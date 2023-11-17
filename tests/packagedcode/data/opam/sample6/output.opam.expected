@@ -37,14 +37,12 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/savonet/ocaml-winsvc.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0",
     "declared_license_expression_spdx": "GPL-2.0-only",
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -55,10 +53,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "gpl-2.0_52.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
             "matched_text": "GPL-2.0"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-d7f02717-086e-f71b-962e-b18cc23b1827"
       }
     ],
     "other_license_expression": null,

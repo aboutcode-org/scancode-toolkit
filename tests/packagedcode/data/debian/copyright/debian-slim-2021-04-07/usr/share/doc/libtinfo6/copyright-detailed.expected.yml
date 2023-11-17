@@ -12,8 +12,6 @@ other_license_expression_spdx: X11-distribute-modifications-variant AND X11 AND 
 license_detections: []
 other_license_detections:
   - license_expression: x11-fsf
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 22
@@ -23,6 +21,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: x11-fsf
         rule_identifier: x11-fsf.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -48,9 +47,8 @@ other_license_detections:
           holders shall not be used in advertising or otherwise to promote the
           sale, use or other dealings in this Software without prior written
           authorization.
+    identifier: x11_fsf-5f3d72c2-fa6a-2f7b-b859-17e7567c1724
   - license_expression: x11-xconsortium
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 47
@@ -60,6 +58,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: x11-xconsortium
         rule_identifier: x11-xconsortium_2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -83,9 +82,8 @@ other_license_detections:
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from the X Consor-
           tium.
+    identifier: x11_xconsortium-8bc3e205-5f29-ecad-90bc-2f492c65be46
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 70
@@ -95,6 +93,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: bsd-new
         rule_identifier: bsd-new_19.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -120,6 +119,7 @@ other_license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
 copyright: |
   1998-2017,2018 Free Software Foundation, Inc.
   1996-2019,2020 Thomas E. Dickey

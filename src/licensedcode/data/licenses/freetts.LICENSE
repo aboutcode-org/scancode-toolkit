@@ -5,10 +5,15 @@ name: FreeTTS License
 category: Permissive
 owner: Oracle Corporation
 homepage_url: http://freetts.sourceforge.net/license.terms
-spdx_license_key: LicenseRef-scancode-freetts
+spdx_license_key: MIT-Festival
+other_spdx_license_keys:
+    - LicenseRef-scancode-freetts
 text_urls:
     - http://freetts.sourceforge.net/license.terms
 faq_url: http://freetts.sourceforge.net/docs/index.php
+other_urls:
+    - https://github.com/festvox/flite/blob/master/COPYING
+    - https://github.com/festvox/speech_tools/blob/master/COPYING
 ignorable_copyrights:
     - Portions Copyright 1999-2001 Language Technologies Institute, Carnegie Mellon University
     - Portions Copyright 2001-2004 Sun Microsystems, Inc.

@@ -26,6 +26,7 @@ def test_license_reference_detection_in_manifest_unknown():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -44,6 +45,7 @@ def test_license_reference_detection_in_manifest_known():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -55,6 +57,25 @@ def test_license_reference_detection_in_manifest_known():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
+def test_license_reference_detection_in_manifest_unknown_reference_nuget():
+    test_dir = test_env.get_test_loc('license_detection/reference-at-manifest/fizzler/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/reference-at-manifest/fizzler.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
 def test_license_reference_detection_in_manifest_licence_comment():
     test_dir = test_env.get_test_loc('license_detection/license-as-manifest-comment/activemq-camel/', copy=True)
     result_file = test_env.get_temp_file('json')
@@ -62,6 +83,7 @@ def test_license_reference_detection_in_manifest_licence_comment():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -80,6 +102,7 @@ def test_license_reference_detection_in_manifest_siblings():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -157,6 +180,7 @@ def test_license_reference_to_unknown_package_complex_package():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -174,6 +198,7 @@ def test_license_reference_to_unknown_package_simple():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -191,6 +216,7 @@ def test_license_reference_to_unknown_package_with_detected_package():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -209,6 +235,7 @@ def test_license_reference_to_unknown_package_paddlenlp():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -227,6 +254,7 @@ def test_license_reference_to_unknown_package_without_detected_package():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -245,6 +273,7 @@ def test_license_reference_to_unknown_package_special_case_debian():
         '--license',
         '--license-text',
         '--license-text-diagnostics',
+        '--license-diagnostics',
         '--package',
         '--strip-root',
         '--verbose',
@@ -253,4 +282,25 @@ def test_license_reference_to_unknown_package_special_case_debian():
     ]
     run_scan_click(args)
     test_loc = test_env.get_test_loc('license_detection/reference-to-package/fusiondirectory.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
+def test_license_package_multi_flavored():
+    test_dir = test_env.get_test_loc('license_detection/multi-flavor/jquery-form-3.51.0/')
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--package',
+        '--strip-root',
+        '--verbose',
+        '--summary',
+        '--classify',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('license_detection/multi-flavor/jquery-form-3.51.0.expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)

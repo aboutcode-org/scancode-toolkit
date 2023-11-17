@@ -1,0 +1,18 @@
+---
+license_expression: lattice-osl-2017
+is_license_notice: yes
+notes: https://github.com/SoerenSofke/DiamondDust/blob/6c3b28479bfdd551a9139b24aa1927c39b2615d3/soc/gpio_LatticeMico/gpio.v
+---
+
+Permission:
+
+   Lattice Semiconductor grants permission to use this code
+   pursuant to the terms of the Lattice Semiconductor Corporation
+   Open Source License Agreement.  
+
+Disclaimer:
+
+   Lattice Semiconductor provides no warranty regarding the use or
+   functionality of this code. It is the user's responsibility to
+   verify the user’s design for consistency and functionality through
+   the use of formal verification methods.

@@ -11,9 +11,9 @@ import logging
 import os.path
 from pprint import pformat
 
-import attr
 import javaproperties
 import lxml
+from fnmatch import fnmatchcase
 from packageurl import PackageURL
 from pymaven import artifact
 from pymaven import pom
@@ -21,10 +21,14 @@ from pymaven.pom import strip_namespace
 
 from commoncode import fileutils
 from packagedcode import models
+from packagedcode.jar_manifest import parse_scm_connection
+from packagedcode.jar_manifest import parse_manifest
+from packagedcode.jar_manifest import get_normalized_java_manifest_data
 from packagedcode.utils import normalize_vcs_url
-from packagedcode.utils import VCS_URLS
 from textcode import analysis
 from typecode import contenttype
+
+import saneyaml
 
 TRACE = False
 
@@ -51,10 +55,120 @@ Third case: a maven repo layout: the jars are side-by-side with a .pom and
 there is no pom.properties check if there are side-by-side artifacts
 """
 
-# TODO: combine with jar_manifets.py
+class MavenBasePackageHandler(models.DatafileHandler):
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder=models.add_to_package):
+        """
+        Assembles from codebases where both a pom.xml and a MANIFEST.MF is present,
+        otherwise uses the default assemble function and `assign_package_to_resources`
+        function from respective DatafileHandlers.
+        """
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+            return
+
+        datafile_path = resource.path
+
+        # This order is important as we want pom.xml to be used for package
+        # creation and then to update from MANIFEST later 
+        manifest_path_pattern = '*/META-INF/MANIFEST.MF'
+        nested_pom_xml_path_pattern = '*/META-INF/maven/**/pom.xml'
+        datafile_name_patterns = (nested_pom_xml_path_pattern, manifest_path_pattern)
+
+        is_manifest = fnmatchcase(datafile_path, manifest_path_pattern)
+        is_pom_xml = fnmatchcase(datafile_path, nested_pom_xml_path_pattern)
+        if is_manifest:
+            meta_inf_resource = resource.parent(codebase)
+        elif is_pom_xml:
+            upward_segments = 4
+            root = resource
+            for _ in range(upward_segments):
+                root = root.parent(codebase)
+            meta_inf_resource = root
+        else:
+            yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase)
+            return
+
+        pom_xmls = []
+        manifests = []
+        for r in meta_inf_resource.walk(codebase):
+            if fnmatchcase(r.path, manifest_path_pattern):
+                manifests.append(r)
+            if fnmatchcase(r.path, nested_pom_xml_path_pattern):
+                pom_xmls.append(r)
+
+        if len(pom_xmls) > 1:
+            yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase)
+            return
+
+        if manifests and pom_xmls:
+            #raise Exception(resource.path, meta_inf_resource, datafile_name_patterns, package_adder)
+            parent_resource = meta_inf_resource.parent(codebase)
+            if not parent_resource:
+                parent_resource = meta_inf_resource
+            yield from cls.assemble_from_many_datafiles_in_directory(
+                    datafile_name_patterns=datafile_name_patterns,
+                    directory=meta_inf_resource,
+                    codebase=codebase,
+                    package_adder=package_adder,
+                    ignore_name_check=True,
+                    parent_resource=parent_resource,
+                )
+        elif manifests and not pom_xmls:
+            yield from JavaJarManifestHandlerMixin.assemble(package_data, resource, codebase)
+        elif pom_xmls and not manifests:
+            yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase)
+        else:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase)
 
 
-class MavenPomXmlHandler(models.DatafileHandler):
+class JavaJarManifestHandler(MavenBasePackageHandler):
+    datasource_id = 'java_jar_manifest'
+    path_patterns = ('*/META-INF/MANIFEST.MF',)
+    default_package_type = 'jar'
+    default_primary_language = 'Java'
+    description = 'Java JAR MANIFEST.MF'
+    documentation_url = 'https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
+
+    @classmethod
+    def parse(cls, location):
+        sections = parse_manifest(location)
+        if sections:
+            main_section = sections[0]
+            manifest = get_normalized_java_manifest_data(main_section)
+            if manifest:
+                yield models.PackageData(**manifest,)
+
+
+class JavaJarManifestHandlerMixin(models.DatafileHandler):
+
+    @classmethod
+    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
+        # we want to root of the jar, two levels up
+        parent = resource.parent(codebase)
+        if parent:
+            parent = resource.parent(codebase)
+        if parent:
+            models.DatafileHandler.assign_package_to_resources(
+                package,
+                resource=parent,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+
+
+class JavaOSGiManifestHandler(JavaJarManifestHandler):
+    datasource_id = 'java_osgi_manifest'
+    # This is an empty tuple to avoid getting back two packages
+    # essentially this is the same as JavaJarManifestHandler
+    path_patterns = ()
+    default_primary_language = 'Java'
+    description = 'Java OSGi MANIFEST.MF'
+    default_package_type = 'osgi'
+
+
+class MavenPomXmlHandler(MavenBasePackageHandler):
     datasource_id = 'maven_pom'
     # NOTE: Maven 1.x used project.xml
     path_patterns = ('*.pom', '*pom.xml',)
@@ -62,8 +176,6 @@ class MavenPomXmlHandler(models.DatafileHandler):
     default_primary_language = 'Java'
     description = 'Apache Maven pom'
     documentation_url = 'https://maven.apache.org/pom.html'
-
-    # TODO: implment more sophistcaed assembly with META-INF/MANIFEST.MF and META-INF/LICENSE
 
     @classmethod
     def is_datafile(cls, location, filetypes=tuple()):
@@ -106,6 +218,23 @@ class MavenPomXmlHandler(models.DatafileHandler):
             yield package_data
 
     @classmethod
+    def get_top_level_resources(cls, manifest_resource, codebase):
+        """
+        Yield Resources that are top-level based on a JAR's directory structure
+        """
+        if 'META-INF' in manifest_resource.path:
+            path_segments = manifest_resource.path.split('META-INF')
+            leading_segment = path_segments[0].strip()
+            meta_inf_dir_path = f'{leading_segment}/META-INF'
+            meta_inf_resource = codebase.get_resource(meta_inf_dir_path)
+            if meta_inf_resource:
+                yield meta_inf_resource
+                yield from meta_inf_resource.walk(codebase)
+
+
+class MavenPomXmlHandlerMixin(models.DatafileHandler):
+
+    @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
         """
         Set the "for_packages" attributes to ``package``  for the whole
@@ -132,10 +261,21 @@ class MavenPomXmlHandler(models.DatafileHandler):
         if resource.path.endswith(f'META-INF/maven/{package.namespace}/{package.name}/pom.xml'):
             # First case: a pom.xml inside a META-INF directory such as in
             # /META-INF/maven/log4j/log4j/pom.xml: This requires going up 5 times
-            upward_segments = 5
+            upward_segments = 4
             root = resource
             for _ in range(upward_segments):
                 root = root.parent(codebase)
+
+            number_poms = 0
+            for child in root.walk(codebase):
+                if 'pom.xml' in child.path:
+                    number_poms += 1
+            
+            if number_poms > 1:
+                root = resource
+            else:
+                root = root.parent(codebase)
+
         else:
             # Second case: a pom.xml at the root of codebase tree
             # FIXME: handle the cases opf parent POMs and nested POMs
@@ -173,12 +313,27 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
             if TRACE:
                 logger.debug(f'MavenPomPropertiesHandler.parse: properties: {properties!r}')
             if properties:
-                yield models.PackageData(
-                    datasource_id=cls.datasource_id,
-                    type=cls.package_type,
-                    primary_language=cls.primary_language,
-                    extra_data=dict(pom_properties=properties)
-                )
+                yield from cls.parse_pom_properties(properties=properties) 
+
+    @classmethod
+    def parse_pom_properties(cls, properties):
+        namespace = properties.pop("groupId", None)
+        name = properties.pop("artifactId", None)
+        version = properties.pop("version", None)
+        if properties:
+            extra_data = dict(pom_properties=properties)
+        else:
+            extra_data = {}
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            name=name,
+            namespace=namespace,
+            version=version,
+            extra_data=extra_data,
+        )
 
 
 def build_url(
@@ -950,7 +1105,7 @@ def get_parties(pom):
             models.Party(
                 type=models.party_person,
                 name=dev['name'],
-                role='developper',
+                role='developer',
                 email=dev['email'],
                 url=dev['url']))
 
@@ -1128,7 +1283,7 @@ def _parse(
     ))
 
     # FIXME: there are still other data to map in a PackageData
-    return models.PackageData(
+    return MavenPackageData(
         datasource_id=datasource_id,
         type=package_type,
         primary_language=primary_language,
@@ -1145,6 +1300,63 @@ def _parse(
         bug_tracking_url=bug_tracking_url,
         **urls,
     )
+
+class MavenPackageData(models.PackageData):
+
+    datasource_id = 'maven_pom'
+
+    def get_license_detections_for_extracted_license_statement(
+        extracted_license,
+        try_as_expression=True,
+        approximate=True,
+        expression_symbols=None,
+    ):
+        from packagedcode.licensing import get_normalized_license_detections
+        from packagedcode.licensing import get_license_detections_for_extracted_license_statement
+
+        if not MavenPackageData.check_extracted_license_statement_structure(extracted_license):
+            return get_normalized_license_detections(
+                extracted_license=extracted_license,
+                try_as_expression=try_as_expression,
+                approximate=approximate,
+                expression_symbols=expression_symbols,
+            )
+        
+        new_extracted_license = extracted_license.copy()
+        
+        for license_entry in new_extracted_license:
+            license_entry.pop("distribution")
+            if not license_entry.get("name"):
+                license_entry.pop("name")
+            if not license_entry.get("url"):
+                license_entry.pop("url")
+            if not license_entry.get("comments"):
+                license_entry.pop("comments")
+
+        extracted_license_statement = saneyaml.dump(new_extracted_license)
+
+        return get_license_detections_for_extracted_license_statement(
+            extracted_license_statement=extracted_license_statement,
+            try_as_expression=try_as_expression,
+            approximate=approximate,
+            expression_symbols=expression_symbols,
+        )
+
+
+    def check_extracted_license_statement_structure(extracted_license):
+
+        is_list_of_mappings = False
+        if not isinstance(extracted_license, list):
+            return is_list_of_mappings
+        else:
+            is_list_of_mappings = True
+
+        for extracted_license_item in extracted_license:
+            if not isinstance(extracted_license_item, dict):
+                is_list_of_mappings = False
+                break
+        
+        return is_list_of_mappings
 
 
 def build_vcs_and_code_view_urls(scm):
@@ -1182,40 +1394,6 @@ def build_vcs_and_code_view_urls(scm):
     # vcs_tag = scm.get('tag')
 
     return dict(vcs_url=vcs_url, code_view_url=code_view_url,)
-
-
-def parse_scm_connection(scm_connection):
-    """
-    Return an SPDX vcs_url given a Maven `scm_connection` string or the string
-    as-is if it cannot be parsed.
-
-    See https://maven.apache.org/scm/scm-url-format.html
-        scm:<scm_provider><delimiter><provider_specific_part>
-
-    scm:git:git://server_name[:port]/path_to_repository
-    scm:git:http://server_name[:port]/path_to_repository
-    scm:git:https://server_name[:port]/path_to_repository
-    scm:git:ssh://server_name[:port]/path_to_repository
-    scm:git:file://[hostname]/path_to_repository
-    """
-
-    delimiter = '|' if '|' in scm_connection else ':'
-    segments = scm_connection.split(delimiter, 2)
-    if not len(segments) == 3:
-        # we cannot parse this so we return it as is
-        return scm_connection
-
-    _scm, scm_tool, vcs_url = segments
-    # TODO: vcs_tool is not yet supported
-    normalized = normalize_vcs_url(vcs_url, vcs_tool=scm_tool)
-    if normalized:
-        vcs_url = normalized
-
-    if not vcs_url.startswith(VCS_URLS):
-        if not vcs_url.startswith(scm_tool):
-            vcs_url = '{scm_tool}+{vcs_url}'.format(**locals())
-
-    return vcs_url
 
 
 def get_extension(packaging):

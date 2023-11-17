@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>javax.persistence</groupId>
+  <artifactId>persistence-api</artifactId>
+  <version>1.0</version>
+  <name>Enterprise JavaBeans (EJB) 3.0</name>
+  <description>
+    The Enterprise JavaBeans architecture is a component architecture for the development and deployment of component-based business applications.
+    The purpose of Enterprise JavaBeans (EJB) 3.0 is to improve the EJB architecture by reducing its complexity from the developer's point of view.
+  </description>
+  <url>http://www.jcp.org/en/jsr/detail?id=220</url>
+
+  <licenses>
+    <license>
+      <name>Common Development and Distribution License (CDDL) v1.0</name>
+      <url>http://www.sun.com/cddl/cddl.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

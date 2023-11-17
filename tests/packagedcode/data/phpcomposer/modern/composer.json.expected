@@ -22,14 +22,12 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "proprietary-license",
     "declared_license_expression_spdx": "LicenseRef-scancode-proprietary-license",
     "license_detections": [
       {
         "license_expression": "proprietary-license",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -40,10 +38,12 @@
             "matcher": "1-hash",
             "license_expression": "proprietary-license",
             "rule_identifier": "proprietary_8.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary_8.RULE",
             "matched_text": "license proprietary"
           }
-        ]
+        ],
+        "identifier": "proprietary_license-c7bb9545-7b66-e7ab-5be4-34e26dc02178"
       }
     ],
     "other_license_expression": null,

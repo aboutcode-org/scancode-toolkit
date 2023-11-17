@@ -1,27 +1,50 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
-relevance: 100
-notes: Non nuclear
+notes: https://github.com/jredmondson/gams/blob/c156c6aad1ab145852bcc77ec2019132743eab85/src/gams/utility/ReferenceFrame.h#L23
+    a rare CMU SEI license
+ignorable_emails:
+    - permission@sei.cmu.edu
 ---
 
-Permission to use, copy, modify, and distribute this software and its
-    documentation for NON-COMMERCIAL or COMMERCIAL purposes and without fee
-    is hereby granted, provided that this copyright notice is kept intact.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
 
-    WIDGET WORKSHOP MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
-    SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT
-    NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-    PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WIDGET WORKSHOP SHALL NOT BE
-    LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING,
-    MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following acknowledgments and disclaimers.
 
-    THIS SOFTWARE IS NOT DESIGNED OR INTENDED FOR USE OR RESALE AS ON-LINE
-    CONTROL EQUIPMENT IN HAZARDOUS ENVIRONMENTS REQUIRING FAIL-SAFE
-    PERFORMANCE, SUCH AS IN THE OPERATION OF NUCLEAR FACILITIES, AIRCRAFT
-    NAVIGATION OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, DIRECT LIFE
-    SUPPORT MACHINES, OR WEAPONS SYSTEMS, IN WHICH THE FAILURE OF THE
-    SOFTWARE COULD LEAD DIRECTLY TO DEATH, PERSONAL INJURY, OR SEVERE
-    PHYSICAL OR ENVIRONMENTAL DAMAGE ("HIGH RISK ACTIVITIES").  WIDGET
-    WORKSHOP SPECIFICALLY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY OF
-    FITNESS FOR HIGH RISK ACTIVITIES.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. The names "Carnegie Mellon University," "SEI" and/or "Software
+   Engineering Institute" shall not be used to endorse or promote products
+   derived from this software without prior written permission. For written
+   permission, please contact permission@sei.cmu.edu.
+
+4. Products derived from this software may not be called "SEI" nor may "SEI"
+   appear in their names without prior written permission of
+   permission@sei.cmu.edu.
+
+5. Redistributions of any form whatsoever must retain the following
+   acknowledgment:
+
+     This material is based upon work funded and supported by the Department
+     of Defense under Contract No. FA8721-05-C-0003 with Carnegie Mellon
+     University for the operation of the Software Engineering Institute, a
+     federally funded research and development center. Any opinions,
+     findings and conclusions or recommendations expressed in this material
+     are those of the author(s) and do not necessarily reflect the views of
+     the United States Department of Defense.
+
+     NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
+     INSTITUTE MATERIAL IS FURNISHED ON AN "AS-IS" BASIS. CARNEGIE MELLON
+     UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR
+     IMPLIED, AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF
+     FITNESS FOR PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS
+     OBTAINED FROM USE OF THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES
+     NOT MAKE ANY WARRANTY OF ANY KIND WITH RESPECT TO FREEDOM FROM PATENT,
+     TRADEMARK, OR COPYRIGHT INFRINGEMENT.
+
+     This material has been approved for public release and unlimited
+     distribution.

@@ -32,14 +32,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=ba05f40c20ddc515f748f205f01befbba3a88feb",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -50,10 +48,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-1b937028f397e2c5fe4eb6a0abd781ab80f9eeff",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "mit"
           }
-        ]
+        ],
+        "identifier": "mit-704ced38-ea60-e53b-6c20-390fe781b1c3"
       }
     ],
     "other_license_expression": null,
@@ -125,14 +125,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e5c984f68aabb28de623a7e3ada5a223c2b66d77",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0",
     "declared_license_expression_spdx": "GPL-2.0-only",
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -143,10 +141,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,
@@ -263,14 +263,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=55464083de768e34737154e10544bb0be12bcf04",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0",
     "declared_license_expression_spdx": "GPL-2.0-only",
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -281,10 +279,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,
@@ -581,14 +581,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=bdc861e495d33e961b7b9884324bea64a16d2b91",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -599,10 +597,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-1b937028f397e2c5fe4eb6a0abd781ab80f9eeff",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "mit"
           }
-        ]
+        ],
+        "identifier": "mit-704ced38-ea60-e53b-6c20-390fe781b1c3"
       }
     ],
     "other_license_expression": null,
@@ -818,14 +818,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=d5cdcefa208fa600971caccebd3ab1c7304fec16",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "openssl-ssleay",
     "declared_license_expression_spdx": "OpenSSL",
     "license_detections": [
       {
         "license_expression": "openssl-ssleay",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -836,10 +834,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "openssl-ssleay",
             "rule_identifier": "spdx-license-identifier-openssl-ssleay-b5dd48b21e3399670d584d4ade9a9791a24c58cd",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "openssl"
           }
-        ]
+        ],
+        "identifier": "openssl_ssleay-5eedc4a6-a77c-b373-2ac4-55bb8c004773"
       }
     ],
     "other_license_expression": null,
@@ -1001,14 +1001,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=d5cdcefa208fa600971caccebd3ab1c7304fec16",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "openssl-ssleay",
     "declared_license_expression_spdx": "OpenSSL",
     "license_detections": [
       {
         "license_expression": "openssl-ssleay",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1019,10 +1017,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "openssl-ssleay",
             "rule_identifier": "spdx-license-identifier-openssl-ssleay-b5dd48b21e3399670d584d4ade9a9791a24c58cd",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "openssl"
           }
-        ]
+        ],
+        "identifier": "openssl_ssleay-5eedc4a6-a77c-b373-2ac4-55bb8c004773"
       }
     ],
     "other_license_expression": null,
@@ -1094,14 +1094,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=8f660379d74a2191e69e83adf79f54bdc4e9d646",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mpl-2.0 AND gpl-2.0-plus",
     "declared_license_expression_spdx": "MPL-2.0 AND GPL-2.0-or-later",
     "license_detections": [
       {
         "license_expression": "mpl-2.0 AND gpl-2.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1112,10 +1110,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mpl-2.0 AND gpl-2.0-plus",
             "rule_identifier": "spdx-license-identifier-mpl-2.0 AND gpl-2.0-plus-ebba41d440d51e8500958cb8f2bc7302a0b7b0c5",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "mpl-2.0 AND gpl-2.0-or-later"
           }
-        ]
+        ],
+        "identifier": "mpl_2_0_and_gpl_2_0_plus-fb163695-8575-68e5-0fd0-cd41328bb5a5"
       }
     ],
     "other_license_expression": null,
@@ -1170,14 +1170,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=981bf8f8fb3cbbc210ee4f2a2fb5b55d0132e02a",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "isc",
     "declared_license_expression_spdx": "ISC",
     "license_detections": [
       {
         "license_expression": "isc",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1188,10 +1186,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "isc",
             "rule_identifier": "spdx-license-identifier-isc-fd23252ced2c9184cff91208f30a380cf105f995",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "isc"
           }
-        ]
+        ],
+        "identifier": "isc-0d657e09-0de3-06c6-ce9e-46867b6ce2d6"
       }
     ],
     "other_license_expression": null,
@@ -1274,14 +1274,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=e5c984f68aabb28de623a7e3ada5a223c2b66d77",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0",
     "declared_license_expression_spdx": "GPL-2.0-only",
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1292,10 +1290,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,
@@ -1358,14 +1358,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=388a4fb3640f8ccbd18e105df3ad741dca4247e1",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "zlib",
     "declared_license_expression_spdx": "Zlib",
     "license_detections": [
       {
         "license_expression": "zlib",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1376,10 +1374,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "zlib",
             "rule_identifier": "spdx-license-identifier-zlib-2023583c09c2e5aa14d564036e304041c0f1ace3",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "zlib"
           }
-        ]
+        ],
+        "identifier": "zlib-f742edbd-d484-7a19-19f0-f4582738f149"
       }
     ],
     "other_license_expression": null,
@@ -1451,14 +1451,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=72048e01f0eef23b1300eb4c7d8eb2afb601f156",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0",
     "declared_license_expression_spdx": "GPL-2.0-only",
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 50.0,
@@ -1469,10 +1467,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "gpl2_bare_word_only.RULE",
+            "rule_relevance": 50,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl2_bare_word_only.RULE",
             "matched_text": "gpl2"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-0f410ee9-c629-711c-cf84-ebb632208a30"
       }
     ],
     "other_license_expression": null,
@@ -1535,14 +1535,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=c2bc0a44e12b8015a83e04a9881714deb3526d80",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-2.0",
     "declared_license_expression_spdx": "GPL-2.0-only",
     "license_detections": [
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1553,10 +1551,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-2.0-only_for_gpl-2.0.RULE",
             "matched_text": "gpl-2.0-only"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-7541c21a-b2c9-c697-2794-bf0cfcdf32f9"
       }
     ],
     "other_license_expression": null,
@@ -1619,14 +1619,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=ba05f40c20ddc515f748f205f01befbba3a88feb",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit AND bsd-new AND gpl-2.0-plus",
     "declared_license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
     "license_detections": [
       {
         "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1637,10 +1635,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
             "rule_identifier": "spdx-license-identifier-mit AND bsd-new AND gpl-2.0-plus-a42688b31c355df3bef97265e8ca20360250716e",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "mit AND bsd-3-clause AND gpl-2.0-or-later"
           }
-        ]
+        ],
+        "identifier": "mit_and_bsd_new_and_gpl_2_0_plus-57deb96b-d294-ad77-12c0-3e0e3c5d55f3"
       }
     ],
     "other_license_expression": null,
@@ -1750,14 +1750,12 @@
     "code_view_url": null,
     "vcs_url": "git+http://git.alpinelinux.org/aports/commit/?id=97b1c2842faa3bfa30f5811ffbf16d5ff9f1a479",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "bsd-new",
     "declared_license_expression_spdx": "BSD-3-Clause",
     "license_detections": [
       {
         "license_expression": "bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -1768,10 +1766,12 @@
             "matcher": "1-hash",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_10.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE",
             "matched_text": "bsd-3-clause"
           }
-        ]
+        ],
+        "identifier": "bsd_new-50fa5753-f24d-ec04-33a1-36bb8ac0492c"
       }
     ],
     "other_license_expression": null,

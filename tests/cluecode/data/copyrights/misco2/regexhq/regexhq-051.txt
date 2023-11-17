@@ -1,0 +1,1 @@
+Copyright (C) 2011 Yusuke Suzuki <utatane.tea@gmail.com>

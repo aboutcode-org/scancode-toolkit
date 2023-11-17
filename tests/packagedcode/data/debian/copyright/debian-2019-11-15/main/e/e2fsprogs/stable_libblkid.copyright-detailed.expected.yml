@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 15
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.0
         rule_identifier: lgpl-2.0_24.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_24.RULE
         matched_text: |
           You are free to distribute this software under the terms of the GNU
@@ -23,6 +22,7 @@ license_detections:
 
           On Debian systems, the complete text of the GNU Lesser (Library)
           General Public License can be found in /usr/share/common-licenses/LGPL-2.
+    identifier: lgpl_2_0-ea336dbe-d6ad-2adf-83b6-2d5c13de7fbe
 other_license_detections: []
 copyright: |
   Copyright (c) 1999, 2001 by Andries Brouwer

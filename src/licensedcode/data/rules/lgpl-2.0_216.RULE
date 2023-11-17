@@ -1,0 +1,10 @@
+---
+license_expression: lgpl-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - COPYING
+---
+
+This library is distributed under GNU LGPL version 2, which can be
+found in the file  "COPYING".

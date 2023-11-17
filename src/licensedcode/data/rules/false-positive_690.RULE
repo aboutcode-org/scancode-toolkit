@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: not a license statement, seen in Log4J
+---
+
+USE AT YOUR OWN RISK, method is public for testing purpose only for now.

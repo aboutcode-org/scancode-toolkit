@@ -1,0 +1,6 @@
+ SPDX-FileCopyrightText: © 2020 Liferay, Inc. <https://liferay.com>
+ SPDX-FileCopyrightText: © 2020 Contributors to the project Clay <https://github.com/liferay/clay/graphs/contributors>
+
+ SPDX-FileCopyrightText: © 2019 Twitter, Inc. <https://twitter.com>
+ SPDX-FileCopyrightText: © 2019 The Bootstrap Authors <https://getbootstrap.com/>
+

@@ -4,6 +4,7 @@ short_name: Perl 1.0
 name: Perl 1.0
 category: Permissive
 owner: Perl Foundation
+homepage_url: https://github.com/AnaTofuZ/Perl-1.0/blob/master/README.orig
 spdx_license_key: LicenseRef-scancode-perl-1.0
 ignorable_copyrights:
     - Copyright (c) 1987, Larry Wall

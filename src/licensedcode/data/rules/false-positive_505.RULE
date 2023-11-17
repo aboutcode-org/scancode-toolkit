@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in xmlbeans-3.1.0-sources.jar
+---
+
+apache/xmlbeans/SchemaAttributeGroup;)V saveIdentityConstraints 2(

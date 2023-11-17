@@ -1,0 +1,10 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 95
+ignorable_urls:
+    - http://opensource.org/licenses/apache2.0.php
+---
+
+License: Apache License, Version 2.0  (http://opensource.org/licenses/apache2.0.php)

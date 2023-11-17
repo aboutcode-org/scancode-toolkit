@@ -1,0 +1,16 @@
+---
+key: hpnd-sell-regexpr
+short_name: Historical sell regexpr variant
+name: Historical Permission Notice and Disclaimer sell regexpr variant
+category: Permissive
+owner: Tatu Ylonen
+spdx_license_key: HPND-sell-regexpr
+other_urls:
+    - https://gitlab.com/bacula-org/bacula/-/blob/Branch-11.0/bacula/LICENSE-FOSS?ref_type=heads#L245
+---
+
+Permission to use, copy, modify, distribute, and sell this software
+and its documentation for any purpose is hereby granted without
+fee, provided that the above copyright notice appear in all copies.
+This software is provided "as is" without express or implied
+warranty.

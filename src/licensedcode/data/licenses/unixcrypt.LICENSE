@@ -1,0 +1,18 @@
+---
+key: unixcrypt
+short_name: UnixCrypt License
+name: UnixCrypt License
+category: Permissive
+owner: unixcrypt
+notes: Also seen in ActiveMQ
+spdx_license_key: UnixCrypt
+other_urls:
+    - https://foss.heptapod.net/python-libs/passlib/-/blob/branch/stable/LICENSE#L70
+    - https://opensource.apple.com/source/JBoss/JBoss-737/jboss-all/jetty/src/main/org/mortbay/util/UnixCrypt.java.auto.html
+    - https://archive.eclipse.org/jetty/8.0.1.v20110908/xref/org/eclipse/jetty/http/security/UnixCrypt.html
+---
+
+Permission to use, copy, modify and distribute this software
+for non-commercial or commercial purposes and without fee is
+hereby granted provided that this copyright notice appears in
+all copies.

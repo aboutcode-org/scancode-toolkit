@@ -21,14 +21,12 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "bsd-simplified",
   "declared_license_expression_spdx": "BSD-2-Clause",
   "license_detections": [
     {
       "license_expression": "bsd-simplified",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +37,12 @@
           "matcher": "1-hash",
           "license_expression": "bsd-simplified",
           "rule_identifier": "spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
           "matched_text": "bsd-2-clause"
         }
-      ]
+      ],
+      "identifier": "bsd_simplified-7cacd81a-0bdb-1c32-cf2d-2250f633f213"
     }
   ],
   "other_license_expression": null,

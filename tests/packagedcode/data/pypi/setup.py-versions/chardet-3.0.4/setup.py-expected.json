@@ -55,14 +55,12 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "lgpl-2.0-plus",
     "declared_license_expression_spdx": "LGPL-2.0-or-later",
     "license_detections": [
       {
         "license_expression": "lgpl-2.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 75.0,
@@ -73,16 +71,15 @@
             "matcher": "1-hash",
             "license_expression": "lgpl-2.0-plus",
             "rule_identifier": "lgpl_bare_single_word.RULE",
+            "rule_relevance": 75,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
             "matched_text": "LGPL"
           }
-        ]
+        ],
+        "identifier": "lgpl_2_0_plus-64f6d457-252f-6fe3-26b9-ae66d29ef973"
       },
       {
         "license_expression": "lgpl-2.0-plus",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -93,16 +90,18 @@
             "matcher": "1-hash",
             "license_expression": "lgpl-2.0-plus",
             "rule_identifier": "pypi_gnu_library_or_lesser_general_public_license.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_library_or_lesser_general_public_license.RULE",
-            "matched_text": "['License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)']"
+            "matched_text": "- 'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)'"
           }
-        ]
+        ],
+        "identifier": "lgpl_2_0_plus-3b2c1a38-eae7-ec73-1ef5-c86a38ba040e"
       }
     ],
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'license': 'LGPL', 'classifiers': ['License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)']}",
+    "extracted_license_statement": "license: LGPL\nclassifiers:\n  - 'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)'\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

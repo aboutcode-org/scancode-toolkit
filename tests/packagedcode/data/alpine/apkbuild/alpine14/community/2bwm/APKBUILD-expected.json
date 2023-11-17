@@ -21,14 +21,12 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "isc",
   "declared_license_expression_spdx": "ISC",
   "license_detections": [
     {
       "license_expression": "isc",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +37,12 @@
           "matcher": "1-spdx-id",
           "license_expression": "isc",
           "rule_identifier": "spdx-license-identifier-isc-fd23252ced2c9184cff91208f30a380cf105f995",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "isc"
         }
-      ]
+      ],
+      "identifier": "isc-0d657e09-0de3-06c6-ce9e-46867b6ce2d6"
     }
   ],
   "other_license_expression": null,

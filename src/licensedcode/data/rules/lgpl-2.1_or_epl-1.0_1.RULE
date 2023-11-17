@@ -1,0 +1,11 @@
+---
+license_expression: lgpl-2.1 OR epl-1.0
+is_license_reference: yes
+minimum_coverage: 95
+notes: noice the weird line break
+ignorable_urls:
+    - http://jgrapht.sourceforge.net/LGPL.html
+---
+
+http://jgrapht.sourceforge.net/LGPL.html, http://www.e
+clipse.org/legal/epl-v10.html

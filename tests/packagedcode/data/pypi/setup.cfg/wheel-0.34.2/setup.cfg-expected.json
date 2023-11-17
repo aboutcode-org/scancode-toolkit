@@ -2,24 +2,24 @@
   {
     "type": "pypi",
     "namespace": null,
-    "name": null,
-    "version": "0.34.2",
+    "name": "wheel",
+    "version": "attr: wheel.__version__",
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Python",
-    "description": "",
+    "description": null,
     "release_date": null,
     "parties": [
       {
         "type": "person",
-        "role": "maintainer",
-        "name": "Alex Gr\u00f6nholm",
-        "email": null,
+        "role": "author",
+        "name": "Daniel Holth",
+        "email": "dholth@fastmail.fm",
         "url": null
       }
     ],
     "keywords": [],
-    "homepage_url": null,
+    "homepage_url": "https://github.com/pypa/wheel",
     "download_url": null,
     "size": null,
     "sha1": null,
@@ -30,17 +30,84 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
-    "license_expression": null,
-    "declared_license": {},
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "matcher": "1-spdx-id",
+            "license_expression": "mit",
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
     "extra_data": {},
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/setuptools",
+        "extracted_requirement": "setuptools>=40.9.0",
+        "scope": "setup",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:generic/python",
+        "extracted_requirement": "python_requires>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
+        "scope": "python",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest",
+        "extracted_requirement": "pytest>=3.0.0",
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-cov",
+        "extracted_requirement": "pytest-cov",
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "datasource_id": "pypi_setup_py",
-    "purl": null
+    "datasource_id": "pypi_setup_cfg",
+    "purl": "pkg:pypi/wheel@attr:%20wheel.__version__"
   }
 ]

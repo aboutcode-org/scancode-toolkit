@@ -1,0 +1,19 @@
+---
+license_expression: wtfpl-2.0 AND bsd-new
+is_license_tag: yes
+minimum_coverage: 95
+ignorable_urls:
+    - http://www.opensource.org/licenses/bsd-license.html
+    - http://www.wtfpl.net/
+---
+
+<licenses>
+        <license>
+            <name>WTFPL</name>
+            <url>http://www.wtfpl.net/</url>
+        </license>
+        <license>
+            <name>The New BSD License</name>
+            <url>http://www.opensource.org/licenses/bsd-license.html</url>
+        </license>
+    </licenses>

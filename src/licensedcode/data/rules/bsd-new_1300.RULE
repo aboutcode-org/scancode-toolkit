@@ -1,0 +1,11 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+referenced_filenames:
+    - https://github.com/jimsch/COSE-JAVA/blob/master/LICENSE
+ignorable_urls:
+    - https://github.com/jimsch/COSE-JAVA/blob/master/LICENSE
+---
+
+name: BSD3 
+url: {{https://github.com/jimsch/COSE-JAVA/blob/master/LICENSE}}

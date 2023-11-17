@@ -47,6 +47,7 @@ class Tallies(PostScanPlugin):
     """
     Compute tallies for license, copyright and other scans at the codebase level
     """
+    run_order = 15
     sort_order = 15
 
     codebase_attributes = dict(tallies=attr.ib(default=attr.Factory(dict)))
@@ -86,6 +87,7 @@ class TalliesWithDetails(PostScanPlugin):
     # store tallies at the file and directory level in this attribute when
     # keep details is True
     resource_attributes = dict(tallies=attr.ib(default=attr.Factory(dict)))
+    run_order = 100
     sort_order = 100
 
     options = [
@@ -157,15 +159,37 @@ def license_tallies(resource, children, keep_details=False):
     sorted by decreasing count.
     """
     LIC_EXP = 'detected_license_expression'
+    LIC_DET = 'license_detections'
+    LIC_CLUE = 'license_clues'
     license_expressions = []
 
     # Collect current data
-    lic_expression = getattr(resource, LIC_EXP, None)
-    if not lic_expression and resource.is_file:
+    detected_expressions = []
+    for detection in getattr(resource, LIC_DET, []):
+        detected_expressions.append(detection["license_expression"])
+    for match in getattr(resource, LIC_CLUE, []):
+        detected_expressions.append(match["license_expression"])
+
+    package_license_detections = []
+    PACKAGE_DATA = 'package_data'
+    package_data = getattr(resource, PACKAGE_DATA, [])
+    if package_data:
+        package_license_detections.extend(
+            [
+                detection
+                for detection in getattr(package_data, LIC_DET, [])
+                if detection
+            ]
+        )
+
+    for detection in package_license_detections:
+        detected_expressions.append(detection["license_expression"])
+
+    if not detected_expressions and resource.is_file:
         # also count files with no detection
         license_expressions.append(None)
     else:
-        license_expressions.append(lic_expression)
+        license_expressions.extend(detected_expressions)
 
     # Collect direct children expression tallies
     for child in children:
@@ -173,9 +197,8 @@ def license_tallies(resource, children, keep_details=False):
         for child_tally in child_tallies:
             # TODO: review this: this feels rather weird
             child_sum_val = child_tally.get('value')
-            if child_sum_val:
-                values = [child_sum_val] * child_tally['count']
-                license_expressions.extend(values)
+            values = [child_sum_val] * child_tally['count']
+            license_expressions.extend(values)
 
     # summarize proper
     licenses_counter = tally_licenses(license_expressions)
@@ -269,6 +292,7 @@ class KeyFilesTallies(PostScanPlugin):
     """
     Compute tallies of a scan at the codebase level for only key files.
     """
+    run_order = 150
     sort_order = 150
 
     # mapping of tally data at the codebase level for key files
@@ -343,6 +367,7 @@ class FacetTallies(PostScanPlugin):
     """
     Compute tallies for a scan at the codebase level, grouping by facets.
     """
+    run_order = 200
     sort_order = 200
     codebase_attributes = dict(tallies_by_facet=attr.ib(default=attr.Factory(list)))
 

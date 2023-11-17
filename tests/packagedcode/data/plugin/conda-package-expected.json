@@ -23,14 +23,12 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": "unknown-license-reference",
       "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "license_detections": [
         {
           "license_expression": "unknown-license-reference",
-          "detection_log": [
-            "unknown-match"
-          ],
           "matches": [
             {
               "score": 80.0,
@@ -41,10 +39,12 @@
               "matcher": "1-hash",
               "license_expression": "unknown-license-reference",
               "rule_identifier": "unknown_license_other_12.RULE",
+              "rule_relevance": 80,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
               "matched_text": "license Other"
             }
-          ]
+          ],
+          "identifier": "unknown_license_reference-e1d5d99b-3b3e-7d4b-a3c1-71248ff49c51"
         }
       ],
       "other_license_expression": null,
@@ -237,69 +237,6 @@
       "datasource_id": "conda_meta_yaml"
     }
   ],
-  "license_references": [
-    {
-      "key": "unknown-license-reference",
-      "language": "en",
-      "short_name": "Unknown License reference",
-      "name": "Unknown License file reference",
-      "category": "Unstated License",
-      "owner": "Unspecified",
-      "homepage_url": null,
-      "notes": "This applies to the case of a file with no clear license, which may be referenced via URL or text such as \"See license in...\" or \"This file is licensed under...\", but where the reference cannot be resolved to a specific named, public license.",
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": true,
-      "is_generic": false,
-      "spdx_license_key": "LicenseRef-scancode-unknown-license-reference",
-      "other_spdx_license_keys": [],
-      "osi_license_key": null,
-      "text_urls": [],
-      "osi_url": null,
-      "faq_url": null,
-      "other_urls": [],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/unknown-license-reference",
-      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE"
-    }
-  ],
-  "license_rule_references": [
-    {
-      "license_expression": "unknown-license-reference",
-      "identifier": "unknown_license_other_12.RULE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
-      "is_license_text": false,
-      "is_license_notice": false,
-      "is_license_reference": true,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": false,
-      "is_synthetic": false,
-      "length": 2,
-      "relevance": 80,
-      "minimum_coverage": 100,
-      "referenced_filenames": [],
-      "notes": null,
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "License: `other`"
-    }
-  ],
   "files": [
     {
       "path": "info",
@@ -355,14 +292,12 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": "unknown-license-reference",
           "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "license_detections": [
             {
               "license_expression": "unknown-license-reference",
-              "detection_log": [
-                "unknown-match"
-              ],
               "matches": [
                 {
                   "score": 80.0,
@@ -373,10 +308,12 @@
                   "matcher": "1-hash",
                   "license_expression": "unknown-license-reference",
                   "rule_identifier": "unknown_license_other_12.RULE",
+                  "rule_relevance": 80,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
                   "matched_text": "license Other"
                 }
-              ]
+              ],
+              "identifier": "unknown_license_reference-e1d5d99b-3b3e-7d4b-a3c1-71248ff49c51"
             }
           ],
           "other_license_expression": null,

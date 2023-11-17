@@ -1,0 +1,70 @@
+---
+key: t-engine-public
+short_name: T-Engine Public License
+name: T-Engine Public License
+category: Proprietary Free
+owner: Tron Project
+homepage_url: https://www.tron.org/download/index.php?route=information/information&information_id=13
+spdx_license_key: LicenseRef-scancode-t-engine-public
+other_urls:
+    - https://www.tron.org/download/index.php?route=information/information&information_id=62&language=en
+---
+
+T-Engine Public License [License Agreement for Software for T-Engine]
+
+established by T-Engine Forum
+on September 29, 2006
+revised on November 28, 2006
+Article 1. Scope of License Agreement
+
+    This License Agreement sets forth copyrights and the terms and conditions of use applicable to the software program, which has an indication that the program is subject to the T-Engine Public License, for the T-Engine distributed by T-Engine Forum and any derivative work created therefrom.
+
+Article 2. Definition
+
+    "Source Code" means individual source program which has the indication that the program is subject to the T-Engine Public License, including related comments and documentations.
+    "Modified Source Code" means a source program modified from the Source Code for the purpose of improving its performance, increasing or decreasing its function, and the like.
+    "Binary Code" means an executable code form which is created by compiling programs, which include all or part of the Source Code or the Modified Source Code.
+    "Embedded Product" means any product which uses the Source Code, the Modified Source Code, or the Binary Code, and operates with executable code form loaded on its hardware.
+    "End User" means a consumer who uses the Embedded Product.
+    "Source Code User" means a person who uses the Source Code.
+    "Distribution" means any of the following acts:
+        to transmit a work to a large number of specific persons through the Internet communication, broadcasting, and the like;
+        to transmit a work to the general public through the Internet communication, broadcasting, and the like automatically in response to a request from the public; and
+        to distribute a reproduction of a work to the general public or a large number of specific persons.
+
+Article 3. Copyright
+
+    The copyrights of the Source Code shall be owned by T-Engine Forum.
+
+Article 4. License of Source Code
+
+    As provided for in this Article, T-Engine Forum shall grant a license to use the Source Code free of charge to any person who has agreed to the T-Engine Public License.
+    In accordance with the license granted under Article 4.1 above, the Source Code User may perform the following acts:
+        to copy and/or modify the Source Code provided by T-Engine Forum hereunder for its own research, development and the like.
+        to run the Source Code provided by T-Engine Forum hereunder for its own research, development and the like.
+        to run the Source Code modified in accordance with the provision of (1) above for its own research, development and the like.
+        to develop, manufacture the Embedded Product containing the Binary Code, and, whether with or without payment, provide the End User with the same and make the Binary Code available to the End User on the Embedded Product.
+        to distribute the Source Code provided by T-Engine Forum and the Source Code modified in accordance with the provision of (1) above. Provided, however, that the Source Code User may not modify the indication of license affixed to the Source Code.
+        to distribute the Binary Code.
+    The Source Code User shall not be obligated to give a copyright notice of the Source Code or a notice that the Source Code is licensed by T-Engine Forum, when they use the Source Code or the Binary Code of program obtained by modifying the Source Code, or make the Binary Code available to the End User on the Embedded Product.
+
+Article 5. Limited Warranty
+
+    T-Engine Forum does not warrant that the Source Code does not infringe upon third party's copyrights.
+    T-Engine Forum does not warrant that the Source Code will fit for any particular purpose of the Source Code User.
+    T-Engine Forum does not warrant that the Source Code does not infringe upon any third party's industrial property rights. In no event shall T-Engine Forum be liable for any dispute which may arise between the Source Code User and a third party in connection with the third party's industrial property rights.
+
+Article 6. Indemnity
+
+    Neither T-Engine Forum nor the copyright holder of the Source Code shall be liable for any damages (including, but not limited to, damages resulting from loss of profit, business interruption, loss of business information or any other pecuniary damage) arising out of use or impossibility of use of the Source Code, even if T-Engine Forum and the copyright holder have been informed of the possibility of such damages.
+
+Article 7. Breach of Agreement
+
+    In case of breach of this License Agreement, T-Engine Forum shall have the breaching person remedy such a breach and take measures on the ground of copyright infringement against the person regardless of whether or not the said person is a member of T-Engine Forum.
+    In case of breach of this License Agreement by a member of T-Engine Forum, T-Engine Forum may take appropriate measures against the member; for example, the member is disqualified from membership, depending on what kind of breach has been committed by it.
+    Any legal dispute which may arise in relation to any breach of this License Agreement shall be subject to the exclusive jurisdiction of the Tokyo District Court.
+
+Article 8. Governing Law and Language
+
+    This License Agreement shall be governed by and interpreted under the laws of Japan.
+    This License Agreement is executed in both Japanese text and English text provided that the Japanese text shall govern the interpretation and performance of this License Agreement.

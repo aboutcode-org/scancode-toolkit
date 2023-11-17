@@ -26,6 +26,8 @@ from pathlib import Path
 from licensedcode._vendor import attr
 from license_expression import ExpressionError
 from license_expression import Licensing
+from saneyaml import load as saneyaml_load
+from saneyaml import dump as saneyaml_dump
 
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
@@ -486,6 +488,8 @@ class License:
         """
         metadata = self.to_dict(include_builtin=False)
         content = self.text
+        # We add a space to empty newlines to make this text YAML safe
+        content = get_yaml_safe_text(content)
         output = dumps_frontmatter(content=content, metadata=metadata)
         license_file = self.license_file(licenses_data_dir=licenses_data_dir)
         with open(license_file, 'w') as of:
@@ -557,7 +561,7 @@ class License:
             yield key
 
     @staticmethod
-    def validate(licenses, verbose=False, no_dupe_urls=False):
+    def validate(licenses, verbose=False, no_dupe_urls=False, thorough=False):
         """
         Check that the ``licenses`` a mapping of {key: License} are valid.
         Return dictionaries of infos, errors and warnings mapping a license key
@@ -662,8 +666,23 @@ class License:
                 if not len(all_licenses) == len(set(all_licenses)):
                     warn('Some duplicated URLs')
 
-            # local text consistency
             text = lic.text
+            if thorough:
+                # local text consistency
+                data = {"text": text}
+                # We are testing whether we can dump as yaml and load from yaml
+                # without failing (i.e. whether the text is yaml safe)
+                # Using saneyaml
+                try:
+                    yaml_string = saneyaml_dump(data)
+                    loaded_yaml = saneyaml_load(yaml_string)
+                except Exception:
+                    errors['GLOBAL'].append(
+                        f'Error invalid YAML text at: {lic.key}, failed during saneyaml.load()'
+                        'Run scancode-reindex-licenses --load-dump to fix this.'
+                    )
+                # This fails because of missing line break at text end, added by saneyaml_dump
+                # assert text == loaded_yaml["text"]
 
             license_itokens = tuple(index_tokenizer(text))
             if not license_itokens:
@@ -744,6 +763,25 @@ class License:
         return errors, warnings, infos
 
 
+def get_yaml_safe_text(text):
+    """
+    Given a `text` string return a YAML-safe version of the
+    string suitable for use in a YAML output, i.e. that would not
+    produce a invalid yaml if used in the output.
+
+    This is done by trying to dump and load the text inside a data
+    dictionary and if it fails, padding all the empty newlines with
+    a space.
+    """
+    data = {"text": text}
+    yaml_string = saneyaml_dump(data)
+    try:
+        loaded_yaml = saneyaml_load(yaml_string)
+    except Exception:
+        text = text.replace('\n\n', '\n \n')
+    return text
+
+
 def ignore_editor_tmp_files(location):
     return location.endswith('.swp')
 
@@ -812,12 +850,18 @@ def get_rules(
     licenses_data_dir=licenses_data_dir,
     rules_data_dir=rules_data_dir,
     validate=False,
+    validate_thorough=False,
     is_builtin=True,
 ):
     """
     Yield Rule objects loaded from a ``licenses_db`` and license files found in
     ``licenses_data_dir`` and rule files found in `rules_data_dir`. Raise an
     Exception if a rule is inconsistent or incorrect.
+
+    If ``validate`` flag is True, we validate all the license rules for consistency
+    and if ``validate_thorough`` is True we perform additional validation tests
+    (like whether it would produce valid YAML) which is skipped normally because these
+    are expensive operations.
     """
     licenses_db = licenses_db or load_licenses(
         licenses_data_dir=licenses_data_dir,
@@ -829,10 +873,25 @@ def get_rules(
     ))
 
     if validate:
-        validate_rules(rules=rules, licenses_by_key=licenses_db)
+        validate_rules(rules=rules, licenses_by_key=licenses_db, thorough=validate_thorough)
 
     licenses_as_rules = build_rules_from_licenses(licenses_db)
     return chain(licenses_as_rules, rules)
+
+
+def load_dump_licenses():
+    """
+    Loads all licenses and rules and dumps them in the same file.
+    This is used to do minor formatting changes consistently across
+    all licenses/rules.
+    """
+    licenses = load_licenses(licenses_data_dir=licenses_data_dir)
+    for lic in licenses.values():
+        lic.dump(licenses_data_dir)
+
+    rules = list(load_rules(rules_data_dir=rules_data_dir))
+    for rule in rules:
+        rule.dump(rules_data_dir=rules_data_dir)
 
 
 def get_license_dirs(additional_dirs):
@@ -926,7 +985,7 @@ def get_rules_from_multiple_dirs(
             is_builtin=False,
         ))
 
-    validate_rules(rules=combined_rules, licenses_by_key=licenses_db)
+    validate_rules(rules=combined_rules, licenses_by_key=licenses_db, thorough=False)
 
     return combined_rules
 
@@ -1004,7 +1063,7 @@ class InvalidLicense(Exception):
     pass
 
 
-def _validate_all_rules(rules, licenses_by_key):
+def _validate_all_rules(rules, licenses_by_key, thorough=False):
     """
     Return a mapping of {error message: [list of Rule]} from validating a list
     of ``rules`` Rule integrity and correctness using known licenses from a
@@ -1014,18 +1073,18 @@ def _validate_all_rules(rules, licenses_by_key):
     errors = defaultdict(list)
 
     for rule in rules:
-        for err_msg in rule.validate(licensing):
+        for err_msg in rule.validate(licensing, thorough=thorough):
             errors[err_msg].append(rule)
     return errors
 
 
-def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules_data_dir):
+def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules_data_dir, thorough=False):
     """
     Return a mapping of {error message: [list of Rule]) from validating a list
     of ``rules`` Rule integrity and correctness using known licenses from a
     mapping of ``licenses_by_key`` {key: License}`.
     """
-    errors = _validate_all_rules(rules=rules, licenses_by_key=licenses_by_key)
+    errors = _validate_all_rules(rules=rules, licenses_by_key=licenses_by_key, thorough=thorough)
     if errors:
         message = ['Errors while validating rules:']
         for msg, rules in errors.items():
@@ -1034,9 +1093,10 @@ def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules
             for rule in rules:
                 message.append(f'  {rule!r}')
 
-                rule_file = rule.rule_file(rules_data_dir=rules_data_dir)
-                if rule_file and exists(rule_file):
-                    message.append(f'    file://{rule_file}')
+                if rule.identifier:
+                    rule_file = rule.rule_file(rules_data_dir=rules_data_dir)
+                    if rule_file and exists(rule_file):
+                        message.append(f'    file://{rule_file}')
 
                 if with_text:
                     txt = rule.text[:100].strip()
@@ -1136,7 +1196,12 @@ def get_license_tokens():
     yield 'licensed'
 
 
-def load_rules(rules_data_dir=rules_data_dir, with_checks=True, is_builtin=True):
+def load_rules(
+    rules_data_dir=rules_data_dir,
+    with_checks=True,
+    is_builtin=True,
+    with_depreacted=False,
+):
     """
     Return an iterable of rules loaded from rule files in ``rules_data_dir``.
     Optionally check for consistency if ``with_checks`` is True.
@@ -1158,7 +1223,12 @@ def load_rules(rules_data_dir=rules_data_dir, with_checks=True, is_builtin=True)
                 space_problems.append(rule_file)
 
             try:
-                yield Rule.from_file(rule_file=rule_file)
+                rule = Rule.from_file(rule_file=rule_file)
+                if not with_depreacted and rule.is_deprecated:
+                    continue 
+                else:
+                    yield rule
+
             except Exception as re:
                 if with_checks:
                     model_errors.append(str(re))
@@ -1334,6 +1404,22 @@ class BasicRule:
             'after. Mutually exclusive from any other is_license_* flag')
     )
 
+    is_license_clue = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this is rule text is a clue to a license '
+            'but cannot be considered in a proper license detection '
+            'as a license text/notice/reference/tag/intro as it is'
+            'merely a clue and does not actually point to or refer to '
+            'the actual license directly. This is still valuable information '
+            'useful in determining the license/origin of a file, but this '
+            'should not be summarized/present in the license expression for '
+            'a package or a file, nor its list of license detections. '
+            'considered in the context of the detection that it precedes. '
+            'Mutually exclusive from any other is_license_* flag')
+    )
+
     is_false_positive = attr.ib(
         default=False,
         repr=False,
@@ -1450,6 +1536,19 @@ class BasicRule:
         metadata=dict(
             help='Flag set to True if this rule is a synthetic rule dynamically '
             'built at runtime, such as an SPDX license rule.')
+    )
+
+    is_deprecated = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='Flag set to True if this rule is deleted, '
+            'and not to be used anymore in license detection. '
+            'This happens usually when a rule is renamed/assigned '
+            'to a seperate license-expression, promoted to being a '
+            'license text or just plain retired. This is used to '
+            'preserve the link to the rule, and therefore make links '
+            'to rules as permanent.')
     )
 
     ###########################################################################
@@ -1652,11 +1751,11 @@ class BasicRule:
         licenses_data_dir=licenses_data_dir,
     ):
         """
-        Return the path to the rule file for this rule object,
-        given the `rules_data_dir` directory or `licenses_data_dir`
-        if a license rule.
+        Return the path to the rule file for this rule object, given the
+        `rules_data_dir` directory or `licenses_data_dir` if a license rule.
+        Return None if the Rule does not have yet an identifier or is synthetic.
         """
-        if self.is_synthetic:
+        if self.is_synthetic or not self.identifier:
             return None
 
         if self.is_from_license:
@@ -1703,7 +1802,7 @@ class BasicRule:
         # license flag instead
         return self.license_expression and 'unknown' in self.license_expression
 
-    def validate(self, licensing=None):
+    def validate(self, licensing=None, thorough=False):
         """
         Validate this rule using the provided ``licensing`` Licensing and yield
         one error message for each type of error detected.
@@ -1716,6 +1815,7 @@ class BasicRule:
             self.is_license_reference,
             self.is_license_tag,
             self.is_license_intro,
+            self.is_license_clue,
         )
 
         has_license_flags = any(license_flags)
@@ -1797,6 +1897,17 @@ class BasicRule:
                 if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
                     yield 'referenced_filenames cannot contain duplicates.'
 
+        if thorough:
+            text = self.text
+            data = {"text": text}
+            # We are testing whether we can dump as yaml and load from yaml
+            # without failing (i.e. whether the text is yaml safe)
+            try:
+                yaml_string = saneyaml_dump(data)
+                loaded_yaml = saneyaml_load(yaml_string)
+            except Exception:
+                yield (f'Error invalid YAML text at: {self.identifier}, failed during saneyaml.load()')
+
     def license_keys(self, unique=True):
         """
         Return a list of license keys for this rule.
@@ -1860,6 +1971,7 @@ class BasicRule:
         data['is_license_reference'] = self.is_license_reference
         data['is_license_tag'] = self.is_license_tag
         data['is_license_intro'] = self.is_license_intro
+        data['is_license_clue'] = self.is_license_clue
         data['is_continuous'] = self.is_continuous
         data['is_builtin'] = self.is_builtin
         data['is_from_license'] = self.is_from_license
@@ -1897,6 +2009,7 @@ class BasicRule:
             'is_license_reference',
             'is_license_tag',
             'is_license_intro',
+            'is_license_clue',
             'is_continuous',
         )
 
@@ -2073,7 +2186,10 @@ class Rule(BasicRule):
         """
         if self.is_from_license:
             return []
-        return list(get_key_phrase_spans(self.text))
+        try:
+            return list(get_key_phrase_spans(self.text))
+        except Exception as e:
+            raise InvalidRule(f'Invalid rule: {self}') from e
 
     def compute_thresholds(self, small_rule=SMALL_RULE):
         """
@@ -2186,7 +2302,9 @@ class Rule(BasicRule):
         self.is_license_tag = data.get('is_license_tag', False)
         self.is_license_reference = data.get('is_license_reference', False)
         self.is_license_intro = data.get('is_license_intro', False)
+        self.is_license_clue = data.get('is_license_clue', False)
         self.is_continuous = data.get('is_continuous', False)
+        self.is_deprecated = data.get('is_deprecated', False)
 
         self.referenced_filenames = data.get('referenced_filenames', []) or []
 
@@ -2479,14 +2597,12 @@ class UnknownRule(SynthethicRule):
         self.identifier = f'license-detection-unknown-{self._unique_id}'
 
         self.license_expression = UNKNOWN_LICENSE_KEY
-        # note that this could be shared across rules as an optimization
+        #TODO: that this could be shared across rules as an optimization
         self.license_expression_object = self.licensing.parse(UNKNOWN_LICENSE_KEY)
         self.is_license_notice = True
         self.notes = 'Unknown license based on a composite of license words.'
         self.is_synthetic = True
         self.setup()
-        # called only for it's side effects
-        self.tokens()
 
 
 @attr.s(slots=True, repr=False)
@@ -2537,7 +2653,6 @@ class DebianUnknownRule(Rule):
 
     def dump(self):
         raise NotImplementedError
-
 
 
 def _print_rule_stats():

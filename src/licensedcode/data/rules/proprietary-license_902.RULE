@@ -1,0 +1,28 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/mgledhill/PS1001-web-template/blob/80a2d5eb4420f3b7190dae3ab9018979c7010515/LICENCE#L1
+ignorable_urls:
+    - https://practicaltypography.com/equity.html
+---
+
+PERMISSIONS IN LIEU OF A LICENCE
+
+This repository is not open source
+
+Everything in this repository belongs to me and not you.
+
+I give you permission to use this repository to learn about website design and 
+development and how to make online publications.
+
+I also give you permission to reuse or adapt any of the website source code, 
+specifically the JavaScript, CSS and HTML elements for your own website projects. 
+
+I also make freely available the empty website template (see TEMPLATE LICENCE below)
+
+**I do NOT** give permission for you to reuse or republish any of the content of this 
+website or documents within this repository (including text, images, and PDFs).
+
+**I do NOT** give permission for you to reuse the fonts that are embedded within the CSS 
+files; these are purchased third party fonts—you may buy your own copy 
+[here](https://practicaltypography.com/equity.html).

@@ -1,0 +1,30 @@
+---
+license_expression: jython AND apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE_CPython.txt
+    - LICENSE_Apache.txt
+ignorable_authors:
+    - Brian Zimmer
+---
+
+Jython 2.0 and 2.1 were developed
+under the Jython specific license below.
+
+From the 2.2 release on, Jython contributors have licensed their
+contributions to the Python Software Foundation under a Contributor
+Agreement, so as to permit distribution under the Python Software Foundation
+license.
+
+The Python standard library developed for CPython is also used in Jython, and
+(like Jython itself) is provided under the Python Software Foundation
+license. See the file LICENSE_CPython.txt for details.
+
+The zxJDBC package was written by Brian Zimmer and originally licensed
+under the GNU Public License. The package is now licensed to the Python
+Software Foundation under a Contributor Agreement, so as to permit
+distribution under the Python Software Foundation license.
+
+Elements of the supporting libraries (appearing renamed in some Jython JARs)
+are covered by the Apache Software License.  See the file LICENSE_Apache.txt
+for details.

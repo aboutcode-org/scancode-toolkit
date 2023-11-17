@@ -2,8 +2,10 @@
 license_expression: bsd-new
 is_license_text: yes
 relevance: 99
+is_deprecated: yes
 notes: This is a sun-bsd-no-nuclear stripped from the nuclear clause which is essentially a
     bsd-3-clause
+    This is actually bsd-3-clause-sun LICENSE
 ---
 
 Redistribution and use in source and binary forms, with or without

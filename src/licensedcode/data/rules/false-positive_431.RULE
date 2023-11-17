@@ -1,0 +1,10 @@
+---
+is_false_positive: yes
+notes: Comment in ebpf in https://github.com/cilium/ebpf/prog.go
+---
+
+// License of the program. Some helpers are only available if
+    // the license is deemed compatible with the GPL.
+    //
+    // See https://www.kernel.org/doc/html/latest/process/license-rules.html#id1
+    License string

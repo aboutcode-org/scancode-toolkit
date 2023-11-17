@@ -1,0 +1,9 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - http://www.jcraft.com/jzlib/LICENSE.txt
+---
+
+name: BSD
+url: http://www.jcraft.com/jzlib/LICENSE.txt

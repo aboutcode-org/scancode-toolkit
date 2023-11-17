@@ -1,0 +1,484 @@
+{
+  "packages": [
+    {
+      "type": "maven",
+      "namespace": "com.github.peteroupc",
+      "name": "numbers",
+      "version": "1.7.4",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Arbitrary-Precision Number Library\nA Java library that supports arbitrary-precision binary and decimal floating-point numbers and rational numbers with arbitrary-precision components, and supports arithmetic with these numbers.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "developer",
+          "name": "Peter Occil",
+          "email": "poccil14@gmail.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": null,
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/peteroupc/Numbers-Java",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "https://github.com/peteroupc/Numbers-Java",
+      "vcs_url": "git+https://github.com/peteroupc/Numbers-Java",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "cc0-1.0",
+      "declared_license_expression_spdx": "CC0-1.0",
+      "license_detections": [
+        {
+          "license_expression": "cc0-1.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 2,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "cc0-1.0",
+              "rule_identifier": "cc0-1.0_203.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE",
+              "matched_text": "- name: CC0 Universal\n  url: http://www.creativecommons.org/publicdomain/zero/1.0/"
+            }
+          ],
+          "identifier": "cc0_1_0-6bdf45cc-fe1e-2f20-02e3-fbae31f10c0e"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- name: CC0 Universal\n  url: http://www.creativecommons.org/publicdomain/zero/1.0/\n",
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/",
+      "repository_download_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/numbers-1.7.4.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/numbers-1.7.4.pom",
+      "package_uid": "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/com.github.peteroupc/numbers@1.7.4"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:maven/junit/junit@4.13-beta-3",
+      "extracted_requirement": "4.13-beta-3",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/junit/junit@4.13-beta-3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
+      "datasource_id": "maven_pom"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "cc0_1_0-15f5e40e-1981-f373-7acf-8ebdfa09ee21",
+      "license_expression": "cc0-1.0",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "cc0_1_0-6bdf45cc-fe1e-2f20-02e3-fbae31f10c0e",
+      "license_expression": "cc0-1.0",
+      "detection_count": 1,
+      "detection_log": []
+    }
+  ],
+  "files": [
+    {
+      "path": "numbers-1.7.4",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/META-INF",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/META-INF/MANIFEST.MF",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "jar",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "java_jar_manifest",
+          "purl": null
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/META-INF/maven",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/META-INF/maven/com.github.peteroupc",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.properties",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "com.github.peteroupc",
+          "name": "numbers",
+          "version": "1.7.4",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "maven_pom_properties",
+          "purl": "pkg:maven/com.github.peteroupc/numbers@1.7.4"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "com.github.peteroupc",
+          "name": "numbers",
+          "version": "1.7.4",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Arbitrary-Precision Number Library\nA Java library that supports arbitrary-precision binary and decimal floating-point numbers and rational numbers with arbitrary-precision components, and supports arithmetic with these numbers.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "developer",
+              "name": "Peter Occil",
+              "email": "poccil14@gmail.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "contributor",
+              "name": null,
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/peteroupc/Numbers-Java",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "https://github.com/peteroupc/Numbers-Java",
+          "vcs_url": "git+https://github.com/peteroupc/Numbers-Java",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "cc0-1.0",
+          "declared_license_expression_spdx": "CC0-1.0",
+          "license_detections": [
+            {
+              "license_expression": "cc0-1.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 2,
+                  "matched_length": 12,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "cc0-1.0",
+                  "rule_identifier": "cc0-1.0_203.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE",
+                  "matched_text": "- name: CC0 Universal\n  url: http://www.creativecommons.org/publicdomain/zero/1.0/"
+                }
+              ],
+              "identifier": "cc0_1_0-6bdf45cc-fe1e-2f20-02e3-fbae31f10c0e"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- name: CC0 Universal\n  url: http://www.creativecommons.org/publicdomain/zero/1.0/\n",
+          "notice_text": null,
+          "source_packages": [
+            "pkg:maven/com.github.peteroupc/numbers@1.7.4?classifier=sources"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:maven/junit/junit@4.13-beta-3",
+              "extracted_requirement": "4.13-beta-3",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/",
+          "repository_download_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/numbers-1.7.4.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/numbers-1.7.4.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/com.github.peteroupc/numbers@1.7.4"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "cc0-1.0",
+      "detected_license_expression_spdx": "CC0-1.0",
+      "license_detections": [
+        {
+          "license_expression": "cc0-1.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 86,
+              "end_line": 91,
+              "matched_length": 20,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "cc0-1.0",
+              "rule_identifier": "cc0-1.0_197.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_197.RULE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "cc0_1_0-15f5e40e-1981-f373-7acf-8ebdfa09ee21"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 4.76,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/com",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/com/upokecenter",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/com/upokecenter/numbers",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "numbers-1.7.4/com/upokecenter/numbers/FastInteger.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/com.github.peteroupc/numbers@1.7.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    }
+  ]
+}

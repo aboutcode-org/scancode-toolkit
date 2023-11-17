@@ -7,10 +7,6 @@ Pre-Scan Options
 
 ----
 
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
-
-----
-
 ``--ignore`` Option
 -------------------
 
@@ -51,8 +47,8 @@ Pre-Scan Options
 
     .. admonition:: Sub-Option
 
-        The options ``--license-clarity-score`` and ``--summary-key-files`` are sub-options of
-        ``--classify``. ``--license-clarity-score`` and ``--summary-key-files`` are Post-Scan
+        The options ``--license-clarity-score`` and ``--tallies-key-files`` are sub-options of
+        ``--classify``. ``--license-clarity-score`` and ``--tallies-key-files`` are Post-Scan
         Options.
 
     The ``--classify`` option can be used like::
@@ -78,11 +74,13 @@ Pre-Scan Options
 
     As in, to the JSON object of each file scanned, these extra attributes are added::
 
+      {
         "is_legal": false,
         "is_manifest": false,
         "is_readme": true,
         "is_top_level": true,
-        "is_key_file": true,
+        "is_key_file": true
+      }
 
 ----
 
@@ -182,7 +180,8 @@ Glob Pattern Matching
 What is a Facet?
 ----------------
 
-    A facet is defined as follows (by ClearlyDefined):
+    A facet is essentially a file purpose classification label.
+    It is defined as follows (by ClearlyDefined):
 
     A facet of a component is a subset of the files related to the component. It's really just a
     grouping that helps us understand the shape of the project. Each facet is described by a set of

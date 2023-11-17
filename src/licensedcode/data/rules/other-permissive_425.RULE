@@ -1,0 +1,16 @@
+---
+license_expression: other-permissive
+is_license_notice: yes
+minimum_coverage: 95
+notes: Seen in openpdf See also https://web.archive.org/web/20060113033212/http://www.javaworld.com/javaworld/javatips/jw-javatip128.html
+ignorable_urls:
+    - http://www.javaworld.com/javaworld/javatips/jw-javatip128.html
+---
+
+SimpleXMLParser:
+The original version of this class was published in a JavaWorld article by Steven Brandt:
+http://www.javaworld.com/javaworld/javatips/jw-javatip128.html
+Jennifer Orr (JavaWorld) wrote: "You have permission to use the code appearing in
+Steven Brandt's JavaWorld article, 'Java Tip 128: Create a quick-and-dirty XML parser.'
+We ask that you reference the author as the creator and JavaWorld as the original publisher
+of the code." Steven Brandt also agreed with the use of this class.

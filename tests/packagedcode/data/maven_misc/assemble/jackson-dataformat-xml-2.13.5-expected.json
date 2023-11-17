@@ -1,0 +1,366 @@
+{
+  "packages": [
+    {
+      "type": "jar",
+      "namespace": null,
+      "name": "Jackson-dataformat-XML",
+      "version": "2.13.5",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "vendor",
+          "name": "FasterXML",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 8,
+              "matched_length": 43,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_394.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "apache_2_0-8607fc22-7931-3e71-b7d5-bd208970dc6f"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 11,
+              "end_line": 13,
+              "matched_length": 26,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "unknown-license-reference_375.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_375.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 8,
+              "matched_length": 43,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_394.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
+            }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "apache_2_0-31344ceb-eee7-3f95-45bb-cc86209f76f8"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:jar/Jackson-dataformat-XML@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "jackson-dataformat-xml-2.13.5/META-INF/MANIFEST.MF"
+      ],
+      "datasource_ids": [
+        "java_jar_manifest"
+      ],
+      "purl": "pkg:jar/Jackson-dataformat-XML@2.13.5"
+    }
+  ],
+  "dependencies": [],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-31344ceb-eee7-3f95-45bb-cc86209f76f8",
+      "license_expression": "apache-2.0",
+      "detection_count": 2,
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
+    },
+    {
+      "identifier": "apache_2_0-8607fc22-7931-3e71-b7d5-bd208970dc6f",
+      "license_expression": "apache-2.0",
+      "detection_count": 2,
+      "detection_log": []
+    }
+  ],
+  "files": [
+    {
+      "path": "jackson-dataformat-xml-2.13.5",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "jackson-dataformat-xml-2.13.5/META-INF",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:jar/Jackson-dataformat-XML@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "jackson-dataformat-xml-2.13.5/META-INF/LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:jar/Jackson-dataformat-XML@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 8,
+              "matched_length": 43,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_394.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "apache_2_0-8607fc22-7931-3e71-b7d5-bd208970dc6f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 84.31,
+      "scan_errors": []
+    },
+    {
+      "path": "jackson-dataformat-xml-2.13.5/META-INF/MANIFEST.MF",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "jar",
+          "namespace": null,
+          "name": "Jackson-dataformat-XML",
+          "version": "2.13.5",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "",
+          "release_date": null,
+          "parties": [
+            {
+              "role": "vendor",
+              "name": "FasterXML"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 8,
+                  "matched_length": 43,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_394.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
+                }
+              ],
+              "detection_log": [],
+              "identifier": "apache_2_0-8607fc22-7931-3e71-b7d5-bd208970dc6f"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 11,
+                  "end_line": 13,
+                  "matched_length": 26,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "unknown-license-reference",
+                  "rule_identifier": "unknown-license-reference_375.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_375.RULE"
+                },
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 8,
+                  "matched_length": 43,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_394.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
+                }
+              ],
+              "detection_log": [
+                "unknown-reference-to-local-file"
+              ],
+              "identifier": "apache_2_0-31344ceb-eee7-3f95-45bb-cc86209f76f8"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "java_jar_manifest",
+          "purl": "pkg:jar/Jackson-dataformat-XML@2.13.5"
+        }
+      ],
+      "for_packages": [
+        "pkg:jar/Jackson-dataformat-XML@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "jackson-dataformat-xml-2.13.5/META-INF/NOTICE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:jar/Jackson-dataformat-XML@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 11,
+              "end_line": 13,
+              "matched_length": 26,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "unknown-license-reference_375.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_375.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 8,
+              "matched_length": 43,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_394.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
+            }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "apache_2_0-31344ceb-eee7-3f95-45bb-cc86209f76f8"
+        }
+      ],
+      "license_clues": [
+        {
+          "score": 100.0,
+          "start_line": 3,
+          "end_line": 3,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown_85.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_85.RULE"
+        }
+      ],
+      "percentage_of_license_text": 24.37,
+      "scan_errors": []
+    }
+  ]
+}

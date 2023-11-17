@@ -1,100 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "pygres_2_2-88058d56-5916-1e18-d3aa-1de8b39f7fbf",
+      "identifier": "pygres_2_2-04f085e8-3db1-f9e2-8dde-7ba8a7ba619a",
       "license_expression": "pygres-2.2",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 7,
-          "end_line": 22,
-          "matched_length": 145,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "pygres-2.2",
-          "rule_identifier": "pygres-2.2_2.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE"
-        }
-      ]
-    }
-  ],
-  "license_references": [
-    {
-      "key": "pygres-2.2",
-      "language": "en",
-      "short_name": "PyGres License 2.2",
-      "name": "PyGres License v2.2",
-      "category": "Permissive",
-      "owner": "Unspecified",
-      "homepage_url": null,
-      "notes": null,
-      "is_builtin": true,
-      "is_exception": false,
-      "is_unknown": false,
-      "is_generic": false,
-      "spdx_license_key": "LicenseRef-scancode-pygres-2.2",
-      "other_spdx_license_keys": [],
-      "osi_license_key": null,
-      "text_urls": [
-        "http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431"
-      ],
-      "osi_url": null,
-      "faq_url": null,
-      "other_urls": [],
-      "key_aliases": [],
-      "minimum_coverage": 0,
-      "standard_notice": null,
-      "ignorable_copyrights": [
-        "Copyright (c) 1995, Pascal Andre (andre@via.ecp.fr)",
-        "copyright 1997, 1998, 1999 by D'Arcy J.M. Cain (darcy@druid.net)"
-      ],
-      "ignorable_holders": [
-        "D'Arcy J.M. Cain",
-        "Pascal Andre"
-      ],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [
-        "andre@chimay.via.ecp.fr",
-        "andre@via.ecp.fr",
-        "darcy@druid.net"
-      ],
-      "text": "PyGres, version 2.2 A Python interface for PostgreSQL database. Written by\nD'Arcy J.M. Cain, (darcy@druid.net).  Based heavily on code written by\nPascal Andre, andre@chimay.via.ecp.fr. Copyright (c) 1995, Pascal Andre\n(andre@via.ecp.fr).\n\nPermission to use, copy, modify, and distribute this software and its\ndocumentation for any purpose, without fee, and without a written\nagreement is hereby granted, provided that the above copyright notice and\nthis paragraph and the following two paragraphs appear in all copies or in\nany new file that contains a substantial portion of this file.\n\nIN NO EVENT SHALL THE AUTHOR BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT,\nSPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,\nARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE\nAUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\nTHE AUTHOR SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED\nTO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE.  THE SOFTWARE PROVIDED HEREUNDER IS ON AN \"AS IS\" BASIS, AND THE\nAUTHOR HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,\nENHANCEMENTS, OR MODIFICATIONS.\n\nFurther modifications copyright 1997, 1998, 1999 by D'Arcy J.M. Cain\n(darcy@druid.net) subject to the same terms and conditions as above.",
-      "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE",
-      "licensedb_url": "https://scancode-licensedb.aboutcode.org/pygres-2.2",
-      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pygres-2.2.LICENSE"
-    }
-  ],
-  "license_rule_references": [
-    {
-      "license_expression": "pygres-2.2",
-      "identifier": "pygres-2.2_2.RULE",
-      "language": "en",
-      "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE",
-      "is_license_text": true,
-      "is_license_notice": false,
-      "is_license_reference": false,
-      "is_license_tag": false,
-      "is_license_intro": false,
-      "is_continuous": false,
-      "is_builtin": true,
-      "is_from_license": false,
-      "is_synthetic": false,
-      "length": 145,
-      "relevance": 100,
-      "minimum_coverage": 0,
-      "referenced_filenames": [],
-      "notes": "from http://shell.vex.net/viewvc.cgi/pygresql/trunk/module/pgmodule.c?view=markup&pathrev=431",
-      "ignorable_copyrights": [],
-      "ignorable_holders": [],
-      "ignorable_authors": [],
-      "ignorable_urls": [],
-      "ignorable_emails": [],
-      "text": "Permission to use, copy, modify, and distribute this software and its\ndocumentation for any purpose, without fee, and without a written\nagreement is hereby granted, provided that the above copyright notice and\nthis paragraph and the following two paragraphs appear in all copies or in\nany new file that contains a substantial portion of this file.\n\nIN NO EVENT SHALL THE AUTHOR BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT,\nSPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS,\nARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF THE\nAUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\nTHE AUTHOR SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED\nTO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\nPURPOSE.  THE SOFTWARE PROVIDED HEREUNDER IS ON AN \"AS IS\" BASIS, AND THE\nAUTHOR HAS NO OBLIGATIONS TO PROVIDE MAINTENANCE, SUPPORT, UPDATES,\nENHANCEMENTS, OR MODIFICATIONS."
+      "detection_count": 1
     }
   ],
   "files": [
@@ -122,9 +31,6 @@
       "license_detections": [
         {
           "license_expression": "pygres-2.2",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -135,16 +41,15 @@
               "matcher": "2-aho",
               "license_expression": "pygres-2.2",
               "rule_identifier": "pygres-2.2_2.RULE",
+              "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE"
             }
-          ]
+          ],
+          "identifier": "pygres_2_2-04f085e8-3db1-f9e2-8dde-7ba8a7ba619a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 69.38,
-      "for_license_detections": [
-        "pygres_2_2-88058d56-5916-1e18-d3aa-1de8b39f7fbf"
-      ],
       "copyrights": [
         {
           "copyright": "Copyright (c) 1996, Pascal Andre (andre@avia.ecp.fr)",

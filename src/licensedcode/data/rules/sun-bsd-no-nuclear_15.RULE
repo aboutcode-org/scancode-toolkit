@@ -1,0 +1,11 @@
+---
+license_expression: sun-bsd-no-nuclear
+is_license_reference: yes
+relevance: 99
+referenced_filenames:
+    - LICENSE.txt
+---
+
+<license>
+<name> BSD 3-clause License w/nuclear disclaimer </name>
+<url> (LICENSE.txt)</url>

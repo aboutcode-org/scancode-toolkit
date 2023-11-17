@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2009-2015 Typesafe Inc. <http://www.typesafe.com>
+holders:
+  - Typesafe Inc.

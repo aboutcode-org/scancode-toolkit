@@ -2,7 +2,7 @@
 key: ubuntu-font-1.0
 short_name: Ubuntu Font Licence v1.0
 name: Ubuntu Font Licence v1.0
-category: Free Restricted
+category: Copyleft Limited
 owner: Ubuntu Font Family
 homepage_url: http://font.ubuntu.com/licence/
 spdx_license_key: LicenseRef-scancode-ubuntu-font-1.0
@@ -15,6 +15,9 @@ other_urls:
 standard_notice: |
     This Font Software is licensed under the Ubuntu Font Licence, Version
     1.0.  https://launchpad.net/ubuntu-font-licence
+notes: |
+    From the license text: "The fonts and derivatives, however,
+    cannot be released under any other licence."
 ---
 
 -------------------------------

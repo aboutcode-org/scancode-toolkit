@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Found inpdfbox-2.0.24-sources.jar
+---
+
+throw new UnsupportedOperationException(“This instance may not be modified.“)

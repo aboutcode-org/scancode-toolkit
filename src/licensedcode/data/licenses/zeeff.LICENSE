@@ -1,0 +1,13 @@
+---
+key: zeeff
+short_name: Zeeff License
+name: Zeeff License
+category: Permissive
+owner: Jon Zeeff
+spdx_license_key: Zeeff
+other_urls:
+    - ftp://ftp.tin.org/pub/news/utils/newsx/newsx-1.6.tar.gz
+---
+
+You can use this code in any manner, as long as you leave my 
+name on it and don't hold me responsible for any problems with it.

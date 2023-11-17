@@ -5,10 +5,10 @@ All Documentation/Help Options
 
 --examples               Show the :ref:`cli_examples_text` and exit.
 
---about                  Show information about ScanCode and licensing
+-A, --about              Show information about ScanCode and licensing
                          and exit.
 
---version                Show the version and exit.
+-V, --version            Show the version and exit.
 
 --list-packages          Show the list of supported package types and exit.
 

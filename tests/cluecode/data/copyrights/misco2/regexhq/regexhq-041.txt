@@ -1,0 +1,1 @@
+@license amdefine 0.1.0 Copyright (c) 2011, The Dojo Foundation All Rights Reserved.

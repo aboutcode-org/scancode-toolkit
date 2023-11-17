@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright 2003 Sun Microsystems, Inc.
+holders:
+  - Sun Microsystems, Inc.
+holders_summary:
+  - value: Sun Microsystems
+    count: 1

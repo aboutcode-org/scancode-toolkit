@@ -1,0 +1,1 @@
+Copyright (C) 2013 [Yusuke Suzuki](http://github.com/Constellation)

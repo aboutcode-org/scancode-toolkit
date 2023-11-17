@@ -1,0 +1,1692 @@
+{
+  "packages": [
+    {
+      "type": "maven",
+      "namespace": "org.apache.htrace",
+      "name": "htrace-core",
+      "version": "4.0.0-incubating",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "vendor",
+          "name": "The Apache Software Foundation",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 4,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_791.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 95.0,
+              "start_line": 5,
+              "end_line": 6,
+              "matched_length": 14,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_product_includes_2.RULE",
+              "rule_relevance": 95,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "htrace-core-4.0.0-incubating/META-INF/MANIFEST.MF"
+      ],
+      "datasource_ids": [
+        "java_jar_manifest"
+      ],
+      "purl": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating"
+    },
+    {
+      "type": "maven",
+      "namespace": "com.fasterxml.jackson.core",
+      "name": "jackson-annotations",
+      "version": "2.4.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Jackson-annotations\nCore annotations used for value types, used by Jackson data binding package.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "http://wiki.fasterxml.com/JacksonHome",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "http://github.com/FasterXML/jackson-annotations",
+      "vcs_url": "git+https://github.com/FasterXML/jackson-annotations.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.pom",
+      "package_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-annotations/pom.xml"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0"
+    },
+    {
+      "type": "maven",
+      "namespace": "com.fasterxml.jackson.core",
+      "name": "jackson-core",
+      "version": "2.4.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Jackson-core\nCore Jackson abstractions, basic JSON streaming API implementation",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "http://wiki.fasterxml.com/JacksonHome",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "http://github.com/FasterXML/jackson-core",
+      "vcs_url": "git+https://github.com/FasterXML/jackson-core.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.pom",
+      "package_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.xml"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0"
+    },
+    {
+      "type": "maven",
+      "namespace": "com.fasterxml.jackson.core",
+      "name": "jackson-databind",
+      "version": "2.4.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "jackson-databind\nGeneral data-binding functionality for Jackson: works on core streaming API",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "http://wiki.fasterxml.com/JacksonHome",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "http://github.com/FasterXML/jackson-databind",
+      "vcs_url": "git+https://github.com/FasterXML/jackson-databind.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.pom",
+      "package_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0"
+    },
+    {
+      "type": "maven",
+      "namespace": "commons-logging",
+      "name": "commons-logging",
+      "version": "1.1.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Commons Logging\nCommons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "http://commons.apache.org/logging",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "http://issues.apache.org/jira/browse/LOGGING",
+      "code_view_url": "http://svn.apache.org/repos/asf/commons/proper/logging/tags/commons-logging-1.1.1",
+      "vcs_url": "svn+http://svn.apache.org/repos/asf/commons/proper/logging/tags/commons-logging-1.1.1",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 15,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/commons-logging/commons-logging@1.1.1?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/",
+      "repository_download_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom",
+      "package_uid": "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/commons-logging/commons-logging@1.1.1"
+    },
+    {
+      "type": "maven",
+      "namespace": "org.apache.htrace",
+      "name": "htrace-core",
+      "version": "4.0.0-incubating",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "htrace-core",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "http://incubator.apache.org/projects/htrace.html",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 11,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/htrace-core-4.0.0-incubating.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/htrace-core-4.0.0-incubating.pom",
+      "package_uid": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0",
+      "extracted_requirement": "2.4.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0",
+      "extracted_requirement": "2.4.0",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/cglib/cglib@2.2.2",
+      "extracted_requirement": "2.2.2",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/cglib/cglib@2.2.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.codehaus.groovy/groovy@1.7.9",
+      "extracted_requirement": "1.7.9",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.codehaus.groovy/groovy@1.7.9?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.hibernate/hibernate-cglib-repack@2.1_3",
+      "extracted_requirement": "2.1_3",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.hibernate/hibernate-cglib-repack@2.1_3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/junit/junit@3.8.1",
+      "extracted_requirement": "3.8.1",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/junit/junit@3.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/log4j/log4j@1.2.12",
+      "extracted_requirement": "1.2.12",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/log4j/log4j@1.2.12?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/logkit/logkit@1.0.1",
+      "extracted_requirement": "1.0.1",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/logkit/logkit@1.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/avalon-framework/avalon-framework@4.1.3",
+      "extracted_requirement": "4.1.3",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/avalon-framework/avalon-framework@4.1.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/javax.servlet/servlet-api@2.3",
+      "extracted_requirement": "2.3",
+      "scope": "provided",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/javax.servlet/servlet-api@2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/junit/junit",
+      "extracted_requirement": null,
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/junit/junit?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-core?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/com.fasterxml.jackson.core/jackson-databind?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/commons-logging/commons-logging?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
+      "datasource_id": "maven_pom"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de",
+      "license_expression": "apache-2.0",
+      "detection_count": 4
+    },
+    {
+      "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e",
+      "license_expression": "apache-2.0",
+      "detection_count": 2
+    },
+    {
+      "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e",
+      "license_expression": "apache-2.0",
+      "detection_count": 2
+    },
+    {
+      "identifier": "apache_2_0-e7633baf-a264-a1ab-40f6-a28ec157067a",
+      "license_expression": "apache-2.0",
+      "detection_count": 1
+    }
+  ],
+  "files": [
+    {
+      "path": "htrace-core-4.0.0-incubating",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 11,
+              "end_line": 11,
+              "matched_length": 17,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_212.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 13,
+              "end_line": 13,
+              "matched_length": 17,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_212.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 15,
+              "end_line": 15,
+              "matched_length": 17,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_212.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 19,
+              "end_line": 19,
+              "matched_length": 17,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_212.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-e7633baf-a264-a1ab-40f6-a28ec157067a"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 41.72,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 4,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_791.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/MANIFEST.MF",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "org.apache.htrace",
+          "name": "htrace-core",
+          "version": "4.0.0-incubating",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "",
+          "release_date": null,
+          "parties": [
+            {
+              "role": "vendor",
+              "name": "The Apache Software Foundation"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 2,
+                  "end_line": 4,
+                  "matched_length": 12,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_791.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE"
+                }
+              ],
+              "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 95.0,
+                  "start_line": 5,
+                  "end_line": 6,
+                  "matched_length": 14,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_product_includes_2.RULE",
+                  "rule_relevance": 95,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
+                }
+              ],
+              "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "java_jar_manifest",
+          "purl": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 95.0,
+              "start_line": 5,
+              "end_line": 6,
+              "matched_length": 14,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_product_includes_2.RULE",
+              "rule_relevance": 95,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 63.64,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-annotations",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-annotations/pom.xml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "com.fasterxml.jackson.core",
+          "name": "jackson-annotations",
+          "version": "2.4.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Jackson-annotations\nCore annotations used for value types, used by Jackson data binding package.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "http://wiki.fasterxml.com/JacksonHome",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "http://github.com/FasterXML/jackson-annotations",
+          "vcs_url": "git+https://github.com/FasterXML/jackson-annotations.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?classifier=sources"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/",
+          "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-core",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.xml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "com.fasterxml.jackson.core",
+          "name": "jackson-core",
+          "version": "2.4.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Jackson-core\nCore Jackson abstractions, basic JSON streaming API implementation",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "http://wiki.fasterxml.com/JacksonHome",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "http://github.com/FasterXML/jackson-core",
+          "vcs_url": "git+https://github.com/FasterXML/jackson-core.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?classifier=sources"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/",
+          "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-databind",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "com.fasterxml.jackson.core",
+          "name": "jackson-databind",
+          "version": "2.4.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "jackson-databind\nGeneral data-binding functionality for Jackson: works on core streaming API",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "http://wiki.fasterxml.com/JacksonHome",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "http://github.com/FasterXML/jackson-databind",
+          "vcs_url": "git+https://github.com/FasterXML/jackson-databind.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?classifier=sources"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0",
+              "extracted_requirement": "2.4.0",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0",
+              "extracted_requirement": "2.4.0",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/cglib/cglib@2.2.2",
+              "extracted_requirement": "2.2.2",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.codehaus.groovy/groovy@1.7.9",
+              "extracted_requirement": "1.7.9",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.hibernate/hibernate-cglib-repack@2.1_3",
+              "extracted_requirement": "2.1_3",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/",
+          "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "commons-logging",
+          "name": "commons-logging",
+          "version": "1.1.1",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Commons Logging\nCommons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "http://commons.apache.org/logging",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "http://issues.apache.org/jira/browse/LOGGING",
+          "code_view_url": "http://svn.apache.org/repos/asf/commons/proper/logging/tags/commons-logging-1.1.1",
+          "vcs_url": "svn+http://svn.apache.org/repos/asf/commons/proper/logging/tags/commons-logging-1.1.1",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 2,
+                  "end_line": 15,
+                  "matched_length": 119,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_2.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+                }
+              ],
+              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:maven/commons-logging/commons-logging@1.1.1?classifier=sources"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:maven/junit/junit@3.8.1",
+              "extracted_requirement": "3.8.1",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/log4j/log4j@1.2.12",
+              "extracted_requirement": "1.2.12",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/logkit/logkit@1.0.1",
+              "extracted_requirement": "1.0.1",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/avalon-framework/avalon-framework@4.1.3",
+              "extracted_requirement": "4.1.3",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/javax.servlet/servlet-api@2.3",
+              "extracted_requirement": "2.3",
+              "scope": "provided",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/",
+          "repository_download_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/commons-logging/commons-logging@1.1.1"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 15,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 19.01,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "org.apache.htrace",
+          "name": "htrace-core",
+          "version": "4.0.0-incubating",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "htrace-core",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "http://incubator.apache.org/projects/htrace.html",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 2,
+                  "end_line": 11,
+                  "matched_length": 119,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_2.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+                }
+              ],
+              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?classifier=sources"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:maven/junit/junit",
+              "extracted_requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core",
+              "extracted_requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind",
+              "extracted_requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/commons-logging/commons-logging",
+              "extracted_requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/",
+          "repository_download_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/htrace-core-4.0.0-incubating.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/htrace-core-4.0.0-incubating.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 11,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 39.27,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/commons",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/commons/logging",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/commons/logging/LogSource.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/core",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/core/TraceScope.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/annotation",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/annotation/SimpleObjectIdResolver.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/core",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/core/JsonParser.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/databind",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "htrace-core-4.0.0-incubating/org/apache/htrace/fasterxml/jackson/databind/SerializationFeature.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    }
+  ]
+}

@@ -4,9 +4,11 @@ is_license_text: yes
 relevance: 100
 notes: Older w3c IPR text
 ignorable_copyrights:
-    - Copyright (c) 1994-2002 W3C
+    - Copyright (c) 1994-2002 W3C (R) (Massachusetts_Institute_of_Technology, Institut National_de_Recherche_en_Informatique_et_en_Automatique,
+        Keio_University)
 ignorable_holders:
-    - W3C
+    - W3C (R) (Massachusetts_Institute_of_Technology, Institut National_de_Recherche_en_Informatique_et_en_Automatique,
+        Keio_University)
 ignorable_emails:
     - site-policy@w3.org
 ---

@@ -17,6 +17,8 @@ from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
+from packagedcode.debian import build_package_data_from_package_filename
+from packagedcode.debian import DebianDebPackageHandler
 
 
 @skipIf(on_windows, 'These tests contain files that are not legit on Windows.')
@@ -146,3 +148,35 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
 
         expected_loc = self.get_test_loc('debian/files-md5sums/mokutil-amd64.md5sums.expected.json', must_exist=False)
         self.check_packages_data(results, expected_loc, must_exist=False, regen=REGEN_TEST_FIXTURES)
+
+    def test_build_package_data_from_package_filename_deb_does_not_crash_on_version(self):
+        filename = 'libapache2-mod-md_2.4.38-3+deb10u10_amd64.deb'
+        result = build_package_data_from_package_filename(
+            filename=filename,
+            datasource_id='debian_deb',
+            package_type='deb',
+        )
+        assert str(result.purl) == 'pkg:deb/libapache2-mod-md@2.4.38-3%2Bdeb10u10?architecture=amd64'
+
+    def test_build_package_data_from_package_filename_orig_sdoes_not_crash_on_version(self):
+        filename = 'abseil_0~20200923.3.orig.tar.gz'
+        result = build_package_data_from_package_filename(
+            filename=filename,
+            datasource_id='debian_deb',
+            package_type='deb',
+        )
+        assert str(result.purl) == 'pkg:deb/abseil@0~20200923.3'
+
+    def test_build_package_data_from_package_filename_debian_tar_sdoes_not_crash_on_version(self):
+        filename = 'abseil_20220623.1-1.debian.tar.xz'
+        result = build_package_data_from_package_filename(
+            filename=filename,
+            datasource_id='debian_deb',
+            package_type='deb',
+        )
+        assert str(result.purl) == 'pkg:deb/abseil@20220623.1-1'
+
+    def test_DebianDebPackageHandler_parse_does_not_crash_on_version(self):
+        location = 'foo/bar/libapache2-mod-md_2.4.38-3+deb10u10_amd64.deb'
+        result = list(DebianDebPackageHandler.parse(location))[0]
+        assert str(result.purl) == 'pkg:deb/libapache2-mod-md@2.4.38-3%2Bdeb10u10?architecture=amd64'

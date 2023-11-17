@@ -1,0 +1,9 @@
+---
+license_expression: warranty-disclaimer
+is_license_text: yes
+notes: Seen in https://raw.githubusercontent.com/dotnet/fsharp/main/tests/fsharp/typecheck/sigs/neg70.fsx
+---
+
+// This sample code is provided "as is" without warranty of any kind. 
+// We disclaim all warranties, either express or implied, including the 
+// warranties of merchantability and fitness for a particular purpose.

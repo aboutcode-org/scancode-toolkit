@@ -1,0 +1,593 @@
+{
+  "packages": [
+    {
+      "type": "maven",
+      "namespace": "org.activiti",
+      "name": "activiti-image-generator",
+      "version": "7-201802-EA",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Activiti :: Image Generator",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.pom",
+      "package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.activiti/activiti-bpmn-model",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.activiti/activiti-bpmn-model?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-awt-util",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.xmlgraphics/batik-awt-util?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-dom",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.xmlgraphics/batik-dom?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-svggen",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.xmlgraphics/batik-svggen?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.slf4j/slf4j-api",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.slf4j/slf4j-api?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.springframework/spring-context",
+      "extracted_requirement": null,
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.springframework/spring-context?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.activiti/activiti-engine",
+      "extracted_requirement": null,
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.activiti/activiti-engine?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/junit/junit",
+      "extracted_requirement": null,
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/junit/junit?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/com.h2database/h2",
+      "extracted_requirement": null,
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/com.h2database/h2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-svg-dom",
+      "extracted_requirement": null,
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.xmlgraphics/batik-svg-dom?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-anim",
+      "extracted_requirement": null,
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.xmlgraphics/batik-anim?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.xmlgraphics/batik-parser",
+      "extracted_requirement": null,
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.xmlgraphics/batik-parser?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "datasource_id": "maven_pom"
+    }
+  ],
+  "files": [
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/MANIFEST.MF",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "jar",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "java_jar_manifest",
+          "purl": null
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.properties",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "org.activiti",
+          "name": "activiti-image-generator",
+          "version": "7-201802-EA",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "maven_pom_properties",
+          "purl": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "org.activiti",
+          "name": "activiti-image-generator",
+          "version": "7-201802-EA",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Activiti :: Image Generator",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?classifier=sources"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:maven/org.activiti/activiti-bpmn-model",
+              "extracted_requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.xmlgraphics/batik-awt-util",
+              "extracted_requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.xmlgraphics/batik-dom",
+              "extracted_requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.xmlgraphics/batik-svggen",
+              "extracted_requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.slf4j/slf4j-api",
+              "extracted_requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.springframework/spring-context",
+              "extracted_requirement": null,
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.activiti/activiti-engine",
+              "extracted_requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/junit/junit",
+              "extracted_requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/com.h2database/h2",
+              "extracted_requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.xmlgraphics/batik-svg-dom",
+              "extracted_requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.xmlgraphics/batik-anim",
+              "extracted_requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.xmlgraphics/batik-parser",
+              "extracted_requirement": null,
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/",
+          "repository_download_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/org/activiti/activiti-image-generator/7-201802-EA/activiti-image-generator-7-201802-EA.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/org",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/org/activiti",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/org/activiti/image",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/org/activiti/image/exception",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "activiti-image-generator-7-201802-EA-sources.jar-extract/org/activiti/image/exception/ActivitiImageException.java",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

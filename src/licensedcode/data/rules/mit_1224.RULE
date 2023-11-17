@@ -1,0 +1,10 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+---
+
+This file is part of , which is MIT licensed.
+See http://opensource.org/licenses/MIT

@@ -1,0 +1,7 @@
+    "Introduction to Mathematical Programming" by F. S. Hillier and
+    G. J. Lieberman, McGraw-Hill, 1990.
+
+    Copyright (C) 1998 Yossi Rubner
+    Computer Science Department, Stanford University
+    E-Mail: rubner@cs.stanford.edu   URL: http://vision.stanford.edu/~rubner
+

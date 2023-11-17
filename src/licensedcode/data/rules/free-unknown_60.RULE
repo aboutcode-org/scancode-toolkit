@@ -4,7 +4,7 @@ is_license_text: yes
 relevance: 100
 ignorable_authors:
     - the WU-FTPD Development Group, the Washington University at Saint Louis, Berkeley Software
-        Design, Inc., and their contributors
+        Design, Inc.
 ignorable_urls:
     - http://www.wu-ftpd.org/license.html
 ---

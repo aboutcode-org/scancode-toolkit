@@ -31,6 +31,7 @@ class TestHasFindings(FileDrivenTesting):
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
     def test_scan_only_findings_with_errors(self):
+        # Run a -cie scan with --timeout 0.01 to regenerate this scan result
         test_file = self.get_test_loc('plugin_only_findings/errors.json')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/errors.expected.json')

@@ -11,77 +11,77 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jason@zenplex.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Pete Kazmier",
       "email": null,
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "James Taylor",
       "email": "james@jamestaylor.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Dan Diephouse",
       "email": "dan@envoisolutions.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Kasper Nielsen",
       "email": "apache@kav.dk",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ben Walding",
       "email": "bwalding@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Mark Wilkinson",
       "email": "mhw@kremvax.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Michal Maczka",
       "email": "mmaczka@interia.pl",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Emmanuel Venisse",
       "email": "evenisse@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Trygve Laugstl",
       "email": "trygvis@codehaus.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Kenney Westerhof",
       "email": "kenney@codehaus.org",
       "url": null
@@ -106,6 +106,7 @@
   "code_view_url": null,
   "vcs_url": "svn+https://svn.codehaus.org/plexus/trunk/",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

@@ -7,8 +7,6 @@ A basic overview of formatting Scancode Output is presented here.
 
 More information on :ref:`cli_output_format`.
 
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
-
 JSON
 ----
 

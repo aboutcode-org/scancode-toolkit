@@ -1,0 +1,47 @@
+{
+  "license_detections": [
+    {
+      "identifier": "unknown-b0897d47-1c91-9898-2364-2e4d1a34b6fd",
+      "license_expression": "unknown",
+      "detection_count": 1,
+      "detection_log": [
+        "unknown-match"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "unknown.txt",
+      "type": "file",
+      "detected_license_expression": "unknown",
+      "detected_license_expression_spdx": "LicenseRef-scancode-unknown",
+      "license_detections": [
+        {
+          "license_expression": "unknown",
+          "matches": [
+            {
+              "score": 86.89,
+              "start_line": 1,
+              "end_line": 10,
+              "matched_length": 53,
+              "match_coverage": 100.0,
+              "matcher": "6-unknown",
+              "license_expression": "unknown",
+              "rule_identifier": "license-detection-unknown-296da2cbc15d2bba73baa1359cda5fc8bf39b942",
+              "rule_relevance": 100,
+              "rule_url": null,
+              "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
+            }
+          ],
+          "detection_log": [
+            "unknown-match"
+          ],
+          "identifier": "unknown-b0897d47-1c91-9898-2364-2e4d1a34b6fd"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 86.89,
+      "scan_errors": []
+    }
+  ]
+}

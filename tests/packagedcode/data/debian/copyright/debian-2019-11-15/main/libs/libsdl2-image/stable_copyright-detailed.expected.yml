@@ -15,8 +15,6 @@ other_license_expression_spdx: Zlib AND Zlib AND (LGPL-2.0-or-later AND LGPL-2.1
 license_detections: []
 other_license_detections:
   - license_expression: unlicense
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 33
@@ -26,6 +24,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: unlicense
         rule_identifier: unlicense_6.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unlicense_6.RULE
         matched_text: |
           This is free and unencumbered software released into the public domain.
@@ -50,9 +49,8 @@ other_license_detections:
           OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
           ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
           OTHER DEALINGS IN THE SOFTWARE.
+    identifier: unlicense-b1acf3b1-c4b1-049c-a0bb-4218e3dce0b3
   - license_expression: zlib
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 63
@@ -62,6 +60,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: zlib
         rule_identifier: zlib.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
         matched_text: |
           This software is provided 'as-is', without any express or implied
@@ -79,9 +78,8 @@ other_license_detections:
           2. Altered source versions must be plainly marked as such, and must not be
              misrepresented as being the original software.
           3. This notice may not be removed or altered from any source distribution.
+    identifier: zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8
   - license_expression: lgpl-2.0-plus AND lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 79
@@ -91,6 +89,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
         rule_identifier: lgpl-2.0-plus_61.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
       - score: '100.0'
@@ -101,6 +100,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_419.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_419.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -110,6 +110,7 @@ other_license_detections:
 
           On Debian systems, the complete text of version 2 of the GNU Lesser
           General Public License can be found in '/usr/share/common-licenses/LGPL-2'.
+    identifier: lgpl_2_0_plus_and_lgpl_2_1_plus-071ae3ad-5282-d90e-9a67-4f4a6120eb34
 copyright: |
   1997-2016 Sam Lantinga <slouken@libsdl.org>
   1997-2016 Sam Lantinga <slouken@libsdl.org>

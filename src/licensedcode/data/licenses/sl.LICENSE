@@ -1,0 +1,15 @@
+---
+key: sl
+short_name: SL License
+name: SL License
+category: Permissive
+owner: Masashi Toyoda
+spdx_license_key: SL
+other_urls:
+    - https://github.com/mtoyoda/sl/blob/master/LICENSE
+---
+
+Everyone is permitted to do anything on this program including copying,
+modifying, and improving, unless you try to pretend that you wrote it.
+i.e., the above copyright notice has to appear in all copies.
+THE AUTHOR DISCLAIMS ANY RESPONSIBILITY WITH REGARD TO THIS SOFTWARE.

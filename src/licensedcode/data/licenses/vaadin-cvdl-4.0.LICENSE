@@ -1,0 +1,124 @@
+---
+key: vaadin-cvdl-4.0
+short_name: Commercial Vaadin Developer License 4.0
+name: Commercial Vaadin Developer License 4.0
+category: Commercial
+owner: Vaadin Ltd
+homepage_url: https://vaadin.com/license/cvdl-4.0
+spdx_license_key: LicenseRef-scancode-vaadin-cvdl-4.0
+ignorable_authors:
+    - changing its source code or the Project
+---
+
+Commercial Vaadin Developer License version 4
+
+Terms and Conditions for Use, Reproduction and Distribution
+
+NOTICE TO USER: PLEASE READ THIS LICENSE AGREEMENT CAREFULLY. 
+
+BY USING ALL OR ANY PART OF THE LICENSED SOFTWARE YOU ACCEPT ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT, INCLUDING, IN PARTICULAR THE RESTRICTIONS ON: USE AND TRANSFERABILITY CONTAINED IN CLAUSE 2; WARRANTY IN CLAUSE 6; LIABILITY IN CLAUSE 7. YOU ACCEPT THAT THIS AGREEMENT IS ENFORCEABLE LIKE ANY WRITTEN NEGOTIATED AGREEMENT DULY SIGNED BY YOU. IF YOU DO NOT AGREE ON ALL THE TERMS AND CONDITIONS OF THIS AGREEMENT, STOP THE USE OF THE LICENSED SOFTWARE IMMEDIATELY.
+1. Definitions
+
+In this Agreement, unless the context requires otherwise, the following words and phrases shall have the following meanings: 
+
+    "Developer" shall mean a software developer, tester, designer or other person developing a software application.
+    "Vaadin Platform" shall mean the Vaadin web framework, components, themes, tools and libraries that help Developers in building software applications. 
+    "Licensed Software" shall mean an add-on software component, extended support version of Vaadin Platform, library, theme, tool or other software or resource that is part of or adds functionality to Vaadin Platform or helps Developers in developing applications. Licensed Software include, but are not limited to, user interface components, integration components, themes, libraries and development tools. 
+    "Use Licensed Software" shall mean either directly interacting with, including without limitations using the user interface of, running or installing, the Licensed Software during Project or editing Project source code file that refers to or depends on Licensed Software either directly or indirectly. Developer who edits source code that can not be compiled and/or run without a copy of Licensed Software is considered to Use Licensed Software. Interacting with a server that runs Licensed Software as a part of an automated test suite or a design system is not considered as Use of Licensed Software, but the maintainers of the mentioned test suite or design system are considered to Use Licensed Software. 
+    "Agreement" shall mean this Commercial Vaadin Developer License version 4 agreement. Previous versions of the agreement were called Commercial Vaadin Add-on License.
+    "License" shall mean the right to Use Licensed Software according to Agreement by one Developer. 
+    "Intellectual Property Rights" shall mean any and all patent, copyright, trademark, design right, petty patent, service mark, domain name or any other right or trade secret whether registered or not. 
+    "Licensee" shall mean the entity that has subscribed to a Subscription that includes the right to Use Licensed Software. 
+    "Licensor" shall mean Vaadin Ltd. or a third party licensing Licensed Software under the Agreement. 
+    "Parties/Party" shall mean Licensee and Licensor, or either of them. 
+    "Project" shall mean Licensee's software development project during which the participating Developers Use Licensed Software and which aims to produce Project Result. 
+    "Project Result" shall mean the outcome of the Project. 
+    “End User” shall mean a person using Project Result that does not involve changing any source code.
+    "Subscription" shall mean a subscription offered by Licensor in which Licensor grants rights to Use Licensed Software according to the terms of the subscription agreement and this Agreement. 
+
+2. Grant of License
+
+2.1 Licensor grants to Licensee, against full payment of the Subscription fee, a worldwide, royalty-free, non-exclusive limited License to Use Licensed Software in Project(s) by a Developer. 
+
+2.2 Licensee shall not, unless expressly provided in Agreement or in the applicable legislation 
+
+2.2.1 rent, lease or loan Licensed Software or any copy of it; 
+
+2.2.2 remove, obliterate, deface or in any way alter the notice of Licensor’s or a third party’s proprietary rights related to Licensed Software; 
+
+2.2.3 grant sub-licenses to Licensed Software or assign its rights or obligations under this Agreement to a third party. 
+
+2.3 Licensee may grant licenses, for free or against a payment, to the Project Result including Licensed Software whether regarded as derivative works or not. End Users are not required to have a valid License. If the Project Result is further developed or modified by changing its source code or the Project Results is used as a software component or framework in a software development project, all Developers who Use Licensed Software in such a context need to have a valid License. If the Project Result is a software development tool, component or environment that provides the functionality of the Licensed Software for use in software development projects, all Developers who Use Licensed Software need to have a valid License. 
+3. Intellectual Property Rights
+
+3.1 All Intellectual Property Rights in and to Licensed Software are and shall at all times remain the sole and exclusive property of Licensor and its third party licensors, if any. 
+
+3.2 Licensee will not at any time do or cause to be done any such act or thing which in any way impairs, or intends to impair, any right, title, interest or any Intellectual Property Right of Licensor or its third party licensors. Licensee shall not in any manner represent that it has any ownership of any kind in any of the above mentioned Intellectual Property Rights. 
+4. Subscription fee and Subscription term
+
+4.1 In consideration for the Subscription based license granted herein, Licensor shall charge a recurring Subscription fee from the Licensee. 
+
+4.2 Licensee must have a valid License for all Developers who Use Licensed Software in the Project. During the Subscription term, the License may be Used in many Projects simultaneously without additional payments. The Project Result may be copied an unlimited number of times and deployed to an unlimited number of computers without additional payments. 
+
+4.3 Licensee's License will be valid starting from the beginning of the Subscription term and remain in force until the end of the Subscription term. The start date of the Subscription term and its possible renewal mechanism are set out in the Subscription agreement or the Licensor’s invoice to the Licensee. If no Subscription start date is specified in the Subscription agreement or the invoice, the start date shall be the date when the Licensor provides the Licensee access to the Licensed Software.
+
+4.4 If License is given without a fee, the License is valid for the time defined by the Licensor.
+5. Term and termination
+
+5.1 This Agreement is effective as of the effective date of the Subscription and expires on the day that the Subscription term for the Licensed Software has expired. Notwithstanding the aforesaid, in the event that the Licensee fails to comply with the terms set in this Agreement, the License granted herein shall not be valid and Licensee must at once cease the use of Licensed Software and any of its rights under Clause 2, and delete all copies of Licensed Software. 
+
+5.2 Licensor has the right, in addition and without prejudice to any other rights or remedies, to terminate this Agreement immediately as follows: 
+
+5.2.1 for any material breach of Agreement, that is not cured within seven (7) days of receipt by Licensee in default of a written notice specifying the breach and requiring its cure; 
+
+5.2.2 upon receiving a written notice, if (a) all or a substantial portion of the assets of Licensee are transferred to an assignee for the benefit of creditors, or to a receiver or a trustee in bankruptcy, (b) a proceeding is commenced by or against Licensee for relief under bankruptcy or similar laws and such proceeding is not dismissed within sixty (60) days, or (c) Licensee is adjudged bankrupt. 
+
+5.3 If and when this Agreement is terminated due to any reason or cause whatsoever, the Licensee shall cease to Use Licensed Software and any of its rights under Clause 2, and delete all copies of Licensed Software. For clarity, the termination of this Agreement shall not affect the validity of any licenses granted by the Licensee to End Users with respect to Project Results prior to the termination of this Agreement, but the Licensee shall not be entitled to Use Licensed Software after the termination of the Agreement. 
+
+5.4 Provisions of the Agreement which, by their nature, are intended to survive its termination or expiration, shall survive its termination or expiration. 
+6. Warranties
+
+THE LICENSED SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND EXPRESS OR IMPLIED, AND TO THE MAXIMUM EXTENT PERMITTED BY THE APPLICABLE LAW. EXCEPT AS EXPRESSLY PROVIDED IN THIS CLAUSE, NO WARRANTY, CONDITION, UNDERTAKING, LIABILITY OR TERM, EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE, AS TO CONDITION, QUALITY, PERFORMANCE, FUNCTIONALITY, INFRINGEMENT, MERCHANTABILITY, DURABILITY OR FITNESS FOR PURPOSE, IS GIVEN OR ASSUMED BY VAADIN LTD., LICENSOR OR ITS LICENSORS AND ALL SUCH WARRANTIES, CONDITIONS, UNDERTAKINGS AND TERMS ARE HEREBY EXCLUDED. 
+7. Limitation of Liability
+
+VAADIN LTD. AND/OR LICENSOR WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, PUNITIVE OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER AND HOWSOEVER CAUSED (INCLUDING BUSINESS INTERRUPTION, OR ANY LOSS OF BUSINESS, ANTICIPATED SAVINGS, REVENUE, GOODWILL, MANAGEMENT TIME, LOSS OF PROFITS OR OF CONTRACTS, LOSS OF OPERATION TIME, LOSS OF REPUTATION OR OF DATA) INCLUDING NEGLIGENCE, WHETHER IN CONTRACT OR TORT, EVEN IF THEY HAVE BEEN ADVISED OF THE POSSIBILITY. DEVELOPER AND/OR LICENSEE WILL USE REASONABLE EFFORTS TO MITIGATE THEIR LOSS SUFFERED. VAADIN LTD'S AND/OR LICENSOR'S AGGREGATE LIABILITY AND THAT OF ITS AFFILIATES AND SUPPLIERS UNDER OR IN CONNECTION WITH THIS LICENSE AGREEMENT WILL BE LIMITED TO THE AMOUNT ACTUALLY PAID FOR THE LICENSED SOFTWARE DURING THE MOST RECENT SUBSCRIPTION PERIOD. 
+8. Updates, new versions maintenance and support
+
+Licensor may, at its sole discretion, during the Subscription term provide maintenance releases, updates and upgrades as new versions of the Licensed Software. 
+
+Licensee is not entitled to receive support for the Licensed Software, but Licensor may, at its sole discretion during the Subscription term, provide support either for free or for a fee. 
+9. Miscellaneous
+
+9.1 No Waiver
+
+The failure of Licensor to exercise any of its rights under this Agreement or to require the performance of any term or provision of this Agreement, or any waiver by the Licensor of any term or provision or breach of this Agreement, shall not prevent a subsequent exercise or enforcement of such right or be deemed a waiver of any subsequent breach of the same or any other term or provision of this Agreement. Any waiver of the performance of any of the terms or conditions of this Agreement shall be effective only if in writing and signed by the Party against which such waiver is to be enforced. 
+
+9.2 Headings
+
+The headings in this Agreement are for the convenience of the Parties only and are not intended to define or limit the scope or interpretation of the Agreement or any provision hereof. 
+
+9.3 Severability
+
+If any term of this Agreement is invalid or unenforceable, such terms or provisions shall not invalidate the rest of the Agreement which shall remain in full force and effect as if such invalidated or unenforceable terms or conditions had not been made a part of this Agreement. In the event this Clause (Severability) becomes operative, Parties agree to attempt to negotiate settlement that carries out the economic intent of the terms or provisions found invalid or unenforceable. 
+
+9.4 Export Control
+
+The Licensed Software may be subject to import and export controls in other countries. Licensee agrees to strictly comply with all applicable import and export regulations and acknowledge that Licensee has the responsibility to obtain licenses to export, re-export, transfer or import Licensed Software. 
+
+9.5 Entire Agreement and Assignment
+
+Agreement sets forth the entire agreement between the Parties with respect to the subject matter hereof and supersedes any prior proposals and representations, whether written or oral. Neither Party shall have the right to assign this Agreement to a third party without the prior written consent of the other party. However, Licensor shall have the right to assign this Agreement and the rights and obligations contained therein to a company belonging to the same group of companies as Licensor, and to a third party to which the business of Licensor is transferred. 
+
+9.6 Governing Law and Jurisdiction
+
+9.6.1 For customers domiciled in the United States
+
+If the Customer’s domicile is in the United States, the Agreement shall be governed by and construed in accordance with the substantive laws of the State of California. The Agreement shall be construed and enforced without regard to the United Nations Convention on the International Sale of Goods (CISG). Any dispute or controversy or claim arising out of or relating to this Agreement, or the breach, termination or validity thereof, shall be resolved by final and binding arbitration in accordance with the International Chamber of Commerce Rules of Arbitration, by one (1) arbitrator appointed according to the aforementioned rules. The arbitration shall be conducted in the English language in San Francisco, California, United States.
+
+9.6.2 For customers domiciled outside the United States
+
+If the Customer’s domicile is outside the United States, the Agreement shall be governed by and construed in accordance with the substantive laws of Finland, excluding its choice of law provisions and the United Nations Convention on Contracts for the International Sale of Goods (CISG). Any dispute, controversy or claim arising out of or relating to the Agreement, or the breach, termination or validity thereof, shall be finally settled by arbitration in accordance with the Arbitration Rules of the Finland Chamber of Commerce. The number of arbitrators shall be one. The seat of arbitration shall be Turku, Finland. The language of the arbitration shall be English.
+
+9.7 Language
+
+The official text of the Agreement or any notices given or accounts or statements required hereby shall be in English.

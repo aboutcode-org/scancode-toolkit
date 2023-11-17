@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Brian Fox",
       "email": "brianf@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Dan T. Tran",
       "email": "dantran@gmail.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "John Casey",
       "email": "casey.john.d@gmail.com",
       "url": null
@@ -43,54 +43,47 @@
   "code_view_url": "http://svn.apache.org/viewcvs.cgi/maven/plugins/tags/maven-dependency-plugin-2.0",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/maven/plugins/tags/maven-dependency-plugin-2.0",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
     {
       "license_expression": "apache-2.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
-          "score": 50.0,
+          "score": 100.0,
           "start_line": 1,
           "end_line": 1,
-          "matched_length": 4,
+          "matched_length": 5,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_3.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_3.RULE",
-          "matched_text": "Apache License 2.0"
-        }
-      ]
-    },
-    {
-      "license_expression": "apache-2.0",
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
+          "rule_identifier": "apache-2.0_1039.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1039.RULE",
+          "matched_text": "- name: Apache License 2.0"
+        },
         {
-          "score": 80.0,
-          "start_line": 1,
-          "end_line": 1,
+          "score": 100.0,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 9,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_42.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
-          "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+          "matched_text": "  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
-      ]
+      ],
+      "identifier": "apache_2_0-da08e9d7-03da-b02c-1775-e1659e903285"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'Apache License 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+  "extracted_license_statement": "- name: Apache License 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.plugins/maven-dependency-plugin@2.0?classifier=sources"

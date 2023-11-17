@@ -1,0 +1,22 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/x-bureau/Airbus-A318/blob/ce3f7db093c48b2cb3588c75d683cb1166298264/plugins/SASL/License#L20
+---
+
+Redistribution in source and binary forms, with or without modification, are not permitted.
+The use of this code in course or binary form is permitted under the following conditions:
+1.  The copyright holders have been notified of the use of  in a commercial project, 
+and have given their agreement. The code is to be used with a special notice provided below.
+2.  The code is used in a free project which is distributed for free use with no limitation 
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

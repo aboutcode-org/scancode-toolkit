@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 7
@@ -16,6 +14,7 @@ license_detections:
         matcher: 2-aho
         license_expression: proprietary-license
         rule_identifier: proprietary-license_521.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_521.RULE
         matched_text: "TERMS AND CONDITIONS\n    IMPORTANT - PLEASE READ BEFORE INSTALLING OR\
           \ USING THIS INTEL(C) SOFTWARE\n\nDo not use or load this firmware (the \"Software\"\
@@ -255,5 +254,6 @@ license_detections:
           \ or their successors. Use\nof the Software by the Government constitutes acknowledgment\
           \ of Intel's\nproprietary rights therein. Contractor or Manufacturer is Intel Corporation,\n\
           2200 Mission College Blvd., Santa Clara, CA 95052."
+    identifier: proprietary_license-57319d5e-5119-fad5-35c4-214531f0d0e9
 other_license_detections: []
 copyright: Copyright 2003-2009 Intel Corporation

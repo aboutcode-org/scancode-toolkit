@@ -21,14 +21,12 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
   "declared_license_expression_spdx": "LicenseRef-scancode-kde-accepted-gpl AND LicenseRef-scancode-kde-accepted-lgpl AND CC0-1.0",
   "license_detections": [
     {
       "license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +37,12 @@
           "matcher": "1-spdx-id",
           "license_expression": "kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0",
           "rule_identifier": "spdx-license-identifier-kde-accepted-gpl AND kde-accepted-lgpl AND cc0-1.0-6a9624535224bcf1a0f54065c5d93440ca135f98",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "licenseref-kde-accepted-gpl AND licenseref-kde-accepted-lgpl AND cc0-1.0"
         }
-      ]
+      ],
+      "identifier": "kde_accepted_gpl_and_kde_accepted_lgpl_and_cc0_1_0-9bee625b-21fc-09c5-d92b-5f0aeaba0d98"
     }
   ],
   "other_license_expression": null,

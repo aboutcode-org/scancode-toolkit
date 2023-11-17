@@ -1,0 +1,1 @@
+This is equivalent to an instance of a record created by a Record Factory.

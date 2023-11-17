@@ -36,14 +36,12 @@
     "code_view_url": "https://svnweb.freebsd.org/ports/head/dns/py-idna",
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "python AND bsd-new",
     "declared_license_expression_spdx": "Python-2.0 AND BSD-3-Clause",
     "license_detections": [
       {
         "license_expression": "python",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 80.0,
@@ -54,16 +52,15 @@
             "matcher": "1-hash",
             "license_expression": "python",
             "rule_identifier": "python_10.RULE",
+            "rule_relevance": 80,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/python_10.RULE",
             "matched_text": "PSFL"
           }
-        ]
+        ],
+        "identifier": "python-1721264e-0167-aa2d-cb21-1f44af363db3"
       },
       {
         "license_expression": "bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 99.0,
@@ -74,10 +71,12 @@
             "matcher": "1-hash",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_416.RULE",
+            "rule_relevance": 99,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_416.RULE",
             "matched_text": "BSD3CLAUSE"
           }
-        ]
+        ],
+        "identifier": "bsd_new-cc1cc165-8154-9d0a-7f4f-fec3d6e6f578"
       }
     ],
     "other_license_expression": null,

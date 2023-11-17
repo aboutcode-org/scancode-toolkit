@@ -2,6 +2,10 @@
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
+ignorable_copyrights:
+    - copyrighted by the Open Source Vulnerability Database (http://osvdb.org)
+ignorable_holders:
+    - the Open Source Vulnerability Database
 ignorable_urls:
     - http://osvdb.org/
 ---

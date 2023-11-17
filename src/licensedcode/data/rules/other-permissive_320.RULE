@@ -1,6 +1,8 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
+is_deprecated: yes
+notes: This is now `punycode` LICENSE
 ---
 
 Disclaimer and license: Regarding this entire document or any

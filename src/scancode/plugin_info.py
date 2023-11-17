@@ -38,6 +38,7 @@ class InfoScanner(ScanPlugin):
         ('is_script', attr.ib(default=False, type=bool, repr=False)),
     ])
 
+    run_order = 0
     sort_order = 0
 
     options = [

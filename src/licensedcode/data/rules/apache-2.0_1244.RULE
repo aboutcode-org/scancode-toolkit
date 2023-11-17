@@ -1,0 +1,14 @@
+---
+license_expression: apache-2.0
+is_license_tag: yes
+ignorable_urls:
+    - https://aws.amazon.com/apache2.0
+---
+
+<licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://aws.amazon.com/apache2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>

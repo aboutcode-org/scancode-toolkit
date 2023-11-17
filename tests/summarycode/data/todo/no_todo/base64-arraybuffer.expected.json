@@ -1,0 +1,727 @@
+{
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "base64-arraybuffer",
+      "version": "0.1.4",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "Encode/decode base64 data into ArrayBuffers",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Niklas von Hertzen",
+          "email": "niklasvh@gmail.com",
+          "url": "http://hertzen.com"
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/niklasvh/base64-arraybuffer",
+      "download_url": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/niklasvh/base64-arraybuffer/issues",
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/niklasvh/base64-arraybuffer",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_relevance": 100,
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        },
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_30.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+              "matched_text": "https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- type: MIT\n  url: https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/base64-arraybuffer",
+      "repository_download_url": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz",
+      "api_data_url": "https://registry.npmjs.org/base64-arraybuffer/0.1.4",
+      "package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "base64-arraybuffer-0.1.4/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/base64-arraybuffer@0.1.4"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/grunt",
+      "extracted_requirement": "^0.4.5",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt-cli",
+      "extracted_requirement": "^0.1.13",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt-cli?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-jshint",
+      "extracted_requirement": "^0.11.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt-contrib-jshint?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-nodeunit",
+      "extracted_requirement": "^0.4.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt-contrib-nodeunit?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-watch",
+      "extracted_requirement": "^0.6.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt-contrib-watch?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "base64-arraybuffer-0.1.4/package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "mit-e634e936-0701-7555-bfaa-1fce0c174838",
+      "license_expression": "mit",
+      "detection_count": 2
+    },
+    {
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "license_expression": "mit",
+      "detection_count": 1
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "detection_count": 1
+    },
+    {
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
+      "license_expression": "mit",
+      "detection_count": 1
+    },
+    {
+      "identifier": "mit-f9ae5fa5-0848-4d18-62fc-d668971434b3",
+      "license_expression": "mit",
+      "detection_count": 1
+    }
+  ],
+  "todo": [],
+  "files": [
+    {
+      "path": "base64-arraybuffer-0.1.4",
+      "type": "directory",
+      "name": "base64-arraybuffer-0.1.4",
+      "base_name": "base64-arraybuffer-0.1.4",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "for_todo": [],
+      "files_count": 5,
+      "dirs_count": 1,
+      "size_count": 4564,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/.npmignore",
+      "type": "file",
+      "name": ".npmignore",
+      "base_name": ".npmignore",
+      "extension": "",
+      "size": 35,
+      "sha1": "de4a0dded8947ec9808a6d23aceddcb205f9f957",
+      "md5": "e9c3fb3867fddd2f012f39ac11949339",
+      "sha256": "3800ebe410db7921c40dd59bf083fd6d94d99fb7392f48ba9eb8146d5d81f706",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "for_todo": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/LICENSE-MIT",
+      "type": "file",
+      "name": "LICENSE-MIT",
+      "base_name": "LICENSE-MIT",
+      "extension": "",
+      "size": 1062,
+      "sha1": "340c75c043b1010ee4cdedbbba0178bd2c5b8437",
+      "md5": "7e6019c14540d23cd5ed7337b94782b0",
+      "sha256": "f3eca6ff762533fa5a77caf954a143e48afa204668cf97dce758c45a9e006be3",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 22,
+              "matched_length": 161,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit.LICENSE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+            }
+          ],
+          "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 96.41,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2012 Niklas von Hertzen",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Niklas von Hertzen",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "for_todo": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/README.md",
+      "type": "file",
+      "name": "README.md",
+      "base_name": "README",
+      "extension": ".md",
+      "size": 792,
+      "sha1": "440c548985b2f38e06657211d630afbfa4e567bf",
+      "md5": "13686c8ce711f4d6266e80febf7a44ae",
+      "sha256": "401541346e1b7e238a757e6707f9f6e02907e17b84af9f3337f392eba8b9107d",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 20,
+              "end_line": 20,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_12.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_12.RULE"
+            }
+          ],
+          "identifier": "mit-e634e936-0701-7555-bfaa-1fce0c174838"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 4.72,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2012 Niklas von Hertzen",
+          "start_line": 19,
+          "end_line": 19
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Niklas von Hertzen",
+          "start_line": 19,
+          "end_line": 19
+        }
+      ],
+      "authors": [],
+      "for_todo": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/lib",
+      "type": "directory",
+      "name": "lib",
+      "base_name": "lib",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "for_todo": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 1704,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/lib/base64-arraybuffer.js",
+      "type": "file",
+      "name": "base64-arraybuffer.js",
+      "base_name": "base64-arraybuffer",
+      "extension": ".js",
+      "size": 1704,
+      "sha1": "e93ee468a164b81c8b8d1de4866085966a67e136",
+      "md5": "b1d19531a9b7fceff2e3215bff5722f9",
+      "sha256": "756e9c9e4b63048c99e9bbfdbd1a76ce5ad3193cecf94a4232ced8fdf1732607",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "JavaScript",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 6,
+              "end_line": 6,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_12.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_12.RULE"
+            }
+          ],
+          "identifier": "mit-e634e936-0701-7555-bfaa-1fce0c174838"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.62,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2012 Niklas von Hertzen",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Niklas von Hertzen",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "authors": [],
+      "for_todo": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "base64-arraybuffer-0.1.4/package.json",
+      "type": "file",
+      "name": "package.json",
+      "base_name": "package",
+      "extension": ".json",
+      "size": 971,
+      "sha1": "1853ae06931a67b3eb8bb76c801ac258966ff74e",
+      "md5": "27fb799cad01c2225da7881703735a6a",
+      "sha256": "c137a784510ece7d3b9b1d4de59c55a0594b1ed51b30c9581e8279cb705b0286",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "base64-arraybuffer",
+          "version": "0.1.4",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "Encode/decode base64 data into ArrayBuffers",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Niklas von Hertzen",
+              "email": "niklasvh@gmail.com",
+              "url": "http://hertzen.com"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/niklasvh/base64-arraybuffer",
+          "download_url": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/niklasvh/base64-arraybuffer/issues",
+          "code_view_url": null,
+          "vcs_url": "git+https://github.com/niklasvh/base64-arraybuffer",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_relevance": 100,
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            },
+            {
+              "license_expression": "mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "mit",
+                  "rule_identifier": "mit_30.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+                  "matched_text": "https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT"
+                }
+              ],
+              "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- type: MIT\n  url: https://github.com/niklasvh/base64-arraybuffer/blob/master/LICENSE-MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/grunt",
+              "extracted_requirement": "^0.4.5",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt-cli",
+              "extracted_requirement": "^0.1.13",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt-contrib-jshint",
+              "extracted_requirement": "^0.11.2",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt-contrib-nodeunit",
+              "extracted_requirement": "^0.4.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt-contrib-watch",
+              "extracted_requirement": "^0.6.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/base64-arraybuffer",
+          "repository_download_url": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz",
+          "api_data_url": "https://registry.npmjs.org/base64-arraybuffer/0.1.4",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/base64-arraybuffer@0.1.4"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 18,
+              "end_line": 20,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_272.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_272.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 21,
+              "end_line": 21,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_30.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-f9ae5fa5-0848-4d18-62fc-d668971434b3"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 4.59,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Niklas von Hertzen",
+          "start_line": 6,
+          "end_line": 7
+        }
+      ],
+      "for_todo": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

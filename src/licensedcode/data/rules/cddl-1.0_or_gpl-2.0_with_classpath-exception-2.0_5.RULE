@@ -1,7 +1,10 @@
 ---
 license_expression: cddl-1.0 OR gpl-2.0 WITH classpath-exception-2.0
-is_license_reference: yes
-relevance: 100
+is_license_tag: yes
+ignorable_urls:
+    - https://github.com/javaee/javax.xml.soap/blob/master/LICENSE
 ---
 
-GPL2 w/ CPE
+name: CDDL + GPLv2 with classpath exception
+url: https://github.com/javaee/javax.xml.soap/blob/master/LICENSE
+comments: A business-friendly OSS license

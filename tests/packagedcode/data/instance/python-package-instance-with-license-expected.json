@@ -1,0 +1,479 @@
+{
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "click",
+      "version": "attr: click.__version__",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Armin Ronacher",
+          "email": "armin.ronacher@active-4.com",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://palletsprojects.com/p/click/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "bsd-new",
+      "declared_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_1305.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
+              "matched_text": "BSD-3-Clause license_files: LICENSE.rst"
+            },
+            {
+              "score": 99.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_89.RULE",
+              "rule_relevance": 99,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+            }
+          ],
+          "identifier": "bsd_new-c0e1e2ee-7e69-b9f1-a736-85b2eaa65db2",
+          "detection_log": [
+            "package-unknown-reference-to-local-file"
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "BSD-3-Clause license_files: LICENSE.rst",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "setup.cfg"
+      ],
+      "datasource_ids": [
+        "pypi_setup_cfg"
+      ],
+      "purl": "pkg:pypi/click@attr:%20click.__version__"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:generic/python",
+      "extracted_requirement": "python_requires>= 3.7",
+      "scope": "python",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:generic/python?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "setup.cfg",
+      "datasource_id": "pypi_setup_cfg"
+    },
+    {
+      "purl": "pkg:pypi/colorama",
+      "extracted_requirement": "colorama; platform_system == \"Windows\"",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/colorama?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/importlib-metadata",
+      "extracted_requirement": "importlib-metadata; python_version < \"3.8\"",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/importlib-metadata?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "setup.py",
+      "datasource_id": "pypi_setup_py"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "bsd_new-261898a0-0118-87c4-7092-14e4ff134882",
+      "license_expression": "bsd-new",
+      "detection_count": 2,
+      "detection_log": []
+    },
+    {
+      "identifier": "bsd_new-68720980-08c9-ffb1-f28e-24c2e067385b",
+      "license_expression": "bsd-new",
+      "detection_count": 1,
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
+    },
+    {
+      "identifier": "bsd_new-c0e1e2ee-7e69-b9f1-a736-85b2eaa65db2",
+      "license_expression": "bsd-new",
+      "detection_count": 1,
+      "detection_log": [
+        "package-unknown-reference-to-local-file"
+      ]
+    },
+    {
+      "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
+      "license_expression": "bsd-new",
+      "detection_count": 1,
+      "detection_log": []
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE.rst",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "bsd-new",
+      "detected_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_89.RULE",
+              "rule_relevance": 99,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "bsd_new-261898a0-0118-87c4-7092-14e4ff134882"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 66.67,
+      "scan_errors": []
+    },
+    {
+      "path": "MANIFEST.in",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "setup.cfg",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "click",
+          "version": "attr: click.__version__",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Armin Ronacher",
+              "email": "armin.ronacher@active-4.com",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://palletsprojects.com/p/click/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "bsd-new",
+          "declared_license_expression_spdx": "BSD-3-Clause",
+          "license_detections": [
+            {
+              "license_expression": "bsd-new",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "bsd-new_1305.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
+                  "matched_text": "BSD-3-Clause license_files: LICENSE.rst"
+                },
+                {
+                  "score": 99.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "bsd-new_89.RULE",
+                  "rule_relevance": 99,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+                }
+              ],
+              "identifier": "bsd_new-c0e1e2ee-7e69-b9f1-a736-85b2eaa65db2",
+              "detection_log": [
+                "package-unknown-reference-to-local-file"
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "BSD-3-Clause license_files: LICENSE.rst",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:generic/python",
+              "extracted_requirement": "python_requires>= 3.7",
+              "scope": "python",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "pypi_setup_cfg",
+          "purl": "pkg:pypi/click@attr:%20click.__version__"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "bsd-new",
+      "detected_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 13,
+              "end_line": 14,
+              "matched_length": 8,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_1302.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1302.RULE"
+            },
+            {
+              "score": 99.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "bsd-new_89.RULE",
+              "rule_relevance": 99,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+            }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "bsd_new-68720980-08c9-ffb1-f28e-24c2e067385b"
+        },
+        {
+          "license_expression": "bsd-new",
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 25,
+              "end_line": 25,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "bsd-new",
+              "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_relevance": 99,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 4.13,
+      "scan_errors": []
+    },
+    {
+      "path": "setup.py",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "click",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "bsd-new",
+          "declared_license_expression_spdx": "BSD-3-Clause",
+          "license_detections": [
+            {
+              "license_expression": "bsd-new",
+              "matches": [
+                {
+                  "score": 99.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "bsd-new",
+                  "rule_identifier": "bsd-new_89.RULE",
+                  "rule_relevance": 99,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
+                }
+              ],
+              "detection_log": [],
+              "identifier": "bsd_new-261898a0-0118-87c4-7092-14e4ff134882"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/colorama",
+              "extracted_requirement": "colorama; platform_system == \"Windows\"",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/importlib-metadata",
+              "extracted_requirement": "importlib-metadata; python_version < \"3.8\"",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://pypi.org/project/click",
+          "repository_download_url": null,
+          "api_data_url": "https://pypi.org/pypi/click/json",
+          "datasource_id": "pypi_setup_py",
+          "purl": "pkg:pypi/click"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+---
+key: cronyx
+short_name: Cronyx License
+name: Cronyx License
+category: Permissive
+owner: Cronyx
+spdx_license_key: Cronyx
+other_urls:
+    - https://gitlab.freedesktop.org/xorg/font/alias/-/blob/master/COPYING
+    - https://gitlab.freedesktop.org/xorg/font/cronyx-cyrillic/-/blob/master/COPYING
+    - https://gitlab.freedesktop.org/xorg/font/misc-cyrillic/-/blob/master/COPYING
+    - https://gitlab.freedesktop.org/xorg/font/screen-cyrillic/-/blob/master/COPYING
+---
+
+This software may be used, modified, copied, distributed, and sold,
+in both source and binary form provided that the copyright
+and these terms are retained. Under no circumstances is the author
+responsible for the proper functioning of this software, nor does
+the author assume any responsibility for damages incurred with its use.

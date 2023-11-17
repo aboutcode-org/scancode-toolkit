@@ -5,9 +5,15 @@ name: OpenSSL exception to GPL 3.0 or later
 category: Copyleft
 owner: Tildeslash
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-openssl-exception-gpl-3.0-plus
+spdx_license_key: cryptsetup-OpenSSL-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-openssl-exception-gpl-3.0-plus
 other_urls:
     - http://www.gnu.org/licenses/gpl-3.0.txt
+    - https://gitlab.com/cryptsetup/cryptsetup/-/blob/main/COPYING
+    - https://gitlab.nic.cz/datovka/datovka/-/blob/develop/COPYING
+    - https://github.com/nbs-system/naxsi/blob/951123ad456bdf5ac94e8d8819342fe3d49bc002/naxsi_src/naxsi_raw.c
+    - http://web.mit.edu/jgross/arch/amd64_deb60/bin/mosh
 standard_notice: |
     This program is free software: you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free

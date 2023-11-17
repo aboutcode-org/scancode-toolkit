@@ -1,0 +1,24 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2020 Liferay, Inc. <https://liferay.com>
+  - Copyright (c) 2020 Contributors to the project Clay <https://github.com/liferay/clay/graphs/contributors>
+  - Copyright (c) 2019 Twitter, Inc. <https://twitter.com>
+  - Copyright (c) 2019 The Bootstrap Authors <https://getbootstrap.com/>
+holders:
+  - Liferay, Inc.
+  - Contributors to the project Clay
+  - Twitter, Inc.
+  - The Bootstrap Authors
+holders_summary:
+  - value: Contributors to the project Clay
+    count: 1
+  - value: Liferay, Inc.
+    count: 1
+  - value: The Bootstrap Authors
+    count: 1
+  - value: Twitter, Inc.
+    count: 1

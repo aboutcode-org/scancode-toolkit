@@ -107,14 +107,12 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/mirage/mirage.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "isc",
     "declared_license_expression_spdx": "ISC",
     "license_detections": [
       {
         "license_expression": "isc",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -125,10 +123,12 @@
             "matcher": "1-spdx-id",
             "license_expression": "isc",
             "rule_identifier": "spdx-license-identifier-isc-9931cb7ad33c2eb18f322c94660b670a84186baa",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "ISC"
           }
-        ]
+        ],
+        "identifier": "isc-6c4320cc-eb5b-3792-8c56-b8565fff1119"
       }
     ],
     "other_license_expression": null,

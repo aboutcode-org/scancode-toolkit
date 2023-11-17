@@ -3,15 +3,9 @@ key: niels-ferguson
 short_name: Niels Ferguson License
 name: Niels Ferguson License
 category: Permissive
-owner: Unspecified
+owner: Niels Ferguson
 spdx_license_key: LicenseRef-scancode-niels-ferguson
-ignorable_copyrights:
-    - Copyright (c) 2002 by Niels Ferguson
-ignorable_holders:
-    - Niels Ferguson
 ---
-
-Copyright (c) 2002 by Niels Ferguson.
 
 The author hereby grants a perpetual license to everybody to use this
 code for any purpose as long as the copyright message is included in the

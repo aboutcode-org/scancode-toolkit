@@ -7,11 +7,11 @@ owner: Autodesk
 homepage_url: https://github.com/Toksisitee/ALACNPopWorldEditor/blob/43d4119d698a7567ab4f32ddceb4076984dce136/_3ds/3dsftk3/license.txt
 spdx_license_key: LicenseRef-scancode-autodesk-3d-sft-3.0
 ignorable_copyrights:
-    - (c) Copyright 1995 by Autodesk
+    - (c) Copyright 1995 by Autodesk, Inc
     - (c) Copyright 1997 by Autodesk, Inc.
     - copyrighted by Autodesk, Inc.
 ignorable_holders:
-    - Autodesk
+    - Autodesk, Inc
     - Autodesk, Inc.
 ---
 

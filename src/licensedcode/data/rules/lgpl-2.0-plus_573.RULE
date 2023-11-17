@@ -1,0 +1,7 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+---
+
+This file contains functions from GLIB, including gutf8.c and
+gunidecomp.c, all licensed under LGPL and copyright hold by:

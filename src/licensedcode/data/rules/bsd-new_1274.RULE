@@ -1,0 +1,14 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - https://raw.githubusercontent.com/ThreeTen/threetenbp/master/LICENSE.txt
+---
+
+<licenses>
+    <license>
+      <name>BSD 3-clause</name>
+      <url>https://raw.githubusercontent.com/ThreeTen/threetenbp/master/LICENSE.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

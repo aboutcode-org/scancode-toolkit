@@ -11,19 +11,19 @@ copyrights:
   - Copyright 2007,2010,2011 The Android Open Source Project
 holders:
   - Brian Paul
-  - 2008-1010 Intel Corporation
+  - Intel Corporation
   - VMware, Inc.
   - Luca Barbieri
   - Alexander Chemeris
   - The Android Open Source Project
 holders_summary:
-  - value: 2008-1010 Intel Corporation
-    count: 1
   - value: Alexander Chemeris
     count: 1
   - value: Android Open Source Project
     count: 1
   - value: Brian Paul
+    count: 1
+  - value: Intel Corporation
     count: 1
   - value: Luca Barbieri
     count: 1

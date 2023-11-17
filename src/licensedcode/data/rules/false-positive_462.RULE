@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in elasticsearch xpack license module
+---
+
+"license/XPackLicenseState; securityContextHolder Lorg/apache/"

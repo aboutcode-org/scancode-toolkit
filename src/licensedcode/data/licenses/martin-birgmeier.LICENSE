@@ -5,9 +5,13 @@ name: Martin Bergmeier License
 category: Permissive
 owner: Martin Bergmeier
 homepage_url: https://chromium.googlesource.com/native_client/nacl-newlib/+/590b76526a1ff92504bf20234610043fd45ae034/newlib/libc/stdlib/rand48.h
-spdx_license_key: LicenseRef-scancode-martin-birgmeier
+spdx_license_key: Martin-Birgmeier
+other_spdx_license_keys:
+    - LicenseRef-scancode-martin-birgmeier
 text_urls:
     - https://chromium.googlesource.com/native_client/nacl-newlib/+/590b76526a1ff92504bf20234610043fd45ae034/newlib/libc/stdlib/rand48.h
+other_urls:
+    - https://github.com/Perl/perl5/blob/blead/util.c#L6136
 ---
 
 You may redistribute unmodified or modified versions of this source

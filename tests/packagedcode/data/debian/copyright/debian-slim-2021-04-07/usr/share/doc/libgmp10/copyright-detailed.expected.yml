@@ -7,8 +7,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-3.0-plus OR gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: '19'
@@ -18,6 +16,7 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-3.0-plus OR gpl-2.0-plus
         rule_identifier: lgpl-3.0-plus_or_gpl-2.0-plus_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_or_gpl-2.0-plus_27.RULE
         matched_text: |
           The GNU MP Library is free software; you can redistribute it and/or modify
@@ -48,9 +47,8 @@ license_detections:
           The GNU Lesser General Public License v3 text is contained in /usr/share/common-licenses/LGPL-3.
           The GNU General Public License v2 text is contained in /usr/share/common-licenses/GPL-2.
           The GNU General Public License v3 text is contained in /usr/share/common-licenses/GPL-3.
+    identifier: lgpl_3_0_plus_or_gpl_2_0_plus-e7f6b716-c9f5-2be9-e260-13311d75d318
   - license_expression: gfdl-1.1-plus AND (lgpl-2.0-plus OR gpl-1.0-plus)
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 52
@@ -60,6 +58,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gfdl-1.1-plus
         rule_identifier: gfdl-1.1-plus_32.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.1-plus_32.RULE
         matched_text: |
           The documentation is released under the GNU Free Documentation License
@@ -74,9 +73,11 @@ license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.0-plus OR gpl-1.0-plus
         rule_identifier: lgpl-2.0-plus_or_gpl-1.0-plus_300.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_or_gpl-1.0-plus_300.RULE
         matched_text: |
           is covered either by the LGPL, or
           under the GNU General Public License /usr/share/common-licenses/GPL.
+    identifier: gfdl_1_1_plus_and__lgpl_2_0_plus_or_gpl_1_0_plus-d27ea022-e4ce-4bb5-6c8b-d35ae13df0ca
 other_license_detections: []
 copyright: Copyright 1991, 1996, 1999, 2000, 2007 Free Software Foundation, Inc.

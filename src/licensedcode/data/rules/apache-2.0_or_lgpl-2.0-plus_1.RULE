@@ -1,0 +1,10 @@
+---
+license_expression: apache-2.0 OR lgpl-2.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+notes: Seen in Clucene
+---
+
+* Distributable under the terms of either the Apache License (Version 2.0) or 
+* the GNU Lesser General Public License, as specified in the COPYING file.

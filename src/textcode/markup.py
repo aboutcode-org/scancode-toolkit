@@ -9,7 +9,6 @@
 #
 
 from collections import Counter
-import logging
 import os
 import re
 
@@ -20,7 +19,25 @@ from typecode import get_type
 Extract text from HTML, XML and related angular markup-like files.
 """
 
-logger = logging.getLogger(__name__)
+# Tracing flags
+TRACE = False or os.environ.get('SCANCODE_DEBUG_TEXT_ANALYSIS', False)
+
+
+# Tracing flags
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
 
@@ -47,11 +64,16 @@ def is_markup(location):
     with open(location, 'rb') as f:
         start = as_unicode(f.read(1024))
 
-    if start.startswith('<'):
+    return is_markup_text(start)
+
+
+def is_markup_text(text):
+
+    if text.startswith('<'):
         return True
 
     # count whitespaces
-    no_spaces = ''.join(start.split())
+    no_spaces = ''.join(text.split())
 
     # count opening and closing tags_count
     counts = Counter(c for c in no_spaces if c in '<>')
@@ -81,7 +103,12 @@ def demarkup(location):
     from textcode.analysis import unicode_text_lines
 
     for line in unicode_text_lines(location):
+        if TRACE:
+            logger_debug(f'demarkup: {line} : demarked: {demarkup_text(line)}')
         yield demarkup_text(line)
+
+
+get_tags_and_entities = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;|href|[\'"]?\/\>)', re.IGNORECASE).split
 
 
 def demarkup_text(text):
@@ -95,18 +122,22 @@ def demarkup_text(text):
     kept_tags = (
         'lic', 'copy', 'www', 'http', 'auth', 'contr', 'leg', 'inc', '@',
         '<s>', '</s>', '169', 'a9'
-        )
+    )
 
     # find start and closing tags or the first white space whichever comes first
-    # or entities
-    # this regex is such that ' '.join(tags.split(a))==a
+    # or entities. This regex is such that ' '.join(tags.split(a))==a
 
-    tags_ents = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;|href|[\'"]?\/\>)', re.IGNORECASE).split
+    tags_and_ents = get_tags_and_entities(text)
+    if TRACE:
+        logger_debug(f'demarkup_text: {text!r}')
+        logger_debug(f'demarkup_text: tags_and_ents: {tags_and_ents}')
 
     cleaned = []
-    for token in tags_ents(text):
-        if token.lower().startswith(('<', '&', 'href')) and not any(k in token.lower() for k in kept_tags):
+    cleaned_append = cleaned.append
+    for token in tags_and_ents:
+        tlow = token.lower()
+        if tlow.startswith(('<', '&', 'href',)) and not any(k in tlow for k in kept_tags):
             continue
         else:
-            cleaned.append(token)
+            cleaned_append(token)
     return u' '.join(cleaned)

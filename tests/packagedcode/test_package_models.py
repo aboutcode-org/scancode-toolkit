@@ -54,6 +54,7 @@ class TestModels(PackageTester):
             ('code_view_url', None),
             ('vcs_url', None),
             ('copyright', None),
+            ('holder', None),
             ('declared_license_expression', None),
             ('declared_license_expression_spdx', None),
             ('license_detections', []),
@@ -152,6 +153,16 @@ class TestModels(PackageTester):
             ), f'Duplicated datasource_id: {pdh!r} with {seen[pdhid]!r}'
             seen[pdh.datasource_id] = pdh
 
+    def test_package_data_handlers_have_package_type(self):
+        """
+        Check that we do not have two DataFileHandlers with the same
+        datasource_id and that all have one.
+        """
+        for pdh in ALL_DATAFILE_HANDLERS:
+            pdh_type = pdh.default_package_type
+            assert pdh_type
+
+
     def test_package_data_file_patterns_are_tuples(self):
         """
         Check that all file patterns are tuples, as if they are
@@ -224,3 +235,20 @@ class TestModels(PackageTester):
             for package_uid in for_packages:
                 normalized_package_uid = purl_with_fake_uuid(package_uid)
                 assert normalized_package_uid == test_package_uid
+
+    def test_create_package_not_handled_by_packagedcode(self):
+        extracted_license_statement = [
+            'gpl',
+            'GNU General Public License version 2.0 (GPLv2)',
+        ]
+        package = PackageData(
+            type='sourceforge',
+            name='openstunts',
+            copyright='Copyright (c) openstunts project',
+            extracted_license_statement=extracted_license_statement,
+        )
+        # Test generated fields
+        assert package.purl == 'pkg:sourceforge/openstunts'
+        assert package.holder == 'openstunts project'
+        assert package.declared_license_expression == 'gpl-1.0-plus AND gpl-2.0'
+        assert package.declared_license_expression_spdx == 'GPL-1.0-or-later AND GPL-2.0-only'

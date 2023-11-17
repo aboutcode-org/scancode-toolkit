@@ -21,14 +21,12 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "unknown-license-reference AND isc",
   "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference AND ISC",
   "license_detections": [
     {
       "license_expression": "unknown-license-reference AND isc",
-      "detection_log": [
-        "unknown-match"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +37,12 @@
           "matcher": "1-spdx-id",
           "license_expression": "unknown-license-reference AND isc",
           "rule_identifier": "spdx-license-identifier-unknown-license-reference AND isc-931c1a1fdf45228cefb05b09f05449a73fc24287",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "licenseref-scancode-unknown-license-reference AND isc"
         }
-      ]
+      ],
+      "identifier": "unknown_license_reference_and_isc-237b1876-104e-30cf-c47f-fcf46ac41130"
     }
   ],
   "other_license_expression": null,

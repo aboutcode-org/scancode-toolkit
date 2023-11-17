@@ -35,14 +35,12 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/gionkunz/chartist-js.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "(mit OR wtfpl-2.0) AND wtfpl-2.0 AND mit",
     "declared_license_expression_spdx": "(MIT OR WTFPL) AND WTFPL AND MIT",
     "license_detections": [
       {
         "license_expression": "mit OR wtfpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -53,16 +51,15 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit OR wtfpl-2.0",
             "rule_identifier": "spdx-license-identifier-mit OR wtfpl-2.0-a3a16f7e12d6ecec29951dd1a41d0d4dbd91e112",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT OR WTFPL"
           }
-        ]
+        ],
+        "identifier": "mit_or_wtfpl_2_0-35db8598-e6f1-f9c5-6a74-5ccca257c5e7"
       },
       {
         "license_expression": "wtfpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 50.0,
@@ -73,16 +70,15 @@
             "matcher": "1-hash",
             "license_expression": "wtfpl-2.0",
             "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+            "rule_relevance": 50,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
             "matched_text": "WTFPL"
           }
-        ]
+        ],
+        "identifier": "wtfpl_2_0-830d3dd8-9412-f474-ee4c-06156f50d2c9"
       },
       {
         "license_expression": "wtfpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -93,16 +89,15 @@
             "matcher": "2-aho",
             "license_expression": "wtfpl-2.0",
             "rule_identifier": "wtfpl-2.0_33.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_33.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL"
           }
-        ]
+        ],
+        "identifier": "wtfpl_2_0-6bb91b8f-711e-123e-f214-718d6541cd9d"
       },
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -113,16 +108,15 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       },
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -133,16 +127,18 @@
             "matcher": "2-aho",
             "license_expression": "mit",
             "rule_identifier": "mit_30.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT"
           }
-        ]
+        ],
+        "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
       }
     ],
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "['MIT OR WTFPL', {'type': 'WTFPL', 'url': 'https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL'}, {'type': 'MIT', 'url': 'https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT'}]",
+    "extracted_license_statement": "- MIT OR WTFPL\n- type: WTFPL\n  url: https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL\n- type: MIT\n  url: https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

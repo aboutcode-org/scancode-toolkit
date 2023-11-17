@@ -22,9 +22,7 @@ standard_notice: |
     INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR PURPOSE.
     See the Mulan PSL v1 for more details.
 ignorable_copyrights:
-    - Copyright (c) 2019 name
-ignorable_holders:
-    - name
+    - Copyright (c) 2019
 ignorable_urls:
     - http://license.coscl.org.cn/MulanPSL
 ---

@@ -1,0 +1,55 @@
+---
+key: aldor-public-2.0
+short_name: Aldor Public License 2.0
+name: Aldor Public License 2.0
+category: Proprietary Free
+owner: Aldor
+homepage_url: https://www.aldor.org/AldorPublicLicense2_0.html
+spdx_license_key: LicenseRef-scancode-aldor-public-2.0
+---
+
+Aldor Public License 2.0
+
+This Aldor distribution contains software and documentation, some in source
+form only, other in source and binary form.  Redistribution and use in source
+and binary forms, with or without modification, are permitted provided
+that the following conditions are met:
+
+* Redistributions of source code must retain the original copyright notice,
+  this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the original copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* Neither the name of the Aldor Software Organization, Aldor.org
+  nor the names of its contributors may be used to endorse or promote products
+  derived from this software without specific prior written permission.
+
+* If you distribute a modified form of either source or binary code 
+  (a) you must make the source form of these modification available to the
+      Aldor Software Organization
+  (b) you grant the Aldor Software Organization a royalty-free license to use,
+      modify or redistribute your modifications without limitation, and
+  (c) you represent that you are legally entitled to grant these rights 
+      and that you are not providing the Aldor Software Organization with 
+      any code that violates any law or breaches any contract.
+
+* Your redistribution and use is on a non-commercial basis, meaning that no
+  payment is made in connection with it, whether directly (as in payment
+  for a copy of the software) or indirectly (as in payment for some
+  service related to the software, or payment for some product or
+  service that includes a copy of the software "without charge").
+
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

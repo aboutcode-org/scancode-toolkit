@@ -1,0 +1,14 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - http://www.antlr.org/license.html
+---
+
+<licenses>
+    <license>
+        <name>{{The BSD License}}</name>
+        <url>http://www.antlr.org/license.html</url>
+        <distribution>repo</distribution>
+    </license>
+</licenses>

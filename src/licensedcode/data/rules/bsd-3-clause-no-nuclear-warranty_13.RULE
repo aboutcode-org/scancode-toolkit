@@ -1,0 +1,9 @@
+---
+license_expression: bsd-3-clause-no-nuclear-warranty
+is_license_tag: yes
+referenced_filenames:
+    - LICENSE.txt
+---
+
+name: {{BSD 3-clause License w/nuclear disclaimer}}
+url: LICENSE.txt

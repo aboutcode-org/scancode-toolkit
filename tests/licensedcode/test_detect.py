@@ -1052,16 +1052,17 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         assert results == expected
 
     def test_match_has_correct_line_positions_in_automake_perl_file(self):
-        # reported as https://github.com/nexB/scancode-toolkit/issues/88
-        # note that this test is very sensitive to changes in the licenses data
-        # set on purpose. Adding new license and/or frequent tokens will likely make it fail
-        # In this case review the new not-frequent tokens that could be involved.
-        # eventually update the rule-side Span offset if this looks acceptable
+        # Reported as https://github.com/nexB/scancode-toolkit/issues/88
+        # Note that this test is very sensitive to changes in the licenses data
+        # set on purpose. Adding new license and/or frequent tokens will likely
+        # make it fail In this case, review the new not-frequent tokens that
+        # could be involved, eventually update the rule-side Span offset if this
+        # looks acceptable below. Most cases just need to fix the test.
         expected = [
             # detected, match.lines(), match.qspan,
             ('gpl-2.0-plus', (12, 25), Span(48, 157)),
             ('fsf-unlimited-no-warranty', (231, 238), Span(964, 1027)),
-            ('free-unknown', (306, 307), Span(1334, 1356)),
+            ('free-unknown', (306, 307), Span(1335, 1357)),
         ]
         self.check_position('positions/automake.pl', expected)
 

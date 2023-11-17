@@ -1,0 +1,14 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - LICENSE
+    - PATENTS
+---
+
+${prefix} Use of this source code is governed by a BSD-style license${suffix}
+${prefix} that can be found in the LICENSE file in the root of the source${suffix}
+${prefix} tree. An additional intellectual property rights grant can be found${suffix}
+${prefix} in the file PATENTS.  All contributing project authors may${suffix}
+${prefix} be found in the AUTHORS file in the root of the source tree.${suffix}

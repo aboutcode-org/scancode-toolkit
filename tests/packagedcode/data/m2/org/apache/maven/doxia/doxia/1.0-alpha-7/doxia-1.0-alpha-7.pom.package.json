@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jason@maven.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Brett Porter",
       "email": "brett@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Emmanuel Venisse",
       "email": "emmanuel@venisse.net",
       "url": null
@@ -43,6 +43,7 @@
   "code_view_url": "http://svn.apache.org/viewcvs.cgi/maven/doxia/tags/doxia-1.0-alpha-7",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/maven/doxia/tags/doxia-1.0-alpha-7",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

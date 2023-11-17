@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2007-2010 by Baptiste Lepilleur and The JsonCpp Authors
+holders:
+  - Baptiste Lepilleur and The JsonCpp Authors
+holders_summary:
+  - value: Baptiste Lepilleur and The JsonCpp Authors
+    count: 1

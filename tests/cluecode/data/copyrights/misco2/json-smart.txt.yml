@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright 2011 JSON-SMART authors
+holders:
+  - JSON-SMART authors
+holders_summary:
+  - value: JSON-SMART authors
+    count: 1

@@ -1,0 +1,8 @@
+---
+license_expression: gpl-2.0-plus
+is_license_tag: yes
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+---
+
+@license      https://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License v2.0 or later

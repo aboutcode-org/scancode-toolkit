@@ -42,14 +42,12 @@
     "code_view_url": "https://github.com/certifi/python-certifi",
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mpl-2.0",
     "declared_license_expression_spdx": "MPL-2.0",
     "license_detections": [
       {
         "license_expression": "mpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 50.0,
@@ -60,16 +58,15 @@
             "matcher": "1-hash",
             "license_expression": "mpl-2.0",
             "rule_identifier": "spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
+            "rule_relevance": 50,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
             "matched_text": "MPL-2.0"
           }
-        ]
+        ],
+        "identifier": "mpl_2_0-159c4a7a-362a-76f0-7d8e-d20aa1923af3"
       },
       {
         "license_expression": "mpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -80,16 +77,18 @@
             "matcher": "1-hash",
             "license_expression": "mpl-2.0",
             "rule_identifier": "pypi_mozilla_public_license_2_0.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mozilla_public_license_2_0.RULE",
-            "matched_text": "['License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)']"
+            "matched_text": "- 'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)'"
           }
-        ]
+        ],
+        "identifier": "mpl_2_0-6c71f7a0-534a-b6f3-2bd5-7d6422217e0a"
       }
     ],
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'license': 'MPL-2.0', 'classifiers': ['License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)']}",
+    "extracted_license_statement": "license: MPL-2.0\nclassifiers:\n  - 'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)'\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

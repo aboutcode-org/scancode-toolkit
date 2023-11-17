@@ -21,23 +21,37 @@ project = "ScanCode-Toolkit"
 copyright = "nexB Inc. and others."
 author = "AboutCode.org authors and contributors"
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-'sphinx.ext.intersphinx',
+    "sphinx.ext.intersphinx",
+    "sphinx_reredirects",
+    'sphinx_rtd_theme',
+    "sphinx_rtd_dark_mode",
+    "sphinx.ext.extlinks",
+    "sphinx_copybutton",
 ]
+
+default_dark_mode = False
+
+# Redirects for olds pages
+# See https://documatt.gitlab.io/sphinx-reredirects/usage.html
+redirects = {
+    "explanations/index.html": "../reference/index.html",
+    "explanations/overview.html": "../reference/overview.html",
+    "explanations/license-detection-reference.html": "../reference/license-detection-reference.html"
+}
 
 # This points to aboutcode.readthedocs.io
 # In case of "undefined label" ERRORS check docs on intersphinx to troubleshoot
 # Link was created at commit - https://github.com/nexB/aboutcode/commit/faea9fcf3248f8f198844fe34d43833224ac4a83
 
 intersphinx_mapping = {
-    'aboutcode': ('https://aboutcode.readthedocs.io/en/latest/', None),
-    'scancode-workbench': ('https://scancode-workbench.readthedocs.io/en/develop/', None),
+    "aboutcode": ("https://aboutcode.readthedocs.io/en/latest/", None),
+    "scancode-workbench": ("https://scancode-workbench.readthedocs.io/en/latest/", None),
 }
 
 
@@ -62,7 +76,7 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-master_doc = 'index'
+master_doc = "index"
 
 html_context = {
     "display_github": True,
@@ -72,9 +86,7 @@ html_context = {
     "conf_py_path": "/docs/source/",  # path in the checkout to the docs root
 }
 
-html_css_files = [
-    '_static/theme_overrides.css'
-    ]
+html_css_files = ["_static/theme_overrides.css"]
 
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
@@ -97,3 +109,9 @@ rst_prolog = """
 .. role:: img-title-para
 
 """
+
+# -- Options for LaTeX output -------------------------------------------------
+
+latex_elements = {
+    'classoptions': ',openany,oneside'
+}

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - opyright 2014 Baidu Inc.
+holders:
+  - Baidu Inc.
+holders_summary:
+  - value: Baidu Inc.
+    count: 1

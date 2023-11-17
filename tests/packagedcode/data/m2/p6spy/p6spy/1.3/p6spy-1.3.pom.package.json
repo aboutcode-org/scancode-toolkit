@@ -11,35 +11,35 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Alan Arvesen",
       "email": "aarvesen@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Bradley Johnson",
       "email": "bradleydot@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Frank Quatro",
       "email": "cheechq@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jeff Goke",
       "email": "jeffgoke@users.sourceforge.net",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "thinknot",
       "email": "thinknot@users.sourceforge.net",
       "url": null
@@ -57,14 +57,12 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/p6spy",
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/p6spy:p6spy",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-1.1",
   "declared_license_expression_spdx": "Apache-1.1",
   "license_detections": [
     {
       "license_expression": "apache-1.1",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -72,39 +70,34 @@
           "end_line": 1,
           "matched_length": 7,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "apache-1.1",
           "rule_identifier": "apache-1.1_66.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_66.RULE",
-          "matched_text": "The P6Spy Software License, Version 1.1"
-        }
-      ]
-    },
-    {
-      "license_expression": "apache-1.1",
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
+          "matched_text": "- name: The P6Spy Software License, Version 1.1"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 13,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "apache-1.1",
           "rule_identifier": "apache-1.1_64.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_64.RULE",
-          "matched_text": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD"
+          "matched_text": "  url: http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD"
         }
-      ]
+      ],
+      "identifier": "apache_1_1-899582d7-4b15-83f9-6aca-75519b44b4b4"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'The P6Spy Software License, Version 1.1', 'url': 'http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD', 'comments': None, 'distribution': None}]",
+  "extracted_license_statement": "- name: The P6Spy Software License, Version 1.1\n  url: http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/p6spy/p6spy@1.3?classifier=sources"

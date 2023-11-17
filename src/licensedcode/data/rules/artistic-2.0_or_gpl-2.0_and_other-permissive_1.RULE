@@ -1,0 +1,13 @@
+---
+license_expression: (artistic-2.0 OR gpl-2.0) AND other-permissive
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 90
+referenced_filenames:
+    - COPYRIGHT
+notes: https://metacpan.org/pod/String::Approx
+---
+
+This library is free software; you can redistribute it and/or modify under either the terms of the Artistic License 2.0, or the GNU Library General Public License, Version 2. See the files Artistic and LGPL for more details.
+
+Furthermore: no warranties or obligations of any kind are given, and the separate file COPYRIGHT must be included intact in all copies and derived materials.

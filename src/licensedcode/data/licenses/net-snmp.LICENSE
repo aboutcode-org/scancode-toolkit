@@ -15,7 +15,7 @@ ignorable_copyrights:
     - Copyright (c) 2003-2006, Sparta, Inc
     - Copyright (c) 2004, Cisco, Inc and Information Network Center of Beijing University of
         Posts and Telecommunications
-    - Copyright (c) Fabasoft R&D Software GmbH & Co
+    - Copyright (c) Fabasoft R&D Software GmbH & Co KG, 2003 oss@fabasoft.com
     - Copyright 1989, 1991, 1992 by Carnegie Mellon University
     - Copyright 1996, 1998-2000 The Regents of the University of California
     - copyright (c) 2001-2003, Cambridge Broadband Ltd.
@@ -23,7 +23,7 @@ ignorable_holders:
     - Cambridge Broadband Ltd.
     - Carnegie Mellon University
     - Cisco, Inc and Information Network Center of Beijing University of Posts and Telecommunications
-    - Fabasoft R&D Software GmbH & Co
+    - Fabasoft R&D Software GmbH & Co KG
     - Networks Associates Technology, Inc
     - Sparta, Inc
     - Sun Microsystems, Inc., 4150 Network Circle, Santa Clara, California 95054, U.S.A.

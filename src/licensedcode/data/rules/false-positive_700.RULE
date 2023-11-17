@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in liferay-portal
+---
+
+2Corrupt license file. License was not registered:

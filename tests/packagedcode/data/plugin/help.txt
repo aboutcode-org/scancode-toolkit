@@ -1,11 +1,4 @@
 --------------------------------------------
-Package type:  None
-  datasource_id:     java_jar
-  documentation URL: https://en.wikipedia.org/wiki/JAR_(file_format)
-  primary language:  None
-  description:       JAR Java Archive
-  path_patterns:    '*.jar'
---------------------------------------------
 Package type:  about
   datasource_id:     about_file
   documentation URL: https://aboutcode-toolkit.readthedocs.io/en/latest/specification.html
@@ -323,9 +316,9 @@ Package type:  deb
 --------------------------------------------
 Package type:  dmg
   datasource_id:     apple_dmg
-  documentation URL: 
+  documentation URL: https://en.wikipedia.org/wiki/Apple_Disk_Image
   primary language:  None
-  description:       
+  description:       macOS disk image file
   path_patterns:    '*.dmg', '*.sparseimage'
 --------------------------------------------
 Package type:  ear
@@ -469,6 +462,13 @@ Package type:  ivy
   path_patterns:    '*/ivy.xml'
 --------------------------------------------
 Package type:  jar
+  datasource_id:     java_jar
+  documentation URL: https://en.wikipedia.org/wiki/JAR_(file_format)
+  primary language:  None
+  description:       JAR Java Archive
+  path_patterns:    '*.jar'
+--------------------------------------------
+Package type:  jar
   datasource_id:     java_jar_manifest
   documentation URL: https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html
   primary language:  Java
@@ -601,6 +601,13 @@ Package type:  opam
   description:       Ocaml Opam file
   path_patterns:    '*opam'
 --------------------------------------------
+Package type:  osgi
+  datasource_id:     java_osgi_manifest
+  documentation URL: https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html
+  primary language:  Java
+  description:       Java OSGi MANIFEST.MF
+  path_patterns:    
+--------------------------------------------
 Package type:  pubspec
   datasource_id:     pubspec_lock
   documentation URL: https://web.archive.org/web/20220330081004/https://gpalma.pt/blog/what-is-the-pubspec-lock/
@@ -708,9 +715,9 @@ Package type:  pypi
 --------------------------------------------
 Package type:  readme
   datasource_id:     readme
-  documentation URL: None
+  documentation URL: 
   primary language:  None
-  description:       None
+  description:       
   path_patterns:    '*/README.android', '*/README.chromium', '*/README.facebook', '*/README.google', '*/README.thirdparty'
 --------------------------------------------
 Package type:  rpm
@@ -739,7 +746,7 @@ Package type:  rpm
   documentation URL: https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb
   primary language:  None
   description:       RPM installed package SQLite database
-  path_patterns:    '*var/lib/rpm/rpmdb.sqlite'
+  path_patterns:    '*rpm/rpmdb.sqlite'
 --------------------------------------------
 Package type:  rpm
   datasource_id:     rpm_spefile

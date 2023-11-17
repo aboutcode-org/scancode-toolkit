@@ -1,0 +1,14 @@
+---
+license_expression: cc0-1.0
+is_license_tag: yes
+ignorable_urls:
+    - https://creativecommons.org/publicdomain/zero/1.0/
+---
+
+<licenses>
+    <license>
+      <name>{{CC0 1.0 Universal}}</name>
+      <url>https://creativecommons.org/publicdomain/zero/1.0/</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

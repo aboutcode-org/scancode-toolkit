@@ -1,0 +1,9 @@
+---
+license_expression: unknown-license-reference
+is_license_reference: yes
+referenced_filenames:
+    - doc/license.html
+---
+
+Please visit doc/license.html for the complete license information
+including third party licenses and trademarks.

@@ -32,6 +32,13 @@ class TestPyPiEndtoEnd(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_pypi_end_to_end_full_with_license(self):
+        test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-with-license-expected.json')
+        run_scan_click(['--package', '--license', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_package_scan_pypi_setup_py_end_to_end(self):
         test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/setup.py')
         result_file = self.get_temp_file('json')
@@ -537,6 +544,16 @@ class TestPyPiSetupPyNotWin(PackageTester):
         test_file = self.get_test_loc('pypi/setup.py-not-win/arpy_setup.py')
         package = pypi.PythonSetupPyHandler.parse(test_file)
         expected_loc = self.get_test_loc('pypi/setup.py-not-win/arpy_setup.py-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
+class TestPyPiSetupCfg(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_parse_setup_cfg(self):
+        test_file = self.get_test_loc('pypi/setup.cfg/wheel-0.34.2/setup.cfg')
+        package = pypi.SetupCfgHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.cfg/wheel-0.34.2/setup.cfg-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 

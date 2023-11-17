@@ -1,0 +1,179 @@
+{
+    "packages": [
+      {
+        "type": "npm",
+        "namespace": null,
+        "name": "cookie-signature",
+        "version": "1.0.3",
+        "qualifiers": {},
+        "subpath": null,
+        "primary_language": "JavaScript",
+        "description": "Sign and unsign cookies",
+        "release_date": null,
+        "parties": [
+          {
+            "type": "person",
+            "role": "author",
+            "name": "TJ Holowaychuk",
+            "email": "tj@learnboost.com",
+            "url": null
+          }
+        ],
+        "keywords": [
+          "cookie",
+          "sign",
+          "unsign"
+        ],
+        "homepage_url": null,
+        "download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
+        "code_view_url": null,
+        "vcs_url": "git+https://github.com/visionmedia/node-cookie-signature.git",
+        "copyright": null,
+        "holder": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "other_license_expression": null,
+        "other_license_expression_spdx": null,
+        "other_license_detections": [],
+        "extracted_license_statement": null,
+        "notice_text": null,
+        "source_packages": [],
+        "extra_data": {},
+        "repository_homepage_url": "https://www.npmjs.com/package/cookie-signature",
+        "repository_download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
+        "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3",
+        "package_uid": "pkg:npm/cookie-signature@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "datafile_paths": [
+          "package.json"
+        ],
+        "datasource_ids": [
+          "npm_package_json"
+        ],
+        "purl": "pkg:npm/cookie-signature@1.0.3"
+      }
+    ],
+    "dependencies": [
+      {
+        "purl": "pkg:npm/mocha",
+        "extracted_requirement": "*",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {},
+        "dependency_uid": "pkg:npm/mocha?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "for_package_uid": "pkg:npm/cookie-signature@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "datafile_path": "package.json",
+        "datasource_id": "npm_package_json"
+      },
+      {
+        "purl": "pkg:npm/should",
+        "extracted_requirement": "*",
+        "scope": "devDependencies",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {},
+        "dependency_uid": "pkg:npm/should?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "for_package_uid": "pkg:npm/cookie-signature@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "datafile_path": "package.json",
+        "datasource_id": "npm_package_json"
+      }
+    ],
+    "files": [
+      {
+        "path": "package.json",
+        "type": "file",
+        "package_data": [
+          {
+            "type": "npm",
+            "namespace": null,
+            "name": "cookie-signature",
+            "version": "1.0.3",
+            "qualifiers": {},
+            "subpath": null,
+            "primary_language": "JavaScript",
+            "description": "Sign and unsign cookies",
+            "release_date": null,
+            "parties": [
+              {
+                "type": "person",
+                "role": "author",
+                "name": "TJ Holowaychuk",
+                "email": "tj@learnboost.com",
+                "url": null
+              }
+            ],
+            "keywords": [
+              "cookie",
+              "sign",
+              "unsign"
+            ],
+            "homepage_url": null,
+            "download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
+            "size": null,
+            "sha1": null,
+            "md5": null,
+            "sha256": null,
+            "sha512": null,
+            "bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
+            "code_view_url": null,
+            "vcs_url": "git+https://github.com/visionmedia/node-cookie-signature.git",
+            "copyright": null,
+            "holder": null,
+            "declared_license_expression": null,
+            "declared_license_expression_spdx": null,
+            "license_detections": [],
+            "other_license_expression": null,
+            "other_license_expression_spdx": null,
+            "other_license_detections": [],
+            "extracted_license_statement": null,
+            "notice_text": null,
+            "source_packages": [],
+            "file_references": [],
+            "extra_data": {},
+            "dependencies": [
+              {
+                "purl": "pkg:npm/mocha",
+                "extracted_requirement": "*",
+                "scope": "devDependencies",
+                "is_runtime": false,
+                "is_optional": true,
+                "is_resolved": false,
+                "resolved_package": {},
+                "extra_data": {}
+              },
+              {
+                "purl": "pkg:npm/should",
+                "extracted_requirement": "*",
+                "scope": "devDependencies",
+                "is_runtime": false,
+                "is_optional": true,
+                "is_resolved": false,
+                "resolved_package": {},
+                "extra_data": {}
+              }
+            ],
+            "repository_homepage_url": "https://www.npmjs.com/package/cookie-signature",
+            "repository_download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
+            "api_data_url": "https://registry.npmjs.org/cookie-signature/1.0.3",
+            "datasource_id": "npm_package_json",
+            "purl": "pkg:npm/cookie-signature@1.0.3"
+          }
+        ],
+        "for_packages": [
+          "pkg:npm/cookie-signature@1.0.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+        ],
+        "scan_errors": []
+      }
+    ]
+  }

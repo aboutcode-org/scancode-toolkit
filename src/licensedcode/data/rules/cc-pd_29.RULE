@@ -1,0 +1,14 @@
+---
+license_expression: cc-pd
+is_license_tag: yes
+ignorable_urls:
+    - http://creativecommons.org/licenses/publicdomain
+---
+
+<licenses>
+    <license>
+        <name>Public Domain</name>
+        <url>http://creativecommons.org/licenses/publicdomain</url>
+        <distribution>repo</distribution>
+    </license>
+</licenses>

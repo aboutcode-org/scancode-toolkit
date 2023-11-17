@@ -1,0 +1,10 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.chromium
+---
+
+Chromium is licensed under a BSD-style license.  See LICENSE.chromium for
+details.

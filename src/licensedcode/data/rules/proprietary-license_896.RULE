@@ -1,0 +1,60 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/ckorzen/pdf-text-extraction-benchmark/blob/47b456f7c5c445b5087200d2ce4051647a9cbbf6/benchmark-generator/tex-paragraph-parser/src/main/resources/texmf/tex/latex/multicol/readme.mz#L61
+---
+
+The distributions mentioned above are distributed as packages each
+including a second README file, for example `readme.mz1', that lists
+all files included in the package.
+
+Please do not request updates from us.  Distribution is done only
+through Mail-Servers and TeX organisations. 
+
+
+Distribution of unchanged versions:
+  
+  You are NOT ALLOWED to take money for the distribution or use of
+  these files except for a nominal charge for copying etc.
+
+  Redistribution of unchanged files is allowed provided that all files
+  listed in the corresponding package README file are distributed
+  including this readme file.
+
+  If you receive only some of these files from someone, complain!
+  
+  However, if these files are distributed by established suppliers as
+  part of a complete TeX distribution, and the structure of the
+  distribution would make it difficult to distribute the whole set of
+  files, *those parties* are allowed to distribute only some of the
+  files provided that it is made clear that the user will get a
+  complete distribution-set upon request to that supplier (not me).
+
+  Notice that this permission is not granted to the end user.
+
+
+Generation and distribution of changed versions:
+
+  The generation of changed versions of the files inluded in the
+  packages is allowed under the following restrictions:
+
+  - You rename the file before you make any changes to it.  
+
+  - You acknowledge the origin of the changed version in the file and
+    keep the information that it (or a changed version) has to be
+    distributed under the restrictions mentioned in this file.
+
+
+  The distribution of changed versions of the files inluded in the
+  packages is allowed under the following restrictions:
+
+  - You provide the user with information how to obtain the original
+    package or, even better, distribute it with your files.
+
+  - You make sure that the changed versions contain a notice that
+    prevents that others to take money for distribution or use of your
+    files, i.e. they have to be distributed under the restrictions
+    mentioned in this file.
+
+  - You inform us that you created a changed version of the files.
+    This is only necessary if you want to distribute it to others.

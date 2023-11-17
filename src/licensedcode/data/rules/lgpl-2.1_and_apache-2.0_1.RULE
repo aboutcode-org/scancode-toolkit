@@ -1,0 +1,9 @@
+---
+license_expression: lgpl-2.1 AND apache-2.0
+is_license_notice: yes
+is_continuous: yes
+relevance: 100
+notes: this wording is specific to Hibernate and is not a choice.
+---
+
+{{projects are licensed under either the LGPL 2.1 or the ASL 2.0}}

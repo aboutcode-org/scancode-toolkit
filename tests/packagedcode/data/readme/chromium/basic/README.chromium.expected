@@ -22,14 +22,12 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "apache-2.0",
     "declared_license_expression_spdx": "Apache-2.0",
     "license_detections": [
       {
         "license_expression": "apache-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 90.0,
@@ -40,10 +38,12 @@
             "matcher": "1-hash",
             "license_expression": "apache-2.0",
             "rule_identifier": "apache-2.0_161.RULE",
+            "rule_relevance": 90,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_161.RULE",
             "matched_text": "license Apache"
           }
-        ]
+        ],
+        "identifier": "apache_2_0-48df238f-acc9-ed4d-d26e-4907d613e57a"
       }
     ],
     "other_license_expression": null,

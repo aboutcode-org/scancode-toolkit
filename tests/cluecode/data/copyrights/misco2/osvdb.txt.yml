@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - copyrighted by the Open Source Vulnerability Database (http://osvdb.org)
+holders:
+  - the Open Source Vulnerability Database
+holders_summary:
+  - value: the Open Source Vulnerability Database
+    count: 1

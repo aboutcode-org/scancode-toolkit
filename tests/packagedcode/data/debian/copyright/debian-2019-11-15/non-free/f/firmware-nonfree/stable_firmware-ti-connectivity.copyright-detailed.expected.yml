@@ -6,8 +6,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 9
@@ -17,6 +15,7 @@ license_detections:
         matcher: 1-hash
         license_expression: proprietary-license
         rule_identifier: proprietary-license_556.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_556.RULE
         matched_text: "All rights reserved not granted herein.\n\nLimited License.\n\nTexas\
           \ Instruments Incorporated grants a world-wide, royalty-free, non-exclusive\nlicense\
@@ -53,5 +52,6 @@ license_detections:
           \ CAUSED AND ON ANY THEORY OF\nLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR\
           \ TORT (INCLUDING NEGLIGENCE\nOR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\
           \ SOFTWARE, EVEN IF\nADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    identifier: proprietary_license-644866ae-f272-7921-a445-8730390753e0
 other_license_detections: []
 copyright: 2000-2016, Texas Instruments Incorporated

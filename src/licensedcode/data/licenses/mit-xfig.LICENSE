@@ -11,9 +11,13 @@ notes: |
     previous version. The previous notice allowed the *selling* of xfig or any
     code in xfig. This is not allowed now, unless xfig is simply included in a
     collection of programs (e.g. on a CD) that you are selling.
-spdx_license_key: LicenseRef-scancode-mit-xfig
+spdx_license_key: Xfig
+other_spdx_license_keys: 
+    - LicenseRef-scancode-mit-xfig
 other_urls:
     - https://fedoraproject.org/wiki/Licensing:MIT?rd=Licensing/MIT#Xfig
+    - https://github.com/Distrotech/transfig/blob/master/transfig/transfig.c
+    - https://sourceforge.net/p/mcj/xfig/ci/master/tree/src/Makefile.am
 ---
 
 Any party obtaining a copy of these files is granted, free of charge, a

@@ -6,6 +6,10 @@ category: Commercial
 owner: RAR
 homepage_url: http://www.win-rar.com/
 spdx_license_key: LicenseRef-scancode-rar-winrar-eula
+ignorable_copyrights:
+    - copyrighted by third parties
+ignorable_holders:
+    - third parties
 ---
 
 RAR and WinRAR END USER LICENSE AGREEMENT (EULA)

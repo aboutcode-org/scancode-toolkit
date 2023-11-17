@@ -1,0 +1,38 @@
+---
+key: qskinny-exception-lgpl-2.1
+short_name: QSkinny Exception to LGPL 2.1
+name: QSkinny Exception to LGPL 2.1
+category: Copyleft Limited
+owner: Uwe Rathmann
+homepage_url: https://raw.githubusercontent.com/uwerat/qskinny/f49d99ac3ca3598a3f282c57389465321af004ff/COPYING
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-qskinny-exception-lgpl-2.1
+text_urls:
+    - https://github.com/slint-ui/slint/blob/master/LICENSES/LicenseRef-qskinny.txt
+other_urls:
+    - https://github.com/uwerat/qskinny/commit/9e583166ff10b669129f87f5c579f5ce30bfca4a#diff-400d38e5cfee181230373a8b02d38f50271a5bf62c62410382efddb8e8b19e22
+ignorable_copyrights:
+    - Copyright (c) 2016 Uwe Rathmann
+ignorable_holders:
+    - Uwe Rathmann
+---
+
+QSkinny License
+Version 1.0, November 1, 2016
+
+QSkinny is Copyright (C) 2016 Uwe Rathmann
+
+You may use, distribute and copy QSkinny under the terms of
+GNU Lesser General Public License version 2.1, which is displayed below
+with the following exceptions:
+
+    1. The object code form of a "work that uses the Library" may incorporate
+       material from a header file that is part of the Library.  You may
+       distribute such object code under terms of your choice, provided that:
+
+        (i)   the header files of the Library have not been modified; and
+        (ii)  the incorporated material is limited to numerical parameters, data
+              structure layouts, accessors, macros, inline functions and
+              templates; and
+        (iii) you comply with the terms of Section 6 of the GNU Lesser General
+              Public License version 2.1.

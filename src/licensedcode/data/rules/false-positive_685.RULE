@@ -1,0 +1,52 @@
+---
+is_false_positive: yes
+notes: Seen at repo1.maven.org/maven2/com/helger/ph-commons/6.2.4/ph-commons-6.2.4-sources.jar/com/helger/commons/thirdparty/ELicense.java
+---
+
+/**
+ * Represents a bunch of Open Source licenses regularly used.
+ *
+ * @author Philip Helger
+ */
+public enum ELicense implements ILicense
+
+  // Apache
+  APACHE1 ("apache1", "Apache License", new Version (1, 0), "http://www.apache.org/licenses/LICENSE-1.0.txt"),
+  APACHE2 ("apache2", "Apache License", new Version (2, 0), "http://www.apache.org/licenses/LICENSE-2.0.txt"),
+  // Mozilla
+  MPL10 ("mpl10", "Mozilla Public License", new Version (1, 0), "http://www.mozilla.org/MPL/1.0/"),
+  MPL11 ("mpl11", "Mozilla Public License", new Version (1, 1), "http://www.mozilla.org/MPL/1.1/"),
+  MPL20 ("mpl20", "Mozilla Public License Version 2.0", new Version (2, 0), "http://www.mozilla.org/MPL/2.0/"),
+  // BSD/MIT
+  // BSD 2-Clause "Simplified" or "FreeBSD" license
+  BSD ("bsd", "BSD 2-Clause License", null, "http://opensource.org/licenses/BSD-2-Clause"),
+  // BSD 3-Clause "New" or "Revised" license
+  BSD3 ("bsd3", "BSD 3-Clause License", null, "http://opensource.org/licenses/BSD-3-Clause"),
+  MIT ("mit", "MIT License", null, "http://opensource.org/licenses/MIT"),
+  // GNU General Public License (GPL)
+  GPL10 ("gpl10", "GNU General Public License", new Version (1, 0), "http://www.gnu.org/licenses/gpl-1.0"),
+  GPL20 ("gpl20", "GNU General Public License", new Version (2, 0), "http://www.gnu.org/licenses/gpl-2.0"),
+  GPL30 ("gpl30", "GNU General Public License", new Version (3, 0), "http://www.gnu.org/licenses/gpl-3.0"),
+  // GNU Lesser General Public License (LGPL)
+  LGPL20 ("lgpl20", "GNU Library General Public License", new Version (2, 0), "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html"),
+  LGPL21 ("lgpl21", "GNU Lesser General Public License", new Version (2, 1), "http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"),
+  LGPL30 ("lgpl30", "GNU Lesser General Public License", new Version (3, 0), "http://www.gnu.org/licenses/lgpl.html"),
+  // GNU Affero General Public License (AGPL)
+  AGPL30 ("agpl30", "GNU Affero General Public License", new Version (3, 0), "http://www.gnu.org/licenses/agpl-3.0"),
+  // GNU Free Documentation License (FDL)
+  FDL11 ("fdl11", "GNU Free Documentation License", new Version (1, 1), "http://www.gnu.org/licenses/fdl-1.1"),
+  FDL12 ("fdl12", "GNU Free Documentation License", new Version (1, 2), "http://www.gnu.org/licenses/fdl-1.2"),
+  FDL13 ("fdl13", "GNU Free Documentation License", new Version (1, 3), "http://www.gnu.org/licenses/fdl-1.3"),
+  // Eclipse Public License
+  EPL10 ("epl10", "Eclipse Public License", new Version (1, 0), "http://www.eclipse.org/legal/epl-v10.html"),
+  // EUPL
+  EUPL11 ("eupl11", "The European Union Public License", new Version (1, 1), "https://joinup.ec.europa.eu/software/page/eupl/licence-eupl"),
+  EUPL12 ("eupl12", "The European Union Public License", new Version (1, 2), "https://joinup.ec.europa.eu/software/page/eupl/licence-eupl"),
+  // Creative commons
+  CCBY10 ("ccby10", "Creative Commons Attributation", new Version (1, 0), "http://creativecommons.org/licenses/by/1.0/"),
+  CCBY20 ("ccby20", "Creative Commons Attributation", new Version (2, 0), "http://creativecommons.org/licenses/by/2.0/"),
+  CCBY25 ("ccby25", "Creative Commons Attributation", new Version (2, 5), "http://creativecommons.org/licenses/by/2.5/"),
+  CCBY30 ("ccby30", "Creative Commons Attributation", new Version (3, 0), "http://creativecommons.org/licenses/by/3.0/"),
+  CCBY40 ("ccby40", "Creative Commons Attributation", new Version (4, 0), "http://creativecommons.org/licenses/by/4.0/"),
+  // Public domain
+  PUBLIC_DOMAIN ("pd", "Public Domain", null, null);

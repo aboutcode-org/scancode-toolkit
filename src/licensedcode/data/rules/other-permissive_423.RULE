@@ -1,0 +1,24 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: Seen in https://web.archive.org/web/20030416150012/http://www.modp.com/cida/index.htm
+    and https://web.archive.org/web/20030206123445/http://www.modp.com/cida/code/source/com/modp/cida/Base64URLSafe.java
+ignorable_urls:
+    - http://www.mopd.com/
+    - http://www.wiley.com/compbooks/galbreath
+---
+
+* Orginally published in or based on works from the book
+ *      Cryptography for Internet and Database Applications
+ *      by Nick Galbreath
+ *      Wiley Publishing, 2002
+ *      ISBN 0-471-21029-3
+ * See http://www.mopd.com or http://www.wiley.com/compbooks/galbreath
+ * for details.
+ *
+ * This software is provided as-is, without express or implied
+ * warranty.  Permission to use, copy, modify, distribute or sell this
+ * software, without fee, for any purpose and by any individual or
+ * organization, is hereby granted, provided that the above copyright
+ * notice, the original publication information and this paragraph
+ * (i.e. this entire Java comment) appear in all copies.

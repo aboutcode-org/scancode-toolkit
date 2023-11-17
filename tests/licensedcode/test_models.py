@@ -88,6 +88,7 @@ class TestLicense(FileBasedTesting):
         errors, warnings, infos = models.License.validate(
             licenses=models.load_licenses(with_deprecated=False),
             verbose=False,
+            thorough=True,
         )
         assert errors == {}
         assert warnings == {}
@@ -185,6 +186,9 @@ class TestLicense(FileBasedTesting):
 class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
+    def test_validate_license_rules_data(self):
+        list(models.get_rules(validate=True, validate_thorough=True))
+
     def test_create_rule_ignore_punctuation(self):
         test_rule = create_rule_from_text_and_expression(text='A one. A two. A three.')
         expected = ['one', 'two', 'three']
@@ -212,31 +216,37 @@ class TestRule(FileBasedTesting):
         expected = self.get_test_loc('models/rules.expected.json')
         check_json(expected, results)
 
-    def test_rules_types_has_only_boolean_values(self):
+    def test_rules_have_only_one_flag_of_bool_type(self):
         rules = list(models.load_rules(rules_data_dir))
-        rule_consitency_errors = []
+        rule_errors = []
 
         for r in rules:
-            list_rule_types = [r.is_license_text, r.is_license_notice,
-                               r.is_license_tag, r.is_license_reference]
+            rule_flags = [
+                r.is_license_text,
+                r.is_license_notice,
+                r.is_license_reference,
+                r.is_license_tag,
+                r.is_license_intro,
+                r.is_license_clue,
+                r.is_false_positive,
+            ]
+            number_of_flags_set = 0
+            for rule_flag in rule_flags:
+                if not type(rule_flag) == bool:
+                    # invalid type
+                    rule_errors.append(r.rule_file)
+                    break
 
-            if any(type(rule_type) != bool for rule_type in list_rule_types):
-                rule_consitency_errors.append((r.data_file, r.text_file))
+                if rule_flag is True:
+                    number_of_flags_set += 1
+                elif rule_flag is False:
+                    continue
 
-        assert rule_consitency_errors == []
+                if number_of_flags_set not in (0, 1):
+                    rule_errors.append(r.rule_file)
+                    break
 
-    def test_rules_have_only_one_rule_type(self):
-        rules = list(models.load_rules(rules_data_dir))
-        rule_consitency_errors = []
-
-        for r in rules:
-            list_rule_types = [r.is_license_text, r.is_license_notice,
-                               r.is_license_tag, r.is_license_reference]
-
-            if sum(list_rule_types) > 1:
-                rule_consitency_errors.append(r.data_file)
-
-        assert rule_consitency_errors == []
+        assert rule_errors == []
 
     def test_dump_rules(self):
         test_dir = self.get_test_loc('models/rules', copy=True)
@@ -253,9 +263,11 @@ class TestRule(FileBasedTesting):
         test_dir = self.get_test_loc('models/rules', copy=True)
         test_dir_dump = self.get_test_loc('models/rule_file_dump')
         rules = list(models.load_rules(test_dir))
+        rules.sort(key=lambda x: x.identifier)
         rule_example = rules.pop()
         rule_example.dump(rules_data_dir=test_dir_dump)
         rule_from_dump = list(models.load_rules(test_dir_dump))
+        rule_from_dump.sort(key=lambda x: x.identifier)
         rule_example_from_dump = rule_from_dump.pop()
         # Note: one license is obsolete and not loaded. Other are various exception/version cases
         before_dump = as_sorted_mapping_seq(licenses=[rule_example], include_text=True)

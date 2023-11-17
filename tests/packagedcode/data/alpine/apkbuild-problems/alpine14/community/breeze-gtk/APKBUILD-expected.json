@@ -21,14 +21,12 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "lgpl-2.1",
   "declared_license_expression_spdx": "LGPL-2.1-only",
   "license_detections": [
     {
       "license_expression": "lgpl-2.1",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 50.0,
@@ -39,10 +37,12 @@
           "matcher": "1-hash",
           "license_expression": "lgpl-2.1",
           "rule_identifier": "spdx_license_id_lgpl-2.1-only_for_lgpl-2.1.RULE",
+          "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_lgpl-2.1-only_for_lgpl-2.1.RULE",
           "matched_text": "lgpl-2.1-only"
         }
-      ]
+      ],
+      "identifier": "lgpl_2_1-b963464a-b3f9-474d-8815-29359c9b9238"
     }
   ],
   "other_license_expression": null,

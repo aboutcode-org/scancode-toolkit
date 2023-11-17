@@ -1,43 +1,34 @@
 {
   "files": [
     {
-      "path": "errors/many_copyrights.c",
+      "path": "many_copyrights.c",
       "type": "file",
       "name": "many_copyrights.c",
       "base_name": "many_copyrights",
       "extension": ".c",
-      "size": 14056,
-      "sha1": "71551d028e1a732d23d8ddafd2fa3493456c5719",
-      "md5": "682cfd155c73a9129591b05a9eb95eca",
-      "mime_type": "text/plain",
-      "file_type": "UTF-8 Unicode text",
-      "programming_language": "C++",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
       "is_binary": false,
-      "is_text": true,
+      "is_text": false,
       "is_archive": false,
       "is_media": false,
-      "is_source": true,
+      "is_source": false,
       "is_script": false,
-      "copyrights": [
-        {
-          "copyright": "Copyright (c) 2000 ACME, Inc.",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
-      "holders": [
-        {
-          "holder": "ACME, Inc.",
-          "start_line": 1,
-          "end_line": 1
-        }
-      ],
+      "copyrights": [],
+      "holders": [],
       "authors": [],
       "emails": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
       "scan_errors": [
+        "ERROR: for scanner: info:\nERROR: Processing interrupted: timeout after 0 seconds.",
+        "ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.",
         "ERROR: for scanner: emails:\nERROR: Processing interrupted: timeout after 0 seconds."
       ]
     }

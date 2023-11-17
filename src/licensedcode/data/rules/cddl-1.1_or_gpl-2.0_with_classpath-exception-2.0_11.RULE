@@ -1,0 +1,13 @@
+---
+license_expression: cddl-1.1 OR gpl-2.0 WITH classpath-exception-2.0
+is_license_tag: yes
+---
+
+<licenses>
+    <license>
+        <name>CDDL + GPLv2 with classpath exception</name>
+        <url>://oss.oracle.com/licenses/CDDL+GPL-1.1</url>
+        <distribution>repo</distribution>
+        <comments>A business-friendly OSS license</comments>
+    </license>
+</licenses>

@@ -1,0 +1,10 @@
+---
+license_expression: lppl-1.3c
+is_license_notice: yes
+ignorable_urls:
+    - https://ctan.org/license/lppl1.3c
+---
+
+License:
+This material is subject to the LaTeX Project Public License 1.3c.
+https://ctan.org/license/lppl1.3c

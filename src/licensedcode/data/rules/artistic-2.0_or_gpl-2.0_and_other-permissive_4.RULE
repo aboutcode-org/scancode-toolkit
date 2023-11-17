@@ -1,0 +1,27 @@
+---
+license_expression: (artistic-2.0 OR gpl-2.0) AND other-permissive
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 90
+notes: See https://st.aticpan.org/source/JHI/String-Approx-3.26/apse.h Note also that there
+    may be conflitcing artistic license version in different files.
+---
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of either:
+
+a) the GNU Library General Public License as published by the Free
+   Software Foundation; either version 2, or (at your option) any
+   later version, or
+
+b) the "Artistic License" which comes with Perl source code.
+
+Other free software licensing schemes are negotiable.
+
+Furthermore:
+
+(1) This software is provided as-is, without warranties or
+    obligations of any kind.
+
+(2) You shall include this copyright notice intact in all copies
+    and derived materials.

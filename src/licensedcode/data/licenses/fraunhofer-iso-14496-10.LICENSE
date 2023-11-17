@@ -13,7 +13,7 @@ ignorable_holders:
     - ISO/IEC
     - International Telecommunications Union, Geneva
 ignorable_authors:
-    - Heiko Schwarz
+    - Heiko Schwarz Fraunhofer
 ignorable_urls:
     - http://www.itu.int/
 ---

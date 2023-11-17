@@ -1,0 +1,20 @@
+---
+key: hpnd-doc-sell
+short_name: Historical documentation sell variant
+name: Historical Permission Notice and Disclaimer - documentation sell variant
+category: Permissive
+owner: DEC - Digital Equipment Corporation
+notes: This is essentially x11-doc License with very minor changes.
+spdx_license_key: HPND-doc-sell
+other_urls:
+    - https://gitlab.freedesktop.org/xorg/lib/libxtst/-/blob/master/COPYING?ref_type=heads#L108-117
+    - https://gitlab.freedesktop.org/xorg/lib/libxext/-/blob/master/COPYING?ref_type=heads#L153-162
+---
+
+Permission to use, copy, modify, distribute, and sell this
+documentation for any purpose is hereby granted without fee,
+provided that the above copyright notice and this permission
+notice appear in all copies. <copyright holder>
+makes no representations about the suitability for any purpose
+of the information in this document. This documentation
+is provided "as is" without express or implied warranty.

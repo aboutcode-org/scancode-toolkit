@@ -1,0 +1,1481 @@
+{
+  "packages": [
+    {
+      "type": "cocoapods",
+      "namespace": null,
+      "name": "CoreMLPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_48.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "matched_text": "Apache License, Version 2.0"
+            }
+          ],
+          "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/CoreMLPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/CoreMLPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "cocoapods",
+      "namespace": null,
+      "name": "Amplify",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_48.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "matched_text": "Apache License, Version 2.0"
+            }
+          ],
+          "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/Amplify",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
+      "package_uid": "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/Amplify.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "cocoapods",
+      "namespace": null,
+      "name": "AmplifyPlugins",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_48.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "matched_text": "Apache License, Version 2.0"
+            }
+          ],
+          "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyPlugins",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
+      "package_uid": "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyPlugins.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "cocoapods",
+      "namespace": null,
+      "name": "AmplifyTestCommon",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Test resources used by different targets\nProvides different test resources and mock methods",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "hhttps://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_48.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "matched_text": "Apache License, Version 2.0"
+            }
+          ],
+          "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AmplifyTestCommon",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
+      "package_uid": "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AmplifyTestCommon.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "cocoapods",
+      "namespace": null,
+      "name": "AWSPluginsCore",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_48.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "matched_text": "Apache License, Version 2.0"
+            }
+          ],
+          "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPluginsCore",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
+      "package_uid": "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPluginsCore.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION"
+    },
+    {
+      "type": "cocoapods",
+      "namespace": null,
+      "name": "AWSPredictionsPlugin",
+      "version": "$AMPLIFY_VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Objective-C",
+      "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Amazon Web Services ",
+          "email": "amazonwebservices",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+      "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+      "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_48.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+              "matched_text": "Apache License, Version 2.0"
+            }
+          ],
+          "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Apache License, Version 2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://cocoapods.org/pods/AWSPredictionsPlugin",
+      "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+      "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
+      "package_uid": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "many-podspecs/AWSPredictionsPlugin.podspec"
+      ],
+      "datasource_ids": [
+        "cocoapods_podspec"
+      ],
+      "purl": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:cocoapods/AWSCore@2.27.0",
+      "extracted_requirement": "2.27.0",
+      "scope": "requires",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cocoapods/AWSCore@2.27.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "many-podspecs/Podfile.lock",
+      "datasource_id": "cocoapods_podfile_lock"
+    },
+    {
+      "purl": "pkg:cocoapods/CwlCatchException@2.1.1",
+      "extracted_requirement": "2.1.1",
+      "scope": "requires",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cocoapods/CwlCatchException@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "many-podspecs/Podfile.lock",
+      "datasource_id": "cocoapods_podfile_lock"
+    },
+    {
+      "purl": "pkg:cocoapods/CwlCatchExceptionSupport@2.1.1",
+      "extracted_requirement": "2.1.1",
+      "scope": "requires",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cocoapods/CwlCatchExceptionSupport@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "many-podspecs/Podfile.lock",
+      "datasource_id": "cocoapods_podfile_lock"
+    },
+    {
+      "purl": "pkg:cocoapods/CwlMachBadInstructionHandler@2.1.0",
+      "extracted_requirement": "2.1.0",
+      "scope": "requires",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cocoapods/CwlMachBadInstructionHandler@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "many-podspecs/Podfile.lock",
+      "datasource_id": "cocoapods_podfile_lock"
+    },
+    {
+      "purl": "pkg:cocoapods/CwlPosixPreconditionTesting@2.1.0",
+      "extracted_requirement": "2.1.0",
+      "scope": "requires",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cocoapods/CwlPosixPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "many-podspecs/Podfile.lock",
+      "datasource_id": "cocoapods_podfile_lock"
+    },
+    {
+      "purl": "pkg:cocoapods/CwlPreconditionTesting@2.1.0",
+      "extracted_requirement": "2.1.0",
+      "scope": "requires",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cocoapods/CwlPreconditionTesting@2.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "many-podspecs/Podfile.lock",
+      "datasource_id": "cocoapods_podfile_lock"
+    },
+    {
+      "purl": "pkg:cocoapods/SwiftFormat/CLI@0.44.17",
+      "extracted_requirement": "0.44.17",
+      "scope": "requires",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cocoapods/SwiftFormat/CLI@0.44.17?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "many-podspecs/Podfile.lock",
+      "datasource_id": "cocoapods_podfile_lock"
+    },
+    {
+      "purl": "pkg:cocoapods/SwiftLint@0.46.2",
+      "extracted_requirement": "0.46.2",
+      "scope": "requires",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cocoapods/SwiftLint@0.46.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "many-podspecs/Podfile.lock",
+      "datasource_id": "cocoapods_podfile_lock"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce",
+      "license_expression": "apache-2.0",
+      "detection_count": 6
+    },
+    {
+      "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f",
+      "license_expression": "apache-2.0",
+      "detection_count": 6
+    },
+    {
+      "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20",
+      "license_expression": "apache-2.0",
+      "detection_count": 3
+    }
+  ],
+  "files": [
+    {
+      "path": "many-podspecs",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "many-podspecs/AWSPluginsCore.podspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cocoapods",
+          "namespace": null,
+          "name": "AWSPluginsCore",
+          "version": "$AMPLIFY_VERSION",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Amazon Web Services ",
+              "email": "amazonwebservices",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+          "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+          "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_48.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "matched_text": "Apache License, Version 2.0"
+                }
+              ],
+              "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache License, Version 2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://cocoapods.org/pods/AWSPluginsCore",
+          "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+          "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/c/7/7/AWSPluginsCore/$AMPLIFY_VERSION/AWSPluginsCore.podspec.json",
+          "datasource_id": "cocoapods_podspec",
+          "purl": "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION"
+        }
+      ],
+      "for_packages": [
+        "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 25,
+              "end_line": 25,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.3,
+      "scan_errors": []
+    },
+    {
+      "path": "many-podspecs/AWSPredictionsPlugin.podspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cocoapods",
+          "namespace": null,
+          "name": "AWSPredictionsPlugin",
+          "version": "$AMPLIFY_VERSION",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Amazon Web Services ",
+              "email": "amazonwebservices",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+          "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+          "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_48.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "matched_text": "Apache License, Version 2.0"
+                }
+              ],
+              "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache License, Version 2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://cocoapods.org/pods/AWSPredictionsPlugin",
+          "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+          "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/6/0/AWSPredictionsPlugin/$AMPLIFY_VERSION/AWSPredictionsPlugin.podspec.json",
+          "datasource_id": "cocoapods_podspec",
+          "purl": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
+        }
+      ],
+      "for_packages": [
+        "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 17,
+              "end_line": 17,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.03,
+      "scan_errors": []
+    },
+    {
+      "path": "many-podspecs/Amplify.podspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cocoapods",
+          "namespace": null,
+          "name": "Amplify",
+          "version": "$AMPLIFY_VERSION",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Amazon Web Services ",
+              "email": "amazonwebservices",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+          "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+          "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_48.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "matched_text": "Apache License, Version 2.0"
+                }
+              ],
+              "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache License, Version 2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://cocoapods.org/pods/Amplify",
+          "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+          "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/c/5/Amplify/$AMPLIFY_VERSION/Amplify.podspec.json",
+          "datasource_id": "cocoapods_podspec",
+          "purl": "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION"
+        }
+      ],
+      "for_packages": [
+        "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 21,
+              "end_line": 21,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.25,
+      "scan_errors": []
+    },
+    {
+      "path": "many-podspecs/AmplifyPlugins.podspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cocoapods",
+          "namespace": null,
+          "name": "AmplifyPlugins",
+          "version": "$AMPLIFY_VERSION",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Amazon Web Services ",
+              "email": "amazonwebservices",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+          "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+          "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_48.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "matched_text": "Apache License, Version 2.0"
+                }
+              ],
+              "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache License, Version 2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://cocoapods.org/pods/AmplifyPlugins",
+          "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+          "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/5/1/8/AmplifyPlugins/$AMPLIFY_VERSION/AmplifyPlugins.podspec.json",
+          "datasource_id": "cocoapods_podspec",
+          "purl": "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION"
+        }
+      ],
+      "for_packages": [
+        "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 24,
+              "end_line": 24,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.67,
+      "scan_errors": []
+    },
+    {
+      "path": "many-podspecs/AmplifyTestCommon.podspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cocoapods",
+          "namespace": null,
+          "name": "AmplifyTestCommon",
+          "version": "$AMPLIFY_VERSION",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": "Test resources used by different targets\nProvides different test resources and mock methods",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Amazon Web Services ",
+              "email": "amazonwebservices",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "hhttps://github.com/aws-amplify/amplify-ios",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+          "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+          "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_48.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "matched_text": "Apache License, Version 2.0"
+                }
+              ],
+              "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache License, Version 2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://cocoapods.org/pods/AmplifyTestCommon",
+          "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+          "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/1/4/f/AmplifyTestCommon/$AMPLIFY_VERSION/AmplifyTestCommon.podspec.json",
+          "datasource_id": "cocoapods_podspec",
+          "purl": "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION"
+        }
+      ],
+      "for_packages": [
+        "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 24,
+              "end_line": 24,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.1,
+      "scan_errors": []
+    },
+    {
+      "path": "many-podspecs/CoreMLPredictionsPlugin.podspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cocoapods",
+          "namespace": null,
+          "name": "CoreMLPredictionsPlugin",
+          "version": "$AMPLIFY_VERSION",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": "Amazon Web Services Amplify for iOS.\nAWS Amplify for iOS provides a declarative library for application development using cloud services",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Amazon Web Services ",
+              "email": "amazonwebservices",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/aws-amplify/amplify-ios",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/aws-amplify/amplify-ios/issues/",
+          "code_view_url": "https://github.com/aws-amplify/amplify-ios/tree/$AMPLIFY_VERSION",
+          "vcs_url": "https://github.com/aws-amplify/amplify-ios.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_48.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+                  "matched_text": "Apache License, Version 2.0"
+                }
+              ],
+              "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache License, Version 2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://cocoapods.org/pods/CoreMLPredictionsPlugin",
+          "repository_download_url": "https://github.com/aws-amplify/amplify-ios/archive/refs/tags/$AMPLIFY_VERSION.zip",
+          "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/b/1/e/CoreMLPredictionsPlugin/$AMPLIFY_VERSION/CoreMLPredictionsPlugin.podspec.json",
+          "datasource_id": "cocoapods_podspec",
+          "purl": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
+        }
+      ],
+      "for_packages": [
+        "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 14,
+              "end_line": 14,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_68.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 5.56,
+      "scan_errors": []
+    },
+    {
+      "path": "many-podspecs/Podfile",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cocoapods",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 2,
+                  "end_line": 175,
+                  "matched_length": 1405,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_70.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+                }
+              ],
+              "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "cocoapods_podfile",
+          "purl": null
+        }
+      ],
+      "for_packages": [
+        "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "many-podspecs/Podfile.lock",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cocoapods",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 2,
+                  "end_line": 175,
+                  "matched_length": 1405,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_70.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+                }
+              ],
+              "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:cocoapods/AWSCore@2.27.0",
+              "extracted_requirement": "2.27.0",
+              "scope": "requires",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cocoapods/CwlCatchException@2.1.1",
+              "extracted_requirement": "2.1.1",
+              "scope": "requires",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cocoapods/CwlCatchExceptionSupport@2.1.1",
+              "extracted_requirement": "2.1.1",
+              "scope": "requires",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cocoapods/CwlMachBadInstructionHandler@2.1.0",
+              "extracted_requirement": "2.1.0",
+              "scope": "requires",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cocoapods/CwlPosixPreconditionTesting@2.1.0",
+              "extracted_requirement": "2.1.0",
+              "scope": "requires",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cocoapods/CwlPreconditionTesting@2.1.0",
+              "extracted_requirement": "2.1.0",
+              "scope": "requires",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cocoapods/SwiftFormat/CLI@0.44.17",
+              "extracted_requirement": "0.44.17",
+              "scope": "requires",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cocoapods/SwiftLint@0.46.2",
+              "extracted_requirement": "0.46.2",
+              "scope": "requires",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "cocoapods_podfile_lock",
+          "purl": null
+        }
+      ],
+      "for_packages": [
+        "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "many-podspecs/amplify-ios.LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 175,
+              "matched_length": 1405,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_70.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    }
+  ]
+}

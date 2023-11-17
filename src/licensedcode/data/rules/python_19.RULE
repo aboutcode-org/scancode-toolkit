@@ -2,6 +2,8 @@
 license_expression: python
 is_license_notice: yes
 relevance: 100
+is_deprecated: yes
+notes: replaced by the python-ldap LICENSE
 ---
 
 The python-ldap package is distributed under Python-style license.
@@ -13,4 +15,4 @@ Standard disclaimer:
    own purposes.  By using this software, each user agrees that the
    author(s) shall not be liable for damages of any kind in relation to
    its use or performance. The author(s) do not warrant that this software
-is fit for any purpose.
+   is fit for any purpose.

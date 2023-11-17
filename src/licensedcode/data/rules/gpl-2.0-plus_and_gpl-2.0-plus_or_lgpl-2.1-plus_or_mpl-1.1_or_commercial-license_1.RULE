@@ -1,0 +1,11 @@
+---
+license_expression: (gpl-2.0-plus AND (gpl-2.0-plus OR lgpl-2.1-plus OR mpl-1.1)) OR commercial-license
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.md
+ignorable_urls:
+    - https://ckeditor.com/legal/ckeditor-oss-license
+---
+
+For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license

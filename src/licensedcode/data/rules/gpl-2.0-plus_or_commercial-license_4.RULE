@@ -1,0 +1,11 @@
+---
+license_expression: gpl-2.0-plus OR commercial-license
+is_license_notice: yes
+notes: https://github.com/thery/opam-coq-archive/blob/ebafdbf1b00a27b2aa66b603001cac1881480299/released/packages/coq-compcert-64/coq-compcert-64.3.7%2B8.12~coq_platform/files/0002-Dual-license-aarch64-Archi.v-Cbuiltins.ml-extraction.patch#L27
+---
+
+This file is distributed
+under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.  This file is also distributed
+under the terms of the INRIA Non-Commercial License Agreement.

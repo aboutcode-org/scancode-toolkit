@@ -18,14 +18,12 @@ declared_license_expression_spdx: BSD-2-Clause AND LicenseRef-scancode-generic-e
   AND (LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-proprietary-license)
   AND BSD-4-Clause-UC AND LicenseRef-scancode-mit-no-advert-export-control AND BSD-4-Clause
   AND MIT AND ISC AND ISC AND LicenseRef-scancode-other-permissive AND BSD-3-Clause AND LicenseRef-scancode-rsa-md4
-  AND RSA-MD AND LicenseRef-scancode-rsa-1990 AND LicenseRef-scancode-mit-modification-obligations
-  AND BSD-3-Clause AND (BSD-2-Clause OR GPL-2.0-or-later) AND BSD-3-Clause AND BSD-2-Clause
+  AND RSA-MD AND LicenseRef-scancode-rsa-1990 AND HPND-export-US-modify AND BSD-3-Clause AND
+  (BSD-2-Clause OR GPL-2.0-or-later) AND BSD-3-Clause AND BSD-2-Clause
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-simplified AND generic-export-compliance AND cc-by-sa-3.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 18
@@ -35,6 +33,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -67,6 +66,7 @@ license_detections:
         matcher: 2-aho
         license_expression: generic-export-compliance
         rule_identifier: generic-export-compliance_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/generic-export-compliance_3.RULE
         matched_text: |
           Downloading of this software may constitute an export of cryptographic
@@ -89,14 +89,14 @@ license_detections:
         matcher: 2-aho
         license_expression: cc-by-sa-3.0
         rule_identifier: cc-by-sa-3.0_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_22.RULE
         matched_text: |
           Documentation components of this software distribution are licensed
           under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
           (http://creativecommons.org/licenses/by-sa/3.0/)
+    identifier: bsd_simplified_and_generic_export_compliance_and_cc_by_sa_3_0-33db6ba2-24df-220e-9776-12e2f090117e
   - license_expression: proprietary-license
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 64
@@ -106,6 +106,7 @@ license_detections:
         matcher: 2-aho
         license_expression: proprietary-license
         rule_identifier: proprietary-license_136.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_136.RULE
         matched_text: |
           No commercial use of these trademarks may be made without
@@ -115,9 +116,8 @@ license_detections:
           manner.  It does NOT prevent a commercial firm from referring to the
           MIT trademarks in order to convey information (although in doing so,
           recognition of their trademark status should be given).
+    identifier: proprietary_license-ae26591e-560d-5622-14d0-ff1ff9a49b22
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 82
@@ -127,6 +127,7 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_80.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_80.RULE
         matched_text: |
           WARNING:  Retrieving the OpenVision Kerberos Administration system
@@ -159,9 +160,8 @@ license_detections:
              continuing Kerberos technology development and our gratitude for
              the valuable work which has been performed by MIT and the Kerberos
              community.
+    identifier: other_permissive-46e6e2b3-dadb-a39b-50ee-b8a8739b526d
   - license_expression: mit-no-advert-export-control
-    detection_log:
-      - not-combined
     matches:
       - score: '98.73'
         start_line: 128
@@ -171,6 +171,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit-no-advert-export-control
         rule_identifier: mit-no-advert-export-control_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_1.RULE
         matched_text: |
           Export of this software from the United States of America may
@@ -192,9 +193,8 @@ license_detections:
              THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
              IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
              WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+    identifier: mit_no_advert_export_control-1128ece3-2db6-bad0-d5d9-6c912fa4983c
   - license_expression: brian-gladman-3-clause
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 156
@@ -204,6 +204,7 @@ license_detections:
         matcher: 2-aho
         license_expression: brian-gladman-3-clause
         rule_identifier: brian-gladman-3-clause_2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/brian-gladman-3-clause_2.RULE
         matched_text: |
           LICENSE TERMS
@@ -226,9 +227,8 @@ license_detections:
              This software is provided 'as is' with no explcit or implied
              warranties in respect of any properties, including, but not limited
              to, correctness and fitness for purpose.
+    identifier: brian_gladman_3_clause-7a3ee4cc-fd00-4912-cc3a-c1abe777f891
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 187
@@ -238,6 +238,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_587.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_587.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -268,9 +269,8 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-66fbca06-fdde-6367-5e72-bd742f214050
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 222
@@ -280,6 +280,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -301,9 +302,8 @@ license_detections:
              WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
              OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
              DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: bsd-simplified
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 248
@@ -313,6 +313,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_20.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_20.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -340,9 +341,8 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-fe5ce6eb-1b7c-6cd1-2e78-e9f71b0262f1
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 334
@@ -352,6 +352,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -373,9 +374,8 @@ license_detections:
              ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
              CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
              SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 363
@@ -385,6 +385,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_19.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -415,9 +416,8 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 400
@@ -427,6 +427,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_588.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_588.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -457,9 +458,8 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-dc7f0df2-c1a1-daeb-6556-1f60f5c4484c
   - license_expression: michigan-disclaimer
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 440
@@ -469,6 +469,7 @@ license_detections:
         matcher: 2-aho
         license_expression: michigan-disclaimer
         rule_identifier: michigan-disclaimer.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/michigan-disclaimer.LICENSE
         matched_text: |
           Permission is granted to use, copy, create derivative works and
@@ -491,9 +492,8 @@ license_detections:
              CONSEQUENTIAL DAMAGES, WITH RESPECT TO ANY CLAIM ARISING OUT OF OR
              IN CONNECTION WITH THE USE OF THE SOFTWARE, EVEN IF IT HAS BEEN OR
              IS HEREAFTER ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+    identifier: michigan_disclaimer-f90073dd-2b26-8fe5-d12a-32531681f44a
   - license_expression: fsf-unlimited-no-warranty
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 469
@@ -503,6 +503,7 @@ license_detections:
         matcher: 2-aho
         license_expression: fsf-unlimited-no-warranty
         rule_identifier: fsf-unlimited-no-warranty.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty.RULE
         matched_text: |
           This file is free software; as a special exception the author gives
@@ -513,9 +514,8 @@ license_detections:
              WITHOUT ANY WARRANTY, to the extent permitted by law; without even
              the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
              PURPOSE.
+    identifier: fsf_unlimited_no_warranty-005cbd82-97e0-5c6c-e111-cd46d95d2c5a
   - license_expression: mit-no-advert-export-control
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 485
@@ -525,6 +525,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit-no-advert-export-control
         rule_identifier: mit-no-advert-export-control_2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_2.RULE
         matched_text: |
           Export of this software from the United States of America may
@@ -546,9 +547,8 @@ license_detections:
              THIS SOFTWARE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR
              IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
              WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+    identifier: mit_no_advert_export_control-d6c84c49-6090-f5cb-35df-480e9ca265bf
   - license_expression: openldap-2.8
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 511
@@ -558,6 +558,7 @@ license_detections:
         matcher: 2-aho
         license_expression: openldap-2.8
         rule_identifier: openldap-2.8.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
         matched_text: |
           The OpenLDAP Public License
@@ -608,9 +609,8 @@ license_detections:
              Copyright 1999-2003 The OpenLDAP Foundation, Redwood City,
              California, USA.  All Rights Reserved.  Permission to copy and
              distribute verbatim copies of this document is granted.
+    identifier: openldap_2_8-58e150c7-83e9-bea6-0075-83fa7a4a9025
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 568
@@ -620,6 +620,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_933.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_933.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -650,9 +651,8 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_new-3067d87e-03fa-386b-14c5-8c725b58e271
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 608
@@ -662,6 +662,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_151.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_151.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -693,9 +694,8 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_new-405dd1d5-a75a-5b1c-3698-dad680358560
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 647
@@ -705,6 +705,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_589.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_589.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -736,9 +737,8 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-bcd7c498-0b2c-5abe-4ee7-1e4d56c69bcc
   - license_expression: freebsd-doc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 682
@@ -748,6 +748,7 @@ license_detections:
         matcher: 2-aho
         license_expression: freebsd-doc
         rule_identifier: freebsd-doc_5.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/freebsd-doc_5.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -774,9 +775,8 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: freebsd_doc-9db33af1-af77-1b9f-27f4-0ae766439a3a
   - license_expression: cmu-uc
-    detection_log:
-      - not-combined
     matches:
       - score: '99.0'
         start_line: 713
@@ -786,6 +786,7 @@ license_detections:
         matcher: 2-aho
         license_expression: cmu-uc
         rule_identifier: cmu-uc_12.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cmu-uc_12.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
@@ -805,9 +806,8 @@ license_detections:
              AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
              OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
              SOFTWARE.
+    identifier: cmu_uc-81218bbc-ee50-f7e2-791a-f18dcff965fd
   - license_expression: nrl-permission
-    detection_log:
-      - not-combined
     matches:
       - score: '95.0'
         start_line: 735
@@ -817,6 +817,7 @@ license_detections:
         matcher: 2-aho
         license_expression: nrl-permission
         rule_identifier: nrl-permission_1.RULE
+        rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/nrl-permission_1.RULE
         matched_text: |
           Permission to use, copy, modify and distribute this software and
@@ -828,9 +829,8 @@ license_detections:
              NRL ALLOWS FREE USE OF THIS SOFTWARE IN ITS "AS IS" CONDITION AND
              DISCLAIMS ANY LIABILITY OF ANY KIND FOR ANY DAMAGES WHATSOEVER
              RESULTING FROM THE USE OF THIS SOFTWARE.
+    identifier: nrl_permission-69f7eb46-92e8-fb4c-6788-8285e4f7effa
   - license_expression: ietf-trust
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 752
@@ -840,6 +840,7 @@ license_detections:
         matcher: 2-aho
         license_expression: ietf-trust
         rule_identifier: ietf-trust_10.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf-trust_10.RULE
         matched_text: |
           This document is subject to the rights, licenses and restrictions
@@ -854,9 +855,8 @@ license_detections:
              THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR
              ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
              PARTICULAR PURPOSE.
+    identifier: ietf_trust-f268e8cf-010e-2ddb-9692-832496073cf3
   - license_expression: mit-old-style
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 769
@@ -866,6 +866,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit-old-style
         rule_identifier: mit-old-style_11.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_11.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
@@ -876,9 +877,8 @@ license_detections:
              representations about the suitability of this software for any
              purpose.  It is provided "as is" without express or implied
              warranty.
+    identifier: mit_old_style-1e993fd4-e311-4d2f-c751-607871e23414
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 782
@@ -888,6 +888,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -909,9 +910,8 @@ license_detections:
              ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
              CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
              SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: bsd-simplified AND (mit-no-advert-export-control AND proprietary-license)
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 810
@@ -921,6 +921,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -955,6 +956,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit-no-advert-export-control AND proprietary-license
         rule_identifier: mit-no-advert-export-control_and_proprietary-license_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_and_proprietary-license_1.RULE
         matched_text: |
           EXPORT OF THIS SOFTWARE from the United States of America may
@@ -977,9 +979,8 @@ license_detections:
              be held liable for any liability nor for any direct, indirect, or
              consequential damages with respect to any claim by the user or
              distributor of the ksu software.
+    identifier: bsd_simplified_and__mit_no_advert_export_control_and_proprietary_license-345b28a9-f29e-4bc5-6160-59a84fd1aadf
   - license_expression: bsd-original-uc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 866
@@ -989,6 +990,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original-uc
         rule_identifier: bsd-original-uc_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1025,9 +1027,8 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_original_uc-f28cb4d4-6336-ee60-f186-4c1929d3a4b0
   - license_expression: mit-no-advert-export-control
-    detection_log:
-      - not-combined
     matches:
       - score: '99.0'
         start_line: 907
@@ -1037,6 +1038,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit-no-advert-export-control
         rule_identifier: mit-no-advert-export-control_4.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_4.RULE
         matched_text: |
           Export of this software from the United States of America may
@@ -1055,9 +1057,8 @@ license_detections:
              Basch, Lehman Brothers and M.I.T. make no representations about the
              suitability of this software for any purpose.  It is provided "as
              is" without express or implied warranty.
+    identifier: mit_no_advert_export_control-8a3f7c38-f5cb-2016-0e86-70fb9f16ca5c
   - license_expression: bsd-original
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 934
@@ -1067,6 +1068,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-original
         rule_identifier: bsd-original_32.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_32.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1104,9 +1106,8 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
+    identifier: bsd_original-07212ebb-4bc6-b4e9-de7c-a4d294184c21
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 978
@@ -1116,6 +1117,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit
         rule_identifier: mit_483.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_483.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -1137,9 +1139,8 @@ license_detections:
              OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
              OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
              OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    identifier: mit-c00d5dad-390d-222f-7182-5d856cf7b8de
   - license_expression: isc
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1004
@@ -1149,6 +1150,7 @@ license_detections:
         matcher: 2-aho
         license_expression: isc
         rule_identifier: isc_14.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_14.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for
@@ -1164,9 +1166,8 @@ license_detections:
              OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
              NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
              CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+    identifier: isc-ea6c318e-91a9-413d-027a-507b2cebec2c
   - license_expression: isc
-    detection_log:
-      - not-combined
     matches:
       - score: '95.0'
         start_line: 1025
@@ -1176,6 +1177,7 @@ license_detections:
         matcher: 2-aho
         license_expression: isc
         rule_identifier: isc_16.RULE
+        rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_16.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for
@@ -1191,9 +1193,8 @@ license_detections:
              IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.  (Isn't
              it sick that the U.S. culture of lawsuit-happy lawyers requires
              this kind of disclaimer?)
+    identifier: isc-e2afa98f-2f94-8ed0-73b4-11ad7eb78f27
   - license_expression: other-permissive
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1046
@@ -1203,13 +1204,13 @@ license_detections:
         matcher: 2-aho
         license_expression: other-permissive
         rule_identifier: other-permissive_22.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_22.RULE
         matched_text: |
           This file may be freely redistributed without license or fee
              provided this copyright message remains intact.
+    identifier: other_permissive-159ebe90-9eb6-c7d5-9749-3fca97d30548
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1060
@@ -1219,6 +1220,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_134.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_134.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1249,9 +1251,8 @@ license_detections:
              (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
              USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
              DAMAGE.
+    identifier: bsd_new-12f1ac86-ca22-4cc1-70be-ff0581226e16
   - license_expression: rsa-md4
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1096
@@ -1261,6 +1262,7 @@ license_detections:
         matcher: 2-aho
         license_expression: rsa-md4
         rule_identifier: rsa-md4.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-md4.LICENSE
         matched_text: |
           License to copy and use this software is granted provided that it
@@ -1280,9 +1282,8 @@ license_detections:
 
              These notices must be retained in any copies of any part of this
              documentation and/or software.
+    identifier: rsa_md4-a759e81a-f925-4fa7-feb4-1653e6ac100e
   - license_expression: rsa-md5
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1121
@@ -1292,6 +1293,7 @@ license_detections:
         matcher: 2-aho
         license_expression: rsa-md5
         rule_identifier: rsa-md5.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-md5.LICENSE
         matched_text: |
           License to copy and use this software is granted provided that it
@@ -1311,9 +1313,8 @@ license_detections:
 
              These notices must be retained in any copies of any part of this
              documentation and/or software.
+    identifier: rsa_md5-15c129b1-dd57-a1d1-c398-85cc6d20017e
   - license_expression: rsa-1990
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1147
@@ -1323,6 +1324,7 @@ license_detections:
         matcher: 2-aho
         license_expression: rsa-1990
         rule_identifier: rsa-1990.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-1990.LICENSE
         matched_text: |
           RSA Data Security, Inc. makes no representations concerning either
@@ -1332,9 +1334,8 @@ license_detections:
 
              These notices must be retained in any copies of any part of this
              documentation and/or software.
+    identifier: rsa_1990-2041758f-0e05-d693-1067-8e6b055aa3ee
   - license_expression: mit-with-modification-obligations
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1163
@@ -1344,6 +1345,7 @@ license_detections:
         matcher: 2-aho
         license_expression: mit-with-modification-obligations
         rule_identifier: mit-with-modification-obligations_2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-with-modification-obligations_2.RULE
         matched_text: |
           Export of this software from the United States of America may
@@ -1365,9 +1367,8 @@ license_detections:
              Security Group, nor CyberSAFE Corporation make any representations
              about the suitability of this software for any purpose.  It is
              provided "as is" without express or implied warranty.
+    identifier: mit_with_modification_obligations-42eb6af6-0f2c-428f-f892-f4bb7295452c
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1190
@@ -1377,6 +1378,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_590.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_590.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1407,9 +1409,8 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
+    identifier: bsd_new-92ffce46-c317-d9f5-e740-a98f7d6eb994
   - license_expression: bsd-simplified OR gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1226
@@ -1419,6 +1420,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified OR gpl-2.0-plus
         rule_identifier: bsd-simplified_or_gpl-2.0-plus_7.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_or_gpl-2.0-plus_7.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1460,9 +1462,8 @@ license_detections:
 
              On Debian systems, the complete text of the GNU General Public License
              version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: bsd_simplified_or_gpl_2_0_plus-061f1e82-e3fd-1972-4fbc-961626a0b57a
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1274
@@ -1472,6 +1473,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-intel_4.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-intel_4.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1503,9 +1505,8 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-27fdae2b-970d-afa7-4ecb-ef39abbe9d1e
   - license_expression: bsd-simplified
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 1311
@@ -1515,6 +1516,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1541,13 +1543,14 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_simplified-a1deb97f-56cd-71ea-a95f-82477d400503
 other_license_detections: []
 copyright: |
   Copyright (c) 1985-2018 by the Massachusetts Institute of Technology
   copyright MIT, Cygnus Support, Novell, OpenVision Technologies, Oracle, Red Hat, Sun Microsystems, FundsXpress, and others
   Copyright, OpenVision Technologies, Inc., 1993-1996
   Copyright (c) 1998 by the FundsXpress, INC.
-  Copyright (c) 2001, Dr Brian Gladman brg@gladman.uk.net', Worcester, UK.
+  Copyright (c) 2001, Dr Brian Gladman brg@gladman.uk.net Worcester, UK.
   Copyright (c) 2006 Red Hat, Inc.
   Portions copyright (c) 2006 Massachusetts Institute of Technology
   Copyright 2011 Red Hat, Inc.

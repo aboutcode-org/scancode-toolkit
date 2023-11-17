@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2014 TJ Holowaychuk <tj@vision-media.ca>
+holders:
+  - TJ Holowaychuk

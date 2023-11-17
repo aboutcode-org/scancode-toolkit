@@ -34,6 +34,7 @@
     "code_view_url": null,
     "vcs_url": "git+https://github.com/visionmedia/node-cookie-signature.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],

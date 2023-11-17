@@ -1,0 +1,58 @@
+---
+key: ms-opus-patent-2012
+short_name: MS Opus Patent Terms 2012
+name: Microsoft Opus Patent Terms 2012
+category: Patent License
+owner: Microsoft
+homepage_url: https://datatracker.ietf.org/ipr/1914/
+spdx_license_key: LicenseRef-scancode-ms-opus-patent-2012
+---
+
+Microsoft Opus Patent Terms
+11-7-2012
+
+1. Patent Terms.
+
+1.1. Specification License. Subject to all the terms and conditions of this Agreement, I, on behalf of myself and my successors in interest and assigns, hereby grant you a non-sublicensable, perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable license to my Necessary Decoder Claims for your Specification Implementation.
+
+1.2. Code License. Subject to all the terms and conditions of this Agreement, I, on behalf of myself and my successors in interest and assigns, hereby grant you a non-sublicensable, perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable patent license to my Necessary Reference Implementation Claims to make, use, sell, offer for sale, import or distribute a Code Implementation.
+
+1.3. Conditions.
+
+1.3.1. Availability. If you own or control Necessary Claims, the licenses set forth in Section 1 are subject to and will become effective starting on the date that you make a binding public irrevocable commitment to license, on reasonable and non-discriminatory royalty-free licensing terms 1) your Necessary Decoder Claims to all implementers for Specification Implementations, and 2) your Necessary Reference Implementation Claims to all implementers for Code Implementations, where the terms of this Agreement satisfy any reciprocity requirements in your reasonable and non-discriminatory royalty-free licensing terms. The promises set forth in Section 1 will remain in effect so long as you continue to make such claims available for Specification Implementations and Code Implementations under reasonable and non-discriminatory royalty-free licensing terms. In addition, as a condition of the licenses set forth in Section 1, you acknowledge and agree that you have not and will not knowingly take any action for the purpose of circumventing the conditions in this Section 1. Notwithstanding the foregoing, you are not required to make the commitments set forth in this Section 1.3.1 as a result of merely using a Specification Implementation or a Code Implementation as an end-user.
+
+1.3.2. Additional Conditions. This license is directly from me to you and you acknowledge as a condition of benefiting from it that no rights from me are received from suppliers, distributors, or otherwise in connection with this license. This license is not an assurance (i) that any of my issued patent claims covers a Specification Implementation or Code Implementation or are enforceable or (ii) that a Specification Implementation or Code Implementation would not infringe intellectual property rights of any third party.
+
+1.4. Termination. All rights, grants, and promises made by me to you under Section 1 are immediately terminated if you or your agent file, maintain, or voluntarily participate in a lawsuit against me or any person or entity asserting that a Specification Implementation infringes Necessary Decoder Claims or a Code Implementation infringes Necessary Reference Implementation Claims, unless that suit was in response to a corresponding suit regarding a Specification Implementation or Code Implementation first brought against you. In addition, all rights, grants, and promises made by me to you under Section 1 are terminated if you, your agent, or successor in interest seek to license Necessary Decoder Claims for Specification Implementations or Necessary Reference Implementations Claims for Code Implementations on a royalty-bearing basis, unless that royalty-bearing licensing activity is in addition to, and not in lieu of, reasonable and non-discriminatory royalty-free licensing terms for Necessary Decoder Claims for Specification Implementations or Necessary Reference Implementation Claims for Code Implementations. This Agreement may also be terminated, including back to the date of non-compliance, because of non-compliance with any other term or condition of this Agreement.
+
+2. Patent License Commitment. On behalf of me and my successors in interest and assigns, I agree to offer alternative reasonable and non-discriminatory royalty-bearing licensing terms 1) to my Necessary Decoder Claims solely for your Specification Implementation and 2) to my Necessary Reference Implementations Claims solely for your Code Implementation.
+
+3. Past Skype Declarations. You may, at your option, continue to rely on the terms set forth in Skype’s past declarations made to the IETF for the Opus Audio Codec, subject to the terms of those declarations and in lieu of the terms of this Agreement solely for the patents set forth in those declarations.
+
+4. Good Faith Obligations. I agree that I have not and will not knowingly take any action for the purpose of circumventing my obligations under this Agreement. In addition, I will not 1) seek an injunction or exclusion order against a) Code Implementations for Necessary Reference Implementation Claims or b) Specification Implementations for Necessary Decoder Claims or 2) require that an implementer license its patents back to me, except for Necessary Reference Implementation Claims for Code Implementations and Necessary Decoder Claims for Specification Implementations. I will not transfer Necessary Reference Implementation Claims or Necessary Decoder Claims unless the transferee is subject to these obligations.
+
+5. Disclaimers. I expressly disclaim any warranties (express, implied, or otherwise), including implied warranties of merchantability, non-infringement, fitness for a particular purpose, or title, related to the Specification or Reference Implementation. The entire risk as to implementing or otherwise using the Specification, Specification Implementation, or Code Implementation is assumed by the implementer and user. IN NO EVENT WILL ANY PARTY BE LIABLE TO ANY OTHER PARTY FOR LOST PROFITS OR ANY FORM OF INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER FROM ANY CAUSES OF ACTION OF ANY KIND WITH RESPECT TO THIS AGREEMENT, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, AND WHETHER OR NOT THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. Nothing in this Agreement requires me to undertake a patent search.
+
+6. Definitions.
+
+6.1. Agreement. “Agreement” means this document, which sets forth the rights, grants, limitations, conditions, obligations, and disclaimers made available for the particular Specification.
+
+6.2. Code Implementation. “Code Implementation” means making, using, selling, offering for sale, importing or distributing 1) the Reference Implementation, or 2) an implementation that, in the case of an encoder, produces a bitstream that can be decoded by a Specification Implementation solely to the extent it produces such a bitstream, and, in the case of decoder, is a Specification Implementation, where that Specification Implementation may also infringe Necessary Reference Implementation Claims.
+
+6.3. Control. “Control” means direct or indirect control of more than 50% of the voting power to elect directors of that corporation, or for any other entity, the power to direct management of such entity.
+
+6.4. I, Me, or My. “I,” “me,” or “my” refers to the party making this declaration, and any entity that I Control.
+
+6.5. Necessary Claims. “Necessary Claims” means Necessary Decoder Claims and Necessary Reference Implementation Claims.
+
+6.6. Necessary Decoder Claims. “Necessary Decoder Claims” are those patent claims that a party owns or controls, including those claims acquired after the date of this declaration, that are necessarily infringed by an implementation of the required portions (including the required elements of optional portions) of the decoder Specification that are described in detail and not merely referenced in the Specification.
+
+6.7. Necessary Reference Implementation Claims. “Necessary Reference Implementation Claims” are those patent claims that a party owns or controls, including those claims acquired after the date of this declaration, that are necessarily infringed by the Reference Implementation. Necessary Reference Implementation Claims do not include claims that would be infringed only as a consequence of further modification of the Reference Implementation.
+
+6.8. Reference Implementation. “Reference Implementation” means the implementation of the Opus encoder and/or decoder code extracted from Appendix A of the Specification.
+
+6.9. Specification. “Specification” means IETF RFC 6716 dated September 2012.
+
+6.10. Specification Implementation. “Specification Implementation” means making, using, selling, offering for sale, importing or distributing any conformant implementation of the decoder set forth in the Specification 1) only to the extent it implements the Specification and 2) so long as all required portions of the Specification are implemented. Specification Implementation also includes any implementation of a decoder included in subsequent versions of RFC 6716 1) only to the extent that it implements the decoder Specification, and 2) so long as all required portions of the decoder Specification are implemented.
+
+6.11. You or Your. “You,” “you,” or “your” means any person or entity who exercises patent rights granted under this Agreement, and any person or entity you Control.

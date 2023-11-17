@@ -492,7 +492,10 @@ def test_scan_can_return_matched_license_text():
     test_file = test_env.get_test_loc('license_text/test.txt')
     expected_file = test_env.get_test_loc('license_text/test.expected')
     result_file = test_env.get_temp_file('json')
-    args = ['--license', '--license-text', '--strip-root', test_file, '--json', result_file]
+    args = [
+        '--license', '--license-text', '--license-text-diagnostics', '--license-diagnostics',
+        '--strip-root', test_file, '--json', result_file
+    ]
     run_scan_click(args)
     check_json_scan(test_env.get_test_loc(expected_file), result_file, regen=REGEN_TEST_FIXTURES)
 
@@ -657,7 +660,14 @@ def test_scan_does_scan_php_composer():
     expected_file = test_env.get_test_loc('composer/composer.expected.json')
     result_file = test_env.get_temp_file('results.json')
     run_scan_click(['--package', test_file, '--json', result_file])
-    check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+    try:
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+    except:
+        # re-run heisenbug
+        env = dict(os.environ)
+        env["SCANCODE_DEBUG_API"] = 'yes'
+        run_scan_click(['--package', test_file, '--json', result_file], env=env)
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
 
 def test_scan_does_scan_rpm():
@@ -910,6 +920,8 @@ def test_scan_errors_out_without_an_input_path():
 
 
 def test_merge_multiple_scans():
+    # Run `--info` scans on samples/ and thirdparty/ directories respectively
+    # in a git checkout of scancode-toolkit v3.0.2
     test_file_1 = test_env.get_test_loc('merge_scans/sample.json')
     test_file_2 = test_env.get_test_loc('merge_scans/thirdparty.json')
     result_file = test_env.get_temp_file('json')

@@ -1,0 +1,10 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 90
+---
+
+/*
+ * Code in this file derives from source code in Woodstox which
+ * carries a {{ASL 2.0 license}}.
+ */

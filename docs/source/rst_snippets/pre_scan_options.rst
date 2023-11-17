@@ -12,7 +12,7 @@ All "Pre-Scan" Options
                              Sub-Options:
 
                              - ``--license-clarity-score``
-                             - ``--summary-key-files``
+                             - ``--tallies-key-files``
 
 --facet <facet_pattern>      Here ``<facet_pattern>`` represents
                              ``<facet>=<pattern>``. Add the ``<facet>``
@@ -20,4 +20,4 @@ All "Pre-Scan" Options
 
                              Sub-Options:
 
-                             - ``--summary-by-facet``
+                             - ``--tallies-by-facet``

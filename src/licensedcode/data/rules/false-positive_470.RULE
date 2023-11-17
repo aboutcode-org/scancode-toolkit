@@ -1,0 +1,20 @@
+---
+is_false_positive: yes
+notes: Seen at jfree/jcommon/1.0.24/jcommon-1.0.24-sources.jar/org/jfree/ui/about/Licences.java
+---
+
+/**
+    * Returns the GPL (v2.1) text.
+    *
+    * @return the GPL licence text.
+    */
+public String getGPL() {
+    return readStringResource("gpl-2.0.txt");
+/**
+    * Returns the LGPL (v2.1) text.
+    *
+    * @return the LGPL licence text.
+    */
+public String getLGPL() {
+    return readStringResource("lgpl-2.1.txt");
+}

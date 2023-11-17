@@ -1,0 +1,2456 @@
+headers:
+  - tool_name: scancode-toolkit
+    options:
+      input: <path>
+      --classify: yes
+      --copyright: yes
+      --email: yes
+      --info: yes
+      --license: yes
+      --license-clarity-score: yes
+      --license-references: yes
+      --license-text: yes
+      --package: yes
+      --summary: yes
+      --url: yes
+      --yaml: <file>
+    notice: |
+      Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
+      OR CONDITIONS OF ANY KIND, either express or implied. No content created from
+      ScanCode should be considered or used as legal advice. Consult an Attorney
+      for any legal advice.
+      ScanCode is a free software code scanning tool from nexB Inc. and others.
+      Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+    output_format_version: 3.0.0
+    message:
+    errors: []
+    warnings: []
+    extra_data:
+      system_environment:
+        operating_system: linux
+        cpu_architecture: 64
+        platform: Linux-5.15.0-84-generic-x86_64-with-glibc2.29
+        platform_version: '#93~20.04.1-Ubuntu SMP Wed Sep 6 16:15:40 UTC 2023'
+        python_version: "3.8.10 (default, May 26 2023, 14:05:08) \n[GCC 9.4.0]"
+      spdx_license_list_version: '3.21'
+      files_count: 4
+summary:
+  declared_license_expression: apache-2.0 AND cddl-1.0 AND mit
+  license_clarity_score:
+    score: '0'
+    declared_license: no
+    identification_precision: no
+    has_license_text: no
+    declared_copyrights: no
+    conflicting_license_categories: no
+    ambiguous_compound_licensing: yes
+  declared_holder:
+  primary_language: Python
+  other_license_expressions:
+    - value: lgpl-3.0
+      count: 3
+    - value: apache-2.0
+      count: 2
+    - value: cddl-1.0
+      count: 1
+    - value: mit
+      count: 1
+  other_holders:
+    - value:
+      count: 3
+    - value: EPFL/Blue Brain Project
+      count: 1
+  other_languages: []
+packages:
+  - type: maven
+    namespace: javax.persistence
+    name: persistence-api
+    version: '1.0'
+    qualifiers: {}
+    subpath:
+    primary_language: Java
+    description: |
+      Enterprise JavaBeans (EJB) 3.0
+      The Enterprise JavaBeans architecture is a component architecture for the development and deployment of component-based business applications.
+          The purpose of Enterprise JavaBeans (EJB) 3.0 is to improve the EJB architecture by reducing its complexity from the developer's point of view.
+    release_date:
+    parties: []
+    keywords: []
+    homepage_url: http://www.jcp.org/en/jsr/detail?id=220
+    download_url:
+    size:
+    sha1:
+    md5:
+    sha256:
+    sha512:
+    bug_tracking_url:
+    code_view_url:
+    vcs_url:
+    copyright:
+    holder:
+    declared_license_expression: cddl-1.0
+    declared_license_expression_spdx: CDDL-1.0
+    license_detections:
+      - license_expression: cddl-1.0
+        matches:
+          - score: '100.0'
+            start_line: 1
+            end_line: 1
+            matched_length: 8
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: cddl-1.0
+            rule_identifier: cddl-1.0.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE
+            matched_text: '- name: Common Development and Distribution License (CDDL) v1.0'
+          - score: '100.0'
+            start_line: 2
+            end_line: 2
+            matched_length: 7
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: cddl-1.0
+            rule_identifier: cddl-1.0_4.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE
+            matched_text: '  url: http://www.sun.com/cddl/cddl.html'
+        identifier: cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880
+    other_license_expression:
+    other_license_expression_spdx:
+    other_license_detections: []
+    extracted_license_statement: |
+      - name: Common Development and Distribution License (CDDL) v1.0
+        url: http://www.sun.com/cddl/cddl.html
+    notice_text:
+    source_packages:
+      - pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources
+    extra_data: {}
+    repository_homepage_url: https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/
+    repository_download_url: https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar
+    api_data_url: https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.pom
+    package_uid: pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_paths:
+      - manifests/maven/persistence-api-1.0.pom
+    datasource_ids:
+      - maven_pom
+    purl: pkg:maven/javax.persistence/persistence-api@1.0
+  - type: npm
+    namespace:
+    name: grunt-esvm
+    version: 3.2.8
+    qualifiers: {}
+    subpath:
+    primary_language: JavaScript
+    description: Create elasticsearch clusters from grunt.
+    release_date:
+    parties:
+      - type: person
+        role: author
+        name: Spencer Alger
+        email: spencer.alger@elasticsearch.com
+        url:
+    keywords:
+      - gruntplugin
+    homepage_url: https://github.com/spenceralger/grunt-esvm
+    download_url: https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz
+    size:
+    sha1:
+    md5:
+    sha256:
+    sha512:
+    bug_tracking_url: https://github.com/spenceralger/grunt-esvm/issues
+    code_view_url:
+    vcs_url: git://github.com/spenceralger/grunt-esvm.git
+    copyright:
+    holder:
+    declared_license_expression: apache-2.0
+    declared_license_expression_spdx: Apache-2.0
+    license_detections:
+      - license_expression: apache-2.0
+        matches:
+          - score: '100.0'
+            start_line: 1
+            end_line: 1
+            matched_length: 3
+            match_coverage: '100.0'
+            matcher: 1-hash
+            license_expression: apache-2.0
+            rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+            matched_text: Apache-2.0
+        identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
+      - license_expression: apache-2.0
+        matches:
+          - score: '100.0'
+            start_line: 1
+            end_line: 1
+            matched_length: 3
+            match_coverage: '100.0'
+            matcher: 1-hash
+            license_expression: apache-2.0
+            rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+            matched_text: Apache 2.0
+        identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
+    other_license_expression:
+    other_license_expression_spdx:
+    other_license_detections: []
+    extracted_license_statement: |
+      - Apache-2.0
+      - type: Apache 2.0
+        url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md
+    notice_text:
+    source_packages: []
+    extra_data: {}
+    repository_homepage_url: https://www.npmjs.com/package/grunt-esvm
+    repository_download_url: https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz
+    api_data_url: https://registry.npmjs.org/grunt-esvm/3.2.8
+    package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_paths:
+      - manifests/npm-license-mapping/package.json
+    datasource_ids:
+      - npm_package_json
+    purl: pkg:npm/grunt-esvm@3.2.8
+  - type: npm
+    namespace:
+    name: angular-compare-validator
+    version: 0.1.1
+    qualifiers: {}
+    subpath:
+    primary_language: JavaScript
+    description: Angular form validation directive to compare two inputs
+    release_date:
+    parties:
+      - type: person
+        role: maintainer
+        name: georgdangl
+        email: npm@dan.gl
+        url:
+    keywords: []
+    homepage_url: https://github.com/GeorgDangl/angular-compare-validator#readme
+    download_url: https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz
+    size:
+    sha1: d35a0754c8587b0502874e3636cf0f19565d09b7
+    md5:
+    sha256:
+    sha512: 8f70ed5e3513185ad58fb2a3114769ac93ddd68836ce89146e586fc03e03ac93dcfb1f11354ac26f408b75c0ebf51663d5e4e8e27c38752a3c06bdde749a7c03
+    bug_tracking_url: https://github.com/GeorgDangl/angular-compare-validator/issues
+    code_view_url:
+    vcs_url: git+https://github.com/GeorgDangl/angular-compare-validator.git
+    copyright:
+    holder:
+    declared_license_expression: mit
+    declared_license_expression_spdx: MIT
+    license_detections:
+      - license_expression: mit
+        matches:
+          - score: '100.0'
+            start_line: 1
+            end_line: 1
+            matched_length: 1
+            match_coverage: '100.0'
+            matcher: 1-spdx-id
+            license_expression: mit
+            rule_identifier: spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06
+            rule_relevance: 100
+            rule_url:
+            matched_text: MIT
+        identifier: mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf
+    other_license_expression:
+    other_license_expression_spdx:
+    other_license_detections: []
+    extracted_license_statement: |
+      - MIT
+    notice_text:
+    source_packages: []
+    extra_data: {}
+    repository_homepage_url: https://www.npmjs.com/package/angular-compare-validator
+    repository_download_url: https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz
+    api_data_url: https://registry.npmjs.org/angular-compare-validator/0.1.1
+    package_uid: pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_paths:
+      - manifests/npm-license-string/package.json
+    datasource_ids:
+      - npm_package_json
+    purl: pkg:npm/angular-compare-validator@0.1.1
+dependencies:
+  - purl: pkg:npm/bluebird
+    extracted_requirement: ^2.9.30
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/cli-color
+    extracted_requirement: ~0.3.2
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/cli-color?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/cli-table
+    extracted_requirement: ~0.3.0
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/cli-table?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/libesvm
+    extracted_requirement: ^3.8.2
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/libesvm?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/lodash
+    extracted_requirement: ^3.9.3
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/lodash?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/moment
+    extracted_requirement: ^2.10.3
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/moment?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/wreck
+    extracted_requirement: ^5.6.0
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/wreck?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/grunt
+    extracted_requirement: '>=0.4.0'
+    scope: devDependencies
+    is_runtime: no
+    is_optional: yes
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/load-grunt-config
+    extracted_requirement: ~0.19.0
+    scope: devDependencies
+    is_runtime: no
+    is_optional: yes
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/load-grunt-config?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/grunt
+    extracted_requirement: '>=0.4.0'
+    scope: peerDependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-mapping/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/%40angular/core
+    extracted_requirement: '>=2.0.0'
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/%40angular/core?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-string/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/%40angular/forms
+    extracted_requirement: '>=2.0.0'
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/%40angular/forms?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-string/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/%40angular/common
+    extracted_requirement: '>=2.0.0'
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/%40angular/common?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-string/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/rxjs
+    extracted_requirement: '>=5.0.0-beta.12'
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/rxjs?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-string/package.json
+    datasource_id: npm_package_json
+  - purl: pkg:npm/zone.js
+    extracted_requirement: '>=0.6.21'
+    scope: dependencies
+    is_runtime: yes
+    is_optional: no
+    is_resolved: no
+    resolved_package: {}
+    extra_data: {}
+    dependency_uid: pkg:npm/zone.js?uuid=fixed-uid-done-for-testing-5642512d1758
+    for_package_uid: pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758
+    datafile_path: manifests/npm-license-string/package.json
+    datasource_id: npm_package_json
+license_detections:
+  - identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
+    license_expression: apache-2.0
+    detection_count: 3
+  - identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
+    license_expression: apache-2.0
+    detection_count: 1
+  - identifier: cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6
+    license_expression: cddl-1.0
+    detection_count: 1
+  - identifier: cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880
+    license_expression: cddl-1.0
+    detection_count: 1
+  - identifier: lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321
+    license_expression: lgpl-3.0
+    detection_count: 2
+  - identifier: lgpl_3_0-121be3c2-9c80-df84-d3da-8f674e4125c0
+    license_expression: lgpl-3.0
+    detection_count: 1
+  - identifier: lgpl_3_0-2db87bcf-56b4-9d7d-7075-2effae31c631
+    license_expression: lgpl-3.0
+    detection_count: 1
+  - identifier: lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5
+    license_expression: lgpl-3.0
+    detection_count: 1
+  - identifier: mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee
+    license_expression: mit
+    detection_count: 1
+  - identifier: mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf
+    license_expression: mit
+    detection_count: 1
+license_references:
+  - key: apache-2.0
+    language: en
+    short_name: Apache 2.0
+    name: Apache License 2.0
+    category: Permissive
+    owner: Apache Software Foundation
+    homepage_url: http://www.apache.org/licenses/
+    notes: |
+      Per SPDX.org, this version was released January 2004 This license is OSI
+      certified
+    is_builtin: yes
+    is_exception: no
+    is_unknown: no
+    is_generic: no
+    spdx_license_key: Apache-2.0
+    other_spdx_license_keys:
+      - LicenseRef-Apache
+      - LicenseRef-Apache-2.0
+    osi_license_key: Apache-2.0
+    text_urls:
+      - http://www.apache.org/licenses/LICENSE-2.0
+    osi_url: http://opensource.org/licenses/apache2.0.php
+    faq_url: http://www.apache.org/foundation/licence-FAQ.html
+    other_urls:
+      - http://www.opensource.org/licenses/Apache-2.0
+      - https://opensource.org/licenses/Apache-2.0
+      - https://www.apache.org/licenses/LICENSE-2.0
+    key_aliases: []
+    minimum_coverage: '0'
+    standard_notice:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls:
+      - http://www.apache.org/licenses/
+      - http://www.apache.org/licenses/LICENSE-2.0
+    ignorable_emails: []
+    text: "                                 Apache License\n                           Version\
+      \ 2.0, January 2004\n                        http://www.apache.org/licenses/\n \n   TERMS\
+      \ AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n \n   1. Definitions.\n \n \
+      \     \"License\" shall mean the terms and conditions for use, reproduction,\n      and\
+      \ distribution as defined by Sections 1 through 9 of this document.\n \n      \"Licensor\"\
+      \ shall mean the copyright owner or entity authorized by\n      the copyright owner that\
+      \ is granting the License.\n \n      \"Legal Entity\" shall mean the union of the acting\
+      \ entity and all\n      other entities that control, are controlled by, or are under common\n\
+      \      control with that entity. For the purposes of this definition,\n      \"control\"\
+      \ means (i) the power, direct or indirect, to cause the\n      direction or management\
+      \ of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty\
+      \ percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership\
+      \ of such entity.\n \n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n\
+      \      exercising permissions granted by this License.\n \n      \"Source\" form shall\
+      \ mean the preferred form for making modifications,\n      including but not limited to\
+      \ software source code, documentation\n      source, and configuration files.\n \n   \
+      \   \"Object\" form shall mean any form resulting from mechanical\n      transformation\
+      \ or translation of a Source form, including but\n      not limited to compiled object\
+      \ code, generated documentation,\n      and conversions to other media types.\n \n   \
+      \   \"Work\" shall mean the work of authorship, whether in Source or\n      Object form,\
+      \ made available under the License, as indicated by a\n      copyright notice that is\
+      \ included in or attached to the work\n      (an example is provided in the Appendix below).\n\
+      \ \n      \"Derivative Works\" shall mean any work, whether in Source or Object\n    \
+      \  form, that is based on (or derived from) the Work and for which the\n      editorial\
+      \ revisions, annotations, elaborations, or other modifications\n      represent, as a\
+      \ whole, an original work of authorship. For the purposes\n      of this License, Derivative\
+      \ Works shall not include works that remain\n      separable from, or merely link (or\
+      \ bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\
+      \ \n      \"Contribution\" shall mean any work of authorship, including\n      the original\
+      \ version of the Work and any modifications or additions\n      to that Work or Derivative\
+      \ Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the\
+      \ Work by the copyright owner\n      or by an individual or Legal Entity authorized to\
+      \ submit on behalf of\n      the copyright owner. For the purposes of this definition,\
+      \ \"submitted\"\n      means any form of electronic, verbal, or written communication\
+      \ sent\n      to the Licensor or its representatives, including but not limited to\n \
+      \     communication on electronic mailing lists, source code control systems,\n      and\
+      \ issue tracking systems that are managed by, or on behalf of, the\n      Licensor for\
+      \ the purpose of discussing and improving the Work, but\n      excluding communication\
+      \ that is conspicuously marked or otherwise\n      designated in writing by the copyright\
+      \ owner as \"Not a Contribution.\"\n \n      \"Contributor\" shall mean Licensor and any\
+      \ individual or Legal Entity\n      on behalf of whom a Contribution has been received\
+      \ by Licensor and\n      subsequently incorporated within the Work.\n \n   2. Grant of\
+      \ Copyright License. Subject to the terms and conditions of\n      this License, each\
+      \ Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge,\
+      \ royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative\
+      \ Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n\
+      \      Work and such Derivative Works in Source or Object form.\n \n   3. Grant of Patent\
+      \ License. Subject to the terms and conditions of\n      this License, each Contributor\
+      \ hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free,\
+      \ irrevocable\n      (except as stated in this section) patent license to make, have made,\n\
+      \      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where\
+      \ such license applies only to those patent claims licensable\n      by such Contributor\
+      \ that are necessarily infringed by their\n      Contribution(s) alone or by combination\
+      \ of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted.\
+      \ If You\n      institute patent litigation against any entity (including a\n      cross-claim\
+      \ or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated\
+      \ within the Work constitutes direct\n      or contributory patent infringement, then\
+      \ any patent licenses\n      granted to You under this License for that Work shall terminate\n\
+      \      as of the date such litigation is filed.\n \n   4. Redistribution. You may reproduce\
+      \ and distribute copies of the\n      Work or Derivative Works thereof in any medium,\
+      \ with or without\n      modifications, and in Source or Object form, provided that You\n\
+      \      meet the following conditions:\n \n      (a) You must give any other recipients\
+      \ of the Work or\n          Derivative Works a copy of this License; and\n \n      (b)\
+      \ You must cause any modified files to carry prominent notices\n          stating that\
+      \ You changed the files; and\n \n      (c) You must retain, in the Source form of any\
+      \ Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n\
+      \          attribution notices from the Source form of the Work,\n          excluding\
+      \ those notices that do not pertain to any part of\n          the Derivative Works; and\n\
+      \ \n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution,\
+      \ then any Derivative Works that You distribute must\n          include a readable copy\
+      \ of the attribution notices contained\n          within such NOTICE file, excluding those\
+      \ notices that do not\n          pertain to any part of the Derivative Works, in at least\
+      \ one\n          of the following places: within a NOTICE text file distributed\n    \
+      \      as part of the Derivative Works; within the Source form or\n          documentation,\
+      \ if provided along with the Derivative Works; or,\n          within a display generated\
+      \ by the Derivative Works, if and\n          wherever such third-party notices normally\
+      \ appear. The contents\n          of the NOTICE file are for informational purposes only\
+      \ and\n          do not modify the License. You may add Your own attribution\n       \
+      \   notices within Derivative Works that You distribute, alongside\n          or as an\
+      \ addendum to the NOTICE text from the Work, provided\n          that such additional\
+      \ attribution notices cannot be construed\n          as modifying the License.\n \n  \
+      \    You may add Your own copyright statement to Your modifications and\n      may provide\
+      \ additional or different license terms and conditions\n      for use, reproduction, or\
+      \ distribution of Your modifications, or\n      for any such Derivative Works as a whole,\
+      \ provided Your use,\n      reproduction, and distribution of the Work otherwise complies\
+      \ with\n      the conditions stated in this License.\n \n   5. Submission of Contributions.\
+      \ Unless You explicitly state otherwise,\n      any Contribution intentionally submitted\
+      \ for inclusion in the Work\n      by You to the Licensor shall be under the terms and\
+      \ conditions of\n      this License, without any additional terms or conditions.\n   \
+      \   Notwithstanding the above, nothing herein shall supersede or modify\n      the terms\
+      \ of any separate license agreement you may have executed\n      with Licensor regarding\
+      \ such Contributions.\n \n   6. Trademarks. This License does not grant permission to\
+      \ use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n\
+      \      except as required for reasonable and customary use in describing the\n      origin\
+      \ of the Work and reproducing the content of the NOTICE file.\n \n   7. Disclaimer of\
+      \ Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor\
+      \ provides the Work (and each\n      Contributor provides its Contributions) on an \"\
+      AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n\
+      \      implied, including, without limitation, any warranties or conditions\n      of\
+      \ TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE.\
+      \ You are solely responsible for determining the\n      appropriateness of using or redistributing\
+      \ the Work and assume any\n      risks associated with Your exercise of permissions under\
+      \ this License.\n \n   8. Limitation of Liability. In no event and under no legal theory,\n\
+      \      whether in tort (including negligence), contract, or otherwise,\n      unless required\
+      \ by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to\
+      \ in writing, shall any Contributor be\n      liable to You for damages, including any\
+      \ direct, indirect, special,\n      incidental, or consequential damages of any character\
+      \ arising as a\n      result of this License or out of the use or inability to use the\n\
+      \      Work (including but not limited to damages for loss of goodwill,\n      work stoppage,\
+      \ computer failure or malfunction, or any and all\n      other commercial damages or losses),\
+      \ even if such Contributor\n      has been advised of the possibility of such damages.\n\
+      \ \n   9. Accepting Warranty or Additional Liability. While redistributing\n      the\
+      \ Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for,\
+      \ acceptance of support, warranty, indemnity,\n      or other liability obligations and/or\
+      \ rights consistent with this\n      License. However, in accepting such obligations,\
+      \ You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n\
+      \      of any other Contributor, and only if You agree to indemnify,\n      defend, and\
+      \ hold each Contributor harmless for any liability\n      incurred by, or claims asserted\
+      \ against, such Contributor by reason\n      of your accepting any such warranty or additional\
+      \ liability.\n \n   END OF TERMS AND CONDITIONS\n \n   APPENDIX: How to apply the Apache\
+      \ License to your work.\n \n      To apply the Apache License to your work, attach the\
+      \ following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n \
+      \     replaced with your own identifying information. (Don't include\n      the brackets!)\
+      \  The text should be enclosed in the appropriate\n      comment syntax for the file format.\
+      \ We also recommend that a\n      file or class name and description of purpose be included\
+      \ on the\n      same \"printed page\" as the copyright notice for easier\n      identification\
+      \ within third-party archives.\n \n   Copyright [yyyy] [name of copyright owner]\n \n\
+      \   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not\
+      \ use this file except in compliance with the License.\n   You may obtain a copy of the\
+      \ License at\n \n       http://www.apache.org/licenses/LICENSE-2.0\n \n   Unless required\
+      \ by applicable law or agreed to in writing, software\n   distributed under the License\
+      \ is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,\
+      \ either express or implied.\n   See the License for the specific language governing permissions\
+      \ and\n   limitations under the License."
+    scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
+    licensedb_url: https://scancode-licensedb.aboutcode.org/apache-2.0
+    spdx_url: https://spdx.org/licenses/Apache-2.0
+  - key: cddl-1.0
+    language: en
+    short_name: CDDL 1.0
+    name: Common Development and Distribution License 1.0
+    category: Copyleft Limited
+    owner: Oracle Corporation
+    homepage_url: http://www.sun.com/cddl/
+    notes: |
+      Per SPDX.org, this license was released 24 January 2004. This license is
+      OSI certified.
+    is_builtin: yes
+    is_exception: no
+    is_unknown: no
+    is_generic: no
+    spdx_license_key: CDDL-1.0
+    other_spdx_license_keys: []
+    osi_license_key: CDDL-1.0
+    text_urls:
+      - http://www.opensolaris.org/os/licensing/cddllicense.txt
+      - http://www.sun.com/cddl/cddl.html
+    osi_url: http://www.opensource.org/licenses/cddl1.txt
+    faq_url: http://www.opensolaris.org/os/about/faq/licensing_faq/
+    other_urls:
+      - http://www.gnu.org/licenses/license-list.html#CDDL
+      - http://www.opensource.org/licenses/cddl1
+      - http://www.oracle.com/us/sun/index.html
+      - https://glassfish.dev.java.net/public/CDDLv1.0.html
+      - https://opensource.org/licenses/cddl1
+    key_aliases: []
+    minimum_coverage: '0'
+    standard_notice:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: "COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0 \n\n1. Definitions.\n\
+      \n1.1. Contributor means each individual or entity that creates or contributes to the\
+      \ creation of Modifications.\n\n1.2. Contributor Version means the combination of the\
+      \ Original Software, prior Modifications used by a Contributor (if any), and the Modifications\
+      \ made by that particular Contributor.\n\n1.3. Covered Software means (a) the Original\
+      \ Software, or (b) Modifications, or (c) the combination of files containing Original\
+      \ Software with files containing Modifications, in each case including portions thereof.\n\
+      \n1.4. Executable means the Covered Software in any form other than Source Code.\n\n1.5.\
+      \ Initial Developer means the individual or entity that first makes Original Software\
+      \ available under this License.\n\n1.6. Larger Work means a work which combines Covered\
+      \ Software or portions thereof with code not governed by the terms of this License.\n\n\
+      1.7. License means this document.\n\n1.8. Licensable means having the right to grant,\
+      \ to the maximum extent possible, whether at the time of the initial grant or subsequently\
+      \ acquired, any and all of the rights conveyed herein.\n\n1.9. Modifications means the\
+      \ Source Code and Executable form of any of the following: A. Any file that results from\
+      \ an addition to, deletion from or modification of the contents of a file containing Original\
+      \ Software or previous Modifications; B. Any new file that contains any part of the Original\
+      \ Software or previous Modification; or C. Any new file that is contributed or otherwise\
+      \ made available under the terms of this License.\n\n1.10. Original Software means the\
+      \ Source Code and Executable form of computer software code that is originally released\
+      \ under this License.\n\n1.11. Patent Claims means any patent claim(s), now owned or hereafter\
+      \ acquired, including without limitation, method, process, and apparatus claims, in any\
+      \ patent Licensable by grantor.\n\n1.12. Source Code means (a) the common form of computer\
+      \ software code in which modifications are made and (b) associated documentation included\
+      \ in or with such code.\n\n1.13. You (or Your) means an individual or a legal entity exercising\
+      \ rights under, and complying with all of the terms of, this License. For legal entities,\
+      \ You includes any entity which controls, is controlled by, or is under common control\
+      \ with You. For purposes of this definition, control means (a) the power, direct or indirect,\
+      \ to cause the direction or management of such entity, whether by contract or otherwise,\
+      \ or (b) ownership of more than fifty percent (50%) of the outstanding shares or beneficial\
+      \ ownership of such entity.\n\n2. License Grants.\n\n 2.1. The Initial Developer Grant.\
+      \ Conditioned upon Your compliance with Section 3.1 below and subject to third party intellectual\
+      \ property claims, the Initial Developer hereby grants You a world-wide, royalty-free,\
+      \ non-exclusive license:\n\n(a) under intellectual property rights (other than patent\
+      \ or trademark) Licensable by Initial Developer, to use, reproduce, modify, display, perform,\
+      \ sublicense and distribute the Original Software (or portions thereof), with or without\
+      \ Modifications, and/or as part of a Larger Work; and\n\n(b) under Patent Claims infringed\
+      \ by the making, using or selling of Original Software, to make, have made, use, practice,\
+      \ sell, and offer for sale, and/or otherwise dispose of the Original Software (or portions\
+      \ thereof);\n\n (c) The licenses granted in Sections 2.1(a) and (b) are effective on the\
+      \ date Initial Developer first distributes or otherwise makes the Original Software available\
+      \ to a third party under the terms of this License;\n\n (d) Notwithstanding Section 2.1(b)\
+      \ above, no patent license is granted: (1) for code that You delete from the Original\
+      \ Software, or (2) for infringements caused by: (i) the modification of the Original Software,\
+      \ or (ii) the combination of the Original Software with other software or devices.\n\n\
+      2.2. Contributor Grant. Conditioned upon Your compliance with Section 3.1 below and subject\
+      \ to third party intellectual property claims, each Contributor hereby grants You a world-wide,\
+      \ royalty-free, non-exclusive license:\n\n(a) under intellectual property rights (other\
+      \ than patent or trademark) Licensable by Contributor to use, reproduce, modify, display,\
+      \ perform, sublicense and distribute the Modifications created by such Contributor (or\
+      \ portions thereof), either on an unmodified basis, with other Modifications, as Covered\
+      \ Software and/or as part of a Larger Work; and\n\n(b) under Patent Claims infringed by\
+      \ the making, using, or selling of Modifications made by that Contributor either alone\
+      \ and/or in combination with its Contributor Version (or portions of such combination),\
+      \ to make, use, sell, offer for sale, have made, and/or otherwise dispose of: (1) Modifications\
+      \ made by that Contributor (or portions thereof); and (2) the combination of Modifications\
+      \ made by that Contributor with its Contributor Version (or portions of such combination).\n\
+      \n(c) The licenses granted in Sections 2.2(a) and 2.2(b) are effective on the date Contributor\
+      \ first distributes or otherwise makes the Modifications available to a third party.\n\
+      \n(d) Notwithstanding Section 2.2(b) above, no patent license is granted: (1) for any\
+      \ code that Contributor has deleted from the Contributor Version; (2) for infringements\
+      \ caused by: (i) third party modifications of Contributor Version, or (ii) the combination\
+      \ of Modifications made by that Contributor with other software (except as part of the\
+      \ Contributor Version) or other devices; or (3) under Patent Claims infringed by Covered\
+      \ Software in the absence of Modifications made by that Contributor.\n\n3. Distribution\
+      \ Obligations.\n\n3.1. Availability of Source Code. Any Covered Software that You distribute\
+      \ or otherwise make available in Executable form must also be made available in Source\
+      \ Code form and that Source Code form must be distributed only under the terms of this\
+      \ License. You must include a copy of this License with every copy of the Source Code\
+      \ form of the Covered Software You distribute or otherwise make available. You must inform\
+      \ recipients of any such Covered Software in Executable form as to how they can obtain\
+      \ such Covered Software in Source Code form in a reasonable manner on or through a medium\
+      \ customarily used for software exchange.\n\n3.2. Modifications. The Modifications that\
+      \ You create or to which You contribute are governed by the terms of this License. You\
+      \ represent that You believe Your Modifications are Your original creation(s) and/or You\
+      \ have sufficient rights to grant the rights conveyed by this License.\n\n3.3. Required\
+      \ Notices. You must include a notice in each of Your Modifications that identifies You\
+      \ as the Contributor of the Modification. You may not remove or alter any copyright, patent\
+      \ or trademark notices contained within the Covered Software, or any notices of licensing\
+      \ or any descriptive text giving attribution to any Contributor or the Initial Developer.\n\
+      \n3.4. Application of Additional Terms. You may not offer or impose any terms on any Covered\
+      \ Software in Source Code form that alters or restricts the applicable version of this\
+      \ License or the recipients rights hereunder. You may choose to offer, and to charge a\
+      \ fee for, warranty, support, indemnity or liability obligations to one or more recipients\
+      \ of Covered Software. However, you may do so only on Your own behalf, and not on behalf\
+      \ of the Initial Developer or any Contributor. You must make it absolutely clear that\
+      \ any such warranty, support, indemnity or liability obligation is offered by You alone,\
+      \ and You hereby agree to indemnify the Initial Developer and every Contributor for any\
+      \ liability incurred by the Initial Developer or such Contributor as a result of warranty,\
+      \ support, indemnity or liability terms You offer.\n\n3.5. Distribution of Executable\
+      \ Versions. You may distribute the Executable form of the Covered Software under the terms\
+      \ of this License or under the terms of a license of Your choice, which may contain terms\
+      \ different from this License, provided that You are in compliance with the terms of this\
+      \ License and that the license for the Executable form does not attempt to limit or alter\
+      \ the recipients rights in the Source Code form from the rights set forth in this License.\
+      \ If You distribute the Covered Software in Executable form under a different license,\
+      \ You must make it absolutely clear that any terms which differ from this License are\
+      \ offered by You alone, not by the Initial Developer or Contributor. You hereby agree\
+      \ to indemnify the Initial Developer and every Contributor for any liability incurred\
+      \ by the Initial Developer or such Contributor as a result of any such terms You offer.\n\
+      \n3.6. Larger Works. You may create a Larger Work by combining Covered Software with other\
+      \ code not governed by the terms of this License and distribute the Larger Work as a single\
+      \ product. In such a case, You must make sure the requirements of this License are fulfilled\
+      \ for the Covered Software.\n\n4. Versions of the License.\n\n4.1. New Versions. Sun Microsystems,\
+      \ Inc. is the initial license steward and may publish revised and/or new versions of this\
+      \ License from time to time. Each version will be given a distinguishing version number.\
+      \ Except as provided in Section 4.3, no one other than the license steward has the right\
+      \ to modify this License.\n\n4.2. Effect of New Versions. You may always continue to use,\
+      \ distribute or otherwise make the Covered Software available under the terms of the version\
+      \ of the License under which You originally received the Covered Software. If the Initial\
+      \ Developer includes a notice in the Original Software prohibiting it from being distributed\
+      \ or otherwise made available under any subsequent version of the License, You must distribute\
+      \ and make the Covered Software available under the terms of the version of the License\
+      \ under which You originally received the Covered Software. Otherwise, You may also choose\
+      \ to use, distribute or otherwise make the Covered Software available under the terms\
+      \ of any subsequent version of the License published by the license steward.\n\n4.3. Modified\
+      \ Versions. When You are an Initial Developer and You want to create a new license for\
+      \ Your Original Software, You may create and use a modified version of this License if\
+      \ You: (a) rename the license and remove any references to the name of the license steward\
+      \ (except to note that the license differs from this License); and (b) otherwise make\
+      \ it clear that the license contains terms which differ from this License.\n\n5. DISCLAIMER\
+      \ OF WARRANTY. COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN AS IS BASIS, WITHOUT\
+      \ WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES\
+      \ THAT THE COVERED SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE\
+      \ OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED\
+      \ SOFTWARE IS WITH YOU. SHOULD ANY COVERED SOFTWARE PROVE DEFECTIVE IN ANY RESPECT, YOU\
+      \ (NOT THE INITIAL DEVELOPER OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY\
+      \ SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL\
+      \ PART OF THIS LICENSE. NO USE OF ANY COVERED SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT\
+      \ UNDER THIS DISCLAIMER.\n\n6. TERMINATION.\n\n6.1. This License and the rights granted\
+      \ hereunder will terminate automatically if You fail to comply with terms herein and fail\
+      \ to cure such breach within 30 days of becoming aware of the breach. Provisions which,\
+      \ by their nature, must remain in effect beyond the termination of this License shall\
+      \ survive.\n\n6.2. If You assert a patent infringement claim (excluding declaratory judgment\
+      \ actions) against Initial Developer or a Contributor (the Initial Developer or Contributor\
+      \ against whom You assert such claim is referred to as Participant) alleging that the\
+      \ Participant Software (meaning the Contributor Version where the Participant is a Contributor\
+      \ or the Original Software where the Participant is the Initial Developer) directly or\
+      \ indirectly infringes any patent, then any and all rights granted directly or indirectly\
+      \ to You by such Participant, the Initial Developer (if the Initial Developer is not the\
+      \ Participant) and all Contributors under Sections 2.1 and/or 2.2 of this License shall,\
+      \ upon 60 days notice from Participant terminate prospectively and automatically at the\
+      \ expiration of such 60 day notice period, unless if within such 60 day period You withdraw\
+      \ Your claim with respect to the Participant Software against such Participant either\
+      \ unilaterally or pursuant to a written agreement with Participant.\n\n6.3. In the event\
+      \ of termination under Sections 6.1 or 6.2 above, all end user licenses that have been\
+      \ validly granted by You or any distributor hereunder prior to termination (excluding\
+      \ licenses granted to You by any distributor) shall survive termination.\n\n7. LIMITATION\
+      \ OF LIABILITY. UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER TORT (INCLUDING\
+      \ NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL YOU, THE INITIAL DEVELOPER, ANY OTHER CONTRIBUTOR,\
+      \ OR ANY DISTRIBUTOR OF COVERED SOFTWARE, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE\
+      \ TO ANY PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY\
+      \ CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOST PROFITS, LOSS OF GOODWILL,\
+      \ WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES\
+      \ OR LOSSES, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES.\
+      \ THIS LIMITATION OF LIABILITY SHALL NOT APPLY TO LIABILITY FOR DEATH OR PERSONAL INJURY\
+      \ RESULTING FROM SUCH PARTYS NEGLIGENCE TO THE EXTENT APPLICABLE LAW PROHIBITS SUCH LIMITATION.\
+      \ SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL\
+      \ DAMAGES, SO THIS EXCLUSION AND LIMITATION MAY NOT APPLY TO YOU.\n\n8. U.S. GOVERNMENT\
+      \ END USERS. The Covered Software is a commercial item, as that term is defined in 48\
+      \ C.F.R. 2.101 (Oct. 1995), consisting of commercial computer software (as that term is\
+      \ defined at 48 C.F.R.  252.227-7014(a)(1)) and commercial computer software documentation\
+      \ as such terms are used in 48 C.F.R. 12.212 (Sept. 1995). Consistent with 48 C.F.R. 12.212\
+      \ and 48 C.F.R. 227.7202-1 through 227.7202-4 (June 1995), all U.S. Government End Users\
+      \ acquire Covered Software with only those rights set forth herein. This U.S. Government\
+      \ Rights clause is in lieu of, and supersedes, any other FAR, DFAR, or other clause or\
+      \ provision that addresses Government rights in computer software under this License.\n\
+      \n9. MISCELLANEOUS. This License represents the complete agreement concerning subject\
+      \ matter hereof. If any provision of this License is held to be unenforceable, such provision\
+      \ shall be reformed only to the extent necessary to make it enforceable. This License\
+      \ shall be governed by the law of the jurisdiction specified in a notice contained within\
+      \ the Original Software (except to the extent applicable law, if any, provides otherwise),\
+      \ excluding such jurisdictions conflict-of-law provisions. Any litigation relating to\
+      \ this License shall be subject to the jurisdiction of the courts located in the jurisdiction\
+      \ and venue specified in a notice contained within the Original Software, with the losing\
+      \ party responsible for costs, including, without limitation, court costs and reasonable\
+      \ attorneys fees and expenses. The application of the United Nations Convention on Contracts\
+      \ for the International Sale of Goods is expressly excluded. Any law or regulation which\
+      \ provides that the language of a contract shall be construed against the drafter shall\
+      \ not apply to this License. You agree that You alone are responsible for compliance with\
+      \ the United States export administration regulations (and the export control laws and\
+      \ regulation of any other countries) when You use, distribute or otherwise make available\
+      \ any Covered Software.\n\n10. RESPONSIBILITY FOR CLAIMS. As between Initial Developer\
+      \ and the Contributors, each party is responsible for claims and damages arising, directly\
+      \ or indirectly, out of its utilization of rights under this License and You agree to\
+      \ work with Initial Developer and Contributors to distribute such responsibility on an\
+      \ equitable basis. Nothing herein is intended or shall be deemed to constitute any admission\
+      \ of liability.\n\nNOTICE PURSUANT TO SECTION 9 OF THE COMMON DEVELOPMENT AND DISTRIBUTION\
+      \ LICENSE (CDDL) The code released under the CDDL shall be governed by the laws of the\
+      \ State of California (excluding conflict-of-law provisions). Any litigation relating\
+      \ to this License shall be subject to the jurisdiction of the Federal Courts of the Northern\
+      \ District of California and the state courts of the State of California, with venue lying\
+      \ in Santa Clara County, California."
+    scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cddl-1.0.LICENSE
+    licensedb_url: https://scancode-licensedb.aboutcode.org/cddl-1.0
+    spdx_url: https://spdx.org/licenses/CDDL-1.0
+  - key: lgpl-3.0
+    language: en
+    short_name: LGPL 3.0
+    name: GNU Lesser General Public License 3.0
+    category: Copyleft Limited
+    owner: Free Software Foundation (FSF)
+    homepage_url: http://www.gnu.org/licenses/lgpl-3.0.html
+    notes: |
+      Per SPDX.org, this license was released 29 June 2007. This license is OSI
+      Certified.
+    is_builtin: yes
+    is_exception: no
+    is_unknown: no
+    is_generic: no
+    spdx_license_key: LGPL-3.0-only
+    other_spdx_license_keys:
+      - LGPL-3.0
+    osi_license_key: LGPL-3.0
+    text_urls:
+      - http://www.gnu.org/licenses/lgpl-3.0-standalone.html
+      - http://www.gnu.org/licenses/lgpl-3.0.txt
+    osi_url: http://www.opensource.org/licenses/lgpl-3.0.html
+    faq_url:
+    other_urls:
+      - http://www.gnu.org/copyleft/lesser.html
+      - http://www.gnu.org/licenses/why-not-lgpl.html
+      - http://www.opensource.org/licenses/LGPL-3.0
+      - https://opensource.org/licenses/LGPL-3.0
+      - https://www.gnu.org/licenses/lgpl+gpl-3.0.txt
+      - https://www.gnu.org/licenses/lgpl-3.0-standalone.html
+    key_aliases: []
+    minimum_coverage: '0'
+    standard_notice:
+    ignorable_copyrights:
+      - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+    ignorable_holders:
+      - Free Software Foundation, Inc.
+    ignorable_authors: []
+    ignorable_urls:
+      - https://fsf.org/
+    ignorable_emails: []
+    text: "                   GNU LESSER GENERAL PUBLIC LICENSE\n                       Version\
+      \ 3, 29 June 2007\n \n Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>\n\
+      \ Everyone is permitted to copy and distribute verbatim copies\n of this license document,\
+      \ but changing it is not allowed.\n \n\n  This version of the GNU Lesser General Public\
+      \ License incorporates\nthe terms and conditions of version 3 of the GNU General Public\n\
+      License, supplemented by the additional permissions listed below.\n \n  0. Additional\
+      \ Definitions.\n \n  As used herein, \"this License\" refers to version 3 of the GNU Lesser\n\
+      General Public License, and the \"GNU GPL\" refers to version 3 of the GNU\nGeneral Public\
+      \ License.\n \n  \"The Library\" refers to a covered work governed by this License,\n\
+      other than an Application or a Combined Work as defined below.\n \n  An \"Application\"\
+      \ is any work that makes use of an interface provided\nby the Library, but which is not\
+      \ otherwise based on the Library.\nDefining a subclass of a class defined by the Library\
+      \ is deemed a mode\nof using an interface provided by the Library.\n \n  A \"Combined\
+      \ Work\" is a work produced by combining or linking an\nApplication with the Library.\
+      \  The particular version of the Library\nwith which the Combined Work was made is also\
+      \ called the \"Linked\nVersion\".\n \n  The \"Minimal Corresponding Source\" for a Combined\
+      \ Work means the\nCorresponding Source for the Combined Work, excluding any source code\n\
+      for portions of the Combined Work that, considered in isolation, are\nbased on the Application,\
+      \ and not on the Linked Version.\n \n  The \"Corresponding Application Code\" for a Combined\
+      \ Work means the\nobject code and/or source code for the Application, including any data\n\
+      and utility programs needed for reproducing the Combined Work from the\nApplication, but\
+      \ excluding the System Libraries of the Combined Work.\n \n  1. Exception to Section 3\
+      \ of the GNU GPL.\n \n  You may convey a covered work under sections 3 and 4 of this License\n\
+      without being bound by section 3 of the GNU GPL.\n \n  2. Conveying Modified Versions.\n\
+      \ \n  If you modify a copy of the Library, and, in your modifications, a\nfacility refers\
+      \ to a function or data to be supplied by an Application\nthat uses the facility (other\
+      \ than as an argument passed when the\nfacility is invoked), then you may convey a copy\
+      \ of the modified\nversion:\n \n   a) under this License, provided that you make a good\
+      \ faith effort to\n   ensure that, in the event an Application does not supply the\n \
+      \  function or data, the facility still operates, and performs\n   whatever part of its\
+      \ purpose remains meaningful, or\n \n   b) under the GNU GPL, with none of the additional\
+      \ permissions of\n   this License applicable to that copy.\n \n  3. Object Code Incorporating\
+      \ Material from Library Header Files.\n \n  The object code form of an Application may\
+      \ incorporate material from\na header file that is part of the Library.  You may convey\
+      \ such object\ncode under terms of your choice, provided that, if the incorporated\nmaterial\
+      \ is not limited to numerical parameters, data structure\nlayouts and accessors, or small\
+      \ macros, inline functions and templates\n(ten or fewer lines in length), you do both\
+      \ of the following:\n \n   a) Give prominent notice with each copy of the object code\
+      \ that the\n   Library is used in it and that the Library and its use are\n   covered\
+      \ by this License.\n \n   b) Accompany the object code with a copy of the GNU GPL and\
+      \ this license\n   document.\n \n  4. Combined Works.\n \n  You may convey a Combined\
+      \ Work under terms of your choice that,\ntaken together, effectively do not restrict modification\
+      \ of the\nportions of the Library contained in the Combined Work and reverse\nengineering\
+      \ for debugging such modifications, if you also do each of\nthe following:\n \n   a) Give\
+      \ prominent notice with each copy of the Combined Work that\n   the Library is used in\
+      \ it and that the Library and its use are\n   covered by this License.\n \n   b) Accompany\
+      \ the Combined Work with a copy of the GNU GPL and this license\n   document.\n \n   c)\
+      \ For a Combined Work that displays copyright notices during\n   execution, include the\
+      \ copyright notice for the Library among\n   these notices, as well as a reference directing\
+      \ the user to the\n   copies of the GNU GPL and this license document.\n \n   d) Do one\
+      \ of the following:\n \n       0) Convey the Minimal Corresponding Source under the terms\
+      \ of this\n       License, and the Corresponding Application Code in a form\n       suitable\
+      \ for, and under terms that permit, the user to\n       recombine or relink the Application\
+      \ with a modified version of\n       the Linked Version to produce a modified Combined\
+      \ Work, in the\n       manner specified by section 6 of the GNU GPL for conveying\n  \
+      \     Corresponding Source.\n \n       1) Use a suitable shared library mechanism for\
+      \ linking with the\n       Library.  A suitable mechanism is one that (a) uses at run\
+      \ time\n       a copy of the Library already present on the user's computer\n       system,\
+      \ and (b) will operate properly with a modified version\n       of the Library that is\
+      \ interface-compatible with the Linked\n       Version.\n \n   e) Provide Installation\
+      \ Information, but only if you would otherwise\n   be required to provide such information\
+      \ under section 6 of the\n   GNU GPL, and only to the extent that such information is\n\
+      \   necessary to install and execute a modified version of the\n   Combined Work produced\
+      \ by recombining or relinking the\n   Application with a modified version of the Linked\
+      \ Version. (If\n   you use option 4d0, the Installation Information must accompany\n \
+      \  the Minimal Corresponding Source and Corresponding Application\n   Code. If you use\
+      \ option 4d1, you must provide the Installation\n   Information in the manner specified\
+      \ by section 6 of the GNU GPL\n   for conveying Corresponding Source.)\n \n  5. Combined\
+      \ Libraries.\n \n  You may place library facilities that are a work based on the\nLibrary\
+      \ side by side in a single library together with other library\nfacilities that are not\
+      \ Applications and are not covered by this\nLicense, and convey such a combined library\
+      \ under terms of your\nchoice, if you do both of the following:\n \n   a) Accompany the\
+      \ combined library with a copy of the same work based\n   on the Library, uncombined with\
+      \ any other library facilities,\n   conveyed under the terms of this License.\n \n   b)\
+      \ Give prominent notice with the combined library that part of it\n   is a work based\
+      \ on the Library, and explaining where to find the\n   accompanying uncombined form of\
+      \ the same work.\n \n  6. Revised Versions of the GNU Lesser General Public License.\n\
+      \ \n  The Free Software Foundation may publish revised and/or new versions\nof the GNU\
+      \ Lesser General Public License from time to time. Such new\nversions will be similar\
+      \ in spirit to the present version, but may\ndiffer in detail to address new problems\
+      \ or concerns.\n \n  Each version is given a distinguishing version number. If the\nLibrary\
+      \ as you received it specifies that a certain numbered version\nof the GNU Lesser General\
+      \ Public License \"or any later version\"\napplies to it, you have the option of following\
+      \ the terms and\nconditions either of that published version or of any later version\n\
+      published by the Free Software Foundation. If the Library as you\nreceived it does not\
+      \ specify a version number of the GNU Lesser\nGeneral Public License, you may choose any\
+      \ version of the GNU Lesser\nGeneral Public License ever published by the Free Software\
+      \ Foundation.\n \n  If the Library as you received it specifies that a proxy can decide\n\
+      whether future versions of the GNU Lesser General Public License shall\napply, that proxy's\
+      \ public statement of acceptance of any version is\npermanent authorization for you to\
+      \ choose that version for the\nLibrary."
+    scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/lgpl-3.0.LICENSE
+    licensedb_url: https://scancode-licensedb.aboutcode.org/lgpl-3.0
+    spdx_url: https://spdx.org/licenses/LGPL-3.0-only
+  - key: mit
+    language: en
+    short_name: MIT License
+    name: MIT License
+    category: Permissive
+    owner: MIT
+    homepage_url: http://opensource.org/licenses/mit-license.php
+    notes: Per SPDX.org, this license is OSI certified.
+    is_builtin: yes
+    is_exception: no
+    is_unknown: no
+    is_generic: no
+    spdx_license_key: MIT
+    other_spdx_license_keys:
+      - LicenseRef-MIT-Bootstrap
+      - LicenseRef-MIT-Discord
+      - LicenseRef-MIT-TC
+      - LicenseRef-MIT-Diehl
+    osi_license_key:
+    text_urls:
+      - http://opensource.org/licenses/mit-license.php
+    osi_url: http://www.opensource.org/licenses/MIT
+    faq_url: https://ieeexplore.ieee.org/document/9263265
+    other_urls:
+      - https://opensource.com/article/18/3/patent-grant-mit-license
+      - https://opensource.com/article/19/4/history-mit-license
+      - https://opensource.org/licenses/MIT
+    key_aliases: []
+    minimum_coverage: '0'
+    standard_notice:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: |
+      Permission is hereby granted, free of charge, to any person obtaining
+      a copy of this software and associated documentation files (the
+      "Software"), to deal in the Software without restriction, including
+      without limitation the rights to use, copy, modify, merge, publish,
+      distribute, sublicense, and/or sell copies of the Software, and to
+      permit persons to whom the Software is furnished to do so, subject to
+      the following conditions:
+
+      The above copyright notice and this permission notice shall be
+      included in all copies or substantial portions of the Software.
+
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+      IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+      CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+      TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+      SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+    licensedb_url: https://scancode-licensedb.aboutcode.org/mit
+    spdx_url: https://spdx.org/licenses/MIT
+  - key: unknown-license-reference
+    language: en
+    short_name: Unknown License reference
+    name: Unknown License file reference
+    category: Unstated License
+    owner: Unspecified
+    homepage_url:
+    notes: This applies to the case of a file with no clear license, which may be referenced
+      via URL or text such as "See license in..." or "This file is licensed under...", but where
+      the reference cannot be resolved to a specific named, public license.
+    is_builtin: yes
+    is_exception: no
+    is_unknown: yes
+    is_generic: no
+    spdx_license_key: LicenseRef-scancode-unknown-license-reference
+    other_spdx_license_keys: []
+    osi_license_key:
+    text_urls: []
+    osi_url:
+    faq_url:
+    other_urls: []
+    key_aliases: []
+    minimum_coverage: '0'
+    standard_notice:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text:
+    scancode_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
+    licensedb_url: https://scancode-licensedb.aboutcode.org/unknown-license-reference
+    spdx_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/unknown-license-reference.LICENSE
+license_rule_references:
+  - license_expression: apache-2.0
+    identifier: apache-2.0_65.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 4
+    relevance: 100
+    minimum_coverage: 80
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: 'license: Apache-2.0'
+  - license_expression: cddl-1.0
+    identifier: cddl-1.0.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 8
+    relevance: 100
+    minimum_coverage: 80
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: Common Development and Distribution License (CDDL) v1.0
+  - license_expression: cddl-1.0
+    identifier: cddl-1.0_32.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 17
+    relevance: 100
+    minimum_coverage: 50
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls:
+      - http://www.sun.com/cddl/cddl.html
+    ignorable_emails: []
+    text: 'License: COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL Version 1.0  (http://www.sun.com/cddl/cddl.html'
+  - license_expression: cddl-1.0
+    identifier: cddl-1.0_4.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 7
+    relevance: 100
+    minimum_coverage: 100
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls:
+      - http://www.sun.com/cddl/cddl.html
+    ignorable_emails: []
+    text: http://www.sun.com/cddl/cddl.html
+  - license_expression: lgpl-3.0
+    identifier: lgpl-3.0_152.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_152.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 2
+    relevance: 100
+    minimum_coverage: 100
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: license='LGPLv3',
+  - license_expression: lgpl-3.0
+    identifier: lgpl-3.0_276.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_276.RULE
+    is_license_text: no
+    is_license_notice: yes
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 106
+    relevance: 100
+    minimum_coverage: '0'
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: |
+      This library is free software; you can redistribute it and/or modify it under
+      the terms of the GNU Lesser General Public License version 3.0 as published
+      by the Free Software Foundation.
+
+      This library is distributed in the hope that it will be useful, but WITHOUT
+      ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+      FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+      details.
+
+      You should have received a copy of the GNU Lesser General Public License
+      along with this library; if not, write to the Free Software Foundation, Inc.,
+      51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+  - license_expression: unknown-license-reference
+    identifier: license-intro_72.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: no
+    is_license_intro: yes
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 3
+    relevance: 16
+    minimum_coverage: 80
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: |
+      <licenses>
+          <license>
+            <name>
+  - license_expression: mit
+    identifier: mit_30.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 2
+    relevance: 100
+    minimum_coverage: 100
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: 'License: MIT'
+  - license_expression: lgpl-3.0
+    identifier: pypi_gnu_lesser_general_public_license_v3.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 10
+    relevance: 100
+    minimum_coverage: 50
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: 'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'
+  - license_expression: mit
+    identifier: spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06
+    language: en
+    rule_url:
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: yes
+    length: 1
+    relevance: 100
+    minimum_coverage: '0'
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: MIT
+  - license_expression: apache-2.0
+    identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    is_license_clue: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 3
+    relevance: 100
+    minimum_coverage: 100
+    referenced_filenames: []
+    notes: Used to detect a bare SPDX license id
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: apache-2.0
+files:
+  - path: manifests
+    type: directory
+    name: manifests
+    base_name: manifests
+    extension:
+    size: '0'
+    sha1:
+    md5:
+    sha256:
+    mime_type:
+    file_type:
+    programming_language:
+    is_binary: no
+    is_text: no
+    is_archive: no
+    is_media: no
+    is_source: no
+    is_script: no
+    package_data: []
+    for_packages: []
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: yes
+    is_key_file: no
+    detected_license_expression:
+    detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
+    percentage_of_license_text: '0'
+    copyrights: []
+    holders: []
+    authors: []
+    emails: []
+    urls: []
+    files_count: 4
+    dirs_count: 4
+    size_count: 6962
+    scan_errors: []
+  - path: manifests/maven
+    type: directory
+    name: maven
+    base_name: maven
+    extension:
+    size: '0'
+    sha1:
+    md5:
+    sha256:
+    mime_type:
+    file_type:
+    programming_language:
+    is_binary: no
+    is_text: no
+    is_archive: no
+    is_media: no
+    is_source: no
+    is_script: no
+    package_data: []
+    for_packages:
+      - pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: yes
+    is_key_file: no
+    detected_license_expression:
+    detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
+    percentage_of_license_text: '0'
+    copyrights: []
+    holders: []
+    authors: []
+    emails: []
+    urls: []
+    files_count: 1
+    dirs_count: '0'
+    size_count: 1307
+    scan_errors: []
+  - path: manifests/maven/persistence-api-1.0.pom
+    type: file
+    name: persistence-api-1.0.pom
+    base_name: persistence-api-1.0
+    extension: .pom
+    size: 1307
+    sha1: 82107f6781df8da9aa7cb60abc649208256af5cb
+    md5: e79938fe4e630b02e3526c0195292cc6
+    sha256: f94648bd92ddf2464e62c56c3833b36927fa8b9803e8ebf3e4cfa7f2d797f3ad
+    mime_type: text/xml
+    file_type: XML 1.0 document, ASCII text
+    programming_language:
+    is_binary: no
+    is_text: yes
+    is_archive: no
+    is_media: no
+    is_source: no
+    is_script: no
+    package_data:
+      - type: maven
+        namespace: javax.persistence
+        name: persistence-api
+        version: '1.0'
+        qualifiers: {}
+        subpath:
+        primary_language: Java
+        description: |
+          Enterprise JavaBeans (EJB) 3.0
+          The Enterprise JavaBeans architecture is a component architecture for the development and deployment of component-based business applications.
+              The purpose of Enterprise JavaBeans (EJB) 3.0 is to improve the EJB architecture by reducing its complexity from the developer's point of view.
+        release_date:
+        parties: []
+        keywords: []
+        homepage_url: http://www.jcp.org/en/jsr/detail?id=220
+        download_url:
+        size:
+        sha1:
+        md5:
+        sha256:
+        sha512:
+        bug_tracking_url:
+        code_view_url:
+        vcs_url:
+        copyright:
+        holder:
+        declared_license_expression: cddl-1.0
+        declared_license_expression_spdx: CDDL-1.0
+        license_detections:
+          - license_expression: cddl-1.0
+            matches:
+              - score: '100.0'
+                start_line: 1
+                end_line: 1
+                matched_length: 8
+                match_coverage: '100.0'
+                matcher: 2-aho
+                license_expression: cddl-1.0
+                rule_identifier: cddl-1.0.RULE
+                rule_relevance: 100
+                rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE
+                matched_text: '- name: Common Development and Distribution License (CDDL) v1.0'
+              - score: '100.0'
+                start_line: 2
+                end_line: 2
+                matched_length: 7
+                match_coverage: '100.0'
+                matcher: 2-aho
+                license_expression: cddl-1.0
+                rule_identifier: cddl-1.0_4.RULE
+                rule_relevance: 100
+                rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE
+                matched_text: '  url: http://www.sun.com/cddl/cddl.html'
+            identifier: cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880
+        other_license_expression:
+        other_license_expression_spdx:
+        other_license_detections: []
+        extracted_license_statement: |
+          - name: Common Development and Distribution License (CDDL) v1.0
+            url: http://www.sun.com/cddl/cddl.html
+        notice_text:
+        source_packages:
+          - pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources
+        file_references: []
+        extra_data: {}
+        dependencies: []
+        repository_homepage_url: https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/
+        repository_download_url: https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar
+        api_data_url: https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.pom
+        datasource_id: maven_pom
+        purl: pkg:maven/javax.persistence/persistence-api@1.0
+    for_packages:
+      - pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    detected_license_expression: cddl-1.0
+    detected_license_expression_spdx: CDDL-1.0
+    license_detections:
+      - license_expression: cddl-1.0
+        matches:
+          - score: '16.0'
+            start_line: 17
+            end_line: '19'
+            matched_length: 3
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: unknown-license-reference
+            rule_identifier: license-intro_72.RULE
+            rule_relevance: 16
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE
+            matched_text: |
+              <licenses>
+                <license>
+                  <name>Common Development and Distribution License (CDDL) v1.0</name>
+          - score: '82.35'
+            start_line: 18
+            end_line: 20
+            matched_length: 14
+            match_coverage: '82.35'
+            matcher: 3-seq
+            license_expression: cddl-1.0
+            rule_identifier: cddl-1.0_32.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE
+            matched_text: |
+              <license>
+                <name>Common Development and Distribution License (CDDL) v1.0</name>
+                <url>http://www.sun.com/cddl/cddl.html</url>
+        identifier: cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6
+    license_clues: []
+    percentage_of_license_text: '9.25'
+    copyrights: []
+    holders: []
+    authors: []
+    emails: []
+    urls:
+      - url: http://www.jcp.org/en/jsr/detail?id=220
+        start_line: 15
+        end_line: 15
+      - url: http://www.sun.com/cddl/cddl.html
+        start_line: 20
+        end_line: 20
+    files_count: '0'
+    dirs_count: '0'
+    size_count: '0'
+    scan_errors: []
+  - path: manifests/npm-license-mapping
+    type: directory
+    name: npm-license-mapping
+    base_name: npm-license-mapping
+    extension:
+    size: '0'
+    sha1:
+    md5:
+    sha256:
+    mime_type:
+    file_type:
+    programming_language:
+    is_binary: no
+    is_text: no
+    is_archive: no
+    is_media: no
+    is_source: no
+    is_script: no
+    package_data: []
+    for_packages: []
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: yes
+    is_key_file: no
+    detected_license_expression:
+    detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
+    percentage_of_license_text: '0'
+    copyrights: []
+    holders: []
+    authors: []
+    emails: []
+    urls: []
+    files_count: 1
+    dirs_count: '0'
+    size_count: 1184
+    scan_errors: []
+  - path: manifests/npm-license-mapping/package.json
+    type: file
+    name: package.json
+    base_name: package
+    extension: .json
+    size: 1184
+    sha1: 0ed61bf6912407a143ce96c95bea56ad13463f5b
+    md5: 427e6d3b579b128fed50328ac65b698e
+    sha256: d292aa647dc82e007ba319c878ec182d6f235f0a923cfe012ffc0ae8b7fa23be
+    mime_type: application/json
+    file_type: JSON data
+    programming_language:
+    is_binary: no
+    is_text: yes
+    is_archive: no
+    is_media: no
+    is_source: no
+    is_script: no
+    package_data:
+      - type: npm
+        namespace:
+        name: grunt-esvm
+        version: 3.2.8
+        qualifiers: {}
+        subpath:
+        primary_language: JavaScript
+        description: Create elasticsearch clusters from grunt.
+        release_date:
+        parties:
+          - type: person
+            role: author
+            name: Spencer Alger
+            email: spencer.alger@elasticsearch.com
+            url:
+        keywords:
+          - gruntplugin
+        homepage_url: https://github.com/spenceralger/grunt-esvm
+        download_url: https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz
+        size:
+        sha1:
+        md5:
+        sha256:
+        sha512:
+        bug_tracking_url: https://github.com/spenceralger/grunt-esvm/issues
+        code_view_url:
+        vcs_url: git://github.com/spenceralger/grunt-esvm.git
+        copyright:
+        holder:
+        declared_license_expression: apache-2.0
+        declared_license_expression_spdx: Apache-2.0
+        license_detections:
+          - license_expression: apache-2.0
+            matches:
+              - score: '100.0'
+                start_line: 1
+                end_line: 1
+                matched_length: 3
+                match_coverage: '100.0'
+                matcher: 1-hash
+                license_expression: apache-2.0
+                rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
+                rule_relevance: 100
+                rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+                matched_text: Apache-2.0
+            identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
+          - license_expression: apache-2.0
+            matches:
+              - score: '100.0'
+                start_line: 1
+                end_line: 1
+                matched_length: 3
+                match_coverage: '100.0'
+                matcher: 1-hash
+                license_expression: apache-2.0
+                rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
+                rule_relevance: 100
+                rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+                matched_text: Apache 2.0
+            identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
+        other_license_expression:
+        other_license_expression_spdx:
+        other_license_detections: []
+        extracted_license_statement: |
+          - Apache-2.0
+          - type: Apache 2.0
+            url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md
+        notice_text:
+        source_packages: []
+        file_references: []
+        extra_data: {}
+        dependencies:
+          - purl: pkg:npm/bluebird
+            extracted_requirement: ^2.9.30
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/cli-color
+            extracted_requirement: ~0.3.2
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/cli-table
+            extracted_requirement: ~0.3.0
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/libesvm
+            extracted_requirement: ^3.8.2
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/lodash
+            extracted_requirement: ^3.9.3
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/moment
+            extracted_requirement: ^2.10.3
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/wreck
+            extracted_requirement: ^5.6.0
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/grunt
+            extracted_requirement: '>=0.4.0'
+            scope: devDependencies
+            is_runtime: no
+            is_optional: yes
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/load-grunt-config
+            extracted_requirement: ~0.19.0
+            scope: devDependencies
+            is_runtime: no
+            is_optional: yes
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/grunt
+            extracted_requirement: '>=0.4.0'
+            scope: peerDependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+        repository_homepage_url: https://www.npmjs.com/package/grunt-esvm
+        repository_download_url: https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz
+        api_data_url: https://registry.npmjs.org/grunt-esvm/3.2.8
+        datasource_id: npm_package_json
+        purl: pkg:npm/grunt-esvm@3.2.8
+    for_packages:
+      - pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    detected_license_expression: apache-2.0
+    detected_license_expression_spdx: Apache-2.0
+    license_detections:
+      - license_expression: apache-2.0
+        matches:
+          - score: '100.0'
+            start_line: 6
+            end_line: 6
+            matched_length: 4
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: apache-2.0
+            rule_identifier: apache-2.0_65.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
+            matched_text: '    "license": "Apache-2.0",'
+        identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
+      - license_expression: apache-2.0
+        matches:
+          - score: '100.0'
+            start_line: 20
+            end_line: 20
+            matched_length: 3
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: apache-2.0
+            rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
+            matched_text: '        "type": "Apache 2.0",'
+        identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
+    license_clues: []
+    percentage_of_license_text: '5.51'
+    copyrights: []
+    holders: []
+    authors:
+      - author: Spencer Alger
+        start_line: 7
+        end_line: 8
+    emails:
+      - email: spencer.alger@elasticsearch.com
+        start_line: 9
+        end_line: 9
+    urls:
+      - url: https://github.com/spenceralger/grunt-esvm
+        start_line: 5
+        end_line: 5
+      - url: git://github.com/spenceralger/grunt-esvm.git
+        start_line: 13
+        end_line: 13
+      - url: https://github.com/spenceralger/grunt-esvm/issues
+        start_line: 16
+        end_line: 16
+      - url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md
+        start_line: 21
+        end_line: 21
+    files_count: '0'
+    dirs_count: '0'
+    size_count: '0'
+    scan_errors: []
+  - path: manifests/npm-license-string
+    type: directory
+    name: npm-license-string
+    base_name: npm-license-string
+    extension:
+    size: '0'
+    sha1:
+    md5:
+    sha256:
+    mime_type:
+    file_type:
+    programming_language:
+    is_binary: no
+    is_text: no
+    is_archive: no
+    is_media: no
+    is_source: no
+    is_script: no
+    package_data: []
+    for_packages: []
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: yes
+    is_key_file: no
+    detected_license_expression:
+    detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
+    percentage_of_license_text: '0'
+    copyrights: []
+    holders: []
+    authors: []
+    emails: []
+    urls: []
+    files_count: 1
+    dirs_count: '0'
+    size_count: 1544
+    scan_errors: []
+  - path: manifests/npm-license-string/package.json
+    type: file
+    name: package.json
+    base_name: package
+    extension: .json
+    size: 1544
+    sha1: e6acddf907b7089d197d9d46879cd18ffb8f5198
+    md5: 5ba816691af915c02567f459ae26ebd6
+    sha256: 11129bc3bbf44b2567307ad13a31bc231f08416919e36bbdeabb9195b3e6ad58
+    mime_type: application/json
+    file_type: JSON data
+    programming_language:
+    is_binary: no
+    is_text: yes
+    is_archive: no
+    is_media: no
+    is_source: no
+    is_script: no
+    package_data:
+      - type: npm
+        namespace:
+        name: angular-compare-validator
+        version: 0.1.1
+        qualifiers: {}
+        subpath:
+        primary_language: JavaScript
+        description: Angular form validation directive to compare two inputs
+        release_date:
+        parties:
+          - type: person
+            role: maintainer
+            name: georgdangl
+            email: npm@dan.gl
+            url:
+        keywords: []
+        homepage_url: https://github.com/GeorgDangl/angular-compare-validator#readme
+        download_url: https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz
+        size:
+        sha1: d35a0754c8587b0502874e3636cf0f19565d09b7
+        md5:
+        sha256:
+        sha512: 8f70ed5e3513185ad58fb2a3114769ac93ddd68836ce89146e586fc03e03ac93dcfb1f11354ac26f408b75c0ebf51663d5e4e8e27c38752a3c06bdde749a7c03
+        bug_tracking_url: https://github.com/GeorgDangl/angular-compare-validator/issues
+        code_view_url:
+        vcs_url: git+https://github.com/GeorgDangl/angular-compare-validator.git
+        copyright:
+        holder:
+        declared_license_expression: mit
+        declared_license_expression_spdx: MIT
+        license_detections:
+          - license_expression: mit
+            matches:
+              - score: '100.0'
+                start_line: 1
+                end_line: 1
+                matched_length: 1
+                match_coverage: '100.0'
+                matcher: 1-spdx-id
+                license_expression: mit
+                rule_identifier: spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06
+                rule_relevance: 100
+                rule_url:
+                matched_text: MIT
+            identifier: mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf
+        other_license_expression:
+        other_license_expression_spdx:
+        other_license_detections: []
+        extracted_license_statement: |
+          - MIT
+        notice_text:
+        source_packages: []
+        file_references: []
+        extra_data: {}
+        dependencies:
+          - purl: pkg:npm/%40angular/core
+            extracted_requirement: '>=2.0.0'
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/%40angular/forms
+            extracted_requirement: '>=2.0.0'
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/%40angular/common
+            extracted_requirement: '>=2.0.0'
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/rxjs
+            extracted_requirement: '>=5.0.0-beta.12'
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:npm/zone.js
+            extracted_requirement: '>=0.6.21'
+            scope: dependencies
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+        repository_homepage_url: https://www.npmjs.com/package/angular-compare-validator
+        repository_download_url: https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz
+        api_data_url: https://registry.npmjs.org/angular-compare-validator/0.1.1
+        datasource_id: npm_package_json
+        purl: pkg:npm/angular-compare-validator@0.1.1
+    for_packages:
+      - pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    detected_license_expression: mit
+    detected_license_expression_spdx: MIT
+    license_detections:
+      - license_expression: mit
+        matches:
+          - score: '100.0'
+            start_line: 4
+            end_line: 4
+            matched_length: 2
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: mit
+            rule_identifier: mit_30.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE
+            matched_text: '    "license": "MIT",'
+        identifier: mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee
+    license_clues: []
+    percentage_of_license_text: '1.32'
+    copyrights: []
+    holders: []
+    authors: []
+    emails:
+      - email: npm@dan.gl
+        start_line: 28
+        end_line: 28
+    urls:
+      - url: https://github.com/GeorgDangl/angular-compare-validator.git
+        start_line: 7
+        end_line: 7
+      - url: https://github.com/GeorgDangl/angular-compare-validator/issues
+        start_line: 20
+        end_line: 20
+      - url: https://github.com/GeorgDangl/angular-compare-validator#readme
+        start_line: 22
+        end_line: 22
+      - url: https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz
+        start_line: 33
+        end_line: 33
+    files_count: '0'
+    dirs_count: '0'
+    size_count: '0'
+    scan_errors: []
+  - path: manifests/pypi
+    type: directory
+    name: pypi
+    base_name: pypi
+    extension:
+    size: '0'
+    sha1:
+    md5:
+    sha256:
+    mime_type:
+    file_type:
+    programming_language:
+    is_binary: no
+    is_text: no
+    is_archive: no
+    is_media: no
+    is_source: no
+    is_script: no
+    package_data: []
+    for_packages: []
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: yes
+    is_key_file: no
+    detected_license_expression:
+    detected_license_expression_spdx:
+    license_detections: []
+    license_clues: []
+    percentage_of_license_text: '0'
+    copyrights: []
+    holders: []
+    authors: []
+    emails: []
+    urls: []
+    files_count: 1
+    dirs_count: '0'
+    size_count: 2927
+    scan_errors: []
+  - path: manifests/pypi/bluepyopt_setup.py
+    type: file
+    name: bluepyopt_setup.py
+    base_name: bluepyopt_setup
+    extension: .py
+    size: 2927
+    sha1: 5507192502255517e006c531d07dd84dc2325be8
+    md5: 6795bed0c9c6b6cb915bfa959a2d1d4a
+    sha256: 4378d297df9fcb4f65fdcd1299e17eef7db86883baf149bc41b0335f943cf006
+    mime_type: text/x-script.python
+    file_type: Python script, ASCII text executable
+    programming_language: Python
+    is_binary: no
+    is_text: yes
+    is_archive: no
+    is_media: no
+    is_source: yes
+    is_script: yes
+    package_data:
+      - type: pypi
+        namespace:
+        name: bluepyopt
+        version:
+        qualifiers: {}
+        subpath:
+        primary_language: Python
+        description: Bluebrain Python Optimisation Library (bluepyopt)
+        release_date:
+        parties:
+          - type: person
+            role: author
+            name: BlueBrain Project, EPFL
+            email: werner.vangeit@epfl.ch
+            url:
+        keywords:
+          - optimisation
+          - neuroscience
+          - BlueBrainProject
+          - 'Development Status :: 5 - Production/Stable'
+          - 'Environment :: Console'
+          - 'Programming Language :: Python :: 3 :: Only'
+          - 'Operating System :: POSIX'
+          - 'Topic :: Scientific/Engineering'
+          - 'Topic :: Utilities'
+        homepage_url: https://github.com/BlueBrain/BluePyOpt
+        download_url:
+        size:
+        sha1:
+        md5:
+        sha256:
+        sha512:
+        bug_tracking_url:
+        code_view_url:
+        vcs_url:
+        copyright:
+        holder:
+        declared_license_expression: lgpl-3.0
+        declared_license_expression_spdx: LGPL-3.0-only
+        license_detections:
+          - license_expression: lgpl-3.0
+            matches:
+              - score: '100.0'
+                start_line: 1
+                end_line: 1
+                matched_length: 1
+                match_coverage: '100.0'
+                matcher: 1-hash
+                license_expression: lgpl-3.0
+                rule_identifier: lgpl-3.0_29.RULE
+                rule_relevance: 100
+                rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_29.RULE
+                matched_text: LGPLv3
+            identifier: lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5
+          - license_expression: lgpl-3.0
+            matches:
+              - score: '100.0'
+                start_line: 1
+                end_line: 1
+                matched_length: 10
+                match_coverage: '100.0'
+                matcher: 1-hash
+                license_expression: lgpl-3.0
+                rule_identifier: pypi_gnu_lesser_general_public_license_v3.RULE
+                rule_relevance: 100
+                rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
+                matched_text: '- ''License :: OSI Approved :: GNU Lesser General Public License
+                  v3 (LGPLv3)'''
+            identifier: lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321
+        other_license_expression:
+        other_license_expression_spdx:
+        other_license_detections: []
+        extracted_license_statement: |
+          license: LGPLv3
+          classifiers:
+            - 'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'
+        notice_text:
+        source_packages: []
+        file_references: []
+        extra_data: {}
+        dependencies:
+          - purl: pkg:pypi/numpy
+            extracted_requirement: numpy>=1.6
+            scope: install
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/pandas
+            extracted_requirement: pandas>=0.18
+            scope: install
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/deap
+            extracted_requirement: deap
+            scope: install
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/efel
+            extracted_requirement: efel>=2.13
+            scope: install
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/ipyparallel
+            extracted_requirement: ipyparallel
+            scope: install
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/pickleshare
+            extracted_requirement: pickleshare>=0.7.3
+            scope: install
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/jinja2
+            extracted_requirement: Jinja2>=2.8
+            scope: install
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/future
+            extracted_requirement: future
+            scope: install
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/pebble
+            extracted_requirement: Pebble>=4.3.10
+            scope: install
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/scoop
+            extracted_requirement: scoop>=0.7
+            scope: all
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+          - purl: pkg:pypi/scoop
+            extracted_requirement: scoop>=0.7
+            scope: scoop
+            is_runtime: yes
+            is_optional: no
+            is_resolved: no
+            resolved_package: {}
+            extra_data: {}
+        repository_homepage_url: https://pypi.org/project/bluepyopt
+        repository_download_url:
+        api_data_url: https://pypi.org/pypi/bluepyopt/json
+        datasource_id: pypi_setup_py
+        purl: pkg:pypi/bluepyopt
+    for_packages: []
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    detected_license_expression: lgpl-3.0
+    detected_license_expression_spdx: LGPL-3.0-only
+    license_detections:
+      - license_expression: lgpl-3.0
+        matches:
+          - score: '100.0'
+            start_line: 9
+            end_line: 20
+            matched_length: 106
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: lgpl-3.0
+            rule_identifier: lgpl-3.0_276.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_276.RULE
+            matched_text: |
+              This library is free software; you can redistribute it and/or modify it under
+              the terms of the GNU Lesser General Public License version 3.0 as published
+              by the Free Software Foundation.
+
+              This library is distributed in the hope that it will be useful, but WITHOUT
+              ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+              FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+              details.
+
+              You should have received a copy of the GNU Lesser General Public License
+              along with this library; if not, write to the Free Software Foundation, Inc.,
+              51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+        identifier: lgpl_3_0-121be3c2-9c80-df84-d3da-8f674e4125c0
+      - license_expression: lgpl-3.0
+        matches:
+          - score: '100.0'
+            start_line: 65
+            end_line: 65
+            matched_length: 2
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: lgpl-3.0
+            rule_identifier: lgpl-3.0_152.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_152.RULE
+            matched_text: '    license="LGPLv3",'
+        identifier: lgpl_3_0-2db87bcf-56b4-9d7d-7075-2effae31c631
+      - license_expression: lgpl-3.0
+        matches:
+          - score: '100.0'
+            start_line: 74
+            end_line: 75
+            matched_length: 10
+            match_coverage: '100.0'
+            matcher: 2-aho
+            license_expression: lgpl-3.0
+            rule_identifier: pypi_gnu_lesser_general_public_license_v3.RULE
+            rule_relevance: 100
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE
+            matched_text: |
+              'License :: OSI Approved :: GNU Lesser General Public '
+              'License v3 (LGPLv3)',
+        identifier: lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321
+    license_clues: []
+    percentage_of_license_text: '34.71'
+    copyrights:
+      - copyright: Copyright (c) 2016-2020, EPFL/Blue Brain Project
+        start_line: 5
+        end_line: 5
+    holders:
+      - holder: EPFL/Blue Brain Project
+        start_line: 5
+        end_line: 5
+    authors:
+      - author: BlueBrain Project
+        start_line: 54
+        end_line: 54
+    emails:
+      - email: werner.vangeit@epfl.ch
+        start_line: 55
+        end_line: 55
+    urls:
+      - url: https://github.com/BlueBrain/BluePyOpt
+        start_line: 7
+        end_line: 7
+    files_count: '0'
+    dirs_count: '0'
+    size_count: '0'
+    scan_errors: []

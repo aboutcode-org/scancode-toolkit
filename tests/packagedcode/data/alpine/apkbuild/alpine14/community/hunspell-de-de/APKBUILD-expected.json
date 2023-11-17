@@ -21,14 +21,12 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "gpl-3.0",
   "declared_license_expression_spdx": "GPL-3.0-only",
   "license_detections": [
     {
       "license_expression": "gpl-3.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 50.0,
@@ -39,10 +37,12 @@
           "matcher": "1-hash",
           "license_expression": "gpl-3.0",
           "rule_identifier": "spdx_license_id_gpl-3.0-only_for_gpl-3.0.RULE",
+          "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-3.0-only_for_gpl-3.0.RULE",
           "matched_text": "gpl-3.0-only"
         }
-      ]
+      ],
+      "identifier": "gpl_3_0-c40e1583-9bea-e122-2576-a76192b84364"
     }
   ],
   "other_license_expression": null,

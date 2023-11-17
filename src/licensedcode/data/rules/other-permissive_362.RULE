@@ -1,0 +1,11 @@
+---
+license_expression: other-permissive
+is_license_notice: yes
+notes: See in https://github.com/waltervn/toluapp/blob/3a2c889fd72b96490714959158af7dd000476135/src/lib/tolua_event.c
+    The project is otherwise MIT-licensed so it could be an MIT notice
+---
+
+This code is free software; you can redistribute it and/or modify it.
+The software provided hereunder is on an "as is" basis, and
+the author has no obligation to provide maintenance, support, updates,
+enhancements, or modifications.

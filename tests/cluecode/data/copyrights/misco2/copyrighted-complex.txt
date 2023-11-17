@@ -1,0 +1,8 @@
+copyrighted by <A
+HREF="http://www.dre.vanderbilt.edu/~schmidt/">Douglas C. Schmidt</A>
+and his <a
+HREF="http://www.cs.wustl.edu/~schmidt/ACE-members.html">research
+group</a> at <A HREF="http://www.wustl.edu/">Washington
+University</A>, <A HREF="http://www.uci.edu">University of California,
+Irvine</A>, and <A HREF="http://www.vanderbilt.edu">Vanderbilt
+University</A>, Copyright (c) 1993-2009, all rights reserved.

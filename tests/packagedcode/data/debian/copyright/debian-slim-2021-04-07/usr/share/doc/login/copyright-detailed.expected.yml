@@ -5,8 +5,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '97.18'
         start_line: 20
@@ -16,6 +14,7 @@ license_detections:
         matcher: 3-seq
         license_expression: bsd-new
         rule_identifier: bsd-new_67.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_67.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -41,9 +40,8 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: bsd_new-44167a67-f95e-380d-3fbb-e5be5e832c48
   - license_expression: tcp-wrappers
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 72
@@ -53,6 +51,7 @@ license_detections:
         matcher: 2-aho
         license_expression: tcp-wrappers
         rule_identifier: tcp-wrappers_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcp-wrappers_3.RULE
         matched_text: "Individual files\n* may be covered by other copyrights (as noted in the\
           \ file itself.)\n*\n* This material was originally written and compiled by Wietse\
@@ -62,9 +61,8 @@ license_detections:
           \ such\n* copies.  \n*\n* This software is provided \"as is\" and without any expressed\
           \ or implied\n* warranties, including, without limitation, the implied warranties\
           \ of\n* merchantibility and fitness for any particular purpose."
+    identifier: tcp_wrappers-47a49a2d-71d2-76d4-0780-2d5c538898f7
   - license_expression: gpl-2.0-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 92
@@ -74,6 +72,7 @@ license_detections:
         matcher: 2-aho
         license_expression: gpl-2.0-plus
         rule_identifier: gpl-2.0-plus_749.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_749.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -88,6 +87,7 @@ license_detections:
 
              On Debian GNU/Linux systems, the complete text of the GNU General Public
              License can be found in '/usr/share/common-licenses/GPL-2'
+    identifier: gpl_2_0_plus-a9d3210f-de49-73ea-3808-ab77ebe47b9a
 other_license_detections: []
 copyright: |
   copyright 1988 - 1994, Julianne Frances Haugh

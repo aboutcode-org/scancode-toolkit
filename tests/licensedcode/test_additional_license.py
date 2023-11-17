@@ -43,6 +43,7 @@ def test_detection_with_additional_license_directory():
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',
+        '--license-references',
         '--strip-root',
         '--verbose',
         '--json', result_file,
@@ -63,6 +64,7 @@ def test_detection_with_additional_license_plugin():
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',
+        '--license-references',
         '--strip-root',
         '--verbose',
         '--json', result_file,
@@ -85,6 +87,7 @@ def test_detection_with_additional_license_combined():
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',
+        '--license-references',
         '--strip-root',
         '--verbose',
         '--json', result_file,

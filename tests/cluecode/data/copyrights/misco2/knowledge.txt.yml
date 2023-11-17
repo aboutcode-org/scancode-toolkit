@@ -1,0 +1,20 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) Knowledge Research and its affiliates
+  - Copyright (c) Knowledge & Experience
+  - Copyright (c) Knowledge Computing Corp.
+holders:
+  - Knowledge Research and its affiliates
+  - Knowledge & Experience
+  - Knowledge Computing Corp.
+holders_summary:
+  - value: Knowledge & Experience
+    count: 1
+  - value: Knowledge Computing Corp.
+    count: 1
+  - value: Knowledge Research and its affiliates
+    count: 1

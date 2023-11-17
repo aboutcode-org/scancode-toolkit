@@ -1,0 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: |
+    See https://github.com/nexB/scancode-toolkit/issues/3446#issuecomment-1653518138,
+    this is deprecated license also with: `key: hot-potato`
+---
+
+All rights reserved by the last person to commit a change to this
+repository, except for the right to commit changes to this repository,
+which is hereby granted to all of earth's citizens for the purpose of
+committing changes to this repository.

@@ -1,0 +1,10 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+ignorable_urls:
+    - http://www.gnu.org/licenses/gpl-3.0.txt
+---
+
+licensed under GPLv3 license, see the provided "LICENSE" file or http://www.gnu.org/licenses/gpl-3.0.txt

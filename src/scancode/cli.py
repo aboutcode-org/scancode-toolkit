@@ -21,6 +21,7 @@ import traceback
 
 from collections import defaultdict
 from functools import partial
+from multiprocessing import TimeoutError
 from time import sleep
 from time import time
 
@@ -65,6 +66,8 @@ from scancode.help import examples_text
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
+from scancode.pool import ScanCodeTimeoutError
+
 
 # Tracing flags
 TRACE = False
@@ -206,7 +209,7 @@ def validate_depth(ctx, param, value):
 @click.option('--timeout',
     type=float,
     default=DEFAULT_TIMEOUT,
-    metavar='<secs>',
+    metavar='<seconds>',
     help='Stop an unfinished file scan after a timeout in seconds. '
          f'[default: {DEFAULT_TIMEOUT} seconds]',
     help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
@@ -1059,9 +1062,12 @@ def run_codebase_plugins(
     if verbose and plugins:
         echo_func(stage_msg % locals(), fg='green')
 
+    # Sort plugins by run_order, from low to high
+    sorted_plugins = sorted(plugins, key=lambda x: x.run_order)
+
     success = True
     # TODO: add progress indicator
-    for plugin in plugins:
+    for plugin in sorted_plugins:
         name = plugin.name
         plugin_start = time()
 
@@ -1293,7 +1299,10 @@ def scan_codebase(
                     else:
                         setattr(resource, key, value)
                 codebase.save_resource(resource)
-
+            except (TimeoutError, ScanCodeTimeoutError):
+                codebase.errors.append("Timeout waiting for resource. Path unknown.")
+                success = False
+                continue
             except StopIteration:
                 break
             except KeyboardInterrupt:

@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Common import in elasticsearch xpack license module
+---
+
+import org.elasticsearch.license.XPackLicenseState;

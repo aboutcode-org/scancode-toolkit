@@ -1,0 +1,12 @@
+---
+license_expression: bsd-new
+is_license_tag: yes
+ignorable_urls:
+    - http://jaxen.codehaus.org/license.html
+---
+
+<licenses>
+    <license>
+      <url>{{http://jaxen.codehaus.org/license.html}}</url>
+    </license>
+  </licenses>

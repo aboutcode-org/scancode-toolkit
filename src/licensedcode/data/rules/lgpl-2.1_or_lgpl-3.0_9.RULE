@@ -1,0 +1,8 @@
+---
+license_expression: lgpl-2.1 OR lgpl-3.0
+is_license_notice: yes
+relevance: 100
+---
+
+license: source files mention "either version 2.1 or 3"
+    (license (list license:lgpl2.1 license:lgpl3))))

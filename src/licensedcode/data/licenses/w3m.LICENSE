@@ -1,0 +1,18 @@
+---
+key: w3m
+short_name: w3m License
+name: w3m License
+category: Permissive
+owner: tats
+homepage_url: https://github.com/tats/w3m/blob/master/COPYING
+spdx_license_key: w3m
+---
+
+Use, modification and redistribution of this software is hereby granted,
+provided that this entire copyright notice is included on any copies of
+this software and applications and derivations thereof.
+
+This software is provided on an "as is" basis, without warranty of any
+kind, either expressed or implied, as to any matter including, but not
+limited to warranty of fitness of purpose, or merchantability, or
+results obtained from use of this software.

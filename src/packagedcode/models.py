@@ -16,6 +16,7 @@ import sys
 import attr
 from packageurl import normalize_qualifiers
 from packageurl import PackageURL
+import saneyaml
 
 from commoncode import filetype
 from commoncode.datautils import choices
@@ -609,6 +610,11 @@ class PackageData(IdentifiablePackageData):
         label='Copyright',
         help='Copyright statements for this package. Typically one per line.')
 
+    holder = String(
+        label='Holder',
+        help='Holders for this package. Typically one per line.'
+    )
+
     declared_license_expression = String(
         label='license expression',
         help='The license expression for this package typically derived '
@@ -711,8 +717,45 @@ class PackageData(IdentifiablePackageData):
         repr=True,
     )
 
+
     def __attrs_post_init__(self, *args, **kwargs):
         self.populate_license_fields()
+        self.populate_holder_field()
+
+    def populate_holder_field(self):
+        if not self.copyright:
+            return
+
+        from cluecode.copyrights import CopyrightDetector
+
+        numbered_lines = list(enumerate(self.copyright.split("\n"), start=1))
+        detector = CopyrightDetector()
+        holders = list(
+            detector.detect(
+                numbered_lines,
+                include_copyrights=False,
+                include_holders=True,
+                include_authors=False,
+            )
+        )
+        # If no holder detected, prefix each copyright statement with `Copyright`
+        if not holders:
+            numbered_lines = [
+                (count, f"Copyright {value}") for count, value in numbered_lines
+            ]
+            holders = list(
+                detector.detect(
+                    numbered_lines,
+                    include_copyrights=False,
+                    include_holders=True,
+                    include_authors=False,
+                )
+            )
+        # If still no holder, then populate holder with copyright field
+        self.holder = (
+            "\n".join([holder_detection.holder for holder_detection in holders])
+            or self.copyright
+        )
 
     def populate_license_fields(self):
         """
@@ -738,7 +781,7 @@ class PackageData(IdentifiablePackageData):
                 )
 
         if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
-            self.extracted_license_statement = repr(self.extracted_license_statement)
+            self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
 
     def to_dict(self, with_details=True, **kwargs):
         mapping = super().to_dict(with_details=with_details, **kwargs)
@@ -827,11 +870,17 @@ class PackageData(IdentifiablePackageData):
         if not self.extracted_license_statement:
             return [], None
 
-        return get_license_detections_and_expression(
-            extracted_license_statement=self.extracted_license_statement,
+        if self.datasource_id:
             default_relation_license=get_default_relation_license(
                 datasource_id=self.datasource_id,
-            ),
+            )
+        else:
+            default_relation_license = 'AND'
+
+        return get_license_detections_and_expression(
+            extracted_license_statement=self.extracted_license_statement,
+            default_relation_license=default_relation_license,
+            datasource_id=self.datasource_id,
         )
 
 
@@ -1072,7 +1121,14 @@ class DatafileHandler:
             cls.assign_package_to_resources(package, resource, codebase, package_adder)
 
     @classmethod
-    def assemble_from_many(cls, pkgdata_resources, codebase, package_adder=add_to_package):
+    def assemble_from_many(
+        cls,
+        pkgdata_resources,
+        codebase,
+        package_adder=add_to_package,
+        ignore_name_check=False,
+        parent_resource=None,
+    ):
         """
         Yield Package, Resources or Dependency given a ``pkgdata_resources``
         list of tuple (PackageData, Resource) in ``codebase``.
@@ -1099,6 +1155,8 @@ class DatafileHandler:
         package = None
         package_uid = None
         base_resource = None
+        if parent_resource:
+            base_resource = parent_resource
 
         # process each package in sequence. The first item creates a package and
         # the other only update
@@ -1127,6 +1185,7 @@ class DatafileHandler:
                 package.update(
                     package_data=package_data,
                     datafile_path=resource.path,
+                    ignore_name_check=ignore_name_check,
                 )
 
             if package_uid:
@@ -1166,6 +1225,9 @@ class DatafileHandler:
             for res in base_resource.walk(codebase):
                 package_adder(package_uid, res, codebase)
                 yield res
+            if parent_resource:
+                package_adder(package_uid, parent_resource, codebase)
+                yield parent_resource
 
     @classmethod
     def assemble_from_many_datafiles(
@@ -1216,11 +1278,74 @@ class DatafileHandler:
         if pkgdata_resources:
             if TRACE:
                 logger_debug(f' assemble_from_many_datafiles: pkgdata_resources: {pkgdata_resources!r}')
-
             yield from cls.assemble_from_many(
                 pkgdata_resources=pkgdata_resources,
                 codebase=codebase,
                 package_adder=package_adder,
+            )
+
+    @classmethod
+    def assemble_from_many_datafiles_in_directory(
+        cls,
+        datafile_name_patterns,
+        directory,
+        codebase,
+        package_adder=add_to_package,
+        ignore_name_check=False,
+        parent_resource=None,
+    ):
+        """
+        Assemble Package and Dependency from package data of the datafiles found
+        in multiple ``datafile_name_patterns`` name patterns (case- sensitive)
+        found in the ``directory`` Resource among it's children and descendants.
+
+        Create a Package from the first package data item. Update this package
+        with other items. Assign to this Package the file tree from the parent
+        of the first resource item.
+
+        Because of this, set the order of ``datafile_name_patterns`` items carefully.
+
+        This is a convenience method that subclasses can reuse when overriding
+        `assemble()`
+
+        NOTE: ATTENTION!: this will not work well for datafile that yields
+        multiple PackageData for unrelated Packages.
+        """
+        if TRACE:
+            logger_debug(f'assemble_from_many_datafiles: datafile_name_patterns: {datafile_name_patterns!r}')
+
+        if not codebase.has_single_resource:
+            resources = [
+                resource
+                for resource in directory.walk(codebase)
+                if resource.is_file
+            ]
+        else:
+            if resources:
+                resources = [directory]
+            else:
+                resources = []
+
+        pkgdata_resources = []
+
+        # we iterate on datafile_name_patterns because their order matters
+        for datafile_name_pattern in datafile_name_patterns:
+            for resource in resources:
+                if fnmatchcase(resource.path, datafile_name_pattern):
+                    for package_data in resource.package_data:
+                        package_data = PackageData.from_dict(package_data)
+                        pkgdata_resources.append((package_data, resource,))
+
+        #raise Exception(pkgdata_resources)
+        if pkgdata_resources:
+            if TRACE:
+                logger_debug(f' assemble_from_many_datafiles: pkgdata_resources: {pkgdata_resources!r}')
+            yield from cls.assemble_from_many(
+                pkgdata_resources=pkgdata_resources,
+                codebase=codebase,
+                package_adder=package_adder,
+                ignore_name_check=ignore_name_check,
+                parent_resource=parent_resource,
             )
 
     @classmethod
@@ -1261,6 +1386,13 @@ class DatafileHandler:
 
         if package_data.extracted_license_statement and not isinstance(package_data.extracted_license_statement, str):
             package_data.extracted_license_statement = repr(package_data.extracted_license_statement)
+
+    @classmethod
+    def get_top_level_resources(cls, manifest_resource, codebase):
+        """
+        Yield Resources that are considered top-level for a Package type.
+        """
+        pass
 
 
 class NonAssemblableDatafileHandler(DatafileHandler):
@@ -1404,6 +1536,7 @@ class Package(PackageData):
         include_version=True,
         include_qualifiers=False,
         include_subpath=False,
+        ignore_name_check=False,
     ):
         """
         Update this Package with data from the ``package_data`` PackageData.
@@ -1436,6 +1569,7 @@ class Package(PackageData):
             include_version=include_version,
             include_qualifiers=include_qualifiers,
             include_subpath=include_subpath,
+            ignore_name_check=ignore_name_check,
         ):
             if TRACE_UPDATE:
                 logger_debug(f'update: skipping: {self.purl} is not compatible with: {package_data.purl}')
@@ -1506,6 +1640,7 @@ def is_compatible(
     include_version=True,
     include_qualifiers=True,
     include_subpath=True,
+    ignore_name_check=False,
 ):
     """
     Return True if the ``purl1`` PackageURL-like object is compatible with
@@ -1533,11 +1668,17 @@ def is_compatible(
     >>> is_compatible(p1, p5, include_subpath=False)
     True
     """
-    is_compatible = (
-        purl1.type == purl2.type
-        and purl1.namespace == purl2.namespace
-        and purl1.name == purl2.name
-    )
+    if ignore_name_check:
+        is_compatible = (
+            purl1.type == purl2.type
+            and purl1.namespace == purl2.namespace
+        )
+    else:
+        is_compatible = (
+            purl1.type == purl2.type
+            and purl1.namespace == purl2.namespace
+            and purl1.name == purl2.name
+        )
     if include_version:
         is_compatible = is_compatible and (purl1.version == purl2.version)
 

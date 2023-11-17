@@ -1,0 +1,85 @@
+{
+  "license_detections": [
+    {
+      "identifier": "apache_2_0_and_gpl_3_0-a4aa7fb0-a160-c0e2-faf5-fabdc3f257c2",
+      "license_expression": "apache-2.0 AND gpl-3.0",
+      "detection_count": 1
+    }
+  ],
+  "files": [
+    {
+      "path": "file_with_multiple_licenses.txt",
+      "type": "file",
+      "name": "file_with_multiple_licenses.txt",
+      "base_name": "file_with_multiple_licenses",
+      "extension": ".txt",
+      "size": 38,
+      "sha1": "92bb9a9fbe881166541fb395dc29501851405892",
+      "md5": "1dcb636e0d184b1c85a47245ec6ef8ca",
+      "sha256": "1f9e9d483e71691f5d0a5aa2ad89b07cc7f52ed0ff18b9ab641527c6c2974203",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": "apache-2.0 AND gpl-3.0",
+      "detected_license_expression_spdx": "Apache-2.0 AND GPL-3.0-only",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0 AND gpl-3.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 3,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_1214.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1214.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 3,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-3.0",
+              "rule_identifier": "gpl-3.0_173.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_173.RULE"
+            }
+          ],
+          "identifier": "apache_2_0_and_gpl_3_0-a4aa7fb0-a160-c0e2-faf5-fabdc3f257c2"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "license_policy": [
+        {
+          "license_key": "apache-2.0",
+          "label": "Approved License",
+          "color_code": "#008000",
+          "icon": "icon-ok-circle"
+        },
+        {
+          "license_key": "gpl-3.0",
+          "label": "Restricted License",
+          "color_code": "#FFcc33",
+          "icon": "icon-warning-sign"
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

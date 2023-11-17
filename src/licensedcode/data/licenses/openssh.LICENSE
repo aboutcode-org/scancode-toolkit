@@ -14,11 +14,11 @@ minimum_coverage: 80
 ignorable_copyrights:
     - Copyright (c) 1983, 1990, 1992, 1993, 1995 The Regents of the University of California
     - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Espoo, Finland
-    - Copyright (c) 1998 CORE SDI
+    - Copyright (c) 1998 CORE SDI S.A., Buenos Aires, Argentina
     - Copyright 1995, 1996 by David Mazieres <dm@lcs.mit.edu>
     - Copyright Patrick Powell 1995
 ignorable_holders:
-    - CORE SDI
+    - CORE SDI S.A., Buenos Aires, Argentina
     - David Mazieres
     - Patrick Powell
     - Tatu Ylonen , Espoo, Finland

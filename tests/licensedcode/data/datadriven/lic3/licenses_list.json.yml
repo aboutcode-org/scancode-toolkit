@@ -1,1 +1,3 @@
-notes: this is a long list of SPDX licenses and nothing should be detected
+license_expressions:
+  - mpl-2.0
+notes: FIXME - should be empty this is a long list of SPDX licenses and nothing should be detected

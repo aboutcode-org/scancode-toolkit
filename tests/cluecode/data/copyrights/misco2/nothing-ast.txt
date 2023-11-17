@@ -1,0 +1,4 @@
+c_AST = astFactory.create(c);
+match(IDENT);
+AST tmp132_AST = null;
+

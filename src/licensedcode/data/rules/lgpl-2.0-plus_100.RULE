@@ -1,9 +1,14 @@
 ---
 license_expression: lgpl-2.0-plus
-is_license_reference: yes
-relevance: 100
+is_license_tag: yes
 ignorable_urls:
-    - http://www.gnu.org/licenses/lgpl.txt
+    - http://www.opensource.org/licenses/lgpl-license.php
 ---
 
-http://www.gnu.org/licenses/lgpl.txt
+<licenses>
+    <license>
+      <name>{{GNU Lesser General Public License}}</name>
+      <url>http://www.opensource.org/licenses/lgpl-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

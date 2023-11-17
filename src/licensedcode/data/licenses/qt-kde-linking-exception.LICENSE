@@ -1,7 +1,7 @@
 ---
 key: qt-kde-linking-exception
-short_name: Qt LInking Exception to GPL 2.0 or later
-name: Qt LInking Exception to GPL 2.0 or later
+short_name: Qt Linking Exception to GPL 2.0 or later
+name: Qt Linking Exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: KDE Project
 is_exception: yes

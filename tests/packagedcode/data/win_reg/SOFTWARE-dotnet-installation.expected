@@ -48,6 +48,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
+    "holder": null,
     "purl": "pkg:windows-program/microsoft-dot-net-framework@4.8.04084"
   }
 ]

@@ -1,0 +1,110 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/dune-universe/dune-universe/blob/d13749a8265158da7fc629f1e5c4ced1e8a68d61/packages/alt-ergo.2.4.1/LICENSE.md
+    https://github.com/dune-universe/dune-universe/blob/d13749a8265158da7fc629f1e5c4ced1e8a68d61/packages/alt-ergo.2.4.1/docs/sphinx_docs/About/licenses/index.rst
+ignorable_copyrights:
+    - Copyright 2013-2020 by OCamlPro
+ignorable_holders:
+    - OCamlPro
+ignorable_emails:
+    - contact@ocamlpro.com
+---
+
+OCamlPro Non-Commercial Purpose License, version 1
+
+Copyright 2013-2020 by OCamlPro.
+
+All rights reserved.
+
+You should carefully read the following terms and conditions before
+using this software. Your use of the Software indicates your
+acceptance of this license agreement and all terms and conditions.
+
+You are hereby licensed to use the Software for Non-Commercial Purpose
+only. Non-Commercial Purpose means the use of the Software solely for
+research. Non-Commercial Purpose excludes, without limitation, any use
+of the Software, as part of, or in any way in connection with a
+product or service which is sold, offered for sale, licensed, leased,
+loaned, or rented, or used in a profit-making context. Permission to
+use, copy, modify, and distribute this compilation for Non-Commercial
+Purpose is hereby granted without fee, subject to the following terms
+of this license.
+
+
+# Copies and Modifications
+
+You must include the above copyright notice and this license on any
+copy or modification of this compilation. Each time you redistribute
+this Software, the recipient automatically receives a license to copy,
+distribute or modify the Software subject to these terms and
+conditions. You may not impose any further restrictions on this
+Software or any derivative works beyond those restrictions herein.
+
+You agree to use your best efforts to provide OCamlPro with any
+modifications containing improvements or extensions and hereby grant
+OCamlPro a perpetual, royalty-free license to use and distribute such
+modifications under its own terms of licensing. You agree to notify
+OCamlPro of any inquiries you have for commercial use of the Software
+and/or its modifications and further agree to negotiate in good faith
+with OCamlPro to license your modifications for commercial purposes.
+
+Notices, modifications, and questions may be directed by e-mail to the
+OCamlPro team at contact@ocamlpro.com.
+
+
+# Commercial Use
+
+If you desire to use the software for profit-making or commercial
+purposes, you agree to negotiate in good faith a license with OCamlPro
+prior to such profitmaking or commercial use. OCamlPro shall have no
+obligation to grant such license to you, and may grant exclusive or
+non-exclusive licenses to others. You may contact the OCamlPro team at
+email address contact@ocamlpro.com to discuss commercial use.
+
+
+# Governing Law
+
+This Agreement shall be subject to French law.
+
+
+# Disclaimer of Warranty
+
+Because this software is licensed free of charge, there is no warranty
+for the program. OCamlPro makes no warranty or representation that the
+operation of the software in this compilation will be error-free, and
+OCamlPro is under no obligation to provide any services, by way of
+maintenance, update, or otherwise.
+
+THIS SOFTWARE AND THE ACCOMPANYING FILES ARE LICENSED “AS IS” AND
+WITHOUT WARRANTIES AS TO PERFORMANCE OR MERCHANTABILITY OR ANY OTHER
+WARRANTIES WHETHER EXPRESSED OR IMPLIED. NO WARRANTY OF FITNESS FOR A
+PARTICULAR PURPOSE IS OFFERED. THE ENTIRE RISK AS TO THE QUALITY AND
+PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE
+DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR
+CORRECTION.
+
+
+# Limitation of Liability
+
+IN NO EVENT WILL OCAMLPRO, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+REDISTRIBUTE THE PRORAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR
+DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL
+DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM
+(INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED
+INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF
+THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF OCAMLPRO OR
+OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+
+# Use of Name
+
+Users will not use the name of OCamlPro nor any adaptation thereof in
+any publicity or advertising, without the prior written consent from
+OCamlPro in each case.
+
+
+# END OF TERMS AND CONDITIONS
+
+Address all correspondence regarding this license to the OCamlPro team
+at email address contact@ocamlpro.com

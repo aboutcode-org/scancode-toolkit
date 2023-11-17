@@ -1,0 +1,131 @@
+{
+  "packages": [],
+  "dependencies": [],
+  "todo": [
+    {
+      "detection_id": "pkg:pypi/scancode-toolkit-e7ce965e-449d-5c31-b5e4-5ad0dfd29f5c",
+      "review_comments": {
+        "cannot-create-top-level-package": "The package data detected couldn't be processed/merged into a scan-level package that is returned, and this is likely because the package assembly method for this specific type of package data is not implemented or there is a bug in the same. Please report this to scancode-toolkit github issues."
+      },
+      "detection": {
+        "type": "pypi",
+        "namespace": null,
+        "name": "scancode-toolkit",
+        "version": null,
+        "qualifiers": {},
+        "subpath": null,
+        "primary_language": "Python",
+        "description": null,
+        "release_date": null,
+        "parties": [],
+        "keywords": [],
+        "homepage_url": "https://github.com/nexB/scancode-toolkit",
+        "download_url": null,
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": null,
+        "bug_tracking_url": null,
+        "code_view_url": null,
+        "vcs_url": null,
+        "copyright": null,
+        "holder": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "other_license_expression": null,
+        "other_license_expression_spdx": null,
+        "other_license_detections": [],
+        "extracted_license_statement": null,
+        "notice_text": null,
+        "source_packages": [],
+        "file_references": [],
+        "extra_data": {},
+        "dependencies": [
+          {
+            "purl": "pkg:generic/python",
+            "extracted_requirement": "python_requires>=3.7",
+            "scope": "python",
+            "is_runtime": true,
+            "is_optional": false,
+            "is_resolved": false,
+            "resolved_package": {},
+            "extra_data": {}
+          }
+        ],
+        "repository_homepage_url": null,
+        "repository_download_url": null,
+        "api_data_url": null,
+        "datasource_id": "pypi_setup_cfg",
+        "purl": "pkg:pypi/scancode-toolkit"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "incomplete-setup.cfg",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "scancode-toolkit",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "https://github.com/nexB/scancode-toolkit",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:generic/python",
+              "extracted_requirement": "python_requires>=3.7",
+              "scope": "python",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "pypi_setup_cfg",
+          "purl": "pkg:pypi/scancode-toolkit"
+        }
+      ],
+      "for_packages": [],
+      "for_todo": [
+        "pkg:pypi/scancode-toolkit-e7ce965e-449d-5c31-b5e4-5ad0dfd29f5c"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

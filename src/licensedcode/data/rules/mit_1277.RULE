@@ -1,0 +1,14 @@
+---
+license_expression: mit
+is_license_tag: yes
+ignorable_urls:
+    - https://jsoup.org/license
+---
+
+<licenses>
+    <license>
+      <name>The {{MIT License}}</name>
+      <url>https://jsoup.org/license</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>

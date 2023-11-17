@@ -1,0 +1,405 @@
+{
+  "packages": [
+    {
+      "type": "nuget",
+      "namespace": null,
+      "name": "Fizzler",
+      "version": "1.3.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": "Fizzler is a W3C Selectors parser and generic selector framework for document hierarchies.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "author",
+          "name": "Atif Aziz,Colin Ramsay",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/atifaziz/Fizzler",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "Git+https://github.com/atifaziz/Fizzler",
+      "copyright": "Copyright \u00a9 2009 Atif Aziz, Colin Ramsay. All rights reserved. Portions Copyright \u00a9 2008 Novell, Inc.",
+      "holder": "Atif Aziz, Colin Ramsay\nNovell, Inc.",
+      "declared_license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+      "declared_license_expression_spdx": "LGPL-2.0-or-later AND GPL-1.0-or-later",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+          "matches": [
+            {
+              "score": 16.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "unknown-license-reference_383.RULE",
+              "rule_relevance": 16,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_383.RULE",
+              "matched_text": "license COPYING.txt"
+            },
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "lgpl-2.0-plus",
+              "rule_identifier": "lgpl-2.0-plus_87.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
+              "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 3,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl_63.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_63.RULE",
+              "matched_text": "GNU GENERAL PUBLIC LICENSE"
+            }
+          ],
+          "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-de66a0ae-df4d-ab6b-975e-8deb27c0f945",
+          "detection_log": [
+            "package-unknown-reference-to-local-file"
+          ]
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "'@type': file\n'#text': COPYING.txt\n",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.nuget.org/packages/Fizzler/1.3.0",
+      "repository_download_url": "https://www.nuget.org/api/v2/package/Fizzler/1.3.0",
+      "api_data_url": "https://api.nuget.org/v3/registration3/fizzler/1.3.0.json",
+      "package_uid": "pkg:nuget/Fizzler@1.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "Fizzler.nuspec"
+      ],
+      "datasource_ids": [
+        "nuget_nupsec"
+      ],
+      "purl": "pkg:nuget/Fizzler@1.3.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:nuget/NETStandard.Library",
+      "extracted_requirement": "1.6.1",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {
+        "framework": ".NETStandard1.0",
+        "exclude": "Build,Analyzers"
+      },
+      "dependency_uid": "pkg:nuget/NETStandard.Library?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:nuget/Fizzler@1.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Fizzler.nuspec",
+      "datasource_id": "nuget_nupsec"
+    },
+    {
+      "purl": "pkg:nuget/System.Diagnostics.Contracts",
+      "extracted_requirement": "4.3.0",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {
+        "framework": ".NETStandard1.0",
+        "exclude": "Build,Analyzers"
+      },
+      "dependency_uid": "pkg:nuget/System.Diagnostics.Contracts?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:nuget/Fizzler@1.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Fizzler.nuspec",
+      "datasource_id": "nuget_nupsec"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-17115808-8fc8-9c98-b64d-c5013bcbde1b",
+      "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+      "detection_count": 1,
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ]
+    },
+    {
+      "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-2a11c930-7038-736e-5e48-b35f872691cc",
+      "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-de66a0ae-df4d-ab6b-975e-8deb27c0f945",
+      "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+      "detection_count": 1,
+      "detection_log": [
+        "package-unknown-reference-to-local-file"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "COPYING.txt",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+      "detected_license_expression_spdx": "LGPL-2.0-or-later AND GPL-1.0-or-later",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "lgpl-2.0-plus",
+              "rule_identifier": "lgpl-2.0-plus_87.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
+              "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 3,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl_63.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_63.RULE",
+              "matched_text": "GNU GENERAL PUBLIC LICENSE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-2a11c930-7038-736e-5e48-b35f872691cc"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    },
+    {
+      "path": "Fizzler.nuspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "nuget",
+          "namespace": null,
+          "name": "Fizzler",
+          "version": "1.3.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "Fizzler is a W3C Selectors parser and generic selector framework for document hierarchies.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "author",
+              "name": "Atif Aziz,Colin Ramsay",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/atifaziz/Fizzler",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "Git+https://github.com/atifaziz/Fizzler",
+          "copyright": "Copyright \u00a9 2009 Atif Aziz, Colin Ramsay. All rights reserved. Portions Copyright \u00a9 2008 Novell, Inc.",
+          "holder": "Atif Aziz, Colin Ramsay\nNovell, Inc.",
+          "declared_license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+          "declared_license_expression_spdx": "LGPL-2.0-or-later AND GPL-1.0-or-later",
+          "license_detections": [
+            {
+              "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+              "matches": [
+                {
+                  "score": 16.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "unknown-license-reference",
+                  "rule_identifier": "unknown-license-reference_383.RULE",
+                  "rule_relevance": 16,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_383.RULE",
+                  "matched_text": "license COPYING.txt"
+                },
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "lgpl-2.0-plus",
+                  "rule_identifier": "lgpl-2.0-plus_87.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
+                  "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE"
+                },
+                {
+                  "score": 100.0,
+                  "start_line": 3,
+                  "end_line": 3,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "gpl-1.0-plus",
+                  "rule_identifier": "gpl_63.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_63.RULE",
+                  "matched_text": "GNU GENERAL PUBLIC LICENSE"
+                }
+              ],
+              "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-de66a0ae-df4d-ab6b-975e-8deb27c0f945",
+              "detection_log": [
+                "package-unknown-reference-to-local-file"
+              ]
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "'@type': file\n'#text': COPYING.txt\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:nuget/NETStandard.Library",
+              "extracted_requirement": "1.6.1",
+              "scope": "dependency",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {
+                "framework": ".NETStandard1.0",
+                "exclude": "Build,Analyzers"
+              }
+            },
+            {
+              "purl": "pkg:nuget/System.Diagnostics.Contracts",
+              "extracted_requirement": "4.3.0",
+              "scope": "dependency",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {
+                "framework": ".NETStandard1.0",
+                "exclude": "Build,Analyzers"
+              }
+            }
+          ],
+          "repository_homepage_url": "https://www.nuget.org/packages/Fizzler/1.3.0",
+          "repository_download_url": "https://www.nuget.org/api/v2/package/Fizzler/1.3.0",
+          "api_data_url": "https://api.nuget.org/v3/registration3/fizzler/1.3.0.json",
+          "datasource_id": "nuget_nupsec",
+          "purl": "pkg:nuget/Fizzler@1.3.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:nuget/Fizzler@1.3.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+      "detected_license_expression_spdx": "LGPL-2.0-or-later AND GPL-1.0-or-later",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+          "matches": [
+            {
+              "score": 33.0,
+              "start_line": 9,
+              "end_line": 9,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "unknown-license-reference_382.RULE",
+              "rule_relevance": 33,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_382.RULE",
+              "matched_text": "license type=\"file\">COPYING.txt</license>"
+            },
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "lgpl-2.0-plus",
+              "rule_identifier": "lgpl-2.0-plus_87.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
+              "matched_text": "GNU LESSER GENERAL PUBLIC LICENSE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 3,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "gpl-1.0-plus",
+              "rule_identifier": "gpl_63.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_63.RULE",
+              "matched_text": "GNU GENERAL PUBLIC LICENSE"
+            }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-17115808-8fc8-9c98-b64d-c5013bcbde1b"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.97,
+      "scan_errors": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+---
+license_expression: lgpl-2.1
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.lgpl
+---
+
+Except where otherwise stated, this code is licensed under version 2.1 of the
+LGPL.  See LICENSE.lgpl for details.

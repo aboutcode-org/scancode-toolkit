@@ -1,0 +1,10 @@
+---
+license_expression: mit OR cecill-c
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE-MIT.txt
+    - LICENSE-CECILL-C.txt
+---
+
+available either under the terms of the {{MIT License}} (see LICENSE-MIT.txt) of the {{Cecill-C License}} (see LICENSE-CECILL-C.txt).
+You as the user {{are entitled to choose the terms}} under which to adopt.

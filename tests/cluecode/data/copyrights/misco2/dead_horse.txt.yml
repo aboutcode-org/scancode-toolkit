@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2014 dead_horse <dead_horse@qq.com>
+holders:
+  - dead_horse
+holders_summary:
+  - value: dead_horse
+    count: 1

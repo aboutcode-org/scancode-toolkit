@@ -4,16 +4,16 @@ what:
   - holders_summary
 copyrights:
   - Copyright (c) 1998- AbiSource, Inc. & Co.
-  - Copyright (c) 2009 Masayuki Hatta
+  - Copyright (c) 2009 Masayuki Hatta (mhatta) <mhatta@debian.org>
   - Copyright (c) 2009 Patrik Fimml <patrik@fimml.at>
 holders:
   - AbiSource, Inc. & Co.
-  - Masayuki Hatta
+  - Masayuki Hatta (mhatta)
   - Patrik Fimml
 holders_summary:
   - value: AbiSource, Inc. & Co.
     count: 1
-  - value: Masayuki Hatta
+  - value: Masayuki Hatta (mhatta)
     count: 1
   - value: Patrik Fimml
     count: 1

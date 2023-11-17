@@ -2,18 +2,220 @@ Changelog
 =========
 
 v33.0.0 (next next, roadmap)
-
 ----------------------------
-
 
 - We now support new package manifest formats:
 
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
+- Fallback packages for non-native dependencies of SCTK.
+- Dependencies for
+- Support for copyright detection objects.
+- Bump commoncode to v31.0.3
 
-v32.0.0 (next, roadmap)
------------------------
+v32.1.0 (next, roadmap)
+----------------------------
+
+- A new field in packages with the license category for the
+  detected license expression and also an API function to
+  compute license categories from license expressions.
+  See https://github.com/nexB/scancode-toolkit/issues/2897
+
+- More support for tabular output formats: New command-line
+  options for XSLX output, and the old `--csv` command line
+  option is removed.
+  See https://github.com/nexB/scancode-toolkit/issues/830
+
+- `--unknown-licenses` is removed and this is always enabled
+  and only used in case of improper detections automatically.
+  Also tag all license rules with required phrases to improve
+  license detection and reduce false positives.
+  See https://github.com/nexB/scancode-toolkit/issues/3300
+
+- A new `--todo` option is added to show the todo items that
+  should be reviewed, which are ambiguous license/package
+  detections.
+
+- File categorization support added, a post scan plugin tagging
+  files with priority levels for review, and also take advantage
+  of these in other summary plugins.
+  See https://github.com/nexB/scancode-toolkit/issues/1745
+
+- New and updated licenses, including support for newly released
+  SPDX license list version 3.22. This release of the SPDX license
+  list had 48 new licenses, and several of them we already had as
+  licenses/rules, and these has been modified to be consistent with
+  the SPDX list. And the rest have been added as new licenses.
+  For more details see https://github.com/nexB/scancode-toolkit/pull/3554
+
+- Upgraded spdx-tools dependency to v0.8.
+  See https://github.com/nexB/scancode-toolkit/issues/3455
+
+
+v32.0.8 - 2023-10-11
+------------------------
+
+This is a minor release with license detection
+improvements, with new and updated license detection rules
+and new licenses.
+
+The main updates over the previous stable release are:
+
+- New and updated license rules fixing several license
+  detection bugs. See for more details:
+  https://github.com/nexB/scancode-toolkit/pull/3545
+  https://github.com/nexB/scancode-toolkit/pull/3519
+
+- Bugfix for an epoch parser bug with numeric values
+  in rpm. See for more details:
+  https://github.com/nexB/scancode-toolkit/pull/3520
+
+
+v32.0.7 - 2023-09-28
+------------------------
+
+This is a minor release with a lot of license detection
+improvements, with new and updated license detection rules
+and new licenses.
+
+- 33 new licenses, 30 licenses updated
+- 70 new and updated license rules
+
+The main updates over the previous stable release are:
+
+- To the license Rule class adds is_license_clue attribute
+  and is_deprecated attribute to support license clues
+  detection, and always maintain consistency on unique rule
+  names. Adds fixes for other license detection bug related
+  to license clues, bug in setup.cfg license detection and
+  makes license detection identifiers python-safe. See
+  https://github.com/nexB/scancode-toolkit/pull/3462
+
+- Update/Add new licenses and license rules. See
+  https://github.com/nexB/scancode-toolkit/pull/3470
+  https://github.com/nexB/scancode-toolkit/pull/3513
+
+- Bump commoncode to v31.0.3 fixing a VirtualCodebase
+  creation issue when there is a directory under the
+  root with the same name as the root directory itself.
+  https://github.com/nexB/commoncode/issues/57
+  https://github.com/nexB/scancode-toolkit/pull/3495
+
+
+v32.0.6 - 2023-07-13
+------------------------
+
+This is a minor release with a lot of license and package detection
+improvements, specially for maven packages. We also support the SPDX
+license list 3.21 now. The main updates over the previous stable
+release are:
+
+- New and updated licenses, including support for newly released
+  SPDX license list version 3.21. For more details see
+  https://github.com/nexB/scancode-toolkit/pull/3437
+
+- Fixes in summary plugin for licenses, and top-level license
+  detections. https://github.com/nexB/scancode-toolkit/pull/3430
+
+- Updated maven license and package detections, with fixes for
+  various maven package manifest parsing, improved top-level
+  package assembly, ecosystem specific package license detection,
+  fixes in ``--todo`` plugin, updated license detection rules/heuristics
+  and other misc changes. For more details see:
+  https://github.com/nexB/scancode-toolkit/pull/3447
+
+- Improved Gemfile.lock parsing. For more details see
+  https://github.com/nexB/scancode-toolkit/pull/3444
+
+- Auto-review plugin to get todo items for scan review, with
+  the new ``--todo`` CLI option. For more details see:
+  https://github.com/nexB/scancode-toolkit/pull/3353
+
+- Misc. license and copyright detection improvements at
+  https://github.com/nexB/scancode-toolkit/pull/3346
+
+- Other misc. minor bugfixes detailed in all the previous
+  release-candidates.
+
+
+v32.0.5rc3 - 2023-06-23
+------------------------
+
+The previous release v32.0.5rc3 was failing on mac app release
+tests, see https://github.com/nexB/scancode-toolkit/issues/3435
+for more details. This release attempts to fix this and release
+correctly.
+
+v32.0.5rc2 - 2023-06-22
+------------------------
+
+The previous release v32.0.5rc1 failed to upload pypi wheels
+because of file size limits enforced by pypi, and this release
+is effectively the same as the previous one, but now the size
+limit has been increased by https://github.com/pypi/support/issues/2926
+so this will upload the wheels correctly.
+
+v32.0.5rc1 - 2023-06-12
+------------------------
+
+This is a minor bugfix release with the following updates:
+
+- A new `--todo` option is added to show the todo items that
+  should be reviewed, which are ambiguous license/package
+  detections.
+
+- New licenses and license detection rules. And other license
+  detection fixes.
+
+v32.0.4 - 2023-06-07
+---------------------
+
+This is a minor bugfix release with the following updates:
+
+- Fixes a performance issue issue arising out of license detection
+  on files happening in a single-threaded process_codebase step when the
+  license CLI option is disabled for a package scan.
+  Reference: https://github.com/nexB/scancode-toolkit/pull/3423
+
+v32.0.3 - 2023-06-06
+---------------------
+
+This is a minor bugfix release with the following updates:
+
+- We were missing scancode-toolkit-mini releases from v32.0.0rc2 and
+  also the scancode-toolkit release wheels including and after v32.0.0rc2 were
+  actually scancode-toolkit-mini releases.
+  Reference: https://github.com/nexB/scancode-toolkit/issues/3421
+
+- Updated github actions, for more details see https://github.com/nexB/skeleton/issues/75
+
+v32.0.2 - 2023-05-26
+---------------------
+
+This is a minor bugfix release with the following update:
+
+- New release v30.1.1 of license-expression with support for new license keys
+  added. Also fail verbosely in `build_spdx_license_expression` for invalid and
+  deprecated license keys.
+
+
+v32.0.1 - 2023-05-23
+---------------------
+
+This is a minor bugfix release.
+
+There are fixes for two issues in this release:
+- https://github.com/nexB/scancode-toolkit/issues/3407:
+  here in typecode we had an improper import of ctypes.utils
+  and this is fixed in a new release v30.0.1 of typecode
+- https://github.com/nexB/scancode-toolkit/issues/3408
+  the setup.cfg and setup-mini.cfg was not aligned for plugin
+  entrypoints.
+
+
+v32.0.0 - 2023-05-23
+---------------------
 
 Important API changes:
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -21,12 +223,23 @@ Important API changes:
 This is a major release with major API and output format changes and signicant
 feature updates.
 
-In particular changed to the output format for the licenses and packages, and
-we changed some of the command line options.
+In particular the output format has changed for the licenses and packages, and
+also for some of the command line options.
 
 The output format version is now 3.0.0.
 
 
+Other updates
+~~~~~~~~~~~~~
+
+- We have a new ``--todo`` CLI option to have todo items for reviewers
+  with ambiguous license detections and package detections.
+  This adds a new codebase-level attribute ``todo`` which is a list
+  of ambiguous detections. Here the ambiguous detection attributes are:
+  - detection_id: same license unique license detection identifier or top-level
+    package identifier.
+  - detection: this is either a license_detection or a package_data mapping.
+  - review_comments: to explain the type of ambiguous detections.
 
 Package detection:
 ~~~~~~~~~~~~~~~~~~
@@ -63,11 +276,22 @@ Package detection:
   manifest data parsing code outside of the scancode-toolkit context in other
   libraries.
 
+- The PackageData model now includes a ``holder`` field, which is populated with
+  holder data extracted from the copyright field if copyright data is present,
+  otherwise it remains empty.
+
+  https://github.com/nexB/scancode-toolkit/issues/3290
+
+- DatafileHandlers now have a classmethod named ``get_top_level_resources()``,
+  which is supposed to yield the top-level Resources of a Package codebase,
+  relative to a Package manifest file. ``maven.MavenPomXmlHandler`` is the first
+  DatafileHandler that has this method implemented.
+
 
 License detection:
 ~~~~~~~~~~~~~~~~~~~
 
-- The SPDX license list has been updated to the latest v3.19
+- The SPDX license list has been updated to the latest v3.20
 
 - This is a major update to license detection where we now combine one or more
   license matches in a larger license detection. This approach improves the
@@ -78,11 +302,9 @@ License detection:
 - There is a new ``license_detections`` codebase level attribute with all the
   unique license detections in the whole scan, both in resources and packages.
   This has the 3 attributes also present in package/resource level license
-  detections: ``license_expression``, ``matches`` and ``detection_log`` and has
-  two additional attributes:
-
-  - ``identifier``: which is the ``license_expression`` with an UUID created out
-    of the detection contents and is the same for same detections.
+  detections: ``license_expression``, ``identifier`` and ``detection_log``
+  (present optionally if the ``--license-diagnostics`` option is enabled) with
+  an additional attribute:
 
   - ``count``: Number of times in the codebase this unique license detection
     was encountered.
@@ -91,15 +313,14 @@ License detection:
 
   - The ``licenses`` attribute is deleted.
 
-  - A new ``for_license_detections`` attribute is aded which references the codebase
-    level unique license detections, and this is a list of ``identifer`` strings from
-    the codebase level license detections it references.
-  
   - A new ``license_detections`` attribute contains license detections in that file.
-    This object has three attributes: ``license_expression``, ``detection_log``
+    This object has three attributes: ``license_expression``, ``identifier``
     and ``matches``. ``matches`` is a list of license matches and is roughly
     the same as  ``licenses`` in the previous version with additional structure
-    changes detailed below.
+    changes detailed below. Identifier is the detected license-expression with an
+    UUID generated from the content of ``matches`` such that this is unique for
+    unique detections. We also have another attribute ``detection_log`` with
+    diagnostics information if the ``--license-diagnostics`` option is enabled.
 
   - A new attribute ``license_clues`` contains license matches with the
     same data structure as the ``matches`` attribute in ``license_detections``.
@@ -111,7 +332,7 @@ License detection:
     Similarly ``spdx_license_expressions`` was removed and replaced by
     ``detected_license_expression_spdx``.
 
-  - See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#change-in-license-data-format-resource>`_
+  - See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#change-in-license-data-format-resource>`_
     for examples and details.
 
 - The data structure of license attributes in ``package_data`` and the codebase
@@ -127,9 +348,11 @@ License detection:
     These expressions are parallel to detections.
 
   - The ``declared_license`` attribute is renamed ``extracted_license_statement``
-    and is now a YAML-encoded string.
+    and is now a YAML-encoded string, which can be parsed to recreate the
+    original extracted license statement. Previously this used to be nested
+    python objects lists/dicts/string, but now this is always a YAML string.
 
-    See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#change-in-license-data-format-package>`_
+    See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#change-in-license-data-format-package>`_
     for examples and details.
 
 - The license matches structure has changed: we used to report one match for each
@@ -137,17 +360,18 @@ License detection:
   single match for each matched license expression, and list the license keys
   as a ``licenses`` attribute. This avoids data duplication.
   Inside each match, we list each match and matched rule attributred directly
-  avoiding nesting. See `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#licensematch-result-data>`_
+  avoiding nesting. See `license updates doc <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#licensematch-result-data>`_
   for examples and details.
 
-- There are new and codebase level attributes default with `--licenses` to report
+- There are new and codebase level attributes with ``--license-references`` to report
   reference license metadata and texts once for each license matched across the
   scan; we now have two codebase level attributes: ``license_references`` and
   ``license_rule_references`` that list unique detected license and license rules.
   for examples and details. This reference data is also removed from license matches
   in all levels i.e. from codebase, package and resource level license detections and
-  resource level license clues.
-  See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/explanations/license-detection-reference.html#comparision-before-after-license-references>`_
+  resource level license clues, irrespective of this CLI option being used, i.e. default
+  with ``--licenses``.
+  See `license updates documentation <https://scancode-toolkit.readthedocs.io/en/latest/reference/license-detection-reference.html#comparision-before-after-license-references>`_
 
 - We replaced the ``scancode --reindex-licenses`` command line option with a
   new separate command named ``scancode-reindex-licenses``.
@@ -157,16 +381,16 @@ License detection:
 
   - We can now detect licenses using custom license texts and license rules
     stored in a directory or packaged as a plugin for consistent reuse and deployment.
-  
+
   - There is an ``--additional-directory`` option with the ``scancode-reindex-licenses``
     command to add the licenses from a directory.
-    
+
   - There is also a ``--only-builtin`` option to use ony builtin licenses
     ignoring any additional license plugins.
 
   - See https://github.com/nexB/scancode-toolkit/issues/480 for more details.
 
-- We combined the licensedata file and text file of each license in a single
+- We combined the license data file and text file of each license in a single
   file with a .LICENSE extension. The .yml data file is now included at the
   top of each .LICENSE file as "YAML frontmatter". The same applies to license
   rules and their .RULE and .yml files. This halves the number of data files
@@ -185,6 +409,40 @@ License detection:
 - The deprecated "--is-license-text" option has been removed.
   This is now built-in with the --license-text option and --info
   and exposed with the "percentage_of_license_text" attribute.
+
+- The license dump() has been modified to add an extra space at empty
+  newlines for license files which also have multiple indentation levels
+  as this was generating invalid YAML output files when ``--license-text``
+  or ``--license-references`` was enabled.
+
+  See https://github.com/nexB/scancode-toolkit/issues/3219
+
+- A bugfix has been added to the ``--unknown-licenses`` option where
+  we would crash when using this option without using ``--matched-text``
+  option. This is now working correctly and also better tested.
+
+  See https://github.com/nexB/scancode-toolkit/issues/3343
+
+
+v31.2.6 - 2023-04-25
+----------------------------------
+
+This is a minor hotfix release.
+
+This fix a crash when parsing a .deb Dbeian package filename
+reported in https://github.com/nexB/scancode-toolkit/issues/3259
+
+
+v31.2.5 - 2023-01-09
+----------------------------------
+
+This is a minor fix backport release.
+
+This adds license rule changes and was requested here:
+https://github.com/nexB/scancode-toolkit/issues/3310
+This was originally merged in #3218 and included in
+the latest release v32.x, and is also being backported
+now to v31.2.x
 
 
 v31.2.4 - 2023-01-09
@@ -573,6 +831,10 @@ Changes:
     - `other_license_expressions`
     - `other_holders`
     - `other_languages`
+
+- A new field ``run_order`` has been added to ``BasePlugin`` and set on all
+  ScanCode plugins. Plugin run order and output order are now set independently
+  of one another.
 
 
 Documentation Update

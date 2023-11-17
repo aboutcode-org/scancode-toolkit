@@ -1,25 +1,9 @@
 {
   "license_detections": [
     {
-      "identifier": "example_installed_1-64843035-317c-ec04-9281-9e8c942639bc",
+      "identifier": "example_installed_1-ec26d04a-f591-6524-a28f-b2c6b6d5086a",
       "license_expression": "example-installed-1",
-      "count": 1,
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
-        {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 11,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "example-installed-1",
-          "rule_identifier": "example-installed-1.LICENSE",
-          "rule_url": null
-        }
-      ]
+      "detection_count": 1
     }
   ],
   "license_references": [
@@ -68,6 +52,7 @@
       "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
+      "is_license_clue": false,
       "is_continuous": false,
       "is_builtin": false,
       "is_from_license": true,
@@ -94,9 +79,6 @@
       "license_detections": [
         {
           "license_expression": "example-installed-1",
-          "detection_log": [
-            "not-combined"
-          ],
           "matches": [
             {
               "score": 100.0,
@@ -107,16 +89,15 @@
               "matcher": "1-hash",
               "license_expression": "example-installed-1",
               "rule_identifier": "example-installed-1.LICENSE",
+              "rule_relevance": 100,
               "rule_url": null
             }
-          ]
+          ],
+          "identifier": "example_installed_1-ec26d04a-f591-6524-a28f-b2c6b6d5086a"
         }
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "for_license_detections": [
-        "example_installed_1-64843035-317c-ec04-9281-9e8c942639bc"
-      ],
       "scan_errors": []
     }
   ]

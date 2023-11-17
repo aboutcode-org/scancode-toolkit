@@ -1,0 +1,9 @@
+---
+license_expression: jj2000
+is_license_tag: yes
+referenced_filenames:
+    - LICENSE-JJ2000.txt
+---
+
+name: {{JJ2000}}
+url: LICENSE-JJ2000.txt

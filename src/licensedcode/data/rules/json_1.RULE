@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.json.org/license.html
 ---
 
-License: provided without support or warranty  (http://www.json.org/license.html
+License: provided without support or warranty  {{http://www.json.org/license.html}}

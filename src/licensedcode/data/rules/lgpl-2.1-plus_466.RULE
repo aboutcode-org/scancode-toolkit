@@ -1,0 +1,10 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_tag: yes
+ignorable_urls:
+    - https://www.gnu.org/licenses/old-licenses/lgpl-2.1
+---
+
+<license>
+<name> LGPL-2.1-or-later </name>
+<url> (https://www.gnu.org/licenses/old-licenses/lgpl-2.1)</url>

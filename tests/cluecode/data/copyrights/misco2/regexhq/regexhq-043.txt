@@ -1,0 +1,1 @@
+Adapted from bzip2.js, copyright 2011 antimatter15 (antimatter15@gmail.com).

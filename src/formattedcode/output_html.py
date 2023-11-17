@@ -7,6 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 import io
+import os
+import logging
 from operator import itemgetter
 from os.path import abspath
 from os.path import dirname
@@ -41,6 +43,24 @@ which is NOT a plugin
 TEMPLATES_DIR = join(dirname(__file__), 'templates')
 
 
+TRACE = False
+
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+
+
 @output_impl
 class HtmlOutput(OutputPlugin):
 
@@ -59,9 +79,18 @@ class HtmlOutput(OutputPlugin):
     def process_codebase(self, codebase, html, **kwargs):
         results = self.get_files(codebase, **kwargs)
         version = codebase.get_or_create_current_header().tool_version
+        license_references = []
+        if hasattr(codebase.attributes, 'license_references'):
+            license_references = codebase.attributes.license_references
         template_loc = join(TEMPLATES_DIR, 'html', 'template.html')
         output_file = html
-        write_templated(output_file, results, version, template_loc)
+        write_templated(
+            output_file=output_file,
+            results=results,
+            license_references=license_references,
+            version=version,
+            template_loc=template_loc,
+        )
 
 
 @output_impl
@@ -98,12 +127,21 @@ class CustomTemplateOutput(OutputPlugin):
     def process_codebase(self, codebase, custom_output, custom_template, **kwargs):
         results = self.get_files(codebase, **kwargs)
         version = codebase.get_or_create_current_header().tool_version
+        license_references = []
+        if hasattr(codebase.attributes, 'license_references'):
+            license_references = codebase.attributes.license_references
         template_loc = custom_template
         output_file = custom_output
-        write_templated(output_file, results, version, template_loc)
+        write_templated(
+            output_file=output_file,
+            results=results,
+            license_references=license_references,
+            version=version,
+            template_loc=template_loc
+        )
 
 
-def write_templated(output_file, results, version, template_loc):
+def write_templated(output_file, results, license_references, version, template_loc):
     """
     Write scan output `results` to the `output_file` opened file using a template
     file at `template_loc`.
@@ -111,7 +149,12 @@ def write_templated(output_file, results, version, template_loc):
     """
     template = get_template(template_loc)
 
-    for template_chunk in generate_output(results, version, template):
+    for template_chunk in generate_output(
+        results=results,
+        license_references=license_references,
+        version=version,
+        template=template,
+    ):
         assert isinstance(template_chunk, str)
         try:
             output_file.write(template_chunk)
@@ -138,23 +181,18 @@ def get_template(location):
     return env.get_template(template_name)
 
 
-def generate_output(results, version, template):
+def generate_output(results, license_references, version, template):
     """
     Yield unicode strings from incrementally rendering `results` and `version`
     with the Jinja `template` object.
     """
     # FIXME: This code is highly coupled with actual scans and may not
     # support adding new scans at all
-
-    from licensedcode.cache import get_licenses_db
-    licenses_db = get_licenses_db()
-
     converted = {}
     converted_infos = {}
     converted_packages = {}
-    licenses = {}
 
-    LICENSES = 'licenses'
+    LICENSES = 'license_detections'
     COPYRIGHTS = 'copyrights'
     PACKAGES = 'package_data'
 
@@ -175,6 +213,8 @@ def generate_output(results, version, template):
             for match in get_matches_from_detection_mappings(scanned_file[LICENSES]):
                 # make copy
                 match = dict(match)
+                if TRACE:
+                    logger_debug(f"match: {match}")
                 license_expression = match['license_expression']
                 results.append({
                     'start': match['start_line'],
@@ -183,11 +223,6 @@ def generate_output(results, version, template):
                     'value': license_expression,
                 })
 
-                # FIXME: we should NOT rely on license objects: only use what is in the JSON instead
-                if license_expression not in licenses:
-                    licenses[license_expression] = match
-                    # we were modifying the scan data in place ....
-                    match['object'] = licenses_db.get(license_expression)
         if results:
             converted[path] = sorted(results, key=itemgetter('start'))
 
@@ -204,15 +239,13 @@ def generate_output(results, version, template):
         if PACKAGES in scanned_file:
             converted_packages[path] = scanned_file[PACKAGES]
 
-        licenses = dict(sorted(licenses.items()))
-
     files = {
         'license_copyright': converted,
         'infos': converted_infos,
         'package_data': converted_packages
     }
 
-    return template.generate(files=files, licenses=licenses, version=version)
+    return template.generate(files=files, license_references=license_references, version=version)
 
 
 @output_impl
@@ -224,7 +257,8 @@ class HtmlAppOutput(OutputPlugin):
         PluggableCommandLineOption(('--html-app',),
             type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
-            help='(DEPRECATED: use the ScanCode Workbench app instead ) '
+            hidden=True,
+            help='(DEPRECATED: use the ScanCode Workbench app instead) '
                   'Write scan output as a mini HTML application to FILE.',
             help_group=OUTPUT_GROUP,
             sort_order=1000),

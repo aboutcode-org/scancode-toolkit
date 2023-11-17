@@ -1,0 +1,24 @@
+---
+key: t-license-amp-t-kernel
+short_name: T-License for AMP T-Kernel
+name: T-License for AMP T-Kernel
+category: Proprietary Free
+owner: Tron Project
+homepage_url: https://www.tron.org/download/index.php?route=information/information&information_id=16
+spdx_license_key: LicenseRef-scancode-t-license-amp-t-kernel
+other_urls:
+    - https://www.tron.org/download/index.php?route=information/information&information_id=62&language=en
+---
+
+T-License for AMP T-Kernel [License Agreement for Source Code of AMP T-Kernel]
+
+established by T-Engine Forum
+on March 24, 2009
+Article 1 Scope of Agreement
+
+    This Agreement sets forth copyrights and the terms and conditions of use applicable to the source code of AMP T-Kernel distributed by T-Engine Forum and any derivative work created therefrom.
+
+Article 2 Copyrights and Terms and Conditions of Use
+
+    The copyrights and the terms and conditions of use under this Agreement shall be subject to the provisions of the T-License established by T-Engine Forum on January 23, 2004.
+    If the T-License referred to in the preceding paragraph has been revised, this Agreement shall be subject to the provisions of the T-License as revised.

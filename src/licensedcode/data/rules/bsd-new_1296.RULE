@@ -1,0 +1,9 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - http://www.linfo.org/bsdlicense.html
+---
+
+http://www.linfo.org/bsdlicense.html

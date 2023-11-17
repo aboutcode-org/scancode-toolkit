@@ -30,14 +30,12 @@
     "code_view_url": null,
     "vcs_url": "https://github.com/ivx/eslint-config-ivx.git",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "mit",
     "declared_license_expression_spdx": "MIT",
     "license_detections": [
       {
         "license_expression": "mit",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -48,16 +46,18 @@
             "matcher": "1-spdx-id",
             "license_expression": "mit",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "MIT"
           }
-        ]
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
       }
     ],
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "['MIT']",
+    "extracted_license_statement": "- MIT\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
@@ -186,7 +186,7 @@
     ],
     "repository_homepage_url": "https://www.npmjs.com/package/@invisionag/eslint-config-ivx",
     "repository_download_url": "https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.0.2.tgz",
-    "api_data_url": "https://registry.npmjs.org/@invisionag%2feslint-config-ivx",
+    "api_data_url": "https://registry.npmjs.org/@invisionag%2feslint-config-ivx/0.0.2",
     "datasource_id": "npm_package_json",
     "purl": "pkg:npm/%40invisionag/eslint-config-ivx@0.0.2"
   }

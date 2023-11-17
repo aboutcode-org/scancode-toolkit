@@ -18,9 +18,9 @@ All Scan Output Options
 --csv FILE              DEPRECATED: Write scan output as CSV to FILE.
                         This option is deprecated and will be replaced by
                         new CSV and tabular output formats in the next
-                        ScanCode release. Visit this issue for details:
+                        ScanCode release. Visit this issue for details,
+                        and to provide input and feedback:
                         https://github.com/nexB/scancode-toolkit/issues/3043
-                        and also provide inputs and feedback.
 
 --html FILE             Write scan output as HTML to FILE.
 
@@ -36,11 +36,15 @@ All Scan Output Options
 
                         Sub-Option of: ``--custom-output``
 
+--debian FILE           Write scan output in machine-readable Debian copyright
+                        format to FILE.
+
 --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
 
 --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
 
---html-app FILE         Write scan output as a mini HTML
+--html-app FILE         [DEPRECATED] Use ``scancode-workbench``
+                        instead. Write scan output as a mini HTML
                         application to FILE.
 
 --cyclonedx FILE        Write scan output as a CycloneDx 1.3 BOM

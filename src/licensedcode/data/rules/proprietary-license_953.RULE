@@ -1,0 +1,303 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_emails:
+    - info@codesynthesis.com
+is_deprecated: yes
+notes: This is now `odb-ncuel` LICENSE. https://www.codesynthesis.com/licenses/ncuel.txt
+---
+
+ODB NON-COMMERCIAL USE AND EVALUATION LICENSE (NCUEL)
+
+INTENT
+
+The intent of this license is to allow you to use ODB with commercial
+databases, such as Oracle, Microsoft SQL Server, IBM DB/2, etc., free
+of charge non-commercially or for evaluation.
+
+Furthermore, if a commercial database has a free edition, often called
+express edition, such as Oracle Express, Microsoft SQL Server Express,
+IBM DB/2 Express-C, etc., that can be used for commercial purposes free
+of charge, then this license allows you to use ODB with such an edition
+for commercial purposes also free of charge.
+
+Note also that the development of an application that will be used for
+commercial purposes constitutes a commercial use and is not allowed,
+except with a free edition of a commercial database. However, this
+license allows you to evaluate ODB; that is, to use the Software for
+a reasonable period for the purpose of determining its suitability for
+a particular application as well as to conduct exploratory development
+or proof-of-concept prototyping.
+
+Finally, any application that uses ODB under this license, whether non-
+commercially, for evaluation, or commercially with a free edition of a
+database, is subject to the terms and conditions similar to that of the
+GPL version 2. In particular, this means that if and when you distribute
+your application, you are required to also release its source code.
+
+If you have any questions concerning this License, please contact us at:
+info@codesynthesis.com.
+
+LEGAL TERMS AND CONDITIONS
+
+This Code Synthesis Tools CC Non-Commercial Use and Evaluation License
+Agreement for ODB Software ("License") is a legal agreement between you,
+the Licensee, (either an individual or a single entity) and Code
+Synthesis Tools CC ("Code Synthesis") for non-commercially using,
+copying, distributing and modifying the Software and any work derived
+from the Software, as defined hereinbelow. Any commercial use, except
+as expressly provided in Section 2.1, is subject to a different license.
+
+By using, modifying, or distributing the Software or any work derived
+from the Software, Licensee indicates acceptance of this License and
+agrees to be bound by all its terms and conditions for using, copying,
+distributing, or modifying the Software and works derived from the
+Software. If Licensee is agreeing to this License on behalf of an entity
+other than an individual person, Licensee represents that Licensee is
+binding and have the right to bind the entity to the terms and conditions
+of this agreement.
+
+These terms and conditions only apply to the ODB components that are
+explicitly licensed under this License (normally ODB runtime libraries
+for commercial databases). Other ODB components may be licensed under
+other licenses and are not affected in any way by the terms and
+conditions found in this License. Similarly, ODB components licensed
+under this License are not affected by the terms and conditions found
+in other licenses. If you are using several ODB components that are
+licensed under different licenses, you must comply with the terms and
+conditions of each such license.
+
+No rights are granted to the Software except as expressly set forth
+herein. Nothing other than this License grants Licensee permission to
+use, copy, distribute or modify the Software or any work derived from
+the Software. Licensee may not use, copy, distribute or modify the
+Software or any work derived from the Software except as expressly
+provided under this License. If Licensee does not accept the terms and
+conditions of this License, Licensee shall not use, copy, distribute
+or modify the Software.
+
+In consideration for Licensee's forbearance of commercial use of the
+Software, except as expressly provided in Section 2.1, Code Synthesis
+grants Licensee non-exclusive, royalty-free and without fees rights
+as expressly provided herein.
+
+1. DEFINITIONS.
+
+A "commercial database" is a database product that has associated
+fees and/or royalties payable for production and/or commercial use
+of the database product. Commercial databases include, but are not
+limited to, Oracle, Microsoft SQL Server, and IBM DB/2.
+
+A "free edition of a commercial database" is a special, limited edition
+of a commercial database, often called express edition, that does not
+require fees and/or royalties for production and/or commercial use.
+Free editions of commercial databases include, but are not limited to,
+Oracle Express, Microsoft SQL Server Express, and IBM DB/2 Express-C.
+
+The "Software" is one of the ODB runtime libraries for one of the
+commercial databases, including, but not limited to, demo programs,
+associated media and printed materials, and any included "on-line"
+documentation.
+
+A "work derived from the Software" is any derivative work as defined
+in the copyright law of the nation or state where rights to the work
+derived from the Software are exercisable; that is to say, a program
+which is linked with or otherwise incorporates the ODB runtime library
+or a translation, improvement, enhancement, extension or other
+modification of the Software which has sufficient originality to
+qualify in such a nation or state as a copyrightable work is a work
+derived from the Software.
+
+To "use" means to execute (i.e. run) the Software.
+
+To "copy" means to create one or more copies of the Software.
+
+To "distribute" means to broadcast, publish, transfer, post, upload,
+download or otherwise disseminate in any medium to any third party.
+
+To "modify" means to create a work derived from the Software.
+
+To "evaluate" means to use the Software for a reasonable period for
+the purpose of determining its suitability for a particular application
+as well as to conduct exploratory development or proof-of-concept
+prototyping.
+
+A "commercial use" is:
+
+(1) the use of the Software or any work derived from the Software in
+connection with, for or in aid of the generation of revenue, such as
+in the conduct of Licensee's daily business operations; or
+
+(2) any copying, distribution or modification of the Software or any
+work derived from the Software to any party where payment or other
+consideration is made in connection with such copying, distribution or
+modification, whether directly (as in payment for a copy of the
+Software) or indirectly (including but not limited to payment for some
+good or service related to the Software, or payment for some product
+or service that includes a copy of the Software "without charge").
+However, the following actions which involve payment do not in and
+of themselves constitute a commercial use:
+
+(a) posting the Software on a public access information storage and
+retrieval service for which a fee is received for retrieving
+information (such as an on-line service), provided that the fee is not
+content-dependent. Such fees which are not content dependent include,
+but are not limited to, fees which are based solely on the storage
+capacity required to store the information, and fees which are based
+solely on the time required to transfer the information from/to the
+public access information storage and retrieval service; and
+
+(b) distributing the Software on a CD-ROM, provided that the Software
+is reproduced entirely and verbatim on such CD-ROM, and provided further
+that all information on such CD-ROM may be distributed in a manner which
+does not constitute a commercial use.
+
+2. GRANT OF LICENSE.
+
+2.1. LICENSE TO USE.
+Licensee may use the Software provided that such use does not constitute
+a commercial use.
+
+Licensee may also use the Software commercially with a free edition of a
+commercial database, if such an edition is available. If Licensee
+distributes works derived from the Software and such works may be used
+commercially by third parties, Licensee must cause such commercial use
+to be limited to a free edition of a commercial database.
+
+2.2. LICENSE TO EVALUATE.
+Licensee may evaluation the Software for commercial use.
+
+2.3. LICENSE TO COPY AND DISTRIBUTE.
+Licensee may copy and distribute literal (i.e., verbatim) copies of the
+Software as Licensee receives it throughout the world, in any medium,
+provided that Licensee distributes an unmodified, easily-readable copy
+of this License with the Software, and provided further that such
+distribution does not constitute a commercial use.
+
+2.4. LICENSE TO CREATE WORKS DERIVED FROM THE SOFTWARE.
+Licensee may create works derived from the Software, provided that any
+such work derived from the Software carries prominent notices stating
+both the manner in which Licensee has created a work derived from the
+Software (for example, notices stating that the work derived from the
+Software is linked with or otherwise incorporates the ODB runtime
+library, or notices stating that the work derived from the Software
+is an enhancement to the Software which Licensee has created) and the
+date any such work derived from the Software was created.
+
+2.5. LICENSE TO COPY AND DISTRIBUTE WORKS DERIVED FROM THE SOFTWARE.
+Licensee may copy and distribute works derived from the Software
+throughout the world, provided that Licensee distributes an
+unmodified, easily-readable copy of this License with such works
+derived from the Software, and provided further that such distribution
+does not constitute a commercial use. Licensee must cause any work
+derived from the Software that Licensee distributes to be licensed as
+a whole and at no charge to all third parties under the terms of this
+License or another free/open source license that does not restrict any
+rights of any third party that would have been granted should such work
+have been licensed under this License.
+
+Any work derived from the Software must be accompanied by the complete
+corresponding machine-readable source code of such work derived from
+the Software, delivered on a medium customarily used for software
+interchange. The source code for the work derived from the Software
+means the preferred form of the work derived from the Software for
+making modifications to it. For an executable work derived from the
+Software, complete source code means all of the source code for all
+modules of the work derived from the Software, all associated
+interface definition files and all scripts used to control compilation
+and installation of all or any part of the work derived from the
+Software. However, the source code delivered need not include anything
+that is normally distributed, in either source code or binary (object-
+code) form, with major components (including but not limited to
+compilers, linkers, and kernels) of the operating system on which the
+executable work derived from the Software runs, unless that component
+itself accompanies the executable code of the work derived from the
+Software.
+
+Furthermore, if the executable code or object code of the work derived
+from the Software may be copied from a designated place, and if the
+source code of the work derived from the Software may be copied from
+the same place, then the work derived from the Software shall be
+construed as accompanied by the complete corresponding machine-readable
+source code of such work derived from the Software, even though third
+parties are not compelled to copy the source code along with the
+executable code or object code.
+
+If the work derived from the Software normally reads commands
+interactively when run, Licensee must cause the work derived from the
+Software, at each time it commences operation, to print or display an
+announcement including either a notice consisting of the verbatim
+warranty and liability provisions of this License, or a notice that
+Licensee, and not Code Synthesis provides a warranty.
+
+Licensee may not impose any further restrictions on the exercise of
+the rights granted herein by any recipient of any work derived from
+the Software.
+
+3. RESTRICTIONS.
+
+Licensee acknowledges that the Software is protected by copyright laws
+and international copyright treaties, as well as other intellectual
+property laws and treaties. The Software is licensed, not sold. All
+title and copyrights in and to the Software are owned exclusively by
+Code Synthesis.
+
+Licensee may not sublicense, assign or transfer this License, the
+Software or any work derived from the Software except as permitted by
+this License.
+
+Licensee is expressly prohibited from using, copying, distributing,
+studying the source code, or otherwise examining the Software for
+the purpose of reverse engineering or duplicating its functionality
+(unless enforcement of this restrictions is prohibited by applicable
+law).
+
+4. LIMITED WARRANTY.
+
+4.1 NO WARRANTIES.
+CODE SYNTHESIS EXPRESSLY DISCLAIMS ANY WARRANTY FOR THE SOFTWARE. THE
+SOFTWARE IS PROVIDED TO LICENSEE "AS IS," WITHOUT WARRANTY OF ANY KIND,
+EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT OF THIRD PARTY RIGHTS. THE ENTIRE RISK AS TO THE USE,
+QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH LICENSEE. SHOULD THE
+SOFTWARE PROVE DEFECTIVE, LICENSEE ASSUMES THE COST OF ALL NECESSARY
+SERVICING, REPAIR OR CORRECTION.
+
+4.2. NO LIABILITY FOR DAMAGES.
+IN NO EVENT WILL CODE SYNTHESIS, OR ANY OTHER PARTY WHO MAY COPY,
+DISTRIBUTE OR MODIFY THE SOFTWARE AS PERMITTED HEREIN, BE LIABLE FOR
+ANY GENERAL, DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL
+DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF
+BUSINESS PROFITS, BUSINESS INTERRUPTION, INACCURATE INFORMATION, LOSS
+OF INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OR
+INABILITY TO USE THE SOFTWARE, EVEN IF CODE SYNTHESIS OR SUCH OTHER
+PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+5. TERMINATION.
+
+Any violation or any attempt to violate any of the terms and conditions
+of this License will automatically terminate Licensee's rights under
+this License. Licensee further agrees upon such termination to cease
+any and all using, copying, distributing and modifying of the Software
+and any work derived from the Software, and further to destroy any and
+all of Licensee's copies of the Software and any work derived from the
+Software.
+
+However, parties who have received copies of the Software or copies of
+any work derived from the Software, or rights, from Licensee under this
+License will not have their licenses terminated so long as such parties
+remain in full compliance with this License.
+
+6. LICENSE SCOPE AND MODIFICATION.
+
+This License sets forth the entire agreement between Licensee and Code
+Synthesis and supersedes all prior agreements and understandings between
+the parties relating to the subject matter hereof. None of the terms of
+this License may be waived or modified except as expressly agreed in
+writing by both Licensee and Code Synthesis.
+
+7. SEVERABILITY.
+
+Should any provision of this License be declared void or unenforceable,
+the validity of the remaining provisions shall not be affected thereby.

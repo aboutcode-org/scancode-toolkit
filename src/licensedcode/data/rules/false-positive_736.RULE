@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: not a JSON license reference
+---
+
+global.json
+license.txt

@@ -21,14 +21,12 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "imagemagick",
   "declared_license_expression_spdx": "ImageMagick",
   "license_detections": [
     {
       "license_expression": "imagemagick",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -39,10 +37,12 @@
           "matcher": "1-spdx-id",
           "license_expression": "imagemagick",
           "rule_identifier": "spdx-license-identifier-imagemagick-0dd8f5c123a82d3e8b7c6d577c371911a89076bb",
+          "rule_relevance": 100,
           "rule_url": null,
           "matched_text": "imagemagick"
         }
-      ]
+      ],
+      "identifier": "imagemagick-cda0fc20-fc3d-858e-431a-edb220e2bc94"
     }
   ],
   "other_license_expression": null,

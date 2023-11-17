@@ -1,0 +1,17 @@
+---
+key: furuseth
+short_name: Furuseth License
+name: Furuseth License
+category: Permissive
+owner: OpenLDAP Foundation
+spdx_license_key: Furuseth
+other_urls:
+    - https://git.openldap.org/openldap/openldap/-/blob/master/COPYRIGHT?ref_type=heads#L39-51
+---
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that this notice is preserved.
+The names of the copyright holders may not be used to endorse or
+promote products derived from this software without their specific
+prior written permission.  This software is provided ``as is''
+without express or implied warranty.

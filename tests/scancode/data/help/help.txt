@@ -21,6 +21,9 @@ Options:
     -u, --url    Scan <input> for urls.
 
   scan options:
+    --license-diagnostics        In license detections, include diagnostic details
+                                 to figure out the license detection post
+                                 processing steps applied.
     --license-score INTEGER      Do not return license matches with a score lower
                                  than this score. A number between 0 and 100.
                                  [default: 0]
@@ -58,8 +61,6 @@ Options:
     --cyclonedx-xml FILE    Write scan output in CycloneDX XML format to FILE.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
-    --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead )
-                            Write scan output as a mini HTML application to FILE.
 
   output filters:
     --ignore-author <pattern>       Ignore a file (and all its findings) if an
@@ -87,12 +88,12 @@ Options:
   pre-scan:
     --ignore <pattern>         Ignore files matching <pattern>.
     --include <pattern>        Include files matching <pattern>.
-    --classify                 Classify files with flags telling if the file is a
-                               legal, or readme or test file, etc.
     --facet <facet>=<pattern>  Add the <facet> to files with a path matching
                                <pattern>.
 
   post-scan:
+    --classify               Classify files with flags telling if the file is a
+                             legal, or readme or test file, etc.
     --consolidate            Group resources by Packages or license and copyright
                              holder and return those groupings as a list of
                              consolidated packages and a list of consolidated
@@ -105,6 +106,8 @@ Options:
                              codebase level.
     --license-policy FILE    Load a License Policy file and apply it to the scan
                              at the Resource level.
+    --license-references     Return reference data for all licenses and license
+                             rules present in detections.
     --mark-source            Set the "is_source" to true for directories that
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a
@@ -125,9 +128,11 @@ Options:
     --tallies-with-details   Compute tallies of license, copyright and other scans
                              at the codebase level, keeping intermediate details
                              at the file and directory level.
+    --todo                   Summarize scans by providing all ambiguous detections
+                             which are todo items and needs manual review.
 
   core:
-    --timeout <secs>         Stop an unfinished file scan after a timeout in
+    --timeout <seconds>      Stop an unfinished file scan after a timeout in
                              seconds. [default: 120 seconds]
     -n, --processes INT      Set the number of parallel processes to use. Disable
                              parallel processing if 0. Also disable threading if

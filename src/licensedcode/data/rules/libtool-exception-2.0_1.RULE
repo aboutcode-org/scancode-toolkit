@@ -2,6 +2,7 @@
 license_expression: libtool-exception-2.0
 is_license_text: yes
 relevance: 99
+is_deprecated: yes
 notes: this exception is usually for the GPL. But this is the LGPL that is referenced here.
 ---
 

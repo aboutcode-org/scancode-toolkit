@@ -53,7 +53,8 @@ class LicenseClarityScore(PostScanPlugin):
 
     codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
 
-    sort_order = 5
+    run_order = 5
+    sort_order = 2
 
     options = [
         PluggableCommandLineOption(
@@ -249,6 +250,7 @@ FILTERS = dict(
     is_license_tag=LicenseFilter(min_coverage=100),
     is_license_reference=LicenseFilter(min_score=50, min_coverage=100),
     is_license_intro=LicenseFilter(min_score=100, min_coverage=100),
+    is_license_clue=LicenseFilter(min_score=100, min_coverage=100),
 )
 
 
@@ -267,6 +269,7 @@ def is_good_license(license_match_object):
             ('is_license_reference', license_match_object.rule.is_license_reference),
             ('is_license_tag', license_match_object.rule.is_license_tag),
             ('is_license_intro', license_match_object.rule.is_license_intro),
+            ('is_license_clue', license_match_object.rule.is_license_clue),
         ]
     )
     matched = False
@@ -320,22 +323,19 @@ def get_field_values_from_codebase_resources(
     """
     values = []
     for resource in codebase.walk(topdown=True):
-        if not (resource.is_dir and resource.is_top_level):
-            continue
-        for child in resource.walk(codebase):
-            if key_files_only:
-                if not child.is_key_file:
-                    continue
-            else:
-                if child.is_key_file:
-                    continue
-            if is_string:
-                value = getattr(child, field_name, None) or None
-                if value:
-                    values.append(value)
-            else:
-                for value in getattr(child, field_name, []) or []:
-                    values.append(value)
+        if key_files_only:
+            if not resource.is_key_file:
+                continue
+        else:
+            if resource.is_key_file:
+                continue
+        if is_string:
+            value = getattr(resource, field_name, None) or None
+            if value:
+                values.append(value)
+        else:
+            for value in getattr(resource, field_name, []) or []:
+                values.append(value)
     return values
 
 

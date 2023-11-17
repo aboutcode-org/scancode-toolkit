@@ -7,5 +7,5 @@ ignorable_urls:
     - https://github.com/martian-lang/martian/blob/master/LICENSE
 ---
 
-Code released under the [MIT License](https://github.com/martian-lang/martian/blob/master/LICENSE). 
- Documentation released under [Creative Commons](https://github.com/martian-lang/martian-docs/blob/master/LICENSE).
+Code released under the {{[MIT License]}}(https://github.com/martian-lang/martian/blob/master/LICENSE). 
+ Documentation released under {{[Creative Commons]}}(https://github.com/martian-lang/martian-docs/blob/master/LICENSE).

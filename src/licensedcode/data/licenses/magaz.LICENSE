@@ -1,0 +1,13 @@
+---
+key: magaz
+short_name: magaz License
+name: magaz License
+category: Permissive
+owner: Donald Arseneau
+spdx_license_key: magaz
+other_urls:
+    - https://mirrors.nic.cz/tex-archive/macros/latex/contrib/magaz/magaz.tex
+---
+
+This software may be freely used, transmitted, reproduced, or modified provided that 
+the copyright notice and this permission is retained.

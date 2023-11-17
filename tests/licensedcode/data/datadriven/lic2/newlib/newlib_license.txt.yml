@@ -6,7 +6,7 @@ license_expressions:
   - standard-ml-nj
   - amd-historical
   - sunpro
-  - osf-1990
+  - hp-1986
   - nilsson-historical
   - newlib-historical
   - bsd-new
@@ -23,7 +23,7 @@ license_expressions:
   - lgpl-2.0-plus
   - lgpl-2.0-plus
   - intel-osl-1993
-  - osf-1990
+  - hp-1986
   - hs-regexp
   - bsd-simplified
   - bsd-simplified

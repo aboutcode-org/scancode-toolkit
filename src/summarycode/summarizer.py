@@ -8,6 +8,7 @@
 #
 
 from collections import defaultdict
+import warnings
 
 import attr
 import fingerprints
@@ -28,6 +29,7 @@ from summarycode.tallies import compute_codebase_tallies
 TRACE = False
 TRACE_LIGHT = False
 
+warnings.simplefilter('ignore', UnicodeWarning)
 
 def logger_debug(*args):
     pass
@@ -55,6 +57,7 @@ class ScanSummary(PostScanPlugin):
     Summarize a scan at the codebase level.
     """
 
+    run_order = 6
     sort_order = 2
 
     codebase_attributes = dict(summary=attr.ib(default=attr.Factory(dict)))
@@ -322,8 +325,8 @@ def is_key_package(package, codebase):
 
     datafile_paths = set(package.datafile_paths or [])
     for resource in codebase.walk(topdown=True):
-        if not resource.is_top_level:
-            break
+        if resource.is_dir:
+            continue
         if resource.path in datafile_paths:
             return True
 

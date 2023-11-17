@@ -1,0 +1,151 @@
+---
+key: phaser-ccp4
+short_name: Phaser Commercial EULA (CCP4)
+name: Phaser Commercial EULA (CCP4)
+category: Commercial
+owner: University of Cambridge
+homepage_url: https://www.phaser.cimr.cam.ac.uk/index.php/CCP4_Licence
+spdx_license_key: LicenseRef-scancode-phaser-ccp4
+other_urls:
+    - https://www.phaser.cimr.cam.ac.uk/index.php/Licences
+ignorable_copyrights:
+    - (c) 2000-2005. Cambridge University Technical Services Limited
+ignorable_holders:
+    - Cambridge University Technical Services Limited
+ignorable_urls:
+    - http://www-structmed.cimr.cam.ac.uk/phaser/download.html
+---
+
+COMMERCIAL END USER LICENCE AGREEMENT (CCP4)
+
+Software: PHASER
+
+This End User Licence Agreement ("Agreement") is a legal agreement between your company the "Licensee" and CAMBRIDGE UNIVERSITY TECHNICAL SERVICES LIMITED ("CUTS") whose registered office is at 16 Mill Lane, Cambridge, CB2 1SB UK.
+
+CUTS is a company wholly owned by the Chancellor, Masters and Scholars of the University of Cambridge which holds title in intellectual property rights including in the Software and carries on trading, business and technology transfer transactions on behalf of the University of Cambridge.
+
+CUTS is the entire legal and beneficial owner and licensor of the Software and is willing to license use of the Software by the Licensee. As a condition precedent to the execution and performance of this Licence, the Licensee (and/or any of its Affiliates, if applicable, the Licensee and its Affiliates collectively referred to as the "Licensee" for the purposes of this Agreement) will have paid up annual fees to the Council for the Central Laboratory of the Research Councils ("CCLRC") for use of software, including the Software which is the subject of the Licence in this Agreement, which has been assembled by the CCLRC with support from the Biotechnology and Biological Sciences Research Council ("BBSRC") of the UK as part of the Collaborative Computational Project Number 4 ("CCP4").
+
+Downloading the Software from its internet publication site (restricted access via user ID and password) at http://www-structmed.cimr.cam.ac.uk/phaser/download.html, installing, or use of the Software by the Licensee indicates the Licensee's agreement to be bound by the terms and conditions of this Agreement. If the Licensee does not agree to these terms and conditions, the Licensee may not download, install or use the Software.
+
+AGREED TERMS
+
+1. DEFINITIONS
+
+1.1 In this Agreement the following words and phrases shall, unless the context otherwise requires, have the following meanings:
+
+Commencement Date means the initial date of download of the Software from its internet publication site by the Licensee;
+
+Derivatives means computer programs in machine readable object code or source code form developed or otherwise acquired by the Licensee which are a modification of, enhancement to, derived from or based upon the Software;
+
+Fee means the annual licence fee payable by the Licensee to the CCLRC;
+
+Intellectual Property Rights means all patents, copyrights, design rights, trade marks, service marks, trade secrets, know-how, database rights and other rights in the nature of intellectual property rights (whether registered or unregistered) and all applications for the same, anywhere in the world;
+
+Parties means CUTS and the Licensee and "Party" shall mean either of them;
+
+Software means the computer program and version listed at the head of this Agreement.
+
+2. GRANT OF LICENCE
+
+2.1 In consideration of the Fee, CUTS hereby grants to the Licensee a non-exclusive, non-transferable, royalty-free licence, commencing on the Commencement Date and for the duration of payment of the Fee, to download, install and use the Software subject to the following terms and conditions:
+
+(a) the Licensee may use the Software solely for its internal use and the Licensee shall not sell, give, disclose, lend, transfer, sublicense or otherwise distribute the Software to any third party, or allow the Software to be accessed over the internet or in any other manner that would allow access to the Software by anyone other than the Licensee's employees (and consultants and contractors provided such use is solely for the Licensee's internal use and subject to the provisions of this Agreement);
+
+(b) the Licensee may create Derivatives solely for its own internal use but shall not distribute the Software or any Derivatives in whole or in part to any third party;
+
+(c) the Software may be installed and used only on computers owned or leased by the Licensee;
+
+(d) the Licensee may copy the Software solely to the extent necessary to exercise this Licence, and for backup, disaster recovery and archival purposes, provided that the Licensee shall retain on all copies of the Software the following copyright notice: (C) 2000-2005. Cambridge University Technical Services Limited. All rights reserved.
+
+3. INTELLECTUAL PROPERTY RIGHTS
+
+3.1 The Licensee acknowledges that all Intellectual Property Rights in the Software belong and shall belong to CUTS and the Licensee shall have no rights in or to the Software other than the right to use it in accordance with the terms of the Licence in this Agreement.
+
+3.2 Title to and ownership of any portion of the Software incorporated into Derivatives shall at all times remain with CUTS and the Licensee shall not have any title or ownership interest therein.
+
+3.3 Title to and ownership of any portion of Derivatives created by the Licensee and not owned by CUTS pursuant to Clauses 3.1 and 3.2 above shall be held by the Licensee. Nothing contained in this Licence shall be construed to limit CUTS rights to modify or to develop other derivatives of the Software which are similar to or offer the same or similar improvements as any Derivatives developed by the Licensee.
+
+3.4 Error fixes, bug fixes, technical suggestions, comments and suggested improvements to the Software and its code are welcome by the authors of the Software and CUTS, and in agreeing to provide these to the authors or to CUTS the Licensee hereby assigns the Intellectual Property Rights in error fixes, bug fixes, or technical improvements to CUTS which are communicated in any manner or medium to the authors of the Software or CUTS with a reservation of use of those improvements and suggestions by the Licensee subject to the terms and conditions of the Licence in this Agreement.
+
+4. NO MAINTENANCE OR SUPPORT
+
+4.1 CUTS is under no obligation whatsoever to:
+
+(a) provide maintenance or support for the Software; or
+
+(b) notify the Licensee of error fixes, bug fixes, patches, or upgrades to the features, functionality or performance of the Software ("Enhancements") (if any), whether developed by CUTS or third parties. If, in its sole discretion, CUTS makes an Enhancement available to the Licensee and CUTS does not separately enter into a written licence agreement with the Licensee relating to such bug fix, patch or upgrade, then it shall be deemed incorporated into the Software and subject to this Agreement.
+
+5. DISCLAIMER OF WARRANTIES
+
+5.1 CUTS warrants that the Software will conform substantially with its functional specifications. Otherwise the Software is supplied "as is" without warranty of any kind. CUTS, its licensors and its employees:
+
+(a) disclaim any warranties, express or implied, including but not limited to any implied warranties of merchantability, fitness for a particular purpose, title or non-infringement of third party rights;
+
+(b) do not assume any legal liability or responsibility for the accuracy, completeness, or usefulness of the Software;
+
+(c) do not represent that use of the Software will not infringe privately owned rights;
+
+(d) do not warrant that the Software will function uninterrupted, that it is error-free or that any errors will be corrected.
+
+6. LIMITATION OF LIABILITY
+
+6.1 In no event will CUTS or its licensors or its employees be liable to the Licensee for any indirect, incidental, consequential, special or punitive damages of any kind or nature, including but not limited to loss of profits or loss of data, for any reason whatsoever, whether such liability is asserted on the basis of contract, tort (including negligence or strict liability), or otherwise, even if CUTS has been warned of the possibility of such loss or damages. In no event shall CUTS' liability arising from or in connection with this Agreement exceed a sum equivalent to the annual Fee paid by the Licensee to CCLRC for use of the Software.
+
+6.2 The limitations and exclusions in this Agreement shall not apply in respect of claims for personal injury or death caused by the negligence of CUTS, its licensors or its employees or in respect of fraud or fraudulent misrepresentation.
+
+7. INDEMNITY
+
+7.1 The Licensee shall indemnify CUTS, the Software authors, the Software sponsors, and their agents, officers, and employees, against any and all claims, suits, losses, damages, costs, fees, and expenses arising out of or in connection with any claim or threatened claim by any third party relating to or arising from the use of the Software by the Licensee. The Licensee shall pay all costs incurred by CUTS in enforcing this provision.
+
+8. TERM AND TERMINATION
+
+8.1 This Agreement and the Licence granted herein shall come into effect on the Commencement Date and will continue for the duration of payment of the Fee unless terminated by CUTS in accordance with this Agreement. If the Licensee breaches any term of this Agreement, and fails to cure such breach within thirty (30) days of the date of written notice, this Agreement shall immediately terminate. Upon such termination the Licensee shall immediately cease using the Software, return to CUTS or destroy all copies of the Software, and provide CUTS with written certification of the Licensee's compliance with the foregoing. Termination shall not relieve the Licensee from its obligations arising prior to such termination. Notwithstanding any provision of this Agreement to the contrary, Sections 3, 5, 6, 7, 8, 9, 10, 13, 14 and 18 shall survive termination of this Agreement.
+
+9. CONFIDENTIALITY
+
+9.1 The Licensee agrees and undertakes that during the term of the Licence in this Agreement and thereafter it will keep confidential all, and will not use for its own purposes nor without the prior written consent of CUTS disclose to any third party any information of a confidential nature (including trade secrets and information of commercial value) which may become known to the Licensee and which relates to CUTS unless such information is public knowledge or already known to the Licensee at the time of disclosure or subsequently becomes public knowledge other by breach of the Licence in this Agreement or subsequently comes lawfully into the possession of the Licensee from a third party.
+
+10. NO SUBLICENSING AND NO ASSIGNMENT
+
+10.1 The Licensee shall have no right to sub-license or to assign, transfer, charge or deal in any other manner the benefit or burden of the Licence in this Agreement in whole or in part or to allow the Software to become the subject of any charge, lien or encumbrance without the prior written consent of CUTS such consent may be withheld without giving any reasons.
+
+11. WAIVER
+
+11.1 No forbearance or delay by either party in enforcing its rights will prejudice or restrict the rights of that party, and no waiver of any such rights or of any breach of any contractual terms will be deemed to be a waiver of any other right or of any later breach.
+
+12. SEVERABILITY
+
+12.1 If any provision of the Licence in this Agreement is judged to be illegal or unenforceable, the continuation in full force and effect of the remainder of the provisions will not be prejudiced.
+
+13. NO AGENCY OR PARTNERSHIP
+
+13.1 Nothing contained or implied in this Agreement constitutes a Party the partner, agent, or legal representative of another party or of the other Party for any purpose or creates any partnership, agency or trust, and no Party has any authority to bind the other Party in any way.
+
+14. THE CONTRACTS (RIGHTS OF THIRD PARTIES) ACT 1999
+
+14.1 The Contracts (Rights of Third Parties) Act 1999 shall not apply to this Agreement and nothing in this Agreement shall confer or purport to confer on or operate to give any third Party any benefit or any right to enforce any term of this Agreement except as expressly provided in this Agreement.
+
+15. NOTICES
+
+15.1 Any notice to be given under this Agreement shall be in writing and delivered by hand, prepaid registered post or facsimile to a Party at the address set out at the head of this Agreement or to such other address or fax number as any Party may specify in writing to another. Notices are deemed to have been given:
+
+(a) if delivered by hand, at the time of delivery unless delivered after 5pm in the place of receipt or on a non-business day, in which case the notice is deemed to have been given at 9am the next business day;
+
+(b) if sent by registered post from within the United Kingdom, three business days after posting (or seven business days if posted from outside the United Kingdom); and
+
+(c) if sent by facsimile, at the time the facsimile is received shown in the transmission report as the time that the whole facsimile was sent unless received after 5pm in the place of receipt or on a non-business day, in which case the notice is deemed to have been given at 9am the next business day. Any notice served by facsimile transmission shall be confirmed by post.
+
+16. ENTIRE AGREEMENT
+
+16.1 This Agreement constitutes the entire agreement and understanding of the Parties and supersedes all negotiations, understandings or previous agreement between the Parties relating to the subject matter of this Agreement.
+
+17. GOVERNING LAW
+
+17.1 This Agreement and any documents to be entered into pursuant to it shall be governed by and construed in accordance with English law and each Party irrevocably submits to the exclusive jurisdiction of the courts of England over any claim or matter arising under or in connection with this Agreement and the documents entered into pursuant to it.
+
+18. EXPORT CONTROL REGULATIONS
+
+18.1 'Export Control Regulations' means any United Nations trade sanctions or EU or UK legislation or regulation, from time to time in force, which impose arms embargoes or control of export of goods, technology or software.
+
+18.2 The Licensee shall ensure that, in using the Software it shall not and nor shall its employees or consultants or contractors breach or compromise directly of indirectly compliance with any Export Control Regulations.

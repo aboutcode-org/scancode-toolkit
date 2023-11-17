@@ -147,7 +147,7 @@ What is Checked?
 ^^^^^^^^^^^^^^^^
 
 PyCQA is an Organization for code quality tools (and plugins) for the Python programming language.
-Doc8 is a sub-project of the same Organization. Refer this `README <https://github.com/PyCQA/doc8/blob/master/README.rst>`_ for more details.
+Doc8 is a sub-project of the same Organization. Refer this `README <https://github.com/PyCQA/doc8/blob/main/README.rst>`_ for more details.
 
 What is checked:
 
@@ -303,6 +303,12 @@ Style Conventions for the Documentaion
     ``rst_snippets/warning_snippets/`` and then included to eliminate redundancy, as these are
     frequently used in multiple files.
 
+8. Redirects
+
+    If layouts of doc pages are being changed and these could be referenced elsewhere, these should
+    be added in the `redirects` mapping in `conf.py`. For examples on using these see
+    https://documatt.gitlab.io/sphinx-reredirects/usage.html
+
 Converting from Markdown
 ------------------------
 
@@ -312,3 +318,15 @@ bugs. But this is definitely better than converting everything by yourself.
 
 This will be helpful in converting GitHub wiki's (Markdown Files) to reStructuredtext files for
 Sphinx/ReadTheDocs hosting.
+
+Automatic Docs Generation
+-------------------------
+
+It's possible to generate docs automatically from data by using a combination of:
+
+- `shell scripts: example <https://github.com/nexB/scancode-toolkit/blob/develop/docs/scripts/regen_package_docs.sh>`_
+- `python scripts: example <https://github.com/nexB/scancode-toolkit/blob/develop/src/packagedcode/regen_package_docs.py>`_
+- `jinja templates: example <https://github.com/nexB/scancode-toolkit/blob/develop/src/packagedcode/templates/available_package_parsers.rst>`_
+
+And we do this currently to keep a documentation page for all the supported package formats.
+See :ref:`supported_packages` for details.

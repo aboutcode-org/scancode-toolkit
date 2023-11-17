@@ -1,0 +1,13 @@
+---
+license_expression: boost-1.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE_1_0.txt
+notes: Seen in https://github.com/boostorg/bcp/blob/772ec6a9bd7395193ce300aeb28cd188ad8e6cbc/licence_info.cpp
+ignorable_urls:
+    - http://www.boost.org/LICENSE_1_0.txt
+---
+
+Subject to the "
+ "Boost Software License, Version 1.0. (See accompanying file "
+ "LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt\

@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: seen in liferay-portal
+---
+
+Failed to read license file
+LICENSE_REPOSITORY_DIR

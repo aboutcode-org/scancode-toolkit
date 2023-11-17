@@ -1,0 +1,1 @@
+Copyright (c) 2012 [Vitaly Puzrin](https://github.com/puzrin).

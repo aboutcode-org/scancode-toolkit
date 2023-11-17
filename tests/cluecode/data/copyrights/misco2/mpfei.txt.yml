@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2006 Michael Pfeiffer - p3fff@web.de
+holders:
+  - Michael Pfeiffer
+holders_summary:
+  - value: Michael Pfeiffer
+    count: 1

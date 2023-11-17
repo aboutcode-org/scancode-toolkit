@@ -1,0 +1,9 @@
+---
+license_expression: gpl-2.0 WITH classpath-exception-2.0
+is_license_notice: yes
+minimum_coverage: 90
+---
+
+OpenJDK is licensed under the {{GPLv2+CE}}. A copy of that license is included in
+this distribution immediately below this notice. You can find a copy of the
+OpenJDK source through the downloads page at

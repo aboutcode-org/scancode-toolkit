@@ -1,0 +1,9 @@
+---
+license_expression: bsd-2-clause-views
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - http://github.com/garycourt/uri-js
+---
+
+License: http://github.com/garycourt/uri-js

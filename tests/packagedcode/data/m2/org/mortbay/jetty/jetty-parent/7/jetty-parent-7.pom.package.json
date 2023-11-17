@@ -11,77 +11,77 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Greg Wilkins",
       "email": "gregw@apache.org",
       "url": "http://www.mortbay.com/mortbay/people/gregw"
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jan Bartel",
       "email": "janb@apache.org",
       "url": "http://www.mortbay.com/people/janb"
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jules Gosnell",
       "email": "jules@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "James Strachan",
       "email": "jstrachan@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Simone Bordet",
       "email": "simone.bordet@gmail.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Tim Vernum",
       "email": "tim@adjective.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Nik Gonzalez",
       "email": "ngonzalez@exist.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jeanfrancois Arcand",
       "email": "jfarcand@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jesse McConnell",
       "email": "jesse@webtide.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "David Jencks",
       "email": "david_jencks@yahoo.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "David Yu",
       "email": "david.yu.ftw@gmail.com",
       "url": null
@@ -106,14 +106,12 @@
   "code_view_url": "scm:svn:https://svn.codehaus.org/jetty/pom/tags/jetty-parent-7",
   "vcs_url": "svn+https://svn.codehaus.org/jetty/pom/tags/jetty-parent-7",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
     {
       "license_expression": "apache-2.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
@@ -121,39 +119,34 @@
           "end_line": 1,
           "matched_length": 5,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_48.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
-          "matched_text": "Apache License Version 2.0"
-        }
-      ]
-    },
-    {
-      "license_expression": "apache-2.0",
-      "detection_log": [
-        "not-combined"
-      ],
-      "matches": [
+          "matched_text": "- name: Apache License Version 2.0"
+        },
         {
           "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
+          "start_line": 2,
+          "end_line": 2,
           "matched_length": 8,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
+          "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_25.RULE",
+          "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_25.RULE",
-          "matched_text": "http://www.apache.org/licenses/LICENSE-2.0"
+          "matched_text": "  url: http://www.apache.org/licenses/LICENSE-2.0"
         }
-      ]
+      ],
+      "identifier": "apache_2_0-7d19d6db-5271-9183-f2fe-699732078833"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'Apache License Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0', 'comments': None, 'distribution': None}]",
+  "extracted_license_statement": "- name: Apache License Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.mortbay.jetty/jetty-parent@7?classifier=sources"

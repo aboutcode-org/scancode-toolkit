@@ -1,0 +1,9 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+is_continuous: yes
+ignorable_urls:
+    - http://jaxen.codehaus.org/license.html
+---
+
+{{http://jaxen.codehaus.org/license.html}}

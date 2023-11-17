@@ -5,6 +5,8 @@
       "type": "file",
       "license_detections": [],
       "declared_license_expression": "apache-2.0 AND mit",
+      "declared_license_expression_spdx": "Apache-2.0 AND MIT",
+      "license_clues": [],
       "scan_errors": []
     }
   ]

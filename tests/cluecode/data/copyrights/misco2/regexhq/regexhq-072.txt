@@ -1,0 +1,1 @@
+Copyright (C) 2013 Mathias Bynens <mathias@qiwi.be>

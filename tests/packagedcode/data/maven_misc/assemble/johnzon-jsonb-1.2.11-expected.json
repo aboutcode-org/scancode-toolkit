@@ -1,0 +1,945 @@
+{
+  "packages": [
+    {
+      "type": "maven",
+      "namespace": "org.apache.johnzon",
+      "name": "johnzon-jsonb",
+      "version": "1.2.11",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Johnzon :: JSON-B Implementation",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 18,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            }
+          ],
+          "detection_log": [
+            "from-package-file"
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/",
+      "repository_download_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/johnzon-jsonb-1.2.11.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/johnzon-jsonb-1.2.11.pom",
+      "package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.3_spec@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "provided",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.3_spec@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-jaxrs_2.1_spec@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "provided",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-jaxrs_2.1_spec@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-jcdi_2.0_spec@1.1",
+      "extracted_requirement": "1.1",
+      "scope": "provided",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-jcdi_2.0_spec@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-jsonb_1.0_spec",
+      "extracted_requirement": null,
+      "scope": "provided",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-jsonb_1.0_spec?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.johnzon/johnzon-mapper@1.2.11",
+      "extracted_requirement": "1.2.11",
+      "scope": "compile",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.johnzon/johnzon-mapper@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.cxf/cxf-rt-rs-client",
+      "extracted_requirement": "${cxf.version}",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.cxf/cxf-rt-rs-client?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.cxf/cxf-rt-frontend-jaxrs",
+      "extracted_requirement": "${cxf.version}",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.cxf/cxf-rt-frontend-jaxrs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.cxf/cxf-rt-transports-local",
+      "extracted_requirement": "${cxf.version}",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.cxf/cxf-rt-transports-local?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-interceptor_1.2_spec@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-interceptor_1.2_spec@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-atinject_1.0_spec@1.0",
+      "extracted_requirement": "1.0",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-atinject_1.0_spec@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    },
+    {
+      "purl": "pkg:maven/org.apache.openwebbeans/openwebbeans-impl",
+      "extracted_requirement": "${owb.version}",
+      "scope": "test",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:maven/org.apache.openwebbeans/openwebbeans-impl?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "datasource_id": "maven_pom"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de",
+      "license_expression": "apache-2.0",
+      "detection_count": 2,
+      "detection_log": [
+        "from-package-file"
+      ]
+    },
+    {
+      "identifier": "apache_2_0-2e855fd2-d4e6-f202-a2a4-6953b9354518",
+      "license_expression": "apache-2.0",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e",
+      "license_expression": "apache-2.0",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "apache_2_0-8352cbe6-d199-3a43-cdc8-b14a837e2ce6",
+      "license_expression": "apache-2.0",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e",
+      "license_expression": "apache-2.0",
+      "detection_count": 1,
+      "detection_log": []
+    },
+    {
+      "identifier": "apache_2_0-f089be2e-5d2c-9289-8733-3880be15665c",
+      "license_expression": "apache-2.0",
+      "detection_count": 1,
+      "detection_log": []
+    }
+  ],
+  "files": [
+    {
+      "path": "johnzon-jsonb-1.2.11",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF/DEPENDENCIES",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 64.18,
+              "start_line": 9,
+              "end_line": 13,
+              "matched_length": 43,
+              "match_coverage": 100.0,
+              "matcher": "3-seq",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_1247.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1247.RULE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "apache_2_0-f089be2e-5d2c-9289-8733-3880be15665c"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 45.74,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF/LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 4,
+              "matched_length": 12,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_791.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF/MANIFEST.MF",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "jar",
+          "namespace": "org.apache.johnzon",
+          "name": "Johnzon :: JSON-B Implementation",
+          "version": "1.2.11",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "Apache Johnzon is an implementation of JSR-353 (JavaTM API for JSON Processing).",
+          "release_date": null,
+          "parties": [
+            {
+              "role": "vendor",
+              "name": "The Apache Software Foundation"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "http://johnzon.apache.org/johnzon-jsonb",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 9,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_42.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+                  "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                }
+              ],
+              "identifier": "apache_2_0-2e855fd2-d4e6-f202-a2a4-6953b9354518"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "http://www.apache.org/licenses/LICENSE-2.0.txt",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {
+            "documentation_url": "http://johnzon.apache.org/"
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "java_jar_manifest",
+          "purl": "pkg:jar/org.apache.johnzon/Johnzon%20::%20JSON-B%20Implementation@1.2.11"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 6,
+              "end_line": 6,
+              "matched_length": 11,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_osgi.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_osgi.RULE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "apache_2_0-8352cbe6-d199-3a43-cdc8-b14a837e2ce6"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 9.48,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF/NOTICE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 95.0,
+              "start_line": 5,
+              "end_line": 6,
+              "matched_length": 14,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_product_includes_2.RULE",
+              "rule_relevance": 95,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 56.0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF/maven",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.properties",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "org.apache.johnzon",
+          "name": "johnzon-jsonb",
+          "version": "1.2.11",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "maven_pom_properties",
+          "purl": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "org.apache.johnzon",
+          "name": "johnzon-jsonb",
+          "version": "1.2.11",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Johnzon :: JSON-B Implementation",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 3,
+                  "end_line": 18,
+                  "matched_length": 119,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "apache-2.0_2.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+                }
+              ],
+              "detection_log": [
+                "from-package-file"
+              ],
+              "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?classifier=sources"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.3_spec@1.1",
+              "extracted_requirement": "1.1",
+              "scope": "provided",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-jaxrs_2.1_spec@1.1",
+              "extracted_requirement": "1.1",
+              "scope": "provided",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-jcdi_2.0_spec@1.1",
+              "extracted_requirement": "1.1",
+              "scope": "provided",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-jsonb_1.0_spec",
+              "extracted_requirement": null,
+              "scope": "provided",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.johnzon/johnzon-mapper@1.2.11",
+              "extracted_requirement": "1.2.11",
+              "scope": "compile",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.cxf/cxf-rt-rs-client",
+              "extracted_requirement": "${cxf.version}",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.cxf/cxf-rt-frontend-jaxrs",
+              "extracted_requirement": "${cxf.version}",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.cxf/cxf-rt-transports-local",
+              "extracted_requirement": "${cxf.version}",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-interceptor_1.2_spec@1.0",
+              "extracted_requirement": "1.0",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-atinject_1.0_spec@1.0",
+              "extracted_requirement": "1.0",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:maven/org.apache.openwebbeans/openwebbeans-impl",
+              "extracted_requirement": "${owb.version}",
+              "scope": "test",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/",
+          "repository_download_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/johnzon-jsonb-1.2.11.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/johnzon-jsonb-1.2.11.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 3,
+              "end_line": 18,
+              "matched_length": 119,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_2.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
+            }
+          ],
+          "detection_log": [
+            "from-package-file"
+          ],
+          "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 22.08,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/org",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/org/apache",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/org/apache/johnzon",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/org/apache/johnzon/jaxrs",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/org/apache/johnzon/jaxrs/jsonb",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/org/apache/johnzon/jaxrs/jsonb/jaxrs",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/org/apache/johnzon/jaxrs/jsonb/jaxrs/JsonbJaxrsProvider.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/org/apache/johnzon/jsonb",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "johnzon-jsonb-1.2.11/org/apache/johnzon/jsonb/JohnzonBuilder.class",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    }
+  ]
+}

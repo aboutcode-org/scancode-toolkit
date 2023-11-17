@@ -1,0 +1,1 @@
+Copyright 2010, Chris Winberry <chris@winberry.net>. All rights reserved.

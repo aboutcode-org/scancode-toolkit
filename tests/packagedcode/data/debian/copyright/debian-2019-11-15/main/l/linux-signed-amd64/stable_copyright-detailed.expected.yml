@@ -22,18 +22,17 @@ other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new OR gpl-1.0-plus
-    detection_log:
-      - not-combined
     matches:
-      - score: '99.6'
+      - score: '100.0'
         start_line: 91
         end_line: 121
-        matched_length: 250
+        matched_length: 251
         match_coverage: '100.0'
-        matcher: 3-seq
+        matcher: 2-aho
         license_expression: bsd-new OR gpl-1.0-plus
-        rule_identifier: bsd-new_or_gpl.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_or_gpl.RULE
+        rule_identifier: bsd-new_or_gpl-1.0-plus_9.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_or_gpl-1.0-plus_9.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -66,9 +65,8 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new_or_gpl_1_0_plus-c0323e55-14e5-80bd-7ec7-8dd3477bd032
   - license_expression: unicode
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 126
@@ -78,6 +76,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: unicode
         rule_identifier: unicode_17.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_17.RULE
         matched_text: |
           Distributed under the Terms of Use in
@@ -111,9 +110,8 @@ other_license_detections:
           not be used in advertising or otherwise to promote the sale, use or other
           dealings in these Data Files or Software without prior written
           authorization of the copyright holder.
+    identifier: unicode-20f1fa03-5a85-518c-1468-0bf7d5e02a8b
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 171
@@ -123,6 +121,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -142,9 +141,8 @@ other_license_detections:
           LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
           FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
           DEALINGS IN THE SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: '194'
@@ -154,6 +152,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - score: '100.0'
@@ -164,6 +163,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1330.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1330.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
@@ -181,9 +181,8 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public License version
           2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-4843804f-917f-9ea7-c10a-097843d59177
   - license_expression: lgpl-2.1 AND lgpl-2.1-plus
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 211
@@ -193,6 +192,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_38.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
       - score: '100.0'
@@ -203,6 +203,7 @@ other_license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
         rule_identifier: lgpl-2.1-plus_62.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_62.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
@@ -225,13 +226,13 @@ other_license_detections:
         matcher: 2-aho
         license_expression: lgpl-2.1
         rule_identifier: lgpl-2.1_293.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_293.RULE
         matched_text: |
           On Debian systems, the complete text of the GNU Lesser General Public
           License version 2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
+    identifier: lgpl_2_1_and_lgpl_2_1_plus-c606c1e3-5c4c-bc4f-8e43-13cab79bd078
   - license_expression: gpl-2.0-plus OR mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 229
@@ -241,6 +242,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0-plus OR mit
         rule_identifier: gpl-2.0-plus_or_mit2.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_or_mit2.RULE
         matched_text: |
           This file is dual-licensed: you can use it either under the terms
@@ -280,6 +282,7 @@ other_license_detections:
               WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
               FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
               OTHER DEALINGS IN THE SOFTWARE.
+    identifier: gpl_2_0_plus_or_mit-d63b2f9d-3903-47d5-a2e8-a9af4acef37b
 copyright: |
   1991-2012 Linus Torvalds and many others
   1996-2006 Manoj Srivastava

@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright 2014 - current.year Rafael Winterhalter
+holders:
+  - Rafael Winterhalter
+holders_summary:
+  - value: Rafael Winterhalter
+    count: 1

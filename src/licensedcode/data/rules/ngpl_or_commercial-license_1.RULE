@@ -1,0 +1,10 @@
+---
+license_expression: ngpl OR commercial-license
+is_license_notice: yes
+ignorable_urls:
+    - http://opensource.org/licenses/NGPL
+---
+
+This software is distributed under The Nethack General Public License.
+Commercial sale is licensed by Canada.
+See Also : {{ http://opensource.org/licenses/NGPL }}

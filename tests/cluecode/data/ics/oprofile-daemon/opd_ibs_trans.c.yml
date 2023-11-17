@@ -3,13 +3,13 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 2008 - 2010 OProfile
+  - Copyright 2008 - 2010 OProfile authors
   - Copyright (c) 2008 Advanced Micro Devices, Inc.
 holders:
-  - OProfile
+  - OProfile authors
   - Advanced Micro Devices, Inc.
 holders_summary:
   - value: Advanced Micro Devices, Inc.
     count: 1
-  - value: OProfile
+  - value: OProfile authors
     count: 1

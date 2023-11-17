@@ -1,0 +1,11 @@
+---
+license_expression: unrar
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/junrar/junrar/blob/master/LICENSE
+---
+
+<license>
+<name> {{UnRar License}} </name>
+<url> (https://github.com/junrar/junrar/blob/master/LICENSE)</url>

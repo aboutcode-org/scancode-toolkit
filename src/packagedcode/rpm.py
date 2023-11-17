@@ -96,6 +96,9 @@ class EVR(namedtuple('EVR', 'epoch version release')):
         note: the sort order of the named tuple is the sort order.
         But for creation we put the rarely used epoch last with a default to None.
         """
+        
+        epoch = str(epoch) if epoch else ""
+
         if epoch and epoch.strip() and not epoch.isdigit():
             raise ValueError('Invalid epoch: must be a number or empty.')
         if not version:
@@ -229,10 +232,9 @@ class RpmInstalledNdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
 
 # TODO: add dependencies!!!
 class RpmInstalledSqliteDatabaseHandler(BaseRpmInstalledDatabaseHandler):
-    # used by newer RHEL/CentOS/Fedora
+    # used by newer RHEL/CentOS/Fedora/CoreOS
     datasource_id = 'rpm_installed_database_sqlite'
-    path_patterns = ('*var/lib/rpm/rpmdb.sqlite',)
-    filetypes = ('berkeley',)
+    path_patterns = ('*rpm/rpmdb.sqlite',)
     default_package_type = 'rpm'
     default_package_namespace = 'TBD'
     description = 'RPM installed package SQLite database'

@@ -4,20 +4,18 @@ declared_license:
   - Binary redistribution (Intel 3)
 declared_license_expression: intel AND intel AND (intel AND (bsd-new AND other-permissive AND
   other-copyleft) AND bsd-new AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro
-  AND osf-1990 AND nilsson-historical AND newlib-historical AND bsd-simplified AND x11-hanson
+  AND hp-1986 AND nilsson-historical AND newlib-historical AND bsd-simplified AND x11-hanson
   AND delorie-historical AND intel-osl-1993)
 declared_license_expression_spdx: LicenseRef-scancode-intel AND LicenseRef-scancode-intel AND
   (LicenseRef-scancode-intel AND (BSD-3-Clause AND LicenseRef-scancode-other-permissive AND
-  LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND LicenseRef-scancode-x11-lucent AND
-  SMLNJ AND LicenseRef-scancode-amd-historical AND LicenseRef-scancode-sunpro AND LicenseRef-scancode-osf-1990
-  AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical AND BSD-2-Clause
-  AND LicenseRef-scancode-x11-hanson AND LicenseRef-scancode-delorie-historical AND LicenseRef-scancode-intel-osl-1993)
+  LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND dtoa AND SMLNJ AND LicenseRef-scancode-amd-historical
+  AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical
+  AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson AND LicenseRef-scancode-delorie-historical
+  AND LicenseRef-scancode-intel-osl-1993)
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: intel
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 11
@@ -27,6 +25,7 @@ license_detections:
         matcher: 2-aho
         license_expression: intel
         rule_identifier: intel.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -65,9 +64,8 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
           DAMAGE.
+    identifier: intel-ba019b8e-e0ea-8048-9073-a76fbb247ff8
   - license_expression: intel
-    detection_log:
-      - not-combined
     matches:
       - score: '95.0'
         start_line: 53
@@ -77,6 +75,7 @@ license_detections:
         matcher: 2-aho
         license_expression: intel
         rule_identifier: intel_2.RULE
+        rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
         matched_text: |
           Redistribution.
@@ -114,11 +113,10 @@ license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    identifier: intel-aad21753-33a8-9b6b-b0be-dbc0838c75ab
   - license_expression: intel AND (bsd-new AND other-permissive AND other-copyleft) AND bsd-new
-      AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND osf-1990 AND nilsson-historical
+      AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND hp-1986 AND nilsson-historical
       AND newlib-historical AND bsd-simplified AND x11-hanson AND delorie-historical AND intel-osl-1993
-    detection_log:
-      - not-combined
     matches:
       - score: '95.0'
         start_line: 101
@@ -128,6 +126,7 @@ license_detections:
         matcher: 2-aho
         license_expression: intel
         rule_identifier: intel_2.RULE
+        rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
         matched_text: |
           Redistribution.
@@ -173,6 +172,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new AND other-permissive AND other-copyleft
         rule_identifier: license-intro_55.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_55.RULE
         matched_text: |
           The newlib subdirectory is a collection of software from several sources.
@@ -188,6 +188,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_newlib.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_newlib.RULE
         matched_text: |
           This copyrighted material is made available to anyone wishing to use,
@@ -208,6 +209,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_newlib3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_newlib3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without modification,
@@ -240,6 +242,7 @@ license_detections:
         matcher: 2-aho
         license_expression: x11-lucent
         rule_identifier: x11-lucent.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -260,6 +263,7 @@ license_detections:
         matcher: 2-aho
         license_expression: standard-ml-nj
         rule_identifier: standard-ml-nj_3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/standard-ml-nj_3.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
@@ -288,6 +292,7 @@ license_detections:
         matcher: 2-aho
         license_expression: amd-historical
         rule_identifier: amd-historical_1.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/amd-historical_1.RULE
         matched_text: |
           This software is the property of Advanced Micro Devices, Inc  (AMD)  which
@@ -310,6 +315,7 @@ license_detections:
         matcher: 2-aho
         license_expression: sunpro
         rule_identifier: sunpro.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
         matched_text: |
           Developed at SunPro, a Sun Microsystems, Inc. business.
@@ -321,9 +327,10 @@ license_detections:
         matched_length: 88
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: osf-1990
-        rule_identifier: osf-1990_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/osf-1990_3.RULE
+        license_expression: hp-1986
+        rule_identifier: hp-1986.LICENSE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hp-1986.LICENSE
         matched_text: |
           To anyone who acknowledges that this file is provided "AS IS"
           without any express or implied warranty:
@@ -343,6 +350,7 @@ license_detections:
         matcher: 2-aho
         license_expression: nilsson-historical
         rule_identifier: nilsson-historical.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute this software is
@@ -361,6 +369,7 @@ license_detections:
         matcher: 2-aho
         license_expression: newlib-historical
         rule_identifier: newlib-historical.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
         matched_text: |
           The authors hereby grant permission to use, copy, modify, distribute,
@@ -380,6 +389,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_98.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_98.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -411,6 +421,7 @@ license_detections:
         matcher: 2-aho
         license_expression: amd-historical
         rule_identifier: amd-historical4.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/amd-historical4.RULE
         matched_text: |
           This software is the property of SuperH, Inc (SuperH) which specifically
@@ -433,6 +444,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_933.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_933.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -469,6 +481,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -499,6 +512,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_newlib3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_newlib3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -529,6 +543,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -559,6 +574,7 @@ license_detections:
         matcher: 2-aho
         license_expression: x11-hanson
         rule_identifier: x11-hanson2.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-hanson2.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -579,6 +595,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -609,6 +626,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_76.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_76.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -640,6 +658,7 @@ license_detections:
         matcher: 2-aho
         license_expression: delorie-historical
         rule_identifier: delorie-historical.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/delorie-historical.LICENSE
         matched_text: |
           Redistribution, modification, and use in source and binary forms is permitted
@@ -656,6 +675,7 @@ license_detections:
         matcher: 2-aho
         license_expression: intel-osl-1993
         rule_identifier: intel-osl-1993.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.LICENSE
         matched_text: |
           Intel hereby grants you permission to copy, modify, and distribute this
@@ -687,9 +707,10 @@ license_detections:
         matched_length: 88
         match_coverage: '100.0'
         matcher: 2-aho
-        license_expression: osf-1990
-        rule_identifier: osf-1990_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/osf-1990_3.RULE
+        license_expression: hp-1986
+        rule_identifier: hp-1986.LICENSE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hp-1986.LICENSE
         matched_text: |
           To anyone who acknowledges that this file is provided "AS IS"
           without any express or implied warranty:
@@ -709,6 +730,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -739,6 +761,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -769,6 +792,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -799,6 +823,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_206.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_206.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -832,6 +857,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_8.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_8.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -862,6 +888,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -892,6 +919,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_newlib3.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_newlib3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -922,6 +950,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_newlib5.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_newlib5.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -952,6 +981,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -982,6 +1012,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_183.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_183.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1014,6 +1045,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_412.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_412.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1050,6 +1082,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_517.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_517.RULE
         matched_text: |
           Redistribution and  use in source  and binary forms, with  or without
@@ -1088,6 +1121,7 @@ license_detections:
         matcher: 2-aho
         license_expression: newlib-historical
         rule_identifier: newlib-historical.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
         matched_text: |
           The authors hereby grant permission to use, copy, modify, distribute,
@@ -1107,6 +1141,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_979.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_979.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1138,6 +1173,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_410.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_410.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1172,6 +1208,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-simplified
         rule_identifier: bsd-simplified_27.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1194,6 +1231,7 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
+    identifier: intel_and__bsd_new_and_other_permissive_and_other_copyleft__and_bsd_new_and_x11_lucent_and_standard_ml_nj_and_amd_historical_and_sunpro_and_hp_1986_and_nilsson_historical_and_newlib_historical_and_bsd_simplified_and_x11_hanson_and_delorie_historical_and_intel_osl_1993-477aff46-5788-d7c6-01dd-0bed8adb8776
 other_license_detections: []
 copyright: |
   2014, Intel Corporation.

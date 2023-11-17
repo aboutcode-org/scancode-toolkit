@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - copyrighted by http://www.dre.vanderbilt.edu/~schmidt/ Douglas C. Schmidt
+  - Copyright (c) 1993-2009
+holders:
+  - Douglas C. Schmidt
+holders_summary:
+  - value: Douglas C. Schmidt
+    count: 1

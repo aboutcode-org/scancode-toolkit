@@ -70,7 +70,7 @@ class BaseNpmHandler(models.DatafileHandler):
         to create and yield the package, the package dependencies, and the
         package resources.
 
-        When reporting the resources of a package, we alk the codebase, skipping
+        When reporting the resources of a package, we walk the codebase, skipping
         the node_modules directory, assign resources to the package and yield
         resources.
 
@@ -623,15 +623,21 @@ class YarnLockV1Handler(BaseNpmHandler):
                 elif not line.startswith(' ') and stripped.endswith(':'):
                     # the first line of a dependency has the name and requirements
                     # "@babel/core@^7.1.0", "@babel/core@^7.3.4":
+                    # For aliases: "@alias@npm:@package@^12":
                     requirements = stripped.strip(':').split(', ')
                     requirements = [r.strip().strip("\"'") for r in requirements]
                     for req in requirements:
                         if req.startswith('@'):
-                            assert req.count('@') == 2
+                            # 2 = package, 4 = alias
+                            assert req.count('@') in [2, 4]
 
                         ns_name, _, constraint = req.rpartition('@')
                         ns, _ , name = ns_name.rpartition('/')
                         constraint = constraint.strip("\"'")
+                        # If we have an alias, just keep the package part:
+                        # <alias-package>@npm:<package>
+                        if "@npm:" in ns:
+                            ns = ns.split(':')[1]
                         top_requirements.append((ns, name, constraint,))
 
                 else:
@@ -794,16 +800,17 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
     Return a package API data URL given a namespace, name, version and a base
     registry URL.
 
-    Note that for scoped packages (with a namespace), the URL is not version
-    specific but contains the data for all versions as the default behvior of
-    the registries is to return nothing in this case. Special quoting rules are
-    applied for scoped npms.
+    Special quoting rules are applied for scoped npms.
 
     For example:
     >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', '0.1.4', 'https://registry.yarnpkg.com')
+    >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx/0.1.4'
+
+    >>> result = npm_api_url('@invisionag', 'eslint-config-ivx', registry='https://registry.yarnpkg.com')
     >>> assert result == 'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
 
     >>> assert npm_api_url(None, 'angular', '1.6.6') == 'https://registry.npmjs.org/angular/1.6.6'
+    >>> assert npm_api_url(None, 'angular') == 'https://registry.npmjs.org/angular'
 
     >>> assert not npm_api_url(None, None, None)
     """
@@ -812,8 +819,6 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
             # this is a legacy wart: older registries used to always encode this /
             # FIXME: do NOT encode and use plain / instead
             ns_name = '%2f'.join([namespace, name])
-            # there is no version-specific URL for scoped packages
-            version = ''
         else:
             ns_name = name
 

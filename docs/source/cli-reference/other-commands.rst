@@ -100,3 +100,11 @@ reindex the licenses without these licenses from the additional plugins.
 
 Rebuild the license index including texts all languages (and not only
 English) and exit. This is an EXPERIMENTAL option.
+
+
+``--load-dump`` Option
+^^^^^^^^^^^^^^^^^^^^^^
+
+Load all licenses and rules from their respective files and then dump them
+to their respective files. This is done to make small formatting changes across
+all licenses and rules, to be consistent across them.

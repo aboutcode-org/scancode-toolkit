@@ -21,14 +21,12 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "unicode-dfs-2015",
   "declared_license_expression_spdx": "Unicode-DFS-2015",
   "license_detections": [
     {
       "license_expression": "unicode-dfs-2015",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 50.0,
@@ -39,10 +37,12 @@
           "matcher": "1-hash",
           "license_expression": "unicode-dfs-2015",
           "rule_identifier": "spdx_license_id_unicode-dfs-2015_for_unicode-dfs-2015.RULE",
+          "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_unicode-dfs-2015_for_unicode-dfs-2015.RULE",
           "matched_text": "unicode-dfs-2015"
         }
-      ]
+      ],
+      "identifier": "unicode_dfs_2015-b2fab4ea-2c1b-2766-4914-3a9d6112ef87"
     }
   ],
   "other_license_expression": null,

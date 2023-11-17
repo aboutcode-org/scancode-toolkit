@@ -10,12 +10,10 @@ spdx_license_key: LicenseRef-scancode-scilab-fr
 text_urls:
     - https://directory.fsf.org/wiki/License:Scilab-old
 ignorable_copyrights:
-    - (c) INRIA-ENPC
     - Scilab (c) INRIA-ENPC
     - Scilab (c) INRIA-ENPC.
     - Scilab inside (c) INRIA-ENPC
 ignorable_holders:
-    - INRIA-ENPC
     - Scilab INRIA-ENPC
     - Scilab INRIA-ENPC.
     - Scilab inside INRIA-ENPC

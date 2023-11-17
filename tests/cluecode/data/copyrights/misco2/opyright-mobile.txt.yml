@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - opyright (c) 2018 OPLUS Mobile Comm Corp. Ltd.
+holders:
+  - OPLUS Mobile Comm Corp. Ltd.
+holders_summary:
+  - value: OPLUS Mobile Comm Corp. Ltd.
+    count: 1

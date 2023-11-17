@@ -1,0 +1,7 @@
+---
+license_expression: bsd-simplified
+is_license_tag: yes
+---
+
+name: BSD-license
+comments: {{Revised 2-clause BSD license}}

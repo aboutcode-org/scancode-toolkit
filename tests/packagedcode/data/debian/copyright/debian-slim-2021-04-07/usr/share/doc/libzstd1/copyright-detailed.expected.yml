@@ -18,8 +18,6 @@ other_license_expression_spdx: (BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only)
 license_detections: []
 other_license_detections:
   - license_expression: zlib
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 30
@@ -29,6 +27,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: zlib
         rule_identifier: zlib_81.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_81.RULE
         matched_text: |
           This software is provided 'as-is', without any express or implied
@@ -46,9 +45,8 @@ other_license_detections:
           2. Altered source versions must be plainly marked as such, and must not be
              misrepresented as being the original software.
           3. This notice may not be removed or altered from any source distribution.
+    identifier: zlib-9a572338-50f0-922a-4ff5-942f61bbd11b
   - license_expression: mit
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 59
@@ -58,6 +56,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: mit
         rule_identifier: mit.LICENSE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining
@@ -79,9 +78,8 @@ other_license_detections:
           ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
           CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
           SOFTWARE.
+    identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: gpl-2.0
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 79
@@ -91,6 +89,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_561.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - score: '100.0'
@@ -101,6 +100,7 @@ other_license_detections:
         matcher: 1-hash
         license_expression: gpl-2.0
         rule_identifier: gpl-2.0_1189.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1189.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -118,19 +118,19 @@ other_license_detections:
 
           On Debian systems, the complete text of the GNU General Public
           License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+    identifier: gpl_2_0-f0da9233-5233-7bfb-cd4d-15c9cbd6a410
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
-      - score: '99.52'
+      - score: '100.0'
         start_line: 97
         end_line: 117
-        matched_length: 206
-        match_coverage: '99.52'
-        matcher: 3-seq
+        matched_length: 211
+        match_coverage: '100.0'
+        matcher: 1-hash
         license_expression: bsd-new
-        rule_identifier: bsd-new_222.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_222.RULE
+        rule_identifier: bsd-new_1273.RULE
+        rule_relevance: 100
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1273.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are met:
@@ -153,6 +153,7 @@ other_license_detections:
           ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-110ee496-752d-98ce-8c3f-6a68f0deedcc
 copyright: |
   2013-2018, Yann Collet
   2016, Przemyslaw Skibinski

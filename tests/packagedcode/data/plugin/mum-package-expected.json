@@ -1,8 +1,6 @@
 {
   "packages": [],
   "dependencies": [],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "test.mum",
@@ -39,6 +37,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": "Microsoft Corporation",
+          "holder": "Microsoft Corporation",
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],

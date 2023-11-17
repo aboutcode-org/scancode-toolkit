@@ -11,28 +11,28 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jorge Ferrer",
       "email": "jferrer germinus.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jes\u00fas Jaimez",
       "email": null,
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Ismael Ferrer",
       "email": "iferrer germinus.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "\u00c3?lvaro Gonz\u00c3\u00a1lez",
       "email": "agonzalez germinus.com",
       "url": null
@@ -57,6 +57,7 @@
   "code_view_url": "http://cvs.sourceforge.net/viewcvs.py/easyconf/",
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/easyconf:easyconf",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

@@ -1,0 +1,8 @@
+---
+license_expression: w3c
+is_license_notice: yes
+---
+
+All of the .java software and associated documentation about 
+the DOM in this repository are distributed under the license 
+from the {{W3C}}, which is provided herein.

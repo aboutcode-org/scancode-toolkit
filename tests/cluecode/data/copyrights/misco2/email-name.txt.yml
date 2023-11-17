@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2006-2010 Roy Marples <roy@marples.name>
+holders:
+  - Roy Marples
+holders_summary:
+  - value: Roy Marples
+    count: 1

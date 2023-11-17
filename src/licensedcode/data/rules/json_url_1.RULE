@@ -1,7 +1,8 @@
 ---
 license_expression: json
 is_license_reference: yes
-relevance: 95
+relevance: 100
+minimum_coverage: 100
 ignorable_urls:
     - https://spdx.org/licenses/json
 ---

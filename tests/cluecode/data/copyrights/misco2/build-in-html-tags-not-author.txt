@@ -1,0 +1,8 @@
+ A <code>ULocale</code> object created by a <code>Builder</code> is
+
+
+
+
+<p>The country value in the <code>Locale</code> created by the
+<code>Builder</code> is always normalized to upper case.
+

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright 2004-present by the Checker Framework developers
+holders:
+  - the Checker Framework developers
+holders_summary:
+  - value: the Checker Framework developers
+    count: 1

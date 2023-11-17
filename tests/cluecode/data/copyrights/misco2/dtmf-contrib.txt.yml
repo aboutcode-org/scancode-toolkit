@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2017, Contributing Member(s) of Distributed Management Task Force, Inc
+holders:
+  - Contributing Member(s) of Distributed Management Task Force, Inc
+holders_summary:
+  - value: Contributing Member(s) of Distributed Management Task Force, Inc
+    count: 1

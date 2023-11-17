@@ -3,8 +3,8 @@ license_expressions:
   - openssh
   - gary-s-brown
   - other-permissive
-  - bsd-new
   - other-permissive
+  - ssh-keyscan
   - public-domain
   - public-domain-disclaimer
   - bsd-original-uc

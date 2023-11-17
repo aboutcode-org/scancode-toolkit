@@ -1,0 +1,11 @@
+---
+license_expression: json
+is_license_tag: yes
+ignorable_urls:
+    - http://json.org/license.html
+---
+
+<licenses>
+    <license>
+        <name>{{The JSON License}}</name>
+        <url>http://json.org/license.html</url>

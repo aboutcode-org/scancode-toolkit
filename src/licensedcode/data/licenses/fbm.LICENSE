@@ -1,0 +1,16 @@
+---
+key: fbm
+short_name: Fuzzy Bitmap License
+name: Fuzzy Bitmap License
+category: Permissive
+owner: Michael Mauldin
+spdx_license_key: FBM
+other_urls:
+    - https://github.com/SWI-Prolog/packages-xpce/blob/161a40cd82004f731ba48024f9d30af388a7edf5/src/img/gifwrite.c#L21-L26
+---
+
+Permission is granted to use this file in whole or in
+part for any purpose, educational, recreational or commercial,
+provided that this copyright notice is retained unchanged.
+This software is available to all free of charge by anonymous
+FTP and in the UUNET archives.

@@ -1,0 +1,10 @@
+---
+license_expression: jdom
+is_license_tag: yes
+ignorable_urls:
+    - https://raw.github.com/hunterhacker/jdom/master/LICENSE.txt
+---
+
+<license>
+<name> Similar to Apache License but with the acknowledgment clause removed </name>
+<url> (https://raw.github.com/hunterhacker/jdom/master/LICENSE.txt)</url>

@@ -1,7 +1,9 @@
 ---
 license_expression: proprietary-license
-is_license_reference: yes
+is_license_clue: yes
 relevance: 100
+is_deprecated: yes
+notes: deprecated because it is too generic and triggers noisy false positives
 ---
 
 may not be modified.

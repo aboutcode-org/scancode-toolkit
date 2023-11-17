@@ -1,0 +1,8 @@
+---
+license_expression: public-domain
+is_license_text: yes
+notes: https://github.com/evrim/ecl/blob/ee989b977617963fd01748b8ac7a0b4ee22d8445/src/clx/cmudep.lisp#L4
+---
+
+This code was written as part of the CMU Common Lisp project at
+Carnegie Mellon University, and has been placed in the public domain.

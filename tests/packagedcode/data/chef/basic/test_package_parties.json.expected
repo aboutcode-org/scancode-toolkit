@@ -29,14 +29,12 @@
   "code_view_url": null,
   "vcs_url": null,
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "public-domain",
   "declared_license_expression_spdx": "LicenseRef-scancode-public-domain",
   "license_detections": [
     {
       "license_expression": "public-domain",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 70.0,
@@ -47,10 +45,12 @@
           "matcher": "1-hash",
           "license_expression": "public-domain",
           "rule_identifier": "public-domain_bare_words.RULE",
+          "rule_relevance": 70,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
           "matched_text": "public-domain"
         }
-      ]
+      ],
+      "identifier": "public_domain-3dd945ae-65df-7d90-6467-60f8ecf2eb77"
     }
   ],
   "other_license_expression": null,

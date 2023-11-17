@@ -25,6 +25,7 @@ class MarkSource(PostScanPlugin):
 
     resource_attributes = dict(source_count=attr.ib(default=0, type=int, repr=False))
 
+    run_order = 8
     sort_order = 8
 
     options = [

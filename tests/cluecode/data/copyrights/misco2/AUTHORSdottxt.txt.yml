@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+holders:
+  - AUTHORS.txt
+holders_summary:
+  - value: AUTHORS.txt
+    count: 1

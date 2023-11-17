@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2010-2012 Japan Registry Services Co., Ltd.
+holders:
+  - Japan Registry Services Co., Ltd.
+holders_summary:
+  - value: Japan Registry Services Co., Ltd.
+    count: 1

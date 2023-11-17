@@ -1,0 +1,16 @@
+---
+key: odb-fpl
+short_name: ODB FPL
+name: ODB Free Proprietary License (FPL)
+category: Proprietary Free
+owner: Code Synthesis
+homepage_url: https://www.codesynthesis.com/products/odb/license.xhtml#1
+spdx_license_key: LicenseRef-scancode-odb-fpl
+faq_url: https://www.codesynthesis.com/products/odb/license.xhtml
+---
+
+Free Proprietary License (FPL)
+
+In addition to the Commercial Proprietary License we offer a free version for handling small object models. This license allows you to use ODB in a proprietary (closed-source) application free of charge and without any of the GPL/NCUEL restrictions provided that the amount of the generated database support code in any single release of your application does not exceed 10,000 lines.
+
+To start using ODB under the free proprietary license simply contact us and we will send you a copy of the license agreement. See also the following questions and answers for additional information.

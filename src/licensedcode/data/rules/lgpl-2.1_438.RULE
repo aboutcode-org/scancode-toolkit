@@ -1,0 +1,11 @@
+---
+license_expression: lgpl-2.1
+is_license_tag: yes
+minimum_coverage: 95
+notes: noice the weird line break
+ignorable_urls:
+    - http://jgrapht.sourceforge.net/LGPL.html
+---
+
+Bundle-License: http://jgrapht.sourceforge.net/LGPL.html, http://www.e
+ clipse.org/legal/epl-v10.html

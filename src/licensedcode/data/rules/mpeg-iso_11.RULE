@@ -1,0 +1,26 @@
+---
+license_expression: mpeg-iso
+is_license_text: yes
+relevance: 99
+minimum_coverage: 90
+notes: See https://sourceforge.net/p/opencore-amr/code/ci/master/tree/opencore/NOTICE
+---
+
+* ISO/IEC gives users of the MPEG-4 Video (ISO/IEC 14496-2) standard free
+ * license to this software module or modifications thereof for use in hardware
+ * or software products claiming conformance to the MPEG-4 Video (ISO/IEC
+ * 14496-2) standard.
+ *
+ * Those intending to use this software module in hardware or software products
+ * are advised that its use may infringe existing patents. The original
+ * developer of this software module and his/her company, the subsequent
+ * editors and their companies, and ISO/IEC have no liability for use of this
+ * software module or modifications thereof in an implementation. Copyright is
+ * not released for non MPEG-4 Video (ISO/IEC 14496-2) Standard conforming
+ * products.
+ *
+ * ACTS-MoMuSys partners retain full right to use the code for his/her own
+ * purpose, assign or donate the code to a third party and to inhibit third
+ * parties from using the code for non MPEG-4 Video (ISO/IEC 14496-2) Standard
+ * conforming products. This copyright notice must be included in all copies or
+ * derivative works.

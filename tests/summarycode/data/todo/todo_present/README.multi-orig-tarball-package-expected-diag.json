@@ -1,0 +1,62 @@
+{
+  "license_detections": [],
+  "todo": [
+    {
+      "detection_id": "borceux-3c39742c-edef-82b7-0cdd-fc4d9ff8b044",
+      "review_comments": {
+        "imperfect-match-coverage": "The license detection likely is not conclusive as there was license matches with low score or coverage, and so this needs review. scancode would likely benifit from a license rule addition from this case, so please report this to scancode-toolkit github issues."
+      },
+      "detection": {
+        "license_expression": "borceux",
+        "matches": [
+          {
+            "score": 4.71,
+            "start_line": 1,
+            "end_line": 3,
+            "matched_length": 4,
+            "match_coverage": 4.71,
+            "matcher": "3-seq",
+            "license_expression": "borceux",
+            "rule_identifier": "borceux.LICENSE",
+            "rule_relevance": 100,
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
+            "matched_text": "package consists of [various] [tarballs].\n\n[This] README"
+          }
+        ],
+        "detection_log": [
+          "low-quality-matches"
+        ],
+        "identifier": "borceux-3c39742c-edef-82b7-0cdd-fc4d9ff8b044"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "README.multi-orig-tarball-package",
+      "type": "file",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [
+        {
+          "score": 4.71,
+          "start_line": 1,
+          "end_line": 3,
+          "matched_length": 4,
+          "match_coverage": 4.71,
+          "matcher": "3-seq",
+          "license_expression": "borceux",
+          "rule_identifier": "borceux.LICENSE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
+          "matched_text": "package consists of [various] [tarballs].\n\n[This] README"
+        }
+      ],
+      "percentage_of_license_text": 10.53,
+      "for_todo": [
+        "borceux-3c39742c-edef-82b7-0cdd-fc4d9ff8b044"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

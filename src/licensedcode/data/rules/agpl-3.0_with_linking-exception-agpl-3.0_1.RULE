@@ -1,0 +1,12 @@
+---
+license_expression: agpl-3.0 WITH linking-exception-agpl-3.0
+is_license_notice: yes
+notes: https://github.com/FellowTraveler/Open-Transactions/blob/3c4908be5d4abf110f5c2fdaa1db4678bdd84644/docs/LICENSE-AND-CREDITS.txt#L1341
+---
+
+ADDITIONAL PERMISSION under the GNU Affero GPL version 3 section 7:
+ *   This paragraph applies only to the LAGPLv3 components listed above.
+ *   If you modify this Program, or any covered work, by linking or
+ *   combining it with other code, such other code is not for that reason
+ *   alone subject to any of the requirements of the GNU Affero GPL
+ *   version 3.

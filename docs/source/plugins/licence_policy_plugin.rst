@@ -51,9 +51,11 @@ Here is an example of the ScanCode output after running ``--license-policy``::
  {
   "path": "samples/zlib/deflate.c",
   "type": "file",
-  "licenses": [
+  "detected_license_expression": "zlib",
+  "detected_license_expression_spdx": "Zlib",
+  "license_detections": [
     {
-      "key": "zlib",
+      "license-expression": "zlib",
       ...
       ...
       ...

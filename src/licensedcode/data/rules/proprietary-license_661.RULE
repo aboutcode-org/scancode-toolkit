@@ -1,0 +1,21 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+notes: See in https://github.com/cetola/ece571-project/blob/38967b2f01f623888026e04362798180da7626e3/hdl/nand/ACounter.v
+---
+
+// Permission:
+//
+//   Lattice Semiconductor grants permission to use this code for use
+//   in synthesis for any Lattice programmable logic product.  Other
+//   use of this code, including the selling or duplication of any
+//   portion is strictly prohibited.
+//
+// Disclaimer:
+//
+//   This VHDL or Verilog source code is intended as a design reference
+//   which illustrates how these types of functions can be implemented.
+//   It is the user's responsibility to verify their design for
+//   consistency and functionality through the use of formal
+//   verification methods.  Lattice Semiconductor provides no warranty
+//   regarding the use or functionality of this code.

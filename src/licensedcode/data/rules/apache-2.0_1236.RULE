@@ -1,0 +1,11 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+minimum_coverage: 95
+---
+
+//***********************************************************************************************
+    //**                 THE FOLLOWING CODE IS A PARTIAL, VERBATIM COPY OF                         **
+    //**                       org.apache.commons.lang.StringUtils                                 **
+    //**                         which is licensed under ASF 2.0                                   **
+    //***********************************************************************************************

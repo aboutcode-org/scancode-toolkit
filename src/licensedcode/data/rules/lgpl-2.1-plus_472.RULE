@@ -1,0 +1,12 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 95
+referenced_filenames:
+    - COPYING
+    - COPYING.LESSER
+notes: This is a typical LGPL-3.0 notice with both the LGPL and GPL texts, but no version is
+    declared. Since lesser is used, this must be a 2.1 or later
+---
+
+licensed under the LGPL. Please see COPYING and COPYING.LESSER for licensing details.

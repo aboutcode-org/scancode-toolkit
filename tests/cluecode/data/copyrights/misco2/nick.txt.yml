@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2005, 2006 Nick Galbreath - nickg at modp dot com
+holders:
+  - Nick Galbreath - nickg at modp dot com
+holders_summary:
+  - value: Nick Galbreath - nickg at modp dot com
+    count: 1

@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright 2011 Katholieke Universiteit Leuven 2011, 2013, 2018 Niels Moller 2018 Red Hat,
+    Inc. 2019 Dmitry Eremin-Solenikov
+holders:
+  - Katholieke Universiteit Leuven Niels Moller Red Hat, Inc. Dmitry Eremin-Solenikov
+holders_summary:
+  - value: Katholieke Universiteit Leuven Niels Moller Red Hat, Inc. Dmitry Eremin-Solenikov
+    count: 1

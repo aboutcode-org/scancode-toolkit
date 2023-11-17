@@ -31,14 +31,16 @@ def strip_variable_text(rdf_text):
     Return rdf_text stripped from variable parts such as rdf nodeids
     """
 
+    namespace_regex = re.compile('SpdxDocument rdf:about="(.+)#SPDXRef-DOCUMENT"')
+    namespace = namespace_regex.search(rdf_text).group(1)
+    rdf_text = re.compile(namespace).sub('', rdf_text)
+
     replace_nid = re.compile('rdf:nodeID="[^\\"]*"').sub
     rdf_text = replace_nid('', rdf_text)
 
-    replace_creation = re.compile('<ns1:creationInfo>.*</ns1:creationInfo>', re.DOTALL).sub  # NOQA
+    replace_creation = re.compile('<spdx:creationInfo>.*</spdx:creationInfo>', re.DOTALL).sub  # NOQA
     rdf_text = replace_creation('', rdf_text)
 
-    replace_pcc = re.compile('<ns1:packageVerificationCode>.*</ns1:packageVerificationCode>', re.DOTALL).sub  # NOQA
-    rdf_text = replace_pcc('', rdf_text)
     return rdf_text
 
 
@@ -127,7 +129,6 @@ def check_rdf_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES):
     else:
         with io.open(expected_file, encoding='utf-8') as i:
             expected = json.load(i)
-            expected = load_and_clean_rdf(result_file)
 
     assert json.dumps(result, indent=2) == json.dumps(expected, indent=2)
 
@@ -346,7 +347,6 @@ def test_output_spdx_rdf_can_handle_non_ascii_paths():
         results = res.read()
     assert 'han/据.svg' in results
 
-
 def test_output_spdx_tv_can_handle_non_ascii_paths():
     test_file = test_env.get_test_loc('spdx/unicode.json')
     result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
@@ -354,3 +354,11 @@ def test_output_spdx_tv_can_handle_non_ascii_paths():
     with io.open(result_file, encoding='utf-8') as res:
         results = res.read()
     assert 'han/据.svg' in results
+
+def test_output_spdx_tv_sh1_of_empty_file():
+    test_dir = test_env.get_test_loc('spdx/empty/scan/somefile')
+    result_file = test_env.get_temp_file(extension='spdx', file_name='test_spdx')
+    run_scan_click([test_dir, '-clip', '--spdx-tv', result_file])
+    with io.open(result_file, encoding='utf-8') as res:
+        results = res.read()
+    assert 'FileChecksum: SHA1: da39a3ee5e6b4b0d3255bfef95601890afd80709' in results

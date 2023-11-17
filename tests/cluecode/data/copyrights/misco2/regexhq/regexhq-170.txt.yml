@@ -1,0 +1,9 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2014 Jon Schlinkert (http://twitter.com/jonschlinkert), Brian Woodward (http://twitter.com/doowb),
+    contributors
+holders:
+  - Jon Schlinkert Brian Woodward contributors

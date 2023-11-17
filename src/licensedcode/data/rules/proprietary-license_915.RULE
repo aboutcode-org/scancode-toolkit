@@ -1,0 +1,41 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+ignorable_copyrights:
+    - (c) Copyright 1990, 1991, 1992, 1993, 1994, 1996 Open Software Foundation,Inc.
+    - (c) Copyright 1996, 1997, 1998, 1999, 2000 The Open Group
+ignorable_holders:
+    - Open Software Foundation,Inc.
+    - The Open Group
+---
+
+RESTRICTED RIGHTS NOTICE: Use, duplication, or disclosure by the
+Government is subject to the restrictions as set forth in subparagraph
+(c)(1)(ii) of the Rights in Technical Data and Computer Software clause
+at DFARS 52.227-7013.
+
+The Open Group LLC
+Apex Plaza, Forbury Road
+Reading, Berkshire,
+RG1 1AX, UK.
+
+RESTRICTED RIGHTS LEGEND: This computer software is submitted with
+"restricted rights." Use, duplication or disclosure is subject to the
+restrictions as set forth in NASA FAR SUP 18-52.227-79 (April 1985)
+"Commercial Computer Software- Restricted Rights (April 1985)." The
+Open Group, Apex Plaza, Forbury Road, Reading, Berkshire, RG1 1AX, UK.
+If the contract contains the Clause at 18-52.227-74 "Rights in Data
+General" then the "Alternate III" clause applies.
+
+(c) Copyright 1990, 1991, 1992, 1993, 1994, 1996 Open Software
+Foundation,Inc. ALL RIGHTS RESERVED
+(c) Copyright 1996, 1997, 1998, 1999, 2000 The Open Group. ALL RIGHTS
+RESERVED
+
+The Open Group, Open Software Foundation, OSF, OSF/Motif, and Motif are
+Trademarks of The Open Group
+DEC and DIGITAL are registered trademarks of Digital Equipment
+Corporation
+HP is a trademark of Hewlett-Packard Company
+X Window System is a trademark of the Massachusetts Institute of
+Technology

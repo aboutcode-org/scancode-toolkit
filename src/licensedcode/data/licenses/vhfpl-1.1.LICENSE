@@ -10,10 +10,10 @@ notes: The original name of Cenon was vhf interservice GmbH at http://www.vhf-in
 spdx_license_key: LicenseRef-scancode-vhfpl-1.1
 ignorable_copyrights:
     - Copyright (c) 2003 vhf interservice GmbH service@vhf.de
-    - Copyright (c) 2003/2004 vhf interservice GmbH, Im Marxle
+    - Copyright (c) 2003/2004 vhf interservice GmbH, Im Marxle 3
 ignorable_holders:
     - vhf interservice GmbH
-    - vhf interservice GmbH, Im Marxle
+    - vhf interservice GmbH, Im Marxle 3
 ignorable_emails:
     - service@vhf.de
 ---

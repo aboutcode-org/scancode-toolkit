@@ -7,15 +7,13 @@ Post-Scan options activate their respective post-scan plugins which execute the 
 
 .. include:: /rst_snippets/post_scan_options.rst
 
-----
-
-.. include::  /rst_snippets/note_snippets/synopsis_install_quickstart.rst
-
 To see all plugins available via command line help, use ``--plugins``.
 
 .. include::  /rst_snippets/note_snippets/post_scan_plugins.rst
 
 ----
+
+.. _mark_source_option:
 
 ``--mark-source`` Option
 ------------------------
@@ -24,16 +22,15 @@ To see all plugins available via command line help, use ``--plugins``.
 
         The option ``--mark-source`` is a sub-option of and **requires** the option ``--info``.
 
-    The ``mark-source`` option marks the "is_source" attribute of a directory to be "True", if more
-    than 90% of the files under that directory is source files, i.e. Their "is_source" attribute is
-    "True".
+    The ``mark-source`` option marks the ``is_source`` attribute of a directory to be ``True``, if more
+    than 90% of the files under that directory is source files, and ``False`` otherwise.
 
     When the following command is executed to scan the ``samples`` directory with this option enabled::
 
         scancode -clpieu --json-pp output.json samples --mark-source
 
-    Then, the following directories are marked as "Source", i.e. Their "is_source" attribute is changed
-    from "false" to "True".
+    Then, the following directories are marked as "Source", i.e. their ``is_source`` attribute is set
+    to ``True``, as they contain mostly source code.
 
     - ``samples/JGroups/src``
     - ``samples/zlib/iostream2``
@@ -42,6 +39,8 @@ To see all plugins available via command line help, use ``--plugins``.
     - ``samples/zlib/infback9``
 
 ----
+
+.. _consolidate_option:
 
 ``--consolidate`` Option
 ------------------------
@@ -53,12 +52,12 @@ To see all plugins available via command line help, use ``--plugins``.
 
     .. note::
 
-        The --consolidate option will be deprecated in a future version of
-        scancode-toolkit as top level packages now provide a improved
-        consolidated data.
+        The ``--consolidate`` option will be deprecated in a future version of
+        ScanCode Toolkit as top level packages, dependencies and licenses
+        now provide improved consolidated data.
 
     The JSON file containing scan results after using the ``--consolidate`` Plugin is structured as
-    follows: (note: "..." in the image contains more data)
+    follows:
 
     An example Scan::
 
@@ -67,12 +66,8 @@ To see all plugins available via command line help, use ``--plugins``.
     The JSON output file is structured as follows::
 
         {
-          "headers": [
-            {...}
-          ],
+          "headers": [...],
           "consolidated_components": [
-            {...
-            },
             {
               "type": "license-holders",
               "identifier": "dmitriy_anisimkov_1",
@@ -92,9 +87,8 @@ To see all plugins available via command line help, use ``--plugins``.
             {...
             }
           ],
-          "consolidated_packages": [],
-          "files": [
-          ]
+          "consolidated_packages": [...],
+          "files": [...]
         }
 
     Each consolidated component has the following information::
@@ -122,70 +116,66 @@ To see all plugins available via command line help, use ``--plugins``.
     "consolidated_components"::
 
         "consolidated_to": [
-                 "dmitriy_anisimkov_1"
-                 ],
+            "dmitriy_anisimkov_1"
+        ],
 
     Note that multiple files may have the same "consolidated_to" attribute.
 
 ----
 
+.. _filter_clues_option:
+
 ``--filter-clues`` Option
 -------------------------
 
     The ``--filter-clues`` Plugin filters redundant duplicated clues already contained in detected
-    licenses, copyright texts and notices.
+    licenses, copyright texts and notices, authors.
 
-    ..
-        [ToDo] Resolve Error and then Add content
-        [ERROR] Check https://github.com/nexB/scancode-toolkit/issues/1758
+    Consider the output of running the following scan (compared to running the scan without the
+    ``--filter-clues`` option)::
 
-    .. WARNING::
+        ./scancode -clpieu --json-pp sample_filter_clues.json samples --filter-clues
 
-        Running the following scan generates an error::
+    When we run without the ``--filter-clues`` option, we have the following detections at
+    ``"path": "samples/JGroups/src/FixedMembershipToken.java"``::
 
-            ./scancode -clp --json-pp sample_filter_clues.json samples --filter-clues
+      {
+        "authors": [
+          {
+            "author": "Chris Mills (millsy@jboss.com)",
+            "start_line": 51,
+            "end_line": 51
+          }
+        ],
+        "emails": [
+          {
+            "email": "millsy@jboss.com",
+            "start_line": 51,
+            "end_line": 51
+          }
+        ]
+      }
 
-----
+    And when we run a scan with the ``--filter-clues`` option::
 
-``--is-license-text`` Option
-----------------------------
+      {
+        "authors": [
+          {
+            "author": "Chris Mills (millsy@jboss.com)",
+            "start_line": 51,
+            "end_line": 51
+          }
+        ],
+        "emails": []
+      }
 
-    .. admonition:: Dependency
-
-        The option ``--is-license-text`` is a sub-option of and requires the options
-        ``--info`` and ``--license-text``.
-        Also, the option ``--license-text`` is a sub-option of and requires the options
-        ``--license``.
-
-    If the ``--is-license-text`` is used, then the “is_license_text” flag is set to true for files that
-    contain mostly license texts and notices. Here mostly means over 90% of the content of the file.
-
-    An example Scan::
-
-        scancode -clpieu --json-pp output.json samples --license-text --is-license-text
-
-    If the samples directory is scanned with this plugin, the files containing mostly license texts
-    will have the following attribute set to 'true'::
-
-        "is_license_text": true,
-
-    The files in samples that will have the "is_license_text" to be true are::
-
-        samples/JGroups/EULA
-        samples/JGroups/LICENSE
-        samples/JGroups/licenses/apache-1.1.txt
-        samples/JGroups/licenses/apache-2.0.txt
-        samples/JGroups/licenses/bouncycastle.txt
-        samples/JGroups/licenses/cpl-1.0.txt
-        samples/JGroups/licenses/lgpl.txt
-        samples/zlib/dotzlib/LICENSE_1_0.txt
-
-    Note that the license objects for each detected license in the files already has "is_license_text"
-    attributes by default, but not the file objects. They only have this attribute if the plugin is used.
-
-    .. include:: /rst_snippets/warning_snippets/post_is_license_text.rst
+    Notice that when we run the scan with the ``--filter-clues`` option, we do not
+    have the `millsy@jboss.com` in email detections as we already have it in
+    author detections.
 
 ----
+
+.. _license_clarity_score:
 
 ``--license-clarity-score`` Option
 ----------------------------------
@@ -195,8 +185,52 @@ To see all plugins available via command line help, use ``--plugins``.
         The option ``--license-clarity-score`` is a sub-option of and requires the option
         ``--classify``.
 
-    The ``--license-clarity-score`` plugin when used in a scan, computes a summary license clarity
-    score at the codebase level.
+    ..
+
+      Keep this doc section in sync with docstrings at: ``src/summarycode/score.py::compute_license_score``
+
+    The ``--license-clarity-score`` plugin when used in a scan, computes a
+    summary license clarity score at the codebase level. The license clarity
+    score is a value from 0-100 calculated by combining the weighted values
+    determined for each of the scoring elements:
+
+    Declared license:
+      - When true, indicates that the software package licensing is documented at
+        top-level or well-known locations in the software project, typically in a
+        package manifest, NOTICE, LICENSE, COPYING or README file.
+      - Scoring Weight = 40
+
+    Identification precision:
+      - Indicates how well the license statement(s) of the software identify known
+        licenses that can be designated by precise keys (identifiers) as provided in
+        a publicly available license list, such as the ScanCode LicenseDB, the SPDX
+        license list, the OSI license list, or a URL pointing to a specific license
+        text in a project or organization website.
+      - Scoring Weight = 40
+
+    License texts:
+      - License texts are provided to support the declared license expression in
+        files such as a package manifest, NOTICE, LICENSE, COPYING or README.
+      - Scoring Weight = 10
+
+    Declared copyright:
+      - When true, indicates that the software package copyright is documented at
+        top-level or well-known locations in the software project, typically in a
+        package manifest, NOTICE, LICENSE, COPYING or README file.
+      - Scoring Weight = 10
+
+    Ambiguous compound licensing
+      - When true, indicates that the software has a license declaration that
+        makes it difficult to construct a reliable license expression, such as in
+        the case of multiple licenses where the conjunctive versus disjunctive
+        relationship is not well defined.
+      - Scoring Weight = -10
+
+    Conflicting license categories
+      - When true, indicates the declared license expression of the software is in
+        the permissive category, but that other potentially conflicting categories,
+        such as copyleft and proprietary, have been detected in lower level code.
+      - Scoring Weight = -20
 
     An example Scan::
 
@@ -208,39 +242,42 @@ To see all plugins available via command line help, use ``--plugins``.
         :columns: 3
 
         - "score"
-        - "declared"
-        - "discovered"
-        - "consistency"
-        - "spdx"
-        - "license_texts"
+        - "declared_license"
+        - "identification_precision
+        - "has_license_text"
+        - "declared_copyrights"
+        - "conflicting_license_categories"
+        - "ambiguous_compound_licensing"
 
-    It whole JSON file is structured as follows, when it has "license_clarity_score"::
+    When the "license_clarity_score" is included, the entire JSON file is structured as follows::
 
         {
-          "headers": [
-            { ...
+          "headers": [...],
+          "summary": {
+            "declared_license_expression": "mit",
+            "license_clarity_score": {
+              "score": 100,
+              "declared_license": true,
+              "identification_precision": true,
+              "has_license_text": true,
+              "declared_copyrights": true,
+              "conflicting_license_categories": false,
+              "ambiguous_compound_licensing": false
             }
-          ],
-          "license_clarity_score": {
-            "score": 17,
-            "declared": false,
-            "discovered": 0.69,
-            "consistency": false,
-            "spdx": false,
-            "license_texts": false
           },
-          "files": [
-          ...
-          ]
+          "files": [...]
         }
 
-    ..
-        [ToDo] Research and Elaborate the attributes
+    .. include:: /rst_snippets/note_snippets/post_license_clarity_score.rst
 
 ----
 
+.. _license_policy_option:
+
 ``--license-policy FILE`` Option
 --------------------------------
+
+    .. include:: /rst_snippets/note_snippets/post_license_policy.rst
 
     The Policy file is a YAML (.yml) document with the following structure::
 
@@ -261,8 +298,6 @@ To see all plugins available via command line help, use ``--plugins``.
 
         scancode -clipeu --json-pp output.json samples --license-policy policy-file.yml
 
-    .. include::  /rst_snippets/note_snippets/post_lic_pol_notsub.rst
-
     This adds to every file/directory an object "license_policy", having as further attributes under it
     the fields as specified in the .YAML file. Here according to our example .YAML file, the attributes
     will be:
@@ -279,38 +314,174 @@ To see all plugins available via command line help, use ``--plugins``.
 
         {
           "path": "samples/JGroups/licenses/apache-2.0.txt",
-          ...
-          ...
-          ...
-          "licenses": [
-          ...
-          ...
-          ...
+          "license_detections": [
+            "license_expression": "apache-2.0",
+            "matches": {...}
+            "identifier": "apache_2_0-9804422e-94ac-ad40-b53a-ee6f8ddb7a3b"
           ],
-          "license_expressions": [
-            "apache-2.0"
-          ],
-          "copyrights": [],
-          "holders": [],
-          "authors": [],
-          "packages": [],
-          "emails": [],
+          "detected_license_expression": "apache-2.0",
+          "detected_license_expression_spdx": "Apache-2.0",
           "license_policy": {
             "license_key": "apache-2.0",
             "label": "Approved License",
             "color_code": "#008000",
             "icon": "icon-ok-circle"
           },
-          "urls": [],
-          "files_count": 0,
-          "dirs_count": 0,
-          "size_count": 0,
-          "scan_errors": []
+          ...
         },
 
     More information on the :ref:`license_policy_plugin` and usage.
 
 ----
+
+.. _license_references_option:
+
+``--license-references`` Option
+-------------------------------
+
+    .. admonition:: Dependency
+
+        The option ``--license-references`` is a sub-option of and requires the option
+        ``--license``.
+
+    Details about the matched license or license rule are not included with the license
+    matches for license detections by default. These are instead reported optionally and
+    separately as codebase-level reference data. There are two codebase-level attributes
+    added with the ``--license-references`` option:
+
+    - ``license_references`` with details from scancode licenses (which are each a
+      ``.LICENSE`` file)
+    - ``license_rule_references`` with details from scancode license rules
+      (which are each a ``.RULE`` file)
+
+    Consider a file ``mit.txt`` with the following license declaration::
+
+      License: mit
+
+    We run the following scan on this file::
+
+      scancode -l --license-text --license-references mit.txt --json-pp mit.json
+
+    See the results for this license scan with ``--license-references`` enabled::
+
+      {
+        "headers": [...],
+        "license_detections": [
+          {
+            "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+            "license_expression": "mit",
+            "detection_count": 1
+          }
+        ],
+        "license_references": [
+          {
+            "key": "mit",
+            "language": "en",
+            "short_name": "MIT License",
+            "name": "MIT License",
+            "category": "Permissive",
+            "owner": "MIT",
+            "homepage_url": "http://opensource.org/licenses/mit-license.php",
+            "notes": "Per SPDX.org, this license is OSI certified.",
+            "is_builtin": true,
+            "is_exception": false,
+            "is_unknown": false,
+            "is_generic": false,
+            "spdx_license_key": "MIT",
+            "other_spdx_license_keys": [],
+            "osi_license_key": null,
+            "text_urls": [
+              "http://opensource.org/licenses/mit-license.php"
+            ],
+            "osi_url": "http://www.opensource.org/licenses/MIT",
+            "faq_url": "https://ieeexplore.ieee.org/document/9263265",
+            "other_urls": [
+              "https://opensource.com/article/18/3/patent-grant-mit-license",
+              "https://opensource.com/article/19/4/history-mit-license",
+              "https://opensource.org/licenses/MIT"
+            ],
+            "key_aliases": [],
+            "minimum_coverage": 0,
+            "standard_notice": null,
+            "ignorable_copyrights": [],
+            "ignorable_holders": [],
+            "ignorable_authors": [],
+            "ignorable_urls": [],
+            "ignorable_emails": [],
+            "text": "Permission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+            "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+            "licensedb_url": "https://scancode-licensedb.aboutcode.org/mit",
+            "spdx_url": "https://spdx.org/licenses/MIT"
+          }
+        ],
+        "license_rule_references": [
+          {
+            "license_expression": "mit",
+            "identifier": "mit_30.RULE",
+            "language": "en",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true,
+            "is_license_intro": false,
+            "is_continuous": false,
+            "is_builtin": true,
+            "is_from_license": false,
+            "is_synthetic": false,
+            "length": 2,
+            "relevance": 100,
+            "minimum_coverage": 100,
+            "referenced_filenames": [],
+            "notes": null,
+            "ignorable_copyrights": [],
+            "ignorable_holders": [],
+            "ignorable_authors": [],
+            "ignorable_urls": [],
+            "ignorable_emails": [],
+            "text": "License: MIT"
+          }
+        ],
+        "files": [
+          {
+            "path": "mit.txt",
+            "type": "file",
+            "detected_license_expression": "mit",
+            "detected_license_expression_spdx": "MIT",
+            "license_detections": [
+              {
+                "license_expression": "mit",
+                "matches": [
+                  {
+                    "score": 100.0,
+                    "start_line": 1,
+                    "end_line": 1,
+                    "matched_length": 2,
+                    "match_coverage": 100.0,
+                    "matcher": "1-hash",
+                    "license_expression": "mit",
+                    "rule_identifier": "mit_30.RULE",
+                    "rule_relevance": 100,
+                    "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+                    "matched_text": "License: mit"
+                  }
+                ],
+                "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+              }
+            ],
+            "license_clues": [],
+            "percentage_of_license_text": 100.0,
+            "scan_errors": []
+          }
+        ]
+      }
+
+    See :ref:`reference_license_related_data` for more details on license references
+    and a comparison with previous scancode output formats.
+
+----
+
+.. _summary_option:
 
 ``--summary`` Option
 --------------------
@@ -328,335 +499,514 @@ To see all plugins available via command line help, use ``--plugins``.
     The whole JSON file is structured as follows, when the ``--summary`` plugin is applied::
 
         {
-          "headers": [
-            {
-            ...
-            }
-          ],
+          "headers": [...],
           "summary": {
-            "license_expressions": [ ...
-            ],
-            "copyrights": [ ...
-            ],
-            "holders": [ ...
-            ],
-            "authors": [ ...
-            ],
-            "programming_language": [ ...
-            ],
-            "packages": []
+            "declared_license_expression": null,
+            "license_clarity_score": {...},
+            "declared_holder": "",
+            "primary_language": "C",
+            "other_license_expressions": [...],
+            "other_holders": [...]
+            "other_languages": [...]
           },
-          "files": [ ...
-          ]
+          "files": [...]
         }
 
-    The Summary object has the following attributes.
+    Each attribute in ``other_license_expressions``, ``other_holders``, ``other_languages``
+    has multiple entries each containing "value" and "count", with their values having
+    the summary information inside them.
+
+    See below a sample fully populated summary object::
+
+      {
+        "summary": {
+        "declared_license_expression": "commercial-license AND other-permissive AND mit",
+        "license_clarity_score": {
+          "score": 100,
+          "declared_license": true,
+          "identification_precision": true,
+          "has_license_text": true,
+          "declared_copyrights": true,
+          "conflicting_license_categories": false,
+          "ambiguous_compound_licensing": false
+        },
+        "declared_holder": "Strapi Solutions SAS",
+        "primary_language": "JavaScript",
+        "other_license_expressions": [
+          {
+            "value": "commercial-license AND other-permissive AND mit",
+            "count": 65
+          },
+          {
+            "value": "mit",
+            "count": 7
+          },
+          {
+            "value": null,
+            "count": 1
+          },
+          {
+            "value": "apache-2.0",
+            "count": 1
+          },
+          {
+            "value": "generic-cla",
+            "count": 1
+          }
+        ],
+        "other_holders": [
+          {
+            "value": null,
+            "count": 3572
+          },
+          {
+            "value": "Jon Schlinkert",
+            "count": 2
+          }
+        ],
+        "other_languages": [
+          {
+            "value": "TypeScript",
+            "count": 91
+          },
+          {
+            "value": "GAS",
+            "count": 28
+          },
+          {
+            "value": "HTML",
+            "count": 6
+          },
+          {
+            "value": "Bash",
+            "count": 5
+          },
+          {
+            "value": "verilog",
+            "count": 1
+          }
+        ]
+      }
+
+----
+
+.. _tallies_option:
+
+``--tallies`` Option
+--------------------
+
+    .. admonition:: Optional Dependency
+
+        The ``--tallies`` option does not have any required CLI option dependencies,
+        but as it contains license, copyright, holder, author, packages and
+        programming language information, it is recommended to use this option with
+        ``--license``, ``--package``, ``--copyright`` and ``--info`` options enabled,
+        or there will not be any corresponding data for these.
+
+    An example scan using the ``--tallies`` Plugin::
+
+        scancode -clipeu --json-pp strapi.json strapi-main/ --tallies
+
+    .. note:
+
+      We have used the `github:strapi/strapi <https://github.com/strapi/strapi>`_ project to generate exmaple results for
+      this and all associated CLI options below.
+
+    The JSON file containing the ``--tallies`` scan results are as follows::
+
+      {
+        "headers": [...],
+        "packages": [...],
+        "dependencies": [...],
+        "license_detections": [...],
+        "tallies": {
+          "detected_license_expression": [
+            {
+              "value": "commercial-license AND other-permissive AND mit",
+              "count": 65
+            },
+            {
+              "value": "mit",
+              "count": 7
+            },
+            {
+              "value": null,
+              "count": 1
+            },
+            {
+              "value": "apache-2.0",
+              "count": 1
+            },
+            {
+              "value": "generic-cla",
+              "count": 1
+            }
+          ],
+          "copyrights": [
+            {
+              "value": null,
+              "count": 3572
+            },
+            {
+              "value": "Copyright (c) Strapi Solutions SAS",
+              "count": 31
+            },
+            {
+              "value": "Copyright (c) Jon Schlinkert",
+              "count": 2
+            }
+          ],
+          "holders": [
+            {
+              "value": null,
+              "count": 3572
+            },
+            {
+              "value": "Strapi Solutions SAS",
+              "count": 31
+            },
+            {
+              "value": "Jon Schlinkert",
+              "count": 2
+            }
+          ],
+          "authors": [
+            {
+              "value": null,
+              "count": 3567
+            },
+            {
+              "value": "name' Strapi Solutions",
+              "count": 30
+            },
+            {
+              "value": "the community",
+              "count": 4
+            },
+            {
+              "value": "name' A Strapi developer",
+              "count": 3
+            },
+            {
+              "value": "name A Strapi",
+              "count": 1
+            },
+            {
+              "value": "name' Yurii Tykhomyrov",
+              "count": 1
+            }
+          ],
+          "programming_language": [
+            {
+              "value": "JavaScript",
+              "count": 2854
+            },
+            {
+              "value": "TypeScript",
+              "count": 91
+            },
+            {
+              "value": "GAS",
+              "count": 28
+            },
+            {
+              "value": "HTML",
+              "count": 6
+            },
+            {
+              "value": "Bash",
+              "count": 5
+            },
+            {
+              "value": "verilog",
+              "count": 1
+            }
+          ],
+          "packages": [...]
+        },
+        "files": [...]
+      }
+
+    This adds a top-level "tallius" attribute and the sub-attributes will be:
 
     .. hlist::
-        :columns: 3
+        :columns: 6
 
-        - "license_expressions"
+        - "detected_license_expression"
         - "copyrights"
         - "holders"
         - "authors"
         - "programming_language"
         - "packages"
 
-    Each attribute has multiple entries each containing "value" and "count", with their values having
-    the summary information inside them.
-
-    A sample summary object generated::
-
-        "summary": {
-        "license_expressions": [
-          {
-            "value": "zlib",
-            "count": 13
-          },
-        ]
-        ],
-        "copyrights": [
-          {
-            "copyright": "Copyright (c) Mark Adler",
-            "count": 4
-          },
-          {
-            "copyright": "Copyright (c) Free Software Foundation, Inc.",
-            "count": 2
-          },
-          {
-            "copyright": "Copyright (c) The Apache Software Foundation",
-            "count": 1
-          },
-          {
-            "copyright": "Copyright Red Hat, Inc. and individual contributors",
-            "count": 1
-          }
-        ],
-        "holders": [
-          {
-            "holder": null,
-            "count": 10
-          },
-          {
-            "holder": "Mark Adler",
-            "count": 4
-          },
-          {
-            "holder": "Red Hat, Inc. and individual contributors",
-            "count": 1
-          },
-          {
-            "holder": "The Apache Software Foundation",
-            "count": 1
-          },
-        ],
-        "authors": [
-          {
-            "author": "Bela Ban",
-            "count": 4
-          },
-          {
-            "author": "Brian Stansberry",
-            "count": 1
-          },
-          {
-            "author": "the Apache Software Foundation (http://www.apache.org/)",
-            "count": 1
-          }
-        ],
-        "programming_language": [
-          {
-            "value": "C++",
-            "count": 13
-          },
-          {
-            "value": "Java",
-            "count": 7
-          },
-        ],
-        "packages": []
+    These are all lists with the corresponding "value" and their respective "count",
+    basically tallies of all different values.
 
 ----
 
-``--summary-by-facet`` Option
+.. _tallies_by_facet_option:
+
+``--tallies-by-facet`` Option
 -----------------------------
 
     .. admonition:: Dependency
 
-        The option ``--summary-by-facet`` is a sub-option of and requires the options ``--facet``
-        and ``--summary``.
+        The option ``--tallies-by-facet`` is a sub-option of and requires the options ``--facet``
+        and ``--tallies``.
 
-    Running the scan with ``--summary --summary-by-facet`` Plugins creates individual summaries for
+    For users who want to know :ref:`what_is_a_facet`.
+
+    Running the scan with ``--tallies --tallies-by-facet`` Plugins creates individual summaries for
     all the facets with the same license, copyright and other scan information, at a codebase level
-    (in addition to the codebase level general summary generated by ``--summary`` Plugin)
+    (in addition to the codebase level general summary generated by ``--tallies`` Plugin).
+    Once all files have been assigned a facet, files without a facet are assigned to
+    the core facet.
 
-    An example scan using the ``--summary-by-facet`` Plugin::
+    An example scan using the ``--tallies-by-facet`` Plugin::
 
-        scancode -clieu --json-pp output.json samples --summary --facet dev="*.java" --facet dev="*.c" --summary-by-facet
+        scancode -clipeu --json-pp strapi.json strapi-main/ --tallies --facet dev="*.js" --facet dev="*.ts" --tallies-by-facet
+
+    We have used the `github:strapi/strapi <https://github.com/strapi/strapi>`_ project to generate exmaple results for
+    this CLI option.
 
     .. include::  /rst_snippets/note_snippets/pre_facet_core.rst
 
-    ..
-        [ToDo] Remove this Warning when Issue solved.
-        [ERROR] Issue at - https://github.com/nexB/scancode-toolkit/issues/1759
-
-    .. WARNING::
-
-        Running the same scan with ``./scancode -clpieu`` i.e. with ``-p`` generates an error.
-        Avoid this.
-
-    The JSON file containing scan results is structured as follows::
-
-        {
-          "headers": [ ...
-          ],
-          "summary": { ...
-          },
-          "summary_by_facet": [
-            {
-              "facet": "core",
-              "summary": { ...
-              }
-            },
-            {
-              "facet": "dev",
-              "summary": { ...
-              }
-            },
-            {
-              "facet": "tests",
-              "summary": { ...
-              }
-            },
-            {
-              "facet": "docs",
-              "summary": { ...
-              }
-            },
-            {
-              "facet": "data",
-              "summary": { ...
-              }
-            },
-            {
-              "facet": "examples",
-              "summary": { ...
-              }
-            }
-          ],
-          "files": [
-        }
-
     A sample "summary_by_facet" object generated by the previous scan (shortened)::
 
-        "summary_by_facet": [
+      {
+        "headers": [...],
+        "packages": [...],
+        "dependencies": [...],
+        "license_detections": [...],
+        "tallies": {...}
+        "tallies_by_facet": [
           {
             "facet": "core",
-            "summary": {
-              "license_expressions": [
+            "tallies": {
+              "detected_license_expression": [
+                {
+                  "value": "commercial-license AND other-permissive AND mit",
+                  "count": 65
+                },
                 {
                   "value": "mit",
-                  "count": 1
+                  "count": 5
                 },
+                {
+                  "value": "generic-cla",
+                  "count": 1
+                }
               ],
               "copyrights": [
                 {
-                  "value": "Copyright (c) Free Software Foundation, Inc.",
-                  "count": 2
-                },
+                  "value": "Copyright (c) Strapi Solutions SAS",
+                  "count": 31
+                }
               ],
               "holders": [
                 {
-                  "value": "The Apache Software Foundation",
-                  "count": 1
-                },
+                  "value": "Strapi Solutions SAS",
+                  "count": 31
+                }
+              ],
               "authors": [
                 {
-                  "value": "Gilles Vollant",
+                  "value": "name' Strapi Solutions",
+                  "count": 30
+                },
+                {
+                  "value": "name' A Strapi developer",
+                  "count": 3
+                },
+                {
+                  "value": "name' Yurii Tykhomyrov",
                   "count": 1
                 },
+                {
+                  "value": "the community",
+                  "count": 1
+                }
               ],
               "programming_language": [
                 {
-                  "value": "C++",
-                  "count": 8
+                  "value": "GAS",
+                  "count": 28
                 },
+                {
+                  "value": "TypeScript",
+                  "count": 7
+                },
+                {
+                  "value": "HTML",
+                  "count": 6
+                },
+                {
+                  "value": "Bash",
+                  "count": 5
+                },
+                {
+                  "value": "verilog",
+                  "count": 1
+                }
               ]
             }
           },
           {
             "facet": "dev",
-            "summary": {
-              "license_expressions": [
+            "tallies": {
+              "detected_license_expression": [
                 {
-                  "value": "zlib",
-                  "count": 5
+                  "value": "mit",
+                  "count": 2
                 },
+                {
+                  "value": "apache-2.0",
+                  "count": 1
+                }
+              ],
               "copyrights": [
                 {
-                  "value": "Copyright Red Hat Middleware LLC, and individual contributors",
-                  "count": 1
-                },
+                  "value": "Copyright (c) Jon Schlinkert",
+                  "count": 2
+                }
               ],
               "holders": [
                 {
-                  "value": "Mark Adler",
-                  "count": 3
-                },
+                  "value": "Jon Schlinkert",
+                  "count": 2
+                }
               ],
               "authors": [
-                  "value": "Brian Stansberry",
-                  "count": 1
+                {
+                  "value": "the community",
+                  "count": 3
                 },
+                {
+                  "value": "name A Strapi",
+                  "count": 1
+                }
               ],
               "programming_language": [
                 {
-                  "value": "Java",
-                  "count": 7
+                  "value": "JavaScript",
+                  "count": 2854
                 },
                 {
-                  "value": "C++",
-                  "count": 5
+                  "value": "TypeScript",
+                  "count": 84
                 }
               ]
             }
           },
+          {
+            "facet": "tests",
+            "tallies": {
+              "detected_license_expression": [],
+              "copyrights": [],
+              "holders": [],
+              "authors": [],
+              "programming_language": []
+            }
+          },
+          {
+            "facet": "docs",
+            "tallies": {
+              "detected_license_expression": [],
+              "copyrights": [],
+              "holders": [],
+              "authors": [],
+              "programming_language": []
+            }
+          },
+          {
+            "facet": "data",
+            "tallies": {
+              "detected_license_expression": [],
+              "copyrights": [],
+              "holders": [],
+              "authors": [],
+              "programming_language": []
+            }
+          },
+          {
+            "facet": "examples",
+            "tallies": {
+              "detected_license_expression": [],
+              "copyrights": [],
+              "holders": [],
+              "authors": [],
+              "programming_language": []
+            }
+          }
         ],
+        "files": [...]
+      }
+
 
     .. include::  /rst_snippets/note_snippets/post_summary_facet.rst
 
-    For users who want to know :ref:`what_is_a_facet`.
-
 ----
 
-``--summary-key-files`` Option
+.. _tallies_key_files_option:
+
+``--tallies-key-files`` Option
 ------------------------------
 
     .. admonition:: Dependency
 
-        The option ``--summary-key-files`` is a sub-option of and requires the options
-        ``--classify`` and ``--summary``.
+        The option ``--tallies-key-files`` is a sub-option of and requires the options
+        ``--classify`` and ``--tallies``.
 
     An example Scan::
 
-        scancode -clpieu --json-pp output.json samples --classify --summary --summary-key-files
+        scancode -clipeu --json-pp strapi.json strapi-main/ --classify --tallies --tallies-key-files
 
-    Running the scan with ``--summary --summary-key-files`` Plugins creates summaries for key files
+    Running the scan with ``--tallies --tallies-key-files`` plugins creates summaries for key files
     with the same license, copyright and other scan information, at a codebase level (in addition
-    to the codebase level general summary generated by ``--summary`` Plugin)
+    to the codebase level general summary generated by ``--tallies`` Plugin).
 
     The resulting JSON file containing the scan results is structured as follows::
 
-        {
-          "headers": [ ...
+      {
+        "headers": [...],
+        "packages": [...],
+        "dependencies": [...],
+        "license_detections": [...],
+        "tallies": {...},
+        "tallies_of_key_files": {
+          "license_expressions": [
+            {
+              "value": null,
+              "count": 1
+            }
           ],
-          "summary": {
-            "license_expressions": [ ...
-            ],
-            "copyrights": [ ...
-            ],
-            "holders": [ ...
-            ],
-            "authors": [ ...
-            ],
-            "programming_language": [ ...
-            ],
-            "packages": []
-          },
-          "summary_of_key_files": {
-            "license_expressions": [
-              {
-                "value": null,
-                "count": 1
-              }
-            ],
-            "copyrights": [
-              {
-                "value": null,
-                "count": 1
-              }
-            ],
-            "holders": [
-              {
-                "value": null,
-                "count": 1
-              }
-            ],
-            "authors": [
-              {
-                "value": null,
-                "count": 1
-              }
-            ],
-            "programming_language": [
-              {
-                "value": null,
-                "count": 1
-              }
-            ]
-          },
-          "files": [
+          "copyrights": [
+            {
+              "value": null,
+              "count": 1
+            }
+          ],
+          "holders": [
+            {
+              "value": null,
+              "count": 1
+            }
+          ],
+          "authors": [
+            {
+              "value": null,
+              "count": 1
+            }
+          ],
+          "programming_language": [
+            {
+              "value": null,
+              "count": 1
+            }
+          ]
+        },
+        "files": [...]
+      }
 
     These following flags for each file/directory is also present (generated by ``--classify``)
 
@@ -669,134 +1019,183 @@ To see all plugins available via command line help, use ``--plugins``.
         - "is_top_level"
         - "is_key_file"
 
+    A key-file is a top-level file, that is either a legal (LICENSE/COPYING etc), manifest or a
+    readme file.
+
 ----
 
-``--summary-with-details`` Option
+.. _tallies_with_details_option:
+
+``--tallies-with-details`` Option
 ---------------------------------
 
-    The ``--summary`` plugin summarizes license, copyright and other scan information at the
-    codebase level. Now running the scan with the ``--summary-with-details`` plugin instead creates
+    The ``--tallies`` plugin summarizes license, copyright and other scan information at the
+    codebase level. Now running the scan with the ``--tallies-with-details`` plugin instead creates
     summaries at individual file/directories with the same license, copyright and other scan
     information, but at a file/directory level (in addition to the the codebase level summary).
 
     An example Scan::
 
-        scancode -clpieu --json-pp output.json samples --summary-with-details
+        scancode -clipeu --json-pp strapi.json strapi-main/ --tallies-with-details
 
     .. include::  /rst_snippets/note_snippets/post_summary_details.rst
 
-    A sample file object in the scan results (a directory level summary of ``samples/arch``) is
-    structured as follows::
+    A sample scan result is structured as follows::
 
-        {
-          "path": "samples/arch",
-          "type": "directory",
-          "name": "arch",
-          "base_name": "arch",
-          "extension": "",
-          "size": 0,
-          "date": null,
-          "sha1": null,
-          "md5": null,
-          "mime_type": null,
-          "file_type": null,
-          "programming_language": null,
-          "is_binary": false,
-          "is_text": false,
-          "is_archive": false,
-          "is_media": false,
-          "is_source": false,
-          "is_script": false,
-          "licenses": [],
-          "license_expressions": [],
-          "copyrights": [],
-          "holders": [],
-          "authors": [],
-          "packages": [],
-          "emails": [],
-          "urls": [],
-          "is_legal": false,
-          "is_manifest": false,
-          "is_readme": false,
-          "is_top_level": true,
-          "is_key_file": false,
-          "summary": {
-            "license_expressions": [
-              {
-                "value": "zlib",
-                "count": 3
-              },
-              {
-                "value": null,
-                "count": 1
-              }
-            ],
-            "copyrights": [
-              {
-                "value": null,
-                "count": 1
-              },
-              {
-                "value": "Copyright (c) Jean-loup Gailly",
-                "count": 1
-              },
-              {
-                "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
-                "count": 1
-              },
-              {
-                "value": "Copyright (c) Mark Adler",
-                "count": 1
-              }
-            ],
-            "holders": [
-              {
-                "value": null,
-                "count": 1
-              },
-              {
-                "value": "Jean-loup Gailly",
-                "count": 1
-              },
-              {
-                "value": "Jean-loup Gailly and Mark Adler",
-                "count": 1
-              },
-              {
-                "value": "Mark Adler",
-                "count": 1
-              }
-            ],
-            "authors": [
-              {
-                "value": null,
-                "count": 4
-              }
-            ],
-            "programming_language": [
-              {
-                "value": "C++",
-                "count": 3
-              },
-              {
-                "value": null,
-                "count": 1
-              }
-            ]
+      {
+        "headers": [...],
+        "packages": [...],
+        "dependencies": [...],
+        "license_detections": [...],
+        "tallies": {...},
+        "files": [
+          {
+            "path": "strapi-main",
+            "type": "directory",
+            "name": "strapi-main",
+            "base_name": "strapi-main",
+            "extension": "",
+            "size": 0,
+            "date": null,
+            "sha1": null,
+            "md5": null,
+            "sha256": null,
+            "mime_type": null,
+            "file_type": null,
+            "programming_language": null,
+            "is_binary": false,
+            "is_text": false,
+            "is_archive": false,
+            "is_media": false,
+            "is_source": false,
+            "is_script": false,
+            "package_data": [],
+            "for_packages": [],
+            "detected_license_expression": null,
+            "detected_license_expression_spdx": null,
+            "license_detections": [],
+            "license_clues": [],
+            "percentage_of_license_text": 0,
+            "copyrights": [],
+            "holders": [],
+            "authors": [],
+            "emails": [],
+            "urls": [],
+            "facets": [],
+            "is_legal": false,
+            "is_manifest": false,
+            "is_readme": false,
+            "is_top_level": true,
+            "is_key_file": false,
+            "tallies": {
+              "detected_license_expression": [
+                {
+                  "value": "commercial-license AND other-permissive AND mit",
+                  "count": 65
+                },
+                {
+                  "value": "mit",
+                  "count": 7
+                },
+                {
+                  "value": null,
+                  "count": 1
+                },
+                {
+                  "value": "apache-2.0",
+                  "count": 1
+                },
+                {
+                  "value": "generic-cla",
+                  "count": 1
+                }
+              ],
+              "copyrights": [
+                {
+                  "value": null,
+                  "count": 3572
+                },
+                {
+                  "value": "Copyright (c) Strapi Solutions SAS",
+                  "count": 31
+                },
+                {
+                  "value": "Copyright (c) Jon Schlinkert",
+                  "count": 2
+                }
+              ],
+              "holders": [
+                {
+                  "value": null,
+                  "count": 3572
+                },
+                {
+                  "value": "Strapi Solutions SAS",
+                  "count": 31
+                },
+                {
+                  "value": "Jon Schlinkert",
+                  "count": 2
+                }
+              ],
+              "authors": [
+                {
+                  "value": null,
+                  "count": 3567
+                },
+                {
+                  "value": "name' Strapi Solutions",
+                  "count": 30
+                },
+                {
+                  "value": "the community",
+                  "count": 4
+                },
+                {
+                  "value": "name' A Strapi developer",
+                  "count": 3
+                },
+                {
+                  "value": "name A Strapi",
+                  "count": 1
+                },
+                {
+                  "value": "name' Yurii Tykhomyrov",
+                  "count": 1
+                }
+              ],
+              "programming_language": [
+                {
+                  "value": "JavaScript",
+                  "count": 2854
+                },
+                {
+                  "value": "TypeScript",
+                  "count": 91
+                },
+                {
+                  "value": "GAS",
+                  "count": 28
+                },
+                {
+                  "value": "HTML",
+                  "count": 6
+                },
+                {
+                  "value": "Bash",
+                  "count": 5
+                },
+                {
+                  "value": "verilog",
+                  "count": 1
+                }
+              ]
+            },
+            "files_count": 3604,
+            "dirs_count": 1603,
+            "size_count": 15175739,
+            "scan_errors": []
           },
-          "files_count": 4,
-          "dirs_count": 2,
-          "size_count": 127720,
-          "scan_errors": []
-        },
-
-    These following flags for each file/directory is also present (generated by ``--classify``)
-
-    .. hlist::
-        :columns: 3
-
-        - "is_legal"
-        - "is_manifest"
-        - "is_readme"
-        - "is_top_level"
-        - "is_key_file"
+          {...}
+        ]
+      }

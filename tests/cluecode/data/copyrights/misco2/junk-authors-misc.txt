@@ -1,0 +1,17 @@
+ segment written by a Lucene commit.
+
+
+<h3>Values are created by Guice</h3>
+ * Returned 
+
+
+expand the group only if was created by group conversion;
+
+
+ created by <code>CtNewMethod.wrapped()</code>.
+
+
+cache maintained by fieldAccess() in TypeChecker.
+
+
+

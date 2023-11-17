@@ -1,4 +1,2 @@
 license_expressions:
-  - (lgpl-2.1 OR mpl-1.1) AND other-permissive
-  - mit
-  - gpl-1.0-plus
+  - lgpl-2.1 OR mpl-1.1

@@ -1,6 +1,10 @@
 ---
 license_expression: proprietary-license
 is_license_text: yes
+ignorable_copyrights:
+    - MediaTek Inc. (c)
+ignorable_holders:
+    - MediaTek Inc.
 ignorable_authors:
     - MediaTek Inc.
 ---

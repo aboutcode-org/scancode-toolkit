@@ -1,0 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://github.com/GreenAureus/green-aureus/blob/5eb7bd53ecdd60710a41fc60e771af03caa50cd2/node/src/main.rs#L5
+---
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy 
+// of this software and associated documentation files (the "Software"), to read 
+// the Software only. Permission is hereby NOT GRANTED to use, copy, modify, 
+// merge, publish, distribute, sublicense, and/or sell copies of the Software.

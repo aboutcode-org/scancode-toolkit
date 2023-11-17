@@ -1,0 +1,2 @@
+-# (C)opyright 2005 by Ivo van Poorten
++# (C)opyright 2005,2006 by Ivo van Poorten

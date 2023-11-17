@@ -36,14 +36,12 @@
     "code_view_url": "https://svnweb.freebsd.org/ports/head/print/rubygem-ttfunk",
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "gpl-3.0 OR ruby OR gpl-2.0",
     "declared_license_expression_spdx": "GPL-3.0-only OR Ruby OR GPL-2.0-only",
     "license_detections": [
       {
         "license_expression": "gpl-3.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -54,16 +52,15 @@
             "matcher": "1-hash",
             "license_expression": "gpl-3.0",
             "rule_identifier": "gpl-3.0_32.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
             "matched_text": "GPLv3"
           }
-        ]
+        ],
+        "identifier": "gpl_3_0-eaa289b6-5fdc-8ed7-ae71-bf02ce67e277"
       },
       {
         "license_expression": "ruby",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -74,16 +71,15 @@
             "matcher": "1-spdx-id",
             "license_expression": "ruby",
             "rule_identifier": "spdx-license-identifier-ruby-549f9d48faec54b20eadf7c9097124f88f2cdd2b",
+            "rule_relevance": 100,
             "rule_url": null,
             "matched_text": "RUBY"
           }
-        ]
+        ],
+        "identifier": "ruby-d8dc5733-9041-74a2-1dd9-05f5a8576f4f"
       },
       {
         "license_expression": "gpl-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -94,10 +90,12 @@
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
             "rule_identifier": "gpl-2.0_bare_single_word.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
             "matched_text": "GPLv2"
           }
-        ]
+        ],
+        "identifier": "gpl_2_0-3aa0fcde-6d7f-a8e2-6494-7f9352e6aafb"
       }
     ],
     "other_license_expression": null,

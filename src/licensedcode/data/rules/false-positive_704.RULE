@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: seen in liferay-portal
+---
+
+<!ATTLIST license
+osi-approved %boolean; #REQUIRED

@@ -47,14 +47,12 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "(epl-1.0 AND bsd-new) AND free-unknown",
     "declared_license_expression_spdx": "(EPL-1.0 AND BSD-3-Clause) AND LicenseRef-scancode-free-unknown",
     "license_detections": [
       {
         "license_expression": "epl-1.0 AND bsd-new",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -65,6 +63,7 @@
             "matcher": "2-aho",
             "license_expression": "epl-1.0",
             "rule_identifier": "epl-1.0_18.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_18.RULE",
             "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0"
           },
@@ -77,16 +76,15 @@
             "matcher": "2-aho",
             "license_expression": "bsd-new",
             "rule_identifier": "bsd-new_802.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_802.RULE",
             "matched_text": "Eclipse Public License v1.0 / Eclipse Distribution License v1.0"
           }
-        ]
+        ],
+        "identifier": "epl_1_0_and_bsd_new-668a8088-f2dc-ea82-9ee5-604a82829d59"
       },
       {
         "license_expression": "free-unknown",
-        "detection_log": [
-          "unknown-match"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -97,16 +95,18 @@
             "matcher": "1-hash",
             "license_expression": "free-unknown",
             "rule_identifier": "pypi_osi_approved.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",
-            "matched_text": "['License :: OSI Approved']"
+            "matched_text": "- 'License :: OSI Approved'"
           }
-        ]
+        ],
+        "identifier": "free_unknown-e8fad921-e243-7cbb-bf61-2ac054636272"
       }
     ],
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'license': 'Eclipse Public License v1.0 / Eclipse Distribution License v1.0', 'classifiers': ['License :: OSI Approved']}",
+    "extracted_license_statement": "license: Eclipse Public License v1.0 / Eclipse Distribution License v1.0\nclassifiers:\n  - 'License :: OSI Approved'\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

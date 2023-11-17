@@ -1,0 +1,10 @@
+---
+license_expression: unicode-mappings
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.unicode.org/Public/PROGRAMS/CVTUTF
+---
+
+derived from unicode conversion examples available at
+http://www.unicode.org/Public/PROGRAMS/CVTUTF

@@ -1,0 +1,12 @@
+---
+license_expression: nist-pd
+is_license_text: yes
+notes: https://github.com/imagej/ImageJ/blob/eb49cce0d6513aa516fb09e7cdbaed3bf2e69731/LICENSE.txt
+---
+
+was developed at the National Institutes of Health by an employee of the
+Federal Government in the course of his official duties. Pursuant to Title 17,
+Section 105 of the United States Code, this software is not subject to copyright
+protection and is in the public domain.  is an experimental system. NIH assumes no
+responsibility whatsoever for its use by other parties, and makes no guarantees, expressed
+or implied, about its quality, reliability, or any other characteristic.

@@ -34,13 +34,13 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.7", "3.8", "3.9", "3.10"]
+       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -69,10 +69,10 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
@@ -99,22 +99,24 @@ jobs:
 
     strategy:
       fail-fast: true
+      matrix:
+       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v1
+      - name: Set up Python on ${{ matrix.pyver }}
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.8"
+          python-version: ${{ matrix.pyver }} 
 
       - name: Build linux app archive
-        run: etc/release/scancode-create-release-app-linux.sh
+        run: etc/release/scancode-create-release-app-linux.sh ${{ matrix.pyver }}
 
-      - name: Collect built linux app
+      - name: Collect built linux app for python ${{ matrix.pyver }}
         uses: actions/upload-artifact@v3
         with:
-          name: linux_app
+          name: linux_app_py_${{ matrix.pyver }}
           path: release/*
 
 
@@ -131,22 +133,24 @@ jobs:
 
     strategy:
       fail-fast: true
+      matrix:
+       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v1
+      - name: Set up Python on ${{ matrix.pyver }}
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.8"
+          python-version: ${{ matrix.pyver }} 
 
       - name: Build mac app archive
-        run: etc/release/scancode-create-release-app-macos.sh
+        run: etc/release/scancode-create-release-app-macos.sh ${{ matrix.pyver }}
 
-      - name: Collect built mac app
+      - name: Collect built mac app for python ${{ matrix.pyver }}
         uses: actions/upload-artifact@v3
         with:
-          name: macos_app
+          name: macos_app_py_${{ matrix.pyver }}
           path: release/*
 
 
@@ -160,24 +164,27 @@ jobs:
     defaults:
       run:
         shell: bash
+
     strategy:
       fail-fast: true
+      matrix:
+       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v1
+      - name: Set up Python on ${{ matrix.pyver }}
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.8"
+          python-version: ${{ matrix.pyver }} 
 
       - name: Build windows app archive
-        run: etc/release/scancode-create-release-app-windows.sh
+        run: etc/release/scancode-create-release-app-windows.sh ${{ matrix.pyver }}
 
-      - name: Collect built windows app
+      - name: Collect built windows app for python ${{ matrix.pyver }}
         uses: actions/upload-artifact@v3
         with:
-          name: windows_app
+          name: windows_app_py_${{ matrix.pyver }}
           path: release/*
 
 
@@ -195,10 +202,10 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: "3.10"
 
@@ -229,13 +236,13 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-20.04, ubuntu-22.04, macos-11, macos-12]
-        pyver: ["3.7", "3.8", "3.9", "3.10"]
+        pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.pyver }}
 
@@ -275,13 +282,13 @@ jobs:
       fail-fast: true
       matrix:
        os: [windows-2019, windows-2022]
-       pyver: ["3.7", "3.8", "3.9", "3.10"]
+       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.pyver }}
 
@@ -319,21 +326,21 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04]
-        pyver: [3.8]
+        os: [ubuntu-20.04, ubuntu-22.04]
+        pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.pyver }}
 
-      - name: Download a single artifact linux_app
+      - name: Download a single artifact linux_app_py_${{ matrix.pyver }}
         uses: actions/download-artifact@v3
         with:
-          name: linux_app
+          name: linux_app_py_${{ matrix.pyver }}
           path: dist
 
       - name: test install app archive
@@ -361,20 +368,20 @@ jobs:
       fail-fast: true
       matrix:
         os: [macos-11, macos-12]
-        pyver: [3.8]
+        pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.pyver }}
 
-      - name: Download a single artifact macos_app
+      - name: Download a single artifact macos_app_py_${{ matrix.pyver }}
         uses: actions/download-artifact@v3
         with:
-          name: macos_app
+          name: macos_app_py_${{ matrix.pyver }}
           path: dist
 
       - name: test install app archive
@@ -402,20 +409,20 @@ jobs:
       fail-fast: true
       matrix:
         os: [windows-2019, windows-2022]
-        pyver: [3.8]
+        pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.pyver }}
 
-      - name: Download a single artifact windows_app
+      - name: Download a single artifact windows_app_py_${{ matrix.pyver }}
         uses: actions/download-artifact@v3
         with:
-          name: windows_app
+          name: windows_app_py_${{ matrix.pyver }}
           path: dist
 
       - name: test install app archive
@@ -432,6 +439,9 @@ jobs:
       - smoke_test_install_and_run_app_archives_on_windows
       - smoke_test_install_and_run_app_archives_on_macos
       - build_scancode_for_release_source
+      - build_scancode_for_release_windows
+      - build_scancode_for_release_linux
+      - build_scancode_for_release_macos
 
     runs-on: ubuntu-20.04
     defaults:
@@ -447,22 +457,94 @@ jobs:
           name: source_app
           path: dist
 
-      - name: Download a single artifact macos_app
+      - name: Download a single artifact macos_app for python 3.7
         uses: actions/download-artifact@v3
         with:
-          name: macos_app
+          name: macos_app_py_3.7
           path: dist
 
-      - name: Download a single artifact linux_app
+      - name: Download a single artifact macos_app for python 3.8
         uses: actions/download-artifact@v3
         with:
-          name: linux_app
+          name: macos_app_py_3.8
           path: dist
 
-      - name: Download a single artifact windows_app
+      - name: Download a single artifact macos_app for python 3.9
         uses: actions/download-artifact@v3
         with:
-          name: windows_app
+          name: macos_app_py_3.9
+          path: dist
+
+      - name: Download a single artifact macos_app for python 3.10
+        uses: actions/download-artifact@v3
+        with:
+          name: macos_app_py_3.10
+          path: dist
+
+      - name: Download a single artifact macos_app for python 3.11
+        uses: actions/download-artifact@v3
+        with:
+          name: macos_app_py_3.11
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.7
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.7
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.8
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.8
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.9
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.9
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.10
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.10
+          path: dist
+
+      - name: Download a single artifact linux_app for python 3.11
+        uses: actions/download-artifact@v3
+        with:
+          name: linux_app_py_3.11
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.7
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.7
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.8
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.8
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.9
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.9
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.10
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.10
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.11
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.11
           path: dist
 
       - name: Mock GH release
@@ -491,11 +573,11 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dist_names: ["wheels-3.7", "wheels-3.8", "wheels-3.9", "wheels-3.10", sdists]
+        dist_names: ["wheels-3.7", "wheels-3.8", "wheels-3.9", "wheels-3.10", "wheels-3.11", sdists]
 
     steps:
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.8
 

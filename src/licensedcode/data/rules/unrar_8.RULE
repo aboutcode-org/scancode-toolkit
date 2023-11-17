@@ -1,0 +1,17 @@
+---
+license_expression: unrar
+is_license_text: yes
+ignorable_authors:
+    - Alexander Roshal
+---
+
+Below are given the license and disclaimer for software written by Alexander Roshal for implementing decompression for RAR.
+
+The source code of UnRAR utility is freeware. This means:
+
+        All copyrights to RAR and the utility UnRAR are exclusively owned by the author - Alexander Roshal.
+        The UnRAR sources may be used in any software to handle RAR archives without limitations free of charge, but cannot be used to re-create the RAR compression algorithm, which is proprietary. Distribution of modified UnRAR sources in separate form or as a part of other software is permitted, provided that it is clearly stated in the documentation and source comments that the code may not be used to develop a RAR (WinRAR) compatible archiver.
+        The UnRAR utility may be freely distributed. It is allowed to distribute UnRAR inside of other software packages.
+        THE RAR ARCHIVER AND THE UnRAR UTILITY ARE DISTRIBUTED "AS IS". NO WARRANTY OF ANY KIND IS EXPRESSED OR IMPLIED. YOU USE AT YOUR OWN RISK. THE AUTHOR WILL NOT BE LIABLE FOR DATA LOSS, DAMAGES, LOSS OF PROFITS OR ANY OTHER KIND OF LOSS WHILE USING OR MISUSING THIS SOFTWARE.
+        Installing and using the UnRAR utility signifies acceptance of< these terms and conditions of the license.
+        If you don't agree with terms of the license you must remove UnRAR files from your storage devices and cease to use the utility.

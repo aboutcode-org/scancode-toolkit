@@ -152,6 +152,7 @@ def get_licenses(
     min_score=0,
     include_text=False,
     license_text_diagnostics=False,
+    license_diagnostics=False,
     deadline=sys.maxsize,
     unknown_licenses=False,
     **kwargs,
@@ -169,10 +170,9 @@ def get_licenses(
     score lower than `minimum_score` are not returned.
 
     If `include_text` is True, matched text is included in the returned
-    `licenses` data as well as a file-level `percentage_of_license_text` percentage to
-    indicate the overall proportion of detected license text and license notice
-    words in the file. This is used to determine if a file contains mostly
-    licensing information.
+    `licenses` data as well as a file-level `percentage_of_license_text` 
+    as the percentage of file words detected as license text or notice.
+    This is used to determine if a file contains mostly licensing.
 
     If ``unknown_licenses`` is True, also detect unknown licenses.
     """
@@ -204,6 +204,7 @@ def get_licenses(
             detection_mapping = detection.to_dict(
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,
+                license_diagnostics=license_diagnostics,
             )
             license_clues.extend(detection_mapping["matches"])
         else:
@@ -212,6 +213,7 @@ def get_licenses(
                 detection.to_dict(
                     include_text=include_text,
                     license_text_diagnostics=license_text_diagnostics,
+                    license_diagnostics=license_diagnostics,
                 )
             )
 

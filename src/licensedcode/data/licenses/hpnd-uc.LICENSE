@@ -1,0 +1,17 @@
+---
+key: hpnd-uc
+short_name: Historical UC variant
+name: Historical Permission Notice and Disclaimer University of California variant
+category: Permissive
+owner: Regents of the University of California
+spdx_license_key: HPND-UC
+other_urls:
+    - https://core.tcl-lang.org/tk/file?name=compat/unistd.h
+---
+
+Permission to use,
+copy, modify, and distribute this software and its documentation for any
+purpose and without fee is hereby granted, provided that the above
+copyright notice appear in all copies. The University of California makes
+no representations about the suitability of this software for any purpose.
+It is provided "as is" without express or implied warranty.

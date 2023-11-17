@@ -6,8 +6,6 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: pcre
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 3
@@ -17,14 +15,14 @@ license_detections:
         matcher: 2-aho
         license_expression: pcre
         rule_identifier: pcre_7.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pcre_7.RULE
         matched_text: |
           ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/
 
           PCRE2 LICENCE
+    identifier: pcre-90b147d9-f7f6-9673-6313-9d0c919c9d91
   - license_expression: bsd-new AND public-domain
-    detection_log:
-      - not-combined
     matches:
       - score: '100.0'
         start_line: 11
@@ -34,6 +32,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_398.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_398.RULE
         matched_text: distributed under the terms of the "BSD" licence,
       - score: '100.0'
@@ -44,11 +43,11 @@ license_detections:
         matcher: 2-aho
         license_expression: public-domain
         rule_identifier: public-domain_328.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_328.RULE
         matched_text: not copyrighted and is in the public domain.
+    identifier: bsd_new_and_public_domain-e977518e-26ee-d19e-0b06-9fb80190cefe
   - license_expression: bsd-new
-    detection_log:
-      - not-combined
     matches:
       - score: '99.0'
         start_line: 58
@@ -58,6 +57,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_898.RULE
+        rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_898.RULE
         matched_text: THE "BSD" LICENCE
       - score: '100.0'
@@ -68,6 +68,7 @@ license_detections:
         matcher: 2-aho
         license_expression: bsd-new
         rule_identifier: bsd-new_1064.RULE
+        rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1064.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -95,6 +96,7 @@ license_detections:
           CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-53a70339-2b69-bfbc-e906-8125366aaaa4
 other_license_detections: []
 copyright: |
   Copyright (c) 1997-2015 University of Cambridge

@@ -1,0 +1,13 @@
+---
+key: fwlw
+short_name: fwlw License
+name: fwlw License
+category: Permissive
+owner: Donald Arseneau
+spdx_license_key: fwlw
+other_urls:
+    - https://mirrors.nic.cz/tex-archive/macros/latex/contrib/fwlw/README
+---
+
+This software package may be freely used, transmitted, reproduced, or modified provided that 
+this notice is left intact.

@@ -1,0 +1,24 @@
+---
+license_expression: lgpl-2.1
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-2.1
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+---
+
+This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation, version 2.1 of the License.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ The complete text of the GNU Lesser General Public License
+ can be found in /usr/share/common-licenses/GPL-2.1 file.

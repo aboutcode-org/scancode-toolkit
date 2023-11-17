@@ -11,21 +11,21 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Michal Maczka",
       "email": "michal@codehaus.com",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Brett Porter",
       "email": "brett@apache.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jason@maven.org",
       "url": null
@@ -50,54 +50,34 @@
   "code_view_url": "http://svn.apache.org/viewcvs.cgi/maven/wagon/wagon-providers/wagon-http-lightweight",
   "vcs_url": "svn+http://svn.apache.org/repos/asf/maven/wagon/trunk/wagon-providers/wagon-http-lightweight",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": "apache-2.0",
   "declared_license_expression_spdx": "Apache-2.0",
   "license_detections": [
     {
       "license_expression": "apache-2.0",
-      "detection_log": [
-        "not-combined"
-      ],
       "matches": [
         {
           "score": 100.0,
           "start_line": 1,
-          "end_line": 1,
-          "matched_length": 7,
+          "end_line": 2,
+          "matched_length": 18,
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_5.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_5.RULE",
-          "matched_text": "The Apache Software License, Version 2.0"
+          "rule_identifier": "apache-2.0_40.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_40.RULE",
+          "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
-      ]
-    },
-    {
-      "license_expression": "apache-2.0",
-      "detection_log": [
-        "not-combined"
       ],
-      "matches": [
-        {
-          "score": 80.0,
-          "start_line": 1,
-          "end_line": 1,
-          "matched_length": 9,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_42.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
-          "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
-        }
-      ]
+      "identifier": "apache_2_0-bfa9e97a-62d3-0076-c881-8443e5e95192"
     }
   ],
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "[{'name': 'The Apache Software License, Version 2.0', 'url': 'http://www.apache.org/licenses/LICENSE-2.0.txt', 'comments': None, 'distribution': 'repo'}]",
+  "extracted_license_statement": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.apache.maven.wagon/wagon-http-lightweight@1.0-alpha-5?classifier=sources"

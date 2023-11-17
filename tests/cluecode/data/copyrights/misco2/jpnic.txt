@@ -1,0 +1,7 @@
+Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved.
+   distribution the "Copyright Notice" refers to the following language:
+   "Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+101-0047, Japan.
+"Copyright (c) 2000-2002 Japan Network Information Center.  All rights reserved."
+"Copyright (c) 2010-2012 Japan Registry Services Co., Ltd.  All rights reserved."
+

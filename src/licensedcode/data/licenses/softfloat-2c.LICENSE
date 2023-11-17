@@ -1,0 +1,47 @@
+---
+key: softfloat-2c
+short_name: SoftFloat Legal Notice 2c
+name: SoftFloat Legal Notice 2c
+category: Permissive
+owner: John R. Hauser
+homepage_url: https://github.com/stffrdhrn/berkeley-softfloat-2?search=1#readme
+spdx_license_key: LicenseRef-scancode-softfloat-2c
+text_urls:
+    - http://www.jhauser.us/arithmetic/SoftFloat-2c.zip
+other_urls:
+    - http://www.jhauser.us/arithmetic/SoftFloat.html
+ignorable_authors:
+    - John R. Hauser
+---
+
+Legal Notice
+
+SoftFloat was written by John R. Hauser.  Release 2c of SoftFloat was made
+possible in part by the International Computer Science Institute, located
+at Suite 600, 1947 Center Street, Berkeley, California 94704.  Funding
+was partially provided by the National Science Foundation under grant
+MIP-9311980.  The original version of this code was written as part of a
+project to build a fixed-point vector processor in collaboration with the
+University of California at Berkeley, overseen by Profs. Nelson Morgan and
+John Wawrzynek.
+
+THIS SOFTWARE IS DISTRIBUTED AS IS, FOR FREE.  Although reasonable effort
+has been made to avoid it, THIS SOFTWARE MAY CONTAIN FAULTS THAT WILL AT
+TIMES RESULT IN INCORRECT BEHAVIOR.  USE OF THIS SOFTWARE IS RESTRICTED TO
+PERSONS AND ORGANIZATIONS WHO CAN AND WILL TOLERATE ALL LOSSES, COSTS, OR
+OTHER PROBLEMS THEY INCUR DUE TO THE SOFTWARE WITHOUT RECOMPENSE FROM JOHN
+HAUSER OR THE INTERNATIONAL COMPUTER SCIENCE INSTITUTE, AND WHO FURTHERMORE
+EFFECTIVELY INDEMNIFY JOHN HAUSER AND THE INTERNATIONAL COMPUTER SCIENCE
+INSTITUTE (possibly via similar legal notice) AGAINST ALL LOSSES, COSTS, OR
+OTHER PROBLEMS INCURRED BY THEIR CUSTOMERS AND CLIENTS DUE TO THE SOFTWARE,
+OR INCURRED BY ANYONE DUE TO A DERIVATIVE WORK THEY CREATE USING ANY PART OF
+THE SOFTWARE.
+
+The following are expressly permitted, even for commercial purposes:
+(1) distribution of SoftFloat in whole or in part, as long as this and
+other legal notices remain and are prominent, and provided also that, for a
+partial distribution, prominent notice is given that it is a subset of the
+original; and
+(2) inclusion or use of SoftFloat in whole or in part in a derivative
+work, provided that the use restrictions above are met and the minimal
+documentation requirements stated in the source code are satisfied.

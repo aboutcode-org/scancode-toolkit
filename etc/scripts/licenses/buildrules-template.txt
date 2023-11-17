@@ -1,10 +1,14 @@
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -12,10 +16,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -23,10 +31,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -34,10 +46,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -45,10 +61,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -56,10 +76,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -67,10 +91,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -78,10 +106,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -89,10 +121,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -100,10 +136,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -111,10 +151,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -122,10 +166,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -133,10 +181,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -144,10 +196,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -155,10 +211,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -166,10 +226,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -177,10 +241,14 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---
@@ -188,10 +256,374 @@ notes:
 ----------------------------------------
 license_expression: 
 relevance: 100
+minimum_coverage: 90
 is_license_notice: yes
 is_license_text: yes
 is_license_reference: yes
 is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
+referenced_filenames:
+notes: 
+---
+
+----------------------------------------
+license_expression: 
+relevance: 100
+minimum_coverage: 90
+is_license_notice: yes
+is_license_text: yes
+is_license_reference: yes
+is_license_tag: yes
+is_false_positive: yes
+is_license_intro: yes
+is_license_clue: yes
 referenced_filenames:
 notes: 
 ---

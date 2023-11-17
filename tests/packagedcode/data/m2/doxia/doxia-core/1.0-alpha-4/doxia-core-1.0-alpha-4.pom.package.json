@@ -11,14 +11,14 @@
   "parties": [
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Jason van Zyl",
       "email": "jason@maven.org",
       "url": null
     },
     {
       "type": "person",
-      "role": "developper",
+      "role": "developer",
       "name": "Emmanuel Evenisse",
       "email": "emmanuel@venisse.net",
       "url": null
@@ -36,6 +36,7 @@
   "code_view_url": "http://svn.doxia.codehaus.org/",
   "vcs_url": "svn+https://svn.codehaus.org/doxia/doxia-core/tags/doxia-core-1.0-alpha-4",
   "copyright": null,
+  "holder": null,
   "declared_license_expression": null,
   "declared_license_expression_spdx": null,
   "license_detections": [],

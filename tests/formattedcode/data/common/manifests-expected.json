@@ -1,0 +1,1604 @@
+{
+  "packages": [
+    {
+      "type": "maven",
+      "namespace": "javax.persistence",
+      "name": "persistence-api",
+      "version": "1.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Java",
+      "description": "Enterprise JavaBeans (EJB) 3.0\nThe Enterprise JavaBeans architecture is a component architecture for the development and deployment of component-based business applications.\n    The purpose of Enterprise JavaBeans (EJB) 3.0 is to improve the EJB architecture by reducing its complexity from the developer's point of view.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "http://www.jcp.org/en/jsr/detail?id=220",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "cddl-1.0",
+      "declared_license_expression_spdx": "CDDL-1.0",
+      "license_detections": [
+        {
+          "license_expression": "cddl-1.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 8,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "cddl-1.0",
+              "rule_identifier": "cddl-1.0.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE",
+              "matched_text": "- name: Common Development and Distribution License (CDDL) v1.0"
+            },
+            {
+              "score": 100.0,
+              "start_line": 2,
+              "end_line": 2,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "cddl-1.0",
+              "rule_identifier": "cddl-1.0_4.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE",
+              "matched_text": "  url: http://www.sun.com/cddl/cddl.html"
+            }
+          ],
+          "identifier": "cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- name: Common Development and Distribution License (CDDL) v1.0\n  url: http://www.sun.com/cddl/cddl.html\n",
+      "notice_text": null,
+      "source_packages": [
+        "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
+      ],
+      "extra_data": {},
+      "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
+      "repository_download_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar",
+      "api_data_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.pom",
+      "package_uid": "pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "manifests/maven/persistence-api-1.0.pom"
+      ],
+      "datasource_ids": [
+        "maven_pom"
+      ],
+      "purl": "pkg:maven/javax.persistence/persistence-api@1.0"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "grunt-esvm",
+      "version": "3.2.8",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "Create elasticsearch clusters from grunt.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Spencer Alger",
+          "email": "spencer.alger@elasticsearch.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "gruntplugin"
+      ],
+      "homepage_url": "https://github.com/spenceralger/grunt-esvm",
+      "download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/spenceralger/grunt-esvm/issues",
+      "code_view_url": null,
+      "vcs_url": "git://github.com/spenceralger/grunt-esvm.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "matched_text": "Apache-2.0"
+            }
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "matched_text": "Apache 2.0"
+            }
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- Apache-2.0\n- type: Apache 2.0\n  url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md\n",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
+      "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
+      "api_data_url": "https://registry.npmjs.org/grunt-esvm/3.2.8",
+      "package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "manifests/npm-license-mapping/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/grunt-esvm@3.2.8"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "angular-compare-validator",
+      "version": "0.1.1",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": "Angular form validation directive to compare two inputs",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "maintainer",
+          "name": "georgdangl",
+          "email": "npm@dan.gl",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/GeorgDangl/angular-compare-validator#readme",
+      "download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
+      "size": null,
+      "sha1": "d35a0754c8587b0502874e3636cf0f19565d09b7",
+      "md5": null,
+      "sha256": null,
+      "sha512": "8f70ed5e3513185ad58fb2a3114769ac93ddd68836ce89146e586fc03e03ac93dcfb1f11354ac26f408b75c0ebf51663d5e4e8e27c38752a3c06bdde749a7c03",
+      "bug_tracking_url": "https://github.com/GeorgDangl/angular-compare-validator/issues",
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/GeorgDangl/angular-compare-validator.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "matcher": "1-spdx-id",
+              "license_expression": "mit",
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_relevance": 100,
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/angular-compare-validator",
+      "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
+      "api_data_url": "https://registry.npmjs.org/angular-compare-validator/0.1.1",
+      "package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "manifests/npm-license-string/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/angular-compare-validator@0.1.1"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/bluebird",
+      "extracted_requirement": "^2.9.30",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/cli-color",
+      "extracted_requirement": "~0.3.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/cli-color?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/cli-table",
+      "extracted_requirement": "~0.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/cli-table?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/libesvm",
+      "extracted_requirement": "^3.8.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/libesvm?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/lodash",
+      "extracted_requirement": "^3.9.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/lodash?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/moment",
+      "extracted_requirement": "^2.10.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/moment?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/wreck",
+      "extracted_requirement": "^5.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/wreck?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt",
+      "extracted_requirement": ">=0.4.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/load-grunt-config",
+      "extracted_requirement": "~0.19.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/load-grunt-config?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/grunt",
+      "extracted_requirement": ">=0.4.0",
+      "scope": "peerDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-mapping/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/%40angular/core",
+      "extracted_requirement": ">=2.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/%40angular/core?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/%40angular/forms",
+      "extracted_requirement": ">=2.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/%40angular/forms?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/%40angular/common",
+      "extracted_requirement": ">=2.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/%40angular/common?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/rxjs",
+      "extracted_requirement": ">=5.0.0-beta.12",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/rxjs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/zone.js",
+      "extracted_requirement": ">=0.6.21",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/zone.js?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/npm-license-string/package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8",
+      "license_expression": "apache-2.0",
+      "detection_count": 3
+    },
+    {
+      "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0",
+      "license_expression": "apache-2.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6",
+      "license_expression": "cddl-1.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880",
+      "license_expression": "cddl-1.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321",
+      "license_expression": "lgpl-3.0",
+      "detection_count": 2
+    },
+    {
+      "identifier": "lgpl_3_0-121be3c2-9c80-df84-d3da-8f674e4125c0",
+      "license_expression": "lgpl-3.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "lgpl_3_0-2db87bcf-56b4-9d7d-7075-2effae31c631",
+      "license_expression": "lgpl-3.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5",
+      "license_expression": "lgpl-3.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "license_expression": "mit",
+      "detection_count": 1
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "detection_count": 1
+    }
+  ],
+  "files": [
+    {
+      "path": "manifests",
+      "type": "directory",
+      "name": "manifests",
+      "base_name": "manifests",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 4,
+      "dirs_count": 4,
+      "size_count": 6962,
+      "scan_errors": []
+    },
+    {
+      "path": "manifests/maven",
+      "type": "directory",
+      "name": "maven",
+      "base_name": "maven",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 1307,
+      "scan_errors": []
+    },
+    {
+      "path": "manifests/maven/persistence-api-1.0.pom",
+      "type": "file",
+      "name": "persistence-api-1.0.pom",
+      "base_name": "persistence-api-1.0",
+      "extension": ".pom",
+      "size": 1307,
+      "sha1": "82107f6781df8da9aa7cb60abc649208256af5cb",
+      "md5": "e79938fe4e630b02e3526c0195292cc6",
+      "sha256": "f94648bd92ddf2464e62c56c3833b36927fa8b9803e8ebf3e4cfa7f2d797f3ad",
+      "mime_type": "text/xml",
+      "file_type": "XML 1.0 document, ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [
+        {
+          "type": "maven",
+          "namespace": "javax.persistence",
+          "name": "persistence-api",
+          "version": "1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Java",
+          "description": "Enterprise JavaBeans (EJB) 3.0\nThe Enterprise JavaBeans architecture is a component architecture for the development and deployment of component-based business applications.\n    The purpose of Enterprise JavaBeans (EJB) 3.0 is to improve the EJB architecture by reducing its complexity from the developer's point of view.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "http://www.jcp.org/en/jsr/detail?id=220",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "cddl-1.0",
+          "declared_license_expression_spdx": "CDDL-1.0",
+          "license_detections": [
+            {
+              "license_expression": "cddl-1.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 8,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "cddl-1.0",
+                  "rule_identifier": "cddl-1.0.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE",
+                  "matched_text": "- name: Common Development and Distribution License (CDDL) v1.0"
+                },
+                {
+                  "score": 100.0,
+                  "start_line": 2,
+                  "end_line": 2,
+                  "matched_length": 7,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "cddl-1.0",
+                  "rule_identifier": "cddl-1.0_4.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE",
+                  "matched_text": "  url: http://www.sun.com/cddl/cddl.html"
+                }
+              ],
+              "identifier": "cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- name: Common Development and Distribution License (CDDL) v1.0\n  url: http://www.sun.com/cddl/cddl.html\n",
+          "notice_text": null,
+          "source_packages": [
+            "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
+          "repository_download_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar",
+          "api_data_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.pom",
+          "datasource_id": "maven_pom",
+          "purl": "pkg:maven/javax.persistence/persistence-api@1.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "cddl-1.0",
+      "detected_license_expression_spdx": "CDDL-1.0",
+      "license_detections": [
+        {
+          "license_expression": "cddl-1.0",
+          "matches": [
+            {
+              "score": 16.0,
+              "start_line": 17,
+              "end_line": 19,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "unknown-license-reference",
+              "rule_identifier": "license-intro_72.RULE",
+              "rule_relevance": 16,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE"
+            },
+            {
+              "score": 82.35,
+              "start_line": 18,
+              "end_line": 20,
+              "matched_length": 14,
+              "match_coverage": 82.35,
+              "matcher": "3-seq",
+              "license_expression": "cddl-1.0",
+              "rule_identifier": "cddl-1.0_32.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE"
+            }
+          ],
+          "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 9.25,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "manifests/npm-license-mapping",
+      "type": "directory",
+      "name": "npm-license-mapping",
+      "base_name": "npm-license-mapping",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 1184,
+      "scan_errors": []
+    },
+    {
+      "path": "manifests/npm-license-mapping/package.json",
+      "type": "file",
+      "name": "package.json",
+      "base_name": "package",
+      "extension": ".json",
+      "size": 1184,
+      "sha1": "0ed61bf6912407a143ce96c95bea56ad13463f5b",
+      "md5": "427e6d3b579b128fed50328ac65b698e",
+      "sha256": "d292aa647dc82e007ba319c878ec182d6f235f0a923cfe012ffc0ae8b7fa23be",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "grunt-esvm",
+          "version": "3.2.8",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "Create elasticsearch clusters from grunt.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Spencer Alger",
+              "email": "spencer.alger@elasticsearch.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "gruntplugin"
+          ],
+          "homepage_url": "https://github.com/spenceralger/grunt-esvm",
+          "download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/spenceralger/grunt-esvm/issues",
+          "code_view_url": null,
+          "vcs_url": "git://github.com/spenceralger/grunt-esvm.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "matched_text": "Apache-2.0"
+                }
+              ],
+              "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0",
+                  "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "matched_text": "Apache 2.0"
+                }
+              ],
+              "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- Apache-2.0\n- type: Apache 2.0\n  url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/bluebird",
+              "extracted_requirement": "^2.9.30",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/cli-color",
+              "extracted_requirement": "~0.3.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/cli-table",
+              "extracted_requirement": "~0.3.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/libesvm",
+              "extracted_requirement": "^3.8.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/lodash",
+              "extracted_requirement": "^3.9.3",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/moment",
+              "extracted_requirement": "^2.10.3",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/wreck",
+              "extracted_requirement": "^5.6.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt",
+              "extracted_requirement": ">=0.4.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/load-grunt-config",
+              "extracted_requirement": "~0.19.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/grunt",
+              "extracted_requirement": ">=0.4.0",
+              "scope": "peerDependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
+          "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
+          "api_data_url": "https://registry.npmjs.org/grunt-esvm/3.2.8",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/grunt-esvm@3.2.8"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 6,
+              "end_line": 6,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_65.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 20,
+              "end_line": 20,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 5.51,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Spencer Alger",
+          "start_line": 7,
+          "end_line": 8
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "manifests/npm-license-string",
+      "type": "directory",
+      "name": "npm-license-string",
+      "base_name": "npm-license-string",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 1544,
+      "scan_errors": []
+    },
+    {
+      "path": "manifests/npm-license-string/package.json",
+      "type": "file",
+      "name": "package.json",
+      "base_name": "package",
+      "extension": ".json",
+      "size": 1544,
+      "sha1": "e6acddf907b7089d197d9d46879cd18ffb8f5198",
+      "md5": "5ba816691af915c02567f459ae26ebd6",
+      "sha256": "11129bc3bbf44b2567307ad13a31bc231f08416919e36bbdeabb9195b3e6ad58",
+      "mime_type": "application/json",
+      "file_type": "JSON data",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "angular-compare-validator",
+          "version": "0.1.1",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": "Angular form validation directive to compare two inputs",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "maintainer",
+              "name": "georgdangl",
+              "email": "npm@dan.gl",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/GeorgDangl/angular-compare-validator#readme",
+          "download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
+          "size": null,
+          "sha1": "d35a0754c8587b0502874e3636cf0f19565d09b7",
+          "md5": null,
+          "sha256": null,
+          "sha512": "8f70ed5e3513185ad58fb2a3114769ac93ddd68836ce89146e586fc03e03ac93dcfb1f11354ac26f408b75c0ebf51663d5e4e8e27c38752a3c06bdde749a7c03",
+          "bug_tracking_url": "https://github.com/GeorgDangl/angular-compare-validator/issues",
+          "code_view_url": null,
+          "vcs_url": "git+https://github.com/GeorgDangl/angular-compare-validator.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-spdx-id",
+                  "license_expression": "mit",
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_relevance": 100,
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/%40angular/core",
+              "extracted_requirement": ">=2.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/%40angular/forms",
+              "extracted_requirement": ">=2.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/%40angular/common",
+              "extracted_requirement": ">=2.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/rxjs",
+              "extracted_requirement": ">=5.0.0-beta.12",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/zone.js",
+              "extracted_requirement": ">=0.6.21",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/angular-compare-validator",
+          "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
+          "api_data_url": "https://registry.npmjs.org/angular-compare-validator/0.1.1",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/angular-compare-validator@0.1.1"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 4,
+              "end_line": 4,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_30.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.32,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "manifests/pypi",
+      "type": "directory",
+      "name": "pypi",
+      "base_name": "pypi",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 2927,
+      "scan_errors": []
+    },
+    {
+      "path": "manifests/pypi/bluepyopt_setup.py",
+      "type": "file",
+      "name": "bluepyopt_setup.py",
+      "base_name": "bluepyopt_setup",
+      "extension": ".py",
+      "size": 2927,
+      "sha1": "5507192502255517e006c531d07dd84dc2325be8",
+      "md5": "6795bed0c9c6b6cb915bfa959a2d1d4a",
+      "sha256": "4378d297df9fcb4f65fdcd1299e17eef7db86883baf149bc41b0335f943cf006",
+      "mime_type": "text/x-script.python",
+      "file_type": "Python script, ASCII text executable",
+      "programming_language": "Python",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": true,
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "bluepyopt",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Bluebrain Python Optimisation Library (bluepyopt)",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "BlueBrain Project, EPFL",
+              "email": "werner.vangeit@epfl.ch",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "optimisation",
+            "neuroscience",
+            "BlueBrainProject",
+            "Development Status :: 5 - Production/Stable",
+            "Environment :: Console",
+            "Programming Language :: Python :: 3 :: Only",
+            "Operating System :: POSIX",
+            "Topic :: Scientific/Engineering",
+            "Topic :: Utilities"
+          ],
+          "homepage_url": "https://github.com/BlueBrain/BluePyOpt",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "lgpl-3.0",
+          "declared_license_expression_spdx": "LGPL-3.0-only",
+          "license_detections": [
+            {
+              "license_expression": "lgpl-3.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "lgpl-3.0",
+                  "rule_identifier": "lgpl-3.0_29.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_29.RULE",
+                  "matched_text": "LGPLv3"
+                }
+              ],
+              "identifier": "lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5"
+            },
+            {
+              "license_expression": "lgpl-3.0",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 10,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "lgpl-3.0",
+                  "rule_identifier": "pypi_gnu_lesser_general_public_license_v3.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE",
+                  "matched_text": "- 'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'"
+                }
+              ],
+              "identifier": "lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "license: LGPLv3\nclassifiers:\n  - 'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/numpy",
+              "extracted_requirement": "numpy>=1.6",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/pandas",
+              "extracted_requirement": "pandas>=0.18",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/deap",
+              "extracted_requirement": "deap",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/efel",
+              "extracted_requirement": "efel>=2.13",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/ipyparallel",
+              "extracted_requirement": "ipyparallel",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/pickleshare",
+              "extracted_requirement": "pickleshare>=0.7.3",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/jinja2",
+              "extracted_requirement": "Jinja2>=2.8",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/future",
+              "extracted_requirement": "future",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/pebble",
+              "extracted_requirement": "Pebble>=4.3.10",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/scoop",
+              "extracted_requirement": "scoop>=0.7",
+              "scope": "all",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/scoop",
+              "extracted_requirement": "scoop>=0.7",
+              "scope": "scoop",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://pypi.org/project/bluepyopt",
+          "repository_download_url": null,
+          "api_data_url": "https://pypi.org/pypi/bluepyopt/json",
+          "datasource_id": "pypi_setup_py",
+          "purl": "pkg:pypi/bluepyopt"
+        }
+      ],
+      "for_packages": [],
+      "detected_license_expression": "lgpl-3.0",
+      "detected_license_expression_spdx": "LGPL-3.0-only",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-3.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 9,
+              "end_line": 20,
+              "matched_length": 106,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "lgpl-3.0",
+              "rule_identifier": "lgpl-3.0_276.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_276.RULE"
+            }
+          ],
+          "identifier": "lgpl_3_0-121be3c2-9c80-df84-d3da-8f674e4125c0"
+        },
+        {
+          "license_expression": "lgpl-3.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 65,
+              "end_line": 65,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "lgpl-3.0",
+              "rule_identifier": "lgpl-3.0_152.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_152.RULE"
+            }
+          ],
+          "identifier": "lgpl_3_0-2db87bcf-56b4-9d7d-7075-2effae31c631"
+        },
+        {
+          "license_expression": "lgpl-3.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 74,
+              "end_line": 75,
+              "matched_length": 10,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "lgpl-3.0",
+              "rule_identifier": "pypi_gnu_lesser_general_public_license_v3.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE"
+            }
+          ],
+          "identifier": "lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 34.71,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2016-2020, EPFL/Blue Brain Project",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "holders": [
+        {
+          "holder": "EPFL/Blue Brain Project",
+          "start_line": 5,
+          "end_line": 5
+        }
+      ],
+      "authors": [
+        {
+          "author": "BlueBrain Project",
+          "start_line": 54,
+          "end_line": 54
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

@@ -44,8 +44,6 @@
       "datasource_id": "cocoapods_podfile_lock"
     }
   ],
-  "license_references": [],
-  "license_rule_references": [],
   "files": [
     {
       "path": "Podfile.lock",
@@ -74,6 +72,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],

@@ -20,6 +20,7 @@ from commoncode import testcase
 from packagedcode import maven
 from packagedcode import models
 from packagedcode.licensing import get_license_detections_and_expression
+from scancode.cli import run_scan
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
@@ -208,11 +209,47 @@ class TestMavenMisc(BaseMavenCase):
         assert package2.to_dict().items() == package.to_dict().items()
 
     def test_package_with_extracted_jars_and_metainf_poms_is_detected_correctly(self):
-        test_dir = self.get_test_loc('maven_misc/extracted-jar')
+        test_dir = self.get_test_loc('maven_misc/extracted-jar/activiti-image-generator-7-201802-EA-sources.jar-extract/')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('maven_misc/extracted-jar-expected.json')
+        expected_file = self.get_test_loc('maven_misc/extracted-jar/activiti-image-generator-expected.json')
         run_scan_click(['--package', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_package_with_extracted_jars_and_metainf_manifest_is_detected_correctly(self):
+        test_dir = self.get_test_loc('maven_misc/extracted-jar/hsqldb-2.4.0.jar-extract/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/extracted-jar/hsqldb-2.4.0-expected.json')
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_uberjars_is_detected_and_resource_assigned_correctly(self):
+        test_dir = self.get_test_loc('maven_misc/uberjars/htrace-core-4.0.0-incubating')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/uberjars/htrace-core-4.0.0-incubating-expected.json')
+        run_scan_click(['--package', '--license', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_maven_assembly_with_pom_and_manifest(self):
+        test_dir = self.get_test_loc('maven_misc/assemble/johnzon-jsonb-1.2.11')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/assemble/johnzon-jsonb-1.2.11-expected.json')
+        run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_maven_assembly_with_pom_and_jar_manifest(self):
+        test_dir = self.get_test_loc('maven_misc/assemble/numbers-1.7.4')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/assemble/numbers-1.7.4-expected.json')
+        run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+    
+    def test_maven_unknown_reference_to_license_in_manifest(self):
+        test_dir = self.get_test_loc('maven_misc/assemble/jackson-dataformat-xml-2.13.5')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/assemble/jackson-dataformat-xml-2.13.5-expected.json')
+        run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
 
     def test_package_dependency_not_missing(self):
         test_file = self.get_test_loc('maven2/log4j/log4j-pom.xml')
@@ -221,6 +258,37 @@ class TestMavenMisc(BaseMavenCase):
     def test_package_dependency_populate_is_resolved_field(self):
         test_file = self.get_test_loc('maven_misc/parse/swagger-java-sample-app_2.10-1.3.1.pom')
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_get_top_level_resources(self):
+        processes = 2
+        test_dir = self.get_test_loc('maven_misc/extracted-jar/activiti-image-generator-7-201802-EA-sources.jar-extract')
+        _, codebase = run_scan(
+            input=test_dir,
+            processes=processes,
+            quiet=True,
+            verbose=False,
+            max_in_memory=0,
+            return_results=False,
+            return_codebase=True,
+            system_package=True,
+        )
+        pom_resource = codebase.get_resource(
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml'
+        )
+        self.assertTrue(pom_resource)
+        top_level_resources_paths = [
+            r.path for r in maven.MavenPomXmlHandler.get_top_level_resources(pom_resource, codebase)
+        ]
+        expected_resource_paths = [
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/MANIFEST.MF',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.properties',
+            'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml',
+        ]
+        self.assertEquals(expected_resource_paths, top_level_resources_paths)
 
 
 class TestPomProperties(testcase.FileBasedTesting):

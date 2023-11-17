@@ -4,12 +4,16 @@ short_name: Autoconf simple exception
 name: Autoconf simple exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
-homepage_url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob;f=config.guess;h=a7448442748cc6f98a066d2d1051fad3b043761a;hb=HEAD
+homepage_url: https://src.fedoraproject.org/rpms/redhat-rpm-config/blob/rawhide/f/config.guess
 notes: |
     this is a simpler version of the Autonconf exception to the GPL 3.0 used in
     GNU Config config.guess and config.sub
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-autoconf-simple-exception
+spdx_license_key: Autoconf-exception-generic-3.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-autoconf-simple-exception
+other_urls:
+    - https://src.fedoraproject.org/rpms/redhat-rpm-config/blob/rawhide/f/config.guess
 ---
 
 As a special exception to the GNU General Public License, if you

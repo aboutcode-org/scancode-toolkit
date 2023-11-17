@@ -22,34 +22,34 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "unknown",
     "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
     "license_detections": [
       {
         "license_expression": "unknown",
-        "detection_log": [
-          "undetected-license"
-        ],
         "matches": [
           {
-            "score": 83.33,
+            "score": 75.0,
             "start_line": 1,
-            "end_line": 1,
-            "matched_length": 5,
+            "end_line": 3,
+            "matched_length": 3,
             "match_coverage": 100.0,
             "matcher": "5-undetected",
             "license_expression": "unknown",
-            "rule_identifier": "package-manifest-unknown-679f097d28658555700ef170738adb0fd7151fce",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-679f097d28658555700ef170738adb0fd7151fce",
-            "matched_text": "license {'LegalCopyright': None, 'LegalTrademarks': '', 'License': None}"
+            "rule_identifier": "package-manifest-unknown-ad65678ddd5bed50985f1d896d812061269049b0",
+            "rule_relevance": 100,
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-ad65678ddd5bed50985f1d896d812061269049b0",
+            "matched_text": "license LegalCopyright:\nLegalTrademarks:\nLicense:"
           }
-        ]
+        ],
+        "identifier": "unknown-d5e156bc-5560-c52a-28b9-d79ccb4407b2"
       }
     ],
     "other_license_expression": null,
     "other_license_expression_spdx": null,
     "other_license_detections": [],
-    "extracted_license_statement": "{'LegalCopyright': None, 'LegalTrademarks': '', 'License': None}",
+    "extracted_license_statement": "LegalCopyright:\nLegalTrademarks:\nLicense:\n",
     "notice_text": null,
     "source_packages": [],
     "file_references": [],

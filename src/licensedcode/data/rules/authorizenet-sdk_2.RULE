@@ -1,0 +1,10 @@
+---
+license_expression: authorizenet-sdk
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/AuthorizeNet/sdk-java/blob/master/LICENSE.txt
+---
+
+{{https://github.com/AuthorizeNet/sdk-java/blob/master/LICENSE.txt}}

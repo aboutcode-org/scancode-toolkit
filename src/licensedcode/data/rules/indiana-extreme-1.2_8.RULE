@@ -1,0 +1,16 @@
+---
+license_expression: indiana-extreme-1.2
+is_license_tag: yes
+referenced_filenames:
+    - https://raw.githubusercontent.com/x-stream/mxparser/master/LICENSE.txt
+ignorable_urls:
+    - https://raw.githubusercontent.com/x-stream/mxparser/master/LICENSE.txt
+---
+
+<licenses>
+<license>
+    <name>{{Indiana University Extreme! Lab Software License}}</name>
+    <url>https://raw.githubusercontent.com/x-stream/mxparser/master/LICENSE.txt</url>
+    <distribution>repo</distribution>
+</license>
+</licenses>

@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) 2016-2018 JSR 371 expert group and contributors
+holders:
+  - JSR 371 expert group and contributors
+holders_summary:
+  - value: JSR 371 expert group and contributors
+    count: 1

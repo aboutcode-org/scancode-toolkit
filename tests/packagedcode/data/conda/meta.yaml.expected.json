@@ -22,14 +22,12 @@
     "code_view_url": null,
     "vcs_url": "https://github.com/winni2k/abeona",
     "copyright": null,
+    "holder": null,
     "declared_license_expression": "apache-2.0",
     "declared_license_expression_spdx": "Apache-2.0",
     "license_detections": [
       {
         "license_expression": "apache-2.0",
-        "detection_log": [
-          "not-combined"
-        ],
         "matches": [
           {
             "score": 100.0,
@@ -40,10 +38,12 @@
             "matcher": "1-hash",
             "license_expression": "apache-2.0",
             "rule_identifier": "apache-2.0_292.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_292.RULE",
             "matched_text": "license Apache Software"
           }
-        ]
+        ],
+        "identifier": "apache_2_0-b61e521f-8056-676d-d623-119feca87b8c"
       }
     ],
     "other_license_expression": null,

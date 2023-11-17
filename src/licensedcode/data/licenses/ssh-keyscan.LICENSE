@@ -1,0 +1,14 @@
+---
+key: ssh-keyscan
+short_name: ssh-keyscan License
+name: ssh-keyscan License
+category: Permissive
+owner: OpenBSD Project
+spdx_license_key: ssh-keyscan
+other_urls:
+    - https://github.com/openssh/openssh-portable/blob/master/LICENCE#L82
+---
+
+Modification and redistribution in source and binary forms is
+permitted provided that due credit is given to the author and the
+OpenBSD project by leaving this copyright notice intact.
