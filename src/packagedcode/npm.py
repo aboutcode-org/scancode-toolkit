@@ -168,7 +168,12 @@ class BaseNpmHandler(models.DatafileHandler):
                     yield subchild
 
 
-def get_urls(namespace, name, version, **kwargs):
+def get_urls(namespace, name, version, is_upm=False, **kwargs):
+    if is_upm:
+        return dict(
+            repository_homepage_url='https://docs.unity3d.com/Manual/Packages.html',
+            repository_download_url='https://packages.unity.com',
+        )
     return dict(
         repository_homepage_url=npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'),
         repository_download_url=npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'),
@@ -189,6 +194,8 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         name = json_data.get('name')
         version = json_data.get('version')
         homepage_url = json_data.get('homepage', '')
+        # Detect Unity packages: https://docs.unity3d.com/Manual/upm-manifestPkg.html
+        is_upm = json_data.get('unity') is not None
 
         # a package.json without name and version can be a private package
 
@@ -196,14 +203,17 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             # TODO: should we keep other URLs
             homepage_url = homepage_url[0]
         homepage_url = homepage_url.strip() or None
+        if is_upm and homepage_url is None:
+            homepage_url=f"https://docs.unity3d.com/Packages/{name}@{version}/manual/index.html"
 
         namespace, name = split_scoped_package_name(name)
 
-        urls = get_urls(namespace, name, version)
+        urls = get_urls(namespace, name, version, is_upm)
+
         package = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
-            primary_language=cls.default_primary_language,
+            primary_language=cls.default_primary_language if not is_upm else None,
             namespace=namespace or None,
             name=name,
             version=version or None,
@@ -242,7 +252,12 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 
         if not package.download_url:
             # Only add a synthetic download URL if there is none from the dist mapping.
-            package.download_url = npm_download_url(package.namespace, package.name, package.version)
+            package.download_url = npm_download_url(
+                package.namespace,
+                package.name,
+                package.version,
+                registry='https://registry.npmjs.org' if not is_upm else 'https://download.packages.unity.com'
+            )
 
         # licenses are a tad special with many different data structures
         lic = json_data.get('license')

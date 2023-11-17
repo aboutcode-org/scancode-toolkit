@@ -390,6 +390,12 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_npm_upm_package_json(self):
+        # See: https://github.com/Unity-Technologies/ml-agents/com.unity.ml-agents/package.json
+        test_file = self.get_test_loc('npm/upm/package/package.json')
+        expected_loc = self.get_test_loc('npm/upm/package/package.json.expected')
+        packages = npm.NpmPackageJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 test_data = [
     (['MIT'], 'mit'),
