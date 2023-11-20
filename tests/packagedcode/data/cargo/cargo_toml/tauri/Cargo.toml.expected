@@ -1,0 +1,72 @@
+[
+  {
+    "type": "cargo",
+    "namespace": null,
+    "name": "rustup",
+    "version": "1.17.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Rust",
+    "description": "Manage multiple rust installations with ease",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Diggory Blake",
+        "email": "diggsey@googlemail.com",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "https://github.com/rust-lang/rustup.rs",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "https://github.com/rust-lang/rustup.rs",
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit OR apache-2.0",
+    "declared_license_expression_spdx": "MIT OR Apache-2.0",
+    "license_detections": [
+      {
+        "license_expression": "mit OR apache-2.0",
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "mit OR apache-2.0",
+            "rule_identifier": "mit_or_apache-2.0_15.RULE",
+            "rule_relevance": 100,
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_15.RULE",
+            "matched_text": "MIT OR Apache-2.0"
+          }
+        ],
+        "identifier": "mit_or_apache_2_0-480eec53-1a80-0150-7c7e-39cf79c9f3a8"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT OR Apache-2.0",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://crates.io/crates/rustup",
+    "repository_download_url": "https://crates.io/api/v1/crates/rustup/1.17.0/download",
+    "api_data_url": "https://crates.io/api/v1/crates/rustup",
+    "datasource_id": "cargo_toml",
+    "purl": "pkg:cargo/rustup@1.17.0"
+  }
+]

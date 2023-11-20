@@ -65,6 +65,12 @@ class TestCargo(PackageTester):
         packages_data = cargo.CargoTomlHandler.parse(test_file)
         self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_cargo_toml_rustup(self):
+        test_file = self.get_test_loc('cargo/cargo_toml/tauri/Cargo.toml')
+        expected_loc = self.get_test_loc('cargo/cargo_toml/tauri/Cargo.toml.expected')
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_cargo_lock_sample1(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample1/output.expected.json')
