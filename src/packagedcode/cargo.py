@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import os
 import re
 
 import saneyaml
@@ -31,8 +32,8 @@ class CargoTomlHandler(models.DatafileHandler):
     @classmethod
     def parse(cls, location):
         package_data = toml.load(location, _dict=dict)
-
         core_package_data = package_data.get('package', {})
+        workspace = package_data.get('workspace', {})
 
         name = core_package_data.get('name')
         version = core_package_data.get('version')
@@ -66,6 +67,9 @@ class CargoTomlHandler(models.DatafileHandler):
         repository_homepage_url = name and f'https://crates.io/crates/{name}'
         repository_download_url = name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download'
         api_data_url = name and f'https://crates.io/api/v1/crates/{name}'
+        extra_data = {}
+        if workspace:
+            extra_data["workspace"] = workspace
 
         yield models.PackageData(
             datasource_id=cls.datasource_id,
@@ -82,20 +86,92 @@ class CargoTomlHandler(models.DatafileHandler):
             repository_download_url=repository_download_url,
             api_data_url=api_data_url,
             dependencies=dependencies,
+            extra_data=extra_data,
         )
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         """
-        Assemble Cargo.toml and possible Cargo.lock datafiles
+        Assemble Cargo.toml and possible Cargo.lock datafiles. Also
+        support cargo workspaces where we have multiple packages from
+        a repository and some shared information present at top-level.
         """
-        yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
-            directory=resource.parent(codebase),
-            codebase=codebase,
-            package_adder=package_adder,
-        )
+        workspace = package_data.extra_data.get("workspace", {})
+        workspace_members = workspace.get("members", [])
+        workspace_package_data = workspace.get("package", {})
+        attributes_to_copy = [
+            "license_detections",
+            "declared_license_expression",
+            "declared_license_expression_spdx"
+        ]
+        if "license" in workspace_package_data:
+            for attribute in attributes_to_copy:
+                workspace_package_data[attribute] = getattr(package_data, attribute)
 
+        workspace_root_path = resource.parent(codebase).path
+        if workspace_package_data and workspace_members:
+            for workspace_member_path in workspace_members:
+                workspace_directory_path = os.path.join(workspace_root_path, workspace_member_path)
+                workspace_directory = codebase.get_resource(path=workspace_directory_path)
+                if not workspace_directory:
+                    continue
+
+                # Update the package data for all members with the
+                # workspace package data
+                for resource in workspace_directory.children(codebase):
+                    if cls.is_datafile(location=resource.location):
+                        if not resource.package_data:
+                            continue
+
+                        updated_package_data = cls.update_resource_package_data(
+                            package_data=workspace_package_data,
+                            old_package_data=resource.package_data.pop(),
+                            mapping=CARGO_ATTRIBUTE_MAPPING,
+                        )
+                        resource.package_data.append(updated_package_data)
+                        resource.save(codebase)
+
+                yield from cls.assemble_from_many_datafiles(
+                    datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
+                    directory=workspace_directory,
+                    codebase=codebase,
+                    package_adder=package_adder,
+                )
+        else:
+            yield from cls.assemble_from_many_datafiles(
+                datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
+                directory=resource.parent(codebase),
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+
+    @classmethod
+    def update_resource_package_data(cls, package_data, old_package_data, mapping=None):
+
+        for attribute in old_package_data.keys():
+            if attribute in mapping:
+                replace_by_attribute = mapping.get(attribute)
+                old_package_data[attribute] = package_data.get(replace_by_attribute)
+            elif attribute == "parties":
+                old_package_data[attribute] = list(get_parties(
+                    person_names=package_data.get("authors"),
+                    party_role='author',
+                ))
+
+        return old_package_data
+
+
+CARGO_ATTRIBUTE_MAPPING = {
+    # Fields in PackageData model: Fields in cargo
+    "homepage_url": "homepage",
+    "vcs_url": "repository",
+    "keywords": "categories",
+    "extracted_license_statement": "license",
+    # These are fields carried over to avoid re-detection of licenses
+    "license_detections": "license_detections",
+    "declared_license_expression": "declared_license_expression",
+    "declared_license_expression_spdx": "declared_license_expression_spdx",
+}
 
 class CargoLockHandler(models.DatafileHandler):
     datasource_id = 'cargo_lock'
@@ -185,11 +261,13 @@ def dependency_mapper(dependencies, scope='dependencies'):
         )
 
 
-def get_parties(person_names, party_role):
+def get_parties(person_names, party_role, debug=False):
     """
     Yields Party of `party_role` given a list of ``person_names`` strings.
     https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field-optional
     """
+    if debug:
+        raise Exception(person_names)
     for person_name in person_names:
         name, email = parse_person(person_name)
         yield models.Party(
@@ -197,7 +275,7 @@ def get_parties(person_names, party_role):
             name=name,
             role=party_role,
             email=email,
-        )
+        ).to_dict()
 
 
 person_parser = re.compile(
