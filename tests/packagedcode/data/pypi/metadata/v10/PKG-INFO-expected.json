@@ -45,13 +45,13 @@
             "match_coverage": 100.0,
             "matcher": "5-undetected",
             "license_expression": "unknown",
-            "rule_identifier": "package-manifest-unknown-623aa537047267a404620d70ae00f1448b424248",
+            "rule_identifier": "package-manifest-unknown-54cabbf9e6e2ad452085853f06d62077e9d72ddb",
             "rule_relevance": 100,
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-623aa537047267a404620d70ae00f1448b424248",
-            "matched_text": "license license: LICENSE.txt"
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-54cabbf9e6e2ad452085853f06d62077e9d72ddb",
+            "matched_text": "license {'license': 'LICENSE.txt'}"
           }
         ],
-        "identifier": "unknown-083832d0-fb1a-f0bc-de38-c8d1cc1a3a8a"
+        "identifier": "unknown-d5d1ef26-6d73-51c2-0bd1-6551bb2e6e9c"
       }
     ],
     "other_license_expression": null,

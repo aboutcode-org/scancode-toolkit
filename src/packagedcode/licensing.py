@@ -684,6 +684,12 @@ def get_normalized_license_detections(
                 if detections:
                     license_detections.extend(detections)
 
+            if not license_detections:
+                unknown_dict_object = repr(dict(extracted_license.items()))
+                unknown_detection = get_unknown_license_detection(query_string=unknown_dict_object)
+                license_detections.append(unknown_detection)
+                if TRACE:
+                    logger_debug(f'get_normalized_license_detections: dict: unknown_dict_object: {unknown_dict_object}, unknown_detection: {saneyaml.dump(unknown_detection.to_dict())}')
         else:
             extracted_license_statement = saneyaml.dump(extracted_license)
             license_detections = get_license_detections_for_extracted_license_statement(
@@ -728,7 +734,6 @@ def get_normalized_license_detections(
 
             else:
                 extracted_license_statement = saneyaml.dump(extracted_license_item)
-
                 detections = get_license_detections_for_extracted_license_statement(
                     extracted_license_statement=extracted_license_statement,
                     try_as_expression=try_as_expression,
@@ -794,6 +799,7 @@ def get_license_detections_and_expression(
     if not license_detections:
         if not isinstance(extracted_license_statement, str):
             extracted_license_statement = saneyaml.dump(extracted_license_statement)
+
         license_detection = get_unknown_license_detection(query_string=extracted_license_statement)
         license_detections = [license_detection]
 

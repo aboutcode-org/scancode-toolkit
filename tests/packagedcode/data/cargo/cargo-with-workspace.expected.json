@@ -1,0 +1,1049 @@
+{
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "tauri-workspace",
+      "version": "0.0.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "contributor",
+          "name": "Tauri Programme within The Commons Conservancy",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/tauri-workspace/-/tauri-workspace-0.0.0.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "git+https://github.com/tauri-apps/tauri.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0 OR mit",
+      "declared_license_expression_spdx": "Apache-2.0 OR MIT",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0 OR mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0 OR mit",
+              "rule_identifier": "apache-2.0_or_mit_36.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+              "matched_text": "Apache-2.0 OR MIT"
+            }
+          ],
+          "identifier": "apache_2_0_or_mit-70d858d7-8968-9e7f-b90f-18b72fb96bef"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- Apache-2.0 OR MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/tauri-workspace",
+      "repository_download_url": "https://registry.npmjs.org/tauri-workspace/-/tauri-workspace-0.0.0.tgz",
+      "api_data_url": "https://registry.npmjs.org/tauri-workspace/0.0.0",
+      "package_uid": "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "cargo-with-workspace/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/tauri-workspace@0.0.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/typescript",
+      "extracted_requirement": "^4.5.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/typescript?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cargo-with-workspace/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/covector",
+      "extracted_requirement": "^0.9.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/covector?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cargo-with-workspace/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/husky",
+      "extracted_requirement": "^6.0.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/husky?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cargo-with-workspace/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/prettier",
+      "extracted_requirement": "^2.5.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/prettier?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cargo-with-workspace/package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "mit_or_apache_2_0__and_cc_by_nc_nd_4_0-71efc9f6-0e5a-a573-25ad-cd1e32f50720",
+      "license_expression": "(mit OR apache-2.0) AND cc-by-nc-nd-4.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "apache_2_0-62ae3761-33a2-9012-c9ab-0dd8e74dae85",
+      "license_expression": "apache-2.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8",
+      "license_expression": "apache-2.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "apache_2_0_or_mit-8028b724-ab19-ab66-3288-312e7edc4fd9",
+      "license_expression": "apache-2.0 OR mit",
+      "detection_count": 4
+    },
+    {
+      "identifier": "apache_2_0_or_mit-70d858d7-8968-9e7f-b90f-18b72fb96bef",
+      "license_expression": "apache-2.0 OR mit",
+      "detection_count": 2
+    },
+    {
+      "identifier": "cc0_1_0-309b9888-634d-163a-1eaa-15f7837d2907",
+      "license_expression": "cc0-1.0",
+      "detection_count": 1
+    },
+    {
+      "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929",
+      "license_expression": "mit",
+      "detection_count": 1
+    },
+    {
+      "identifier": "unknown-91d148c3-19ed-e6b1-0d37-5f588dcd6a94",
+      "license_expression": "unknown",
+      "detection_count": 3
+    }
+  ],
+  "files": [
+    {
+      "path": "cargo-with-workspace",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0 OR mit",
+          "declared_license_expression_spdx": "Apache-2.0 OR MIT",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0 OR mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 17,
+                  "end_line": 17,
+                  "matched_length": 6,
+                  "match_coverage": 100.0,
+                  "matcher": "2-aho",
+                  "license_expression": "apache-2.0 OR mit",
+                  "rule_identifier": "apache-2.0_or_mit_37.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_37.RULE"
+                }
+              ],
+              "identifier": "apache_2_0_or_mit-8028b724-ab19-ab66-3288-312e7edc4fd9"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "cargo_toml",
+          "purl": null
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0 OR mit",
+      "detected_license_expression_spdx": "Apache-2.0 OR MIT",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0 OR mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 17,
+              "end_line": 17,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0 OR mit",
+              "rule_identifier": "apache-2.0_or_mit_37.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_37.RULE"
+            }
+          ],
+          "identifier": "apache_2_0_or_mit-8028b724-ab19-ab66-3288-312e7edc4fd9"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 8.0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/LICENSE.spdx",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "cc0-1.0 AND apache-2.0",
+      "detected_license_expression_spdx": "CC0-1.0 AND Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "cc0-1.0",
+          "matches": [
+            {
+              "score": 95.0,
+              "start_line": 2,
+              "end_line": 2,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "cc0-1.0",
+              "rule_identifier": "spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
+              "rule_relevance": 95,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_cc0-1.0_for_cc0-1.0.RULE"
+            }
+          ],
+          "identifier": "cc0_1_0-309b9888-634d-163a-1eaa-15f7837d2907"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 7,
+              "end_line": 7,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 5.56,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/LICENSE_APACHE-2.0",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "matches": [
+            {
+              "score": 75.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "1-hash",
+              "license_expression": "apache-2.0",
+              "rule_identifier": "apache-2.0_3.RULE",
+              "rule_relevance": 75,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_3.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-62ae3761-33a2-9012-c9ab-0dd8e74dae85"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/LICENSE_MIT",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 1,
+              "end_line": 1,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit",
+              "rule_identifier": "mit_14.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE"
+            }
+          ],
+          "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 22.22,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "(mit OR apache-2.0) AND cc-by-nc-nd-4.0",
+      "detected_license_expression_spdx": "(MIT OR Apache-2.0) AND CC-BY-NC-ND-4.0",
+      "license_detections": [
+        {
+          "license_expression": "(mit OR apache-2.0) AND cc-by-nc-nd-4.0",
+          "matches": [
+            {
+              "score": 99.0,
+              "start_line": 19,
+              "end_line": 19,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "mit OR apache-2.0",
+              "rule_identifier": "mit_or_apache-2.0_1.RULE",
+              "rule_relevance": 99,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_1.RULE"
+            },
+            {
+              "score": 100.0,
+              "start_line": 21,
+              "end_line": 21,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "cc-by-nc-nd-4.0",
+              "rule_identifier": "cc-by-nc-nd-4.0_27.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-nc-nd-4.0_27.RULE"
+            }
+          ],
+          "identifier": "mit_or_apache_2_0__and_cc_by_nc_nd_4_0-71efc9f6-0e5a-a573-25ad-cd1e32f50720"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 4.52,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core/tauri",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core/tauri-build",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core/tauri-build/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "tauri-build",
+          "version": "2.0.0-alpha.11",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "build time code to pair with https://crates.io/crates/tauri",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "workspace",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": {
+            "workspace": true
+          },
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": {
+            "workspace": true
+          },
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "unknown",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+          "license_detections": [
+            {
+              "license_expression": "unknown",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "matcher": "5-undetected",
+                  "license_expression": "unknown",
+                  "rule_identifier": "package-manifest-unknown-06e9bf2862e301d2e03347936ee156170df84855",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-06e9bf2862e301d2e03347936ee156170df84855",
+                  "matched_text": "license {'workspace': True}"
+                }
+              ],
+              "identifier": "unknown-91d148c3-19ed-e6b1-0d37-5f588dcd6a94"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "workspace: yes\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://crates.io/crates/tauri-build",
+          "repository_download_url": "https://crates.io/api/v1/crates/tauri-build/2.0.0-alpha.11/download",
+          "api_data_url": "https://crates.io/api/v1/crates/tauri-build",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/tauri-build@2.0.0-alpha.11"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core/tauri-runtime",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core/tauri-runtime/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "tauri-runtime",
+          "version": "1.0.0-alpha.4",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "Runtime for Tauri applications",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "workspace",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": {
+            "workspace": true
+          },
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": {
+            "workspace": true
+          },
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "unknown",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+          "license_detections": [
+            {
+              "license_expression": "unknown",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "matcher": "5-undetected",
+                  "license_expression": "unknown",
+                  "rule_identifier": "package-manifest-unknown-06e9bf2862e301d2e03347936ee156170df84855",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-06e9bf2862e301d2e03347936ee156170df84855",
+                  "matched_text": "license {'workspace': True}"
+                }
+              ],
+              "identifier": "unknown-91d148c3-19ed-e6b1-0d37-5f588dcd6a94"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "workspace: yes\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://crates.io/crates/tauri-runtime",
+          "repository_download_url": "https://crates.io/api/v1/crates/tauri-runtime/1.0.0-alpha.4/download",
+          "api_data_url": "https://crates.io/api/v1/crates/tauri-runtime",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/tauri-runtime@1.0.0-alpha.4"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core/tauri/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "tauri",
+          "version": "2.0.0-alpha.17",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "Make tiny, secure apps for all desktop platforms with Tauri",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "workspace",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": {
+            "workspace": true
+          },
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": {
+            "workspace": true
+          },
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "unknown",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+          "license_detections": [
+            {
+              "license_expression": "unknown",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "matcher": "5-undetected",
+                  "license_expression": "unknown",
+                  "rule_identifier": "package-manifest-unknown-06e9bf2862e301d2e03347936ee156170df84855",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-06e9bf2862e301d2e03347936ee156170df84855",
+                  "matched_text": "license {'workspace': True}"
+                }
+              ],
+              "identifier": "unknown-91d148c3-19ed-e6b1-0d37-5f588dcd6a94"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "workspace: yes\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://crates.io/crates/tauri",
+          "repository_download_url": "https://crates.io/api/v1/crates/tauri/2.0.0-alpha.17/download",
+          "api_data_url": "https://crates.io/api/v1/crates/tauri",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/tauri@2.0.0-alpha.17"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core/tests",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core/tests/restart",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/core/tests/restart/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "restart",
+          "version": "0.1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Tauri Programme within The Commons Conservancy",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0 OR mit",
+          "declared_license_expression_spdx": "Apache-2.0 OR MIT",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0 OR mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0 OR mit",
+                  "rule_identifier": "apache-2.0_or_mit_36.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+                  "matched_text": "Apache-2.0 OR MIT"
+                }
+              ],
+              "identifier": "apache_2_0_or_mit-70d858d7-8968-9e7f-b90f-18b72fb96bef"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache-2.0 OR MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://crates.io/crates/restart",
+          "repository_download_url": "https://crates.io/api/v1/crates/restart/0.1.0/download",
+          "api_data_url": "https://crates.io/api/v1/crates/restart",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/restart@0.1.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0 OR mit",
+      "detected_license_expression_spdx": "Apache-2.0 OR MIT",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0 OR mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 5,
+              "end_line": 5,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0 OR mit",
+              "rule_identifier": "apache-2.0_or_mit_37.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_37.RULE"
+            }
+          ],
+          "identifier": "apache_2_0_or_mit-8028b724-ab19-ab66-3288-312e7edc4fd9"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 20.0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "tauri-workspace",
+          "version": "0.0.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "contributor",
+              "name": "Tauri Programme within The Commons Conservancy",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/tauri-workspace/-/tauri-workspace-0.0.0.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "git+https://github.com/tauri-apps/tauri.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0 OR mit",
+          "declared_license_expression_spdx": "Apache-2.0 OR MIT",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0 OR mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0 OR mit",
+                  "rule_identifier": "apache-2.0_or_mit_36.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+                  "matched_text": "Apache-2.0 OR MIT"
+                }
+              ],
+              "identifier": "apache_2_0_or_mit-70d858d7-8968-9e7f-b90f-18b72fb96bef"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- Apache-2.0 OR MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/typescript",
+              "extracted_requirement": "^4.5.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/covector",
+              "extracted_requirement": "^0.9.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/husky",
+              "extracted_requirement": "^6.0.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/prettier",
+              "extracted_requirement": "^2.5.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/tauri-workspace",
+          "repository_download_url": "https://registry.npmjs.org/tauri-workspace/-/tauri-workspace-0.0.0.tgz",
+          "api_data_url": "https://registry.npmjs.org/tauri-workspace/0.0.0",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/tauri-workspace@0.0.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0 OR mit",
+      "detected_license_expression_spdx": "Apache-2.0 OR MIT",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0 OR mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 4,
+              "end_line": 4,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0 OR mit",
+              "rule_identifier": "apache-2.0_or_mit_37.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_37.RULE"
+            }
+          ],
+          "identifier": "apache_2_0_or_mit-8028b724-ab19-ab66-3288-312e7edc4fd9"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 8.33,
+      "scan_errors": []
+    }
+  ]
+}

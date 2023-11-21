@@ -110,6 +110,15 @@ class TestCargo(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_scan_works_on_cargo_workspace(self):
+        test_file = self.get_test_loc('cargo/cargo-with-workspace')
+        expected_file = self.get_test_loc('cargo/cargo-with-workspace.expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', '--license', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
 
 PERSON_PARSER_TEST_TABLE = [
     ('Barney Rubble <b@rubble.com>', ('Barney Rubble ', '<b@rubble.com>')),
