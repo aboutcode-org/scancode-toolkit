@@ -21,74 +21,7 @@ Handle Rust cargo crates
 """
 
 
-class CargoTomlHandler(models.DatafileHandler):
-    datasource_id = 'cargo_toml'
-    path_patterns = ('*/Cargo.toml', '*/cargo.toml',)
-    default_package_type = 'cargo'
-    default_primary_language = 'Rust'
-    description = 'Rust Cargo.toml package manifest'
-    documentation_url = 'https://doc.rust-lang.org/cargo/reference/manifest.html'
-
-    @classmethod
-    def parse(cls, location):
-        package_data = toml.load(location, _dict=dict)
-        core_package_data = package_data.get('package', {})
-        workspace = package_data.get('workspace', {})
-
-        name = core_package_data.get('name')
-        version = core_package_data.get('version')
-        description = core_package_data.get('description') or ''
-        description = description.strip()
-
-        authors = core_package_data.get('authors') or []
-        parties = list(get_parties(person_names=authors, party_role='author'))
-
-        extracted_license_statement = core_package_data.get('license')
-        # TODO: load as a notice_text
-        license_file = core_package_data.get('license-file')
-
-        keywords = core_package_data.get('keywords') or []
-        categories = core_package_data.get('categories') or []
-        keywords.extend(categories)
-
-        # cargo dependencies are complex and can be overriden at multiple levels
-        dependencies = []
-        for key, value in core_package_data.items():
-            if key.endswith('dependencies'):
-                dependencies.extend(dependency_mapper(dependencies=value, scope=key))
-
-        # TODO: add file refs:
-        # - readme, include and exclude
-        # TODO: other URLs
-        # - documentation
-
-        vcs_url = core_package_data.get('repository')
-        homepage_url = core_package_data.get('homepage')
-        repository_homepage_url = name and f'https://crates.io/crates/{name}'
-        repository_download_url = name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download'
-        api_data_url = name and f'https://crates.io/api/v1/crates/{name}'
-        extra_data = {}
-        if workspace:
-            extra_data["workspace"] = workspace
-
-        yield models.PackageData(
-            datasource_id=cls.datasource_id,
-            type=cls.default_package_type,
-            name=name,
-            version=version,
-            primary_language=cls.default_primary_language,
-            description=description,
-            parties=parties,
-            extracted_license_statement=extracted_license_statement,
-            vcs_url=vcs_url,
-            homepage_url=homepage_url,
-            repository_homepage_url=repository_homepage_url,
-            repository_download_url=repository_download_url,
-            api_data_url=api_data_url,
-            dependencies=dependencies,
-            extra_data=extra_data,
-        )
-
+class CargoBaseHandler(models.DatafileHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         """
@@ -161,6 +94,79 @@ class CargoTomlHandler(models.DatafileHandler):
         return old_package_data
 
 
+
+class CargoTomlHandler(CargoBaseHandler):
+    datasource_id = 'cargo_toml'
+    path_patterns = ('*/Cargo.toml', '*/cargo.toml',)
+    default_package_type = 'cargo'
+    default_primary_language = 'Rust'
+    description = 'Rust Cargo.toml package manifest'
+    documentation_url = 'https://doc.rust-lang.org/cargo/reference/manifest.html'
+
+    @classmethod
+    def parse(cls, location):
+        package_data = toml.load(location, _dict=dict)
+        core_package_data = package_data.get('package', {})
+        workspace = package_data.get('workspace', {})
+
+        name = core_package_data.get('name')
+        version = core_package_data.get('version')
+        if isinstance(version, dict) and "workspace" in version:
+            version = "workspace"
+
+        description = core_package_data.get('description') or ''
+        description = description.strip()
+
+        authors = core_package_data.get('authors') or []
+        parties = list(get_parties(person_names=authors, party_role='author'))
+
+        extracted_license_statement = core_package_data.get('license')
+        # TODO: load as a notice_text
+        license_file = core_package_data.get('license-file')
+
+        keywords = core_package_data.get('keywords') or []
+        categories = core_package_data.get('categories') or []
+        keywords.extend(categories)
+
+        # cargo dependencies are complex and can be overriden at multiple levels
+        dependencies = []
+        for key, value in core_package_data.items():
+            if key.endswith('dependencies'):
+                dependencies.extend(dependency_mapper(dependencies=value, scope=key))
+
+        # TODO: add file refs:
+        # - readme, include and exclude
+        # TODO: other URLs
+        # - documentation
+
+        vcs_url = core_package_data.get('repository')
+        homepage_url = core_package_data.get('homepage')
+        repository_homepage_url = name and f'https://crates.io/crates/{name}'
+        repository_download_url = name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download'
+        api_data_url = name and f'https://crates.io/api/v1/crates/{name}'
+        extra_data = {}
+        if workspace:
+            extra_data["workspace"] = workspace
+
+        yield models.PackageData(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            primary_language=cls.default_primary_language,
+            description=description,
+            parties=parties,
+            extracted_license_statement=extracted_license_statement,
+            vcs_url=vcs_url,
+            homepage_url=homepage_url,
+            repository_homepage_url=repository_homepage_url,
+            repository_download_url=repository_download_url,
+            api_data_url=api_data_url,
+            dependencies=dependencies,
+            extra_data=extra_data,
+        )
+
+
 CARGO_ATTRIBUTE_MAPPING = {
     # Fields in PackageData model: Fields in cargo
     "homepage_url": "homepage",
@@ -173,7 +179,8 @@ CARGO_ATTRIBUTE_MAPPING = {
     "declared_license_expression_spdx": "declared_license_expression_spdx",
 }
 
-class CargoLockHandler(models.DatafileHandler):
+
+class CargoLockHandler(CargoBaseHandler):
     datasource_id = 'cargo_lock'
     path_patterns = ('*/Cargo.lock', '*/cargo.lock',)
     default_package_type = 'cargo'
@@ -220,18 +227,6 @@ class CargoLockHandler(models.DatafileHandler):
             dependencies=dependencies,
         )
 
-    @classmethod
-    def assemble(cls, package_data, resource, codebase, package_adder):
-        """
-        Assemble Cargo.toml and possible Cargo.lock datafiles
-        """
-        yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=('Cargo.toml', 'Cargo.lock',),
-            directory=resource.parent(codebase),
-            codebase=codebase,
-            package_adder=package_adder,
-        )
-
 
 def dependency_mapper(dependencies, scope='dependencies'):
     """
@@ -261,13 +256,11 @@ def dependency_mapper(dependencies, scope='dependencies'):
         )
 
 
-def get_parties(person_names, party_role, debug=False):
+def get_parties(person_names, party_role):
     """
     Yields Party of `party_role` given a list of ``person_names`` strings.
     https://doc.rust-lang.org/cargo/reference/manifest.html#the-authors-field-optional
     """
-    if debug:
-        raise Exception(person_names)
     for person_name in person_names:
         name, email = parse_person(person_name)
         yield models.Party(

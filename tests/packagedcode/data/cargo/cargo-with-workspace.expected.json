@@ -456,12 +456,12 @@
     {
       "identifier": "apache_2_0_or_mit-8028b724-ab19-ab66-3288-312e7edc4fd9",
       "license_expression": "apache-2.0 OR mit",
-      "detection_count": 8
+      "detection_count": 9
     },
     {
       "identifier": "apache_2_0_or_mit-70d858d7-8968-9e7f-b90f-18b72fb96bef",
       "license_expression": "apache-2.0 OR mit",
-      "detection_count": 1
+      "detection_count": 2
     },
     {
       "identifier": "cc0_1_0-309b9888-634d-163a-1eaa-15f7837d2907",
@@ -1243,6 +1243,380 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 20.0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/examples",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/examples/api",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/examples/api/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "api",
+          "version": "1.0.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/api/-/api-1.0.0.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/%40tauri-apps/api",
+              "extracted_requirement": "../../tooling/api/dist",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/%40zerodevx/svelte-json-view",
+              "extracted_requirement": "0.2.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/%40iconify-json/codicon",
+              "extracted_requirement": "^1.1.10",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/%40iconify-json/ph",
+              "extracted_requirement": "^1.1.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/internal-ip",
+              "extracted_requirement": "^7.0.0",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/unocss",
+              "extracted_requirement": "^0.39.3",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/%40sveltejs/vite-plugin-svelte",
+              "extracted_requirement": "^2.4.6",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/svelte",
+              "extracted_requirement": "^4.2.1",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/vite",
+              "extracted_requirement": "^4.4.9",
+              "scope": "devDependencies",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/api",
+          "repository_download_url": "https://registry.npmjs.org/api/-/api-1.0.0.tgz",
+          "api_data_url": "https://registry.npmjs.org/api/1.0.0",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/api@1.0.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/examples/api/src-tauri",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/examples/api/src-tauri/Cargo.lock",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/addr2line@0.21.0",
+              "extracted_requirement": "0.21.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/adler@1.0.2",
+              "extracted_requirement": "1.0.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/aead@0.5.2",
+              "extracted_requirement": "0.5.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "cargo_lock",
+          "purl": null
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "cargo-with-workspace/examples/api/src-tauri/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "api",
+          "version": "0.1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "An example Tauri Application showcasing the api",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0 OR mit",
+          "declared_license_expression_spdx": "Apache-2.0 OR MIT",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0 OR mit",
+              "matches": [
+                {
+                  "score": 100.0,
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "matcher": "1-hash",
+                  "license_expression": "apache-2.0 OR mit",
+                  "rule_identifier": "apache-2.0_or_mit_36.RULE",
+                  "rule_relevance": 100,
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+                  "matched_text": "Apache-2.0 OR MIT"
+                }
+              ],
+              "identifier": "apache_2_0_or_mit-70d858d7-8968-9e7f-b90f-18b72fb96bef"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache-2.0 OR MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://crates.io/crates/api",
+          "repository_download_url": "https://crates.io/api/v1/crates/api/0.1.0/download",
+          "api_data_url": "https://crates.io/api/v1/crates/api",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/api@0.1.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "apache-2.0 OR mit",
+      "detected_license_expression_spdx": "Apache-2.0 OR MIT",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0 OR mit",
+          "matches": [
+            {
+              "score": 100.0,
+              "start_line": 7,
+              "end_line": 7,
+              "matched_length": 6,
+              "match_coverage": 100.0,
+              "matcher": "2-aho",
+              "license_expression": "apache-2.0 OR mit",
+              "rule_identifier": "apache-2.0_or_mit_37.RULE",
+              "rule_relevance": 100,
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_37.RULE"
+            }
+          ],
+          "identifier": "apache_2_0_or_mit-8028b724-ab19-ab66-3288-312e7edc4fd9"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.28,
       "scan_errors": []
     },
     {
