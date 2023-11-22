@@ -56,3 +56,17 @@ class TestNuget(PackageTester):
         package = nuget.NugetNuspecHandler.parse(test_file)
         expected_loc = self.get_test_loc('nuget/Castle.Core.nuspec.json.expected')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_csproj(self):
+        # See: https://github.com/microsoft/VFSForGit/blob/master/GVFS/GVFS.GVFlt/GVFS.GVFlt.csproj
+        test_file = self.get_test_loc('nuget/csproj/gvfs.csproj')
+        package = nuget.NugetCsprojHandler.parse(test_file)
+        expected_loc = self.get_test_loc('nuget/csproj/gvfs.csproj.expected')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_packages_config(self):
+        # See: https://learn.microsoft.com/en-us/nuget/reference/packages-config#examples
+        test_file = self.get_test_loc('nuget/packages-config/packages.config')
+        package = nuget.NugetPackagesConfigHandler.parse(test_file)
+        expected_loc = self.get_test_loc('nuget/packages-config/packages.config.expected')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)

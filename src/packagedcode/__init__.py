@@ -148,6 +148,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     nuget.NugetNupkgHandler,
     nuget.NugetNuspecHandler,
+    nuget.NugetCsprojHandler,
+    nuget.NugetPackagesConfigHandler,
 
     opam.OpamFileHandler,
 
