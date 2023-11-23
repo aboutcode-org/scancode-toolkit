@@ -966,3 +966,35 @@ def test_getting_version_returns_valid_yaml():
     args = ['-V']
     result = run_scan_click(args)
     assert saneyaml.load(result.output) == test_version
+
+
+faulty_json = [
+    ('various-inputs/not-a-json-but-png.json', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
+    ('various-inputs/not-a-yaml-but-png.yaml', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
+    ('various-inputs/png.png', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
+    ('various-inputs/true-json.json', 2, 'Error: Invalid value: Failed to process codebase'),
+    ('various-inputs/true-yaml.yaml', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
+    ('various-inputs/true-yaml-license-policy-yaml.yml', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
+    ('various-inputs/true-yaml.yml', 2, 'Error: Invalid value: Input JSON scan file(s) is not valid JSON'),
+]
+
+
+@pytest.mark.parametrize('test_file, expected_rc, expected_message', faulty_json)
+def test_scan_does_validate_input_and_fails_on_faulty_json_input(test_file, expected_rc, expected_message):
+    test_file = test_env.get_test_loc(test_file)
+    result = run_scan_click(
+        [
+            '--from-json',
+            test_file,
+            '--json-pp',
+            '-',
+         ],
+        expected_rc=expected_rc,
+        retry=False,
+    )
+    assert expected_message in result.output
+
+
+def test_scan_does_validate_input_and_does_not_fail_on_valid_json_input():
+    test_file = test_env.get_test_loc('various-inputs/true-scan-json.json')
+    run_scan_click(['--from-json', test_file, '--json-pp', '-'], retry=False)
