@@ -64,6 +64,13 @@ class TestNuget(PackageTester):
         expected_loc = self.get_test_loc('nuget/csproj/gvfs.csproj.expected')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_csproj_multiple_groups(self):
+        # See: https://github.com/files-community/Files/blob/main/src/Files.App/Files.App.csproj
+        test_file = self.get_test_loc('nuget/csproj/multiple_groups.csproj')
+        package = nuget.NugetCsprojHandler.parse(test_file)
+        expected_loc = self.get_test_loc('nuget/csproj/multiple_groups.csproj.expected')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_packages_config(self):
         # See: https://learn.microsoft.com/en-us/nuget/reference/packages-config#examples
         test_file = self.get_test_loc('nuget/packages-config/packages.config')

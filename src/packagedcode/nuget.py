@@ -192,20 +192,24 @@ class NugetCsprojHandler(models.DatafileHandler):
         if not parsed:
             return
 
-        pkgs = parsed.get('Project', {}).get('ItemGroup', {}).get('PackageReference')
-        if pkgs is None:
+        groups = parsed.get('Project', {}).get('ItemGroup')
+        if groups is None:
             return
-        for pkg in pkgs if isinstance(pkgs, list) else [pkgs]:
-            name = pkg.get('Include') or pkg.get('@Include')
-            version = pkg.get('Version') or pkg.get('@Version')
-            urls = get_urls(name, version)
-            yield models.PackageData(
-                datasource_id=cls.datasource_id,
-                type=cls.default_package_type,
-                name=name,
-                version=version,
-                **urls,
-            )
+        for group in groups if isinstance(groups, list) else [groups]:
+            pkgs = group.get('PackageReference')
+            if pkgs is None:
+                continue
+            for pkg in pkgs if isinstance(pkgs, list) else [pkgs]:
+                name = pkg.get('Include') or pkg.get('@Include')
+                version = pkg.get('Version') or pkg.get('@Version')
+                urls = get_urls(name, version)
+                yield models.PackageData(
+                    datasource_id=cls.datasource_id,
+                    type=cls.default_package_type,
+                    name=name,
+                    version=version,
+                    **urls,
+                )
 
 class NugetPackagesConfigHandler(models.DatafileHandler):
     datasource_id = 'nuget_packages_config'
