@@ -1,0 +1,9 @@
+---
+license_expression: bigscience-rail-1.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://bigscience.huggingface.co/blog/the-bigscience-rail-license
+---
+
+[BigScience RAIL](https://bigscience.huggingface.co/blog/the-bigscience-rail-license)

@@ -1,0 +1,10 @@
+---
+license_expression: cc0-1.0
+is_license_notice: yes
+ignorable_urls:
+    - https://creativecommons.org/publicdomain/zero/1.0
+---
+
+All other files that do not have an explicit copyright notice (e.g., all
+examples and some demos) are licensed under the Creative Commons CC0 1.0 license. The
+exact text can be found at https://creativecommons.org/publicdomain/zero/1.0/.
