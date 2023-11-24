@@ -1,0 +1,151 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_urls:
+    - ftp://ftp.greatcircle.com/pub/majordomo/
+ignorable_emails:
+    - majordomo-license@greatcircle.com
+---
+
+MAJORDOMO LICENSE AGREEMENT
+
+
+                             Version 1.1
+                              18 May 96
+
+Great Circle Associates (GCA) is the original developer of Majordomo,
+a package for managing Internet mailing lists.  Since its initial
+release, many organizations and individuals have contributed
+enhancements and fixes, but the original copyright has been retained
+by Great Circle Associates.
+
+Majordomo is distributed in source code form, with almost all
+modules written in Perl (there is one small C program), and runs
+on many UNIX platforms.  Majordomo is not a supported product of
+Great Circle Associates, but is made available for use on the following
+basis.
+
+GCA grants you a license as follows to the Majordomo package:
+
+     1.  LICENSE.  GCA grants you a non-exclusive, non-transferable
+license for the Majordomo package ("Majordomo") and its associated
+documentation, subject to all of the following terms and conditions.
+In accepting a copy of Majordomo you agree to the following terms
+and conditions.
+
+     This license permits you to use, copy, and modify Majordomo
+solely for your organization's use.
+
+     2.    LIMITATIONS ON LICENSE.
+
+           a.    You may only use, copy, and modify Majordomo
+                 as expressly provided for in this Agreement.
+                 You must reproduce and include this Agreement, and
+                 GCA's  copyright notices on any copy and its
+                 associated documentation.
+
+           b.    No part of Majordomo may be incorporated into any
+                 program or other product that is sold, or for which any
+                 revenue is received without written permission of
+                 Great Circle Associates, with the following exceptions:
+ 
+                     You may install Majordomo at your site and run
+                     mailing lists for other using it, and charge for
+                     that service.
+      
+                     You may install Majordomo at other sites, and
+                     charge for your time to install, configure,
+                     customize, and manage it.
+      
+                     You may charge for enhancements you've made to
+                     the Majordomo software, subject to the distribution
+                     restrictions listed below.
+  
+                 You may not charge for the Majordomo software
+                 itself.
+ 
+                 A commercial license will be required in all other cases.
+
+           c.    If Majordomo is being provided or configured for a
+                 customer, the provider must clearly state in
+                 documentation and bid/proposal materials that the
+                 Majordomo technologies are licensed and provided
+                 by Great Circle Associates, and a copy of this
+                 license must be included with the configured
+                 system.
+
+           d.    Majordomo, if modified, must carry prominent notices
+                 stating that changes have been made, and the dates of
+                 any such changes.
+
+                 You may publicly distribute an unmodified and
+                 complete version of Majordomo, for instance as
+                 part of a collection of free software packages,
+                 but you must distribute the whole package, and
+                 you must tell people where they can obtain the
+                 latest version:
+                     ftp://ftp.greatcircle.com/pub/majordomo/
+
+                 You may not publicly distribute a modified or
+                 incomplete version of Majordomo.  You may make
+                 such a version available to your own clients,
+                 subject to the restrictions below, but not to the
+                 general public (for instance, by placing it on an
+                 anonymous FTP site).
+
+                 You may not distribute (publicly or privately) a modified
+                 version of Majordomo without clearly identifying it as such
+                 (by changing the version string in majordomo_version.pl),
+                 identifying the changes (through appropriate README
+                 documentation and/or comments in the code),
+                 identifying who will be responsible for supporting
+                 the modified version, and informing people receiving
+                 the modified version where they can find an
+                 unmodified version:
+                     ftp://ftp.greatcircle.com/pub/majordomo/
+
+           e.    All rights not expressly granted herein are reserved to GCA.
+
+     3.  NO GCA OBLIGATION: You are solely responsible for maintaining
+your copy of Majordomo and the security of the operating environment in
+which Majordomo may be used.  You are solely responsible for all of your
+costs and expenses incurred in connection with the distribution of Majordomo
+or any Application Program hereunder, and GCA shall have no liability,
+obligation or responsibility therefor. GCA shall have no obligation to
+provide maintenance, support, upgrades, or new releases to you.
+
+     4.  NO WARRANTY OF PERFORMANCE.  Majordomo and its associated
+documentation are licensed "as is" without warranty as to their
+performance, merchantability, or fitness for any particular purpose.
+The entire risk as to the results and performance of Majordomo is
+assumed by you.  Should Majordomo prove defective, you assume the
+entire cost of all necessary servicing, repair, or correction.
+
+     5.  LIMITATION OF LIABILITY.  Neither GCA nor any other
+person who has been involved in the creation, production or delivery
+of Majordomo shall be liable to you or to any other person for any
+direct, indirect, special, incidental, consequential, or punitive
+damages, even if GCA has been advised of the possibility of such
+damages.
+
+     6.  TERM.  The license granted hereunder is effective until
+terminated.  This license shall automatically terminate without notice
+if you breach any of the provisions hereof.  You may terminate it at
+any time by destroying Majordomo and its associated documentation.
+
+     7.    GENERAL.
+
+           a.    This Agreement shall be governed by the laws of
+                 the State of California.
+
+           b.    Address all correspondence regarding this license
+                 to GCA's electronic mail address
+                 <majordomo-license@greatcircle.com>, or to
+
+                      Great Circle Associates
+                      1057 West Dana Street
+                      Mountain View, CA  94041
+                      USA
+
+[ Note: the form of this license was derived, by permission, from the license
+for the Firewalls Toolkit distributed by Trusted Information Systems, Inc. ]
