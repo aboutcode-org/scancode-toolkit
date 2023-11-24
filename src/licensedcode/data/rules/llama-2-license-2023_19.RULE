@@ -1,0 +1,9 @@
+---
+license_expression: llama-2-license-2023
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://github.com/facebookresearch/llama/blob/main/LICENSE
+---
+
+[LLAMA2 License](https://github.com/facebookresearch/llama/blob/main/LICENSE)
