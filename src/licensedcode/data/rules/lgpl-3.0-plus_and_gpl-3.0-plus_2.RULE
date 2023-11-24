@@ -1,0 +1,13 @@
+---
+license_expression: lgpl-3.0-plus AND gpl-3.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.GPL
+    - LICENSE.LGPL
+---
+
+This is either the GNU General Public License
+or the GNU Lesser General Public License (as published by the Free Software
+Foundation; either version 3 of the License or (at your option) any later
+version). The texts of both licenses can be found in the files LICENSE.GPL
+and LICENSE.LGPL.
