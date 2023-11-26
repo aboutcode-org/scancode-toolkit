@@ -1,0 +1,9 @@
+---
+license_expression: afl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/license/afl-3-0-php/
+---
+
+Licensed under the Academic Software License version 3.0  https://opensource.org/license/afl-3-0-php/
