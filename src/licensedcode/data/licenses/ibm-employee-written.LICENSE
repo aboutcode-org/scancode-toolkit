@@ -1,8 +1,10 @@
 ---
-license_expression: proprietary-license
-is_license_text: yes
-is_deprecated: yes
-notes: This is now the ibm-employee-written LICENSE
+key: ibm-employee-written
+short_name: IBM Employee-Written Software License
+name: IBM License Agreement for IBM Employee-Written Software
+category: Proprietary Free
+owner: IBM
+spdx_license_key: LicenseRef-scancode-ibm-employee-written
 ---
 
 IBM License Agreement for IBM Employee-Written Software

@@ -1,0 +1,67 @@
+---
+key: ibm-glextrusion
+short_name: IBM glextrusion License
+name: IBM glextrusion License
+category: Permissive
+owner: IBM
+homepage_url: https://github.com/linas/glextrusion/blob/master/src/COPYING.src
+spdx_license_key: LicenseRef-scancode-ibm-glextrusion
+text_urls:
+    - https://raw.githubusercontent.com/linas/glextrusion/master/src/COPYING.src
+---
+
+This software is owned by International Business Machines Corporation
+("IBM"), or its subsidiaries or IBM's suppliers, and is copyrighted and
+licensed, not sold.  IBM retains title to the software, and grants you a
+nonexclusive license for the software.
+
+Under this license, you may:
+
+1) use the software on one or more machines at a time;
+2) make copies of the software for use or backup purposes within your
+   enterprise;
+3) modify this software and merge it with another program; and
+4) make copies of the original file you downloaded and distribute it,
+   provided that you transfer a copy of this license to the other party.
+   The other party agrees to these terms by its first use of this software.
+
+You must reproduce the copyright notice and any other legend of
+ownership on each copy or partial copy of the software.
+
+This software, as provided by IBM, is only intended to assist in the
+development of a working software program. The software may not function
+as written: additional code is required. In addition, the software may
+not compile and/or bind successfully as written.
+
+IBM PROVIDES THE SOFTWARE "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK
+AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH YOU.  SHOULD
+ANY PART OF THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION. IN NO EVENT, UNLESS
+REQUIRED BY APPLICABLE LAW, SHALL IBM BE LIABLE TO YOU FOR DAMAGES,
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES
+ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE (INCLUDING BUT
+NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES
+SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE SOFTWARE TO
+OPERATE WITH ANY OTHER PROGRAMS), EVEN IF IBM HAS BEEN ADVISED IN
+ADVANCE OF THE POSSIBILITY OF SUCH DAMAGES.
+
+IBM does not warrant that the contents of the software will meet your
+requirements, that the software is error-free or that the software does
+not infringe on any intellectual property rights of any third party.
+
+IBM may make improvements and/or changes in the software at any time.
+
+Changes may or may not be made periodically to the information in the
+software; these changes may be reported, for the software included
+herein, in new editions.
+
+References, if any, in the software to IBM products, programs, or
+services do not imply that IBM intends to make these available in all
+countries in which IBM operates. Any reference to an IBM licensed
+program in the software is not intended to state or imply that only
+IBM's  licensed program may be used. Any functionally equivalent program
+may be used.
+
+The laws of New York State govern this agreement.
