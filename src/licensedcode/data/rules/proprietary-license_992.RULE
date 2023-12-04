@@ -1,0 +1,10 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+minimum_coverage: 90
+notes: an odd license https://github.com/Rakhisharma/Extension/blob/b7f6ed50d9fca2042bb0f5b84b8ec960d16e0301/ISC
+    License Copyright (c) 2017%2C Shailesh Singh#L3
+---
+
+To use, copy, modify, and/or distribute this software for any purpose with or without fee is {{hereby not granted without
+permission}}, provided that the above copyright notice and this permission notice appear in all copies.
