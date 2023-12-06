@@ -108,11 +108,13 @@ class CargoTomlHandler(CargoBaseHandler):
         package_data = toml.load(location, _dict=dict)
         core_package_data = package_data.get('package', {})
         workspace = package_data.get('workspace', {})
+        extra_data = {}
 
         name = core_package_data.get('name')
         version = core_package_data.get('version')
         if isinstance(version, dict) and "workspace" in version:
-            version = "workspace"
+            version = None
+            extra_data["version"] = "workspace"
 
         description = core_package_data.get('description') or ''
         description = description.strip()
@@ -144,7 +146,6 @@ class CargoTomlHandler(CargoBaseHandler):
         repository_homepage_url = name and f'https://crates.io/crates/{name}'
         repository_download_url = name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download'
         api_data_url = name and f'https://crates.io/api/v1/crates/{name}'
-        extra_data = {}
         if workspace:
             extra_data["workspace"] = workspace
 

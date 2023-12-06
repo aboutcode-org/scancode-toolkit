@@ -3,7 +3,7 @@
     "type": "cargo",
     "namespace": null,
     "name": "core-api",
-    "version": "workspace",
+    "version": null,
     "qualifiers": {},
     "subpath": null,
     "primary_language": "Rust",
@@ -33,12 +33,14 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
+    "extra_data": {
+      "version": "workspace"
+    },
     "dependencies": [],
     "repository_homepage_url": "https://crates.io/crates/core-api",
-    "repository_download_url": "https://crates.io/api/v1/crates/core-api/workspace/download",
+    "repository_download_url": null,
     "api_data_url": "https://crates.io/api/v1/crates/core-api",
     "datasource_id": "cargo_toml",
-    "purl": "pkg:cargo/core-api@workspace"
+    "purl": "pkg:cargo/core-api"
   }
 ]
