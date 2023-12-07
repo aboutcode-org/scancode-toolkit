@@ -3,7 +3,23 @@
     {
       "identifier": "example_installed_1-ec26d04a-f591-6524-a28f-b2c6b6d5086a",
       "license_expression": "example-installed-1",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "additional_license_plugin_test.txt",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 11,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "example-installed-1",
+          "rule_identifier": "example-installed-1.LICENSE",
+          "rule_relevance": 100,
+          "rule_url": null,
+          "matched_text": null
+        }
+      ]
     }
   ],
   "license_references": [

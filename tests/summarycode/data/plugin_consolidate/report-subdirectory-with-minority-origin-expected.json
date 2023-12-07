@@ -5,7 +5,23 @@
     {
       "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
       "license_expression": "mit",
-      "detection_count": 4
+      "detection_count": 4,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "report-subdirectory-with-minority-origin/b",
+          "start_line": 3,
+          "end_line": 7,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "mit",
+          "rule_identifier": "mit.LICENSE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "consolidated_components": [

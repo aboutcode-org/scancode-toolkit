@@ -3,7 +3,23 @@
     {
       "identifier": "blessing-728ecfdc-abda-aff7-2b96-4e2cbd706f0d",
       "license_expression": "blessing",
-      "detection_count": 136
+      "detection_count": 136,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "sqlite.tgz/sqlite3-binding2.c",
+          "start_line": 30,
+          "end_line": 35,
+          "matched_length": 42,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "blessing",
+          "rule_identifier": "blessing.LICENSE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/blessing.LICENSE",
+          "matched_text": "The author disclaims copyright to this source code.  In place of\n** a legal notice, here is a blessing:\n**\n**    May you do good and not evil.\n**    May you find forgiveness for yourself and forgive others.\n**    May you share freely, never taking more than you give."
+        }
+      ]
     }
   ],
   "files": [

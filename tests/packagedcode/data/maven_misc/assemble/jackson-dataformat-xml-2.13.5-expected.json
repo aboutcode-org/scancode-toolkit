@@ -119,13 +119,59 @@
       "detection_count": 2,
       "detection_log": [
         "unknown-reference-to-local-file"
+      ],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "jackson-dataformat-xml-2.13.5/META-INF/NOTICE",
+          "start_line": 11,
+          "end_line": 13,
+          "matched_length": 26,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "unknown-license-reference_375.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_375.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 100.0,
+          "from_file": "jackson-dataformat-xml-2.13.5/META-INF/LICENSE",
+          "start_line": 1,
+          "end_line": 8,
+          "matched_length": 43,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_394.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE",
+          "matched_text": null
+        }
       ]
     },
     {
       "identifier": "apache_2_0-8607fc22-7931-3e71-b7d5-bd208970dc6f",
       "license_expression": "apache-2.0",
       "detection_count": 2,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "jackson-dataformat-xml-2.13.5/META-INF/LICENSE",
+          "start_line": 1,
+          "end_line": 8,
+          "matched_length": 43,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_394.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

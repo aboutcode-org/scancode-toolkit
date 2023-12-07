@@ -235,37 +235,133 @@
       "detection_count": 2,
       "detection_log": [
         "from-package-file"
+      ],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
+          "start_line": 3,
+          "end_line": 18,
+          "matched_length": 119,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_2.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+          "matched_text": null
+        }
       ]
     },
     {
       "identifier": "apache_2_0-2e855fd2-d4e6-f202-a2a4-6953b9354518",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "johnzon-jsonb-1.2.11/META-INF/MANIFEST.MF",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 9,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_42.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
+          "matched_text": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 95.0,
+          "from_file": "johnzon-jsonb-1.2.11/META-INF/NOTICE",
+          "start_line": 5,
+          "end_line": 6,
+          "matched_length": 14,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_product_includes_2.RULE",
+          "rule_relevance": 95,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-8352cbe6-d199-3a43-cdc8-b14a837e2ce6",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "johnzon-jsonb-1.2.11/META-INF/MANIFEST.MF",
+          "start_line": 6,
+          "end_line": 6,
+          "matched_length": 11,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_osgi.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_osgi.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "johnzon-jsonb-1.2.11/META-INF/LICENSE",
+          "start_line": 2,
+          "end_line": 4,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_791.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-f089be2e-5d2c-9289-8733-3880be15665c",
       "license_expression": "apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 64.18,
+          "from_file": "johnzon-jsonb-1.2.11/META-INF/DEPENDENCIES",
+          "start_line": 9,
+          "end_line": 13,
+          "matched_length": 43,
+          "match_coverage": 100.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_1247.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1247.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

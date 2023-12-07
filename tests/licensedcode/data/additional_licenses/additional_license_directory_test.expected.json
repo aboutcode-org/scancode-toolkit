@@ -3,7 +3,37 @@
     {
       "identifier": "example1_and_example2-f86ebb61-26dd-be05-2a61-01d7b630ba62",
       "license_expression": "example1 AND example2",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "additional_license_directory_test.txt",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 9,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "example1",
+          "rule_identifier": "example1.LICENSE",
+          "rule_relevance": 100,
+          "rule_url": null,
+          "matched_text": null
+        },
+        {
+          "score": 100.0,
+          "from_file": "additional_license_directory_test.txt",
+          "start_line": 1,
+          "end_line": 5,
+          "matched_length": 69,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "example2",
+          "rule_identifier": "example2.LICENSE",
+          "rule_relevance": 100,
+          "rule_url": null,
+          "matched_text": null
+        }
+      ]
     }
   ],
   "license_references": [

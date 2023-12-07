@@ -4,13 +4,73 @@
       "identifier": "gpl_1_0_plus-0211bbc4-784e-97fe-2ac1-f150ccba866e",
       "license_expression": "gpl-1.0-plus",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 90.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 79,
+          "end_line": 79,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl_70.RULE",
+          "rule_relevance": 90,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_70.RULE",
+          "matched_text": "under GPL:"
+        }
+      ]
     },
     {
       "identifier": "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-c2393e5a-e531-304f-58a9-a6431d46d214",
       "license_expression": "gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 88,
+          "end_line": 89,
+          "matched_length": 20,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-2.0",
+          "rule_identifier": "gpl-2.0_870.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_870.RULE",
+          "matched_text": "When combining them with FFmpeg, FFmpeg needs to be licensed as GPL as well by\npassing --enable-gpl to configure."
+        },
+        {
+          "score": 100.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 91,
+          "end_line": 91,
+          "matched_length": 8,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_411.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_411.RULE",
+          "matched_text": "libraries are under the Apache License 2.0."
+        },
+        {
+          "score": 99.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 94,
+          "end_line": 94,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "lgpl-3.0-plus",
+          "rule_identifier": "lgpl-3.0-plus_130.RULE",
+          "rule_relevance": 99,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_130.RULE",
+          "matched_text": "enable-version3"
+        }
+      ]
     },
     {
       "identifier": "ijg_and_mit-e50613dc-8a09-65cc-c498-5d9527795382",
@@ -18,19 +78,123 @@
       "detection_count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
+      ],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 59,
+          "end_line": 59,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "unknown-license-reference_235.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_235.RULE",
+          "matched_text": "under other licensing terms,"
+        },
+        {
+          "score": 100.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 62,
+          "end_line": 63,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "ijg",
+          "rule_identifier": "ijg_28.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ijg_28.RULE",
+          "matched_text": "taken from libjpeg, see the top of the files for\n  licensing details."
+        },
+        {
+          "score": 100.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 67,
+          "end_line": 67,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "mit",
+          "rule_identifier": "mit_576.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_576.RULE",
+          "matched_text": "is under the expat license"
+        }
       ]
     },
     {
       "identifier": "lgpl_2_1_plus_and_other_permissive_and_gpl_2_0_plus-666058ef-8c38-3b17-d8e7-448b304de833",
       "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 99.09,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 3,
+          "end_line": 13,
+          "matched_length": 109,
+          "match_coverage": 99.09,
+          "matcher": "3-seq",
+          "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
+          "rule_identifier": "lgpl-2.1-plus_and__other-permissive_and_gpl-2.0-plus_1.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_and__other-permissive_and_gpl-2.0-plus_1.RULE",
+          "matched_text": "Most files in FFmpeg are under the GNU Lesser General Public License version 2.1\nor later (LGPL v2.1+). Read the file COPYING.LGPLv2.1 for details. Some other\nfiles have MIT/X11/BSD-style licenses. In combination the LGPL v2.1+ applies to\nFFmpeg.\n\nSome optional parts of FFmpeg are licensed under the GNU General Public License\nversion 2 or later (GPL v2+). See the file COPYING.GPLv2 for details. None of\nthese parts are used by default, you have to explicitly pass --enable-gpl to\nconfigure to activate them. In this case, FFmpeg's license changes to GPL v2+.\n\nSpecifically, the GPL parts of FFmpeg are:"
+        }
+      ]
     },
     {
       "identifier": "lgpl_3_0_and_lgpl_3_0_plus_and__lgpl_3_0_and_gpl_3_0-eb2232a5-2c4f-3fc9-a2ee-cdf40b20ae23",
       "license_expression": "lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 54,
+          "end_line": 54,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "lgpl-3.0",
+          "rule_identifier": "lgpl-3.0_134.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_134.RULE",
+          "matched_text": "version 3 of the (L)GPL,"
+        },
+        {
+          "score": 99.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 55,
+          "end_line": 55,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "lgpl-3.0-plus",
+          "rule_identifier": "lgpl-3.0-plus_130.RULE",
+          "rule_relevance": 99,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_130.RULE",
+          "matched_text": "enable-version3"
+        },
+        {
+          "score": 100.0,
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 56,
+          "end_line": 57,
+          "matched_length": 25,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "lgpl-3.0 AND gpl-3.0",
+          "rule_identifier": "lgpl-3.0_and_gpl-3.0_2.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_and_gpl-3.0_2.RULE",
+          "matched_text": "Read the file COPYING.LGPLv3 or, if you have enabled GPL parts,\nCOPYING.GPLv3 to learn the exact legal terms that apply in this case."
+        }
+      ]
     }
   ],
   "files": [

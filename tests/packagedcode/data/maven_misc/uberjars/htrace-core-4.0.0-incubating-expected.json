@@ -576,22 +576,128 @@
     {
       "identifier": "apache_2_0-4bde3f57-78aa-4201-96bf-531cba09e7de",
       "license_expression": "apache-2.0",
-      "detection_count": 4
+      "detection_count": 4,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
+          "start_line": 2,
+          "end_line": 15,
+          "matched_length": 119,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_2.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-482220ca-c07b-bf59-66ed-6e7eaf9f3b1e",
       "license_expression": "apache-2.0",
-      "detection_count": 2
+      "detection_count": 2,
+      "sample_matches": [
+        {
+          "score": 95.0,
+          "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
+          "start_line": 5,
+          "end_line": 6,
+          "matched_length": 14,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_product_includes_2.RULE",
+          "rule_relevance": 95,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_product_includes_2.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e",
       "license_expression": "apache-2.0",
-      "detection_count": 2
+      "detection_count": 2,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
+          "start_line": 2,
+          "end_line": 4,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_791.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-e7633baf-a264-a1ab-40f6-a28ec157067a",
       "license_expression": "apache-2.0",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
+          "start_line": 11,
+          "end_line": 11,
+          "matched_length": 17,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_212.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 100.0,
+          "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
+          "start_line": 13,
+          "end_line": 13,
+          "matched_length": 17,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_212.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 100.0,
+          "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
+          "start_line": 15,
+          "end_line": 15,
+          "matched_length": 17,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_212.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 100.0,
+          "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
+          "start_line": 19,
+          "end_line": 19,
+          "matched_length": 17,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_212.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

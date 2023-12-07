@@ -4,7 +4,23 @@
       "identifier": "lgpl_2_1-694bd705-92dd-1a63-d099-ca6c411c469a",
       "license_expression": "lgpl-2.1",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "test.txt",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "lgpl-2.1",
+          "rule_identifier": "lgpl-2.1_38.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE",
+          "matched_text": "license: LGPL-2.1"
+        }
+      ]
     }
   ],
   "files": [

@@ -96,7 +96,23 @@
       "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
       "license_expression": "bsd-new",
       "detection_count": 2,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 99.0,
+          "from_file": "base-example/PKG-INFO",
+          "start_line": 16,
+          "end_line": 16,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "pypi_bsd_license.RULE",
+          "rule_relevance": 99,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+          "matched_text": "License :: OSI Approved :: BSD License"
+        }
+      ]
     },
     {
       "identifier": "bsd_new-af493d9f-0c66-d9f8-4538-579134812514",
@@ -104,6 +120,36 @@
       "detection_count": 1,
       "detection_log": [
         "unknown-reference-in-file-to-package"
+      ],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "base-example/django.po",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 11,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "free-unknown",
+          "rule_identifier": "free-unknown-package_1.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_1.RULE",
+          "matched_text": "This file is distributed under the same license as the package."
+        },
+        {
+          "score": 99.0,
+          "from_file": "PKG-INFO",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "bsd-new",
+          "rule_identifier": "pypi_bsd_license.RULE",
+          "rule_relevance": 99,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+          "matched_text": "- 'License :: OSI Approved :: BSD License'"
+        }
       ]
     }
   ],

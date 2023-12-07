@@ -3,7 +3,23 @@
     {
       "identifier": "pcre-c61d8210-7748-d787-5e3e-fd64c6cd6b6a",
       "license_expression": "pcre",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "LICENSE3",
+          "start_line": 1,
+          "end_line": 47,
+          "matched_length": 303,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "pcre",
+          "rule_identifier": "pcre.LICENSE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pcre.LICENSE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

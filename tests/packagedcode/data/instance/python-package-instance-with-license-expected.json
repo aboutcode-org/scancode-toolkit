@@ -141,7 +141,23 @@
       "identifier": "bsd_new-261898a0-0118-87c4-7092-14e4ff134882",
       "license_expression": "bsd-new",
       "detection_count": 2,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 99.0,
+          "from_file": "pypi/LICENSE.rst",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_89.RULE",
+          "rule_relevance": 99,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "bsd_new-68720980-08c9-ffb1-f28e-24c2e067385b",
@@ -149,6 +165,36 @@
       "detection_count": 1,
       "detection_log": [
         "unknown-reference-to-local-file"
+      ],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "pypi/setup.cfg",
+          "start_line": 13,
+          "end_line": 14,
+          "matched_length": 8,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_1302.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1302.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 99.0,
+          "from_file": "pypi/LICENSE.rst",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_89.RULE",
+          "rule_relevance": 99,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+          "matched_text": null
+        }
       ]
     },
     {
@@ -157,13 +203,59 @@
       "detection_count": 1,
       "detection_log": [
         "package-unknown-reference-to-local-file"
+      ],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "pypi/setup.cfg",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 7,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_1305.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
+          "matched_text": "BSD-3-Clause license_files: LICENSE.rst"
+        },
+        {
+          "score": 99.0,
+          "from_file": "pypi/LICENSE.rst",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "bsd-new_89.RULE",
+          "rule_relevance": 99,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE",
+          "matched_text": null
+        }
       ]
     },
     {
       "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
       "license_expression": "bsd-new",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 99.0,
+          "from_file": "pypi/setup.cfg",
+          "start_line": 25,
+          "end_line": 25,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "bsd-new",
+          "rule_identifier": "pypi_bsd_license.RULE",
+          "rule_relevance": 99,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

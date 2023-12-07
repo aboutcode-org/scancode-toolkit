@@ -3,7 +3,23 @@
     {
       "identifier": "gpl_2_0_and_patent_disclaimer-3bb2602f-86f5-b9da-9bf5-b52e6920c8d1",
       "license_expression": "gpl-2.0 AND patent-disclaimer",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "e2fsprogs/e2fsprogs-fsstress",
+          "start_line": 4,
+          "end_line": 30,
+          "matched_length": 185,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-2.0 AND patent-disclaimer",
+          "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

@@ -4,7 +4,23 @@
       "identifier": "unknown_license_reference-8dac7670-e286-f6de-27a1-f2b5c87524ff",
       "license_expression": "unknown-license-reference",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "scan-without-ref/license-notice.txt",
+          "start_line": 34,
+          "end_line": 34,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "unknown-license-reference_25.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_25.RULE",
+          "matched_text": "license\": \"SEE LICENSE IN LICENSE."
+        }
+      ]
     }
   ],
   "files": [

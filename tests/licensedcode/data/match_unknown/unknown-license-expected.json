@@ -3,7 +3,23 @@
     {
       "identifier": "unknown-b0897d47-1c91-9898-2364-2e4d1a34b6fd",
       "license_expression": "unknown",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 86.89,
+          "from_file": "unknown.txt",
+          "start_line": 1,
+          "end_line": 10,
+          "matched_length": 53,
+          "match_coverage": 100.0,
+          "matcher": "6-unknown",
+          "license_expression": "unknown",
+          "rule_identifier": "license-detection-unknown-06adbd6a51da0d78de6a51def94b9fa954a6c4f0",
+          "rule_relevance": 100,
+          "rule_url": null,
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

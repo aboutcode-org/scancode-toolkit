@@ -5,12 +5,44 @@
     {
       "identifier": "gpl_2_0_plus-9b44ef18-69db-1b2d-f6ce-dd439fc51603",
       "license_expression": "gpl-2.0-plus",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "bug-1141.tar.gz/bug/sub/sub2/src/benchmark.c",
+          "start_line": 8,
+          "end_line": 19,
+          "matched_length": 102,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-2.0-plus",
+          "rule_identifier": "gpl-2.0-plus_119.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_119.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f",
       "license_expression": "gpl-3.0-plus",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "bug-1141.tar.gz/bug/sub/sub2/COPYING",
+          "start_line": 1,
+          "end_line": 12,
+          "matched_length": 102,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "gpl-3.0-plus",
+          "rule_identifier": "gpl-3.0-plus_290.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "tallies": {

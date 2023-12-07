@@ -100,32 +100,170 @@
     {
       "identifier": "apache_2_0-e3938c59-cc73-037c-3372-e20c26c25f48",
       "license_expression": "apache-2.0",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "no_license_ambiguity/LICENSE-APACHE",
+          "start_line": 1,
+          "end_line": 176,
+          "matched_length": 1410,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_875.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_875.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "apache_2_0_and__apache_2_0_or_mit-7ff6dd9d-b5e8-3fa4-dd61-c5a634c9b300",
       "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 94.12,
+          "from_file": "no_license_ambiguity/COPYRIGHT",
+          "start_line": 1,
+          "end_line": 7,
+          "matched_length": 48,
+          "match_coverage": 100.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_1060.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1060.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 97.83,
+          "from_file": "no_license_ambiguity/COPYRIGHT",
+          "start_line": 6,
+          "end_line": 9,
+          "matched_length": 45,
+          "match_coverage": 100.0,
+          "matcher": "3-seq",
+          "license_expression": "apache-2.0 OR mit",
+          "rule_identifier": "apache-2.0_or_mit_47.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_47.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "mit-a9138d4e-bc0e-0a20-76fd-237047e6d41c",
       "license_expression": "mit",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 57.69,
+          "from_file": "no_license_ambiguity/README.md",
+          "start_line": 152,
+          "end_line": 157,
+          "matched_length": 15,
+          "match_coverage": 57.69,
+          "matcher": "3-seq",
+          "license_expression": "mit OR apache-2.0",
+          "rule_identifier": "mit_or_apache-2.0_9.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_9.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 100.0,
+          "from_file": "no_license_ambiguity/README.md",
+          "start_line": 157,
+          "end_line": 157,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "mit",
+          "rule_identifier": "mit_154.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_154.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 100.0,
+          "from_file": "no_license_ambiguity/LICENSE-MIT",
+          "start_line": 4,
+          "end_line": 26,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "mit",
+          "rule_identifier": "mit.LICENSE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
       "license_expression": "mit",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "no_license_ambiguity/LICENSE-MIT",
+          "start_line": 4,
+          "end_line": 26,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "mit",
+          "rule_identifier": "mit.LICENSE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "mit_or_apache_2_0-480eec53-1a80-0150-7c7e-39cf79c9f3a8",
       "license_expression": "mit OR apache-2.0",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "no_license_ambiguity/Cargo.toml",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "mit OR apache-2.0",
+          "rule_identifier": "mit_or_apache-2.0_15.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_15.RULE",
+          "matched_text": "MIT OR Apache-2.0"
+        }
+      ]
     },
     {
       "identifier": "mit_or_apache_2_0-719f8427-422e-8023-c20e-9f8dd0af13b9",
       "license_expression": "mit OR apache-2.0",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "no_license_ambiguity/Cargo.toml",
+          "start_line": 5,
+          "end_line": 5,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "mit OR apache-2.0",
+          "rule_identifier": "mit_or_apache-2.0_14.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_14.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

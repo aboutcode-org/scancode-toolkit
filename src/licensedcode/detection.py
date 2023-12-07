@@ -670,6 +670,7 @@ class LicenseMatchFromResult(LicenseMatch):
 
         if include_text:
             result['matched_text'] = matched_text
+
         return result
 
 
@@ -917,7 +918,12 @@ class UniqueDetection:
 
             return True
 
-        return attr.asdict(self, filter=dict_fields)
+        detection_mapping = attr.asdict(self, filter=dict_fields)
+        detection_mapping["sample_matches"] = [
+            match.to_dict(include_text=True)
+            for match in self.matches
+        ]
+        return detection_mapping
 
     def get_license_detection_object(self):
         return LicenseDetection(

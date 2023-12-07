@@ -122,7 +122,23 @@
     {
       "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
       "license_expression": "apache-2.0",
-      "detection_count": 2
+      "detection_count": 2,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "codebase/setup.py",
+          "start_line": 4,
+          "end_line": 14,
+          "matched_length": 85,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_7.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

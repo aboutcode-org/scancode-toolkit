@@ -106,13 +106,45 @@
       "identifier": "cc0_1_0-15f5e40e-1981-f373-7acf-8ebdfa09ee21",
       "license_expression": "cc0-1.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
+          "start_line": 86,
+          "end_line": 91,
+          "matched_length": 20,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "cc0-1.0",
+          "rule_identifier": "cc0-1.0_197.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_197.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "cc0_1_0-6bdf45cc-fe1e-2f20-02e3-fbae31f10c0e",
       "license_expression": "cc0-1.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
+          "start_line": 1,
+          "end_line": 2,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "cc0-1.0",
+          "rule_identifier": "cc0-1.0_203.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE",
+          "matched_text": "- name: CC0 Universal\n  url: http://www.creativecommons.org/publicdomain/zero/1.0/"
+        }
+      ]
     }
   ],
   "files": [

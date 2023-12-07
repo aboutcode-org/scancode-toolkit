@@ -569,17 +569,65 @@
     {
       "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce",
       "license_expression": "apache-2.0",
-      "detection_count": 6
+      "detection_count": 6,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "many-podspecs/Amplify.podspec",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_48.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
+          "matched_text": "Apache License, Version 2.0"
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f",
       "license_expression": "apache-2.0",
-      "detection_count": 6
+      "detection_count": 6,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "many-podspecs/Amplify.podspec",
+          "start_line": 21,
+          "end_line": 21,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_68.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20",
       "license_expression": "apache-2.0",
-      "detection_count": 3
+      "detection_count": 3,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "many-podspecs/amplify-ios.LICENSE",
+          "start_line": 2,
+          "end_line": 175,
+          "matched_length": 1405,
+          "match_coverage": 100.0,
+          "matcher": "1-hash",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "apache-2.0_70.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "files": [

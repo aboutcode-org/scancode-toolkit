@@ -5,12 +5,72 @@
     {
       "identifier": "apache_2_0-b955b3e8-dd31-4357-9227-7a93de3b06a1",
       "license_expression": "apache-2.0",
-      "detection_count": 3
+      "detection_count": 3,
+      "sample_matches": [
+        {
+          "score": 50.0,
+          "from_file": "return-nested-local-majority/foo/bar",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "unknown-license-reference",
+          "rule_identifier": "license-intro_2.RULE",
+          "rule_relevance": 50,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 100.0,
+          "from_file": "return-nested-local-majority/foo/bar",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "apache-2.0",
+          "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+          "matched_text": null
+        }
+      ]
     },
     {
       "identifier": "gpl_1_0_plus_and_gpl_2_0-1e023d4a-9b9a-a032-f999-6d506ad4bcde",
       "license_expression": "gpl-1.0-plus AND gpl-2.0",
-      "detection_count": 1
+      "detection_count": 1,
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "return-nested-local-majority/foo/local-majority/baz",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-1.0-plus",
+          "rule_identifier": "gpl_208.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_208.RULE",
+          "matched_text": null
+        },
+        {
+          "score": 100.0,
+          "from_file": "return-nested-local-majority/foo/local-majority/baz",
+          "start_line": 2,
+          "end_line": 2,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "matcher": "2-aho",
+          "license_expression": "gpl-2.0",
+          "rule_identifier": "gpl-2.0_840.RULE",
+          "rule_relevance": 100,
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_840.RULE",
+          "matched_text": null
+        }
+      ]
     }
   ],
   "consolidated_components": [

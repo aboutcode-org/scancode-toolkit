@@ -4,7 +4,23 @@
       "identifier": "mit-86af397f-7fb9-6751-2e09-217685ce5b2a",
       "license_expression": "mit",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "score": 100.0,
+          "from_file": "license",
+          "start_line": 240,
+          "end_line": 240,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "matcher": "1-spdx-id",
+          "license_expression": "mit",
+          "rule_identifier": "spdx-license-identifier-mit-158ab4758b53eeb6113d49d57f1d2a094ce67b5b",
+          "rule_relevance": 100,
+          "rule_url": null,
+          "matched_text": "licenses.nuget.org/MIT\">MIT</"
+        }
+      ]
     }
   ],
   "files": [
