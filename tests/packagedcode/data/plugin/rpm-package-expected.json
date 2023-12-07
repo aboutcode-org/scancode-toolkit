@@ -34,7 +34,7 @@
               "score": 50.0,
               "start_line": 1,
               "end_line": 1,
-              "from_file": null,
+              "from_file": "alfandega-2.0-1.7.3.noarch.rpm",
               "matched_length": 1,
               "match_coverage": 100.0,
               "matcher": "1-hash",

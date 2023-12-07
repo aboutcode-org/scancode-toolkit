@@ -34,7 +34,7 @@
               "score": 80.0,
               "start_line": 1,
               "end_line": 1,
-              "from_file": null,
+              "from_file": "info/recipe.tar-extract/recipe/meta.yaml",
               "matched_length": 2,
               "match_coverage": 100.0,
               "matcher": "1-hash",

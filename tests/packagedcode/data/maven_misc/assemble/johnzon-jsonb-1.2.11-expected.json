@@ -34,7 +34,7 @@
               "score": 100.0,
               "start_line": 3,
               "end_line": 18,
-              "from_file": null,
+              "from_file": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
               "matched_length": 119,
               "match_coverage": 100.0,
               "matcher": "2-aho",

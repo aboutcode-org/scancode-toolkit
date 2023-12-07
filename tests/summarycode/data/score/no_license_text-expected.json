@@ -54,7 +54,7 @@
               "score": 100.0,
               "start_line": 1,
               "end_line": 1,
-              "from_file": null,
+              "from_file": "no_license_text/package.json",
               "matched_length": 1,
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",

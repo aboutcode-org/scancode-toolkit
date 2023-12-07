@@ -69,7 +69,7 @@
               "score": 100.0,
               "start_line": 4,
               "end_line": 14,
-              "from_file": null,
+              "from_file": "codebase/setup.py",
               "matched_length": 85,
               "match_coverage": 100.0,
               "matcher": "2-aho",

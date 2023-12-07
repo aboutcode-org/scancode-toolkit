@@ -25,11 +25,11 @@ from plugincode.scan import ScanPlugin
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
 from licensedcode.detection import DetectionRule
+from licensedcode.detection import populate_matches_with_path
 from packagedcode import get_package_handler
 from packagedcode.licensing import add_referenced_license_matches_for_package
 from packagedcode.licensing import add_referenced_license_detection_from_package
 from packagedcode.licensing import add_license_from_sibling_file
-from packagedcode.licensing import get_license_detection_mappings
 from packagedcode.licensing import get_license_expression_from_detection_mappings
 from packagedcode.models import add_to_package
 from packagedcode.models import Dependency
@@ -328,7 +328,17 @@ def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=F
         strip_root=strip_root,
         **kwargs
     )
-    codebase.attributes.packages.extend(pkg.to_dict() for pkg in packages)
+
+    package_mappings = []
+    for package in packages:
+        for detection in package.license_detections:
+            populate_matches_with_path(
+                matches=detection["matches"],
+                path=package.datafile_paths[0],
+            )
+        package_mappings.append(package.to_dict())
+
+    codebase.attributes.packages.extend(package_mappings)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
 
 

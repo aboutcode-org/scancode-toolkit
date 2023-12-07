@@ -42,7 +42,7 @@
               "score": 16.0,
               "start_line": 1,
               "end_line": 1,
-              "from_file": null,
+              "from_file": "Fizzler.nuspec",
               "matched_length": 3,
               "match_coverage": 100.0,
               "matcher": "1-hash",
