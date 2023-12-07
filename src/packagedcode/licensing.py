@@ -25,6 +25,7 @@ from licensedcode.detection import get_referenced_filenames
 from licensedcode.detection import find_referenced_resource
 from licensedcode.detection import detect_licenses
 from licensedcode.detection import LicenseDetectionFromResult
+from licensedcode.detection import populate_matches_with_path
 from licensedcode.spans import Span
 from licensedcode import query
 
@@ -113,11 +114,16 @@ def add_referenced_license_matches_for_package(resource, codebase):
                 if referenced_license_detections:
                     modified = True
                     detection_modified = True
-                    license_match_mappings.extend(
-                        get_matches_from_detection_mappings(
-                            license_detections=referenced_license_detections
-                        )
+                    matches_to_extend = get_matches_from_detection_mappings(
+                        license_detections=referenced_license_detections
                     )
+                    # For LicenseMatches with different resources as origin, add the
+                    # resource path to these matches as origin info
+                    populate_matches_with_path(
+                        matches=matches_to_extend,
+                        path=referenced_resource.path
+                    )
+                    license_match_mappings.extend(matches_to_extend)
 
             if not detection_modified:
                 continue
@@ -231,6 +237,10 @@ def add_referenced_license_detection_from_package(resource, codebase):
                 for pkg_detection in pkg_detections:
                     modified = True
                     detection_modified = True
+                    populate_matches_with_path(
+                        matches=pkg_detection["matches"],
+                        path=resource.path
+                    )
                     license_match_mappings.extend(pkg_detection["matches"])
                     detections_added.append(pkg_detection)
                     analysis = DetectionCategory.UNKNOWN_REFERENCE_IN_FILE_TO_PACKAGE.value
@@ -347,6 +357,11 @@ def get_license_detections_from_sibling_file(resource, codebase):
 
     license_detections = []
     for sibling in siblings:
+        for detection in sibling.license_detections:
+            populate_matches_with_path(
+                matches=detection["matches"],
+                path=sibling.path
+            )
         license_detections.extend(sibling.license_detections)
 
     if not license_detections:

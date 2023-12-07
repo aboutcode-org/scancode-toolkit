@@ -29,10 +29,10 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-84-generic-x86_64-with-glibc2.29
-        platform_version: '#93~20.04.1-Ubuntu SMP Wed Sep 6 16:15:40 UTC 2023'
-        python_version: "3.8.10 (default, May 26 2023, 14:05:08) \n[GCC 9.4.0]"
-      spdx_license_list_version: '3.21'
+        platform: Linux-5.15.0-89-generic-x86_64-with-glibc2.29
+        platform_version: '#99~20.04.1-Ubuntu SMP Thu Nov 2 15:16:47 UTC 2023'
+        python_version: "3.8.10 (default, Nov 22 2023, 10:22:35) \n[GCC 9.4.0]"
+      spdx_license_list_version: '3.22'
       files_count: 4
 summary:
   declared_license_expression: apache-2.0 AND cddl-1.0 AND mit
@@ -96,6 +96,7 @@ packages:
           - score: '100.0'
             start_line: 1
             end_line: 1
+            from_file:
             matched_length: 8
             match_coverage: '100.0'
             matcher: 2-aho
@@ -107,6 +108,7 @@ packages:
           - score: '100.0'
             start_line: 2
             end_line: 2
+            from_file:
             matched_length: 7
             match_coverage: '100.0'
             matcher: 2-aho
@@ -172,6 +174,7 @@ packages:
           - score: '100.0'
             start_line: 1
             end_line: 1
+            from_file:
             matched_length: 3
             match_coverage: '100.0'
             matcher: 1-hash
@@ -186,6 +189,7 @@ packages:
           - score: '100.0'
             start_line: 1
             end_line: 1
+            from_file:
             matched_length: 3
             match_coverage: '100.0'
             matcher: 1-hash
@@ -250,6 +254,7 @@ packages:
           - score: '100.0'
             start_line: 1
             end_line: 1
+            from_file:
             matched_length: 1
             match_coverage: '100.0'
             matcher: 1-spdx-id
@@ -1546,6 +1551,7 @@ files:
               - score: '100.0'
                 start_line: 1
                 end_line: 1
+                from_file: manifests/maven/persistence-api-1.0.pom
                 matched_length: 8
                 match_coverage: '100.0'
                 matcher: 2-aho
@@ -1557,6 +1563,7 @@ files:
               - score: '100.0'
                 start_line: 2
                 end_line: 2
+                from_file: manifests/maven/persistence-api-1.0.pom
                 matched_length: 7
                 match_coverage: '100.0'
                 matcher: 2-aho
@@ -1598,6 +1605,7 @@ files:
           - score: '16.0'
             start_line: 17
             end_line: '19'
+            from_file: manifests/maven/persistence-api-1.0.pom
             matched_length: 3
             match_coverage: '100.0'
             matcher: 2-aho
@@ -1612,6 +1620,7 @@ files:
           - score: '82.35'
             start_line: 18
             end_line: 20
+            from_file: manifests/maven/persistence-api-1.0.pom
             matched_length: 14
             match_coverage: '82.35'
             matcher: 3-seq
@@ -1736,6 +1745,7 @@ files:
               - score: '100.0'
                 start_line: 1
                 end_line: 1
+                from_file: manifests/npm-license-mapping/package.json
                 matched_length: 3
                 match_coverage: '100.0'
                 matcher: 1-hash
@@ -1750,6 +1760,7 @@ files:
               - score: '100.0'
                 start_line: 1
                 end_line: 1
+                from_file: manifests/npm-license-mapping/package.json
                 matched_length: 3
                 match_coverage: '100.0'
                 matcher: 1-hash
@@ -1871,6 +1882,7 @@ files:
           - score: '100.0'
             start_line: 6
             end_line: 6
+            from_file: manifests/npm-license-mapping/package.json
             matched_length: 4
             match_coverage: '100.0'
             matcher: 2-aho
@@ -1885,6 +1897,7 @@ files:
           - score: '100.0'
             start_line: 20
             end_line: 20
+            from_file: manifests/npm-license-mapping/package.json
             matched_length: 3
             match_coverage: '100.0'
             matcher: 2-aho
@@ -2017,6 +2030,7 @@ files:
               - score: '100.0'
                 start_line: 1
                 end_line: 1
+                from_file: manifests/npm-license-string/package.json
                 matched_length: 1
                 match_coverage: '100.0'
                 matcher: 1-spdx-id
@@ -2096,6 +2110,7 @@ files:
           - score: '100.0'
             start_line: 4
             end_line: 4
+            from_file: manifests/npm-license-string/package.json
             matched_length: 2
             match_coverage: '100.0'
             matcher: 2-aho
@@ -2234,6 +2249,7 @@ files:
               - score: '100.0'
                 start_line: 1
                 end_line: 1
+                from_file: manifests/pypi/bluepyopt_setup.py
                 matched_length: 1
                 match_coverage: '100.0'
                 matcher: 1-hash
@@ -2248,6 +2264,7 @@ files:
               - score: '100.0'
                 start_line: 1
                 end_line: 1
+                from_file: manifests/pypi/bluepyopt_setup.py
                 matched_length: 10
                 match_coverage: '100.0'
                 matcher: 1-hash
@@ -2377,6 +2394,7 @@ files:
           - score: '100.0'
             start_line: 9
             end_line: 20
+            from_file: manifests/pypi/bluepyopt_setup.py
             matched_length: 106
             match_coverage: '100.0'
             matcher: 2-aho
@@ -2403,6 +2421,7 @@ files:
           - score: '100.0'
             start_line: 65
             end_line: 65
+            from_file: manifests/pypi/bluepyopt_setup.py
             matched_length: 2
             match_coverage: '100.0'
             matcher: 2-aho
@@ -2417,6 +2436,7 @@ files:
           - score: '100.0'
             start_line: 74
             end_line: 75
+            from_file: manifests/pypi/bluepyopt_setup.py
             matched_length: 10
             match_coverage: '100.0'
             matcher: 2-aho

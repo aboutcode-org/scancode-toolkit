@@ -17,6 +17,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 25
         end_line: 25
+        from_file:
         matched_length: 4
         match_coverage: '100.0'
         matcher: 1-hash
@@ -28,6 +29,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 26
         end_line: 39
+        from_file:
         matched_length: 120
         match_coverage: '100.0'
         matcher: 1-hash

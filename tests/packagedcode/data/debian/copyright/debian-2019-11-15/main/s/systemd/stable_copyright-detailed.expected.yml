@@ -33,6 +33,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 62
         end_line: 63
+        from_file:
         matched_length: 18
         match_coverage: '100.0'
         matcher: 1-hash
@@ -49,6 +50,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 114
         end_line: 130
+        from_file:
         matched_length: 161
         match_coverage: '100.0'
         matcher: 1-hash
@@ -80,6 +82,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 132
         end_line: 132
+        from_file:
         matched_length: 3
         match_coverage: '100.0'
         matcher: 1-hash
@@ -91,6 +94,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 133
         end_line: 148
+        from_file:
         matched_length: 132
         match_coverage: '100.0'
         matcher: 1-hash
@@ -121,6 +125,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 150
         end_line: 150
+        from_file:
         matched_length: 3
         match_coverage: '100.0'
         matcher: 1-hash
@@ -132,6 +137,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 151
         end_line: 166
+        from_file:
         matched_length: 134
         match_coverage: '100.0'
         matcher: 1-hash
@@ -162,6 +168,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 168
         end_line: 168
+        from_file:
         matched_length: 4
         match_coverage: '100.0'
         matcher: 1-hash
@@ -173,6 +180,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 169
         end_line: 184
+        from_file:
         matched_length: 141
         match_coverage: '100.0'
         matcher: 1-hash
@@ -203,6 +211,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 186
         end_line: 186
+        from_file:
         matched_length: 4
         match_coverage: '100.0'
         matcher: 1-hash
@@ -214,6 +223,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 187
         end_line: '195'
+        from_file:
         matched_length: 82
         match_coverage: '100.0'
         matcher: 1-hash

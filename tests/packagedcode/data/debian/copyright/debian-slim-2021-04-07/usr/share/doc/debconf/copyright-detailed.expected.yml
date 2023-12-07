@@ -26,6 +26,7 @@ other_license_detections:
       - score: '99.45'
         start_line: 59
         end_line: 78
+        from_file:
         matched_length: 182
         match_coverage: '99.45'
         matcher: 3-seq

@@ -20,6 +20,7 @@ from plugincode.scan import scan_impl
 
 from licensedcode.cache import build_spdx_license_expression, get_cache
 from licensedcode.detection import collect_license_detections
+from licensedcode.detection import populate_matches_with_path
 from licensedcode.detection import find_referenced_resource
 from licensedcode.detection import get_detected_license_expression
 from licensedcode.detection import get_matches_from_detection_mappings
@@ -279,11 +280,14 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
                 modified = True
                 detection_modified = True
                 detections_added.extend(referenced_resource.license_detections)
-                license_match_mappings.extend(
-                    get_matches_from_detection_mappings(
-                        license_detections=referenced_resource.license_detections
-                    )
+                matches_to_extend = get_matches_from_detection_mappings(
+                    license_detections=referenced_resource.license_detections
                 )
+                populate_matches_with_path(
+                    matches=matches_to_extend,
+                    path=referenced_resource.path
+                )
+                license_match_mappings.extend(matches_to_extend)
 
         if not detection_modified:
             continue

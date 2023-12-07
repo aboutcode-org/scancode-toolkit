@@ -9,6 +9,7 @@ license_detections:
       - score: '97.98'
         start_line: 9
         end_line: 34
+        from_file:
         matched_length: '194'
         match_coverage: '100.0'
         matcher: 3-seq

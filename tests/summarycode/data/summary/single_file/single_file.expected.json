@@ -101,6 +101,7 @@
               "score": 100.0,
               "start_line": 1,
               "end_line": 132,
+              "from_file": "codebase/jetty.LICENSE",
               "matched_length": 996,
               "match_coverage": 100.0,
               "matcher": "1-hash",

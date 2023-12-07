@@ -11,6 +11,7 @@ license_detections:
       - score: '99.02'
         start_line: 17
         end_line: 30
+        from_file:
         matched_length: 101
         match_coverage: '99.02'
         matcher: 3-seq
@@ -33,6 +34,7 @@ license_detections:
       - score: '100.0'
         start_line: 38
         end_line: 45
+        from_file:
         matched_length: 85
         match_coverage: '100.0'
         matcher: 2-aho
@@ -52,6 +54,7 @@ license_detections:
       - score: '100.0'
         start_line: 49
         end_line: 73
+        from_file:
         matched_length: 210
         match_coverage: '100.0'
         matcher: 2-aho

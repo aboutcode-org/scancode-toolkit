@@ -617,6 +617,7 @@ class LicenseMatchFromResult(LicenseMatch):
         matched_text = license_match_mapping.get("matched_text") or None
 
         return cls(
+            from_file=license_match_mapping["from_file"],
             start_line=license_match_mapping["start_line"],
             end_line=license_match_mapping["end_line"],
             match_score=license_match_mapping["score"],
@@ -654,6 +655,7 @@ class LicenseMatchFromResult(LicenseMatch):
 
         # Detection Level Information
         result['score'] = self.score()
+        result['from_file'] = self.from_file
         result['start_line'] = self.start_line
         result['end_line'] = self.end_line
         result['matched_length'] = self.len()
@@ -671,6 +673,21 @@ class LicenseMatchFromResult(LicenseMatch):
         return result
 
 
+def populate_matches_with_path(matches, path):
+    """
+    Given `matches` list of LicenseMatch objects, populate the `from_file`
+    attribute in them with `path` which is the path for the origin file for
+    that license match.
+    """
+    for match in matches:
+        # Here if we have the `from_file` attribute populated already,
+        # they are from other files, and if it's empty, they are from
+        # the original resource, so we populate the files with the resource
+        # path for the original resource of their origin  
+        if not match["from_file"]:
+            match["from_file"] = path
+
+
 def collect_license_detections(codebase, include_license_clues=True):
     """
     Return a list of LicenseDetectionFromResult object rehydrated from
@@ -680,7 +697,10 @@ def collect_license_detections(codebase, include_license_clues=True):
     according to their license detections. This is required because package fields
     are populated in package plugin, which runs before the license plugin, and thus
     the license plugin step where unknown references to other files are dereferenced
-    does not show up automatically in package attributes. 
+    does not show up automatically in package attributes.
+
+    Also populate from_file attributes with resource paths for matches which have
+    origin in the same file.
     """
     has_packages = hasattr(codebase.root, 'package_data')
     has_licenses = hasattr(codebase.root, 'license_detections')
@@ -692,7 +712,11 @@ def collect_license_detections(codebase, include_license_clues=True):
         resource_license_detections = []
         if has_licenses:
             license_detections = getattr(resource, 'license_detections', []) or []
+            for detection in license_detections:
+                populate_matches_with_path(matches=detection["matches"], path=resource.path)
             license_clues = getattr(resource, 'license_clues', []) or []
+            populate_matches_with_path(matches=license_clues, path=resource.path)
+            codebase.save_resource(resource)
 
             if license_detections:
                 license_detection_objects = detections_from_license_detection_mappings(
@@ -729,6 +753,9 @@ def collect_license_detections(codebase, include_license_clues=True):
 
                 package_license_detections = package["license_detections"]
                 if package_license_detections:
+                    for detection in package_license_detections:
+                        populate_matches_with_path(matches=detection["matches"], path=resource.path)
+                        modified = True
                     package_license_detection_mappings.extend(package_license_detections)
                     detection_is_same, license_expression = verify_package_license_expression(
                         license_detection_mappings=package_license_detections,

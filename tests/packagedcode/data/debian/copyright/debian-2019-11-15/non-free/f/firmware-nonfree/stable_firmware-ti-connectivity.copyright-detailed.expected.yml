@@ -10,6 +10,7 @@ license_detections:
       - score: '100.0'
         start_line: 9
         end_line: 65
+        from_file:
         matched_length: 436
         match_coverage: '100.0'
         matcher: 1-hash

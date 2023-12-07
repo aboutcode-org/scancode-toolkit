@@ -20,6 +20,7 @@
               "score": 86.89,
               "start_line": 1,
               "end_line": 10,
+              "from_file": "unknown.txt",
               "matched_length": 53,
               "match_coverage": 100.0,
               "matcher": "6-unknown",

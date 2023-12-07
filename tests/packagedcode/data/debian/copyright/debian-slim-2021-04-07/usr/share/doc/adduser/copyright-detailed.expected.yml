@@ -9,6 +9,7 @@ license_detections:
       - score: '100.0'
         start_line: 28
         end_line: 47
+        from_file:
         matched_length: 143
         match_coverage: '100.0'
         matcher: 2-aho

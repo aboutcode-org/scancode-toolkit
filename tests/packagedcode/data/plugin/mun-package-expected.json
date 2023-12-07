@@ -48,6 +48,7 @@
                   "score": 88.89,
                   "start_line": 1,
                   "end_line": 3,
+                  "from_file": null,
                   "matched_length": 8,
                   "match_coverage": 100.0,
                   "matcher": "5-undetected",

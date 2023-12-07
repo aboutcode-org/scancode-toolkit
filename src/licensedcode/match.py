@@ -223,6 +223,17 @@ class LicenseMatch(object):
         metadata=dict(help='match end line, 1-based')
     )
 
+    from_file = attr.ib(
+        default=None,
+        metadata=dict(
+            help='File path where this LicenseMatch was originally detected. '
+                 'This needs to be stored as we bring over LicenseMatches from '
+                 'other files into LicenseDetection objects now, and we need '
+                 'to track the origin for these to be able to determine easily '
+                 'which are native to that file.'
+        )
+    )
+
     query = attr.ib(
         default=None,
         metadata=dict(help='Query object for this match')
@@ -722,7 +733,7 @@ class LicenseMatch(object):
         highlight=True,
         highlight_matched='{}',
         highlight_not_matched='[{}]',
-        _usecache=True
+        _usecache=True,
     ):
         """
         Return the matched text for this match or an empty string if no query
@@ -763,6 +774,7 @@ class LicenseMatch(object):
         include_text=False,
         license_text_diagnostics=False,
         whole_lines=True,
+        file_path=None,
     ):
         """
         Return a "result" scan data built from a LicenseMatch object.
@@ -783,6 +795,7 @@ class LicenseMatch(object):
         result['score'] = self.score()
         result['start_line'] = self.start_line
         result['end_line'] = self.end_line
+        result['from_file'] = file_path
         result['matched_length'] = self.len()
         result['match_coverage'] = self.coverage()
         result['matcher'] = self.matcher

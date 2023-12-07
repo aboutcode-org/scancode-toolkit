@@ -11,6 +11,7 @@
         "matches": [
           {
             "score": 4.71,
+            "from_file": "README.multi-orig-tarball-package",
             "start_line": 1,
             "end_line": 3,
             "matched_length": 4,
@@ -42,6 +43,7 @@
           "score": 4.71,
           "start_line": 1,
           "end_line": 3,
+          "from_file": "README.multi-orig-tarball-package",
           "matched_length": 4,
           "match_coverage": 4.71,
           "matcher": "3-seq",

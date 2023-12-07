@@ -38,6 +38,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 93
         end_line: 93
+        from_file:
         matched_length: 4
         match_coverage: '100.0'
         matcher: 1-hash
@@ -49,6 +50,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 94
         end_line: 107
+        from_file:
         matched_length: 107
         match_coverage: '100.0'
         matcher: 1-hash
@@ -77,6 +79,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 109
         end_line: 109
+        from_file:
         matched_length: 3
         match_coverage: '100.0'
         matcher: 1-hash
@@ -88,6 +91,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 110
         end_line: 124
+        from_file:
         matched_length: 126
         match_coverage: '100.0'
         matcher: 1-hash
@@ -117,6 +121,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 126
         end_line: 126
+        from_file:
         matched_length: 3
         match_coverage: '100.0'
         matcher: 1-hash
@@ -128,6 +133,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 127
         end_line: 141
+        from_file:
         matched_length: 126
         match_coverage: '100.0'
         matcher: 1-hash
@@ -157,6 +163,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 143
         end_line: 143
+        from_file:
         matched_length: 3
         match_coverage: '100.0'
         matcher: 1-hash
@@ -168,6 +175,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 144
         end_line: 155
+        from_file:
         matched_length: 106
         match_coverage: '100.0'
         matcher: 1-hash
@@ -194,6 +202,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 157
         end_line: 157
+        from_file:
         matched_length: 4
         match_coverage: '100.0'
         matcher: 1-hash
@@ -205,6 +214,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 158
         end_line: 179
+        from_file:
         matched_length: 213
         match_coverage: '100.0'
         matcher: 1-hash
@@ -241,6 +251,7 @@ other_license_detections:
       - score: '97.8'
         start_line: 182
         end_line: 488
+        from_file:
         matched_length: 3074
         match_coverage: '97.8'
         matcher: 3-seq
@@ -562,6 +573,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 491
         end_line: 491
+        from_file:
         matched_length: 8
         match_coverage: '100.0'
         matcher: 2-aho
@@ -573,6 +585,7 @@ other_license_detections:
       - score: '99.82'
         start_line: 493
         end_line: 914
+        from_file:
         matched_length: 2766
         match_coverage: '99.82'
         matcher: 3-seq

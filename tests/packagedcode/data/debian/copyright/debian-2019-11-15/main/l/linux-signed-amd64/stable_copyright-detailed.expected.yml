@@ -26,6 +26,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 91
         end_line: 121
+        from_file:
         matched_length: 251
         match_coverage: '100.0'
         matcher: 2-aho
@@ -71,6 +72,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 126
         end_line: 156
+        from_file:
         matched_length: 309
         match_coverage: '100.0'
         matcher: 2-aho
@@ -116,6 +118,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 171
         end_line: 187
+        from_file:
         matched_length: 161
         match_coverage: '100.0'
         matcher: 1-hash
@@ -147,6 +150,7 @@ other_license_detections:
       - score: '100.0'
         start_line: '194'
         end_line: '194'
+        from_file:
         matched_length: 3
         match_coverage: '100.0'
         matcher: 1-hash
@@ -158,6 +162,7 @@ other_license_detections:
       - score: '100.0'
         start_line: '195'
         end_line: 209
+        from_file:
         matched_length: 126
         match_coverage: '100.0'
         matcher: 1-hash
@@ -187,6 +192,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 211
         end_line: 211
+        from_file:
         matched_length: 4
         match_coverage: '100.0'
         matcher: 1-hash
@@ -198,6 +204,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 212
         end_line: 223
+        from_file:
         matched_length: 106
         match_coverage: '100.0'
         matcher: 2-aho
@@ -221,6 +228,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 225
         end_line: 226
+        from_file:
         matched_length: 27
         match_coverage: '100.0'
         matcher: 2-aho
@@ -237,6 +245,7 @@ other_license_detections:
       - score: '100.0'
         start_line: 229
         end_line: 265
+        from_file:
         matched_length: 282
         match_coverage: '100.0'
         matcher: 1-hash

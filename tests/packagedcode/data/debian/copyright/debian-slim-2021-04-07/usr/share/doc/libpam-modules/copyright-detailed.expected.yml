@@ -9,6 +9,7 @@ license_detections:
       - score: '98.6'
         start_line: 25
         end_line: 63
+        from_file:
         matched_length: 282
         match_coverage: '100.0'
         matcher: 3-seq
@@ -59,6 +60,7 @@ license_detections:
       - score: '100.0'
         start_line: 66
         end_line: 67
+        from_file:
         matched_length: 23
         match_coverage: '100.0'
         matcher: 2-aho

@@ -20,6 +20,7 @@
         "matches": [
           {
             "score": 86.89,
+            "from_file": "unknown-license.txt",
             "start_line": 1,
             "end_line": 10,
             "matched_length": 53,
@@ -53,6 +54,7 @@
               "score": 86.89,
               "start_line": 1,
               "end_line": 10,
+              "from_file": "unknown-license.txt",
               "matched_length": 53,
               "match_coverage": 100.0,
               "matcher": "6-unknown",

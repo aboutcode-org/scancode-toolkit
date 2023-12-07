@@ -21,6 +21,7 @@
               "score": 100.0,
               "start_line": 240,
               "end_line": 240,
+              "from_file": "license",
               "matched_length": 5,
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
