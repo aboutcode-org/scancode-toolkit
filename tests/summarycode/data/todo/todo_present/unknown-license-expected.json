@@ -43,6 +43,13 @@
             "rule_identifier": "license-detection-unknown-51bcd994ad60981fff8c5f1b1b9af6e3d4f5ba67",
             "rule_relevance": 100,
             "rule_url": null,
+            "is_license_notice": true,
+            "is_builtin": true,
+            "is_synthetic": true,
+            "rule_length": 53,
+            "rule_text": "form shall mean the preferred form for making\nthe purposes of this definition control\nsoftware is modified by someone else\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.",
+            "rule_notes": "Unknown license based on a composite of license words.",
+            "referenced_filenames": [],
             "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\nsoftware is modified by someone else\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof."
           }
         ],

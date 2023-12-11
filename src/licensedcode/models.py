@@ -1950,6 +1950,33 @@ class BasicRule:
         return (self.min_high_matched_length_unique if unique
                 else self.min_high_matched_length)
 
+    def get_flags_mapping(self):
+        """
+        Return a list of boolean attributes for a rule which are set to True.
+        """
+
+        rule_boolean_attributes = [
+            'is_license_text',
+            'is_license_text',
+            'is_license_notice',
+            'is_license_reference',
+            'is_license_tag',
+            'is_license_intro',
+            'is_license_clue',
+            'is_continuous',
+            'is_builtin',
+            'is_from_license',
+            'is_synthetic',
+        ]
+
+        mapping = {}
+        for attribute in rule_boolean_attributes:
+            value = getattr(self, attribute)
+            if value:
+                mapping[attribute] = True
+
+        return mapping
+
     def to_reference(self):
         """
         Return a mapping of reference data for this Rule object.

@@ -21,6 +21,13 @@
             "rule_identifier": "borceux.LICENSE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
+            "is_license_text": true,
+            "is_builtin": true,
+            "is_from_license": true,
+            "rule_length": 85,
+            "rule_text": "Copyright 1993 Francis Borceux\nYou may freely use, modify, and/or distribute each of the files in this package without limitation.  The package consists of the following files:\n\nREADME\ncompatibility/OldDiagram\ncompatibility/OldMaxiDiagram\ncompatibility/OldMicroDiagram\ncompatibility/OldMiniDiagram\ncompatibility/OldMultipleArrows\ndiagram/Diagram\ndiagram/MaxiDiagram\ndiagram/MicroDiagram\ndiagram/MiniDiagram\ndiagram/MultipleArrows\nuser-guides/Diagram_Mode_d_Emploi\nuser-guides/Diagram_Read_Me\n\nOf course no support is guaranteed, but the author will attempt to assist with problems.  Current email address:\nfrancis dot borceux at uclouvain dot be.",
+            "rule_notes": null,
+            "referenced_filenames": [],
             "matched_text": "package consists of [various] [tarballs].\n\n[This] README"
           }
         ],

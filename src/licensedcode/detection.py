@@ -643,6 +643,7 @@ class LicenseMatchFromResult(LicenseMatch):
         include_text=False,
         license_text_diagnostics=False,
         whole_lines=True,
+        rule_details=False,
     ):
         """
         Return a "result" scan data built from a LicenseMatch object.
@@ -667,6 +668,14 @@ class LicenseMatchFromResult(LicenseMatch):
         result['rule_identifier'] = self.rule.identifier
         result['rule_relevance'] = self.rule.relevance
         result['rule_url'] = self.rule.rule_url
+
+        # Extra rule details added optionally
+        if rule_details:
+            result.update(self.rule.get_flags_mapping())
+            result["rule_length"] = self.rule.length
+            result["rule_text"] = self.rule.text
+            result["rule_notes"] = self.rule.notes
+            result["referenced_filenames"] = self.rule.referenced_filenames
 
         if include_text:
             result['matched_text'] = matched_text

@@ -20,6 +20,7 @@ from licensedcode.detection import FileRegion
 from licensedcode.detection import get_ambiguous_license_detections_by_type
 from licensedcode.detection import get_uuid_on_content
 from licensedcode.detection import UniqueDetection
+from licensedcode.detection import LicenseMatchFromResult
 from plugincode.post_scan import PostScanPlugin, post_scan_impl
 from packageurl import PackageURL
 
@@ -222,13 +223,23 @@ class AmbiguousDetection:
     """
     Detections which needs review.
     """
+
+    detection_type = attr.ib(
+        default=None,
+        metadata=dict(
+            help='A string determining what type of detection this object is, '
+            'the possible values for this are : `package` and `license` '
+        )
+    )
+
     detection_id = attr.ib(
         default=None,
         metadata=dict(
             help='A detection ID identifying an unique detection. '
-            'This has two parts one with the type of detection in string, '
-            'like `package`/`license` and a positive integer '
-            'denoting the detection number.'
+            'For a license detection this is an id with the license, '
+            'expression and an UUID based on the match content. '
+            'For a package detection this is the purl and the UUID as '
+            'a qualifier.'
         )
     )
 
@@ -269,6 +280,7 @@ class AmbiguousDetection:
         )
         review_comments = get_review_comments(detection_log)
         return cls(
+            detection_type='package',
             detection_id=detection_id,
             detection=package_data,
             review_comments=review_comments,
@@ -287,6 +299,7 @@ class AmbiguousDetection:
             license_diagnostics=license_diagnostics,
         )
         return cls(
+            detection_type='license',
             detection_id=detection.identifier,
             detection=detection_mapping,
             review_comments=review_comments,
@@ -299,9 +312,25 @@ class AmbiguousDetection:
             if attr.name == 'file_regions':
                 return False
 
+            if attr.name == 'detection_type':
+                return False
+
             return True
 
-        return attr.asdict(self, filter=dict_fields, dict_factory=dict)
+        detection_mapping = attr.asdict(self, filter=dict_fields, dict_factory=dict)
+        if self.detection_type == 'license':
+            # add rule attributes to the match details
+            matches_with_details = []
+            for license_match in detection_mapping["detection"]["matches"]:
+                license_match_obj = LicenseMatchFromResult.from_dict(license_match)
+                matches_with_details.append(license_match_obj.to_dict(
+                    include_text=True,
+                    license_text_diagnostics=True,
+                    rule_details=True,
+                ))
+            detection_mapping["detection"]["matches"] = matches_with_details
+
+        return detection_mapping
 
 
 class PackageDetectionCategory(Enum):
