@@ -27,6 +27,7 @@
   "license_detections": [
     {
       "license_expression": "gpl-1.0-plus OR artistic-perl-1.0",
+      "license_expression_spdx": "GPL-1.0-or-later OR Artistic-1.0-Perl",
       "matches": [
         {
           "score": 100.0,
@@ -37,6 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "gpl-1.0-plus OR artistic-perl-1.0",
+          "spdx_license_expression": "GPL-1.0-or-later OR Artistic-1.0-Perl",
           "rule_identifier": "spdx-license-identifier-gpl-1.0-plus OR artistic-perl-1.0-535d84b5d1aa6e65995199385dd4e21954d8d8ba",
           "rule_relevance": 100,
           "rule_url": null,

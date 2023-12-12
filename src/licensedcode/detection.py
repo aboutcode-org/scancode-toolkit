@@ -169,6 +169,12 @@ class LicenseDetection:
             'using the SPDX license expression syntax and ScanCode license keys.')
     )
 
+    license_expression_spdx = attr.ib(
+        default=None,
+        metadata=dict(
+            help='Full license expression string with SPDX license keys.')
+    )
+
     matches = attr.ib(
         default=attr.Factory(list),
         metadata=dict(
@@ -248,7 +254,16 @@ class LicenseDetection:
             detection_log=detection_log,
         )
         detection.identifier = detection.identifier_with_expression
+        detection.license_expression_spdx = detection.spdx_license_expression()
         return detection
+
+    def spdx_license_expression(self):
+        from licensedcode.cache import build_spdx_license_expression
+        from licensedcode.cache import get_cache
+        return str(build_spdx_license_expression(
+            license_expression=self.license_expression,
+            licensing=get_cache().licensing,
+        ))
 
     def __eq__(self, other):
         return (
@@ -515,6 +530,7 @@ class LicenseDetectionFromResult(LicenseDetection):
 
         detection = cls(
             license_expression=license_detection_mapping["license_expression"],
+            license_expression_spdx=license_detection_mapping["license_expression_spdx"],
             detection_log=license_detection_mapping.get("detection_log", []) or None,
             identifier=license_detection_mapping["identifier"],
             matches=matches,
@@ -665,6 +681,7 @@ class LicenseMatchFromResult(LicenseMatch):
 
         # LicenseDB Level Information (Rule that was matched)
         result['license_expression'] = self.rule.license_expression
+        result['license_expression_spdx'] = self.rule.spdx_license_expression()
         result['rule_identifier'] = self.rule.identifier
         result['rule_relevance'] = self.rule.relevance
         result['rule_url'] = self.rule.rule_url
@@ -865,6 +882,7 @@ class UniqueDetection:
     """
     identifier = attr.ib(default=None)
     license_expression = attr.ib(default=None)
+    license_expression_spdx = attr.ib(default=None)
     detection_count = attr.ib(default=None)
     matches = attr.ib(default=attr.Factory(list))
     detection_log = attr.ib(default=attr.Factory(list))
@@ -897,12 +915,14 @@ class UniqueDetection:
                         for match in detection.matches
                     ]
                 ))
+                detection.license_expression_spdx = detection.spdx_license_expression()
                 detection.identifier = detection.identifier_with_expression
 
             unique_license_detections.append(
                 cls(
                     identifier=detection.identifier,
                     license_expression=detection.license_expression,
+                    license_expression_spdx=detection.license_expression_spdx,
                     detection_log=detection_log or [],
                     matches=detection.matches,
                     detection_count=len(file_regions),
@@ -937,6 +957,7 @@ class UniqueDetection:
     def get_license_detection_object(self):
         return LicenseDetection(
             license_expression=self.license_expression,
+            license_expression_spdx=self.license_expression_spdx,
             detection_log=self.detection_log,
             matches=self.matches,
             identifier=self.identifier,

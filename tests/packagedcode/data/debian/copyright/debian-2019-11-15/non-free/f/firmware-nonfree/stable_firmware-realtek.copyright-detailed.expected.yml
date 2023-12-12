@@ -7,6 +7,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - score: '100.0'
         start_line: 9
@@ -16,6 +17,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_66.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
@@ -25,6 +27,7 @@ license_detections:
           notice is accompanying it.
     identifier: other_permissive-16dc1659-320f-55c9-0ddb-4d46c5526cbb
   - license_expression: intel
+    license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - score: '93.72'
         start_line: 18
@@ -34,6 +37,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 3-seq
         license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
         rule_identifier: intel_1.RULE
         rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_1.RULE

@@ -31,6 +31,7 @@ other_license_expression_spdx: (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND Lic
 license_detections: []
 other_license_detections:
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - score: '100.0'
         start_line: 85
@@ -40,6 +41,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_324.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_324.RULE
@@ -49,6 +51,7 @@ other_license_detections:
           It is provided "as is" without express or implied warranty.
     identifier: other_permissive-030a04e3-fab9-cc90-a7eb-341ec19285d1
   - license_expression: x11
+    license_expression_spdx: ICU
     matches:
       - score: '100.0'
         start_line: 90
@@ -58,6 +61,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: x11
+        spdx_license_expression: ICU
         rule_identifier: x11_2.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11_2.RULE
@@ -91,6 +95,7 @@ other_license_detections:
           of their respective owners.
     identifier: x11-fa1d6e22-e05b-6093-6d7b-b82e9d97a910
   - license_expression: lgpl-2.0-plus
+    license_expression_spdx: LGPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 118
@@ -100,6 +105,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
+        spdx_license_expression: LGPL-2.0-or-later
         rule_identifier: lgpl-2.0-plus_61.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
@@ -112,6 +118,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.0-plus
+        spdx_license_expression: LGPL-2.0-or-later
         rule_identifier: lgpl-2.0-plus_529.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_529.RULE
@@ -130,6 +137,7 @@ other_license_detections:
           License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
     identifier: lgpl_2_0_plus-4c6098f7-5b22-4023-84df-76b5f2165c85
   - license_expression: tcl
+    license_expression_spdx: TCL
     matches:
       - score: '100.0'
         start_line: 133
@@ -139,6 +147,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: tcl
+        spdx_license_expression: TCL
         rule_identifier: tcl_14.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_14.RULE
@@ -184,6 +193,7 @@ other_license_detections:
           terms specified in this license.
     identifier: tcl-5f656d8e-004e-b8eb-6b96-10577123cfec
   - license_expression: unicode
+    license_expression_spdx: LicenseRef-scancode-unicode
     matches:
       - score: '100.0'
         start_line: 174
@@ -193,6 +203,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: unicode
+        spdx_license_expression: LicenseRef-scancode-unicode
         rule_identifier: unicode_57.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_57.RULE

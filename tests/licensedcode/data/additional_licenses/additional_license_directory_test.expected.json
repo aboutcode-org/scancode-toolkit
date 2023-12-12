@@ -3,6 +3,7 @@
     {
       "identifier": "example1_and_example2-f86ebb61-26dd-be05-2a61-01d7b630ba62",
       "license_expression": "example1 AND example2",
+      "license_expression_spdx": "scancode-example1 AND scancode-example2",
       "detection_count": 1,
       "sample_matches": [
         {
@@ -14,6 +15,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "example1",
+          "license_expression_spdx": "scancode-example1",
           "rule_identifier": "example1.LICENSE",
           "rule_relevance": 100,
           "rule_url": null,
@@ -28,6 +30,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "example2",
+          "license_expression_spdx": "scancode-example2",
           "rule_identifier": "example2.LICENSE",
           "rule_relevance": 100,
           "rule_url": null,
@@ -169,6 +172,7 @@
       "license_detections": [
         {
           "license_expression": "example1 AND example2",
+          "license_expression_spdx": "scancode-example1 AND scancode-example2",
           "matches": [
             {
               "score": 100.0,
@@ -179,6 +183,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "example1",
+              "spdx_license_expression": "scancode-example1",
               "rule_identifier": "example1.LICENSE",
               "rule_relevance": 100,
               "rule_url": null
@@ -192,6 +197,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "example2",
+              "spdx_license_expression": "scancode-example2",
               "rule_identifier": "example2.LICENSE",
               "rule_relevance": 100,
               "rule_url": null

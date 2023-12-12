@@ -5,6 +5,7 @@
     {
       "identifier": "gpl_3_0-ab79e5a8-e510-cbf4-5302-ef968484bcdf",
       "license_expression": "gpl-3.0",
+      "license_expression_spdx": "GPL-3.0-only",
       "detection_count": 2,
       "detection_log": [],
       "sample_matches": [
@@ -17,6 +18,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "gpl-3.0",
+          "license_expression_spdx": "GPL-3.0-only",
           "rule_identifier": "gpl-3.0_204.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE",
@@ -27,6 +29,7 @@
     {
       "identifier": "gpl_3_0-76e8f741-ece2-d587-493c-92b0b1e4bdfe",
       "license_expression": "gpl-3.0",
+      "license_expression_spdx": "GPL-3.0-only",
       "detection_count": 1,
       "detection_log": [
         "unknown-reference-in-file-to-nonexistent-package"
@@ -41,6 +44,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -55,6 +59,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -69,6 +74,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -83,6 +89,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -97,6 +104,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -111,6 +119,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -125,6 +134,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "gpl-3.0",
+          "license_expression_spdx": "GPL-3.0-only",
           "rule_identifier": "gpl-3.0_204.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE",
@@ -135,6 +145,7 @@
     {
       "identifier": "gpl_3_0-e907b820-6f8c-81c4-38c5-75006ae093a4",
       "license_expression": "gpl-3.0",
+      "license_expression_spdx": "GPL-3.0-only",
       "detection_count": 1,
       "detection_log": [
         "unknown-reference-in-file-to-nonexistent-package"
@@ -149,6 +160,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -163,6 +175,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -177,6 +190,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -191,6 +205,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -205,6 +220,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -219,6 +235,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -233,6 +250,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -247,6 +265,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "gpl-3.0",
+          "license_expression_spdx": "GPL-3.0-only",
           "rule_identifier": "gpl-3.0_204.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE",
@@ -257,6 +276,7 @@
     {
       "identifier": "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus-ebd5f076-5cba-e641-e071-0028c4ee0ddb",
       "license_expression": "gpl-3.0 AND unknown-license-reference AND gpl-3.0-plus",
+      "license_expression_spdx": "GPL-3.0-only AND LicenseRef-scancode-unknown-license-reference AND GPL-3.0-or-later",
       "detection_count": 1,
       "detection_log": [],
       "sample_matches": [
@@ -269,6 +289,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "gpl-3.0",
+          "license_expression_spdx": "GPL-3.0-only",
           "rule_identifier": "gpl-3.0_203.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_203.RULE",
@@ -283,6 +304,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "rule_identifier": "unknown-license-reference_367.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_367.RULE",
@@ -297,6 +319,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "gpl-3.0-plus",
+          "license_expression_spdx": "GPL-3.0-or-later",
           "rule_identifier": "gpl-3.0-plus_290.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
@@ -307,6 +330,7 @@
     {
       "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f",
       "license_expression": "gpl-3.0-plus",
+      "license_expression_spdx": "GPL-3.0-or-later",
       "detection_count": 1,
       "detection_log": [],
       "sample_matches": [
@@ -319,6 +343,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "gpl-3.0-plus",
+          "license_expression_spdx": "GPL-3.0-or-later",
           "rule_identifier": "gpl-3.0-plus_290.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
@@ -338,6 +363,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0",
+          "license_expression_spdx": "GPL-3.0-only",
           "matches": [
             {
               "score": 100.0,
@@ -348,6 +374,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "gpl-3.0",
+              "spdx_license_expression": "GPL-3.0-only",
               "rule_identifier": "gpl-3.0_204.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE",
@@ -396,6 +423,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0 AND unknown-license-reference AND gpl-3.0-plus",
+          "license_expression_spdx": "GPL-3.0-only AND LicenseRef-scancode-unknown-license-reference AND GPL-3.0-or-later",
           "matches": [
             {
               "score": 100.0,
@@ -406,6 +434,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-3.0",
+              "spdx_license_expression": "GPL-3.0-only",
               "rule_identifier": "gpl-3.0_203.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_203.RULE",
@@ -420,6 +449,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
               "rule_identifier": "unknown-license-reference_367.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_367.RULE",
@@ -434,6 +464,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-3.0-plus",
+              "spdx_license_expression": "GPL-3.0-or-later",
               "rule_identifier": "gpl-3.0-plus_290.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
@@ -458,6 +489,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0-plus",
+          "license_expression_spdx": "GPL-3.0-or-later",
           "matches": [
             {
               "score": 100.0,
@@ -468,6 +500,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-3.0-plus",
+              "spdx_license_expression": "GPL-3.0-or-later",
               "rule_identifier": "gpl-3.0-plus_290.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
@@ -504,6 +537,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0",
+          "license_expression_spdx": "GPL-3.0-only",
           "matches": [
             {
               "score": 100.0,
@@ -514,6 +548,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -528,6 +563,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -542,6 +578,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -556,6 +593,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -570,6 +608,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -584,6 +623,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -598,6 +638,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -612,6 +653,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "gpl-3.0",
+              "spdx_license_expression": "GPL-3.0-only",
               "rule_identifier": "gpl-3.0_204.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE",
@@ -638,6 +680,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-3.0",
+          "license_expression_spdx": "GPL-3.0-only",
           "matches": [
             {
               "score": 100.0,
@@ -648,6 +691,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -662,6 +706,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -676,6 +721,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -690,6 +736,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -704,6 +751,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -718,6 +766,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -732,6 +781,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "gpl-3.0",
+              "spdx_license_expression": "GPL-3.0-only",
               "rule_identifier": "gpl-3.0_204.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE",
@@ -781,6 +831,7 @@
           "license_detections": [
             {
               "license_expression": "gpl-3.0",
+              "license_expression_spdx": "GPL-3.0-only",
               "matches": [
                 {
                   "score": 100.0,
@@ -791,6 +842,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "gpl-3.0",
+                  "spdx_license_expression": "GPL-3.0-only",
                   "rule_identifier": "gpl-3.0_204.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_204.RULE",

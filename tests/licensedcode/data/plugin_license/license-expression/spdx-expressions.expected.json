@@ -3,6 +3,7 @@
     {
       "identifier": "zlib_and_apache_2_0-98210dcd-8eb2-6675-dd67-08f007face08",
       "license_expression": "zlib AND apache-2.0",
+      "license_expression_spdx": "Zlib AND Apache-2.0",
       "detection_count": 1,
       "detection_log": [],
       "sample_matches": [
@@ -15,6 +16,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
           "rule_identifier": "spdx-license-identifier-zlib-478bffd97a87207ab3ba955132d7a51b329faca0",
           "rule_relevance": 100,
           "rule_url": null,
@@ -29,6 +31,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "rule_identifier": "spdx-license-identifier-apache-2.0-5dcda840588b4f07f49f2c0100924ebca7bc0649",
           "rule_relevance": 100,
           "rule_url": null,
@@ -46,6 +49,7 @@
       "license_detections": [
         {
           "license_expression": "zlib AND apache-2.0",
+          "license_expression_spdx": "Zlib AND Apache-2.0",
           "matches": [
             {
               "score": 100.0,
@@ -56,6 +60,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "zlib",
+              "spdx_license_expression": "Zlib",
               "rule_identifier": "spdx-license-identifier-zlib-defbb051fec96d25d21a92bf9e28889f674a89dc",
               "rule_relevance": 100,
               "rule_url": null,
@@ -70,6 +75,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
               "rule_identifier": "spdx-license-identifier-apache-2.0-8b7d7ba520c6ab392deaea36b8b1f018b637027e",
               "rule_relevance": 100,
               "rule_url": null,

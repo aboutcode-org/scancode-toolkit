@@ -45,6 +45,7 @@
     "license_detections": [
       {
         "license_expression": "agpl-3.0-plus",
+        "license_expression_spdx": "AGPL-3.0-or-later",
         "matches": [
           {
             "score": 100.0,
@@ -55,6 +56,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "agpl-3.0-plus",
+            "spdx_license_expression": "AGPL-3.0-or-later",
             "rule_identifier": "spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
@@ -65,6 +67,7 @@
       },
       {
         "license_expression": "agpl-3.0-plus",
+        "license_expression_spdx": "AGPL-3.0-or-later",
         "matches": [
           {
             "score": 100.0,
@@ -75,6 +78,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "agpl-3.0-plus",
+            "spdx_license_expression": "AGPL-3.0-or-later",
             "rule_identifier": "pypi_gnu_affero_general_public_license_v3_or_later.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_affero_general_public_license_v3_or_later.RULE",

@@ -8,6 +8,7 @@
       },
       "detection": {
         "license_expression": "borceux",
+        "license_expression_spdx": "Borceux",
         "matches": [
           {
             "score": 4.71,
@@ -18,6 +19,7 @@
             "match_coverage": 4.71,
             "matcher": "3-seq",
             "license_expression": "borceux",
+            "license_expression_spdx": "Borceux",
             "rule_identifier": "borceux.LICENSE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
@@ -55,6 +57,7 @@
           "match_coverage": 4.71,
           "matcher": "3-seq",
           "license_expression": "borceux",
+          "spdx_license_expression": "Borceux",
           "rule_identifier": "borceux.LICENSE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",

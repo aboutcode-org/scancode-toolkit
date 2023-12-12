@@ -7,6 +7,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
+    license_expression_spdx: GPL-2.0-only AND LGPL-2.0-only AND BSD-3-Clause AND NTP
     matches:
       - score: '99.02'
         start_line: 17
@@ -16,6 +17,7 @@ license_detections:
         match_coverage: '99.02'
         matcher: 3-seq
         license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
+        spdx_license_expression: GPL-2.0-only AND LGPL-2.0-only AND BSD-3-Clause AND NTP
         rule_identifier: gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_lgpl-2.0_and_bsd-new_and_mit_1.RULE
@@ -30,6 +32,7 @@ license_detections:
           \  The\ncomplete text of the GNU Library General Public License can be found\nin '/usr/share/common-licenses/LGPL-2'."
     identifier: gpl_2_0_and_lgpl_2_0_and_bsd_new_and_mit_old_style_no_advert-aed55561-0504-0265-5986-832cc7f7bbf2
   - license_expression: ntp-0 AND bsd-new
+    license_expression_spdx: NTP-0 AND BSD-3-Clause
     matches:
       - score: '100.0'
         start_line: 38
@@ -39,6 +42,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ntp-0
+        spdx_license_expression: NTP-0
         rule_identifier: ntp-0.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ntp-0.LICENSE
@@ -59,6 +63,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_117.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_117.RULE

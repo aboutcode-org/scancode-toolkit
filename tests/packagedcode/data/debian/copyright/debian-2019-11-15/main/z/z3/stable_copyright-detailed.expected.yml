@@ -8,6 +8,7 @@ other_license_expression_spdx: MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later)
 license_detections: []
 other_license_detections:
   - license_expression: mit
+    license_expression_spdx: MIT
     matches:
       - score: '100.0'
         start_line: 8
@@ -17,6 +18,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
+        spdx_license_expression: MIT
         rule_identifier: mit.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
@@ -40,6 +42,7 @@ other_license_detections:
           SOFTWARE.
     identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 29
@@ -49,6 +52,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
@@ -61,6 +65,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_846.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_846.RULE

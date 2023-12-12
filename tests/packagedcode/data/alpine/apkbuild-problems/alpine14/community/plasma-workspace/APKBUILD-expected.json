@@ -27,6 +27,7 @@
   "license_detections": [
     {
       "license_expression": "(gpl-2.0 OR gpl-3.0) AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND lgpl-2.1 AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0) AND lgpl-2.0",
+      "license_expression_spdx": "(GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-or-later AND GPL-2.0-or-later AND MIT AND LGPL-2.1-only AND LGPL-2.0-or-later AND (LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.0-only",
       "matches": [
         {
           "score": 100.0,
@@ -37,6 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "(gpl-2.0 OR gpl-3.0) AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND lgpl-2.1 AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0) AND lgpl-2.0",
+          "spdx_license_expression": "(GPL-2.0-only OR GPL-3.0-only) AND LGPL-2.1-or-later AND GPL-2.0-or-later AND MIT AND LGPL-2.1-only AND LGPL-2.0-or-later AND (LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.0-only",
           "rule_identifier": "spdx-license-identifier-(gpl-2.0 OR gpl-3.0) AND lgpl-2.1-plus AND gpl-2.0-plus AND mit AND lgpl-2.1 AND lgpl-2.0-plus AND (lgpl-2.1 OR lgpl-3.0) AND lgpl-2.0-03672b2a90402ac498ea76c8d3bb32c9fc13e415",
           "rule_relevance": 100,
           "rule_url": null,

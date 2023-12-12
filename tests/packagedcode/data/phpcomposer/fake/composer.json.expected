@@ -43,6 +43,7 @@
     "license_detections": [
       {
         "license_expression": "lgpl-2.1 OR gpl-3.0-plus",
+        "license_expression_spdx": "LGPL-2.1-only OR GPL-3.0-or-later",
         "matches": [
           {
             "score": 100.0,
@@ -53,6 +54,7 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "lgpl-2.1 OR gpl-3.0-plus",
+            "spdx_license_expression": "LGPL-2.1-only OR GPL-3.0-or-later",
             "rule_identifier": "spdx-license-identifier-lgpl-2.1 OR gpl-3.0-plus-4447537ab02d07e1156b062adaf7b9e2ba3f55de",
             "rule_relevance": 100,
             "rule_url": null,

@@ -14,6 +14,7 @@ other_license_expression_spdx: LicenseRef-scancode-cups AND LicenseRef-scancode-
 license_detections: []
 other_license_detections:
   - license_expression: bsd-simplified
+    license_expression_spdx: BSD-2-Clause
     matches:
       - score: '100.0'
         start_line: 26
@@ -23,6 +24,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_70.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_70.RULE
@@ -52,6 +54,7 @@ other_license_detections:
           OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_simplified-ec301da4-ee99-7256-688b-0e0ca57ab6eb
   - license_expression: cups
+    license_expression_spdx: LicenseRef-scancode-cups
     matches:
       - score: '100.0'
         start_line: 51
@@ -61,6 +64,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: cups
+        spdx_license_expression: LicenseRef-scancode-cups
         rule_identifier: cups_6.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cups_6.RULE
@@ -124,6 +128,7 @@ other_license_detections:
           derived work.
     identifier: cups-6d04e430-ddd5-a021-eef2-53103e172a4a
   - license_expression: cups
+    license_expression_spdx: LicenseRef-scancode-cups
     matches:
       - score: '100.0'
         start_line: 110
@@ -133,6 +138,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: cups
+        spdx_license_expression: LicenseRef-scancode-cups
         rule_identifier: cups_4.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cups_4.RULE
@@ -196,6 +202,7 @@ other_license_detections:
           derived work.
     identifier: cups-a1c6fe77-1eeb-f76a-7b3e-a0867d417450
   - license_expression: zlib
+    license_expression_spdx: Zlib
     matches:
       - score: '100.0'
         start_line: 169
@@ -205,6 +212,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: zlib
+        spdx_license_expression: Zlib
         rule_identifier: zlib_7.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_7.RULE
@@ -217,6 +225,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: zlib
+        spdx_license_expression: Zlib
         rule_identifier: zlib.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE

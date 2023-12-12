@@ -34,6 +34,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 17
@@ -43,6 +44,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_108.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
@@ -55,6 +57,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_267.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_267.RULE
@@ -83,6 +86,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_232.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_232.RULE
@@ -91,6 +95,7 @@ license_detections:
             /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-bcd17595-f3dd-a7e4-38d6-be996ed9d675
   - license_expression: sun-source
+    license_expression_spdx: LicenseRef-scancode-sun-source
     matches:
       - score: '100.0'
         start_line: 44
@@ -100,6 +105,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: sun-source
+        spdx_license_expression: LicenseRef-scancode-sun-source
         rule_identifier: sun-source_1.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sun-source_1.RULE
@@ -125,6 +131,7 @@ license_detections:
            Sun has been advised of the possibility of such damages.
     identifier: sun_source-02813787-7782-d45a-b30b-598566f2f032
   - license_expression: hpnd-pbmplus
+    license_expression_spdx: HPND-Pbmplus
     matches:
       - score: '100.0'
         start_line: 68
@@ -134,6 +141,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: hpnd-pbmplus
+        spdx_license_expression: HPND-Pbmplus
         rule_identifier: hpnd-pbmplus.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hpnd-pbmplus.LICENSE
@@ -146,6 +154,7 @@ license_detections:
            implied warranty.
     identifier: hpnd_pbmplus-791a84f8-2595-c6f9-929c-722baf14af4e
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 79
@@ -155,6 +164,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -164,6 +174,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 87
@@ -173,6 +184,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -182,6 +194,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 94
@@ -191,6 +204,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -200,6 +214,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 102
@@ -209,6 +224,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_266.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_266.RULE
@@ -218,6 +234,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.
     identifier: lgpl_2_1_plus-71729f6f-ef57-95b2-a0e3-46c5dbedfe44
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 111
@@ -227,6 +244,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_711.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_711.RULE
@@ -236,6 +254,7 @@ license_detections:
            /usr/share/common-licenses/GPL-2.
     identifier: gpl_2_0_plus-3032bd69-4dfa-eb9e-e226-72ce6f830857
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 120
@@ -245,6 +264,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -254,6 +274,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 128
@@ -263,6 +284,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -272,6 +294,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 137
@@ -281,6 +304,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -290,6 +314,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 144
@@ -299,6 +324,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -308,6 +334,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: adrian
+    license_expression_spdx: LicenseRef-scancode-adrian
     matches:
       - score: '100.0'
         start_line: 152
@@ -317,6 +344,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: adrian
+        spdx_license_expression: LicenseRef-scancode-adrian
         rule_identifier: adrian.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/adrian.LICENSE
@@ -331,6 +359,7 @@ license_detections:
            with no warranty.
     identifier: adrian-0f705124-8a69-aa6e-bdc8-c0c1997d93ed
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 164
@@ -340,6 +369,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -349,6 +379,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 171
@@ -358,6 +389,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -367,6 +399,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 179
@@ -376,6 +409,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -385,6 +419,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 187
@@ -394,6 +429,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -403,6 +439,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: '195'
@@ -412,6 +449,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -421,6 +459,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 203
@@ -430,6 +469,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -439,6 +479,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 211
@@ -448,6 +489,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -457,6 +499,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 219
@@ -466,6 +509,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -475,6 +519,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 226
@@ -484,6 +529,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -493,6 +539,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 235
@@ -502,6 +549,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -511,6 +559,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 243
@@ -520,6 +569,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -529,6 +579,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 251
@@ -538,6 +589,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -547,6 +599,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 259
@@ -556,6 +609,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -565,6 +619,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 266
@@ -574,6 +629,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -583,6 +639,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 275
@@ -592,6 +649,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -601,6 +659,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 283
@@ -610,6 +669,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -619,6 +679,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 291
@@ -628,6 +689,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -637,6 +699,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: mit
+    license_expression_spdx: MIT
     matches:
       - score: '100.0'
         start_line: 299
@@ -646,6 +709,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit
+        spdx_license_expression: MIT
         rule_identifier: mit.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
@@ -671,6 +735,7 @@ license_detections:
             SOFTWARE.
     identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 323
@@ -680,6 +745,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -689,6 +755,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 332
@@ -698,6 +765,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -707,6 +775,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 340
@@ -716,6 +785,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -725,6 +795,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 347
@@ -734,6 +805,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -743,6 +815,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 354
@@ -752,6 +825,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -761,6 +835,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 363
@@ -770,6 +845,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -779,6 +855,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.0-plus
+    license_expression_spdx: LGPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 371
@@ -788,6 +865,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.0-plus
+        spdx_license_expression: LGPL-2.0-or-later
         rule_identifier: lgpl-2.0-plus_528.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_528.RULE
@@ -797,6 +875,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.
     identifier: lgpl_2_0_plus-ebf414f2-2099-4528-86ae-45f3f720d2e0
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 382
@@ -806,6 +885,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -815,6 +895,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 389
@@ -824,6 +905,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -833,6 +915,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 397
@@ -842,6 +925,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -851,6 +935,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 405
@@ -860,6 +945,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -869,6 +955,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 413
@@ -878,6 +965,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -887,6 +975,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 422
@@ -896,6 +985,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -905,6 +995,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 430
@@ -914,6 +1005,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -923,6 +1015,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 440
@@ -932,6 +1025,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -941,6 +1035,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 447
@@ -950,6 +1045,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -959,6 +1055,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 454
@@ -968,6 +1065,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -977,6 +1075,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 465
@@ -986,6 +1085,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -995,6 +1095,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 472
@@ -1004,6 +1105,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1013,6 +1115,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 479
@@ -1022,6 +1125,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1031,6 +1135,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 487
@@ -1040,6 +1145,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1049,6 +1155,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 495
@@ -1058,6 +1165,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1067,6 +1175,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 502
@@ -1076,6 +1185,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1085,6 +1195,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 511
@@ -1094,6 +1205,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1103,6 +1215,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 518
@@ -1112,6 +1225,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1121,6 +1235,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 525
@@ -1130,6 +1245,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1139,6 +1255,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 533
@@ -1148,6 +1265,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1157,6 +1275,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 540
@@ -1166,6 +1285,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1175,6 +1295,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 547
@@ -1184,6 +1305,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1193,6 +1315,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 554
@@ -1202,6 +1325,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1211,6 +1335,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 561
@@ -1220,6 +1345,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1229,6 +1355,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 568
@@ -1238,6 +1365,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1247,6 +1375,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 576
@@ -1256,6 +1385,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_711.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_711.RULE
@@ -1265,6 +1395,7 @@ license_detections:
             /usr/share/common-licenses/GPL-2.
     identifier: gpl_2_0_plus-3032bd69-4dfa-eb9e-e226-72ce6f830857
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 585
@@ -1274,6 +1405,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1283,6 +1415,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 594
@@ -1292,6 +1425,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1301,6 +1435,7 @@ license_detections:
            /usr/share/common-licenses/LGPL-2.1.
     identifier: lgpl_2_1_plus-e3503782-dabb-a2b9-bb59-14bddddca6ec
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 602
@@ -1310,6 +1445,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE
@@ -1325,6 +1461,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_231.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_231.RULE

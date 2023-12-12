@@ -12,6 +12,7 @@ other_license_expression_spdx: X11-distribute-modifications-variant AND X11 AND 
 license_detections: []
 other_license_detections:
   - license_expression: x11-fsf
+    license_expression_spdx: X11-distribute-modifications-variant
     matches:
       - score: '100.0'
         start_line: 22
@@ -21,6 +22,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: x11-fsf
+        spdx_license_expression: X11-distribute-modifications-variant
         rule_identifier: x11-fsf.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE
@@ -50,6 +52,7 @@ other_license_detections:
           authorization.
     identifier: x11_fsf-5f3d72c2-fa6a-2f7b-b859-17e7567c1724
   - license_expression: x11-xconsortium
+    license_expression_spdx: X11
     matches:
       - score: '100.0'
         start_line: 47
@@ -59,6 +62,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: x11-xconsortium
+        spdx_license_expression: X11
         rule_identifier: x11-xconsortium_2.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE
@@ -86,6 +90,7 @@ other_license_detections:
           tium.
     identifier: x11_xconsortium-8bc3e205-5f29-ecad-90bc-2f492c65be46
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
       - score: '100.0'
         start_line: 70
@@ -95,6 +100,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_19.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE

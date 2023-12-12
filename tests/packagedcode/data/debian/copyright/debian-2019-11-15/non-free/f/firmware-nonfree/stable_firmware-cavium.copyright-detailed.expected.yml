@@ -5,6 +5,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: cavium-linux-firmware
+    license_expression_spdx: LicenseRef-scancode-cavium-linux-firmware
     matches:
       - score: '100.0'
         start_line: 6
@@ -14,6 +15,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: cavium-linux-firmware
+        spdx_license_expression: LicenseRef-scancode-cavium-linux-firmware
         rule_identifier: cavium-linux-firmware.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/cavium-linux-firmware.LICENSE

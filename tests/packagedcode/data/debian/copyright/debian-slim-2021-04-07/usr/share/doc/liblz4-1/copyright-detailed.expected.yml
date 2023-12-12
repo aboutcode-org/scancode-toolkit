@@ -29,6 +29,7 @@ other_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AN
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0
+    license_expression_spdx: GPL-2.0-only
     matches:
       - score: '100.0'
         start_line: 64
@@ -38,6 +39,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
         rule_identifier: gpl-2.0_561.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
@@ -50,6 +52,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
         rule_identifier: gpl-2.0_1296.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1296.RULE
@@ -62,6 +65,7 @@ other_license_detections:
           Public License can be found in '/usr/share/common-licenses/GPL-2'.
     identifier: gpl_2_0-8f03a209-723a-5338-eac8-e37c880f528d
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 72
@@ -71,6 +75,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
@@ -83,6 +88,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_985.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_985.RULE
@@ -96,6 +102,7 @@ other_license_detections:
           Public License can be found in '/usr/share/common-licenses/GPL-2'.
     identifier: gpl_2_0_plus-e081e12a-5320-6d45-b399-2b85f6a41f9a
   - license_expression: bsd-simplified
+    license_expression_spdx: BSD-2-Clause
     matches:
       - score: '100.0'
         start_line: 82
@@ -105,6 +112,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE

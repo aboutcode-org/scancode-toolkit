@@ -37,6 +37,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
               "score": 100.0,
@@ -47,6 +48,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
               "rule_identifier": "apache-2.0_394.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
@@ -57,6 +59,7 @@
         },
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
               "score": 100.0,
@@ -67,6 +70,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
               "rule_identifier": "unknown-license-reference_375.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_375.RULE"
@@ -80,6 +84,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
               "rule_identifier": "apache-2.0_394.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
@@ -116,6 +121,7 @@
     {
       "identifier": "apache_2_0-31344ceb-eee7-3f95-45bb-cc86209f76f8",
       "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
       "detection_log": [
         "unknown-reference-to-local-file"
@@ -130,6 +136,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "rule_identifier": "unknown-license-reference_375.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_375.RULE",
@@ -144,6 +151,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "rule_identifier": "apache-2.0_394.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE",
@@ -154,6 +162,7 @@
     {
       "identifier": "apache_2_0-8607fc22-7931-3e71-b7d5-bd208970dc6f",
       "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
       "detection_log": [],
       "sample_matches": [
@@ -166,6 +175,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "rule_identifier": "apache-2.0_394.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE",
@@ -213,6 +223,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
               "score": 100.0,
@@ -223,6 +234,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
               "rule_identifier": "apache-2.0_394.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
@@ -274,6 +286,7 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
                   "score": 100.0,
@@ -284,6 +297,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
                   "rule_identifier": "apache-2.0_394.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
@@ -294,6 +308,7 @@
             },
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
                   "score": 100.0,
@@ -304,6 +319,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "unknown-license-reference",
+                  "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
                   "rule_identifier": "unknown-license-reference_375.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_375.RULE"
@@ -317,6 +333,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
                   "rule_identifier": "apache-2.0_394.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
@@ -366,6 +383,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
               "score": 100.0,
@@ -376,6 +394,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
               "rule_identifier": "unknown-license-reference_375.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_375.RULE"
@@ -389,6 +408,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
               "rule_identifier": "apache-2.0_394.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_394.RULE"
@@ -410,6 +430,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "spdx_license_expression": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown_85.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_85.RULE"

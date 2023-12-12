@@ -3,6 +3,7 @@
     {
       "identifier": "x11_xconsortium_veillard-61f804f6-d484-92ca-09b5-26be51ac974e",
       "license_expression": "x11-xconsortium-veillard",
+      "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
       "detection_count": 2,
       "detection_log": [
         "unknown-reference-to-local-file"
@@ -17,6 +18,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "rule_identifier": "unknown-license-reference_30.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_30.RULE",
@@ -31,6 +33,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "x11-xconsortium-veillard",
+          "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
           "rule_identifier": "x11-xconsortium-veillard.LICENSE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
@@ -41,6 +44,7 @@
     {
       "identifier": "x11_xconsortium_veillard-50c015bd-e4e1-c6fe-eb82-9551473dd8e1",
       "license_expression": "x11-xconsortium-veillard",
+      "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
       "detection_count": 1,
       "detection_log": [
         "unknown-reference-to-local-file"
@@ -55,6 +59,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "rule_identifier": "unknown-license-reference_108.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_108.RULE",
@@ -69,6 +74,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "x11-xconsortium-veillard",
+          "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
           "rule_identifier": "x11-xconsortium-veillard.LICENSE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
@@ -79,6 +85,7 @@
     {
       "identifier": "x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901",
       "license_expression": "x11-xconsortium-veillard",
+      "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
       "detection_count": 1,
       "detection_log": [],
       "sample_matches": [
@@ -91,6 +98,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "x11-xconsortium-veillard",
+          "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
           "rule_identifier": "x11-xconsortium-veillard.LICENSE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
@@ -108,6 +116,7 @@
       "license_detections": [
         {
           "license_expression": "x11-xconsortium-veillard",
+          "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
           "matches": [
             {
               "score": 100.0,
@@ -118,6 +127,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium-veillard",
+              "spdx_license_expression": "LicenseRef-scancode-x11-xconsortium-veillard",
               "rule_identifier": "x11-xconsortium-veillard.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
@@ -140,6 +150,7 @@
       "license_detections": [
         {
           "license_expression": "x11-xconsortium-veillard",
+          "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
           "matches": [
             {
               "score": 100.0,
@@ -150,6 +161,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
               "rule_identifier": "unknown-license-reference_30.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_30.RULE",
@@ -164,6 +176,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium-veillard",
+              "spdx_license_expression": "LicenseRef-scancode-x11-xconsortium-veillard",
               "rule_identifier": "x11-xconsortium-veillard.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
@@ -188,6 +201,7 @@
       "license_detections": [
         {
           "license_expression": "x11-xconsortium-veillard",
+          "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
           "matches": [
             {
               "score": 100.0,
@@ -198,6 +212,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
               "rule_identifier": "unknown-license-reference_30.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_30.RULE",
@@ -212,6 +227,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium-veillard",
+              "spdx_license_expression": "LicenseRef-scancode-x11-xconsortium-veillard",
               "rule_identifier": "x11-xconsortium-veillard.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",
@@ -256,6 +272,7 @@
       "license_detections": [
         {
           "license_expression": "x11-xconsortium-veillard",
+          "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
           "matches": [
             {
               "score": 100.0,
@@ -266,6 +283,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
               "rule_identifier": "unknown-license-reference_108.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_108.RULE",
@@ -280,6 +298,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium-veillard",
+              "spdx_license_expression": "LicenseRef-scancode-x11-xconsortium-veillard",
               "rule_identifier": "x11-xconsortium-veillard.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE",

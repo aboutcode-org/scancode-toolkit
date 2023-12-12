@@ -42,6 +42,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
               "score": 100.0,
@@ -52,6 +53,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "mit",
+              "spdx_license_expression": "MIT",
               "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
               "rule_relevance": 100,
               "rule_url": null,
@@ -115,6 +117,7 @@
     {
       "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
       "license_expression": "mit",
+      "license_expression_spdx": "MIT",
       "detection_count": 1,
       "sample_matches": [
         {
@@ -126,6 +129,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
           "rule_relevance": 100,
           "rule_url": null,
@@ -136,6 +140,7 @@
     {
       "identifier": "mit-bdbee2a2-57b2-e502-e367-d613d7f6dda8",
       "license_expression": "mit",
+      "license_expression_spdx": "MIT",
       "detection_count": 1,
       "sample_matches": [
         {
@@ -147,6 +152,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "rule_identifier": "mit_272.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_272.RULE",
@@ -202,6 +208,7 @@
           "license_detections": [
             {
               "license_expression": "mit",
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
                   "score": 100.0,
@@ -212,6 +219,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-spdx-id",
                   "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
                   "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
                   "rule_relevance": 100,
                   "rule_url": null,
@@ -266,6 +274,7 @@
       "license_detections": [
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
               "score": 100.0,
@@ -276,6 +285,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "mit",
+              "spdx_license_expression": "MIT",
               "rule_identifier": "mit_272.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_272.RULE"

@@ -16,6 +16,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: intel
+    license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - score: '100.0'
         start_line: 11
@@ -25,6 +26,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
         rule_identifier: intel.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
@@ -67,6 +69,7 @@ license_detections:
           DAMAGE.
     identifier: intel-ba019b8e-e0ea-8048-9073-a76fbb247ff8
   - license_expression: intel
+    license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - score: '95.0'
         start_line: 53
@@ -76,6 +79,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
         rule_identifier: intel_2.RULE
         rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
@@ -119,6 +123,11 @@ license_detections:
   - license_expression: intel AND (bsd-new AND other-permissive AND other-copyleft) AND bsd-new
       AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND hp-1986 AND nilsson-historical
       AND newlib-historical AND bsd-simplified AND x11-hanson AND delorie-historical AND intel-osl-1993
+    license_expression_spdx: LicenseRef-scancode-intel AND (BSD-3-Clause AND LicenseRef-scancode-other-permissive
+      AND LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND dtoa AND SMLNJ AND LicenseRef-scancode-amd-historical
+      AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical
+      AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson AND LicenseRef-scancode-delorie-historical
+      AND LicenseRef-scancode-intel-osl-1993
     matches:
       - score: '95.0'
         start_line: 101
@@ -128,6 +137,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
         rule_identifier: intel_2.RULE
         rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
@@ -175,6 +185,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new AND other-permissive AND other-copyleft
+        spdx_license_expression: BSD-3-Clause AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
         rule_identifier: license-intro_55.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_55.RULE
@@ -192,6 +203,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_newlib.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_newlib.RULE
@@ -214,6 +226,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_newlib3.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_newlib3.RULE
@@ -248,6 +261,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: x11-lucent
+        spdx_license_expression: dtoa
         rule_identifier: x11-lucent.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent.RULE
@@ -270,6 +284,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: standard-ml-nj
+        spdx_license_expression: SMLNJ
         rule_identifier: standard-ml-nj_3.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/standard-ml-nj_3.RULE
@@ -300,6 +315,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: amd-historical
+        spdx_license_expression: LicenseRef-scancode-amd-historical
         rule_identifier: amd-historical_1.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/amd-historical_1.RULE
@@ -324,6 +340,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: sunpro
+        spdx_license_expression: SunPro
         rule_identifier: sunpro.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
@@ -339,6 +356,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: hp-1986
+        spdx_license_expression: HP-1986
         rule_identifier: hp-1986.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hp-1986.LICENSE
@@ -361,6 +379,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: nilsson-historical
+        spdx_license_expression: LicenseRef-scancode-nilsson-historical
         rule_identifier: nilsson-historical.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.LICENSE
@@ -381,6 +400,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: newlib-historical
+        spdx_license_expression: LicenseRef-scancode-newlib-historical
         rule_identifier: newlib-historical.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
@@ -402,6 +422,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_98.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_98.RULE
@@ -435,6 +456,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: amd-historical
+        spdx_license_expression: LicenseRef-scancode-amd-historical
         rule_identifier: amd-historical4.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/amd-historical4.RULE
@@ -459,6 +481,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_933.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_933.RULE
@@ -497,6 +520,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
@@ -529,6 +553,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_newlib3.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_newlib3.RULE
@@ -561,6 +586,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
@@ -593,6 +619,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: x11-hanson
+        spdx_license_expression: LicenseRef-scancode-x11-hanson
         rule_identifier: x11-hanson2.RULE
         rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-hanson2.RULE
@@ -615,6 +642,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
@@ -647,6 +675,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_76.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_76.RULE
@@ -680,6 +709,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: delorie-historical
+        spdx_license_expression: LicenseRef-scancode-delorie-historical
         rule_identifier: delorie-historical.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/delorie-historical.LICENSE
@@ -698,6 +728,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: intel-osl-1993
+        spdx_license_expression: LicenseRef-scancode-intel-osl-1993
         rule_identifier: intel-osl-1993.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel-osl-1993.LICENSE
@@ -733,6 +764,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: hp-1986
+        spdx_license_expression: HP-1986
         rule_identifier: hp-1986.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hp-1986.LICENSE
@@ -755,6 +787,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
@@ -787,6 +820,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
@@ -819,6 +853,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
@@ -851,6 +886,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_206.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_206.RULE
@@ -886,6 +922,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_8.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_8.RULE
@@ -918,6 +955,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
@@ -950,6 +988,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_newlib3.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_newlib3.RULE
@@ -982,6 +1021,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_newlib5.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_newlib5.RULE
@@ -1014,6 +1054,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
@@ -1046,6 +1087,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_183.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_183.RULE
@@ -1080,6 +1122,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_412.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_412.RULE
@@ -1118,6 +1161,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_517.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_517.RULE
@@ -1158,6 +1202,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: newlib-historical
+        spdx_license_expression: LicenseRef-scancode-newlib-historical
         rule_identifier: newlib-historical.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/newlib-historical.LICENSE
@@ -1179,6 +1224,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_979.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_979.RULE
@@ -1212,6 +1258,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_410.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_410.RULE
@@ -1248,6 +1295,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE

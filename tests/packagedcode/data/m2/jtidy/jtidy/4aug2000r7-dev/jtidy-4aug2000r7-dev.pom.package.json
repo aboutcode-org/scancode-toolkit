@@ -35,6 +35,7 @@
   "license_detections": [
     {
       "license_expression": "tidy",
+      "license_expression_spdx": "HTMLTIDY",
       "matches": [
         {
           "score": 100.0,
@@ -45,6 +46,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "tidy",
+          "spdx_license_expression": "HTMLTIDY",
           "rule_identifier": "tidy_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tidy_2.RULE",

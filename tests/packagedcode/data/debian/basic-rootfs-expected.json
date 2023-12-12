@@ -41,6 +41,7 @@
       "license_detections": [
         {
           "license_expression": "x11-fsf",
+          "license_expression_spdx": "X11-distribute-modifications-variant",
           "matches": [
             {
               "score": 100.0,
@@ -51,6 +52,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "x11-fsf",
+              "spdx_license_expression": "X11-distribute-modifications-variant",
               "rule_identifier": "x11-fsf.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
@@ -61,6 +63,7 @@
         },
         {
           "license_expression": "x11-xconsortium",
+          "license_expression_spdx": "X11",
           "matches": [
             {
               "score": 100.0,
@@ -71,6 +74,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium",
+              "spdx_license_expression": "X11",
               "rule_identifier": "x11-xconsortium_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE",
@@ -81,6 +85,7 @@
         },
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -91,6 +96,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "bsd-new_19.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
@@ -101,6 +107,7 @@
         },
         {
           "license_expression": "x11-xconsortium",
+          "license_expression_spdx": "X11",
           "matches": [
             {
               "score": 100.0,
@@ -111,6 +118,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "x11-xconsortium",
+              "spdx_license_expression": "X11",
               "rule_identifier": "x11-xconsortium_41.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_41.RULE",
@@ -229,6 +237,7 @@
       "other_license_detections": [
         {
           "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
+          "license_expression_spdx": "LGPL-2.1-or-later AND LGPL-2.1-only",
           "matches": [
             {
               "score": 100.0,
@@ -239,6 +248,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "lgpl-2.1-plus",
+              "spdx_license_expression": "LGPL-2.1-or-later",
               "rule_identifier": "lgpl-2.1-plus_108.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
@@ -253,6 +263,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1-plus",
+              "spdx_license_expression": "LGPL-2.1-or-later",
               "rule_identifier": "lgpl-2.1-plus_93.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
@@ -267,6 +278,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "lgpl-2.1",
+              "spdx_license_expression": "LGPL-2.1-only",
               "rule_identifier": "lgpl-2.1_314.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",
@@ -391,6 +403,7 @@
           "license_detections": [
             {
               "license_expression": "x11-fsf",
+              "license_expression_spdx": "X11-distribute-modifications-variant",
               "matches": [
                 {
                   "score": 100.0,
@@ -401,6 +414,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "x11-fsf",
+                  "spdx_license_expression": "X11-distribute-modifications-variant",
                   "rule_identifier": "x11-fsf.LICENSE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-fsf.LICENSE",
@@ -411,6 +425,7 @@
             },
             {
               "license_expression": "x11-xconsortium",
+              "license_expression_spdx": "X11",
               "matches": [
                 {
                   "score": 100.0,
@@ -421,6 +436,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "x11-xconsortium",
+                  "spdx_license_expression": "X11",
                   "rule_identifier": "x11-xconsortium_2.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE",
@@ -431,6 +447,7 @@
             },
             {
               "license_expression": "bsd-new",
+              "license_expression_spdx": "BSD-3-Clause",
               "matches": [
                 {
                   "score": 100.0,
@@ -441,6 +458,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "bsd-new",
+                  "spdx_license_expression": "BSD-3-Clause",
                   "rule_identifier": "bsd-new_19.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE",
@@ -451,6 +469,7 @@
             },
             {
               "license_expression": "x11-xconsortium",
+              "license_expression_spdx": "X11",
               "matches": [
                 {
                   "score": 100.0,
@@ -461,6 +480,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "x11-xconsortium",
+                  "spdx_license_expression": "X11",
                   "rule_identifier": "x11-xconsortium_41.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_41.RULE",
@@ -534,6 +554,7 @@
           "other_license_detections": [
             {
               "license_expression": "lgpl-2.1-plus AND lgpl-2.1",
+              "license_expression_spdx": "LGPL-2.1-or-later AND LGPL-2.1-only",
               "matches": [
                 {
                   "score": 100.0,
@@ -544,6 +565,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "lgpl-2.1-plus",
+                  "spdx_license_expression": "LGPL-2.1-or-later",
                   "rule_identifier": "lgpl-2.1-plus_108.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE",
@@ -558,6 +580,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "lgpl-2.1-plus",
+                  "spdx_license_expression": "LGPL-2.1-or-later",
                   "rule_identifier": "lgpl-2.1-plus_93.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_93.RULE",
@@ -572,6 +595,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "lgpl-2.1",
+                  "spdx_license_expression": "LGPL-2.1-only",
                   "rule_identifier": "lgpl-2.1_314.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_314.RULE",

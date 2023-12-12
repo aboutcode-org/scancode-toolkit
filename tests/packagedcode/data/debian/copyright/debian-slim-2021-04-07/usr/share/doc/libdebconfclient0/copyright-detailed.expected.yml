@@ -5,6 +5,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: public-domain
+    license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - score: '100.0'
         start_line: 17
@@ -14,12 +15,14 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
         rule_identifier: public-domain_282.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_282.RULE
         matched_text: derived portions are public domain)
     identifier: public_domain-8b1c4208-37f4-199b-a316-29e1b9bdceca
   - license_expression: bsd-unmodified
+    license_expression_spdx: LicenseRef-scancode-bsd-unmodified
     matches:
       - score: '100.0'
         start_line: 22
@@ -29,6 +32,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-unmodified
+        spdx_license_expression: LicenseRef-scancode-bsd-unmodified
         rule_identifier: bsd-unmodified_4.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-unmodified_4.RULE

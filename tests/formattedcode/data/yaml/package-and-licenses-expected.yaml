@@ -88,6 +88,7 @@ packages:
     declared_license_expression_spdx: Apache-2.0
     license_detections:
       - license_expression: apache-2.0
+        license_expression_spdx: Apache-2.0
         matches:
           - score: '100.0'
             start_line: 1
@@ -97,6 +98,7 @@ packages:
             match_coverage: '100.0'
             matcher: 1-hash
             license_expression: apache-2.0
+            spdx_license_expression: Apache-2.0
             rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
             rule_relevance: 100
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
@@ -122,6 +124,7 @@ dependencies: []
 license_detections:
   - identifier: apache_2_0-ab23f79b-ec38-9a8a-9b23-85059407f34d
     license_expression: apache-2.0
+    license_expression_spdx: Apache-2.0
     detection_count: 1
     sample_matches:
       - score: '100.0'
@@ -132,6 +135,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
+        license_expression_spdx: Apache-2.0
         rule_identifier: apache-2.0.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
@@ -276,6 +280,7 @@ license_detections:
           \ language governing permissions and\n   limitations under the License."
   - identifier: apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8
     license_expression: apache-2.0
+    license_expression_spdx: Apache-2.0
     detection_count: 1
     sample_matches:
       - score: '100.0'
@@ -286,12 +291,14 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
+        license_expression_spdx: Apache-2.0
         rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
         matched_text: Apache-2.0
   - identifier: apache_2_0-ec759ae0-ea5a-f138-793e-388520e080c0
     license_expression: apache-2.0
+    license_expression_spdx: Apache-2.0
     detection_count: 1
     sample_matches:
       - score: '100.0'
@@ -302,12 +309,14 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: apache-2.0
+        license_expression_spdx: Apache-2.0
         rule_identifier: apache-2.0_65.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: license = Apache-2.0
   - identifier: apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39
     license_expression: apache-2.0 AND (apache-2.0 OR mit)
+    license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
     detection_count: 1
     sample_matches:
       - score: '80.0'
@@ -318,6 +327,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: apache-2.0
+        license_expression_spdx: Apache-2.0
         rule_identifier: apache-2.0_73.RULE
         rule_relevance: 80
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE
@@ -330,12 +340,14 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: apache-2.0 OR mit
+        license_expression_spdx: Apache-2.0 OR MIT
         rule_identifier: apache-2.0_or_mit_36.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE
         matched_text: This is licensed under Apache-2.0 or MIT
   - identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
     license_expression: mit
+    license_expression_spdx: MIT
     detection_count: 1
     sample_matches:
       - score: '100.0'
@@ -346,6 +358,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
+        license_expression_spdx: MIT
         rule_identifier: mit.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
@@ -1042,6 +1055,7 @@ files:
     detected_license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
     license_detections:
       - license_expression: apache-2.0 AND (apache-2.0 OR mit)
+        license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
         matches:
           - score: '80.0'
             start_line: 3
@@ -1051,6 +1065,7 @@ files:
             match_coverage: '100.0'
             matcher: 2-aho
             license_expression: apache-2.0
+            spdx_license_expression: Apache-2.0
             rule_identifier: apache-2.0_73.RULE
             rule_relevance: 80
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE
@@ -1063,6 +1078,7 @@ files:
             match_coverage: '100.0'
             matcher: 2-aho
             license_expression: apache-2.0 OR mit
+            spdx_license_expression: Apache-2.0 OR MIT
             rule_identifier: apache-2.0_or_mit_36.RULE
             rule_relevance: 100
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE
@@ -1115,6 +1131,7 @@ files:
     detected_license_expression_spdx: Apache-2.0
     license_detections:
       - license_expression: apache-2.0
+        license_expression_spdx: Apache-2.0
         matches:
           - score: '100.0'
             start_line: 2
@@ -1124,6 +1141,7 @@ files:
             match_coverage: '100.0'
             matcher: 1-hash
             license_expression: apache-2.0
+            spdx_license_expression: Apache-2.0
             rule_identifier: apache-2.0.LICENSE
             rule_relevance: 100
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE
@@ -1322,6 +1340,7 @@ files:
     detected_license_expression_spdx: MIT
     license_detections:
       - license_expression: mit
+        license_expression_spdx: MIT
         matches:
           - score: '100.0'
             start_line: 2
@@ -1331,6 +1350,7 @@ files:
             match_coverage: '100.0'
             matcher: 1-hash
             license_expression: mit
+            spdx_license_expression: MIT
             rule_identifier: mit.LICENSE
             rule_relevance: 100
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
@@ -1416,6 +1436,7 @@ files:
         declared_license_expression_spdx: Apache-2.0
         license_detections:
           - license_expression: apache-2.0
+            license_expression_spdx: Apache-2.0
             matches:
               - score: '100.0'
                 start_line: 1
@@ -1425,6 +1446,7 @@ files:
                 match_coverage: '100.0'
                 matcher: 1-hash
                 license_expression: apache-2.0
+                spdx_license_expression: Apache-2.0
                 rule_identifier: spdx_license_id_apache-2.0_for_apache-2.0.RULE
                 rule_relevance: 100
                 rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE
@@ -1455,6 +1477,7 @@ files:
     detected_license_expression_spdx: Apache-2.0
     license_detections:
       - license_expression: apache-2.0
+        license_expression_spdx: Apache-2.0
         matches:
           - score: '100.0'
             start_line: 4
@@ -1464,6 +1487,7 @@ files:
             match_coverage: '100.0'
             matcher: 2-aho
             license_expression: apache-2.0
+            spdx_license_expression: Apache-2.0
             rule_identifier: apache-2.0_65.RULE
             rule_relevance: 100
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE

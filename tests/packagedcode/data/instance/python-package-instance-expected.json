@@ -37,6 +37,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -47,6 +48,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "bsd-new_1305.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",
@@ -180,6 +182,7 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
+              "license_expression_spdx": "BSD-3-Clause",
               "matches": [
                 {
                   "score": 100.0,
@@ -190,6 +193,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
+                  "spdx_license_expression": "BSD-3-Clause",
                   "rule_identifier": "bsd-new_1305.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1305.RULE",

@@ -35,6 +35,7 @@
   "license_detections": [
     {
       "license_expression": "cpl-1.0",
+      "license_expression_spdx": "CPL-1.0",
       "matches": [
         {
           "score": 100.0,
@@ -45,6 +46,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "cpl-1.0",
+          "spdx_license_expression": "CPL-1.0",
           "rule_identifier": "cpl-1.0_5.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_5.RULE",
@@ -59,6 +61,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "cpl-1.0",
+          "spdx_license_expression": "CPL-1.0",
           "rule_identifier": "cpl-1.0_10.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_10.RULE",

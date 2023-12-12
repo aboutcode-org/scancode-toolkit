@@ -24,6 +24,7 @@ other_license_expression_spdx: BSD-3-Clause AND FSFULLRWD AND BSD-3-Clause AND B
 license_detections: []
 other_license_detections:
   - license_expression: fsf-unlimited-no-warranty
+    license_expression_spdx: FSFULLRWD
     matches:
       - score: '100.0'
         start_line: 17
@@ -33,6 +34,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: fsf-unlimited-no-warranty
+        spdx_license_expression: FSFULLRWD
         rule_identifier: fsf-unlimited-no-warranty.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty.RULE
@@ -47,6 +49,7 @@ other_license_detections:
             PURPOSE.  */
     identifier: fsf_unlimited_no_warranty-005cbd82-97e0-5c6c-e111-cd46d95d2c5a
   - license_expression: isc
+    license_expression_spdx: ISC
     matches:
       - score: '100.0'
         start_line: 61
@@ -56,6 +59,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: isc
+        spdx_license_expression: ISC
         rule_identifier: isc_20.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_20.RULE
@@ -73,6 +77,7 @@ other_license_detections:
           PERFORMANCE OF THIS SOFTWARE.
     identifier: isc-027c5afe-e7fe-a7fe-149e-fdcae05e6c2e
   - license_expression: isc AND ibm-dhcp
+    license_expression_spdx: ISC AND LicenseRef-scancode-ibm-dhcp
     matches:
       - score: '100.0'
         start_line: 80
@@ -82,6 +87,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: isc
+        spdx_license_expression: ISC
         rule_identifier: isc_9.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
@@ -106,6 +112,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ibm-dhcp
+        spdx_license_expression: LicenseRef-scancode-ibm-dhcp
         rule_identifier: ibm-dhcp.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
@@ -132,6 +139,7 @@ other_license_detections:
           IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
     identifier: isc_and_ibm_dhcp-d539ba65-a2a0-2bb1-a2a4-c389ed251972
   - license_expression: free-unknown
+    license_expression_spdx: LicenseRef-scancode-free-unknown
     matches:
       - score: '100.0'
         start_line: 160
@@ -141,12 +149,14 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: free-unknown
+        spdx_license_expression: LicenseRef-scancode-free-unknown
         rule_identifier: free-unknown-package_4.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_4.RULE
         matched_text: This file is distributed under the same license as the
     identifier: free_unknown-fddf748a-9953-bc6c-cb9d-91001840e335
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
       - score: '100.0'
         start_line: 165
@@ -156,6 +166,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_19.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
@@ -185,6 +196,7 @@ other_license_detections:
           SUCH DAMAGE.
     identifier: bsd_new-ccc98c3a-92d4-e7a3-e0ba-798328cb6b98
   - license_expression: mit
+    license_expression_spdx: MIT
     matches:
       - score: '80.0'
         start_line: 46
@@ -194,6 +206,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit
+        spdx_license_expression: MIT
         rule_identifier: mit_17.RULE
         rule_relevance: 80
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_17.RULE
@@ -210,6 +223,7 @@ other_license_detections:
           * included in all copies or substantial portions of the Software.
     identifier: mit-19e92631-4a50-0b43-f7f7-3c6b7d44ec18
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
       - score: '100.0'
         start_line: 151
@@ -219,6 +233,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_1043.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1043.RULE

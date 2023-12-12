@@ -32,6 +32,7 @@ other_license_expression_spdx: (Apache-2.0 AND Apache-2.0) AND (BSD-3-Clause OR 
 license_detections: []
 other_license_detections:
   - license_expression: markus-kuhn-license
+    license_expression_spdx: HPND-Markus-Kuhn
     matches:
       - score: '100.0'
         start_line: 21
@@ -41,6 +42,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: markus-kuhn-license
+        spdx_license_expression: HPND-Markus-Kuhn
         rule_identifier: markus-kuhn-license.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/markus-kuhn-license.LICENSE
@@ -50,6 +52,7 @@ other_license_detections:
           disclaims all warranties with regard to this software.
     identifier: markus_kuhn_license-295f6fda-191f-872c-b04b-3876e296284a
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - score: '100.0'
         start_line: 33
@@ -59,6 +62,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_323.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_323.RULE
@@ -67,6 +71,7 @@ other_license_detections:
           without limitation, modified or unmodified, in any way, for any purpose.
     identifier: other_permissive-7bea3fe6-1cb8-bf34-9c3e-7838c62068eb
   - license_expression: gpl-2.0-plus AND gpl-2.0
+    license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
     matches:
       - score: '100.0'
         start_line: 78
@@ -76,6 +81,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
@@ -88,6 +94,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
         rule_identifier: gpl-2.0_1325.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1325.RULE
@@ -96,6 +103,7 @@ other_license_detections:
           found in `/usr/share/common-licenses/GPL-2'.
     identifier: gpl_2_0_plus_and_gpl_2_0-10dc4dde-c7f1-a166-da30-2c69a01c2c0f
   - license_expression: gpl-3.0-plus AND gpl-3.0
+    license_expression_spdx: GPL-3.0-or-later AND GPL-3.0-only
     matches:
       - score: '100.0'
         start_line: 82
@@ -105,6 +113,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
         rule_identifier: gpl-3.0-plus_92.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
@@ -117,6 +126,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0
+        spdx_license_expression: GPL-3.0-only
         rule_identifier: gpl-3.0_480.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_480.RULE
@@ -125,6 +135,7 @@ other_license_detections:
           found in `/usr/share/common-licenses/GPL-3'.
     identifier: gpl_3_0_plus_and_gpl_3_0-078c7647-d24b-f86e-aa47-7ac72abda7dc
   - license_expression: apache-2.0
+    license_expression_spdx: Apache-2.0
     matches:
       - score: '100.0'
         start_line: 86
@@ -134,6 +145,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
+        spdx_license_expression: Apache-2.0
         rule_identifier: apache-2.0_65.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
@@ -146,6 +158,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
+        spdx_license_expression: Apache-2.0
         rule_identifier: apache-2.0_2.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE
@@ -168,6 +181,7 @@ other_license_detections:
           under the License.
     identifier: apache_2_0-aeabe930-a28e-205e-e368-f6c12f1d7220
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
       - score: '100.0'
         start_line: 107
@@ -177,6 +191,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_970.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_970.RULE
@@ -208,6 +223,7 @@ other_license_detections:
           IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-a174ddc5-8db2-d884-fdfa-783911e89ca7
   - license_expression: bsd-simplified
+    license_expression_spdx: BSD-2-Clause
     matches:
       - score: '100.0'
         start_line: 136
@@ -217,6 +233,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
@@ -243,6 +260,7 @@ other_license_detections:
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_simplified-a1deb97f-56cd-71ea-a95f-82477d400503
   - license_expression: mit
+    license_expression_spdx: MIT
     matches:
       - score: '100.0'
         start_line: 158
@@ -252,6 +270,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
+        spdx_license_expression: MIT
         rule_identifier: mit.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
@@ -275,6 +294,7 @@ other_license_detections:
           DEALINGS IN THE SOFTWARE.
     identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: unicode
+    license_expression_spdx: LicenseRef-scancode-unicode
     matches:
       - score: '100.0'
         start_line: 177
@@ -284,6 +304,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: unicode
+        spdx_license_expression: LicenseRef-scancode-unicode
         rule_identifier: unicode_56.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_56.RULE
@@ -322,6 +343,7 @@ other_license_detections:
           trademarks mentioned herein are the property of their respective owners.
     identifier: unicode-9705ed00-4a5e-7686-ae43-8d76e5bb8000
   - license_expression: afl-3.0
+    license_expression_spdx: AFL-3.0
     matches:
       - score: '100.0'
         start_line: 211
@@ -331,6 +353,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: afl-3.0
+        spdx_license_expression: AFL-3.0
         rule_identifier: afl-3.0.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/afl-3.0.LICENSE

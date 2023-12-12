@@ -6,6 +6,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: reportbug
+    license_expression_spdx: LicenseRef-scancode-reportbug
     matches:
       - score: '100.0'
         start_line: 10
@@ -15,6 +16,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: reportbug
+        spdx_license_expression: LicenseRef-scancode-reportbug
         rule_identifier: reportbug_1.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/reportbug_1.RULE
@@ -37,6 +39,7 @@ license_detections:
               #  SOFTWARE.
     identifier: reportbug-e60ef7fe-f574-325a-97a9-98023b9499bd
   - license_expression: gpl-1.0-plus
+    license_expression_spdx: GPL-1.0-or-later
     matches:
       - score: '100.0'
         start_line: 32
@@ -46,6 +49,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus
+        spdx_license_expression: GPL-1.0-or-later
         rule_identifier: gpl_77.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_77.RULE
@@ -58,6 +62,7 @@ license_detections:
               can be found in file "/usr/share/common-licenses/GPL".
     identifier: gpl_1_0_plus-f1eeed44-9773-383b-20dd-aee6015f96bf
   - license_expression: reportbug AND gpl-2.0
+    license_expression_spdx: LicenseRef-scancode-reportbug AND GPL-2.0-only
     matches:
       - score: '100.0'
         start_line: 43
@@ -67,6 +72,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: reportbug
+        spdx_license_expression: LicenseRef-scancode-reportbug
         rule_identifier: reportbug_1.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/reportbug_1.RULE
@@ -95,6 +101,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
         rule_identifier: gpl-2.0_561.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE

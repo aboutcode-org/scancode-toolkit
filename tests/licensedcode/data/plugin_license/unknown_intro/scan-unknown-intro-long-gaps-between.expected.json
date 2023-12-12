@@ -3,6 +3,7 @@
     {
       "identifier": "bzip2_libbzip_2010-2234b9aa-1198-8ed2-f0d2-3310ced04b8a",
       "license_expression": "bzip2-libbzip-2010",
+      "license_expression_spdx": "bzip2-1.0.6",
       "detection_count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
@@ -17,6 +18,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "rule_identifier": "license-intro_4.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
@@ -31,6 +33,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "bzip2-libbzip-2010",
+          "license_expression_spdx": "bzip2-1.0.6",
           "rule_identifier": "bzip2-libbzip-2010.LICENSE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",
@@ -41,6 +44,7 @@
     {
       "identifier": "x11_lucent-3c40145a-efd5-16ba-0a7a-9c28d9993bc2",
       "license_expression": "x11-lucent",
+      "license_expression_spdx": "dtoa",
       "detection_count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
@@ -55,6 +59,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "rule_identifier": "license-intro_4.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
@@ -69,6 +74,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "x11-lucent",
+          "license_expression_spdx": "dtoa",
           "rule_identifier": "x11-lucent_1.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent_1.RULE",
@@ -86,6 +92,7 @@
       "license_detections": [
         {
           "license_expression": "x11-lucent",
+          "license_expression_spdx": "dtoa",
           "matches": [
             {
               "score": 100.0,
@@ -96,6 +103,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
               "rule_identifier": "license-intro_4.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
@@ -110,6 +118,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "x11-lucent",
+              "spdx_license_expression": "dtoa",
               "rule_identifier": "x11-lucent_1.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-lucent_1.RULE",
@@ -123,6 +132,7 @@
         },
         {
           "license_expression": "bzip2-libbzip-2010",
+          "license_expression_spdx": "bzip2-1.0.6",
           "matches": [
             {
               "score": 100.0,
@@ -133,6 +143,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
               "rule_identifier": "license-intro_4.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_4.RULE",
@@ -147,6 +158,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bzip2-libbzip-2010",
+              "spdx_license_expression": "bzip2-1.0.6",
               "rule_identifier": "bzip2-libbzip-2010.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bzip2-libbzip-2010.LICENSE",

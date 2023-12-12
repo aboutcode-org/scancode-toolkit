@@ -43,6 +43,7 @@
     "license_detections": [
       {
         "license_expression": "apache-2.0 OR mit",
+        "license_expression_spdx": "Apache-2.0 OR MIT",
         "matches": [
           {
             "score": 99.0,
@@ -53,6 +54,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "apache-2.0 OR mit",
+            "spdx_license_expression": "Apache-2.0 OR MIT",
             "rule_identifier": "apache-2.0_or_mit_48.RULE",
             "rule_relevance": 99,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_48.RULE",

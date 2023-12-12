@@ -5,6 +5,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
       - score: '97.18'
         start_line: 20
@@ -14,6 +15,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 3-seq
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_67.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_67.RULE
@@ -43,6 +45,7 @@ license_detections:
           SUCH DAMAGE.
     identifier: bsd_new-44167a67-f95e-380d-3fbb-e5be5e832c48
   - license_expression: tcp-wrappers
+    license_expression_spdx: TCP-wrappers
     matches:
       - score: '100.0'
         start_line: 72
@@ -52,6 +55,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: tcp-wrappers
+        spdx_license_expression: TCP-wrappers
         rule_identifier: tcp-wrappers_3.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcp-wrappers_3.RULE
@@ -65,6 +69,7 @@ license_detections:
           \ of\n* merchantibility and fitness for any particular purpose."
     identifier: tcp_wrappers-47a49a2d-71d2-76d4-0780-2d5c538898f7
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 92
@@ -74,6 +79,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_749.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_749.RULE

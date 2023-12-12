@@ -3,6 +3,7 @@
     {
       "identifier": "pygres_2_2-04f085e8-3db1-f9e2-8dde-7ba8a7ba619a",
       "license_expression": "pygres-2.2",
+      "license_expression_spdx": "LicenseRef-scancode-pygres-2.2",
       "detection_count": 1,
       "sample_matches": [
         {
@@ -14,6 +15,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "pygres-2.2",
+          "license_expression_spdx": "LicenseRef-scancode-pygres-2.2",
           "rule_identifier": "pygres-2.2_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE",
@@ -47,6 +49,7 @@
       "license_detections": [
         {
           "license_expression": "pygres-2.2",
+          "license_expression_spdx": "LicenseRef-scancode-pygres-2.2",
           "matches": [
             {
               "score": 100.0,
@@ -57,6 +60,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "pygres-2.2",
+              "spdx_license_expression": "LicenseRef-scancode-pygres-2.2",
               "rule_identifier": "pygres-2.2_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pygres-2.2_2.RULE"

@@ -5,6 +5,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-3.0-plus
+    license_expression_spdx: GPL-3.0-or-later
     matches:
       - score: '100.0'
         start_line: 20
@@ -14,6 +15,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
         rule_identifier: gpl-3.0-plus_283.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_283.RULE
@@ -24,6 +26,7 @@ license_detections:
           \ version 3 can be found in /usr/share/common-licenses/GPL-3."
     identifier: gpl_3_0_plus-72552c94-3196-d38e-6a71-2d6e21cd1304
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 32
@@ -33,6 +36,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_734.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_734.RULE

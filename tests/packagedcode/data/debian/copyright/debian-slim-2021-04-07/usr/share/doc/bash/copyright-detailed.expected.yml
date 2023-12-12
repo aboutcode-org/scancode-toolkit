@@ -10,6 +10,8 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-3.0-plus AND bash-exception-gpl AND gpl-1.0-plus
+    license_expression_spdx: GPL-3.0-or-later AND LicenseRef-scancode-bash-exception-gpl-2.0
+      AND GPL-1.0-or-later
     matches:
       - score: '100.0'
         start_line: 13
@@ -19,6 +21,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
         rule_identifier: gpl-3.0-plus_289.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_289.RULE
@@ -45,6 +48,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bash-exception-gpl
+        spdx_license_expression: LicenseRef-scancode-bash-exception-gpl-2.0
         rule_identifier: bash-exception-gpl.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bash-exception-gpl.LICENSE
@@ -64,12 +68,14 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-1.0-plus
+        spdx_license_expression: GPL-1.0-or-later
         rule_identifier: gpl_72.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE
         matched_text: License GPL
     identifier: gpl_3_0_plus_and_bash_exception_gpl_and_gpl_1_0_plus-97ecff07-b029-2b9f-7d04-2b0e02ccce04
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - score: '100.0'
         start_line: 44
@@ -79,6 +85,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_207.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_207.RULE
@@ -90,6 +97,7 @@ license_detections:
            contents of this document remain unaltered.
     identifier: other_permissive-60c74a7c-6092-8de0-c193-49a4fe912e05
   - license_expression: gfdl-1.3-plus
+    license_expression_spdx: GFDL-1.3-or-later
     matches:
       - score: '100.0'
         start_line: 55
@@ -99,6 +107,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
+        spdx_license_expression: GFDL-1.3-or-later
         rule_identifier: gfdl-1.3-plus_22.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus_22.RULE
@@ -115,6 +124,7 @@ license_detections:
            ``GNU Free Documentation License''.
     identifier: gfdl_1_3_plus-0aeecc5a-f102-1cd4-f9a4-21a9fa22ea82
   - license_expression: gfdl-1.3-plus
+    license_expression_spdx: GFDL-1.3-or-later
     matches:
       - score: '100.0'
         start_line: 71
@@ -124,6 +134,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
+        spdx_license_expression: GFDL-1.3-or-later
         rule_identifier: gfdl-1.3-plus.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus.RULE
@@ -136,6 +147,7 @@ license_detections:
            ``GNU Free Documentation License''.
     identifier: gfdl_1_3_plus-07dd7e9d-9df0-a5d7-2970-ca1db4485238
   - license_expression: other-permissive AND latex2e
+    license_expression_spdx: LicenseRef-scancode-other-permissive AND Latex2e
     matches:
       - score: '100.0'
         start_line: 82
@@ -145,6 +157,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_206.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_206.RULE
@@ -160,6 +173,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: latex2e
+        spdx_license_expression: Latex2e
         rule_identifier: latex2e_7.RULE
         rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_7.RULE
@@ -180,6 +194,7 @@ license_detections:
            by the Foundation.
     identifier: other_permissive_and_latex2e-9bfec26a-a076-0444-9a14-c06a5cb3d5c9
   - license_expression: latex2e
+    license_expression_spdx: Latex2e
     matches:
       - score: '99.0'
         start_line: 108
@@ -189,6 +204,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: latex2e
+        spdx_license_expression: Latex2e
         rule_identifier: latex2e_3.RULE
         rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_3.RULE
@@ -212,6 +228,7 @@ license_detections:
            into another language, under the above conditions for modified versions.
     identifier: latex2e-abecc49a-960b-cb0b-20f3-1234574e4447
   - license_expression: gfdl-1.3-plus
+    license_expression_spdx: GFDL-1.3-or-later
     matches:
       - score: '100.0'
         start_line: 132
@@ -221,6 +238,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gfdl-1.3-plus
+        spdx_license_expression: GFDL-1.3-or-later
         rule_identifier: gfdl-1.3-plus.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus.RULE
@@ -233,6 +251,7 @@ license_detections:
            ``GNU Free Documentation License''.
     identifier: gfdl_1_3_plus-07dd7e9d-9df0-a5d7-2970-ca1db4485238
   - license_expression: latex2e
+    license_expression_spdx: Latex2e
     matches:
       - score: '99.0'
         start_line: 144
@@ -242,6 +261,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: latex2e
+        spdx_license_expression: Latex2e
         rule_identifier: latex2e_2.RULE
         rule_relevance: 99
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_2.RULE
@@ -265,6 +285,7 @@ license_detections:
            into another language, under the above conditions for modified versions.
     identifier: latex2e-6a890414-92fd-9f22-de3c-b47764d7b84e
   - license_expression: bsd-original-uc AND historical
+    license_expression_spdx: BSD-4-Clause-UC AND HPND
     matches:
       - score: '100.0'
         start_line: 168
@@ -274,6 +295,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-original-uc
+        spdx_license_expression: BSD-4-Clause-UC
         rule_identifier: bsd-original-uc_3.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
@@ -313,6 +335,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: historical
+        spdx_license_expression: HPND
         rule_identifier: historical_10.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/historical_10.RULE
@@ -334,6 +357,7 @@ license_detections:
            * SOFTWARE.
     identifier: bsd_original_uc_and_historical-f1b25d95-5587-016c-88d1-a85a2079ce8f
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - score: '100.0'
         start_line: 220
@@ -343,6 +367,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_291.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_291.RULE

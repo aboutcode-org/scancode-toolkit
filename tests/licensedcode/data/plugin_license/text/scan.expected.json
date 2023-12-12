@@ -3,6 +3,7 @@
     {
       "identifier": "fsf_ap-49ad9aab-c91b-eeb7-e90f-dc3f959b1c36",
       "license_expression": "fsf-ap",
+      "license_expression_spdx": "FSFAP",
       "detection_count": 1,
       "detection_log": [],
       "sample_matches": [
@@ -15,6 +16,7 @@
           "match_coverage": 91.43,
           "matcher": "3-seq",
           "license_expression": "fsf-ap",
+          "license_expression_spdx": "FSFAP",
           "rule_identifier": "fsf-ap.LICENSE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE",
@@ -25,6 +27,7 @@
     {
       "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
       "detection_count": 1,
       "detection_log": [],
       "sample_matches": [
@@ -37,6 +40,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+          "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
           "rule_identifier": "spdx-license-identifier-gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib-40ad9110ec6551e97f55cd72b297773235a415e7",
           "rule_relevance": 100,
           "rule_url": null,
@@ -54,6 +58,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+          "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
           "matches": [
             {
               "score": 100.0,
@@ -64,6 +69,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+              "spdx_license_expression": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
               "rule_identifier": "spdx-license-identifier-gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib-4099cddf665e1c4068ae21bd191fabfb71b7c536",
               "rule_relevance": 100,
               "rule_url": null,
@@ -86,6 +92,7 @@
       "license_detections": [
         {
           "license_expression": "fsf-ap",
+          "license_expression_spdx": "FSFAP",
           "matches": [
             {
               "score": 91.43,
@@ -96,6 +103,7 @@
               "match_coverage": 91.43,
               "matcher": "3-seq",
               "license_expression": "fsf-ap",
+              "spdx_license_expression": "FSFAP",
               "rule_identifier": "fsf-ap.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE",

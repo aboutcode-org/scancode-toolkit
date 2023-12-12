@@ -1932,9 +1932,10 @@ class BasicRule:
                 expression2=other.license_expression_object,
             )
 
-    def spdx_license_expression(self, licensing=None):
+    def spdx_license_expression(self):
         from licensedcode.cache import build_spdx_license_expression
-        return str(build_spdx_license_expression(self.license_expression, licensing=licensing))
+        from licensedcode.cache import get_cache
+        return str(build_spdx_license_expression(self.license_expression, licensing=get_cache().licensing))
 
     def get_length(self, unique=False):
         return self.length_unique if unique else self.length

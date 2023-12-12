@@ -11,6 +11,7 @@ other_license_expression_spdx: Zlib AND Zlib AND Zlib AND Zlib
 license_detections: []
 other_license_detections:
   - license_expression: zlib
+    license_expression_spdx: Zlib
     matches:
       - score: '100.0'
         start_line: 57
@@ -20,6 +21,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: zlib
+        spdx_license_expression: Zlib
         rule_identifier: zlib_17.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE

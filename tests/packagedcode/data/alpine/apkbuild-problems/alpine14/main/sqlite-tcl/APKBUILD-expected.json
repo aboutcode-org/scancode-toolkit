@@ -27,6 +27,7 @@
   "license_detections": [
     {
       "license_expression": "public-domain",
+      "license_expression_spdx": "LicenseRef-scancode-public-domain",
       "matches": [
         {
           "score": 100.0,
@@ -37,6 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "public-domain",
+          "spdx_license_expression": "LicenseRef-scancode-public-domain",
           "rule_identifier": "spdx-license-identifier-public-domain-3557a117ec0598b8a9056c438400584fec0415e6",
           "rule_relevance": 100,
           "rule_url": null,

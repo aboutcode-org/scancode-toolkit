@@ -48,6 +48,7 @@
     "license_detections": [
       {
         "license_expression": "gpl-3.0",
+        "license_expression_spdx": "GPL-3.0-only",
         "matches": [
           {
             "score": 100.0,
@@ -58,6 +59,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "gpl-3.0",
+            "spdx_license_expression": "GPL-3.0-only",
             "rule_identifier": "gpl-3.0_32.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
@@ -68,6 +70,7 @@
       },
       {
         "license_expression": "gpl-3.0",
+        "license_expression_spdx": "GPL-3.0-only",
         "matches": [
           {
             "score": 100.0,
@@ -78,6 +81,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "free-unknown",
+            "spdx_license_expression": "LicenseRef-scancode-free-unknown",
             "rule_identifier": "pypi_osi_approved.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",
@@ -92,6 +96,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "gpl-3.0",
+            "spdx_license_expression": "GPL-3.0-only",
             "rule_identifier": "gpl-3.0_90.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_90.RULE",

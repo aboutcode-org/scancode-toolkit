@@ -5,6 +5,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: x11-xconsortium-veillard
+    license_expression_spdx: LicenseRef-scancode-x11-xconsortium-veillard
     matches:
       - score: '100.0'
         start_line: 15
@@ -14,6 +15,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: x11-xconsortium-veillard
+        spdx_license_expression: LicenseRef-scancode-x11-xconsortium-veillard
         rule_identifier: x11-xconsortium-veillard.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
@@ -40,6 +42,7 @@ license_detections:
           ings in this Software without prior written authorization from him.
     identifier: x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901
   - license_expression: x11-xconsortium
+    license_expression_spdx: X11
     matches:
       - score: '100.0'
         start_line: 43
@@ -49,6 +52,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: x11-xconsortium
+        spdx_license_expression: X11
         rule_identifier: x11-xconsortium_4.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_4.RULE

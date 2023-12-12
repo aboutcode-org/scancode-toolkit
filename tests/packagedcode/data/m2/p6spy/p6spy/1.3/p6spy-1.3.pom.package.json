@@ -63,6 +63,7 @@
   "license_detections": [
     {
       "license_expression": "apache-1.1",
+      "license_expression_spdx": "Apache-1.1",
       "matches": [
         {
           "score": 100.0,
@@ -73,6 +74,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "apache-1.1",
+          "spdx_license_expression": "Apache-1.1",
           "rule_identifier": "apache-1.1_66.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_66.RULE",
@@ -87,6 +89,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "apache-1.1",
+          "spdx_license_expression": "Apache-1.1",
           "rule_identifier": "apache-1.1_64.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_64.RULE",

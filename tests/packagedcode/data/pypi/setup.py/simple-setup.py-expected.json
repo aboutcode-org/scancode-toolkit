@@ -47,6 +47,7 @@
     "license_detections": [
       {
         "license_expression": "(apache-2.0 AND scancode-acknowledgment) AND cc0-1.0",
+        "license_expression_spdx": "(Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment) AND CC0-1.0",
         "matches": [
           {
             "score": 100.0,
@@ -57,6 +58,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "apache-2.0 AND scancode-acknowledgment",
+            "spdx_license_expression": "Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment",
             "rule_identifier": "apache-2.0_and_scancode-acknowledgment_5.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_scancode-acknowledgment_5.RULE",
@@ -71,6 +73,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "cc0-1.0",
+            "spdx_license_expression": "CC0-1.0",
             "rule_identifier": "spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
             "rule_relevance": 95,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
@@ -81,6 +84,7 @@
       },
       {
         "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
         "matches": [
           {
             "score": 95.0,
@@ -91,6 +95,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "apache-2.0",
+            "spdx_license_expression": "Apache-2.0",
             "rule_identifier": "pypi_apache_no-version.RULE",
             "rule_relevance": 95,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
@@ -101,6 +106,7 @@
       },
       {
         "license_expression": "free-unknown",
+        "license_expression_spdx": "LicenseRef-scancode-free-unknown",
         "matches": [
           {
             "score": 100.0,
@@ -111,6 +117,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "free-unknown",
+            "spdx_license_expression": "LicenseRef-scancode-free-unknown",
             "rule_identifier": "pypi_osi_approved.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_osi_approved.RULE",

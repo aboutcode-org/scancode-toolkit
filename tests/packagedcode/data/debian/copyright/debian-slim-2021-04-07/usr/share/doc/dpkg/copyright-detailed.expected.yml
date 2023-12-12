@@ -21,6 +21,7 @@ other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.
 license_detections: []
 other_license_detections:
   - license_expression: public-domain AND other-permissive
+    license_expression_spdx: LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive
     matches:
       - score: '70.0'
         start_line: 102
@@ -30,6 +31,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
         rule_identifier: public-domain_bare_words.RULE
         rule_relevance: 70
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
@@ -42,6 +44,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_277.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_277.RULE
@@ -56,6 +59,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
         rule_identifier: public-domain_346.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_346.RULE
@@ -68,6 +72,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
         rule_identifier: public-domain_348.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_348.RULE
@@ -82,12 +87,14 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
         rule_identifier: public-domain_347.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_347.RULE
         matched_text: placed in public domain as well.
     identifier: public_domain_and_other_permissive-6d37fe29-1db1-5e5f-a49b-c1130b99e1cd
   - license_expression: public-domain
+    license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - score: '100.0'
         start_line: 118
@@ -97,6 +104,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
         rule_identifier: public-domain_303.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_303.RULE
@@ -106,6 +114,7 @@ other_license_detections:
           This code is in the public domain; do with it what you wish.
     identifier: public_domain-12604376-43c0-ec4b-0941-067570a4db40
   - license_expression: gpl-2.0-plus AND gpl-2.0
+    license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
     matches:
       - score: '100.0'
         start_line: 127
@@ -115,6 +124,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
@@ -127,6 +137,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_860.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_860.RULE
@@ -151,6 +162,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
         rule_identifier: gpl-2.0_1299.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1299.RULE
@@ -160,6 +172,7 @@ other_license_detections:
           as the file ‘COPYING’.
     identifier: gpl_2_0_plus_and_gpl_2_0-5a6543fd-26b8-dd6a-e1e9-6425e51ff1a5
   - license_expression: gpl-2.0
+    license_expression_spdx: GPL-2.0-only
     matches:
       - score: '100.0'
         start_line: 145
@@ -169,6 +182,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
         rule_identifier: gpl-2.0_561.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
@@ -181,6 +195,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
         rule_identifier: gpl-2.0_1119.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1119.RULE
@@ -198,6 +213,7 @@ other_license_detections:
           along with this program.  If not, see <https://www.gnu.org/licenses/>.
     identifier: gpl_2_0-a054018a-dccf-8b92-9ab1-ab255ec3aba9
   - license_expression: bsd-simplified
+    license_expression_spdx: BSD-2-Clause
     matches:
       - score: '99.45'
         start_line: 159
@@ -207,6 +223,7 @@ other_license_detections:
         match_coverage: '99.45'
         matcher: 3-seq
         license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
         rule_identifier: bsd-simplified_52.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_52.RULE

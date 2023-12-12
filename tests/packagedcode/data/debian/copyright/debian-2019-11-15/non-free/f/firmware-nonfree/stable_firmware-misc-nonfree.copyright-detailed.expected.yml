@@ -56,6 +56,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: 3com-microcode
+    license_expression_spdx: LicenseRef-scancode-3com-microcode
     matches:
       - score: '100.0'
         start_line: 11
@@ -65,6 +66,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: 3com-microcode
+        spdx_license_expression: LicenseRef-scancode-3com-microcode
         rule_identifier: 3com-microcode3.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/3com-microcode3.RULE
@@ -99,6 +101,7 @@ license_detections:
           COMBINATION WITH THE 3c990img.h MICROCODE SOFTWARE
     identifier: 3com_microcode-95088184-6248-7170-903e-7cdeb257c3c7
   - license_expression: bsd-simplified-source
+    license_expression_spdx: LicenseRef-scancode-bsd-simplified-source
     matches:
       - score: '100.0'
         start_line: 46
@@ -108,6 +111,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-simplified-source
+        spdx_license_expression: LicenseRef-scancode-bsd-simplified-source
         rule_identifier: bsd-simplified-source.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
@@ -118,6 +122,7 @@ license_detections:
           modification.
     identifier: bsd_simplified_source-6143a4b4-ec33-d5c8-8554-6c658178bec4
   - license_expression: agere-bsd
+    license_expression_spdx: LicenseRef-scancode-agere-bsd
     matches:
       - score: '100.0'
         start_line: 56
@@ -127,6 +132,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: agere-bsd
+        spdx_license_expression: LicenseRef-scancode-agere-bsd
         rule_identifier: agere-bsd_1.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agere-bsd_1.RULE
@@ -170,6 +176,7 @@ license_detections:
           DAMAGE.
     identifier: agere_bsd-4a463b61-1437-6a15-9fe6-40378a9eb65d
   - license_expression: x11-acer
+    license_expression_spdx: LicenseRef-scancode-x11-acer
     matches:
       - score: '100.0'
         start_line: 97
@@ -179,6 +186,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: x11-acer
+        spdx_license_expression: LicenseRef-scancode-x11-acer
         rule_identifier: x11-acer.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-acer.LICENSE
@@ -198,6 +206,7 @@ license_detections:
           PERFORMANCE OF THIS SOFTWARE.
     identifier: x11_acer-7550e8f0-db0e-6d89-d2ac-3618d4ee3003
   - license_expression: ctl-linux-firmware
+    license_expression_spdx: LicenseRef-scancode-ctl-linux-firmware
     matches:
       - score: '100.0'
         start_line: 116
@@ -207,6 +216,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ctl-linux-firmware
+        spdx_license_expression: LicenseRef-scancode-ctl-linux-firmware
         rule_identifier: ctl-linux-firmware.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ctl-linux-firmware.LICENSE
@@ -257,6 +267,7 @@ license_detections:
           COMBINATION WITH THIS SOFTWARE.
     identifier: ctl_linux_firmware-34c7234e-10ae-8356-1929-6ccd816982c0
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - score: '100.0'
         start_line: 164
@@ -266,6 +277,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_66.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
@@ -275,6 +287,7 @@ license_detections:
           notice is accompanying it.
     identifier: other_permissive-16dc1659-320f-55c9-0ddb-4d46c5526cbb
   - license_expression: linux-openib
+    license_expression_spdx: Linux-OpenIB
     matches:
       - score: '100.0'
         start_line: 173
@@ -284,6 +297,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: linux-openib
+        spdx_license_expression: Linux-OpenIB
         rule_identifier: linux-openib.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE
@@ -311,6 +325,7 @@ license_detections:
           SOFTWARE.
     identifier: linux_openib-5cc86e85-b634-0fcb-8ddc-4ddbb0522a54
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 200
@@ -320,6 +335,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_334.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_334.RULE
@@ -350,6 +366,7 @@ license_detections:
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: proprietary_license-51a2910b-aac5-7aad-3357-77fd6da29d81
   - license_expression: bsd-simplified-source
+    license_expression_spdx: LicenseRef-scancode-bsd-simplified-source
     matches:
       - score: '100.0'
         start_line: 228
@@ -359,6 +376,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-simplified-source
+        spdx_license_expression: LicenseRef-scancode-bsd-simplified-source
         rule_identifier: bsd-simplified-source.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
@@ -369,6 +387,7 @@ license_detections:
           modification.
     identifier: bsd_simplified_source-6143a4b4-ec33-d5c8-8554-6c658178bec4
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 236
@@ -378,6 +397,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_332.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_332.RULE
@@ -396,6 +416,7 @@ license_detections:
           OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
     identifier: proprietary_license-41a38744-1ebf-1a54-f4b8-57cd0cbf62cd
   - license_expression: isc
+    license_expression_spdx: ISC
     matches:
       - score: '100.0'
         start_line: 252
@@ -405,6 +426,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: isc
+        spdx_license_expression: ISC
         rule_identifier: isc.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
@@ -424,6 +446,7 @@ license_detections:
           PERFORMANCE OF THIS SOFTWARE.
     identifier: isc-58175475-cc81-cb6a-8921-4daa3f26b3e8
   - license_expression: isc
+    license_expression_spdx: ISC
     matches:
       - score: '100.0'
         start_line: 269
@@ -433,6 +456,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: isc
+        spdx_license_expression: ISC
         rule_identifier: isc.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
@@ -452,6 +476,7 @@ license_detections:
           PERFORMANCE OF THIS SOFTWARE.
     identifier: isc-58175475-cc81-cb6a-8921-4daa3f26b3e8
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 286
@@ -461,6 +486,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_331.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_331.RULE
@@ -475,6 +501,7 @@ license_detections:
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
     identifier: proprietary_license-a9e72056-aaa3-7377-e4fe-12479379a931
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
       - score: '100.0'
         start_line: 300
@@ -484,6 +511,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_786.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_786.RULE
@@ -514,6 +542,7 @@ license_detections:
           EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-f3e25f19-7c66-228a-349d-cae0cf7fa1fb
   - license_expression: isc
+    license_expression_spdx: ISC
     matches:
       - score: '100.0'
         start_line: 328
@@ -523,6 +552,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: isc
+        spdx_license_expression: ISC
         rule_identifier: isc.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
@@ -541,6 +571,7 @@ license_detections:
           WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
     identifier: isc-58175475-cc81-cb6a-8921-4daa3f26b3e8
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 344
@@ -550,6 +581,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_330.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_330.RULE
@@ -563,6 +595,7 @@ license_detections:
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
     identifier: proprietary_license-ecce2e4a-d4cf-1dee-1e46-abcca77ae72b
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 355
@@ -572,6 +605,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_328.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_328.RULE
@@ -587,6 +621,7 @@ license_detections:
           PURPOSE AND NON-INFRINGEMENT.
     identifier: proprietary_license-c8f8f417-1187-871b-abf4-44a6b2b46801
   - license_expression: intel
+    license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - score: '95.0'
         start_line: 370
@@ -596,6 +631,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
         rule_identifier: intel_2.RULE
         rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
@@ -636,6 +672,7 @@ license_detections:
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: intel-aad21753-33a8-9b6b-b0be-dbc0838c75ab
   - license_expression: nxp-firmware-patent
+    license_expression_spdx: LicenseRef-scancode-nxp-firmware-patent
     matches:
       - score: '100.0'
         start_line: 414
@@ -645,6 +682,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: nxp-firmware-patent
+        spdx_license_expression: LicenseRef-scancode-nxp-firmware-patent
         rule_identifier: nxp-firmware-patent.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nxp-firmware-patent.LICENSE
@@ -695,6 +733,7 @@ license_detections:
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: nxp_firmware_patent-7f5723fc-1afa-a9f1-d2f4-056f2efa7eb9
   - license_expression: bsd-original
+    license_expression_spdx: BSD-4-Clause
     matches:
       - score: '100.0'
         start_line: 462
@@ -704,6 +743,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-original
+        spdx_license_expression: BSD-4-Clause
         rule_identifier: bsd-original_44.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_44.RULE
@@ -736,6 +776,7 @@ license_detections:
           POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_original-4f35e404-7c29-ac7d-6f02-247d42139dd7
   - license_expression: mit
+    license_expression_spdx: MIT
     matches:
       - score: '98.77'
         start_line: 494
@@ -745,6 +786,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 3-seq
         license_expression: mit
+        spdx_license_expression: MIT
         rule_identifier: mit_712.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_712.RULE
@@ -768,6 +810,7 @@ license_detections:
           OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     identifier: mit-705ac3a8-db0e-b472-c9a5-81aa76c1cd17
   - license_expression: moxa-linux-firmware
+    license_expression_spdx: LicenseRef-scancode-moxa-linux-firmware
     matches:
       - score: '100.0'
         start_line: 515
@@ -777,6 +820,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: moxa-linux-firmware
+        spdx_license_expression: LicenseRef-scancode-moxa-linux-firmware
         rule_identifier: moxa-linux-firmware.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/moxa-linux-firmware.LICENSE
@@ -799,6 +843,7 @@ license_detections:
           5. Moxa(r) is worldwide registered trademark.
     identifier: moxa_linux_firmware-fb6f9a99-6e99-6d97-4c1c-881b96f64e03
   - license_expression: ralink-firmware
+    license_expression_spdx: LicenseRef-scancode-ralink-firmware
     matches:
       - score: '100.0'
         start_line: 537
@@ -808,6 +853,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ralink-firmware
+        spdx_license_expression: LicenseRef-scancode-ralink-firmware
         rule_identifier: ralink-firmware.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
@@ -850,6 +896,7 @@ license_detections:
           DAMAGE.
     identifier: ralink_firmware-93a62c8f-7797-e9e8-e61b-edd0e2768be0
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 577
@@ -859,12 +906,14 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_324.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_324.RULE
         matched_text: All firmware components are redistributable in binary form.
     identifier: proprietary_license-fb7f18e9-048a-60a6-5671-b183fa33d6f6
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 582
@@ -874,6 +923,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_325.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_325.RULE
@@ -1007,6 +1057,7 @@ license_detections:
           writing signed by an authorized officer of NVIDIA.
     identifier: proprietary_license-aac2f5c4-4283-44a0-a2b1-c21fc0892152
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 719
@@ -1016,6 +1067,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_319.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
@@ -1060,6 +1112,7 @@ license_detections:
           DAMAGE.
     identifier: proprietary_license-2c4aae81-5af5-c5c8-6bd9-38a342789964
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 761
@@ -1069,6 +1122,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_311.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_311.RULE
@@ -1083,6 +1137,7 @@ license_detections:
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
     identifier: proprietary_license-838f5686-e3d0-2c33-daf1-28caf52e0dc9
   - license_expression: ralink-firmware
+    license_expression_spdx: LicenseRef-scancode-ralink-firmware
     matches:
       - score: '100.0'
         start_line: 775
@@ -1092,6 +1147,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: ralink-firmware
+        spdx_license_expression: LicenseRef-scancode-ralink-firmware
         rule_identifier: ralink-firmware.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
@@ -1134,6 +1190,7 @@ license_detections:
           DAMAGE.
     identifier: ralink_firmware-93a62c8f-7797-e9e8-e61b-edd0e2768be0
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - score: '100.0'
         start_line: 815
@@ -1143,6 +1200,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_66.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
@@ -1152,6 +1210,7 @@ license_detections:
           notice is accompanying it.
     identifier: other_permissive-16dc1659-320f-55c9-0ddb-4d46c5526cbb
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - score: '100.0'
         start_line: 822
@@ -1161,6 +1220,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
         rule_identifier: other-permissive_66.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
@@ -1170,6 +1230,7 @@ license_detections:
           notice is accompanying it.
     identifier: other_permissive-16dc1659-320f-55c9-0ddb-4d46c5526cbb
   - license_expression: bsd-new AND proprietary-license
+    license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 829
@@ -1179,6 +1240,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: bsd-new AND proprietary-license
+        spdx_license_expression: BSD-3-Clause AND LicenseRef-scancode-proprietary-license
         rule_identifier: bsd-new_and_proprietary-license_1.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_proprietary-license_1.RULE
@@ -1218,6 +1280,7 @@ license_detections:
           EITHER SOLELY OR IN COMBINATION WITH THIS SOFTWARE.
     identifier: bsd_new_and_proprietary_license-c9674145-0129-79f6-f4e9-f55158e8b2ea
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 865
@@ -1227,6 +1290,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_308.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_308.RULE
@@ -1240,6 +1304,7 @@ license_detections:
           of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
     identifier: proprietary_license-1be66554-dd2d-def0-56ec-6b64fe8eeadd
   - license_expression: intel
+    license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - score: '100.0'
         start_line: 876
@@ -1249,6 +1314,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
         rule_identifier: intel.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE

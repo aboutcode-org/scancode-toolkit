@@ -5,6 +5,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: pcre
+    license_expression_spdx: LicenseRef-scancode-pcre
     matches:
       - score: '100.0'
         start_line: 7
@@ -14,12 +15,14 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: pcre
+        spdx_license_expression: LicenseRef-scancode-pcre
         rule_identifier: pcre_4.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pcre_4.RULE
         matched_text: PCRE LICENCE
     identifier: pcre-b7d0af79-af3f-24dc-6a31-2df791031f14
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
       - score: '100.0'
         start_line: 13
@@ -29,6 +32,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_645.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_645.RULE
@@ -38,6 +42,7 @@ license_detections:
           directory, is distributed under the same terms as the software itself.
     identifier: bsd_new-b0c1a29e-cb77-763e-cf87-1a54fced2cf1
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
       - score: '100.0'
         start_line: 44
@@ -47,6 +52,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
         rule_identifier: bsd-new_1105.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1105.RULE

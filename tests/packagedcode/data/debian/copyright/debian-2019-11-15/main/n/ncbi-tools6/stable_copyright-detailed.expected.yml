@@ -38,6 +38,7 @@ other_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef
 license_detections: []
 other_license_detections:
   - license_expression: public-domain AND us-govt-public-domain
+    license_expression_spdx: LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain
     matches:
       - score: '100.0'
         start_line: 92
@@ -47,6 +48,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
         rule_identifier: public-domain_128.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_128.RULE
@@ -59,6 +61,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: us-govt-public-domain
+        spdx_license_expression: LicenseRef-scancode-us-govt-public-domain
         rule_identifier: us-govt-public-domain_24.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/us-govt-public-domain_24.RULE
@@ -84,6 +87,7 @@ other_license_detections:
           Please cite the author in any work or product based on this material.
     identifier: public_domain_and_us_govt_public_domain-895fe8b3-9bbf-2d1f-e72e-0f0fa3e85ebc
   - license_expression: boost-1.0
+    license_expression_spdx: BSL-1.0
     matches:
       - score: '100.0'
         start_line: 115
@@ -93,6 +97,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: boost-1.0
+        spdx_license_expression: BSL-1.0
         rule_identifier: boost-1.0_9.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_9.RULE
@@ -120,6 +125,7 @@ other_license_detections:
           DEALINGS IN THE SOFTWARE.
     identifier: boost_1_0-0a228323-a725-4239-e66d-7117aa6c54bb
   - license_expression: mit
+    license_expression_spdx: MIT
     matches:
       - score: '100.0'
         start_line: 138
@@ -129,6 +135,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: mit
+        spdx_license_expression: MIT
         rule_identifier: mit.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
@@ -152,6 +159,7 @@ other_license_detections:
           IN THE SOFTWARE.
     identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: mit-with-modification-obligations AND proprietary-license
+    license_expression_spdx: HPND-export-US-modify AND LicenseRef-scancode-proprietary-license
     matches:
       - score: '100.0'
         start_line: 157
@@ -161,6 +169,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: mit-with-modification-obligations
+        spdx_license_expression: HPND-export-US-modify
         rule_identifier: mit-with-modification-obligations_4.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-with-modification-obligations_4.RULE
@@ -189,6 +198,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_136.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_136.RULE
@@ -202,6 +212,7 @@ other_license_detections:
           recognition of their trademark status should be given).
     identifier: mit_with_modification_obligations_and_proprietary_license-d8f55aff-c8ea-6055-f1d9-e64dedf37d99
   - license_expression: public-domain
+    license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - score: '100.0'
         start_line: 188
@@ -211,6 +222,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
         rule_identifier: public-domain_359.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_359.RULE
@@ -224,6 +236,7 @@ other_license_detections:
                Champaign, IL  61820
     identifier: public_domain-3ede6353-539f-56a1-dbd0-5b29db1edfc9
   - license_expression: flex-2.5
+    license_expression_spdx: BSD-3-Clause-flex
     matches:
       - score: '100.0'
         start_line: '197'
@@ -233,6 +246,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: flex-2.5
+        spdx_license_expression: BSD-3-Clause-flex
         rule_identifier: flex-2.5_6.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/flex-2.5_6.RULE
@@ -252,6 +266,7 @@ other_license_detections:
           WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
     identifier: flex_2_5-dc2b38a4-d8d9-e49a-8c97-65694300b4be
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 211
@@ -261,6 +276,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
@@ -273,6 +289,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_845.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_845.RULE

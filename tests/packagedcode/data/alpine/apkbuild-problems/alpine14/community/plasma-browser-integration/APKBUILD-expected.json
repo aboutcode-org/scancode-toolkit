@@ -27,6 +27,7 @@
   "license_detections": [
     {
       "license_expression": "gpl-3.0-plus",
+      "license_expression_spdx": "GPL-3.0-or-later",
       "matches": [
         {
           "score": 50.0,
@@ -37,6 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "gpl-3.0-plus",
+          "spdx_license_expression": "GPL-3.0-or-later",
           "rule_identifier": "spdx_license_id_gpl-3.0-or-later_for_gpl-3.0-plus.RULE",
           "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_gpl-3.0-or-later_for_gpl-3.0-plus.RULE",

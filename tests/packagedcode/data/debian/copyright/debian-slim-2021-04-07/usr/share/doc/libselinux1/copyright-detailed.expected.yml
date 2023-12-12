@@ -6,6 +6,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: selinux-nsa-declaration-1.0
+    license_expression_spdx: libselinux-1.0
     matches:
       - score: '100.0'
         start_line: 7
@@ -15,6 +16,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: selinux-nsa-declaration-1.0
+        spdx_license_expression: libselinux-1.0
         rule_identifier: selinux-nsa-declaration-1.0.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/selinux-nsa-declaration-1.0.LICENSE
@@ -42,6 +44,7 @@ license_detections:
           risk.
     identifier: selinux_nsa_declaration_1_0-845d7cb4-a2eb-f401-8cd9-df047578f86c
   - license_expression: gpl-2.0
+    license_expression_spdx: GPL-2.0-only
     matches:
       - score: '100.0'
         start_line: 32
@@ -51,6 +54,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
         rule_identifier: gpl-2.0_929.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_929.RULE
@@ -59,6 +63,7 @@ license_detections:
            version 2.
     identifier: gpl_2_0-a2bdb57d-a203-65c0-fbb7-26a774d0b947
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 38
@@ -68,6 +73,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_384.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_384.RULE
@@ -87,6 +93,7 @@ license_detections:
           General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
     identifier: lgpl_2_1_plus-87de33d2-cbcd-42e9-9876-2f1e5c016188
   - license_expression: gpl-2.0
+    license_expression_spdx: GPL-2.0-only
     matches:
       - score: '100.0'
         start_line: 56
@@ -96,6 +103,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
         rule_identifier: gpl-2.0_930.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_930.RULE

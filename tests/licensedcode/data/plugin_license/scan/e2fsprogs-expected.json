@@ -3,6 +3,7 @@
     {
       "identifier": "gpl_2_0_and_patent_disclaimer-3bb2602f-86f5-b9da-9bf5-b52e6920c8d1",
       "license_expression": "gpl-2.0 AND patent-disclaimer",
+      "license_expression_spdx": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",
       "detection_count": 1,
       "sample_matches": [
         {
@@ -14,6 +15,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "gpl-2.0 AND patent-disclaimer",
+          "license_expression_spdx": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",
           "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE",
@@ -39,6 +41,7 @@
           "match_coverage": 14.39,
           "matcher": "3-seq",
           "license_expression": "lgpl-2.0-plus",
+          "spdx_license_expression": "LGPL-2.0-or-later",
           "rule_identifier": "lgpl-2.0-plus_65.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_65.RULE"
@@ -55,6 +58,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0 AND patent-disclaimer",
+          "license_expression_spdx": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",
           "matches": [
             {
               "score": 100.0,
@@ -65,6 +69,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "gpl-2.0 AND patent-disclaimer",
+              "spdx_license_expression": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",
               "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"

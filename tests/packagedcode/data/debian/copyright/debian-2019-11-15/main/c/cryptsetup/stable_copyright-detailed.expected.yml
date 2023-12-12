@@ -40,6 +40,7 @@ other_license_expression_spdx: GPL-2.0-or-later WITH cryptsetup-OpenSSL-exceptio
 license_detections: []
 other_license_detections:
   - license_expression: gary-s-brown
+    license_expression_spdx: LicenseRef-scancode-gary-s-brown
     matches:
       - score: '100.0'
         start_line: 81
@@ -49,6 +50,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gary-s-brown
+        spdx_license_expression: LicenseRef-scancode-gary-s-brown
         rule_identifier: gary-s-brown.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gary-s-brown.LICENSE
@@ -57,6 +59,7 @@ other_license_detections:
           desired without restriction.
     identifier: gary_s_brown-00cc5fb9-1775-705c-7cef-d16939c33621
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 84
@@ -66,6 +69,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
@@ -78,6 +82,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_807.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_807.RULE
@@ -100,6 +105,7 @@ other_license_detections:
           License v2 can be found in `/usr/share/common-licenses/GPL-2'.
     identifier: gpl_2_0_plus-4e79540c-e313-dd16-f163-61e6669029cb
   - license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus
+    license_expression_spdx: GPL-2.0-or-later WITH cryptsetup-OpenSSL-exception
     matches:
       - score: '100.0'
         start_line: 103
@@ -109,6 +115,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus
+        spdx_license_expression: GPL-2.0-or-later WITH cryptsetup-OpenSSL-exception
         rule_identifier: gpl-2.0-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
@@ -143,6 +150,7 @@ other_license_detections:
           then also delete it here.
     identifier: gpl_2_0_plus_with_openssl_exception_gpl_3_0_plus-cd0a53c3-195e-8aaa-a52a-63cdd0ec060b
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - score: '100.0'
         start_line: 132
@@ -152,6 +160,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_108.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
@@ -164,6 +173,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
         rule_identifier: lgpl-2.1-plus_293.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_293.RULE
@@ -187,6 +197,7 @@ other_license_detections:
           License v2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
     identifier: lgpl_2_1_plus-92524a9d-fa24-4473-c0bd-9db8994678c0
   - license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
+    license_expression_spdx: LGPL-2.1-or-later WITH cryptsetup-OpenSSL-exception
     matches:
       - score: '95.0'
         start_line: 152
@@ -196,6 +207,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
+        spdx_license_expression: LGPL-2.1-or-later WITH cryptsetup-OpenSSL-exception
         rule_identifier: lgpl-2.1-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
         rule_relevance: 95
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_with_openssl-exception-gpl-3.0-plus_3.RULE
@@ -231,6 +243,7 @@ other_license_detections:
           program, then also delete it here.
     identifier: lgpl_2_1_plus_with_openssl_exception_gpl_3_0_plus-e204903f-6e59-75fe-0a89-535375db6e93
   - license_expression: cc0-1.0
+    license_expression_spdx: CC0-1.0
     matches:
       - score: '100.0'
         start_line: 183
@@ -240,6 +253,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: cc0-1.0
+        spdx_license_expression: CC0-1.0
         rule_identifier: cc0-1.0_129.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_129.RULE
@@ -251,6 +265,7 @@ other_license_detections:
           Universal license can be found in `/usr/share/common-licenses/CC0-1.0'.
     identifier: cc0_1_0-5beade1d-aaaa-0e66-b349-bf4292c3ebff
   - license_expression: apache-2.0
+    license_expression_spdx: Apache-2.0
     matches:
       - score: '100.0'
         start_line: 189
@@ -260,6 +275,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
+        spdx_license_expression: Apache-2.0
         rule_identifier: apache-2.0_65.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
@@ -272,6 +288,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: apache-2.0
+        spdx_license_expression: Apache-2.0
         rule_identifier: apache-2.0_845.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_845.RULE

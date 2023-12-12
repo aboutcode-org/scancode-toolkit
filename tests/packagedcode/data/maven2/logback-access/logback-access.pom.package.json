@@ -27,6 +27,7 @@
   "license_detections": [
     {
       "license_expression": "lgpl-2.0-plus",
+      "license_expression_spdx": "LGPL-2.0-or-later",
       "matches": [
         {
           "score": 100.0,
@@ -37,6 +38,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "lgpl-2.0-plus",
+          "spdx_license_expression": "LGPL-2.0-or-later",
           "rule_identifier": "lgpl-2.0-plus_87.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
@@ -51,6 +53,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "lgpl-2.0-plus",
+          "spdx_license_expression": "LGPL-2.0-or-later",
           "rule_identifier": "lgpl_3.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",

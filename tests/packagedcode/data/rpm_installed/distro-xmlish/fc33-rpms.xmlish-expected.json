@@ -30,6 +30,7 @@
     "license_detections": [
       {
         "license_expression": "gpl-3.0-plus AND gpl-2.0-plus AND lgpl-2.0-plus",
+        "license_expression_spdx": "GPL-3.0-or-later AND GPL-2.0-or-later AND LGPL-2.0-or-later",
         "matches": [
           {
             "score": 100.0,
@@ -40,6 +41,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "gpl-3.0-plus",
+            "spdx_license_expression": "GPL-3.0-or-later",
             "rule_identifier": "gpl-3.0-plus_28.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
@@ -54,6 +56,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "gpl-3.0-plus",
+            "spdx_license_expression": "GPL-3.0-or-later",
             "rule_identifier": "gpl-3.0-plus_28.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_28.RULE",
@@ -68,6 +71,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "gpl-2.0-plus",
+            "spdx_license_expression": "GPL-2.0-or-later",
             "rule_identifier": "gpl-2.0-plus_bare_single_word.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_bare_single_word.RULE",
@@ -82,6 +86,7 @@
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "lgpl-2.0-plus",
+            "spdx_license_expression": "LGPL-2.0-or-later",
             "rule_identifier": "lgpl-2.0-plus_68.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_68.RULE",
@@ -237,6 +242,7 @@
     "license_detections": [
       {
         "license_expression": "mit",
+        "license_expression_spdx": "MIT",
         "matches": [
           {
             "score": 100.0,
@@ -247,6 +253,7 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "mit",
+            "spdx_license_expression": "MIT",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_relevance": 100,
             "rule_url": null,

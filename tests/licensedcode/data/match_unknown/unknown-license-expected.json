@@ -3,6 +3,7 @@
     {
       "identifier": "unknown-b0897d47-1c91-9898-2364-2e4d1a34b6fd",
       "license_expression": "unknown",
+      "license_expression_spdx": "LicenseRef-scancode-unknown",
       "detection_count": 1,
       "sample_matches": [
         {
@@ -14,6 +15,7 @@
           "match_coverage": 100.0,
           "matcher": "6-unknown",
           "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
           "rule_identifier": "license-detection-unknown-06adbd6a51da0d78de6a51def94b9fa954a6c4f0",
           "rule_relevance": 100,
           "rule_url": null,
@@ -31,6 +33,7 @@
       "license_detections": [
         {
           "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
           "matches": [
             {
               "score": 86.89,
@@ -41,6 +44,7 @@
               "match_coverage": 100.0,
               "matcher": "6-unknown",
               "license_expression": "unknown",
+              "spdx_license_expression": "LicenseRef-scancode-unknown",
               "rule_identifier": "license-detection-unknown-296da2cbc15d2bba73baa1359cda5fc8bf39b942",
               "rule_relevance": 100,
               "rule_url": null

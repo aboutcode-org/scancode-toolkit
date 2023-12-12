@@ -6,6 +6,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0-plus AND public-domain
+    license_expression_spdx: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
     matches:
       - score: '100.0'
         start_line: 8
@@ -15,6 +16,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: gpl-2.0-plus AND public-domain
+        spdx_license_expression: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
         rule_identifier: gpl-2.0-plus_and_public-domain_810.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_and_public-domain_810.RULE
@@ -25,6 +27,7 @@ license_detections:
           which is in the public domain.
     identifier: gpl_2_0_plus_and_public_domain-e8510ebe-e9a6-c0d1-ae7e-42280922b32a
   - license_expression: smail-gpl
+    license_expression_spdx: LicenseRef-scancode-smail-gpl
     matches:
       - score: '100.0'
         start_line: 18
@@ -34,6 +37,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: smail-gpl
+        spdx_license_expression: LicenseRef-scancode-smail-gpl
         rule_identifier: smail-gpl.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE

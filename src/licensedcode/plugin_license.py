@@ -297,7 +297,12 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
             post_scan=True,
         )
+        license_expression_spdx = build_spdx_license_expression(
+            license_expression=str(license_expression),
+            licensing=get_cache().licensing,
+        )
         license_detection_mapping["license_expression"] = str(license_expression)
+        license_detection_mapping["license_expression_spdx"] = str(license_expression_spdx)
         license_detection_mapping["detection_log"] = detection_log
         license_detection_mapping["identifier"] = get_new_identifier_from_detections(
             initial_detection=license_detection_mapping,

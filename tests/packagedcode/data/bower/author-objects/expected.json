@@ -47,6 +47,7 @@
     "license_detections": [
       {
         "license_expression": "mit",
+        "license_expression_spdx": "MIT",
         "matches": [
           {
             "score": 100.0,
@@ -57,6 +58,7 @@
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "mit",
+            "spdx_license_expression": "MIT",
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_relevance": 100,
             "rule_url": null,
@@ -67,6 +69,7 @@
       },
       {
         "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
         "matches": [
           {
             "score": 100.0,
@@ -77,6 +80,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "apache-2.0",
+            "spdx_license_expression": "Apache-2.0",
             "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
@@ -87,6 +91,7 @@
       },
       {
         "license_expression": "bsd-new",
+        "license_expression_spdx": "BSD-3-Clause",
         "matches": [
           {
             "score": 100.0,
@@ -97,6 +102,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "bsd-new",
+            "spdx_license_expression": "BSD-3-Clause",
             "rule_identifier": "bsd-new_10.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE",

@@ -48,6 +48,7 @@
     "license_detections": [
       {
         "license_expression": "mpl-2.0",
+        "license_expression_spdx": "MPL-2.0",
         "matches": [
           {
             "score": 50.0,
@@ -58,6 +59,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "mpl-2.0",
+            "spdx_license_expression": "MPL-2.0",
             "rule_identifier": "spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
             "rule_relevance": 50,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
@@ -68,6 +70,7 @@
       },
       {
         "license_expression": "mpl-2.0",
+        "license_expression_spdx": "MPL-2.0",
         "matches": [
           {
             "score": 100.0,
@@ -78,6 +81,7 @@
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "mpl-2.0",
+            "spdx_license_expression": "MPL-2.0",
             "rule_identifier": "pypi_mozilla_public_license_2_0.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mozilla_public_license_2_0.RULE",

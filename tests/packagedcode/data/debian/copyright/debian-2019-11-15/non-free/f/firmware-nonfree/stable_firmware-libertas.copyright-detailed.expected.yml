@@ -7,6 +7,7 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - score: '96.37'
         start_line: 11
@@ -16,6 +17,7 @@ license_detections:
         match_coverage: '96.37'
         matcher: 3-seq
         license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
         rule_identifier: proprietary-license_319.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
@@ -60,6 +62,7 @@ license_detections:
           DAMAGE.
     identifier: proprietary_license-f9aa1a05-7e88-4427-f33a-e480c0221ea3
   - license_expression: marvell-firmware
+    license_expression_spdx: LicenseRef-scancode-marvell-firmware
     matches:
       - score: '100.0'
         start_line: 55
@@ -69,6 +72,7 @@ license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: marvell-firmware
+        spdx_license_expression: LicenseRef-scancode-marvell-firmware
         rule_identifier: marvell-firmware.LICENSE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/marvell-firmware.LICENSE

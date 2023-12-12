@@ -49,6 +49,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 99.0,
@@ -59,6 +60,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -142,6 +144,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 99.0,
@@ -152,6 +155,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -188,6 +192,7 @@
     {
       "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-21b00e16-ec3a-6dc3-3971-5dbd5f5b756a",
       "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
+      "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
       "detection_count": 2,
       "detection_log": [],
       "sample_matches": [
@@ -200,6 +205,7 @@
           "match_coverage": 5.88,
           "matcher": "3-seq",
           "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
+          "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
           "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
@@ -210,6 +216,7 @@
     {
       "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
       "license_expression": "bsd-new",
+      "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 6,
       "detection_log": [],
       "sample_matches": [
@@ -222,6 +229,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "rule_identifier": "pypi_bsd_license.RULE",
           "rule_relevance": 99,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -232,6 +240,7 @@
     {
       "identifier": "bsd_new-cdb8fe96-c13c-043d-8031-aebb4cd77653",
       "license_expression": "bsd-new",
+      "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 5,
       "detection_log": [
         "unknown-reference-in-file-to-package"
@@ -246,6 +255,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_3.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
@@ -260,6 +270,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "rule_identifier": "pypi_bsd_license.RULE",
           "rule_relevance": 99,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -270,6 +281,7 @@
     {
       "identifier": "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d",
       "license_expression": "bsd-new",
+      "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 2,
       "detection_log": [],
       "sample_matches": [
@@ -282,6 +294,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "rule_identifier": "bsd-new_683.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE",
@@ -292,6 +305,7 @@
     {
       "identifier": "bsd_new-734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7",
       "license_expression": "bsd-new",
+      "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 2,
       "detection_log": [
         "unknown-reference-in-file-to-package"
@@ -306,6 +320,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "rule_identifier": "free-unknown-package_2.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -320,6 +335,7 @@
           "match_coverage": 100.0,
           "matcher": "1-hash",
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "rule_identifier": "pypi_bsd_license.RULE",
           "rule_relevance": 99,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -381,6 +397,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
+          "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
           "matches": [
             {
               "score": 5.88,
@@ -391,6 +408,7 @@
               "match_coverage": 5.88,
               "matcher": "3-seq",
               "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
+              "spdx_license_expression": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
               "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
@@ -505,6 +523,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -515,6 +534,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
@@ -529,6 +549,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -557,6 +578,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -567,6 +589,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
@@ -581,6 +604,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -633,6 +657,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -643,6 +668,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -657,6 +683,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -685,6 +712,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -695,6 +723,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_2.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_2.RULE",
@@ -709,6 +738,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -737,6 +767,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -747,6 +778,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
@@ -761,6 +793,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -887,6 +920,7 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
+              "license_expression_spdx": "BSD-3-Clause",
               "matches": [
                 {
                   "score": 99.0,
@@ -897,6 +931,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
+                  "spdx_license_expression": "BSD-3-Clause",
                   "rule_identifier": "pypi_bsd_license.RULE",
                   "rule_relevance": 99,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -932,6 +967,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 99.0,
@@ -942,6 +978,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -1008,6 +1045,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -1018,6 +1056,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "bsd-new_683.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE",
@@ -1044,6 +1083,7 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
+          "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
           "matches": [
             {
               "score": 5.88,
@@ -1054,6 +1094,7 @@
               "match_coverage": 5.88,
               "matcher": "3-seq",
               "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
+              "spdx_license_expression": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
               "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
@@ -1139,6 +1180,7 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
+              "license_expression_spdx": "BSD-3-Clause",
               "matches": [
                 {
                   "score": 99.0,
@@ -1149,6 +1191,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
+                  "spdx_license_expression": "BSD-3-Clause",
                   "rule_identifier": "pypi_bsd_license.RULE",
                   "rule_relevance": 99,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -1184,6 +1227,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 99.0,
@@ -1194,6 +1238,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -1306,6 +1351,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -1316,6 +1362,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
@@ -1330,6 +1377,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -1382,6 +1430,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 100.0,
@@ -1392,6 +1441,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "free-unknown",
+              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
               "rule_identifier": "free-unknown-package_3.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown-package_3.RULE",
@@ -1406,6 +1456,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -1455,6 +1506,7 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
+              "license_expression_spdx": "BSD-3-Clause",
               "matches": [
                 {
                   "score": 100.0,
@@ -1465,6 +1517,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "bsd-new",
+                  "spdx_license_expression": "BSD-3-Clause",
                   "rule_identifier": "bsd-new_683.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE",
@@ -1558,6 +1611,7 @@
           "license_detections": [
             {
               "license_expression": "bsd-new",
+              "license_expression_spdx": "BSD-3-Clause",
               "matches": [
                 {
                   "score": 99.0,
@@ -1568,6 +1622,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "bsd-new",
+                  "spdx_license_expression": "BSD-3-Clause",
                   "rule_identifier": "pypi_bsd_license.RULE",
                   "rule_relevance": 99,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
@@ -1603,6 +1658,7 @@
       "license_detections": [
         {
           "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
               "score": 99.0,
@@ -1613,6 +1669,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
               "rule_identifier": "pypi_bsd_license.RULE",
               "rule_relevance": 99,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",

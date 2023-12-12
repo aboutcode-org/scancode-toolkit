@@ -37,6 +37,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
           "matches": [
             {
               "score": 100.0,
@@ -47,6 +48,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "zlib",
+              "spdx_license_expression": "Zlib",
               "rule_identifier": "zlib_in_manifest.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
@@ -61,6 +63,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "zlib",
+              "spdx_license_expression": "Zlib",
               "rule_identifier": "zlib.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
@@ -98,6 +101,7 @@
     {
       "identifier": "zlib-9531c668-be8d-7a25-49eb-c18c9dcd616b",
       "license_expression": "zlib",
+      "license_expression_spdx": "Zlib",
       "detection_count": 2,
       "detection_log": [
         "unknown-reference-to-local-file"
@@ -112,6 +116,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
           "rule_identifier": "zlib_in_manifest.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
@@ -126,6 +131,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
           "rule_identifier": "zlib.LICENSE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
@@ -136,6 +142,7 @@
     {
       "identifier": "zlib-f32ae987-c66a-44ce-bd13-c90e0c59aab8",
       "license_expression": "zlib",
+      "license_expression_spdx": "Zlib",
       "detection_count": 1,
       "detection_log": [],
       "sample_matches": [
@@ -148,6 +155,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
           "rule_identifier": "zlib.LICENSE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
@@ -167,6 +175,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
           "matches": [
             {
               "score": 100.0,
@@ -177,6 +186,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "zlib",
+              "spdx_license_expression": "Zlib",
               "rule_identifier": "zlib.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
@@ -232,6 +242,7 @@
           "license_detections": [
             {
               "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
               "matches": [
                 {
                   "score": 100.0,
@@ -242,6 +253,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "zlib",
+                  "spdx_license_expression": "Zlib",
                   "rule_identifier": "zlib_in_manifest.RULE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
@@ -256,6 +268,7 @@
                   "match_coverage": 100.0,
                   "matcher": "2-aho",
                   "license_expression": "zlib",
+                  "spdx_license_expression": "Zlib",
                   "rule_identifier": "zlib.LICENSE",
                   "rule_relevance": 100,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
@@ -292,6 +305,7 @@
       "license_detections": [
         {
           "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
           "matches": [
             {
               "score": 100.0,
@@ -302,6 +316,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "zlib",
+              "spdx_license_expression": "Zlib",
               "rule_identifier": "zlib_in_manifest.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
@@ -316,6 +331,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "zlib",
+              "spdx_license_expression": "Zlib",
               "rule_identifier": "zlib.LICENSE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",

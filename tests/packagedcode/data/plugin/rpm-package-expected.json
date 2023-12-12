@@ -29,6 +29,7 @@
       "license_detections": [
         {
           "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
           "matches": [
             {
               "score": 50.0,
@@ -39,6 +40,7 @@
               "match_coverage": 100.0,
               "matcher": "1-hash",
               "license_expression": "gpl-1.0-plus",
+              "spdx_license_expression": "GPL-1.0-or-later",
               "rule_identifier": "gpl_bare_word_only.RULE",
               "rule_relevance": 50,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
@@ -105,6 +107,7 @@
           "license_detections": [
             {
               "license_expression": "gpl-1.0-plus",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "matches": [
                 {
                   "score": 50.0,
@@ -115,6 +118,7 @@
                   "match_coverage": 100.0,
                   "matcher": "1-hash",
                   "license_expression": "gpl-1.0-plus",
+                  "spdx_license_expression": "GPL-1.0-or-later",
                   "rule_identifier": "gpl_bare_word_only.RULE",
                   "rule_relevance": 50,
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",

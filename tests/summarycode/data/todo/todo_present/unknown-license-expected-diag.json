@@ -3,6 +3,7 @@
     {
       "identifier": "unknown-b0897d47-1c91-9898-2364-2e4d1a34b6fd",
       "license_expression": "unknown",
+      "license_expression_spdx": "LicenseRef-scancode-unknown",
       "detection_count": 1,
       "detection_log": [
         "unknown-match"
@@ -17,6 +18,7 @@
           "match_coverage": 100.0,
           "matcher": "6-unknown",
           "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
           "rule_identifier": "license-detection-unknown-3d4d4e847eacf4b9efcc80ca90df1eea689f5cee",
           "rule_relevance": 100,
           "rule_url": null,
@@ -33,6 +35,7 @@
       },
       "detection": {
         "license_expression": "unknown",
+        "license_expression_spdx": "LicenseRef-scancode-unknown",
         "matches": [
           {
             "score": 86.89,
@@ -43,6 +46,7 @@
             "match_coverage": 100.0,
             "matcher": "6-unknown",
             "license_expression": "unknown",
+            "license_expression_spdx": "LicenseRef-scancode-unknown",
             "rule_identifier": "license-detection-unknown-3d4d4e847eacf4b9efcc80ca90df1eea689f5cee",
             "rule_relevance": 100,
             "rule_url": null,
@@ -72,6 +76,7 @@
       "license_detections": [
         {
           "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
           "matches": [
             {
               "score": 86.89,
@@ -82,6 +87,7 @@
               "match_coverage": 100.0,
               "matcher": "6-unknown",
               "license_expression": "unknown",
+              "spdx_license_expression": "LicenseRef-scancode-unknown",
               "rule_identifier": "license-detection-unknown-296da2cbc15d2bba73baa1359cda5fc8bf39b942",
               "rule_relevance": 100,
               "rule_url": null,

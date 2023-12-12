@@ -15,6 +15,7 @@ other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-
 license_detections: []
 other_license_detections:
   - license_expression: gpl-3.0-plus
+    license_expression_spdx: GPL-3.0-or-later
     matches:
       - score: '100.0'
         start_line: 25
@@ -24,6 +25,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
         rule_identifier: gpl-3.0-plus_92.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
@@ -36,6 +38,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
         rule_identifier: gpl-3.0-plus_482.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_482.RULE
@@ -57,6 +60,7 @@ other_license_detections:
           Public License can be found in `/usr/share/common-licenses/GPL-3'.
     identifier: gpl_3_0_plus-64267dbf-cd13-53b6-0e75-79a84b05d3cf
   - license_expression: gfdl-1.3-plus
+    license_expression_spdx: GFDL-1.3-or-later
     matches:
       - score: '100.0'
         start_line: 43
@@ -66,6 +70,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gfdl-1.3-plus
+        spdx_license_expression: GFDL-1.3-or-later
         rule_identifier: gfdl-1.3-plus_24.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus_24.RULE
@@ -80,6 +85,7 @@ other_license_detections:
           License can be found in `/usr/share/common-licenses/GFDL-3'.
     identifier: gfdl_1_3_plus-60c54326-73ad-53e9-8924-f9dfc5748830
   - license_expression: latex2e
+    license_expression_spdx: Latex2e
     matches:
       - score: '85.0'
         start_line: 53
@@ -89,6 +95,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: latex2e
+        spdx_license_expression: Latex2e
         rule_identifier: latex2e_8.RULE
         rule_relevance: 85
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_8.RULE

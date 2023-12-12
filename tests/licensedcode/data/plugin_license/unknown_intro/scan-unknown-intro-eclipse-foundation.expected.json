@@ -3,6 +3,7 @@
     {
       "identifier": "epl_2_0-c1e39224-7271-293c-64f7-090bd2f15988",
       "license_expression": "epl-2.0",
+      "license_expression_spdx": "EPL-2.0",
       "detection_count": 1,
       "detection_log": [],
       "sample_matches": [
@@ -15,6 +16,7 @@
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "epl-2.0",
+          "license_expression_spdx": "EPL-2.0",
           "rule_identifier": "epl-2.0_56.RULE",
           "rule_relevance": 100,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE",
@@ -29,6 +31,7 @@
           "match_coverage": 100.0,
           "matcher": "1-spdx-id",
           "license_expression": "epl-2.0",
+          "license_expression_spdx": "EPL-2.0",
           "rule_identifier": "spdx-license-identifier-epl-2.0-fc3580adf1834d6862422242a06d59e74eb62582",
           "rule_relevance": 100,
           "rule_url": null,
@@ -46,6 +49,7 @@
       "license_detections": [
         {
           "license_expression": "epl-2.0",
+          "license_expression_spdx": "EPL-2.0",
           "matches": [
             {
               "score": 100.0,
@@ -56,6 +60,7 @@
               "match_coverage": 100.0,
               "matcher": "2-aho",
               "license_expression": "epl-2.0",
+              "spdx_license_expression": "EPL-2.0",
               "rule_identifier": "epl-2.0_56.RULE",
               "rule_relevance": 100,
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_56.RULE",
@@ -70,6 +75,7 @@
               "match_coverage": 100.0,
               "matcher": "1-spdx-id",
               "license_expression": "epl-2.0",
+              "spdx_license_expression": "EPL-2.0",
               "rule_identifier": "spdx-license-identifier-epl-2.0-c05120fcba71854ec1ea0d2897a5dcb1290a6dea",
               "rule_relevance": 100,
               "rule_url": null,

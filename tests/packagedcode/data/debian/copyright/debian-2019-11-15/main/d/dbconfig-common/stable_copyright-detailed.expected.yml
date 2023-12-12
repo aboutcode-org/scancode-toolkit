@@ -8,6 +8,7 @@ other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (AFL-
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - score: '100.0'
         start_line: 10
@@ -17,6 +18,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
@@ -29,6 +31,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 1-hash
         license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
         rule_identifier: gpl-2.0-plus_754.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_754.RULE
@@ -41,6 +44,7 @@ other_license_detections:
           /usr/share/common-licenses/GPL-2.
     identifier: gpl_2_0_plus-8b07b509-5e22-a4f6-31f8-ca7a10f27b4b
   - license_expression: afl-2.1
+    license_expression_spdx: AFL-2.1
     matches:
       - score: '100.0'
         start_line: 21
@@ -50,6 +54,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: afl-2.1
+        spdx_license_expression: AFL-2.1
         rule_identifier: afl-2.1_12.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/afl-2.1_12.RULE
@@ -62,6 +67,7 @@ other_license_detections:
         match_coverage: '100.0'
         matcher: 2-aho
         license_expression: afl-2.1
+        spdx_license_expression: AFL-2.1
         rule_identifier: afl-2.1_6.RULE
         rule_relevance: 100
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/afl-2.1_6.RULE
