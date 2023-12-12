@@ -15,30 +15,30 @@ other_license_detections:
   - license_expression: lgpl-2.1
     license_expression_spdx: LGPL-2.1-only
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1
+        spdx_license_expression: LGPL-2.1-only
+        from_file:
         start_line: 25
         end_line: 25
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
-        rule_identifier: lgpl-2.1_38.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1_38.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
-      - score: '100.0'
+      - license_expression: lgpl-2.1
+        spdx_license_expression: LGPL-2.1-only
+        from_file:
         start_line: 26
         end_line: 39
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 120
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
-        rule_identifier: lgpl-2.1_368.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1_368.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_368.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or modify it

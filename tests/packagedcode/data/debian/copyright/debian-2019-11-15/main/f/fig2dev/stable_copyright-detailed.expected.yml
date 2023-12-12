@@ -17,17 +17,17 @@ other_license_detections:
   - license_expression: mit-xfig
     license_expression_spdx: Xfig
     matches:
-      - score: '100.0'
+      - license_expression: mit-xfig
+        spdx_license_expression: Xfig
+        from_file:
         start_line: 28
         end_line: 35
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 85
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mit-xfig
-        spdx_license_expression: Xfig
-        rule_identifier: mit-xfig_3.RULE
         rule_relevance: 100
+        rule_identifier: mit-xfig_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-xfig_3.RULE
         matched_text: |
           Any party obtaining a copy of these files is granted, free of charge, a
@@ -42,30 +42,30 @@ other_license_detections:
   - license_expression: gpl-2.0-plus AND (gpl-2.0 OR gpl-3.0)
     license_expression_spdx: GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only)
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 53
         end_line: 53
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
-        rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
-      - score: '100.0'
+      - license_expression: gpl-2.0 OR gpl-3.0
+        spdx_license_expression: GPL-2.0-only OR GPL-3.0-only
+        from_file:
         start_line: 54
         end_line: 69
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 130
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0 OR gpl-3.0
-        spdx_license_expression: GPL-2.0-only OR GPL-3.0-only
-        rule_identifier: gpl-2.0_or_gpl-3.0_19.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0_or_gpl-3.0_19.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_or_gpl-3.0_19.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -88,17 +88,17 @@ other_license_detections:
   - license_expression: mit-old-style-no-advert
     license_expression_spdx: NTP
     matches:
-      - score: '100.0'
+      - license_expression: mit-old-style-no-advert
+        spdx_license_expression: NTP
+        from_file:
         start_line: 75
         end_line: 83
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 96
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mit-old-style-no-advert
-        spdx_license_expression: NTP
-        rule_identifier: mit-old-style-no-advert_3.RULE
         rule_relevance: 100
+        rule_identifier: mit-old-style-no-advert_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_3.RULE
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this software and its
@@ -114,30 +114,30 @@ other_license_detections:
   - license_expression: gpl-3.0 AND gpl-3.0-plus
     license_expression_spdx: GPL-3.0-only AND GPL-3.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-3.0
+        spdx_license_expression: GPL-3.0-only
+        from_file:
         start_line: 88
         end_line: 88
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
-        rule_identifier: gpl-3.0_rdesc_1.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0_rdesc_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_rdesc_1.RULE
         matched_text: 'License: gpl-3'
-      - score: '100.0'
+      - license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
+        from_file:
         start_line: 89
         end_line: 97
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 79
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
-        rule_identifier: gpl-3.0-plus_96.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0-plus_96.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_96.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
@@ -149,17 +149,17 @@ other_license_detections:
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
           GNU General Public License for more details.
-      - score: '100.0'
+      - license_expression: gpl-3.0
+        spdx_license_expression: GPL-3.0-only
+        from_file:
         start_line: 99
         end_line: 101
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 26
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
-        rule_identifier: gpl-3.0_405.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0_405.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_405.RULE
         matched_text: |
           On Debian systems, the full text of the GNU General Public

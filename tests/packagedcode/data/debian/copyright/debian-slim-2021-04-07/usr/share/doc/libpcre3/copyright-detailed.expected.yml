@@ -7,34 +7,34 @@ license_detections:
   - license_expression: pcre
     license_expression_spdx: LicenseRef-scancode-pcre
     matches:
-      - score: '100.0'
+      - license_expression: pcre
+        spdx_license_expression: LicenseRef-scancode-pcre
+        from_file:
         start_line: 7
         end_line: 7
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 2
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: pcre
-        spdx_license_expression: LicenseRef-scancode-pcre
-        rule_identifier: pcre_4.RULE
         rule_relevance: 100
+        rule_identifier: pcre_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pcre_4.RULE
         matched_text: PCRE LICENCE
     identifier: pcre-b7d0af79-af3f-24dc-6a31-2df791031f14
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 13
         end_line: 15
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 32
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_645.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_645.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_645.RULE
         matched_text: |
           PCRE is distributed under the terms of the "BSD" licence, as
@@ -44,17 +44,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 44
         end_line: 72
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 223
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_1105.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_1105.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1105.RULE
         matched_text: |
           THE "BSD" LICENCE

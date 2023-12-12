@@ -12,17 +12,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 21
         end_line: 45
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 203
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_600.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_600.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_600.RULE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -54,17 +54,17 @@ license_detections:
   - license_expression: broadcom-proprietary
     license_expression_spdx: LicenseRef-scancode-broadcom-proprietary
     matches:
-      - score: '100.0'
+      - license_expression: broadcom-proprietary
+        spdx_license_expression: LicenseRef-scancode-broadcom-proprietary
+        from_file:
         start_line: 51
         end_line: 254
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 1770
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: broadcom-proprietary
-        spdx_license_expression: LicenseRef-scancode-broadcom-proprietary
-        rule_identifier: broadcom-proprietary_1.RULE
         rule_relevance: 100
+        rule_identifier: broadcom-proprietary_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/broadcom-proprietary_1.RULE
         matched_text: "SOFTWARE LICENSE AGREEMENT\n\nUnless you and Broadcom Corporation (“Broadcom”)\
           \ execute a separate written\nsoftware license agreement governing use of the accompanying\
@@ -210,30 +210,30 @@ license_detections:
   - license_expression: gpl-2.0-plus
     license_expression_spdx: GPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 260
         end_line: 260
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
-        rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 261
         end_line: 275
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 126
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
-        rule_identifier: gpl-2.0-plus_846.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_846.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_846.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify

@@ -7,17 +7,17 @@ license_detections:
   - license_expression: mit-old-style-no-advert
     license_expression_spdx: NTP
     matches:
-      - score: '100.0'
+      - license_expression: mit-old-style-no-advert
+        spdx_license_expression: NTP
+        from_file:
         start_line: 14
         end_line: 24
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 112
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit-old-style-no-advert
-        spdx_license_expression: NTP
-        rule_identifier: mit-old-style-no-advert_5.RULE
         rule_relevance: 100
+        rule_identifier: mit-old-style-no-advert_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_5.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software

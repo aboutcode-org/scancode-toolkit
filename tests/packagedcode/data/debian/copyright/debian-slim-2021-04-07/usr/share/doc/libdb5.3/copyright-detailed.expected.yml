@@ -8,17 +8,17 @@ license_detections:
   - license_expression: sleepycat
     license_expression_spdx: Sleepycat
     matches:
-      - score: '100.0'
+      - license_expression: sleepycat
+        spdx_license_expression: Sleepycat
+        from_file:
         start_line: 5
         end_line: 12
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 61
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: sleepycat
-        spdx_license_expression: Sleepycat
-        rule_identifier: sleepycat_17.RULE
         rule_relevance: 100
+        rule_identifier: sleepycat_17.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_17.RULE
         matched_text: |
           http://www.oracle.com/technology/software/products/berkeley-db/db/index.html
@@ -33,17 +33,17 @@ license_detections:
   - license_expression: sleepycat
     license_expression_spdx: Sleepycat
     matches:
-      - score: '100.0'
+      - license_expression: sleepycat
+        spdx_license_expression: Sleepycat
+        from_file:
         start_line: 18
         end_line: 47
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 283
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: sleepycat
-        spdx_license_expression: Sleepycat
-        rule_identifier: sleepycat_15.RULE
         rule_relevance: 100
+        rule_identifier: sleepycat_15.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sleepycat_15.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -80,17 +80,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 53
         end_line: 75
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 213
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_19.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_19.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -120,17 +120,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 81
         end_line: 103
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 213
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_943.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_943.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_943.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -160,17 +160,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 111
         end_line: 133
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 216
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_115.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_115.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_115.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without

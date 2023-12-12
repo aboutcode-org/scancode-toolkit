@@ -7,17 +7,17 @@ license_detections:
   - license_expression: x11-xconsortium-veillard
     license_expression_spdx: LicenseRef-scancode-x11-xconsortium-veillard
     matches:
-      - score: '100.0'
+      - license_expression: x11-xconsortium-veillard
+        spdx_license_expression: LicenseRef-scancode-x11-xconsortium-veillard
+        from_file:
         start_line: 15
         end_line: 34
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: '199'
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: x11-xconsortium-veillard
-        spdx_license_expression: LicenseRef-scancode-x11-xconsortium-veillard
-        rule_identifier: x11-xconsortium-veillard.LICENSE
         rule_relevance: 100
+        rule_identifier: x11-xconsortium-veillard.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -44,17 +44,17 @@ license_detections:
   - license_expression: x11-xconsortium
     license_expression_spdx: X11
     matches:
-      - score: '100.0'
+      - license_expression: x11-xconsortium
+        spdx_license_expression: X11
+        from_file:
         start_line: 43
         end_line: 62
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: '198'
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: x11-xconsortium
-        spdx_license_expression: X11
-        rule_identifier: x11-xconsortium_4.RULE
         rule_relevance: 100
+        rule_identifier: x11-xconsortium_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_4.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy

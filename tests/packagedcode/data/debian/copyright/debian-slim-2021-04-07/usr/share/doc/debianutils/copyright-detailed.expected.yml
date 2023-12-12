@@ -8,17 +8,17 @@ license_detections:
   - license_expression: gpl-2.0-plus AND public-domain
     license_expression_spdx: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus AND public-domain
+        spdx_license_expression: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
+        from_file:
         start_line: 8
         end_line: 11
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 31
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0-plus AND public-domain
-        spdx_license_expression: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
-        rule_identifier: gpl-2.0-plus_and_public-domain_810.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_and_public-domain_810.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_and_public-domain_810.RULE
         matched_text: |
           redistributed under the terms of the GNU GPL, Version 2 or later,
@@ -29,17 +29,17 @@ license_detections:
   - license_expression: smail-gpl
     license_expression_spdx: LicenseRef-scancode-smail-gpl
     matches:
-      - score: '100.0'
+      - license_expression: smail-gpl
+        spdx_license_expression: LicenseRef-scancode-smail-gpl
+        from_file:
         start_line: 18
         end_line: 161
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 1227
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: smail-gpl
-        spdx_license_expression: LicenseRef-scancode-smail-gpl
-        rule_identifier: smail-gpl.LICENSE
         rule_relevance: 100
+        rule_identifier: smail-gpl.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/smail-gpl.LICENSE
         matched_text: "SMAIL GENERAL PUBLIC LICENSE\n\t\t       (Clarified 11 Feb 1988)\n\n\
           \ Copyright (C)  1988 Landon Curt Noll & Ronald S. Karr\n Copyright (C)  1992 Ronald\

@@ -11,26 +11,24 @@
         "license_expression_spdx": "Borceux",
         "matches": [
           {
-            "score": 4.71,
+            "license_expression": "borceux",
+            "license_expression_spdx": "Borceux",
             "from_file": "README.multi-orig-tarball-package",
             "start_line": 1,
             "end_line": 3,
-            "matched_length": 4,
-            "match_coverage": 4.71,
-            "matcher": "3-seq",
-            "license_expression": "borceux",
-            "license_expression_spdx": "Borceux",
-            "rule_identifier": "borceux.LICENSE",
-            "rule_relevance": 100,
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
             "is_license_text": true,
-            "is_builtin": true,
-            "is_from_license": true,
+            "matcher": "3-seq",
+            "score": 4.71,
+            "matched_length": 4,
             "rule_length": 85,
-            "rule_text": "Copyright 1993 Francis Borceux\nYou may freely use, modify, and/or distribute each of the files in this package without limitation.  The package consists of the following files:\n\nREADME\ncompatibility/OldDiagram\ncompatibility/OldMaxiDiagram\ncompatibility/OldMicroDiagram\ncompatibility/OldMiniDiagram\ncompatibility/OldMultipleArrows\ndiagram/Diagram\ndiagram/MaxiDiagram\ndiagram/MicroDiagram\ndiagram/MiniDiagram\ndiagram/MultipleArrows\nuser-guides/Diagram_Mode_d_Emploi\nuser-guides/Diagram_Read_Me\n\nOf course no support is guaranteed, but the author will attempt to assist with problems.  Current email address:\nfrancis dot borceux at uclouvain dot be.",
+            "match_coverage": 4.71,
+            "rule_relevance": 100,
+            "rule_identifier": "borceux.LICENSE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
             "rule_notes": null,
             "referenced_filenames": [],
-            "matched_text": "package consists of [various] [tarballs].\n\n[This] README"
+            "matched_text": "package consists of [various] [tarballs].\n\n[This] README",
+            "rule_text": "Copyright 1993 Francis Borceux\nYou may freely use, modify, and/or distribute each of the files in this package without limitation.  The package consists of the following files:\n\nREADME\ncompatibility/OldDiagram\ncompatibility/OldMaxiDiagram\ncompatibility/OldMicroDiagram\ncompatibility/OldMiniDiagram\ncompatibility/OldMultipleArrows\ndiagram/Diagram\ndiagram/MaxiDiagram\ndiagram/MicroDiagram\ndiagram/MiniDiagram\ndiagram/MultipleArrows\nuser-guides/Diagram_Mode_d_Emploi\nuser-guides/Diagram_Read_Me\n\nOf course no support is guaranteed, but the author will attempt to assist with problems.  Current email address:\nfrancis dot borceux at uclouvain dot be."
           }
         ],
         "detection_log": [
@@ -49,17 +47,17 @@
       "license_detections": [],
       "license_clues": [
         {
-          "score": 4.71,
-          "start_line": 1,
-          "end_line": 3,
-          "from_file": "README.multi-orig-tarball-package",
-          "matched_length": 4,
-          "match_coverage": 4.71,
-          "matcher": "3-seq",
           "license_expression": "borceux",
           "spdx_license_expression": "Borceux",
-          "rule_identifier": "borceux.LICENSE",
+          "from_file": "README.multi-orig-tarball-package",
+          "start_line": 1,
+          "end_line": 3,
+          "matcher": "3-seq",
+          "score": 4.71,
+          "matched_length": 4,
+          "match_coverage": 4.71,
           "rule_relevance": 100,
+          "rule_identifier": "borceux.LICENSE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
           "matched_text": "package consists of [various] [tarballs].\n\n[This] README"
         }

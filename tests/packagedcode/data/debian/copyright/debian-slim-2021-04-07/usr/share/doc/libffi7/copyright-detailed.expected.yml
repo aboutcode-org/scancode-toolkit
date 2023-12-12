@@ -7,17 +7,17 @@ license_detections:
   - license_expression: mit AND gpl-2.0-plus AND gpl-1.0-plus
     license_expression_spdx: MIT AND GPL-2.0-or-later AND GPL-1.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 42
         end_line: 59
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining
@@ -38,17 +38,17 @@ license_detections:
               CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
               TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
               SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-      - score: '79.17'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 62
         end_line: 70
-        from_file:
+        matcher: 3-seq
+        score: '79.17'
         matched_length: 57
         match_coverage: '79.17'
-        matcher: 3-seq
-        license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
-        rule_identifier: gpl-2.0-plus_858.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_858.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_858.RULE
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
@@ -60,17 +60,17 @@ license_detections:
           doc/*:
             Permission is granted to copy, distribute and/or modify this document
             under the terms of the GNU General Public License
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 69
         end_line: 76
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 72
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
-        rule_identifier: gpl-2.0-plus_858.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_858.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_858.RULE
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
@@ -81,17 +81,17 @@ license_detections:
 
             On Debian GNU/Linux systems, the complete text of the GNU General
             Public License is in `/usr/share/common-licenses/GPL'.
-      - score: '100.0'
+      - license_expression: gpl-1.0-plus
+        spdx_license_expression: GPL-1.0-or-later
+        from_file:
         start_line: 79
         end_line: 79
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 12
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
-        rule_identifier: gpl-1.0-plus_478.RULE
         rule_relevance: 100
+        rule_identifier: gpl-1.0-plus_478.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_478.RULE
         matched_text: and is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
     identifier: mit_and_gpl_2_0_plus_and_gpl_1_0_plus-d975bf27-0617-3629-9279-63c39b163da7

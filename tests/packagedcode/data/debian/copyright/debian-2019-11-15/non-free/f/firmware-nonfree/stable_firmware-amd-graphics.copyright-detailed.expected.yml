@@ -9,17 +9,17 @@ license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '97.67'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 14
         end_line: 31
-        from_file:
+        matcher: 3-seq
+        score: '97.67'
         matched_length: 168
         match_coverage: '100.0'
-        matcher: 3-seq
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit_x11-r75_58.RULE
         rule_relevance: 100
+        rule_identifier: mit_x11-r75_58.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_x11-r75_58.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -44,17 +44,17 @@ license_detections:
   - license_expression: amd-linux-firmware
     license_expression_spdx: LicenseRef-scancode-amd-linux-firmware
     matches:
-      - score: '100.0'
+      - license_expression: amd-linux-firmware
+        spdx_license_expression: LicenseRef-scancode-amd-linux-firmware
+        from_file:
         start_line: 38
         end_line: 86
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 427
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: amd-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-amd-linux-firmware
-        rule_identifier: amd-linux-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: amd-linux-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/amd-linux-firmware.LICENSE
         matched_text: |
           REDISTRIBUTION: Permission is hereby granted, free of any license fees,

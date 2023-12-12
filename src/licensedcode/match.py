@@ -791,20 +791,17 @@ class LicenseMatch(object):
 
         result = {}
 
-        # Detection Level Information
-        result['score'] = self.score()
-        result['start_line'] = self.start_line
-        result['end_line'] = self.end_line
-        result['from_file'] = file_path
-        result['matched_length'] = self.len()
-        result['match_coverage'] = self.coverage()
-        result['matcher'] = self.matcher
-
-        # LicenseDB Level Information (Rule that was matched)
         result['license_expression'] = self.rule.license_expression
         result['spdx_license_expression'] = self.rule.spdx_license_expression()
-        result['rule_identifier'] = self.rule.identifier
+        result['from_file'] = file_path
+        result['start_line'] = self.start_line
+        result['end_line'] = self.end_line
+        result['matcher'] = self.matcher
+        result['score'] = self.score()
+        result['matched_length'] = self.len()
+        result['match_coverage'] = self.coverage()
         result['rule_relevance'] = self.rule.relevance
+        result['rule_identifier'] = self.rule.identifier
         result['rule_url'] = self.rule.rule_url
 
         if include_text:

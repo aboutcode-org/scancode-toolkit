@@ -16,17 +16,17 @@ license_detections:
   - license_expression: lgpl-2.1-plus
     license_expression_spdx: LGPL-2.1-or-later
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 10
         end_line: 26
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 147
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
-        rule_identifier: lgpl-2.1-plus_1.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_1.RULE
         matched_text: |
           The GNU C Library is free software; you can redistribute it and/or
@@ -50,17 +50,17 @@ license_detections:
   - license_expression: gpl-2.0-plus AND bsd-new
     license_expression_spdx: GPL-2.0-or-later AND BSD-3-Clause
     matches:
-      - score: '95.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 33
         end_line: 48
-        from_file:
+        matcher: 2-aho
+        score: '95.0'
         matched_length: 135
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
-        rule_identifier: gpl-2.0-plus_15.RULE
         rule_relevance: 95
+        rule_identifier: gpl-2.0-plus_15.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_15.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -79,17 +79,17 @@ license_detections:
 
             On Debian systems, the complete text of the GNU Library
             General Public License can be found in `/usr/share/common-licenses/GPL-2'.
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 50
         end_line: 51
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 13
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_24.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_24.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_24.RULE
         matched_text: |
           All code incorporated from 4.4 BSD is distributed under the following
@@ -98,17 +98,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 56
         end_line: 80
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 218
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_57.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_57.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_57.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -140,17 +140,17 @@ license_detections:
   - license_expression: historical
     license_expression_spdx: HPND
     matches:
-      - score: '100.0'
+      - license_expression: historical
+        spdx_license_expression: HPND
+        from_file:
         start_line: 88
         end_line: 102
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 141
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: historical
-        spdx_license_expression: HPND
-        rule_identifier: historical_10.RULE
         rule_relevance: 100
+        rule_identifier: historical_10.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/historical_10.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -172,17 +172,17 @@ license_detections:
   - license_expression: isc
     license_expression_spdx: ISC
     matches:
-      - score: '100.0'
+      - license_expression: isc
+        spdx_license_expression: ISC
+        from_file:
         start_line: 108
         end_line: 119
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 113
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: isc
-        spdx_license_expression: ISC
-        rule_identifier: isc_9.RULE
         rule_relevance: 100
+        rule_identifier: isc_9.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -201,17 +201,17 @@ license_detections:
   - license_expression: bsd-new AND carnegie-mellon-contributors
     license_expression_spdx: BSD-3-Clause AND CMU-Mach
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 126
         end_line: 151
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 214
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_591.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_591.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_591.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -240,17 +240,17 @@ license_detections:
                 WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
                 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
                 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-      - score: '100.0'
+      - license_expression: carnegie-mellon-contributors
+        spdx_license_expression: CMU-Mach
+        from_file:
         start_line: 153
         end_line: 179
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 159
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: carnegie-mellon-contributors
-        spdx_license_expression: CMU-Mach
-        rule_identifier: carnegie-mellon-contributors_3.RULE
         rule_relevance: 100
+        rule_identifier: carnegie-mellon-contributors_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/carnegie-mellon-contributors_3.RULE
         matched_text: |
           The following CMU license covers some of the support code for Mach,
@@ -280,17 +280,17 @@ license_detections:
               or Software.Distribution@CS.CMU.EDU any improvements or
               extensions that they make and grant Carnegie Mellon the rights to
               redistribute these changes.
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 181
         end_line: 206
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 219
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_592.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_592.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_592.RULE
         matched_text: |
           under the following CMU license:
@@ -319,17 +319,17 @@ license_detections:
                IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
                OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
                IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 208
         end_line: 211
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: '19'
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_593.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_593.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_593.RULE
         matched_text: |
           The following license covers the files from Intel's "Highly Optimized
@@ -340,17 +340,17 @@ license_detections:
   - license_expression: bsd-new AND inner-net-2.0
     license_expression_spdx: BSD-3-Clause AND Inner-Net-2.0
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 217
         end_line: 242
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 204
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-intel_2.RULE
         rule_relevance: 100
+        rule_identifier: bsd-intel_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-intel_2.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -379,17 +379,17 @@ license_detections:
               LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
               NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
               SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-      - score: '100.0'
+      - license_expression: inner-net-2.0
+        spdx_license_expression: Inner-Net-2.0
+        from_file:
         start_line: 245
         end_line: 280
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 314
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: inner-net-2.0
-        spdx_license_expression: Inner-Net-2.0
-        rule_identifier: inner-net-2.0_2.RULE
         rule_relevance: 100
+        rule_identifier: inner-net-2.0_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/inner-net-2.0_2.RULE
         matched_text: |
           distributed under the following license:
@@ -432,17 +432,17 @@ license_detections:
   - license_expression: lgpl-2.1-plus
     license_expression_spdx: LGPL-2.1-or-later
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 286
         end_line: 289
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 48
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
-        rule_identifier: lgpl-2.1-plus_177.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_177.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_177.RULE
         matched_text: |
           This file is distributed under the terms of the GNU Lesser General
@@ -453,17 +453,17 @@ license_detections:
   - license_expression: lgpl-2.1-plus AND lgpl-2.0-plus
     license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 298
         end_line: 309
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 106
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
-        rule_identifier: lgpl-2.1-plus_491.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_491.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_491.RULE
         matched_text: |
           GNU Libidn is free software; you can redistribute it and/or
@@ -478,17 +478,17 @@ license_detections:
 
               You should have received a copy of the GNU Lesser General Public
               License along with GNU Libidn; if not, see <http://www.gnu.org/licenses/>.
-      - score: '100.0'
+      - license_expression: lgpl-2.0-plus
+        spdx_license_expression: LGPL-2.0-or-later
+        from_file:
         start_line: 313
         end_line: 314
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 20
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
-        rule_identifier: lgpl-2.0-plus_573.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.0-plus_573.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_573.RULE
         matched_text: |
           This file contains functions from GLIB, including gutf8.c and
@@ -497,17 +497,17 @@ license_detections:
   - license_expression: punycode AND ietf
     license_expression_spdx: LicenseRef-scancode-punycode AND LicenseRef-scancode-ietf
     matches:
-      - score: '100.0'
+      - license_expression: punycode
+        spdx_license_expression: LicenseRef-scancode-punycode
+        from_file:
         start_line: 324
         end_line: 332
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 87
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: punycode
-        spdx_license_expression: LicenseRef-scancode-punycode
-        rule_identifier: punycode.LICENSE
         rule_relevance: 100
+        rule_identifier: punycode.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/punycode.LICENSE
         matched_text: |
           Disclaimer and license: Regarding this entire document or any
@@ -519,17 +519,17 @@ license_detections:
               provided that redistributed derivative works do not contain
               misleading author or version information.  Derivative works need
               not be licensed under similar terms.
-      - score: '100.0'
+      - license_expression: ietf
+        spdx_license_expression: LicenseRef-scancode-ietf
+        from_file:
         start_line: 336
         end_line: 358
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 209
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: ietf
-        spdx_license_expression: LicenseRef-scancode-ietf
-        rule_identifier: ietf.LICENSE
         rule_relevance: 100
+        rule_identifier: ietf.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ietf.LICENSE
         matched_text: |
           This document and translations of it may be copied and furnished to
@@ -559,17 +559,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 365
         end_line: 387
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 213
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_66.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_66.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -599,17 +599,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 395
         end_line: 409
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 141
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_144.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_144.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_144.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and its
@@ -631,17 +631,17 @@ license_detections:
   - license_expression: hs-regexp
     license_expression_spdx: Spencer-94
     matches:
-      - score: '100.0'
+      - license_expression: hs-regexp
+        spdx_license_expression: Spencer-94
+        from_file:
         start_line: 414
         end_line: 432
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 147
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: hs-regexp
-        spdx_license_expression: Spencer-94
-        rule_identifier: hs-regexp.LICENSE
         rule_relevance: 100
+        rule_identifier: hs-regexp.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hs-regexp.LICENSE
         matched_text: |
           This software is not subject to any license of the American Telephone
@@ -667,17 +667,17 @@ license_detections:
   - license_expression: pcre
     license_expression_spdx: LicenseRef-scancode-pcre
     matches:
-      - score: '95.0'
+      - license_expression: pcre
+        spdx_license_expression: LicenseRef-scancode-pcre
+        from_file:
         start_line: 438
         end_line: 473
-        from_file:
+        matcher: 2-aho
+        score: '95.0'
         matched_length: 271
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: pcre
-        spdx_license_expression: LicenseRef-scancode-pcre
-        rule_identifier: pcre_2.RULE
         rule_relevance: 95
+        rule_identifier: pcre_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pcre_2.RULE
         matched_text: |
           Permission is granted to anyone to use this software for any purpose on any
@@ -720,17 +720,17 @@ license_detections:
   - license_expression: sunpro
     license_expression_spdx: SunPro
     matches:
-      - score: '100.0'
+      - license_expression: sunpro
+        spdx_license_expression: SunPro
+        from_file:
         start_line: 479
         end_line: 482
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 25
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: sunpro
-        spdx_license_expression: SunPro
-        rule_identifier: sunpro.LICENSE
         rule_relevance: 100
+        rule_identifier: sunpro.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
         matched_text: |
           Developed at SunPro, a Sun Microsystems, Inc. business.
@@ -741,17 +741,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 488
         end_line: 491
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 26
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_145.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_145.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_145.RULE
         matched_text: |
           Feel free to copy, use and distribute this software provided:
@@ -762,17 +762,17 @@ license_detections:
   - license_expression: lgpl-2.1-plus
     license_expression_spdx: LGPL-2.1-or-later
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 497
         end_line: 509
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 106
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
-        rule_identifier: lgpl-2.1-plus_36.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_36.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_36.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or

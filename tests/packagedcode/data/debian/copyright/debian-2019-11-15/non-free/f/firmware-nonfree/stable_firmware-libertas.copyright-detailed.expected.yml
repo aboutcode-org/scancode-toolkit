@@ -9,17 +9,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '96.37'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 11
         end_line: 48
-        from_file:
+        matcher: 3-seq
+        score: '96.37'
         matched_length: 292
         match_coverage: '96.37'
-        matcher: 3-seq
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_319.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_319.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
         matched_text: |
           Redistribution. Redistribution and use in binary form, without
@@ -64,17 +64,17 @@ license_detections:
   - license_expression: marvell-firmware
     license_expression_spdx: LicenseRef-scancode-marvell-firmware
     matches:
-      - score: '100.0'
+      - license_expression: marvell-firmware
+        spdx_license_expression: LicenseRef-scancode-marvell-firmware
+        from_file:
         start_line: 55
         end_line: 84
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 242
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: marvell-firmware
-        spdx_license_expression: LicenseRef-scancode-marvell-firmware
-        rule_identifier: marvell-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: marvell-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/marvell-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without

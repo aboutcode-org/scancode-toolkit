@@ -670,32 +670,29 @@ class LicenseMatchFromResult(LicenseMatch):
 
         result = {}
 
-        # Detection Level Information
-        result['score'] = self.score()
+        result['license_expression'] = self.rule.license_expression
+        result['license_expression_spdx'] = self.rule.spdx_license_expression()
         result['from_file'] = self.from_file
         result['start_line'] = self.start_line
         result['end_line'] = self.end_line
-        result['matched_length'] = self.len()
-        result['match_coverage'] = self.coverage()
-        result['matcher'] = self.matcher
-
-        # LicenseDB Level Information (Rule that was matched)
-        result['license_expression'] = self.rule.license_expression
-        result['license_expression_spdx'] = self.rule.spdx_license_expression()
-        result['rule_identifier'] = self.rule.identifier
-        result['rule_relevance'] = self.rule.relevance
-        result['rule_url'] = self.rule.rule_url
-
-        # Extra rule details added optionally
         if rule_details:
             result.update(self.rule.get_flags_mapping())
+        result['matcher'] = self.matcher
+        result['score'] = self.score()
+        result['matched_length'] = self.len()
+        if rule_details:
             result["rule_length"] = self.rule.length
-            result["rule_text"] = self.rule.text
+        result['match_coverage'] = self.coverage()
+        result['rule_relevance'] = self.rule.relevance
+        result['rule_identifier'] = self.rule.identifier
+        result['rule_url'] = self.rule.rule_url
+        if rule_details:
             result["rule_notes"] = self.rule.notes
             result["referenced_filenames"] = self.rule.referenced_filenames
-
         if include_text:
             result['matched_text'] = matched_text
+        if rule_details:
+            result["rule_text"] = self.rule.text
 
         return result
 

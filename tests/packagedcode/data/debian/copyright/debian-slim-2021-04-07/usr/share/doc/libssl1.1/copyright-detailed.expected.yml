@@ -7,17 +7,17 @@ license_detections:
   - license_expression: openssl-ssleay
     license_expression_spdx: OpenSSL
     matches:
-      - score: '99.89'
+      - license_expression: openssl-ssleay
+        spdx_license_expression: OpenSSL
+        from_file:
         start_line: 10
         end_line: 133
-        from_file:
+        matcher: 3-seq
+        score: '99.89'
         matched_length: 869
         match_coverage: '99.89'
-        matcher: 3-seq
-        license_expression: openssl-ssleay
-        spdx_license_expression: OpenSSL
-        rule_identifier: openssl-ssleay_37.RULE
         rule_relevance: 100
+        rule_identifier: openssl-ssleay_37.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_37.RULE
         matched_text: "LICENSE ISSUES\n  ==============\n\n  The OpenSSL toolkit stays under\
           \ a dual license, i.e. both the conditions of\n  the OpenSSL License and the original\

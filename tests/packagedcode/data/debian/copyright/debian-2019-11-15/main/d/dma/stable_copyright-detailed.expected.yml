@@ -21,17 +21,17 @@ other_license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '90.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 47
         end_line: 59
-        from_file:
+        matcher: 1-hash
+        score: '90.0'
         matched_length: 101
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_1036.RULE
         rule_relevance: 90
+        rule_identifier: bsd-new_1036.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1036.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -51,17 +51,17 @@ other_license_detections:
   - license_expression: isc
     license_expression_spdx: ISC
     matches:
-      - score: '100.0'
+      - license_expression: isc
+        spdx_license_expression: ISC
+        from_file:
         start_line: 62
         end_line: 72
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 111
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: isc
-        spdx_license_expression: ISC
-        rule_identifier: isc_14.RULE
         rule_relevance: 100
+        rule_identifier: isc_14.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_14.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -79,17 +79,17 @@ other_license_detections:
   - license_expression: bsd-simplified
     license_expression_spdx: BSD-2-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
+        from_file:
         start_line: 75
         end_line: 94
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 183
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
-        rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
+        rule_identifier: bsd-simplified_27.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without

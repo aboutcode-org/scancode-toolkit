@@ -40,17 +40,17 @@ other_license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '99.05'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 85
         end_line: 110
-        from_file:
+        matcher: 1-hash
+        score: '99.05'
         matched_length: 209
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_594.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_594.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_594.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -83,17 +83,17 @@ other_license_detections:
   - license_expression: fsf-unlimited-no-warranty
     license_expression_spdx: FSFULLRWD
     matches:
-      - score: '100.0'
+      - license_expression: fsf-unlimited-no-warranty
+        spdx_license_expression: FSFULLRWD
+        from_file:
         start_line: 114
         end_line: 121
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 64
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
-        rule_identifier: fsf-unlimited-no-warranty.RULE
         rule_relevance: 100
+        rule_identifier: fsf-unlimited-no-warranty.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty.RULE
         matched_text: |
           This file is free software; as a special exception the author gives
@@ -108,17 +108,17 @@ other_license_detections:
   - license_expression: ietf
     license_expression_spdx: LicenseRef-scancode-ietf
     matches:
-      - score: '90.0'
+      - license_expression: ietf
+        spdx_license_expression: LicenseRef-scancode-ietf
+        from_file:
         start_line: 129
         end_line: 144
-        from_file:
+        matcher: 2-aho
+        score: '90.0'
         matched_length: 149
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: ietf
-        spdx_license_expression: LicenseRef-scancode-ietf
-        rule_identifier: ietf_7.RULE
         rule_relevance: 90
+        rule_identifier: ietf_7.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf_7.RULE
         matched_text: |
           This document and translations of it may be copied and furnished to
@@ -141,30 +141,30 @@ other_license_detections:
   - license_expression: gpl-3.0-plus
     license_expression_spdx: GPL-3.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
+        from_file:
         start_line: 147
         end_line: 147
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
-        rule_identifier: gpl-3.0-plus_92.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0-plus_92.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
-      - score: '100.0'
+      - license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
+        from_file:
         start_line: 148
         end_line: 163
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 126
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
-        rule_identifier: gpl-3.0-plus_480.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0-plus_480.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_480.RULE
         matched_text: |
           GnuPG is free software; you can redistribute it and/or modify
@@ -187,30 +187,30 @@ other_license_detections:
   - license_expression: lgpl-3.0-plus
     license_expression_spdx: LGPL-3.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-3.0-plus
+        spdx_license_expression: LGPL-3.0-or-later
+        from_file:
         start_line: 165
         end_line: 165
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-3.0-plus
-        spdx_license_expression: LGPL-3.0-or-later
-        rule_identifier: lgpl-3.0-plus_166.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-3.0-plus_166.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_166.RULE
         matched_text: 'License: lgpl-3+'
-      - score: '100.0'
+      - license_expression: lgpl-3.0-plus
+        spdx_license_expression: LGPL-3.0-or-later
+        from_file:
         start_line: 166
         end_line: 181
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 132
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-3.0-plus
-        spdx_license_expression: LGPL-3.0-or-later
-        rule_identifier: lgpl-3.0-plus_191.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-3.0-plus_191.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_191.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
@@ -233,30 +233,30 @@ other_license_detections:
   - license_expression: lgpl-2.1-plus
     license_expression_spdx: LGPL-2.1-or-later
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 183
         end_line: 183
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
-        rule_identifier: lgpl-2.1-plus_108.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_108.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 184
         end_line: '199'
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 135
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
-        rule_identifier: lgpl-2.1-plus_307.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_307.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_307.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it
@@ -279,17 +279,17 @@ other_license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 202
         end_line: 225
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 205
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_910.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_910.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_910.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -320,17 +320,17 @@ other_license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 228
         end_line: 245
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -355,30 +355,30 @@ other_license_detections:
   - license_expression: cc0-1.0
     license_expression_spdx: CC0-1.0
     matches:
-      - score: '100.0'
+      - license_expression: cc0-1.0
+        spdx_license_expression: CC0-1.0
+        from_file:
         start_line: 247
         end_line: 247
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: cc0-1.0
-        spdx_license_expression: CC0-1.0
-        rule_identifier: cc0-1.0_12.RULE
         rule_relevance: 100
+        rule_identifier: cc0-1.0_12.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
         matched_text: 'License: cc0-1.0'
-      - score: '100.0'
+      - license_expression: cc0-1.0
+        spdx_license_expression: CC0-1.0
+        from_file:
         start_line: 248
         end_line: 253
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 57
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: cc0-1.0
-        spdx_license_expression: CC0-1.0
-        rule_identifier: cc0-1.0_131.RULE
         rule_relevance: 100
+        rule_identifier: cc0-1.0_131.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_131.RULE
         matched_text: |
           To the extent possible under law, the author(s) have dedicated all
@@ -391,17 +391,17 @@ other_license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 81
         end_line: 81
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 5
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_321.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_321.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_321.RULE
         matched_text: This file is licensed permissively
     identifier: other_permissive-9b0e778e-b2cb-3f63-cd43-d76f05797558

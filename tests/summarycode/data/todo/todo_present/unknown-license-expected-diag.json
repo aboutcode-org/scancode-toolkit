@@ -10,17 +10,17 @@
       ],
       "sample_matches": [
         {
-          "score": 86.89,
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
           "from_file": "unknown-license.txt",
           "start_line": 1,
           "end_line": 10,
+          "matcher": "6-unknown",
+          "score": 86.89,
           "matched_length": 53,
           "match_coverage": 100.0,
-          "matcher": "6-unknown",
-          "license_expression": "unknown",
-          "license_expression_spdx": "LicenseRef-scancode-unknown",
-          "rule_identifier": "license-detection-unknown-3d4d4e847eacf4b9efcc80ca90df1eea689f5cee",
           "rule_relevance": 100,
+          "rule_identifier": "license-detection-unknown-3d4d4e847eacf4b9efcc80ca90df1eea689f5cee",
           "rule_url": null,
           "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
         }
@@ -38,26 +38,24 @@
         "license_expression_spdx": "LicenseRef-scancode-unknown",
         "matches": [
           {
-            "score": 86.89,
+            "license_expression": "unknown",
+            "license_expression_spdx": "LicenseRef-scancode-unknown",
             "from_file": "unknown-license.txt",
             "start_line": 1,
             "end_line": 10,
-            "matched_length": 53,
-            "match_coverage": 100.0,
-            "matcher": "6-unknown",
-            "license_expression": "unknown",
-            "license_expression_spdx": "LicenseRef-scancode-unknown",
-            "rule_identifier": "license-detection-unknown-3d4d4e847eacf4b9efcc80ca90df1eea689f5cee",
-            "rule_relevance": 100,
-            "rule_url": null,
             "is_license_notice": true,
-            "is_builtin": true,
-            "is_synthetic": true,
+            "matcher": "6-unknown",
+            "score": 86.89,
+            "matched_length": 53,
             "rule_length": 53,
-            "rule_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof.",
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "license-detection-unknown-3d4d4e847eacf4b9efcc80ca90df1eea689f5cee",
+            "rule_url": null,
             "rule_notes": "Unknown license based on a composite of license words.",
             "referenced_filenames": [],
-            "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
+            "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof.",
+            "rule_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
           }
         ],
         "detection_log": [
@@ -79,17 +77,17 @@
           "license_expression_spdx": "LicenseRef-scancode-unknown",
           "matches": [
             {
-              "score": 86.89,
-              "start_line": 1,
-              "end_line": 10,
-              "from_file": "unknown-license.txt",
-              "matched_length": 53,
-              "match_coverage": 100.0,
-              "matcher": "6-unknown",
               "license_expression": "unknown",
               "spdx_license_expression": "LicenseRef-scancode-unknown",
-              "rule_identifier": "license-detection-unknown-296da2cbc15d2bba73baa1359cda5fc8bf39b942",
+              "from_file": "unknown-license.txt",
+              "start_line": 1,
+              "end_line": 10,
+              "matcher": "6-unknown",
+              "score": 86.89,
+              "matched_length": 53,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "license-detection-unknown-296da2cbc15d2bba73baa1359cda5fc8bf39b942",
               "rule_url": null,
               "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
             }

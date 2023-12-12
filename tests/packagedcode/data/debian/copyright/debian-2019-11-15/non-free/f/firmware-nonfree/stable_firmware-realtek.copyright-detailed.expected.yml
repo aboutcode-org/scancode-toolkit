@@ -9,17 +9,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 9
         end_line: 11
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 23
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_66.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
@@ -29,17 +29,17 @@ license_detections:
   - license_expression: intel
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
-      - score: '93.72'
+      - license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
+        from_file:
         start_line: 18
         end_line: 53
-        from_file:
+        matcher: 3-seq
+        score: '93.72'
         matched_length: 293
         match_coverage: '100.0'
-        matcher: 3-seq
-        license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
-        rule_identifier: intel_1.RULE
         rule_relevance: 95
+        rule_identifier: intel_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_1.RULE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without

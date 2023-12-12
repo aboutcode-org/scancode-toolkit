@@ -7,17 +7,17 @@ license_detections:
   - license_expression: intel
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
-      - score: '95.0'
+      - license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
+        from_file:
         start_line: 8
         end_line: 46
-        from_file:
+        matcher: 2-aho
+        score: '95.0'
         matched_length: 268
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
-        rule_identifier: intel_2.RULE
         rule_relevance: 95
+        rule_identifier: intel_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
         matched_text: "Redistribution.  \n\nRedistribution and use in binary form, without modification,\
           \ are\npermitted provided that the following conditions are met:\n\n * Redistributions\

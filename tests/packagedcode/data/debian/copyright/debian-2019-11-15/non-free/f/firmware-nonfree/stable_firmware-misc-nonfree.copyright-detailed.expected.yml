@@ -58,17 +58,17 @@ license_detections:
   - license_expression: 3com-microcode
     license_expression_spdx: LicenseRef-scancode-3com-microcode
     matches:
-      - score: '100.0'
+      - license_expression: 3com-microcode
+        spdx_license_expression: LicenseRef-scancode-3com-microcode
+        from_file:
         start_line: 11
         end_line: 38
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 264
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: 3com-microcode
-        spdx_license_expression: LicenseRef-scancode-3com-microcode
-        rule_identifier: 3com-microcode3.RULE
         rule_relevance: 100
+        rule_identifier: 3com-microcode3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/3com-microcode3.RULE
         matched_text: |
           Redistribution and use in source and binary forms of the 3c990img.h
@@ -103,17 +103,17 @@ license_detections:
   - license_expression: bsd-simplified-source
     license_expression_spdx: LicenseRef-scancode-bsd-simplified-source
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified-source
+        spdx_license_expression: LicenseRef-scancode-bsd-simplified-source
+        from_file:
         start_line: 46
         end_line: 49
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 30
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-simplified-source
-        spdx_license_expression: LicenseRef-scancode-bsd-simplified-source
-        rule_identifier: bsd-simplified-source.LICENSE
         rule_relevance: 100
+        rule_identifier: bsd-simplified-source.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -124,17 +124,17 @@ license_detections:
   - license_expression: agere-bsd
     license_expression_spdx: LicenseRef-scancode-agere-bsd
     matches:
-      - score: '100.0'
+      - license_expression: agere-bsd
+        spdx_license_expression: LicenseRef-scancode-agere-bsd
+        from_file:
         start_line: 56
         end_line: 92
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 296
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: agere-bsd
-        spdx_license_expression: LicenseRef-scancode-agere-bsd
-        rule_identifier: agere-bsd_1.RULE
         rule_relevance: 100
+        rule_identifier: agere-bsd_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agere-bsd_1.RULE
         matched_text: |
           This software is provided subject to the following terms and conditions,
@@ -178,17 +178,17 @@ license_detections:
   - license_expression: x11-acer
     license_expression_spdx: LicenseRef-scancode-x11-acer
     matches:
-      - score: '100.0'
+      - license_expression: x11-acer
+        spdx_license_expression: LicenseRef-scancode-x11-acer
+        from_file:
         start_line: 97
         end_line: 109
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 112
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: x11-acer
-        spdx_license_expression: LicenseRef-scancode-x11-acer
-        rule_identifier: x11-acer.LICENSE
         rule_relevance: 100
+        rule_identifier: x11-acer.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-acer.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
@@ -208,17 +208,17 @@ license_detections:
   - license_expression: ctl-linux-firmware
     license_expression_spdx: LicenseRef-scancode-ctl-linux-firmware
     matches:
-      - score: '100.0'
+      - license_expression: ctl-linux-firmware
+        spdx_license_expression: LicenseRef-scancode-ctl-linux-firmware
+        from_file:
         start_line: 116
         end_line: 159
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 364
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: ctl-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-ctl-linux-firmware
-        rule_identifier: ctl-linux-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: ctl-linux-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ctl-linux-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -269,17 +269,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 164
         end_line: 166
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 23
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_66.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
@@ -289,17 +289,17 @@ license_detections:
   - license_expression: linux-openib
     license_expression_spdx: Linux-OpenIB
     matches:
-      - score: '100.0'
+      - license_expression: linux-openib
+        spdx_license_expression: Linux-OpenIB
+        from_file:
         start_line: 173
         end_line: '193'
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 143
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: linux-openib
-        spdx_license_expression: Linux-OpenIB
-        rule_identifier: linux-openib.LICENSE
         rule_relevance: 100
+        rule_identifier: linux-openib.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/linux-openib.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or
@@ -327,17 +327,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 200
         end_line: 223
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: '199'
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_334.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_334.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_334.RULE
         matched_text: |
           Redistribution and use in binary form, without modification, are
@@ -368,17 +368,17 @@ license_detections:
   - license_expression: bsd-simplified-source
     license_expression_spdx: LicenseRef-scancode-bsd-simplified-source
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified-source
+        spdx_license_expression: LicenseRef-scancode-bsd-simplified-source
+        from_file:
         start_line: 228
         end_line: 231
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 30
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-simplified-source
-        spdx_license_expression: LicenseRef-scancode-bsd-simplified-source
-        rule_identifier: bsd-simplified-source.LICENSE
         rule_relevance: 100
+        rule_identifier: bsd-simplified-source.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-source.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -389,17 +389,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 236
         end_line: 247
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 120
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_332.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_332.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_332.RULE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software, only
@@ -418,17 +418,17 @@ license_detections:
   - license_expression: isc
     license_expression_spdx: ISC
     matches:
-      - score: '100.0'
+      - license_expression: isc
+        spdx_license_expression: ISC
+        from_file:
         start_line: 252
         end_line: 264
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 112
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: isc
-        spdx_license_expression: ISC
-        rule_identifier: isc.LICENSE
         rule_relevance: 100
+        rule_identifier: isc.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
@@ -448,17 +448,17 @@ license_detections:
   - license_expression: isc
     license_expression_spdx: ISC
     matches:
-      - score: '100.0'
+      - license_expression: isc
+        spdx_license_expression: ISC
+        from_file:
         start_line: 269
         end_line: 281
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 112
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: isc
-        spdx_license_expression: ISC
-        rule_identifier: isc.LICENSE
         rule_relevance: 100
+        rule_identifier: isc.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for
@@ -478,17 +478,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 286
         end_line: 293
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 75
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_331.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_331.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_331.RULE
         matched_text: |
           TERRATEC grants permission to use and redistribute these firmware
@@ -503,17 +503,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 300
         end_line: 323
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 211
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_786.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_786.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_786.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -544,17 +544,17 @@ license_detections:
   - license_expression: isc
     license_expression_spdx: ISC
     matches:
-      - score: '100.0'
+      - license_expression: isc
+        spdx_license_expression: ISC
+        from_file:
         start_line: 328
         end_line: 339
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 112
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: isc
-        spdx_license_expression: ISC
-        rule_identifier: isc.LICENSE
         rule_relevance: 100
+        rule_identifier: isc.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for any
@@ -573,17 +573,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 344
         end_line: 350
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 75
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_330.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_330.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_330.RULE
         matched_text: |
           Sensoray grants permission to use and redistribute these firmware
@@ -597,17 +597,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 355
         end_line: 363
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 73
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_328.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_328.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_328.RULE
         matched_text: |
           The firmware files included in the firmware/ directory may be freely
@@ -623,17 +623,17 @@ license_detections:
   - license_expression: intel
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
-      - score: '95.0'
+      - license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
+        from_file:
         start_line: 370
         end_line: 403
-        from_file:
+        matcher: 2-aho
+        score: '95.0'
         matched_length: 268
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
-        rule_identifier: intel_2.RULE
         rule_relevance: 95
+        rule_identifier: intel_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/intel_2.RULE
         matched_text: |
           Redistribution.
@@ -674,17 +674,17 @@ license_detections:
   - license_expression: nxp-firmware-patent
     license_expression_spdx: LicenseRef-scancode-nxp-firmware-patent
     matches:
-      - score: '100.0'
+      - license_expression: nxp-firmware-patent
+        spdx_license_expression: LicenseRef-scancode-nxp-firmware-patent
+        from_file:
         start_line: 414
         end_line: 457
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 384
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: nxp-firmware-patent
-        spdx_license_expression: LicenseRef-scancode-nxp-firmware-patent
-        rule_identifier: nxp-firmware-patent.LICENSE
         rule_relevance: 100
+        rule_identifier: nxp-firmware-patent.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nxp-firmware-patent.LICENSE
         matched_text: |
           Redistribution. Reproduction and redistribution in binary form, without
@@ -735,17 +735,17 @@ license_detections:
   - license_expression: bsd-original
     license_expression_spdx: BSD-4-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-original
+        spdx_license_expression: BSD-4-Clause
+        from_file:
         start_line: 462
         end_line: 487
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 233
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-original
-        spdx_license_expression: BSD-4-Clause
-        rule_identifier: bsd-original_44.RULE
         rule_relevance: 100
+        rule_identifier: bsd-original_44.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_44.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -778,17 +778,17 @@ license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '98.77'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 494
         end_line: 510
-        from_file:
+        matcher: 3-seq
+        score: '98.77'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 3-seq
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit_712.RULE
         rule_relevance: 100
+        rule_identifier: mit_712.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_712.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -812,17 +812,17 @@ license_detections:
   - license_expression: moxa-linux-firmware
     license_expression_spdx: LicenseRef-scancode-moxa-linux-firmware
     matches:
-      - score: '100.0'
+      - license_expression: moxa-linux-firmware
+        spdx_license_expression: LicenseRef-scancode-moxa-linux-firmware
+        from_file:
         start_line: 515
         end_line: 530
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 143
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: moxa-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-moxa-linux-firmware
-        rule_identifier: moxa-linux-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: moxa-linux-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/moxa-linux-firmware.LICENSE
         matched_text: |
           The software accompanying this license statement (the “Software”)
@@ -845,17 +845,17 @@ license_detections:
   - license_expression: ralink-firmware
     license_expression_spdx: LicenseRef-scancode-ralink-firmware
     matches:
-      - score: '100.0'
+      - license_expression: ralink-firmware
+        spdx_license_expression: LicenseRef-scancode-ralink-firmware
+        from_file:
         start_line: 537
         end_line: 572
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 297
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: ralink-firmware
-        spdx_license_expression: LicenseRef-scancode-ralink-firmware
-        rule_identifier: ralink-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: ralink-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -898,34 +898,34 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 577
         end_line: 577
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 8
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_324.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_324.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_324.RULE
         matched_text: All firmware components are redistributable in binary form.
     identifier: proprietary_license-fb7f18e9-048a-60a6-5671-b183fa33d6f6
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 582
         end_line: 708
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 956
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_325.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_325.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_325.RULE
         matched_text: |
           IMPORTANT NOTICE -- READ CAREFULLY: This License For Customer Use of
@@ -1059,17 +1059,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 719
         end_line: 756
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 303
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_319.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_319.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_319.RULE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -1114,17 +1114,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 761
         end_line: 768
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 75
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_311.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_311.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_311.RULE
         matched_text: |
           Comtrol grants permission to use and redistribute these firmware
@@ -1139,17 +1139,17 @@ license_detections:
   - license_expression: ralink-firmware
     license_expression_spdx: LicenseRef-scancode-ralink-firmware
     matches:
-      - score: '100.0'
+      - license_expression: ralink-firmware
+        spdx_license_expression: LicenseRef-scancode-ralink-firmware
+        from_file:
         start_line: 775
         end_line: 810
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 297
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: ralink-firmware
-        spdx_license_expression: LicenseRef-scancode-ralink-firmware
-        rule_identifier: ralink-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: ralink-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ralink-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -1192,17 +1192,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 815
         end_line: 817
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 23
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_66.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
@@ -1212,17 +1212,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 822
         end_line: 824
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 23
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_66.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_66.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_66.RULE
         matched_text: |
           Permission is hereby granted for the distribution of this firmware
@@ -1232,17 +1232,17 @@ license_detections:
   - license_expression: bsd-new AND proprietary-license
     license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new AND proprietary-license
+        spdx_license_expression: BSD-3-Clause AND LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 829
         end_line: 861
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 266
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-new AND proprietary-license
-        spdx_license_expression: BSD-3-Clause AND LicenseRef-scancode-proprietary-license
-        rule_identifier: bsd-new_and_proprietary-license_1.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_and_proprietary-license_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_and_proprietary-license_1.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1282,17 +1282,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 865
         end_line: 871
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 75
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_308.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_308.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_308.RULE
         matched_text: |
           Conexant grants permission to use and redistribute these firmware
@@ -1306,17 +1306,17 @@ license_detections:
   - license_expression: intel
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
-      - score: '100.0'
+      - license_expression: intel
+        spdx_license_expression: LicenseRef-scancode-intel
+        from_file:
         start_line: 876
         end_line: 911
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 295
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
-        rule_identifier: intel.LICENSE
         rule_relevance: 100
+        rule_identifier: intel.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/intel.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without

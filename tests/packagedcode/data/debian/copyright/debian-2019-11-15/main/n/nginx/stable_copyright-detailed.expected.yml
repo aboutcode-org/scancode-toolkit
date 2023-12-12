@@ -38,17 +38,17 @@ other_license_detections:
   - license_expression: bsd-simplified
     license_expression_spdx: BSD-2-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
+        from_file:
         start_line: 110
         end_line: 130
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 185
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
-        rule_identifier: bsd-simplified_20.RULE
         rule_relevance: 100
+        rule_identifier: bsd-simplified_20.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_20.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -76,17 +76,17 @@ other_license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 135
         end_line: 157
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 213
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_19.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_19.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -116,17 +116,17 @@ other_license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 160
         end_line: 182
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 213
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_42.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_42.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_42.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -156,17 +156,17 @@ other_license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 185
         end_line: 201
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy

@@ -40,30 +40,30 @@ other_license_detections:
   - license_expression: public-domain AND us-govt-public-domain
     license_expression_spdx: LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain
     matches:
-      - score: '100.0'
+      - license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
+        from_file:
         start_line: 92
         end_line: 92
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 5
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
-        rule_identifier: public-domain_128.RULE
         rule_relevance: 100
+        rule_identifier: public-domain_128.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_128.RULE
         matched_text: put into the public domain,
-      - score: '100.0'
+      - license_expression: us-govt-public-domain
+        spdx_license_expression: LicenseRef-scancode-us-govt-public-domain
+        from_file:
         start_line: 94
         end_line: 112
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 158
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: us-govt-public-domain
-        spdx_license_expression: LicenseRef-scancode-us-govt-public-domain
-        rule_identifier: us-govt-public-domain_24.RULE
         rule_relevance: 100
+        rule_identifier: us-govt-public-domain_24.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/us-govt-public-domain_24.RULE
         matched_text: |
           PUBLIC DOMAIN NOTICE
@@ -89,17 +89,17 @@ other_license_detections:
   - license_expression: boost-1.0
     license_expression_spdx: BSL-1.0
     matches:
-      - score: '100.0'
+      - license_expression: boost-1.0
+        spdx_license_expression: BSL-1.0
+        from_file:
         start_line: 115
         end_line: 135
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 202
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: boost-1.0
-        spdx_license_expression: BSL-1.0
-        rule_identifier: boost-1.0_9.RULE
         rule_relevance: 100
+        rule_identifier: boost-1.0_9.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_9.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person or organization
@@ -127,17 +127,17 @@ other_license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 138
         end_line: 154
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -161,17 +161,17 @@ other_license_detections:
   - license_expression: mit-with-modification-obligations AND proprietary-license
     license_expression_spdx: HPND-export-US-modify AND LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: mit-with-modification-obligations
+        spdx_license_expression: HPND-export-US-modify
+        from_file:
         start_line: 157
         end_line: 172
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 153
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit-with-modification-obligations
-        spdx_license_expression: HPND-export-US-modify
-        rule_identifier: mit-with-modification-obligations_4.RULE
         rule_relevance: 100
+        rule_identifier: mit-with-modification-obligations_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-with-modification-obligations_4.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and its
@@ -190,17 +190,17 @@ other_license_detections:
           THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
           WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
           MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 179
         end_line: 185
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 57
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_136.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_136.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_136.RULE
         matched_text: |
           No commercial use of these trademarks may be made without prior
@@ -214,17 +214,17 @@ other_license_detections:
   - license_expression: public-domain
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
-      - score: '100.0'
+      - license_expression: public-domain
+        spdx_license_expression: LicenseRef-scancode-public-domain
+        from_file:
         start_line: 188
         end_line: '194'
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 36
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
-        rule_identifier: public-domain_359.RULE
         rule_relevance: 100
+        rule_identifier: public-domain_359.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_359.RULE
         matched_text: |
           This source file is placed in the public domian.
@@ -238,17 +238,17 @@ other_license_detections:
   - license_expression: flex-2.5
     license_expression_spdx: BSD-3-Clause-flex
     matches:
-      - score: '100.0'
+      - license_expression: flex-2.5
+        spdx_license_expression: BSD-3-Clause-flex
+        from_file:
         start_line: '197'
         end_line: 209
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 122
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: flex-2.5
-        spdx_license_expression: BSD-3-Clause-flex
-        rule_identifier: flex-2.5_6.RULE
         rule_relevance: 100
+        rule_identifier: flex-2.5_6.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/flex-2.5_6.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
@@ -268,30 +268,30 @@ other_license_detections:
   - license_expression: gpl-2.0-plus
     license_expression_spdx: GPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 211
         end_line: 211
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
-        rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 212
         end_line: 231
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 139
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
-        rule_identifier: gpl-2.0-plus_845.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_845.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_845.RULE
         matched_text: |
           This program is free software; you can redistribute it

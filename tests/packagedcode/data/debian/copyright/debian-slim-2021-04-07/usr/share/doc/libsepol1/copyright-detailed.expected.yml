@@ -7,17 +7,17 @@ license_detections:
   - license_expression: lgpl-2.1-plus AND gpl-2.0
     license_expression_spdx: LGPL-2.1-or-later AND GPL-2.0-only
     matches:
-      - score: '89.63'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 16
         end_line: 41
-        from_file:
+        matcher: 3-seq
+        score: '89.63'
         matched_length: 147
         match_coverage: '89.63'
-        matcher: 3-seq
-        license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
-        rule_identifier: lgpl-2.1-plus_312.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_312.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_312.RULE
         matched_text: |
           library is free software; you can redistribute it and/or
@@ -46,17 +46,17 @@ license_detections:
 
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/
-      - score: '100.0'
+      - license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
+        from_file:
         start_line: 36
         end_line: 46
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 77
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
-        rule_identifier: gpl-2.0_1123.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0_1123.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1123.RULE
         matched_text: |
           distributed under the terms of the GNU

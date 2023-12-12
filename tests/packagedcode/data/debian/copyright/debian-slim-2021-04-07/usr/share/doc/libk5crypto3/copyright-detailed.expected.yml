@@ -27,17 +27,17 @@ license_detections:
     license_expression_spdx: BSD-2-Clause AND LicenseRef-scancode-generic-export-compliance
       AND CC-BY-SA-3.0
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
+        from_file:
         start_line: 18
         end_line: 39
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 183
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
-        rule_identifier: bsd-simplified.LICENSE
         rule_relevance: 100
+        rule_identifier: bsd-simplified.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -62,17 +62,17 @@ license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-      - score: '100.0'
+      - license_expression: generic-export-compliance
+        spdx_license_expression: LicenseRef-scancode-generic-export-compliance
+        from_file:
         start_line: 41
         end_line: 52
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 104
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: generic-export-compliance
-        spdx_license_expression: LicenseRef-scancode-generic-export-compliance
-        rule_identifier: generic-export-compliance_3.RULE
         rule_relevance: 100
+        rule_identifier: generic-export-compliance_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/generic-export-compliance_3.RULE
         matched_text: |
           Downloading of this software may constitute an export of cryptographic
@@ -87,17 +87,17 @@ license_detections:
           certain countries and individuals, including, but not limited to, the
           countries of Cuba, Iran, North Korea, Sudan, Syria, and residents and
           nationals of those countries.
-      - score: '100.0'
+      - license_expression: cc-by-sa-3.0
+        spdx_license_expression: CC-BY-SA-3.0
+        from_file:
         start_line: 54
         end_line: 56
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 25
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: cc-by-sa-3.0
-        spdx_license_expression: CC-BY-SA-3.0
-        rule_identifier: cc-by-sa-3.0_22.RULE
         rule_relevance: 100
+        rule_identifier: cc-by-sa-3.0_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_22.RULE
         matched_text: |
           Documentation components of this software distribution are licensed
@@ -107,17 +107,17 @@ license_detections:
   - license_expression: proprietary-license
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 64
         end_line: 70
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 57
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
-        rule_identifier: proprietary-license_136.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_136.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_136.RULE
         matched_text: |
           No commercial use of these trademarks may be made without
@@ -131,17 +131,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 82
         end_line: 111
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 244
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_80.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_80.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_80.RULE
         matched_text: |
           WARNING:  Retrieving the OpenVision Kerberos Administration system
@@ -178,17 +178,17 @@ license_detections:
   - license_expression: mit-no-advert-export-control
     license_expression_spdx: LicenseRef-scancode-mit-no-advert-export-control
     matches:
-      - score: '98.73'
+      - license_expression: mit-no-advert-export-control
+        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
+        from_file:
         start_line: 128
         end_line: 146
-        from_file:
+        matcher: 2-aho
+        score: '98.73'
         matched_length: 155
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit-no-advert-export-control
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
-        rule_identifier: mit-no-advert-export-control_1.RULE
         rule_relevance: 100
+        rule_identifier: mit-no-advert-export-control_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_1.RULE
         matched_text: |
           Export of this software from the United States of America may
@@ -214,17 +214,17 @@ license_detections:
   - license_expression: brian-gladman-3-clause
     license_expression_spdx: LicenseRef-scancode-brian-gladman-3-clause
     matches:
-      - score: '100.0'
+      - license_expression: brian-gladman-3-clause
+        spdx_license_expression: LicenseRef-scancode-brian-gladman-3-clause
+        from_file:
         start_line: 156
         end_line: 175
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 117
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: brian-gladman-3-clause
-        spdx_license_expression: LicenseRef-scancode-brian-gladman-3-clause
-        rule_identifier: brian-gladman-3-clause_2.RULE
         rule_relevance: 100
+        rule_identifier: brian-gladman-3-clause_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/brian-gladman-3-clause_2.RULE
         matched_text: |
           LICENSE TERMS
@@ -251,17 +251,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 187
         end_line: 214
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 213
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_587.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_587.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_587.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -296,17 +296,17 @@ license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 222
         end_line: 240
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -332,17 +332,17 @@ license_detections:
   - license_expression: bsd-simplified
     license_expression_spdx: BSD-2-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
+        from_file:
         start_line: 248
         end_line: 272
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 185
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
-        rule_identifier: bsd-simplified_20.RULE
         rule_relevance: 100
+        rule_identifier: bsd-simplified_20.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_20.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -374,17 +374,17 @@ license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 334
         end_line: 352
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -410,17 +410,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 363
         end_line: 390
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 213
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_19.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_19.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_19.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -455,17 +455,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 400
         end_line: 427
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 205
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_588.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_588.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_588.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -500,17 +500,17 @@ license_detections:
   - license_expression: michigan-disclaimer
     license_expression_spdx: LicenseRef-scancode-michigan-disclaimer
     matches:
-      - score: '100.0'
+      - license_expression: michigan-disclaimer
+        spdx_license_expression: LicenseRef-scancode-michigan-disclaimer
+        from_file:
         start_line: 440
         end_line: 459
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 186
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: michigan-disclaimer
-        spdx_license_expression: LicenseRef-scancode-michigan-disclaimer
-        rule_identifier: michigan-disclaimer.LICENSE
         rule_relevance: 100
+        rule_identifier: michigan-disclaimer.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/michigan-disclaimer.LICENSE
         matched_text: |
           Permission is granted to use, copy, create derivative works and
@@ -537,17 +537,17 @@ license_detections:
   - license_expression: fsf-unlimited-no-warranty
     license_expression_spdx: FSFULLRWD
     matches:
-      - score: '100.0'
+      - license_expression: fsf-unlimited-no-warranty
+        spdx_license_expression: FSFULLRWD
+        from_file:
         start_line: 469
         end_line: 476
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 64
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
-        rule_identifier: fsf-unlimited-no-warranty.RULE
         rule_relevance: 100
+        rule_identifier: fsf-unlimited-no-warranty.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty.RULE
         matched_text: |
           This file is free software; as a special exception the author gives
@@ -562,17 +562,17 @@ license_detections:
   - license_expression: mit-no-advert-export-control
     license_expression_spdx: LicenseRef-scancode-mit-no-advert-export-control
     matches:
-      - score: '100.0'
+      - license_expression: mit-no-advert-export-control
+        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
+        from_file:
         start_line: 485
         end_line: 503
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 159
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit-no-advert-export-control
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
-        rule_identifier: mit-no-advert-export-control_2.RULE
         rule_relevance: 100
+        rule_identifier: mit-no-advert-export-control_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_2.RULE
         matched_text: |
           Export of this software from the United States of America may
@@ -598,17 +598,17 @@ license_detections:
   - license_expression: openldap-2.8
     license_expression_spdx: OLDAP-2.8
     matches:
-      - score: '100.0'
+      - license_expression: openldap-2.8
+        spdx_license_expression: OLDAP-2.8
+        from_file:
         start_line: 511
         end_line: 558
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 330
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: openldap-2.8
-        spdx_license_expression: OLDAP-2.8
-        rule_identifier: openldap-2.8.LICENSE
         rule_relevance: 100
+        rule_identifier: openldap-2.8.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/openldap-2.8.LICENSE
         matched_text: |
           The OpenLDAP Public License
@@ -663,17 +663,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 568
         end_line: 595
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 212
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_933.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_933.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_933.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -708,17 +708,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 608
         end_line: 636
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 213
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_151.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_151.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_151.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -754,17 +754,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 647
         end_line: 675
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 217
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_589.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_589.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_589.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -800,17 +800,17 @@ license_detections:
   - license_expression: freebsd-doc
     license_expression_spdx: FreeBSD-DOC
     matches:
-      - score: '100.0'
+      - license_expression: freebsd-doc
+        spdx_license_expression: FreeBSD-DOC
+        from_file:
         start_line: 682
         end_line: 705
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 185
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: freebsd-doc
-        spdx_license_expression: FreeBSD-DOC
-        rule_identifier: freebsd-doc_5.RULE
         rule_relevance: 100
+        rule_identifier: freebsd-doc_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/freebsd-doc_5.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -841,17 +841,17 @@ license_detections:
   - license_expression: cmu-uc
     license_expression_spdx: MIT-CMU
     matches:
-      - score: '99.0'
+      - license_expression: cmu-uc
+        spdx_license_expression: MIT-CMU
+        from_file:
         start_line: 713
         end_line: 729
-        from_file:
+        matcher: 2-aho
+        score: '99.0'
         matched_length: 143
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: cmu-uc
-        spdx_license_expression: MIT-CMU
-        rule_identifier: cmu-uc_12.RULE
         rule_relevance: 99
+        rule_identifier: cmu-uc_12.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cmu-uc_12.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
@@ -875,17 +875,17 @@ license_detections:
   - license_expression: nrl-permission
     license_expression_spdx: LicenseRef-scancode-nrl-permission
     matches:
-      - score: '95.0'
+      - license_expression: nrl-permission
+        spdx_license_expression: LicenseRef-scancode-nrl-permission
+        from_file:
         start_line: 735
         end_line: 743
-        from_file:
+        matcher: 2-aho
+        score: '95.0'
         matched_length: 71
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: nrl-permission
-        spdx_license_expression: LicenseRef-scancode-nrl-permission
-        rule_identifier: nrl-permission_1.RULE
         rule_relevance: 95
+        rule_identifier: nrl-permission_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/nrl-permission_1.RULE
         matched_text: |
           Permission to use, copy, modify and distribute this software and
@@ -901,17 +901,17 @@ license_detections:
   - license_expression: ietf-trust
     license_expression_spdx: LicenseRef-scancode-ietf-trust
     matches:
-      - score: '100.0'
+      - license_expression: ietf-trust
+        spdx_license_expression: LicenseRef-scancode-ietf-trust
+        from_file:
         start_line: 752
         end_line: 763
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 99
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: ietf-trust
-        spdx_license_expression: LicenseRef-scancode-ietf-trust
-        rule_identifier: ietf-trust_10.RULE
         rule_relevance: 100
+        rule_identifier: ietf-trust_10.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf-trust_10.RULE
         matched_text: |
           This document is subject to the rights, licenses and restrictions
@@ -930,17 +930,17 @@ license_detections:
   - license_expression: mit-old-style
     license_expression_spdx: LicenseRef-scancode-mit-old-style
     matches:
-      - score: '100.0'
+      - license_expression: mit-old-style
+        spdx_license_expression: LicenseRef-scancode-mit-old-style
+        from_file:
         start_line: 769
         end_line: 776
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 69
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit-old-style
-        spdx_license_expression: LicenseRef-scancode-mit-old-style
-        rule_identifier: mit-old-style_11.RULE
         rule_relevance: 100
+        rule_identifier: mit-old-style_11.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_11.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software and
@@ -955,17 +955,17 @@ license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 782
         end_line: 800
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -992,17 +992,17 @@ license_detections:
     license_expression_spdx: BSD-2-Clause AND (LicenseRef-scancode-mit-no-advert-export-control
       AND LicenseRef-scancode-proprietary-license)
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
+        from_file:
         start_line: 810
         end_line: 833
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 183
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
-        rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
+        rule_identifier: bsd-simplified_27.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1029,17 +1029,17 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-      - score: '100.0'
+      - license_expression: mit-no-advert-export-control AND proprietary-license
+        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 837
         end_line: 856
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 165
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit-no-advert-export-control AND proprietary-license
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-proprietary-license
-        rule_identifier: mit-no-advert-export-control_and_proprietary-license_1.RULE
         rule_relevance: 100
+        rule_identifier: mit-no-advert-export-control_and_proprietary-license_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_and_proprietary-license_1.RULE
         matched_text: |
           EXPORT OF THIS SOFTWARE from the United States of America may
@@ -1066,17 +1066,17 @@ license_detections:
   - license_expression: bsd-original-uc
     license_expression_spdx: BSD-4-Clause-UC
     matches:
-      - score: '100.0'
+      - license_expression: bsd-original-uc
+        spdx_license_expression: BSD-4-Clause-UC
+        from_file:
         start_line: 866
         end_line: 899
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 243
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-original-uc
-        spdx_license_expression: BSD-4-Clause-UC
-        rule_identifier: bsd-original-uc_3.RULE
         rule_relevance: 100
+        rule_identifier: bsd-original-uc_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1117,17 +1117,17 @@ license_detections:
   - license_expression: mit-no-advert-export-control
     license_expression_spdx: LicenseRef-scancode-mit-no-advert-export-control
     matches:
-      - score: '99.0'
+      - license_expression: mit-no-advert-export-control
+        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
+        from_file:
         start_line: 907
         end_line: 922
-        from_file:
+        matcher: 2-aho
+        score: '99.0'
         matched_length: 145
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit-no-advert-export-control
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
-        rule_identifier: mit-no-advert-export-control_4.RULE
         rule_relevance: 99
+        rule_identifier: mit-no-advert-export-control_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_4.RULE
         matched_text: |
           Export of this software from the United States of America may
@@ -1150,17 +1150,17 @@ license_detections:
   - license_expression: bsd-original
     license_expression_spdx: BSD-4-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-original
+        spdx_license_expression: BSD-4-Clause
+        from_file:
         start_line: 934
         end_line: 968
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 245
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-original
-        spdx_license_expression: BSD-4-Clause
-        rule_identifier: bsd-original_32.RULE
         rule_relevance: 100
+        rule_identifier: bsd-original_32.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_32.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1202,17 +1202,17 @@ license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 978
         end_line: 996
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 165
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit_483.RULE
         rule_relevance: 100
+        rule_identifier: mit_483.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_483.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -1238,17 +1238,17 @@ license_detections:
   - license_expression: isc
     license_expression_spdx: ISC
     matches:
-      - score: '100.0'
+      - license_expression: isc
+        spdx_license_expression: ISC
+        from_file:
         start_line: 1004
         end_line: 1016
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 111
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: isc
-        spdx_license_expression: ISC
-        rule_identifier: isc_14.RULE
         rule_relevance: 100
+        rule_identifier: isc_14.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_14.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for
@@ -1268,17 +1268,17 @@ license_detections:
   - license_expression: isc
     license_expression_spdx: ISC
     matches:
-      - score: '95.0'
+      - license_expression: isc
+        spdx_license_expression: ISC
+        from_file:
         start_line: 1025
         end_line: 1037
-        from_file:
+        matcher: 2-aho
+        score: '95.0'
         matched_length: 132
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: isc
-        spdx_license_expression: ISC
-        rule_identifier: isc_16.RULE
         rule_relevance: 95
+        rule_identifier: isc_16.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_16.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for
@@ -1298,17 +1298,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 1046
         end_line: 1047
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 16
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_22.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_22.RULE
         matched_text: |
           This file may be freely redistributed without license or fee
@@ -1317,17 +1317,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 1060
         end_line: 1087
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 208
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_134.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_134.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_134.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1362,17 +1362,17 @@ license_detections:
   - license_expression: rsa-md4
     license_expression_spdx: LicenseRef-scancode-rsa-md4
     matches:
-      - score: '100.0'
+      - license_expression: rsa-md4
+        spdx_license_expression: LicenseRef-scancode-rsa-md4
+        from_file:
         start_line: 1096
         end_line: 1112
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 126
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: rsa-md4
-        spdx_license_expression: LicenseRef-scancode-rsa-md4
-        rule_identifier: rsa-md4.LICENSE
         rule_relevance: 100
+        rule_identifier: rsa-md4.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-md4.LICENSE
         matched_text: |
           License to copy and use this software is granted provided that it
@@ -1396,17 +1396,17 @@ license_detections:
   - license_expression: rsa-md5
     license_expression_spdx: RSA-MD
     matches:
-      - score: '100.0'
+      - license_expression: rsa-md5
+        spdx_license_expression: RSA-MD
+        from_file:
         start_line: 1121
         end_line: 1137
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 126
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: rsa-md5
-        spdx_license_expression: RSA-MD
-        rule_identifier: rsa-md5.LICENSE
         rule_relevance: 100
+        rule_identifier: rsa-md5.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-md5.LICENSE
         matched_text: |
           License to copy and use this software is granted provided that it
@@ -1430,17 +1430,17 @@ license_detections:
   - license_expression: rsa-1990
     license_expression_spdx: LicenseRef-scancode-rsa-1990
     matches:
-      - score: '100.0'
+      - license_expression: rsa-1990
+        spdx_license_expression: LicenseRef-scancode-rsa-1990
+        from_file:
         start_line: 1147
         end_line: 1153
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 54
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: rsa-1990
-        spdx_license_expression: LicenseRef-scancode-rsa-1990
-        rule_identifier: rsa-1990.LICENSE
         rule_relevance: 100
+        rule_identifier: rsa-1990.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/rsa-1990.LICENSE
         matched_text: |
           RSA Data Security, Inc. makes no representations concerning either
@@ -1454,17 +1454,17 @@ license_detections:
   - license_expression: mit-with-modification-obligations
     license_expression_spdx: HPND-export-US-modify
     matches:
-      - score: '100.0'
+      - license_expression: mit-with-modification-obligations
+        spdx_license_expression: HPND-export-US-modify
+        from_file:
         start_line: 1163
         end_line: 1181
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 177
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit-with-modification-obligations
-        spdx_license_expression: HPND-export-US-modify
-        rule_identifier: mit-with-modification-obligations_2.RULE
         rule_relevance: 100
+        rule_identifier: mit-with-modification-obligations_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-with-modification-obligations_2.RULE
         matched_text: |
           Export of this software from the United States of America may
@@ -1490,17 +1490,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 1190
         end_line: 1217
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 213
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_590.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_590.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_590.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1535,17 +1535,17 @@ license_detections:
   - license_expression: bsd-simplified OR gpl-2.0-plus
     license_expression_spdx: BSD-2-Clause OR GPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified OR gpl-2.0-plus
+        spdx_license_expression: BSD-2-Clause OR GPL-2.0-or-later
+        from_file:
         start_line: 1226
         end_line: 1264
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 335
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-simplified OR gpl-2.0-plus
-        spdx_license_expression: BSD-2-Clause OR GPL-2.0-or-later
-        rule_identifier: bsd-simplified_or_gpl-2.0-plus_7.RULE
         rule_relevance: 100
+        rule_identifier: bsd-simplified_or_gpl-2.0-plus_7.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_or_gpl-2.0-plus_7.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1591,17 +1591,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 1274
         end_line: 1302
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 212
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-intel_4.RULE
         rule_relevance: 100
+        rule_identifier: bsd-intel_4.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-intel_4.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -1637,17 +1637,17 @@ license_detections:
   - license_expression: bsd-simplified
     license_expression_spdx: BSD-2-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
+        from_file:
         start_line: 1311
         end_line: 1334
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 183
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
-        rule_identifier: bsd-simplified.LICENSE
         rule_relevance: 100
+        rule_identifier: bsd-simplified.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without

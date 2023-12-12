@@ -1958,16 +1958,12 @@ class BasicRule:
 
         rule_boolean_attributes = [
             'is_license_text',
-            'is_license_text',
             'is_license_notice',
             'is_license_reference',
             'is_license_tag',
             'is_license_intro',
             'is_license_clue',
             'is_continuous',
-            'is_builtin',
-            'is_from_license',
-            'is_synthetic',
         ]
 
         mapping = {}

@@ -14,17 +14,17 @@ license_detections:
   - license_expression: openldap-2.8
     license_expression_spdx: OLDAP-2.8
     matches:
-      - score: '100.0'
+      - license_expression: openldap-2.8
+        spdx_license_expression: OLDAP-2.8
+        from_file:
         start_line: 17
         end_line: 37
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 124
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: openldap-2.8
-        spdx_license_expression: OLDAP-2.8
-        rule_identifier: openldap-2.8_21.RULE
         rule_relevance: 100
+        rule_identifier: openldap-2.8_21.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_21.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -48,17 +48,17 @@ license_detections:
 
           Additional information about OpenLDAP can be obtained at
           <http://www.openldap.org/>.
-      - score: '100.0'
+      - license_expression: openldap-2.8
+        spdx_license_expression: OLDAP-2.8
+        from_file:
         start_line: 41
         end_line: 81
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 297
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: openldap-2.8
-        spdx_license_expression: OLDAP-2.8
-        rule_identifier: openldap-2.8_16.RULE
         rule_relevance: 100
+        rule_identifier: openldap-2.8_16.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_16.RULE
         matched_text: |
           The OpenLDAP Public License
@@ -106,17 +106,17 @@ license_detections:
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 91
         end_line: 107
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 165
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        spdx_license_expression: MIT
-        rule_identifier: mit_483.RULE
         rule_relevance: 100
+        rule_identifier: mit_483.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_483.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -140,17 +140,17 @@ license_detections:
   - license_expression: fsf-unlimited-no-warranty
     license_expression_spdx: FSFULLRWD
     matches:
-      - score: '100.0'
+      - license_expression: fsf-unlimited-no-warranty
+        spdx_license_expression: FSFULLRWD
+        from_file:
         start_line: 115
         end_line: 122
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 64
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
-        rule_identifier: fsf-unlimited-no-warranty_2.RULE
         rule_relevance: 100
+        rule_identifier: fsf-unlimited-no-warranty_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty_2.RULE
         matched_text: |
           This Makefile.in is free software; the Free Software Foundation
@@ -165,17 +165,17 @@ license_detections:
   - license_expression: hs-regexp
     license_expression_spdx: Spencer-94
     matches:
-      - score: '95.0'
+      - license_expression: hs-regexp
+        spdx_license_expression: Spencer-94
+        from_file:
         start_line: 129
         end_line: 145
-        from_file:
+        matcher: 2-aho
+        score: '95.0'
         matched_length: 123
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: hs-regexp
-        spdx_license_expression: Spencer-94
-        rule_identifier: hs-regexp_5.RULE
         rule_relevance: 95
+        rule_identifier: hs-regexp_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
         matched_text: |
           Permission is granted to anyone to use this software for any purpose
@@ -199,17 +199,17 @@ license_detections:
   - license_expression: ibm-dhcp
     license_expression_spdx: LicenseRef-scancode-ibm-dhcp
     matches:
-      - score: '100.0'
+      - license_expression: ibm-dhcp
+        spdx_license_expression: LicenseRef-scancode-ibm-dhcp
+        from_file:
         start_line: 154
         end_line: 173
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 203
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: ibm-dhcp
-        spdx_license_expression: LicenseRef-scancode-ibm-dhcp
-        rule_identifier: ibm-dhcp.LICENSE
         rule_relevance: 100
+        rule_identifier: ibm-dhcp.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/ibm-dhcp.LICENSE
         matched_text: |
           International Business Machines, Inc. (hereinafter called IBM) grants
@@ -236,17 +236,17 @@ license_detections:
   - license_expression: ietf
     license_expression_spdx: LicenseRef-scancode-ietf
     matches:
-      - score: '100.0'
+      - license_expression: ietf
+        spdx_license_expression: LicenseRef-scancode-ietf
+        from_file:
         start_line: 180
         end_line: 206
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 221
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: ietf
-        spdx_license_expression: LicenseRef-scancode-ietf
-        rule_identifier: ietf_5.RULE
         rule_relevance: 100
+        rule_identifier: ietf_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ietf_5.RULE
         matched_text: "Full Copyright Statement\n# \n#    Copyright (C) The Internet Society\
           \ (1999).  All Rights Reserved.\n# \n#    This document and translations of it may\
@@ -271,17 +271,17 @@ license_detections:
   - license_expression: isc
     license_expression_spdx: ISC
     matches:
-      - score: '100.0'
+      - license_expression: isc
+        spdx_license_expression: ISC
+        from_file:
         start_line: 227
         end_line: 238
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 113
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: isc
-        spdx_license_expression: ISC
-        rule_identifier: isc_9.RULE
         rule_relevance: 100
+        rule_identifier: isc_9.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_9.RULE
         matched_text: |
           Permission to use, copy, modify, and distribute this software for any
@@ -300,17 +300,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 245
         end_line: 250
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 39
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_203.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_203.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_203.RULE
         matched_text: "This software is not subject to any license of Silicon Graphics \n *\
           \ Inc. or Purdue University.\n *\n * Redistribution and use in source and binary forms\
@@ -320,17 +320,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 277
         end_line: 283
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 57
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_200.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_200.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_200.RULE
         matched_text: "This software is not subject to any license of Carnegie Mellon University.\n\
           \ *\n * Redistribution and use in source and binary forms are permitted without \n\
@@ -341,17 +341,17 @@ license_detections:
   - license_expression: mit-old-style-no-advert
     license_expression_spdx: NTP
     matches:
-      - score: '100.0'
+      - license_expression: mit-old-style-no-advert
+        spdx_license_expression: NTP
+        from_file:
         start_line: 311
         end_line: 319
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 96
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit-old-style-no-advert
-        spdx_license_expression: NTP
-        rule_identifier: mit-old-style-no-advert_3.RULE
         rule_relevance: 100
+        rule_identifier: mit-old-style-no-advert_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style-no-advert_3.RULE
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this software and its
@@ -367,17 +367,17 @@ license_detections:
   - license_expression: other-permissive
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 327
         end_line: 328
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 12
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        rule_identifier: other-permissive_199.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_199.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_199.RULE
         matched_text: |
           Permission to copy and
@@ -386,17 +386,17 @@ license_detections:
   - license_expression: hs-regexp
     license_expression_spdx: Spencer-94
     matches:
-      - score: '95.0'
+      - license_expression: hs-regexp
+        spdx_license_expression: Spencer-94
+        from_file:
         start_line: 337
         end_line: 352
-        from_file:
+        matcher: 2-aho
+        score: '95.0'
         matched_length: 123
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: hs-regexp
-        spdx_license_expression: Spencer-94
-        rule_identifier: hs-regexp_5.RULE
         rule_relevance: 95
+        rule_identifier: hs-regexp_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/hs-regexp_5.RULE
         matched_text: |
           Permission is granted to anyone to use this software for any purpose
@@ -419,17 +419,17 @@ license_detections:
   - license_expression: openldap-2.8
     license_expression_spdx: OLDAP-2.8
     matches:
-      - score: '100.0'
+      - license_expression: openldap-2.8
+        spdx_license_expression: OLDAP-2.8
+        from_file:
         start_line: 359
         end_line: 362
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 43
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: openldap-2.8
-        spdx_license_expression: OLDAP-2.8
-        rule_identifier: openldap-2.8_15.RULE
         rule_relevance: 100
+        rule_identifier: openldap-2.8_15.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openldap-2.8_15.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted only
@@ -440,17 +440,17 @@ license_detections:
   - license_expression: bsla AND bsd-original-uc
     license_expression_spdx: BSD-4.3TAHOE AND BSD-4-Clause-UC
     matches:
-      - score: '100.0'
+      - license_expression: bsla
+        spdx_license_expression: BSD-4.3TAHOE
+        from_file:
         start_line: 368
         end_line: 378
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 101
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsla
-        spdx_license_expression: BSD-4.3TAHOE
-        rule_identifier: bsla_3.RULE
         rule_relevance: 100
+        rule_identifier: bsla_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsla_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
@@ -464,17 +464,17 @@ license_detections:
            * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
            * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
            * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
-      - score: '100.0'
+      - license_expression: bsd-original-uc
+        spdx_license_expression: BSD-4-Clause-UC
+        from_file:
         start_line: 380
         end_line: 381
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 12
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-original-uc
-        spdx_license_expression: BSD-4-Clause-UC
-        rule_identifier: bsd-original-uc_25.RULE
         rule_relevance: 100
+        rule_identifier: bsd-original-uc_25.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_25.RULE
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
@@ -483,17 +483,17 @@ license_detections:
   - license_expression: bsd-original-uc
     license_expression_spdx: BSD-4-Clause-UC
     matches:
-      - score: '100.0'
+      - license_expression: bsd-original-uc
+        spdx_license_expression: BSD-4-Clause-UC
+        from_file:
         start_line: 388
         end_line: 414
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 243
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-original-uc
-        spdx_license_expression: BSD-4-Clause-UC
-        rule_identifier: bsd-original-uc_3.RULE
         rule_relevance: 100
+        rule_identifier: bsd-original-uc_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -523,17 +523,17 @@ license_detections:
            * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
            * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            * SUCH DAMAGE.
-      - score: '100.0'
+      - license_expression: bsd-original-uc
+        spdx_license_expression: BSD-4-Clause-UC
+        from_file:
         start_line: 416
         end_line: 419
-        from_file:
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 24
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-original-uc
-        spdx_license_expression: BSD-4-Clause-UC
-        rule_identifier: bsd-original-uc_24.RULE
         rule_relevance: 100
+        rule_identifier: bsd-original-uc_24.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_24.RULE
         matched_text: |
           NOTE: The Regents have since retroactively removed the advertising
@@ -544,17 +544,17 @@ license_detections:
   - license_expression: bsd-original-uc-1986
     license_expression_spdx: BSD-4.3RENO
     matches:
-      - score: '99.0'
+      - license_expression: bsd-original-uc-1986
+        spdx_license_expression: BSD-4.3RENO
+        from_file:
         start_line: 426
         end_line: 431
-        from_file:
+        matcher: 2-aho
+        score: '99.0'
         matched_length: 64
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-original-uc-1986
-        spdx_license_expression: BSD-4.3RENO
-        rule_identifier: bsd-original-uc-1986_3.RULE
         rule_relevance: 99
+        rule_identifier: bsd-original-uc-1986_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc-1986_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms are permitted

@@ -41,17 +41,17 @@ license_detections:
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 171
         end_line: '196'
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 214
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
-        rule_identifier: bsd-new_591.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_591.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_591.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -84,17 +84,17 @@ license_detections:
   - license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
     license_expression_spdx: GPL-2.0-or-later WITH Autoconf-exception-generic
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
+        spdx_license_expression: GPL-2.0-or-later WITH Autoconf-exception-generic
+        from_file:
         start_line: '199'
         end_line: 218
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 165
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
-        spdx_license_expression: GPL-2.0-or-later WITH Autoconf-exception-generic
-        rule_identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_16.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_with_autoconf-simple-exception-2.0_16.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_autoconf-simple-exception-2.0_16.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -121,17 +121,17 @@ license_detections:
   - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
     license_expression_spdx: GPL-2.0-or-later WITH Libtool-exception
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
+        spdx_license_expression: GPL-2.0-or-later WITH Libtool-exception
+        from_file:
         start_line: 221
         end_line: 240
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 171
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus WITH libtool-exception-2.0
-        spdx_license_expression: GPL-2.0-or-later WITH Libtool-exception
-        rule_identifier: gpl-2.0-plus_with_libtool-exception-2.0_17.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_with_libtool-exception-2.0_17.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_libtool-exception-2.0_17.RULE
         matched_text: |
           GNU Libtool is free software; you can redistribute it and/or modify
@@ -158,17 +158,17 @@ license_detections:
   - license_expression: gpl-3.0-plus WITH autoconf-simple-exception
     license_expression_spdx: GPL-3.0-or-later WITH Autoconf-exception-generic-3.0
     matches:
-      - score: '100.0'
+      - license_expression: gpl-3.0-plus WITH autoconf-simple-exception
+        spdx_license_expression: GPL-3.0-or-later WITH Autoconf-exception-generic-3.0
+        from_file:
         start_line: 243
         end_line: 264
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 186
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0-plus WITH autoconf-simple-exception
-        spdx_license_expression: GPL-3.0-or-later WITH Autoconf-exception-generic-3.0
-        rule_identifier: gpl-3.0-plus_with_autoconf-simple-exception_6.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0-plus_with_autoconf-simple-exception_6.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_autoconf-simple-exception_6.RULE
         matched_text: |
           This file is free software; you can redistribute it and/or modify it
@@ -197,30 +197,30 @@ license_detections:
   - license_expression: lgpl-2.1
     license_expression_spdx: LGPL-2.1-only
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1
+        spdx_license_expression: LGPL-2.1-only
+        from_file:
         start_line: 266
         end_line: 266
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
-        rule_identifier: lgpl-2.1_38.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1_38.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
-      - score: '100.0'
+      - license_expression: lgpl-2.1
+        spdx_license_expression: LGPL-2.1-only
+        from_file:
         start_line: 267
         end_line: 280
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 121
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
-        rule_identifier: lgpl-2.1_369.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1_369.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_369.RULE
         matched_text: |
           This library is free software: you can redistribute it and/or
@@ -241,30 +241,30 @@ license_detections:
   - license_expression: lgpl-2.1-plus
     license_expression_spdx: LGPL-2.1-or-later
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 282
         end_line: 282
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
-        rule_identifier: lgpl-2.1-plus_108.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_108.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 283
         end_line: 298
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 139
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
-        rule_identifier: lgpl-2.1-plus_387.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_387.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_387.RULE
         matched_text: |
           The GNU C Library is free software; you can redistribute it and/or
@@ -287,17 +287,17 @@ license_detections:
   - license_expression: x11-xconsortium
     license_expression_spdx: X11
     matches:
-      - score: '100.0'
+      - license_expression: x11-xconsortium
+        spdx_license_expression: X11
+        from_file:
         start_line: 301
         end_line: 321
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 201
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: x11-xconsortium
-        spdx_license_expression: X11
-        rule_identifier: x11-xconsortium_2.RULE
         rule_relevance: 100
+        rule_identifier: x11-xconsortium_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium_2.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -325,17 +325,17 @@ license_detections:
   - license_expression: fsf-unlimited
     license_expression_spdx: FSFULLR
     matches:
-      - score: '100.0'
+      - license_expression: fsf-unlimited
+        spdx_license_expression: FSFULLR
+        from_file:
         start_line: 324
         end_line: 326
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 29
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: fsf-unlimited
-        spdx_license_expression: FSFULLR
-        rule_identifier: fsf-unlimited.LICENSE
         rule_relevance: 100
+        rule_identifier: fsf-unlimited.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
         matched_text: |
           This file is free software; the Free Software Foundation gives
@@ -345,17 +345,17 @@ license_detections:
   - license_expression: fsf-unlimited-no-warranty
     license_expression_spdx: FSFULLRWD
     matches:
-      - score: '100.0'
+      - license_expression: fsf-unlimited-no-warranty
+        spdx_license_expression: FSFULLRWD
+        from_file:
         start_line: 329
         end_line: 336
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 63
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
-        rule_identifier: fsf-unlimited-no-warranty.LICENSE
         rule_relevance: 100
+        rule_identifier: fsf-unlimited-no-warranty.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited-no-warranty.LICENSE
         matched_text: |
           This file is free software; the Free Software Foundation
@@ -370,17 +370,17 @@ license_detections:
   - license_expression: fsf-free
     license_expression_spdx: FSFUL
     matches:
-      - score: '100.0'
+      - license_expression: fsf-free
+        spdx_license_expression: FSFUL
+        from_file:
         start_line: 339
         end_line: 340
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 18
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: fsf-free
-        spdx_license_expression: FSFUL
-        rule_identifier: fsf-free.LICENSE
         rule_relevance: 100
+        rule_identifier: fsf-free.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-free.LICENSE
         matched_text: |
           This configure script is free software; the Free Software Foundation
@@ -389,17 +389,17 @@ license_detections:
   - license_expression: fsf-ap
     license_expression_spdx: FSFAP
     matches:
-      - score: '100.0'
+      - license_expression: fsf-ap
+        spdx_license_expression: FSFAP
+        from_file:
         start_line: 343
         end_line: 346
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 35
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: fsf-ap
-        spdx_license_expression: FSFAP
-        rule_identifier: fsf-ap.LICENSE
         rule_relevance: 100
+        rule_identifier: fsf-ap.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE
         matched_text: |
           Copying and distribution of this file, with or without modification,
@@ -410,17 +410,17 @@ license_detections:
   - license_expression: fsf-unlimited-no-warranty
     license_expression_spdx: FSFULLRWD
     matches:
-      - score: '100.0'
+      - license_expression: fsf-unlimited-no-warranty
+        spdx_license_expression: FSFULLRWD
+        from_file:
         start_line: 349
         end_line: 356
-        from_file:
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 64
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
-        rule_identifier: fsf-unlimited-no-warranty_2.RULE
         rule_relevance: 100
+        rule_identifier: fsf-unlimited-no-warranty_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-unlimited-no-warranty_2.RULE
         matched_text: |
           This Makefile.in is free software; the Free Software Foundation
