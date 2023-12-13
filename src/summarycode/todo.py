@@ -100,6 +100,22 @@ class AmbiguousDetectionsToDoPlugin(PostScanPlugin):
         if hasattr(codebase.root, 'license_detections'):
             has_licenses = True
 
+            license_diagnostics = kwargs.get("license_diagnostics")
+            license_text = kwargs.get("license_text")
+            license_text_diagnostics = kwargs.get("license_text_diagnostics")
+            if not license_diagnostics or not license_text or not license_text_diagnostics:
+                usage_suggestion_message = (
+                    "The --review option, whe paired with --license option should be used with the folowing "
+                    "additional CLI options for maximum benifit: [`--license-text`, `--license-text-diagnostics`,"
+                    "--license-diagnostics`] as these show additional diagnostic information to help review the issues."
+                )
+                warnings.simplefilter('always', ToDoPluginUsageWarning)
+                warnings.warn(
+                    usage_suggestion_message,
+                    ToDoPluginUsageWarning,
+                    stacklevel=2,
+                )
+
         if not has_packages and not has_licenses:
             usage_suggestion_message = (
                 "The --review option should be used with atleast one of the license [`--license`], "
@@ -323,11 +339,13 @@ class AmbiguousDetection:
             matches_with_details = []
             for license_match in detection_mapping["detection"]["matches"]:
                 license_match_obj = LicenseMatchFromResult.from_dict(license_match)
-                matches_with_details.append(license_match_obj.to_dict(
-                    include_text=True,
-                    license_text_diagnostics=True,
-                    rule_details=True,
-                ))
+                matches_with_details.append(
+                    license_match_obj.to_dict(
+                        include_text=True,
+                        license_text_diagnostics=True,
+                        rule_details=True,
+                    )
+                )
             detection_mapping["detection"]["matches"] = matches_with_details
 
         return detection_mapping

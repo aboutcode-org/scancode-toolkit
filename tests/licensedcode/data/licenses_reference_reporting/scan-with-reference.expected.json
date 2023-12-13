@@ -45,17 +45,17 @@
           "license_expression_spdx": "Artistic-2.0 OR MIT",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "from_file": "scan/package.json",
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
               "license_expression": "artistic-2.0 OR mit",
               "spdx_license_expression": "Artistic-2.0 OR MIT",
-              "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-512604ee8f4c8e5ccdd4631c2b447196299cd404",
+              "from_file": "scan/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-512604ee8f4c8e5ccdd4631c2b447196299cd404",
               "rule_url": null,
               "matched_text": "Artistic-2.0 OR MIT"
             }
@@ -92,34 +92,32 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": "scan/copyr.java",
           "start_line": 3,
           "end_line": 16,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 119,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "rule_identifier": "apache-2.0_2.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE",
-          "matched_text": null
+          "rule_identifier": "apache-2.0_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
         },
         {
-          "score": 100.0,
+          "license_expression": "mit OR bsd-simplified",
+          "license_expression_spdx": "MIT OR BSD-2-Clause",
           "from_file": "scan/copyr.java",
           "start_line": 19,
           "end_line": 19,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
           "matched_length": 8,
           "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "mit OR bsd-simplified",
-          "license_expression_spdx": "MIT OR BSD-2-Clause",
-          "rule_identifier": "spdx-license-identifier-mit OR bsd-simplified-c8fa3f8aa8e5819b052e913ac9dec497534a442b",
           "rule_relevance": 100,
-          "rule_url": null,
-          "matched_text": null
+          "rule_identifier": "spdx-license-identifier-mit OR bsd-simplified-c8fa3f8aa8e5819b052e913ac9dec497534a442b",
+          "rule_url": null
         }
       ]
     },
@@ -130,19 +128,18 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "artistic-2.0",
+          "license_expression_spdx": "Artistic-2.0",
           "from_file": "scan/package.json",
           "start_line": 28,
           "end_line": 28,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 4,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "artistic-2.0",
-          "license_expression_spdx": "Artistic-2.0",
-          "rule_identifier": "artistic-2.0_46.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
-          "matched_text": null
+          "rule_identifier": "artistic-2.0_46.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
         }
       ]
     },
@@ -153,19 +150,18 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "artistic-2.0 OR mit",
+          "license_expression_spdx": "Artistic-2.0 OR MIT",
           "from_file": "scan/package.json",
           "start_line": 1,
           "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
           "matched_length": 5,
           "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "artistic-2.0 OR mit",
-          "license_expression_spdx": "Artistic-2.0 OR MIT",
-          "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-512604ee8f4c8e5ccdd4631c2b447196299cd404",
           "rule_relevance": 100,
-          "rule_url": null,
-          "matched_text": "Artistic-2.0 OR MIT"
+          "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-512604ee8f4c8e5ccdd4631c2b447196299cd404",
+          "rule_url": null
         }
       ]
     }
@@ -492,31 +488,31 @@
           "license_expression_spdx": "Apache-2.0 AND (MIT OR BSD-2-Clause)",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 3,
-              "end_line": 16,
-              "from_file": "scan/copyr.java",
-              "matched_length": 119,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_2.RULE",
+              "from_file": "scan/copyr.java",
+              "start_line": 3,
+              "end_line": 16,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 119,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_2.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_2.RULE"
             },
             {
-              "score": 100.0,
-              "start_line": 19,
-              "end_line": 19,
-              "from_file": "scan/copyr.java",
-              "matched_length": 8,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
               "license_expression": "mit OR bsd-simplified",
               "spdx_license_expression": "MIT OR BSD-2-Clause",
-              "rule_identifier": "spdx-license-identifier-mit OR bsd-simplified-f59ff8931aa67ccbfb194b8c7db7d4e5eafb709c",
+              "from_file": "scan/copyr.java",
+              "start_line": 19,
+              "end_line": 19,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 8,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit OR bsd-simplified-f59ff8931aa67ccbfb194b8c7db7d4e5eafb709c",
               "rule_url": null
             }
           ],
@@ -576,17 +572,17 @@
               "license_expression_spdx": "Artistic-2.0 OR MIT",
               "matches": [
                 {
-                  "score": 100.0,
-                  "start_line": 1,
-                  "end_line": 1,
-                  "from_file": "scan/package.json",
-                  "matched_length": 5,
-                  "match_coverage": 100.0,
-                  "matcher": "1-spdx-id",
                   "license_expression": "artistic-2.0 OR mit",
                   "spdx_license_expression": "Artistic-2.0 OR MIT",
-                  "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-512604ee8f4c8e5ccdd4631c2b447196299cd404",
+                  "from_file": "scan/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
                   "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-artistic-2.0 OR mit-512604ee8f4c8e5ccdd4631c2b447196299cd404",
                   "rule_url": null,
                   "matched_text": "Artistic-2.0 OR MIT"
                 }
@@ -621,17 +617,17 @@
           "license_expression_spdx": "Artistic-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 28,
-              "end_line": 28,
-              "from_file": "scan/package.json",
-              "matched_length": 4,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "artistic-2.0",
               "spdx_license_expression": "Artistic-2.0",
-              "rule_identifier": "artistic-2.0_46.RULE",
+              "from_file": "scan/package.json",
+              "start_line": 28,
+              "end_line": 28,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "artistic-2.0_46.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
             }
           ],

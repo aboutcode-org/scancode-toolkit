@@ -170,7 +170,7 @@ class LicenseScanner(ScanPlugin):
             unknown_licenses=unknown_licenses,
         )
 
-    def process_codebase(self, codebase, license_diagnostics, **kwargs):
+    def process_codebase(self, codebase, license_text=False, license_diagnostics=False, license_text_diagnostics=False, **kwargs):
         """
         Post-process ``codebase`` to follow referenced filenames to license
         matches in other files.
@@ -231,7 +231,11 @@ class LicenseScanner(ScanPlugin):
             )
 
         unsorted_license_detections = [
-            unique_detection.to_dict(license_diagnostics=license_diagnostics)
+            unique_detection.to_dict(
+                include_text=license_text,
+                license_diagnostics=license_diagnostics,
+                license_text_diagnostics=license_text_diagnostics,
+            )
             for unique_detection in unique_license_detections
         ]
         codebase.attributes.license_detections.extend(

@@ -773,7 +773,7 @@ class LicenseMatch(object):
         spdx_license_url=SPDX_LICENSE_URL,
         include_text=False,
         license_text_diagnostics=False,
-        whole_lines=True,
+        whole_lines=False,
         file_path=None,
     ):
         """
@@ -785,11 +785,11 @@ class LicenseMatch(object):
         if include_text:
             if license_text_diagnostics:
                 matched_text_diagnostics = self.matched_text(whole_lines=False, highlight=True)
+
+            if whole_lines:
+                matched_text = self.matched_text(whole_lines=True, highlight=False)
             else:
-                if whole_lines:
-                    matched_text = self.matched_text(whole_lines=True, highlight=False)
-                else:
-                    matched_text = self.matched_text(whole_lines=False, highlight=False)
+                matched_text = self.matched_text(whole_lines=False, highlight=False)
 
         result = {}
 
@@ -808,8 +808,8 @@ class LicenseMatch(object):
 
         if include_text:
             result['matched_text'] = matched_text
-            if license_text_diagnostics:
-               result['matched_text_diagnostics'] = matched_text_diagnostics
+        if license_text_diagnostics:
+            result['matched_text_diagnostics'] = matched_text_diagnostics
         return result
 
     def get_highlighted_text(self, trace=TRACE_HIGHLIGHTED_TEXT):

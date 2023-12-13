@@ -8,19 +8,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "lgpl-2.1",
+          "license_expression_spdx": "LGPL-2.1-only",
           "from_file": "test.txt",
           "start_line": 1,
           "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 4,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.1",
-          "license_expression_spdx": "LGPL-2.1-only",
-          "rule_identifier": "lgpl-2.1_38.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.1_38.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE",
-          "matched_text": "license: LGPL-2.1"
+          "matched_text": "foo bar this that license: LGPL-2.1 bar",
+          "matched_text_diagnostics": "license: LGPL-2.1"
         }
       ]
     }
@@ -37,19 +38,20 @@
           "license_expression_spdx": "LGPL-2.1-only",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "from_file": "test.txt",
-              "matched_length": 4,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "lgpl-2.1",
               "spdx_license_expression": "LGPL-2.1-only",
-              "rule_identifier": "lgpl-2.1_38.RULE",
+              "from_file": "test.txt",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.1_38.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE",
-              "matched_text": "license: LGPL-2.1"
+              "matched_text": "foo bar this that license: LGPL-2.1 bar",
+              "matched_text_diagnostics": "license: LGPL-2.1"
             }
           ],
           "detection_log": [],

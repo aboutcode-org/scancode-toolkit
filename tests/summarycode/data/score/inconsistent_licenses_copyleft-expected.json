@@ -52,17 +52,17 @@
           "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "from_file": "inconsistent_licenses_copyleft/package.json",
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "from_file": "inconsistent_licenses_copyleft/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
               "rule_url": null,
               "matched_text": "MIT"
             }
@@ -282,19 +282,18 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "gpl-2.0-plus",
+          "license_expression_spdx": "GPL-2.0-or-later",
           "from_file": "inconsistent_licenses_copyleft/util.js",
           "start_line": 1,
           "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
           "matched_length": 8,
           "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": "GPL-2.0-or-later",
-          "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-d77dcfd90692f92e4c8cd586b28797e4f3d067f3",
           "rule_relevance": 100,
-          "rule_url": null,
-          "matched_text": null
+          "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-d77dcfd90692f92e4c8cd586b28797e4f3d067f3",
+          "rule_url": null
         }
       ]
     },
@@ -305,19 +304,18 @@
       "detection_count": 2,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "from_file": "inconsistent_licenses_copyleft/index.js",
           "start_line": 2,
           "end_line": 19,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 161,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "rule_identifier": "mit.LICENSE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
-          "matched_text": null
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
         }
       ]
     },
@@ -328,19 +326,18 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "from_file": "inconsistent_licenses_copyleft/package.json",
           "start_line": 7,
           "end_line": 7,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 2,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "rule_identifier": "mit_30.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
-          "matched_text": null
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
         }
       ]
     },
@@ -351,19 +348,18 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "from_file": "inconsistent_licenses_copyleft/package.json",
           "start_line": 1,
           "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
           "matched_length": 1,
           "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
           "rule_relevance": 100,
-          "rule_url": null,
-          "matched_text": "MIT"
+          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+          "rule_url": null
         }
       ]
     }
@@ -444,17 +440,17 @@
           "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 20,
-              "end_line": 37,
-              "from_file": "inconsistent_licenses_copyleft/README.md",
-              "matched_length": 161,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "rule_identifier": "mit.LICENSE",
+              "from_file": "inconsistent_licenses_copyleft/README.md",
+              "start_line": 20,
+              "end_line": 37,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 161,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
@@ -519,17 +515,17 @@
           "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 2,
-              "end_line": 19,
-              "from_file": "inconsistent_licenses_copyleft/index.js",
-              "matched_length": 161,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "rule_identifier": "mit.LICENSE",
+              "from_file": "inconsistent_licenses_copyleft/index.js",
+              "start_line": 2,
+              "end_line": 19,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 161,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
@@ -618,17 +614,17 @@
               "license_expression_spdx": "MIT",
               "matches": [
                 {
-                  "score": 100.0,
-                  "start_line": 1,
-                  "end_line": 1,
-                  "from_file": "inconsistent_licenses_copyleft/package.json",
-                  "matched_length": 1,
-                  "match_coverage": 100.0,
-                  "matcher": "1-spdx-id",
                   "license_expression": "mit",
                   "spdx_license_expression": "MIT",
-                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "from_file": "inconsistent_licenses_copyleft/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
                   "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
                   "rule_url": null,
                   "matched_text": "MIT"
                 }
@@ -799,17 +795,17 @@
           "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 7,
-              "end_line": 7,
-              "from_file": "inconsistent_licenses_copyleft/package.json",
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "rule_identifier": "mit_30.RULE",
+              "from_file": "inconsistent_licenses_copyleft/package.json",
+              "start_line": 7,
+              "end_line": 7,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
             }
           ],
@@ -868,17 +864,17 @@
           "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "from_file": "inconsistent_licenses_copyleft/util.js",
-              "matched_length": 8,
-              "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
               "license_expression": "gpl-2.0-plus",
               "spdx_license_expression": "GPL-2.0-or-later",
-              "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-3f844e1a237b3ca425edf1127a3c075a0a0c1de6",
+              "from_file": "inconsistent_licenses_copyleft/util.js",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 8,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-3f844e1a237b3ca425edf1127a3c075a0a0c1de6",
               "rule_url": null
             }
           ],

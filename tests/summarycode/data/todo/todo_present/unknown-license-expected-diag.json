@@ -20,9 +20,10 @@
           "matched_length": 53,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "license-detection-unknown-3d4d4e847eacf4b9efcc80ca90df1eea689f5cee",
+          "rule_identifier": "license-detection-unknown-51bcd994ad60981fff8c5f1b1b9af6e3d4f5ba67",
           "rule_url": null,
-          "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
+          "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\nsoftware is modified by someone else\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.",
+          "matched_text_diagnostics": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
         }
       ]
     }
@@ -50,12 +51,12 @@
             "rule_length": 53,
             "match_coverage": 100.0,
             "rule_relevance": 100,
-            "rule_identifier": "license-detection-unknown-3d4d4e847eacf4b9efcc80ca90df1eea689f5cee",
+            "rule_identifier": "license-detection-unknown-51bcd994ad60981fff8c5f1b1b9af6e3d4f5ba67",
             "rule_url": null,
             "rule_notes": "Unknown license based on a composite of license words.",
             "referenced_filenames": [],
-            "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof.",
-            "rule_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
+            "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\nsoftware is modified by someone else\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.",
+            "rule_text": "form shall mean the preferred form for making\nthe purposes of this definition control\nsoftware is modified by someone else\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof."
           }
         ],
         "detection_log": [
@@ -89,7 +90,8 @@
               "rule_relevance": 100,
               "rule_identifier": "license-detection-unknown-296da2cbc15d2bba73baa1359cda5fc8bf39b942",
               "rule_url": null,
-              "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
+              "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\nsoftware is modified by someone else\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.",
+              "matched_text_diagnostics": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof."
             }
           ],
           "detection_log": [

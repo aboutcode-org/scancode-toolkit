@@ -44,32 +44,32 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_48.RULE",
+              "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "- name: Apache License, version 2.0"
             },
             {
-              "score": 100.0,
-              "start_line": 2,
-              "end_line": 2,
-              "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
-              "matched_length": 9,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_42.RULE",
+              "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
+              "start_line": 2,
+              "end_line": 2,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 9,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_42.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
               "matched_text": "  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
@@ -235,19 +235,18 @@
       "detection_count": 2,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": "jar/META-INF/LICENSE.txt",
           "start_line": 2,
           "end_line": 202,
+          "matcher": "1-hash",
+          "score": 100.0,
           "matched_length": 1584,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "rule_identifier": "apache-2.0.LICENSE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-          "matched_text": null
+          "rule_identifier": "apache-2.0.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE"
         }
       ]
     },
@@ -258,19 +257,18 @@
       "detection_count": 2,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": "jar/org/jboss/logging/AbstractLoggerProvider.java",
           "start_line": 6,
           "end_line": 16,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 85,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "rule_identifier": "apache-2.0_7.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE",
-          "matched_text": null
+          "rule_identifier": "apache-2.0_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
         }
       ]
     },
@@ -281,19 +279,18 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
           "start_line": 24,
           "end_line": 30,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 25,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "rule_identifier": "apache-2.0_1227.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1227.RULE",
-          "matched_text": null
+          "rule_identifier": "apache-2.0_1227.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1227.RULE"
         }
       ]
     },
@@ -304,34 +301,32 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
           "start_line": 1,
           "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 5,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "rule_identifier": "apache-2.0_48.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
-          "matched_text": "- name: Apache License, version 2.0"
+          "rule_identifier": "apache-2.0_48.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE"
         },
         {
-          "score": 100.0,
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
           "start_line": 2,
           "end_line": 2,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 9,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "rule_identifier": "apache-2.0_42.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
-          "matched_text": "  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
+          "rule_identifier": "apache-2.0_42.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE"
         }
       ]
     }
@@ -496,17 +491,17 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 2,
-              "end_line": 202,
-              "from_file": "jar/META-INF/LICENSE.txt",
-              "matched_length": 1584,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0.LICENSE",
+              "from_file": "jar/META-INF/LICENSE.txt",
+              "start_line": 2,
+              "end_line": 202,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 1584,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE"
             }
           ],
@@ -580,17 +575,17 @@
               "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
-                  "start_line": 2,
-                  "end_line": 202,
-                  "from_file": "jar/META-INF/LICENSE.txt",
-                  "matched_length": 1584,
-                  "match_coverage": 100.0,
-                  "matcher": "1-hash",
                   "license_expression": "apache-2.0",
                   "spdx_license_expression": "Apache-2.0",
-                  "rule_identifier": "apache-2.0.LICENSE",
+                  "from_file": "jar/META-INF/LICENSE.txt",
+                  "start_line": 2,
+                  "end_line": 202,
+                  "matcher": "1-hash",
+                  "score": 100.0,
+                  "matched_length": 1584,
+                  "match_coverage": 100.0,
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0.LICENSE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE"
                 }
               ],
@@ -893,32 +888,32 @@
               "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
-                  "start_line": 1,
-                  "end_line": 1,
-                  "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
-                  "matched_length": 5,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
                   "license_expression": "apache-2.0",
                   "spdx_license_expression": "Apache-2.0",
-                  "rule_identifier": "apache-2.0_48.RULE",
+                  "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "- name: Apache License, version 2.0"
                 },
                 {
-                  "score": 100.0,
-                  "start_line": 2,
-                  "end_line": 2,
-                  "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
-                  "matched_length": 9,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
                   "license_expression": "apache-2.0",
                   "spdx_license_expression": "Apache-2.0",
-                  "rule_identifier": "apache-2.0_42.RULE",
+                  "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
+                  "start_line": 2,
+                  "end_line": 2,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 9,
+                  "match_coverage": 100.0,
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_42.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
                   "matched_text": "  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
@@ -1051,17 +1046,17 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 24,
-              "end_line": 30,
-              "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
-              "matched_length": 25,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_1227.RULE",
+              "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
+              "start_line": 24,
+              "end_line": 30,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 25,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_1227.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1227.RULE"
             }
           ],
@@ -1237,17 +1232,17 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 6,
-              "end_line": 16,
-              "from_file": "jar/org/jboss/logging/AbstractLoggerProvider.java",
-              "matched_length": 85,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_7.RULE",
+              "from_file": "jar/org/jboss/logging/AbstractLoggerProvider.java",
+              "start_line": 6,
+              "end_line": 16,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 85,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_7.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
             }
           ],
@@ -1312,17 +1307,17 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 6,
-              "end_line": 16,
-              "from_file": "jar/org/jboss/logging/AbstractMdcLoggerProvider.java",
-              "matched_length": 85,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_7.RULE",
+              "from_file": "jar/org/jboss/logging/AbstractMdcLoggerProvider.java",
+              "start_line": 6,
+              "end_line": 16,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 85,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_7.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
             }
           ],

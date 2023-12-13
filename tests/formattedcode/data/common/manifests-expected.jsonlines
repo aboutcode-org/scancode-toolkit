@@ -25,10 +25,6 @@
             "python_version": "3.8.10 (default, Nov 22 2023, 10:22:35) \n[GCC 9.4.0]"
           },
           "spdx_license_list_version": "3.22",
-          "additional_license_plugins": [
-            "/home/ayansinha/nexB/write_access/scancode-extra/venv/lib/python3.8/site-packages/licenses_to_install1",
-            "/home/ayansinha/nexB/write_access/scancode-extra/venv/lib/python3.8/site-packages/licenses_to_install2"
-          ],
           "files_count": 4
         }
       }
@@ -536,8 +532,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
           }
         ]
       },
@@ -559,8 +554,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "apache-2.0_65.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
           }
         ]
       },
@@ -582,8 +576,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 16,
             "rule_identifier": "license-intro_72.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE"
           },
           {
             "license_expression": "cddl-1.0",
@@ -597,8 +590,7 @@
             "match_coverage": 82.35,
             "rule_relevance": 100,
             "rule_identifier": "cddl-1.0_32.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE"
           }
         ]
       },
@@ -620,8 +612,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "cddl-1.0.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE",
-            "matched_text": "- name: Common Development and Distribution License (CDDL) v1.0"
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE"
           },
           {
             "license_expression": "cddl-1.0",
@@ -635,8 +626,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "cddl-1.0_4.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE",
-            "matched_text": "  url: http://www.sun.com/cddl/cddl.html"
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE"
           }
         ]
       },
@@ -658,8 +648,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "pypi_gnu_lesser_general_public_license_v3.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE"
           }
         ]
       },
@@ -681,8 +670,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "lgpl-3.0_276.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_276.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_276.RULE"
           }
         ]
       },
@@ -704,8 +692,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "lgpl-3.0_152.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_152.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_152.RULE"
           }
         ]
       },
@@ -727,8 +714,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "lgpl-3.0_29.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_29.RULE",
-            "matched_text": "LGPLv3"
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_29.RULE"
           }
         ]
       },
@@ -750,8 +736,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "mit_30.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
           }
         ]
       },
@@ -773,8 +758,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-            "rule_url": null,
-            "matched_text": "MIT"
+            "rule_url": null
           }
         ]
       }

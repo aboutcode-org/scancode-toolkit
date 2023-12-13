@@ -185,7 +185,7 @@ class PackageScanner(ScanPlugin):
             system=system_package,
         )
 
-    def process_codebase(self, codebase, strip_root=False, **kwargs):
+    def process_codebase(self, codebase, strip_root=False, license_text=False, license_diagnostics=False, license_text_diagnostics=False, **kwargs):
         """
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data

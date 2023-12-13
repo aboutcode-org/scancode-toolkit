@@ -10,34 +10,36 @@
       ],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "from_file": "scan-ref/license-notice.txt",
           "start_line": 34,
           "end_line": 34,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 5,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-          "rule_identifier": "unknown-license-reference_25.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "unknown-license-reference_25.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_25.RULE",
-          "matched_text": "license\": \"SEE LICENSE IN LICENSE."
+          "matched_text": "  \"license\": \"SEE LICENSE IN LICENSE.txt\",",
+          "matched_text_diagnostics": "license\": \"SEE LICENSE IN LICENSE."
         },
         {
-          "score": 100.0,
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "from_file": "scan-ref/LICENSE",
           "start_line": 1,
           "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
           "matched_length": 10,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "rule_identifier": "mit_66.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "mit_66.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_66.RULE",
-          "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
+          "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT).",
+          "matched_text_diagnostics": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
         }
       ]
     },
@@ -49,19 +51,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "from_file": "scan-ref/LICENSE",
           "start_line": 1,
           "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
           "matched_length": 10,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "rule_identifier": "mit_66.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "mit_66.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_66.RULE",
-          "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
+          "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT).",
+          "matched_text_diagnostics": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
         }
       ]
     }
@@ -78,19 +81,20 @@
           "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "from_file": "scan-ref/LICENSE",
-              "matched_length": 10,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "rule_identifier": "mit_66.RULE",
+              "from_file": "scan-ref/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 10,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "mit_66.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_66.RULE",
-              "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
+              "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT).",
+              "matched_text_diagnostics": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
             }
           ],
           "detection_log": [],
@@ -112,34 +116,36 @@
           "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 34,
-              "end_line": 34,
-              "from_file": "scan-ref/license-notice.txt",
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "unknown-license-reference",
               "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
-              "rule_identifier": "unknown-license-reference_25.RULE",
+              "from_file": "scan-ref/license-notice.txt",
+              "start_line": 34,
+              "end_line": 34,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "unknown-license-reference_25.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_25.RULE",
-              "matched_text": "license\": \"SEE LICENSE IN LICENSE."
+              "matched_text": "  \"license\": \"SEE LICENSE IN LICENSE.txt\",",
+              "matched_text_diagnostics": "license\": \"SEE LICENSE IN LICENSE."
             },
             {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "from_file": "scan-ref/LICENSE",
-              "matched_length": 10,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "rule_identifier": "mit_66.RULE",
+              "from_file": "scan-ref/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 10,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "mit_66.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_66.RULE",
-              "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
+              "matched_text": "that is licensed under [MIT](http://opensource.org/licenses/MIT).",
+              "matched_text_diagnostics": "that is licensed under [MIT](http://opensource.org/licenses/MIT)."
             }
           ],
           "detection_log": [

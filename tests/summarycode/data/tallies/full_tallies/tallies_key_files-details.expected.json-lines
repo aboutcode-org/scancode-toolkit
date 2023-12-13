@@ -52,8 +52,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "artistic-2.0_46.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-2.0_46.RULE"
           }
         ]
       },
@@ -75,8 +74,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "boost-1.0_21.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_21.RULE"
           }
         ]
       },
@@ -98,8 +96,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "cc-by-2.5_4.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-2.5_4.RULE"
           }
         ]
       },
@@ -121,8 +118,7 @@
             "match_coverage": 99.69,
             "rule_relevance": 100,
             "rule_identifier": "cc0-1.0_155.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_155.RULE"
           }
         ]
       },
@@ -144,8 +140,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ada-linking-exception_1.RULE"
           }
         ]
       },
@@ -167,8 +162,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "lgpl-2.1-plus_59.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_59.RULE"
           }
         ]
       },
@@ -190,8 +184,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "mit-old-style_cmr-no_1.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_cmr-no_1.RULE"
           }
         ]
       },
@@ -213,8 +206,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "zlib_5.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
           },
           {
             "license_expression": "zlib",
@@ -228,8 +220,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "zlib_17.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
           }
         ]
       },
@@ -251,8 +242,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "zlib_5.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
           }
         ]
       },
@@ -274,8 +264,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "zlib_17.RULE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
           }
         ]
       },
@@ -297,8 +286,7 @@
             "match_coverage": 100.0,
             "rule_relevance": 100,
             "rule_identifier": "zlib.LICENSE",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE",
-            "matched_text": null
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE"
           }
         ]
       }

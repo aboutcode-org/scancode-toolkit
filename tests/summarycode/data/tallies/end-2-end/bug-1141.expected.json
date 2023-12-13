@@ -9,19 +9,18 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "gpl-2.0-plus",
+          "license_expression_spdx": "GPL-2.0-or-later",
           "from_file": "bug-1141.tar.gz/bug/sub/sub2/src/benchmark.c",
           "start_line": 8,
           "end_line": 19,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 102,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": "GPL-2.0-or-later",
-          "rule_identifier": "gpl-2.0-plus_119.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_119.RULE",
-          "matched_text": null
+          "rule_identifier": "gpl-2.0-plus_119.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_119.RULE"
         }
       ]
     },
@@ -32,19 +31,18 @@
       "detection_count": 1,
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "gpl-3.0-plus",
+          "license_expression_spdx": "GPL-3.0-or-later",
           "from_file": "bug-1141.tar.gz/bug/sub/sub2/COPYING",
           "start_line": 1,
           "end_line": 12,
+          "matcher": "1-hash",
+          "score": 100.0,
           "matched_length": 102,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "gpl-3.0-plus",
-          "license_expression_spdx": "GPL-3.0-or-later",
-          "rule_identifier": "gpl-3.0-plus_290.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
-          "matched_text": null
+          "rule_identifier": "gpl-3.0-plus_290.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE"
         }
       ]
     }
@@ -308,17 +306,17 @@
           "license_expression_spdx": "GPL-3.0-or-later",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 12,
-              "from_file": "bug-1141.tar.gz/bug/sub/sub2/COPYING",
-              "matched_length": 102,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
               "license_expression": "gpl-3.0-plus",
               "spdx_license_expression": "GPL-3.0-or-later",
-              "rule_identifier": "gpl-3.0-plus_290.RULE",
+              "from_file": "bug-1141.tar.gz/bug/sub/sub2/COPYING",
+              "start_line": 1,
+              "end_line": 12,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 102,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "gpl-3.0-plus_290.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE"
             }
           ],
@@ -534,17 +532,17 @@
           "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 8,
-              "end_line": 19,
-              "from_file": "bug-1141.tar.gz/bug/sub/sub2/src/benchmark.c",
-              "matched_length": 102,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "gpl-2.0-plus",
               "spdx_license_expression": "GPL-2.0-or-later",
-              "rule_identifier": "gpl-2.0-plus_119.RULE",
+              "from_file": "bug-1141.tar.gz/bug/sub/sub2/src/benchmark.c",
+              "start_line": 8,
+              "end_line": 19,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 102,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "gpl-2.0-plus_119.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_119.RULE"
             }
           ],

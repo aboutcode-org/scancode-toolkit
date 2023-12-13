@@ -8,19 +8,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
           "start_line": 53,
           "end_line": 54,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 51,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "rule_identifier": "apache-2.0_1208.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_1208.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1208.RULE",
-          "matched_text": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</"
+          "matched_text": "<p>Your use of the opentest4j code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.",
+          "matched_text_diagnostics": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</"
         }
       ]
     },
@@ -32,19 +33,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 95.0,
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
           "start_line": 34,
           "end_line": 37,
+          "matcher": "2-aho",
+          "score": 95.0,
           "matched_length": 25,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "rule_identifier": "apache-2.0_1203.RULE",
           "rule_relevance": 95,
+          "rule_identifier": "apache-2.0_1203.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1203.RULE",
-          "matched_text": "developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</"
+          "matched_text": "<p>The plug-in includes SureFire JUnit Runner ${surefire-version} developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</a>).",
+          "matched_text_diagnostics": "developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</"
         }
       ]
     },
@@ -56,19 +58,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
           "start_line": 44,
           "end_line": 47,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 75,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "rule_identifier": "apache-2.0_1205.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_1205.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1205.RULE",
-          "matched_text": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.\n\n<p>The Apache attribution <a href=\"about_files/NOTICE\">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</"
+          "matched_text": "<p>Your use of the SureFire JUnit Runner code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.\n\n<p>The Apache attribution <a href=\"about_files/NOTICE\">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</p>",
+          "matched_text_diagnostics": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.\n\n<p>The Apache attribution <a href=\"about_files/NOTICE\">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</"
         }
       ]
     },
@@ -80,34 +83,36 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
           "start_line": 53,
           "end_line": 54,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 22,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "license_expression_spdx": "BSD-3-Clause",
-          "rule_identifier": "bsd-new_1270.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "bsd-new_1270.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1270.RULE",
-          "matched_text": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nNew BSD License."
+          "matched_text": "Your use of hamcrest-library 1.1 in both source and binary code form contained in the plug-in is subject to the terms and conditions of the \nNew BSD License.",
+          "matched_text_diagnostics": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nNew BSD License."
         },
         {
-          "score": 100.0,
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
           "start_line": 57,
           "end_line": 59,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 5,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "license_expression_spdx": "BSD-3-Clause",
-          "rule_identifier": "bsd-new_1271.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "bsd-new_1271.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1271.RULE",
-          "matched_text": "New BSD License:</p>\n<pre>\nBSD License"
+          "matched_text": "<p>The Hamcrest New BSD License:</p>\n<pre>\nBSD License",
+          "matched_text_diagnostics": "New BSD License:</p>\n<pre>\nBSD License"
         }
       ]
     },
@@ -119,19 +124,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
           "start_line": 64,
           "end_line": 85,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 211,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "license_expression_spdx": "BSD-3-Clause",
-          "rule_identifier": "bsd-new_860.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "bsd-new_860.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_860.RULE",
-          "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of\nconditions and the following disclaimer. Redistributions in binary form must reproduce\nthe above copyright notice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the distribution.\n\nNeither the name of Hamcrest nor the names of its contributors may be used to endorse\nor promote products derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY\nWAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE."
+          "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of\nconditions and the following disclaimer. Redistributions in binary form must reproduce\nthe above copyright notice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the distribution.\n\nNeither the name of Hamcrest nor the names of its contributors may be used to endorse\nor promote products derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY\nWAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE.",
+          "matched_text_diagnostics": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of\nconditions and the following disclaimer. Redistributions in binary form must reproduce\nthe above copyright notice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the distribution.\n\nNeither the name of Hamcrest nor the names of its contributors may be used to endorse\nor promote products derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY\nWAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE."
         }
       ]
     },
@@ -143,19 +149,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "cpl-1.0",
+          "license_expression_spdx": "CPL-1.0",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_4.html",
           "start_line": 39,
           "end_line": 41,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 60,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "cpl-1.0",
-          "license_expression_spdx": "CPL-1.0",
-          "rule_identifier": "cpl-1.0_36.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "cpl-1.0_36.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_36.RULE",
-          "matched_text": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</a>.\n(a local copy can be found <a href=\"about_files/cpl-v10.html\">here</"
+          "matched_text": "Your use of JUnit 3.8.2 in both source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</a>.\n(a local copy can be found <a href=\"about_files/cpl-v10.html\">here</a>)</p>",
+          "matched_text_diagnostics": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</a>.\n(a local copy can be found <a href=\"about_files/cpl-v10.html\">here</"
         }
       ]
     },
@@ -167,19 +174,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "cpl-1.0",
+          "license_expression_spdx": "CPL-1.0",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
           "start_line": 40,
           "end_line": 41,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 49,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "cpl-1.0",
-          "license_expression_spdx": "CPL-1.0",
-          "rule_identifier": "cpl-1.0_31.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "cpl-1.0_31.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_31.RULE",
-          "matched_text": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</"
+          "matched_text": "Your use of JUnit 4.8.1 in both source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</a>.",
+          "matched_text_diagnostics": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</"
         }
       ]
     },
@@ -191,19 +199,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "epl-1.0",
+          "license_expression_spdx": "EPL-1.0",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
           "start_line": 12,
           "end_line": 25,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 163,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "epl-1.0",
-          "license_expression_spdx": "EPL-1.0",
-          "rule_identifier": "epl-1.0_104.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "epl-1.0_104.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_104.RULE",
-          "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"https://www.eclipse.org/\">https://www.eclipse.org</"
+          "matched_text": "<h3>License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"https://www.eclipse.org/\">https://www.eclipse.org</a>.</p>",
+          "matched_text_diagnostics": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"https://www.eclipse.org/\">https://www.eclipse.org</"
         }
       ]
     },
@@ -215,19 +224,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "epl-1.0",
+          "license_expression_spdx": "EPL-1.0",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
           "start_line": 12,
           "end_line": 25,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 163,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "epl-1.0",
-          "license_expression_spdx": "EPL-1.0",
-          "rule_identifier": "epl-1.0_99.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "epl-1.0_99.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_99.RULE",
-          "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">http://www.eclipse.org</"
+          "matched_text": "<h3>License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">http://www.eclipse.org</a>.</p>",
+          "matched_text_diagnostics": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">http://www.eclipse.org</"
         }
       ]
     },
@@ -239,19 +249,20 @@
       "detection_log": [],
       "sample_matches": [
         {
-          "score": 100.0,
+          "license_expression": "epl-2.0",
+          "license_expression_spdx": "EPL-2.0",
           "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
           "start_line": 71,
           "end_line": 72,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 51,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "epl-2.0",
-          "license_expression_spdx": "EPL-2.0",
-          "rule_identifier": "epl-2.0_67.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "epl-2.0_67.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_67.RULE",
-          "matched_text": "code is subject to the terms and conditions of the Eclipse Public License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE.md\">LICENSE.md</a> and is also available at <a href=\"https://www.eclipse.org/legal/epl-2.0/\">https://www.eclipse.org/legal/epl-2.0/</"
+          "matched_text": "<p>Your use of the junit-jupiter-engine, junit-vintage-engine, junit-platform-commons, junit-platform-engine, junit-platform-launcher code is subject to the terms and conditions of the Eclipse Public License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE.md\">LICENSE.md</a> and is also available at <a href=\"https://www.eclipse.org/legal/epl-2.0/\">https://www.eclipse.org/legal/epl-2.0/</a>.",
+          "matched_text_diagnostics": "code is subject to the terms and conditions of the Eclipse Public License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE.md\">LICENSE.md</a> and is also available at <a href=\"https://www.eclipse.org/legal/epl-2.0/\">https://www.eclipse.org/legal/epl-2.0/</"
         }
       ]
     }
@@ -268,19 +279,20 @@
           "license_expression_spdx": "EPL-1.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 12,
-              "end_line": 25,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
-              "matched_length": 163,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "epl-1.0",
               "spdx_license_expression": "EPL-1.0",
-              "rule_identifier": "epl-1.0_99.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
+              "start_line": 12,
+              "end_line": 25,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 163,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "epl-1.0_99.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_99.RULE",
-              "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">http://www.eclipse.org</"
+              "matched_text": "<h3>License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">http://www.eclipse.org</a>.</p>",
+              "matched_text_diagnostics": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">http://www.eclipse.org</"
             }
           ],
           "detection_log": [],
@@ -291,19 +303,20 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 95.0,
-              "start_line": 34,
-              "end_line": 37,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
-              "matched_length": 25,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_1203.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
+              "start_line": 34,
+              "end_line": 37,
+              "matcher": "2-aho",
+              "score": 95.0,
+              "matched_length": 25,
+              "match_coverage": 100.0,
               "rule_relevance": 95,
+              "rule_identifier": "apache-2.0_1203.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1203.RULE",
-              "matched_text": "developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</"
+              "matched_text": "<p>The plug-in includes SureFire JUnit Runner ${surefire-version} developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</a>).",
+              "matched_text_diagnostics": "developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</"
             }
           ],
           "detection_log": [],
@@ -314,19 +327,20 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 44,
-              "end_line": 47,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
-              "matched_length": 75,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_1205.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_1.html",
+              "start_line": 44,
+              "end_line": 47,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 75,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_1205.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1205.RULE",
-              "matched_text": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.\n\n<p>The Apache attribution <a href=\"about_files/NOTICE\">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</"
+              "matched_text": "<p>Your use of the SureFire JUnit Runner code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.\n\n<p>The Apache attribution <a href=\"about_files/NOTICE\">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</p>",
+              "matched_text_diagnostics": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.\n\n<p>The Apache attribution <a href=\"about_files/NOTICE\">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</"
             }
           ],
           "detection_log": [],
@@ -348,19 +362,20 @@
           "license_expression_spdx": "EPL-1.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 12,
-              "end_line": 25,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
-              "matched_length": 163,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "epl-1.0",
               "spdx_license_expression": "EPL-1.0",
-              "rule_identifier": "epl-1.0_99.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
+              "start_line": 12,
+              "end_line": 25,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 163,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "epl-1.0_99.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_99.RULE",
-              "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">http://www.eclipse.org</"
+              "matched_text": "<h3>License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">http://www.eclipse.org</a>.</p>",
+              "matched_text_diagnostics": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"http://www.eclipse.org\">http://www.eclipse.org</"
             }
           ],
           "detection_log": [],
@@ -371,19 +386,20 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 95.0,
-              "start_line": 34,
-              "end_line": 37,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
-              "matched_length": 25,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_1203.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
+              "start_line": 34,
+              "end_line": 37,
+              "matcher": "2-aho",
+              "score": 95.0,
+              "matched_length": 25,
+              "match_coverage": 100.0,
               "rule_relevance": 95,
+              "rule_identifier": "apache-2.0_1203.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1203.RULE",
-              "matched_text": "developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</"
+              "matched_text": "<p>The plug-in includes Surefire Shared Java 5 Provider Base ${surefire-version} developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</a>).",
+              "matched_text_diagnostics": "developed by the Apache Software Foundation.  Therefore:</p>\n\n<blockquote>\nThis product includes software developed by the Apache Software Foundation (<a href=\"http://www.apache.org/\">http://www.apache.org/</"
             }
           ],
           "detection_log": [],
@@ -394,19 +410,20 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 44,
-              "end_line": 47,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
-              "matched_length": 75,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_1205.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
+              "start_line": 44,
+              "end_line": 47,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 75,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_1205.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1205.RULE",
-              "matched_text": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.\n\n<p>The Apache attribution <a href=\"about_files/NOTICE\">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</"
+              "matched_text": "<p>Your use of the Surefire Shared Java 5 Provider Base code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.\n\n<p>The Apache attribution <a href=\"about_files/NOTICE\">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</p>",
+              "matched_text_diagnostics": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.\n\n<p>The Apache attribution <a href=\"about_files/NOTICE\">NOTICE</a> file is included with the Content in accordance with 4d of the Apache License, Version 2.0.</"
             }
           ],
           "detection_log": [],
@@ -417,19 +434,20 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
               "start_line": 53,
               "end_line": 54,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 51,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_1208.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_1208.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1208.RULE",
-              "matched_text": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</"
+              "matched_text": "<p>Your use of the opentest4j code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.",
+              "matched_text_diagnostics": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</"
             }
           ],
           "detection_log": [],
@@ -440,19 +458,20 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
               "start_line": 59,
               "end_line": 60,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 51,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_1208.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_1208.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1208.RULE",
-              "matched_text": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</"
+              "matched_text": "<p>Your use of the API Guardian code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.",
+              "matched_text_diagnostics": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</"
             }
           ],
           "detection_log": [],
@@ -463,19 +482,20 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 65,
-              "end_line": 66,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
-              "matched_length": 51,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
-              "rule_identifier": "apache-2.0_1208.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
+              "start_line": 65,
+              "end_line": 66,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 51,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_1208.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1208.RULE",
-              "matched_text": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</"
+              "matched_text": "<p>Your use of the junit-platform-surefire-provider code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</a>.",
+              "matched_text_diagnostics": "code is subject to the terms and conditions of the Apache Software License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE\">LICENSE</a> and is also available at <a href=\"http://www.apache.org/licenses/LICENSE-2.0.html\">http://www.apache.org/licenses/LICENSE-2.0.html</"
             }
           ],
           "detection_log": [],
@@ -486,19 +506,20 @@
           "license_expression_spdx": "EPL-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 71,
-              "end_line": 72,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
-              "matched_length": 51,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "epl-2.0",
               "spdx_license_expression": "EPL-2.0",
-              "rule_identifier": "epl-2.0_67.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_2.html",
+              "start_line": 71,
+              "end_line": 72,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 51,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "epl-2.0_67.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-2.0_67.RULE",
-              "matched_text": "code is subject to the terms and conditions of the Eclipse Public License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE.md\">LICENSE.md</a> and is also available at <a href=\"https://www.eclipse.org/legal/epl-2.0/\">https://www.eclipse.org/legal/epl-2.0/</"
+              "matched_text": "<p>Your use of the junit-jupiter-engine, junit-vintage-engine, junit-platform-commons, junit-platform-engine, junit-platform-launcher code is subject to the terms and conditions of the Eclipse Public License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE.md\">LICENSE.md</a> and is also available at <a href=\"https://www.eclipse.org/legal/epl-2.0/\">https://www.eclipse.org/legal/epl-2.0/</a>.",
+              "matched_text_diagnostics": "code is subject to the terms and conditions of the Eclipse Public License 2.0.  A copy of the license is contained\nin the file <a href=\"about_files/LICENSE.md\">LICENSE.md</a> and is also available at <a href=\"https://www.eclipse.org/legal/epl-2.0/\">https://www.eclipse.org/legal/epl-2.0/</"
             }
           ],
           "detection_log": [],
@@ -520,19 +541,20 @@
           "license_expression_spdx": "EPL-1.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 12,
-              "end_line": 25,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
-              "matched_length": 163,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "epl-1.0",
               "spdx_license_expression": "EPL-1.0",
-              "rule_identifier": "epl-1.0_104.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
+              "start_line": 12,
+              "end_line": 25,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 163,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "epl-1.0_104.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_104.RULE",
-              "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"https://www.eclipse.org/\">https://www.eclipse.org</"
+              "matched_text": "<h3>License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"https://www.eclipse.org/\">https://www.eclipse.org</a>.</p>",
+              "matched_text_diagnostics": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"https://www.eclipse.org/\">https://www.eclipse.org</"
             }
           ],
           "detection_log": [],
@@ -543,19 +565,20 @@
           "license_expression_spdx": "CPL-1.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 40,
-              "end_line": 41,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
-              "matched_length": 49,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "cpl-1.0",
               "spdx_license_expression": "CPL-1.0",
-              "rule_identifier": "cpl-1.0_31.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
+              "start_line": 40,
+              "end_line": 41,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 49,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "cpl-1.0_31.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_31.RULE",
-              "matched_text": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</"
+              "matched_text": "Your use of JUnit 4.8.1 in both source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</a>.",
+              "matched_text_diagnostics": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</"
             }
           ],
           "detection_log": [],
@@ -566,34 +589,36 @@
           "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
               "start_line": 53,
               "end_line": 54,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 22,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
-              "rule_identifier": "bsd-new_1270.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "bsd-new_1270.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1270.RULE",
-              "matched_text": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nNew BSD License."
+              "matched_text": "Your use of hamcrest-library 1.1 in both source and binary code form contained in the plug-in is subject to the terms and conditions of the \nNew BSD License.",
+              "matched_text_diagnostics": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nNew BSD License."
             },
             {
-              "score": 100.0,
-              "start_line": 57,
-              "end_line": 59,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "rule_identifier": "bsd-new_1271.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
+              "start_line": 57,
+              "end_line": 59,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "bsd-new_1271.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1271.RULE",
-              "matched_text": "New BSD License:</p>\n<pre>\nBSD License"
+              "matched_text": "<p>The Hamcrest New BSD License:</p>\n<pre>\nBSD License",
+              "matched_text_diagnostics": "New BSD License:</p>\n<pre>\nBSD License"
             }
           ],
           "detection_log": [],
@@ -604,19 +629,20 @@
           "license_expression_spdx": "BSD-3-Clause",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 64,
-              "end_line": 85,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
-              "matched_length": 211,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "rule_identifier": "bsd-new_860.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_3.html",
+              "start_line": 64,
+              "end_line": 85,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 211,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "bsd-new_860.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_860.RULE",
-              "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of\nconditions and the following disclaimer. Redistributions in binary form must reproduce\nthe above copyright notice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the distribution.\n\nNeither the name of Hamcrest nor the names of its contributors may be used to endorse\nor promote products derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY\nWAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE."
+              "matched_text": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of\nconditions and the following disclaimer. Redistributions in binary form must reproduce\nthe above copyright notice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the distribution.\n\nNeither the name of Hamcrest nor the names of its contributors may be used to endorse\nor promote products derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY\nWAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE.",
+              "matched_text_diagnostics": "Redistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this list of\nconditions and the following disclaimer. Redistributions in binary form must reproduce\nthe above copyright notice, this list of conditions and the following disclaimer in\nthe documentation and/or other materials provided with the distribution.\n\nNeither the name of Hamcrest nor the names of its contributors may be used to endorse\nor promote products derived from this software without specific prior written\npermission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY\nWAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE."
             }
           ],
           "detection_log": [],
@@ -638,19 +664,20 @@
           "license_expression_spdx": "EPL-1.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 12,
-              "end_line": 25,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_4.html",
-              "matched_length": 163,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "epl-1.0",
               "spdx_license_expression": "EPL-1.0",
-              "rule_identifier": "epl-1.0_104.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_4.html",
+              "start_line": 12,
+              "end_line": 25,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 163,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "epl-1.0_104.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_104.RULE",
-              "matched_text": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"https://www.eclipse.org\">https://www.eclipse.org</"
+              "matched_text": "<h3>License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"https://www.eclipse.org\">https://www.eclipse.org</a>.</p>",
+              "matched_text_diagnostics": "License</h3>\n\n<p>The Eclipse Foundation makes available all content in this plug-in (&quot;Content&quot;).  Unless otherwise \nindicated below, the Content is provided to you under the terms and conditions of the\nEclipse Public License Version 1.0 (&quot;EPL&quot;).  A copy of the EPL is available \nat <a href=\"https://www.eclipse.org/legal/epl-v10.html\">https://www.eclipse.org/legal/epl-v10.html</a>.\nFor purposes of the EPL, &quot;Program&quot; will mean the Content.</p>\n\n<p>If you did not receive this Content directly from the Eclipse Foundation, the Content is \nbeing redistributed by another party (&quot;Redistributor&quot;) and different terms and conditions may\napply to your use of any object code in the Content.  Check the Redistributor's license that was \nprovided with the Content.  If no such license exists, contact the Redistributor.  Unless otherwise\nindicated below, the terms and conditions of the EPL still apply to any source code in the Content\nand such source code may be obtained at <a href=\"https://www.eclipse.org\">https://www.eclipse.org</"
             }
           ],
           "detection_log": [],
@@ -661,19 +688,20 @@
           "license_expression_spdx": "CPL-1.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 39,
-              "end_line": 41,
-              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_4.html",
-              "matched_length": 60,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "cpl-1.0",
               "spdx_license_expression": "CPL-1.0",
-              "rule_identifier": "cpl-1.0_36.RULE",
+              "from_file": "scan-unknown-intro-eclipse-foundation-tycho/about_4.html",
+              "start_line": 39,
+              "end_line": 41,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 60,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
+              "rule_identifier": "cpl-1.0_36.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cpl-1.0_36.RULE",
-              "matched_text": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</a>.\n(a local copy can be found <a href=\"about_files/cpl-v10.html\">here</"
+              "matched_text": "Your use of JUnit 3.8.2 in both source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</a>.\n(a local copy can be found <a href=\"about_files/cpl-v10.html\">here</a>)</p>",
+              "matched_text_diagnostics": "source and binary code form contained in the plug-in is subject to the terms and conditions of the \nCommon Public License Version 1.0 (&quot;CPL&quot;).  A copy of the CPL is available at <a href=\"https://www.eclipse.org/legal/cpl-v10.html\">https://www.eclipse.org/legal/cpl-v10.html</a>.\n(a local copy can be found <a href=\"about_files/cpl-v10.html\">here</"
             }
           ],
           "detection_log": [],

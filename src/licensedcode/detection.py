@@ -606,6 +606,12 @@ class LicenseMatchFromResult(LicenseMatch):
             help='Text which was matched')
     )
 
+    matched_text_diagnostics = attr.ib(
+        default=None,
+        metadata=dict(
+            help='Text which was matched, with extra diagnostics information.')
+    )
+
     def score(self):
         return self.match_score
 
@@ -631,6 +637,7 @@ class LicenseMatchFromResult(LicenseMatch):
         """
         rule = Rule.from_match_data(license_match_mapping)
         matched_text = license_match_mapping.get("matched_text") or None
+        matched_text_diagnostics = license_match_mapping.get("matched_text_diagnostics") or None
 
         return cls(
             from_file=license_match_mapping["from_file"],
@@ -641,6 +648,7 @@ class LicenseMatchFromResult(LicenseMatch):
             match_coverage=license_match_mapping["match_coverage"],
             matcher=license_match_mapping["matcher"],
             text=matched_text,
+            matched_text_diagnostics=matched_text_diagnostics,
             rule=rule,
             qspan=None,
             ispan=None,
@@ -664,10 +672,6 @@ class LicenseMatchFromResult(LicenseMatch):
         """
         Return a "result" scan data built from a LicenseMatch object.
         """
-        matched_text = None
-        if include_text:
-            matched_text = self.matched_text
-
         result = {}
 
         result['license_expression'] = self.rule.license_expression
@@ -689,8 +693,10 @@ class LicenseMatchFromResult(LicenseMatch):
         if rule_details:
             result["rule_notes"] = self.rule.notes
             result["referenced_filenames"] = self.rule.referenced_filenames
-        if include_text:
-            result['matched_text'] = matched_text
+        if include_text and self.matched_text:
+            result['matched_text'] = self.matched_text
+        if license_text_diagnostics and self.matched_text_diagnostics:
+            result['matched_text_diagnostics'] = self.matched_text_diagnostics
         if rule_details:
             result["rule_text"] = self.rule.text
 
@@ -929,7 +935,11 @@ class UniqueDetection:
 
         return unique_license_detections
 
-    def to_dict(self, license_diagnostics):
+    def to_dict(self,
+        include_text=False,
+        license_text_diagnostics=False,
+        license_diagnostics=False,
+    ):
 
         def dict_fields(attr, value):
 
@@ -946,7 +956,10 @@ class UniqueDetection:
 
         detection_mapping = attr.asdict(self, filter=dict_fields)
         detection_mapping["sample_matches"] = [
-            match.to_dict(include_text=True)
+            match.to_dict(
+                include_text=include_text,
+                license_text_diagnostics=license_text_diagnostics,
+            )
             for match in self.matches
         ]
         return detection_mapping

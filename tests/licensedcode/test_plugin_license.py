@@ -86,7 +86,6 @@ def test_license_option_reports_license_texts():
     args = [
         '--license',
         '--license-text',
-        '--license-text-diagnostics',
         '--license-diagnostics',
         '--strip-root',
         '--verbose',
