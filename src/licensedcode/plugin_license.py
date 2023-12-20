@@ -15,6 +15,7 @@ import attr
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import SCAN_GROUP
 from commoncode.cliutils import SCAN_OPTIONS_GROUP
+from license_expression import combine_expressions
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 
@@ -30,10 +31,12 @@ from licensedcode.detection import DetectionCategory
 from licensedcode.detection import LicenseDetectionFromResult
 from licensedcode.detection import sort_unique_detections
 from licensedcode.detection import UniqueDetection
+from licensedcode.detection import use_referenced_license_expression
 from packagedcode.utils import combine_expressions
 from scancode.api import SCANCODE_LICENSEDB_URL
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE', False)
+TRACE_REFERENCE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE_REFERENCE', False)
 
 
 def logger_debug(*args):
@@ -259,6 +262,11 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
 
     modified = False
 
+    if TRACE_REFERENCE:
+        logger_debug(
+            f'add_referenced_license_matches: resource_path: {resource.path}',
+        )
+
     for license_detection_mapping in license_detection_mappings:
 
         license_detection = LicenseDetectionFromResult.from_license_detection_mapping(
@@ -271,6 +279,10 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
         referenced_filenames = get_referenced_filenames(license_detection.matches)
 
         if not referenced_filenames:
+            if TRACE_REFERENCE:
+                logger_debug(
+                    f'No references at license detection with expression: {license_detection.license_expression}',
+                )
             continue
 
         for referenced_filename in referenced_filenames:
@@ -281,6 +293,31 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             )
 
             if referenced_resource and referenced_resource.license_detections:
+                referenced_license_expression = combine_expressions(
+                    expressions=[
+                        detection["license_expression"]
+                        for detection in referenced_resource.license_detections
+                    ],
+                )
+                if not use_referenced_license_expression(
+                    referenced_license_expression=referenced_license_expression,
+                    license_detection=license_detection,
+                ):
+                    if TRACE_REFERENCE:
+                        logger_debug(
+                            f'use_referenced_license_expression: False for '
+                            f'resource: {referenced_resource.path} and '
+                            f'license_expression: {referenced_license_expression}',
+                        )
+                    continue
+
+                if TRACE_REFERENCE:
+                    logger_debug(
+                        f'use_referenced_license_expression: True for '
+                        f'resource: {referenced_resource.path} and '
+                        f'license_expression: {referenced_license_expression}',
+                    )
+
                 modified = True
                 detection_modified = True
                 detections_added.extend(referenced_resource.license_detections)
@@ -301,6 +338,7 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
             post_scan=True,
         )
+
         license_expression_spdx = build_spdx_license_expression(
             license_expression=str(license_expression),
             licensing=get_cache().licensing,

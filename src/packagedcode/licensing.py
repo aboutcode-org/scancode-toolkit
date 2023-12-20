@@ -26,6 +26,7 @@ from licensedcode.detection import find_referenced_resource
 from licensedcode.detection import detect_licenses
 from licensedcode.detection import LicenseDetectionFromResult
 from licensedcode.detection import populate_matches_with_path
+from licensedcode.detection import use_referenced_license_expression
 from licensedcode.spans import Span
 from licensedcode import query
 
@@ -93,6 +94,7 @@ def add_referenced_license_matches_for_package(resource, codebase):
                 file_path=resource.path,
             )
 
+            detections_added = []
             detection_modified = False
             license_match_mappings = license_detection_mapping["matches"]
             referenced_filenames = get_referenced_filenames(license_detection_object.matches)
@@ -106,16 +108,24 @@ def add_referenced_license_matches_for_package(resource, codebase):
                     codebase=codebase,
                 )
 
-                if not referenced_resource:
-                    continue
+                if referenced_resource and referenced_resource.license_detections:
+                    referenced_license_expression = combine_expressions(
+                        expressions=[
+                            detection["license_expression"]
+                            for detection in referenced_resource.license_detections
+                        ],
+                    )
+                    if not use_referenced_license_expression(
+                        referenced_license_expression=referenced_license_expression,
+                        license_detection=license_detection_object,
+                    ):
+                        continue
 
-                referenced_license_detections = referenced_resource.license_detections
-
-                if referenced_license_detections:
                     modified = True
                     detection_modified = True
+                    detections_added.extend(referenced_resource.license_detections)
                     matches_to_extend = get_matches_from_detection_mappings(
-                        license_detections=referenced_license_detections
+                        license_detections=referenced_resource.license_detections
                     )
                     # For LicenseMatches with different resources as origin, add the
                     # resource path to these matches as origin info
@@ -142,7 +152,7 @@ def add_referenced_license_matches_for_package(resource, codebase):
             license_detection_mapping["detection_log"] = detection_log
             license_detection_mapping["identifier"] = get_new_identifier_from_detections(
                 initial_detection=license_detection_mapping,
-                detections_added=referenced_license_detections,
+                detections_added=detections_added,
                 license_expression=license_expression,
             )
 
@@ -223,7 +233,20 @@ def add_referenced_license_detection_from_package(resource, codebase):
                     f'sibling_license_detections: {sibling_license_detections}'
                 )
 
+            referenced_license_expression = combine_expressions(
+                expressions=[
+                    detection["license_expression"]
+                    for detection in sibling_license_detections
+                ],
+            )
+            if not use_referenced_license_expression(
+                referenced_license_expression=referenced_license_expression,
+                license_detection=license_detection_object,
+            ):
+                continue
+
             for sibling_detection in sibling_license_detections:
+                
                 modified = True
                 detection_modified = True
                 license_match_mappings.extend(sibling_detection["matches"])
@@ -239,6 +262,21 @@ def add_referenced_license_detection_from_package(resource, codebase):
                         break
 
                 pkg_detections = codebase_package["license_detections"]
+                if not pkg_detections:
+                    continue
+
+                referenced_license_expression = combine_expressions(
+                    expressions=[
+                        detection["license_expression"]
+                        for detection in pkg_detections
+                    ],
+                )
+                if not use_referenced_license_expression(
+                    referenced_license_expression=referenced_license_expression,
+                    license_detection=license_detection_object,
+                ):
+                    continue
+
                 for pkg_detection in pkg_detections:
                     modified = True
                     detection_modified = True

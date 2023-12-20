@@ -333,6 +333,25 @@ class LicenseDetection:
         id_safe_expression = python_safe_name(s=str(self.license_expression))
         return "{}-{}".format(id_safe_expression, self._identifier)
 
+    @property
+    def is_unknown(self):
+        """
+        Return True if there are unknown license keys in the license expression
+        for this detection, return False otherwise.
+        """
+        unknown_license_keys = [
+            "unknown-license-reference",
+            "unknown-spdx",
+            "unknown",
+            "free-unknown"
+        ]
+
+        for license_key in unknown_license_keys:
+            if license_key in self.license_expression:
+                return True
+
+        return False
+
     def get_start_end_line(self):
         """
         Return start and end line for a license detection issue, from the
@@ -1353,6 +1372,83 @@ def has_references_to_local_files(license_matches):
         bool(match.rule.referenced_filenames)
         for match in license_matches
     )
+
+
+def use_referenced_license_expression(referenced_license_expression, license_detection, licensing=Licensing()):
+    """
+    Return True if the `license_detection` LicenseDetection object should
+    include the referenced LicenseMatch objects (the `referenced_license_expression`
+    LicenseExpression string is the combined License Expression for these matches)
+    that it references, otherwise if return False if the LicenseDetection object
+    should remain intact.
+    """
+    if not referenced_license_expression or not license_detection:
+        return False
+
+    # We should always include referenced license matches to resolve an unknown
+    # license reference
+    if license_detection.is_unknown:
+        return True
+    
+    # We should always include referenced license matches when the license
+    # expression from the referenced license matches match the license
+    # expression for the detection
+    if referenced_license_expression == license_detection.license_expression:
+        return True
+
+    # Here for a key-value pair, the license texts for a value (for example `gpl`)
+    # is often included in the license text of the key (for example `lgpl`)
+    dependent_license_keys = {
+        "lgpl": "gpl",
+        "agpl": "gpl",
+    }
+
+    # The license keys which contatin these have `or-later` licenses
+    license_keys_with_or_later = [
+        "gpl", "lgpl", "agpl"
+    ]
+
+    license_keys = set(
+        licensing.license_keys(expression=license_detection.license_expression)
+    )
+    referenced_license_keys = set(
+        licensing.license_keys(expression=referenced_license_expression)
+    )
+    same_expression = referenced_license_expression == license_detection.license_expression
+    same_license_keys = license_keys == referenced_license_keys
+
+    if same_license_keys and not same_expression:
+        return False
+
+    for primary_key, dependent_key in dependent_license_keys.items():
+        dependent_key_only_in_referenced = dependent_key in referenced_license_keys and dependent_key not in license_keys 
+        if primary_key in license_keys and dependent_key_only_in_referenced:
+            return False
+    
+    all_license_keys_special = [
+        key
+        for key in license_keys
+        if all([
+            key.startswith(reference_key)
+            for reference_key in license_keys_with_or_later
+        ])
+    ]
+    all_referenced_license_keys_special = [
+        key
+        for key in referenced_license_keys
+        if all([
+            key.startswith(reference_key)
+            for reference_key in license_keys_with_or_later
+        ])
+    ]
+
+    if all_license_keys_special and all_referenced_license_keys_special and not same_license_keys:
+        True
+
+    if len(referenced_license_keys) > 5:
+        return False
+
+    return True
 
 
 def get_detected_license_expression(
