@@ -141,6 +141,12 @@ parsers in scancode-toolkit during documentation builds.
      - ``chrome_crx``
      - JavaScript
      - https://chrome.google.com/extensions
+   * - Citation File Format
+     - ``*.cff``
+     - ``citation``
+     - ``citation_cff``
+     - None
+     - https://citation-file-format.github.io/
    * - Cocoapods Podfile
      - ``*Podfile``
      - ``cocoapods``
