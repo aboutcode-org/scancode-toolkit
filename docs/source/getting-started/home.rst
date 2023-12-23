@@ -63,7 +63,7 @@ Using this data you can:
 - Discover the origin and license of the open source and third-party software
   components that you use,
 
-- Discover direct dependent pacakges and indirect pinned or locked dependencies,
+- Discover direct dependent packages and indirect pinned or locked dependencies,
 
 - Assemble a software component Inventory of your codebase, and report the data
   using standard SBOM formats,
