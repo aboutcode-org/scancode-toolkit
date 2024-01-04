@@ -1,0 +1,158 @@
+{
+  "license_detections": [
+    {
+      "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-0a83bc4e-d93a-78cb-c0f0-62a499fed37f",
+      "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+      "license_expression_spdx": "LGPL-2.0-or-later AND GPL-1.0-or-later",
+      "detection_count": 1,
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "from_file": "lgpl-gpl/LICENSE",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 99.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 99,
+          "rule_identifier": "lgpl_33.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_33.RULE",
+          "matched_text": "lgpl license",
+          "matched_text_diagnostics": "lgpl license"
+        },
+        {
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
+          "from_file": "lgpl-gpl/LICENSE",
+          "start_line": 1,
+          "end_line": 3,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl_72.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE",
+          "matched_text": "lgpl license\n\ngpl license",
+          "matched_text_diagnostics": "license\n\ngpl"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_2_1_plus-16a4d776-3936-fefa-b308-9ab5cdf01851",
+      "license_expression": "lgpl-2.1-plus",
+      "license_expression_spdx": "LGPL-2.1-or-later",
+      "detection_count": 1,
+      "detection_log": [],
+      "sample_matches": [
+        {
+          "license_expression": "lgpl-2.1-plus",
+          "license_expression_spdx": "LGPL-2.1-or-later",
+          "from_file": "lgpl-gpl/reference.py",
+          "start_line": 1,
+          "end_line": 2,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 21,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.1-plus_51.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_51.RULE",
+          "matched_text": "# This software is distributed under the terms of the GNU Lesser General\n# Public Licence (LGPL) See LICENSE.txt for further details",
+          "matched_text_diagnostics": "This software is distributed under the terms of the GNU Lesser General\n# Public Licence (LGPL) See LICENSE.txt for further details"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "type": "file",
+      "detected_license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+      "detected_license_expression_spdx": "LGPL-2.0-or-later AND GPL-1.0-or-later",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.0-plus AND gpl-1.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later AND GPL-1.0-or-later",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.0-plus",
+              "spdx_license_expression": "LGPL-2.0-or-later",
+              "from_file": "lgpl-gpl/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 99.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 99,
+              "rule_identifier": "lgpl_33.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_33.RULE",
+              "matched_text": "lgpl license",
+              "matched_text_diagnostics": "lgpl license"
+            },
+            {
+              "license_expression": "gpl-1.0-plus",
+              "spdx_license_expression": "GPL-1.0-or-later",
+              "from_file": "lgpl-gpl/LICENSE",
+              "start_line": 1,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "gpl_72.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE",
+              "matched_text": "lgpl license\n\ngpl license",
+              "matched_text_diagnostics": "license\n\ngpl"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "lgpl_2_0_plus_and_gpl_1_0_plus-0a83bc4e-d93a-78cb-c0f0-62a499fed37f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 75.0,
+      "scan_errors": []
+    },
+    {
+      "path": "reference.py",
+      "type": "file",
+      "detected_license_expression": "lgpl-2.1-plus",
+      "detected_license_expression_spdx": "LGPL-2.1-or-later",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-2.1-plus",
+          "license_expression_spdx": "LGPL-2.1-or-later",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.1-plus",
+              "spdx_license_expression": "LGPL-2.1-or-later",
+              "from_file": "lgpl-gpl/reference.py",
+              "start_line": 1,
+              "end_line": 2,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 21,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.1-plus_51.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_51.RULE",
+              "matched_text": "# This software is distributed under the terms of the GNU Lesser General\n# Public Licence (LGPL) See LICENSE.txt for further details",
+              "matched_text_diagnostics": "This software is distributed under the terms of the GNU Lesser General\n# Public Licence (LGPL) See LICENSE.txt for further details"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "lgpl_2_1_plus-16a4d776-3936-fefa-b308-9ab5cdf01851"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "scan_errors": []
+    }
+  ]
+}
