@@ -1,7 +1,8 @@
 ---
 license_expression: lbnl-bsd
 is_license_text: yes
-notes: From https://www.davidhbailey.com/dhbsoftware/LBNL-BSD-License.docx
+is_deprecated: yes
+notes: This is now dhb-lbnl-bsd-2007 LICENSE
 ---
 
 1. Redistribution and use in source and binary forms, with or without
