@@ -30,22 +30,22 @@
       "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
           "license_expression": "unknown-license-reference",
           "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
-          "rule_identifier": "spdx-license-identifier-unknown-license-reference-555dc1c4c5d6d483173bdc629017bd81905d82ab",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-unknown_license_reference-555dc1c4c5d6d483173bdc629017bd81905d82ab",
           "rule_url": null,
           "matched_text": "licenseref-scancode-unknown-license-reference"
         }
       ],
-      "identifier": "unknown_license_reference-c96a9bc7-af3a-ff3f-fb67-793f7201aab1"
+      "identifier": "unknown_license_reference-50b9bf54-338e-5bf6-ccb9-ac71fdc12e10"
     }
   ],
   "other_license_expression": null,

@@ -69,8 +69,8 @@ class LicenseReference(PostScanPlugin):
         Collect the ``license_references`` and ``rule_references``
         list of data mappings and add to the ``codebase``.
         """
-        include_files = 'license' in kwargs
-        include_packages = 'package' in kwargs
+        include_files = hasattr(codebase.attributes, 'license_detections')
+        include_packages = hasattr(codebase.attributes, 'packages')
 
         license_references, rule_references = collect_license_and_rule_references(
             codebase=codebase,
@@ -86,17 +86,24 @@ def collect_license_and_rule_references(codebase, include_packages=True, include
     Return a two-tuple of (``license_references``, ``license_rule_references``)
     sorted lists of unique mappings collected from a ``codebase``.
     """
+    if TRACE:
+        logger_debug(f'include_packages: {include_packages}, include_files: {include_files}')
 
     license_keys = set()
     rules_by_identifier = {}
 
     if include_packages:
         pks, prules = collect_references_from_packages(codebase)
-        license_keys.update(pks)
+        if TRACE:
+            logger_debug(f'collect_references_from_packages: license keys: {pks}')
+            logger_debug(f'collect_references_from_packages: rules by id: {prules}')
         rules_by_identifier.update(prules)
 
     if include_files:
         pks, prules = collect_references_from_files(codebase)
+        if TRACE:
+            logger_debug(f'collect_references_from_files: license keys: {pks}')
+            logger_debug(f'collect_references_from_files: rules by id: {prules}')
         license_keys.update(pks)
         rules_by_identifier.update(prules)
 
@@ -139,10 +146,6 @@ def collect_references_from_packages(codebase):
             expression = pkg['declared_license_expression']
             if expression:
                 license_keys.update(licensing.license_keys(expression))
-
-        detections = getattr(resource, 'license_detections', []) or []
-        rules_by_id = build_rules_from_detection_data(detections)
-        rules_by_identifier.update(rules_by_id)
 
     for rule in rules_by_identifier.values():
         # TODO: consider using the expresion object directly instead

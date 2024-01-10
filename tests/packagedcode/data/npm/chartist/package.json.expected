@@ -44,39 +44,39 @@
         "license_expression_spdx": "MIT OR WTFPL",
         "matches": [
           {
-            "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
-            "from_file": null,
-            "matched_length": 3,
-            "match_coverage": 100.0,
-            "matcher": "1-spdx-id",
             "license_expression": "mit OR wtfpl-2.0",
             "spdx_license_expression": "MIT OR WTFPL",
-            "rule_identifier": "spdx-license-identifier-mit OR wtfpl-2.0-a3a16f7e12d6ecec29951dd1a41d0d4dbd91e112",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
             "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit_or_wtfpl_2_0-a3a16f7e12d6ecec29951dd1a41d0d4dbd91e112",
             "rule_url": null,
             "matched_text": "MIT OR WTFPL"
           }
         ],
-        "identifier": "mit_or_wtfpl_2_0-35db8598-e6f1-f9c5-6a74-5ccca257c5e7"
+        "identifier": "mit_or_wtfpl_2_0-6e79a0d6-24d4-17b2-ba10-09867c90eb5b"
       },
       {
         "license_expression": "wtfpl-2.0",
         "license_expression_spdx": "WTFPL",
         "matches": [
           {
-            "score": 50.0,
-            "start_line": 1,
-            "end_line": 1,
-            "from_file": null,
-            "matched_length": 1,
-            "match_coverage": 100.0,
-            "matcher": "1-hash",
             "license_expression": "wtfpl-2.0",
             "spdx_license_expression": "WTFPL",
-            "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 50.0,
+            "matched_length": 1,
+            "match_coverage": 100.0,
             "rule_relevance": 50,
+            "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
             "matched_text": "WTFPL"
           }
@@ -88,17 +88,17 @@
         "license_expression_spdx": "WTFPL",
         "matches": [
           {
-            "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
-            "from_file": null,
-            "matched_length": 2,
-            "match_coverage": 100.0,
-            "matcher": "2-aho",
             "license_expression": "wtfpl-2.0",
             "spdx_license_expression": "WTFPL",
-            "rule_identifier": "wtfpl-2.0_33.RULE",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "2-aho",
+            "score": 100.0,
+            "matched_length": 2,
+            "match_coverage": 100.0,
             "rule_relevance": 100,
+            "rule_identifier": "wtfpl-2.0_33.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_33.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL"
           }
@@ -110,17 +110,17 @@
         "license_expression_spdx": "MIT",
         "matches": [
           {
-            "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
-            "from_file": null,
-            "matched_length": 1,
-            "match_coverage": 100.0,
-            "matcher": "1-spdx-id",
             "license_expression": "mit",
             "spdx_license_expression": "MIT",
-            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 1,
+            "match_coverage": 100.0,
             "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_url": null,
             "matched_text": "MIT"
           }
@@ -132,17 +132,17 @@
         "license_expression_spdx": "MIT",
         "matches": [
           {
-            "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
-            "from_file": null,
-            "matched_length": 2,
-            "match_coverage": 100.0,
-            "matcher": "2-aho",
             "license_expression": "mit",
             "spdx_license_expression": "MIT",
-            "rule_identifier": "mit_30.RULE",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "2-aho",
+            "score": 100.0,
+            "matched_length": 2,
+            "match_coverage": 100.0,
             "rule_relevance": 100,
+            "rule_identifier": "mit_30.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
             "matched_text": "https://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT"
           }

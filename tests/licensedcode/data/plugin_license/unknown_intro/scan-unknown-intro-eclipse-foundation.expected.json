@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "epl_2_0-c1e39224-7271-293c-64f7-090bd2f15988",
+      "identifier": "epl_2_0-1f628a4b-0e45-b83e-b594-35a20adb6ae0",
       "license_expression": "epl-2.0",
       "license_expression_spdx": "EPL-2.0",
       "detection_count": 1,
@@ -34,7 +34,7 @@
           "matched_length": 6,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "spdx-license-identifier-epl-2.0-0718e69b8b1cac97c407a917de96eec58fa0dada",
+          "rule_identifier": "spdx-license-identifier-epl_2_0-0718e69b8b1cac97c407a917de96eec58fa0dada",
           "rule_url": null,
           "matched_text": " * SPDX-License-Identifier: EPL-2.0",
           "matched_text_diagnostics": "SPDX-License-Identifier: EPL-2.0"
@@ -80,14 +80,14 @@
               "matched_length": 6,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "spdx-license-identifier-epl-2.0-c05120fcba71854ec1ea0d2897a5dcb1290a6dea",
+              "rule_identifier": "spdx-license-identifier-epl_2_0-fc3580adf1834d6862422242a06d59e74eb62582",
               "rule_url": null,
               "matched_text": " * SPDX-License-Identifier: EPL-2.0",
               "matched_text_diagnostics": "SPDX-License-Identifier: EPL-2.0"
             }
           ],
           "detection_log": [],
-          "identifier": "epl_2_0-c1e39224-7271-293c-64f7-090bd2f15988"
+          "identifier": "epl_2_0-1f628a4b-0e45-b83e-b594-35a20adb6ae0"
         }
       ],
       "license_clues": [],

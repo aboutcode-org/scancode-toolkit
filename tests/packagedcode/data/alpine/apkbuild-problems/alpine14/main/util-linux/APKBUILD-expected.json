@@ -30,22 +30,22 @@
       "license_expression_spdx": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND LGPL-2.1-or-later AND BSD-3-Clause AND BSD-4-Clause-UC AND LicenseRef-scancode-public-domain",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 36,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
           "license_expression": "gpl-3.0-plus AND gpl-2.0-plus AND gpl-2.0 AND lgpl-2.1-plus AND bsd-new AND bsd-original-uc AND public-domain",
           "spdx_license_expression": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND LGPL-2.1-or-later AND BSD-3-Clause AND BSD-4-Clause-UC AND LicenseRef-scancode-public-domain",
-          "rule_identifier": "spdx-license-identifier-gpl-3.0-plus AND gpl-2.0-plus AND gpl-2.0 AND lgpl-2.1-plus AND bsd-new AND bsd-original-uc AND public-domain-4c618cc2365d2d36360f002752b2a7dfb8e338a4",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 36,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-gpl_3_0_plus_and_gpl_2_0_plus_and_gpl_2_0_and_lgpl_2_1_plus_and_bsd_new_and_bsd_original_uc_and_public_domain-4c618cc2365d2d36360f002752b2a7dfb8e338a4",
           "rule_url": null,
           "matched_text": "gpl-3.0-or-later AND gpl-2.0-or-later AND gpl-2.0-only AND lgpl-2.1-or-later AND bsd-3-clause AND bsd-4-clause-uc AND licenseref-scancode-public-domain"
         }
       ],
-      "identifier": "gpl_3_0_plus_and_gpl_2_0_plus_and_gpl_2_0_and_lgpl_2_1_plus_and_bsd_new_and_bsd_original_uc_and_public_domain-bf8f1c95-7f51-85e4-e3ef-f3b4dcaa3167"
+      "identifier": "gpl_3_0_plus_and_gpl_2_0_plus_and_gpl_2_0_and_lgpl_2_1_plus_and_bsd_new_and_bsd_original_uc_and_public_domain-38707577-6108-2177-785a-5ee2baa61419"
     }
   ],
   "other_license_expression": null,

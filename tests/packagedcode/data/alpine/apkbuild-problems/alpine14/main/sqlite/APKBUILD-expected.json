@@ -30,22 +30,22 @@
       "license_expression_spdx": "LicenseRef-scancode-public-domain",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
           "license_expression": "public-domain",
           "spdx_license_expression": "LicenseRef-scancode-public-domain",
-          "rule_identifier": "spdx-license-identifier-public-domain-3557a117ec0598b8a9056c438400584fec0415e6",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-public_domain-3557a117ec0598b8a9056c438400584fec0415e6",
           "rule_url": null,
           "matched_text": "licenseref-scancode-public-domain"
         }
       ],
-      "identifier": "public_domain-5a0148d7-0124-d104-8168-e464a488f454"
+      "identifier": "public_domain-d4ddee47-afa0-e133-44e4-f06937fd663d"
     }
   ],
   "other_license_expression": null,

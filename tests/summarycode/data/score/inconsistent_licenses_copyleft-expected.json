@@ -276,7 +276,7 @@
   ],
   "license_detections": [
     {
-      "identifier": "gpl_2_0_plus-1db96703-cb36-48f4-1493-265d3d85eb9e",
+      "identifier": "gpl_2_0_plus-cdfb149f-ba4a-2c30-a8a0-76aa75a6ccf5",
       "license_expression": "gpl-2.0-plus",
       "license_expression_spdx": "GPL-2.0-or-later",
       "detection_count": 1,
@@ -292,7 +292,7 @@
           "matched_length": 8,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-d77dcfd90692f92e4c8cd586b28797e4f3d067f3",
+          "rule_identifier": "spdx-license-identifier-gpl_2_0_plus-d77dcfd90692f92e4c8cd586b28797e4f3d067f3",
           "rule_url": null
         }
       ]
@@ -874,11 +874,11 @@
               "matched_length": 8,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "spdx-license-identifier-gpl-2.0-plus-3f844e1a237b3ca425edf1127a3c075a0a0c1de6",
+              "rule_identifier": "spdx-license-identifier-gpl_2_0_plus-a72d250698ecf7ac942b919f4caaaef61adb1ead",
               "rule_url": null
             }
           ],
-          "identifier": "gpl_2_0_plus-1db96703-cb36-48f4-1493-265d3d85eb9e"
+          "identifier": "gpl_2_0_plus-cdfb149f-ba4a-2c30-a8a0-76aa75a6ccf5"
         }
       ],
       "license_clues": [],

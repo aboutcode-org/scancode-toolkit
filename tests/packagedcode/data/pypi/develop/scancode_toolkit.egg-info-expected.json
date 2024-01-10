@@ -59,22 +59,22 @@
         "license_expression_spdx": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
         "matches": [
           {
-            "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
-            "from_file": null,
-            "matched_length": 18,
-            "match_coverage": 100.0,
-            "matcher": "1-spdx-id",
             "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
             "spdx_license_expression": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
-            "rule_identifier": "spdx-license-identifier-apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft-c7657a2c18db6a7df47030f236ebed3021446a79",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 18,
+            "match_coverage": 100.0,
             "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-apache_2_0_and_cc_by_4_0_and_other_permissive_and_other_copyleft-c7657a2c18db6a7df47030f236ebed3021446a79",
             "rule_url": null,
             "matched_text": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft"
           }
         ],
-        "identifier": "apache_2_0_and_cc_by_4_0_and_other_permissive_and_other_copyleft-b684b1e7-0568-cb99-16b9-e4b66bbf5120"
+        "identifier": "apache_2_0_and_cc_by_4_0_and_other_permissive_and_other_copyleft-22959186-4062-af61-0401-671dffe8beea"
       }
     ],
     "other_license_expression": null,
