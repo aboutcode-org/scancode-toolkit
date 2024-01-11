@@ -643,7 +643,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
     default_package_type = 'pypi'
     default_primary_language = 'Python'
     description = 'Python setup.py'
-    documentation_url = 'https://docs.python.org/3/distutils/setupscript.html'
+    documentation_url = 'https://docs.python.org/3.11/distutils/setupscript.html'
 
     @classmethod
     def parse(cls, location):
