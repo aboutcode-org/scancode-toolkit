@@ -82,7 +82,7 @@ If you have a multiprocessor machine you might want to run the tests in parallel
 typically run the tests in verbose mode with ``pytest -vvs -n4``.
 
 You can also run a subset of the test suite as shown in the CI configs
-https://github.com/nexB/scancode-toolkit/blob/develop/appveyor.yml#L6 e,g,
+https://github.com/nexB/scancode-toolkit/blob/develop/azure-pipelines.yml e,g,
 ``pytest -n 2 -vvs tests/scancode`` runs only the test scripts present in the
 ``tests/scancode`` directory. (You can give the path to a specific test script
 file there too).

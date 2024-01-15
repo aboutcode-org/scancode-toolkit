@@ -31,7 +31,7 @@ You need to create a file with:
   text as is, with the original formatting intact.
 
 - the data attributes for the license in YAML format as
-  `YAML frontmatter <https://github.com/eyeseast/python-frontmatter#python-frontmatter>`_.
+  `YAML frontmatter <https://python-frontmatter.readthedocs.io/en/latest/>`_.
 
 See an example license: `apache-2.0.LICENSE <https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE>`_
 

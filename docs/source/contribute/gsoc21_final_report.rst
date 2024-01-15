@@ -15,7 +15,7 @@ Project: Detect Unknown Licenses and Indirect License References in Scancode
 
 `ScanCode-toolkit <https://github.com/nexB/scancode-toolkit>`_
 
-`Project Link <https://summerofcode.withgoogle.com/projects/#6116612073062400>`_
+`Project Link <https://summerofcode.withgoogle.com/archive/2021/projects/6229596998991872>`_
 
 `Proposal <https://docs.google.com/document/d/1Dp0Hgk38RIMwITTiS-kqfikpkHRi2rjtkotA9CLw8j0/edit?usp=sharing>`_
 
