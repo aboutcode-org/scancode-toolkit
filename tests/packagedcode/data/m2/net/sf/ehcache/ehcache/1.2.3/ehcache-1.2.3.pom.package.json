@@ -81,44 +81,18 @@
         {
           "score": 100.0,
           "start_line": 1,
-          "end_line": 1,
-          "matched_length": 8,
+          "end_line": 4,
+          "matched_length": 26,
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_1316.RULE",
+          "rule_identifier": "apache-2.0_1326.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1316.RULE",
-          "matched_text": "- name: The Apache Software License, Version 2.0"
-        },
-        {
-          "score": 90.0,
-          "start_line": 2,
-          "end_line": 2,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_222.RULE",
-          "rule_relevance": 90,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_222.RULE",
-          "matched_text": "  url: http://ehcache.sourceforge.net/LICENSE.txt"
-        },
-        {
-          "score": 100.0,
-          "start_line": 4,
-          "end_line": 6,
-          "matched_length": 17,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "apache-2.0",
-          "rule_identifier": "apache-2.0_228.RULE",
-          "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_228.RULE",
-          "matched_text": "    The license is the standard wording from the Apache license, but with\n                    Greg Luck as copyright\n                    owner."
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1326.RULE",
+          "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://ehcache.sourceforge.net/LICENSE.txt\n  comments: |\n    The license is the standard wording from the Apache license, but with"
         }
       ],
-      "identifier": "apache_2_0-c973d9ca-4048-3ccd-f7c7-c7e267fa7f3a"
+      "identifier": "apache_2_0-61721ce2-7f9f-9b2f-8c4f-0bc3dbd263ff"
     }
   ],
   "other_license_expression": null,

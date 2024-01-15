@@ -1,0 +1,11 @@
+---
+license_expression: mit OR apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - https://opensource.org/licenses/MIT
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
+This program is licensed either under the terms of the
+{{ Apache Software License }} (https://www.apache.org/licenses/LICENSE-2.0), or the
+{{ MIT License }} (https://opensource.org/licenses/MIT).

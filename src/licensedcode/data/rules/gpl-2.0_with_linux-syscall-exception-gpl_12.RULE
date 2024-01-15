@@ -1,0 +1,10 @@
+---
+license_expression: gpl-2.0 WITH linux-syscall-exception-gpl
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+---
+
+{{
+License Fullname
+    GPL-2.0 with Linux-syscall-note}}

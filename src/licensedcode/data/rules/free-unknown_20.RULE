@@ -1,11 +1,11 @@
 ---
 license_expression: free-unknown
-is_license_reference: yes
+is_license_clue: yes
 relevance: 100
 referenced_filenames:
     - LICENSE.txt
+    - License.txt
 notes: typically for GPL but this can vary and be various versions
 ---
 
-This is free software. See License.txt, in the download
-// package, for details.
+This is free software. See License.txt, in the download package, for details.

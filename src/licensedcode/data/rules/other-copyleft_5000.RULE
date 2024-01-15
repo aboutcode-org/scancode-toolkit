@@ -1,0 +1,13 @@
+---
+license_expression: other-copyleft
+is_license_notice: yes
+notes: POSIX man page notice, no license key assigned yet
+---
+
+This notice shall appear on any product containing this material.
+
+Redistribution of this material is permitted so long as this notice and
+the corresponding notices within each POSIX manual page are retained on
+any distribution, and the nroff source is included.  Modifications to
+the text are permitted so long as any conflicts with the standard
+are clearly marked as such in the text.

@@ -1,6 +1,7 @@
 ---
 license_expression: bsd-new OR apache-2.0 OR gpl-2.0-plus OR lgpl-2.1-plus
 is_license_notice: yes
+minimum_coverage: 90
 relevance: 100
 notes: SecurityVulns.COM
 ignorable_urls:
@@ -22,11 +23,11 @@ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 This software is FREEWARE. 
-
+{{
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that following conditions
 are met (BSD style license):
-
+}}
     * Redistributions of source code must retain the above copyright notice,
     this list of conditions and the following disclaimer.
     * Redistributions in binary form must reproduce the above copyright notice,
@@ -40,21 +41,21 @@ are met (BSD style license):
 Instead of this license, you can also use and redistribute this software under
 terms of compatible license, including:
 
-1. Apache License, Version 2.0
+1. {{Apache License, Version 2.0}}
    You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
-2. GNU General Public License as published by
+2. {{GNU General Public License as published by
    the Free Software Foundation; either version 2 of the License, or
-   (at your option) any later version.
+   (at your option) any later version.}}
    You may obtain a copy of the License at
 
     https://www.gnu.org/licenses/gpl.txt
 
-3. GNU Lesser General Public License as published by the
+3. {{GNU Lesser General Public License as published by the
    Free Software Foundation; either version 2.1 of the License, or
-   (at your option) any later version.
+   (at your option) any later version. }}
    You may obtain a copy of the License at
 
 https://www.gnu.org/licenses/lgpl.txt

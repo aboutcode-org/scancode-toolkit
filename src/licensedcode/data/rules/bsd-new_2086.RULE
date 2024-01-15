@@ -1,0 +1,15 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+minimum_coverage: 90
+referenced_filenames:
+    - Copyright.txt
+ignorable_urls:
+    - http://gdcm.sourceforge.net/Copyright.html
+---
+
+See Copyright.txt or {{ http://gdcm.sourceforge.net/Copyright.html }} for details.
+
+     This software is distributed WITHOUT ANY WARRANTY; without even
+     the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+     PURPOSE.  See the above copyright notice for more information.

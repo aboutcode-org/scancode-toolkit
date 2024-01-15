@@ -524,16 +524,16 @@ other_license_detections:
     identifier: lgpl_2_0_plus_and_lgpl_2_0-9618c993-f50f-833f-bab4-b076894634e9
   - license_expression: bsd-new
     matches:
-      - score: '53.47'
+      - score: '63.19'
         start_line: 925
         end_line: 934
         matched_length: 60
-        match_coverage: '59.41'
+        match_coverage: '63.83'
         matcher: 3-seq
         license_expression: bsd-new
-        rule_identifier: bsd-new_1036.RULE
-        rule_relevance: 90
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1036.RULE
+        rule_identifier: bsd-new_1374.RULE
+        rule_relevance: 99
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1374.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions are
@@ -545,7 +545,7 @@ other_license_detections:
            2. Redistributions in binary form must the following disclaimer in
              the documentation and/or other materials provided with the
              distribution.
-    identifier: bsd_new-7c8321ea-5f82-974c-692b-936bcaabf520
+    identifier: bsd_new-bee97273-3ab1-9998-6318-02cf08215b30
   - license_expression: bsd-new
     matches:
       - score: '100.0'

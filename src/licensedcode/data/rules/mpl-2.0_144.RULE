@@ -1,0 +1,13 @@
+---
+license_expression: mpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
+## License
+
+The project license is specified in LICENSE.
+
+libzmq is free software; you can redistribute it and/or modify it under
+the terms of the {{Mozilla Public License Version 2.0.}}

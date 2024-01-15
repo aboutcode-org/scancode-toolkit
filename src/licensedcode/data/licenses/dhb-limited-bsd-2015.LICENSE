@@ -1,0 +1,40 @@
+---
+key: dhb-limited-bsd-2015
+short_name: DHB Limited BSD License 2015
+name: David H. Bailey Limited BSD License 2015
+category: Copyleft Limited
+owner: David H. Bailey
+homepage_url: https://www.davidhbailey.com/dhbsoftware/
+spdx_license_key: LicenseRef-scancode-dhb-limited-bsd-2015
+text_urls:
+    - https://www.davidhbailey.com/dhbsoftware/DHB-License.docx
+ignorable_copyrights:
+    - COPYRIGHT (c) 2015 by David H. Bailey
+ignorable_holders:
+    - David H. Bailey
+ignorable_emails:
+    - dhbailey@lbl.gov
+---
+
+COPYRIGHT, DISCLAIMER AND LIMITED BSD LICENSE.
+
+AUTHOR:
+   David H. Bailey
+   Lawrence Berkeley National Lab (retired) and University of California, Davis
+   Email: dhbailey@lbl.gov
+   
+COPYRIGHT (c) 2015 by David H. Bailey.  All rights reserved.
+
+By downloading this software, you agree to the following:
+
+1. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+a. Redistributions of source code must retain the copyright notice, this list of conditions and the following disclaimer.
+
+b. Redistributions in binary form must reproduce the copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+c. Neither the name of the author nor the names of contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+2. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+3. You are under no obligation whatsoever to provide any modifications or enhancements of this software to anyone. However, if you choose to provide these modifications or enhancements to the author or make them publicly available, without enacting a separate written license agreement covering these modifications or enhancements, then you hereby grant to the author a non-exclusive, royalty-free perpetual license to install, use, modify, prepare derivative works, incorporate into other computer software, distribute, and sublicense such enhancements or derivative works thereof, in binary and source code form.
