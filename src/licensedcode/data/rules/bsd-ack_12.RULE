@@ -1,6 +1,8 @@
 ---
 license_expression: bsd-ack
 is_license_text: yes
+is_deprecated: yes
+notes: this is a bsd-new rather
 ---
 
 Redistribution and use in source and binary forms, with or without

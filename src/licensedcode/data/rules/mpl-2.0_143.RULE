@@ -1,0 +1,12 @@
+---
+license_expression: mpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
+LICENSE
+-------
+Free use of this software is granted under the terms of the Mozilla Public
+License Version 2.0 (MPL-2.0). For details see the file `LICENSE` included with
+the 0MQ distribution.

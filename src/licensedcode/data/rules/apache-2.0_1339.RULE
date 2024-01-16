@@ -1,0 +1,9 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+ignorable_urls:
+    - https://www.apache.org/licenses/LICENSE-2.0
+---
+
+This program is licensed under the terms of the
+{{ Apache Software License }} (https://www.apache.org/licenses/LICENSE-2.0)

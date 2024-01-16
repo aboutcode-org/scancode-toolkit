@@ -1,0 +1,8 @@
+---
+license_expression: odbl-1.0
+is_license_notice: yes
+ignorable_urls:
+    - https://opendatacommons.org/licenses/odbl/
+---
+
+data entries are freely available under the https://opendatacommons.org/licenses/odbl/ Open Data Commons Open Database License.

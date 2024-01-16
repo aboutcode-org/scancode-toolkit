@@ -1,0 +1,9 @@
+---
+license_expression: cc-by-sa-2.1-jp
+is_license_reference: yes
+is_continuous: yes
+minimum_coverage: 100
+notes: Rule based on an SPDX license name and/or ID
+---
+
+CC-BY-SA-2.1-JP

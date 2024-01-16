@@ -4,9 +4,7 @@ short_name: Proprietary License
 name: Proprietary License
 category: Commercial
 owner: Unspecified
-notes: replaces the proprietary key npm before 3.1 recommended this "If you are using a license
-    that hasn't been assigned an SPDX identifier, or if you are using a custom license, use
-    the following valid SPDX expression "LicenseRef-LICENSE"
+notes: replaces the "proprietary" ScanCode license key used before ScanCode 3.1.
 is_generic: yes
 spdx_license_key: LicenseRef-scancode-proprietary-license
 other_spdx_license_keys:

@@ -7,6 +7,8 @@ ignorable_copyrights:
     - Copyright (c) 2001 Alexander Peslyak
 ignorable_holders:
     - Alexander Peslyak
+is_deprecated: yes
+notes: this is now requalified as a `openwall-md5-permissive` license
 ---
 
 No copyright is

@@ -1,6 +1,8 @@
 ---
 license_expression: proprietary-license
 is_license_text: yes
+is_deprecated: yes
+notes: This is now the ibm-employee-written LICENSE
 ---
 
 IBM License Agreement for IBM Employee-Written Software

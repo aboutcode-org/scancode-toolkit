@@ -1,0 +1,11 @@
+---
+license_expression: liliq-rplus-1.1
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+notes: Rule based on an SPDX license name and/or ID. Since we do not track yet license in non-English
+    languages, so this is a rule to deal with this in the short term
+---
+
+licenseid : LiLiQ-Rplus-1.1

@@ -1,0 +1,11 @@
+---
+license_expression: gpl-2.0 WITH universal-foss-exception-1.0
+is_license_tag: yes
+referenced_filenames:
+    - LICENSE
+---
+
+<license>
+      <name>The GNU General Public License, v2 with FOSS exception</name>
+      <distribution>repo</distribution>
+      <comments>For detailed license information see the LICENSE file in this distribution.</comments>

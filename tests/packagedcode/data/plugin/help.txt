@@ -694,7 +694,7 @@ Package type:  pypi
 --------------------------------------------
 Package type:  pypi
   datasource_id:     pypi_setup_py
-  documentation URL: https://docs.python.org/3/distutils/setupscript.html
+  documentation URL: https://docs.python.org/3.11/distutils/setupscript.html
   primary language:  Python
   description:       Python setup.py
   path_patterns:    '*setup.py'

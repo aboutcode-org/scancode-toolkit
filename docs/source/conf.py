@@ -54,6 +54,12 @@ intersphinx_mapping = {
     "scancode-workbench": ("https://scancode-workbench.readthedocs.io/en/latest/", None),
 }
 
+# List of regular expressions for the linkchecker to ignore
+# See https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
+linkcheck_ignore = [
+    r'https://en.wikipedia.org/wiki/*',
+    r'https://matrix.to/*'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]

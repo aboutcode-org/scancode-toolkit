@@ -1,0 +1,9 @@
+---
+license_expression: afl-3.0
+is_license_reference: yes
+relevance: 99
+ignorable_urls:
+    - http://www.opensource.org/licenses/academic.php
+---
+
+http://www.opensource.org/licenses/academic.php

@@ -1,0 +1,13 @@
+---
+license_expression: other-permissive
+is_license_notice: yes
+notes: https://github.com/AntoineThiboult/HOOPLA/blob/332160e4815985f87aeb7cadffd021bf3043cdba/Tools/Calibration/dds/licence_dds.txt#L6
+---
+
+algorithm implementation is free for public use and you are free to redistribute it.  
+However, the user needs to reference the use of this program in any papers/reports/articles 
+which have results obtained from the use of this program.  I would also appreciate a copy of 
+such papers/articles/reports, or at least an e-mail message with the reference so I can get 
+a copy.
+
+Please report to me any bugs you find in this code.

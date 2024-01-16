@@ -1,0 +1,7 @@
+---
+license_expression: pycrypto
+is_license_notice: yes
+relevance: 100
+---
+
+Portions of this module are {{derived from A.M. Kuchling's well-designed GPG.py}}
