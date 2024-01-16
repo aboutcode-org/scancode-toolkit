@@ -27,22 +27,25 @@
   "license_detections": [
     {
       "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
+      "license_expression_spdx": "LicenseRef-scancode-kde-accepted-lgpl AND LicenseRef-scancode-kfqf-accepted-gpl",
       "matches": [
         {
-          "score": 100.0,
+          "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
+          "spdx_license_expression": "LicenseRef-scancode-kde-accepted-lgpl AND LicenseRef-scancode-kfqf-accepted-gpl",
+          "from_file": null,
           "start_line": 1,
           "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
           "matched_length": 9,
           "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "kde-accepted-lgpl AND kfqf-accepted-gpl",
-          "rule_identifier": "spdx-license-identifier-kde-accepted-lgpl AND kfqf-accepted-gpl-d97defd08863e41010f561c03741f2df5e14dc33",
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-kde_accepted_lgpl_and_kfqf_accepted_gpl-d97defd08863e41010f561c03741f2df5e14dc33",
           "rule_url": null,
           "matched_text": "licenseref-kde-accepted-lgpl AND licenseref-kfqf-accepted-gpl"
         }
       ],
-      "identifier": "kde_accepted_lgpl_and_kfqf_accepted_gpl-56df79dc-2a6f-aa15-1384-b9638a21737f"
+      "identifier": "kde_accepted_lgpl_and_kfqf_accepted_gpl-1a159184-2296-4a31-863d-e99589aa56d6"
     }
   ],
   "other_license_expression": null,

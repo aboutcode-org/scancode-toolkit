@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 20
         end_line: 42
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 214
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        rule_identifier: bsd-new_1373.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_1373.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1373.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -42,16 +45,19 @@ license_detections:
           SUCH DAMAGE.
     identifier: bsd_new-a12452d6-4cce-854f-824e-72aab36acfaf
   - license_expression: tcp-wrappers
+    license_expression_spdx: TCP-wrappers
     matches:
-      - score: '100.0'
+      - license_expression: tcp-wrappers
+        spdx_license_expression: TCP-wrappers
+        from_file:
         start_line: 72
         end_line: 85
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 88
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: tcp-wrappers
-        rule_identifier: tcp-wrappers_3.RULE
         rule_relevance: 100
+        rule_identifier: tcp-wrappers_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcp-wrappers_3.RULE
         matched_text: "Individual files\n* may be covered by other copyrights (as noted in the\
           \ file itself.)\n*\n* This material was originally written and compiled by Wietse\
@@ -63,16 +69,19 @@ license_detections:
           \ of\n* merchantibility and fitness for any particular purpose."
     identifier: tcp_wrappers-47a49a2d-71d2-76d4-0780-2d5c538898f7
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 92
         end_line: 103
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 100
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_749.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_749.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_749.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify

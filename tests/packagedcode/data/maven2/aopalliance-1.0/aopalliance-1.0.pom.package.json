@@ -27,15 +27,18 @@
   "license_detections": [
     {
       "license_expression": "public-domain AND gpl-1.0-plus",
+      "license_expression_spdx": "LicenseRef-scancode-public-domain AND GPL-1.0-or-later",
       "matches": [
         {
           "score": 70.0,
           "start_line": 1,
           "end_line": 1,
+          "from_file": null,
           "matched_length": 2,
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "public-domain",
+          "spdx_license_expression": "LicenseRef-scancode-public-domain",
           "rule_identifier": "public-domain_bare_words.RULE",
           "rule_relevance": 70,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
@@ -45,10 +48,12 @@
           "score": 50.0,
           "start_line": 2,
           "end_line": 2,
+          "from_file": null,
           "matched_length": 1,
           "match_coverage": 100.0,
           "matcher": "2-aho",
           "license_expression": "gpl-1.0-plus",
+          "spdx_license_expression": "GPL-1.0-or-later",
           "rule_identifier": "gpl_bare_word_only.RULE",
           "rule_relevance": 50,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",

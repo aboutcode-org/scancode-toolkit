@@ -31,27 +31,32 @@ other_license_expression_spdx: ((GPL-2.0-or-later AND GPL-2.0-or-later) AND (LGP
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 67
         end_line: 67
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 68
         end_line: 82
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 126
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_846.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_846.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_846.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
@@ -71,27 +76,32 @@ other_license_detections:
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
     identifier: gpl_2_0_plus-00217b75-1a81-9ffa-8aed-0d1bd2f9756b
   - license_expression: lgpl-2.1-plus AND lgpl-2.1
+    license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-only
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 84
         end_line: 84
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_108.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_108.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 85
         end_line: 96
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 106
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_36.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_36.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_36.RULE
         matched_text: |
           This library is free software: you can redistribute it and/or modify
@@ -106,15 +116,17 @@ other_license_detections:
 
           You should have received a copy of the GNU Lesser General Public License
           along with this library.  If not, see <http://www.gnu.org/licenses/>.
-      - score: '100.0'
+      - license_expression: lgpl-2.1
+        spdx_license_expression: LGPL-2.1-only
+        from_file:
         start_line: 98
         end_line: 99
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 27
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1
-        rule_identifier: lgpl-2.1_293.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1_293.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_293.RULE
         matched_text: |
           On Debian systems, the complete text of the GNU Lesser General

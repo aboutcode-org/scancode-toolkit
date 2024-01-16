@@ -3,7 +3,24 @@
     {
       "identifier": "apache_1_1-1712efcb-d696-b5e4-214d-b2ab69680c2a",
       "license_expression": "apache-1.1",
-      "detection_count": 1
+      "license_expression_spdx": "Apache-1.1",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "apache-1.1",
+          "license_expression_spdx": "Apache-1.1",
+          "from_file": "LICENSE",
+          "start_line": 7,
+          "end_line": 70,
+          "matcher": "3-seq",
+          "score": 96.07,
+          "matched_length": 367,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-1.1_63.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE"
+        }
+      ]
     }
   ],
   "files": [
@@ -31,17 +48,20 @@
       "license_detections": [
         {
           "license_expression": "apache-1.1",
+          "license_expression_spdx": "Apache-1.1",
           "matches": [
             {
-              "score": 96.07,
+              "license_expression": "apache-1.1",
+              "spdx_license_expression": "Apache-1.1",
+              "from_file": "LICENSE",
               "start_line": 7,
               "end_line": 70,
+              "matcher": "3-seq",
+              "score": 96.07,
               "matched_length": 367,
               "match_coverage": 100.0,
-              "matcher": "3-seq",
-              "license_expression": "apache-1.1",
-              "rule_identifier": "apache-1.1_63.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-1.1_63.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-1.1_63.RULE"
             }
           ],

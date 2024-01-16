@@ -36,15 +36,18 @@
     "license_detections": [
       {
         "license_expression": "lgpl-2.1-plus",
+        "license_expression_spdx": "LGPL-2.1-or-later",
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 30,
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "lgpl-2.1-plus",
+            "spdx_license_expression": "LGPL-2.1-or-later",
             "rule_identifier": "lgpl-2.1-plus_455.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_455.RULE",

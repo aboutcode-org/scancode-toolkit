@@ -40,32 +40,38 @@ other_license_expression_spdx: (BSD-3-Clause AND LicenseRef-scancode-google-pate
 license_detections: []
 other_license_detections:
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 187
         end_line: 188
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 17
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: other-permissive
-        rule_identifier: other-permissive_292.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_292.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_292.RULE
         matched_text: |
           Permission to use, copy, and distribute these images for any purpose and
           without fee is hereby granted.
     identifier: other_permissive-b68ae66f-78f0-96ce-91ff-6dc9db670978
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 226
         end_line: 250
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 212
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-new
-        rule_identifier: bsd-new_166.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_166.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -95,16 +101,19 @@ other_license_detections:
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-050b3051-820b-200e-26c9-1a3c8e9761d2
   - license_expression: bsd-new AND google-patent-license-golang
+    license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-google-patent-license-golang
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 255
         end_line: 279
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 212
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-new
-        rule_identifier: bsd-new_166.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_166.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_166.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -132,15 +141,17 @@ other_license_detections:
           THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-      - score: '95.0'
+      - license_expression: google-patent-license-golang
+        spdx_license_expression: LicenseRef-scancode-google-patent-license-golang
+        from_file:
         start_line: 281
         end_line: 294
+        matcher: 2-aho
+        score: '95.0'
         matched_length: 131
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: google-patent-license-golang
-        rule_identifier: google-patent-license-golang_1.RULE
         rule_relevance: 95
+        rule_identifier: google-patent-license-golang_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/google-patent-license-golang_1.RULE
         matched_text: |
           Subject to the terms and conditions of this License, Google hereby
@@ -159,27 +170,32 @@ other_license_detections:
           such litigation is filed.
     identifier: bsd_new_and_google_patent_license_golang-6396c13c-c50d-6867-8cdb-3c6fc442fe86
   - license_expression: apache-2.0
+    license_expression_spdx: Apache-2.0
     matches:
-      - score: '100.0'
+      - license_expression: apache-2.0
+        spdx_license_expression: Apache-2.0
+        from_file:
         start_line: 296
         end_line: 296
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: apache-2.0
-        rule_identifier: apache-2.0_65.RULE
         rule_relevance: 100
+        rule_identifier: apache-2.0_65.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
-      - score: '100.0'
+      - license_expression: apache-2.0
+        spdx_license_expression: Apache-2.0
+        from_file:
         start_line: 297
         end_line: 310
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 105
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: apache-2.0
-        rule_identifier: apache-2.0_1019.RULE
         rule_relevance: 100
+        rule_identifier: apache-2.0_1019.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1019.RULE
         matched_text: |
           Licensed under the Apache License, Version 2.0 (the "License");
@@ -198,16 +214,19 @@ other_license_detections:
           /usr/share/common-licenses/Apache-2.0.
     identifier: apache_2_0-0aa97ccb-0d15-2093-0be2-57d791140e1a
   - license_expression: mit
+    license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 313
         end_line: 329
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mit
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -229,16 +248,19 @@ other_license_detections:
           THE SOFTWARE.
     identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: bsd-simplified
+    license_expression_spdx: BSD-2-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
+        from_file:
         start_line: 336
         end_line: 355
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 183
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-simplified
-        rule_identifier: bsd-simplified_27.RULE
         rule_relevance: 100
+        rule_identifier: bsd-simplified_27.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_27.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -263,16 +285,19 @@ other_license_detections:
           SUCH DAMAGE.
     identifier: bsd_simplified-24fb2214-fe65-fd01-a4db-75b7cf8d710c
   - license_expression: mpeg-ssg
+    license_expression_spdx: MPEG-SSG
     matches:
-      - score: '100.0'
+      - license_expression: mpeg-ssg
+        spdx_license_expression: MPEG-SSG
+        from_file:
         start_line: 358
         end_line: 376
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 153
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mpeg-ssg
-        rule_identifier: mpeg-ssg_1.RULE
         rule_relevance: 100
+        rule_identifier: mpeg-ssg_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpeg-ssg_1.RULE
         matched_text: |
           These software programs are available to the user without any license fee or
@@ -296,16 +321,19 @@ other_license_detections:
           design.
     identifier: mpeg_ssg-edece10f-06f5-dd49-8002-b4f2d5854d89
   - license_expression: cc-by-3.0
+    license_expression_spdx: CC-BY-3.0
     matches:
-      - score: '97.85'
+      - license_expression: cc-by-3.0
+        spdx_license_expression: CC-BY-3.0
+        from_file:
         start_line: 379
         end_line: 705
+        matcher: 3-seq
+        score: '97.85'
         matched_length: 2686
         match_coverage: '97.85'
-        matcher: 3-seq
-        license_expression: cc-by-3.0
-        rule_identifier: cc-by-3.0_102.RULE
         rule_relevance: 100
+        rule_identifier: cc-by-3.0_102.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_102.RULE
         matched_text: |
           THE WORK (AS DEFINED BELOW) IS PROVIDED UNDER THE TERMS OF THIS
@@ -637,16 +665,19 @@ other_license_detections:
                intended to restrict the license of any rights under applicable law.
     identifier: cc_by_3_0-4a3ad702-c278-8efa-96a7-7950ab5504e8
   - license_expression: bsd-2-clause-views
+    license_expression_spdx: BSD-2-Clause-Views
     matches:
-      - score: '98.1'
+      - license_expression: bsd-2-clause-views
+        spdx_license_expression: BSD-2-Clause-Views
+        from_file:
         start_line: 708
         end_line: 731
+        matcher: 1-hash
+        score: '98.1'
         matched_length: 206
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-2-clause-views
-        rule_identifier: bsd-2-clause-views_11.RULE
         rule_relevance: 100
+        rule_identifier: bsd-2-clause-views_11.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-2-clause-views_11.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -675,16 +706,19 @@ other_license_detections:
           either expressed or implied, of
     identifier: bsd_2_clause_views-2415de48-d7ef-74fd-0e8e-85439a2304f3
   - license_expression: sunpro
+    license_expression_spdx: SunPro
     matches:
-      - score: '100.0'
+      - license_expression: sunpro
+        spdx_license_expression: SunPro
+        from_file:
         start_line: 171
         end_line: 174
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 25
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: sunpro
-        rule_identifier: sunpro.LICENSE
         rule_relevance: 100
+        rule_identifier: sunpro.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/sunpro.LICENSE
         matched_text: |
           Developed at SunPro, a Sun Microsystems, Inc. business.
@@ -693,16 +727,19 @@ other_license_detections:
           is preserved.
     identifier: sunpro-8cbf8f94-4a9d-af5a-dc57-033780c667f7
   - license_expression: cc-by-3.0
+    license_expression_spdx: CC-BY-3.0
     matches:
-      - score: '100.0'
+      - license_expression: cc-by-3.0
+        spdx_license_expression: CC-BY-3.0
+        from_file:
         start_line: 209
         end_line: 211
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 17
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: cc-by-3.0
-        rule_identifier: cc-by-3.0_111.RULE
         rule_relevance: 100
+        rule_identifier: cc-by-3.0_111.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_111.RULE
         matched_text: |
           are covered by the

@@ -17,6 +17,57 @@ v33.0.0 (next next, roadmap)
 v32.1.0 (next, roadmap)
 ----------------------------
 
+Major API/other changes:
+
+- Output Format Version updated to 3.1.0 (minor version bump)
+- Drops python 3.7 and adopts python 3.12
+- New license match attributes:
+  - ``from_file``
+  - ``matched_text_diagnostics`` is added for ``--license-text-diagnostics``
+- In codebase-level ``license_detections`` we have a new attribute
+  ``reference_matches``
+- SPDX license expressions everywhere side-by-side with ScanCode
+  license expressions.
+- All rule attribute level data provided in codebase level ``todo`` items.
+
+Changes in Output Data Structure:
+
+- The data structure of the JSON output has changed for
+  licenses at file level, and license detections at top-level.
+  But note that all the changes are additions to the JSON output,
+  so we have a minor version bump ``3.0.0`` to ``3.1.0``:
+
+  - There is a new attribute ``from_file`` in ``matches`` which is in
+    ``license_detections`` in:
+    * File level ``license_detections``
+    * Codebase level ``license_detections``
+    * ``license_detections`` and  ``other_license_detections`` in
+      file-level ``package_data``
+    * ``license_detections`` and  ``other_license_detections`` in
+      codebase level ``packages``
+  
+  - On using the CLI option ``--license-text-diagnostics`` there is
+    now a new license match attribute ``matched_text_diagnostics``
+    with the matched text and highlighted diagnostics, instead of
+    having this replace the plain ``matched_text``.
+
+  - A new ``reference_matches`` attribute is added to codebase-level
+    ``license_detections`` which is same as the ``matches`` attribute
+    in other license detections.
+  
+  - We now have SPDX license expressions everywhere we have
+    ScanCode license expressions for ease of use and adopting
+    SPDX everywhere. A new attribute ``license_expression_spdx``
+    is added to:
+    - ``license_detections`` in file and codebase level
+    - in package ``license_detections`` and ``other_license_detections``
+    - ``matches`` for ``license_detections`` everywhere
+
+  - Adds all rule atrribute level info in codebase level ``todo``
+    data, to assist in review. This includes length, text, notes,
+    referenced_filenames, and the boolean attributes (like
+    is_license_notice, is_license_intro etc, as applicable).
+
 - A new field in packages with the license category for the
   detected license expression and also an API function to
   compute license categories from license expressions.

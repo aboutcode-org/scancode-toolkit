@@ -43,17 +43,20 @@
           "license_detections": [
             {
               "license_expression": "unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "matches": [
                 {
-                  "score": 88.89,
+                  "license_expression": "unknown",
+                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "from_file": "stdole2.tlb",
                   "start_line": 1,
                   "end_line": 3,
+                  "matcher": "5-undetected",
+                  "score": 88.89,
                   "matched_length": 8,
                   "match_coverage": 100.0,
-                  "matcher": "5-undetected",
-                  "license_expression": "unknown",
-                  "rule_identifier": "package-manifest-unknown-ac5b72bda2754025edd093f0f8161168689d3065",
                   "rule_relevance": 100,
+                  "rule_identifier": "package-manifest-unknown-ac5b72bda2754025edd093f0f8161168689d3065",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-ac5b72bda2754025edd093f0f8161168689d3065",
                   "matched_text": "license LegalCopyright: \u00a9 Microsoft Corporation. All rights reserved.\nLegalTrademarks:\nLicense:"
                 }

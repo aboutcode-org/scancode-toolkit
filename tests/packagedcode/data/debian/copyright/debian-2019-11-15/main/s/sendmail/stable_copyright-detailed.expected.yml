@@ -9,16 +9,19 @@ other_license_expression_spdx: Sendmail AND Sendmail
 license_detections: []
 other_license_detections:
   - license_expression: sendmail
+    license_expression_spdx: Sendmail
     matches:
-      - score: '97.65'
+      - license_expression: sendmail
+        spdx_license_expression: Sendmail
+        from_file:
         start_line: '19'
         end_line: 99
+        matcher: 3-seq
+        score: '97.65'
         matched_length: 582
         match_coverage: '97.65'
-        matcher: 3-seq
-        license_expression: sendmail
-        rule_identifier: sendmail-2014.RULE
         rule_relevance: 100
+        rule_identifier: sendmail-2014.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sendmail-2014.RULE
         matched_text: |
           SENDMAIL LICENSE

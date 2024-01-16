@@ -37,17 +37,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/CoreMLPredictionsPlugin.podspec",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_48.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
@@ -111,17 +114,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/Amplify.podspec",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_48.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
@@ -185,17 +191,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/AmplifyPlugins.podspec",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_48.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
@@ -259,17 +268,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/AmplifyTestCommon.podspec",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_48.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
@@ -333,17 +345,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/AWSPluginsCore.podspec",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_48.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
@@ -407,17 +422,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/AWSPredictionsPlugin.podspec",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_48.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
               "matched_text": "Apache License, Version 2.0"
             }
@@ -563,17 +581,68 @@
     {
       "identifier": "apache_2_0-428c1364-ecb5-f806-7a2e-77d10737a7ce",
       "license_expression": "apache-2.0",
-      "detection_count": 6
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 6,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "many-podspecs/Amplify.podspec",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_48.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE"
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-d310abb3-4d20-b3be-830d-ee37b30a997f",
       "license_expression": "apache-2.0",
-      "detection_count": 6
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 6,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "many-podspecs/Amplify.podspec",
+          "start_line": 21,
+          "end_line": 21,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_68.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20",
       "license_expression": "apache-2.0",
-      "detection_count": 3
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 3,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "many-podspecs/amplify-ios.LICENSE",
+          "start_line": 2,
+          "end_line": 175,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 1405,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_70.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
+        }
+      ]
     }
   ],
   "files": [
@@ -630,17 +699,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "many-podspecs/AWSPluginsCore.podspec",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 5,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
@@ -672,17 +744,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/AWSPluginsCore.podspec",
               "start_line": 25,
               "end_line": 25,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 6,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_68.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_68.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
@@ -734,17 +809,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "many-podspecs/AWSPredictionsPlugin.podspec",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 5,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
@@ -776,17 +854,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/AWSPredictionsPlugin.podspec",
               "start_line": 17,
               "end_line": 17,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 6,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_68.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_68.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
@@ -838,17 +919,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "many-podspecs/Amplify.podspec",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 5,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
@@ -880,17 +964,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/Amplify.podspec",
               "start_line": 21,
               "end_line": 21,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 6,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_68.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_68.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
@@ -942,17 +1029,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "many-podspecs/AmplifyPlugins.podspec",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 5,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
@@ -984,17 +1074,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/AmplifyPlugins.podspec",
               "start_line": 24,
               "end_line": 24,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 6,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_68.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_68.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
@@ -1046,17 +1139,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "many-podspecs/AmplifyTestCommon.podspec",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 5,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
@@ -1088,17 +1184,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/AmplifyTestCommon.podspec",
               "start_line": 24,
               "end_line": 24,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 6,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_68.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_68.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
@@ -1150,17 +1249,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "many-podspecs/CoreMLPredictionsPlugin.podspec",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 5,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_48.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
                   "matched_text": "Apache License, Version 2.0"
                 }
@@ -1192,17 +1294,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/CoreMLPredictionsPlugin.podspec",
               "start_line": 14,
               "end_line": 14,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 6,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_68.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_68.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_68.RULE"
             }
           ],
@@ -1246,17 +1351,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "many-podspecs/amplify-ios.LICENSE",
                   "start_line": 2,
                   "end_line": 175,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 1405,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_70.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_70.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
                 }
               ],
@@ -1322,17 +1430,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "many-podspecs/amplify-ios.LICENSE",
                   "start_line": 2,
                   "end_line": 175,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 1405,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_70.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_70.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
                 }
               ],
@@ -1456,17 +1567,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "many-podspecs/amplify-ios.LICENSE",
               "start_line": 2,
               "end_line": 175,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 1405,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_70.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_70.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
             }
           ],

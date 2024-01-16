@@ -42,15 +42,18 @@
     "license_detections": [
       {
         "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
         "matches": [
           {
             "score": 95.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 6,
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "apache-2.0",
+            "spdx_license_expression": "Apache-2.0",
             "rule_identifier": "pypi_apache_no-version.RULE",
             "rule_relevance": 95,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",

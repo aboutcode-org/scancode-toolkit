@@ -37,17 +37,20 @@
       "license_detections": [
         {
           "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "unknown",
+              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "from_file": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "5-undetected",
+              "score": 100.0,
               "matched_length": 2,
               "match_coverage": 100.0,
-              "matcher": "5-undetected",
-              "license_expression": "unknown",
-              "rule_identifier": "package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
               "rule_relevance": 100,
+              "rule_identifier": "package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
               "matched_text": "license distributable"
             }
@@ -120,17 +123,20 @@
           "license_detections": [
             {
               "license_expression": "unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "unknown",
+                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "from_file": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "5-undetected",
+                  "score": 100.0,
                   "matched_length": 2,
                   "match_coverage": 100.0,
-                  "matcher": "5-undetected",
-                  "license_expression": "unknown",
-                  "rule_identifier": "package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
                   "rule_relevance": 100,
+                  "rule_identifier": "package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-195220dbe86398dd9a8e945a50757302c09fb0dc",
                   "matched_text": "license distributable"
                 }

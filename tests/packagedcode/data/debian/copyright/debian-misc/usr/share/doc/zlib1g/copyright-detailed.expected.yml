@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: zlib
+    license_expression_spdx: Zlib
     matches:
-      - score: '100.0'
+      - license_expression: zlib
+        spdx_license_expression: Zlib
+        from_file:
         start_line: 42
         end_line: 59
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 144
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: zlib
-        rule_identifier: zlib_17.RULE
         rule_relevance: 100
+        rule_identifier: zlib_17.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE
         matched_text: |
           This software is provided 'as-is', without any express or implied

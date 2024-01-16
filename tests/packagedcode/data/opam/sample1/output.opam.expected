@@ -113,15 +113,18 @@
     "license_detections": [
       {
         "license_expression": "isc",
+        "license_expression_spdx": "ISC",
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 1,
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "isc",
+            "spdx_license_expression": "ISC",
             "rule_identifier": "spdx-license-identifier-isc-9931cb7ad33c2eb18f322c94660b670a84186baa",
             "rule_relevance": 100,
             "rule_url": null,

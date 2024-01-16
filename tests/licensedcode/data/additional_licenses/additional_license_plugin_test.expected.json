@@ -3,7 +3,24 @@
     {
       "identifier": "example_installed_1-ec26d04a-f591-6524-a28f-b2c6b6d5086a",
       "license_expression": "example-installed-1",
-      "detection_count": 1
+      "license_expression_spdx": "scancode-example-installed1",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "example-installed-1",
+          "license_expression_spdx": "scancode-example-installed1",
+          "from_file": "additional_license_plugin_test.txt",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 11,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "example-installed-1.LICENSE",
+          "rule_url": null
+        }
+      ]
     }
   ],
   "license_references": [
@@ -79,17 +96,20 @@
       "license_detections": [
         {
           "license_expression": "example-installed-1",
+          "license_expression_spdx": "scancode-example-installed1",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "example-installed-1",
+              "spdx_license_expression": "scancode-example-installed1",
+              "from_file": "additional_license_plugin_test.txt",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 11,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "example-installed-1",
-              "rule_identifier": "example-installed-1.LICENSE",
               "rule_relevance": 100,
+              "rule_identifier": "example-installed-1.LICENSE",
               "rule_url": null
             }
           ],

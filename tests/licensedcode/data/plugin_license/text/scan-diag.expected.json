@@ -3,14 +3,52 @@
     {
       "identifier": "fsf_ap-49ad9aab-c91b-eeb7-e90f-dc3f959b1c36",
       "license_expression": "fsf-ap",
+      "license_expression_spdx": "FSFAP",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "fsf-ap",
+          "license_expression_spdx": "FSFAP",
+          "from_file": "scan/short-license",
+          "start_line": 1,
+          "end_line": 3,
+          "matcher": "3-seq",
+          "score": 91.43,
+          "matched_length": 32,
+          "match_coverage": 91.43,
+          "rule_relevance": 100,
+          "rule_identifier": "fsf-ap.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE",
+          "matched_text": "Reproduction and distribution of this file, with or without modification, are\npermitted in any medium without royalties provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any warranties.",
+          "matched_text_diagnostics": "and distribution of this file, with or without modification, are\npermitted in any medium without [royalties] provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any"
+        }
+      ]
     },
     {
-      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0",
+      "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-e59dcea3-b71b-02e5-24d9-3795864d0303",
       "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+      "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+          "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
+          "from_file": "scan/gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 13,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-40ad9110ec6551e97f55cd72b297773235a415e7",
+          "rule_url": null,
+          "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */",
+          "matched_text_diagnostics": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+        }
+      ]
     }
   ],
   "files": [
@@ -22,23 +60,27 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+          "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+              "spdx_license_expression": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
+              "from_file": "scan/gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
               "matched_length": 13,
               "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
-              "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-              "rule_identifier": "spdx-license-identifier-gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib-4099cddf665e1c4068ae21bd191fabfb71b7c536",
               "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-40ad9110ec6551e97f55cd72b297773235a415e7",
               "rule_url": null,
-              "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
+              "matched_text": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */",
+              "matched_text_diagnostics": "SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR Linux-Openib) */"
             }
           ],
           "detection_log": [],
-          "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-c196bf1c-1c1f-18b4-554f-690be18bbad0"
+          "identifier": "gpl_2_0_with_linux_syscall_exception_gpl_or_linux_openib-e59dcea3-b71b-02e5-24d9-3795864d0303"
         }
       ],
       "license_clues": [],
@@ -53,19 +95,23 @@
       "license_detections": [
         {
           "license_expression": "fsf-ap",
+          "license_expression_spdx": "FSFAP",
           "matches": [
             {
-              "score": 91.43,
+              "license_expression": "fsf-ap",
+              "spdx_license_expression": "FSFAP",
+              "from_file": "scan/short-license",
               "start_line": 1,
               "end_line": 3,
+              "matcher": "3-seq",
+              "score": 91.43,
               "matched_length": 32,
               "match_coverage": 91.43,
-              "matcher": "3-seq",
-              "license_expression": "fsf-ap",
-              "rule_identifier": "fsf-ap.LICENSE",
               "rule_relevance": 100,
+              "rule_identifier": "fsf-ap.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-ap.LICENSE",
-              "matched_text": "and distribution of this file, with or without modification, are\npermitted in any medium without [royalties] provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any"
+              "matched_text": "Reproduction and distribution of this file, with or without modification, are\npermitted in any medium without royalties provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any warranties.",
+              "matched_text_diagnostics": "and distribution of this file, with or without modification, are\npermitted in any medium without [royalties] provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any"
             }
           ],
           "detection_log": [],

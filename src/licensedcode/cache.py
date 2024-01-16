@@ -545,11 +545,12 @@ def validate_spdx_license_keys(license_expression, licensing):
         try:
             parsed.render(template='{symbol.wrapped.spdx_license_key}')
         except AttributeError:
+            msg = f"Error rendering SPDX license key for: {key}"
             messages.append(msg)
             pass
 
     if messages:
-        raise InvalidLicenseKeyError(messages)
+        raise InvalidLicenseKeyError(f"ERROR in parsing license_expression: {license_expression}: type: {type(license_expression)} :{messages}")
 
 
 class InvalidLicenseKeyError(Exception):

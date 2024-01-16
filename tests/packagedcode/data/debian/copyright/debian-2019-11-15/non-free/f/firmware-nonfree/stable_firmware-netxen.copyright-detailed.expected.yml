@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: qlogic-firmware
+    license_expression_spdx: LicenseRef-scancode-qlogic-firmware
     matches:
-      - score: '100.0'
+      - license_expression: qlogic-firmware
+        spdx_license_expression: LicenseRef-scancode-qlogic-firmware
+        from_file:
         start_line: 7
         end_line: 34
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 262
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: qlogic-firmware
-        rule_identifier: qlogic-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: qlogic-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qlogic-firmware.LICENSE
         matched_text: "Redistribution and use in binary form, without modification, for use\
           \ in conjunction\nwith QLogic authorized products is permitted provided that the following\

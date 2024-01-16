@@ -36,15 +36,18 @@
     "license_detections": [
       {
         "license_expression": "bsd-simplified-darwin",
+        "license_expression_spdx": "LicenseRef-scancode-bsd-simplified-darwin",
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 217,
             "match_coverage": 100.0,
             "matcher": "2-aho",
             "license_expression": "bsd-simplified-darwin",
+            "spdx_license_expression": "LicenseRef-scancode-bsd-simplified-darwin",
             "rule_identifier": "bsd-simplified-darwin.LICENSE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-darwin.LICENSE",

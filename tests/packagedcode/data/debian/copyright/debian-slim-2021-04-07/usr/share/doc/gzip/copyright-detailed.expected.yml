@@ -15,27 +15,32 @@ other_license_expression_spdx: (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-
 license_detections: []
 other_license_detections:
   - license_expression: gpl-3.0-plus
+    license_expression_spdx: GPL-3.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
+        from_file:
         start_line: 25
         end_line: 25
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0-plus
-        rule_identifier: gpl-3.0-plus_92.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0-plus_92.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
-      - score: '100.0'
+      - license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
+        from_file:
         start_line: 26
         end_line: 40
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 123
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0-plus
-        rule_identifier: gpl-3.0-plus_482.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0-plus_482.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_482.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
@@ -55,16 +60,19 @@ other_license_detections:
           Public License can be found in `/usr/share/common-licenses/GPL-3'.
     identifier: gpl_3_0_plus-64267dbf-cd13-53b6-0e75-79a84b05d3cf
   - license_expression: gfdl-1.3-plus
+    license_expression_spdx: GFDL-1.3-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gfdl-1.3-plus
+        spdx_license_expression: GFDL-1.3-or-later
+        from_file:
         start_line: 43
         end_line: 50
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 72
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gfdl-1.3-plus
-        rule_identifier: gfdl-1.3-plus_24.RULE
         rule_relevance: 100
+        rule_identifier: gfdl-1.3-plus_24.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus_24.RULE
         matched_text: |
           Permission is granted to copy, distribute and/or modify this document
@@ -77,16 +85,19 @@ other_license_detections:
           License can be found in `/usr/share/common-licenses/GFDL-3'.
     identifier: gfdl_1_3_plus-60c54326-73ad-53e9-8924-f9dfc5748830
   - license_expression: latex2e
+    license_expression_spdx: Latex2e
     matches:
-      - score: '85.0'
+      - license_expression: latex2e
+        spdx_license_expression: Latex2e
+        from_file:
         start_line: 53
         end_line: 70
+        matcher: 1-hash
+        score: '85.0'
         matched_length: 138
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: latex2e
-        rule_identifier: latex2e_8.RULE
         rule_relevance: 85
+        rule_identifier: latex2e_8.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/latex2e_8.RULE
         matched_text: |
           Permission is granted to make and distribute verbatim copies of

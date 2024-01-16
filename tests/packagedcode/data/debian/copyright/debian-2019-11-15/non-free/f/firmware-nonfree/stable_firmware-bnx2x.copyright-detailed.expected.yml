@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '87.5'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 6
         end_line: 11
+        matcher: 3-seq
+        score: '87.5'
         matched_length: 35
         match_coverage: '100.0'
-        matcher: 3-seq
-        license_expression: proprietary-license
-        rule_identifier: proprietary-license_599.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_599.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_599.RULE
         matched_text: |
           This file contains firmware data derived from proprietary unpublished

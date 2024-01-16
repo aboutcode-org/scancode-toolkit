@@ -18,27 +18,32 @@ other_license_expression_spdx: (MPL-2.0 AND MPL-2.0) AND (MPL-2.0 AND MPL-2.0) A
 license_detections: []
 other_license_detections:
   - license_expression: mpl-2.0
+    license_expression_spdx: MPL-2.0
     matches:
-      - score: '100.0'
+      - license_expression: mpl-2.0
+        spdx_license_expression: MPL-2.0
+        from_file:
         start_line: 38
         end_line: 38
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mpl-2.0
-        rule_identifier: mpl-2.0_75.RULE
         rule_relevance: 100
+        rule_identifier: mpl-2.0_75.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_75.RULE
         matched_text: 'License: mpl-2.0'
-      - score: '100.0'
+      - license_expression: mpl-2.0
+        spdx_license_expression: MPL-2.0
+        from_file:
         start_line: 39
         end_line: 411
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 2371
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mpl-2.0
-        rule_identifier: mpl-2.0.LICENSE
         rule_relevance: 100
+        rule_identifier: mpl-2.0.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mpl-2.0.LICENSE
         matched_text: |
           Mozilla Public License Version 2.0
@@ -416,16 +421,19 @@ other_license_detections:
            defined by the Mozilla Public License, v. 2.0.
     identifier: mpl_2_0-a4e80716-0ace-81d4-b4b0-3d29c3a0f1e2
   - license_expression: bsd-2-clause-views
+    license_expression_spdx: BSD-2-Clause-Views
     matches:
-      - score: '100.0'
+      - license_expression: bsd-2-clause-views
+        spdx_license_expression: BSD-2-Clause-Views
+        from_file:
         start_line: 414
         end_line: 441
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 215
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-2-clause-views
-        rule_identifier: bsd-2-clause-views_1.RULE
         rule_relevance: 100
+        rule_identifier: bsd-2-clause-views_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-2-clause-views_1.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -458,16 +466,19 @@ other_license_detections:
           Foundation.
     identifier: bsd_2_clause_views-1d997716-afbf-cd29-cb1e-420af00fe852
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '99.04'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 446
         end_line: 470
+        matcher: 3-seq
+        score: '99.04'
         matched_length: 207
         match_coverage: '100.0'
-        matcher: 3-seq
-        license_expression: bsd-new
-        rule_identifier: bsd-new_784.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_784.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_784.RULE
         matched_text: |
           Redistribution  and  use  in  source   and  binary  forms,  with  or  without
@@ -497,27 +508,32 @@ other_license_detections:
           POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-2b3a5518-e8a8-d9b2-be49-79747be815eb
   - license_expression: cc0-1.0
+    license_expression_spdx: CC0-1.0
     matches:
-      - score: '100.0'
+      - license_expression: cc0-1.0
+        spdx_license_expression: CC0-1.0
+        from_file:
         start_line: 472
         end_line: 472
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: cc0-1.0
-        rule_identifier: cc0-1.0_12.RULE
         rule_relevance: 100
+        rule_identifier: cc0-1.0_12.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
         matched_text: 'License: cc0-1.0'
-      - score: '100.0'
+      - license_expression: cc0-1.0
+        spdx_license_expression: CC0-1.0
+        from_file:
         start_line: 473
         end_line: 481
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 82
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: cc0-1.0
-        rule_identifier: cc0-1.0_99.RULE
         rule_relevance: 100
+        rule_identifier: cc0-1.0_99.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_99.RULE
         matched_text: |
           To the extent possible under law, the author(s) have dedicated all copyright

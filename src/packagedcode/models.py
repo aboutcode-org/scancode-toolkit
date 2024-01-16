@@ -1336,7 +1336,6 @@ class DatafileHandler:
                         package_data = PackageData.from_dict(package_data)
                         pkgdata_resources.append((package_data, resource,))
 
-        #raise Exception(pkgdata_resources)
         if pkgdata_resources:
             if TRACE:
                 logger_debug(f' assemble_from_many_datafiles: pkgdata_resources: {pkgdata_resources!r}')
@@ -1498,6 +1497,12 @@ class Package(PackageData):
 
         package_data_mapping['datafile_paths'] = [datafile_path]
         package_data_mapping['datasource_ids'] = [dsid]
+
+        license_detections = package_data_mapping['license_detections']
+        for detection in license_detections:
+            for license_match in detection['matches']:
+                if not license_match['from_file']:
+                    license_match['from_file'] = datafile_path
 
         return cls.from_dict(package_data_mapping)
 

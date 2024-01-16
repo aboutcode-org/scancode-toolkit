@@ -20,6 +20,7 @@ from plugincode.scan import scan_impl
 
 from licensedcode.cache import build_spdx_license_expression, get_cache
 from licensedcode.detection import collect_license_detections
+from licensedcode.detection import populate_matches_with_path
 from licensedcode.detection import find_referenced_resource
 from licensedcode.detection import get_detected_license_expression
 from licensedcode.detection import get_matches_from_detection_mappings
@@ -169,7 +170,7 @@ class LicenseScanner(ScanPlugin):
             unknown_licenses=unknown_licenses,
         )
 
-    def process_codebase(self, codebase, license_diagnostics, **kwargs):
+    def process_codebase(self, codebase, license_text=False, license_diagnostics=False, license_text_diagnostics=False, **kwargs):
         """
         Post-process ``codebase`` to follow referenced filenames to license
         matches in other files.
@@ -230,7 +231,11 @@ class LicenseScanner(ScanPlugin):
             )
 
         unsorted_license_detections = [
-            unique_detection.to_dict(license_diagnostics=license_diagnostics)
+            unique_detection.to_dict(
+                include_text=license_text,
+                license_diagnostics=license_diagnostics,
+                license_text_diagnostics=license_text_diagnostics,
+            )
             for unique_detection in unique_license_detections
         ]
         codebase.attributes.license_detections.extend(
@@ -279,11 +284,14 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
                 modified = True
                 detection_modified = True
                 detections_added.extend(referenced_resource.license_detections)
-                license_match_mappings.extend(
-                    get_matches_from_detection_mappings(
-                        license_detections=referenced_resource.license_detections
-                    )
+                matches_to_extend = get_matches_from_detection_mappings(
+                    license_detections=referenced_resource.license_detections
                 )
+                populate_matches_with_path(
+                    matches=matches_to_extend,
+                    path=referenced_resource.path
+                )
+                license_match_mappings.extend(matches_to_extend)
 
         if not detection_modified:
             continue
@@ -293,7 +301,12 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             analysis=DetectionCategory.UNKNOWN_FILE_REFERENCE_LOCAL.value,
             post_scan=True,
         )
+        license_expression_spdx = build_spdx_license_expression(
+            license_expression=str(license_expression),
+            licensing=get_cache().licensing,
+        )
         license_detection_mapping["license_expression"] = str(license_expression)
+        license_detection_mapping["license_expression_spdx"] = str(license_expression_spdx)
         license_detection_mapping["detection_log"] = detection_log
         license_detection_mapping["identifier"] = get_new_identifier_from_detections(
             initial_detection=license_detection_mapping,
