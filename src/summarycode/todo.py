@@ -105,7 +105,7 @@ class AmbiguousDetectionsToDoPlugin(PostScanPlugin):
             license_text_diagnostics = kwargs.get("license_text_diagnostics")
             if not license_diagnostics or not license_text or not license_text_diagnostics:
                 usage_suggestion_message = (
-                    "The --review option, whe paired with --license option should be used with the folowing "
+                    "The --todo option, whe paired with --license option should be used with the folowing "
                     "additional CLI options for maximum benifit: [`--license-text`, `--license-text-diagnostics`,"
                     "--license-diagnostics`] as these show additional diagnostic information to help review the issues."
                 )
@@ -118,7 +118,7 @@ class AmbiguousDetectionsToDoPlugin(PostScanPlugin):
 
         if not has_packages and not has_licenses:
             usage_suggestion_message = (
-                "The --review option should be used with atleast one of the license [`--license`], "
+                "The --todo option should be used with atleast one of the license [`--license`], "
                 "or package [`--package`] options."
             )
             warnings.simplefilter('always', ToDoPluginUsageWarning)

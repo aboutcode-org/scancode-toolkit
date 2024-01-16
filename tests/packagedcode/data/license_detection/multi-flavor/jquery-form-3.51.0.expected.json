@@ -146,7 +146,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "composer.json",
+              "from_file": "jquery-form-3.51.0/composer.json",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-spdx-id",
@@ -168,7 +168,7 @@
             {
               "license_expression": "gpl-2.0",
               "spdx_license_expression": "GPL-2.0-only",
-              "from_file": "composer.json",
+              "from_file": "jquery-form-3.51.0/composer.json",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -249,7 +249,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "package.json",
+              "from_file": "jquery-form-3.51.0/package.json",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-spdx-id",
@@ -271,7 +271,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "package.json",
+              "from_file": "jquery-form-3.51.0/package.json",
               "start_line": 1,
               "end_line": 1,
               "matcher": "2-aho",
@@ -293,7 +293,7 @@
             {
               "license_expression": "gpl-1.0-plus",
               "spdx_license_expression": "GPL-1.0-or-later",
-              "from_file": "package.json",
+              "from_file": "jquery-form-3.51.0/package.json",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -315,7 +315,7 @@
             {
               "license_expression": "gpl-1.0-plus",
               "spdx_license_expression": "GPL-1.0-or-later",
-              "from_file": "package.json",
+              "from_file": "jquery-form-3.51.0/package.json",
               "start_line": 1,
               "end_line": 1,
               "matcher": "2-aho",
@@ -472,7 +472,7 @@
       "license_expression_spdx": "(MIT OR GPL-2.0-or-later) AND GPL-2.0-only",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit OR gpl-2.0-plus",
           "license_expression_spdx": "MIT OR GPL-2.0-or-later",
@@ -513,7 +513,7 @@
       "license_expression_spdx": "GPL-1.0-or-later",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-1.0-plus",
           "license_expression_spdx": "GPL-1.0-or-later",
@@ -537,7 +537,7 @@
       "license_expression_spdx": "GPL-1.0-or-later",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-1.0-plus",
           "license_expression_spdx": "GPL-1.0-or-later",
@@ -561,7 +561,7 @@
       "license_expression_spdx": "GPL-2.0-only",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0",
           "license_expression_spdx": "GPL-2.0-only",
@@ -585,7 +585,7 @@
       "license_expression_spdx": "MIT",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -609,7 +609,7 @@
       "license_expression_spdx": "MIT",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -633,7 +633,7 @@
       "license_expression_spdx": "MIT OR GPL-2.0-only",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit OR gpl-2.0",
           "license_expression_spdx": "MIT OR GPL-2.0-only",
@@ -658,7 +658,7 @@
       "license_expression_spdx": "MIT OR GPL-2.0-only",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit OR gpl-2.0",
           "license_expression_spdx": "MIT OR GPL-2.0-only",

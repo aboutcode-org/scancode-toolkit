@@ -32,17 +32,17 @@
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
           "matches": [
             {
-              "score": 80.0,
-              "start_line": 1,
-              "end_line": 1,
-              "from_file": "info/recipe.tar-extract/recipe/meta.yaml",
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "matcher": "1-hash",
               "license_expression": "unknown-license-reference",
               "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
-              "rule_identifier": "unknown_license_other_12.RULE",
+              "from_file": "package/info/recipe.tar-extract/recipe/meta.yaml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 80.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
               "rule_relevance": 80,
+              "rule_identifier": "unknown_license_other_12.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
               "matched_text": "license Other"
             }
@@ -304,17 +304,17 @@
               "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "matches": [
                 {
-                  "score": 80.0,
-                  "start_line": 1,
-                  "end_line": 1,
-                  "from_file": null,
-                  "matched_length": 2,
-                  "match_coverage": 100.0,
-                  "matcher": "1-hash",
                   "license_expression": "unknown-license-reference",
                   "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
-                  "rule_identifier": "unknown_license_other_12.RULE",
+                  "from_file": "package/info/recipe.tar-extract/recipe/meta.yaml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 80.0,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
                   "rule_relevance": 80,
+                  "rule_identifier": "unknown_license_other_12.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_license_other_12.RULE",
                   "matched_text": "license Other"
                 }

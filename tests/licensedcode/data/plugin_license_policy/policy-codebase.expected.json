@@ -5,7 +5,7 @@
       "license_expression": "broadcom-commercial",
       "license_expression_spdx": "LicenseRef-scancode-broadcom-commercial",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "broadcom-commercial",
           "license_expression_spdx": "LicenseRef-scancode-broadcom-commercial",
@@ -27,7 +27,7 @@
       "license_expression": "bsd-1988",
       "license_expression_spdx": "LicenseRef-scancode-bsd-1988",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "bsd-1988",
           "license_expression_spdx": "LicenseRef-scancode-bsd-1988",
@@ -49,7 +49,7 @@
       "license_expression": "esri-devkit",
       "license_expression_spdx": "LicenseRef-scancode-esri-devkit",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "esri-devkit",
           "license_expression_spdx": "LicenseRef-scancode-esri-devkit",
@@ -71,7 +71,7 @@
       "license_expression": "oracle-java-ee-sdk-2010",
       "license_expression_spdx": "LicenseRef-scancode-oracle-java-ee-sdk-2010",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "oracle-java-ee-sdk-2010",
           "license_expression_spdx": "LicenseRef-scancode-oracle-java-ee-sdk-2010",
@@ -93,7 +93,7 @@
       "license_expression": "rh-eula",
       "license_expression_spdx": "LicenseRef-scancode-rh-eula",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "rh-eula",
           "license_expression_spdx": "LicenseRef-scancode-rh-eula",

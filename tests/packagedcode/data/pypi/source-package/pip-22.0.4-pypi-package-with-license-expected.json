@@ -55,7 +55,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "PKG-INFO",
+              "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-spdx-id",
@@ -77,7 +77,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "PKG-INFO",
+              "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -123,7 +123,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 5,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -145,7 +145,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 3,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -167,7 +167,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 2,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -189,7 +189,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 2,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "unknown-license-reference",
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
@@ -225,7 +225,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 2,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "unknown-license-reference",
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
@@ -275,7 +275,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 2,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -297,7 +297,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",

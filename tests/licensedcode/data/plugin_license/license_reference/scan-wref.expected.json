@@ -6,7 +6,7 @@
       "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "unknown-license-reference",
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",

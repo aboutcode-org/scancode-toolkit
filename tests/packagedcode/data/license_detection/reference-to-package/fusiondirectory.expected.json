@@ -4761,7 +4761,7 @@
       "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "bsd-new",
           "license_expression_spdx": "BSD-3-Clause",
@@ -4786,7 +4786,7 @@
       "license_expression_spdx": "BSD-4-Clause",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "bsd-original",
           "license_expression_spdx": "BSD-4-Clause",
@@ -4811,7 +4811,7 @@
       "license_expression_spdx": "BSD-2-Clause",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "bsd-simplified",
           "license_expression_spdx": "BSD-2-Clause",
@@ -4836,7 +4836,7 @@
       "license_expression_spdx": "LicenseRef-scancode-free-unknown",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "free-unknown",
           "license_expression_spdx": "LicenseRef-scancode-free-unknown",
@@ -4861,7 +4861,7 @@
       "license_expression_spdx": "LicenseRef-scancode-free-unknown",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "free-unknown",
           "license_expression_spdx": "LicenseRef-scancode-free-unknown",
@@ -4886,7 +4886,7 @@
       "license_expression_spdx": "GPL-2.0-or-later",
       "detection_count": 44,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0-plus",
           "license_expression_spdx": "GPL-2.0-or-later",
@@ -4911,7 +4911,7 @@
       "license_expression_spdx": "GPL-2.0-or-later",
       "detection_count": 42,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0-plus",
           "license_expression_spdx": "GPL-2.0-or-later",
@@ -4939,7 +4939,7 @@
         "possible-false-positive",
         "not-license-clues-as-more-detections-present"
       ],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0-plus",
           "license_expression_spdx": "GPL-2.0-or-later",
@@ -4964,7 +4964,7 @@
       "license_expression_spdx": "GPL-2.0-or-later AND LicenseRef-scancode-free-unknown",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0-plus",
           "license_expression_spdx": "GPL-2.0-or-later",
@@ -5005,7 +5005,7 @@
       "license_expression_spdx": "GPL-2.0-or-later AND LicenseRef-scancode-free-unknown",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0-plus",
           "license_expression_spdx": "GPL-2.0-or-later",
@@ -5046,7 +5046,7 @@
       "license_expression_spdx": "GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0-plus",
           "license_expression_spdx": "GPL-2.0-or-later",
@@ -5407,7 +5407,7 @@
       "license_expression_spdx": "LGPL-3.0-or-later",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "lgpl-3.0-plus",
           "license_expression_spdx": "LGPL-3.0-or-later",
@@ -5435,7 +5435,7 @@
         "possible-false-positive",
         "not-license-clues-as-more-detections-present"
       ],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -5463,7 +5463,7 @@
         "possible-false-positive",
         "not-license-clues-as-more-detections-present"
       ],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "public-domain",
           "license_expression_spdx": "LicenseRef-scancode-public-domain",

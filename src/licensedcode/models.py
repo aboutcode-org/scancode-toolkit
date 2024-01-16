@@ -2128,6 +2128,8 @@ class Rule(BasicRule):
 
     @property
     def pysafe_expression(self):
+        """
+        Return a python safe identifier, for use in rule identifiers"""
         return python_safe_name(self.license_expression)
 
     def load_data(self, rule_file):

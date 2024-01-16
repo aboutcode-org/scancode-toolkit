@@ -5,7 +5,7 @@
       "license_expression": "example1 AND example2",
       "license_expression_spdx": "scancode-example1 AND scancode-example2",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "example1",
           "license_expression_spdx": "scancode-example1",

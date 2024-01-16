@@ -38,6 +38,8 @@ from packagedcode.models import PackageData
 from packagedcode.models import PackageWithResources
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
+TRACE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
+TRACE_LICENSE = os.environ.get('SCANCODE_DEBUG_PACKAGE_LICENSE', False)
 
 
 def logger_debug(*args):
@@ -46,7 +48,7 @@ def logger_debug(*args):
 
 logger = logging.getLogger(__name__)
 
-if TRACE:
+if TRACE or TRACE_LICENSE or TRACE_ASSEMBLY:
     import sys
 
     logging.basicConfig(stream=sys.stdout)
@@ -185,7 +187,7 @@ class PackageScanner(ScanPlugin):
             system=system_package,
         )
 
-    def process_codebase(self, codebase, strip_root=False, license_text=False, license_diagnostics=False, license_text_diagnostics=False, **kwargs):
+    def process_codebase(self, codebase, strip_root=False, **kwargs):
         """
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data
@@ -199,6 +201,20 @@ class PackageScanner(ScanPlugin):
         # These steps add proper license detections to package_data and hence
         # this is performed before top level packages creation
         for resource in codebase.walk(topdown=False):
+            # populate `from_file` attribute in matches
+            for package_data in resource.package_data:
+                for detection in package_data['license_detections']:
+                    populate_matches_with_path(
+                        matches=detection['matches'],
+                        path=resource.path,
+                    )
+
+                for detection in package_data['other_license_detections']:
+                    populate_matches_with_path(
+                        matches=detection['matches'],
+                        path=resource.path,
+                    )
+
             if not has_licenses:
                 #TODO: Add the steps where we detect licenses from files for only a package scan
                 # in the multiprocessing get_package_data API function
@@ -207,7 +223,7 @@ class PackageScanner(ScanPlugin):
             # If we don't detect license in package_data but there is license detected in file
             # we add the license expression from the file to a package
             modified = add_license_from_file(resource, codebase)
-            if TRACE and modified:
+            if TRACE_LICENSE and modified:
                 logger_debug(f'packagedcode: process_codebase: add_license_from_file: modified: {modified}')
 
             if codebase.has_single_resource:
@@ -216,17 +232,18 @@ class PackageScanner(ScanPlugin):
             # If there is referenced files in a extracted license statement, we follow
             # the references, look for license detections and add them back
             modified = list(add_referenced_license_matches_for_package(resource, codebase))
-            if TRACE and modified:
+            if TRACE_LICENSE and modified:
                 logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_for_package: modified: {modified}')
 
             # If there is a LICENSE file on the same level as the manifest, and no license
             # is detected in the package_data, we add the license from the file
             modified = add_license_from_sibling_file(resource, codebase)
-            if TRACE and modified:
+            if TRACE_LICENSE and modified:
                 logger_debug(f'packagedcode: process_codebase: add_license_from_sibling_file: modified: {modified}')
 
         # Create codebase-level packages and dependencies
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
+        #raise Exception()
 
         if has_licenses:
             # This step is dependent on top level packages
@@ -234,7 +251,7 @@ class PackageScanner(ScanPlugin):
                 # If there is a unknown reference to a package we add the license
                 # from the package license detection
                 modified = list(add_referenced_license_detection_from_package(resource, codebase))
-                if TRACE and modified:
+                if TRACE_LICENSE and modified:
                     logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_from_package: modified: {modified}')
 
 
@@ -244,7 +261,7 @@ def add_license_from_file(resource, codebase):
     and the file has license detections, and if so, populate the package_data license
     expression and detection fields from the file license.
     """
-    if TRACE:
+    if TRACE_LICENSE:
         logger_debug(f'packagedcode.plugin_package: add_license_from_file: resource: {resource.path}')
 
     if not resource.is_file:
@@ -252,7 +269,7 @@ def add_license_from_file(resource, codebase):
 
     license_detections_file = resource.license_detections
 
-    if TRACE:
+    if TRACE_LICENSE:
         logger_debug(f'add_license_from_file: license_detections_file: {license_detections_file}')
     if not license_detections_file:
         return
@@ -263,7 +280,7 @@ def add_license_from_file(resource, codebase):
 
     for pkg in package_data:
         license_detections_pkg = pkg["license_detections"]
-        if TRACE:
+        if TRACE_LICENSE:
             logger_debug(f'add_license_from_file: license_detections_pkg: {license_detections_pkg}')
 
         if not license_detections_pkg:
@@ -329,16 +346,7 @@ def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=F
         **kwargs
     )
 
-    package_mappings = []
-    for package in packages:
-        for detection in package.license_detections:
-            populate_matches_with_path(
-                matches=detection["matches"],
-                path=package.datafile_paths[0],
-            )
-        package_mappings.append(package.to_dict())
-
-    codebase.attributes.packages.extend(package_mappings)
+    codebase.attributes.packages.extend(package.to_dict() for package in packages)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
 
 
@@ -361,20 +369,20 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
         if resource.path in seen_resource_paths:
             continue
 
-        if TRACE:
+        if TRACE_ASSEMBLY:
             logger_debug('get_package_and_deps: location:', resource.location)
 
         for package_data in resource.package_data:
             try:
                 package_data = PackageData.from_dict(mapping=package_data)
 
-                if TRACE:
+                if TRACE_ASSEMBLY:
                     logger_debug('  get_package_and_deps: package_data:', package_data)
 
                 # Find a handler for this package datasource to assemble collect
                 # packages and deps
                 handler = get_package_handler(package_data)
-                if TRACE:
+                if TRACE_ASSEMBLY:
                     logger_debug('  get_package_and_deps: handler:', handler)
 
                 items = handler.assemble(
@@ -385,7 +393,7 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                 )
 
                 for item in items:
-                    if TRACE:
+                    if TRACE_ASSEMBLY:
                         logger_debug('    get_package_and_deps: item:', item)
 
                     if isinstance(item, Package):
@@ -404,7 +412,7 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                     elif isinstance(item, Resource):
                         seen_resource_paths.add(item.path)
 
-                        if TRACE:
+                        if TRACE_ASSEMBLY:
                             logger_debug(
                                 '    get_package_and_deps: seen_resource_path:',
                                 seen_resource_paths,

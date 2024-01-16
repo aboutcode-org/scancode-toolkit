@@ -165,14 +165,15 @@ class LicenseDetection:
     license_expression = attr.ib(
         default=None,
         metadata=dict(
-            help='Full license expression string '
-            'using the SPDX license expression syntax and ScanCode license keys.')
+            help='A license expression string using the SPDX license expression'
+            ' syntax and ScanCode license keys, the effective license expression'
+            ' for this license detection.')
     )
 
     license_expression_spdx = attr.ib(
         default=None,
         metadata=dict(
-            help='Full license expression string with SPDX license keys.')
+            help='SPDX license expression string with SPDX ids.')
     )
 
     matches = attr.ib(
@@ -955,7 +956,7 @@ class UniqueDetection:
             return True
 
         detection_mapping = attr.asdict(self, filter=dict_fields)
-        detection_mapping["sample_matches"] = [
+        detection_mapping["reference_matches"] = [
             match.to_dict(
                 include_text=include_text,
                 license_text_diagnostics=license_text_diagnostics,

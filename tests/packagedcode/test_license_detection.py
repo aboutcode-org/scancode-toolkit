@@ -19,7 +19,7 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def test_license_reference_detection_in_manifest_unknown():
+def test_license_reference_detection_in_manifest_unknown_with_license():
     test_dir = test_env.get_test_loc('license_detection/reference-at-manifest/flutter_playtabs_bridge/', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [

@@ -239,7 +239,7 @@
       "detection_log": [
         "from-package-file"
       ],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -262,7 +262,7 @@
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -285,7 +285,7 @@
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -308,7 +308,7 @@
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -331,7 +331,7 @@
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -354,7 +354,7 @@
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",

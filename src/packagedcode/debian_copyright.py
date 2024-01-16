@@ -1259,7 +1259,6 @@ class DebianLicensing:
                     matches=text_matches, reference_match=common_license_match
                 ):
                     # TODO: Add unknown matches if matches are not consistent
-                    # raise Exception(f'Inconsistent Licenses: {common_license_match} {matches}')
                     pass
 
                 # TODO: Add unknown matches if matches are weak

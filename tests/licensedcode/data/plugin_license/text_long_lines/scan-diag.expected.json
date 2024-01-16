@@ -6,7 +6,7 @@
       "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
           "license_expression_spdx": "GPL-2.0-only WITH Linux-syscall-note OR Linux-OpenIB",
@@ -31,7 +31,7 @@
       "license_expression_spdx": "Unlicense",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "unlicense",
           "license_expression_spdx": "Unlicense",

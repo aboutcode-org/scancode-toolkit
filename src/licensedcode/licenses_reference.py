@@ -97,6 +97,7 @@ def collect_license_and_rule_references(codebase, include_packages=True, include
         if TRACE:
             logger_debug(f'collect_references_from_packages: license keys: {pks}')
             logger_debug(f'collect_references_from_packages: rules by id: {prules}')
+        license_keys.update(pks)
         rules_by_identifier.update(prules)
 
     if include_files:
