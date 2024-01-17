@@ -1,8 +1,16 @@
 ---
-license_expression: other-permissive
-is_license_text: yes
-is_deprecated: yes
-notes: This is now a new license at owl-0.9.4.LICENSE
+key: owl-0.9.4
+short_name: OWL-0.9.4
+name: Open Works License v0.9.4
+category: Permissive
+owner: coil.apotheon.org
+homepage_url: https://owl.apotheon.org/
+spdx_license_key: LicenseRef-scancode-owl-0.9.4
+text_urls:
+    - http://owl.apotheon.org/plaintext
+faq_url: http://owl.apotheon.org/about
+other_urls:
+    - http://owl.apotheon.org/notice
 ---
 
 # Open Works License
