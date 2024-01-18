@@ -5,6 +5,6 @@ ignorable_urls:
     - https://opensource.org/licenses/Apache-2.0
 ---
 
-<name>Apache-2.0
+<name>{{Apache-2.0}}
       <url>https://opensource.org/licenses/Apache-2.0
       <comments>Apache License, Version 2.0

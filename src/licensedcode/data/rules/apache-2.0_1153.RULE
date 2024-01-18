@@ -8,8 +8,8 @@ ignorable_urls:
 <licenses>
     <license>
       <name>
-        All files contained in this JAR are licensed under the Apache
-         2.0 license, unless noted differently in their source (see
+        All files contained in this JAR are licensed under the {{Apache
+         2.0}} license, unless noted differently in their source (see
          swing2swt).
       </name>
       <url>
