@@ -221,30 +221,35 @@
       "license_detections": [
         {
           "license_expression": "public-domain AND gpl-1.0-plus",
+          "license_expression_spdx": "LicenseRef-scancode-public-domain AND GPL-1.0-or-later",
           "matches": [
             {
-              "score": 70.0,
+              "license_expression": "public-domain",
+              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "from_file": "maven2/aopalliance-1.0/aopalliance-1.0.pom",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "2-aho",
+              "score": 70.0,
               "matched_length": 2,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "public-domain",
-              "rule_identifier": "public-domain_bare_words.RULE",
               "rule_relevance": 70,
+              "rule_identifier": "public-domain_bare_words.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
               "matched_text": "- name: Public Domain"
             },
             {
-              "score": 50.0,
+              "license_expression": "gpl-1.0-plus",
+              "spdx_license_expression": "GPL-1.0-or-later",
+              "from_file": "maven2/aopalliance-1.0/aopalliance-1.0.pom",
               "start_line": 2,
               "end_line": 2,
+              "matcher": "2-aho",
+              "score": 50.0,
               "matched_length": 1,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "gpl-1.0-plus",
-              "rule_identifier": "gpl_bare_word_only.RULE",
               "rule_relevance": 50,
+              "rule_identifier": "gpl_bare_word_only.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
               "matched_text": "- name: GPL"
             }
@@ -750,22 +755,25 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
-              "start_line": 1,
-              "end_line": 1,
-              "matched_length": 8,
-              "match_coverage": 100.0,
-              "matcher": "2-aho",
               "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_1316.RULE",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "maven2/commons-validator-1.2.0/commons-validator-1.2.0.pom",
+              "start_line": 1,
+              "end_line": 2,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 11,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1316.RULE",
-              "matched_text": "- name: The Apache Software License, Version 2.0"
+              "rule_identifier": "apache-2.0_1321.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1321.RULE",
+              "matched_text": "- name: The Apache Software License, Version 2.0\n  url: /LICENSE.txt"
             }
           ],
-          "identifier": "apache_2_0-c3b9cbd8-09fc-8aa5-f48b-917b9001c088"
+          "identifier": "apache_2_0-0e1a671d-e78a-851c-343d-1420e4bbc821"
         }
       ],
       "other_license_expression": null,
@@ -979,17 +987,20 @@
       "license_detections": [
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "maven2/findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 3,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit_1160.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "mit_1160.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1160.RULE",
               "matched_text": "license - name: MIT"
             }
@@ -1151,30 +1162,35 @@
       "license_detections": [
         {
           "license_expression": "epl-1.0",
+          "license_expression_spdx": "EPL-1.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "epl-1.0",
+              "spdx_license_expression": "EPL-1.0",
+              "from_file": "maven2/foo-pom/foo-pom.xml",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 6,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "epl-1.0",
-              "rule_identifier": "epl-1.0_4.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "epl-1.0_4.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
               "matched_text": "- name: Eclipse Public License - v 1.0"
             },
             {
-              "score": 100.0,
+              "license_expression": "epl-1.0",
+              "spdx_license_expression": "EPL-1.0",
+              "from_file": "maven2/foo-pom/foo-pom.xml",
               "start_line": 2,
               "end_line": 2,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 8,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "epl-1.0",
-              "rule_identifier": "epl-1.0.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "epl-1.0.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
               "matched_text": "  url: http://www.eclipse.org/legal/epl-v10.html"
             }
@@ -1365,30 +1381,35 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later AND LGPL-2.1-or-later",
           "matches": [
             {
-              "score": 75.0,
+              "license_expression": "lgpl-2.0-plus",
+              "spdx_license_expression": "LGPL-2.0-or-later",
+              "from_file": "maven2/jrecordbind-2.3.4/jrecordbind-2.3.4.pom",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "2-aho",
+              "score": 75.0,
               "matched_length": 1,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "lgpl-2.0-plus",
-              "rule_identifier": "lgpl_bare_single_word.RULE",
               "rule_relevance": 75,
+              "rule_identifier": "lgpl_bare_single_word.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
               "matched_text": "- name: LGPL"
             },
             {
-              "score": 100.0,
+              "license_expression": "lgpl-2.1-plus",
+              "spdx_license_expression": "LGPL-2.1-or-later",
+              "from_file": "maven2/jrecordbind-2.3.4/jrecordbind-2.3.4.pom",
               "start_line": 2,
               "end_line": 2,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 7,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "lgpl-2.1-plus",
-              "rule_identifier": "lgpl_7.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "lgpl_7.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_7.RULE",
               "matched_text": "  url: http://www.gnu.org/copyleft/lesser.html"
             }
@@ -1454,17 +1475,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "maven2/log4j/log4j-pom.xml",
               "start_line": 1,
               "end_line": 2,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 18,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_40.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_40.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_40.RULE",
               "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
@@ -1522,30 +1546,35 @@
       "license_detections": [
         {
           "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "lgpl-2.0-plus",
+              "spdx_license_expression": "LGPL-2.0-or-later",
+              "from_file": "maven2/logback-access/logback-access.pom",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "lgpl-2.0-plus",
-              "rule_identifier": "lgpl-2.0-plus_87.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "lgpl-2.0-plus_87.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
               "matched_text": "- name: GNU Lesser General Public License"
             },
             {
-              "score": 100.0,
+              "license_expression": "lgpl-2.0-plus",
+              "spdx_license_expression": "LGPL-2.0-or-later",
+              "from_file": "maven2/logback-access/logback-access.pom",
               "start_line": 2,
               "end_line": 2,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 7,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "lgpl-2.0-plus",
-              "rule_identifier": "lgpl_3.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "lgpl_3.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
               "matched_text": "  url: http://www.gnu.org/licenses/lgpl.html"
             }
@@ -2006,17 +2035,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "maven2/spring-2.5.4/spring-2.5.4.pom",
               "start_line": 1,
               "end_line": 2,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 18,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_40.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_40.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_40.RULE",
               "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
@@ -2082,17 +2114,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "maven2/spring-orm-2.5.3/spring-orm-2.5.3.pom",
               "start_line": 1,
               "end_line": 2,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 18,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_40.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_40.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_40.RULE",
               "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
@@ -2158,17 +2193,20 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "maven2/spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom",
               "start_line": 1,
               "end_line": 2,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 18,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_40.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_40.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_40.RULE",
               "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
@@ -6618,30 +6656,35 @@
           "license_detections": [
             {
               "license_expression": "public-domain AND gpl-1.0-plus",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain AND GPL-1.0-or-later",
               "matches": [
                 {
-                  "score": 70.0,
+                  "license_expression": "public-domain",
+                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "from_file": "maven2/aopalliance-1.0/aopalliance-1.0.pom",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 70.0,
                   "matched_length": 2,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "public-domain",
-                  "rule_identifier": "public-domain_bare_words.RULE",
                   "rule_relevance": 70,
+                  "rule_identifier": "public-domain_bare_words.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
                   "matched_text": "- name: Public Domain"
                 },
                 {
-                  "score": 50.0,
+                  "license_expression": "gpl-1.0-plus",
+                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "from_file": "maven2/aopalliance-1.0/aopalliance-1.0.pom",
                   "start_line": 2,
                   "end_line": 2,
+                  "matcher": "2-aho",
+                  "score": 50.0,
                   "matched_length": 1,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "gpl-1.0-plus",
-                  "rule_identifier": "gpl_bare_word_only.RULE",
                   "rule_relevance": 50,
+                  "rule_identifier": "gpl_bare_word_only.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
                   "matched_text": "- name: GPL"
                 }
@@ -7300,22 +7343,25 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
-                  "start_line": 1,
-                  "end_line": 1,
-                  "matched_length": 8,
-                  "match_coverage": 100.0,
-                  "matcher": "2-aho",
                   "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_1316.RULE",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "maven2/commons-validator-1.2.0/commons-validator-1.2.0.pom",
+                  "start_line": 1,
+                  "end_line": 2,
+                  "matcher": "1-hash",
+                  "score": 100.0,
+                  "matched_length": 11,
+                  "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1316.RULE",
-                  "matched_text": "- name: The Apache Software License, Version 2.0"
+                  "rule_identifier": "apache-2.0_1321.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1321.RULE",
+                  "matched_text": "- name: The Apache Software License, Version 2.0\n  url: /LICENSE.txt"
                 }
               ],
-              "identifier": "apache_2_0-c3b9cbd8-09fc-8aa5-f48b-917b9001c088"
+              "identifier": "apache_2_0-0e1a671d-e78a-851c-343d-1420e4bbc821"
             }
           ],
           "other_license_expression": null,
@@ -7870,17 +7916,20 @@
           "license_detections": [
             {
               "license_expression": "mit",
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "maven2/findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 3,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "mit",
-                  "rule_identifier": "mit_1160.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "mit_1160.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1160.RULE",
                   "matched_text": "license - name: MIT"
                 }
@@ -8364,30 +8413,35 @@
           "license_detections": [
             {
               "license_expression": "epl-1.0",
+              "license_expression_spdx": "EPL-1.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "epl-1.0",
+                  "spdx_license_expression": "EPL-1.0",
+                  "from_file": "maven2/foo-pom/foo-pom.xml",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 6,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "epl-1.0",
-                  "rule_identifier": "epl-1.0_4.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "epl-1.0_4.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
                   "matched_text": "- name: Eclipse Public License - v 1.0"
                 },
                 {
-                  "score": 100.0,
+                  "license_expression": "epl-1.0",
+                  "spdx_license_expression": "EPL-1.0",
+                  "from_file": "maven2/foo-pom/foo-pom.xml",
                   "start_line": 2,
                   "end_line": 2,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 8,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "epl-1.0",
-                  "rule_identifier": "epl-1.0.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "epl-1.0.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
                   "matched_text": "  url: http://www.eclipse.org/legal/epl-v10.html"
                 }
@@ -8810,30 +8864,35 @@
           "license_detections": [
             {
               "license_expression": "lgpl-2.0-plus AND lgpl-2.1-plus",
+              "license_expression_spdx": "LGPL-2.0-or-later AND LGPL-2.1-or-later",
               "matches": [
                 {
-                  "score": 75.0,
+                  "license_expression": "lgpl-2.0-plus",
+                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "from_file": "maven2/jrecordbind-2.3.4/jrecordbind-2.3.4.pom",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 75.0,
                   "matched_length": 1,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "lgpl-2.0-plus",
-                  "rule_identifier": "lgpl_bare_single_word.RULE",
                   "rule_relevance": 75,
+                  "rule_identifier": "lgpl_bare_single_word.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
                   "matched_text": "- name: LGPL"
                 },
                 {
-                  "score": 100.0,
+                  "license_expression": "lgpl-2.1-plus",
+                  "spdx_license_expression": "LGPL-2.1-or-later",
+                  "from_file": "maven2/jrecordbind-2.3.4/jrecordbind-2.3.4.pom",
                   "start_line": 2,
                   "end_line": 2,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 7,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "lgpl-2.1-plus",
-                  "rule_identifier": "lgpl_7.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "lgpl_7.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_7.RULE",
                   "matched_text": "  url: http://www.gnu.org/copyleft/lesser.html"
                 }
@@ -8973,17 +9032,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "maven2/log4j/log4j-pom.xml",
                   "start_line": 1,
                   "end_line": 2,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 18,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_40.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_40.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_40.RULE",
                   "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
@@ -9135,30 +9197,35 @@
           "license_detections": [
             {
               "license_expression": "lgpl-2.0-plus",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "lgpl-2.0-plus",
+                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "from_file": "maven2/logback-access/logback-access.pom",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 5,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "lgpl-2.0-plus",
-                  "rule_identifier": "lgpl-2.0-plus_87.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "lgpl-2.0-plus_87.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
                   "matched_text": "- name: GNU Lesser General Public License"
                 },
                 {
-                  "score": 100.0,
+                  "license_expression": "lgpl-2.0-plus",
+                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "from_file": "maven2/logback-access/logback-access.pom",
                   "start_line": 2,
                   "end_line": 2,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 7,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "lgpl-2.0-plus",
-                  "rule_identifier": "lgpl_3.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "lgpl_3.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
                   "matched_text": "  url: http://www.gnu.org/licenses/lgpl.html"
                 }
@@ -10426,17 +10493,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "maven2/spring-2.5.4/spring-2.5.4.pom",
                   "start_line": 1,
                   "end_line": 2,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 18,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_40.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_40.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_40.RULE",
                   "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
@@ -11186,17 +11256,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "maven2/spring-orm-2.5.3/spring-orm-2.5.3.pom",
                   "start_line": 1,
                   "end_line": 2,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 18,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_40.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_40.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_40.RULE",
                   "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
@@ -11456,17 +11529,20 @@
           "license_detections": [
             {
               "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "maven2/spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom",
                   "start_line": 1,
                   "end_line": 2,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 18,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "apache-2.0",
-                  "rule_identifier": "apache-2.0_40.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "apache-2.0_40.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_40.RULE",
                   "matched_text": "- name: The Apache Software License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }

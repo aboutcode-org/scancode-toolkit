@@ -1,0 +1,130 @@
+---
+key: responsible-ai-source-1.1
+short_name: Reponsible AI Source Code License v1.1
+name: Reponsible AI Source Code License v1.1
+category: Proprietary Free
+owner: Responsible AI
+homepage_url: https://www.licenses.ai/source-code-license
+spdx_license_key: LicenseRef-scancode-responsible-ai-source-1.1
+ignorable_urls:
+    - http://licenses.ai/
+---
+
+Responsible AI SOURCE CODE License
+
+Version 1.1, Nov 20, 2022
+
+http://licenses.ai/
+
+TERMS AND CONDITIONS. 
+
+The Responsible Artificial Intelligence Source Code License (“License”) governs the use of the accompanying software. If you access or use the software, you accept the License.  If you do not accept the License, do not access or use the software.    
+
+1.         Definitions.
+
+As used in this License, the following capitalized terms have the following meanings: 
+
+(i) "License" means the terms and conditions for use, reproduction, and distribution as defined by Sections one (1) through eight (8) of this document.  
+
+(ii) "Licensor" means the copyright owner or legal entity authorized by the copyright owner that is granting the License.
+
+(iii) "You" (or "Your") means an individual or legal entity exercising permissions granted by this License.
+
+(iv) The terms “reproduce”, “reproduction”, “derivative works”, and “distribution” have the same meaning here as under U.S. Copyright Law. 
+
+(v) “Contribution” means the original software, additions to the original software, modifications to the original software, or derivative works of the original software.  
+
+(vi) "Contributor" means any person or Licensor who provides a Contribution.  
+
+ 
+
+2.         Grant of Rights.
+
+Subject to this License, each Contributor grants You a non-exclusive, worldwide, royalty-free copyright license to reproduce its Contribution, prepare derivative works of its Contribution, and distribute its Contribution or any derivative works of its Contribution that You create.
+
+
+3.         Restrictions. 
+
+
+1.         If You distribute any portion of the Contribution, You must include a complete copy of this License with the distribution; and
+
+
+2.         You agree that the Contribution, or any derivative work of the Contribution, will not be used by You or any third party subject to Your control, to:
+
+a.     Surveillance
+
+ i.    Detect or infer any legally protected class or aspect of any person, as defined by U.S. Federal Law; and
+
+ ii.   Detect or infer aspects and/or features of an identity any person, such as name, family name, address, gender, sexual orientation, race, religion, age, location (at any geographical level), skin color, society or political affiliations, employment status and/or employment history, and health and medical conditions.  Age and medical conditions may be inferred solely for the purpose of improving software/hardware accessibility and such data should not be cached or stored without the explicit and time limited permission of Licensor    
+
+
+b.     Computer Generated Media
+
+ i.  Synthesize  and/or modify audio-realistic and/or video-realistic representations (indistinguishable from photo/video recordings) of people and events, without including a caption, watermark, and/or metadata file indicating that the audio-realistic and/or video-realistic representations were generated using the Contribution.
+
+
+c.     Health Care
+
+ i.   Predict the likelihood that any person will request to file an insurance claim;
+
+ ii.  Determine an insurance premium or deny insurance applications or claims; 
+
+ iii.  Predict  the likelihood that any person request to file an insurance claim based on determining a lifestyle of a person, medical-test reports, demographic details of a person and/or online activity of a person;
+
+ iv.  Determine  an insurance premium or deny insurance applications or claims based on data determining a lifestyle of a person, medical-test reports,  demographic details of a person, and/or online activity of a person;
+
+ v.   Deny  an insurance claim based on any predicted likelihood of the possibility of insurance fraud; and
+
+ vi.  Diagnose a medical condition without human oversight.    
+
+d.     Criminal
+
+ i.    Predict the likelihood that a crime will be committed by any person;
+
+ ii.    Predict the likelihood, of any person, being a criminal or having committed a  crime;
+
+ iii.   Predict the likelihood, of any person, being a criminal, based on the person’s facial attributes or another person’s facial attributes;
+
+iv.    Predict the likelihood, of any person, having committed a crime, based on the person’s facial attributes or another person’s facial attributes;  
+
+v.    Predict  the likelihood that a crime will be committed by any person, based on the person’s facial attributes or another person’s facial attributes;
+
+vi.   Predict a likelihood of a crime being committed by any person, based on evidence collected, facial and emotion analysis, or other such features    
+
+vii.  Use personal data and/or personal characteristics or features such as: name,  family name, address, gender, sexual orientation, race, religion, age,  location (at any geographical level), skin color, society or political affiliations, employment status and/or history, health and medical conditions (including physical, mental), family history, social media and publicly available data, image or video analysis of an individual or a group(s) of individuals, heart-rate, perspiration, breathing, and brain imaging and other metabolic data to predict the likelihood a person will engage in criminal behavior; and
+
+viii.  Predict the likelihood of a person being a criminal based on the        person or other User’s facial attributes.
+
+ 3. Restrictions referenced in Section 3.2 MUST be included as an enforceable provision by You in any type of legal agreement governing the use and/or distribution of the Work or any Derivative Works, and You shall give notice to subsequent users You Distribute to, that the Work or any Derivative Works are subject to Section 3.2. You shall require all of Your users who use the Work or any Derivative Works to comply with the terms of Section 3.2.
+
+4.         Termination
+
+Upon the occurrence of any of the restricted uses listed above in “3. Restrictions”, Licensor shall have the right to:
+
+(i) terminate this License Agreement and disable any Contribution either by pre-installed or then installed disabling instructions, and to take immediate possession of the Contribution and all copies wherever located, without demand or notice;
+
+(ii) require You to immediately return to Licensor all copies of the Contribution, or upon request by Licensor destroy the Contribution and all copies and certify in writing that they have been destroyed;   
+
+(iii) for a period of 1 year, provide a prominent notice on the Licensor’s website indicating that this License was violated by the Licensor;
+
+(iv) release/delete any and all data collected through use of the Contribution; and    
+
+(v) notify all parties affected by use of the Contribution.      
+
+Termination of this License Agreement shall be in addition to and not in lieu of any other remedies available to Licensor.  Licensor expressly reserves the right to pursue all legal and equitable remedies available under the law.  
+
+ 
+5.         Disclaimer of Warranty.
+
+Unless required by applicable law or agreed to in writing, Licensor provides any Contribution (and each Contributor provides its Contributions) on an "As-Is" basis, without WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing a Contribution and assume any risks associated with Your exercise of permissions under this License.
+
+
+6.         Limitation of Liability.
+
+In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use any Contribution (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.
+
+7.         Accepting Warranty or Additional Liability.
+
+While redistributing the Contribution, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.
+
+END OF TERMS AND CONDITIONS

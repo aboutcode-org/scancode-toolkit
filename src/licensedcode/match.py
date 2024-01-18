@@ -223,6 +223,17 @@ class LicenseMatch(object):
         metadata=dict(help='match end line, 1-based')
     )
 
+    from_file = attr.ib(
+        default=None,
+        metadata=dict(
+            help='File path where this LicenseMatch was originally detected. '
+                 'This needs to be stored as we bring over LicenseMatches from '
+                 'other files into LicenseDetection objects now, and we need '
+                 'to track the origin for these to be able to determine easily '
+                 'which are native to that file.'
+        )
+    )
+
     query = attr.ib(
         default=None,
         metadata=dict(help='Query object for this match')
@@ -722,7 +733,7 @@ class LicenseMatch(object):
         highlight=True,
         highlight_matched='{}',
         highlight_not_matched='[{}]',
-        _usecache=True
+        _usecache=True,
     ):
         """
         Return the matched text for this match or an empty string if no query
@@ -762,39 +773,43 @@ class LicenseMatch(object):
         spdx_license_url=SPDX_LICENSE_URL,
         include_text=False,
         license_text_diagnostics=False,
-        whole_lines=True,
+        whole_lines=False,
+        file_path=None,
     ):
         """
         Return a "result" scan data built from a LicenseMatch object.
         """
         matched_text = None
+        matched_text_diagnostics = None
+
         if include_text:
             if license_text_diagnostics:
-                matched_text = self.matched_text(whole_lines=False, highlight=True)
+                matched_text_diagnostics = self.matched_text(whole_lines=False, highlight=True)
+
+            if whole_lines:
+                matched_text = self.matched_text(whole_lines=True, highlight=False)
             else:
-                if whole_lines:
-                    matched_text = self.matched_text(whole_lines=True, highlight=False)
-                else:
-                    matched_text = self.matched_text(whole_lines=False, highlight=False)
+                matched_text = self.matched_text(whole_lines=False, highlight=False)
 
         result = {}
 
-        # Detection Level Information
-        result['score'] = self.score()
+        result['license_expression'] = self.rule.license_expression
+        result['spdx_license_expression'] = self.rule.spdx_license_expression()
+        result['from_file'] = file_path
         result['start_line'] = self.start_line
         result['end_line'] = self.end_line
+        result['matcher'] = self.matcher
+        result['score'] = self.score()
         result['matched_length'] = self.len()
         result['match_coverage'] = self.coverage()
-        result['matcher'] = self.matcher
-
-        # LicenseDB Level Information (Rule that was matched)
-        result['license_expression'] = self.rule.license_expression
-        result['rule_identifier'] = self.rule.identifier
         result['rule_relevance'] = self.rule.relevance
+        result['rule_identifier'] = self.rule.identifier
         result['rule_url'] = self.rule.rule_url
 
         if include_text:
             result['matched_text'] = matched_text
+        if license_text_diagnostics:
+            result['matched_text_diagnostics'] = matched_text_diagnostics
         return result
 
     def get_highlighted_text(self, trace=TRACE_HIGHLIGHTED_TEXT):

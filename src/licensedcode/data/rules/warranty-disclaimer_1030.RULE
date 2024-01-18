@@ -1,0 +1,10 @@
+---
+license_expression: warranty-disclaimer
+is_license_notice: yes
+minimum_coverage: 50
+---
+
+Required Disclaimer: Hewlett-Packard makes no implied or expressed
+warranties about this code nor any promises to maintain or test it
+in any way.  This copy of this snapshot is no longer the property
+of Hewlett-Packard.

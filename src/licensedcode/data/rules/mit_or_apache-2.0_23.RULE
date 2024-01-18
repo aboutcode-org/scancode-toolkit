@@ -1,0 +1,9 @@
+---
+license_expression: mit OR apache-2.0
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg
+---
+
+[![License](https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg)]

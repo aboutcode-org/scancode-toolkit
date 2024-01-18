@@ -1,0 +1,10 @@
+---
+license_expression: unknown-license-reference
+is_license_reference: yes
+referenced_filenames:
+    - LICENSE
+notes: Seen in https://epics.anl.gov/license/LICENSE.h
+---
+
+This file is distributed subject to a Software License Agreement found
+in the file LICENSE that is included with this distribution.

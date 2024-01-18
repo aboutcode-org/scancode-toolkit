@@ -1,0 +1,18 @@
+---
+license_expression: boost-original
+is_license_text: yes
+minimum_coverage: 95
+---
+
+Permission to copy, use, modify, sell
+and distribute this software is granted provided this copyright notice
+appears in all copies. This software is provided "as is" without express or
+implied warranty, and with no claim as to its suitability for any purpose.
+
+Incorporated into the boost rational number library, and modified and
+extended, by Paul Moore, with permission.
+
+boostinspect:nolicense (don't complain about the lack of a Boost license)
+(Stephen Silver hasn't been contacted yet for permission to change the
+license.  If Paul Moore's permission is also needed, then that's a problem
+since he hasn't been in contact for years.)

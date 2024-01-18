@@ -1,0 +1,9 @@
+---
+license_expression: afl-3.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE_AFL3.txt
+---
+
+Licensed under the Academic Free License version 3.0.  See LICENSE_AFL3.txt

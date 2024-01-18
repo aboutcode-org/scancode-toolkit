@@ -1,0 +1,11 @@
+---
+license_expression: afl-3.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE_AFL3.txt
+ignorable_urls:
+    - http://www.opensource.org/licenses/academic.php
+---
+
+Licensed under the Academic Free License version 3.0.  See LICENSE_AFL3.txt
+or http://www.opensource.org/licenses/academic.php for a copy of the license

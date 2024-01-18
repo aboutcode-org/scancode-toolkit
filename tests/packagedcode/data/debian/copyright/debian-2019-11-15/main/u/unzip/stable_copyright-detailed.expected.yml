@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: info-zip-2009-01
+    license_expression_spdx: LicenseRef-scancode-info-zip-2009-01
     matches:
-      - score: '100.0'
+      - license_expression: info-zip-2009-01
+        spdx_license_expression: LicenseRef-scancode-info-zip-2009-01
+        from_file:
         start_line: 15
         end_line: 76
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 527
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: info-zip-2009-01
-        rule_identifier: info-zip-2009-01_12.RULE
         rule_relevance: 100
+        rule_identifier: info-zip-2009-01_12.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/info-zip-2009-01_12.RULE
         matched_text: |
           This is version 2009-Jan-02 of the Info-ZIP license.

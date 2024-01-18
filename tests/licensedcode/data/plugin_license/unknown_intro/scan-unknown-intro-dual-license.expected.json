@@ -3,9 +3,76 @@
     {
       "identifier": "wtfpl_2_0_and_mit-e5642b07-705c-9730-80ab-f5ed0565be28",
       "license_expression": "wtfpl-2.0 AND mit",
+      "license_expression_spdx": "WTFPL AND MIT",
       "detection_count": 1,
       "detection_log": [
         "unknown-intro-followed-by-match"
+      ],
+      "reference_matches": [
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "scan-unknown-intro-dual-license/README.md",
+          "start_line": 43,
+          "end_line": 43,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "lead-in_unknown_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE",
+          "matched_text": "All code, unless stated otherwise, is dual-licensed under [`WTFPL`](http://www.wtfpl.net/txt/copying/) and [`MIT`](https://opensource.org/licenses/MIT).",
+          "matched_text_diagnostics": "dual-licensed under [`"
+        },
+        {
+          "license_expression": "wtfpl-2.0",
+          "license_expression_spdx": "WTFPL",
+          "from_file": "scan-unknown-intro-dual-license/README.md",
+          "start_line": 43,
+          "end_line": 43,
+          "matcher": "2-aho",
+          "score": 50.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 50,
+          "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+          "matched_text": "All code, unless stated otherwise, is dual-licensed under [`WTFPL`](http://www.wtfpl.net/txt/copying/) and [`MIT`](https://opensource.org/licenses/MIT).",
+          "matched_text_diagnostics": "WTFPL`]("
+        },
+        {
+          "license_expression": "wtfpl-2.0",
+          "license_expression_spdx": "WTFPL",
+          "from_file": "scan-unknown-intro-dual-license/README.md",
+          "start_line": 43,
+          "end_line": 43,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "wtfpl-2.0_27.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE",
+          "matched_text": "All code, unless stated otherwise, is dual-licensed under [`WTFPL`](http://www.wtfpl.net/txt/copying/) and [`MIT`](https://opensource.org/licenses/MIT).",
+          "matched_text_diagnostics": "www.wtfpl.net/"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "scan-unknown-intro-dual-license/README.md",
+          "start_line": 43,
+          "end_line": 43,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_64.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE",
+          "matched_text": "All code, unless stated otherwise, is dual-licensed under [`WTFPL`](http://www.wtfpl.net/txt/copying/) and [`MIT`](https://opensource.org/licenses/MIT).",
+          "matched_text_diagnostics": "MIT`](https://opensource.org/licenses/MIT)."
+        }
       ]
     }
   ],
@@ -18,58 +85,71 @@
       "license_detections": [
         {
           "license_expression": "wtfpl-2.0 AND mit",
+          "license_expression_spdx": "WTFPL AND MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "scan-unknown-intro-dual-license/README.md",
               "start_line": 43,
               "end_line": 43,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 3,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "unknown-license-reference",
-              "rule_identifier": "lead-in_unknown_30.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "lead-in_unknown_30.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE",
-              "matched_text": "dual-licensed under [`"
+              "matched_text": "All code, unless stated otherwise, is dual-licensed under [`WTFPL`](http://www.wtfpl.net/txt/copying/) and [`MIT`](https://opensource.org/licenses/MIT).",
+              "matched_text_diagnostics": "dual-licensed under [`"
             },
             {
-              "score": 50.0,
+              "license_expression": "wtfpl-2.0",
+              "spdx_license_expression": "WTFPL",
+              "from_file": "scan-unknown-intro-dual-license/README.md",
               "start_line": 43,
               "end_line": 43,
+              "matcher": "2-aho",
+              "score": 50.0,
               "matched_length": 1,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "wtfpl-2.0",
-              "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
               "rule_relevance": 50,
+              "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
-              "matched_text": "WTFPL`]("
+              "matched_text": "All code, unless stated otherwise, is dual-licensed under [`WTFPL`](http://www.wtfpl.net/txt/copying/) and [`MIT`](https://opensource.org/licenses/MIT).",
+              "matched_text_diagnostics": "WTFPL`]("
             },
             {
-              "score": 100.0,
+              "license_expression": "wtfpl-2.0",
+              "spdx_license_expression": "WTFPL",
+              "from_file": "scan-unknown-intro-dual-license/README.md",
               "start_line": 43,
               "end_line": 43,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 3,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "wtfpl-2.0",
-              "rule_identifier": "wtfpl-2.0_27.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "wtfpl-2.0_27.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE",
-              "matched_text": "www.wtfpl.net/"
+              "matched_text": "All code, unless stated otherwise, is dual-licensed under [`WTFPL`](http://www.wtfpl.net/txt/copying/) and [`MIT`](https://opensource.org/licenses/MIT).",
+              "matched_text_diagnostics": "www.wtfpl.net/"
             },
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "scan-unknown-intro-dual-license/README.md",
               "start_line": 43,
               "end_line": 43,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 6,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit_64.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "mit_64.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE",
-              "matched_text": "MIT`](https://opensource.org/licenses/MIT)."
+              "matched_text": "All code, unless stated otherwise, is dual-licensed under [`WTFPL`](http://www.wtfpl.net/txt/copying/) and [`MIT`](https://opensource.org/licenses/MIT).",
+              "matched_text_diagnostics": "MIT`](https://opensource.org/licenses/MIT)."
             }
           ],
           "detection_log": [

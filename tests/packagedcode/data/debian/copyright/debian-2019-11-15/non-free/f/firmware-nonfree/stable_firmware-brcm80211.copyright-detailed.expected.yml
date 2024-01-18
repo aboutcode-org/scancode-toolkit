@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: broadcom-proprietary
+    license_expression_spdx: LicenseRef-scancode-broadcom-proprietary
     matches:
-      - score: '100.0'
+      - license_expression: broadcom-proprietary
+        spdx_license_expression: LicenseRef-scancode-broadcom-proprietary
+        from_file:
         start_line: 4
         end_line: 207
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 1770
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: broadcom-proprietary
-        rule_identifier: broadcom-proprietary_1.RULE
         rule_relevance: 100
+        rule_identifier: broadcom-proprietary_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/broadcom-proprietary_1.RULE
         matched_text: "SOFTWARE LICENSE AGREEMENT\n\nUnless you and Broadcom Corporation (“Broadcom”)\
           \ execute a separate written\nsoftware license agreement governing use of the accompanying\

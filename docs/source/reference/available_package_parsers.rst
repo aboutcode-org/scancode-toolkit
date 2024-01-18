@@ -646,7 +646,7 @@ parsers in scancode-toolkit during documentation builds.
      - ``pypi``
      - ``pypi_setup_py``
      - Python
-     - https://docs.python.org/3/distutils/setupscript.html
+     - https://docs.python.org/3.11/distutils/setupscript.html
    * - PyPI wheel
      - ``*.whl``
      - ``pypi``
@@ -692,7 +692,7 @@ parsers in scancode-toolkit during documentation builds.
      - None
      - https://fedoraproject.org/wiki/Changes/NewRpmDBFormat
    * - RPM installed package SQLite database
-     - ``*var/lib/rpm/rpmdb.sqlite``
+     - ``*rpm/rpmdb.sqlite``
      - ``rpm``
      - ``rpm_installed_database_sqlite``
      - None

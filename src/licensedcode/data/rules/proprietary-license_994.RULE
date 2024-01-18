@@ -1,0 +1,12 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+minimum_coverage: 80
+referenced_filenames:
+    - copyright.html
+notes: https://github.com/GameOverture/HarmonyEngine/blob/f0039d0bc68e5eb7afeb1030a80f2cb910d1ea73/Engine/include/Scene/Nodes/Loadables/Bodies/Objects/HyEntityLeaf2d.h#L7
+---
+
+Permission to use, copy, modify, and distribute this software 
+is hereby NOT granted. Please refer to the file "copyright.html"
+for further important copyright and licensing information.

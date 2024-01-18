@@ -24,6 +24,7 @@ STOPWORDS = frozenset({
 
 # common html tags as <a href=https://link ...> dfsdfsdf</a>
     'a',
+    'abbr',
     'alt',
     'blockquote',
     'body',
@@ -65,7 +66,7 @@ STOPWORDS = frozenset({
 
 # Some HTML punctuations and entities all as &emdash;
 
-        'bdquo',
+    'bdquo',
     'bull',
     'bullet',
     'colon',

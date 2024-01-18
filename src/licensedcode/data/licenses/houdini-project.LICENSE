@@ -1,0 +1,101 @@
+---
+key: houdini-project
+short_name: Houdini Project License
+name: Houdini Project License
+category: Copyleft
+owner: Houdini
+homepage_url: https://github.com/houdiniproject/houdini/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-houdini
+other_urls:
+    - https://k.sfconservancy.org/license-additional-permissions/
+ignorable_urls:
+    - http://www.gnu.org/licenses/
+    - https://k.sfconservancy.org/license-additional-permissions/
+---
+
+# Free Software Licensing Information for Houdini Project.
+
+The primary license of the Houdini Project is:
+
+   AGPL-3.0-or-later WITH WTO-AP-3.0-or-later
+
+This software's license gives you freedom; you can copy, convey,
+propagate, redistribute and/or modify this program under the terms of
+the GNU Affero General Public License (AGPL) as published by the Free
+Software Foundation (FSF), either version 3 of the License, or (at your
+option) any later version of the AGPL published by the FSF.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero
+General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program in a file in the toplevel directory called
+"AGPL-3.0.txt".  If not, see <http://www.gnu.org/licenses/>.
+
+In addition to the permission granted by the AGPLv3, you also receive
+permissions as written in The Web Template Output Additional Permission,
+Version 3.0, as published by the Software Freedom Conservancy
+("Conservancy"), either version 3 of that Additional Permission, or (at your
+option) any later version of the Additional Permission as published by
+Conservancy.
+
+You should have received a copy of the Web Template Output Additional
+Permission, along with this program in a file in the toplevel directory
+called "Web-Template-Output-Additional-Permission.txt".  If not, see
+<https://k.sfconservancy.org/license-additional-permissions/>.
+
+## Different Licenses for some files in Houdini Repository.
+
+1. Any file in the Houdini repository that does not specific a license, or is
+   not discussed explicitly in this toplevel "LICENSE" file is licensed:
+
+   AGPL-3.0-or-later WITH WTO-AP-3.0-or-later
+
+   as specified in detail above.
+
+2. Files that contain the information "License: LGPL-3.0-or-later" are
+   licensed as below:
+
+   You can copy, convey, propagate, redistribute and/or modify this program
+   under the terms of the GNU General Public License (GPL) as published by
+   the Free Software Foundation (FSF), either version 3 of the License, or
+   (at your option) any later version of the GPL published by the FSF.
+
+   This program is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public
+   License for more details.
+
+   You should have received a copy of the GNU General Public License along
+   with this program in a file in the toplevel directory called
+   "GPL-3.0.txt".  If not, see <http://www.gnu.org/licenses/>.
+
+   In addition to the permission granted by the GPLv3, you also receive
+   permissions as written in GNU Lesser General Public License (LGPL),
+   Version 3.0, as published by the Free Software Foundation (FSF), either
+   version 3 of the License, or (at your option) any later version of the
+   LGPL published by the FSF.
+
+   This program is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+   for more details.
+
+   You should have received a copy of the GNU Lesser General Public License
+   along with this program in a file in the toplevel directory called
+   "LGPL-3.0.txt".  If not, see <http://www.gnu.org/licenses/>.
+
+3. Files that contain the information "License: CC0-1.0" are licensed under
+   the Creative Commons Public Domain Dedication 1.0 Universal or any later
+   version as published by Creative Commons, Inc. ("CC0").
+
+4. All SVG, ICO and PNG files in this repository are licensed as CC-0.
+
+   This applies to any files that are both (a) in the standard SVG, ICO,
+   and/or PNG format, and (b) where their names end in .svg or .ico.
+    
+   The project may in future place later versions of these files under a
+   copyleft license, but will discuss that with the contributor community
+   before doing so.

@@ -1,0 +1,8 @@
+---
+license_expression: openssl-ssleay
+is_license_reference: yes
+relevance: 100
+notes: damaged URL seen in the wild
+---
+
+https:www.openssl.orgsourcelicense.html

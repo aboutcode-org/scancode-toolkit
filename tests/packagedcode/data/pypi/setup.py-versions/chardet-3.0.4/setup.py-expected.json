@@ -61,15 +61,18 @@
     "license_detections": [
       {
         "license_expression": "lgpl-2.0-plus",
+        "license_expression_spdx": "LGPL-2.0-or-later",
         "matches": [
           {
             "score": 75.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 1,
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "lgpl-2.0-plus",
+            "spdx_license_expression": "LGPL-2.0-or-later",
             "rule_identifier": "lgpl_bare_single_word.RULE",
             "rule_relevance": 75,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
@@ -80,15 +83,18 @@
       },
       {
         "license_expression": "lgpl-2.0-plus",
+        "license_expression_spdx": "LGPL-2.0-or-later",
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 11,
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "lgpl-2.0-plus",
+            "spdx_license_expression": "LGPL-2.0-or-later",
             "rule_identifier": "pypi_gnu_library_or_lesser_general_public_license.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_library_or_lesser_general_public_license.RULE",

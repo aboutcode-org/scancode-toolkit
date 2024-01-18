@@ -1,0 +1,56 @@
+---
+key: ibm-employee-written
+short_name: IBM Employee-Written Software License
+name: IBM License Agreement for IBM Employee-Written Software
+category: Proprietary Free
+owner: IBM
+spdx_license_key: LicenseRef-scancode-ibm-employee-written
+---
+
+IBM License Agreement for IBM Employee-Written Software
+
+IF YOU DOWNLOAD OR USE THIS PROGRAM YOU AGREE TO THESE TERMS.
+
+International Business Machines Corporation grants you a license to use the Program only in the country where you acquired it. The Program is copyrighted and licensed (not sold). We do not transfer title to the Program to you. You obtain no rights other than those granted you under this license.
+
+Under this license, you may:
+
+    use the Program on one or more machines at a time;
+    make copies of the Program for use or backup purposes within your Enterprise;
+    modify the Program and merge it into another program; and
+    make copies of the original file you downloaded and distribute it, provided that you transfer a copy of this license to the other party. The other party agrees to these terms by its first use of the Program.
+
+You must reproduce the copyright notice and any other legend of ownership on each copy or partial copy, of the Program.
+
+You may NOT:
+
+    sublicense, rent, lease, or assign the Program; and
+    reverse assemble, reverse compile, or otherwise translate the Program.
+
+We do not warrant that the Program is free from claims by a third party of copyright, patent, trademark, trade secret, or any other intellectual property infringement.
+
+Under no circumstances are we liable for any of the following:
+
+    third-party claims against you for losses or damages;
+    loss of, or damage to, your records or data; or
+    economic consequential damages (including lost profits or savings) or incidental damages, even if we are informed of their possibility.
+
+Some jurisdictions do not allow these limitations or exclusions, so they may not apply to you.
+
+We do not warrant uninterrupted or error free operation of the Program. We have no obligation to provide service, defect correction, or any maintenance for the Program. We have no obligation to supply any Program updates or enhancements to you even if such are or later become available.
+
+IF YOU DOWNLOAD OR USE THIS PROGRAM YOU AGREE TO THESE TERMS.
+
+THERE ARE NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not apply to you.
+
+You may terminate this license at any time. We may terminate this license if you fail to comply with any of its terms. In either event, you must destroy all your copies of the Program.
+
+You are responsible for the payment of any taxes resulting from this license.
+
+You may not sell, transfer, assign, or subcontract any of your rights or obligations under this license. Any attempt to do so is void.
+
+Neither of us may bring a legal action more than two years after the cause of action arose.
+
+If you acquired the Program in the United States, this license is governed by the laws of the State of New York. If you acquired the Program in Canada, this license is governed by the laws of the Province of Ontario. Otherwise, this license is governed by the laws of the country in which you acquired the Program.

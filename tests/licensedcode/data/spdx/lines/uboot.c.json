@@ -1,196 +1,196 @@
 [
   [
-    "SPDX-License-Identifier: \" line references more than one Unique",
+    "SPDX-License-Identifier:\" line references more than one Unique",
     1,
     9
   ],
   [
-    "SPDX-License-Identifier:  BSD-2-Clause",
+    "SPDX-License-Identifier: BSD-2-Clause",
     10,
     15
   ],
   [
-    "SPDX-License-Identifier:     BSD-3-Clause",
+    "SPDX-License-Identifier:    BSD-3-Clause",
     16,
     21
   ],
   [
-    "SPDX-License-Identifier:  BSD-3-Clause",
+    "SPDX-License-Identifier: BSD-3-Clause",
     22,
     27
   ],
   [
-    "SPDX-License-Identifier:  BSD-3-Clause",
+    "SPDX-License-Identifier: BSD-3-Clause",
     28,
     33
   ],
   [
-    "SPDX-License-Identifier:  eCos-2.0",
+    "SPDX-License-Identifier: eCos-2.0",
     34,
     39
   ],
   [
-    "SPDX-License-Identifier:     GPL-2.0+",
+    "SPDX-License-Identifier:    GPL-2.0+",
     40,
     45
   ],
   [
-    "SPDX-License-Identifier:      GPL-2.0",
+    "SPDX-License-Identifier:     GPL-2.0",
     46,
     51
   ],
   [
-    "SPDX-License-Identifier:         GPL-2.0+",
+    "SPDX-License-Identifier:        GPL-2.0+",
     52,
     57
   ],
   [
-    "SPDX-License-Identifier:       GPL-2.0+",
+    "SPDX-License-Identifier:      GPL-2.0+",
     58,
     63
   ],
   [
-    "SPDX-License-Identifier:      GPL-2.0",
+    "SPDX-License-Identifier:     GPL-2.0",
     64,
     69
   ],
   [
-    "SPDX-License-Identifier:      GPL-2.0+",
+    "SPDX-License-Identifier:     GPL-2.0+",
     70,
     75
   ],
   [
-    "SPDX-License-Identifier:     GPL-2.0+",
+    "SPDX-License-Identifier:    GPL-2.0+",
     76,
     81
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0",
+    "SPDX-License-Identifier: GPL-2.0",
     82,
     87
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0+",
+    "SPDX-License-Identifier: GPL-2.0+",
     88,
     93
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0",
+    "SPDX-License-Identifier: GPL-2.0",
     94,
     99
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0+",
+    "SPDX-License-Identifier: GPL-2.0+",
     100,
     105
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0+",
+    "SPDX-License-Identifier: GPL-2.0+",
     106,
     111
   ],
   [
-    "SPDX-License-Identifier:     GPL-2.0",
+    "SPDX-License-Identifier:    GPL-2.0",
     112,
     117
   ],
   [
-    "SPDX-License-Identifier:     GPL-2.0+",
+    "SPDX-License-Identifier:    GPL-2.0+",
     118,
     123
   ],
   [
-    "SPDX-License-Identifier:       GPL-2.0+",
+    "SPDX-License-Identifier:      GPL-2.0+",
     124,
     129
   ],
   [
-    "SPDX-License-Identifier:      GPL-2.0+",
+    "SPDX-License-Identifier:     GPL-2.0+",
     130,
     135
   ],
   [
-    "SPDX-License-Identifier:     GPL-2.0+",
+    "SPDX-License-Identifier:    GPL-2.0+",
     136,
     141
   ],
   [
-    "SPDX-License-Identifier:   GPL-2.0+",
+    "SPDX-License-Identifier:  GPL-2.0+",
     142,
     147
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0",
+    "SPDX-License-Identifier: GPL-2.0",
     148,
     153
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0+",
+    "SPDX-License-Identifier: GPL-2.0+",
     154,
     159
   ],
   [
-    "SPDX-License-Identifier:   GPL-2.0",
+    "SPDX-License-Identifier:  GPL-2.0",
     160,
     165
   ],
   [
-    "SPDX-License-Identifier:   GPL-2.0+",
+    "SPDX-License-Identifier:  GPL-2.0+",
     166,
     171
   ],
   [
-    "SPDX-License-Identifier:      GPL-2.0+",
+    "SPDX-License-Identifier:     GPL-2.0+",
     172,
     177
   ],
   [
-    "SPDX-License-Identifier:     GPL-2.0+",
+    "SPDX-License-Identifier:    GPL-2.0+",
     178,
     183
   ],
   [
-    "SPDX-License-Identifier:     GPL-2.0+",
+    "SPDX-License-Identifier:    GPL-2.0+",
     184,
     189
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0+ BSD-2-Clause",
+    "SPDX-License-Identifier: GPL-2.0+ BSD-2-Clause",
     190,
     198
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0+    BSD-2-Clause",
+    "SPDX-License-Identifier: GPL-2.0+    BSD-2-Clause",
     199,
     207
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0+    BSD-3-Clause",
+    "SPDX-License-Identifier: GPL-2.0+    BSD-3-Clause",
     208,
     216
   ],
   [
-    "SPDX-License-Identifier:     GPL-2.0+    BSD-3-Clause",
+    "SPDX-License-Identifier:    GPL-2.0+    BSD-3-Clause",
     217,
     225
   ],
   [
-    "SPDX-License-Identifier:  GPL-2.0 IBM-pibs",
+    "SPDX-License-Identifier: GPL-2.0 IBM-pibs",
     226,
     233
   ],
   [
-    "SPDX-License-Identifier:   ISC",
+    "SPDX-License-Identifier:  ISC",
     234,
     237
   ],
   [
-    "SPDX-License-Identifier:  LGPL-2.0+",
+    "SPDX-License-Identifier: LGPL-2.0+",
     238,
     243
   ],
   [
-    "SPDX-License-Identifier:  LGPL-2.1+",
+    "SPDX-License-Identifier: LGPL-2.1+",
     244,
     249
   ]

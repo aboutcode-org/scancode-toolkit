@@ -64,17 +64,20 @@
       "license_detections": [
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
               "matched_length": 1,
               "match_coverage": 100.0,
-              "matcher": "1-spdx-id",
-              "license_expression": "mit",
-              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
               "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
               "rule_url": null,
               "matched_text": "MIT"
             }
@@ -83,17 +86,20 @@
         },
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "mit",
-              "rule_identifier": "pypi_mit_license.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "pypi_mit_license.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
               "matched_text": "- 'License :: OSI Approved :: MIT License'"
             }
@@ -129,37 +135,212 @@
     {
       "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8",
       "license_expression": "mit",
-      "detection_count": 3
+      "license_expression_spdx": "MIT",
+      "detection_count": 3,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/PKG-INFO",
+          "start_line": 13,
+          "end_line": 13,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "pypi_mit_license.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
+        }
+      ]
     },
     {
       "identifier": "mit-707ccf7a-5c60-0e4c-5844-349c989a00f5",
       "license_expression": "mit",
-      "detection_count": 2
+      "license_expression_spdx": "MIT",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "pip-22.0.4/setup.cfg",
+          "start_line": 87,
+          "end_line": 87,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/LICENSE.txt",
+          "start_line": 3,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/LICENSE.txt",
+          "start_line": 3,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+        }
+      ]
     },
     {
       "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
       "license_expression": "mit",
-      "detection_count": 2
+      "license_expression_spdx": "MIT",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/PKG-INFO",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+          "rule_url": null
+        }
+      ]
     },
     {
       "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
       "license_expression": "mit",
-      "detection_count": 2
+      "license_expression_spdx": "MIT",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/LICENSE.txt",
+          "start_line": 3,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+        }
+      ]
     },
     {
       "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
       "license_expression": "mit",
-      "detection_count": 1
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/PKG-INFO",
+          "start_line": 6,
+          "end_line": 6,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        }
+      ]
     },
     {
       "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
       "license_expression": "mit",
-      "detection_count": 1
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "pip-22.0.4/PKG-INFO",
+          "start_line": 25,
+          "end_line": 25,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/LICENSE.txt",
+          "start_line": 3,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+        }
+      ]
     },
     {
       "identifier": "mit-6e6256c5-00ca-dcb6-8033-2fc4b6ff86be",
       "license_expression": "mit",
-      "detection_count": 1
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/setup.py",
+          "start_line": 31,
+          "end_line": 31,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/setup.py",
+          "start_line": 35,
+          "end_line": 35,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "pypi_mit_license.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
+        }
+      ]
     }
   ],
   "files": [
@@ -216,17 +397,20 @@
       "license_detections": [
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 161,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit.LICENSE",
               "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
@@ -321,17 +505,20 @@
           "license_detections": [
             {
               "license_expression": "mit",
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "pip-22.0.4/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
                   "matched_length": 1,
                   "match_coverage": 100.0,
-                  "matcher": "1-spdx-id",
-                  "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
                   "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
                   "rule_url": null,
                   "matched_text": "MIT"
                 }
@@ -340,17 +527,20 @@
             },
             {
               "license_expression": "mit",
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "pip-22.0.4/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 5,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "mit",
-                  "rule_identifier": "pypi_mit_license.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "pypi_mit_license.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "matched_text": "- 'License :: OSI Approved :: MIT License'"
                 }
@@ -390,17 +580,20 @@
       "license_detections": [
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 6,
               "end_line": 6,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 2,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit_30.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
             }
           ],
@@ -408,17 +601,20 @@
         },
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 13,
               "end_line": 13,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "pypi_mit_license.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "pypi_mit_license.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
             }
           ],
@@ -426,29 +622,34 @@
         },
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 25,
               "end_line": 25,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 4,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "unknown-license-reference",
-              "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
             },
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 161,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit.LICENSE",
               "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
@@ -762,17 +963,20 @@
           "license_detections": [
             {
               "license_expression": "mit",
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "pip-22.0.4/LICENSE.txt",
                   "start_line": 3,
                   "end_line": 20,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 161,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "mit",
-                  "rule_identifier": "mit.LICENSE",
                   "rule_relevance": 100,
+                  "rule_identifier": "mit.LICENSE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
                 }
               ],
@@ -843,41 +1047,48 @@
           "license_detections": [
             {
               "license_expression": "mit",
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "unknown-license-reference",
+                  "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+                  "from_file": "pip-22.0.4/setup.cfg",
                   "start_line": 87,
                   "end_line": 87,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 4,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "unknown-license-reference",
-                  "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
                 },
                 {
-                  "score": 100.0,
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "pip-22.0.4/LICENSE.txt",
                   "start_line": 3,
                   "end_line": 20,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 161,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "mit",
-                  "rule_identifier": "mit.LICENSE",
                   "rule_relevance": 100,
+                  "rule_identifier": "mit.LICENSE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
                 },
                 {
-                  "score": 100.0,
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "pip-22.0.4/LICENSE.txt",
                   "start_line": 3,
                   "end_line": 20,
+                  "matcher": "2-aho",
+                  "score": 100.0,
                   "matched_length": 161,
                   "match_coverage": 100.0,
-                  "matcher": "2-aho",
-                  "license_expression": "mit",
-                  "rule_identifier": "mit.LICENSE",
                   "rule_relevance": 100,
+                  "rule_identifier": "mit.LICENSE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
                 }
               ],
@@ -916,41 +1127,48 @@
       "license_detections": [
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "pip-22.0.4/setup.cfg",
               "start_line": 87,
               "end_line": 87,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 4,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "unknown-license-reference",
-              "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
             },
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 161,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit.LICENSE",
               "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             },
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 161,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit.LICENSE",
               "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
@@ -1010,17 +1228,20 @@
           "license_detections": [
             {
               "license_expression": "mit",
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "pip-22.0.4/setup.py",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
                   "matched_length": 1,
                   "match_coverage": 100.0,
-                  "matcher": "1-spdx-id",
-                  "license_expression": "mit",
-                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
                   "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
                   "rule_url": null,
                   "matched_text": "MIT"
                 }
@@ -1029,17 +1250,20 @@
             },
             {
               "license_expression": "mit",
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
-                  "score": 100.0,
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "pip-22.0.4/setup.py",
                   "start_line": 1,
                   "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
                   "matched_length": 5,
                   "match_coverage": 100.0,
-                  "matcher": "1-hash",
-                  "license_expression": "mit",
-                  "rule_identifier": "pypi_mit_license.RULE",
                   "rule_relevance": 100,
+                  "rule_identifier": "pypi_mit_license.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
                   "matched_text": "- 'License :: OSI Approved :: MIT License'"
                 }
@@ -1080,29 +1304,34 @@
       "license_detections": [
         {
           "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/setup.py",
               "start_line": 31,
               "end_line": 31,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 2,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "mit_30.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
             },
             {
-              "score": 100.0,
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "pip-22.0.4/setup.py",
               "start_line": 35,
               "end_line": 35,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 5,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "mit",
-              "rule_identifier": "pypi_mit_license.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "pypi_mit_license.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
             }
           ],

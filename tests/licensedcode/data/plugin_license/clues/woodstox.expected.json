@@ -3,14 +3,52 @@
     {
       "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e",
       "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "woodstox/ASL2.0",
+          "start_line": 2,
+          "end_line": 4,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_791.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE",
+          "matched_text": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/",
+          "matched_text_diagnostics": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/"
+        }
+      ]
     },
     {
       "identifier": "apache_2_0-e6c6a798-7f38-0f45-701a-6f3304caf1ee",
       "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
-      "detection_log": []
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "woodstox/LICENSE",
+          "start_line": 1,
+          "end_line": 11,
+          "matcher": "3-seq",
+          "score": 78.46,
+          "matched_length": 51,
+          "match_coverage": 78.46,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_jna1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_jna1.RULE",
+          "matched_text": "This copy of Woodstox XML processor is licensed under the\nApache (Software) License, version 2.0 (\"the License\").\nSee the License for details about distribution rights, and the\nspecific rights regarding derivate works.\n\nYou may obtain a copy of the License at:\n\nhttp://www.apache.org/licenses/\n\nA copy is also included in the downloadable source code package\ncontaining Woodstox, in file \"ASL2.0\", under the same directory",
+          "matched_text_diagnostics": "is licensed under the\nApache (Software) License, version 2.0 (\"the License\").\nSee the License for details about distribution rights, and the\nspecific rights regarding derivate works.\n\nYou may obtain a copy of the License at:\n\nhttp://www.apache.org/licenses/\n\nA copy is also included in the downloadable source code package\ncontaining"
+        }
+      ]
     }
   ],
   "license_references": [
@@ -191,19 +229,23 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "woodstox/ASL2.0",
               "start_line": 2,
               "end_line": 4,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 12,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_791.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_791.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE",
-              "matched_text": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/"
+              "matched_text": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/",
+              "matched_text_diagnostics": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/"
             }
           ],
           "detection_log": [],
@@ -222,19 +264,23 @@
       "license_detections": [
         {
           "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "score": 78.46,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "woodstox/LICENSE",
               "start_line": 1,
               "end_line": 11,
+              "matcher": "3-seq",
+              "score": 78.46,
               "matched_length": 51,
               "match_coverage": 78.46,
-              "matcher": "3-seq",
-              "license_expression": "apache-2.0",
-              "rule_identifier": "apache-2.0_jna1.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_jna1.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_jna1.RULE",
-              "matched_text": "is licensed under the\nApache (Software) License, version 2.0 (\"the License\").\nSee the License for details about distribution rights, and the\nspecific rights regarding derivate works.\n\nYou may obtain a copy of the License at:\n\nhttp://www.apache.org/licenses/\n\nA copy is also included in the downloadable source code package\ncontaining"
+              "matched_text": "This copy of Woodstox XML processor is licensed under the\nApache (Software) License, version 2.0 (\"the License\").\nSee the License for details about distribution rights, and the\nspecific rights regarding derivate works.\n\nYou may obtain a copy of the License at:\n\nhttp://www.apache.org/licenses/\n\nA copy is also included in the downloadable source code package\ncontaining Woodstox, in file \"ASL2.0\", under the same directory",
+              "matched_text_diagnostics": "is licensed under the\nApache (Software) License, version 2.0 (\"the License\").\nSee the License for details about distribution rights, and the\nspecific rights regarding derivate works.\n\nYou may obtain a copy of the License at:\n\nhttp://www.apache.org/licenses/\n\nA copy is also included in the downloadable source code package\ncontaining"
             }
           ],
           "detection_log": [],
@@ -273,17 +319,20 @@
       "license_detections": [],
       "license_clues": [
         {
-          "score": 100.0,
+          "license_expression": "unknown-license-reference",
+          "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "woodstox/NOTICE",
           "start_line": 1,
           "end_line": 2,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 19,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "unknown-license-reference",
-          "rule_identifier": "license-clue_1.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "license-clue_1.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-clue_1.RULE",
-          "matched_text": "This product currently only contains code developed by authors\nof specific components, as identified by the source code files."
+          "matched_text": "This product currently only contains code developed by authors\nof specific components, as identified by the source code files.",
+          "matched_text_diagnostics": "This product currently only contains code developed by authors\nof specific components, as identified by the source code files."
         }
       ],
       "percentage_of_license_text": 44.19,

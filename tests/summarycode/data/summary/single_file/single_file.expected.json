@@ -22,7 +22,24 @@
     {
       "identifier": "jetty-a0130d29-e7f1-bc37-111a-fccd6b1c6b58",
       "license_expression": "jetty",
-      "detection_count": 1
+      "license_expression_spdx": "LicenseRef-scancode-jetty",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "jetty",
+          "license_expression_spdx": "LicenseRef-scancode-jetty",
+          "from_file": "codebase/jetty.LICENSE",
+          "start_line": 1,
+          "end_line": 132,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 996,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "jetty.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
+        }
+      ]
     }
   ],
   "files": [
@@ -96,17 +113,20 @@
       "license_detections": [
         {
           "license_expression": "jetty",
+          "license_expression_spdx": "LicenseRef-scancode-jetty",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "jetty",
+              "spdx_license_expression": "LicenseRef-scancode-jetty",
+              "from_file": "codebase/jetty.LICENSE",
               "start_line": 1,
               "end_line": 132,
+              "matcher": "1-hash",
+              "score": 100.0,
               "matched_length": 996,
               "match_coverage": 100.0,
-              "matcher": "1-hash",
-              "license_expression": "jetty",
-              "rule_identifier": "jetty.LICENSE",
               "rule_relevance": 100,
+              "rule_identifier": "jetty.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/jetty.LICENSE"
             }
           ],

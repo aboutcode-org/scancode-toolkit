@@ -2,7 +2,10 @@
 license_expression: proprietary-license
 is_license_text: yes
 relevance: 100
-notes: See https://raw.githubusercontent.com/kemitchell/responsible-ai-licenses/347d6f8a3d419e356aeee882f851cf20a9bbbe89/source.txt
+is_deprecated: yes
+notes: |
+    See https://raw.githubusercontent.com/kemitchell/responsible-ai-licenses/347d6f8a3d419e356aeee882f851cf20a9bbbe89/source.txt
+    This is now the responsible-ai-source-1.0 LICENSE
 ignorable_urls:
     - http://licenses.ai/
 ---

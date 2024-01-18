@@ -16,16 +16,19 @@ other_license_expression_spdx: MIT AND MIT AND BSD-3-Clause AND LicenseRef-scanc
 license_detections: []
 other_license_detections:
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '99.53'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 26
         end_line: 45
+        matcher: 1-hash
+        score: '99.53'
         matched_length: 211
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-new
-        rule_identifier: bsd-new_314.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_314.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_314.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -50,16 +53,19 @@ other_license_detections:
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-f23dc916-0d10-a62b-e883-6fe84fea0844
   - license_expression: mit
+    license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 48
         end_line: 67
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: mit
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person
@@ -84,27 +90,32 @@ other_license_detections:
           OTHER DEALINGS IN THE SOFTWARE.
     identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 71
         end_line: 71
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 72
         end_line: 86
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 126
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_846.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_846.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_846.RULE
         matched_text: |
           This package is free software; you can redistribute it and/or modify
@@ -124,16 +135,19 @@ other_license_detections:
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
     identifier: gpl_2_0_plus-00217b75-1a81-9ffa-8aed-0d1bd2f9756b
   - license_expression: warranty-disclaimer
+    license_expression_spdx: LicenseRef-scancode-warranty-disclaimer
     matches:
-      - score: '100.0'
+      - license_expression: warranty-disclaimer
+        spdx_license_expression: LicenseRef-scancode-warranty-disclaimer
+        from_file:
         start_line: 89
         end_line: 89
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 10
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: warranty-disclaimer
-        rule_identifier: warranty-disclaimer_78.RULE
         rule_relevance: 100
+        rule_identifier: warranty-disclaimer_78.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_78.RULE
         matched_text: NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
     identifier: warranty_disclaimer-7ce752f1-3fd2-5c9f-d85a-ceb48cc6e7c9

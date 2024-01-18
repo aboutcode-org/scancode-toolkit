@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: Seen in CGAL
+---
+
+error "Your commercial license for CGAL does not cover this release \
+of CGAL LGPL packages. You get this error, as you defined CGAL_LICENSE_ERROR."

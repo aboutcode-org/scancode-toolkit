@@ -42,15 +42,18 @@
     "license_detections": [
       {
         "license_expression": "gpl-3.0",
+        "license_expression_spdx": "GPL-3.0-only",
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 1,
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "gpl-3.0",
+            "spdx_license_expression": "GPL-3.0-only",
             "rule_identifier": "gpl-3.0_32.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_32.RULE",
@@ -61,15 +64,18 @@
       },
       {
         "license_expression": "ruby",
+        "license_expression_spdx": "Ruby",
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 1,
             "match_coverage": 100.0,
             "matcher": "1-spdx-id",
             "license_expression": "ruby",
+            "spdx_license_expression": "Ruby",
             "rule_identifier": "spdx-license-identifier-ruby-549f9d48faec54b20eadf7c9097124f88f2cdd2b",
             "rule_relevance": 100,
             "rule_url": null,
@@ -80,15 +86,18 @@
       },
       {
         "license_expression": "gpl-2.0",
+        "license_expression_spdx": "GPL-2.0-only",
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 1,
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "gpl-2.0",
+            "spdx_license_expression": "GPL-2.0-only",
             "rule_identifier": "gpl-2.0_bare_single_word.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",

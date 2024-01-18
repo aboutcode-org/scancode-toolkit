@@ -580,26 +580,26 @@
 
     The ``--license-url-template`` option sets the template URL used for the license reference URLs.
 
-    The default template URL is : [https://enterprise.dejacode.com/urn/urn:dje:license:{}]
+    The default template URL is : [https://scancode-licensedb.aboutcode.org/{}]
     In a template URL, curly braces ({}) are replaced by the license key.
 
-    So, by default the license reference URL points to the dejacode page for that license.
+    So, by default the license reference URL points to the LicenseDB page for that license.
 
     A scan example using the ``--license-url-template TEXT`` option ::
 
-        scancode -clpieu --json-pp output.json samples --license-url-template https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/{}.yml
+        scancode -clpieu --json-pp output.json samples --license-url-template https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/{}.LICENSE
 
     In a normal scan, reference url for "ZLIB License" is as follows::
 
-        "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:zlib",
+        "reference_url": "https://scancode-licensedb.aboutcode.org/zlib",
 
     After using the option in the following manner::
 
-        ``--license-url-template https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/{}``
+        ``--license-url-template https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/{}.LICENSE``
 
-    the reference URL changes to this `zlib.yml file <https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/zlib.yml>`_::
+    the reference URL changes to this `zlib.LICENSE file <https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/zlib.LICENSE>`_::
 
-        "reference_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.yml",
+        "reference_url": "https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/zlib.LICENSE",
 
     The reference URL changes for all detected licenses in the scan, across the scan result file.
 

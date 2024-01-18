@@ -1,0 +1,19 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+minimum_coverage: 90
+notes: https://github.com/aawhitetech/wss-web/blob/d4bbb44698ab8367c20df79766a4261993bb1afd/LICENSE
+---
+
+Permission is {{hereby not granted }}   
+for anyone to copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of this software and its
+documentation, unless permission from the copyright holder is explicitly
+granted.
+
+THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

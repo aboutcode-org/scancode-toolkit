@@ -1,0 +1,11 @@
+---
+license_expression: liliq-p-1.1
+is_license_reference: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+ignorable_urls:
+    - https://opensource.org/licenses/liliq-p-1.1
+---
+
+https://opensource.org/licenses/liliq-p-1.1

@@ -30,15 +30,18 @@
     "license_detections": [
       {
         "license_expression": "boost-1.0",
+        "license_expression_spdx": "BSL-1.0",
         "matches": [
           {
             "score": 50.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 3,
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "boost-1.0",
+            "spdx_license_expression": "BSL-1.0",
             "rule_identifier": "boost-1.0_48.RULE",
             "rule_relevance": 50,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
@@ -113,15 +116,18 @@
     "license_detections": [
       {
         "license_expression": "lgpl-2.1",
+        "license_expression_spdx": "LGPL-2.1-only",
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 3,
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "lgpl-2.1",
+            "spdx_license_expression": "LGPL-2.1-only",
             "rule_identifier": "lgpl-2.1_85.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_85.RULE",

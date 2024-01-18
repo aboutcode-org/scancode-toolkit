@@ -5,12 +5,46 @@
     {
       "identifier": "bsd_original_uc-f28cb4d4-6336-ee60-f186-4c1929d3a4b0",
       "license_expression": "bsd-original-uc",
-      "detection_count": 1
+      "license_expression_spdx": "BSD-4-Clause-UC",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "bsd-original-uc",
+          "license_expression_spdx": "BSD-4-Clause-UC",
+          "from_file": "basic.tgz/basic/dir2/subdir/bcopy.s",
+          "start_line": 25,
+          "end_line": 51,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 243,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "bsd-original-uc_3.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE"
+        }
+      ]
     },
     {
       "identifier": "gpl_2_0_or_bsd_new-1aafbf52-fc7a-3ded-e4ce-3a96e276a0f9",
       "license_expression": "gpl-2.0 OR bsd-new",
-      "detection_count": 1
+      "license_expression_spdx": "GPL-2.0-only OR BSD-3-Clause",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "gpl-2.0 OR bsd-new",
+          "license_expression_spdx": "GPL-2.0-only OR BSD-3-Clause",
+          "from_file": "basic.tgz/basic/main.c",
+          "start_line": 5,
+          "end_line": 12,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 50,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_or_bsd-new_aes_1.RULE"
+        }
+      ]
     }
   ],
   "files": [
@@ -40,17 +74,20 @@
       "license_detections": [
         {
           "license_expression": "bsd-original-uc",
+          "license_expression_spdx": "BSD-4-Clause-UC",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "bsd-original-uc",
+              "spdx_license_expression": "BSD-4-Clause-UC",
+              "from_file": "basic.tgz/basic/dir2/subdir/bcopy.s",
               "start_line": 25,
               "end_line": 51,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 243,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "bsd-original-uc",
-              "rule_identifier": "bsd-original-uc_3.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "bsd-original-uc_3.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_3.RULE"
             }
           ],
@@ -111,17 +148,20 @@
       "license_detections": [
         {
           "license_expression": "gpl-2.0 OR bsd-new",
+          "license_expression_spdx": "GPL-2.0-only OR BSD-3-Clause",
           "matches": [
             {
-              "score": 100.0,
+              "license_expression": "gpl-2.0 OR bsd-new",
+              "spdx_license_expression": "GPL-2.0-only OR BSD-3-Clause",
+              "from_file": "basic.tgz/basic/main.c",
               "start_line": 5,
               "end_line": 12,
+              "matcher": "2-aho",
+              "score": 100.0,
               "matched_length": 50,
               "match_coverage": 100.0,
-              "matcher": "2-aho",
-              "license_expression": "gpl-2.0 OR bsd-new",
-              "rule_identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
               "rule_relevance": 100,
+              "rule_identifier": "gpl-2.0_or_bsd-new_aes_1.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_or_bsd-new_aes_1.RULE"
             }
           ],

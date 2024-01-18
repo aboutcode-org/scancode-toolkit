@@ -7,6 +7,8 @@ owner: Unspecified
 notes: this is a generic commercial license
 is_generic: yes
 spdx_license_key: LicenseRef-scancode-commercial-license
+other_spdx_license_keys:
+    - LicenseRef-Commercial
 ---
 
 This component is licensed under a commercial contract from the supplier.

@@ -36,15 +36,18 @@
     "license_detections": [
       {
         "license_expression": "zlib",
+        "license_expression_spdx": "Zlib",
         "matches": [
           {
             "score": 100.0,
             "start_line": 1,
             "end_line": 1,
+            "from_file": null,
             "matched_length": 5,
             "match_coverage": 100.0,
             "matcher": "1-hash",
             "license_expression": "zlib",
+            "spdx_license_expression": "Zlib",
             "rule_identifier": "zlib_in_manifest.RULE",
             "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",

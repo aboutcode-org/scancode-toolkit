@@ -1,10 +1,10 @@
 ---
 license_expression: free-unknown
-is_license_notice: yes
+is_license_clue: yes
 notes: Seen in bootstrap. This is a cc-by-3.0, but the text alone is weak
+referenced_filenames:
+    - LICENSE.md
 ---
 
-It is free
-software, and may be redistributed under the terms specified in the [license].
-
-  [license]: LICENSE.md
+It is free software, and may be redistributed under the terms specified in the [license].
+[license]: LICENSE.md

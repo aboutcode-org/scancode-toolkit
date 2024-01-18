@@ -1,0 +1,10 @@
+---
+license_expression: warranty-disclaimer
+is_license_text: yes
+notes: https://raw.githubusercontent.com/SoftwareAG/ganymed-ssh-2/0fabdbfd52299569f56c3fd4dfb5b41eb87f6747/README.txt
+---
+
+These tools are provided as-is and without warranty or support. They do not
+constitute part of the product suite. Users are free to use, fork
+and modify them, subject to the license agreement. While  welcomes
+contributions, we cannot guarantee to include every contribution in the master project.

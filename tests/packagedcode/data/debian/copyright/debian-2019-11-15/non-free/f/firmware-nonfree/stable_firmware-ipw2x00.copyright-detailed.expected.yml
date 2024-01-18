@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 7
         end_line: 332
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 2975
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: proprietary-license
-        rule_identifier: proprietary-license_521.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_521.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_521.RULE
         matched_text: "TERMS AND CONDITIONS\n    IMPORTANT - PLEASE READ BEFORE INSTALLING OR\
           \ USING THIS INTEL(C) SOFTWARE\n\nDo not use or load this firmware (the \"Software\"\

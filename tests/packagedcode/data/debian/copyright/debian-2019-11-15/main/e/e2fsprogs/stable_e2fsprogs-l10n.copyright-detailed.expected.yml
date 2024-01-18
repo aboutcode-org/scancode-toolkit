@@ -5,32 +5,38 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-2.0
+    license_expression_spdx: GPL-2.0-only
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
+        from_file:
         start_line: 18
         end_line: '19'
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 14
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0
-        rule_identifier: gpl-2.0_1137.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0_1137.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1137.RULE
         matched_text: |
           This package, the EXT2 filesystem utilities, is protected by the GNU
           General Public License.
     identifier: gpl_2_0-aefa39b0-a76b-6c60-5a18-f680bc579b0d
   - license_expression: gpl-2.0
+    license_expression_spdx: GPL-2.0-only
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
+        from_file:
         start_line: 24
         end_line: 25
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 23
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0
-        rule_identifier: gpl-2.0_563.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0_563.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_563.RULE
         matched_text: |
           On Debian GNU systems, the complete text of the GNU General

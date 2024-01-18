@@ -2,6 +2,7 @@
 license_expression: bsd-simplified OR gpl-2.0
 is_license_notice: yes
 relevance: 100
+minimum_coverage: 80
 referenced_filenames:
     - LICENSE.GPL
 ignorable_copyrights:
@@ -11,7 +12,7 @@ ignorable_holders:
     - Intel Corporation
 ---
 
-This file is provided under a dual BSD/GPLv2 license.  When using or
+This file is provided under a {{dual BSD/GPLv2 license.}}  When using or
 redistributing this file, you may do so under either license.
 
 GPL LICENSE SUMMARY
@@ -19,7 +20,7 @@ GPL LICENSE SUMMARY
 Copyright(c) 2008  Intel Corporation. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
-it under the terms of version 2 of the GNU General Public License as
+it under the terms of {{version 2 of the GNU General Public License}} as
 published by the Free Software Foundation.
 
 This program is distributed in the hope that it will be useful, but
@@ -33,7 +34,7 @@ Foundation, Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
 The full GNU General Public License is included in this distribution
 in the file called LICENSE.GPL.
 
-BSD LICENSE
+{{BSD LICENSE}}
 
 Copyright(c) 2008 - Intel Corporation. All rights reserved.
 All rights reserved.

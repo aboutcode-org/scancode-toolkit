@@ -42,16 +42,19 @@ other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0 AND lgpl-2.1
+    license_expression_spdx: Apache-2.0 AND LGPL-2.1-only
     matches:
-      - score: '90.0'
+      - license_expression: apache-2.0 AND lgpl-2.1
+        spdx_license_expression: Apache-2.0 AND LGPL-2.1-only
+        from_file:
         start_line: 162
         end_line: 175
+        matcher: 1-hash
+        score: '90.0'
         matched_length: 106
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: apache-2.0 AND lgpl-2.1
-        rule_identifier: apache-2.0_and_lgpl-2.1_2.RULE
         rule_relevance: 90
+        rule_identifier: apache-2.0_and_lgpl-2.1_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_lgpl-2.1_2.RULE
         matched_text: |
           Licensed under the Apache License, Version 2.0 (the "License");
@@ -70,16 +73,19 @@ other_license_detections:
           /usr/share/common-licenses/Apache-2.0
     identifier: apache_2_0_and_lgpl_2_1-bf9c1a6e-3503-291d-0a38-d275e48b6404
   - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-new
+        spdx_license_expression: BSD-3-Clause
+        from_file:
         start_line: 178
         end_line: '199'
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 201
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-new
-        rule_identifier: bsd-new_942.RULE
         rule_relevance: 100
+        rule_identifier: bsd-new_942.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_942.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -106,16 +112,19 @@ other_license_detections:
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-ec493980-5bb3-5f10-73b9-7c82003a5f4b
   - license_expression: boost-1.0
+    license_expression_spdx: BSL-1.0
     matches:
-      - score: '100.0'
+      - license_expression: boost-1.0
+        spdx_license_expression: BSL-1.0
+        from_file:
         start_line: 202
         end_line: 222
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 202
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: boost-1.0
-        rule_identifier: boost-1.0_9.RULE
         rule_relevance: 100
+        rule_identifier: boost-1.0_9.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_9.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person or organization
@@ -141,16 +150,19 @@ other_license_detections:
           DEALINGS IN THE SOFTWARE.
     identifier: boost_1_0-0a228323-a725-4239-e66d-7117aa6c54bb
   - license_expression: cc-by-3.0
+    license_expression_spdx: CC-BY-3.0
     matches:
-      - score: '100.0'
+      - license_expression: cc-by-3.0
+        spdx_license_expression: CC-BY-3.0
+        from_file:
         start_line: 225
         end_line: 247
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 159
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: cc-by-3.0
-        rule_identifier: cc-by-3.0_110.RULE
         rule_relevance: 100
+        rule_identifier: cc-by-3.0_110.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-3.0_110.RULE
         matched_text: |
           Creative Commons Legal Code
@@ -178,27 +190,32 @@ other_license_detections:
           CONDITIONS.
     identifier: cc_by_3_0-85c40002-c78a-e362-e471-c4d97777bac4
   - license_expression: mit
+    license_expression_spdx: MIT
     matches:
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 250
         end_line: 250
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        rule_identifier: mit_26.RULE
         rule_relevance: 100
+        rule_identifier: mit_26.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE
         matched_text: The MIT License (MIT)
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 252
         end_line: 268
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -220,27 +237,32 @@ other_license_detections:
           SOFTWARE.
     identifier: mit-86fcf017-3572-9813-b7e8-0a10ec4a120f
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 270
         end_line: 270
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 271
         end_line: 283
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 113
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_420.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_420.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_420.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
@@ -256,42 +278,49 @@ other_license_detections:
           You should have received a copy of the GNU General Public License
           along with this program; if not, write to the Free Software Foundation,
           Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 285
         end_line: 286
+        matcher: 2-aho
+        score: '100.0'
         matched_length: '19'
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_843.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_843.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_843.RULE
         matched_text: |
           On Debian systems a full copy of the GPL 2 can be found at
           /usr/share/common-licenses/GPL-2
     identifier: gpl_2_0_plus-35e4cd88-b99c-c282-9c8d-6adda8e30de7
   - license_expression: gpl-3.0
+    license_expression_spdx: GPL-3.0-only
     matches:
-      - score: '100.0'
+      - license_expression: gpl-3.0
+        spdx_license_expression: GPL-3.0-only
+        from_file:
         start_line: 288
         end_line: 288
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0
-        rule_identifier: gpl-3.0_rdesc_1.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0_rdesc_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_rdesc_1.RULE
         matched_text: 'License: gpl-3'
-      - score: '100.0'
+      - license_expression: gpl-3.0
+        spdx_license_expression: GPL-3.0-only
+        from_file:
         start_line: 289
         end_line: 303
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 121
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0
-        rule_identifier: gpl-3.0_417.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0_417.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_417.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or
@@ -311,27 +340,32 @@ other_license_detections:
           /usr/share/common-licenses/GPL-3
     identifier: gpl_3_0-8aedd1ed-14a5-6251-d7c9-2043652e8a9d
   - license_expression: lgpl-2.1
+    license_expression_spdx: LGPL-2.1-only
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1
+        spdx_license_expression: LGPL-2.1-only
+        from_file:
         start_line: 305
         end_line: 305
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1
-        rule_identifier: lgpl-2.1_38.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1_38.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
-      - score: '100.0'
+      - license_expression: lgpl-2.1
+        spdx_license_expression: LGPL-2.1-only
+        from_file:
         start_line: 306
         end_line: 314
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 91
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1
-        rule_identifier: lgpl-2.1_313.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1_313.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_313.RULE
         matched_text: |
           This file may be used under the terms of the GNU Lesser General Public
@@ -345,27 +379,32 @@ other_license_detections:
           /usr/share/common-licenses/LGPL-2.1
     identifier: lgpl_2_1-2e3849b9-b454-6df2-7ee6-17217037ee49
   - license_expression: lgpl-2.1-plus AND lgpl-2.1
+    license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-only
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 316
         end_line: 316
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 4
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_108.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_108.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
-      - score: '100.0'
+      - license_expression: lgpl-2.1
+        spdx_license_expression: LGPL-2.1-only
+        from_file:
         start_line: 317
         end_line: 332
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 138
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.1
-        rule_identifier: lgpl-2.1_312.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1_312.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_312.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
@@ -386,16 +425,19 @@ other_license_detections:
           /usr/share/common-licenses/LGPL-2.1
     identifier: lgpl_2_1_plus_and_lgpl_2_1-cf318f99-012d-ea29-3c3d-7de3bd7e0338
   - license_expression: public-domain-disclaimer
+    license_expression_spdx: LicenseRef-scancode-public-domain-disclaimer
     matches:
-      - score: '100.0'
+      - license_expression: public-domain-disclaimer
+        spdx_license_expression: LicenseRef-scancode-public-domain-disclaimer
+        from_file:
         start_line: 335
         end_line: 337
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 27
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: public-domain-disclaimer
-        rule_identifier: public-domain-disclaimer_47.RULE
         rule_relevance: 100
+        rule_identifier: public-domain-disclaimer_47.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain-disclaimer_47.RULE
         matched_text: |
           This software is in the public domain, furnished "as is", without technical
