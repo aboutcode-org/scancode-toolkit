@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import click
 import os
 import sys
 import traceback
@@ -36,20 +35,11 @@ from commoncode.text import python_safe_name
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
-from licensedcode import TINY_RULE
 from licensedcode.frontmatter import dumps_frontmatter
 from licensedcode.frontmatter import load_frontmatter
 from licensedcode.languages import LANG_INFO as known_languages
-from licensedcode.spans import Span
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import index_tokenizer_with_stopwords
-from licensedcode.tokenize import key_phrase_tokenizer
-from licensedcode.tokenize import return_spans_for_key_phrase_in_text
-from licensedcode.tokenize import get_ignorable_spans
-from licensedcode.tokenize import get_non_overlapping_spans
-from licensedcode.tokenize import add_key_phrase_markers
-from licensedcode.tokenize import KEY_PHRASE_OPEN
-from licensedcode.tokenize import KEY_PHRASE_CLOSE
 from licensedcode.tokenize import query_lines
 from scancode.api import SCANCODE_LICENSEDB_URL
 from scancode.api import SCANCODE_LICENSE_URL
@@ -2215,6 +2205,7 @@ class Rule(BasicRule):
         Return a list of Spans marking key phrases token positions of that must
         be present for this rule to be matched.
         """
+        from licensedcode.required_phrases import get_key_phrase_spans
         if self.is_from_license:
             return []
         try:
@@ -2870,140 +2861,3 @@ def get_rules_by_expression(rules_data_dir=rules_data_dir):
             rules_by_expression[rule.license_expression].append(rule)
 
     return OrderedDict(sorted(rules_by_expression.items()))
-
-
-def get_key_phrase_spans(text):
-    """
-    Yield Spans of key phrase token positions found in the rule ``text``.
-    Tokens form a key phrase when enclosed in {{double curly braces}}.
-
-    For example:
-
-    >>> text = 'This is enclosed in {{double curly braces}}'
-    >>> #       0    1  2        3    4      5     6
-    >>> x = list(get_key_phrase_spans(text))
-    >>> assert x == [Span(4, 6)], x
-
-    >>> text = 'This is {{enclosed}} a  {{double curly braces}} or not'
-    >>> #       0    1    2          SW   3      4     5        6  7
-    >>> x = list(get_key_phrase_spans(text))
-    >>> assert x == [Span(2), Span(3, 5)], x
-
-    >>> text = 'This {{is}} enclosed a  {{double curly braces}} or not'
-    >>> #       0    1      2        SW   3      4     5        6  7
-    >>> x = list(get_key_phrase_spans(text))
-    >>> assert x == [Span([1]), Span([3, 4, 5])], x
-
-    >>> text = '{{AGPL-3.0  GNU Affero General Public License v3.0}}'
-    >>> #         0    1 2  3   4      5       6      7       8  9
-    >>> x = list(get_key_phrase_spans(text))
-    >>> assert x == [Span(0, 9)], x
-
-    >>> assert list(get_key_phrase_spans('{This}')) == []
-
-    >>> def check_exception(text):
-    ...     try:
-    ...         return list(get_key_phrase_spans(text))
-    ...     except InvalidRule:
-    ...         pass
-
-    >>> check_exception('This {{is')
-    >>> check_exception('This }}is')
-    >>> check_exception('{{This }}is{{')
-    >>> check_exception('This }}is{{')
-    >>> check_exception('{{}}')
-    >>> check_exception('{{This is')
-    >>> check_exception('{{This is{{')
-    >>> check_exception('{{This is{{ }}')
-    >>> check_exception('{{{{This}}}}')
-    >>> check_exception('}}This {{is}}')
-    >>> check_exception('This }} {{is}}')
-    >>> check_exception('{{This}}')
-    [Span(0)]
-    >>> check_exception('{This}')
-    []
-    >>> check_exception('{{{This}}}')
-    [Span(0)]
-    """
-    ipos = 0
-    in_key_phrase = False
-    key_phrase = []
-    for token in key_phrase_tokenizer(text):
-        if token == KEY_PHRASE_OPEN:
-            if in_key_phrase:
-                raise InvalidRule('Invalid rule with nested key phrase {{ {{ braces', text)
-            in_key_phrase = True
-
-        elif token == KEY_PHRASE_CLOSE:
-            if in_key_phrase:
-                if key_phrase:
-                    yield Span(key_phrase)
-                    key_phrase.clear()
-                else:
-                    raise InvalidRule('Invalid rule with empty key phrase {{}} braces', text)
-                in_key_phrase = False
-            else:
-                raise InvalidRule(f'Invalid rule with dangling key phrase missing closing braces', text)
-            continue
-        else:
-            if in_key_phrase:
-                key_phrase.append(ipos)
-            ipos += 1
-
-    if key_phrase or in_key_phrase:
-        raise InvalidRule(f'Invalid rule with dangling key phrase missing final closing braces', text)
-
-
-def add_key_phrases_for_license_fields(licence_object, rules):
-
-    license_fields_mapping_by_order = {
-        "name": licence_object.name,
-        "short_name": licence_object.short_name,
-        #"key",
-        #"spdx_license_key"
-    }
-
-    for rule in rules:
-        # skip small rules
-        if len(rule.text) < TINY_RULE:
-            continue
-
-        for license_field_value in license_fields_mapping_by_order.values():
-
-            # Reload from file as there could be changes from other license fields
-            rule_file = os.path.join(rules_data_dir, rule.identifier)
-            reloaded_rule = Rule.from_file(rule_file)
-
-            # we get spans for name/short_name if they exist
-            new_key_phrase_spans = return_spans_for_key_phrase_in_text(
-                text=reloaded_rule.text,
-                key_phrase=license_field_value
-            )
-
-            # we get spans for already existing key phrases and ignorables
-            ignorable_spans = get_ignorable_spans(reloaded_rule)
-            old_key_phrase_spans = reloaded_rule.build_key_phrase_spans()
-
-            # we verify whether there are spans which overlap with the
-            # already present key phrases or ignorables
-            spans_to_add = list(
-                get_non_overlapping_spans(
-                    old_key_phrase_spans=old_key_phrase_spans + ignorable_spans,
-                    new_key_phrase_spans=new_key_phrase_spans
-                )
-            )
-
-            text_rule = reloaded_rule.text
-            
-            # we add key phrase markers for the non-overlapping spans
-            for span_to_add in spans_to_add:
-                text_rule = add_key_phrase_markers(
-                    text=text_rule,
-                    key_phrase_span=span_to_add
-                )
-
-            # write the rule on disk if there are any updates
-            if text_rule != reloaded_rule.text:
-                click.echo(f"Updating rule: {reloaded_rule.identifier}")
-                reloaded_rule.text = text_rule
-                reloaded_rule.dump(rules_data_dir)
