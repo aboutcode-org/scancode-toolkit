@@ -119,9 +119,10 @@ Beyond these we have a few secondary models:
 """
 
 SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+SCANCODE_DEBUG_PACKAGE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
 
 TRACE = SCANCODE_DEBUG_PACKAGE
-TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE
+TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE_ASSEMBLY
 
 
 def logger_debug(*args):
@@ -1537,6 +1538,7 @@ class Package(PackageData):
         self,
         package_data,
         datafile_path,
+        check_compatible=True,
         replace=False,
         include_version=True,
         include_qualifiers=False,
@@ -1568,7 +1570,7 @@ class Package(PackageData):
         if isinstance(package_data, dict):
             package_data = PackageData.from_dict(package_data)
 
-        if not is_compatible(
+        if check_compatible and not is_compatible(
             purl1=self,
             purl2=package_data,
             include_version=include_version,

@@ -1,7 +1,7 @@
 [
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "libncurses5",
     "version": "6.1-1ubuntu1.18.04",
     "qualifiers": {
@@ -133,7 +133,7 @@
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/ncurses"
+      "pkg:deb/ubuntu/ncurses"
     ],
     "extra_data": {
       "multi_arch": "same",
@@ -179,7 +179,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "debian-container-layer.tar.xz/var/lib/dpkg/status",
       "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
@@ -328,7 +328,7 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -419,16 +419,16 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "libndp0",
     "version": "1.4-2ubuntu0.16.04.1",
     "qualifiers": {
@@ -524,7 +524,7 @@
     "extracted_license_statement": "- LGPL-2.1+\n- LGPL-2.1+\n- LGPL-2.1+\n",
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/libndp"
+      "pkg:deb/ubuntu/libndp"
     ],
     "extra_data": {
       "multi_arch": "same",
@@ -552,7 +552,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "debian-container-layer.tar.xz/var/lib/dpkg/status",
       "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
@@ -665,7 +665,7 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -747,11 +747,11 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64"
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "libncurses5",
     "version": "6.1-1ubuntu1.18.04",
     "qualifiers": {
@@ -44,7 +44,7 @@
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/ncurses"
+      "pkg:deb/ubuntu/ncurses"
     ],
     "file_references": [],
     "extra_data": {
@@ -55,11 +55,11 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "libcom-err2",
     "version": "1.44.1-1ubuntu1.1",
     "qualifiers": {
@@ -102,7 +102,7 @@
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/e2fsprogs"
+      "pkg:deb/ubuntu/e2fsprogs"
     ],
     "file_references": [],
     "extra_data": {
@@ -113,11 +113,11 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/libcom-err2@1.44.1-1ubuntu1.1?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libcom-err2@1.44.1-1ubuntu1.1?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "libapt-pkg5.0",
     "version": "1.6.11",
     "qualifiers": {
@@ -160,7 +160,7 @@
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/apt"
+      "pkg:deb/ubuntu/apt"
     ],
     "file_references": [],
     "extra_data": {
@@ -171,11 +171,11 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/libapt-pkg5.0@1.6.11?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libapt-pkg5.0@1.6.11?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "libaudit1",
     "version": "1:2.8.2-1ubuntu1",
     "qualifiers": {
@@ -218,7 +218,7 @@
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/audit"
+      "pkg:deb/ubuntu/audit"
     ],
     "file_references": [],
     "extra_data": {
@@ -229,11 +229,11 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/libaudit1@1:2.8.2-1ubuntu1?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.2-1ubuntu1?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "perl-base",
     "version": "5.26.1-6ubuntu0.3",
     "qualifiers": {
@@ -276,7 +276,7 @@
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/perl"
+      "pkg:deb/ubuntu/perl"
     ],
     "file_references": [],
     "extra_data": {},
@@ -285,11 +285,11 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/perl-base@5.26.1-6ubuntu0.3?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?architecture=amd64"
   },
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "libudev1",
     "version": "237-3ubuntu10.22",
     "qualifiers": {
@@ -332,7 +332,7 @@
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/systemd"
+      "pkg:deb/ubuntu/systemd"
     ],
     "file_references": [],
     "extra_data": {
@@ -343,6 +343,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/libudev1@237-3ubuntu10.22?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libudev1@237-3ubuntu10.22?architecture=amd64"
   }
 ]

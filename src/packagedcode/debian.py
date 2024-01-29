@@ -305,6 +305,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
                 package.update(
                     package_data=package_data,
                     datafile_path=res.path,
+                    check_compatible=False,
                     replace=False,
                     include_version=False,
                     include_qualifiers=False,
@@ -628,6 +629,16 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
     if keyword:
         keywords.append(keyword)
 
+    # Get distro/namespace information from clues in package data
+    if not distro:
+        for clue, namespace in version_clues_for_namespace.items():
+            if clue in version:
+                distro = namespace
+        
+        for clue, namespace in maintainer_clues_for_namespace.items():
+            if clue in maintainer:
+                distro = namespace
+
     source_packages = []
     source = debian_data.get('source')
     if source:
@@ -654,6 +665,18 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         parties=parties,
         extra_data=extra_data,
     )
+
+
+version_clues_for_namespace = {
+    'deb': 'debian',
+    'ubuntu': 'ubuntu',
+}
+
+
+maintainer_clues_for_namespace = {
+    'packages.debian.org': 'debian',
+    'lists.ubuntu.com': 'ubuntu',
+}
 
 
 ignored_root_dirs = {

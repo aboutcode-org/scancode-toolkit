@@ -1,7 +1,7 @@
 [
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "perl-base",
     "version": "5.22.1-9ubuntu0.6",
     "qualifiers": {
@@ -44,7 +44,7 @@
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/perl"
+      "pkg:deb/ubuntu/perl"
     ],
     "file_references": [],
     "extra_data": {},
@@ -53,6 +53,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/perl-base@5.22.1-9ubuntu0.6?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/perl-base@5.22.1-9ubuntu0.6?architecture=amd64"
   }
 ]
