@@ -75,7 +75,7 @@
     },
     {
       "type": "deb",
-      "namespace": null,
+      "namespace": "debian",
       "name": "base-passwd",
       "version": "3.5.47",
       "qualifiers": {
@@ -279,7 +279,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:deb/base-passwd@3.5.47?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:deb/debian/base-passwd@3.5.47?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ubuntu-var-lib-dpkg/var/lib/dpkg/status",
         "ubuntu-var-lib-dpkg/var/lib/dpkg/info/base-passwd.md5sums"
@@ -288,7 +288,7 @@
         "debian_installed_status_db",
         "debian_installed_md5sums"
       ],
-      "purl": "pkg:deb/base-passwd@3.5.47?architecture=amd64"
+      "purl": "pkg:deb/debian/base-passwd@3.5.47?architecture=amd64"
     },
     {
       "type": "deb",
@@ -1832,7 +1832,7 @@
         }
       ],
       "for_packages": [
-        "pkg:deb/base-passwd@3.5.47?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/debian/base-passwd@3.5.47?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -2589,7 +2589,7 @@
         },
         {
           "type": "deb",
-          "namespace": null,
+          "namespace": "debian",
           "name": "base-passwd",
           "version": "3.5.47",
           "qualifiers": {
@@ -2641,7 +2641,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
-          "purl": "pkg:deb/base-passwd@3.5.47?architecture=amd64"
+          "purl": "pkg:deb/debian/base-passwd@3.5.47?architecture=amd64"
         },
         {
           "type": "deb",

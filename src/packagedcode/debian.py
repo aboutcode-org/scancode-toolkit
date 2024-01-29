@@ -675,7 +675,12 @@ version_clues_for_namespace = {
 
 maintainer_clues_for_namespace = {
     'packages.debian.org': 'debian',
+    'lists.debian.org': 'debian',
+    'lists.alioth.debian.org': 'debian',
+    '@debian.org': 'debian',
+    'debian-init-diversity@': 'debian',
     'lists.ubuntu.com': 'ubuntu',
+    '@canonical.com': 'ubuntu',
 }
 
 
