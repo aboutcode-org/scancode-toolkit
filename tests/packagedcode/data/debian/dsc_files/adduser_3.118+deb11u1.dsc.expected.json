@@ -1,0 +1,68 @@
+{
+  "packages": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "adduser_3.118+deb11u1.dsc",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "deb",
+          "namespace": "debian",
+          "name": null,
+          "version": "3.118+deb11u1",
+          "qualifiers": {
+            "architecture": "all"
+          },
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "maintainer",
+              "name": "Debian Adduser Developers <adduser@packages.debian.org>",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:deb/debian/adduser"
+          ],
+          "file_references": [],
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_source_control_dsc",
+          "purl": null
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}

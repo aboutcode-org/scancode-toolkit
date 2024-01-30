@@ -1,0 +1,32 @@
+Source: gzip
+Section: utils
+Priority: required
+Maintainer: Bdale Garbee <bdale@gag.com>
+Uploaders: Carl Worth <cworth@cworth.org>
+Build-Depends: debhelper (>= 11), texinfo, autoconf, automake, less
+Build-Depends-Indep: mingw-w64
+Rules-Requires-Root: no
+Standards-Version: 4.3.0
+Vcs-Git: https://salsa.debian.org/debian/gzip.git
+Vcs-Browser: https://salsa.debian.org/debian/gzip
+Homepage: https://www.gnu.org/software/gzip/
+
+Package: gzip
+Architecture: any
+Essential: yes
+Pre-Depends: ${shlibs:Depends}
+Depends: dpkg (>= 1.15.4) | install-info
+Suggests: less
+Description: GNU compression utilities
+ This package provides the standard GNU file compression utilities, which 
+ are also the default compression tools for Debian.  They typically operate 
+ on files with names ending in '.gz', but can also decompress files ending 
+ in '.Z' created with 'compress'.
+
+Package: gzip-win32
+Architecture: all
+Priority: optional
+Suggests: wine
+Description: GNU compression utility (win32 build)
+ This is a win32 version of gzip, meant to be used by the win32-loader
+ component of Debian-Installer.

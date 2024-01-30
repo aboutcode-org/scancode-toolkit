@@ -138,6 +138,7 @@ class DebianControlFileInExtractedDebHandler(models.DatafileHandler):
             debian_data=get_paragraph_data_from_file(location=location),
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            distro='debian',
         )
 
     @classmethod
@@ -538,6 +539,9 @@ def build_package_data_from_package_filename(filename, datasource_id, package_ty
     """
 
     # TODO: we cannot know the distro from the name only
+    # PURLs without namespace is invalid, so we need to
+    # have a default value for this
+    distro = 'debian'
     deb = DebArchive.from_filename(filename=filename)
 
     if deb.architecture:
@@ -553,6 +557,7 @@ def build_package_data_from_package_filename(filename, datasource_id, package_ty
         datasource_id=datasource_id,
         type=package_type,
         name=deb.name,
+        namespace=distro,
         version=version,
         qualifiers=qualifiers,
     )
@@ -645,13 +650,17 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
 
     # Get distro/namespace information from clues in package data
     if not distro:
-        for clue, namespace in version_clues_for_namespace.items():
-            if clue in version:
-                distro = namespace
-        
-        for clue, namespace in maintainer_clues_for_namespace.items():
-            if clue in maintainer:
-                distro = namespace
+        if version:
+            for clue, namespace in version_clues_for_namespace.items():
+                if clue in version:
+                    distro = namespace
+                    break
+
+        if maintainer:
+            for clue, namespace in maintainer_clues_for_namespace.items():
+                if clue in maintainer:
+                    distro = namespace
+                    break
 
     source_packages = []
     source = debian_data.get('source')
@@ -659,7 +668,7 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         source_pkg_purl = PackageURL(
             type=package_type,
             name=source,
-            namespace=distro
+            namespace=distro,
         ).to_string()
 
         source_packages.append(source_pkg_purl)
