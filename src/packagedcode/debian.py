@@ -197,11 +197,19 @@ class DebianDscFileHandler(models.DatafileHandler):
             location=location,
             remove_pgp_signature=True,
         )
-        yield build_package_data(
+
+        package_data_from_file = build_package_data_from_package_filename(
+            filename=os.path.basename(location),
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
+        package_data = build_package_data(
             debian_data=debian_data,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
         )
+        package_data.update_purl_fields(package_data=package_data_from_file)
+        yield package_data
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):

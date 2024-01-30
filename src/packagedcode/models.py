@@ -784,6 +784,26 @@ class PackageData(IdentifiablePackageData):
         if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
             self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
 
+    def update_purl_fields(self, package_data, replace=False):
+
+        if not self.type == package_data.type:
+            return
+
+        purl_fields = [
+            "name",
+            "namespace",
+            "version",
+            "qualifiers"
+        ]
+
+        for purl_field in purl_fields:
+            value = getattr(self, purl_field)
+            # We will not update only when replace is False and value is non-empty
+            if not replace and value:
+                continue
+
+            setattr(self, purl_field, getattr(package_data, purl_field))
+
     def to_dict(self, with_details=True, **kwargs):
         mapping = super().to_dict(with_details=with_details, **kwargs)
         if not with_details:
