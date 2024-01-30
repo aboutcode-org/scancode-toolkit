@@ -566,6 +566,66 @@
     {
       "type": "deb",
       "namespace": "ubuntu",
+      "name": "e2fsprogs",
+      "version": "1.46.2-2",
+      "qualifiers": {
+        "architecture": "amd64"
+      },
+      "subpath": null,
+      "primary_language": null,
+      "description": "ext2/ext3/ext4 file system utilities\n The ext2, ext3 and ext4 file systems are successors of the original ext\n (\"extended\") file system. They are the main file system types used for\n hard disks on Debian and other Linux systems.\n .\n This package contains programs for creating, checking, and maintaining\n ext2/3/4-based file systems.  It also includes the \"badblocks\" program,\n which can be used to scan for bad blocks on a disk or other storage device.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "maintainer",
+          "name": "Theodore Y. Ts'o <tytso@mit.edu>",
+          "email": null,
+          "url": null
+        }
+      ],
+      "keywords": [
+        "admin"
+      ],
+      "homepage_url": "http://e2fsprogs.sourceforge.net",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "extra_data": {
+        "multi_arch": "foreign"
+      },
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:deb/ubuntu/e2fsprogs@1.46.2-2?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "ubuntu-var-lib-dpkg/var/lib/dpkg/status"
+      ],
+      "datasource_ids": [
+        "debian_installed_status_db"
+      ],
+      "purl": "pkg:deb/ubuntu/e2fsprogs@1.46.2-2?architecture=amd64"
+    },
+    {
+      "type": "deb",
+      "namespace": "ubuntu",
       "name": "tar",
       "version": "1.30+dfsg-7",
       "qualifiers": {
@@ -2698,6 +2758,62 @@
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
           "purl": "pkg:deb/ubuntu/bash@5.0-6ubuntu1?architecture=amd64"
+        },
+        {
+          "type": "deb",
+          "namespace": "ubuntu",
+          "name": "e2fsprogs",
+          "version": "1.46.2-2",
+          "qualifiers": {
+            "architecture": "amd64"
+          },
+          "subpath": null,
+          "primary_language": null,
+          "description": "ext2/ext3/ext4 file system utilities\n The ext2, ext3 and ext4 file systems are successors of the original ext\n (\"extended\") file system. They are the main file system types used for\n hard disks on Debian and other Linux systems.\n .\n This package contains programs for creating, checking, and maintaining\n ext2/3/4-based file systems.  It also includes the \"badblocks\" program,\n which can be used to scan for bad blocks on a disk or other storage device.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "maintainer",
+              "name": "Theodore Y. Ts'o <tytso@mit.edu>",
+              "email": null,
+              "url": null
+            }
+          ],
+          "keywords": [
+            "admin"
+          ],
+          "homepage_url": "http://e2fsprogs.sourceforge.net",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "extra_data": {
+            "multi_arch": "foreign"
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_installed_status_db",
+          "purl": "pkg:deb/ubuntu/e2fsprogs@1.46.2-2?architecture=amd64"
         },
         {
           "type": "deb",

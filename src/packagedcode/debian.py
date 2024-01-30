@@ -9,6 +9,7 @@
 
 import os
 import logging
+from collections import Counter
 from pathlib import Path
 
 from commoncode import fileutils
@@ -157,14 +158,18 @@ class DebianControlFileInSourceHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location):
-        # TODO: we cannot know the distro from the name only
         # NOTE: a control file in a source repo or debina.tar tarball can contain more than one package
+        debian_packages = []
         for debian_data in get_paragraphs_data_from_file(location=location):
-            yield build_package_data(
-                debian_data,
-                datasource_id=cls.datasource_id,
-                package_type=cls.default_package_type,
+            debian_packages.append(
+                build_package_data(
+                    debian_data=debian_data,
+                    datasource_id=cls.datasource_id,
+                    package_type=cls.default_package_type,
+                )
             )
+
+        yield from populate_debian_namespace(debian_packages)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
@@ -214,12 +219,17 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
     def parse(cls, location):
         # note that we do not know yet the distro at this stage
         # we could get it... but we get that later during assemble()
-        for debian_data in get_paragraphs_data_from_file(location):
-            yield build_package_data(
-                debian_data,
-                datasource_id=cls.datasource_id,
-                package_type=cls.default_package_type,
+        debian_packages = []
+        for debian_data in get_paragraphs_data_from_file(location=location):
+            debian_packages.append(
+                build_package_data(
+                    debian_data=debian_data,
+                    datasource_id=cls.datasource_id,
+                    package_type=cls.default_package_type,
+                )
             )
+
+        yield from populate_debian_namespace(debian_packages)
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -380,13 +390,17 @@ class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
         rootfs installation. distroless is derived from Debian but each package
         has its own status file.
         """
-        for debian_data in get_paragraphs_data_from_file(location):
-            yield build_package_data(
-                debian_data,
-                datasource_id=cls.datasource_id,
-                package_type=cls.default_package_type,
-                distro='distroless',
+        debian_packages = []
+        for debian_data in get_paragraphs_data_from_file(location=location):
+            debian_packages.append(
+                build_package_data(
+                    debian_data=debian_data,
+                    datasource_id=cls.datasource_id,
+                    package_type=cls.default_package_type,
+                )
             )
+
+        yield from populate_debian_namespace(debian_packages)
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -665,6 +679,29 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         parties=parties,
         extra_data=extra_data,
     )
+
+
+def populate_debian_namespace(packages):
+    """
+    For an iterable of debian `packages`, populate the
+    most frequently occuring namespace, or the default
+    namespace 'debian' in packages without namespace.
+    """
+    if not packages:
+        return
+
+    namespaces_with_count = Counter([
+        package.namespace
+        for package in packages
+    ])
+    distro = max(namespaces_with_count, key=namespaces_with_count.get)
+    if not distro:
+        distro = 'debian'
+
+    for package in packages:
+        if not package.namespace:
+            package.namespace = distro
+        yield package
 
 
 version_clues_for_namespace = {
