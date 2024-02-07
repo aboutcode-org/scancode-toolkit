@@ -174,6 +174,13 @@ Package type:  composer
   description:       PHP composer lockfile
   path_patterns:    '*composer.lock'
 --------------------------------------------
+Package type:  conan
+  datasource_id:     conan_conanfile_py
+  documentation URL: https://docs.conan.io/2.0/reference/conanfile.html
+  primary language:  C++
+  description:       conan recipe
+  path_patterns:    '*/conanfile.py'
+--------------------------------------------
 Package type:  conda
   datasource_id:     conda_meta_yaml
   documentation URL: https://docs.conda.io/

@@ -21,6 +21,7 @@ from packagedcode import debian
 from packagedcode import debian_copyright
 from packagedcode import distro
 from packagedcode import conda
+from packagedcode import conan
 from packagedcode import cocoapods
 from packagedcode import cran
 from packagedcode import freebsd
@@ -76,6 +77,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     conda.CondaYamlHandler,
     conda.CondaMetaYamlHandler,
+
+    conan.ConanFileHandler,
 
     cran.CranDescriptionFileHandler,
 
