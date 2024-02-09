@@ -5,11 +5,13 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
+
 import ast
 import io
 import logging
 import os
 
+import saneyaml
 from packageurl import PackageURL
 
 from packagedcode import models
@@ -41,7 +43,6 @@ if TRACE:
         return logger.debug(" ".join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-
 class ConanFileParser(ast.NodeVisitor):
     def __init__(self):
         self.name = None
@@ -53,25 +54,26 @@ class ConanFileParser(ast.NodeVisitor):
         self.license = None
         self.keywords = []
         self.requires = []
-    
+
     def to_dict(self):
         return {
-            'name': self.name,
-            'version': self.version,
-            'description': self.description,
-            'author':self.author,
-            'homepage_url':self.homepage_url,
-            'vcs_url':self.vcs_url,
-            'license':self.license,
-            'keywords':self.keywords,
-            'requires':self.requires,
+            "name": self.name,
+            "version": self.version,
+            "description": self.description,
+            "author": self.author,
+            "homepage_url": self.homepage_url,
+            "vcs_url": self.vcs_url,
+            "license": self.license,
+            "keywords": self.keywords,
+            "requires": self.requires,
         }
-
 
     def visit_Assign(self, node):
         if not node.targets or not isinstance(node.targets[0], ast.Name):
             return
-        if not node.value or not (isinstance(node.value, ast.Constant) or isinstance(node.value, ast.Tuple)):
+        if not node.value or not (
+            isinstance(node.value, ast.Constant) or isinstance(node.value, ast.Tuple)
+        ):
             return
         variable_name = node.targets[0].id
         values = node.value
@@ -159,30 +161,120 @@ class ConanFileHandler(models.DatafileHandler):
             version=parser.version,
             description=parser.description,
             homepage_url=parser.homepage_url,
-            vcs_url=parser.vcs_url,
             keywords=parser.keywords,
-            declared_license_expression=parser.license,
+            extracted_license_statement=parser.license,
             dependencies=dependencies,
         )
 
+
+class ConanDataHandler(models.DatafileHandler):
+    datasource_id = "conan_conandata_yml"
+    path_patterns = ("*/conandata.yml",)
+    default_package_type = "conan"
+    default_primary_language = "C++"
+    description = "conan external source"
+    documentation_url = (
+        "https://docs.conan.io/2/tutorial/creating_packages/"
+        "handle_sources_in_packages.html#using-the-conandata-yml-file"
+    )
+
+    @classmethod
+    def parse(cls, location):
+        with io.open(location, encoding="utf-8") as loc:
+            conan_data = loc.read()
+
+        conan_data = saneyaml.load(conan_data)
+        sources = conan_data.get("sources", {})
+
+        for version, source in sources.items():
+            sha256 = source.get("sha256", None)
+            urls = []
+            source_urls = source.get("url")
+            if isinstance(source_urls, str):
+                urls.append(source_urls)
+            elif isinstance(source_urls, list):
+                urls.extend(source_urls)
+
+            for url in urls:
+                yield models.PackageData(
+                    datasource_id=cls.datasource_id,
+                    type=cls.default_package_type,
+                    primary_language=cls.default_primary_language,
+                    namespace=None,
+                    version=version,
+                    download_url=url,
+                    sha256=sha256,
+                )
+
+    @classmethod
+    def assemble(
+        cls, package_data, resource, codebase, package_adder=models.add_to_package
+    ):
+        """
+        Assemble
+        """
+        siblings = resource.siblings(codebase)
+        conanfile_package_resource = [r for r in siblings if r.name == "conanfile.py"]
+        package_data_dict = package_data.to_dict()
+
+        if conanfile_package_resource:
+            conanfile_package_resource = conanfile_package_resource[0]
+
+            conanfile_package_data = conanfile_package_resource.package_data
+            if conanfile_package_data:
+                conanfile_package_data = conanfile_package_data[0]
+
+                package_data_dict["name"] = conanfile_package_data.get("name")
+                package_data_dict["description"] = conanfile_package_data.get(
+                    "description"
+                )
+                package_data_dict["homepage_url"] = conanfile_package_data.get(
+                    "homepage_url"
+                )
+                package_data_dict["keywords"] = conanfile_package_data.get("keywords")
+                package_data_dict[
+                    "extracted_license_statement"
+                ] = conanfile_package_data.get("extracted_license_statement")
+
+        datafile_path = resource.path
+        pkg_data = models.PackageData.from_dict(package_data_dict)
+
+        if pkg_data.purl:
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=datafile_path,
+            )
+            package.populate_license_fields()
+            yield package
+
+            cls.assign_package_to_resources(
+                package=package,
+                resource=resource,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+        yield resource
+
+
 def is_constraint_resolved(constraint):
-    range_characters = {'>', '<', '[', ']', '>=','<='}
+    range_characters = {">", "<", "[", "]", ">=", "<="}
     return not any(char in range_characters for char in constraint)
 
+
 def get_dependencies(requires):
-    dependent_packages=[]
+    dependent_packages = []
     for req in requires:
-        name, constraint = req.split('/', 1)
+        name, constraint = req.split("/", 1)
         is_resolved = is_constraint_resolved(constraint)
-        purl = PackageURL(type='conan', name=name)
+        purl = PackageURL(type="conan", name=name)
         dependent_packages.append(
             models.DependentPackage(
                 purl=purl.to_string(),
-                scope='install',
+                scope="install",
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=is_resolved,
-                extracted_requirement=constraint
+                extracted_requirement=constraint,
             )
         )
     return dependent_packages

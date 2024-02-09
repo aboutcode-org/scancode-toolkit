@@ -175,6 +175,13 @@ Package type:  composer
   path_patterns:    '*composer.lock'
 --------------------------------------------
 Package type:  conan
+  datasource_id:     conan_conandata_yml
+  documentation URL: https://docs.conan.io/2/tutorial/creating_packages/handle_sources_in_packages.html#using-the-conandata-yml-file
+  primary language:  C++
+  description:       conan external source
+  path_patterns:    '*/conandata.yml'
+--------------------------------------------
+Package type:  conan
   datasource_id:     conan_conanfile_py
   documentation URL: https://docs.conan.io/2.0/reference/conanfile.html
   primary language:  C++

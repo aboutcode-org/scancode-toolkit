@@ -79,6 +79,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     conda.CondaMetaYamlHandler,
 
     conan.ConanFileHandler,
+    conan.ConanDataHandler,
 
     cran.CranDescriptionFileHandler,
 
