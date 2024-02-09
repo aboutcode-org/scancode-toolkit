@@ -211,7 +211,8 @@ class ConanDataHandler(models.DatafileHandler):
         cls, package_data, resource, codebase, package_adder=models.add_to_package
     ):
         """
-        Assemble
+        `conandata.yml` only contains the `version` and `download_url` use the conanfile.py
+        to enhance the package metadata.
         """
         siblings = resource.siblings(codebase)
         conanfile_package_resource = [r for r in siblings if r.name == "conanfile.py"]
