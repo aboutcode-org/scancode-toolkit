@@ -1,26 +1,3 @@
-from conan import ConanFile
-from conan.errors import ConanException, ConanInvalidConfiguration
-from conan.tools.apple import is_apple_os, to_apple_arch, XCRun
-from conan.tools.build import build_jobs, check_min_cppstd, cross_building, valid_min_cppstd, supported_cppstd
-from conan.tools.env import VirtualBuildEnv
-from conan.tools.files import (
-    apply_conandata_patches, chdir, collect_libs, copy, export_conandata_patches,
-    get, mkdir, rename, replace_in_file, rm, rmdir, save
-)
-from conan.tools.gnu import AutotoolsToolchain
-from conan.tools.layout import basic_layout
-from conan.tools.microsoft import is_msvc, is_msvc_static_runtime, MSBuildToolchain, msvc_runtime_flag, VCVars
-from conan.tools.scm import Version
-
-import glob
-from io import StringIO
-import os
-import re
-import shlex
-import shutil
-import sys
-import yaml
-
 required_conan_version = ">=1.53.0"
 
 

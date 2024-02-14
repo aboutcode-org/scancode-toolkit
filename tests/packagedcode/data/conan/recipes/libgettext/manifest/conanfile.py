@@ -1,22 +1,3 @@
-import glob
-import os
-
-from conan import ConanFile
-from conan.tools.apple import is_apple_os
-from conan.tools.build import cross_building
-from conan.tools.env import VirtualBuildEnv, VirtualRunEnv, Environment
-from conan.tools.files import (
-    apply_conandata_patches,
-    copy,
-    export_conandata_patches,
-    get,
-    rename
-)
-from conan.tools.gnu import Autotools, AutotoolsDeps, AutotoolsToolchain
-from conan.tools.layout import basic_layout
-from conan.tools.microsoft import is_msvc, unix_path
-from conan.tools.scm import Version
-
 required_conan_version = ">=1.53.0"
 
 

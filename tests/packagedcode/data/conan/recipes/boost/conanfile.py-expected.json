@@ -72,7 +72,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/bzip2",
+        "purl": "pkg:conan/bzip2@1.0.8",
         "extracted_requirement": "1.0.8",
         "scope": "install",
         "is_runtime": true,
@@ -82,7 +82,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/xz_utils",
+        "purl": "pkg:conan/xz_utils@5.4.4",
         "extracted_requirement": "5.4.4",
         "scope": "install",
         "is_runtime": true,
@@ -92,7 +92,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/zstd",
+        "purl": "pkg:conan/zstd@1.5.5",
         "extracted_requirement": "1.5.5",
         "scope": "install",
         "is_runtime": true,
@@ -102,7 +102,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/libbacktrace",
+        "purl": "pkg:conan/libbacktrace@cci.20210118",
         "extracted_requirement": "cci.20210118",
         "scope": "install",
         "is_runtime": true,
@@ -112,7 +112,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/icu",
+        "purl": "pkg:conan/icu@73.2",
         "extracted_requirement": "73.2",
         "scope": "install",
         "is_runtime": true,
@@ -122,7 +122,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/libiconv",
+        "purl": "pkg:conan/libiconv@1.17",
         "extracted_requirement": "1.17",
         "scope": "install",
         "is_runtime": true,

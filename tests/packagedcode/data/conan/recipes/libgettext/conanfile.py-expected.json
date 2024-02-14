@@ -64,7 +64,7 @@
     "extra_data": {},
     "dependencies": [
       {
-        "purl": "pkg:conan/libiconv",
+        "purl": "pkg:conan/libiconv@1.17",
         "extracted_requirement": "1.17",
         "scope": "install",
         "is_runtime": true,

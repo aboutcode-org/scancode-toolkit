@@ -75,33 +75,34 @@ class ConanFileParser(ast.NodeVisitor):
             isinstance(node.value, ast.Constant) or isinstance(node.value, ast.Tuple)
         ):
             return
+
+        attribute_mapping = {
+            "name": "name",
+            "version": "version",
+            "description": "description",
+            "author": "author",
+            "homepage": "homepage_url",
+            "url": "vcs_url",
+            "license": "license",
+            "topics": "keywords",
+            "requires": "requires",
+        }
         variable_name = node.targets[0].id
         values = node.value
-        if variable_name == "name":
-            self.name = values.value
-        elif variable_name == "version":
-            self.version = values.value
-        elif variable_name == "description":
-            self.description = values.value
-        elif variable_name == "author":
-            self.author = values.value
-        elif variable_name == "homepage":
-            self.homepage_url = values.value
-        elif variable_name == "url":
-            self.vcs_url = values.value
-        elif variable_name == "license":
-            self.license = values.value
-        elif variable_name == "topics":
-            self.keywords.extend(
-                [el.value for el in values.elts if isinstance(el, ast.Constant)]
-            )
-        elif variable_name == "requires":
-            if isinstance(values, ast.Tuple):
-                self.requires.extend(
-                    [el.value for el in values.elts if isinstance(el, ast.Constant)]
-                )
-            elif isinstance(values, ast.Constant):
-                self.requires.append(values.value)
+
+        if variable_name in attribute_mapping:
+            attribute_name = attribute_mapping[variable_name]
+            if variable_name in ("topics", "requires"):
+                current_list = getattr(self, attribute_name)
+                if isinstance(values, ast.Tuple):
+                    current_list.extend(
+                        [el.value for el in values.elts if isinstance(el, ast.Constant)]
+                    )
+                elif isinstance(values, ast.Constant):
+                    current_list.append(values.value)
+                setattr(self, attribute_name, current_list)
+            else:
+                setattr(self, attribute_name, values.value)
 
     def visit_Call(self, node):
         if not isinstance(node.func, ast.Attribute) or not isinstance(
@@ -122,10 +123,7 @@ class ConanFileHandler(models.DatafileHandler):
     documentation_url = "https://docs.conan.io/2.0/reference/conanfile.html"
 
     @classmethod
-    def parse(cls, location):
-        with io.open(location, encoding="utf-8") as loc:
-            conan_recipe = loc.read()
-
+    def _parse(cls, conan_recipe):
         try:
             tree = ast.parse(conan_recipe)
             recipe_class_def = next(
@@ -152,7 +150,7 @@ class ConanFileHandler(models.DatafileHandler):
 
         dependencies = get_dependencies(parser.requires)
 
-        yield models.PackageData(
+        return models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -165,6 +163,13 @@ class ConanFileHandler(models.DatafileHandler):
             extracted_license_statement=parser.license,
             dependencies=dependencies,
         )
+
+    @classmethod
+    def parse(cls, location):
+        with io.open(location, encoding="utf-8") as loc:
+            conan_recipe = loc.read()
+
+        yield cls._parse(conan_recipe)
 
 
 class ConanDataHandler(models.DatafileHandler):
@@ -188,23 +193,25 @@ class ConanDataHandler(models.DatafileHandler):
 
         for version, source in sources.items():
             sha256 = source.get("sha256", None)
-            urls = []
             source_urls = source.get("url")
+            if not source_urls:
+                continue
+            
+            url = None
             if isinstance(source_urls, str):
-                urls.append(source_urls)
+                url = source_urls
             elif isinstance(source_urls, list):
-                urls.extend(source_urls)
+                url = source_urls[0]
 
-            for url in urls:
-                yield models.PackageData(
-                    datasource_id=cls.datasource_id,
-                    type=cls.default_package_type,
-                    primary_language=cls.default_primary_language,
-                    namespace=None,
-                    version=version,
-                    download_url=url,
-                    sha256=sha256,
-                )
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                namespace=None,
+                version=version,
+                download_url=url,
+                sha256=sha256,
+            )
 
     @classmethod
     def assemble(
@@ -245,6 +252,9 @@ class ConanDataHandler(models.DatafileHandler):
                 package_data=pkg_data,
                 datafile_path=datafile_path,
             )
+            package.datafile_paths.append(conanfile_package_resource.path)
+            package.datasource_ids.append(ConanFileHandler.datasource_id)
+
             package.populate_license_fields()
             yield package
 
@@ -254,10 +264,14 @@ class ConanDataHandler(models.DatafileHandler):
                 codebase=codebase,
                 package_adder=package_adder,
             )
+        # print(package.to_dict())
         yield resource
 
 
 def is_constraint_resolved(constraint):
+    """
+    Checks if a constraint is resolved and it specifies an exact version.
+    """
     range_characters = {">", "<", "[", "]", ">=", "<="}
     return not any(char in range_characters for char in constraint)
 
@@ -267,7 +281,10 @@ def get_dependencies(requires):
     for req in requires:
         name, constraint = req.split("/", 1)
         is_resolved = is_constraint_resolved(constraint)
-        purl = PackageURL(type="conan", name=name)
+        version = None
+        if is_resolved:
+            version = constraint
+        purl = PackageURL(type="conan", name=name, version=version)
         dependent_packages.append(
             models.DependentPackage(
                 purl=purl.to_string(),

@@ -73,7 +73,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/bzip2",
+        "purl": "pkg:conan/bzip2@1.0.8",
         "extracted_requirement": "1.0.8",
         "scope": "install",
         "is_runtime": true,
@@ -83,7 +83,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/xz_utils",
+        "purl": "pkg:conan/xz_utils@5.4.5",
         "extracted_requirement": "5.4.5",
         "scope": "install",
         "is_runtime": true,
@@ -93,7 +93,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/zstd",
+        "purl": "pkg:conan/zstd@1.5.5",
         "extracted_requirement": "1.5.5",
         "scope": "install",
         "is_runtime": true,
@@ -113,7 +113,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conan/mbedtls",
+        "purl": "pkg:conan/mbedtls@3.5.0",
         "extracted_requirement": "3.5.0",
         "scope": "install",
         "is_runtime": true,

@@ -76,7 +76,7 @@ class TestConanHandler(PackageTester):
 class TestConanEndtoEnd(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), "data")
 
-    def test_package_scan_conan_end_to_end_full(self):
+    def test_package_scan_conan_end_to_end_full_boost(self):
         test_dir = self.get_test_loc("conan/recipes/boost/manifest")
         result_file = self.get_temp_file("json")
         expected_file = self.get_test_loc(
@@ -97,7 +97,7 @@ class TestConanEndtoEnd(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
-    def test_package_scan_conan_end_to_end_full(self):
+    def test_package_scan_conan_end_to_end_full_libgettext(self):
         test_dir = self.get_test_loc("conan/recipes/libgettext/manifest")
         result_file = self.get_temp_file("json")
         expected_file = self.get_test_loc(
@@ -118,7 +118,7 @@ class TestConanEndtoEnd(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
-    def test_package_scan_conan_end_to_end_full(self):
+    def test_package_scan_conan_end_to_end_full_libzip(self):
         test_dir = self.get_test_loc("conan/recipes/libzip/manifest")
         result_file = self.get_temp_file("json")
         expected_file = self.get_test_loc(
@@ -186,7 +186,7 @@ def test_get_dependencies():
             extracted_requirement="[>=1.2.11 <2]",
         ),
         models.DependentPackage(
-            purl="pkg:conan/bzip2",
+            purl="pkg:conan/bzip2@1.0.8",
             scope="install",
             is_runtime=True,
             is_optional=False,
@@ -194,7 +194,7 @@ def test_get_dependencies():
             extracted_requirement="1.0.8",
         ),
         models.DependentPackage(
-            purl="pkg:conan/xz_utils",
+            purl="pkg:conan/xz_utils@5.4.4",
             scope="install",
             is_runtime=True,
             is_optional=False,
