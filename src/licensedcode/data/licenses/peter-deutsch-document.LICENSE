@@ -5,9 +5,14 @@ name: Peter Deutsch Document License
 category: Permissive
 owner: Peter Deutsch
 homepage_url: http://www.ietf.org/rfc/rfc1952.txt
-spdx_license_key: LicenseRef-scancode-peter-deutsch-document
+spdx_license_key: LPD-document
+other_spdx_license_keys:
+    - LicenseRef-scancode-peter-deutsch-document
 text_urls:
     - http://www.ietf.org/rfc/rfc1952.txt
+other_urls:
+    - https://www.ietf.org/rfc/rfc1952.txt
+    - https://github.com/Cyan4973/xxHash/blob/dev/doc/xxhash_spec.md
 ---
 
 Permission is granted to copy and distribute this document for any

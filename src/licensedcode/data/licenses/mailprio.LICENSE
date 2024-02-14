@@ -1,11 +1,15 @@
 ---
-license_expression: other-permissive
-is_license_text: yes
-is_deprecated: yes
+key: mailprio
+short_name: mailprio License
+name: mailprio License
+category: Permissive
+owner: Unspecified
 notes: |
-    Seen in mailprio
     Added in SPDX license list 3.23
-    Replaced by license: mailprio
+    This was previously the license rule: other-permissive_242.RULE
+spdx_license_key: mailprio
+other_urls:
+    - https://fossies.org/linux/sendmail/contrib/mailprio
 ---
 
 Rights are hereby granted to download, use, modify, sell, copy, and

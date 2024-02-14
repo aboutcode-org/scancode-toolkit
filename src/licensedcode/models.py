@@ -2029,6 +2029,7 @@ class BasicRule:
             'is_license_intro',
             'is_license_clue',
             'is_continuous',
+            'is_deprecated'
         )
 
         # default to English which is implied

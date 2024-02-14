@@ -5,7 +5,12 @@ name: NRL permission
 category: Permissive
 owner: NRL
 homepage_url: https://web.mit.edu/kerberos/krb5-1.14/doc/mitK5license.html
-spdx_license_key: LicenseRef-scancode-nrl-permission
+spdx_license_key: CMU-Mach-nodoc
+other_spdx_license_keys:
+    - LicenseRef-scancode-nrl-permission
+other_urls:
+    - https://github.com/krb5/krb5/blob/krb5-1.21.2-final/NOTICE#L718-L728
+    - https://web.mit.edu/kerberos/krb5-1.21/doc/mitK5license.html
 ---
 
 Permission to use, copy, modify and distribute this software and its

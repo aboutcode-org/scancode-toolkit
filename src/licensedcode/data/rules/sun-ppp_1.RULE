@@ -1,12 +1,15 @@
 ---
-license_expression: other-permissive
+license_expression: sun-ppp
 is_license_text: yes
-is_deprecated: yes
-notes: |
-    seen in old Sun code
-    Added in SPDX license list 3.23
-    Replaced by license: sun-ppp
+minimum_coverage: 99
+ignorable_copyrights:
+    - Copyright (c) 2001 by Sun Microsystems, Inc.
+ignorable_holders:
+    - Sun Microsystems, Inc.
 ---
+
+Copyright (c) 2001 by Sun Microsystems, Inc.
+All rights reserved.
 
 Non-exclusive rights to redistribute, modify, translate, and use
 this software in source and binary forms, in whole or in part, is

@@ -6,7 +6,12 @@ category: Permissive
 owner: Android Open Source Project
 homepage_url: https://android.googlesource.com/platform/external/fmtlib/+/refs/heads/master/LICENSE.rst
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-object-form-exception-to-mit
+spdx_license_key: fmt-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-object-form-exception-to-mit
+other_urls:
+    - https://github.com/fmtlib/fmt/blob/2eb363297b24cd71a68ccfb20ff755430f17e60f/LICENSE#L22C1-L27C62
+    - https://github.com/fmtlib/fmt/blob/master/LICENSE
 ---
 
 Optional exception to the license
