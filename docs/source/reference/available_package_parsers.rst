@@ -177,6 +177,18 @@ parsers in scancode-toolkit during documentation builds.
      - ``php_composer_lock``
      - PHP
      - https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+   * - conan external source
+     - ``*/conandata.yml``
+     - ``conan``
+     - ``conan_conandata_yml``
+     - C++
+     - https://docs.conan.io/2/tutorial/creating_packages/handle_sources_in_packages.html#using-the-conandata-yml-file
+   * - conan recipe
+     - ``*/conanfile.py``
+     - ``conan``
+     - ``conan_conanfile_py``
+     - C++
+     - https://docs.conan.io/2.0/reference/conanfile.html
    * - Conda meta.yml manifest
      - ``*/meta.yaml``
      - ``conda``
