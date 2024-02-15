@@ -5,7 +5,9 @@
   "author": null,
   "homepage_url": "https://www.boost.org",
   "vcs_url": "https://github.com/conan-io/conan-center-index",
-  "license": "BSL-1.0",
+  "license": [
+    "BSL-1.0"
+  ],
   "keywords": [
     "libraries",
     "cpp"

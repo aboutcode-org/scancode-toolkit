@@ -51,7 +51,7 @@ class ConanFileParser(ast.NodeVisitor):
         self.author = None
         self.homepage_url = None
         self.vcs_url = None
-        self.license = None
+        self.license = []
         self.keywords = []
         self.requires = []
 
@@ -92,7 +92,7 @@ class ConanFileParser(ast.NodeVisitor):
 
         if variable_name in attribute_mapping:
             attribute_name = attribute_mapping[variable_name]
-            if variable_name in ("topics", "requires"):
+            if variable_name in ("topics", "requires", "license"):
                 current_list = getattr(self, attribute_name)
                 if isinstance(values, ast.Tuple):
                     current_list.extend(
@@ -264,7 +264,6 @@ class ConanDataHandler(models.DatafileHandler):
                 codebase=codebase,
                 package_adder=package_adder,
             )
-        # print(package.to_dict())
         yield resource
 
 

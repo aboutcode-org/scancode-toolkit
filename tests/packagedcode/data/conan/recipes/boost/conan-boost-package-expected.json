@@ -47,7 +47,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -56,7 +56,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -121,7 +121,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -130,7 +130,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -195,7 +195,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -204,7 +204,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -269,7 +269,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -278,7 +278,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -343,7 +343,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -352,7 +352,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -417,7 +417,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -426,7 +426,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -491,7 +491,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -500,7 +500,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -565,7 +565,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -574,7 +574,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -639,7 +639,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -648,7 +648,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -713,7 +713,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -722,7 +722,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -787,7 +787,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -796,7 +796,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -861,7 +861,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -870,7 +870,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -935,7 +935,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -944,7 +944,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -1009,7 +1009,7 @@
               "rule_relevance": 50,
               "rule_identifier": "boost-1.0_48.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
-              "matched_text": "BSL-1.0"
+              "matched_text": "- BSL-1.0"
             }
           ],
           "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
@@ -1018,7 +1018,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -1092,7 +1092,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "BSL-1.0",
+      "extracted_license_statement": "- BSL-1.0\n",
       "notice_text": null,
       "source_packages": [],
       "extra_data": {},
@@ -1881,7 +1881,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "BSL-1.0",
+          "extracted_license_statement": "- BSL-1.0\n",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
