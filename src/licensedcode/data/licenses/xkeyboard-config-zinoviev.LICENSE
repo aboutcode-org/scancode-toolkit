@@ -1,0 +1,83 @@
+---
+key: xkeyboard-config-zinoviev
+short_name: xkeyboard-config Zinoviev License
+name: xkeyboard-config Zinoviev License
+notes: |
+    WARNING: perfect detections to more than 1 license/rules
+    license_expression: font-alias AND other-permissive
+    license_expression_spdx: LicenseRef-scancode-font-alias AND LicenseRef-scancode-other-permissive
+    matches:
+      - license_expression: font-alias
+        spdx_license_expression: LicenseRef-scancode-font-alias
+        from_file:
+        start_line: 3
+        end_line: 8
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 53
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: font-alias.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/font-alias.LICENSE
+        matched_text: |
+          This software may be used, modified, copied, distributed, and sold,
+          in both source and binary form provided that the above copyright
+          and these terms are retained. Under no circumstances is the author
+          responsible for the proper functioning of this software, nor does
+          the author assume any responsibility for damages incurred with its
+          use.
+        matched_text_diagnostics: |
+          This software may be used, modified, copied, distributed, and sold,
+          in both source and binary form provided that the above copyright
+          and these terms are retained. Under no circumstances is the author
+          responsible for the proper functioning of this software, nor does
+          the author assume any responsibility for damages incurred with its
+          use.
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
+        start_line: 10
+        end_line: 15
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 46
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: other-permissive_286.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_286.RULE
+        matched_text: |
+          Permission is granted to anyone to use, distribute and modify
+          this file in any way, provided that the above copyright notice
+          is left intact and the author of the modification summarizes
+          the changes in this header.
+
+          This file is distributed without any expressed or implied warranty.
+        matched_text_diagnostics: |
+          Permission is granted to anyone to use, distribute and modify
+          this file in any way, provided that the above copyright notice
+          is left intact and the author of the modification summarizes
+          the changes in this header.
+
+          This file is distributed without any expressed or implied warranty.
+    detection_log: []
+    identifier: font_alias_and_other_permissive-316202a2-617c-59c6-fa32-9ef256e06f03
+spdx_license_key: xkeyboard-config-Zinoviev
+other_urls:
+    - https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/blob/master/COPYING?ref_type=heads#L178
+---
+
+Copyright (C) 1999, 2000 by Anton Zinoviev <anton@lml.bas.bg>
+
+This software may be used, modified, copied, distributed, and sold,
+in both source and binary form provided that the above copyright
+and these terms are retained. Under no circumstances is the author
+responsible for the proper functioning of this software, nor does
+the author assume any responsibility for damages incurred with its
+use.
+
+Permission is granted to anyone to use, distribute and modify
+this file in any way, provided that the above copyright notice
+is left intact and the author of the modification summarizes
+the changes in this header.
+
+This file is distributed without any expressed or implied warranty.

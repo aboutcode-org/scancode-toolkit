@@ -1,0 +1,157 @@
+---
+key: umich-merit
+short_name: Michigan/Merit Networks License
+name: Michigan/Merit Networks License
+notes: |
+    license_expression: cmu-template AND hpnd-pbmplus AND nilsson-historical AND warranty-disclaimer
+    license_expression_spdx: LicenseRef-scancode-cmu-template AND HPND-Pbmplus AND LicenseRef-scancode-nilsson-historical
+      AND LicenseRef-scancode-warranty-disclaimer
+    matches:
+      - license_expression: cmu-template
+        spdx_license_expression: LicenseRef-scancode-cmu-template
+        from_file:
+        start_line: 4
+        end_line: 9
+        matcher: 3-seq
+        score: '55.84'
+        matched_length: 43
+        match_coverage: '55.84'
+        rule_relevance: 100
+        rule_identifier: cmu-template_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cmu-template_2.RULE
+        matched_text: |
+          Permission to use, copy, modify, and distribute this software and its
+          documentation for any purpose and without fee is hereby granted, provided
+          that the above copyright notice and this permission notice appear in all
+          copies of the software and derivative works or modified versions thereof,
+          and that both the copyright notice and this permission and disclaimer
+          notice appear in supporting documentation.
+        matched_text_diagnostics: |
+          Permission to use, copy, modify, and distribute this software and its
+          documentation [for] [any] [purpose] [and] [without] [fee] is hereby granted, provided
+          that [the] [above] copyright notice and this permission notice appear in all
+          copies of the software [and] derivative works or modified versions thereof,
+          and that both [the] [copyright] [notice] [and] [this] [permission] [and] [disclaimer]
+          [notice] appear in supporting documentation.
+      - license_expression: hpnd-pbmplus
+        spdx_license_expression: HPND-Pbmplus
+        from_file:
+        start_line: 4
+        end_line: 11
+        matcher: 3-seq
+        score: '76.79'
+        matched_length: 43
+        match_coverage: '76.79'
+        rule_relevance: 100
+        rule_identifier: hpnd-pbmplus.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hpnd-pbmplus.LICENSE
+        matched_text: |
+          Permission to use, copy, modify, and distribute this software and its
+          documentation for any purpose and without fee is hereby granted, provided
+          that the above copyright notice and this permission notice appear in all
+          copies of the software and derivative works or modified versions thereof,
+          and that both the copyright notice and this permission and disclaimer
+          notice appear in supporting documentation.
+
+          THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+        matched_text_diagnostics: |
+          Permission to use, copy, modify, and distribute this software and its
+          documentation for any purpose and without fee is hereby granted, provided
+          that the above copyright notice and this permission notice appear in [all]
+          [copies] [of] [the] [software] [and] [derivative] [works] [or] [modified] [versions] [thereof],
+          [and] [that] [both] [the] [copyright] [notice] [and] [this] [permission] [and] [disclaimer]
+          [notice] [appear] [in] supporting documentation.
+
+          THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY
+      - license_expression: nilsson-historical
+        spdx_license_expression: LicenseRef-scancode-nilsson-historical
+        from_file:
+        start_line: 8
+        end_line: 13
+        matcher: 3-seq
+        score: '27.27'
+        matched_length: 15
+        match_coverage: '27.27'
+        rule_relevance: 100
+        rule_identifier: nilsson-historical.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/nilsson-historical.LICENSE
+        matched_text: |
+          and that both the copyright notice and this permission and disclaimer
+          notice appear in supporting documentation.
+
+          THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+          EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF
+          MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE REGENTS OF THE
+        matched_text_diagnostics: |
+          disclaimer
+          [notice] [appear] [in] [supporting] [documentation].
+
+          [THIS] [SOFTWARE] [IS] [PROVIDED] "[AS] [IS]" [WITHOUT] [WARRANTY] [OF] [ANY] [KIND], [EITHER]
+          EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF
+          MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+      - license_expression: warranty-disclaimer
+        spdx_license_expression: LicenseRef-scancode-warranty-disclaimer
+        from_file:
+        start_line: 11
+        end_line: 13
+        matcher: 3-seq
+        score: '60.71'
+        matched_length: 17
+        match_coverage: '60.71'
+        rule_relevance: 100
+        rule_identifier: warranty-disclaimer_30.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_30.RULE
+        matched_text: |
+          THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+          EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF
+          MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE REGENTS OF THE
+        matched_text_diagnostics: |
+          IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+          EXPRESS OR IMPLIED, INCLUDING [WITHOUT] [LIMITATION] WARRANTIES OF
+          MERCHANTABILITY
+      - license_expression: warranty-disclaimer
+        spdx_license_expression: LicenseRef-scancode-warranty-disclaimer
+        from_file:
+        start_line: 11
+        end_line: 13
+        matcher: 3-seq
+        score: '60.0'
+        matched_length: 15
+        match_coverage: '60.0'
+        rule_relevance: 100
+        rule_identifier: warranty-disclaimer_59.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_59.RULE
+        matched_text: |
+          THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+          EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF
+          MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE REGENTS OF THE
+        matched_text_diagnostics: |
+          WITHOUT WARRANTY OF ANY KIND, [EITHER]
+          EXPRESS [OR] [IMPLIED], INCLUDING WITHOUT LIMITATION [WARRANTIES] OF
+          MERCHANTABILITY [AND] FITNESS FOR A PARTICULAR PURPOSE.
+    detection_log: []
+    identifier: cmu_template_and_hpnd_pbmplus_and_nilsson_historical_and_warranty_disclaimer-7d70a8ff-de7b-7651-e1d4-51f37b2c7a8c
+spdx_license_key: UMich-Merit
+other_urls:
+    - https://github.com/radcli/radcli/blob/master/COPYRIGHT#L64
+---
+
+[C] The Regents of the University of Michigan and Merit Network, Inc. 1992,
+1993, 1994, 1995 All Rights Reserved
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted, provided
+that the above copyright notice and this permission notice appear in all
+copies of the software and derivative works or modified versions thereof,
+and that both the copyright notice and this permission and disclaimer
+notice appear in supporting documentation.
+
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
+EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE REGENTS OF THE
+UNIVERSITY OF MICHIGAN AND MERIT NETWORK, INC. DO NOT WARRANT THAT THE
+FUNCTIONS CONTAINED IN THE SOFTWARE WILL MEET LICENSEE'S REQUIREMENTS OR
+THAT OPERATION WILL BE UNINTERRUPTED OR ERROR FREE.  The Regents of the
+University of Michigan and Merit Network, Inc. shall not be liable for any
+special, indirect, incidental or consequential damages with respect to any
+claim by Licensee or any third party arising from use of the software.

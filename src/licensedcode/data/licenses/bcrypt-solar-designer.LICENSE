@@ -1,0 +1,60 @@
+---
+key: bcrypt-solar-designer
+short_name: bcrypt Solar Designer License
+name: bcrypt Solar Designer License
+notes: |
+    license_expression: openwall-md5-permissive
+    license_expression_spdx: LicenseRef-scancode-openwall-md5-permissive
+    matches:
+      - license_expression: openwall-md5-permissive
+        spdx_license_expression: LicenseRef-scancode-openwall-md5-permissive
+        from_file:
+        start_line: 2
+        end_line: 11
+        matcher: 3-seq
+        score: '98.73'
+        matched_length: 78
+        match_coverage: '98.73'
+        rule_relevance: 100
+        rule_identifier: openwall-md5-permissive_8.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openwall-md5-permissive_8.RULE
+        matched_text: |
+          No copyright is claimed, and the software is hereby placed in the public
+          domain.  In case this attempt to disclaim copyright and place the software
+          in the public domain is deemed null and void, then the software is
+          Copyright (c) 1998-2014 Solar Designer and it is hereby released to the
+          general public under the following terms:
+
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted.
+
+          There's ABSOLUTELY NO WARRANTY, express or implied.
+        matched_text_diagnostics: |
+          No copyright is claimed, and the software is hereby placed in the public
+          domain.  In case this attempt to disclaim copyright and place the software
+          in the public domain is deemed null and void, then the software is
+          Copyright (c) 1998-[2014] Solar Designer and it is hereby released to the
+          general public under the following terms:
+
+          Redistribution and use in source and binary forms, with or without
+          modification, are permitted.
+
+          There's ABSOLUTELY NO WARRANTY, express or implied.
+    detection_log: []
+    identifier: openwall_md5_permissive-d577a47e-632c-7d78-881e-5082e8cad90b
+spdx_license_key: bcrypt-Solar-Designer
+other_urls:
+    - https://github.com/bcrypt-ruby/bcrypt-ruby/blob/master/ext/mri/crypt_blowfish.c
+---
+
+Written by Solar Designer <solar at openwall.com> in 1998-2014.
+No copyright is claimed, and the software is hereby placed in the public
+domain.  In case this attempt to disclaim copyright and place the software
+in the public domain is deemed null and void, then the software is
+Copyright (c) 1998-2014 Solar Designer and it is hereby released to the
+general public under the following terms:
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted.
+
+There's ABSOLUTELY NO WARRANTY, express or implied.

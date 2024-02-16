@@ -1,0 +1,188 @@
+---
+key: bsd-systemics-w3works
+short_name: Systemics W3Works BSD variant license
+name: Systemics W3Works BSD variant license
+notes: |
+    Multiple licenses detected by scancode on this text
+    license_expression:
+    license_expression_spdx:
+    matches:
+      - license_expression: bsd-original-uc
+        spdx_license_expression: BSD-4-Clause-UC
+        from_file:
+        start_line: 13
+        end_line: 15
+        matcher: 3-seq
+        score: '58.62'
+        matched_length: 17
+        match_coverage: '58.62'
+        rule_relevance: 100
+        rule_identifier: bsd-original-uc_13.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original-uc_13.RULE
+        matched_text: |
+          1. All advertising materials mentioning features or use of this software
+             must display the following acknowledgement:
+             This product inculdes software developed by W3Works, LLC (http://www.w3works.com)
+        matched_text_diagnostics: |
+          All advertising materials mentioning features or use of this software
+             must display the following acknowledgement:
+             This product
+      - license_expression: efl-1.0
+        spdx_license_expression: EFL-1.0
+        from_file:
+        start_line: 17
+        end_line: 21
+        matcher: 3-seq
+        score: '14.6'
+        matched_length: 20
+        match_coverage: '14.6'
+        rule_relevance: 100
+        rule_identifier: efl-1.0.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/efl-1.0.LICENSE
+        matched_text: "   NO ADDITIONAL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED\
+          \ TO,\n   THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n\
+          \   ARE EXTENDED BY THIS DISTRIBUTION.\n \n   Any subsequent derrivations of this package\
+          \ must retainl this copyright."
+        matched_text_diagnostics: "WARRANTIES, [EXPRESS] [OR] [IMPLIED], INCLUDING, BUT NOT LIMITED\
+          \ TO,\n   THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n\
+          \   ARE [EXTENDED] [BY] [THIS] [DISTRIBUTION].\n \n   [Any] [subsequent] [derrivations]\
+          \ of this package"
+    detection_log:
+      - low-quality-matches
+    identifier:
+    license_expression: bsd-systemics
+    license_expression_spdx: BSD-Systemics
+    matches:
+      - license_expression: bsd-systemics
+        spdx_license_expression: BSD-Systemics
+        from_file:
+        start_line: 26
+        end_line: 62
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 326
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: bsd-systemics.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-systemics.LICENSE
+        matched_text: "This library and applications are FREE FOR COMMERCIAL AND NON-COMMERCIAL\
+          \ USE\nas long as the following conditions are adhered to.\n \nCopyright remains with\
+          \ Systemics Ltd, and as such any Copyright notices\nin the code are not to be removed.\
+          \  If this code is used in a product,\nSystemics should be given attribution as the author\
+          \ of the parts used.\nThis can be in the form of a textual message at program startup\
+          \ or\nin documentation (online or textual) provided with the package.\n \nRedistribution\
+          \ and use in source and binary forms, with or without\nmodification, are permitted provided\
+          \ that the following conditions\nare met:\n1. Redistributions of source code must retain\
+          \ the copyright\n   notice, this list of conditions and the following disclaimer.\n2.\
+          \ Redistributions in binary form must reproduce the above copyright\n   notice, this list\
+          \ of conditions and the following disclaimer in the\n   documentation and/or other materials\
+          \ provided with the distribution.\n3. All advertising materials mentioning features or\
+          \ use of this software\n   must display the following acknowledgement:\n   This product\
+          \ includes software developed by Systemics Ltd (http://www.systemics.com/)   \n \n   THIS\
+          \ SOFTWARE IS PROVIDED BY SYSTEMICS LTD ``AS IS'' AND\n   ANY EXPRESS OR IMPLIED WARRANTIES,\
+          \ INCLUDING, BUT NOT LIMITED TO, THE\n   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS\
+          \ FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS\
+          \ BE LIABLE\n   FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n\
+          \   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n   OR SERVICES;\
+          \ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n   HOWEVER CAUSED AND ON ANY\
+          \ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n   LIABILITY, OR TORT (INCLUDING NEGLIGENCE\
+          \ OR OTHERWISE) ARISING IN ANY WAY\n   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\
+          \ OF THE POSSIBILITY OF\n   SUCH DAMAGE.\n \n   The licence and distribution terms for\
+          \ any publically available version or\n   derivative of this code cannot be changed. \
+          \ i.e. this code cannot simply be\n   copied and put under another distribution licence\n\
+          \   [including the GNU Public Licence.]"
+        matched_text_diagnostics: "This library and applications are FREE FOR COMMERCIAL AND NON-COMMERCIAL\
+          \ USE\nas long as the following conditions are adhered to.\n \nCopyright remains with\
+          \ Systemics Ltd, and as such any Copyright notices\nin the code are not to be removed.\
+          \  If this code is used in a product,\nSystemics should be given attribution as the author\
+          \ of the parts used.\nThis can be in the form of a textual message at program startup\
+          \ or\nin documentation (online or textual) provided with the package.\n \nRedistribution\
+          \ and use in source and binary forms, with or without\nmodification, are permitted provided\
+          \ that the following conditions\nare met:\n1. Redistributions of source code must retain\
+          \ the copyright\n   notice, this list of conditions and the following disclaimer.\n2.\
+          \ Redistributions in binary form must reproduce the above copyright\n   notice, this list\
+          \ of conditions and the following disclaimer in the\n   documentation and/or other materials\
+          \ provided with the distribution.\n3. All advertising materials mentioning features or\
+          \ use of this software\n   must display the following acknowledgement:\n   This product\
+          \ includes software developed by Systemics Ltd (http://www.systemics.com/)   \n \n   THIS\
+          \ SOFTWARE IS PROVIDED BY SYSTEMICS LTD ``AS IS'' AND\n   ANY EXPRESS OR IMPLIED WARRANTIES,\
+          \ INCLUDING, BUT NOT LIMITED TO, THE\n   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS\
+          \ FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS\
+          \ BE LIABLE\n   FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n\
+          \   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS\n   OR SERVICES;\
+          \ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)\n   HOWEVER CAUSED AND ON ANY\
+          \ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\n   LIABILITY, OR TORT (INCLUDING NEGLIGENCE\
+          \ OR OTHERWISE) ARISING IN ANY WAY\n   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED\
+          \ OF THE POSSIBILITY OF\n   SUCH DAMAGE.\n \n   The licence and distribution terms for\
+          \ any publically available version or\n   derivative of this code cannot be changed. \
+          \ i.e. this code cannot simply be\n   copied and put under another distribution licence\n\
+          \   [including the GNU Public Licence.]"
+    detection_log: []
+    identifier: bsd_systemics-7ee85210-eb5a-b549-3dd1-a32f1c875b0d
+spdx_license_key: BSD-Systemics-W3Works
+other_urls:
+    - https://metacpan.org/release/DPARIS/Crypt-Blowfish-2.14/source/COPYRIGHT#L7
+---
+
+Copyright (C) 1995, 1996 Systemics Ltd (http://www.systemics.com/)
+ 
+Modifications and Current Implimentation Copyright (C) 2000 W3Works, LLC.
+ 
+All rights reserved.
+ 
+Current implimentation contains modifications made by W3Works, LLC.  The 
+modifications remain copyright of W3Works, LLC and attribution for these 
+modification should be made to W3Works, LLC.  These modifications and 
+this copyright must remain with this package.
+ 
+Additions to the Restrictions set out below are:
+1. All advertising materials mentioning features or use of this software
+   must display the following acknowledgement:
+   This product inculdes software developed by W3Works, LLC (http://www.w3works.com)
+ 
+   NO ADDITIONAL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+   THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+   ARE EXTENDED BY THIS DISTRIBUTION.
+ 
+   Any subsequent derrivations of this package must retainl this copyright.
+ 
+ 
+Original Copyright Below
+ 
+This library and applications are FREE FOR COMMERCIAL AND NON-COMMERCIAL USE
+as long as the following conditions are adhered to.
+ 
+Copyright remains with Systemics Ltd, and as such any Copyright notices
+in the code are not to be removed.  If this code is used in a product,
+Systemics should be given attribution as the author of the parts used.
+This can be in the form of a textual message at program startup or
+in documentation (online or textual) provided with the package.
+ 
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+1. Redistributions of source code must retain the copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. All advertising materials mentioning features or use of this software
+   must display the following acknowledgement:
+   This product includes software developed by Systemics Ltd (http://www.systemics.com/)   
+ 
+   THIS SOFTWARE IS PROVIDED BY SYSTEMICS LTD ``AS IS'' AND
+   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+   FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+   OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+   LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+   SUCH DAMAGE.
+ 
+   The licence and distribution terms for any publically available version or
+   derivative of this code cannot be changed.  i.e. this code cannot simply be
+   copied and put under another distribution licence
+   [including the GNU Public Licence.]

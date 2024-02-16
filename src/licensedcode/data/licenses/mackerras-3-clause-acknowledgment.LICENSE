@@ -1,0 +1,78 @@
+---
+key: mackerras-3-clause-acknowledgment
+short_name: Mackerras 3-Clause - acknowledgment variant
+name: Mackerras 3-Clause - acknowledgment variant
+notes: |
+    license_expression: paul-mackerras
+    license_expression_spdx: LicenseRef-scancode-paul-mackerras
+    matches:
+      - license_expression: paul-mackerras
+        spdx_license_expression: LicenseRef-scancode-paul-mackerras
+        from_file:
+        start_line: 3
+        end_line: 25
+        matcher: 3-seq
+        score: '99.38'
+        matched_length: 161
+        match_coverage: '99.38'
+        rule_relevance: 100
+        rule_identifier: paul-mackerras.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/paul-mackerras.LICENSE
+        matched_text: " Redistribution and use in source and binary forms, with or without\n modification,\
+          \ are permitted provided that the following conditions\n are met:\n \n 1. Redistributions\
+          \ of source code must retain the above copyright\n     notice, this list of conditions\
+          \ and the following disclaimer.\n \n2. The name(s) of the authors of this software must\
+          \ not be used to\n   endorse or promote products derived from this software without\n\
+          \   prior written permission.\n\n3. Redistributions of any form whatsoever must retain\
+          \ the following\n   acknowledgment:\n   \"This product includes software developed by\
+          \ Paul Mackerras\n   <paulus@ozlabs.org>\".\n\nTHE AUTHORS OF THIS SOFTWARE DISCLAIM ALL\
+          \ WARRANTIES WITH REGARD TO\nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY\n\
+          AND FITNESS, IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY\nSPECIAL, INDIRECT OR CONSEQUENTIAL\
+          \ DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER\
+          \ IN\nAN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING\nOUT OF OR IN\
+          \ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+        matched_text_diagnostics: "Redistribution and use in source and binary forms, with or without\n\
+          \ modification, are permitted provided that the following conditions\n are met:\n \n 1.\
+          \ Redistributions of source code must retain the above copyright\n     notice, this list\
+          \ of conditions and the following disclaimer.\n \n2. The name(s) of the authors of this\
+          \ software must not be used to\n   endorse or promote products derived from this software\
+          \ without\n   prior written permission.\n\n3. Redistributions of any form whatsoever must\
+          \ retain the following\n   acknowledgment:\n   \"This product includes software developed\
+          \ by Paul Mackerras\n   <paulus@[ozlabs].org>\".\n\nTHE AUTHORS OF THIS SOFTWARE DISCLAIM\
+          \ ALL WARRANTIES WITH REGARD TO\nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY\n\
+          AND FITNESS, IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY\nSPECIAL, INDIRECT OR CONSEQUENTIAL\
+          \ DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER\
+          \ IN\nAN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING\nOUT OF OR IN\
+          \ CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+    detection_log: []
+    identifier: paul_mackerras-9bb3bcee-c7b4-fa4b-c7b5-b4eadbd91f92
+spdx_license_key: Mackerras-3-Clause-acknowledgment
+other_urls:
+    - https://github.com/ppp-project/ppp/blob/master/pppd/auth.c#L6-L28
+---
+
+Copyright (c) 1993-2002 Paul Mackerras. All rights reserved.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 
+ 1. Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+ 
+2. The name(s) of the authors of this software must not be used to
+   endorse or promote products derived from this software without
+   prior written permission.
+
+3. Redistributions of any form whatsoever must retain the following
+   acknowledgment:
+   "This product includes software developed by Paul Mackerras
+   <paulus@ozlabs.org>".
+
+THE AUTHORS OF THIS SOFTWARE DISCLAIM ALL WARRANTIES WITH REGARD TO
+THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS, IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY
+SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
+OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
