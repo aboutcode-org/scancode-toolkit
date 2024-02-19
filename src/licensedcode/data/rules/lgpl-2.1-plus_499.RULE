@@ -1,0 +1,10 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+relevance: 99
+---
+
+NOTE: Only {{certain parts}} of the ScummVM project are {{under the GNU LGPL.}}
+
+The majority of the files are {{under the GNU GPL}}. See the headers of the
+individual files to find out the exact license.

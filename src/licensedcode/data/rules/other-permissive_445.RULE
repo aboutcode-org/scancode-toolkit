@@ -1,0 +1,46 @@
+---
+license_expression: other-permissive
+is_license_text: yes
+notes: Seen in https://sourceforge.net/projects/shptrans
+ignorable_copyrights:
+    - Copyright (c) 1999-2003 Bruce Dodson and others
+ignorable_holders:
+    - Bruce Dodson and others
+---
+
+SHPTRANS License 1.1:
+SHPTRANS is Copyright (c) 1999-2003 Bruce Dodson and others.
+All rights reserved.
+Permission to use, copy, modify, merge, publish, perform, 
+distribute, sublicense, and/or sell copies of this original work 
+of authorship (the "Software") and derivative works thereof, is 
+hereby granted free of charge to any person obtaining a copy of 
+the Software, subject to the following conditions:
+1. A copy of this license (including the above copyright notice,
+   this permission notice, and the following disclaimers) must 
+   appear in the documentation or in other materials accompanying
+   the Software, where an end-user can reasonably be expected to 
+   see it.
+2. The above copyright notice must appear in all copies of the
+   Software and in any portions thereof.  The copyright notice
+   must be followed immediately by a notice stating that the 
+   Software is made available under the terms of this license,
+   and indicating where the complete license text is found.
+3. Products derived from the Software must include the following
+   notice in their documentation or in other materials accompanying
+   the work, where an end-user can reasonably be expected to see it:
+   "Portions of this software are based on SHPTRANS by Bruce Dodson."
+4. The names of the copyright holders and contributing authors may
+   not be used to endorse or promote products derived from the
+   Software without specific prior written permission.
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
+THE COPYRIGHT HOLDERS AND CONTRIBUTING AUTHORS DISCLAIM ANY AND
+ALL WARRANTIES, WHETHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTING AUTHORS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING IN ANY WAY OUT OF THE USE
+OR DISTRIBUTION OF THE SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
