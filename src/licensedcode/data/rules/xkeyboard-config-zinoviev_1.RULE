@@ -1,13 +1,16 @@
 ---
-key: xkeyboard-config-zinoviev
-short_name: xkeyboard-config Zinoviev License
-name: xkeyboard-config Zinoviev License
-category: Permissive
-owner: Unspecified
-spdx_license_key: xkeyboard-config-Zinoviev
-other_urls:
-    - https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/blob/master/COPYING?ref_type=heads#L178
+license_expression: xkeyboard-config-zinoviev
+is_license_text: yes
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) 1999, 2000 by Anton Zinoviev <anton@lml.bas.bg>
+ignorable_holders:
+    - Anton Zinoviev
+ignorable_emails:
+    - anton@lml.bas.bg
 ---
+
+Copyright (C) 1999, 2000 by Anton Zinoviev <anton@lml.bas.bg>
 
 This software may be used, modified, copied, distributed, and sold,
 in both source and binary form provided that the above copyright

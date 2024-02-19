@@ -1,10 +1,13 @@
 ---
 license_expression: openwall-md5-permissive
 is_license_text: yes
+is_deprecated: yes
 ignorable_copyrights:
     - Copyright (c) 1998-2011 Solar Designer
 ignorable_holders:
     - Solar Designer
+notes: |
+    Deprecated in favour of bcrypt-solar-designer.LICENSE
 ---
 
 No copyright is claimed, and the software is hereby placed in the public

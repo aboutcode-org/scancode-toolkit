@@ -1,13 +1,11 @@
 ---
-key: umich-merit
-short_name: Michigan/Merit Networks License
-name: Michigan/Merit Networks License
-category: Permissive
-owner: University of Michigan
-spdx_license_key: UMich-Merit
-other_urls:
-    - https://github.com/radcli/radcli/blob/master/COPYRIGHT#L64
+license_expression: umich-merit
+is_license_text: yes
+minimum_coverage: 95
 ---
+
+[C] The Regents of the University of Michigan and Merit Network, Inc. 1992,
+1993, 1994, 1995 All Rights Reserved
 
 Permission to use, copy, modify, and distribute this software and its
 documentation for any purpose and without fee is hereby granted, provided

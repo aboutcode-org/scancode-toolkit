@@ -1,16 +1,15 @@
 ---
-key: pnmstitch
-short_name: pnmstitch License
-name: pnmstitch License
-category: Permissive
-owner: pnmstitch Project
-notes: This is the same as bsd-dpt.RULE with ` Mark Salyzyn` added.
-spdx_license_key: pnmstitch
-other_spdx_license_keys:
-    - pnmstitc
-other_urls:
-    - https://sourceforge.net/p/netpbm/code/HEAD/tree/super_stable/editor/pnmstitch.c#l2
+license_expression: pnmstitch
+is_license_text: yes
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) 2002 Mark Salyzyn
+ignorable_holders:
+    - Mark Salyzyn
 ---
+
+Copyright (c) 2002 Mark Salyzyn
+All rights reserved.
 
 TERMS AND CONDITIONS OF USE
 

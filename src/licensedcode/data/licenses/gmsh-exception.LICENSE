@@ -1,7 +1,9 @@
 ---
 key: gmsh-exception
-short_name: Gmsh exception>
-name: Gmsh exception>
+short_name: Gmsh exception
+name: Gmsh exception
+category: Copyleft Limited
+owner: Unspecified
 is_exception: yes
 spdx_license_key: Gmsh-exception
 other_urls:

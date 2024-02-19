@@ -2,44 +2,8 @@
 key: gnome-examples-exception
 short_name: GNOME examples exception
 name: GNOME examples exception
-notes: |
-    license_expression: generic-exception AND other-permissive
-    license_expression_spdx: LicenseRef-scancode-generic-exception AND LicenseRef-scancode-other-permissive
-    matches:
-      - license_expression: generic-exception
-        spdx_license_expression: LicenseRef-scancode-generic-exception
-        from_file:
-        start_line: 1
-        end_line: 1
-        matcher: 2-aho
-        score: '99.0'
-        matched_length: 3
-        match_coverage: '100.0'
-        rule_relevance: 99
-        rule_identifier: license-intro_8.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_8.RULE
-        matched_text: As a special exception, the copyright holders give you permission to copy,
-          modify, and distribute the example code contained in this document under the terms of
-          your choosing, without restriction.
-        matched_text_diagnostics: As a special exception,
-      - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
-        from_file:
-        start_line: 1
-        end_line: 1
-        matcher: 3-seq
-        score: '20.0'
-        matched_length: 6
-        match_coverage: '20.0'
-        rule_relevance: 100
-        rule_identifier: other-permissive_84.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_84.RULE
-        matched_text: As a special exception, the copyright holders give you permission to copy,
-          modify, and distribute the example code contained in this document under the terms of
-          your choosing, without restriction.
-        matched_text_diagnostics: permission to copy, modify, and distribute
-    detection_log: []
-    identifier: generic_exception_and_other_permissive-928e319f-241d-e75e-bbca-e2c0a90a4112
+category: Permissive
+owner: GNOME Project
 is_exception: yes
 spdx_license_key: GNOME-examples-exception
 other_urls:

@@ -1,14 +1,16 @@
 ---
-key: hpnd-fenneberg-livingston
-short_name: Historical Fenneberg-Livingston variant
-name: Historical Permission Notice and Disclaimer - Fenneberg-Livingston variant
-category: Permissive
-owner: Lars Fenneberg
-spdx_license_key: HPND-Fenneberg-Livingston
-other_urls:
-    - https://github.com/FreeRADIUS/freeradius-client/blob/master/COPYRIGHT#L32
-    - https://github.com/radcli/radcli/blob/master/COPYRIGHT#L34
+license_expression: hpnd-fenneberg-livingston
+is_license_text: yes
+minimum_coverage: 98
+ignorable_copyrights:
+    - Copyright (c) 1995,1996,1997,1998 Lars Fenneberg <lf@elemental.net>
+ignorable_holders:
+    - Lars Fenneberg
+ignorable_emails:
+    - lf@elemental.net
 ---
+
+Copyright (C) 1995,1996,1997,1998 Lars Fenneberg <lf@elemental.net>
 
 Permission to use, copy, modify, and distribute this software for any
 purpose and without fee is hereby granted, provided that this copyright and

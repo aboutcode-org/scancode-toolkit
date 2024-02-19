@@ -10,6 +10,8 @@ notes: |
 spdx_license_key: SAX-PD-2.0
 other_urls:
     - http://www.saxproject.org/copying.html
+ignorable_emails:
+    - david@megginson.com
 ---
 
 SAX2 is Free!

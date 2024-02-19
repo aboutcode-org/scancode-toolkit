@@ -1,0 +1,18 @@
+---
+license_expression: softsurfer
+is_license_text: yes
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright 2001, softSurfer (www.softsurfer.com)
+ignorable_holders:
+    - softSurfer
+ignorable_urls:
+    - http://www.softsurfer.com/
+---
+
+Copyright 2001, softSurfer (www.softsurfer.com)
+This code may be freely used and modified for any purpose                                                                                                                                
+providing that this copyright notice is included with it.
+SoftSurfer makes no warranty for this code, and cannot be held
+liable for any real or imagined damage resulting from its use.
+Users of this code must verify correctness for their application.

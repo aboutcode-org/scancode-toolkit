@@ -1,20 +1,27 @@
 ---
-key: bsd-systemics-w3works
-short_name: Systemics W3Works License
-name: Systemics W3Works BSD variant license
-category: Permissive
-owner: Systemics Ltd
-spdx_license_key: BSD-Systemics-W3Works
-other_urls:
-    - https://metacpan.org/release/DPARIS/Crypt-Blowfish-2.14/source/COPYRIGHT#L7
+license_expression: bsd-systemics-w3works
+is_license_text: yes
+minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright (c) 1995, 1996 Systemics Ltd (http://www.systemics.com/)
+    - Copyright (c) 2000 W3Works, LLC.
 ignorable_holders:
+    - Systemics Ltd
     - W3Works, LLC.
 ignorable_authors:
+    - Systemics Ltd (http://www.systemics.com/)
     - W3Works, LLC (http://www.w3works.com)
 ignorable_urls:
+    - http://www.systemics.com/
     - http://www.w3works.com/
 ---
 
+Copyright (C) 1995, 1996 Systemics Ltd (http://www.systemics.com/)
+ 
+Modifications and Current Implimentation Copyright (C) 2000 W3Works, LLC.
+ 
+All rights reserved.
+ 
 Current implimentation contains modifications made by W3Works, LLC.  The 
 modifications remain copyright of W3Works, LLC and attribution for these 
 modification should be made to W3Works, LLC.  These modifications and 
