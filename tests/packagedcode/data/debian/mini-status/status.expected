@@ -5,7 +5,7 @@
     "name": "perl-base",
     "version": "5.22.1-9ubuntu0.6",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -53,6 +53,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/ubuntu/perl-base@5.22.1-9ubuntu0.6?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/perl-base@5.22.1-9ubuntu0.6?arch=amd64"
   }
 ]

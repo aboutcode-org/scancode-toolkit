@@ -5,7 +5,7 @@
     "name": "libncurses5",
     "version": "6.1-1ubuntu1.18.04",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -179,7 +179,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "basic-rootfs.tar.gz/var/lib/dpkg/status",
       "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
@@ -328,7 +328,7 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -419,12 +419,12 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64"
   },
   {
     "type": "deb",
@@ -432,7 +432,7 @@
     "name": "libndp0",
     "version": "1.4-2ubuntu0.16.04.1",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -552,7 +552,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "basic-rootfs.tar.gz/var/lib/dpkg/status",
       "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
@@ -665,7 +665,7 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -747,11 +747,11 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64"
   }
 ]

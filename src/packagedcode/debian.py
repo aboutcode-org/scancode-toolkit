@@ -279,7 +279,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
 
         # We only need to adjust the md5sum/list path in the case of `same`
         qualifiers = package_data.qualifiers or {}
-        architecture = qualifiers.get('architecture')
+        architecture = qualifiers.get('arch')
 
         multi_arch = package_data.extra_data.get('multi_arch')
 
@@ -626,7 +626,7 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
     qualifiers = {}
     architecture = debian_data.get('architecture')
     if architecture:
-        qualifiers['architecture'] = architecture
+        qualifiers['arch'] = architecture
 
     extra_data = {}
     # Multi-Arch can be: "foreign", "same", "allowed", "all", "optional" or

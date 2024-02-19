@@ -6,7 +6,7 @@
       "name": "adduser",
       "version": "3.118+deb11u1",
       "qualifiers": {
-        "architecture": "all"
+        "arch": "all"
       },
       "subpath": null,
       "primary_language": null,
@@ -49,14 +49,14 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:deb/debian/adduser@3.118%2Bdeb11u1?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:deb/debian/adduser@3.118%2Bdeb11u1?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "adduser_3.118+deb11u1.dsc"
       ],
       "datasource_ids": [
         "debian_source_control_dsc"
       ],
-      "purl": "pkg:deb/debian/adduser@3.118%2Bdeb11u1?architecture=all"
+      "purl": "pkg:deb/debian/adduser@3.118%2Bdeb11u1?arch=all"
     }
   ],
   "dependencies": [],
@@ -71,7 +71,7 @@
           "name": "adduser",
           "version": "3.118+deb11u1",
           "qualifiers": {
-            "architecture": "all"
+            "arch": "all"
           },
           "subpath": null,
           "primary_language": null,
@@ -117,11 +117,11 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_source_control_dsc",
-          "purl": "pkg:deb/debian/adduser@3.118%2Bdeb11u1?architecture=all"
+          "purl": "pkg:deb/debian/adduser@3.118%2Bdeb11u1?arch=all"
         }
       ],
       "for_packages": [
-        "pkg:deb/debian/adduser@3.118%2Bdeb11u1?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/debian/adduser@3.118%2Bdeb11u1?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

@@ -5,7 +5,7 @@
     "name": "libncurses5",
     "version": "6.1-1ubuntu1.18.04",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -55,7 +55,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64"
   },
   {
     "type": "deb",
@@ -63,7 +63,7 @@
     "name": "libcom-err2",
     "version": "1.44.1-1ubuntu1.1",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -113,7 +113,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/ubuntu/libcom-err2@1.44.1-1ubuntu1.1?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libcom-err2@1.44.1-1ubuntu1.1?arch=amd64"
   },
   {
     "type": "deb",
@@ -121,7 +121,7 @@
     "name": "libapt-pkg5.0",
     "version": "1.6.11",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -171,7 +171,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/ubuntu/libapt-pkg5.0@1.6.11?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libapt-pkg5.0@1.6.11?arch=amd64"
   },
   {
     "type": "deb",
@@ -179,7 +179,7 @@
     "name": "libaudit1",
     "version": "1:2.8.2-1ubuntu1",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -229,7 +229,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.2-1ubuntu1?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.2-1ubuntu1?arch=amd64"
   },
   {
     "type": "deb",
@@ -237,7 +237,7 @@
     "name": "perl-base",
     "version": "5.26.1-6ubuntu0.3",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -285,7 +285,7 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64"
   },
   {
     "type": "deb",
@@ -293,7 +293,7 @@
     "name": "libudev1",
     "version": "237-3ubuntu10.22",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -343,6 +343,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "debian_installed_status_db",
-    "purl": "pkg:deb/ubuntu/libudev1@237-3ubuntu10.22?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libudev1@237-3ubuntu10.22?arch=amd64"
   }
 ]

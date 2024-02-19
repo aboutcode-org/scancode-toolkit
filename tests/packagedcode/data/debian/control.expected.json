@@ -6,7 +6,7 @@
       "name": "gzip",
       "version": null,
       "qualifiers": {
-        "architecture": "any"
+        "arch": "any"
       },
       "subpath": null,
       "primary_language": null,
@@ -39,14 +39,14 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:deb/debian/gzip?architecture=any&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:deb/debian/gzip?arch=any&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "control/debian/control"
       ],
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "purl": "pkg:deb/debian/gzip?architecture=any"
+      "purl": "pkg:deb/debian/gzip?arch=any"
     },
     {
       "type": "deb",
@@ -54,7 +54,7 @@
       "name": "gzip-win32",
       "version": null,
       "qualifiers": {
-        "architecture": "all"
+        "arch": "all"
       },
       "subpath": null,
       "primary_language": null,
@@ -87,14 +87,14 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:deb/debian/gzip-win32?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:deb/debian/gzip-win32?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "control/debian/control"
       ],
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "purl": "pkg:deb/debian/gzip-win32?architecture=all"
+      "purl": "pkg:deb/debian/gzip-win32?arch=all"
     }
   ],
   "dependencies": [],
@@ -104,8 +104,8 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [
-        "pkg:deb/debian/gzip?architecture=any&uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:deb/debian/gzip-win32?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/debian/gzip?arch=any&uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:deb/debian/gzip-win32?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -114,8 +114,8 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [
-        "pkg:deb/debian/gzip?architecture=any&uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:deb/debian/gzip-win32?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/debian/gzip?arch=any&uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:deb/debian/gzip-win32?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -183,7 +183,7 @@
           "name": "gzip",
           "version": null,
           "qualifiers": {
-            "architecture": "any"
+            "arch": "any"
           },
           "subpath": null,
           "primary_language": null,
@@ -219,7 +219,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_control_in_source",
-          "purl": "pkg:deb/debian/gzip?architecture=any"
+          "purl": "pkg:deb/debian/gzip?arch=any"
         },
         {
           "type": "deb",
@@ -227,7 +227,7 @@
           "name": "gzip-win32",
           "version": null,
           "qualifiers": {
-            "architecture": "all"
+            "arch": "all"
           },
           "subpath": null,
           "primary_language": null,
@@ -263,12 +263,12 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_control_in_source",
-          "purl": "pkg:deb/debian/gzip-win32?architecture=all"
+          "purl": "pkg:deb/debian/gzip-win32?arch=all"
         }
       ],
       "for_packages": [
-        "pkg:deb/debian/gzip?architecture=any&uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:deb/debian/gzip-win32?architecture=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/debian/gzip?arch=any&uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:deb/debian/gzip-win32?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }
