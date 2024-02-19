@@ -103,6 +103,13 @@ Changes in Output Data Structure:
 - Upgraded spdx-tools dependency to v0.8.
   See https://github.com/nexB/scancode-toolkit/issues/3455
 
+Support for Conan package parser:
+
+- We now support the parsing of Conan manifest files, such as
+  `conanfile.py`, as described here https://docs.conan.io/2.0/reference/conanfile.html.
+  We also support source extraction from `conandata.yml`, as described here
+  https://docs.conan.io/2/tutorial/creating_packages/handle_sources_in_packages.html#using-the-conandata-yml-file.
+
 
 v32.0.8 - 2023-10-11
 ------------------------
