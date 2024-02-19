@@ -243,6 +243,13 @@ parsers in scancode-toolkit during documentation builds.
      - ``debian_copyright_in_source``
      - None
      - https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+   * - Debian machine readable file standalone
+     - ``*/copyright``
+       ``*_copyright``
+     - ``deb``
+     - ``debian_copyright_standalone``
+     - None
+     - https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
    * - Debian binary package archive
      - ``*.deb``
      - ``deb``

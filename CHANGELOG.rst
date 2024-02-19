@@ -12,7 +12,27 @@ v33.0.0 (next next, roadmap)
 - Fallback packages for non-native dependencies of SCTK.
 - Dependencies for
 - Support for copyright detection objects.
-- Bump commoncode to v31.0.3
+
+- A new field in packages with the license category for the
+  detected license expression and also an API function to
+  compute license categories from license expressions.
+  See https://github.com/nexB/scancode-toolkit/issues/2897
+
+- More support for tabular output formats: New command-line
+  options for XSLX output, and the old `--csv` command line
+  option is removed.
+  See https://github.com/nexB/scancode-toolkit/issues/830
+
+- `--unknown-licenses` is removed and this is always enabled
+  and only used in case of improper detections automatically.
+  Also tag all license rules with required phrases to improve
+  license detection and reduce false positives.
+  See https://github.com/nexB/scancode-toolkit/issues/3300
+
+- File categorization support added, a post scan plugin tagging
+  files with priority levels for review, and also take advantage
+  of these in other summary plugins.
+  See https://github.com/nexB/scancode-toolkit/issues/1745
 
 v32.1.0 (next, roadmap)
 ----------------------------
@@ -68,37 +88,22 @@ Changes in Output Data Structure:
     referenced_filenames, and the boolean attributes (like
     is_license_notice, is_license_intro etc, as applicable).
 
-- A new field in packages with the license category for the
-  detected license expression and also an API function to
-  compute license categories from license expressions.
-  See https://github.com/nexB/scancode-toolkit/issues/2897
-
-- More support for tabular output formats: New command-line
-  options for XSLX output, and the old `--csv` command line
-  option is removed.
-  See https://github.com/nexB/scancode-toolkit/issues/830
-
-- `--unknown-licenses` is removed and this is always enabled
-  and only used in case of improper detections automatically.
-  Also tag all license rules with required phrases to improve
-  license detection and reduce false positives.
-  See https://github.com/nexB/scancode-toolkit/issues/3300
-
-- A new `--todo` option is added to show the todo items that
-  should be reviewed, which are ambiguous license/package
-  detections.
-
-- File categorization support added, a post scan plugin tagging
-  files with priority levels for review, and also take advantage
-  of these in other summary plugins.
-  See https://github.com/nexB/scancode-toolkit/issues/1745
-
 - New and updated licenses, including support for newly released
   SPDX license list version 3.22. This release of the SPDX license
   list had 48 new licenses, and several of them we already had as
   licenses/rules, and these has been modified to be consistent with
   the SPDX list. And the rest have been added as new licenses.
   For more details see https://github.com/nexB/scancode-toolkit/pull/3554
+
+- Improve debian namespace detection based on clues and fix
+  namespace and qualifier bugs for debian purls.
+  For more details see https://github.com/nexB/scancode.io/issues/899
+  and https://github.com/nexB/scancode-toolkit/issues/3443
+  Also improve debian manifests parsing and purl parsing from
+  filenames. Support for https://github.com/nexB/purldb/issues/245
+  Bumps debian-inspector to v31.1.0 
+
+- Bump commoncode to v31.0.3
 
 - Upgraded spdx-tools dependency to v0.8.
   See https://github.com/nexB/scancode-toolkit/issues/3455
