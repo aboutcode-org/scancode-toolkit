@@ -7,11 +7,11 @@ owner: Systemics Ltd
 spdx_license_key: BSD-Systemics-W3Works
 other_urls:
     - https://metacpan.org/release/DPARIS/Crypt-Blowfish-2.14/source/COPYRIGHT#L7
-ignorable_holders:
-    - W3Works, LLC.
 ignorable_authors:
+    - Systemics Ltd (http://www.systemics.com/)
     - W3Works, LLC (http://www.w3works.com)
 ignorable_urls:
+    - http://www.systemics.com/
     - http://www.w3works.com/
 ---
 
