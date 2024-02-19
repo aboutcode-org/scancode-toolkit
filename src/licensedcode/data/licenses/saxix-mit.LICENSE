@@ -6,6 +6,7 @@ category: Permissive
 owner: Stefano Apostolico
 homepage_url: https://github.com/saxix/django-adminactions/blob/develop/LICENSE
 spdx_license_key: LicenseRef-scancode-saxix-mit
+minimum_coverage: 99
 ---
 
 MIT License
