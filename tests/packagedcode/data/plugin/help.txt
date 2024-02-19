@@ -266,6 +266,13 @@ Package type:  deb
   path_patterns:    '*/debian/copyright'
 --------------------------------------------
 Package type:  deb
+  datasource_id:     debian_copyright_standalone
+  documentation URL: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+  primary language:  None
+  description:       Debian machine readable file standalone
+  path_patterns:    '*/copyright', '*_copyright'
+--------------------------------------------
+Package type:  deb
   datasource_id:     debian_deb
   documentation URL: https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html
   primary language:  None

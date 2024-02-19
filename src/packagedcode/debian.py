@@ -9,6 +9,7 @@
 
 import os
 import logging
+from collections import Counter
 from pathlib import Path
 
 from commoncode import fileutils
@@ -137,6 +138,7 @@ class DebianControlFileInExtractedDebHandler(models.DatafileHandler):
             debian_data=get_paragraph_data_from_file(location=location),
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            distro='debian',
         )
 
     @classmethod
@@ -157,14 +159,18 @@ class DebianControlFileInSourceHandler(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location):
-        # TODO: we cannot know the distro from the name only
         # NOTE: a control file in a source repo or debina.tar tarball can contain more than one package
+        debian_packages = []
         for debian_data in get_paragraphs_data_from_file(location=location):
-            yield build_package_data(
-                debian_data,
-                datasource_id=cls.datasource_id,
-                package_type=cls.default_package_type,
+            debian_packages.append(
+                build_package_data(
+                    debian_data=debian_data,
+                    datasource_id=cls.datasource_id,
+                    package_type=cls.default_package_type,
+                )
             )
+
+        yield from populate_debian_namespace(debian_packages)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
@@ -191,11 +197,19 @@ class DebianDscFileHandler(models.DatafileHandler):
             location=location,
             remove_pgp_signature=True,
         )
-        yield build_package_data(
+
+        package_data_from_file = build_package_data_from_package_filename(
+            filename=os.path.basename(location),
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
+        package_data = build_package_data(
             debian_data=debian_data,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
         )
+        package_data.update_purl_fields(package_data=package_data_from_file)
+        yield package_data
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
@@ -214,12 +228,17 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
     def parse(cls, location):
         # note that we do not know yet the distro at this stage
         # we could get it... but we get that later during assemble()
-        for debian_data in get_paragraphs_data_from_file(location):
-            yield build_package_data(
-                debian_data,
-                datasource_id=cls.datasource_id,
-                package_type=cls.default_package_type,
+        debian_packages = []
+        for debian_data in get_paragraphs_data_from_file(location=location):
+            debian_packages.append(
+                build_package_data(
+                    debian_data=debian_data,
+                    datasource_id=cls.datasource_id,
+                    package_type=cls.default_package_type,
+                )
             )
+
+        yield from populate_debian_namespace(debian_packages)
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -260,7 +279,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
 
         # We only need to adjust the md5sum/list path in the case of `same`
         qualifiers = package_data.qualifiers or {}
-        architecture = qualifiers.get('architecture')
+        architecture = qualifiers.get('arch')
 
         multi_arch = package_data.extra_data.get('multi_arch')
 
@@ -305,6 +324,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
                 package.update(
                     package_data=package_data,
                     datafile_path=res.path,
+                    check_compatible=False,
                     replace=False,
                     include_version=False,
                     include_qualifiers=False,
@@ -379,13 +399,17 @@ class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
         rootfs installation. distroless is derived from Debian but each package
         has its own status file.
         """
-        for debian_data in get_paragraphs_data_from_file(location):
-            yield build_package_data(
-                debian_data,
-                datasource_id=cls.datasource_id,
-                package_type=cls.default_package_type,
-                distro='distroless',
+        debian_packages = []
+        for debian_data in get_paragraphs_data_from_file(location=location):
+            debian_packages.append(
+                build_package_data(
+                    debian_data=debian_data,
+                    datasource_id=cls.datasource_id,
+                    package_type=cls.default_package_type,
+                )
             )
+
+        yield from populate_debian_namespace(debian_packages)
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -523,6 +547,9 @@ def build_package_data_from_package_filename(filename, datasource_id, package_ty
     """
 
     # TODO: we cannot know the distro from the name only
+    # PURLs without namespace is invalid, so we need to
+    # have a default value for this
+    distro = 'debian'
     deb = DebArchive.from_filename(filename=filename)
 
     if deb.architecture:
@@ -538,6 +565,7 @@ def build_package_data_from_package_filename(filename, datasource_id, package_ty
         datasource_id=datasource_id,
         type=package_type,
         name=deb.name,
+        namespace=distro,
         version=version,
         qualifiers=qualifiers,
     )
@@ -598,7 +626,7 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
     qualifiers = {}
     architecture = debian_data.get('architecture')
     if architecture:
-        qualifiers['architecture'] = architecture
+        qualifiers['arch'] = architecture
 
     extra_data = {}
     # Multi-Arch can be: "foreign", "same", "allowed", "all", "optional" or
@@ -628,13 +656,27 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
     if keyword:
         keywords.append(keyword)
 
+    # Get distro/namespace information from clues in package data
+    if not distro:
+        if version:
+            for clue, namespace in version_clues_for_namespace.items():
+                if clue in version:
+                    distro = namespace
+                    break
+
+        if maintainer:
+            for clue, namespace in maintainer_clues_for_namespace.items():
+                if clue in maintainer:
+                    distro = namespace
+                    break
+
     source_packages = []
     source = debian_data.get('source')
     if source:
         source_pkg_purl = PackageURL(
             type=package_type,
             name=source,
-            namespace=distro
+            namespace=distro,
         ).to_string()
 
         source_packages.append(source_pkg_purl)
@@ -654,6 +696,46 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         parties=parties,
         extra_data=extra_data,
     )
+
+
+def populate_debian_namespace(packages):
+    """
+    For an iterable of debian `packages`, populate the
+    most frequently occuring namespace, or the default
+    namespace 'debian' in packages without namespace.
+    """
+    if not packages:
+        return
+
+    namespaces_with_count = Counter([
+        package.namespace
+        for package in packages
+    ])
+    distro = max(namespaces_with_count, key=namespaces_with_count.get)
+    if not distro:
+        distro = 'debian'
+
+    for package in packages:
+        if not package.namespace:
+            package.namespace = distro
+        yield package
+
+
+version_clues_for_namespace = {
+    'deb': 'debian',
+    'ubuntu': 'ubuntu',
+}
+
+
+maintainer_clues_for_namespace = {
+    'packages.debian.org': 'debian',
+    'lists.debian.org': 'debian',
+    'lists.alioth.debian.org': 'debian',
+    '@debian.org': 'debian',
+    'debian-init-diversity@': 'debian',
+    'lists.ubuntu.com': 'ubuntu',
+    '@canonical.com': 'ubuntu',
+}
 
 
 ignored_root_dirs = {

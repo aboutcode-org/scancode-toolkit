@@ -212,13 +212,17 @@ SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
     debian_copyright.DebianCopyrightFileInPackageHandler,
     debian_copyright.DebianCopyrightFileInSourceHandler,
 
-    # TODO: consider activating? debian_copyright.StandaloneDebianCopyrightFileHandler,
-
     debian.DebianDistrolessInstalledDatabaseHandler,
 
     debian.DebianInstalledFilelistHandler,
     debian.DebianInstalledMd5sumFilelistHandler,
     debian.DebianInstalledStatusDatabaseHandler,
+    debian.DebianControlFileInSourceHandler,
+    debian.DebianDscFileHandler,
+    debian.DebianSourcePackageTarballHandler,
+    debian.DebianSourcePackageMetadataTarballHandler,
+    debian.DebianDebPackageHandler,
+    debian_copyright.StandaloneDebianCopyrightFileHandler
 ]
 
 if on_linux:
