@@ -20,6 +20,8 @@ from debian_inspector.copyright import CopyrightFilesParagraph
 from debian_inspector.copyright import CopyrightLicenseParagraph
 from debian_inspector.copyright import CopyrightHeaderParagraph
 from debian_inspector.copyright import DebianCopyright
+from debian_inspector.package import CodeMetadata
+from debian_inspector.version import Version as DebVersion
 from license_expression import ExpressionError
 from license_expression import LicenseSymbolLike
 from license_expression import Licensing
@@ -264,9 +266,63 @@ class StandaloneDebianCopyrightFileHandler(BaseDebianCopyrightFileHandler):
     )
 
     @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return (
+            super().is_datafile(location, filetypes=filetypes)
+            and not DebianCopyrightFileInPackageHandler.is_datafile(location)
+            and not DebianCopyrightFileInSourceHandler.is_datafile(location)
+        )
+
+    @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         # assemble is the default
         yield from super().assemble(package_data, resource, codebase, package_adder)
+
+    @classmethod
+    def parse(cls, location):
+        """
+        Gets license/copyright information from file like
+        other copyright files, but also gets purl fields if
+        present in copyright filename, if obtained from
+        upstream metadata archive.
+        """
+        package_data = list(super().parse(location)).pop()
+        package_data_from_file = build_package_data_from_metadata_filename(
+            filename=os.path.basename(location),
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
+        if package_data_from_file:
+            package_data.update_purl_fields(package_data=package_data_from_file)
+
+        yield package_data
+
+
+def build_package_data_from_metadata_filename(filename, datasource_id, package_type):
+    """
+    Return a PackageData built from the filename of a Debian package metadata.
+    """
+
+    # TODO: we cannot know the distro from the name only
+    # PURLs without namespace is invalid, so we need to
+    # have a default value for this
+    distro = 'debian'
+    try:
+        deb = CodeMetadata.from_filename(filename=filename)
+    except ValueError:
+        return
+
+    version = deb.version
+    if isinstance(version, DebVersion):
+        version = str(version)
+
+    return models.PackageData(
+        datasource_id=datasource_id,
+        type=package_type,
+        name=deb.name,
+        namespace=distro,
+        version=version,
+    )
 
 
 class NotReallyStructuredCopyrightFile(Exception):

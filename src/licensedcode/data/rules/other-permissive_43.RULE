@@ -1,7 +1,11 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
-notes: seen in old Sun code
+is_deprecated: yes
+notes: |
+    seen in old Sun code
+    Added in SPDX license list 3.23
+    Replaced by license: sun-ppp
 ---
 
 Non-exclusive rights to redistribute, modify, translate, and use

@@ -21,6 +21,7 @@ from packagedcode import debian
 from packagedcode import debian_copyright
 from packagedcode import distro
 from packagedcode import conda
+from packagedcode import conan
 from packagedcode import cocoapods
 from packagedcode import cran
 from packagedcode import freebsd
@@ -76,6 +77,9 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     conda.CondaYamlHandler,
     conda.CondaMetaYamlHandler,
+
+    conan.ConanFileHandler,
+    conan.ConanDataHandler,
 
     cran.CranDescriptionFileHandler,
 
@@ -208,13 +212,17 @@ SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
     debian_copyright.DebianCopyrightFileInPackageHandler,
     debian_copyright.DebianCopyrightFileInSourceHandler,
 
-    # TODO: consider activating? debian_copyright.StandaloneDebianCopyrightFileHandler,
-
     debian.DebianDistrolessInstalledDatabaseHandler,
 
     debian.DebianInstalledFilelistHandler,
     debian.DebianInstalledMd5sumFilelistHandler,
     debian.DebianInstalledStatusDatabaseHandler,
+    debian.DebianControlFileInSourceHandler,
+    debian.DebianDscFileHandler,
+    debian.DebianSourcePackageTarballHandler,
+    debian.DebianSourcePackageMetadataTarballHandler,
+    debian.DebianDebPackageHandler,
+    debian_copyright.StandaloneDebianCopyrightFileHandler
 ]
 
 if on_linux:

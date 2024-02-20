@@ -1,0 +1,18 @@
+Package: bsdutils
+Essential: yes
+Status: install ok installed
+Priority: required
+Section: utils
+Installed-Size: 394
+Maintainer: util-linux packagers <util-linux@packages.debian.org>
+Architecture: amd64
+Multi-Arch: foreign
+Source: util-linux (2.36.1-8+deb11u1)
+Version: 1:2.36.1-8+deb11u1
+Pre-Depends: libc6 (>= 2.17), libsystemd0
+Recommends: bsdextrautils
+Description: basic utilities from 4.4BSD-Lite
+ This package contains the bare minimum of BSD utilities needed for a Debian
+ system: logger, renice, script, scriptlive, scriptreplay and wall. The
+ remaining standard BSD utilities are provided by bsdextrautils.
+Homepage: http://www.kernel.org/pub/linux/utils/util-linux/

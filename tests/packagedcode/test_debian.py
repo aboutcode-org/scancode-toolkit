@@ -46,6 +46,20 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
         results = list(get_installed_packages(test_dir))
         self.check_packages_data(results, expected_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_control_file_basic(self):
+        test_dir = self.get_test_loc('debian/control')
+        expected_file = self.get_test_loc('debian/control.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_dsc_file_basic(self):
+        test_dir = self.get_test_loc('debian/dsc_files/adduser_3.118+deb11u1.dsc')
+        expected_file = self.get_test_loc('debian/dsc_files/adduser_3.118+deb11u1.dsc.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
 
 class TestDebian(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -67,6 +81,12 @@ class TestDebian(PackageTester):
         test_file = self.get_test_loc('debian/basic/status')
         expected_loc = self.get_test_loc('debian/basic/status.expected')
         # specify ubuntu distro as this was the source of the test `status` file
+        packages = list(debian.DebianInstalledStatusDatabaseHandler.parse(test_file))
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_status_file_with_source_packages(self):
+        test_file = self.get_test_loc('debian/status-with-source/status')
+        expected_loc = self.get_test_loc('debian/status-with-source/status.expected')
         packages = list(debian.DebianInstalledStatusDatabaseHandler.parse(test_file))
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
@@ -156,7 +176,7 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
             datasource_id='debian_deb',
             package_type='deb',
         )
-        assert str(result.purl) == 'pkg:deb/libapache2-mod-md@2.4.38-3%2Bdeb10u10?architecture=amd64'
+        assert str(result.purl) == 'pkg:deb/debian/libapache2-mod-md@2.4.38-3%2Bdeb10u10?architecture=amd64'
 
     def test_build_package_data_from_package_filename_orig_sdoes_not_crash_on_version(self):
         filename = 'abseil_0~20200923.3.orig.tar.gz'
@@ -165,7 +185,7 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
             datasource_id='debian_deb',
             package_type='deb',
         )
-        assert str(result.purl) == 'pkg:deb/abseil@0~20200923.3'
+        assert str(result.purl) == 'pkg:deb/debian/abseil@0~20200923.3'
 
     def test_build_package_data_from_package_filename_debian_tar_sdoes_not_crash_on_version(self):
         filename = 'abseil_20220623.1-1.debian.tar.xz'
@@ -174,9 +194,9 @@ class TestDebianGetListOfInstalledFiles(PackageTester):
             datasource_id='debian_deb',
             package_type='deb',
         )
-        assert str(result.purl) == 'pkg:deb/abseil@20220623.1-1'
+        assert str(result.purl) == 'pkg:deb/debian/abseil@20220623.1-1'
 
     def test_DebianDebPackageHandler_parse_does_not_crash_on_version(self):
         location = 'foo/bar/libapache2-mod-md_2.4.38-3+deb10u10_amd64.deb'
         result = list(DebianDebPackageHandler.parse(location))[0]
-        assert str(result.purl) == 'pkg:deb/libapache2-mod-md@2.4.38-3%2Bdeb10u10?architecture=amd64'
+        assert str(result.purl) == 'pkg:deb/debian/libapache2-mod-md@2.4.38-3%2Bdeb10u10?architecture=amd64'
