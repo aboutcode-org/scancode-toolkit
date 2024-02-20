@@ -5,7 +5,9 @@ name: Unicode License v3
 category: Permissive
 owner: Unicode Consortium
 homepage_url: https://www.unicode.org/license.txt
-spdx_license_key: LicenseRef-scancode-unicode-v3
+spdx_license_key: Unicode-3.0
+other_spdx_license_keys:
+    - LicenseRef-scancode-unicode-v3
 ---
 
 UNICODE LICENSE V3

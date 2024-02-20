@@ -124,7 +124,7 @@ other_license_expression: ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AN
   WITH tex-exception) AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus))
   AND ((lgpl-3.0-plus AND lgpl-3.0-plus) OR (gpl-2.0-plus AND gpl-2.0-plus)) AND (gpl-2.0-plus
   AND gpl-2.0-plus) AND autoconf-simple-exception-2.0 AND public-domain AND (gpl-2.0 AND gpl-2.0)
-  AND fsf-ap
+  AND fsfap-no-warranty-disclaimer
 other_license_expression_spdx: ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later
   AND GPL-2.0-or-later)) AND (((GPL-2.0-or-later OR GPL-3.0-or-later) AND LicenseRef-scancode-other-permissive
   AND LicenseRef-scancode-public-domain) AND LicenseRef-scancode-public-domain AND LGPL-2.0-or-later
@@ -190,7 +190,7 @@ other_license_expression_spdx: ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GP
   AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later))
   AND ((LGPL-3.0-or-later AND LGPL-3.0-or-later) OR (GPL-2.0-or-later AND GPL-2.0-or-later))
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND Autoconf-exception-generic AND LicenseRef-scancode-public-domain
-  AND (GPL-2.0-only AND GPL-2.0-only) AND FSFAP
+  AND (GPL-2.0-only AND GPL-2.0-only) AND FSFAP-no-warranty-disclaimer
 license_detections: []
 other_license_detections:
   - license_expression: lgpl-2.0-plus
@@ -373,11 +373,11 @@ other_license_detections:
           Public License, version 2, can be found in
           /usr/share/common-licenses/GPL-2.
     identifier: gpl_2_0-b47eb271-c5ef-bd9e-ddea-7766c795aa06
-  - license_expression: fsf-ap
-    license_expression_spdx: FSFAP
+  - license_expression: fsfap-no-warranty-disclaimer
+    license_expression_spdx: FSFAP-no-warranty-disclaimer
     matches:
-      - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+      - license_expression: fsfap-no-warranty-disclaimer
+        spdx_license_expression: FSFAP-no-warranty-disclaimer
         from_file:
         start_line: 565
         end_line: 567
@@ -386,13 +386,13 @@ other_license_detections:
         matched_length: 26
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: fsf-ap_3.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_3.RULE
+        rule_identifier: fsfap-no-warranty-disclaimer.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsfap-no-warranty-disclaimer.LICENSE
         matched_text: |
           Copying and distribution of this file, with or without modification,
           are permitted in any medium without royalty provided the copyright
           notice and this notice are preserved.
-    identifier: fsf_ap-e6bce55e-c5a1-cd3c-4dee-8eea6cc9bbe3
+    identifier: fsfap_no_warranty_disclaimer-0a0f0582-ca9a-fded-f81d-082964e0dd88
   - license_expression: lgpl-3.0-plus
     license_expression_spdx: LGPL-3.0-or-later
     matches:

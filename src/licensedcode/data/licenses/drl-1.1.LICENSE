@@ -5,7 +5,11 @@ name: Detection Rule License (DRL) 1.1
 category: Permissive
 owner: Florian Roth
 homepage_url: https://github.com/Neo23x0/signature-base/blob/master/LICENSE
-spdx_license_key: LicenseRef-scancode-drl-1.1
+spdx_license_key: DRL-1.1
+other_spdx_license_keys:
+    - LicenseRef-scancode-drl-1.1
+other_urls:
+    - https://github.com/SigmaHQ/Detection-Rule-License/blob/6ec7fbde6101d101b5b5d1fcb8f9b69fbc76c04a/LICENSE.Detection.Rules.md
 ---
 
 Detection Rule License (DRL) 1.1

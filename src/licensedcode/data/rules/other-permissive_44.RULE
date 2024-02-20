@@ -1,6 +1,10 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
+is_deprecated: yes
+notes: |
+    Added in SPDX license list 3.23
+    Replaced by license: hpnd-inria-imag
 ---
 
 This software is available with usual &quot;research&quot; terms
