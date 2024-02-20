@@ -673,9 +673,19 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
     source_packages = []
     source = debian_data.get('source')
     if source:
+        # source package strings often have version in them like:
+        # Source: util-linux (2.36.1-8+deb11u1)
+        if " (" in source and ")" in source:
+            source_name, source_version = source.split(" (")
+            source_version, _ = source_version.split(")")
+        else:
+            source_name = source
+            source_version = None
+
         source_pkg_purl = PackageURL(
             type=package_type,
-            name=source,
+            name=source_name,
+            version=source_version,
             namespace=distro,
         ).to_string()
 

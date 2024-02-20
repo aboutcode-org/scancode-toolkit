@@ -84,6 +84,12 @@ class TestDebian(PackageTester):
         packages = list(debian.DebianInstalledStatusDatabaseHandler.parse(test_file))
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_status_file_with_source_packages(self):
+        test_file = self.get_test_loc('debian/status-with-source/status')
+        expected_loc = self.get_test_loc('debian/status-with-source/status.expected')
+        packages = list(debian.DebianInstalledStatusDatabaseHandler.parse(test_file))
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_status_file_perl_error(self):
         test_file = self.get_test_loc('debian/mini-status/status')
         expected_loc = self.get_test_loc('debian/mini-status/status.expected')
