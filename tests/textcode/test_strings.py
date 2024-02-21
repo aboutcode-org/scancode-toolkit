@@ -162,11 +162,11 @@ class TestStrings(FileBasedTesting):
     def test_is_relative_path(self):
         # Win Path
         path = "c:\\usr\\lib\\librt.so.1."
-        self.assertFalse(strings.is_relative_path(path))
+        assert strings.is_relative_path(path) is False
 
         # Relative Posix Path
         path = "usr/lib/librt.so.1"
-        self.assertTrue(strings.is_relative_path(path))
+        assert strings.is_relative_path(path) is True
 
     def test_strings_with_lf(self):
         test_file = 'strings/with-lf/strings.exe'
