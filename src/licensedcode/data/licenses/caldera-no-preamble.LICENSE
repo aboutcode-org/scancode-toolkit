@@ -3,7 +3,7 @@ key: caldera-no-preamble
 short_name: Caldera License (without preamble)
 name: Caldera License (without preamble)
 category: Permissive
-owner: Caldera International Inc.
+owner: Caldera
 notes: |
     Added in SPDX license list 3.23
     This was previously the license rule: bsd-original_46.RULE

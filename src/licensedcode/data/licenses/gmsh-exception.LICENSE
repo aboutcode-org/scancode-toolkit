@@ -3,9 +3,11 @@ key: gmsh-exception
 short_name: Gmsh exception
 name: Gmsh exception
 category: Copyleft Limited
-owner: Unspecified
+owner: gmsh
 is_exception: yes
 spdx_license_key: Gmsh-exception
+text_urls:
+    - https://gmsh.info/LICENSE.txt
 other_urls:
     - https://gitlab.onelab.info/gmsh/gmsh/-/raw/master/LICENSE.txt
 ---

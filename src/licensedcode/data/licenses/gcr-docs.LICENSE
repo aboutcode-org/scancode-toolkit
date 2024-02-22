@@ -2,7 +2,7 @@
 key: gcr-docs
 short_name: Gnome GCR Documentation License
 name: Gnome GCR Documentation License
-category: Copyleft
+category: Copyleft Limited
 owner: GNOME Project
 spdx_license_key: GCR-docs
 other_urls:
