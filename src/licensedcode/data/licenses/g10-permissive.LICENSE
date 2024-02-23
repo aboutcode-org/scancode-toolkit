@@ -6,7 +6,6 @@ category: Permissive
 owner: g10 Code GmbH
 homepage_url: https://changelogs.ubuntu.com/changelogs/pool/main/d/dbus/dbus_1.10.6-1ubuntu3.6/copyright
 spdx_license_key: LicenseRef-scancode-g10-permissive
-standard_notice: 'License: g10-permissive'
 ---
 
 This file is free software; as a special exception the author gives
