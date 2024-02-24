@@ -258,16 +258,15 @@ class TestScanSummary(FileDrivenTesting):
         assert result_1 == expected_1
 
     def test_get_holders_from_copyright(self):
-        test_copyright = 'Copyright (c) 2017, The University of Chicago. All rights reserved.'
-        expected_1 = ['The University of Chicago']
-        result_1 = get_holders_from_copyright(test_copyright)
-        assert result_1 == expected_1
+        test_copyright_string = 'Copyright (c) 2017, The University of Chicago. All rights reserved.'
+        result = list(get_holders_from_copyright(test_copyright_string))
+        assert result == ['The University of Chicago']
 
-        test_copyrights = [
+        test_copyright_lines = [
             'Copyright (c) 2017, The University of Chicago. All rights reserved.',
             'Copyright (c) MIT',
             'Copyright (c) Apache Software Foundation',
         ]
-        expected_2 = ['The University of Chicago', 'MIT', 'Apache Software Foundation']
-        result_2 = get_holders_from_copyright(test_copyrights)
-        assert result_2 == expected_2
+
+        result = list(get_holders_from_copyright(test_copyright_lines))
+        assert result == ['The University of Chicago', 'MIT', 'Apache Software Foundation']

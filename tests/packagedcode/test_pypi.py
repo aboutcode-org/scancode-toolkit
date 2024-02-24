@@ -417,23 +417,23 @@ class TestPipRequirementsFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/requirements_txt/invalid_spec/output.expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    @pytest.mark.parametrize(
-        'filename',
-        [
-            'dev-requirements.txt',
-            'reqs.txt',
-            'requirements/base.txt',
-            'requirements-dev.txt',
-            'requirements.in',
-            'requirements.pip',
-            'requirements.txt',
-            'requirement.txt',
-            'requires.txt',
-            'some-requirements-dev.txt',
-        ]
-    )
-    def test_PipRequirementsFileHandler_is_datafile(self, filename):
-        assert pypi.PipRequirementsFileHandler.is_datafile(filename, _bare_filename=True)
+@pytest.mark.parametrize(
+    'filename',
+    [
+        'dev-requirements.txt',
+        'reqs.txt',
+        'requirements/base.txt',
+        'requirements-dev.txt',
+        'requirements.in',
+        'requirements.pip',
+        'requirements.txt',
+        'requirement.txt',
+        'requires.txt',
+        'some-requirements-dev.txt',
+    ]
+)
+def test_PipRequirementsFileHandler_is_datafile(filename):
+    assert pypi.PipRequirementsFileHandler.is_datafile(location=filename, _bare_filename=True)
 
 
 class TestPyPiPipfile(PackageTester):

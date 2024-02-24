@@ -274,7 +274,7 @@ class TestMavenMisc(BaseMavenCase):
         pom_resource = codebase.get_resource(
             'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml'
         )
-        assert pom_resource is True
+        assert pom_resource
         top_level_resources_paths = [
             r.path for r in maven.MavenPomXmlHandler.get_top_level_resources(pom_resource, codebase)
         ]

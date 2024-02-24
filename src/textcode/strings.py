@@ -180,33 +180,33 @@ def is_shared_object(s):
     return so(s)
 
 
+# TODO: implement me
+_posix = re.compile('^/[\\w_\\-].*$', re.IGNORECASE).match
 def is_posix_path(s):
     """
     Return True if s looks like a posix path.
     Example: /usr/lib/librt.so.1 or /usr/lib
     """
-    # TODO: implement me
-    posix = re.compile('^/[\\w_\\-].*$', re.IGNORECASE).match
-    posix(s)
-    return False
+    return _posix(s)
 
 
+# TODO: implement me
+_relative = re.compile('^(?:([^/]|\\.\\.)[\\w_\\-]+/.*$)', re.IGNORECASE).match
 def is_relative_path(s):
     """
     Return True if s looks like a relative posix path.
     Example: usr/lib/librt.so.1 or ../usr/lib
     """
-    relative = re.compile('^(?:([^/]|\\.\\.)[\\w_\\-]+/.*$)', re.IGNORECASE).match
-    return relative(s)
+    return bool(_relative(s))
 
 
+_winpath = re.compile('^[\\w_\\-]+\\.so\\.[0-9]+\\.*.[0-9]*$', re.IGNORECASE).match
 def is_win_path(s):
     """
     Return True if s looks like a win path.
     Example: c:\\usr\\lib\\librt.so.1.
     """
-    winpath = re.compile('^[\\w_\\-]+\\.so\\.[0-9]+\\.*.[0-9]*$', re.IGNORECASE).match
-    return winpath(s)
+    return _winpath(s)
 
 
 def is_c_source(s):

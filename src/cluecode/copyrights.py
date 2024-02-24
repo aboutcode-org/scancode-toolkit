@@ -2517,7 +2517,8 @@ grammar = """
     COMPANY: {<COMPANY> <MAINT>} #19603
 
 
-#######################################
+#################################    #COPYRIGHT: {<COPY> <COPY> <MIT>}        #1802
+######
 # VARIOUS FORMS OF COPYRIGHT
 #######################################
 
@@ -2571,6 +2572,8 @@ grammar = """
     COPYRIGHT: {<COPY>+ <BY> <NAME|NAME-EMAIL|NAME-YEAR>+}        #1670
 
     COPYRIGHT: {<COPY> <COPY> <COMP>+}        #1690
+
+    COPYRIGHT: {<COPY> <COPY> <MIT>}        #1802
 
     COPYRIGHT: {<COPY> <COPY> <NN>+ <COMPANY|NAME|NAME-EMAIL>+}        #1710
 

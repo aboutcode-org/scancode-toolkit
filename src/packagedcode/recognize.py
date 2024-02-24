@@ -16,7 +16,7 @@ from packagedcode import SYSTEM_PACKAGE_DATAFILE_HANDLERS
 from packagedcode import ALL_DATAFILE_HANDLERS
 from packagedcode import models
 
-TRACE = False or os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
 def logger_debug(*args):
@@ -62,7 +62,6 @@ def recognize_package_data(
         datafile_handlers = APPLICATION_PACKAGE_DATAFILE_HANDLERS
     elif system:
         datafile_handlers = SYSTEM_PACKAGE_DATAFILE_HANDLERS
-
     return list(_parse(location, datafile_handlers=datafile_handlers))
 
 
@@ -78,6 +77,9 @@ def _parse(
     """
 
     for handler in datafile_handlers:
+        if TRACE:
+            logger_debug(f'_parse:.is_datafile: {handler}')
+
         if not handler.is_datafile(location):
             continue
 
