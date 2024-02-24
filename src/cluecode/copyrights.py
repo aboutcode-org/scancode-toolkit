@@ -4128,8 +4128,10 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
 
         # normalize (possibly repeated) quotes to unique single quote '
         # backticks ` and "
-        .replace('`', u"'")
-        .replace('"', u"'")
+        .replace('`', "'")
+        .replace('"', "'")
+        # see https://github.com/nexB/scancode-toolkit/issues/3667
+        .replace('§', " ")
     )
 
     if TRACE_TOK:
