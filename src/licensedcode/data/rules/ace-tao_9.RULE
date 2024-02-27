@@ -1,0 +1,24 @@
+---
+license_expression: ace-tao
+is_license_notice: yes
+ignorable_copyrights:
+    - copyrighted by Douglas C. Schmidt and his research group at Washington University, University
+        of California, Irvine, and Vanderbilt University, Copyright (c) 1993-2009
+ignorable_holders:
+    - Douglas C. Schmidt and his research group at Washington University, University of California,
+        Irvine, and Vanderbilt University
+---
+
+ACE(TM), TAO(TM), CIAO(TM), DAnCE(TM), and CoSMIC(TM)
+(henceforth referred to as "DOC software") are copyrighted by
+Douglas C. Schmidt and his research group at Washington University,
+University of California, Irvine, and Vanderbilt University,
+Copyright (c) 1993-2009, all rights reserved.
+Since DOC software is open-source, freely available software,
+you are free to use, modify, copy, and distribute--perpetually and
+irrevocably--the DOC software source code and object code produced
+from the source, as well as copy and distribute modified versions of
+this software. You must, however, include this copyright statement
+along with any code built using DOC software that you release. No
+copyright statement needs to be provided if you just ship binary
+executables of your software products.
