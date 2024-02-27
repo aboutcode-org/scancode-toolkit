@@ -5,6 +5,7 @@ name: Lisp Lesser General Public License (LLPGL)
 category: Copyleft Limited
 owner: Franz Inc
 homepage_url: http://opensource.franz.com/preamble.html
+is_exception: yes
 spdx_license_key: LLGPL
 other_spdx_license_keys:
     - LicenseRef-scancode-llgpl
