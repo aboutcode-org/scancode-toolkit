@@ -89,11 +89,32 @@ Changes in Output Data Structure:
     is_license_notice, is_license_intro etc, as applicable).
 
 - New and updated licenses, including support for newly released
-  SPDX license list version 3.22. This release of the SPDX license
-  list had 48 new licenses, and several of them we already had as
-  licenses/rules, and these has been modified to be consistent with
-  the SPDX list. And the rest have been added as new licenses.
-  For more details see https://github.com/nexB/scancode-toolkit/pull/3554
+  SPDX license list versions:
+  - SPDX License List 3.22:
+    This release of the SPDX license list had 48 new licenses,
+    and several of them we already had as licenses/rules, and
+    these has been modified to be consistent with the SPDX list.
+    And the rest have been added as new licenses.
+    For more details see https://github.com/nexB/scancode-toolkit/pull/3554
+
+  - SPDX License List 3.23:
+    This release of the SPDX license list had 43 new licenses,
+    and out of them 22 were present as licenses and 10 were
+    present as rules already. There were 4 new license/exception
+    texts added, and the rest were either texts with small variations,
+    additions to texts or several rule texts together.
+    For more details see https://github.com/nexB/scancode-toolkit/pull/3653
+
+  - We also have lots of other misc new licenses and rules added to
+    LicenseDB, see PRs below for more details:
+    https://github.com/nexB/scancode-toolkit/pull/3663
+    https://github.com/nexB/scancode-toolkit/pull/3642
+    https://github.com/nexB/scancode-toolkit/pull/3586
+    https://github.com/nexB/scancode-toolkit/pull/3584
+    https://github.com/nexB/scancode-toolkit/pull/3575
+    https://github.com/nexB/scancode-toolkit/pull/3570
+    https://github.com/nexB/scancode-toolkit/pull/3568
+    https://github.com/nexB/scancode-toolkit/pull/3562
 
 - Improve debian namespace detection based on clues and fix
   namespace and qualifier bugs for debian purls.

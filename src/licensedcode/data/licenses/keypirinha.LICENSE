@@ -1,11 +1,11 @@
 ---
-license_expression: proprietary-license
-is_license_text: yes
-relevance: 100
-is_deprecated: yes
-notes: |
-    See https://keypirinha.com/license.html
-    This is now the keypirinha.LICENSE
+key: keypirinha
+short_name: Keypirinha License
+name: Keypirinha License
+category: Proprietary Free
+owner: Keypirinha
+homepage_url: https://keypirinha.com/license.html
+spdx_license_key: LicenseRef-scancode-keypirinha
 ---
 
 Redistribution and use in binary form, without modification, are permitted provided that the following conditions are met:

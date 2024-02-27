@@ -3,7 +3,7 @@ key: radvd
 short_name: radvd License
 name: radvd License
 category: Permissive
-owner: Unspecified
+owner: radvd
 homepage_url: https://github.com/reubenhwk/radvd/blob/master/COPYRIGHT
 spdx_license_key: radvd
 other_spdx_license_keys:
