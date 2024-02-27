@@ -2,8 +2,8 @@
 key: hpnd-mit-disclaimer
 short_name: Historical with MIT disclaimer
 name: Historical Permission Notice and Disclaimer with MIT disclaimer
-owner: OSI - Open Source Initiative
 category: Permissive
+owner: OSI - Open Source Initiative
 spdx_license_key: HPND-MIT-disclaimer
 other_urls:
     - https://metacpan.org/release/NLNETLABS/Net-DNS-SEC-1.22/source/LICENSE

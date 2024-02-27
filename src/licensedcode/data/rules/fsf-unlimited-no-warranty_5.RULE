@@ -1,6 +1,8 @@
 ---
 license_expression: fsf-unlimited-no-warranty
 is_license_text: yes
+is_deprecated: yes
+notes: This is now the g10-permissive.LICENSE
 ---
 
 * This file is free software; as a special exception the author gives

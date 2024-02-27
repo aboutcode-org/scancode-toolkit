@@ -2,8 +2,8 @@
 key: pixar
 short_name: Pixar License
 name: Pixar License
-owner: Pixar
 category: Permissive
+owner: Pixar
 spdx_license_key: Pixar
 other_urls:
     - https://github.com/PixarAnimationStudios/OpenSubdiv/raw/v3_5_0/LICENSE.txt
@@ -26,6 +26,7 @@ standard_notice: |
     distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
     KIND, either express or implied. See the Apache License for the specific
     language governing permissions and limitations under the Apache License.
+notes: This was previously the free-unknown_68.RULE
 ---
 
 Modified Apache 2.0 License

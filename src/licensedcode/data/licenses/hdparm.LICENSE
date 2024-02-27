@@ -3,7 +3,7 @@ key: hdparm
 short_name: HDPARM License
 name: HDPARM License
 category: Permissive
-owner: Unspecified
+owner: Mark Lord
 spdx_license_key: hdparm
 other_spdx_license_keys:
     - LicenseRef-scancode-hdparm

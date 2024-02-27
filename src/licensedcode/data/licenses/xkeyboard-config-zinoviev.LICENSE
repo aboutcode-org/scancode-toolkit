@@ -3,7 +3,7 @@ key: xkeyboard-config-zinoviev
 short_name: xkeyboard-config Zinoviev License
 name: xkeyboard-config Zinoviev License
 category: Permissive
-owner: Unspecified
+owner: FreeDesktop.org
 spdx_license_key: xkeyboard-config-Zinoviev
 other_urls:
     - https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/blob/master/COPYING?ref_type=heads#L178
