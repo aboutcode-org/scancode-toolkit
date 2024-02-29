@@ -178,3 +178,64 @@ class NugetNuspecHandler(models.DatafileHandler):
             **urls,
         )
 
+class NugetCsprojHandler(models.DatafileHandler):
+    datasource_id = 'nuget_csproj'
+    path_patterns = ('*.csproj',)
+    default_package_type = 'nuget'
+    description = 'Csproj package manifest'
+    documentation_url = 'https://learn.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files'
+
+    @classmethod
+    def parse(cls, location):
+        with open(location, 'rb') as loc:
+            parsed = xmltodict.parse(loc)
+        if not parsed:
+            return
+
+        groups = parsed.get('Project', {}).get('ItemGroup')
+        if groups is None:
+            return
+        for group in groups if isinstance(groups, list) else [groups]:
+            pkgs = group.get('PackageReference')
+            if pkgs is None:
+                continue
+            for pkg in pkgs if isinstance(pkgs, list) else [pkgs]:
+                name = pkg.get('Include') or pkg.get('@Include')
+                version = pkg.get('Version') or pkg.get('@Version')
+                urls = get_urls(name, version)
+                yield models.PackageData(
+                    datasource_id=cls.datasource_id,
+                    type=cls.default_package_type,
+                    name=name,
+                    version=version,
+                    **urls,
+                )
+
+class NugetPackagesConfigHandler(models.DatafileHandler):
+    datasource_id = 'nuget_packages_config'
+    path_patterns = ('*/packages.config',)
+    default_package_type = 'nuget'
+    description = 'NuGet packages config manifest'
+    documentation_url = 'https://learn.microsoft.com/en-us/nuget/reference/packages-config'
+
+    @classmethod
+    def parse(cls, location):
+        with open(location, 'rb') as loc:
+            parsed = xmltodict.parse(loc)
+        if not parsed:
+            return
+
+        pkgs = parsed.get('packages', {}).get('package')
+        if pkgs is None:
+            return
+        for pkg in pkgs if isinstance(pkgs, list) else [pkgs]:
+            name = pkg.get('@id')
+            version = pkg.get('@version')
+            urls = get_urls(name, version)
+            yield models.PackageData(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                name=name,
+                version=version,
+                **urls,
+            )
