@@ -582,7 +582,10 @@ def parse_debian_files_list(location, datasource_id, package_type):
         name, _, arch = filename.partition(':')
         qualifiers['arch'] = arch
     else:
-        name = filename
+        name = None
+        # For DebianMd5sumFilelistInPackageHandler we cannot infer name
+        if not name == "md5sums":
+            name = filename
 
     file_references = []
     with open(location) as info_file:
