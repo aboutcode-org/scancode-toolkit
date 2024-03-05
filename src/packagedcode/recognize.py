@@ -44,6 +44,7 @@ def recognize_package_data(
     location,
     application=True,
     system=False,
+    package_only=False,
 ):
     """
     Return a list of Package objects if any package_data were recognized for
@@ -55,19 +56,24 @@ def recognize_package_data(
     if not filetype.is_file(location):
         return []
 
-    assert application or system
-    if application and system:
+    assert application or system or package_only
+    if package_only or (application and system):
         datafile_handlers = ALL_DATAFILE_HANDLERS
     elif application:
         datafile_handlers = APPLICATION_PACKAGE_DATAFILE_HANDLERS
     elif system:
         datafile_handlers = SYSTEM_PACKAGE_DATAFILE_HANDLERS
 
-    return list(_parse(location, datafile_handlers=datafile_handlers))
+    return list(_parse(
+        location=location,
+        package_only=package_only,
+        datafile_handlers=datafile_handlers,
+    ))
 
 
 def _parse(
     location,
+    package_only=False,
     datafile_handlers=APPLICATION_PACKAGE_DATAFILE_HANDLERS,
 ):
     """
@@ -85,7 +91,7 @@ def _parse(
             logger_debug(f'_parse:.is_datafile: {location}')
 
         try:
-            for parsed in handler.parse(location):
+            for parsed in handler.parse(location=location, package_only=package_only):
                 if TRACE:
                     logger_debug(f' _parse: parsed: {parsed!r}')
                 yield parsed

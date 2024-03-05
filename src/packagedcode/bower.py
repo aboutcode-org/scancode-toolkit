@@ -25,7 +25,7 @@ class BowerJsonHandler(models.DatafileHandler):
     documentation_url = 'https://bower.io'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
 
@@ -87,7 +87,12 @@ class BowerJsonHandler(models.DatafileHandler):
                 )
             )
 
-        yield models.PackageData(
+        if package_only:
+            package_klass = models.PackageDataOnly
+        else:
+            package_klass = models.PackageData
+
+        yield package_klass(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -98,5 +103,5 @@ class BowerJsonHandler(models.DatafileHandler):
             parties=parties,
             homepage_url=homepage_url,
             vcs_url=vcs_url,
-            dependencies=dependencies
+            dependencies=dependencies,
         )

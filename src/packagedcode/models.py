@@ -905,6 +905,17 @@ class PackageData(IdentifiablePackageData):
         )
 
 
+class PackageDataOnly(PackageData):
+    """
+    PackageData class which skips the license/copyright detection during instance
+    creation.
+    """
+
+    def __attrs_post_init__(self):
+        if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
+            self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
+
+
 def get_default_relation_license(datasource_id):
     from packagedcode import HANDLER_BY_DATASOURCE_ID
     handler = HANDLER_BY_DATASOURCE_ID[datasource_id]
