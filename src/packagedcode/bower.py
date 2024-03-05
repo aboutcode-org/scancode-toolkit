@@ -87,12 +87,7 @@ class BowerJsonHandler(models.DatafileHandler):
                 )
             )
 
-        if package_only:
-            package_klass = models.PackageDataOnly
-        else:
-            package_klass = models.PackageData
-
-        yield package_klass(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -105,3 +100,4 @@ class BowerJsonHandler(models.DatafileHandler):
             vcs_url=vcs_url,
             dependencies=dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)

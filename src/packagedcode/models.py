@@ -718,10 +718,38 @@ class PackageData(IdentifiablePackageData):
         repr=True,
     )
 
+    @classmethod
+    def from_data(cls, package_data, package_only=False):
+        """
+        Return PackageData object created out of the package metadata
+        present in `package_data` mapping. Also populate license and
+        copyright holder fields by computing them from extracted license
+        statement and extracted copyright.
 
-    def __attrs_post_init__(self, *args, **kwargs):
-        self.populate_license_fields()
-        self.populate_holder_field()
+        Skip the license/copyright detection step if `package_only` is True.
+        """
+        package_data = cls(**package_data)
+
+        if not package_only:
+            package_data.populate_license_fields()
+            package_data.populate_holder_field()
+        else:
+            package_data.normalize_extracted_license_statement()
+
+        return package_data
+
+    def normalize_extracted_license_statement(self):
+        """
+        Normalizes the extracted license statement to a readable
+        YAML string if it was a pythonic object.
+        """
+        if (
+            self.extracted_license_statement and
+            not isinstance(self.extracted_license_statement, str)
+        ):
+            self.extracted_license_statement = saneyaml.dump(
+                self.extracted_license_statement
+            )
 
     def populate_holder_field(self):
         if not self.copyright:
@@ -781,8 +809,7 @@ class PackageData(IdentifiablePackageData):
                     f"license_detections: {self.license_detections}"
                 )
 
-        if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
-            self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
+        self.normalize_extracted_license_statement()
 
     def update_purl_fields(self, package_data, replace=False):
 
@@ -903,17 +930,6 @@ class PackageData(IdentifiablePackageData):
             default_relation_license=default_relation_license,
             datasource_id=self.datasource_id,
         )
-
-
-class PackageDataOnly(PackageData):
-    """
-    PackageData class which skips the license/copyright detection during instance
-    creation.
-    """
-
-    def __attrs_post_init__(self):
-        if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
-            self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
 
 
 def get_default_relation_license(datasource_id):
