@@ -12,6 +12,9 @@ Options:
     -p, --package     Scan <input> for application package and dependency
                       manifests, lockfiles and related data.
     --system-package  Scan <input> for installed system package databases.
+    --package-only    Only detect package information and skip license/copyright
+                      detection steps, in application package and dependency
+                      manifests, lockfiles and related data.
     -c, --copyright   Scan <input> for copyrights.
 
   other scans:

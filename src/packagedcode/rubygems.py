@@ -41,12 +41,13 @@ class GemArchiveHandler(models.DatafileHandler):
     )
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         metadata = extract_gem_metadata(location)
         metadata = saneyaml.load(metadata)
         yield build_rubygem_package_data(
             gem_data=metadata,
             datasource_id=cls.datasource_id,
+            package_only=package_only,
         )
 
 
@@ -84,13 +85,14 @@ class GemMetadataArchiveExtractedHandler(models.DatafileHandler):
     )
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with open(location, 'rb') as met:
             metadata = met.read()
         metadata = saneyaml.load(metadata)
         yield build_rubygem_package_data(
             gem_data=metadata,
             datasource_id=cls.datasource_id,
+            package_only=package_only,
         )
 
     @classmethod
@@ -129,7 +131,7 @@ class GemspecHandler(models.DatafileHandler):
     documentation_url = 'https://guides.rubygems.org/specification-reference/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         gemspec = spec.parse_spec(
             location=location,
             package_type=cls.default_package_type,
@@ -152,7 +154,7 @@ class GemspecHandler(models.DatafileHandler):
 
         urls = get_urls(name=name, version=version)
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -166,6 +168,7 @@ class GemspecHandler(models.DatafileHandler):
             dependencies=dependencies,
             **urls
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 class GemspecInExtractedGemHandler(GemspecHandler):
     datasource_id = 'gemspec_extracted'
@@ -234,7 +237,7 @@ class GemfileLockHandler(BaseGemProjectHandler):
     documentation_url = 'https://bundler.io/man/gemfile.5.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         gemfile_lock = GemfileLockParser(location)
         all_gems = list(gemfile_lock.all_gems.values())
         if not all_gems:
@@ -258,7 +261,7 @@ class GemfileLockHandler(BaseGemProjectHandler):
             ]
             urls = get_urls(primary_gem.name, primary_gem.version)
 
-            yield models.PackageData(
+            package_data = dict(
                 datasource_id=cls.datasource_id,
                 primary_language=cls.default_primary_language,
                 type=cls.default_package_type,
@@ -267,6 +270,7 @@ class GemfileLockHandler(BaseGemProjectHandler):
                 dependencies=deps,
                 **urls
             )
+            yield models.PackageData.from_data(package_data, package_only)
         else:
             deps = [
                 models.DependentPackage(
@@ -284,12 +288,13 @@ class GemfileLockHandler(BaseGemProjectHandler):
                 ) for gem in all_gems
             ]
 
-            yield models.PackageData(
+            package_data = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
                 dependencies=deps,
                 primary_language=cls.default_primary_language,
             )
+            yield models.PackageData.from_data(package_data, package_only)
 
 
 class GemfileLockInExtractedGemHandler(GemfileLockHandler):
@@ -417,7 +422,7 @@ def extract_gem_metadata(location):
             fileutils.delete(extract_loc)
 
 
-def build_rubygem_package_data(gem_data, datasource_id):
+def build_rubygem_package_data(gem_data, datasource_id, package_only=False):
     """
     Return a PackageData for ``datasource_id`` built from a Gem `gem_data`
     mapping or None. The ``gem_data`` can come from a .gemspec or .gem/metadata.
@@ -461,7 +466,7 @@ def build_rubygem_package_data(gem_data, datasource_id):
     dependencies = get_dependencies(gem_data.get('dependencies'))
     file_references = get_file_references(metadata.get('files'))
 
-    package_data = models.PackageData(
+    package_mapping = dict(
         datasource_id=datasource_id,
         type=GemArchiveHandler.default_package_type,
         primary_language=GemArchiveHandler.default_primary_language,
@@ -477,6 +482,7 @@ def build_rubygem_package_data(gem_data, datasource_id):
         dependencies=dependencies,
         **urls,
     )
+    package_data = models.PackageData.from_data(package_mapping, package_only)
 
     # we can have one singular or a plural list of authors
     authors = gem_data.get('authors') or []

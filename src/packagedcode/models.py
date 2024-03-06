@@ -728,6 +728,9 @@ class PackageData(IdentifiablePackageData):
 
         Skip the license/copyright detection step if `package_only` is True.
         """
+        if "purl" in package_data:
+            package_data.pop("purl")
+
         package_data = cls(**package_data)
 
         if not package_only:
@@ -1048,13 +1051,16 @@ class DatafileHandler:
                     return any(ft in actual_type for ft in filetypes)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield one or more PackageData objects given a package data file at
         ``location``.
 
         Subclasses must implement and are responsible for returning proper
         computed license fields and list of resources and files.
+
+        If `package_only`, skip the license/copyright detection on extracted
+        license/copyright data.
         """
         raise NotImplementedError
 
@@ -1515,8 +1521,6 @@ class Package(PackageData):
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
 
-        self.populate_license_fields()
-
     def to_dict(self):
         return super().to_dict(with_details=False)
 
@@ -1528,7 +1532,7 @@ class Package(PackageData):
         return PackageData.from_dict(mapping)
 
     @classmethod
-    def from_package_data(cls, package_data, datafile_path):
+    def from_package_data(cls, package_data, datafile_path, package_only=False):
         """
         Return a Package from a ``package_data`` PackageData object
         or mapping. Or None.
@@ -1552,7 +1556,16 @@ class Package(PackageData):
                 if not license_match['from_file']:
                     license_match['from_file'] = datafile_path
 
-        return cls.from_dict(package_data_mapping)
+        package = cls.from_dict(package_data_mapping)
+        
+        if not package.package_uid:
+            package.package_uid = build_package_uid(package.purl)
+        
+        if not package_only:
+            package.populate_license_fields()
+            package.populate_holder_field()
+
+        return package
 
     @classmethod
     def from_dict(cls, mapping):

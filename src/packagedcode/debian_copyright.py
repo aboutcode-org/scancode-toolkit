@@ -95,7 +95,7 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
                 return True
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         debian_copyright = parse_copyright_file(location)
         license_fields = DebianLicenseFields.get_license_fields(
             debian_copyright=debian_copyright
@@ -111,19 +111,26 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
             # no name otherwise for now
             name = None
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
-            extracted_license_statement=license_fields.extracted_license_statement,
-            declared_license_expression=license_fields.declared_license_expression,
-            declared_license_expression_spdx=license_fields.declared_license_expression_spdx,
-            license_detections=license_fields.license_detections,
-            other_license_expression=license_fields.other_license_expression,
-            other_license_expression_spdx=license_fields.other_license_expression_spdx,
-            other_license_detections=license_fields.other_license_detections,
-            copyright=debian_copyright.get_copyright(),
         )
+
+        if not package_only:
+            license_data = dict(
+                extracted_license_statement=license_fields.extracted_license_statement,
+                declared_license_expression=license_fields.declared_license_expression,
+                declared_license_expression_spdx=license_fields.declared_license_expression_spdx,
+                license_detections=license_fields.license_detections,
+                other_license_expression=license_fields.other_license_expression,
+                other_license_expression_spdx=license_fields.other_license_expression_spdx,
+                other_license_detections=license_fields.other_license_detections,
+                copyright=debian_copyright.get_copyright(),
+            )
+            package_data.update(license_data)
+
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 @attr.s
@@ -279,14 +286,14 @@ class StandaloneDebianCopyrightFileHandler(BaseDebianCopyrightFileHandler):
         yield from super().assemble(package_data, resource, codebase, package_adder)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Gets license/copyright information from file like
         other copyright files, but also gets purl fields if
         present in copyright filename, if obtained from
         upstream metadata archive.
         """
-        package_data = list(super().parse(location)).pop()
+        package_data = list(super().parse(location, package_only)).pop()
         package_data_from_file = build_package_data_from_metadata_filename(
             filename=os.path.basename(location),
             datasource_id=cls.datasource_id,

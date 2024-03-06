@@ -52,7 +52,7 @@ class CompactManifestHandler(models.DatafileHandler):
     documentation_url = 'https://www.freebsd.org/cgi/man.cgi?pkg-create(8)#MANIFEST_FILE_DETAILS'
 
     @classmethod
-    def _parse(cls, yaml_data):
+    def _parse(cls, yaml_data, package_only=False):
         package_data = models.PackageData(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -97,7 +97,8 @@ class CompactManifestHandler(models.DatafileHandler):
         # license_mapper needs multiple fields
         license_mapper(yaml_data, package_data)
 
-        cls.populate_license_fields(package_data)
+        if not package_only:
+            cls.populate_license_fields(package_data)
 
         if TRACE:
             logger_debug(
@@ -107,7 +108,7 @@ class CompactManifestHandler(models.DatafileHandler):
         return package_data
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package archive, manifest or similar.
@@ -115,7 +116,7 @@ class CompactManifestHandler(models.DatafileHandler):
         with io.open(location, encoding='utf-8') as loc:
             yaml_data = saneyaml.load(loc)
 
-        yield cls._parse(yaml_data)
+        yield cls._parse(yaml_data, package_only)
 
     @staticmethod
     def get_license_detections_and_expression(package_data):

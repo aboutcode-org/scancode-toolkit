@@ -216,7 +216,7 @@ class PodspecHandler(BasePodHandler):
     documentation_url = 'https://guides.cocoapods.org/syntax/podspec.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield one or more Package manifest objects given a file ``location``
         pointing to a package archive, manifest or similar.
@@ -258,7 +258,7 @@ class PodspecHandler(BasePodHandler):
             homepage_url=homepage_url,
             vcs_url=vcs_url)
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -273,6 +273,7 @@ class PodspecHandler(BasePodHandler):
             parties=parties,
             **urls,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 class PodfileHandler(PodspecHandler):
@@ -293,7 +294,7 @@ class PodfileLockHandler(BasePodHandler):
     documentation_url = 'https://guides.cocoapods.org/using/the-podfile.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield PackageData from a YAML Podfile.lock.
         """
@@ -337,12 +338,13 @@ class PodfileLockHandler(BasePodHandler):
                     )
                 )
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 class PodspecJsonHandler(models.DatafileHandler):
@@ -354,7 +356,7 @@ class PodspecJsonHandler(models.DatafileHandler):
     documentation_url = 'https://guides.cocoapods.org/syntax/podspec.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with open(location) as psj:
             data = json.load(psj)
 
@@ -423,7 +425,7 @@ class PodspecJsonHandler(models.DatafileHandler):
             name=name,
             version=version, homepage_url=homepage_url, vcs_url=vcs_url)
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             primary_language=cls.default_primary_language,
             type=cls.default_package_type,
@@ -437,6 +439,7 @@ class PodspecJsonHandler(models.DatafileHandler):
             download_url=download_url,
             **urls,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 def get_urls(name=None, version=None, homepage_url=None, vcs_url=None, **kwargs):

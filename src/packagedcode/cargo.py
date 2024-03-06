@@ -29,7 +29,7 @@ class CargoTomlHandler(models.DatafileHandler):
     documentation_url = 'https://doc.rust-lang.org/cargo/reference/manifest.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         package_data = toml.load(location, _dict=dict)
 
         core_package_data = package_data.get('package', {})
@@ -67,7 +67,7 @@ class CargoTomlHandler(models.DatafileHandler):
         repository_download_url = name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download'
         api_data_url = name and f'https://crates.io/api/v1/crates/{name}'
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -83,6 +83,7 @@ class CargoTomlHandler(models.DatafileHandler):
             api_data_url=api_data_url,
             dependencies=dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -116,7 +117,7 @@ class CargoLockHandler(models.DatafileHandler):
     # ]
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         cargo_lock = toml.load(location, _dict=dict)
         dependencies = []
         package = cargo_lock.get('package', [])
@@ -137,12 +138,13 @@ class CargoLockHandler(models.DatafileHandler):
                 )
             )
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):

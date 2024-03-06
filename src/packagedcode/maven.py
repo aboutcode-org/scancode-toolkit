@@ -132,13 +132,14 @@ class JavaJarManifestHandler(MavenBasePackageHandler):
     documentation_url = 'https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         sections = parse_manifest(location)
         if sections:
             main_section = sections[0]
             manifest = get_normalized_java_manifest_data(main_section)
             if manifest:
-                yield models.PackageData(**manifest,)
+                package_data = dict(**manifest,)
+                yield models.PackageData.from_data(package_data, package_only)
 
 
 class JavaJarManifestHandlerMixin(models.DatafileHandler):
@@ -206,13 +207,14 @@ class MavenPomXmlHandler(MavenBasePackageHandler):
                     return True
 
     @classmethod
-    def parse(cls, location, base_url='https://repo1.maven.org/maven2'):
+    def parse(cls, location, package_only=False, base_url='https://repo1.maven.org/maven2'):
         package_data = parse(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             base_url=base_url,
+            package_only=package_only,
         )
         if package_data:
             yield package_data
@@ -303,7 +305,7 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
     documentation_url = 'https://maven.apache.org/pom.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield PackageData from a pom.properties file (which is typically side-
         by-side with its pom file.)
@@ -313,10 +315,10 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
             if TRACE:
                 logger.debug(f'MavenPomPropertiesHandler.parse: properties: {properties!r}')
             if properties:
-                yield from cls.parse_pom_properties(properties=properties) 
+                yield from cls.parse_pom_properties(properties=properties, package_only=package_only) 
 
     @classmethod
-    def parse_pom_properties(cls, properties):
+    def parse_pom_properties(cls, properties, package_only=False):
         namespace = properties.pop("groupId", None)
         name = properties.pop("artifactId", None)
         version = properties.pop("version", None)
@@ -325,7 +327,7 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
         else:
             extra_data = {}
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -334,6 +336,7 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
             version=version,
             extra_data=extra_data,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 def build_url(
@@ -1189,6 +1192,7 @@ def parse(
     package_type,
     primary_language,
     base_url='https://repo1.maven.org/maven2',
+    package_only=False,
 ):
     """
     Return Packagedata objects from parsing a Maven pom file at `location` or
@@ -1199,7 +1203,8 @@ def parse(
         package_type=package_type,
         primary_language=primary_language,
         location=location,
-        base_url=base_url
+        base_url=base_url,
+        package_only=package_only,
     )
     if package:
         return package
@@ -1212,6 +1217,7 @@ def _parse(
     location=None,
     text=None,
     base_url='https://repo1.maven.org/maven2',
+    package_only=False,
 ):
     """
     Yield Packagedata objects from parsing a Maven pom file at `location` or
@@ -1283,7 +1289,7 @@ def _parse(
     ))
 
     # FIXME: there are still other data to map in a PackageData
-    return MavenPackageData(
+    package_data = dict(
         datasource_id=datasource_id,
         type=package_type,
         primary_language=primary_language,
@@ -1300,6 +1306,7 @@ def _parse(
         bug_tracking_url=bug_tracking_url,
         **urls,
     )
+    return MavenPackageData.from_data(package_data, package_only)
 
 class MavenPackageData(models.PackageData):
 
