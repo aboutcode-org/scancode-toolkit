@@ -50,6 +50,15 @@ parse_dep_link = re.compile(
     r'(?P<version>(.*))'
 ).match
 
+parse_rep_link = re.compile(
+    r"(?P<ns_name>[^\s]+)"
+    r"\s*"
+    r"(?P<version>.*)?"
+    r"\s*=>\s*"
+    r"(?P<replacement_ns_name>[^\s]+)"
+    r"\s*"
+    r"(?P<replacement_version>.*)?"
+).match
 
 def preprocess(line):
     """
@@ -120,6 +129,7 @@ def parse_gomod(location):
     gomods = GoModule()
     require = []
     exclude = []
+    replace = []
 
     for i, line in enumerate(lines):
         line = preprocess(line)
@@ -158,6 +168,67 @@ def parse_gomod(location):
                     )
             continue
 
+        if "replace" in line and "(" in line:
+            for exc in lines[i + 1 :]:
+                exc = preprocess(exc)
+                if ")" in exc:
+                    break
+
+                parsed_rep_link = parse_rep_link(exc)
+                ns_name = parsed_rep_link.group("ns_name")
+                replacement_ns_name = parsed_rep_link.group("replacement_ns_name")
+                namespace, _, name = ns_name.rpartition("/")
+                replacement_namespace, _, replacement_name = (
+                    replacement_ns_name.rpartition("/")
+                )
+
+                replace.append(
+                    GoModule(
+                        namespace=namespace,
+                        name=name,
+                        version=parsed_rep_link.group("version"),
+                    )
+                )
+
+                replace.append(
+                    GoModule(
+                        namespace=replacement_namespace,
+                        name=replacement_name,
+                        version=parsed_rep_link.group("replacement_version"),
+                    )
+                )
+            continue
+
+        if "replace" in line and "=>" in line:
+
+            line = line.lstrip("replace").strip()
+
+            parsed_rep_link = parse_rep_link(line)
+            ns_name = parsed_rep_link.group("ns_name")
+            replacement_ns_name = parsed_rep_link.group("replacement_ns_name")
+            namespace, _, name = ns_name.rpartition("/")
+            replacement_namespace, _, replacement_name = replacement_ns_name.rpartition(
+                "/"
+            )
+
+            replace.append(
+                GoModule(
+                    namespace=namespace,
+                    name=name,
+                    version=parsed_rep_link.group("version"),
+                )
+            )
+
+            replace.append(
+                GoModule(
+                    namespace=replacement_namespace,
+                    name=replacement_name,
+                    version=parsed_rep_link.group("replacement_version"),
+                )
+            )
+
+            continue
+
         parsed_module_name = parse_module(line)
         if parsed_module_name:
             ns_name = parsed_module_name.group('ns_name')
@@ -188,6 +259,7 @@ def parse_gomod(location):
 
     gomods.require = require
     gomods.exclude = exclude
+    gomods.replace = replace
 
     return gomods
 
