@@ -741,6 +741,15 @@ class PackageData(IdentifiablePackageData):
 
         return package_data
 
+    @property
+    def can_assemble(self):
+        from packagedcode import HANDLER_BY_DATASOURCE_ID
+        handler = HANDLER_BY_DATASOURCE_ID.get(self.datasource_id)
+        if issubclass(handler, NonAssemblableDatafileHandler):
+            return False
+
+        return True
+
     def normalize_extracted_license_statement(self):
         """
         Normalizes the extracted license statement to a readable

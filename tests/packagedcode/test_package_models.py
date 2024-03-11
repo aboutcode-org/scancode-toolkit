@@ -90,6 +90,17 @@ class TestModels(PackageTester):
         expected_loc = 'models/simple-expected.json'
         self.check_package_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_PackageData_model_can_assemble(self):
+        package_jar = models.PackageData(
+            type='maven', name='this', version='23', datasource_id="java_jar",
+        )
+        package_pom = models.PackageData(
+            type='maven', name='this', version='23', datasource_id="maven_pom",
+        )
+
+        assert not package_jar.can_assemble
+        assert package_pom.can_assemble
+
     def test_Package_model_qualifiers_are_serialized_as_mappings(self):
         package = models.PackageData(
             type='maven', name='this', version='23', qualifiers=dict(this='that')
