@@ -646,12 +646,14 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
 
     maintainer = debian_data.get('maintainer')
     if maintainer:
-        party = models.Party(role='maintainer', name=maintainer)
+        maintainer_name, maintainer_email = parse_debian_maintainers(maintainer)
+        party = models.Party(role='maintainer', name=maintainer_name, email=maintainer_email)
         parties.append(party)
 
     orig_maintainer = debian_data.get('original_maintainer')
     if orig_maintainer:
-        party = models.Party(role='original_maintainer', name=orig_maintainer)
+        maintainer_name, maintainer_email = parse_debian_maintainers(orig_maintainer)
+        party = models.Party(role='maintainer', name=maintainer_name, email=maintainer_email)
         parties.append(party)
 
     keywords = []
@@ -709,6 +711,26 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         parties=parties,
         extra_data=extra_data,
     )
+
+
+def parse_debian_maintainers(maintainer):
+    """
+    Get name and email values from a debian maintainer string.
+
+    Example string:
+    Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>
+    """
+    email_wrappers = ["<", ">"]
+    has_email = "@" in maintainer and all([
+        True 
+        for char in email_wrappers
+        if char in maintainer
+    ])
+    if not has_email:
+        return maintainer, None
+
+    name, _, email = maintainer.rpartition("<")
+    return name.rstrip(" "), email.rstrip(">")
 
 
 def populate_debian_namespace(packages):

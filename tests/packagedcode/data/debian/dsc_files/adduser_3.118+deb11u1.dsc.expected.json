@@ -16,8 +16,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Debian Adduser Developers <adduser@packages.debian.org>",
-          "email": null,
+          "name": "Debian Adduser Developers",
+          "email": "adduser@packages.debian.org",
           "url": null
         }
       ],
@@ -81,8 +81,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Debian Adduser Developers <adduser@packages.debian.org>",
-              "email": null,
+              "name": "Debian Adduser Developers",
+              "email": "adduser@packages.debian.org",
               "url": null
             }
           ],

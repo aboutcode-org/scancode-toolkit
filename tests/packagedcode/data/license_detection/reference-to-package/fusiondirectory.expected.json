@@ -5910,8 +5910,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "FusionDirectory Packagers <team+fusiondirectory@tracker.debian.org>",
-              "email": null,
+              "name": "FusionDirectory Packagers",
+              "email": "team+fusiondirectory@tracker.debian.org",
               "url": null
             }
           ],

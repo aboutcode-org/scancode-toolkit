@@ -137,8 +137,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Bdale Garbee <bdale@gag.com>",
-              "email": null,
+              "name": "Bdale Garbee",
+              "email": "bdale@gag.com",
               "url": null
             }
           ],
