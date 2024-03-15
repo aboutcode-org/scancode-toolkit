@@ -16,8 +16,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-          "email": null,
+          "name": "Ubuntu Developers",
+          "email": "ubuntu-devel-discuss@lists.ubuntu.com",
           "url": null
         }
       ],
@@ -89,8 +89,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Colin Watson <cjwatson@debian.org>",
-          "email": null,
+          "name": "Colin Watson",
+          "email": "cjwatson@debian.org",
           "url": null
         }
       ],
@@ -306,8 +306,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-          "email": null,
+          "name": "Ubuntu Developers",
+          "email": "ubuntu-devel-discuss@lists.ubuntu.com",
           "url": null
         }
       ],
@@ -579,8 +579,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Theodore Y. Ts'o <tytso@mit.edu>",
-          "email": null,
+          "name": "Theodore Y. Ts'o",
+          "email": "tytso@mit.edu",
           "url": null
         }
       ],
@@ -639,8 +639,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-          "email": null,
+          "name": "Ubuntu Developers",
+          "email": "ubuntu-devel-discuss@lists.ubuntu.com",
           "url": null
         }
       ],
@@ -2607,8 +2607,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-              "email": null,
+              "name": "Ubuntu Developers",
+              "email": "ubuntu-devel-discuss@lists.ubuntu.com",
               "url": null
             }
           ],
@@ -2663,8 +2663,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Colin Watson <cjwatson@debian.org>",
-              "email": null,
+              "name": "Colin Watson",
+              "email": "cjwatson@debian.org",
               "url": null
             }
           ],
@@ -2719,8 +2719,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-              "email": null,
+              "name": "Ubuntu Developers",
+              "email": "ubuntu-devel-discuss@lists.ubuntu.com",
               "url": null
             }
           ],
@@ -2775,8 +2775,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Theodore Y. Ts'o <tytso@mit.edu>",
-              "email": null,
+              "name": "Theodore Y. Ts'o",
+              "email": "tytso@mit.edu",
               "url": null
             }
           ],
@@ -2831,8 +2831,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-              "email": null,
+              "name": "Ubuntu Developers",
+              "email": "ubuntu-devel-discuss@lists.ubuntu.com",
               "url": null
             }
           ],

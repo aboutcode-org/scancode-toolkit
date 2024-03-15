@@ -46,20 +46,6 @@ class TestDebianPackageGetInstalledPackages(PackageTester):
         results = list(get_installed_packages(test_dir))
         self.check_packages_data(results, expected_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_control_file_basic(self):
-        test_dir = self.get_test_loc('debian/control')
-        expected_file = self.get_test_loc('debian/control.expected.json')
-        result_file = self.get_temp_file('results.json')
-        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
-
-    def test_parse_dsc_file_basic(self):
-        test_dir = self.get_test_loc('debian/dsc_files/adduser_3.118+deb11u1.dsc')
-        expected_file = self.get_test_loc('debian/dsc_files/adduser_3.118+deb11u1.dsc.expected.json')
-        result_file = self.get_temp_file('results.json')
-        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
-        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
-
 
 class TestDebian(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -110,6 +96,21 @@ class TestDebian(PackageTester):
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_control_file_basic(self):
+        test_dir = self.get_test_loc('debian/control')
+        expected_file = self.get_test_loc('debian/control.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_dsc_file_basic(self):
+        test_dir = self.get_test_loc('debian/dsc_files/adduser_3.118+deb11u1.dsc')
+        expected_file = self.get_test_loc('debian/dsc_files/adduser_3.118+deb11u1.dsc.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
 
 
 class TestDebianGetListOfInstalledFiles(PackageTester):
