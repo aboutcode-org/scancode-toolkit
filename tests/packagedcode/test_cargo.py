@@ -65,6 +65,18 @@ class TestCargo(PackageTester):
         packages_data = cargo.CargoTomlHandler.parse(test_file)
         self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_cargo_toml_tauri_workspace(self):
+        test_file = self.get_test_loc('cargo/cargo_toml/tauri/Cargo.toml')
+        expected_loc = self.get_test_loc('cargo/cargo_toml/tauri/Cargo.toml.expected')
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_cargo_toml_tauri_workspace_in_version(self):
+        test_file = self.get_test_loc('cargo/cargo_toml/tauri-examples/Cargo.toml')
+        expected_loc = self.get_test_loc('cargo/cargo_toml/tauri-examples/Cargo.toml.expected')
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_cargo_lock_sample1(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample1/output.expected.json')
@@ -100,6 +112,15 @@ class TestCargo(PackageTester):
         expected_file = self.get_test_loc('cargo/scan.expected.json', must_exist=False)
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_scan_works_on_cargo_workspace(self):
+        test_file = self.get_test_loc('cargo/cargo-with-workspace')
+        expected_file = self.get_test_loc('cargo/cargo-with-workspace.expected.json', must_exist=False)
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', '--license', test_file, '--json', result_file])
         check_json_scan(
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )

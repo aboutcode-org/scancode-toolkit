@@ -47,7 +47,7 @@ if TRACE:
         )
 
 
-class AutotoolsConfigureHandler(models.DatafileHandler):
+class AutotoolsConfigureHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'autotools_configure'
     path_patterns = ('*/configure', '*/configure.ac',)
     default_package_type = 'autotools'
@@ -75,14 +75,6 @@ class AutotoolsConfigureHandler(models.DatafileHandler):
         )
         yield models.PackageData.from_data(package_data, package_only)
 
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
-        models.DatafileHandler.assign_package_to_parent_tree(
-            package=package,
-            resource=resource,
-            codebase=codebase,
-            package_adder=package_adder,
-        )
 
 
 def check_rule_name_ending(rule_name, starlark_rule_types=('binary', 'library')):

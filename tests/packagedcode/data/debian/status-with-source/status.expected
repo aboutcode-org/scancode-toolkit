@@ -15,8 +15,8 @@
       {
         "type": null,
         "role": "maintainer",
-        "name": "util-linux packagers <util-linux@packages.debian.org>",
-        "email": null,
+        "name": "util-linux packagers",
+        "email": "util-linux@packages.debian.org",
         "url": null
       }
     ],

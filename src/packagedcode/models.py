@@ -759,9 +759,14 @@ class PackageData(IdentifiablePackageData):
             self.extracted_license_statement and
             not isinstance(self.extracted_license_statement, str)
         ):
-            self.extracted_license_statement = saneyaml.dump(
-                self.extracted_license_statement
-            )
+            if isinstance(self.extracted_license_statement, dict):
+                self.extracted_license_statement = saneyaml.dump(
+                    dict(self.extracted_license_statement.items())
+                )
+            else:
+                self.extracted_license_statement = saneyaml.dump(
+                    self.extracted_license_statement
+                )
 
     def populate_holder_field(self):
         if not self.copyright:

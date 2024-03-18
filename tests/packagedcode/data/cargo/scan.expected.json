@@ -148,7 +148,14 @@
       "extracted_license_statement": "MIT OR Apache-2.0",
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {},
+      "extra_data": {
+        "workspace": {
+          "members": [
+            "bench",
+            "daacfind"
+          ]
+        }
+      },
       "repository_homepage_url": "https://crates.io/crates/daachorse",
       "repository_download_url": "https://crates.io/api/v1/crates/daachorse/0.4.1/download",
       "api_data_url": "https://crates.io/api/v1/crates/daachorse",
@@ -895,7 +902,14 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "extra_data": {
+            "workspace": {
+              "members": [
+                "bench",
+                "daacfind"
+              ]
+            }
+          },
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/daachorse",
           "repository_download_url": "https://crates.io/api/v1/crates/daachorse/0.4.1/download",

@@ -28,7 +28,6 @@ from packagedcode import freebsd
 from packagedcode import godeps
 from packagedcode import golang
 from packagedcode import haxe
-from packagedcode import jar_manifest
 from packagedcode import maven
 from packagedcode import misc
 from packagedcode import npm
@@ -84,6 +83,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     cran.CranDescriptionFileHandler,
 
     debian_copyright.DebianCopyrightFileInPackageHandler,
+    debian_copyright.StandaloneDebianCopyrightFileHandler,
     debian.DebianDscFileHandler,
 
     debian.DebianControlFileInExtractedDebHandler,
@@ -216,13 +216,7 @@ SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
 
     debian.DebianInstalledFilelistHandler,
     debian.DebianInstalledMd5sumFilelistHandler,
-    debian.DebianInstalledStatusDatabaseHandler,
-    debian.DebianControlFileInSourceHandler,
-    debian.DebianDscFileHandler,
-    debian.DebianSourcePackageTarballHandler,
-    debian.DebianSourcePackageMetadataTarballHandler,
-    debian.DebianDebPackageHandler,
-    debian_copyright.StandaloneDebianCopyrightFileHandler
+    debian.DebianInstalledStatusDatabaseHandler
 ]
 
 if on_linux:

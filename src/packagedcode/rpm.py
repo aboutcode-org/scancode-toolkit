@@ -234,6 +234,9 @@ class RpmInstalledNdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
 # TODO: add dependencies!!!
 class RpmInstalledSqliteDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # used by newer RHEL/CentOS/Fedora/CoreOS
+    # Filetype: SQLite 3.x database, ...
+    # Mimetype: application/vnd.sqlite3
+
     datasource_id = 'rpm_installed_database_sqlite'
     path_patterns = ('*rpm/rpmdb.sqlite',)
     default_package_type = 'rpm'

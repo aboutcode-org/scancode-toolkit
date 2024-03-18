@@ -420,6 +420,8 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                                 for dfp in item.datafile_paths
                             ]
                         packages.append(item)
+                        if TRACE:
+                            logger_debug('    get_package_and_deps: Package:', item.purl)
 
                     elif isinstance(item, Dependency):
                         if strip_root and not has_single_resource:
