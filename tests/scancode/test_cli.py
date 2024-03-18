@@ -709,7 +709,7 @@ def test_scan_to_json_without_FILE_does_not_write_to_next_option():
     result = run_scan_click(args, expected_rc=2)
     assert (
         'Error: Invalid value for "--json": Illegal file name '
-        'conflicting with an option name: --info.'
+        'conflicting with an option name: "--info".'
     ).replace("'", '"') in result.output.replace("'", '"')
 
 
