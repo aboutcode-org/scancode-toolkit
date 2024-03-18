@@ -1,0 +1,100 @@
+[
+  {
+    "type": "gem",
+    "namespace": null,
+    "name": "oj",
+    "version": "::Oj::VERSION",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Ruby",
+    "description": "A fast JSON parser and serializer.\nThe fastest JSON parser and object serializer.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Peter Ohler",
+        "email": null,
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": null,
+        "email": "peter@ohler.com",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://www.ohler.com/oj",
+    "download_url": "https://rubygems.org/downloads/oj-::Oj::VERSION.gem",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:gem/rake-compiler",
+        "extracted_requirement": ">= 0.9, < 2.0",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:gem/minitest",
+        "extracted_requirement": "~> 5",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:gem/test-unit",
+        "extracted_requirement": "~> 3.0",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:gem/wwtd",
+        "extracted_requirement": "~> 0",
+        "scope": "development",
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": false,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://rubygems.org/gems/oj/versions/::Oj::VERSION",
+    "repository_download_url": "https://rubygems.org/downloads/oj-::Oj::VERSION.gem",
+    "api_data_url": "https://rubygems.org/api/v2/rubygems/oj/versions/::Oj::VERSION.json",
+    "datasource_id": "gemspec",
+    "purl": "pkg:gem/oj@::Oj::VERSION"
+  }
+]

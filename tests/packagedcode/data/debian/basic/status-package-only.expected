@@ -1,0 +1,348 @@
+[
+  {
+    "type": "deb",
+    "namespace": "ubuntu",
+    "name": "libncurses5",
+    "version": "6.1-1ubuntu1.18.04",
+    "qualifiers": {
+      "arch": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "shared libraries for terminal handling\n The ncurses library routines are a terminal-independent method of\n updating character screens with reasonable optimization.\n .\n This package contains the shared libraries necessary to run programs\n compiled with ncurses.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers",
+        "email": "ubuntu-devel-discuss@lists.ubuntu.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
+    "homepage_url": "https://invisible-island.net/ncurses/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [
+      "pkg:deb/ubuntu/ncurses"
+    ],
+    "file_references": [],
+    "extra_data": {
+      "multi_arch": "same"
+    },
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64"
+  },
+  {
+    "type": "deb",
+    "namespace": "ubuntu",
+    "name": "libcom-err2",
+    "version": "1.44.1-1ubuntu1.1",
+    "qualifiers": {
+      "arch": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "common error description library\n libcomerr is an attempt to present a common error-handling mechanism to\n manipulate the most common form of error code in a fashion that does not\n have the problems identified with mechanisms commonly in use.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers",
+        "email": "ubuntu-devel-discuss@lists.ubuntu.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
+    "homepage_url": "http://e2fsprogs.sourceforge.net",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [
+      "pkg:deb/ubuntu/e2fsprogs"
+    ],
+    "file_references": [],
+    "extra_data": {
+      "multi_arch": "same"
+    },
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/ubuntu/libcom-err2@1.44.1-1ubuntu1.1?arch=amd64"
+  },
+  {
+    "type": "deb",
+    "namespace": "ubuntu",
+    "name": "libapt-pkg5.0",
+    "version": "1.6.11",
+    "qualifiers": {
+      "arch": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "package management runtime library\n This library provides the common functionality for searching and\n managing packages as well as information about packages.\n Higher-level package managers can depend upon this library.\n .\n This includes:\n  * retrieval of information about packages from multiple sources\n  * retrieval of packages and all dependent packages\n    needed to satisfy a request either through an internal\n    solver or by interfacing with an external one\n  * authenticating the sources and validating the retrieved data\n  * installation and removal of packages in the system\n  * providing different transports to retrieve data over cdrom, ftp,\n    http(s), rsh as well as an interface to add more transports like\n    tor+http(s) (apt-transport-tor).",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers",
+        "email": "ubuntu-devel-discuss@lists.ubuntu.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [
+      "pkg:deb/ubuntu/apt"
+    ],
+    "file_references": [],
+    "extra_data": {
+      "multi_arch": "same"
+    },
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/ubuntu/libapt-pkg5.0@1.6.11?arch=amd64"
+  },
+  {
+    "type": "deb",
+    "namespace": "ubuntu",
+    "name": "libaudit1",
+    "version": "1:2.8.2-1ubuntu1",
+    "qualifiers": {
+      "arch": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "Dynamic library for security auditing\n The audit-libs package contains the dynamic libraries needed for\n applications to use the audit framework. It is used to monitor systems for\n security related events.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers",
+        "email": "ubuntu-devel-discuss@lists.ubuntu.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
+    "homepage_url": "https://people.redhat.com/sgrubb/audit/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [
+      "pkg:deb/ubuntu/audit"
+    ],
+    "file_references": [],
+    "extra_data": {
+      "multi_arch": "same"
+    },
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/ubuntu/libaudit1@1:2.8.2-1ubuntu1?arch=amd64"
+  },
+  {
+    "type": "deb",
+    "namespace": "ubuntu",
+    "name": "perl-base",
+    "version": "5.26.1-6ubuntu0.3",
+    "qualifiers": {
+      "arch": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "minimal Perl system\n Perl is a scripting language used in many system scripts and utilities.\n .\n This package provides a Perl interpreter and the small subset of the\n standard run-time library required to perform basic tasks. For a full\n Perl installation, install \"perl\" (and its dependencies, \"perl-modules-5.26\"\n and \"perl-doc\").",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers",
+        "email": "ubuntu-devel-discuss@lists.ubuntu.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "perl"
+    ],
+    "homepage_url": "http://dev.perl.org/perl5/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [
+      "pkg:deb/ubuntu/perl"
+    ],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/ubuntu/perl-base@5.26.1-6ubuntu0.3?arch=amd64"
+  },
+  {
+    "type": "deb",
+    "namespace": "ubuntu",
+    "name": "libudev1",
+    "version": "237-3ubuntu10.22",
+    "qualifiers": {
+      "arch": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "libudev shared library\n This library provides access to udev device information.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "Ubuntu Developers",
+        "email": "ubuntu-devel-discuss@lists.ubuntu.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "libs"
+    ],
+    "homepage_url": "https://www.freedesktop.org/wiki/Software/systemd",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [
+      "pkg:deb/ubuntu/systemd"
+    ],
+    "file_references": [],
+    "extra_data": {
+      "multi_arch": "same"
+    },
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/ubuntu/libudev1@237-3ubuntu10.22?arch=amd64"
+  }
+]

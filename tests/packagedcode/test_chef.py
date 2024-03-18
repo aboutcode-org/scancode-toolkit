@@ -132,9 +132,18 @@ class TestChef(PackageTester):
 
     def test_scan_cli_works(self):
         test_file = self.get_test_loc('chef/package/')
-        expected_file = self.get_test_loc('chef/package.scan.expected.json', must_exist=False)
+        expected_file = self.get_test_loc('chef/package.scan.expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_scan_cli_works_package_only(self):
+        test_file = self.get_test_loc('chef/package/')
+        expected_file = self.get_test_loc('chef/package-only.scan.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package-only', test_file, '--json', result_file])
         check_json_scan(
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )

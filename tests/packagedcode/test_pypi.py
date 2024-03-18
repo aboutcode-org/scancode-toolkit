@@ -39,10 +39,17 @@ class TestPyPiEndtoEnd(PackageTester):
         run_scan_click(['--package', '--license', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_pypi_end_to_end_package_only(self):
+        test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-only-expected.json')
+        run_scan_click(['--package-only', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_package_scan_pypi_setup_py_end_to_end(self):
         test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/setup.py')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-setup-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-setup-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
@@ -266,14 +273,14 @@ class TestPypiUnpackedSdist(PackageTester):
 
     def test_can_parse_solo_metadata_from_command_line(self):
         test_file = self.get_test_loc('pypi/solo-metadata/PKG-INFO')
-        expected_file = self.get_test_loc('pypi/solo-metadata/expected.json', must_exist=False)
+        expected_file = self.get_test_loc('pypi/solo-metadata/expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_metadata_prefer_pkg_info_from_egg_info_from_command_line(self):
         test_file = self.get_test_loc('pypi/unpacked_sdist/prefer-egg-info-pkg-info/celery')
-        expected_file = self.get_test_loc('pypi/unpacked_sdist/prefer-egg-info-pkg-info/celery-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('pypi/unpacked_sdist/prefer-egg-info-pkg-info/celery-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
@@ -539,25 +546,25 @@ class TestPyPiSetupPyNames(PackageTester):
     def test_parse_setup_py_with_name(self):
         test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py')
         package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_setup_py_without_name(self):
         test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py')
         package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_get_setup_py_args_with_name(self):
         test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py')
         kwargs = pypi.get_setup_py_args(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.args.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.args.expected.json')
         check_result_equals_expected_json(kwargs, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_get_setup_py_args_without_name(self):
         test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py')
         kwargs = pypi.get_setup_py_args(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.args.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.args.expected.json')
         check_result_equals_expected_json(kwargs, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 

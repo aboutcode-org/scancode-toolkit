@@ -109,16 +109,25 @@ class TestCargo(PackageTester):
 
     def test_scan_cli_works(self):
         test_file = self.get_test_loc('cargo/scan')
-        expected_file = self.get_test_loc('cargo/scan.expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cargo/scan.expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_scan_cli_works_package_only(self):
+        test_file = self.get_test_loc('cargo/scan')
+        expected_file = self.get_test_loc('cargo/scan-package-only.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package-only', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
     def test_scan_works_on_cargo_workspace(self):
         test_file = self.get_test_loc('cargo/cargo-with-workspace')
-        expected_file = self.get_test_loc('cargo/cargo-with-workspace.expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cargo/cargo-with-workspace.expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', '--license', test_file, '--json', result_file])
         check_json_scan(
