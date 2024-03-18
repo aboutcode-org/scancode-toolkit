@@ -168,9 +168,8 @@ class PackageScanner(ScanPlugin):
             default=False,
             conflicting_options=['license', 'summary', 'package', 'system_package'],
             help=(
-                'Scan for system and application package metadata and skip '
-                'license/copyright detection steps and codebase level package '
-                'creation.'
+                'Scan for system and application package data and skip '
+                'license/copyright detection and top-level package creation.'
             ),
             help_group=SCAN_GROUP,
             sort_order=22,
