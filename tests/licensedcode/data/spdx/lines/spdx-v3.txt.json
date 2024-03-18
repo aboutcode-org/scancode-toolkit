@@ -1,21 +1,21 @@
 [
   [
-    "SPDX-License-Identifier:      GPL-2.0-or-later",
+    "SPDX-License-Identifier:     GPL-2.0-or-later",
     0,
     7
   ],
   [
-    "SPDX-License-Identifier:      GPL-2.0-or-later",
+    "SPDX-License-Identifier:     GPL-2.0-or-later",
     8,
     15
   ],
   [
-    "SPDX-License-Identifier:  MIT AND GPL-2.0-or-later",
+    "SPDX-License-Identifier: MIT AND GPL-2.0-or-later",
     16,
     25
   ],
   [
-    "SPDX-License-Identifier:  LGPL-2.1+.",
+    "SPDX-License-Identifier: LGPL-2.1+.",
     26,
     31
   ]

@@ -6,7 +6,7 @@
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 3,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -31,7 +31,7 @@
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -56,7 +56,7 @@
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -81,7 +81,7 @@
       "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "bsd-new",
           "license_expression_spdx": "BSD-3-Clause",
@@ -122,7 +122,7 @@
       "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "bsd-new",
           "license_expression_spdx": "BSD-3-Clause",
@@ -147,7 +147,7 @@
       "license_expression_spdx": "CPL-1.0",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "cpl-1.0",
           "license_expression_spdx": "CPL-1.0",
@@ -172,7 +172,7 @@
       "license_expression_spdx": "CPL-1.0",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "cpl-1.0",
           "license_expression_spdx": "CPL-1.0",
@@ -197,7 +197,7 @@
       "license_expression_spdx": "EPL-1.0",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "epl-1.0",
           "license_expression_spdx": "EPL-1.0",
@@ -222,7 +222,7 @@
       "license_expression_spdx": "EPL-1.0",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "epl-1.0",
           "license_expression_spdx": "EPL-1.0",
@@ -247,7 +247,7 @@
       "license_expression_spdx": "EPL-2.0",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "epl-2.0",
           "license_expression_spdx": "EPL-2.0",

@@ -30,22 +30,22 @@
       "license_expression_spdx": "(LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.1-only AND (LGPL-2.1-only WITH Qt-LGPL-exception-1.1 OR GPL-3.0-only WITH Qt-LGPL-exception-1.1)",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 36,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
           "license_expression": "(lgpl-2.1 OR lgpl-3.0) AND lgpl-2.1 AND (lgpl-2.1 WITH qt-lgpl-exception-1.1 OR gpl-3.0 WITH qt-lgpl-exception-1.1)",
           "spdx_license_expression": "(LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.1-only AND (LGPL-2.1-only WITH Qt-LGPL-exception-1.1 OR GPL-3.0-only WITH Qt-LGPL-exception-1.1)",
-          "rule_identifier": "spdx-license-identifier-(lgpl-2.1 OR lgpl-3.0) AND lgpl-2.1 AND (lgpl-2.1 WITH qt-lgpl-exception-1.1 OR gpl-3.0 WITH qt-lgpl-exception-1.1)-3017fe0de3ce4010ecfd72d730a3209c094143fb",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 36,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-lgpl_2_1_or_lgpl_3_0__and_lgpl_2_1_and__lgpl_2_1_with_qt_lgpl_exception_1_1_or_gpl_3_0_with_qt_lgpl_exception_1_1-3017fe0de3ce4010ecfd72d730a3209c094143fb",
           "rule_url": null,
           "matched_text": "(lgpl-2.1-only OR lgpl-3.0-only) AND lgpl-2.1-only AND (lgpl-2.1-only WITH nokia-qt-exception-1.1 OR gpl-3.0-only WITH nokia-qt-exception-1.1)"
         }
       ],
-      "identifier": "lgpl_2_1_or_lgpl_3_0__and_lgpl_2_1_and__lgpl_2_1_with_qt_lgpl_exception_1_1_or_gpl_3_0_with_qt_lgpl_exception_1_1-9e166793-0625-fd57-517a-fe7395ccb817"
+      "identifier": "lgpl_2_1_or_lgpl_3_0__and_lgpl_2_1_and__lgpl_2_1_with_qt_lgpl_exception_1_1_or_gpl_3_0_with_qt_lgpl_exception_1_1-ca3a8423-40d6-60f4-21b7-ca3034f24a3e"
     }
   ],
   "other_license_expression": null,

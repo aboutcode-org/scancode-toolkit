@@ -5,10 +5,10 @@ declared_license_expression: qti-linux-firmware AND proprietary-license AND open
   AND (gpl-2.0 OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-new AND bsd-new AND bsd-new AND
   isc
 declared_license_expression_spdx: LicenseRef-scancode-qti-linux-firmware AND LicenseRef-scancode-proprietary-license
-  AND OpenSSL AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows
-  AND Zlib AND Zlib AND LicenseRef-scancode-public-domain AND BSD-3-Clause AND LicenseRef-scancode-gary-s-brown
-  AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-public-domain-disclaimer
-  AND LicenseRef-scancode-public-domain-disclaimer AND (GPL-2.0-only OR BSD-3-Clause) AND (GPL-2.0-only
+  AND OpenSSL AND OpenSSL AND OpenSSL-standalone AND SSLeay-standalone AND Zlib AND Zlib AND
+  LicenseRef-scancode-public-domain AND BSD-3-Clause AND LicenseRef-scancode-gary-s-brown AND
+  LicenseRef-scancode-other-permissive AND LicenseRef-scancode-public-domain-disclaimer AND
+  LicenseRef-scancode-public-domain-disclaimer AND (GPL-2.0-only OR BSD-3-Clause) AND (GPL-2.0-only
   OR BSD-3-Clause) AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND ISC
 other_license_expression:
 other_license_expression_spdx:
@@ -293,10 +293,10 @@ license_detections:
         matched_text: OpenSSL License
     identifier: openssl_ssleay-cbfdb9fc-932d-b226-10aa-6aeea27f1ff9
   - license_expression: openssl
-    license_expression_spdx: LicenseRef-scancode-openssl
+    license_expression_spdx: OpenSSL-standalone
     matches:
       - license_expression: openssl
-        spdx_license_expression: LicenseRef-scancode-openssl
+        spdx_license_expression: OpenSSL-standalone
         from_file:
         start_line: 252
         end_line: 299
@@ -358,10 +358,10 @@ license_detections:
            * Hudson (tjh@cryptsoft.com).
     identifier: openssl-e1da0b01-fab9-e27d-4ff3-c4944b09b621
   - license_expression: ssleay-windows
-    license_expression_spdx: LicenseRef-scancode-ssleay-windows
+    license_expression_spdx: SSLeay-standalone
     matches:
       - license_expression: ssleay-windows
-        spdx_license_expression: LicenseRef-scancode-ssleay-windows
+        spdx_license_expression: SSLeay-standalone
         from_file:
         start_line: 309
         end_line: 360

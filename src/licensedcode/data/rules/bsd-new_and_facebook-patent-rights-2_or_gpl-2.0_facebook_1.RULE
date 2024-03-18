@@ -1,0 +1,22 @@
+---
+license_expression: bsd-new AND facebook-patent-rights-2 OR gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+    - PATENTS
+notes: the PATENTS file has been removed from the git repo after v1.3.1. See https://github.com/facebook/zstd/tree/v1.3.0
+    for this instead Also ztsd has licensing has been changed and simplified.
+ignorable_urls:
+    - https://github.com/facebook/zstd
+---
+
+This source code is licensed under the BSD-style license found in the
+LICENSE file in the root directory of https://github.com/facebook/zstd.
+An additional grant of patent rights can be found in the PATENTS file in the
+same directory.
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License version 2 as published by the
+Free Software Foundation. This program is dual-licensed; you may select
+either version 2 of the GNU General Public License ("GPL") or BSD license
+("BSD").

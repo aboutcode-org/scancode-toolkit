@@ -282,10 +282,10 @@ class TestPypiUnpackedSdist(PackageTester):
         # `celery/celery.egg-info/PKG-INFO`
         vc = VirtualCodebase(location=result_file)
         for dep in vc.attributes.dependencies:
-            self.assertEqual(dep['datafile_path'], 'celery/celery.egg-info/PKG-INFO')
+            assert dep['datafile_path'] == 'celery/celery.egg-info/PKG-INFO'
         for pkg in vc.attributes.packages:
             for path in pkg['datafile_paths']:
-                self.assertEqual(path, 'celery/celery.egg-info/PKG-INFO')
+                assert path == 'celery/celery.egg-info/PKG-INFO'
 
 
 class TestPipRequirementsFileHandler(PackageTester):
@@ -417,47 +417,23 @@ class TestPipRequirementsFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/requirements_txt/invalid_spec/output.expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_PipRequirementsFileHandler_is_datafile(self):
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('dev-requirements.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirement.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements.in', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements.pip', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements-dev.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('some-requirements-dev.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requires.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements/base.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('reqs.txt', _bare_filename=True),
-            True
-        )
+@pytest.mark.parametrize(
+    'filename',
+    [
+        'dev-requirements.txt',
+        'reqs.txt',
+        'requirements/base.txt',
+        'requirements-dev.txt',
+        'requirements.in',
+        'requirements.pip',
+        'requirements.txt',
+        'requirement.txt',
+        'requires.txt',
+        'some-requirements-dev.txt',
+    ]
+)
+def test_PipRequirementsFileHandler_is_datafile(filename):
+    assert pypi.PipRequirementsFileHandler.is_datafile(location=filename, _bare_filename=True)
 
 
 class TestPyPiPipfile(PackageTester):
@@ -607,7 +583,7 @@ def check_setup_py_parsing(test_loc):
 
     expected_loc2 = f'{test_loc}-expected.json'
     packages_data = pypi.PythonSetupPyHandler.parse(test_loc)
-    test_envt.check_packages_data(
+    env.check_packages_data(
         packages_data=packages_data,
         expected_loc=expected_loc2,
         regen=REGEN_TEST_FIXTURES,
@@ -615,12 +591,12 @@ def check_setup_py_parsing(test_loc):
     )
 
 
-test_envt = PackageTester()
+env = PackageTester()
 
 
 @pytest.mark.parametrize(
     'test_loc',
-    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'setup.py-versions'))),
+    get_setup_py_test_files(os.path.abspath(os.path.join(env.test_data_dir, 'pypi', 'setup.py-versions'))),
 )
 def test_parse_setup_py_with_computed_versions(test_loc):
     check_setup_py_parsing(test_loc)
@@ -628,7 +604,7 @@ def test_parse_setup_py_with_computed_versions(test_loc):
 
 @pytest.mark.parametrize(
     'test_loc',
-    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'setup.py')))
+    get_setup_py_test_files(os.path.abspath(os.path.join(env.test_data_dir, 'pypi', 'setup.py')))
 )
 def test_parse_setup_py(test_loc):
     check_setup_py_parsing(test_loc)
@@ -636,7 +612,7 @@ def test_parse_setup_py(test_loc):
 
 @pytest.mark.parametrize(
     'test_loc',
-    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'more_setup.py'))),
+    get_setup_py_test_files(os.path.abspath(os.path.join(env.test_data_dir, 'pypi', 'more_setup.py'))),
 )
 def test_parse_more_setup_py(test_loc):
     check_setup_py_parsing(test_loc)

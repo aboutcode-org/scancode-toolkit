@@ -1,6 +1,8 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
+is_deprecated: yes
+notes: this is now requalified as a `openwall-md5-permissive` license
 ---
 
 * Redistribution and use in source and binary forms, with or without

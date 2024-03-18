@@ -30,22 +30,22 @@
       "license_expression_spdx": "LGPL-2.1-or-later AND GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only)",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 21,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
           "license_expression": "lgpl-2.1-plus AND gpl-2.0-plus AND (gpl-2.0 OR gpl-3.0)",
           "spdx_license_expression": "LGPL-2.1-or-later AND GPL-2.0-or-later AND (GPL-2.0-only OR GPL-3.0-only)",
-          "rule_identifier": "spdx-license-identifier-lgpl-2.1-plus AND gpl-2.0-plus AND (gpl-2.0 OR gpl-3.0)-42c579dc301f74170657fd26e8c1f4a629633b3e",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 21,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-lgpl_2_1_plus_and_gpl_2_0_plus_and__gpl_2_0_or_gpl_3_0-42c579dc301f74170657fd26e8c1f4a629633b3e",
           "rule_url": null,
           "matched_text": "lgpl-2.1-or-later AND gpl-2.0-or-later AND (gpl-2.0-only OR gpl-3.0-only)"
         }
       ],
-      "identifier": "lgpl_2_1_plus_and_gpl_2_0_plus_and__gpl_2_0_or_gpl_3_0-e1d4dc9c-9f75-3ae1-db9f-5af2bf2e9853"
+      "identifier": "lgpl_2_1_plus_and_gpl_2_0_plus_and__gpl_2_0_or_gpl_3_0-0b9f8884-60ab-ae33-7510-9a9faad53750"
     }
   ],
   "other_license_expression": null,

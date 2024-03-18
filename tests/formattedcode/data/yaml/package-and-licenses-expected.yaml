@@ -126,7 +126,7 @@ license_detections:
     license_expression: apache-2.0
     license_expression_spdx: Apache-2.0
     detection_count: 1
-    sample_matches:
+    reference_matches:
       - license_expression: apache-2.0
         license_expression_spdx: Apache-2.0
         from_file: package-and-licenses/apache-2.0.LICENSE
@@ -282,7 +282,7 @@ license_detections:
     license_expression: apache-2.0
     license_expression_spdx: Apache-2.0
     detection_count: 1
-    sample_matches:
+    reference_matches:
       - license_expression: apache-2.0
         license_expression_spdx: Apache-2.0
         from_file: package-and-licenses/setup.cfg
@@ -300,7 +300,7 @@ license_detections:
     license_expression: apache-2.0
     license_expression_spdx: Apache-2.0
     detection_count: 1
-    sample_matches:
+    reference_matches:
       - license_expression: apache-2.0
         license_expression_spdx: Apache-2.0
         from_file: package-and-licenses/setup.cfg
@@ -318,7 +318,7 @@ license_detections:
     license_expression: apache-2.0 AND (apache-2.0 OR mit)
     license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
     detection_count: 1
-    sample_matches:
+    reference_matches:
       - license_expression: apache-2.0
         license_expression_spdx: Apache-2.0
         from_file: package-and-licenses/README.txt
@@ -349,7 +349,7 @@ license_detections:
     license_expression: mit
     license_expression_spdx: MIT
     detection_count: 1
-    sample_matches:
+    reference_matches:
       - license_expression: mit
         license_expression_spdx: MIT
         from_file: package-and-licenses/mit.LICENSE

@@ -6,7 +6,7 @@
       "license_expression_spdx": "LGPL-2.1-only",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "lgpl-2.1",
           "license_expression_spdx": "LGPL-2.1-only",

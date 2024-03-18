@@ -3339,7 +3339,7 @@
       "license_expression": "artistic-2.0",
       "license_expression_spdx": "Artistic-2.0",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "artistic-2.0",
           "license_expression_spdx": "Artistic-2.0",
@@ -3361,7 +3361,7 @@
       "license_expression": "artistic-2.0",
       "license_expression_spdx": "Artistic-2.0",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "artistic-2.0",
           "license_expression_spdx": "Artistic-2.0",
@@ -3383,7 +3383,7 @@
       "license_expression": "boost-1.0",
       "license_expression_spdx": "BSL-1.0",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "boost-1.0",
           "license_expression_spdx": "BSL-1.0",
@@ -3405,7 +3405,7 @@
       "license_expression": "cc-by-2.5",
       "license_expression_spdx": "CC-BY-2.5",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "cc-by-2.5",
           "license_expression_spdx": "CC-BY-2.5",
@@ -3427,7 +3427,7 @@
       "license_expression": "cc0-1.0",
       "license_expression_spdx": "CC0-1.0",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "cc0-1.0",
           "license_expression_spdx": "CC0-1.0",
@@ -3449,7 +3449,7 @@
       "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
       "license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
           "license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
@@ -3471,7 +3471,7 @@
       "license_expression": "lgpl-2.1-plus",
       "license_expression_spdx": "LGPL-2.1-or-later",
       "detection_count": 3,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "lgpl-2.1-plus",
           "license_expression_spdx": "LGPL-2.1-or-later",
@@ -3493,7 +3493,7 @@
       "license_expression": "mit-old-style",
       "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit-old-style",
           "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
@@ -3515,7 +3515,7 @@
       "license_expression": "zlib",
       "license_expression_spdx": "Zlib",
       "detection_count": 7,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "zlib",
           "license_expression_spdx": "Zlib",
@@ -3551,7 +3551,7 @@
       "license_expression": "zlib",
       "license_expression_spdx": "Zlib",
       "detection_count": 2,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "zlib",
           "license_expression_spdx": "Zlib",
@@ -3573,7 +3573,7 @@
       "license_expression": "zlib",
       "license_expression_spdx": "Zlib",
       "detection_count": 2,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "zlib",
           "license_expression_spdx": "Zlib",
@@ -3595,7 +3595,7 @@
       "license_expression": "zlib",
       "license_expression_spdx": "Zlib",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "zlib",
           "license_expression_spdx": "Zlib",

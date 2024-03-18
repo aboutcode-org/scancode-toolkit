@@ -1,12 +1,12 @@
 {
   "license_detections": [
     {
-      "identifier": "mit-86af397f-7fb9-6751-2e09-217685ce5b2a",
+      "identifier": "mit-59928f02-ade3-817b-5db4-dfe1c6738ef4",
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -48,14 +48,14 @@
               "matched_length": 5,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "spdx-license-identifier-mit-6fcd9fa0c61347e06feb569ce3335c1b374640a1",
+              "rule_identifier": "spdx-license-identifier-mit-38fe0b852f1f8545c4a1b7ac0e456b182dbeb3ab",
               "rule_url": null,
               "matched_text": "<a href=\"https://licenses.nuget.org/MIT\">MIT</a>                </div>",
               "matched_text_diagnostics": "licenses.nuget.org/MIT\">MIT</"
             }
           ],
           "detection_log": [],
-          "identifier": "mit-86af397f-7fb9-6751-2e09-217685ce5b2a"
+          "identifier": "mit-59928f02-ade3-817b-5db4-dfe1c6738ef4"
         }
       ],
       "license_clues": [],

@@ -1,0 +1,12 @@
+---
+license_expression: warranty-disclaimer
+is_license_notice: yes
+minimum_coverage: 50
+referenced_filenames:
+    - LICENSE
+---
+
+This program is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the LICENSE file included in this
+release for licensing terms and conditions.

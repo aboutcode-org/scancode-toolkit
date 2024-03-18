@@ -1,0 +1,11 @@
+---
+license_expression: warranty-disclaimer
+is_license_text: yes
+notes: found in old texi2html code in older bash/support
+---
+
+This program is the intellectual property of the European
+Laboratory for Particle Physics (known as CERN). No guarantee whatsoever is
+provided by CERN. No liability whatsoever is accepted for any loss or damage
+of any kind resulting from any defect or inaccuracy in this information or
+code.

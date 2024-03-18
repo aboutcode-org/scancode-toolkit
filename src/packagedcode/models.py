@@ -119,9 +119,10 @@ Beyond these we have a few secondary models:
 """
 
 SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+SCANCODE_DEBUG_PACKAGE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
 
 TRACE = SCANCODE_DEBUG_PACKAGE
-TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE
+TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE_ASSEMBLY
 
 
 def logger_debug(*args):
@@ -781,7 +782,30 @@ class PackageData(IdentifiablePackageData):
                 )
 
         if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
-            self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
+            if isinstance(self.extracted_license_statement, dict):
+                self.extracted_license_statement = saneyaml.dump(dict(self.extracted_license_statement.items()))
+            else:
+                self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
+
+    def update_purl_fields(self, package_data, replace=False):
+
+        if not self.type == package_data.type:
+            return
+
+        purl_fields = [
+            "name",
+            "namespace",
+            "version",
+            "qualifiers"
+        ]
+
+        for purl_field in purl_fields:
+            value = getattr(self, purl_field)
+            # We will not update only when replace is False and value is non-empty
+            if not replace and value:
+                continue
+
+            setattr(self, purl_field, getattr(package_data, purl_field))
 
     def to_dict(self, with_details=True, **kwargs):
         mapping = super().to_dict(with_details=with_details, **kwargs)
@@ -1336,7 +1360,6 @@ class DatafileHandler:
                         package_data = PackageData.from_dict(package_data)
                         pkgdata_resources.append((package_data, resource,))
 
-        #raise Exception(pkgdata_resources)
         if pkgdata_resources:
             if TRACE:
                 logger_debug(f' assemble_from_many_datafiles: pkgdata_resources: {pkgdata_resources!r}')
@@ -1499,6 +1522,12 @@ class Package(PackageData):
         package_data_mapping['datafile_paths'] = [datafile_path]
         package_data_mapping['datasource_ids'] = [dsid]
 
+        license_detections = package_data_mapping['license_detections']
+        for detection in license_detections:
+            for license_match in detection['matches']:
+                if not license_match['from_file']:
+                    license_match['from_file'] = datafile_path
+
         return cls.from_dict(package_data_mapping)
 
     @classmethod
@@ -1532,6 +1561,7 @@ class Package(PackageData):
         self,
         package_data,
         datafile_path,
+        check_compatible=True,
         replace=False,
         include_version=True,
         include_qualifiers=False,
@@ -1563,7 +1593,7 @@ class Package(PackageData):
         if isinstance(package_data, dict):
             package_data = PackageData.from_dict(package_data)
 
-        if not is_compatible(
+        if check_compatible and not is_compatible(
             purl1=self,
             purl2=package_data,
             include_version=include_version,

@@ -177,6 +177,18 @@ parsers in scancode-toolkit during documentation builds.
      - ``php_composer_lock``
      - PHP
      - https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+   * - conan external source
+     - ``*/conandata.yml``
+     - ``conan``
+     - ``conan_conandata_yml``
+     - C++
+     - https://docs.conan.io/2/tutorial/creating_packages/handle_sources_in_packages.html#using-the-conandata-yml-file
+   * - conan recipe
+     - ``*/conanfile.py``
+     - ``conan``
+     - ``conan_conanfile_py``
+     - C++
+     - https://docs.conan.io/2.0/reference/conanfile.html
    * - Conda meta.yml manifest
      - ``*/meta.yaml``
      - ``conda``
@@ -241,6 +253,13 @@ parsers in scancode-toolkit during documentation builds.
      - ``*/debian/copyright``
      - ``deb``
      - ``debian_copyright_in_source``
+     - None
+     - https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+   * - Debian machine readable file standalone
+     - ``*/copyright``
+       ``*_copyright``
+     - ``deb``
+     - ``debian_copyright_standalone``
      - None
      - https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
    * - Debian binary package archive
@@ -646,7 +665,7 @@ parsers in scancode-toolkit during documentation builds.
      - ``pypi``
      - ``pypi_setup_py``
      - Python
-     - https://docs.python.org/3/distutils/setupscript.html
+     - https://docs.python.org/3.11/distutils/setupscript.html
    * - PyPI wheel
      - ``*.whl``
      - ``pypi``
@@ -692,7 +711,7 @@ parsers in scancode-toolkit during documentation builds.
      - None
      - https://fedoraproject.org/wiki/Changes/NewRpmDBFormat
    * - RPM installed package SQLite database
-     - ``*var/lib/rpm/rpmdb.sqlite``
+     - ``*rpm/rpmdb.sqlite``
      - ``rpm``
      - ``rpm_installed_database_sqlite``
      - None

@@ -30,22 +30,22 @@
       "license_expression_spdx": "MIT AND ICU AND Unicode-TOU",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
           "license_expression": "mit AND x11 AND unicode-tou",
           "spdx_license_expression": "MIT AND ICU AND Unicode-TOU",
-          "rule_identifier": "spdx-license-identifier-mit AND x11 AND unicode-tou-04c03ffc5d87121ab71914d00034fdd4a46eb02c",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-mit_and_x11_and_unicode_tou-04c03ffc5d87121ab71914d00034fdd4a46eb02c",
           "rule_url": null,
           "matched_text": "mit AND icu AND unicode-tou"
         }
       ],
-      "identifier": "mit_and_x11_and_unicode_tou-d166582e-6bb1-c449-6145-b9d5a08a23df"
+      "identifier": "mit_and_x11_and_unicode_tou-93872a25-23c6-76dd-5410-3218dc1ec059"
     }
   ],
   "other_license_expression": null,

@@ -83,7 +83,16 @@
       "extracted_license_statement": "MIT OR Apache-2.0",
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {},
+      "extra_data": {
+        "workspace": {
+          "members": [
+            "rand_core",
+            "rand_distr",
+            "rand_chacha",
+            "rand_pcg"
+          ]
+        }
+      },
       "repository_homepage_url": "https://crates.io/crates/rand",
       "repository_download_url": "https://crates.io/api/v1/crates/rand/0.8.5/download",
       "api_data_url": "https://crates.io/api/v1/crates/rand",
@@ -104,7 +113,7 @@
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -126,7 +135,7 @@
       "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -162,7 +171,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit OR apache-2.0",
           "license_expression_spdx": "MIT OR Apache-2.0",
@@ -212,7 +221,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -234,7 +243,7 @@
       "license_expression": "mit OR apache-2.0",
       "license_expression_spdx": "MIT OR Apache-2.0",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit OR apache-2.0",
           "license_expression_spdx": "MIT OR Apache-2.0",
@@ -256,7 +265,7 @@
       "license_expression": "mit OR apache-2.0",
       "license_expression_spdx": "MIT OR Apache-2.0",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit OR apache-2.0",
           "license_expression_spdx": "MIT OR Apache-2.0",
@@ -520,7 +529,16 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "extra_data": {
+            "workspace": {
+              "members": [
+                "rand_core",
+                "rand_distr",
+                "rand_chacha",
+                "rand_pcg"
+              ]
+            }
+          },
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/rand",
           "repository_download_url": "https://crates.io/api/v1/crates/rand/0.8.5/download",

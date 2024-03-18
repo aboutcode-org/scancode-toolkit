@@ -1,0 +1,10 @@
+---
+license_expression: epl-1.0
+is_license_tag: yes
+relevance: 100
+ignorable_urls:
+    - https://www.eclipse.org/legal/epl-v10.html
+---
+
+<name>The Eclipse Public License, Version 1.0
+      <url>https://www.eclipse.org/legal/epl-v10.html

@@ -7,7 +7,7 @@
       "license_expression": "bsd-original-uc",
       "license_expression_spdx": "BSD-4-Clause-UC",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "bsd-original-uc",
           "license_expression_spdx": "BSD-4-Clause-UC",
@@ -29,7 +29,7 @@
       "license_expression": "gpl-2.0 OR bsd-new",
       "license_expression_spdx": "GPL-2.0-only OR BSD-3-Clause",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0 OR bsd-new",
           "license_expression_spdx": "GPL-2.0-only OR BSD-3-Clause",

@@ -30,6 +30,7 @@ from saneyaml import dump as saneyaml_dump
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import resource_iter
+from commoncode.text import python_safe_name
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
@@ -2028,6 +2029,7 @@ class BasicRule:
             'is_license_intro',
             'is_license_clue',
             'is_continuous',
+            'is_deprecated'
         )
 
         # default to English which is implied
@@ -2124,6 +2126,12 @@ class Rule(BasicRule):
         rule = Rule(is_builtin=is_builtin)
         rule.load_data(rule_file=rule_file)
         return rule
+
+    @property
+    def pysafe_expression(self):
+        """
+        Return a python safe identifier, for use in rule identifiers"""
+        return python_safe_name(self.license_expression)
 
     def load_data(self, rule_file):
         """
@@ -2581,7 +2589,7 @@ class SpdxRule(SynthethicRule):
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = f'spdx-license-identifier-{self.license_expression}-{self._unique_id}'
+        self.identifier = f'spdx-license-identifier-{self.pysafe_expression}-{self._unique_id}'
         self.setup()
 
         if not self.license_expression:
@@ -2635,7 +2643,7 @@ class UnDetectedRule(SynthethicRule):
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
-        self.identifier = f'package-manifest-{self.license_expression}-{self._unique_id}'
+        self.identifier = f'package-manifest-{self.pysafe_expression}-{self._unique_id}'
         expression = self.licensing.parse(self.license_expression)
         self.license_expression = expression.render()
         self.license_expression_object = expression

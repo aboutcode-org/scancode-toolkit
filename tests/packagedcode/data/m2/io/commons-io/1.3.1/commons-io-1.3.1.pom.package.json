@@ -227,22 +227,22 @@
       "license_expression_spdx": "Apache-2.0",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 8,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
           "license_expression": "apache-2.0",
           "spdx_license_expression": "Apache-2.0",
-          "rule_identifier": "apache-2.0_1316.RULE",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 2,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 11,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1316.RULE",
-          "matched_text": "- name: The Apache Software License, Version 2.0"
+          "rule_identifier": "apache-2.0_1321.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1321.RULE",
+          "matched_text": "- name: The Apache Software License, Version 2.0\n  url: /LICENSE.txt"
         }
       ],
-      "identifier": "apache_2_0-c3b9cbd8-09fc-8aa5-f48b-917b9001c088"
+      "identifier": "apache_2_0-0e1a671d-e78a-851c-343d-1420e4bbc821"
     }
   ],
   "other_license_expression": null,

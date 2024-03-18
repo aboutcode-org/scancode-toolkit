@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: Seen in CGAL
+---
+
+CGAL_pragma_warning("Your commercial license for CGAL does not cover "
+                    "this release of CGAL LGPL packages.")

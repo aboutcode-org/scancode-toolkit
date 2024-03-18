@@ -54,7 +54,7 @@
             {
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "from_file": "django-1.2/setup.py",
+              "from_file": "google_appengine_sdk/django-1.2/setup.py",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -149,7 +149,7 @@
             {
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "from_file": "django-1.3/PKG-INFO",
+              "from_file": "google_appengine_sdk/django-1.3/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -195,7 +195,7 @@
       "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
           "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
@@ -220,7 +220,7 @@
       "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 6,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "bsd-new",
           "license_expression_spdx": "BSD-3-Clause",
@@ -247,7 +247,7 @@
       "detection_log": [
         "unknown-reference-in-file-to-package"
       ],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "free-unknown",
           "license_expression_spdx": "LicenseRef-scancode-free-unknown",
@@ -267,7 +267,7 @@
         {
           "license_expression": "bsd-new",
           "license_expression_spdx": "BSD-3-Clause",
-          "from_file": "django-1.2/setup.py",
+          "from_file": "google_appengine_sdk/django-1.2/setup.py",
           "start_line": 1,
           "end_line": 1,
           "matcher": "1-hash",
@@ -287,7 +287,7 @@
       "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 2,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "bsd-new",
           "license_expression_spdx": "BSD-3-Clause",
@@ -314,7 +314,7 @@
       "detection_log": [
         "unknown-reference-in-file-to-package"
       ],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "free-unknown",
           "license_expression_spdx": "LicenseRef-scancode-free-unknown",
@@ -334,7 +334,7 @@
         {
           "license_expression": "bsd-new",
           "license_expression_spdx": "BSD-3-Clause",
-          "from_file": "django-1.2/setup.py",
+          "from_file": "google_appengine_sdk/django-1.2/setup.py",
           "start_line": 1,
           "end_line": 1,
           "matcher": "1-hash",
@@ -550,7 +550,7 @@
             {
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "from_file": "django-1.2/setup.py",
+              "from_file": "google_appengine_sdk/django-1.2/setup.py",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -606,7 +606,7 @@
             {
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "from_file": "django-1.2/setup.py",
+              "from_file": "google_appengine_sdk/django-1.2/setup.py",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -686,7 +686,7 @@
             {
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "from_file": "django-1.2/setup.py",
+              "from_file": "google_appengine_sdk/django-1.2/setup.py",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -742,7 +742,7 @@
             {
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "from_file": "django-1.2/setup.py",
+              "from_file": "google_appengine_sdk/django-1.2/setup.py",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -798,7 +798,7 @@
             {
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "from_file": "django-1.2/setup.py",
+              "from_file": "google_appengine_sdk/django-1.2/setup.py",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -1387,7 +1387,7 @@
             {
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "from_file": "django-1.3/PKG-INFO",
+              "from_file": "google_appengine_sdk/django-1.3/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -1467,7 +1467,7 @@
             {
               "license_expression": "bsd-new",
               "spdx_license_expression": "BSD-3-Clause",
-              "from_file": "django-1.3/PKG-INFO",
+              "from_file": "google_appengine_sdk/django-1.3/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",

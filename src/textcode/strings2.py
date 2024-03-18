@@ -23,8 +23,8 @@
 import re
 
 ASCII_BYTE = (
-    " !\"#\$%&\'\(\)\*\+,-\./0123456789:;<=>\?@ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    "\[\]\^_`abcdefghijklmnopqrstuvwxyz\{\|\}\\\~\t"
+    r" !\"#\$%&\'\(\)\*\+,-\./0123456789:;<=>\?@ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    r"\[\]\^_`abcdefghijklmnopqrstuvwxyz\{\|\}\\\~\t"
 )
 
 

@@ -1,8 +1,11 @@
 ---
 license_expression: bsd-original
 is_license_text: yes
-relevance: 100
-notes: See in https://github.com/MirBSD/z-archive-cvs/blob/cf42464925efd09ffd028556dc89021aef74901c/src/share/doc/legal/lbsd-caldera.mdoc%2Cv
+is_deprecated: yes
+notes: |
+    See in https://github.com/MirBSD/z-archive-cvs/blob/cf42464925efd09ffd028556dc89021aef74901c/src/share/doc/legal/lbsd-caldera.mdoc%2Cv
+    Added in SPDX license list 3.23
+    Replaced by license: caldera-no-preamble
 ---
 
 Redistribution and use in source and binary forms, with or without

@@ -74,9 +74,9 @@ From uboot: the first two lines are patch-like:
 
         qry = Query(query_string=querys, idx=idx)
         expected = [
-            ('SPDX-License-Identifier:  (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)',  0,  15),
-            ('SPDX-License-Identifier:  EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0',16,  34),
-            ('SPDX-License-Identifier:      GPL-2.0+ BSD-2-Clause', 45, 53)]
+            ('SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)',  0,  15),
+            ('SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0',16,  34),
+            ('SPDX-License-Identifier:     GPL-2.0+ BSD-2-Clause', 45, 53)]
 
         assert qry.spdx_lines == expected
 
@@ -98,10 +98,10 @@ From uboot: the first two lines are patch-like:
 
         qry = Query(query_string=querys, idx=idx)
         expected = [
-            ('licenses.nuget.org /(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)',  1,  14),
-            ('SPDX-License-Identifier:  EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0',15,  33),
-            ('licenses.nuget.org /MIT', 45, 48),
-            ('licenses.nuget.org /(MIT)', 50, 53)
+            ('licenses.nuget.org/(LGPL-2.0-only WITH FLTK-exception OR Apache-2.0)',  1,  14),
+            ('SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0',15,  33),
+            ('licenses.nuget.org/MIT', 45, 48),
+            ('licenses.nuget.org/(MIT)', 50, 53)
         ]
 
         assert qry.spdx_lines == expected

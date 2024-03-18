@@ -250,7 +250,6 @@ class TestMavenMisc(BaseMavenCase):
         run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
-
     def test_package_dependency_not_missing(self):
         test_file = self.get_test_loc('maven2/log4j/log4j-pom.xml')
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
@@ -275,7 +274,7 @@ class TestMavenMisc(BaseMavenCase):
         pom_resource = codebase.get_resource(
             'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml'
         )
-        self.assertTrue(pom_resource)
+        assert pom_resource
         top_level_resources_paths = [
             r.path for r in maven.MavenPomXmlHandler.get_top_level_resources(pom_resource, codebase)
         ]
@@ -288,7 +287,7 @@ class TestMavenMisc(BaseMavenCase):
             'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.properties',
             'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml',
         ]
-        self.assertEquals(expected_resource_paths, top_level_resources_paths)
+        assert top_level_resources_paths == expected_resource_paths
 
 
 class TestPomProperties(testcase.FileBasedTesting):

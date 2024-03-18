@@ -1,0 +1,11 @@
+---
+license_expression: llama-2-license-2023
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE_llama2
+---
+
+## License
+
+Llama 2 is licensed under the [LLAMA 2 Community License](LICENSE_llama2

@@ -24,7 +24,7 @@
       "license_expression": "jetty",
       "license_expression_spdx": "LicenseRef-scancode-jetty",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "jetty",
           "license_expression_spdx": "LicenseRef-scancode-jetty",

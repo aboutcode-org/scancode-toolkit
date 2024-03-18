@@ -42,7 +42,7 @@
       "license_expression": "gpl-2.0-plus",
       "license_expression_spdx": "GPL-2.0-or-later",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0-plus",
           "license_expression_spdx": "GPL-2.0-or-later",
@@ -64,7 +64,7 @@
       "license_expression": "gpl-3.0-plus",
       "license_expression_spdx": "GPL-3.0-or-later",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-3.0-plus",
           "license_expression_spdx": "GPL-3.0-or-later",

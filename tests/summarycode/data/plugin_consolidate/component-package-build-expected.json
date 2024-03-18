@@ -123,7 +123,7 @@
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 5,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -145,7 +145,7 @@
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -167,7 +167,7 @@
       "license_expression": "gpl-2.0",
       "license_expression_spdx": "GPL-2.0-only",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0",
           "license_expression_spdx": "GPL-2.0-only",
@@ -189,7 +189,7 @@
       "license_expression": "lgpl-2.0",
       "license_expression_spdx": "LGPL-2.0-only",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "lgpl-2.0",
           "license_expression_spdx": "LGPL-2.0-only",

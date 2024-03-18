@@ -12,13 +12,13 @@ license_detections:
         from_file:
         start_line: 20
         end_line: 42
-        matcher: 3-seq
-        score: '97.18'
-        matched_length: 207
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 214
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: bsd-new_67.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_67.RULE
+        rule_identifier: bsd-new_1373.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1373.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
           modification, are permitted provided that the following conditions
@@ -43,7 +43,7 @@ license_detections:
           LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
-    identifier: bsd_new-44167a67-f95e-380d-3fbb-e5be5e832c48
+    identifier: bsd_new-a12452d6-4cce-854f-824e-72aab36acfaf
   - license_expression: tcp-wrappers
     license_expression_spdx: TCP-wrappers
     matches:

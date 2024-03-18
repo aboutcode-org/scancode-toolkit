@@ -30,22 +30,22 @@
       "license_expression_spdx": "Ruby AND BSD-2-Clause AND MIT",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 7,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
           "license_expression": "ruby AND bsd-simplified AND mit",
           "spdx_license_expression": "Ruby AND BSD-2-Clause AND MIT",
-          "rule_identifier": "spdx-license-identifier-ruby AND bsd-simplified AND mit-41ebb50cee7db0cae90eea02dcf774f353e5566e",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 7,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-ruby_and_bsd_simplified_and_mit-41ebb50cee7db0cae90eea02dcf774f353e5566e",
           "rule_url": null,
           "matched_text": "ruby AND bsd-2-clause AND mit"
         }
       ],
-      "identifier": "ruby_and_bsd_simplified_and_mit-51044b18-d59b-bf75-33d1-1915e63eba54"
+      "identifier": "ruby_and_bsd_simplified_and_mit-a1641df0-0337-1529-a352-1e66972a1551"
     }
   ],
   "other_license_expression": null,

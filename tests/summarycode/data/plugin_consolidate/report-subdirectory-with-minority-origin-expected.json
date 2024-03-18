@@ -7,7 +7,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 4,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",

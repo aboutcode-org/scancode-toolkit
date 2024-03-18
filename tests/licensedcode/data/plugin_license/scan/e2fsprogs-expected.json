@@ -5,7 +5,7 @@
       "license_expression": "gpl-2.0 AND patent-disclaimer",
       "license_expression_spdx": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "gpl-2.0 AND patent-disclaimer",
           "license_expression_spdx": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",

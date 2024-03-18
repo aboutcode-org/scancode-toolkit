@@ -42,7 +42,7 @@
             {
               "license_expression": "unknown-license-reference",
               "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
-              "from_file": "Fizzler.nuspec",
+              "from_file": "fizzler/Fizzler.nuspec",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -158,7 +158,7 @@
       "detection_log": [
         "unknown-reference-to-local-file"
       ],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "unknown-license-reference",
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
@@ -215,7 +215,7 @@
       "license_expression_spdx": "LGPL-2.0-or-later AND GPL-1.0-or-later",
       "detection_count": 1,
       "detection_log": [],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "lgpl-2.0-plus",
           "license_expression_spdx": "LGPL-2.0-or-later",
@@ -258,7 +258,7 @@
       "detection_log": [
         "package-unknown-reference-to-local-file"
       ],
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "unknown-license-reference",
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",

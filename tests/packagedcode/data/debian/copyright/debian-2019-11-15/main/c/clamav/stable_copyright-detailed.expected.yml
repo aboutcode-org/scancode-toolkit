@@ -50,9 +50,9 @@ other_license_expression: (gpl-2.0 AND gpl-2.0) AND gpl-2.0 AND (gpl-2.0 AND ope
   mit AND bsd-simplified AND bsd-simplified AND bsd-new AND bsd-new AND bsd-new AND zlib AND
   zlib AND isc AND fsf-unlimited AND fsf-free AND fsf-unlimited-no-warranty AND fsf-ap AND fsf-ap
   AND bzip2-libbzip-2010 AND public-domain AND public-domain AND public-domain AND x11-tiff
-  AND (public-domain AND public-domain) AND (apache-2.0 AND (free-unknown AND apache-2.0 WITH
-  generic-exception)) AND (free-unknown AND apache-2.0 WITH generic-exception) AND (gpl-3.0-plus
-  WITH bison-exception-2.2 AND gpl-3.0) AND gpl-3.0
+  AND (public-domain AND public-domain) AND (apache-2.0 AND apache-2.0 WITH generic-exception)
+  AND apache-2.0 WITH generic-exception AND (gpl-3.0-plus WITH bison-exception-2.2 AND gpl-3.0)
+  AND gpl-3.0
 other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND GPL-2.0-only AND (GPL-2.0-only
   AND cryptsetup-OpenSSL-exception AND GPL-2.0-only) AND GPL-2.0-only AND (GPL-2.0-or-later
   AND GPL-2.0-or-later) AND GPL-2.0-only AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND GPL-2.0-only
@@ -65,9 +65,8 @@ other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND GPL-2.0-only 
   AND BSD-3-Clause AND BSD-3-Clause AND Zlib AND Zlib AND ISC AND FSFULLR AND FSFUL AND FSFULLRWD
   AND FSFAP AND FSFAP AND bzip2-1.0.6 AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-public-domain AND libtiff AND (LicenseRef-scancode-public-domain AND
-  LicenseRef-scancode-public-domain) AND (Apache-2.0 AND (LicenseRef-scancode-free-unknown AND
-  Apache-2.0 WITH LicenseRef-scancode-generic-exception)) AND (LicenseRef-scancode-free-unknown
-  AND Apache-2.0 WITH LicenseRef-scancode-generic-exception) AND (GPL-3.0-or-later WITH Bison-exception-2.2
+  LicenseRef-scancode-public-domain) AND (Apache-2.0 AND Apache-2.0 WITH LicenseRef-scancode-generic-exception)
+  AND Apache-2.0 WITH LicenseRef-scancode-generic-exception AND (GPL-3.0-or-later WITH Bison-exception-2.2
   AND GPL-3.0-only) AND GPL-3.0-only
 license_detections: []
 other_license_detections:
@@ -708,9 +707,8 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: public domain.
     identifier: public_domain-12719e81-b9e7-3b20-5ec2-b0cc7eebb090
-  - license_expression: apache-2.0 AND (free-unknown AND apache-2.0 WITH generic-exception)
-    license_expression_spdx: Apache-2.0 AND (LicenseRef-scancode-free-unknown AND Apache-2.0
-      WITH LicenseRef-scancode-generic-exception)
+  - license_expression: apache-2.0 AND apache-2.0 WITH generic-exception
+    license_expression_spdx: Apache-2.0 AND Apache-2.0 WITH LicenseRef-scancode-generic-exception
     matches:
       - license_expression: apache-2.0
         spdx_license_expression: Apache-2.0
@@ -736,8 +734,8 @@ other_license_detections:
           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
           See the License for the specific language governing permissions and
           limitations under the License.
-      - license_expression: free-unknown AND apache-2.0 WITH generic-exception
-        spdx_license_expression: LicenseRef-scancode-free-unknown AND Apache-2.0 WITH LicenseRef-scancode-generic-exception
+      - license_expression: apache-2.0 WITH generic-exception
+        spdx_license_expression: Apache-2.0 WITH LicenseRef-scancode-generic-exception
         from_file:
         start_line: 591
         end_line: 602
@@ -746,8 +744,8 @@ other_license_detections:
         matched_length: 137
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: free-unknown_and_apache-2.0_with_generic-exception_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_and_apache-2.0_with_generic-exception_1.RULE
+        rule_identifier: apache-2.0_with_generic-exception_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_with_generic-exception_1.RULE
         matched_text: |
           See COPYING.YARA. The GPL exception has been granted by upstream in
           https://bugzilla.clamav.net/show_bug.cgi?id=11336:
@@ -761,7 +759,7 @@ other_license_detections:
 
           On Debian systems, the full text of the Apache License, Version 2.0 can be
           found in the file `/usr/share/common-licenses/Apache-2.0'.
-    identifier: apache_2_0_and__free_unknown_and_apache_2_0_with_generic_exception-4b3213fc-c113-2772-9c82-d6f6f834cb7d
+    identifier: apache_2_0_and_apache_2_0_with_generic_exception-a8c6f17d-1661-8453-bad0-5cae80a43f41
   - license_expression: gpl-3.0-plus WITH bison-exception-2.2 AND gpl-3.0
     license_expression_spdx: GPL-3.0-or-later WITH Bison-exception-2.2 AND GPL-3.0-only
     matches:
@@ -1263,11 +1261,11 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_58.RULE
         matched_text: FSF changes to this file are in the public domain.
     identifier: x11_xconsortium_and_public_domain-d9561273-6993-908f-b782-aed5836bd09b
-  - license_expression: free-unknown AND apache-2.0 WITH generic-exception
-    license_expression_spdx: LicenseRef-scancode-free-unknown AND Apache-2.0 WITH LicenseRef-scancode-generic-exception
+  - license_expression: apache-2.0 WITH generic-exception
+    license_expression_spdx: Apache-2.0 WITH LicenseRef-scancode-generic-exception
     matches:
-      - license_expression: free-unknown AND apache-2.0 WITH generic-exception
-        spdx_license_expression: LicenseRef-scancode-free-unknown AND Apache-2.0 WITH LicenseRef-scancode-generic-exception
+      - license_expression: apache-2.0 WITH generic-exception
+        spdx_license_expression: Apache-2.0 WITH LicenseRef-scancode-generic-exception
         from_file:
         start_line: 591
         end_line: 602
@@ -1276,8 +1274,8 @@ other_license_detections:
         matched_length: 137
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: free-unknown_and_apache-2.0_with_generic-exception_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_and_apache-2.0_with_generic-exception_1.RULE
+        rule_identifier: apache-2.0_with_generic-exception_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_with_generic-exception_1.RULE
         matched_text: |
           See COPYING.YARA. The GPL exception has been granted by upstream in
           https://bugzilla.clamav.net/show_bug.cgi?id=11336:
@@ -1291,7 +1289,7 @@ other_license_detections:
 
           On Debian systems, the full text of the Apache License, Version 2.0 can be
           found in the file `/usr/share/common-licenses/Apache-2.0'.
-    identifier: free_unknown_and_apache_2_0_with_generic_exception-f6e83f64-9eb6-7bd3-40a7-d2f9f8c12904
+    identifier: apache_2_0_with_generic_exception-a512f441-dab3-b8eb-e03a-3851ccfd84b9
   - license_expression: gpl-3.0
     license_expression_spdx: GPL-3.0-only
     matches:

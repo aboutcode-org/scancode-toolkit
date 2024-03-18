@@ -137,7 +137,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 3,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -159,7 +159,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 2,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "unknown-license-reference",
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
@@ -209,7 +209,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 2,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -231,7 +231,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 2,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -253,7 +253,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
@@ -275,7 +275,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "unknown-license-reference",
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
@@ -311,7 +311,7 @@
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 1,
-      "sample_matches": [
+      "reference_matches": [
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
