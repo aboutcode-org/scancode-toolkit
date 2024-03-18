@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: Seen in CGAL
+---
+
+ifndef CGAL_LICENSE_LGPL_H

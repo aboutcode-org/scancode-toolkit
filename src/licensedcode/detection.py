@@ -165,8 +165,15 @@ class LicenseDetection:
     license_expression = attr.ib(
         default=None,
         metadata=dict(
-            help='Full license expression string '
-            'using the SPDX license expression syntax and ScanCode license keys.')
+            help='A license expression string using the SPDX license expression'
+            ' syntax and ScanCode license keys, the effective license expression'
+            ' for this license detection.')
+    )
+
+    license_expression_spdx = attr.ib(
+        default=None,
+        metadata=dict(
+            help='SPDX license expression string with SPDX ids.')
     )
 
     matches = attr.ib(
@@ -248,7 +255,16 @@ class LicenseDetection:
             detection_log=detection_log,
         )
         detection.identifier = detection.identifier_with_expression
+        detection.license_expression_spdx = detection.spdx_license_expression()
         return detection
+
+    def spdx_license_expression(self):
+        from licensedcode.cache import build_spdx_license_expression
+        from licensedcode.cache import get_cache
+        return str(build_spdx_license_expression(
+            license_expression=self.license_expression,
+            licensing=get_cache().licensing,
+        ))
 
     def __eq__(self, other):
         return (
@@ -515,6 +531,7 @@ class LicenseDetectionFromResult(LicenseDetection):
 
         detection = cls(
             license_expression=license_detection_mapping["license_expression"],
+            license_expression_spdx=license_detection_mapping["license_expression_spdx"],
             detection_log=license_detection_mapping.get("detection_log", []) or None,
             identifier=license_detection_mapping["identifier"],
             matches=matches,
@@ -590,6 +607,12 @@ class LicenseMatchFromResult(LicenseMatch):
             help='Text which was matched')
     )
 
+    matched_text_diagnostics = attr.ib(
+        default=None,
+        metadata=dict(
+            help='Text which was matched, with extra diagnostics information.')
+    )
+
     def score(self):
         return self.match_score
 
@@ -615,8 +638,10 @@ class LicenseMatchFromResult(LicenseMatch):
         """
         rule = Rule.from_match_data(license_match_mapping)
         matched_text = license_match_mapping.get("matched_text") or None
+        matched_text_diagnostics = license_match_mapping.get("matched_text_diagnostics") or None
 
         return cls(
+            from_file=license_match_mapping["from_file"],
             start_line=license_match_mapping["start_line"],
             end_line=license_match_mapping["end_line"],
             match_score=license_match_mapping["score"],
@@ -624,6 +649,7 @@ class LicenseMatchFromResult(LicenseMatch):
             match_coverage=license_match_mapping["match_coverage"],
             matcher=license_match_mapping["matcher"],
             text=matched_text,
+            matched_text_diagnostics=matched_text_diagnostics,
             rule=rule,
             qspan=None,
             ispan=None,
@@ -642,33 +668,55 @@ class LicenseMatchFromResult(LicenseMatch):
         include_text=False,
         license_text_diagnostics=False,
         whole_lines=True,
+        rule_details=False,
     ):
         """
         Return a "result" scan data built from a LicenseMatch object.
         """
-        matched_text = None
-        if include_text:
-            matched_text = self.matched_text
-
         result = {}
 
-        # Detection Level Information
-        result['score'] = self.score()
+        result['license_expression'] = self.rule.license_expression
+        result['license_expression_spdx'] = self.rule.spdx_license_expression()
+        result['from_file'] = self.from_file
         result['start_line'] = self.start_line
         result['end_line'] = self.end_line
-        result['matched_length'] = self.len()
-        result['match_coverage'] = self.coverage()
+        if rule_details:
+            result.update(self.rule.get_flags_mapping())
         result['matcher'] = self.matcher
-
-        # LicenseDB Level Information (Rule that was matched)
-        result['license_expression'] = self.rule.license_expression
-        result['rule_identifier'] = self.rule.identifier
+        result['score'] = self.score()
+        result['matched_length'] = self.len()
+        if rule_details:
+            result["rule_length"] = self.rule.length
+        result['match_coverage'] = self.coverage()
         result['rule_relevance'] = self.rule.relevance
+        result['rule_identifier'] = self.rule.identifier
         result['rule_url'] = self.rule.rule_url
+        if rule_details:
+            result["rule_notes"] = self.rule.notes
+            result["referenced_filenames"] = self.rule.referenced_filenames
+        if include_text and self.matched_text:
+            result['matched_text'] = self.matched_text
+        if license_text_diagnostics and self.matched_text_diagnostics:
+            result['matched_text_diagnostics'] = self.matched_text_diagnostics
+        if rule_details:
+            result["rule_text"] = self.rule.text
 
-        if include_text:
-            result['matched_text'] = matched_text
         return result
+
+
+def populate_matches_with_path(matches, path):
+    """
+    Given `matches` list of LicenseMatch objects, populate the `from_file`
+    attribute in them with `path` which is the path for the origin file for
+    that license match.
+    """
+    for match in matches:
+        # Here if we have the `from_file` attribute populated already,
+        # they are from other files, and if it's empty, they are from
+        # the original resource, so we populate the files with the resource
+        # path for the original resource of their origin  
+        if not match["from_file"]:
+            match["from_file"] = path
 
 
 def collect_license_detections(codebase, include_license_clues=True):
@@ -680,7 +728,10 @@ def collect_license_detections(codebase, include_license_clues=True):
     according to their license detections. This is required because package fields
     are populated in package plugin, which runs before the license plugin, and thus
     the license plugin step where unknown references to other files are dereferenced
-    does not show up automatically in package attributes. 
+    does not show up automatically in package attributes.
+
+    Also populate from_file attributes with resource paths for matches which have
+    origin in the same file.
     """
     has_packages = hasattr(codebase.root, 'package_data')
     has_licenses = hasattr(codebase.root, 'license_detections')
@@ -692,7 +743,11 @@ def collect_license_detections(codebase, include_license_clues=True):
         resource_license_detections = []
         if has_licenses:
             license_detections = getattr(resource, 'license_detections', []) or []
+            for detection in license_detections:
+                populate_matches_with_path(matches=detection["matches"], path=resource.path)
             license_clues = getattr(resource, 'license_clues', []) or []
+            populate_matches_with_path(matches=license_clues, path=resource.path)
+            codebase.save_resource(resource)
 
             if license_detections:
                 license_detection_objects = detections_from_license_detection_mappings(
@@ -729,6 +784,9 @@ def collect_license_detections(codebase, include_license_clues=True):
 
                 package_license_detections = package["license_detections"]
                 if package_license_detections:
+                    for detection in package_license_detections:
+                        populate_matches_with_path(matches=detection["matches"], path=resource.path)
+                        modified = True
                     package_license_detection_mappings.extend(package_license_detections)
                     detection_is_same, license_expression = verify_package_license_expression(
                         license_detection_mappings=package_license_detections,
@@ -828,6 +886,7 @@ class UniqueDetection:
     """
     identifier = attr.ib(default=None)
     license_expression = attr.ib(default=None)
+    license_expression_spdx = attr.ib(default=None)
     detection_count = attr.ib(default=None)
     matches = attr.ib(default=attr.Factory(list))
     detection_log = attr.ib(default=attr.Factory(list))
@@ -860,12 +919,14 @@ class UniqueDetection:
                         for match in detection.matches
                     ]
                 ))
+                detection.license_expression_spdx = detection.spdx_license_expression()
                 detection.identifier = detection.identifier_with_expression
 
             unique_license_detections.append(
                 cls(
                     identifier=detection.identifier,
                     license_expression=detection.license_expression,
+                    license_expression_spdx=detection.license_expression_spdx,
                     detection_log=detection_log or [],
                     matches=detection.matches,
                     detection_count=len(file_regions),
@@ -875,7 +936,11 @@ class UniqueDetection:
 
         return unique_license_detections
 
-    def to_dict(self, license_diagnostics):
+    def to_dict(self,
+        include_text=False,
+        license_text_diagnostics=False,
+        license_diagnostics=False,
+    ):
 
         def dict_fields(attr, value):
 
@@ -890,11 +955,20 @@ class UniqueDetection:
 
             return True
 
-        return attr.asdict(self, filter=dict_fields)
+        detection_mapping = attr.asdict(self, filter=dict_fields)
+        detection_mapping["reference_matches"] = [
+            match.to_dict(
+                include_text=include_text,
+                license_text_diagnostics=license_text_diagnostics,
+            )
+            for match in self.matches
+        ]
+        return detection_mapping
 
     def get_license_detection_object(self):
         return LicenseDetection(
             license_expression=self.license_expression,
+            license_expression_spdx=self.license_expression_spdx,
             detection_log=self.detection_log,
             matches=self.matches,
             identifier=self.identifier,

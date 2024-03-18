@@ -20,16 +20,19 @@ other_license_expression_spdx: BSD-2-Clause AND BSD-2-Clause AND (GPL-2.0-or-lat
 license_detections: []
 other_license_detections:
   - license_expression: fsf-unlimited
+    license_expression_spdx: FSFULLR
     matches:
-      - score: '100.0'
+      - license_expression: fsf-unlimited
+        spdx_license_expression: FSFULLR
+        from_file:
         start_line: 27
         end_line: 29
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 29
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: fsf-unlimited
-        rule_identifier: fsf-unlimited.LICENSE
         rule_relevance: 100
+        rule_identifier: fsf-unlimited.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/fsf-unlimited.LICENSE
         matched_text: |
           This file is free software; the Free Software Foundation gives
@@ -37,16 +40,19 @@ other_license_detections:
           modifications, as long as this notice is preserved.
     identifier: fsf_unlimited-ed3d6762-95f0-131d-94c5-834f10d192a2
   - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
+    license_expression_spdx: GPL-2.0-or-later WITH Libtool-exception
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
+        spdx_license_expression: GPL-2.0-or-later WITH Libtool-exception
+        from_file:
         start_line: 39
         end_line: 51
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 113
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus WITH libtool-exception-2.0
-        rule_identifier: gpl-2.0-plus_with_libtool-exception-2.0_8.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_with_libtool-exception-2.0_8.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_libtool-exception-2.0_8.RULE
         matched_text: |
           GNU Libtool is free software; you can redistribute it and/or modify
@@ -64,27 +70,32 @@ other_license_detections:
           `/usr/share/common-licenses/GPL-2'.
     identifier: gpl_2_0_plus_with_libtool_exception_2_0-e1a8cc64-f5eb-97cf-c90d-a5d265d7d63f
   - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 54
         end_line: 54
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_22.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_22.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus
+        spdx_license_expression: GPL-2.0-or-later
+        from_file:
         start_line: 55
         end_line: 61
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 66
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-2.0-plus
-        rule_identifier: gpl-2.0-plus_842.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_842.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_842.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify it under
@@ -96,27 +107,32 @@ other_license_detections:
           can be found in /usr/share/common-licenses/GPL-2.
     identifier: gpl_2_0_plus-db94a8a0-a1a1-5b56-3906-697a3aec3c2d
   - license_expression: gpl-3.0-plus
+    license_expression_spdx: GPL-3.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
+        from_file:
         start_line: 63
         end_line: 63
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0-plus
-        rule_identifier: gpl-3.0-plus_92.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0-plus_92.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
-      - score: '100.0'
+      - license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
+        from_file:
         start_line: 64
         end_line: 70
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 68
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: gpl-3.0-plus
-        rule_identifier: gpl-3.0-plus_387.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0-plus_387.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_387.RULE
         matched_text: |
           This file is free software: you can redistribute it and/or modify
@@ -128,16 +144,19 @@ other_license_detections:
           can be found in the file `/usr/share/common-licenses/GPL-3'.
     identifier: gpl_3_0_plus-19176ed3-f40f-a50b-29ca-3d0d961d6743
   - license_expression: bsd-simplified
+    license_expression_spdx: BSD-2-Clause
     matches:
-      - score: '100.0'
+      - license_expression: bsd-simplified
+        spdx_license_expression: BSD-2-Clause
+        from_file:
         start_line: 73
         end_line: 95
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 183
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: bsd-simplified
-        rule_identifier: bsd-simplified_5.RULE
         rule_relevance: 100
+        rule_identifier: bsd-simplified_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_5.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without

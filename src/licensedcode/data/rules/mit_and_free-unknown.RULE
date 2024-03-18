@@ -1,6 +1,7 @@
 ---
 license_expression: mit AND free-unknown
 is_license_notice: yes
+is_deprecated: yes
 referenced_filenames:
     - LICENSE
 ---

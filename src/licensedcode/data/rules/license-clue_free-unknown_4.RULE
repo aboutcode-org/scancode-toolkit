@@ -1,0 +1,12 @@
+---
+license_expression: free-unknown
+is_license_clue: yes
+minimum_coverage: 80
+referenced_filenames:
+    - docs/THIRDPARTY
+---
+
+The software includes some works released by third parties under other
+free and open source licenses. Those works are redistributed under the
+license terms under which the works were received. For more details,
+see the ``docs/THIRDPARTY`` file included with this distribution.

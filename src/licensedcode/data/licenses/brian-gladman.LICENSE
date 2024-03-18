@@ -5,9 +5,14 @@ name: Brian Gladman License
 category: Permissive
 owner: Brian Gladman
 homepage_url: http://www.gladman.me.uk/AES
-spdx_license_key: LicenseRef-scancode-brian-gladman
+spdx_license_key: Brian-Gladman-2-Clause
+other_spdx_license_keys:
+    - LicenseRef-scancode-brian-gladman
 text_urls:
     - http://gladman.plushost.co.uk/oldsite/AES/aes-src-12-09-11.zip
+other_urls:
+    - https://web.mit.edu/kerberos/krb5-1.21/doc/mitK5license.html
+    - https://github.com/krb5/krb5/blob/krb5-1.21.2-final/NOTICE#L140-L156
 ---
 
 The redistribution and use of this software (with or without changes)

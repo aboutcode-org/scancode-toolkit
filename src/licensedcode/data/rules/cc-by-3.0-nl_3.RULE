@@ -1,0 +1,9 @@
+---
+license_expression: cc-by-3.0-nl
+is_license_reference: yes
+is_continuous: yes
+minimum_coverage: 100
+notes: Rule based on an SPDX license name and/or ID
+---
+
+CC-BY-3.0-NL

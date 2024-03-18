@@ -1,0 +1,13 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://www.wu-ftpd.org/license.html
+---
+
+Use and distribution of this software and its source code are governed   
+  by the terms and conditions of the WU-FTPD Software License ("LICENSE").  
+   
+  If you did not receive a copy of the license, it may be obtained online  
+  at http://www.wu-ftpd.org/license.html.

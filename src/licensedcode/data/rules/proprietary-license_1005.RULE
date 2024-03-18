@@ -1,0 +1,16 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+minimum_coverage: 80
+notes: https://github.com/cjus/unlicensed/blob/4b90fee5fcd700617fcd9e6e18ba87525036116a/UNL#L9
+---
+
+The Unlicensed non-License (UNL)
+
+This code where this {{non-license appears}} is concernered Unlicensed software.
+Permission is hereby NOT granted to any person obtaining a copy of this 
+software and associated documentation files (the "Software").
+
+While this software may have been available to you for preview, it must not 
+be used in other projects or body of work without prior written notice from 
+the copyright holder.

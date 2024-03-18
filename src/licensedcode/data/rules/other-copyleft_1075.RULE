@@ -1,0 +1,51 @@
+---
+license_expression: other-copyleft
+is_license_text: yes
+notes: this is a per-GPL text found in RMS regex code from circa 1985
+---
+
+This program is distributed in the hope that it will be useful,
+but without any warranty.  No author or distributor
+accepts responsibility to anyone for the consequences of using it
+or for whether it serves any particular purpose or works at all,
+unless he says so in writing.
+
+   Permission is granted to anyone to distribute verbatim copies
+   of this program's source code as received, in any medium, provided that
+   the copyright notice, the nonwarraty notice above
+   and this permission notice are preserved,
+   and that the distributor grants the recipient all rights
+   for further redistribution as permitted by this notice,
+   and informs him of these rights.
+
+   Permission is granted to distribute modified versions of this
+   program's source code, or of portions of it, under the above
+   conditions, plus the conditions that all changed files carry
+   prominent notices stating who last changed them and that the
+   derived material, including anything packaged together with it and
+   conceptually functioning as a modification of it rather than an
+   application of it, is in its entirety subject to a permission
+   notice identical to this one.
+
+   Permission is granted to distribute this program (verbatim or
+   as modified) in compiled or executable form, provided verbatim
+   redistribution is permitted as stated above for source code, and
+    A.  it is accompanied by the corresponding machine-readable
+      source code, under the above conditions, or
+    B.  it is accompanied by a written offer, with no time limit,
+      to distribute the corresponding machine-readable source code,
+      under the above conditions, to any one, in return for reimbursement
+      of the cost of distribution.   Verbatim redistribution of the
+      written offer must be permitted.  Or,
+    C.  it is distributed by someone who received only the
+      compiled or executable form, and is accompanied by a copy of the
+      written offer of source code which he received along with it.
+
+   Permission is granted to distribute this program (verbatim or as modified)
+   in executable form as part of a larger system provided that the source
+   code for this program, including any modifications used,
+   is also distributed or offered as stated in the preceding paragraph.
+
+In other words, you are welcome to use, share and improve this program.
+You are forbidden to forbid anyone else to use, share and improve
+what you give them.   Help stamp out software-hoarding!  */

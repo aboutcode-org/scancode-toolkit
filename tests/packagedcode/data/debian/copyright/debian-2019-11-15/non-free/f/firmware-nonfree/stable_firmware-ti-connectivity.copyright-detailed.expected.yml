@@ -6,16 +6,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: proprietary-license
+    license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
-      - score: '100.0'
+      - license_expression: proprietary-license
+        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        from_file:
         start_line: 9
         end_line: 65
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 436
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: proprietary-license
-        rule_identifier: proprietary-license_556.RULE
         rule_relevance: 100
+        rule_identifier: proprietary-license_556.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_556.RULE
         matched_text: "All rights reserved not granted herein.\n\nLimited License.\n\nTexas\
           \ Instruments Incorporated grants a world-wide, royalty-free, non-exclusive\nlicense\

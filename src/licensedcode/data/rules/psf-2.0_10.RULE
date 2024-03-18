@@ -1,0 +1,12 @@
+---
+license_expression: psf-2.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.python.org/2.4/license
+---
+
+Licensed to PSF under a Contributor Agreement.
+ See http://www.python.org/2.4/license for licensing details.
+
+
+ PSF LICENSE AGREEMENT FOR PYTHON 2.4

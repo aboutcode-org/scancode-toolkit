@@ -1,0 +1,9 @@
+about_resource: manifest/
+name: conan-center-index
+version: 30c5f6b4aeeb9bce3614b9b2f1db7ea3324d8cdc
+download_url: https://github.com/conan-io/conan-center-index/tree/30c5f6b4aeeb9bce3614b9b2f1db7ea3324d8cdc/recipes/libgettext/all
+vcs_repository: https://github.com/conan-io/conan-center-index.git
+license: mit
+license_text: manifest.LICENSE
+description: Recipes for the ConanCenter repository.
+notes: recipe used for testing conan DataFileHandler 

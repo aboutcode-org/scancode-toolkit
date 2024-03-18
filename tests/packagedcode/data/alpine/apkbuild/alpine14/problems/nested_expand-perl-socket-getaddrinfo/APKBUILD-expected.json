@@ -27,22 +27,25 @@
   "license_detections": [
     {
       "license_expression": "gpl-1.0-plus OR artistic-perl-1.0",
+      "license_expression_spdx": "GPL-1.0-or-later OR Artistic-1.0-Perl",
       "matches": [
         {
-          "score": 100.0,
+          "license_expression": "gpl-1.0-plus OR artistic-perl-1.0",
+          "spdx_license_expression": "GPL-1.0-or-later OR Artistic-1.0-Perl",
+          "from_file": null,
           "start_line": 1,
           "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
           "matched_length": 10,
           "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
-          "license_expression": "gpl-1.0-plus OR artistic-perl-1.0",
-          "rule_identifier": "spdx-license-identifier-gpl-1.0-plus OR artistic-perl-1.0-535d84b5d1aa6e65995199385dd4e21954d8d8ba",
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-gpl_1_0_plus_or_artistic_perl_1_0-535d84b5d1aa6e65995199385dd4e21954d8d8ba",
           "rule_url": null,
           "matched_text": "gpl-1.0-or-later OR artistic-1.0-perl"
         }
       ],
-      "identifier": "gpl_1_0_plus_or_artistic_perl_1_0-5b18e6f8-26f2-64b3-9bbb-03e93b71de62"
+      "identifier": "gpl_1_0_plus_or_artistic_perl_1_0-e8b8391b-a631-ad82-c771-fb65500b961e"
     }
   ],
   "other_license_expression": null,

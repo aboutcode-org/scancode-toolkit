@@ -7,7 +7,11 @@ owner: nexB
 notes: |
     This is a variant composed of clause 1 and 3 of a BSD-Modified and some
     additional conditions on position and content of the notice
-spdx_license_key: LicenseRef-scancode-bsd-top
+spdx_license_key: BSD-Source-beginning-file
+other_spdx_license_keys:
+    - LicenseRef-scancode-bsd-top
+other_urls:
+    - https://github.com/lattera/freebsd/blob/master/sys/cam/cam.c#L4
 minimum_coverage: 70
 ---
 

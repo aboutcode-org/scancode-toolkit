@@ -1,0 +1,8 @@
+---
+license_expression: mpl-2.0 AND mit
+is_license_tag: yes
+is_continuous: yes
+relevance: 100
+---
+
+{{license="MPL-2.0 AND MIT"}}

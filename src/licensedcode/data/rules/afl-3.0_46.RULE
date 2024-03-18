@@ -1,0 +1,9 @@
+---
+license_expression: afl-3.0
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://opensource.org/licenses/AFL-3.0
+---
+
+license: Licensed under the Academic Software License version 3.0 (http://opensource.org/licenses/AFL-3.0)

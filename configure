@@ -159,7 +159,7 @@ PROD_REQUIREMENTS="scancode_toolkit*.whl"
 VIRTUALENV_DIR=venv
 
 # Cleanable files and directories to delete with the --clean option
-CLEANABLE="build dist venv .cache .eggs"
+CLEANABLE="tmp build dist venv .cache .eggs"
 
 # extra  arguments passed to pip
 PIP_EXTRA_ARGS=" "

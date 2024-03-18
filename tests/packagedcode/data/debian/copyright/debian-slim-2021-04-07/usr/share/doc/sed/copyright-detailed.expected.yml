@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: gpl-3.0-plus AND gfdl-1.3-plus
+    license_expression_spdx: GPL-3.0-or-later AND GFDL-1.3-or-later
     matches:
-      - score: '98.28'
+      - license_expression: gpl-3.0-plus
+        spdx_license_expression: GPL-3.0-or-later
+        from_file:
         start_line: 11
         end_line: 17
+        matcher: 2-aho
+        score: '98.28'
         matched_length: 57
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-3.0-plus
-        rule_identifier: gpl-3.0-plus_285.RULE
         rule_relevance: 100
+        rule_identifier: gpl-3.0-plus_285.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_285.RULE
         matched_text: |
           GNU sed is free software; you can redistribute it and/or modify it under
@@ -24,15 +27,17 @@ license_detections:
 
           On Debian GNU/Linux systems you can find a copy of the GPL in
           /usr/share/common-licenses/GPL-3
-      - score: '96.97'
+      - license_expression: gfdl-1.3-plus
+        spdx_license_expression: GFDL-1.3-or-later
+        from_file:
         start_line: '19'
         end_line: 21
+        matcher: 2-aho
+        score: '96.97'
         matched_length: 32
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gfdl-1.3-plus
-        rule_identifier: gfdl-1.3-plus_5.RULE
         rule_relevance: 100
+        rule_identifier: gfdl-1.3-plus_5.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gfdl-1.3-plus_5.RULE
         matched_text: |
           The sed info manual is released under the terms of the GNU Free

@@ -1,0 +1,8 @@
+---
+license_expression: mit OR apache-2.0
+is_license_notice: yes
+relevance: 100
+---
+
+This program is licensed either under the terms of the
+{{ Apache Software License }} or the {{ MIT License }}.

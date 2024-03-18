@@ -31,16 +31,19 @@ other_license_expression_spdx: (LGPL-2.0-or-later AND LGPL-2.0-or-later) AND Lic
 license_detections: []
 other_license_detections:
   - license_expression: other-permissive
+    license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
-      - score: '100.0'
+      - license_expression: other-permissive
+        spdx_license_expression: LicenseRef-scancode-other-permissive
+        from_file:
         start_line: 85
         end_line: 87
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 28
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: other-permissive
-        rule_identifier: other-permissive_324.RULE
         rule_relevance: 100
+        rule_identifier: other-permissive_324.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_324.RULE
         matched_text: |
           Permission to use, copy, modify, distribute, and sell this example
@@ -48,16 +51,19 @@ other_license_detections:
           It is provided "as is" without express or implied warranty.
     identifier: other_permissive-030a04e3-fab9-cc90-a7eb-341ec19285d1
   - license_expression: x11
+    license_expression_spdx: ICU
     matches:
-      - score: '100.0'
+      - license_expression: x11
+        spdx_license_expression: ICU
+        from_file:
         start_line: 90
         end_line: 116
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 241
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: x11
-        rule_identifier: x11_2.RULE
         rule_relevance: 100
+        rule_identifier: x11_2.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11_2.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a
@@ -89,27 +95,32 @@ other_license_detections:
           of their respective owners.
     identifier: x11-fa1d6e22-e05b-6093-6d7b-b82e9d97a910
   - license_expression: lgpl-2.0-plus
+    license_expression_spdx: LGPL-2.0-or-later
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.0-plus
+        spdx_license_expression: LGPL-2.0-or-later
+        from_file:
         start_line: 118
         end_line: 118
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 3
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.0-plus
-        rule_identifier: lgpl-2.0-plus_61.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.0-plus_61.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
-      - score: '100.0'
+      - license_expression: lgpl-2.0-plus
+        spdx_license_expression: LGPL-2.0-or-later
+        from_file:
         start_line: 119
         end_line: 130
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 106
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: lgpl-2.0-plus
-        rule_identifier: lgpl-2.0-plus_529.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.0-plus_529.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_529.RULE
         matched_text: |
           This library is free software; you can redistribute it and/or
@@ -126,16 +137,19 @@ other_license_detections:
           License version 2 can be found in "/usr/share/common-licenses/LGPL-2".
     identifier: lgpl_2_0_plus-4c6098f7-5b22-4023-84df-76b5f2165c85
   - license_expression: tcl
+    license_expression_spdx: TCL
     matches:
-      - score: '100.0'
+      - license_expression: tcl
+        spdx_license_expression: TCL
+        from_file:
         start_line: 133
         end_line: 171
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 341
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: tcl
-        rule_identifier: tcl_14.RULE
         rule_relevance: 100
+        rule_identifier: tcl_14.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_14.RULE
         matched_text: |
           This software is copyrighted by the Regents of the University of
@@ -179,16 +193,19 @@ other_license_detections:
           terms specified in this license.
     identifier: tcl-5f656d8e-004e-b8eb-6b96-10577123cfec
   - license_expression: unicode
+    license_expression_spdx: LicenseRef-scancode-unicode
     matches:
-      - score: '100.0'
+      - license_expression: unicode
+        spdx_license_expression: LicenseRef-scancode-unicode
+        from_file:
         start_line: 174
         end_line: 224
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 423
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: unicode
-        rule_identifier: unicode_57.RULE
         rule_relevance: 100
+        rule_identifier: unicode_57.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unicode_57.RULE
         matched_text: |
           Unicode Data Files include all data files under the directories

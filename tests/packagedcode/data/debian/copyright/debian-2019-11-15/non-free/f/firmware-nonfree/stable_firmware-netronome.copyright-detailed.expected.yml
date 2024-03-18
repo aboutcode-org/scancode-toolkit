@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: netronome-firmware
+    license_expression_spdx: LicenseRef-scancode-netronome-firmware
     matches:
-      - score: '100.0'
+      - license_expression: netronome-firmware
+        spdx_license_expression: LicenseRef-scancode-netronome-firmware
+        from_file:
         start_line: 6
         end_line: 68
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 545
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: netronome-firmware
-        rule_identifier: netronome-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: netronome-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/netronome-firmware.LICENSE
         matched_text: |
           Agilio(r) Firmware License Agreement (the "AGREEMENT")

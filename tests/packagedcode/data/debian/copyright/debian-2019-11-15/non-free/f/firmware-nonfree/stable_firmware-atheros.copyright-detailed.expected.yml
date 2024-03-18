@@ -16,16 +16,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: stmicroelectronics-linux-firmware
+    license_expression_spdx: LicenseRef-scancode-stmicro-linux-firmware
     matches:
-      - score: '96.74'
+      - license_expression: stmicroelectronics-linux-firmware
+        spdx_license_expression: LicenseRef-scancode-stmicro-linux-firmware
+        from_file:
         start_line: 12
         end_line: 46
+        matcher: 3-seq
+        score: '96.74'
         matched_length: 267
         match_coverage: '96.74'
-        matcher: 3-seq
-        license_expression: stmicroelectronics-linux-firmware
-        rule_identifier: stmicroelectronics-linux-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: stmicroelectronics-linux-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/stmicroelectronics-linux-firmware.LICENSE
         matched_text: |
           Redistribution.  Redistribution and use in binary form, without
@@ -66,16 +69,20 @@ license_detections:
     identifier: stmicroelectronics_linux_firmware-a130ff63-8589-bdec-7e0a-199e0d3c8cdf
   - license_expression: clear-bsd AND isc AND bsd-no-mod AND gpl-2.0-plus WITH ecos-exception-2.0
       AND mit
+    license_expression_spdx: BSD-3-Clause-Clear AND ISC AND LicenseRef-scancode-bsd-no-mod AND
+      GPL-2.0-or-later WITH eCos-exception-2.0 AND MIT
     matches:
-      - score: '99.15'
+      - license_expression: clear-bsd
+        spdx_license_expression: BSD-3-Clause-Clear
+        from_file:
         start_line: 57
         end_line: 85
+        matcher: 3-seq
+        score: '99.15'
         matched_length: 234
         match_coverage: '100.0'
-        matcher: 3-seq
-        license_expression: clear-bsd
-        rule_identifier: clear-bsd_3.RULE
         rule_relevance: 100
+        rule_identifier: clear-bsd_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/clear-bsd_3.RULE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
@@ -107,15 +114,17 @@ license_detections:
           WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
           OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
           IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-      - score: '100.0'
+      - license_expression: isc
+        spdx_license_expression: ISC
+        from_file:
         start_line: 87
         end_line: 97
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 112
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: isc
-        rule_identifier: isc.LICENSE
         rule_relevance: 100
+        rule_identifier: isc.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/isc.LICENSE
         matched_text: |
           Permission to use, copy, modify, and/or distribute this software for any
@@ -129,15 +138,17 @@ license_detections:
           WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
           ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
           OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-      - score: '100.0'
+      - license_expression: bsd-no-mod
+        spdx_license_expression: LicenseRef-scancode-bsd-no-mod
+        from_file:
         start_line: 99
         end_line: 128
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 231
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: bsd-no-mod
-        rule_identifier: bsd-no-mod.LICENSE
         rule_relevance: 100
+        rule_identifier: bsd-no-mod.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-no-mod.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms are permitted
@@ -170,15 +181,17 @@ license_detections:
           OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
           OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGES.
-      - score: '100.0'
+      - license_expression: gpl-2.0-plus WITH ecos-exception-2.0
+        spdx_license_expression: GPL-2.0-or-later WITH eCos-exception-2.0
+        from_file:
         start_line: 130
         end_line: 142
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 138
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0-plus WITH ecos-exception-2.0
-        rule_identifier: gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_ecos-exception-2.0_25.RULE
         matched_text: |
           eCos is free software; you can redistribute it and/or modify it under
@@ -194,15 +207,17 @@ license_detections:
 
           This exception does not invalidate any other reasons why a work based on
           this file might be covered by the GNU General Public License.
-      - score: '100.0'
+      - license_expression: mit
+        spdx_license_expression: MIT
+        from_file:
         start_line: 144
         end_line: 161
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 161
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: mit
-        rule_identifier: mit.LICENSE
         rule_relevance: 100
+        rule_identifier: mit.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining
@@ -225,16 +240,19 @@ license_detections:
           SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     identifier: clear_bsd_and_isc_and_bsd_no_mod_and_gpl_2_0_plus_with_ecos_exception_2_0_and_mit-d99207f1-72fd-4564-992c-a3c49dd76df1
   - license_expression: qca-linux-firmware
+    license_expression_spdx: LicenseRef-scancode-qca-linux-firmware
     matches:
-      - score: '100.0'
+      - license_expression: qca-linux-firmware
+        spdx_license_expression: LicenseRef-scancode-qca-linux-firmware
+        from_file:
         start_line: 205
         end_line: 248
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 390
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: qca-linux-firmware
-        rule_identifier: qca-linux-firmware.LICENSE
         rule_relevance: 100
+        rule_identifier: qca-linux-firmware.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/qca-linux-firmware.LICENSE
         matched_text: |
           Redistribution. Reproduction and redistribution in binary form, without

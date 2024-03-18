@@ -2,31 +2,39 @@
   "license_detections": [],
   "todo": [
     {
-      "detection_id": "borceux-3c39742c-edef-82b7-0cdd-fc4d9ff8b044",
+      "detection_id": "borceux-d99f172d-bc25-b4f7-b6bf-cccec1995ce5",
       "review_comments": {
         "imperfect-match-coverage": "The license detection likely is not conclusive as there was license matches with low score or coverage, and so this needs review. scancode would likely benifit from a license rule addition from this case, so please report this to scancode-toolkit github issues."
       },
       "detection": {
         "license_expression": "borceux",
+        "license_expression_spdx": "Borceux",
         "matches": [
           {
-            "score": 4.71,
+            "license_expression": "borceux",
+            "license_expression_spdx": "Borceux",
+            "from_file": "README.multi-orig-tarball-package",
             "start_line": 1,
             "end_line": 3,
-            "matched_length": 4,
-            "match_coverage": 4.71,
+            "is_license_text": true,
             "matcher": "3-seq",
-            "license_expression": "borceux",
-            "rule_identifier": "borceux.LICENSE",
+            "score": 4.71,
+            "matched_length": 4,
+            "rule_length": 85,
+            "match_coverage": 4.71,
             "rule_relevance": 100,
+            "rule_identifier": "borceux.LICENSE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
-            "matched_text": "package consists of [various] [tarballs].\n\n[This] README"
+            "rule_notes": null,
+            "referenced_filenames": [],
+            "matched_text": "This src:package consists of various tarballs.\n\nThis README is a dummy file for creating the base tarball of the name",
+            "rule_text": "Copyright 1993 Francis Borceux\nYou may freely use, modify, and/or distribute each of the files in this package without limitation.  The package consists of the following files:\n\nREADME\ncompatibility/OldDiagram\ncompatibility/OldMaxiDiagram\ncompatibility/OldMicroDiagram\ncompatibility/OldMiniDiagram\ncompatibility/OldMultipleArrows\ndiagram/Diagram\ndiagram/MaxiDiagram\ndiagram/MicroDiagram\ndiagram/MiniDiagram\ndiagram/MultipleArrows\nuser-guides/Diagram_Mode_d_Emploi\nuser-guides/Diagram_Read_Me\n\nOf course no support is guaranteed, but the author will attempt to assist with problems.  Current email address:\nfrancis dot borceux at uclouvain dot be."
           }
         ],
         "detection_log": [
           "low-quality-matches"
         ],
-        "identifier": "borceux-3c39742c-edef-82b7-0cdd-fc4d9ff8b044"
+        "identifier": "borceux-d99f172d-bc25-b4f7-b6bf-cccec1995ce5"
       }
     }
   ],
@@ -39,22 +47,25 @@
       "license_detections": [],
       "license_clues": [
         {
-          "score": 4.71,
+          "license_expression": "borceux",
+          "spdx_license_expression": "Borceux",
+          "from_file": "README.multi-orig-tarball-package",
           "start_line": 1,
           "end_line": 3,
+          "matcher": "3-seq",
+          "score": 4.71,
           "matched_length": 4,
           "match_coverage": 4.71,
-          "matcher": "3-seq",
-          "license_expression": "borceux",
-          "rule_identifier": "borceux.LICENSE",
           "rule_relevance": 100,
+          "rule_identifier": "borceux.LICENSE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/borceux.LICENSE",
-          "matched_text": "package consists of [various] [tarballs].\n\n[This] README"
+          "matched_text": "This src:package consists of various tarballs.\n\nThis README is a dummy file for creating the base tarball of the name",
+          "matched_text_diagnostics": "package consists of [various] [tarballs].\n\n[This] README"
         }
       ],
       "percentage_of_license_text": 10.53,
       "for_todo": [
-        "borceux-3c39742c-edef-82b7-0cdd-fc4d9ff8b044"
+        "borceux-d99f172d-bc25-b4f7-b6bf-cccec1995ce5"
       ],
       "scan_errors": []
     }

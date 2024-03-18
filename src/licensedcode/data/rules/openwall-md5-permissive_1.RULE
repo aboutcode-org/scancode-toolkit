@@ -1,0 +1,11 @@
+---
+license_expression: openwall-md5-permissive
+is_license_text: yes
+---
+
+* Redistribution and use in source and binary forms, with or without
+ * modification, are permitted.
+ *
+ * There's ABSOLUTELY NO WARRANTY, express or implied.
+ *
+ * (This is a heavily cut-down "BSD license".)

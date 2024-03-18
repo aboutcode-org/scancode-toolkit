@@ -1,0 +1,225 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+minimum_coverage: 70
+notes: Seen in http://www.pixelglow.com/papers/psl-license.pdf
+---
+
+These terms and conditions apply to the use of any computer software developed by   (“ ”) which
+is supplied with a copy of this license agreement, and also to any enhancement, modification, update or new release of that
+software or part thereof ("Licensed Software"). In using the Licensed Software, you agree to be bound by these terms and
+conditions, unless the Licensed Software is also supplied with a copy of the Reciprocal Public License and you have agreed to
+be bound by its terms instead of the terms of this license. If you (“the Customer”) do not accept these or any other applicable
+terms and conditions, you must refrain from installing, copying or using the Licensed Software.
+
+Term of License
+1.1
+  License. Subject to the following sub-clause,   hereby grants to the Customer a nonexclusive, non-transferable license to use the Licensed Software, including any source code with which it may be
+supplied, for an indefinite term. This license does not include media or documentation for the software, but simply
+permits the Customer to use the Software under alternative terms from the Reciprocal Public License if it or any part
+of it is also offered under that license by  .
+1.2
+Reciprocal Public License. Until the license fee for the Licensed Software is received from the Customer, and
+provided that the Licensed Software has been supplied with a copy of the Reciprocal Public License,  
+grants the Customer a limited license to use the Licensed Software (or such parts of it as   may specify)
+under the terms of the Reciprocal Public License only. The Customer acknowledges that none of the obligations or
+warranties of   contained in this agreement extend to copies licensed under the Reciprocal Public License.
+License Conditions
+2.1
+Limitations on License. The Licensed Software may not be copied, altered, modified or reproduced except to the
+extent authorized by this agreement.
+2.2
+No Sub-License. The Licensed Software may only be used pursuant to this agreement by the Customer and may not
+be sub-licensed.
+2.3
+Equitable Remedies. In addition to any other remedies available to   under this agreement or otherwise,
+any unauthorized use, alteration, modification, reproduction, publication, disclosure or transfer of the Licensed
+Software will entitle   to any available equitable remedy against the Customer.
+Copying
+3.1
+Limitation on Copies. The Customer may make copies of the Licensed Software for the purpose of backup and
+security. The terms of this agreement, with the necessary modifications, shall apply to any such copies. The
+Customer may not otherwise copy the Licensed Software except for those parts of it that have been licensed under
+the Reciprocal Public License, which may be copied under the terms of that license.
+3.2
+Notices on Copies. The Customer will ensure any copy of the Licensed Software made pursuant to this agreement
+bears notice of  's ownership of copyright and a notice stipulating that the Licensed Software contains
+information confidential to  . The Customer will comply with any directions of   as to the form or
+content of such notices.
+Modifications
+4.1
+Limitation on Modifications. The Customer may modify or alter the Licensed Software or link or merge all or any
+part of the Licensed Software with any other software provided that:
+a.
+4.2
+neither the Licensed Software as modified nor any work derived from from the Licensed Software may be
+further distributed in source code form or as an executable program, except:
+i.
+any parts of the Licensed Software made available by   for license under the Reciprocal Public
+License and any modification or derivation of them may be distributed under the terms of that license;
+or
+ii.
+with the written consent of   which may be granted or withheld on such terms and conditions
+as   thinks fit in its absolute discretion;
+b.
+the costs associated with the modifications or alterations or the costs arising out of the investigation of the
+effects of proposed modifications or alterations will be borne solely by the Customer;
+c.
+the Customer must provide to   every calendar quarter during the continuance of this agreement a
+schedule listing all software which the Customer has developed as a modification or derivation from the
+Licensed Software; and
+d.
+the Customer will fully indemnify   against all liability which may be incurred by   if such
+modifications or alterations infringe any Intellectual Property Rights of a third person or otherwise cause
+  to suffer loss, damages or expense.
+Ownership of Modifications. The Licensed Software as modified or altered remains the property of   in all
+respects, whether modified by the Customer,   or a third party and whether or not authorized pursuant to
+this agreement, provided only that   does not claim rights in compiled software independently written by
+the Customer with which the Licensed Software is linked or merged.
+5.
+Export Restrictions.
+The Customer will not carry or transmit the Licensed Software or any component of it into any country if to do so would
+infringe any law relating to controls on the export of munitions that may be applicable under  or United States
+law. Without limitation, at the date of this agreement such countries may include Afghanistan, Cuba, Iran, Iraq, Libya,
+North Korea, Sudan, Serbia/Montenegro and Syria.
+6.
+Support
+6.1
+Availability of Support.   or its agents will provide support services relating to the installation and
+configuration of the Licensed Software at such times and on such other terms and conditions as   may
+reasonably determine periodically.
+6.2
+Maintenance.   or its agents may perform such services as   considers reasonable to ensure the
+Licensed Software remains in substantial conformity with the specifications set out in its documentation. Such
+support will, at the sole option of  , take the form of:
+a.
+telephone or email advice;
+b.
+supply of a modified copy of the Licensed Software; and
+c.
+on-site attendance followed by such advice, programming or re-configuration as   considers
+necessary (for which additional charges may be levied to the Customer at  's discretion);
+all of which may at  's option incur an additional charge to the Customer to be agreed with the Customer at
+that time.
+6.3
+7.
+Updates and New Releases
+7.1
+8.
+Customer to Report Defects. If the Customer considers that the Licensed Software requires error correction or
+program modification, the Customer will give   a documented example of the defect or error which it
+alleges prevents conformity of the Licensed Software with its specifications. The Customer will, if so requested by
+ , give   a listing of output and any other data which   requires in order to reproduce
+operating conditions similar to those present when any alleged defect or error in the Licensed Software was
+discovered.
+Provision of Updates and New Releases.   will supply the Customer with any updates and new releases of
+the Licensed Software as they become available, for a period to be determined by   upon receipt of the
+license fee, provided that   is not required to produce any such updates or new releases except at its
+discretion.
+Sub-Contracts
+  may sub-contract for the performance of this agreement or any part of this agreement or engage individuals on
+a sub-contract or consultancy basis, whether or not operating under a corporate structure, to assist in the provision of
+services pursuant to this agreement.
+9.
+Entire Agreement
+This agreement constitutes the entire agreement between the parties and supersedes all prior representations, agreements,
+statements and understanding, whether verbal or in writing.
+10.
+Implied Terms
+Any condition or warranty which would otherwise be implied in this agreement, including without limitation the
+warranties of merchantable quality, fitness for purpose and non-infringement of intellectual property rights, is hereby
+excluded to the extent permitted by law. If the full exclusion of any condition or warranty is not permitted by law, the
+liability of   for any breach of such condition or warranty will be limited, at the option of  , to one or
+more of the following:
+a.
+b.
+
+11.
+if the breach relates to goods:
+i.
+the replacement of the goods or the supply of the equivalent goods;
+ii.
+the repair of such goods;
+iii.
+the payment of the cost of replacing the goods or of acquiring equivalent goods; or
+iv.
+the payment of the cost of having the goods repaired; and
+if the breach relates to services:
+i.
+the supplying of the services again; or
+ii.
+the payment of the cost of having the services supplied again.
+Exclusions
+ 11.1 Limitation of Liability.   will be under no liability to the Customer in respect of any loss or damage
+(including consequential loss or damage) which may be suffered or incurred or which may arise directly or
+indirectly in respect of goods or services supplied pursuant to this agreement or in respect of a failure or omission
+on the part of   to comply with its obligations under this agreement.
+11.2 No Representations. The Customer acknowledges that to the extent   has made any representation which is
+not otherwise expressly stated in this agreement, the Customer has been provided with an opportunity to
+independently verify that the accuracy of that representation. Subject to the above, the Customer warrants that it has
+not relied on any representation made by   which has not been stated expressly in this agreement or upon
+any descriptions, illustrations or specifications contained in any document including catalogues or publicity material
+produced by  .
+11.3 Indemnity. The Customer will at all times indemnify and hold harmless   and its officers, employees and
+agents from and against any loss (including reasonable legal costs and expenses) or liability reasonably incurred or
+suffered by any of those indemnified where such loss or liability was caused by:
+12.
+a.
+a breach by the Customer of its obligations under this agreement; or
+b.
+any willful, unlawful or negligent act or omission of the Customer.
+Termination
+Without limiting the generality of any other clause in this agreement,   may terminate this agreement immediately
+by notice in writing if the Customer is in breach of any term of this agreement and such breach is not remedied within
+fourteen (14) days of it notifying  .
+13.
+Miscellaneous Provisions
+13.1 Interpretation. References to a party to this agreement include the party, his executors, administrators, or permitted
+assigns (or in the case of a corporation, the party and its successors and assigns or permitted assigns). The word
+"person" includes a corporation. Words written in the singular will include the plural and vice versa, and the
+masculine or neuter genders will include every gender. References to statutes will include all statutes, amending,
+consolidated or replacing them. If two or more parties enter into covenants, obligations or agreements together,
+those covenants, obligations or agreements will bind them all jointly and severally. The words "in writing" include
+any communication sent by letter, facsimile or electronic mail.
+13.2 Time. Where under this agreement:
+a.
+anything is required to be done on the 29th, 30th, or 31st day of a month which does not contain such a date,
+references to that date will be construed as references to the last day of the month;
+b.
+anything falls due to be done on a Saturday, Sunday or gazetted public holiday or a notice is deemed to be
+served on that date, the next day which is not a Saturday, Sunday or gazetted public holiday will be the date
+by which that thing falls due or when service is deemed to occur.
+13.3 Further Acts. Each party do whatever further acts and execute whatever further documents as might be required by
+law or reasonably requested by the other party in order to carry out and effect the intent and purpose of this
+agreement.
+13.4 Governing Law. The laws of  govern this agreement. Any dispute arising from this agreement is
+to be determined by the courts of  and any court of appeal from a  court.
+13.5 Assignment.   may assign the benefit of this agreement to any related body corporate of   as that
+term is defined in the Corporations Law. The Customer may not assign this agreement without the prior written
+consent of  .
+13.6 Waiver Not to Affect Rights. If   fails to enforce its rights under this agreement or to require the customer
+to comply with any of its obligations under this agreement, this will not prevent   enforcing those rights in
+the future or taking advantage of any remedies that it may as a result of the Customer's breach.
+13.7 Variation.   may modify these terms of use at any time, and such modifications shall be effective
+immediately upon posting of the modified terms of use on  's Web site. Accordingly, you agree to review
+the terms of use periodically, and your continued access or use of the Licensed Software shall be deemed your
+acceptance of the modified terms of use.
+13.8 Severability. If any provision of this agreement is held invalid, unenforceable or illegal for any reason, the
+agreement will remain otherwise in full force apart from such provisions which will be deemed deleted.
+13.9 Survival of Agreement. Subject to any provision to the contrary, this agreement will inure to the benefit of and be
+binding upon the Parties and their successors, trustees, permitted assigns or receivers but will not inure to the
+benefit of any other persons. The covenants, conditions and provisions of this agreement which are capable of
+having effect after the expiration of the Agreement will remain in full force and effect following the expiration of the
+Agreement.
+13.10Notices. Notices under this agreement may be delivered by hand, mail, facsimile or email to the appropriate address
+specified by either party to the other in writing. Notice will be deemed given:
+ a.
+in the case of hand delivery, upon written acknowledgment of receipt by an officer or other duly authorized
+employee, agent or representative of the receiving Party;
+b.
+in the case of posting, three (3) days after despatch;
+c.
+in the case of facsimile, upon receipt of transmission if received on a business day or otherwise at the
+commencement of the first business day following transmission;
+d.
+in the case of email, at the commencement of the first business day following transmission unless a nondelivery message is received by the sender in the meantime.

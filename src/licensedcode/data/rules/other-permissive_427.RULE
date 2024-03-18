@@ -1,0 +1,10 @@
+---
+license_expression: other-permissive
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 100
+referenced_filenames:
+    - OpenGL/DLLS/gle_COPYING.src
+---
+
+licensed under the license declared in OpenGL/DLLS/gle_COPYING.src

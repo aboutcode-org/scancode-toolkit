@@ -1,0 +1,13 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+relevance: 100
+notes: Seen in MSFT Visual Studio and compiler binaries that likely have a commercial license
+    from Dinkumware
+ignorable_copyrights:
+    - Copyright (c) by P.J. Plauger
+ignorable_holders:
+    - P.J. Plauger
+---
+
+Copyright (c) by {{P.J. Plauger}}, {{licensed by Dinkumware}}, Ltd. ALL RIGHTS RESERVED.

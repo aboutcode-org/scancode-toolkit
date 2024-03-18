@@ -1,0 +1,7 @@
+---
+license_expression: pycrypto
+is_license_notice: yes
+relevance: 100
+---
+
+this single file under the same {{terms that A.M. Kuchling used for pycrypto.}}

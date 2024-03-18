@@ -12,10 +12,6 @@ v33.0.0 (next next, roadmap)
 - Fallback packages for non-native dependencies of SCTK.
 - Dependencies for
 - Support for copyright detection objects.
-- Bump commoncode to v31.0.3
-
-v32.1.0 (next, roadmap)
-----------------------------
 
 - A new field in packages with the license category for the
   detected license expression and also an API function to
@@ -33,24 +29,112 @@ v32.1.0 (next, roadmap)
   license detection and reduce false positives.
   See https://github.com/nexB/scancode-toolkit/issues/3300
 
-- A new `--todo` option is added to show the todo items that
-  should be reviewed, which are ambiguous license/package
-  detections.
-
 - File categorization support added, a post scan plugin tagging
   files with priority levels for review, and also take advantage
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+v32.1.0 (next, roadmap)
+----------------------------
+
+Major API/other changes:
+
+- Output Format Version updated to 3.1.0 (minor version bump)
+- Drops python 3.7 and adopts python 3.12
+- New license match attributes:
+  - ``from_file``
+  - ``matched_text_diagnostics`` is added for ``--license-text-diagnostics``
+- In codebase-level ``license_detections`` we have a new attribute
+  ``reference_matches``
+- SPDX license expressions everywhere side-by-side with ScanCode
+  license expressions.
+- All rule attribute level data provided in codebase level ``todo`` items.
+
+Changes in Output Data Structure:
+
+- The data structure of the JSON output has changed for
+  licenses at file level, and license detections at top-level.
+  But note that all the changes are additions to the JSON output,
+  so we have a minor version bump ``3.0.0`` to ``3.1.0``:
+
+  - There is a new attribute ``from_file`` in ``matches`` which is in
+    ``license_detections`` in:
+    * File level ``license_detections``
+    * Codebase level ``license_detections``
+    * ``license_detections`` and  ``other_license_detections`` in
+      file-level ``package_data``
+    * ``license_detections`` and  ``other_license_detections`` in
+      codebase level ``packages``
+  
+  - On using the CLI option ``--license-text-diagnostics`` there is
+    now a new license match attribute ``matched_text_diagnostics``
+    with the matched text and highlighted diagnostics, instead of
+    having this replace the plain ``matched_text``.
+
+  - A new ``reference_matches`` attribute is added to codebase-level
+    ``license_detections`` which is same as the ``matches`` attribute
+    in other license detections.
+  
+  - We now have SPDX license expressions everywhere we have
+    ScanCode license expressions for ease of use and adopting
+    SPDX everywhere. A new attribute ``license_expression_spdx``
+    is added to:
+    - ``license_detections`` in file and codebase level
+    - in package ``license_detections`` and ``other_license_detections``
+    - ``matches`` for ``license_detections`` everywhere
+
+  - Adds all rule atrribute level info in codebase level ``todo``
+    data, to assist in review. This includes length, text, notes,
+    referenced_filenames, and the boolean attributes (like
+    is_license_notice, is_license_intro etc, as applicable).
+
 - New and updated licenses, including support for newly released
-  SPDX license list version 3.22. This release of the SPDX license
-  list had 48 new licenses, and several of them we already had as
-  licenses/rules, and these has been modified to be consistent with
-  the SPDX list. And the rest have been added as new licenses.
-  For more details see https://github.com/nexB/scancode-toolkit/pull/3554
+  SPDX license list versions:
+  - SPDX License List 3.22:
+    This release of the SPDX license list had 48 new licenses,
+    and several of them we already had as licenses/rules, and
+    these has been modified to be consistent with the SPDX list.
+    And the rest have been added as new licenses.
+    For more details see https://github.com/nexB/scancode-toolkit/pull/3554
+
+  - SPDX License List 3.23:
+    This release of the SPDX license list had 43 new licenses,
+    and out of them 22 were present as licenses and 10 were
+    present as rules already. There were 4 new license/exception
+    texts added, and the rest were either texts with small variations,
+    additions to texts or several rule texts together.
+    For more details see https://github.com/nexB/scancode-toolkit/pull/3653
+
+  - We also have lots of other misc new licenses and rules added to
+    LicenseDB, see PRs below for more details:
+    https://github.com/nexB/scancode-toolkit/pull/3663
+    https://github.com/nexB/scancode-toolkit/pull/3642
+    https://github.com/nexB/scancode-toolkit/pull/3586
+    https://github.com/nexB/scancode-toolkit/pull/3584
+    https://github.com/nexB/scancode-toolkit/pull/3575
+    https://github.com/nexB/scancode-toolkit/pull/3570
+    https://github.com/nexB/scancode-toolkit/pull/3568
+    https://github.com/nexB/scancode-toolkit/pull/3562
+
+- Improve debian namespace detection based on clues and fix
+  namespace and qualifier bugs for debian purls.
+  For more details see https://github.com/nexB/scancode.io/issues/899
+  and https://github.com/nexB/scancode-toolkit/issues/3443
+  Also improve debian manifests parsing and purl parsing from
+  filenames. Support for https://github.com/nexB/purldb/issues/245
+  Bumps debian-inspector to v31.1.0 
+
+- Bump commoncode to v31.0.3
 
 - Upgraded spdx-tools dependency to v0.8.
   See https://github.com/nexB/scancode-toolkit/issues/3455
+
+Support for Conan package parser:
+
+- We now support the parsing of Conan manifest files, such as
+  `conanfile.py`, as described here https://docs.conan.io/2.0/reference/conanfile.html.
+  We also support source extraction from `conandata.yml`, as described here
+  https://docs.conan.io/2/tutorial/creating_packages/handle_sources_in_packages.html#using-the-conandata-yml-file.
 
 
 v32.0.8 - 2023-10-11

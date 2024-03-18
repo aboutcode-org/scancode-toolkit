@@ -10,16 +10,19 @@ other_license_expression_spdx: TCL AND LicenseRef-scancode-pngsuite
 license_detections: []
 other_license_detections:
   - license_expression: tcl
+    license_expression_spdx: TCL
     matches:
-      - score: '98.8'
+      - license_expression: tcl
+        spdx_license_expression: TCL
+        from_file:
         start_line: 13
         end_line: 53
+        matcher: 3-seq
+        score: '98.8'
         matched_length: 328
         match_coverage: '98.8'
-        matcher: 3-seq
-        license_expression: tcl
-        rule_identifier: tcl_3.RULE
         rule_relevance: 100
+        rule_identifier: tcl_3.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tcl_3.RULE
         matched_text: |
           This software is copyrighted by Jan Nijtmans (the maintainer)
@@ -65,16 +68,19 @@ other_license_detections:
           terms specified in this license.
     identifier: tcl-dd56f002-7495-c249-a5da-5ef965c62822
   - license_expression: pngsuite
+    license_expression_spdx: LicenseRef-scancode-pngsuite
     matches:
-      - score: '100.0'
+      - license_expression: pngsuite
+        spdx_license_expression: LicenseRef-scancode-pngsuite
+        from_file:
         start_line: 56
         end_line: 57
+        matcher: 1-hash
+        score: '100.0'
         matched_length: 18
         match_coverage: '100.0'
-        matcher: 1-hash
-        license_expression: pngsuite
-        rule_identifier: pngsuite.LICENSE
         rule_relevance: 100
+        rule_identifier: pngsuite.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/pngsuite.LICENSE
         matched_text: |
           Permission to use, copy, modify, and distribute these images for any

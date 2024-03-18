@@ -1,0 +1,19 @@
+---
+key: gtkbook
+short_name: gtkbook License
+name: gtkbook License
+category: Permissive
+owner: Syd Logan
+notes: |
+    Added in SPDX license list 3.23
+    This was previously the license rule: other-permissive_102.RULE
+spdx_license_key: gtkbook
+other_urls:
+    - https://github.com/slogan621/gtkbook
+    - https://github.com/oetiker/rrdtool-1.x/blob/master/src/plbasename.c#L8-L11
+---
+
+This code is distributed without warranty. You are free to use
+this code for any purpose, however, if this code is republished or
+redistributed in its original form, as hardcopy or electronically,
+then you must include this copyright notice along with the code.

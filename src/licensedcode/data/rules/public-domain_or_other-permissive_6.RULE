@@ -8,6 +8,8 @@ ignorable_holders:
     - Alexander Peslyak
 ignorable_authors:
     - Alexander Peslyak
+is_deprecated: yes
+notes: this is now requalified as a `openwall-md5-permissive` license
 ---
 
 This software was written by Alexander Peslyak in 2001.  No copyright is

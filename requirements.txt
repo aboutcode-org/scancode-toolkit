@@ -13,7 +13,7 @@ commoncode==31.0.3
 construct==2.10.68
 container-inspector==31.1.0
 cryptography==37.0.4
-debian-inspector==31.0.0
+debian-inspector==31.1.0
 dockerfile-parse==1.2.0
 dparse2==0.7.0
 extractcode==31.0.0

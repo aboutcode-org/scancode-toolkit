@@ -1,0 +1,11 @@
+---
+license_expression: apache-1.1 AND apache-2.0
+is_license_clue: yes
+notes: http://subversion.tigris.org/license-1.html pointed to different licenses over time
+ignorable_urls:
+    - http://svn.apache.org/repos/asf/subversion/tags/1.6.0/www/license-1.html
+    - http://svn.apache.org/repos/asf/subversion/trunk/LICENSE
+---
+
+The license of Subversion 1.7 and later is at http://svn.apache.org/repos/asf/subversion/trunk/LICENSE.
+The license of Subversion 1.6 and earlier can be found at http://svn.apache.org/repos/asf/subversion/tags/1.6.0/www/license-1.html

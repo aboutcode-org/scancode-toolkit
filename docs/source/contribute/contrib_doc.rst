@@ -173,7 +173,7 @@ ScanCode toolkit documentation uses `Intersphinx <http://www.sphinx-doc.org/en/m
 to link to other Sphinx Documentations, to maintain links to other Aboutcode Projects.
 
 To link sections in the same documentation, standart reST labels are used. Refer
-`Cross-Referencing <http://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#ref-role>`_ for more information.
+`Cross-Referencing <https://www.sphinx-doc.org/en/master/usage/referencing.html#cross-referencing-arbitrary-locations>`_ for more information.
 
 For example::
 

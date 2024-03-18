@@ -6,16 +6,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: selinux-nsa-declaration-1.0
+    license_expression_spdx: libselinux-1.0
     matches:
-      - score: '100.0'
+      - license_expression: selinux-nsa-declaration-1.0
+        spdx_license_expression: libselinux-1.0
+        from_file:
         start_line: 7
         end_line: 27
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 153
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: selinux-nsa-declaration-1.0
-        rule_identifier: selinux-nsa-declaration-1.0.LICENSE
         rule_relevance: 100
+        rule_identifier: selinux-nsa-declaration-1.0.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/selinux-nsa-declaration-1.0.LICENSE
         matched_text: |
           This library (libselinux) is public domain software, i.e. not copyrighted.
@@ -41,32 +44,38 @@ license_detections:
           risk.
     identifier: selinux_nsa_declaration_1_0-845d7cb4-a2eb-f401-8cd9-df047578f86c
   - license_expression: gpl-2.0
+    license_expression_spdx: GPL-2.0-only
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
+        from_file:
         start_line: 32
         end_line: 33
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 11
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0
-        rule_identifier: gpl-2.0_929.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0_929.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_929.RULE
         matched_text: |
           distributed underthe terms of the GNU General Public License,
            version 2.
     identifier: gpl_2_0-a2bdb57d-a203-65c0-fbb7-26a774d0b947
   - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.1-plus
+        spdx_license_expression: LGPL-2.1-or-later
+        from_file:
         start_line: 38
         end_line: 50
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 97
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.1-plus
-        rule_identifier: lgpl-2.1-plus_384.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.1-plus_384.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_384.RULE
         matched_text: |
           The GNU C Library is distributed under
@@ -84,16 +93,19 @@ license_detections:
           General Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
     identifier: lgpl_2_1_plus-87de33d2-cbcd-42e9-9876-2f1e5c016188
   - license_expression: gpl-2.0
+    license_expression_spdx: GPL-2.0-only
     matches:
-      - score: '100.0'
+      - license_expression: gpl-2.0
+        spdx_license_expression: GPL-2.0-only
+        from_file:
         start_line: 56
         end_line: 65
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 78
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: gpl-2.0
-        rule_identifier: gpl-2.0_930.RULE
         rule_relevance: 100
+        rule_identifier: gpl-2.0_930.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_930.RULE
         matched_text: |
           distributed under the terms of the GNU

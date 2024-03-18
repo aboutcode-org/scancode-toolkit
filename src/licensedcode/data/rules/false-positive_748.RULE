@@ -1,0 +1,8 @@
+---
+is_false_positive: yes
+notes: Seen in CGAL
+---
+
+defined(CGAL_LGPL_LICENSE_WARNING)
+CGAL_pragma_warning("You use the CGAL LGPL packages under the terms "
+"of the LGPLv3+.")

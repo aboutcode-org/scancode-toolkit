@@ -5,16 +5,19 @@ other_license_expression:
 other_license_expression_spdx:
 license_detections:
   - license_expression: lgpl-2.0
+    license_expression_spdx: LGPL-2.0-only
     matches:
-      - score: '100.0'
+      - license_expression: lgpl-2.0
+        spdx_license_expression: LGPL-2.0-only
+        from_file:
         start_line: 15
         end_line: '19'
+        matcher: 2-aho
+        score: '100.0'
         matched_length: 42
         match_coverage: '100.0'
-        matcher: 2-aho
-        license_expression: lgpl-2.0
-        rule_identifier: lgpl-2.0_24.RULE
         rule_relevance: 100
+        rule_identifier: lgpl-2.0_24.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0_24.RULE
         matched_text: |
           You are free to distribute this software under the terms of the GNU
