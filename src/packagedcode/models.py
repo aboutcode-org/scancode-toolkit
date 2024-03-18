@@ -782,7 +782,10 @@ class PackageData(IdentifiablePackageData):
                 )
 
         if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
-            self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
+            if isinstance(self.extracted_license_statement, dict):
+                self.extracted_license_statement = saneyaml.dump(dict(self.extracted_license_statement.items()))
+            else:
+                self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
 
     def update_purl_fields(self, package_data, replace=False):
 
