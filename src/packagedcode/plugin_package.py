@@ -166,9 +166,11 @@ class PackageScanner(ScanPlugin):
             ),
             is_flag=True,
             default=False,
+            conflicting_options=['license', 'summary', 'package', 'system_package'],
             help=(
-                'Only detect package information and skip license/copyright detection steps, '
-                'in application package and dependency manifests, lockfiles and related data.'
+                'Scan for system and application package metadata and skip '
+                'license/copyright detection steps and codebase level package '
+                'creation.'
             ),
             help_group=SCAN_GROUP,
             sort_order=22,

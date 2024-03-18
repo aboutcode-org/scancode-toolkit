@@ -227,6 +227,42 @@ class TestPlugins(PackageTester):
                 ef.write(result.output)
         assert result.output == open(expected_file).read()
 
+    def test_plugin_package_only_fails_with_license_scan(self):
+        test_dir = self.get_test_loc('maven2')
+        result_file = self.get_temp_file('json')
+        try:
+            run_scan_click(['--package-only', '--license', test_dir, '--json', result_file])
+            raise Exception("This SCAN should raise an AssertionError for conflicting CLI options")
+        except AssertionError:
+            pass
+    
+    def test_plugin_package_only_fails_with_summary_scan(self):
+        test_dir = self.get_test_loc('maven2')
+        result_file = self.get_temp_file('json')
+        try:
+            run_scan_click(['--package-only', '--summary', '--classify', test_dir, '--json', result_file])
+            raise Exception("This SCAN should raise an AssertionError for conflicting CLI options")
+        except AssertionError:
+            pass
+
+    def test_plugin_package_only_fails_with_package_scan(self):
+        test_dir = self.get_test_loc('maven2')
+        result_file = self.get_temp_file('json')
+        try:
+            run_scan_click(['--package-only', '--package', test_dir, '--json', result_file])
+            raise Exception("This SCAN should raise an AssertionError for conflicting CLI options")
+        except AssertionError:
+            pass
+
+    def test_plugin_package_only_fails_with_system_package_scan(self):
+        test_dir = self.get_test_loc('maven2')
+        result_file = self.get_temp_file('json')
+        try:
+            run_scan_click(['--package-only', '--system-package', test_dir, '--json', result_file])
+            raise Exception("This SCAN should raise an AssertionError for conflicting CLI options")
+        except AssertionError:
+            pass
+
     def test_system_package_get_installed_packages(self):
         test_dir = self.extract_test_tar('debian/basic-rootfs.tar.gz')
         expected_file = self.get_test_loc('plugin/get_installed_packages-expected.json')
