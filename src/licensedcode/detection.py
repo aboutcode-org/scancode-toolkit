@@ -1381,7 +1381,11 @@ def use_referenced_license_expression(referenced_license_expression, license_det
     LicenseExpression string is the combined License Expression for these matches)
     that it references, otherwise if return False if the LicenseDetection object
     should remain intact.
+    Reference: https://github.com/nexB/scancode-toolkit/issues/3547
     """
+    #TODO: Also determing if referenced matches could be added but
+    # resulting license expression should not be modified.
+
     if not referenced_license_expression or not license_detection:
         return False
 
@@ -1396,18 +1400,6 @@ def use_referenced_license_expression(referenced_license_expression, license_det
     if referenced_license_expression == license_detection.license_expression:
         return True
 
-    # Here for a key-value pair, the license texts for a value (for example `gpl`)
-    # is often included in the license text of the key (for example `lgpl`)
-    dependent_license_keys = {
-        "lgpl": "gpl",
-        "agpl": "gpl",
-    }
-
-    # The license keys which contatin these have `or-later` licenses
-    license_keys_with_or_later = [
-        "gpl", "lgpl", "agpl"
-    ]
-
     license_keys = set(
         licensing.license_keys(expression=license_detection.license_expression)
     )
@@ -1417,33 +1409,11 @@ def use_referenced_license_expression(referenced_license_expression, license_det
     same_expression = referenced_license_expression == license_detection.license_expression
     same_license_keys = license_keys == referenced_license_keys
 
+    # If we have the same license keys but not the same license expression then
+    # the reference could merely be pointing to notices, combining which produces
+    # a different expression, and the original detection is correct
     if same_license_keys and not same_expression:
         return False
-
-    for primary_key, dependent_key in dependent_license_keys.items():
-        dependent_key_only_in_referenced = dependent_key in referenced_license_keys and dependent_key not in license_keys 
-        if primary_key in license_keys and dependent_key_only_in_referenced:
-            return False
-    
-    all_license_keys_special = [
-        key
-        for key in license_keys
-        if all([
-            key.startswith(reference_key)
-            for reference_key in license_keys_with_or_later
-        ])
-    ]
-    all_referenced_license_keys_special = [
-        key
-        for key in referenced_license_keys
-        if all([
-            key.startswith(reference_key)
-            for reference_key in license_keys_with_or_later
-        ])
-    ]
-
-    if all_license_keys_special and all_referenced_license_keys_special and not same_license_keys:
-        True
 
     if len(referenced_license_keys) > 5:
         return False
