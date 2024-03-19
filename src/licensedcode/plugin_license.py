@@ -45,7 +45,7 @@ def logger_debug(*args):
 
 logger = logging.getLogger(__name__)
 
-if TRACE:
+if TRACE or TRACE_REFERENCE:
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -217,6 +217,8 @@ class LicenseScanner(ScanPlugin):
                     f'before: {license_expressions_before}\n'
                     f'after : {license_expressions_after}'
                 )
+        
+        #raise Exception()
 
         license_detections = collect_license_detections(
             codebase=codebase,
@@ -273,8 +275,6 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             license_detection_mapping=license_detection_mapping,
             file_path=resource.path,
         )
-        detection_modified = False
-        detections_added = []
         license_match_mappings = license_detection_mapping["matches"]
         referenced_filenames = get_referenced_filenames(license_detection.matches)
 
@@ -285,6 +285,7 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
                 )
             continue
 
+        referenced_detections = []
         for referenced_filename in referenced_filenames:
             referenced_resource = find_referenced_resource(
                 referenced_filename=referenced_filename,
@@ -293,45 +294,46 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             )
 
             if referenced_resource and referenced_resource.license_detections:
-                referenced_license_expression = combine_expressions(
-                    expressions=[
-                        detection["license_expression"]
-                        for detection in referenced_resource.license_detections
-                    ],
+                referenced_detections.extend(
+                    referenced_resource.license_detections
                 )
-                if not use_referenced_license_expression(
-                    referenced_license_expression=referenced_license_expression,
-                    license_detection=license_detection,
-                ):
-                    if TRACE_REFERENCE:
-                        logger_debug(
-                            f'use_referenced_license_expression: False for '
-                            f'resource: {referenced_resource.path} and '
-                            f'license_expression: {referenced_license_expression}',
-                        )
-                    continue
 
-                if TRACE_REFERENCE:
-                    logger_debug(
-                        f'use_referenced_license_expression: True for '
-                        f'resource: {referenced_resource.path} and '
-                        f'license_expression: {referenced_license_expression}',
+                for detection in referenced_resource.license_detections:
+                    populate_matches_with_path(
+                        matches=detection["matches"],
+                        path=referenced_resource.path
                     )
 
-                modified = True
-                detection_modified = True
-                detections_added.extend(referenced_resource.license_detections)
-                matches_to_extend = get_matches_from_detection_mappings(
-                    license_detections=referenced_resource.license_detections
+        referenced_license_expression = combine_expressions(
+            expressions=[
+                detection["license_expression"]
+                for detection in referenced_detections
+            ],
+        )
+        if not use_referenced_license_expression(
+            referenced_license_expression=referenced_license_expression,
+            license_detection=license_detection,
+        ):
+            if TRACE_REFERENCE:
+                logger_debug(
+                    f'use_referenced_license_expression: False for '
+                    f'resource: {referenced_resource.path} and '
+                    f'license_expression: {referenced_license_expression}',
                 )
-                populate_matches_with_path(
-                    matches=matches_to_extend,
-                    path=referenced_resource.path
-                )
-                license_match_mappings.extend(matches_to_extend)
-
-        if not detection_modified:
             continue
+
+        if TRACE_REFERENCE:
+            logger_debug(
+                f'use_referenced_license_expression: True for '
+                f'resource: {referenced_resource.path} and '
+                f'license_expression: {referenced_license_expression}',
+            )
+
+        modified = True
+        matches_to_extend = get_matches_from_detection_mappings(
+            license_detections=referenced_detections
+        )
+        license_match_mappings.extend(matches_to_extend)
 
         detection_log, license_expression = get_detected_license_expression(
             license_match_mappings=license_match_mappings,
@@ -348,7 +350,7 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
         license_detection_mapping["detection_log"] = detection_log
         license_detection_mapping["identifier"] = get_new_identifier_from_detections(
             initial_detection=license_detection_mapping,
-            detections_added=detections_added,
+            detections_added=referenced_detections,
             license_expression=license_expression,
         )
 

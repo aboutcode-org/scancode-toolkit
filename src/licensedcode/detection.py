@@ -1377,11 +1377,15 @@ def has_references_to_local_files(license_matches):
 
 def use_referenced_license_expression(referenced_license_expression, license_detection, licensing=Licensing()):
     """
-    Return True if the `license_detection` LicenseDetection object should
-    include the referenced LicenseMatch objects (the `referenced_license_expression`
-    LicenseExpression string is the combined License Expression for these matches)
-    that it references, otherwise if return False if the LicenseDetection object
-    should remain intact.
+    Return True if the ``license_detection`` LicenseDetection should include
+    the matches represented by the ``referenced_license_expression`` string.
+    Return False otherwise.
+
+    Used when we have a ``license_detection`` with a match to a license rule like
+    "See license in COPYING" and where the ``referenced_license_expression`` is the
+    expression found in the "COPYING" file, which is the combined expression from
+    all license detections found in "COPYING" (or multiple referenced files).
+
     Reference: https://github.com/nexB/scancode-toolkit/issues/3547
     """
     #TODO: Also determing if referenced matches could be added but
@@ -1416,6 +1420,10 @@ def use_referenced_license_expression(referenced_license_expression, license_det
     if same_license_keys and not same_expression:
         return False
 
+    # when there are many license keys in an expression, and there are no
+    # unknown or other cases, we cannot safely conclude that we should
+    # follow the license in the referenced filenames. This is likely
+    # a case where we have larger notices and several combined expressions,
     if len(referenced_license_keys) > 5:
         return False
 

@@ -95,12 +95,12 @@ def add_referenced_license_matches_for_package(resource, codebase):
             )
 
             detections_added = []
-            detection_modified = False
             license_match_mappings = license_detection_mapping["matches"]
             referenced_filenames = get_referenced_filenames(license_detection_object.matches)
             if not referenced_filenames:
                 continue
 
+            referenced_detections = []
             for referenced_filename in referenced_filenames:
                 referenced_resource = find_referenced_resource(
                     referenced_filename=referenced_filename,
@@ -109,34 +109,36 @@ def add_referenced_license_matches_for_package(resource, codebase):
                 )
 
                 if referenced_resource and referenced_resource.license_detections:
-                    referenced_license_expression = combine_expressions(
-                        expressions=[
-                            detection["license_expression"]
-                            for detection in referenced_resource.license_detections
-                        ],
+                    referenced_detections.extend(
+                        referenced_resource.license_detections
                     )
-                    if not use_referenced_license_expression(
-                        referenced_license_expression=referenced_license_expression,
-                        license_detection=license_detection_object,
-                    ):
-                        continue
 
-                    modified = True
-                    detection_modified = True
-                    detections_added.extend(referenced_resource.license_detections)
-                    matches_to_extend = get_matches_from_detection_mappings(
-                        license_detections=referenced_resource.license_detections
-                    )
                     # For LicenseMatches with different resources as origin, add the
                     # resource path to these matches as origin info
-                    populate_matches_with_path(
-                        matches=matches_to_extend,
-                        path=referenced_resource.path
-                    )
-                    license_match_mappings.extend(matches_to_extend)
+                    for detection in referenced_resource.license_detections:
+                        populate_matches_with_path(
+                            matches=detection["matches"],
+                            path=referenced_resource.path
+                        )
 
-            if not detection_modified:
+            referenced_license_expression = combine_expressions(
+                expressions=[
+                    detection["license_expression"]
+                    for detection in referenced_detections
+                ],
+            )
+            if not use_referenced_license_expression(
+                referenced_license_expression=referenced_license_expression,
+                license_detection=license_detection_object,
+            ):
                 continue
+
+            modified = True
+            detections_added.extend(referenced_resource.license_detections)
+            matches_to_extend = get_matches_from_detection_mappings(
+                license_detections=referenced_resource.license_detections,
+            )
+            license_match_mappings.extend(matches_to_extend)
 
             detection_log, license_expression = get_detected_license_expression(
                 license_match_mappings=license_match_mappings,
