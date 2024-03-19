@@ -334,6 +334,25 @@ class LicenseDetection:
         id_safe_expression = python_safe_name(s=str(self.license_expression))
         return "{}-{}".format(id_safe_expression, self._identifier)
 
+    @property
+    def is_unknown(self):
+        """
+        Return True if there are unknown license keys in the license expression
+        for this detection, return False otherwise.
+        """
+        unknown_license_keys = [
+            "unknown-license-reference",
+            "unknown-spdx",
+            "unknown",
+            "free-unknown"
+        ]
+
+        for license_key in unknown_license_keys:
+            if license_key in self.license_expression:
+                return True
+
+        return False
+
     def get_start_end_line(self):
         """
         Return start and end line for a license detection issue, from the
@@ -1354,6 +1373,61 @@ def has_references_to_local_files(license_matches):
         bool(match.rule.referenced_filenames)
         for match in license_matches
     )
+
+
+def use_referenced_license_expression(referenced_license_expression, license_detection, licensing=Licensing()):
+    """
+    Return True if the ``license_detection`` LicenseDetection should include
+    the matches represented by the ``referenced_license_expression`` string.
+    Return False otherwise.
+
+    Used when we have a ``license_detection`` with a match to a license rule like
+    "See license in COPYING" and where the ``referenced_license_expression`` is the
+    expression found in the "COPYING" file, which is the combined expression from
+    all license detections found in "COPYING" (or multiple referenced files).
+
+    Reference: https://github.com/nexB/scancode-toolkit/issues/3547
+    """
+    #TODO: Also determing if referenced matches could be added but
+    # resulting license expression should not be modified.
+
+    if not referenced_license_expression or not license_detection:
+        return False
+
+    # We should always include referenced license matches to resolve an unknown
+    # license reference
+    if license_detection.is_unknown:
+        return True
+    
+    # We should always include referenced license matches when the license
+    # expression from the referenced license matches match the license
+    # expression for the detection
+    if referenced_license_expression == license_detection.license_expression:
+        return True
+
+    license_keys = set(
+        licensing.license_keys(expression=license_detection.license_expression)
+    )
+    referenced_license_keys = set(
+        licensing.license_keys(expression=referenced_license_expression)
+    )
+    same_expression = referenced_license_expression == license_detection.license_expression
+    same_license_keys = license_keys == referenced_license_keys
+
+    # If we have the same license keys but not the same license expression then
+    # the reference could merely be pointing to notices, combining which produces
+    # a different expression, and the original detection is correct
+    if same_license_keys and not same_expression:
+        return False
+
+    # when there are many license keys in an expression, and there are no
+    # unknown or other cases, we cannot safely conclude that we should
+    # follow the license in the referenced filenames. This is likely
+    # a case where we have larger notices and several combined expressions,
+    if len(referenced_license_keys) > 5:
+        return False
+
+    return True
 
 
 def get_detected_license_expression(
