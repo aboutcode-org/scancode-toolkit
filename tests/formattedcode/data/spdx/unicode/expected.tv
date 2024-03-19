@@ -16,7 +16,7 @@ SPDX License List: 3.23</text>
 PackageName: unicode
 SPDXID: SPDXRef-001
 PackageDownloadLocation: NOASSERTION
-FilesAnalyzed: True
+FilesAnalyzed: true
 PackageVerificationCode: ce09fd939153fe02b82fefb764381ba40234e6ca
 PackageLicenseConcluded: NOASSERTION
 PackageLicenseInfoFromFiles: LicenseRef-scancode-agere-bsd

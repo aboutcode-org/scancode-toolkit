@@ -16,7 +16,7 @@ SPDX License List: 3.23</text>
 PackageName: simple
 SPDXID: SPDXRef-001
 PackageDownloadLocation: NOASSERTION
-FilesAnalyzed: True
+FilesAnalyzed: true
 PackageVerificationCode: a83523bcfc10441aa94a575b88aa1d3269902485
 PackageLicenseConcluded: NOASSERTION
 PackageLicenseInfoFromFiles: NONE
