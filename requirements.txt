@@ -28,14 +28,14 @@ html5lib==1.1
 idna==3.3
 importlib-metadata==4.12.0
 inflection==0.5.1
-intbitset==3.0.2
+intbitset==3.1.0
 isodate==0.6.1
 jaraco.functools==3.5.1
 javaproperties==0.8.1
 Jinja2==3.1.2
 jsonstreams==0.6.0
 license-expression==30.1.1
-lxml==4.9.2
+lxml==4.9.4
 MarkupSafe==2.1.2
 more-itertools==8.13.0
 normality==2.3.3

@@ -29,7 +29,7 @@ author = "AboutCode.org authors and contributors"
 extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_reredirects",
-    'sphinx_rtd_theme',
+    "sphinx_rtd_theme",
     "sphinx_rtd_dark_mode",
     "sphinx.ext.extlinks",
     "sphinx_copybutton",
@@ -51,7 +51,10 @@ redirects = {
 
 intersphinx_mapping = {
     "aboutcode": ("https://aboutcode.readthedocs.io/en/latest/", None),
-    "scancode-workbench": ("https://scancode-workbench.readthedocs.io/en/latest/", None),
+    "scancode-workbench": (
+        "https://scancode-workbench.readthedocs.io/en/develop/",
+        None,
+    ),
 }
 
 # List of regular expressions for the linkchecker to ignore
@@ -92,7 +95,9 @@ html_context = {
     "conf_py_path": "/docs/source/",  # path in the checkout to the docs root
 }
 
-html_css_files = ["_static/theme_overrides.css"]
+html_css_files = [
+    "theme_overrides.css",
+]
 
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
@@ -118,6 +123,4 @@ rst_prolog = """
 
 # -- Options for LaTeX output -------------------------------------------------
 
-latex_elements = {
-    'classoptions': ',openany,oneside'
-}
+latex_elements = {"classoptions": ",openany,oneside"}

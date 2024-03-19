@@ -25,7 +25,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build PyPI wheels
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     defaults:
       run:
@@ -34,10 +34,10 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+       pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python on ${{ matrix.pyver }}
         uses: actions/setup-python@v4
@@ -59,7 +59,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build PyPI sdist archives
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     defaults:
       run:
@@ -69,7 +69,7 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -91,7 +91,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build app Release for linux
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     defaults:
       run:
@@ -100,10 +100,10 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+       pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python on ${{ matrix.pyver }}
         uses: actions/setup-python@v4
@@ -125,7 +125,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build app Release for mac
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     defaults:
       run:
@@ -134,10 +134,10 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+       pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python on ${{ matrix.pyver }}
         uses: actions/setup-python@v4
@@ -159,7 +159,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build app Release for windows
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     defaults:
       run:
@@ -168,10 +168,10 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+       pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python on ${{ matrix.pyver }}
         uses: actions/setup-python@v4
@@ -193,7 +193,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build app source
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     defaults:
       run:
@@ -202,7 +202,7 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -235,11 +235,11 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-20.04, ubuntu-22.04, macos-11, macos-12]
-        pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+        os: [ubuntu-22.04, ubuntu-22.04, macos-11, macos-12]
+        pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
         uses: actions/setup-python@v4
@@ -282,10 +282,10 @@ jobs:
       fail-fast: true
       matrix:
        os: [windows-2019, windows-2022]
-       pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+       pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
         uses: actions/setup-python@v4
@@ -326,11 +326,11 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-20.04, ubuntu-22.04]
-        pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+        os: [ubuntu-22.04, ubuntu-22.04]
+        pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
         uses: actions/setup-python@v4
@@ -368,10 +368,10 @@ jobs:
       fail-fast: true
       matrix:
         os: [macos-11, macos-12]
-        pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+        pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
         uses: actions/setup-python@v4
@@ -409,10 +409,10 @@ jobs:
       fail-fast: true
       matrix:
         os: [windows-2019, windows-2022]
-        pyver: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+        pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
         uses: actions/setup-python@v4
@@ -443,7 +443,7 @@ jobs:
       - build_scancode_for_release_linux
       - build_scancode_for_release_macos
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: bash
@@ -566,7 +566,7 @@ jobs:
       - smoke_test_install_and_run_pypi_wheels_on_windows
       - smoke_test_install_and_run_pypi_wheels_on_posix
       - publish_to_gh_release
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     defaults:
       run:
         shell: bash
