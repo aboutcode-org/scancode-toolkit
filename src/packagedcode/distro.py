@@ -25,7 +25,7 @@ class EtcOsReleaseHandler(models.NonAssemblableDatafileHandler):
     documentation_url = 'https://www.freedesktop.org/software/systemd/man/os-release.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         distro = Distro.from_os_release_file(location)
         distro_identifier = distro.identifier
         pretty_name = distro.pretty_name and distro.pretty_name.lower() or ''
@@ -53,13 +53,14 @@ class EtcOsReleaseHandler(models.NonAssemblableDatafileHandler):
 
         version = distro.version_id
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             namespace=namespace,
             name=name,
             version=version,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
     @classmethod
     def find_linux_rootfs_root_resource(cls, resource, codebase):

@@ -79,11 +79,12 @@ class PythonEggPkgInfoFile(models.DatafileHandler):
     documentation_url = 'https://peps.python.org/pep-0376/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         yield parse_metadata(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            package_only=package_only,
         )
 
     @classmethod
@@ -103,11 +104,12 @@ class PythonEditableInstallationPkgInfoFile(models.DatafileHandler):
     documentation_url = 'https://peps.python.org/pep-0376/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         yield parse_metadata(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            package_only=package_only,
         )
 
     @classmethod
@@ -320,11 +322,12 @@ class PythonSdistPkgInfoFile(BaseExtractedPythonLayout):
         )
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         yield parse_metadata(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            package_only=package_only,
         )
 
 
@@ -337,11 +340,12 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
     documentation_url = 'https://packaging.python.org/en/latest/specifications/core-metadata/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         yield parse_metadata(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            package_only=package_only,
         )
 
     @classmethod
@@ -457,7 +461,7 @@ class PyprojectTomlHandler(models.NonAssemblableDatafileHandler):
 META_DIR_SUFFIXES = '.dist-info', '.egg-info', 'EGG-INFO',
 
 
-def parse_metadata(location, datasource_id, package_type):
+def parse_metadata(location, datasource_id, package_type, package_only=False):
     """
     Return a PackageData object from a PKG-INFO or METADATA file at ``location``
     which is a path string or pathlib.Path-like object (including a possible zip
@@ -487,7 +491,7 @@ def parse_metadata(location, datasource_id, package_type):
 
     file_references = list(get_file_references(dist))
 
-    return models.PackageData(
+    package_data = dict(
         datasource_id=datasource_id,
         type=package_type,
         primary_language='Python',
@@ -502,6 +506,7 @@ def parse_metadata(location, datasource_id, package_type):
         extra_data=extra_data,
         **urls,
     )
+    return models.PackageData.from_data(package_data, package_only)
 
 
 def urlsafe_b64decode(data):
@@ -551,7 +556,7 @@ class PypiWheelHandler(models.DatafileHandler):
     documentation_url = 'https://peps.python.org/pep-0427/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with zipfile.ZipFile(location) as zf:
             for path in ZipPath(zf).iterdir():
                 if not path.name.endswith(META_DIR_SUFFIXES):
@@ -564,6 +569,7 @@ class PypiWheelHandler(models.DatafileHandler):
                         location=metapath,
                         datasource_id=cls.datasource_id,
                         package_type=cls.default_package_type,
+                        package_only=package_only,
                     )
 
 
@@ -577,7 +583,7 @@ class PypiEggHandler(models.DatafileHandler):
     documentation_url = 'https://web.archive.org/web/20210604075235/http://peak.telecommunity.com/DevCenter/PythonEggs'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with zipfile.ZipFile(location) as zf:
             for path in ZipPath(zf).iterdir():
                 if not path.name.endswith(META_DIR_SUFFIXES):
@@ -591,6 +597,7 @@ class PypiEggHandler(models.DatafileHandler):
                         location=metapath,
                         datasource_id=cls.datasource_id,
                         package_type=cls.default_package_type,
+                        package_only=package_only,
                     )
 
 
@@ -610,7 +617,7 @@ class PypiSdistArchiveHandler(models.DatafileHandler):
             return True
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         # FIXME: add dependencies
 
         try:
@@ -622,7 +629,7 @@ class PypiSdistArchiveHandler(models.DatafileHandler):
         version = sdist.version
         urls, extra_data = get_urls(metainfo=sdist, name=name, version=version)
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -635,6 +642,7 @@ class PypiSdistArchiveHandler(models.DatafileHandler):
             extra_data=extra_data,
             **urls,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 class PythonSetupPyHandler(BaseExtractedPythonLayout):
@@ -646,7 +654,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
     documentation_url = 'https://docs.python.org/3.11/distutils/setupscript.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         setup_args = get_setup_py_args(location)
 
         # it may be legit to have a name-less package?
@@ -664,7 +672,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
         python_requires = get_setup_py_python_requires(setup_args)
         extra_data.update(python_requires)
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -678,6 +686,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             extra_data=extra_data,
             **urls,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 class ResolvedPurl(NamedTuple):
@@ -694,7 +703,7 @@ class BaseDependencyFileHandler(models.DatafileHandler):
     """
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         file_name = fileutils.file_name(location)
 
         dependency_type = get_dparse2_supported_file_name(file_name)
@@ -705,12 +714,13 @@ class BaseDependencyFileHandler(models.DatafileHandler):
             location=location,
             file_name=dependency_type,
         )
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 class SetupCfgHandler(BaseExtractedPythonLayout):
@@ -722,7 +732,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
     documentation_url = 'https://peps.python.org/pep-0390/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
 
         metadata = {}
         parser = ConfigParser()
@@ -801,7 +811,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                 extracted_license_statement = ''
             extracted_license_statement += f" license_files: {license_file_references}"
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=metadata.get('name'),
@@ -812,6 +822,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
             dependencies=dependent_packages,
             extracted_license_statement=extracted_license_statement,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
     @classmethod
     def parse_reqs(cls, reqs, scope):
@@ -873,7 +884,7 @@ class PipfileLockHandler(BaseDependencyFileHandler):
     documentation_url = 'https://github.com/pypa/pipfile'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with open(location) as f:
             content = f.read()
 
@@ -890,13 +901,14 @@ class PipfileLockHandler(BaseDependencyFileHandler):
             file_name='Pipfile.lock',
         )
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             sha256=sha256,
             dependencies=dependent_packages,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 class PipRequirementsFileHandler(BaseDependencyFileHandler):
@@ -919,15 +931,16 @@ class PipRequirementsFileHandler(BaseDependencyFileHandler):
     documentation_url = 'https://pip.pypa.io/en/latest/reference/requirements-file-format/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         dependencies, extra_data = get_requirements_txt_dependencies(location=location)
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
             extra_data=extra_data,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 # TODO: enable nested load
 

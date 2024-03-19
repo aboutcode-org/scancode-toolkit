@@ -104,7 +104,7 @@ class CargoTomlHandler(CargoBaseHandler):
     documentation_url = 'https://doc.rust-lang.org/cargo/reference/manifest.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         package_data = toml.load(location, _dict=dict)
         core_package_data = package_data.get('package', {})
         workspace = package_data.get('workspace', {})
@@ -149,7 +149,7 @@ class CargoTomlHandler(CargoBaseHandler):
         if workspace:
             extra_data["workspace"] = workspace
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -166,6 +166,7 @@ class CargoTomlHandler(CargoBaseHandler):
             dependencies=dependencies,
             extra_data=extra_data,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 CARGO_ATTRIBUTE_MAPPING = {
@@ -200,7 +201,7 @@ class CargoLockHandler(CargoBaseHandler):
     # ]
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         cargo_lock = toml.load(location, _dict=dict)
         dependencies = []
         package = cargo_lock.get('package', [])
@@ -221,12 +222,13 @@ class CargoLockHandler(CargoBaseHandler):
                 )
             )
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 def dependency_mapper(dependencies, scope='dependencies'):

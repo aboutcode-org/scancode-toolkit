@@ -166,14 +166,14 @@ class TestPlugins(PackageTester):
     def test_package_command_scan_pubspec_package(self):
         test_dir = self.get_test_loc('pubspec/specs/authors-pubspec.yaml')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin/pubspec-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('plugin/pubspec-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_package_command_scan_pubspec_lock_package(self):
         test_dir = self.get_test_loc('pubspec/locks/dart-pubspec.lock')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin/pubspec-lock-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('plugin/pubspec-lock-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
@@ -226,6 +226,42 @@ class TestPlugins(PackageTester):
             with open(expected_file, 'w') as ef:
                 ef.write(result.output)
         assert result.output == open(expected_file).read()
+
+    def test_plugin_package_only_fails_with_license_scan(self):
+        test_dir = self.get_test_loc('maven2')
+        result_file = self.get_temp_file('json')
+        try:
+            run_scan_click(['--package-only', '--license', test_dir, '--json', result_file])
+            raise Exception("This SCAN should raise an AssertionError for conflicting CLI options")
+        except AssertionError:
+            pass
+    
+    def test_plugin_package_only_fails_with_summary_scan(self):
+        test_dir = self.get_test_loc('maven2')
+        result_file = self.get_temp_file('json')
+        try:
+            run_scan_click(['--package-only', '--summary', '--classify', test_dir, '--json', result_file])
+            raise Exception("This SCAN should raise an AssertionError for conflicting CLI options")
+        except AssertionError:
+            pass
+
+    def test_plugin_package_only_fails_with_package_scan(self):
+        test_dir = self.get_test_loc('maven2')
+        result_file = self.get_temp_file('json')
+        try:
+            run_scan_click(['--package-only', '--package', test_dir, '--json', result_file])
+            raise Exception("This SCAN should raise an AssertionError for conflicting CLI options")
+        except AssertionError:
+            pass
+
+    def test_plugin_package_only_fails_with_system_package_scan(self):
+        test_dir = self.get_test_loc('maven2')
+        result_file = self.get_temp_file('json')
+        try:
+            run_scan_click(['--package-only', '--system-package', test_dir, '--json', result_file])
+            raise Exception("This SCAN should raise an AssertionError for conflicting CLI options")
+        except AssertionError:
+            pass
 
     def test_system_package_get_installed_packages(self):
         test_dir = self.extract_test_tar('debian/basic-rootfs.tar.gz')

@@ -718,10 +718,55 @@ class PackageData(IdentifiablePackageData):
         repr=True,
     )
 
+    @classmethod
+    def from_data(cls, package_data, package_only=False):
+        """
+        Return PackageData object created out of the package metadata
+        present in `package_data` mapping. Also populate license and
+        copyright holder fields by computing them from extracted license
+        statement and extracted copyright.
 
-    def __attrs_post_init__(self, *args, **kwargs):
-        self.populate_license_fields()
-        self.populate_holder_field()
+        Skip the license/copyright detection step if `package_only` is True.
+        """
+        if "purl" in package_data:
+            package_data.pop("purl")
+
+        package_data = cls(**package_data)
+
+        if not package_only:
+            package_data.populate_license_fields()
+            package_data.populate_holder_field()
+        else:
+            package_data.normalize_extracted_license_statement()
+
+        return package_data
+
+    @property
+    def can_assemble(self):
+        from packagedcode import HANDLER_BY_DATASOURCE_ID
+        handler = HANDLER_BY_DATASOURCE_ID.get(self.datasource_id)
+        if issubclass(handler, NonAssemblableDatafileHandler):
+            return False
+
+        return True
+
+    def normalize_extracted_license_statement(self):
+        """
+        Normalizes the extracted license statement to a readable
+        YAML string if it was a pythonic object.
+        """
+        if (
+            self.extracted_license_statement and
+            not isinstance(self.extracted_license_statement, str)
+        ):
+            if isinstance(self.extracted_license_statement, dict):
+                self.extracted_license_statement = saneyaml.dump(
+                    dict(self.extracted_license_statement.items())
+                )
+            else:
+                self.extracted_license_statement = saneyaml.dump(
+                    self.extracted_license_statement
+                )
 
     def populate_holder_field(self):
         if not self.copyright:
@@ -781,11 +826,7 @@ class PackageData(IdentifiablePackageData):
                     f"license_detections: {self.license_detections}"
                 )
 
-        if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
-            if isinstance(self.extracted_license_statement, dict):
-                self.extracted_license_statement = saneyaml.dump(dict(self.extracted_license_statement.items()))
-            else:
-                self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
+        self.normalize_extracted_license_statement()
 
     def update_purl_fields(self, package_data, replace=False):
 
@@ -1024,13 +1065,16 @@ class DatafileHandler:
                     return any(ft in actual_type for ft in filetypes)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield one or more PackageData objects given a package data file at
         ``location``.
 
         Subclasses must implement and are responsible for returning proper
         computed license fields and list of resources and files.
+
+        If `package_only`, skip the license/copyright detection on extracted
+        license/copyright data.
         """
         raise NotImplementedError
 
@@ -1491,8 +1535,6 @@ class Package(PackageData):
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
 
-        self.populate_license_fields()
-
     def to_dict(self):
         return super().to_dict(with_details=False)
 
@@ -1504,7 +1546,7 @@ class Package(PackageData):
         return PackageData.from_dict(mapping)
 
     @classmethod
-    def from_package_data(cls, package_data, datafile_path):
+    def from_package_data(cls, package_data, datafile_path, package_only=False):
         """
         Return a Package from a ``package_data`` PackageData object
         or mapping. Or None.
@@ -1528,7 +1570,16 @@ class Package(PackageData):
                 if not license_match['from_file']:
                     license_match['from_file'] = datafile_path
 
-        return cls.from_dict(package_data_mapping)
+        package = cls.from_dict(package_data_mapping)
+        
+        if not package.package_uid:
+            package.package_uid = build_package_uid(package.purl)
+        
+        if not package_only:
+            package.populate_license_fields()
+            package.populate_holder_field()
+
+        return package
 
     @classmethod
     def from_dict(cls, mapping):

@@ -37,6 +37,12 @@ v33.0.0 (next next, roadmap)
 v32.1.0 (next, roadmap)
 ----------------------------
 
+New CLI options:
+
+- A new CLI option ``--package-only`` has been added which performs
+  a faster package scan by skipping the package assembly step and
+  also skipping license/copyright detection on package metadata.
+
 Major API/other changes:
 
 - Output Format Version updated to 3.1.0 (minor version bump)

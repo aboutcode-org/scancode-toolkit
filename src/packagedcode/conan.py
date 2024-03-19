@@ -123,7 +123,7 @@ class ConanFileHandler(models.DatafileHandler):
     documentation_url = "https://docs.conan.io/2.0/reference/conanfile.html"
 
     @classmethod
-    def _parse(cls, conan_recipe):
+    def _parse(cls, conan_recipe, package_only=False):
         try:
             tree = ast.parse(conan_recipe)
             recipe_class_def = next(
@@ -150,7 +150,7 @@ class ConanFileHandler(models.DatafileHandler):
 
         dependencies = get_dependencies(parser.requires)
 
-        return models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -163,13 +163,14 @@ class ConanFileHandler(models.DatafileHandler):
             extracted_license_statement=parser.license,
             dependencies=dependencies,
         )
+        return models.PackageData.from_data(package_data, package_only)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with io.open(location, encoding="utf-8") as loc:
             conan_recipe = loc.read()
 
-        yield cls._parse(conan_recipe)
+        yield cls._parse(conan_recipe, package_only)
 
 
 class ConanDataHandler(models.DatafileHandler):
@@ -184,7 +185,7 @@ class ConanDataHandler(models.DatafileHandler):
     )
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with io.open(location, encoding="utf-8") as loc:
             conan_data = loc.read()
 
@@ -203,7 +204,7 @@ class ConanDataHandler(models.DatafileHandler):
             elif isinstance(source_urls, list):
                 url = source_urls[0]
 
-            yield models.PackageData(
+            package_data = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
                 primary_language=cls.default_primary_language,
@@ -212,6 +213,8 @@ class ConanDataHandler(models.DatafileHandler):
                 download_url=url,
                 sha256=sha256,
             )
+            yield models.PackageData.from_data(package_data, package_only)
+            
 
     @classmethod
     def assemble(
@@ -245,7 +248,7 @@ class ConanDataHandler(models.DatafileHandler):
                 ] = conanfile_package_data.get("extracted_license_statement")
 
         datafile_path = resource.path
-        pkg_data = models.PackageData.from_dict(package_data_dict)
+        pkg_data = models.PackageData.from_data(package_data_dict)
 
         if pkg_data.purl:
             package = models.Package.from_package_data(

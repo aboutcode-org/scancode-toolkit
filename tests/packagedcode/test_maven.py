@@ -236,6 +236,13 @@ class TestMavenMisc(BaseMavenCase):
         run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_maven_assembly_with_pom_and_manifest_package_only(self):
+        test_dir = self.get_test_loc('maven_misc/assemble/johnzon-jsonb-1.2.11')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/assemble/johnzon-jsonb-1.2.11-package-only-expected.json')
+        run_scan_click(['--package-only', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_maven_assembly_with_pom_and_jar_manifest(self):
         test_dir = self.get_test_loc('maven_misc/assemble/numbers-1.7.4')
         result_file = self.get_temp_file('json')
