@@ -132,7 +132,7 @@ if not __version__:
 # 4. hardcoded This is the default, fallback version in case package is not installed or we
 # do not have a proper version otherwise.
 if not __version__:
-    __version__ = '32.0.8'
+    __version__ = '32.1.0'
 
 #######################
 # used to warn user when the version is out of date
