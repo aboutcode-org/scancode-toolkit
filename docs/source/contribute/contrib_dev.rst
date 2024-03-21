@@ -186,9 +186,9 @@ recursive dependencies.
 
 There are utility scripts in ``etc/release`` that can help with the dependencies
 management process in particular to build or update wheels with native code for
-multiple OSes (Linux, macOS and Windows) and multiple Python versions (3.7+),
+multiple OSes (Linux, macOS and Windows) and multiple Python versions (3.8+),
 which is not a completely simple operation (and requires eventually 12 wheels
-and one source distribution to be published as we support 3 OSes and 4 Python
+and one source distribution to be published as we support 3 OSes and 5 Python
 versions).
 
 
