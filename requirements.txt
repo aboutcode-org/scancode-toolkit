@@ -51,7 +51,7 @@ pluggy==1.0.0
 plugincode==32.0.0
 ply==3.11
 publicsuffix2==2.20191221
-pyahocorasick==2.0.0
+pyahocorasick==2.1.0
 pycparser==2.21
 pygmars==0.7.0
 Pygments==2.13.0
