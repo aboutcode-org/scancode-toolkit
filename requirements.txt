@@ -2,6 +2,7 @@ attrs==23.2.0
 banal==1.0.6
 beautifulsoup4==4.12.3
 binaryornot==0.4.4
+beartype==0.17.2
 boolean.py==4.0
 certifi==2024.2.2
 cffi==1.16.0
@@ -62,6 +63,7 @@ PyYAML==6.0.1
 rdflib==6.2.0
 requests==2.31.0
 saneyaml==0.6.0
+semantic-version==2.10.0
 six==1.16.0
 soupsieve==2.3.2.post1
 spdx-tools==0.8.2
@@ -70,6 +72,7 @@ toml==0.10.2
 typecode==30.0.1
 typecode-libmagic==5.39.210531
 typing-extensions==4.3.0
+uritools==4.0.2
 urllib3==2.2.1
 urlpy==0.5
 wcwidth==0.2.5
