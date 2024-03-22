@@ -457,12 +457,6 @@ jobs:
           name: source_app
           path: dist
 
-      - name: Download a single artifact macos_app for python 3.7
-        uses: actions/download-artifact@v3
-        with:
-          name: macos_app_py_3.7
-          path: dist
-
       - name: Download a single artifact macos_app for python 3.8
         uses: actions/download-artifact@v3
         with:
@@ -487,10 +481,10 @@ jobs:
           name: macos_app_py_3.11
           path: dist
 
-      - name: Download a single artifact linux_app for python 3.7
+      - name: Download a single artifact macos_app for python 3.12
         uses: actions/download-artifact@v3
         with:
-          name: linux_app_py_3.7
+          name: macos_app_py_3.12
           path: dist
 
       - name: Download a single artifact linux_app for python 3.8
@@ -517,10 +511,10 @@ jobs:
           name: linux_app_py_3.11
           path: dist
 
-      - name: Download a single artifact windows_app for python 3.7
+      - name: Download a single artifact linux_app for python 3.12
         uses: actions/download-artifact@v3
         with:
-          name: windows_app_py_3.7
+          name: linux_app_py_3.12
           path: dist
 
       - name: Download a single artifact windows_app for python 3.8
@@ -545,6 +539,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: windows_app_py_3.11
+          path: dist
+
+      - name: Download a single artifact windows_app for python 3.12
+        uses: actions/download-artifact@v3
+        with:
+          name: windows_app_py_3.12
           path: dist
 
       - name: Mock GH release
@@ -573,7 +573,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dist_names: ["wheels-3.7", "wheels-3.8", "wheels-3.9", "wheels-3.10", "wheels-3.11", sdists]
+        dist_names: ["wheels-3.8", "wheels-3.9", "wheels-3.10", "wheels-3.11", "wheels-3.12", sdists]
 
     steps:
       - name: Set up Python
@@ -592,6 +592,6 @@ jobs:
           ls -al dist
 
       - name: Publish distributions to PyPI
-        uses: pypa/gh-action-pypi-publish@master
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}

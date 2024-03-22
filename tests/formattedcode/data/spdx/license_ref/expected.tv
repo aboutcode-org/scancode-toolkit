@@ -16,7 +16,7 @@ SPDX License List: 3.23</text>
 PackageName: scan
 SPDXID: SPDXRef-001
 PackageDownloadLocation: NOASSERTION
-FilesAnalyzed: True
+FilesAnalyzed: true
 PackageVerificationCode: b49eeefd776fb76555378d07fd05d986a249a2b3
 PackageLicenseConcluded: NOASSERTION
 PackageLicenseInfoFromFiles: Apache-2.0
