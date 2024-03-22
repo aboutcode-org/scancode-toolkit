@@ -726,6 +726,9 @@ patterns = [
     # Short words skipping some leading caps
     (r'^[BEFHJMNPQRTUVW][a-z]$', 'NN'),
 
+    # three or more AsCamelCase GetQueueReference
+    (r'^([A-Z][a-z]+){3,}$', 'JUNK'),
+
     # misc exceptions
     (r'^dead_horse$', 'NN'),
     (r'^A11yance', 'NNP'),
@@ -897,6 +900,7 @@ patterns = [
     (r'^Should$', 'JUNK'),
     (r'^[Ll]icensing\@?$', 'JUNK'),
     (r'^Disclaimer$', 'JUNK'),
+    (r'^Directive$', 'JUNK'),
     (r'^LAWS\,?$', 'JUNK'),
     (r'^[Ll]aws?,?$', 'JUNK'),
     (r'^me$', 'JUNK'),
