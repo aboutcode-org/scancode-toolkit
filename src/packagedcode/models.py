@@ -951,7 +951,10 @@ class PackageData(IdentifiablePackageData):
 
 def get_default_relation_license(datasource_id):
     from packagedcode import HANDLER_BY_DATASOURCE_ID
-    handler = HANDLER_BY_DATASOURCE_ID[datasource_id]
+    handler = HANDLER_BY_DATASOURCE_ID.get(datasource_id, None)
+    if not handler:
+        return 'AND'
+
     return handler.default_relation_license
 
 
@@ -1532,6 +1535,8 @@ class Package(PackageData):
     )
 
     def __attrs_post_init__(self, *args, **kwargs):
+        if not self.purl:
+            self.purl = self.set_purl()
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
 
@@ -1546,7 +1551,7 @@ class Package(PackageData):
         return PackageData.from_dict(mapping)
 
     @classmethod
-    def from_package_data(cls, package_data, datafile_path, package_only=False):
+    def from_package_data(cls, package_data, datafile_path=None, package_only=False):
         """
         Return a Package from a ``package_data`` PackageData object
         or mapping. Or None.
@@ -1561,20 +1566,21 @@ class Package(PackageData):
         elif package_data:
             raise Exception(f'Invalid type: {package_data!r}', package_data)
 
-        package_data_mapping['datafile_paths'] = [datafile_path]
         package_data_mapping['datasource_ids'] = [dsid]
 
-        license_detections = package_data_mapping['license_detections']
-        for detection in license_detections:
-            for license_match in detection['matches']:
-                if not license_match['from_file']:
-                    license_match['from_file'] = datafile_path
+        if datafile_path:
+            package_data_mapping['datafile_paths'] = [datafile_path]
+            license_detections = package_data_mapping.get('license_detections', [])
+            for detection in license_detections:
+                for license_match in detection['matches']:
+                    if not license_match['from_file']:
+                        license_match['from_file'] = datafile_path
 
         package = cls.from_dict(package_data_mapping)
-        
+
         if not package.package_uid:
             package.package_uid = build_package_uid(package.purl)
-        
+
         if not package_only:
             package.populate_license_fields()
             package.populate_holder_field()
