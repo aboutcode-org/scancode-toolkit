@@ -31,6 +31,17 @@ class TestTextPreparation(FileBasedTesting):
         result = copyrights.prepare_text_line(cp)
         assert result == 'test (c) all rights reserved'
 
+    def test_invaild_copyright(self):
+        cp= '[C] The Regents of the University of Michigan'
+        result= copyrights.prepare_text_line(cp) 
+        assert result == 'Copyright (C) The Regents of the University of Michigan' 
+        
+    def test_invaild_copyright_insensitivity(self):
+        cp= '[c] The Regents of the University of Michigan and Merit Network, Inc. 1992,'
+        result= copyrights.prepare_text_line(cp) 
+        print(result) 
+        assert result== '(c) The Regents of the University of Michigan and Merit Network, Inc. 1992,'
+        
     def test_prepare_text_line_debian(self):
         cp = 'Parts Copyright (c) 1992 <s>Uri Blumentha<s>l, I</s>BM</s>'
         result = copyrights.prepare_text_line(cp)
