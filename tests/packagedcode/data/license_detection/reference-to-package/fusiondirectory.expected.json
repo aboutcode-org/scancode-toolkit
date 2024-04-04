@@ -5913,6 +5913,13 @@
               "name": "FusionDirectory Packagers",
               "email": "team+fusiondirectory@tracker.debian.org",
               "url": null
+            },
+            {
+              "type": null,
+              "role": "uploader",
+              "name": "Benoit Mortier <benoit.mortier@opensides.be>,\n Mike Gabriel",
+              "email": "sunweaver@debian.org>,",
+              "url": null
             }
           ],
           "keywords": [
@@ -5926,8 +5933,8 @@
           "sha256": null,
           "sha512": null,
           "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
+          "code_view_url": "https://salsa.debian.org/debian/fusiondirectory/",
+          "vcs_url": "https://salsa.debian.org/debian/fusiondirectory.git",
           "copyright": null,
           "holder": null,
           "declared_license_expression": "gpl-2.0-plus AND free-unknown AND bsd-new AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive) AND bsd-simplified",
