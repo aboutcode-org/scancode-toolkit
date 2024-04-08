@@ -2067,6 +2067,10 @@ patterns = [
 
     # dot in: fooo at bar dot com
     (r'^dot$', 'DOT'),
+    
+    # moment/moment is an odd name
+    (r'moment/moment$', 'NAME'),
+
 
     ############################################################################
     # catch all other as Nouns
