@@ -1251,6 +1251,7 @@ patterns = [
     (r'^Extended', 'NN'),
     (r'^Every$', 'NN'),
     (r'^Digitized', 'NN'),
+    (r'^[Ds]istributed?.?$', 'NN'),
     (r'^END$', 'NN'),
     (r'^Entity$', 'NN'),
     (r'^Example', 'NN'),
