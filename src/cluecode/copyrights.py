@@ -1140,6 +1140,16 @@ patterns = [
     (r'^[MmNn]odules?[,\.]?$', 'JUNK'),
     (r'^[Rr]eturned$', 'JUNK'),
 
+    # misc junk
+    (r'^False.?$', 'JUNK'),
+    (r'^True.?$', 'JUNK'),
+
+    (r'^imports?$', 'JUNK'),
+    (r'^[Ww]arnings?$', 'JUNK'),
+    (r'^[Ww]hether$', 'JUNK'),
+    (r'^[Bb]oth$', 'JUNK'),
+    (r'^[Cc]aller$', 'JUNK'),
+
     # tags
     (r'^E-?[Mm]ail:?$', 'JUNK'),
     (r'^URL:?$', 'JUNK'),
@@ -1252,6 +1262,12 @@ patterns = [
     (r'^Every$', 'NN'),
     (r'^Digitized', 'NN'),
     (r'^[Ds]istributed?.?$', 'NN'),
+
+    (r'^Multiply$', 'NN'),
+    (r'^Convert$', 'NN'),
+    (r'^Compute$', 'NN'),
+    (r'^Case$', 'NN'),
+    
     (r'^END$', 'NN'),
     (r'^Entity$', 'NN'),
     (r'^Example', 'NN'),
@@ -3262,7 +3278,7 @@ COPYRIGHTS_JUNK = [
     r'^copyright \(c\)$',
     r'^\(c\) by$',
 
-    r"\(c\) [A-Z][a-z] \(c\)",
+    r"\(c\) [a-z][a-z] \(c\)",
     r"^copyright holder or simply",
     r"^copyright notice\.",
     r"^copyright of uc berkeley's berkeley software distribution",
@@ -3326,6 +3342,8 @@ COPYRIGHTS_JUNK = [
     r'^u\.s\. copyright act',
     r'^\(c\) Object c$',
     r'^copyright headers?',
+    r'Copyright \(c\) 2021 Dot',
+    r'^\(c\) \(c\) B$'
 ]
 
 # a collection of junk junk matcher callables
@@ -3551,7 +3569,7 @@ def remove_dupe_copyright_words(c):
 
 def remove_some_extra_words_and_punct(c):
     """
-    Remove misc junk includein some punctuations
+    Remove misc junk including some punctuations
     """
     c = c.replace('<p>', ' ')
     c = c.replace('<a href', ' ')
@@ -4135,6 +4153,8 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         # backticks ` and "
         .replace('`', "'")
         .replace('"', "'")
+        # u nicode prefix in Python strings
+        .replace(" u'", " '")        
         # see https://github.com/nexB/scancode-toolkit/issues/3667
         .replace('§', " ")
     )
