@@ -60,7 +60,7 @@ copyrights:
   - Copyright (c) 2004, 2006-2009 Glenn Randers-Pehrson
   - Copyright (c) 2000-2002 Glenn Randers-Pehrson
   - Copyright (c) 1998, 1999 Glenn Randers-Pehrson
-  - Copyright (c) 1996, 1997 Andreas Dilger Distributed
+  - Copyright (c) 1996, 1997 Andreas Dilger
   - Copyright (c) 1995, 1996 Guy Eric Schalnat, Group 42, Inc.
   - Copyright (c) 2001-2006 Cisco Systems, Inc.
   - Copyright (c) 2010, Google Inc.
@@ -165,7 +165,7 @@ holders:
   - Glenn Randers-Pehrson
   - Glenn Randers-Pehrson
   - Glenn Randers-Pehrson
-  - Andreas Dilger Distributed
+  - Andreas Dilger
   - Guy Eric Schalnat, Group 42, Inc.
   - Cisco Systems, Inc.
   - Google Inc.
@@ -247,7 +247,7 @@ holders_summary:
     count: 1
   - value: Analog Devices Inc.
     count: 1
-  - value: Andreas Dilger Distributed
+  - value: Andreas Dilger
     count: 1
   - value: Andrew Tridgell
     count: 1

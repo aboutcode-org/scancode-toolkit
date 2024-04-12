@@ -279,18 +279,22 @@ class CopyrightDetector(object):
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
             'EMAIL', 'URL',
             'HOLDER', 'AUTHOR',
+            'IS', 'HELD',
+            
         ])
 
         non_holder_labels_mini = frozenset([
             'COPY',
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
             'HOLDER', 'AUTHOR',
+            'IS', 'HELD',
         ])
 
         non_authors_labels = frozenset([
             'COPY',
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
             'HOLDER', 'AUTHOR',
+            'IS', 'HELD',
         ])
 
         # then walk the parse parse_tree, collecting copyrights, years and authors
@@ -703,6 +707,11 @@ patterns = [
     (r'^[Rr]éservés[\.,]*$', 'RESERVED'),
     (r'^[Rr]eserves[\.,]*$', 'RESERVED'),
 
+    # used to detect "copyright is held by..." 
+    (r'^is$', 'IS'),
+    (r'^are$', 'IS'),
+    (r'^held$', 'HELD'),
+
     # TODO: in Dutch Alle rechten voorbehouden.
     # TODO: in Spanish Reservados todos los derechos
 
@@ -736,6 +745,9 @@ patterns = [
     # JUNK proper
     ############################################################################
 
+    # all lower case with dashes "enforce-trailing-newline" at least 3 times
+    (r'^((\w+-){3,}\w+)$', 'JUNK'),
+ 
     # path with trailing year-like are NOT a year as in
     # Landroid/icu/impl/IDNA2003 : treat as JUNK
     (r'^[^\\/]+[\\/][^\\/]+[\\/].*$', 'JUNK'),
@@ -825,7 +837,6 @@ patterns = [
     (r'^Idata$', 'JUNK'),
     (r'^[Cc]ontributed?$', 'JUNK'),
     (r'^[Ff]unctions?$', 'JUNK'),
-    (r'^[Nn]otices?$', 'JUNK'),
     (r'^[Mm]ust$', 'JUNK'),
     (r'^ISUPPER?$', 'JUNK'),
     (r'^ISLOWER$', 'JUNK'),
@@ -891,8 +902,6 @@ patterns = [
 
     (r'^providing$', 'JUNK'),
     (r'^Execute$', 'JUNK'),
-    (r'^NOTICE[.,]*$', 'JUNK'),
-    (r'^[Nn]otice[.,]*$', 'JUNK'),
     (r'^passes$', 'JUNK'),
     (r'^Should$', 'JUNK'),
     (r'^[Ll]icensing\@?$', 'JUNK'),
@@ -964,7 +973,6 @@ patterns = [
     (r'^Much$', 'JUNK'),
     (r'^remains?,?$', 'JUNK'),
     (r'^earlier$', 'JUNK'),
-    (r'^is$', 'JUNK'),
     (r'^[lL]aws?$', 'JUNK'),
     (r'^Insert$', 'JUNK'),
     (r'^url$', 'JUNK'),
@@ -986,7 +994,6 @@ patterns = [
     (r'^interfaces?,?$', 'JUNK'),
     (r'^than$', 'JUNK'),
     (r'^whom$', 'JUNK'),
-    (r'^are$', 'JUNK'),
     (r'^However,?$', 'JUNK'),
     (r'^[Cc]ollectively$', 'JUNK'),
     (r'^following$', 'JUNK'),
@@ -1365,7 +1372,8 @@ patterns = [
     (r'^Neither$', 'NN'),
     (r'^Norwegian$', 'NN'),
     (r'^Notes?$', 'NN'),
-    (r'^NOTICE', 'NN'),
+    (r'^NOTICE[\.\,]?$', 'NN'),
+    (r'^[Nn]otices?[\.,]?$', 'NN'),
     (r'^NOT$', 'NN'),
     (r'^NULL$', 'NN'),
     (r'^Objects?$', 'NN'),
@@ -2764,8 +2772,8 @@ grammar = """
     # portions copyright
     COPYRIGHT: {<PORTIONS> <COPYRIGHT|COPYRIGHT2>}        #2610
 
-    #copyright notice (3dfx Interactive, Inc. 1999), (notice is JUNK)
-    COPYRIGHT: {<COPY> <JUNK> <COMPANY> <YR-RANGE>}       #2620
+    #copyright notice (3dfx Interactive, Inc. 1999),
+    COPYRIGHT: {<COPY> <NN> <COMPANY> <YR-RANGE>}       #2620
 
     # Copyright (C) <2013>, GENIVI Alliance, Inc.
     COPYRIGHT: {<COPYRIGHT2> <ANDCO>}       #2625
@@ -2977,7 +2985,7 @@ grammar = """
     COPYRIGHT: {<COPY> <HOLDER> <NAME>}       #83000
 
     #holder is Tim Hudson (tjh@mincom.oz.au).
-    COPYRIGHT: {<HOLDER> <JUNK> <NAME-EMAIL>}       #83001
+    COPYRIGHT: {<HOLDER> <IS> <NAME-EMAIL>}       #83001
 
     # Copyright lowRISC contributors.
     COPYRIGHT: {<COPY> <NN> <CONTRIBUTORS>}        #83002
@@ -2991,6 +2999,11 @@ grammar = """
     # Copyright OProfile authors
     COPYRIGHT: {<COPY> <NN>?<NNP>+ <AUTHS>}         #83004
 
+#######################################
+# Copyright is held by ....
+#######################################
+    # Copyright is held by ....
+    COPYRIGHT: {<COPY> <IS> <HELD> <BY> <NNP|NAME|COMPANYNAME-EMAIL>+ }         #10989898
 
 
 #######################################
@@ -2998,7 +3011,7 @@ grammar = """
 #######################################
 
     # SPDX-FileContributor special case
-    AUTHOR: {<SPDX-CONTRIB> <CCOMPANY|NAME|NAME-EMAIL|NAME-YEAR|EMAIL> <COMPANY|NAME|NAME-EMAIL|NAME-YEAR|EMAIL|NN>? }        #264000
+    AUTHOR: {<SPDX-CONTRIB> <COMPANY|NAME|NAME-EMAIL|NAME-YEAR|EMAIL> <COMPANY|NAME|NAME-EMAIL|NAME-YEAR|EMAIL|NN>? }        #264000
 
     # developed by Project Mayo.
     AUTHOR: {<AUTH2>+ <BY> <COMPANY> <NNP>}        #2645-1
@@ -3635,11 +3648,11 @@ def strip_trailing_period(s):
 
     is_single_word = len(s.split()) == 1
 
-        # U.S.A., e.V., M.I.T. and similar
+    # U.S.A., e.V., M.I.T. and similar
     if s[-2].isupper() and not is_single_word:
         return s
 
-        # S.A., e.v., b.v. and other
+    # S.A., e.v., b.v. and other
     if s[-3] == '.':
         return s
 
