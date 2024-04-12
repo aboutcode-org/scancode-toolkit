@@ -127,7 +127,7 @@ class DebianSourcePackageTarballHandler(models.DatafileHandler):
 class DebianControlFileInExtractedDebHandler(models.DatafileHandler):
     datasource_id = 'debian_control_extracted_deb'
     default_package_type = 'deb'
-    path_patterns = ('*/control.tar.gz-extract/control',)
+    path_patterns = ('*/control.tar.gz-extract/control','*/control.tar.xz-extract/control')
     description = 'Debian control file - extracted layout'
     documentation_url = 'https://www.debian.org/doc/debian-policy/ch-controlfields.html'
 
@@ -590,7 +590,7 @@ def parse_debian_files_list(location, datasource_id, package_type):
     else:
         name = None
         # For DebianMd5sumFilelistInPackageHandler we cannot infer name
-        if not name == "md5sums":
+        if not filename == "md5sums":
             name = filename
 
     file_references = []
@@ -663,6 +663,19 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         party = models.Party(role='maintainer', name=maintainer_name, email=maintainer_email)
         parties.append(party)
 
+    uploaders = debian_data.get('uploaders')
+    if uploaders:
+        for uploader in uploaders.split(", "):
+            uploader_name, uploader_email = parse_debian_maintainers(uploader)
+            party = models.Party(role='uploader', name=uploader_name, email=uploader_email)
+            parties.append(party)
+
+    vcs_url = debian_data.get('vcs-git')
+    if vcs_url and ' ' in vcs_url:
+        vcs_url = vcs_url.split(' ')[0]
+
+    code_view_url = debian_data.get('vcs-browser')
+
     keywords = []
     keyword = debian_data.get('section')
     if keyword:
@@ -712,6 +725,8 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         qualifiers=qualifiers,
         description=description,
         homepage_url=homepage_url,
+        vcs_url=vcs_url,
+        code_view_url=code_view_url,
         size=size,
         source_packages=source_packages,
         keywords=keywords,

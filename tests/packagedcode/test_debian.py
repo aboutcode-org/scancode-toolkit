@@ -113,6 +113,13 @@ class TestDebian(PackageTester):
         run_scan_click(['--package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
+    def test_debian_control_and_md5sums_file(self):
+        test_dir = self.get_test_loc('debian/files-md5sums/python-tenacity-doc')
+        expected_file = self.get_test_loc('debian/files-md5sums/python-tenacity-doc.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', '--system-package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_dsc_file_basic(self):
         test_dir = self.get_test_loc('debian/dsc_files/adduser_3.118+deb11u1.dsc')
         expected_file = self.get_test_loc('debian/dsc_files/adduser_3.118+deb11u1.dsc.expected.json')
@@ -120,6 +127,12 @@ class TestDebian(PackageTester):
         run_scan_click(['--package', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_dsc_file_vcs_with_extra_info(self):
+        test_dir = self.get_test_loc('debian/dsc_files/zsh_5.7.1-1+deb10u1.dsc')
+        expected_file = self.get_test_loc('debian/dsc_files/zsh_5.7.1-1+deb10u1.dsc.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
 
 class TestDebianGetListOfInstalledFiles(PackageTester):
