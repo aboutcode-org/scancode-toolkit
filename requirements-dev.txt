@@ -6,6 +6,7 @@ commonmark==0.9.1
 docutils==0.19
 et-xmlfile==1.1.0
 execnet==1.9.0
+flot==0.7.2
 iniconfig==1.1.1
 isort==5.10.1
 jeepney==0.8.0
