@@ -3,7 +3,7 @@ requires = [ "flot>=0.7.0" ]
 build-backend = "flot.buildapi"
 
 [project]
-name = "scancode-toolkit"
+name = "scancode-toolkit-mini"
 version = "32.1.0"
 description = "ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts."
 readme = "README.rst"
@@ -30,7 +30,6 @@ keywords = [
     "package-url",
     "purl",
 ]
-
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -95,12 +94,10 @@ dependencies = [
     "xmltodict >= 0.11.0",
     "zipp >= 3.0.0; python_version < \"3.9\"",
     "typecode >= 30.0.1",
-    "typecode[full] >= 30.0.1",
-    "extractcode[full] >= 31.0.0",
-]
+    # "typecode[full] >= 30.0.1",
+    # "extractcode[full] >= 31.0.0",
 
-[project.urls]
-Homepage = "https://github.com/nexB/scancode-toolkit"
+]
 
 
 [project.optional-dependencies]
@@ -140,6 +137,9 @@ docs = [
     "sphinx-copybutton",
 ]
 
+
+[project.urls]
+Homepage = "https://github.com/nexB/scancode-toolkit"
 
 
 [tool.bumpversion]
@@ -193,6 +193,7 @@ sdist_extra_includes = [
     "tests/**/*",
     ".gitattributes",
     ".gitignore",
+    "thirdparty/**/*",
     "*.LICENSE",
     "NOTICE",
     "*.ABOUT",
