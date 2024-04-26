@@ -9,7 +9,7 @@
 #
 
 ################################################################################
-# ScanCode release build script for a Windows app archive
+# ScanCode release build script for a source archive for the apps
 ################################################################################
 
 set -e
@@ -24,9 +24,8 @@ git describe --tags > $release_dir/SCANCODE_VERSION
 thirdparty_dir=$release_dir/thirdparty
 mkdir -p $thirdparty_dir
 
-# build an sdist
-./configure --dev
-venv/bin/python setup.py --quiet sdist
+# Collect other built sdist
+
 mv dist/*.tar.gz $release_dir
 
 ./configure --rel
@@ -51,6 +50,7 @@ cp -r etc/thirdparty $release_dir/etc
 cp -r \
   scancode.bat scancode extractcode extractcode.bat configure configure.bat \
   *.rst \
+  *.toml \
   docs \
   samples \
   *NOTICE *LICENSE *ABOUT \

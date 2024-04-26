@@ -20,7 +20,7 @@ set -e
 operating_system=macos
 python_dot_version=$1
 python_version=${python_dot_version//.}
-python_exe="python3"
+python_exe="python$python_dot_version"
 release_dir=scancode-toolkit-$(git describe --tags)
 
 rm -rf $release_dir
@@ -60,13 +60,12 @@ rm -rf $thirdparty_src_dir
 mkdir -p $release_dir/etc
 cp -r etc/thirdparty $release_dir/etc
 
-# Build the wheel
+# Build the app archive
 ./configure --dev
-venv/bin/scancode-reindex-licenses
-venv/bin/python setup.py --quiet bdist_wheel --python-tag cp$python_version
 
 cp -r \
   dist/scancode_*.whl \
+  dist/licensedcode_index_*.whl \
   scancode extractcode configure \
   *.rst \
   samples \

@@ -20,11 +20,11 @@ on:
 permissions: {}
 jobs:
 
-  build_scancode_wheel_for_pypi:
+  build_scancode_wheels_for_pypi:
     permissions:
       contents: read # to fetch code (actions/checkout)
 
-    name: Build PyPI wheels
+    name: Build PyPI packages
     runs-on: ubuntu-22.04
 
     defaults:
@@ -34,7 +34,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-       pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+       pyver: ["3.8"]
 
     steps:
       - uses: actions/checkout@v4
@@ -44,46 +44,14 @@ jobs:
         with:
           python-version: ${{ matrix.pyver }} 
 
-      - name: Install requirements then build main and mini wheel
-        run: etc/release/scancode-create-pypi-wheel.sh
+      - name: Install requirements then build all PyPI packages
+        run: etc/release/scancode-create-pypi-wheel-and-sdist.sh
 
-      - name: Collect built wheels for ${{ matrix.pyver }} 
+      - name: Collect built wheels and dist 
         uses: actions/upload-artifact@v3
         with:
-          name: wheels-${{ matrix.pyver }}
-          path: dist/*.whl
-
-
-  build_scancode_sdist_for_pypi:
-    permissions:
-      contents: read # to fetch code (actions/checkout)
-
-    name: Build PyPI sdist archives
-    runs-on: ubuntu-22.04
-
-    defaults:
-      run:
-        shell: bash
-
-    strategy:
-      fail-fast: true
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-
-      - name: Install requirements then build main and mini sdist
-        run: etc/release/scancode-create-pypi-sdist.sh
-
-      - name: Collect built sdist
-        uses: actions/upload-artifact@v3
-        with:
-          name: sdists
-          path: dist/*.tar.gz
+          name: wheels
+          path: dist/*
 
 
   build_scancode_for_release_linux:
@@ -93,6 +61,9 @@ jobs:
     name: Build app Release for linux
     runs-on: ubuntu-22.04
 
+    needs:
+      - build_scancode_wheels_for_pypi
+
     defaults:
       run:
         shell: bash
@@ -109,6 +80,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.pyver }} 
+
+      - name: Download wheels artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: wheels
+          path: dist
 
       - name: Build linux app archive
         run: etc/release/scancode-create-release-app-linux.sh ${{ matrix.pyver }}
@@ -127,6 +104,9 @@ jobs:
     name: Build app Release for mac
     runs-on: ubuntu-22.04
 
+    needs:
+      - build_scancode_wheels_for_pypi
+
     defaults:
       run:
         shell: bash
@@ -137,12 +117,19 @@ jobs:
        pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
+
       - uses: actions/checkout@v4
 
       - name: Set up Python on ${{ matrix.pyver }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.pyver }} 
+
+      - name: Download wheels artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: wheels
+          path: dist
 
       - name: Build mac app archive
         run: etc/release/scancode-create-release-app-macos.sh ${{ matrix.pyver }}
@@ -161,6 +148,9 @@ jobs:
     name: Build app Release for windows
     runs-on: ubuntu-22.04
 
+    needs:
+      - build_scancode_wheels_for_pypi
+
     defaults:
       run:
         shell: bash
@@ -177,6 +167,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.pyver }} 
+
+      - name: Download wheels artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: wheels
+          path: dist
 
       - name: Build windows app archive
         run: etc/release/scancode-create-release-app-windows.sh ${{ matrix.pyver }}
@@ -195,9 +191,13 @@ jobs:
     name: Build app source
     runs-on: ubuntu-22.04
 
+    needs:
+      - build_scancode_wheels_for_pypi
+
     defaults:
       run:
         shell: bash
+
     strategy:
       fail-fast: true
 
@@ -208,6 +208,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
+
+      - name: Download wheels artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: wheels
+          path: dist
 
       - name: Build source archive with deps
         run: etc/release/scancode-create-release-app-sources.sh
@@ -235,7 +241,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-22.04, ubuntu-22.04, macos-11, macos-12]
+        os: [ubuntu-20.04, ubuntu-22.04, macos-11, macos-12]
         pyver: ["3.8", "3.9", "3.10", "3.11", "3.12"]
 
     steps:
@@ -249,7 +255,7 @@ jobs:
       - name: Download wheels artifact
         uses: actions/download-artifact@v3
         with:
-          name: wheels-${{ matrix.pyver }}
+          name: wheels
           path: dist
 
       - name: test install wheels
@@ -258,7 +264,7 @@ jobs:
           rm -rf venv;  \
           python -m venv venv
           venv/bin/python -m pip install --upgrade pip wheel setuptools
-          for f in `find dist -type f -name "*${{ matrix.pyver }}*"`; \
+          for f in `find dist -type f -name "scancode*${{ matrix.pyver }}*"`; \
             do \
               venv/bin/python -m pip install --force-reinstall "$f[full]" ; \
               venv/bin/scancode -clipeu --json-pp - some.file ; \
@@ -295,7 +301,7 @@ jobs:
       - name: Download wheels artifact
         uses: actions/download-artifact@v3
         with:
-          name: wheels-${{ matrix.pyver }}
+          name: wheels
           path: dist
 
       - name: test install wheel
