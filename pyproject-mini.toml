@@ -172,6 +172,11 @@ excludes = [
     # these are now provided by separate, smaller packages
     "src/licensedcode/data/**/*",
 
+    # scancode_toolkit.egg-info is only for editable local config
+    "src/scancode_toolkit.egg-info/**/*",
+
+    "docs/build/**/*",
+
     # Python compiled files
     "**/*.py[cod]",
     "**/*.egg-info",
@@ -196,10 +201,10 @@ editable_paths = [ "src", "tests" ]
 
 sdist_extra_includes = [
     "etc/**/*",
-    "docs/**/*",
+    # "docs/**/*",
     ".github/**/*",
-    "samples/**/*",
-    "tests/**/*",
+    # "samples/**/*",
+    # "tests/**/*",
     ".gitattributes",
     ".gitignore",
     "*.LICENSE",
@@ -333,9 +338,7 @@ norecursedirs = [
    "lib",
    "lib64",
    "Lib64",
-   "Scripts",    # these are now provided by separate, smaller packages
-    "src/licensedcode/data/**/*",
-   
+   "Scripts",
    "thirdparty",
    "tmp",
    "venv",
