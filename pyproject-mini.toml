@@ -124,6 +124,7 @@ packages = [
 ]
 
 testing = [
+    "flot",
     "pytest >= 6, != 7.0.0",
     "pytest-xdist >= 2",
     "aboutcode-toolkit >= 7.0.2",
@@ -168,6 +169,9 @@ includes = [
 ]
 
 excludes = [
+    # these are now provided by separate, smaller packages
+    "src/licensedcode/data/**/*",
+
     # Python compiled files
     "**/*.py[cod]",
     "**/*.egg-info",
@@ -329,7 +333,9 @@ norecursedirs = [
    "lib",
    "lib64",
    "Lib64",
-   "Scripts",
+   "Scripts",    # these are now provided by separate, smaller packages
+    "src/licensedcode/data/**/*",
+   
    "thirdparty",
    "tmp",
    "venv",
