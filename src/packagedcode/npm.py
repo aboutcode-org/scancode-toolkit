@@ -12,6 +12,7 @@ import os
 import logging
 import json
 import re
+import sys
 import urllib.parse
 from functools import partial
 from itertools import islice
@@ -35,8 +36,10 @@ To check https://github.com/npm/normalize-package-data
 
 
 SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+SCANCODE_DEBUG_PACKAGE_NPM = os.environ.get('SCANCODE_DEBUG_PACKAGE_NPM', False)
 
 TRACE = SCANCODE_DEBUG_PACKAGE
+TRACE_NPM = SCANCODE_DEBUG_PACKAGE_NPM
 
 
 def logger_debug(*args):
@@ -45,8 +48,7 @@ def logger_debug(*args):
 
 logger = logging.getLogger(__name__)
 
-if TRACE:
-    import sys
+if TRACE or TRACE_NPM:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -643,10 +645,15 @@ class YarnLockV1Handler(BaseNpmHandler):
                         # <alias-package>@npm:<package>
                         if "@npm:" in ns:
                             ns = ns.split(':')[1]
+                        if "@npm:" in name:
+                            name = name.split(':')[1]
                         top_requirements.append((ns, name, constraint,))
 
                 else:
                     raise Exception('Inconsistent content')
+
+            if TRACE_NPM:
+                logger_debug(f'YarnLockV1Handler: parse: top_requirements: {top_requirements}')
 
             # top_requirements should be all for the same package
             ns_names = set([(ns, name) for ns, name, _constraint in top_requirements])
