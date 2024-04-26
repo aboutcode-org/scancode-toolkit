@@ -4,6 +4,12 @@ Changelog
 v33.0.0 (next next, roadmap)
 ----------------------------
 
+- We changed the way licenses text are packaged to help creating smaller packages for publishing
+  on PyPI. If you relied on actual license text files present in the wheels, you will now need
+  to install the package scancode-toolkit[licenses] that will also contain the files. However, the
+  better and preferred way is to run the command line "scancode-license-data" that will create
+  a directory with all license files, and this works with all builds of scancode-toolkit.
+
 - We now support new package manifest formats:
 
   - OpenWRT packages.
