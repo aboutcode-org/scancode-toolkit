@@ -1,0 +1,78 @@
+# SPDX-License-Identifier: MIT
+# This is copied from https://github.com/python-attrs/attrs/blob/f7f317ae4c3790f23ae027db626593d50e8a4e88/pyproject.toml
+# and deleted non-essential parts
+
+[build-system]
+requires = ["hatchling", "hatch-vcs", "hatch-fancy-pypi-readme>=23.2.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "attrs"
+authors = [{ name = "Hynek Schlawack", email = "hs@ox.cx" }]
+license = "MIT"
+requires-python = ">=3.7"
+description = "Classes Without Boilerplate"
+keywords = ["class", "attribute", "boilerplate"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Typing :: Typed",
+]
+dependencies = ["importlib_metadata;python_version<'3.8'"]
+dynamic = ["version", "readme"]
+
+[project.optional-dependencies]
+tests-mypy = [
+  'pytest-mypy-plugins; platform_python_implementation == "CPython" and python_version >= "3.8"',
+  # Since the mypy error messages keep changing, we have to keep updating this
+  # pin.
+  'mypy>=1.6,<1.10; platform_python_implementation == "CPython" and python_version >= "3.8"',
+]
+tests = [
+  # For regression test to ensure cloudpickle compat doesn't break.
+  'cloudpickle; platform_python_implementation == "CPython"',
+  "hypothesis",
+  "pympler",
+  # 4.3.0 dropped last use of `convert`
+  "pytest>=4.3.0",
+  "pytest-xdist[psutil]",
+  "attrs[tests-mypy]",
+]
+cov = [
+  "attrs[tests]",
+  # Ensure coverage is new enough for `source_pkgs`.
+  "coverage[toml]>=5.3",
+]
+docs = [
+  "furo",
+  "myst-parser",
+  "sphinx",
+  "sphinx-notfound-page",
+  "sphinxcontrib-towncrier",
+  "towncrier",
+]
+dev = ["attrs[tests]", "pre-commit"]
+
+[project.urls]
+Documentation = "https://www.attrs.org/"
+Changelog = "https://www.attrs.org/en/stable/changelog.html"
+GitHub = "https://github.com/python-attrs/attrs"
+Funding = "https://github.com/sponsors/hynek"
+Tidelift = "https://tidelift.com/subscription/pkg/pypi-attrs?utm_source=pypi-attrs&utm_medium=pypi"
+
+[tool.black]
+line-length = 79
+
+[tool.mypy]
+pretty = true
+disallow_untyped_defs = true
+check_untyped_defs = true

@@ -1,0 +1,103 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "gerapy",
+    "version": "0.9.13",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Distributed Crawler Management Framework Based on Scrapy, Scrapyd, Scrapyd-Client, Scrapyd-API, Django and Vue.js.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Germey",
+        "email": "cqc@cuiqingcai.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy"
+    ],
+    "homepage_url": "https://github.com/Gerapy/Gerapy",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "spdx_license_expression": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+      },
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "spdx_license_expression": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "pypi_mit_license.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+            "matched_text": "- 'License :: OSI Approved :: MIT License'"
+          }
+        ],
+        "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "license: MIT\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/gerapy",
+    "repository_download_url": "https://pypi.org/packages/source/g/gerapy/gerapy-0.9.13.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/gerapy/0.9.13/json",
+    "datasource_id": "pypi_poetry_pyproject_toml",
+    "purl": "pkg:pypi/gerapy@0.9.13"
+  }
+]

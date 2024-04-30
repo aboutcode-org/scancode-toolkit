@@ -693,8 +693,15 @@ Package type:  pypi
   path_patterns:    '*/EGG-INFO/PKG-INFO'
 --------------------------------------------
 Package type:  pypi
+  datasource_id:     pypi_poetry_pyproject_toml
+  documentation URL: https://packaging.python.org/en/latest/specifications/pyproject-toml/
+  primary language:  Python
+  description:       Python poetry pyproject.toml
+  path_patterns:    '*pyproject.toml'
+--------------------------------------------
+Package type:  pypi
   datasource_id:     pypi_pyproject_toml
-  documentation URL: https://peps.python.org/pep-0621/
+  documentation URL: https://packaging.python.org/en/latest/specifications/pyproject-toml/
   primary language:  Python
   description:       Python pyproject.toml
   path_patterns:    '*pyproject.toml'

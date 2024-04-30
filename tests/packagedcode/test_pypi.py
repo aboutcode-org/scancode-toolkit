@@ -295,6 +295,60 @@ class TestPypiUnpackedSdist(PackageTester):
                 assert path == 'celery/celery.egg-info/PKG-INFO'
 
 
+class TestPyprojectTomlFileHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pyproject_toml_standard(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/attrs/pyproject.toml')
+        assert pypi.PyprojectTomlHandler.is_datafile(test_file)
+
+    def test_parse_pyproject_toml_standard_attrs(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/attrs/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/attrs-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_apache_airflow(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_apache_airflow_client(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow-pyclient/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow-pyclient-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_flask(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/flask/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/flask-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_lc0(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/lc0/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/lc0-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_is_pyproject_toml_poetry(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy/pyproject.toml')
+        assert pypi.PoetryPyprojectTomlHandler.is_datafile(test_file)
+    
+    def test_parse_pyproject_toml_poetry_gerapy(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+    
+    def test_parse_pyproject_toml_poetry_gino(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gino/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/gino-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
 class TestPipRequirementsFileHandler(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 

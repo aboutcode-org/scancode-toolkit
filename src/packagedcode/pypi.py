@@ -27,6 +27,7 @@ import importlib_metadata
 import packvers as packaging
 import pip_requirements_parser
 import pkginfo2
+import toml
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
@@ -38,6 +39,7 @@ from packvers.utils import canonicalize_name
 
 from packagedcode import models
 from packagedcode.utils import build_description
+from packagedcode.utils import parse_maintainer_name_email
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
 
@@ -149,7 +151,7 @@ class BaseExtractedPythonLayout(models.DatafileHandler):
         datafile_name_patterns = (
             'Pipfile.lock',
             'Pipfile',
-        ) + PipRequirementsFileHandler.path_patterns
+        ) + PipRequirementsFileHandler.path_patterns + PyprojectTomlHandler.path_patterns
 
         # TODO: we want PKG-INFO first, then (setup.py, setup.cfg), then pyproject.toml for poetry
         # then we have the rest of the lock files (pipfile, pipfile.lock, etc.)
@@ -448,14 +450,119 @@ def get_resource_for_path(path, root, codebase):
     return root
 
 
-# FIXME: Implement me
-class PyprojectTomlHandler(models.NonAssemblableDatafileHandler):
+class PyprojectTomlHandler(BaseExtractedPythonLayout):
     datasource_id = 'pypi_pyproject_toml'
     path_patterns = ('*pyproject.toml',)
     default_package_type = 'pypi'
     default_primary_language = 'Python'
     description = 'Python pyproject.toml'
-    documentation_url = 'https://peps.python.org/pep-0621/'
+    documentation_url = 'https://packaging.python.org/en/latest/specifications/pyproject-toml/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return (
+            super().is_datafile(location, filetypes=filetypes)
+            and not is_poetry_pyproject_toml(location)
+        )
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        package_data = toml.load(location, _dict=dict)
+        project_data = package_data.get("project")
+        if not project_data:
+            return
+
+        name = project_data.get('name')
+        version = project_data.get('version')
+        description = project_data.get('description') or ''
+        description = description.strip()
+
+        urls, extra_data = get_urls(metainfo=project_data, name=name, version=version)
+
+        extracted_license_statement, license_file = get_declared_license(project_data)
+        if license_file:
+            extra_data['license_file'] = license_file
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            name=name,
+            version=version,
+            extracted_license_statement=extracted_license_statement,
+            description=description,
+            keywords=get_keywords(project_data),
+            parties=get_pyproject_toml_parties(project_data),
+            extra_data=extra_data,
+            **urls,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+def is_poetry_pyproject_toml(location):
+    with open(location, 'r') as file:
+        data = file.read()
+
+    if "tool.poetry" in data:
+        return True
+    else:
+        return False
+
+
+class PoetryPyprojectTomlHandler(BaseExtractedPythonLayout):
+    datasource_id = 'pypi_poetry_pyproject_toml'
+    path_patterns = ('*pyproject.toml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python poetry pyproject.toml'
+    documentation_url = 'https://packaging.python.org/en/latest/specifications/pyproject-toml/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return (
+            super().is_datafile(location, filetypes=filetypes)
+            and is_poetry_pyproject_toml(location)
+        )
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        toml_data = toml.load(location, _dict=dict)
+
+        tool_data = toml_data.get('tool')
+        if not tool_data:
+            return
+        
+        poetry_data = tool_data.get('poetry')
+        if not poetry_data:
+            return
+
+        name = poetry_data.get('name')
+        version = poetry_data.get('version')
+        description = poetry_data.get('description') or ''
+        description = description.strip()
+
+        urls, extra_data = get_urls(metainfo=poetry_data, name=name, version=version, poetry=True)
+
+        extracted_license_statement, license_file = get_declared_license(poetry_data)
+        if license_file:
+            extra_data['license_file'] = license_file
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            name=name,
+            version=version,
+            extracted_license_statement=extracted_license_statement,
+            description=description,
+            keywords=get_keywords(poetry_data),
+            parties=get_pyproject_toml_parties(poetry_data),
+            extra_data=extra_data,
+            **urls,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
 
 
 META_DIR_SUFFIXES = '.dist-info', '.egg-info', 'EGG-INFO',
@@ -487,8 +594,11 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
 
     urls, extra_data = get_urls(metainfo=meta, name=name, version=version)
 
-    dependencies = get_dist_dependencies(dist)
+    extracted_license_statement, license_file = get_declared_license(metainfo=meta)
+    if license_file:
+        extra_data['license_file'] = license_file
 
+    dependencies = get_dist_dependencies(dist)
     file_references = list(get_file_references(dist))
 
     package_data = dict(
@@ -497,7 +607,7 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
         primary_language='Python',
         name=name,
         version=version,
-        extracted_license_statement=get_declared_license(meta),
+        extracted_license_statement=extracted_license_statement,
         description=get_description(metainfo=meta, location=str(location)),
         keywords=get_keywords(meta),
         parties=get_parties(meta),
@@ -628,6 +738,9 @@ class PypiSdistArchiveHandler(models.DatafileHandler):
         name = sdist.name
         version = sdist.version
         urls, extra_data = get_urls(metainfo=sdist, name=name, version=version)
+        extracted_license_statement, license_file = get_declared_license(metainfo=sdist)
+        if license_file:
+            extra_data['license_file'] = license_file
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -636,7 +749,7 @@ class PypiSdistArchiveHandler(models.DatafileHandler):
             name=name,
             version=version,
             description=get_description(sdist, location=location),
-            extracted_license_statement=get_declared_license(sdist),
+            extracted_license_statement=extracted_license_statement,
             keywords=get_keywords(sdist),
             parties=get_parties(sdist),
             extra_data=extra_data,
@@ -672,6 +785,10 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
         python_requires = get_setup_py_python_requires(setup_args)
         extra_data.update(python_requires)
 
+        extracted_license_statement, license_file = get_declared_license(metainfo=setup_args)
+        if license_file:
+            extra_data['license_file'] = license_file
+
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -680,7 +797,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             version=version,
             description=get_description(setup_args),
             parties=get_setup_parties(setup_args),
-            extracted_license_statement=get_declared_license(setup_args),
+            extracted_license_statement=extracted_license_statement,
             dependencies=dependencies,
             keywords=get_keywords(setup_args),
             extra_data=extra_data,
@@ -1146,15 +1263,23 @@ def get_legacy_description(location):
 
 def get_declared_license(metainfo):
     """
-    Return a mapping of declared license information found in a ``metainfo``
-    object or mapping.
+    Return a mapping of declared license information and license file name
+    found in a ``metainfo`` package data mapping.
     """
     declared_license = {}
     # TODO: We should make the declared license as it is, this should be
     # updated in scancode to parse a pure string
     lic = get_attribute(metainfo, 'License')
+
+    license_file = None
+    if lic and 'file' in lic:
+        license_file = lic.pop('file')
+
     if lic and not lic == 'UNKNOWN':
-        declared_license['license'] = lic
+        if 'text' in lic:
+            declared_license['license'] = lic.get('text')
+        else:
+            declared_license['license'] = lic
 
     license_classifiers, _ = get_classifiers(metainfo)
     if license_classifiers:
@@ -1163,7 +1288,7 @@ def get_declared_license(metainfo):
     if not declared_license:
         declared_license = None
 
-    return declared_license
+    return declared_license, license_file
 
 
 def get_classifiers(metainfo):
@@ -1175,6 +1300,7 @@ def get_classifiers(metainfo):
     classifiers = (
         get_attribute(metainfo, 'Classifier', multiple=True)
         or get_attribute(metainfo, 'Classifiers', multiple=True)
+        or get_attribute(metainfo, 'classifiers', multiple=True)
     )
     if not classifiers:
         return [], []
@@ -1218,7 +1344,6 @@ def get_parties(
     author_email_key='Author-email',
     maintainer_key='Maintainer',
     maintainer_email_key='Maintainer-email',
-
 ):
     """
     Return a list of parties found in a ``metainfo`` object or mapping.
@@ -1263,6 +1388,47 @@ def get_setup_parties(setup_kwargs):
         maintainer_key='maintainer',
         maintainer_email_key='maintainer_email',
     )
+
+
+def get_pyproject_toml_parties(metainfo):
+
+    parties = []
+    authors = metainfo.get('authors') or []
+    for author in authors:
+        add_pyproject_toml_party(
+            parties=parties,
+            party=author,
+            role='author',
+        )
+
+    maintainers = metainfo.get('maintainers') or []
+    for maintainer in maintainers:
+        add_pyproject_toml_party(
+            parties=parties,
+            party=maintainer,
+            role='maintainer',
+        )
+
+    return parties
+
+
+def add_pyproject_toml_party(parties, party, role):
+
+    if type(party) is str:
+        name, email = parse_maintainer_name_email(party)
+        parties.append(models.Party(
+            type=models.party_person,
+            name=name,
+            role=role,
+            email=email,
+        ))
+    else:
+        parties.append(models.Party(
+            type=models.party_person,
+            name=party.get('name'),
+            role=role,
+            email=party.get('email'),
+        ))
 
 
 def get_setup_py_python_requires(setup_args):
@@ -1643,7 +1809,7 @@ def get_pypi_urls(name, version, **kwargs):
     )
 
 
-def get_urls(metainfo, name, version):
+def get_urls(metainfo, name, version, poetry=False):
     """
     Return a mapping of standard URLs and a mapping of extra-data URls for URLs
     of this package:
@@ -1706,11 +1872,18 @@ def get_urls(metainfo, name, version):
     )
     add_url(homepage_url, _attribute='homepage_url')
 
-    project_urls = (
-        get_attribute(metainfo, 'Project-URL', multiple=True)
-        or get_attribute(metainfo, 'project_urls')
-        or []
-    )
+    if poetry:
+        url_fields = ["homepage", "repository", "documentation"]
+        project_urls = {}
+        for url_field in url_fields:
+            project_urls[url_field] = metainfo.get(url_field)
+    else:
+        project_urls = (
+            get_attribute(metainfo, 'Project-URL', multiple=True)
+            or get_attribute(metainfo, 'project_urls')
+            or get_attribute(metainfo, 'urls')
+            or []
+        )
 
     if isinstance(project_urls, list):
         # these come from METADATA and we convert them back to a mapping
