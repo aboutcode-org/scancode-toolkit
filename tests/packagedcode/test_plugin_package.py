@@ -10,6 +10,7 @@
 import os
 from unittest.case import skipIf
 
+from commoncode.system import on_linux
 from commoncode.system import on_windows
 
 from packagedcode.plugin_package import get_installed_packages
@@ -219,8 +220,20 @@ class TestPlugins(PackageTester):
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
-    def test_package_list_command(self, regen=REGEN_TEST_FIXTURES):
+    @skipIf(not on_linux, 'The RPM and Windows Package parsers are only available on Linux')
+    def test_package_list_command_all_parsers(self, regen=REGEN_TEST_FIXTURES):
         expected_file = self.get_test_loc('plugin/help.txt')
+        result = run_scan_click(['--list-packages'])
+        if regen:
+            with open(expected_file, 'w') as ef:
+                ef.write(result.output)
+        assert result.output == open(expected_file).read()
+
+    @skipIf(on_linux, 'The RPM and Windows Package parsers are available on Linux')
+    def test_package_list_command_not_on_linux(self, regen=REGEN_TEST_FIXTURES):
+        # There should not be listings for RPM-related or Windows-related
+        # Package parsers
+        expected_file = self.get_test_loc('plugin/help-not-on-linux.txt')
         result = run_scan_click(['--list-packages'])
         if regen:
             with open(expected_file, 'w') as ef:
@@ -235,7 +248,7 @@ class TestPlugins(PackageTester):
             raise Exception("This SCAN should raise an AssertionError for conflicting CLI options")
         except AssertionError:
             pass
-    
+
     def test_plugin_package_only_fails_with_summary_scan(self):
         test_dir = self.get_test_loc('maven2')
         result_file = self.get_temp_file('json')
