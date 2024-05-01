@@ -1059,7 +1059,7 @@
       "md5": "661652a0568e25d12fc9bfad2fdabfb2",
       "sha256": "f3144ba734429b825e22c2f9048412e78c907e0142f2cdc629879b3a0fa63c89",
       "mime_type": "text/plain",
-      "file_type": "UTF-8 Unicode text, with CRLF line terminators",
+      "file_type": "Unicode text, UTF-8 text, with CRLF line terminators",
       "programming_language": "C#",
       "is_binary": false,
       "is_text": true,
