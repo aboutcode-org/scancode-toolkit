@@ -14,7 +14,7 @@ headers:
       for any legal advice.
       ScanCode is a free software code scanning tool from nexB Inc. and others.
       Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-    output_format_version: 3.0.0
+    output_format_version: 3.1.0
     message:
     errors: []
     warnings: []
@@ -22,10 +22,10 @@ headers:
       system_environment:
         operating_system: mac
         cpu_architecture: 64
-        platform: macOS-13.2.1-x86_64-i386-64bit
-        platform_version: 'Darwin Kernel Version 22.3.0: Mon Jan 30 20:39:35 PST 2023; root:xnu-8792.81.3~2/RELEASE_ARM64_T8103'
-        python_version: 3.10.6 (main, Aug 30 2022, 05:12:36) [Clang 13.1.6 (clang-1316.0.21.2.5)]
-      spdx_license_list_version: '3.20'
+        platform: macOS-14.4.1-arm64-arm-64bit
+        platform_version: 'Darwin Kernel Version 23.4.0: Fri Mar 15 00:12:41 PDT 2024; root:xnu-10063.101.17~1/RELEASE_ARM64_T8103'
+        python_version: 3.12.2 (main, Apr 29 2024, 15:55:18) [Clang 15.0.0 (clang-1500.3.9.4)]
+      spdx_license_list_version: '3.23'
       files_count: 1
 packages: []
 dependencies: []
@@ -73,7 +73,7 @@ files:
     md5: bdf7c572beb4094c2059508fa73c05a4
     sha256: 234d690ec9a5ac134e01847f34581b0ea83dfd1f3d4c79bee046297baa5f5925
     mime_type: text/plain
-    file_type: UTF-8 Unicode text, with no line terminators
+    file_type: Unicode text, UTF-8 text, with no line terminators
     programming_language: C
     is_binary: no
     is_text: yes

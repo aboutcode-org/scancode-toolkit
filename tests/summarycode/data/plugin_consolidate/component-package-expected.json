@@ -620,7 +620,7 @@
       "md5": "e10ff141105dc64fbde2dc77c61275db",
       "sha256": "96af7c1cf3144e8a70972e2fac9f34d6ff884ee01206066b1304f08c71053297",
       "mime_type": "application/json",
-      "file_type": "JSON data",
+      "file_type": "JSON text data",
       "programming_language": null,
       "is_binary": false,
       "is_text": true,

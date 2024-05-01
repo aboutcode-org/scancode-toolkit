@@ -370,7 +370,7 @@
       "md5": "e371da445e8b18fcf8ee5b8c26373007",
       "sha256": "dbd900a6c5e68795b2673418961804f26f534c1b122fe787f884b5f32df80ba9",
       "mime_type": "text/plain",
-      "file_type": "ASCII text, with CRLF line terminators",
+      "file_type": "JAR Manifest, ASCII text, with CRLF line terminators",
       "programming_language": null,
       "is_binary": false,
       "is_text": true,

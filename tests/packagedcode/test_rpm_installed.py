@@ -52,11 +52,10 @@ parse_rpm_xmlish = partial(
     package_type=RpmInstalledSqliteDatabaseHandler.default_package_type,
 )
 
-
+@skipIf(not on_linux, 'RPM command is only available on Linux')
 class TestRpmInstalled(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    @skipIf(not on_linux, 'RPM command is only available on Linux')
     def test_collect_installed_rpmdb_xmlish_from_rootfs(self):
         test_root_dir = self.extract_test_tar('rpm_installed/rootfs/var-lib-rpm.tar.xz')
         test_root_dir = os.path.join(test_root_dir, 'rootfs')
@@ -134,7 +133,6 @@ class TestRpmInstalled(PackageTester):
         check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
 
     @pytest.mark.scanslow
-    @pytest.mark.skipif(not on_linux, reason='RPM command is only available on Linux')
     def test_scan_system_package_end_to_end_installed_rpms_fedora_bdb(self):
         test_dir = self.extract_test_tar('rpm_installed/end-to-end/bdb-fedora-rootfs.tar.xz')
         test_dir = os.path.join(test_dir, 'rootfs')
