@@ -8,7 +8,9 @@
 #
 
 import os
+from unittest import skipIf
 
+from commoncode.system import on_linux
 from commoncode.testcase import FileBasedTesting
 
 from packagedcode import models
@@ -197,6 +199,7 @@ class TestRecognize(FileBasedTesting):
         assert packages
         assert isinstance(packages[0], models.PackageData)
 
+    @skipIf(not on_linux, 'RPM command is only available on Linux')
     def test_recognize_rpmdb_sqlite(self):
         test_file = self.get_test_loc('rpm/rpmdb.sqlite')
         packages = recognize_package_data(test_file, system=True)
