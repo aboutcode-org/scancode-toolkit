@@ -114,7 +114,7 @@ class ChefMetadataFormatter(Formatter):
                     value = value[1:-1]
                 line.append(value)
 
-            if ttype in (Token.Text,) and value.endswith('\n') and line:
+            if ttype in (Token.Text.Whitespace,) and value.endswith('\n') and line:
                 # The field name should be the first element in the list
                 key = line.pop(0)
                 # Join all tokens as a single string
