@@ -1,0 +1,33 @@
+name: Nightly sync latest release from upstream
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Exécution quotidienne à minuit UTC
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Sync Latest Release
+        run: |
+          # Récupérer les informations d'authentification
+          GIT_TOKEN=$GITHUB_TOKEN
+
+          # Récupérer la dernière release du repository d'origine
+          LATEST_RELEASE=$(curl -s -H "Authorization: token $GIT_TOKEN" "https://api.github.com/repos/nexB/scancode-toolkit/releases/latest"")
+
+          # Extraire les informations de la dernière release
+          release_name=$(echo "$LATEST_RELEASE" | jq -r '.name')
+          release_tag=$(echo "$LATEST_RELEASE" | jq -r '.tag_name')
+          release_body=$(echo "$LATEST_RELEASE" | jq -r '.body')
+
+          # Créer la dernière release dans le fork
+          curl -X POST \
+            -H "Authorization: token $GIT_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "{\"tag_name\": \"$release_tag\", \"name\": \"$release_name\", \"body\": \"$release_body\"}" \
+            "https://api.github.com/repos/kickmaker/scancode-toolkit/releases"
