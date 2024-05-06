@@ -2718,7 +2718,9 @@ grammar = """
     # Copyright (c) 2019-2021, Open source contributors.
     # Copyright 2007 ZXing authors
     # Copyright (c) 2002 the Initial Developer
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS|COMMIT|AUTHS|MAINT>? <ALLRIGHTRESERVED>?} #22793
+    # Copyright (c) brandonocasey <brandonocasey@gmail.com>
+    # Copyright (c) 2024 bgme <i@bgme.me>.
+    COPYRIGHT: {<COPY>+  <YR-RANGE>?  <NN>+ <CONTRIBUTORS|COMMIT|AUTHS|MAINT>? <EMAIL>? <ALLRIGHTRESERVED>?} #22793.3
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
     COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794
