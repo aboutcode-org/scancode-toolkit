@@ -16,10 +16,9 @@ import click
 from commoncode.cliutils import MISC_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
 from packagedcode.plugin_package import get_available_package_parsers
-from jinja2 import Environment, FileSystemLoader
-
 
 TEMPLATES_DIR = os.path.join(dirname(__file__), 'templates')
+
 
 def write_file(file_path, content):
     file_path.open("w").write(content)
@@ -35,6 +34,9 @@ def regenerate(
     templates from ``template_dir``. ``test`` is to generate a stable output for
     testing only
     """
+    from jinja2 import Environment
+    from jinja2 import FileSystemLoader
+
     environment = Environment(
         loader=FileSystemLoader(template_dir),
         autoescape=True,
@@ -48,7 +50,6 @@ def regenerate(
         all_available_packages=all_available_packages,
     )
     write_file(file_path=doc_path, content=packages_doc)
-
 
 
 @click.command(name='regen-package-docs')

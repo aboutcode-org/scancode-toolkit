@@ -17,14 +17,13 @@ from os import path
 from pathlib import Path
 
 import attr
+
 from license_expression import LicenseSymbolLike
 from license_expression import Licensing
 from packageurl import PackageURL
 
 from packagedcode import bashparse
 from packagedcode import models
-from packagedcode.licensing import get_declared_license_expression_spdx
-from packagedcode.licensing import get_license_detections_and_expression
 from packagedcode.utils import combine_expressions
 from packagedcode.utils import get_ancestor
 from textcode.analysis import as_unicode
@@ -903,8 +902,16 @@ def L_license_handler(value, **kwargs):
     Return a normalized declared license and a detected license expression.
     """
     original = value
-    _declared, detected, license_detections = detect_declared_license(value)
-    detected_spdx = get_declared_license_expression_spdx(declared_license_expression=detected)
+
+    detected = ""
+    license_detections = []
+    detected_spdx = ""
+    try:
+        from packagedcode.licensing import get_declared_license_expression_spdx
+        _declared, detected, license_detections = detect_declared_license(value)
+        detected_spdx = get_declared_license_expression_spdx(declared_license_expression=detected)
+    except ImportError:
+        pass
     return {
         'extracted_license_statement': original,
         'declared_license_expression': detected,
@@ -1363,53 +1370,60 @@ package_handlers_by_field_name = {
 
 def detect_declared_license(declared):
     """
-    Return a tuple of (cleaned declared license, detected license expression)
-    strings from a ``declared`` license text. Both can be None.
+    Return a tuple of (cleaned declared license, detected license expression, license_detections)
+    strings from a ``declared`` license text. All of the return tuple values can be None.
     """
     # cleaning first to fix syntax quirks and try to get something we can parse
     cleaned = normalize_and_cleanup_declared_license(declared)
     if not cleaned:
-        return None, None
+        return None, None, None
 
-    # then we apply mappings for known non-standard symbols
-    # the output should be a proper SPDX expression
-    mapped = apply_expressions_mapping(cleaned)
-
-    # Finally perform SPDX expressions detection: Alpine uses mostly SPDX, but
-    # with some quirks such as some non standard symbols (in addition to the
-    # non-standard syntax)
-    extra_licenses = {}
-    expression_symbols = get_license_symbols(extra_licenses=extra_licenses)
-
-    license_detections, detected_license_expression = get_license_detections_and_expression(
-        extracted_license_statement=mapped,
-        expression_symbols=expression_symbols,
-    )
-
-    return cleaned, detected_license_expression, license_detections
+    try:
+        from packagedcode.licensing import get_license_detections_and_expression
+        # then we apply mappings for known non-standard symbols
+        # the output should be a proper SPDX expression
+        mapped = apply_expressions_mapping(cleaned)
+    
+        # Finally perform SPDX expressions detection: Alpine uses mostly SPDX, but
+        # with some quirks such as some non standard symbols (in addition to the
+        # non-standard syntax)
+        extra_licenses = {}
+        expression_symbols = get_license_symbols(extra_licenses=extra_licenses)
+    
+        license_detections, detected_license_expression = get_license_detections_and_expression(
+            extracted_license_statement=mapped,
+            expression_symbols=expression_symbols,
+        )
+    
+        return cleaned, detected_license_expression, license_detections
+    except ImportError:
+        return None, None, None
 
 
 def get_license_symbols(extra_licenses):
     """
     Return a mapping of {lowercased key: LicenseSymbolLike} where
     LicenseSymbolLike wraps a License object. This is a combo of the SPDX
-    licenses keys and the Alpine-specific extra symbols.
+    licenses keys and the Alpine-specific extra symbols. This can be an empty mapping.
     """
-    from licensedcode.cache import get_spdx_symbols
-    from licensedcode.cache import get_licenses_db
+    try:
+        from licensedcode.cache import get_spdx_symbols
+        from licensedcode.cache import get_licenses_db
+    
+        # make a copy
+        symbols = dict(get_spdx_symbols())
+        ref_licenses = get_licenses_db()
+    
+        for alpine_key, license_key in extra_licenses.items():
+            # check that there are no dupe keys
+            assert alpine_key not in symbols
+    
+            lic = ref_licenses[license_key]
+            symbols[alpine_key] = LicenseSymbolLike(lic)
+        return symbols
 
-    # make a copy
-    symbols = dict(get_spdx_symbols())
-    ref_licenses = get_licenses_db()
-
-    for alpine_key, license_key in extra_licenses.items():
-        # check that there are no dupe keys
-        assert alpine_key not in symbols
-
-        lic = ref_licenses[license_key]
-        symbols[alpine_key] = LicenseSymbolLike(lic)
-
-    return symbols
+    except ImportError:
+        return {}
 
 
 def normalize_and_cleanup_declared_license(declared):
@@ -1684,7 +1698,7 @@ def apply_expressions_mapping(expression):
     """
     Return a new license expression string from an ``expression`` string
     replacing subexpressions using the DECLARED_TO_SPDX_SUBS expression
-    subsitution table.
+    subsitution table. Return an empty string if this cannot be mapped.
     """
     licensing = Licensing()
 
@@ -1697,8 +1711,8 @@ def apply_expressions_mapping(expression):
 
     try:
         expression = licensing.parse(expression, simple=True)
-    except:
-        raise Exception(expression)
+    except Exception as e:
+        raise Exception(expression) from e
     return str(expression.subs(DECLARED_TO_SPDX_SUBS))
 
 

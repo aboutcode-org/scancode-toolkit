@@ -49,55 +49,48 @@ classifiers = [
 dependencies = [
     "attrs >= 18.1,!=20.1.0;python_version<'3.11'",
     "attrs >= 22.1.0;python_version>='3.11'",
-    "Beautifulsoup4 >= 4.0.0",
     "boolean.py >= 4.0",
-    "chardet >= 3.0.0",
     "click >= 6.7, !=7.0",
-    "colorama >= 0.3.9",
     "commoncode >= 31.0.3",
     "container-inspector >= 31.0.0",
     "debian-inspector >= 31.1.0",
     "dparse2 >= 0.7.0",
-    "fasteners",
-    "fingerprints >= 0.6.0",
     "ftfy >=  6.0.0",
     "gemfileparser2 >= 0.9.0",
-    "html5lib",
     "importlib_metadata",
-    "intbitset >= 3.0.2",
-    "jaraco.functools",
     "javaproperties >= 0.5",
     "jinja2 >= 2.7.0",
-    "jsonstreams >= 0.5.0",
     "license_expression >= 30.1.1",
     "lxml >= 4.9.2",
-    "MarkupSafe >= 2.1.2",
     "packageurl_python >= 0.9.0",
     "packvers >= 21.0.0",
     # use temp advanced patched release
     "parameter-expansion-patched >= 0.3.1",
-    "pdfminer.six >= 20200101",
     "pefile >= 2020.1.1",
     "pip-requirements-parser >= 32.0.1",
     "pkginfo2 >= 30.0.0",
-    "pluggy >= 1.0.0",
     "plugincode >= 32.0.0",
-    "publicsuffix2",
-    "pyahocorasick >= 2.0.0",
     "pygmars >= 0.7.0",
     "pygments",
     "pymaven_patch >= 0.2.8",
-    "requests >= 2.7.0",
     "saneyaml >= 0.6.0",
-    "spdx_tools == 0.8.2",
-    "text_unidecode >= 1.0",
     "toml >= 0.10.0",
-    "urlpy",
     "xmltodict >= 0.11.0",
-    "zipp >= 3.0.0; python_version < \"3.9\"",
     "typecode >= 30.0.1",
     "typecode[full] >= 30.0.1",
 ]
+
+
+[project.optional-dependencies]
+full = [
+# we still need all these deps and clenup is needed
+#from licensedcode
+#from summarycode
+#from textcode
+#from typecode
+]
+
+
 
 [project.urls]
 Homepage = "https://github.com/nexB/scancode-toolkit"
