@@ -1,12 +1,9 @@
-# note: this is the default pyproject.toml that is used only in development
-# we use flot the other pyproject*.toml files to build release wheels and archives
-
 [build-system]
 requires = [ "flot>=0.7.0" ]
 build-backend = "flot.buildapi"
 
 [project]
-name = "scancode-toolkit-devel"
+name = "scancode-toolkit"
 version = "32.1.0"
 description = "ScanCode is a tool to scan code for license, copyright, package and their documented dependencies and other interesting facts."
 readme = "README.rst"
@@ -49,6 +46,7 @@ classifiers = [
 ]
 
 dependencies = [
+    "licensedcode-index",
     "attrs >= 18.1,!=20.1.0;python_version<'3.11'",
     "attrs >= 22.1.0;python_version>='3.11'",
     "Beautifulsoup4 >= 4.0.0",
@@ -107,10 +105,8 @@ Homepage = "https://github.com/nexB/scancode-toolkit"
 
 
 [project.optional-dependencies]
-# no impact but added for symmetry with the other pyproject.toml
 licenses = [
     "licensecode-data",
-    "licensedcode-index",
 ]
 
 # no impact but added for symmetry with the other pyproject.toml
