@@ -1746,6 +1746,15 @@ class Package(PackageData):
         return True
 
     def refresh_license_expressions(self, default_relation='AND'):
+        """
+        Refresh the standard and SPDX license expressions. Do nothing is the licensing code
+        is not available.
+        """
+        try:
+            from packagedcode.licensing import get_declared_license_expression_spdx
+        except ImportError:
+            return
+
         if self.license_detections:
             self.declared_license_expression = str(combine_expressions(
                     expressions=[
