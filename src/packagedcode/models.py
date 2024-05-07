@@ -30,6 +30,8 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
+from license_expression import combine_expressions
+from license_expression import Licensing
 
 try:
     from typecode import contenttype
