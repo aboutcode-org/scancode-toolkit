@@ -7,8 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import attr
-
 from commoncode.system import on_linux
 from packagedcode import about
 from packagedcode import alpine
