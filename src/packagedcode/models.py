@@ -116,11 +116,8 @@ Beyond these we have a few secondary models:
 - IdentifiablePackageData: a base class for a Package-like class with a Package URL.
 """
 
-SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
-SCANCODE_DEBUG_PACKAGE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
-
-TRACE = SCANCODE_DEBUG_PACKAGE
-TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE_ASSEMBLY
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+TRACE_UPDATE = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
 
 
 def logger_debug(*args):
@@ -1645,6 +1642,8 @@ class Package(PackageData):
         include_qualifiers=False,
         include_subpath=False,
         ignore_name_check=False,
+        default_relation='AND',
+        licensing=Licensing(),
     ):
         """
         Update this Package with data from the ``package_data`` PackageData.
@@ -1697,15 +1696,15 @@ class Package(PackageData):
             'file_references',
         ])
 
+        license_modified = False
         for name, value in existing.items():
             new_value = new_package_data.get(name)
+            if not new_value:
+                if TRACE_UPDATE: logger_debug(f'  No new value: {name!r}: skipping')
+                continue
 
             if TRACE_UPDATE:
                 logger_debug(f'update: {name!r}={value!r} with new_value: {new_value!r}')
-
-            if not new_value:
-                if TRACE_UPDATE: logger_debug('  No new value: skipping')
-                continue
 
             if not value:
                 if TRACE_UPDATE: logger_debug('  set existing value to new')
@@ -1721,6 +1720,18 @@ class Package(PackageData):
             if name == 'extra_data':
                 value.update(new_value)
 
+            if 'license_detections' in name:
+                license_modified = True
+                license_keys = licensing.license_keys(
+                    expression=new_package_data.get("declared_license_expression"),
+                    unique=True,
+                )
+                if name == 'license_detections' and len(license_keys) > 1:
+                    setattr(self, 'other_license_detections', new_value)
+                else:
+                    merged = value + new_value
+                    setattr(self, name, merged)
+
             if name in list_fields:
                 if TRACE_UPDATE: logger_debug('  merge lists of values')
                 merged = merge_sequences(list1=value, list2=new_value)
@@ -1729,7 +1740,35 @@ class Package(PackageData):
             elif TRACE_UPDATE and value != new_value:
                 if TRACE_UPDATE: logger_debug('  skipping update: no replace')
 
+        if license_modified:
+            self.refresh_license_expressions(default_relation=default_relation)
+
         return True
+
+    def refresh_license_expressions(self, default_relation='AND'):
+        if self.license_detections:
+            self.declared_license_expression = str(combine_expressions(
+                    expressions=[
+                        detection["license_expression"]
+                        for detection in self.license_detections
+                    ],
+                    relation=default_relation,
+            ))
+            self.declared_license_expression_spdx = get_declared_license_expression_spdx(
+                declared_license_expression=self.declared_license_expression,
+            )
+        
+        if self.other_license_detections:
+            self.other_license_expression = str(combine_expressions(
+                expressions=[
+                    detection["license_expression"]
+                    for detection in self.other_license_detections
+                ],
+                relation=default_relation,
+            ))
+            self.other_license_expression_spdx = get_declared_license_expression_spdx(
+                declared_license_expression=self.other_license_expression,
+            )
 
     def get_packages_files(self, codebase):
         """
