@@ -40,7 +40,11 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
-v32.1.0 (next, roadmap)
+- The Python API of the packagedcode module has changed. The package datafile "handlers" registry
+  that used to be in packagedcode/__init__.py has been moved to packagedcode/handlers.py
+ 
+
+v32.1.0 2024-03-22
 ----------------------------
 
 New CLI options:
