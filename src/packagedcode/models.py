@@ -1475,9 +1475,9 @@ class DatafileHandler:
                 pass
 
         if pd_els and not isinstance(pd_els, str):
-            package_data.extracted_license_statement = repr(pd_els)
             # TODO: consider using a common normalization of the extracted license field
             # package_data.extracted_license_statement = normalize_extracted_license_statement(pd_els)
+            package_data.extracted_license_statement = repr(pd_els)
 
     @classmethod
     def get_top_level_resources(cls, manifest_resource, codebase):
