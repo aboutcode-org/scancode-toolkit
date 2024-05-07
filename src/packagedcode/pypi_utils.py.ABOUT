@@ -1,4 +1,4 @@
-about_resource: pypi.py
+about_resource: pypi_utils.py
 name: pyserial
 namespace: pyserial
 package_url: pkg:github/pyserial/pyserial@d867871e6aa33301#setup.py
@@ -6,8 +6,7 @@ attribute: yes
 copyright: Copyright (c) 2001-2020 Chris Liechti <cliechti@gmx.net>
 download_url: https://github.com/pyserial/pyserial/blob/d867871e6aa333014a77498b4ac96fdd1d3bf1d8/setup.py#L34
 license_expression: bsd-new
-notice_file: pypi.py.NOTICE
+license_file: pypi_utils.py.LICENSE
 primary_language: Python
-notes: The functions find_pattern(), find_dunder_version(),
- find_setup_py_dunder_version() are inspired and heavily modified from Pyserial
- setup.py
+notes: The functions find_pattern(), find_dunder_version(), find_setup_py_dunder_version() are
+ inspired and heavily modified from Pyserial setup.py
