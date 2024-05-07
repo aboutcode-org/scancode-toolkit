@@ -25,9 +25,10 @@ venv/bin/flot --pyproject pyproject-licensedcode-data.toml --wheel --sdist
 venv/bin/flot --pyproject pyproject-licensedcode-index.toml --wheel --sdist
 
 # build code packages
-venv/bin/flot --pyproject pyproject.toml --wheel --sdist
-venv/bin/flot --pyproject pyproject-mini.toml --wheel --sdist
-venv/bin/flot --pyproject pyproject-packagedcode.toml --wheel --sdist
+venv/bin/flot --pyproject pyproject-scancode-toolkit.toml --wheel --sdist
+venv/bin/flot --pyproject pyproject-scancode-toolkit-mini.toml --wheel --sdist
+venv/bin/flot --pyproject pyproject-packagedcode-models.toml --wheel --sdist
+venv/bin/flot --pyproject pyproject-packagedcode-pypi.toml --wheel --sdist
 
 venv/bin/twine check dist/*
 
