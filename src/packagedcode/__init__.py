@@ -218,8 +218,10 @@ SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
     debian.DebianInstalledMd5sumFilelistHandler,
     debian.DebianInstalledStatusDatabaseHandler,
 
+    distro.EtcOsReleaseHandler,
+
     rpm.RpmLicenseFilesHandler,
-    rpm.RpmMarinerContainerManifestHandler
+    rpm.RpmMarinerContainerManifestHandler,
 ]
 
 if on_linux:
