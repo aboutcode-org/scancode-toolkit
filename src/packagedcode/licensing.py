@@ -37,7 +37,6 @@ from summarycode.classify import README_STARTS_ENDS
 
 import saneyaml
 
-
 """
 Detect and normalize licenses as found in package manifests data.
 """
@@ -248,7 +247,7 @@ def add_referenced_license_detection_from_package(resource, codebase):
                 continue
 
             for sibling_detection in sibling_license_detections:
-                
+
                 modified = True
                 detection_modified = True
                 license_match_mappings.extend(sibling_detection["matches"])
@@ -591,7 +590,7 @@ def matches_have_unknown(matches, licensing=Licensing()):
 
 def get_license_detections_from_matches(matches):
     """
-    Return a list of LicenseDetection objects given a list of LicenseMatch objects.
+    Return a list of LicenseDetection given a ``matches`` list of LicenseMatch.
     """
     license_detections = []
 
@@ -624,7 +623,7 @@ def get_license_expression_from_detections(license_detections, relation='AND', u
         license_expression = str(license_expressions[0])
     else:
         license_expression = str(
-            combine_expressions(license_expressions, relation=relation, unique=unique)
+            combine_expressions(expressions=license_expressions, relation=relation, unique=unique)
         )
 
     return license_expression
@@ -639,8 +638,9 @@ def get_mapping_and_expression_from_detections(
     whole_lines=True,
 ):
     """
-    Return a list of LicenseDetection data mapping and a license_expression
-    from a list of LicenseDetection objects.
+    Return a tuple of:
+        (list of LicenseDetection data mapping , license_expression string)
+    from a ``license_detections`` list of LicenseDetection.
     """
     detection_data = []
 
@@ -672,13 +672,16 @@ def get_mapping_and_expression_from_detections(
     return detection_data, license_expression
 
 
+# TODO: fixme do not use a double negative
 def is_declared_license_not_fully_matched(matches):
     """
-    verify that we consumed 100% of the query string e.g. that we
-    have no unknown leftover.
+    Return True if we DID NOT we consumed all the query string e.g. that we have no unknown leftover.
 
-    # 1. have all matches 100% coverage?
-    # 2. is declared license fully matched?
+    A declared license statement is supposed to be entreily about licensing and therefore we should
+    detect everything in its string.
+    We check if:
+     - do all matches have a 100% coverage?
+     - is the declared license fully matched?
     """
     all_matches_have_full_coverage = all(m.coverage() == 100 for m in matches)
 
@@ -690,7 +693,7 @@ def is_declared_license_not_fully_matched(matches):
             raise Exception(
                 'Inconsistent package.extracted_license_statement: text with multiple "queries".'
                 'Please report this issue to the scancode-toolkit team.\n'
-                f'{matches}'
+                f'{matches!r}'
             )
 
     query_len = len(query.tokens)
@@ -712,8 +715,8 @@ def get_normalized_license_detections(
     expression_symbols=None,
 ):
     """
-    Return a normalized license expression string detected from a list of
-    declared license items.
+    Return a normalized license expression string detected from a ``extracted_license`` list of
+    declared license items or string or dict
     """
     license_detections = []
 
@@ -736,6 +739,7 @@ def get_normalized_license_detections(
                 logger_debug(f'get_normalized_license_detections: str:')
 
         elif isinstance(extracted_license, dict):
+            # detect first on values, not keys
             for extracted_license_statement in extracted_license.values():
                 detections = get_license_detections_for_extracted_license_statement(
                     extracted_license_statement=extracted_license_statement,
@@ -744,17 +748,27 @@ def get_normalized_license_detections(
                     expression_symbols=expression_symbols,
                 )
                 if TRACE:
-                    logger_debug(f'get_normalized_license_detections: dict: extracted_license_statement: {extracted_license_statement}: detections: {detections}')
+                    logger_debug(
+                        'get_normalized_license_detections: dict: '
+                        f'extracted_license_statement: {extracted_license_statement}: '
+                        f'detections: {detections}'
+                    )
 
                 if detections:
                     license_detections.extend(detections)
 
             if not license_detections:
+                # try again first on items if nothing was found
                 unknown_dict_object = repr(dict(extracted_license.items()))
                 unknown_detection = get_unknown_license_detection(query_string=unknown_dict_object)
                 license_detections.append(unknown_detection)
                 if TRACE:
-                    logger_debug(f'get_normalized_license_detections: dict: unknown_dict_object: {unknown_dict_object}, unknown_detection: {saneyaml.dump(unknown_detection.to_dict())}')
+                    logger_debug(
+                        'get_normalized_license_detections: dict: '
+                        f'unknown_dict_object: {unknown_dict_object}, '
+                        f'unknown_detection: {saneyaml.dump(unknown_detection.to_dict())}'
+                    )
+
         else:
             extracted_license_statement = saneyaml.dump(extracted_license)
             license_detections = get_license_detections_for_extracted_license_statement(
@@ -781,7 +795,10 @@ def get_normalized_license_detections(
                     license_detections.extend(detections)
 
                 if TRACE:
-                    logger_debug(f'get_normalized_license_detections: list(str): extracted_license_item: {extracted_license_item}: detections: {license_detections}')
+                    logger_debug(
+                        'get_normalized_license_detections: list(str): '
+                        f'extracted_license_item: {extracted_license_item}: '
+                        f'detections: {license_detections}')
 
             elif isinstance(extracted_license_item, dict):
                 for extracted_license_statement in extracted_license_item.values():
@@ -792,7 +809,11 @@ def get_normalized_license_detections(
                         expression_symbols=expression_symbols,
                     )
                     if TRACE:
-                        logger_debug(f'get_normalized_license_detections: list(dict): extracted_license_statement: {extracted_license_statement}: detections: {detections}')
+                        logger_debug(
+                            'get_normalized_license_detections: list(dict): '
+                            f'extracted_license_statement: {extracted_license_statement}: '
+                            f'detections: {detections}'
+                        )
 
                     if detections:
                         license_detections.extend(detections)
@@ -810,7 +831,11 @@ def get_normalized_license_detections(
                     license_detections.extend(detections)
 
                 if TRACE:
-                    logger_debug(f'get_normalized_license_detections: list(other): extracted_license_statement: {extracted_license_statement}: detections: {license_detections}')
+                    logger_debug(
+                        'get_normalized_license_detections: list(other): '
+                        f'extracted_license_statement: {extracted_license_statement}: '
+                        f'detections: {license_detections}'
+                    )
 
     return license_detections
 
@@ -821,7 +846,7 @@ def get_license_detections_and_expression(
     try_as_expression=True,
     approximate=True,
     expression_symbols=None,
-    datasource_id = None,
+    datasource_id=None,
 ):
     """
     Given a text `extracted_license_statement` return a list of LicenseDetection objects.
@@ -886,8 +911,7 @@ def get_license_detections_for_extracted_license_statement(
     expression_symbols=None,
 ):
     """
-    Return a list of LicenseDetection objects after detecting licenses in
-    the given `extracted_license_statement`.
+    Detect licenses in an ``extracted_license_statement`` string and return a LicenseDetection list.
     """
     if not extracted_license_statement:
         return []
