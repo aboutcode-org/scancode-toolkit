@@ -103,9 +103,9 @@ The key models defined here are:
   dependencies. When implementing a new package type and manifest file format,
   subclass DatafileHandler and implement the parse() and assemble() methods for
   this package datafile format and package type. Then register this class in
-  ``packagedcode.APPLICATION_PACKAGE_DATAFILE_HANDLERS`` if this is an
-  application package or ``packagedcode.SYSTEM_PACKAGE_DATAFILE_HANDLERS`` if
-  this is a system package.
+  ``packagedcode.handlers.APPLICATION_PACKAGE_DATAFILE_HANDLERS`` if this is an
+  application package or ``packagedcode.handlers.SYSTEM_PACKAGE_DATAFILE_HANDLERS``
+  if this is a system package.
 
 
 Beyond these we have a few secondary models:
@@ -743,7 +743,7 @@ class PackageData(IdentifiablePackageData):
 
     @property
     def can_assemble(self):
-        from packagedcode import HANDLER_BY_DATASOURCE_ID
+        from packagedcode.handlers import HANDLER_BY_DATASOURCE_ID
         handler = HANDLER_BY_DATASOURCE_ID.get(self.datasource_id)
         if issubclass(handler, NonAssemblableDatafileHandler):
             return False
@@ -950,7 +950,7 @@ class PackageData(IdentifiablePackageData):
 
 
 def get_default_relation_license(datasource_id):
-    from packagedcode import HANDLER_BY_DATASOURCE_ID
+    from packagedcode.handlers import HANDLER_BY_DATASOURCE_ID
     handler = HANDLER_BY_DATASOURCE_ID[datasource_id]
     return handler.default_relation_license
 

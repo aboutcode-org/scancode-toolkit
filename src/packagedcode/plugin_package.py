@@ -26,7 +26,7 @@ from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
 from licensedcode.detection import DetectionRule
 from licensedcode.detection import populate_matches_with_path
-from packagedcode import get_package_handler
+from packagedcode.handlers import get_package_handler
 from packagedcode.licensing import add_referenced_license_matches_for_package
 from packagedcode.licensing import add_referenced_license_detection_from_package
 from packagedcode.licensing import add_license_from_sibling_file
@@ -78,7 +78,7 @@ def print_packages(ctx, param, value):
 
 def get_available_package_parsers(docs=False):
 
-    from packagedcode import ALL_DATAFILE_HANDLERS
+    from packagedcode.handlers import ALL_DATAFILE_HANDLERS
 
     all_data_packages = []
 

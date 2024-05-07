@@ -11,7 +11,7 @@ import os.path
 
 from packagedcode import misc
 from packagedcode import models
-from packagedcode import ALL_DATAFILE_HANDLERS
+from packagedcode.handlers import ALL_DATAFILE_HANDLERS
 from packagedcode.models import PackageData
 from packagedcode.models import Party
 from packagedcode.plugin_package import get_package_and_deps

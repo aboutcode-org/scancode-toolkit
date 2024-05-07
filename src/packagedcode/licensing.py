@@ -837,7 +837,7 @@ def get_license_detections_and_expression(
     Return None if the `query_string` is empty. Return "unknown" as a license
     expression if there is a `query_string` but nothing was detected.
     """
-    from packagedcode import PACKAGE_DATA_CLASS_BY_DATASOURCE_ID
+    from packagedcode.handlers import PACKAGE_DATA_CLASS_BY_DATASOURCE_ID
 
     detection_data = []
     license_expression = None
