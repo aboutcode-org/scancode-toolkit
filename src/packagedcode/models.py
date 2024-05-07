@@ -9,14 +9,16 @@
 
 import os
 import uuid
-from fnmatch import fnmatchcase
 import logging
 import sys
 
+from fnmatch import fnmatchcase
+
 import attr
+import saneyaml
+
 from packageurl import normalize_qualifiers
 from packageurl import PackageURL
-import saneyaml
 
 from commoncode import filetype
 from commoncode.datautils import choices
@@ -28,17 +30,11 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
+
 try:
     from typecode import contenttype
 except ImportError:
     contenttype = None
-
-try:
-    from packagedcode import licensing
-except ImportError:
-    licensing = None
-
-from packagedcode.licensing import get_declared_license_expression_spdx
 
 """
 This module contain data models for package and dependencies, abstracting and
@@ -61,7 +57,7 @@ Structured package information come in three primary kinds:
 - "metadata" such as a name, version or description,
 
 - "dependencies" on other packages either potential with version requirements or
-  resolved and locked with concrete versions), and
+  resolved and locked with concrete versions, and
 
 - "build" and packaging scripts and instructions.
 
@@ -737,42 +733,32 @@ class PackageData(IdentifiablePackageData):
             package_data.populate_license_fields()
             package_data.populate_holder_field()
         else:
-            package_data.normalize_extracted_license_statement()
+            package_data.extracted_license_statement = normalize_extracted_license_statement(
+                package_data.extracted_license_statement
+            )
 
         return package_data
 
     @property
     def can_assemble(self):
-        from packagedcode.handlers import HANDLER_BY_DATASOURCE_ID
-        handler = HANDLER_BY_DATASOURCE_ID.get(self.datasource_id)
-        if issubclass(handler, NonAssemblableDatafileHandler):
+        try:
+            from packagedcode.handlers import HANDLER_BY_DATASOURCE_ID
+            handler = HANDLER_BY_DATASOURCE_ID.get(self.datasource_id)
+            if issubclass(handler, NonAssemblableDatafileHandler):
+                return False
+
+            return True
+        except ImportError:
             return False
-
-        return True
-
-    def normalize_extracted_license_statement(self):
-        """
-        Normalizes the extracted license statement to a readable
-        YAML string if it was a pythonic object.
-        """
-        if (
-            self.extracted_license_statement and
-            not isinstance(self.extracted_license_statement, str)
-        ):
-            if isinstance(self.extracted_license_statement, dict):
-                self.extracted_license_statement = saneyaml.dump(
-                    dict(self.extracted_license_statement.items())
-                )
-            else:
-                self.extracted_license_statement = saneyaml.dump(
-                    self.extracted_license_statement
-                )
 
     def populate_holder_field(self):
         if not self.copyright:
             return
 
-        from cluecode.copyrights import CopyrightDetector
+        try:
+            from cluecode.copyrights import CopyrightDetector
+        except ImportError:
+            return
 
         numbered_lines = list(enumerate(self.copyright.split("\n"), start=1))
         detector = CopyrightDetector()
@@ -811,22 +797,29 @@ class PackageData(IdentifiablePackageData):
         """
         if not self.declared_license_expression and self.extracted_license_statement:
 
-            self.license_detections, self.declared_license_expression = \
-                self.get_license_detections_and_expression()
+            try:
+                from packagedcode.licensing import get_declared_license_expression_spdx
 
-            self.declared_license_expression_spdx = get_declared_license_expression_spdx(
-                declared_license_expression=self.declared_license_expression
-            )
+                lds, dle = self.get_license_detections_and_expression()
+                self.license_detections = lds
+                self.declared_license_expression = dle
 
-            if TRACE:
-                logger_debug(
-                    f"PackageData: populate_license_fields:"
-                    f"extracted_license_statement: {self.extracted_license_statement}"
-                    f"declared_license_expression: {self.declared_license_expression}"
-                    f"license_detections: {self.license_detections}"
-                )
+                dles = get_declared_license_expression_spdx(declared_license_expression=dle)
+                self.declared_license_expression_spdx = dles
 
-        self.normalize_extracted_license_statement()
+                if TRACE:
+                    logger_debug(
+                        f"PackageData: populate_license_fields:"
+                        f"extracted_license_statement: {self.extracted_license_statement}"
+                        f"declared_license_expression: {self.declared_license_expression}"
+                        f"license_detections: {self.license_detections}"
+                    )
+            except ImportError:
+                pass
+
+        self.extracted_license_statement = normalize_extracted_license_statement(
+            self.extracted_license_statement
+        )
 
     def update_purl_fields(self, package_data, replace=False):
 
@@ -930,29 +923,53 @@ class PackageData(IdentifiablePackageData):
         Called only when using the default assemble() implementation.
         Subclass can override as needed.
         """
-        from packagedcode.licensing import get_license_detections_and_expression
 
         if not self.extracted_license_statement:
             return [], None
 
-        if self.datasource_id:
-            default_relation_license=get_default_relation_license(
+        try:
+            from packagedcode.licensing import get_license_detections_and_expression
+
+            if self.datasource_id:
+                default_relation_license = get_default_relation_license(
+                    datasource_id=self.datasource_id,
+                )
+            else:
+                default_relation_license = 'AND'
+
+            return get_license_detections_and_expression(
+                extracted_license_statement=self.extracted_license_statement,
+                default_relation_license=default_relation_license,
                 datasource_id=self.datasource_id,
             )
-        else:
-            default_relation_license = 'AND'
+        except ImportError:
+            return [], None
 
-        return get_license_detections_and_expression(
-            extracted_license_statement=self.extracted_license_statement,
-            default_relation_license=default_relation_license,
-            datasource_id=self.datasource_id,
-        )
+
+def normalize_extracted_license_statement(els):
+    """
+    Normalizes the extracted license statement ``els`` to a readable
+    YAML string if it was a pythonic object.
+    """
+    if (els and not isinstance(els, str)):
+        if isinstance(els, dict):
+            els = saneyaml.dump(dict(els.items()))
+        else:
+            els = saneyaml.dump(els)
+    return els
 
 
 def get_default_relation_license(datasource_id):
-    from packagedcode.handlers import HANDLER_BY_DATASOURCE_ID
-    handler = HANDLER_BY_DATASOURCE_ID[datasource_id]
-    return handler.default_relation_license
+    """
+    Return the default relationship between multiple license statements (OR or AND) defaulting to
+    "AND".
+    """
+    try:
+        from packagedcode.handlers import HANDLER_BY_DATASOURCE_ID
+        handler = HANDLER_BY_DATASOURCE_ID[datasource_id]
+        return handler.default_relation_license
+    except ImportError:
+        return
 
 
 def _rehydrate_list(cls, values):
@@ -1434,25 +1451,33 @@ class DatafileHandler:
         object, and add the declared_license_expression (and the spdx expression)
         and corresponding LicenseDetection data.
         """
-        if not package_data.declared_license_expression and package_data.extracted_license_statement:
+        pd_els = package_data.extracted_license_statement
+        if not package_data.declared_license_expression and pd_els:
 
-            package_data.license_detections, package_data.declared_license_expression = \
-                cls.get_license_detections_and_expression(package_data)
+            try:
+                from packagedcode.licensing import get_declared_license_expression_spdx
+                pd_ld, pd_dle = cls.get_license_detections_and_expression(package_data)
+                package_data.license_detections = pd_ld
+                package_data.declared_license_expression = pd_dle
 
-            package_data.declared_license_expression_spdx = get_declared_license_expression_spdx(
-                declared_license_expression=package_data.declared_license_expression
-            )
+                pd_dles = get_declared_license_expression_spdx(declared_license_expression=pd_dle)
+                package_data.declared_license_expression_spdx = pd_dles
 
-            if TRACE:
-                logger_debug(
-                    f"DatafileHandler: populate_license_fields:"
-                    f"extracted_license_statement: {package_data.extracted_license_statement}"
-                    f"declared_license_expression: {package_data.declared_license_expression}"
-                    f"license_detections: {package_data.license_detections}"
-                )
+                if TRACE:
+                    logger_debug(
+                        f"DatafileHandler: populate_license_fields:"
+                        f"extracted_license_statement: {package_data.extracted_license_statement}"
+                        f"declared_license_expression: {package_data.declared_license_expression}"
+                        f"license_detections: {package_data.license_detections}"
+                    )
 
-        if package_data.extracted_license_statement and not isinstance(package_data.extracted_license_statement, str):
-            package_data.extracted_license_statement = repr(package_data.extracted_license_statement)
+            except ImportError:
+                pass
+
+        if pd_els and not isinstance(pd_els, str):
+            package_data.extracted_license_statement = repr(pd_els)
+            # TODO: consider using a common normalization of the extracted license field
+            # package_data.extracted_license_statement = normalize_extracted_license_statement(pd_els)
 
     @classmethod
     def get_top_level_resources(cls, manifest_resource, codebase):
@@ -1571,10 +1596,10 @@ class Package(PackageData):
                     license_match['from_file'] = datafile_path
 
         package = cls.from_dict(package_data_mapping)
-        
+
         if not package.package_uid:
             package.package_uid = build_package_uid(package.purl)
-        
+
         if not package_only:
             package.populate_license_fields()
             package.populate_holder_field()
