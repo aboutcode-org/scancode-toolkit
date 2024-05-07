@@ -3,16 +3,17 @@ requires = [ "flot>=0.7.0" ]
 build-backend = "flot.buildapi"
 
 [project]
-name = "packagedcode-models"
+name = "packagedcode-pypi"
 version = "32.1.0"
-description = "PackagedCode Models is a library with core models of package manifests, lockfiles and dependencies for all type of app and system packages keyed by PURL."
-license = { text = "Apache-2.0" }
+description = "PackagedCode PyPI is a library to parse Python package manifests and lockfiles keyed by PURL."
+license = { text = "Apache-2.0 AND BSD-3-Clause AND MIT" }
 # TODO consider a readme?
 # readme = "README.rst"
 requires-python = ">=3.8"
 authors = [
     { name = "nexB. Inc. and others", email = "info@aboutcode.org" },
 ]
+
 keywords = [
     "open source",
     "scan",
@@ -22,6 +23,9 @@ keywords = [
     "SBOM",
     "package-url",
     "purl",
+    "pypi",
+    "poetry",
+    "pip",
 ]
 
 classifiers = [
@@ -39,12 +43,17 @@ classifiers = [
 ]
 
 dependencies = [
+    "packagedcode-models",
     "attrs >= 18.1,!=20.1.0;python_version<'3.11'",
     "attrs >= 22.1.0;python_version>='3.11'",
     "commoncode >= 31.0.3",
+    "dparse2 >= 0.7.0",
+    "importlib_metadata",
     "packageurl_python >= 0.9.0",
-    "saneyaml >= 0.6.0",
-    "typecode >= 30.0.1",
+    "packvers >= 21.0.0",
+    "pip-requirements-parser >= 32.0.1",
+    "pkginfo2 >= 30.0.0",
+    "zipp >= 3.0.0; python_version < \"3.9\"",
 ]
 
 
@@ -52,19 +61,12 @@ dependencies = [
 Homepage = "https://github.com/nexB/scancode-toolkit"
 
 
-[project.optional-dependencies]
-
-full = [
-    "typecode[full] >= 30.0.1",
-]
-
-
 [tool.flot]
 wheel_path_prefixes_to_strip = [ "src" ]
 
 includes = [
     "src/packagedcode/__init__.py",
-    "src/packagedcode/models.py",
+    "src/packagedcode/pypi*.py",
 ]
 
 excludes = [
