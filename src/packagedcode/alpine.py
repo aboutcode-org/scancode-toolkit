@@ -73,19 +73,17 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
-        # get the root resource of the rootfs
-        levels_up = len('lib/apk/db/installed'.split('/'))
-        root_resource = get_ancestor(
-            levels_up=levels_up,
-            resource=resource,
-            codebase=codebase,
-        )
+        root_resource = cls.get_root_resource_for_rootfs(resource, codebase)
 
         package = models.Package.from_package_data(
             package_data=package_data,
             datafile_path=resource.path,
         )
-        package_uid = package.package_uid
+        namespace = cls.get_distro_identifier_rootfs(root_resource, codebase)
+        if namespace:
+            package.namespace = namespace
+
+        package_uid = package.refresh_and_get_package_uid()
 
         cls.populate_license_fields(package)
 
@@ -119,12 +117,14 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
 
         dependent_packages = package_data.dependencies
         if dependent_packages:
-            yield from models.Dependency.from_dependent_packages(
+            for dep in models.Dependency.from_dependent_packages(
                 dependent_packages=dependent_packages,
                 datafile_path=resource.path,
                 datasource_id=package_data.datasource_id,
                 package_uid=package_uid,
-            )
+            ):
+                dep.update_namespace(namespace)
+                yield dep
 
 
 class AlpineApkbuildHandler(models.DatafileHandler):
