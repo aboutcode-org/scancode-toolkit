@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "lua-unit",
   "version": "3.3-r2",
@@ -30,17 +30,17 @@
       "license_expression_spdx": "BSD-2-Clause",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
           "license_expression": "bsd-simplified",
           "spdx_license_expression": "BSD-2-Clause",
-          "rule_identifier": "spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-2-clause_for_bsd-simplified.RULE",
           "matched_text": "bsd-2-clause"
         }
@@ -74,5 +74,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/lua-unit@3.3-r2"
+  "purl": "pkg:apk/lua-unit@3.3-r2"
 }

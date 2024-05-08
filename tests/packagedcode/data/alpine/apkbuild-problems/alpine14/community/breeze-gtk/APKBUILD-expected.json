@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "breeze-gtk",
   "version": "5.22.0-r0",
@@ -30,17 +30,17 @@
       "license_expression_spdx": "LGPL-2.1-only",
       "matches": [
         {
-          "score": 50.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
           "license_expression": "lgpl-2.1",
           "spdx_license_expression": "LGPL-2.1-only",
-          "rule_identifier": "spdx_license_id_lgpl-2.1-only_for_lgpl-2.1.RULE",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 50.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
           "rule_relevance": 50,
+          "rule_identifier": "spdx_license_id_lgpl-2.1-only_for_lgpl-2.1.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_lgpl-2.1-only_for_lgpl-2.1.RULE",
           "matched_text": "lgpl-2.1-only"
         }
@@ -74,5 +74,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/breeze-gtk@5.22.0-r0"
+  "purl": "pkg:apk/breeze-gtk@5.22.0-r0"
 }

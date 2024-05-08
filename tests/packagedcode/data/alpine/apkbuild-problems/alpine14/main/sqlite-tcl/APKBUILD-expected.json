@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "sqlite-tcl",
   "version": "3.35.5-r0",
@@ -74,5 +74,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/sqlite-tcl@3.35.5-r0"
+  "purl": "pkg:apk/sqlite-tcl@3.35.5-r0"
 }

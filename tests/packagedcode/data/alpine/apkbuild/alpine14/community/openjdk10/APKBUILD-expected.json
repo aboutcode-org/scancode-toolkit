@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "openjdk10",
   "version": "10.0.2_p13-r3",
@@ -30,17 +30,17 @@
       "license_expression_spdx": "Classpath-exception-2.0",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
           "license_expression": "classpath-exception-2.0",
           "spdx_license_expression": "Classpath-exception-2.0",
-          "rule_identifier": "classpath-exception-2.0_6.RULE",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "classpath-exception-2.0_6.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/classpath-exception-2.0_6.RULE",
           "matched_text": "gpl-2.0-with-classpath-exception"
         }
@@ -170,5 +170,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/openjdk10@10.0.2_p13-r3"
+  "purl": "pkg:apk/openjdk10@10.0.2_p13-r3"
 }

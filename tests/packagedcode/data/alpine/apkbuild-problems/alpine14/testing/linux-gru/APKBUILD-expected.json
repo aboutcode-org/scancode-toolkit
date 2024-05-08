@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "linux-gru",
   "version": "5.12.10-r0",
@@ -30,17 +30,17 @@
       "license_expression_spdx": "GPL-2.0-only",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "matcher": "1-hash",
           "license_expression": "gpl-2.0",
           "spdx_license_expression": "GPL-2.0-only",
-          "rule_identifier": "gpl-2.0_52.RULE",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "gpl-2.0_52.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_52.RULE",
           "matched_text": "gpl-2.0"
         }
@@ -94,5 +94,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/linux-gru@5.12.10-r0"
+  "purl": "pkg:apk/linux-gru@5.12.10-r0"
 }

@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "gcc6",
   "version": "6.4.0-r12",
@@ -386,5 +386,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/gcc6@6.4.0-r12"
+  "purl": "pkg:apk/gcc6@6.4.0-r12"
 }

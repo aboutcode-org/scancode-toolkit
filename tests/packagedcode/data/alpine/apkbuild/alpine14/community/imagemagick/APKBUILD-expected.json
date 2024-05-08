@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "imagemagick",
   "version": "7.0.11.13-r0",
@@ -30,17 +30,17 @@
       "license_expression_spdx": "ImageMagick",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 1,
-          "match_coverage": 100.0,
-          "matcher": "1-spdx-id",
           "license_expression": "imagemagick",
           "spdx_license_expression": "ImageMagick",
-          "rule_identifier": "spdx-license-identifier-imagemagick-0dd8f5c123a82d3e8b7c6d577c371911a89076bb",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-imagemagick-0dd8f5c123a82d3e8b7c6d577c371911a89076bb",
           "rule_url": null,
           "matched_text": "imagemagick"
         }
@@ -82,5 +82,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/imagemagick@7.0.11.13-r0"
+  "purl": "pkg:apk/imagemagick@7.0.11.13-r0"
 }

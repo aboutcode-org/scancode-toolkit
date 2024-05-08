@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "qt6-qtbase",
   "version": "6.1.1-r0",
@@ -74,5 +74,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/qt6-qtbase@6.1.1-r0"
+  "purl": "pkg:apk/qt6-qtbase@6.1.1-r0"
 }

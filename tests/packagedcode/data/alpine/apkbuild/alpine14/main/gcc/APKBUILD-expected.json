@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "gcc",
   "version": "10.3.1_git20210424-r1",
@@ -402,5 +402,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/gcc@10.3.1_git20210424-r1"
+  "purl": "pkg:apk/gcc@10.3.1_git20210424-r1"
 }
