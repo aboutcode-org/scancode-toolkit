@@ -1511,7 +1511,7 @@ class DatafileHandler:
             # there can be only one distro
             distro = os_release_res.package_data and os_release_res.package_data[0]
             if distro:
-                identifier = distro.get("name")
+                identifier = distro.get("namespace")
                 break
 
         return identifier

@@ -355,8 +355,8 @@
       "package_data": [
         {
           "type": "linux-distro",
-          "namespace": "debian",
-          "name": "ubuntu",
+          "namespace": "ubuntu",
+          "name": "debian",
           "version": "22.04",
           "qualifiers": {},
           "subpath": null,
@@ -393,7 +393,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "etc_os_release",
-          "purl": "pkg:linux-distro/debian/ubuntu@22.04"
+          "purl": "pkg:linux-distro/ubuntu/debian@22.04"
         }
       ],
       "for_packages": [],
