@@ -333,7 +333,7 @@ def streamline_scanned_file(scanned_file, remove_file_date=False, normalize_file
     if remove_file_date:
         scanned_file.pop('date', None)
     if normalize_file_type and (file_type := scanned_file.get('file_type')):
-        file_type_segments = file_type.split(',')
+        file_type_segments = file_type.split()
         normalized_file_type = file_type_segments[0]
         scanned_file['file_type'] = normalized_file_type
 
