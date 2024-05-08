@@ -335,6 +335,8 @@ def streamline_scanned_file(scanned_file, remove_file_date=False, normalize_file
     if normalize_file_type and (file_type := scanned_file.get('file_type')):
         file_type_segments = file_type.split()
         normalized_file_type = file_type_segments[0]
+        if 'UTF' in normalized_file_type:
+            normalized_file_type = 'Unicode'
         scanned_file['file_type'] = normalized_file_type
 
 
