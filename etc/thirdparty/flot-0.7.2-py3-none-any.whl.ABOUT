@@ -1,2 +1,10 @@
-date: 2024-04-26
+about_resource: flot-0.7.2-py3-none-any.whl
+name: flot
+version: 0.7.2
 download_url: https://files.pythonhosted.org/packages/54/98/9fc7924de9ebff67602f6934fff7411d089468d5aee878d7fd2f9d8be1f5/flot-0.7.2-py3-none-any.whl
+copyright: |
+	Copyright (c) nexB Inc. and contributors
+	Copyright (c) 2015, Thomas Kluyver and contributors
+	Copyright (c) Donald Stufft and individual contributors.
+license_expression_spdx: BSD-2-clause AND BSD-3-clause
+license_file: flot.LICENSE
