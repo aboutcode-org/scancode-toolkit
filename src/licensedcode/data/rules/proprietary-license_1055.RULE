@@ -1,0 +1,13 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+notes: it is not clear if this is commercially licensed or open source or proprietary
+ignorable_authors:
+    - Red Hat
+---
+
+The Universal Base Image is designed and engineered to be the base
+layer for all of your containerized applications, middleware and utilities. This base
+image is freely redistributable, but Red Hat only supports Red Hat technologies through
+subscriptions for Red Hat products. This image is maintained by Red Hat and updated
+regularly.

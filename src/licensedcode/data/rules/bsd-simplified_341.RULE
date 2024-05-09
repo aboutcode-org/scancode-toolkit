@@ -1,0 +1,9 @@
+---
+license_expression: bsd-simplified
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE
+---
+
+distributed under an [open source license](./LICENSE). A simplified 2-BSD license.
