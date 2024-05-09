@@ -175,13 +175,12 @@ def detect_copyrights_from_lines(
         )
 
     for candidates in candidate_lines_groups:
-        if TRACE:
-            from pprint import pformat
-            can = pformat(candidates, width=160)
-            logger_debug(
-                f' detect_copyrights_from_lines: processing candidates group:\n'
-                f'  {can}'
-            )
+        if TRACE or TRACE_DEEP:
+            logger_debug(f'========================================================================')
+            logger_debug(f'  detect_copyrights_from_lines: processing candidates group:')
+            for can in candidates:
+                logger_debug(f'    {can}')
+                
 
         detections = detector.detect(
             numbered_lines=candidates,
@@ -246,12 +245,12 @@ class CopyrightDetector(object):
             return
 
         if TRACE or TRACE_TOK:
-            logger_debug(f'CopyrightDetector: numbered_lines: {numbered_lines}')
+            logger_debug(f'  CopyrightDetector: numbered_lines: {numbered_lines}')
 
         tokens = list(get_tokens(numbered_lines))
 
         if TRACE:
-            logger_debug(f'CopyrightDetector: initial tokens: {tokens}')
+            logger_debug(f'  CopyrightDetector: initial tokens: {tokens}')
 
         if not tokens:
             return
@@ -259,14 +258,14 @@ class CopyrightDetector(object):
         # first, POS tag each token using token regexes
         lexed_text = list(self.lexer.lex_tokens(tokens, trace=TRACE_TOK))
 
-        if TRACE:
-            logger_debug(f'CopyrightDetector: lexed tokens: {lexed_text}')
+        if TRACE or TRACE_DEEP:
+            logger_debug(f'  CopyrightDetector: lexed tokens:\n{lexed_text}')
 
         # then build a parse parse_tree based on tagged tokens
         parse_tree = self.parser.parse(lexed_text)
 
-        if TRACE:
-            logger_debug(f'CopyrightDetector: parse_tree:\n{tree_pformat(parse_tree)}')
+        if TRACE or TRACE_DEEP:
+            logger_debug(f'  CopyrightDetector: final parse_tree:\n{tree_pformat(parse_tree)}')
 
         non_copyright_labels = frozenset()
         if not include_copyright_years:
@@ -312,7 +311,7 @@ class CopyrightDetector(object):
                     junk=COPYRIGHTS_JUNK,
                 )
 
-                if TRACE:
+                if TRACE or TRACE_DEEP:
                     logger_debug(f'CopyrightDetector: detection: {copyrght}')
 
                 if copyrght:
@@ -3879,15 +3878,13 @@ def candidate_lines(numbered_lines):
 
     if TRACE_TOK:
         numbered_lines = list(numbered_lines)
-        logger_debug(
-            f'candidate_lines: numbered_lines: {numbered_lines!r}')
+        logger_debug(f'candidate_lines: numbered_lines: {numbered_lines!r}')
 
     # the previous line (chars only)
     previous_chars = None
     for numbered_line in numbered_lines:
         if TRACE:
-            logger_debug(
-                f'# candidate_lines: evaluating line: {numbered_line!r}')
+            logger_debug(f'# candidate_lines: evaluating line: {numbered_line!r}')
 
         _line_number, line = numbered_line
 
