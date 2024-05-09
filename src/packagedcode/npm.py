@@ -12,6 +12,7 @@ import os
 import logging
 import json
 import re
+import sys
 import urllib.parse
 from functools import partial
 from itertools import islice
@@ -35,8 +36,10 @@ To check https://github.com/npm/normalize-package-data
 
 
 SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+SCANCODE_DEBUG_PACKAGE_NPM = os.environ.get('SCANCODE_DEBUG_PACKAGE_NPM', False)
 
 TRACE = SCANCODE_DEBUG_PACKAGE
+TRACE_NPM = SCANCODE_DEBUG_PACKAGE_NPM
 
 
 def logger_debug(*args):
@@ -45,8 +48,7 @@ def logger_debug(*args):
 
 logger = logging.getLogger(__name__)
 
-if TRACE:
-    import sys
+if TRACE or TRACE_NPM:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -185,7 +187,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
     documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-json'
 
     @classmethod
-    def _parse(cls, json_data):
+    def _parse(cls, json_data, package_only=False):
         name = json_data.get('name')
         version = json_data.get('version')
         homepage_url = json_data.get('homepage', '')
@@ -200,7 +202,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         namespace, name = split_scoped_package_name(name)
 
         urls = get_urls(namespace, name, version)
-        package = models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -211,6 +213,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             homepage_url=homepage_url,
             **urls,
         )
+        package = models.PackageData.from_data(package_data, package_only)
         vcs_revision = json_data.get('gitHead') or None
 
         # mapping of top level package.json items to a function accepting as
@@ -249,7 +252,8 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         lics = json_data.get('licenses')
         package = licenses_mapper(lic, lics, package)
 
-        package.populate_license_fields()
+        if not package_only:
+            package.populate_license_fields()
 
         if TRACE:
             logger_debug(f'NpmPackageJsonHandler: parse: package: {package.to_dict()}')
@@ -257,17 +261,17 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         return package
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with io.open(location, encoding='utf-8') as loc:
             json_data = json.load(loc)
 
-        yield cls._parse(json_data)
+        yield cls._parse(json_data, package_only)
 
 
 class BaseNpmLockHandler(BaseNpmHandler):
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
 
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
@@ -280,7 +284,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
 
         extra_data = dict(lockfile_version=lockfile_version)
         # this is the top level element that we return
-        root_package_data = models.PackageData(
+        root_package_mapping = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -290,6 +294,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
             extra_data=extra_data,
             **get_urls(root_ns, root_name, root_version)
         )
+        root_package_data = models.PackageData.from_data(root_package_mapping, package_only)
 
         # https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json#lockfileversion
         if lockfile_version == 1:
@@ -359,7 +364,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
             integrity = dep_data.get('integrity')
             misc.update(get_algo_hexsum(integrity).items())
 
-            resolved_package = models.PackageData(
+            resolved_package_mapping = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
                 primary_language=cls.default_primary_language,
@@ -369,6 +374,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 extracted_license_statement=extracted_license_statement,
                 **misc,
             )
+            resolved_package = models.PackageData.from_data(resolved_package_mapping, package_only)
             # these are paths t the root of the installed package in v2
             if dep:
                 resolved_package.file_references = [models.FileReference(path=dep)],
@@ -490,7 +496,7 @@ class YarnLockV2Handler(BaseNpmHandler):
         return super().is_datafile(location, filetypes=filetypes) and is_yarn_v2(location)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Parse a bew yarn.lock v2 YAML format which looks like this:
 
@@ -545,12 +551,13 @@ class YarnLockV2Handler(BaseNpmHandler):
                 )
             top_dependencies.append(dependency)
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=top_dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 class YarnLockV1Handler(BaseNpmHandler):
@@ -569,7 +576,7 @@ class YarnLockV1Handler(BaseNpmHandler):
         return super().is_datafile(location, filetypes=filetypes) and not is_yarn_v2(location)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Parse a classic yarn.lock format which looks like this:
             "@babel/core@^7.1.0", "@babel/core@^7.3.4":
@@ -638,10 +645,15 @@ class YarnLockV1Handler(BaseNpmHandler):
                         # <alias-package>@npm:<package>
                         if "@npm:" in ns:
                             ns = ns.split(':')[1]
+                        if "@npm:" in name:
+                            name = name.split(':')[1]
                         top_requirements.append((ns, name, constraint,))
 
                 else:
                     raise Exception('Inconsistent content')
+
+            if TRACE_NPM:
+                logger_debug(f'YarnLockV1Handler: parse: top_requirements: {top_requirements}')
 
             # top_requirements should be all for the same package
             ns_names = set([(ns, name) for ns, name, _constraint in top_requirements])
@@ -657,7 +669,7 @@ class YarnLockV1Handler(BaseNpmHandler):
             misc.update(get_algo_hexsum(integrity).items())
 
             # we create a resolve package with the details
-            resolved_package_data = models.PackageData(
+            resolved_package_mapping = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
                 namespace=ns,
@@ -666,6 +678,7 @@ class YarnLockV1Handler(BaseNpmHandler):
                 primary_language=cls.default_primary_language,
                 **misc,
             )
+            resolved_package_data = models.PackageData.from_data(resolved_package_mapping, package_only)
 
             # we add the sub-deps to the resolved package
             for subns, subname, subconstraint in sub_dependencies:
@@ -701,12 +714,13 @@ class YarnLockV1Handler(BaseNpmHandler):
             )
             dependencies.append(dep)
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 def get_checksum_and_url(url):

@@ -63,11 +63,12 @@ class AlpineInstalledDatabaseHandler(models.DatafileHandler):
     description = 'Alpine Linux installed package database'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         yield from parse_alpine_installed_db(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            package_only=package_only,
         )
 
     @classmethod
@@ -134,9 +135,14 @@ class AlpineApkbuildHandler(models.DatafileHandler):
     documentation_url = 'https://wiki.alpinelinux.org/wiki/APKBUILD_Reference'
 
     @classmethod
-    def parse(cls, location):
-        package_data = parse_apkbuild(location, strict=True)
-        cls.populate_license_fields(package_data)
+    def parse(cls, location, package_only=False):
+        package_data = parse_apkbuild(
+            location=location,
+            strict=True,
+            package_only=package_only
+        )
+        if not package_only:
+            cls.populate_license_fields(package_data)
         if package_data:
             yield package_data
 
@@ -165,7 +171,7 @@ class AlpineApkbuildHandler(models.DatafileHandler):
         )
 
 
-def parse_alpine_installed_db(location, datasource_id, package_type):
+def parse_alpine_installed_db(location, datasource_id, package_type, package_only=False):
     """
     Yield PackageData objects from an installed database file at `location`
     or None. Typically found at '/lib/apk/db/installed' in an Alpine
@@ -179,6 +185,7 @@ def parse_alpine_installed_db(location, datasource_id, package_type):
             package_fields=package_fields,
             datasource_id=datasource_id,
             package_type=package_type,
+            package_only=package_only,
         )
 
 
@@ -241,7 +248,7 @@ ESSENTIAL_APKBUILD_VARIABLES = set([
 ])
 
 
-def parse_apkbuild(location, strict=False):
+def parse_apkbuild(location, strict=False, package_only=False):
     """
     Return a PackageData object from an APKBUILD file at ``location`` or None.
 
@@ -256,6 +263,7 @@ def parse_apkbuild(location, strict=False):
         datasource_id=AlpineApkbuildHandler.datasource_id,
         package_type=AlpineApkbuildHandler.default_package_type,
         strict=strict,
+        package_only=package_only,
     )
 
 
@@ -732,7 +740,7 @@ def fix_apkbuild(text):
     return text
 
 
-def parse_apkbuild_text(text, datasource_id, package_type, strict=False):
+def parse_apkbuild_text(text, datasource_id, package_type, strict=False, package_only=False):
     """
     Return a PackageData object from an APKBUILD text context or None. Only
     consider variables with a name listed in the ``names`` set.
@@ -761,7 +769,8 @@ def parse_apkbuild_text(text, datasource_id, package_type, strict=False):
     package = build_package_data(
         variables,
         datasource_id=datasource_id,
-        package_type=package_type
+        package_type=package_type,
+        package_only=package_only,
     )
 
     if package and unresolved:
@@ -800,7 +809,7 @@ def parse_pkginfo(location):
     raise NotImplementedError
 
 
-def build_package_data(package_fields, datasource_id, package_type):
+def build_package_data(package_fields, datasource_id, package_type, package_only=False):
     """
     Return a PackageData object from a ``package_fields`` iterable of (name,
     value) tuples.
@@ -850,7 +859,16 @@ def build_package_data(package_fields, datasource_id, package_type):
 
             converted_fields.update(converted)
 
-    return models.PackageData.from_dict(converted_fields)
+    fields_not_required = ["current_file", "current_dir"]
+    for field in fields_not_required:
+        value = converted_fields.get(field)
+        if value:
+            converted_fields.pop(field)
+
+    return models.PackageData.from_data(
+        package_data=converted_fields,
+        package_only=package_only,
+    )
 
 #####################################
 # Note: all handlers MUST accept **kwargs as they also receive the current data

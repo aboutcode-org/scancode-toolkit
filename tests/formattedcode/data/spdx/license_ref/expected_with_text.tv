@@ -10,13 +10,13 @@ ScanCode should be considered or used as legal advice. Consult an Attorney
 for any legal advice.
 ScanCode is a free software code scanning tool from nexB Inc. and others.
 Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-SPDX License List: 3.22</text>
+SPDX License List: 3.23</text>
 ## Creation Information
 ## Package Information
 PackageName: scan
 SPDXID: SPDXRef-001
 PackageDownloadLocation: NOASSERTION
-FilesAnalyzed: True
+FilesAnalyzed: true
 PackageVerificationCode: b49eeefd776fb76555378d07fd05d986a249a2b3
 PackageLicenseConcluded: NOASSERTION
 PackageLicenseInfoFromFiles: Apache-2.0

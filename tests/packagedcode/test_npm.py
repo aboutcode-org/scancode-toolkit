@@ -304,6 +304,13 @@ class TestNpm(PackageTester):
         packages = npm.YarnLockV1Handler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_complex_yarn_lock_v1(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-complex2/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-complex2/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_yarn_lock_v1_complex(self):
         test_file = self.get_test_loc('npm/yarn-lock/v1-complex/yarn.lock')
         expected_loc = self.get_test_loc(
@@ -347,7 +354,7 @@ class TestNpm(PackageTester):
 
     def test_npm_get_package_resources(self):
         test_file = self.get_test_loc('npm/get_package_resources')
-        expected_file = self.get_test_loc('npm/get_package_resources.scan.expected.json', must_exist=False)
+        expected_file = self.get_test_loc('npm/get_package_resources.scan.expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(
@@ -356,16 +363,25 @@ class TestNpm(PackageTester):
 
     def test_scan_cli_works(self):
         test_file = self.get_test_loc('npm/scan-nested/scan')
-        expected_file = self.get_test_loc('npm/scan-nested/scan.expected.json', must_exist=False)
+        expected_file = self.get_test_loc('npm/scan-nested/scan.expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_scan_cli_works_package_only(self):
+        test_file = self.get_test_loc('npm/scan-nested/scan')
+        expected_file = self.get_test_loc('npm/scan-nested/scan-package-only.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package-only', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
     def test_npm_electron_scan(self):
         test_file = self.get_test_loc('npm/electron/package')
-        expected_file = self.get_test_loc('npm/electron/package.expected.json', must_exist=False)
+        expected_file = self.get_test_loc('npm/electron/package.expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(
@@ -374,7 +390,7 @@ class TestNpm(PackageTester):
 
     def test_npm_scan_with_private_package_json(self):
         test_file = self.get_test_loc('npm/private/package.json')
-        expected_file = self.get_test_loc('npm/private/scan.expected.json', must_exist=False)
+        expected_file = self.get_test_loc('npm/private/scan.expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(
@@ -383,7 +399,7 @@ class TestNpm(PackageTester):
 
     def test_npm_scan_with_private_package_json_and_yarn_lock(self):
         test_file = self.get_test_loc('npm/private-and-yarn/theia/')
-        expected_file = self.get_test_loc('npm/private-and-yarn/scan.expected.json', must_exist=False)
+        expected_file = self.get_test_loc('npm/private-and-yarn/scan.expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(

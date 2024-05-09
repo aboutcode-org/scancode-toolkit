@@ -106,7 +106,7 @@ class NugetNuspecHandler(models.DatafileHandler):
     documentation_url = 'https://docs.microsoft.com/en-us/nuget/reference/nuspec'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with open(location, 'rb') as loc:
             parsed = xmltodict.parse(loc)
 
@@ -163,7 +163,7 @@ class NugetNuspecHandler(models.DatafileHandler):
         elif 'licenseUrl' in nuspec:
             extracted_license_statement = nuspec.get('licenseUrl')
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -177,4 +177,5 @@ class NugetNuspecHandler(models.DatafileHandler):
             vcs_url=vcs_url,
             **urls,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 

@@ -1,0 +1,21 @@
+---
+license_expression: agpl-3.0 WITH clojure-exception-to-gpl-3.0
+is_license_text: yes
+minimum_coverage: 90
+ignorable_urls:
+    - https://github.com/howonlee/mertonon/releases/
+---
+
+Source code in this repository is variously licensed under the {{GNU Affero General Public License (AGPL) version 3}}, or licensed under a commercial license, conditional upon having a valid license from Howon Lee.
+
+- Outside of the top-level "ee" directory, source code in a given file is licensed under the AGPL. The AGPL is reproduced in this repository as `agpl.md`.
+
+- Within the the top-level "ee" directory, source code in a given file is licensed under a commercial license. Usage is conditional upon having a valid commercial license from Howon Lee. Access to files and folders in the "ee" directory and its subdirectories does not constitute permission to use this code or Enterprise Edition features.
+
+A commercial license for the ordinarily-AGPL portion of the code is also available for enterprise customers, if your corporation bans usage of AGPL products. Contact us for a quote.
+
+When built, binary files are generated for the AGPL source code and the commercially licensed source code. Binaries located at https://github.com/howonlee/mertonon/releases/ are released under the AGPL. All other releases are released under commercial license only.
+
+Additional permission under GNU GPL version 3 section 7
+
+{{If you modify this Program, or any covered work, by linking or combining it with any of the below libraries (or a modified version of that library), containing parts covered by the terms of any of the below libraries, the licensors of this Program grant you additional permission to convey the resulting work.}}

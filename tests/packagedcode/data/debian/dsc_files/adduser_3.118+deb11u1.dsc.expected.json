@@ -16,8 +16,15 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Debian Adduser Developers <adduser@packages.debian.org>",
-          "email": null,
+          "name": "Debian Adduser Developers",
+          "email": "adduser@packages.debian.org",
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "uploader",
+          "name": "Marc Haber",
+          "email": "mh+debian-packages@zugschlus.de",
           "url": null
         }
       ],
@@ -30,8 +37,8 @@
       "sha256": null,
       "sha512": null,
       "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
+      "code_view_url": "https://salsa.debian.org/debian/adduser",
+      "vcs_url": "https://salsa.debian.org/debian/adduser.git",
       "copyright": null,
       "holder": null,
       "declared_license_expression": null,
@@ -81,8 +88,15 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Debian Adduser Developers <adduser@packages.debian.org>",
-              "email": null,
+              "name": "Debian Adduser Developers",
+              "email": "adduser@packages.debian.org",
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "uploader",
+              "name": "Marc Haber",
+              "email": "mh+debian-packages@zugschlus.de",
               "url": null
             }
           ],
@@ -95,8 +109,8 @@
           "sha256": null,
           "sha512": null,
           "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
+          "code_view_url": "https://salsa.debian.org/debian/adduser",
+          "vcs_url": "https://salsa.debian.org/debian/adduser.git",
           "copyright": null,
           "holder": null,
           "declared_license_expression": null,

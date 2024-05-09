@@ -1,0 +1,26 @@
+{
+  "name": "tauri-workspace",
+  "version": "0.0.0",
+  "license": "Apache-2.0 OR MIT",
+  "private": true,
+  "contributors": [
+    "Tauri Programme within The Commons Conservancy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tauri-apps/tauri.git"
+  },
+  "scripts": {
+    "format": "prettier --write . --config .prettierrc --ignore-path .prettierignore",
+    "format:check": "prettier --check . --config .prettierrc --ignore-path .prettierignore",
+    "postinstall": "husky install"
+  },
+  "devDependencies": {
+    "covector": "^0.9.0",
+    "husky": "^6.0.0",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "typescript": "^4.5.4"
+  }
+}

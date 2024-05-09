@@ -1,0 +1,23 @@
+Package: python-tenacity-doc
+Source: python-tenacity
+Version: 8.2.1-1
+Architecture: all
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Installed-Size: 287
+Depends: libjs-sphinxdoc (>= 5.2)
+Section: doc
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://github.com/jd/tenacity
+Description: retry code until it succeeeds - doc
+ Tenacity is a general-purpose retrying library to simplify the task of adding
+ retry behavior to just about anything. It originates from a fork of Retrying.
+ .
+ Features:
+  * Generic Decorator API
+  * Specify stop condition (i.e. limit by number of attempts)
+  * Specify wait condition (i.e. exponential backoff sleeping between attempts)
+  * Customize retrying on Exceptions
+  * Customize retrying on expected returned result
+ .
+ This package contains the documentation.

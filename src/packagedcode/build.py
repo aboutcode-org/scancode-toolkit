@@ -47,7 +47,7 @@ if TRACE:
         )
 
 
-class AutotoolsConfigureHandler(models.DatafileHandler):
+class AutotoolsConfigureHandler(models.NonAssemblableDatafileHandler):
     datasource_id = 'autotools_configure'
     path_patterns = ('*/configure', '*/configure.ac',)
     default_package_type = 'autotools'
@@ -55,7 +55,7 @@ class AutotoolsConfigureHandler(models.DatafileHandler):
     documentation_url = 'https://www.gnu.org/software/automake/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         # we use the parent directory as a package name
         name = fileutils.file_name(fileutils.parent_directory(location))
         # we could use checksums as version in the future
@@ -67,21 +67,14 @@ class AutotoolsConfigureHandler(models.DatafileHandler):
         # there are dependencies we could use
         # dependencies = []
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
             version=version,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
-    @classmethod
-    def assign_package_to_resources(cls, package, resource, codebase, package_adder):
-        models.DatafileHandler.assign_package_to_parent_tree(
-            package=package,
-            resource=resource,
-            codebase=codebase,
-            package_adder=package_adder,
-        )
 
 
 def check_rule_name_ending(rule_name, starlark_rule_types=('binary', 'library')):
@@ -112,6 +105,7 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
             package = models.Package.from_package_data(
                 package_data=package_data,
                 datafile_path=resource.path,
+                package_only=True,
             )
 
             if TRACE:
@@ -143,8 +137,7 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
         yield resource
 
     @classmethod
-    def parse(cls, location):
-
+    def parse(cls, location, package_only=False):
         # Thanks to Starlark being a Python dialect, we can use `ast` to parse it
         with open(location, 'rb') as f:
             tree = ast.parse(f.read())
@@ -196,23 +189,28 @@ class BaseStarlarkManifestHandler(models.DatafileHandler):
                     if TRACE:
                         logger_debug(f"build: parse: license_files: {license_files}")
 
-                    package_data = models.PackageData(
+                    package_data = dict(
                         datasource_id=cls.datasource_id,
                         type=cls.default_package_type,
                         name=name,
+                        extracted_license_statement=license_files,
                     )
-
-                    package_data.extracted_license_statement = license_files
-                    yield package_data
+                    # `package_only` is True as we do the license detection
+                    # on assembly
+                    yield models.PackageData.from_data(
+                        package_data=package_data,
+                        package_only=True,
+                    )
 
         else:
             # If we don't find anything in the pkgdata file, we yield a Package
             # with the parent directory as the name
-            yield models.PackageData(
+            package_data = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
                 name=fileutils.file_name(fileutils.parent_directory(location))
             )
+            yield models.PackageData.from_data(package_data, package_only)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder, skip_name=None):
@@ -334,7 +332,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
     documentation_url = 'https://buck.build/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=True):
 
         with open(location, 'rb') as f:
             tree = ast.parse(f.read())
@@ -386,7 +384,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
         ):
             # TODO: Create function that determines package type from download URL,
             # then create a package of that package type from the metadata info
-            yield models.PackageData(
+            package_data = dict(
                 datasource_id=cls.datasource_id,
                 type=metadata_fields.get('upstream_type', cls.default_package_type),
                 name=metadata_fields.get('name'),
@@ -396,6 +394,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 homepage_url=metadata_fields.get('upstream_address', ''),
                 # TODO: Store 'upstream_hash` somewhere
             )
+            yield models.PackageData.from_data(package_data, package_only=True)
 
         if (
             'package_type'
@@ -409,7 +408,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
             and 'vcs_commit_hash'
             in metadata_fields
         ):
-            yield models.PackageData(
+            package_data = dict(
                 datasource_id=cls.datasource_id,
                 type=metadata_fields.get('package_type', cls.default_package_type),
                 name=metadata_fields.get('name'),
@@ -422,6 +421,7 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 sha1=metadata_fields.get('download_archive_sha1', ''),
                 extra_data=dict(vcs_commit_hash=metadata_fields.get('vcs_commit_hash', ''))
             )
+            yield models.PackageData.from_data(package_data, package_only=True)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):

@@ -33,6 +33,10 @@ documenting a program's options. For example:
 --system-package             Scan ``<input>`` for installed system package
                              databases.
 
+--package-only               Scan ``<input>`` for system and application
+                             only for package metadata, without license/
+                             copyright detection and package assembly.
+
 -e, --email                  Scan ``<input>`` for emails.
 
                              Sub-Options:

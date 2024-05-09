@@ -27,10 +27,9 @@ other_license_expression: apache-2.0 AND (apache-2.0 AND bsd-new) AND bsd-new AN
   AND metamail)) AND (apache-2.0 AND zeusbench) AND (apache-2.0 OR gpl-2.0-plus) AND mit
 other_license_expression_spdx: Apache-2.0 AND (Apache-2.0 AND BSD-3-Clause) AND BSD-3-Clause
   AND (GPL-3.0-or-later OR Bison-exception-2.2) AND LicenseRef-scancode-bsd-unchanged AND (Apache-2.0
-  AND (Apache-2.0 AND Spencer-94)) AND LicenseRef-scancode-bsd-simplified-darwin AND (Apache-2.0
-  AND LicenseRef-scancode-public-domain) AND (Apache-2.0 AND (HPND-sell-variant AND metamail))
-  AND (Apache-2.0 AND LicenseRef-scancode-zeusbench) AND (Apache-2.0 OR GPL-2.0-or-later) AND
-  MIT
+  AND (Apache-2.0 AND Spencer-94)) AND BSD-2-Clause-Darwin AND (Apache-2.0 AND LicenseRef-scancode-public-domain)
+  AND (Apache-2.0 AND (HPND-sell-variant AND metamail)) AND (Apache-2.0 AND LicenseRef-scancode-zeusbench)
+  AND (Apache-2.0 OR GPL-2.0-or-later) AND MIT
 license_detections: []
 other_license_detections:
   - license_expression: apache-2.0
@@ -346,10 +345,10 @@ other_license_detections:
           Mark Cox, mark@ukweb.com, Allow relative URLs even when no base specified
     identifier: public_domain-a7ae1690-4f60-4902-e6d2-15dc3a028b4c
   - license_expression: bsd-simplified-darwin
-    license_expression_spdx: LicenseRef-scancode-bsd-simplified-darwin
+    license_expression_spdx: BSD-2-Clause-Darwin
     matches:
       - license_expression: bsd-simplified-darwin
-        spdx_license_expression: LicenseRef-scancode-bsd-simplified-darwin
+        spdx_license_expression: BSD-2-Clause-Darwin
         from_file:
         start_line: 279
         end_line: 302

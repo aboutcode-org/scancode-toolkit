@@ -49,6 +49,7 @@ class PackageTester(testcase.FileBasedTesting):
         must_exist=True,
         remove_uuid=True,
         regen=REGEN_TEST_FIXTURES,
+        package_only=False,
     ):
         """
         Helper to test a list of package_data objects against an expected JSON file.
@@ -66,7 +67,8 @@ class PackageTester(testcase.FileBasedTesting):
                         for package_uid in resource.for_packages
                     ]
                     resource.for_packages = normalized_package_uids
-            populate_license_fields(package_data)
+            if not package_only:
+                package_data.populate_license_fields()
             results.append(package_data.to_dict())
 
         check_result_equals_expected_json(
@@ -78,6 +80,7 @@ class PackageTester(testcase.FileBasedTesting):
 
 def populate_license_fields(package_data):
     if package_data.extracted_license_statement and not package_data.declared_license_expression:
+
         from packagedcode import HANDLER_BY_DATASOURCE_ID
         handler = HANDLER_BY_DATASOURCE_ID[package_data.datasource_id]
         handler.populate_license_fields(package_data)
