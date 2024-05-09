@@ -11,9 +11,9 @@ import os
 import sys
 
 from commoncode import filetype
-from packagedcode import APPLICATION_PACKAGE_DATAFILE_HANDLERS
-from packagedcode import SYSTEM_PACKAGE_DATAFILE_HANDLERS
-from packagedcode import ALL_DATAFILE_HANDLERS
+from packagedcode.handlers import APPLICATION_PACKAGE_DATAFILE_HANDLERS
+from packagedcode.handlers import SYSTEM_PACKAGE_DATAFILE_HANDLERS
+from packagedcode.handlers import ALL_DATAFILE_HANDLERS
 from packagedcode import models
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)

@@ -13,7 +13,7 @@ from plugincode.post_scan import post_scan_impl
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
 
-from packagedcode import get_package_handler
+from packagedcode.handlers import get_package_handler
 from packagedcode.models import PackageData
 from summarycode.classify import set_classification_flags
 

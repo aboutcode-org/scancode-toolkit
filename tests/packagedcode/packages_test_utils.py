@@ -81,7 +81,7 @@ class PackageTester(testcase.FileBasedTesting):
 def populate_license_fields(package_data):
     if package_data.extracted_license_statement and not package_data.declared_license_expression:
 
-        from packagedcode import HANDLER_BY_DATASOURCE_ID
+        from packagedcode.handlers import HANDLER_BY_DATASOURCE_ID
         handler = HANDLER_BY_DATASOURCE_ID[package_data.datasource_id]
         handler.populate_license_fields(package_data)
 

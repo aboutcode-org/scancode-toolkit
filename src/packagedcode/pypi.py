@@ -17,6 +17,7 @@ import re
 import sys
 import tempfile
 import zipfile
+
 from configparser import ConfigParser
 from pathlib import Path
 from typing import NamedTuple
@@ -27,6 +28,7 @@ import importlib_metadata
 import packvers as packaging
 import pip_requirements_parser
 import pkginfo2
+
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
@@ -40,6 +42,9 @@ from packagedcode import models
 from packagedcode.utils import build_description
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
+from packagedcode.pypi_utils import find_pattern
+from packagedcode.pypi_utils import find_setup_py_dunder_version
+from packagedcode.pypi_utils import find_dunder_version
 
 try:
     from zipfile import Path as ZipPath
@@ -1757,41 +1762,6 @@ def get_urls(metainfo, name, version):
     return urls, extra_data
 
 
-def find_pattern(location, pattern):
-    """
-    Search the file at `location` for a patern regex on a single line and return
-    this or None if not found. Reads the supplied location as text without
-    importing it.
-
-    Code inspired and heavily modified from:
-    https://github.com/pyserial/pyserial/blob/d867871e6aa333014a77498b4ac96fdd1d3bf1d8/setup.py#L34
-    SPDX-License-Identifier: BSD-3-Clause
-    (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
-    """
-    with open(location) as fp:
-        content = fp.read()
-
-    match = re.search(pattern, content)
-    if match:
-        return match.group(1).strip()
-
-
-def find_dunder_version(location):
-    """
-    Return a "dunder" __version__ string or None from searching the module file
-    at `location`.
-
-    Code inspired and heavily modified from:
-    https://github.com/pyserial/pyserial/blob/d867871e6aa333014a77498b4ac96fdd1d3bf1d8/setup.py#L34
-    SPDX-License-Identifier: BSD-3-Clause
-    (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
-    """
-    pattern = re.compile(r"^__version__\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
-    match = find_pattern(location, pattern)
-    if TRACE: logger_debug('find_dunder_version:', 'location:', location, 'match:', match)
-    return match
-
-
 def find_plain_version(location):
     """
     Return a plain version attribute string or None from searching the module
@@ -1800,29 +1770,6 @@ def find_plain_version(location):
     pattern = re.compile(r"^version\s*=\s*['\"]([^'\"]*)['\"]", re.MULTILINE)
     match = find_pattern(location, pattern)
     if TRACE: logger_debug('find_plain_version:', 'location:', location, 'match:', match)
-    return match
-
-
-def find_setup_py_dunder_version(location):
-    """
-    Return a "dunder" __version__ expression string used as a setup(version)
-    argument or None from searching the setup.py file at `location`.
-
-    For instance:
-        setup(
-            version=six.__version__,
-        ...
-    would return six.__version__
-
-    Code inspired and heavily modified from:
-    https://github.com/pyserial/pyserial/blob/d867871e6aa333014a77498b4ac96fdd1d3bf1d8/setup.py#L34
-    SPDX-License-Identifier: BSD-3-Clause
-    (C) 2001-2020 Chris Liechti <cliechti@gmx.net>
-    """
-    pattern = re.compile(r"^\s*version\s*=\s*(.*__version__)", re.MULTILINE)
-    match = find_pattern(location, pattern)
-    if TRACE:
-        logger_debug('find_setup_py_dunder_version:', 'location:', location, 'match:', match)
     return match
 
 

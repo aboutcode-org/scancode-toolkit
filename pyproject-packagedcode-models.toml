@@ -1,0 +1,101 @@
+[build-system]
+requires = [ "flot>=0.7.0" ]
+build-backend = "flot.buildapi"
+
+[project]
+name = "packagedcode-models"
+version = "32.1.0"
+description = "PackagedCode Models is a library with core models of package manifests, lockfiles and dependencies for all type of app and system packages keyed by PURL."
+license = { text = "Apache-2.0" }
+# TODO consider a readme?
+# readme = "README.rst"
+requires-python = ">=3.8"
+authors = [
+    { name = "nexB. Inc. and others", email = "info@aboutcode.org" },
+]
+keywords = [
+    "open source",
+    "scan",
+    "package",
+    "dependency",
+    "sca",
+    "SBOM",
+    "package-url",
+    "purl",
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "attrs >= 18.1,!=20.1.0;python_version<'3.11'",
+    "attrs >= 22.1.0;python_version>='3.11'",
+    "commoncode >= 31.0.3",
+    "packageurl_python >= 0.9.0",
+    "saneyaml >= 0.6.0",
+    "typecode >= 30.0.1",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/nexB/scancode-toolkit"
+
+
+[project.optional-dependencies]
+
+full = [
+    "typecode[full] >= 30.0.1",
+]
+
+
+[tool.flot]
+wheel_path_prefixes_to_strip = [ "src" ]
+
+includes = [
+    "src/packagedcode/__init__.py",
+    "src/packagedcode/models.py",
+]
+
+excludes = [
+    # Python compiled files
+    "**/*.py[cod]",
+    "**/*.egg-info",
+    # Various junk and temp files
+    "**/.DS_Store",
+    "**/*~",
+    "**/.*.sw[po]",
+    "**/.ve",
+    "**/*.bak",
+    "**/.ipynb_checkpoints",
+]
+
+metadata_files = [
+    "*.LICENSE",
+    "NOTICE",
+    "AUTHORS.rst",
+    "CHANGELOG.rst",
+    "CODE_OF_CONDUCT.rst",
+]
+
+editable_paths = [ "src", "tests" ]
+
+sdist_extra_includes = [
+    "tests/packagedcode/*",
+    ".gitattributes",
+    ".gitignore",
+    "*.LICENSE",
+    "NOTICE",
+    "*.rst",
+    "requirements*",
+]

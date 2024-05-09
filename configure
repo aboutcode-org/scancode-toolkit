@@ -149,11 +149,12 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 fi
 
 # Requirement arguments passed to pip and used by default or with --dev.
-REQUIREMENTS="--editable $BASE --constraint requirements.txt --constraint requirements-linux.txt"
-DEV_REQUIREMENTS="--editable $BASE_DEV --constraint requirements.txt --constraint requirements-linux.txt --constraint requirements-dev.txt"
-DOCS_REQUIREMENTS="--editable .[docs] --constraint requirements.txt"
-REL_REQUIREMENTS="--requirement etc/scripts/requirements.txt"
-PROD_REQUIREMENTS="scancode_toolkit*.whl"
+REQUIREMENTS="--no-build-isolation --editable $BASE --constraint requirements.txt --constraint requirements-linux.txt"
+DEV_REQUIREMENTS="--no-build-isolation --editable $BASE_DEV --constraint requirements.txt --constraint requirements-linux.txt --constraint requirements-dev.txt"
+DOCS_REQUIREMENTS="--no-build-isolation --editable .[docs] --constraint requirements.txt"
+REL_REQUIREMENTS="--no-build-isolation --requirement etc/scripts/requirements.txt"
+PROD_REQUIREMENTS="--no-build-isolation scancode_toolkit*.whl"
+FLOT_REQUIREMENTS="etc/thirdparty/flot*.whl"
 
 # where we create a virtualenv
 VIRTUALENV_DIR=venv
@@ -176,15 +177,9 @@ CFG_BIN_DIR=$CFG_ROOT_DIR/$VIRTUALENV_DIR/bin
 
 
 ################################
-# Install with or without and index. With "--no-index" this is using only local wheels
-# This is an offline mode with no index and no network operations
-# NO_INDEX="--no-index "
-NO_INDEX=""
-
-
-################################
 # Thirdparty package locations and index handling
 # Find packages from the local thirdparty directory if present
+# offline mode for scancode installation with no Pypi index at all
 thirddir=$CFG_ROOT_DIR/thirdparty
 if [[ "$(echo $thirddir/*.whl)x" != "$thirddir/*.whlx" ]]; then
     PIP_EXTRA_ARGS="--no-index --find-links $CFG_ROOT_DIR/thirdparty"
@@ -257,7 +252,6 @@ install_packages() {
 
     "$CFG_BIN_DIR/pip" install \
         --upgrade \
-        --no-build-isolation \
         $CFG_QUIET \
         $PIP_EXTRA_ARGS \
         $1
@@ -320,6 +314,7 @@ PIP_EXTRA_ARGS="$PIP_EXTRA_ARGS"
 
 find_python
 create_virtualenv "$VIRTUALENV_DIR"
+install_packages "$FLOT_REQUIREMENTS"
 install_packages "$CFG_REQUIREMENTS"
 . "$CFG_BIN_DIR/activate"
 

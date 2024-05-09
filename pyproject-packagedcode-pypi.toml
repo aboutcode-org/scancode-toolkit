@@ -1,0 +1,103 @@
+[build-system]
+requires = [ "flot>=0.7.0" ]
+build-backend = "flot.buildapi"
+
+[project]
+name = "packagedcode-pypi"
+version = "32.1.0"
+description = "PackagedCode PyPI is a library to parse Python package manifests and lockfiles keyed by PURL."
+license = { text = "Apache-2.0 AND BSD-3-Clause AND MIT" }
+# TODO consider a readme?
+# readme = "README.rst"
+requires-python = ">=3.8"
+authors = [
+    { name = "nexB. Inc. and others", email = "info@aboutcode.org" },
+]
+
+keywords = [
+    "open source",
+    "scan",
+    "package",
+    "dependency",
+    "sca",
+    "SBOM",
+    "package-url",
+    "purl",
+    "pypi",
+    "poetry",
+    "pip",
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "packagedcode-models",
+    "attrs >= 18.1,!=20.1.0;python_version<'3.11'",
+    "attrs >= 22.1.0;python_version>='3.11'",
+    "commoncode >= 31.0.3",
+    "dparse2 >= 0.7.0",
+    "importlib_metadata",
+    "packageurl_python >= 0.9.0",
+    "packvers >= 21.0.0",
+    "pip-requirements-parser >= 32.0.1",
+    "pkginfo2 >= 30.0.0",
+    "zipp >= 3.0.0; python_version < \"3.9\"",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/nexB/scancode-toolkit"
+
+
+[tool.flot]
+wheel_path_prefixes_to_strip = [ "src" ]
+
+includes = [
+    "src/packagedcode/__init__.py",
+    "src/packagedcode/pypi*.py",
+]
+
+excludes = [
+    # Python compiled files
+    "**/*.py[cod]",
+    "**/*.egg-info",
+    # Various junk and temp files
+    "**/.DS_Store",
+    "**/*~",
+    "**/.*.sw[po]",
+    "**/.ve",
+    "**/*.bak",
+    "**/.ipynb_checkpoints",
+]
+
+metadata_files = [
+    "*.LICENSE",
+    "NOTICE",
+    "AUTHORS.rst",
+    "CHANGELOG.rst",
+    "CODE_OF_CONDUCT.rst",
+]
+
+editable_paths = [ "src", "tests" ]
+
+sdist_extra_includes = [
+    "tests/packagedcode/*",
+    ".gitattributes",
+    ".gitignore",
+    "*.LICENSE",
+    "NOTICE",
+    "*.rst",
+    "requirements*",
+]

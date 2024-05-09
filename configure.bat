@@ -26,10 +26,13 @@
 @rem ################################
 
 @rem # Requirement arguments passed to pip and used by default or with --dev.
-set "REQUIREMENTS=--editable . --constraint requirements.txt"
-set "DEV_REQUIREMENTS=--editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
-set "DOCS_REQUIREMENTS=--editable .[docs] --constraint requirements.txt"
-set "REL_REQUIREMENTS=--requirement etc/scripts/requirements.txt"
+set "REQUIREMENTS=--no-build-isolation --editable . --constraint requirements.txt"
+set "DEV_REQUIREMENTS=--no-build-isolation --editable .[testing] --constraint requirements.txt --constraint requirements-dev.txt"
+set "DOCS_REQUIREMENTS=--no-build-isolation --editable .[docs] --constraint requirements.txt"
+set "REL_REQUIREMENTS=--no-build-isolation --requirement etc/scripts/requirements.txt"
+set "PROD_REQUIREMENTS=--no-build-isolation scancode_toolkit*.whl"
+set "FLOT_REQUIREMENTS=etc/thirdparty/flot*.whl"
+
 
 @rem # where we create a virtualenv
 set "VIRTUALENV_DIR=venv"
@@ -54,7 +57,7 @@ set "CFG_BIN_DIR=%CFG_ROOT_DIR%\%VIRTUALENV_DIR%\Scripts"
 @rem ################################
 @rem # Thirdparty package locations and index handling
 @rem # Find packages from the local thirdparty directory or from thirdparty.aboutcode.org
-@rem # offline mode for scancode installation with no index at all
+@rem # offline mode for scancode installation with no Pypi index at all
 if exist "%CFG_ROOT_DIR%\thirdparty" (
     set PIP_EXTRA_ARGS=--no-index --find-links "%CFG_ROOT_DIR%\thirdparty"
     for %%i in (scancode_toolkit*.whl) do set "CFG_REQUIREMENTS=%CFG_ROOT_DIR%\%%i[full]"
@@ -164,7 +167,12 @@ if %ERRORLEVEL% neq 0 (
 
 "%CFG_BIN_DIR%\pip" install ^
     --upgrade ^
-    --no-build-isolation ^
+    %CFG_QUIET% ^
+    %PIP_EXTRA_ARGS% ^
+    %FLOT_REQUIREMENTS%
+
+"%CFG_BIN_DIR%\pip" install ^
+    --upgrade ^
     %CFG_QUIET% ^
     %PIP_EXTRA_ARGS% ^
     %CFG_REQUIREMENTS%
