@@ -242,7 +242,7 @@ Package type:  deb
   documentation URL: https://www.debian.org/doc/debian-policy/ch-controlfields.html
   primary language:  None
   description:       Debian control file - extracted layout
-  path_patterns:    '*/control.tar.gz-extract/control'
+  path_patterns:    '*/control.tar.gz-extract/control', '*/control.tar.xz-extract/control'
 --------------------------------------------
 Package type:  deb
   datasource_id:     debian_control_in_source
@@ -768,6 +768,20 @@ Package type:  rpm
   primary language:  None
   description:       RPM installed package SQLite database
   path_patterns:    '*rpm/rpmdb.sqlite'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_mariner_manifest
+  documentation URL: https://github.com/microsoft/marinara/
+  primary language:  None
+  description:       RPM mariner distroless package manifest
+  path_patterns:    '*var/lib/rpmmanifest/container-manifest-2'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_package_licenses
+  documentation URL: https://github.com/microsoft/marinara/
+  primary language:  None
+  description:       RPM mariner distroless package license files
+  path_patterns:    '*usr/share/licenses/*/COPYING*', '*usr/share/licenses/*/LICENSE*'
 --------------------------------------------
 Package type:  rpm
   datasource_id:     rpm_spefile
