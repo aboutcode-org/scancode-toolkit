@@ -280,7 +280,7 @@ class CopyrightDetector(object):
             'EMAIL', 'URL',
             'HOLDER', 'AUTHOR',
             'IS', 'HELD',
-            
+
         ])
 
         non_holder_labels_mini = frozenset([
@@ -707,7 +707,7 @@ patterns = [
     (r'^[Rr]éservés[\.,]*$', 'RESERVED'),
     (r'^[Rr]eserves[\.,]*$', 'RESERVED'),
 
-    # used to detect "copyright is held by..." 
+    # used to detect "copyright is held by..."
     (r'^is$', 'IS'),
     (r'^are$', 'IS'),
     (r'^held$', 'HELD'),
@@ -747,7 +747,7 @@ patterns = [
 
     # all lower case with dashes "enforce-trailing-newline" at least 3 times
     (r'^((\w+-){3,}\w+)$', 'JUNK'),
- 
+
     # path with trailing year-like are NOT a year as in
     # Landroid/icu/impl/IDNA2003 : treat as JUNK
     (r'^[^\\/]+[\\/][^\\/]+[\\/].*$', 'JUNK'),
@@ -897,7 +897,7 @@ patterns = [
     # of a copyright statement
     (r'^neither$', 'JUNK'),
     (r'^nor$', 'JUNK'),
-    
+
     (r'^data-.*$', 'JUNK'),
 
     (r'^providing$', 'JUNK'),
@@ -1278,7 +1278,7 @@ patterns = [
     (r'^Convert$', 'NN'),
     (r'^Compute$', 'NN'),
     (r'^Case$', 'NN'),
-    
+
     (r'^END$', 'NN'),
     (r'^Entity$', 'NN'),
     (r'^Example', 'NN'),
@@ -2096,10 +2096,9 @@ patterns = [
 
     # dot in: fooo at bar dot com
     (r'^dot$', 'DOT'),
-    
+
     # moment/moment is an odd name
     (r'moment/moment$', 'NAME'),
-
 
     ############################################################################
     # catch all other as Nouns
@@ -2734,6 +2733,9 @@ grammar = """
     # Copyright 2013-2020 by OCamlPro.
     COPYRIGHT2: {<COPY>+ <YR-RANGE>+ <BY> <NN|NNP> }        #22795
 
+    # Copyright 2018 (c) DistributedLock
+    COPYRIGHT: {<COPY> <YR-RANGE> <COPY>  <NNP>}        #230020
+
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>?}        #2300
@@ -3006,6 +3008,10 @@ grammar = """
 
     # Copyright OProfile authors
     COPYRIGHT: {<COPY> <NN>?<NNP>+ <AUTHS>}         #83004
+
+    # (C) Distributed Management Task Force (Distributed is an NN)
+    COPYRIGHT: {<COPY> <NN> <NAME>}         #83010
+
 
 #######################################
 # Copyright is held by ....
@@ -4101,7 +4107,6 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     if TRACE_TOK:
         logger_debug('  prepare_text_line: after remove_printf_format_codes: ' + repr(line))
 
-
     # less common comment line prefixes
     line = remove_comment_markers(' ', line)
     if TRACE_TOK:
@@ -4175,7 +4180,7 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('`', "'")
         .replace('"', "'")
         # u nicode prefix in Python strings
-        .replace(" u'", " '")        
+        .replace(" u'", " '")
         # see https://github.com/nexB/scancode-toolkit/issues/3667
         .replace('§', " ")
     )

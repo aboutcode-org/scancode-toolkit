@@ -1,0 +1,2 @@
+Copyright (c) Distributed Webs Project, LLC. <legal@distributedwebs.org><br>
+Copyright (c) 2014 Mathias Buus

@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) Distributed Software System Lab
+holders:
+  - Distributed Software System Lab
+holders_summary:
+  - value: Distributed Software System Lab
+    count: 1
