@@ -741,6 +741,10 @@ patterns = [
     (r'^Fu$', 'NNP'),
     (r'^W3C\(r\)$', 'COMP'),
 
+    # three or more AsCamelCase GetQueueReference, with some exceptions
+    (r'^OpenStreetMap.?$', 'NAME'),
+    (r'^([A-Z][a-z]+){3,}$', 'JUNK'),
+
     ############################################################################
     # JUNK proper
     ############################################################################
