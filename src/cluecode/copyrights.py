@@ -717,7 +717,7 @@ patterns = [
 
     ############################################################################
     # JUNK are things to ignore
-    # Exceptions to JUNK
+    # These are exceptions to JUNK
     ############################################################################
 
     # trailing parens: notice(s) and exceptions
@@ -1167,6 +1167,10 @@ patterns = [
 
     # :co,e):f
     (r'^[\:,\)]+[a-z]+[\:,]+[a-z]+[\:,\)]+[a-z\:,\)]*$', 'JUNK'),
+
+    # NN often used in conjunction with copyright
+    (r'^[Ss]tatements?.?$', 'JUNK'),
+    (r'^issues?.?$', 'JUNK'),
 
     ############################################################################
     # Nouns and proper Nouns
@@ -2718,9 +2722,11 @@ grammar = """
     # Copyright (c) 2019-2021, Open source contributors.
     # Copyright 2007 ZXing authors
     # Copyright (c) 2002 the Initial Developer
-    # Copyright (c) brandonocasey <brandonocasey@gmail.com>
     # Copyright (c) 2024 bgme <i@bgme.me>.
-    COPYRIGHT: {<COPY>+  <YR-RANGE>?  <NN>+ <CONTRIBUTORS|COMMIT|AUTHS|MAINT>? <EMAIL>? <ALLRIGHTRESERVED>?} #22793.3
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS|COMMIT|AUTHS|MAINT>? <EMAIL>? <ALLRIGHTRESERVED>?} #22793.3
+
+    # Copyright (c) brandonocasey <brandonocasey@gmail.com>
+    COPYRIGHT: {<COPY><COPY>? <NN> <EMAIL> <ALLRIGHTRESERVED>?} #22793.4
 
     # Licensed material of Foobar Company, All Rights Reserved, (C) 2005
     COPYRIGHT: {<COMPANY>  <ALLRIGHTRESERVED>  <COPYRIGHT>} #22794
