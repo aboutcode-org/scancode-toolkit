@@ -2755,6 +2755,9 @@ grammar = """
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
+    # using #2280 above: Copyright 2018 Developers of the Rand project 
+    COPYRIGHT: {<COPYRIGHT2>  <MAINT>  <OF>  <COMPANY>}        #2280.123
+
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>?}        #2300
 
     # Copyright (c) 2014, 2015, the respective contributors All rights reserved.
