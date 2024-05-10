@@ -45,7 +45,7 @@ def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_DEEP or TRACE_TOK:
+if TRACE or TRACE_TOK:
     import logging
 
     logger = logging.getLogger(__name__)
@@ -54,6 +54,9 @@ if TRACE or TRACE_DEEP or TRACE_TOK:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+
+if TRACE_DEEP:
+    logger_debug = print
 
 """
 Detect and collect copyright statements.
@@ -175,13 +178,11 @@ def detect_copyrights_from_lines(
         )
 
     for candidates in candidate_lines_groups:
-        if TRACE:
-            from pprint import pformat
-            can = pformat(candidates, width=160)
-            logger_debug(
-                f' detect_copyrights_from_lines: processing candidates group:\n'
-                f'  {can}'
-            )
+        if TRACE or TRACE_DEEP:
+            logger_debug(f'\n========================================================================')
+            logger_debug(f'detect_copyrights_from_lines: processing candidates group:')
+            for can in candidates:
+                logger_debug(f'  {can}')
 
         detections = detector.detect(
             numbered_lines=candidates,
@@ -259,14 +260,17 @@ class CopyrightDetector(object):
         # first, POS tag each token using token regexes
         lexed_text = list(self.lexer.lex_tokens(tokens, trace=TRACE_TOK))
 
-        if TRACE:
-            logger_debug(f'CopyrightDetector: lexed tokens: {lexed_text}')
+        if TRACE or TRACE_DEEP:
+            logger_debug(f'CopyrightDetector: lexed tokens:')
+            for l in lexed_text:
+                logger_debug(f'  {l!r}')
 
         # then build a parse parse_tree based on tagged tokens
         parse_tree = self.parser.parse(lexed_text)
 
-        if TRACE:
-            logger_debug(f'CopyrightDetector: parse_tree:\n{tree_pformat(parse_tree)}')
+        if TRACE or TRACE_DEEP:
+            logger_debug('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+            logger_debug(f'CopyrightDetector: final parse_tree:\n{tree_pformat(parse_tree)}')
 
         non_copyright_labels = frozenset()
         if not include_copyright_years:
@@ -316,8 +320,8 @@ class CopyrightDetector(object):
                     junk=COPYRIGHTS_JUNK,
                 )
 
-                if TRACE:
-                    logger_debug(f'CopyrightDetector: detection: {copyrght}')
+                if TRACE or TRACE_DEEP:
+                    logger_debug(f'CopyrightDetector: final copyright: {copyrght}')
 
                 if copyrght:
                     if include_copyrights:
@@ -499,8 +503,6 @@ def build_detection_from_node(
         ]
     else:
         leaves = node.leaves()
-
-    # if TRACE_DEEP:  logger_debug('    starting leaves:', leaves)
 
     if include_copyright_allrights:
         filtered = leaves
@@ -3940,15 +3942,13 @@ def candidate_lines(numbered_lines):
 
     if TRACE_TOK:
         numbered_lines = list(numbered_lines)
-        logger_debug(
-            f'candidate_lines: numbered_lines: {numbered_lines!r}')
+        logger_debug(f'candidate_lines: numbered_lines: {numbered_lines!r}')
 
     # the previous line (chars only)
     previous_chars = None
     for numbered_line in numbered_lines:
         if TRACE:
-            logger_debug(
-                f'# candidate_lines: evaluating line: {numbered_line!r}')
+            logger_debug(f'# candidate_lines: evaluating line: {numbered_line!r}')
 
         _line_number, line = numbered_line
 
@@ -3962,10 +3962,7 @@ def candidate_lines(numbered_lines):
 
             if TRACE:
                 cands = list(candidates)
-                logger_debug(
-                    '   candidate_lines: is EOS: yielding candidates\n'
-                    f'    {cands}r\n\n'
-                )
+                logger_debug(f'   candidate_lines: is EOS: yielding candidates\n    {cands!r}\n')
 
             yield list(candidates)
             candidates_clear()
@@ -3978,7 +3975,8 @@ def candidate_lines(numbered_lines):
             candidates_append(numbered_line)
 
             previous_chars = chars_only
-            if TRACE: logger_debug('   candidate_lines: line is candidate')
+            if TRACE:
+                logger_debug('   candidate_lines: line is candidate')
 
         elif 's>' in line:
             # this is for debian-style <s></s> copyright name tags
@@ -4011,10 +4009,7 @@ def candidate_lines(numbered_lines):
                 # completely empty or only made of punctuations
                 if TRACE:
                     cands = list(candidates)
-                    logger_debug(
-                        '   candidate_lines: empty: yielding candidates\n'
-                        f'    {cands}r\n\n'
-                    )
+                    logger_debug(f'   candidate_lines: empty: yielding candidates\n    {cands!r}\n')
 
                 yield list(candidates)
                 candidates_clear()
@@ -4031,10 +4026,7 @@ def candidate_lines(numbered_lines):
         elif candidates:
             if TRACE:
                 cands = list(candidates)
-                logger_debug(
-                    '    candidate_lines: not in COP: yielding candidates\n'
-                    f'    {cands}r\n\n'
-                )
+                logger_debug(f'    candidate_lines: not in COP: yielding candidates\n    {cands!r}\n')
 
             yield list(candidates)
             candidates_clear()
@@ -4045,10 +4037,7 @@ def candidate_lines(numbered_lines):
     if candidates:
         if TRACE:
             cands = list(candidates)
-            logger_debug(
-                'candidate_lines: finally yielding candidates\n'
-                f'    {cands}r\n\n'
-            )
+            logger_debug(f'candidate_lines: finally yielding candidates\n    {cands!r}\n')
 
         yield list(candidates)
 
