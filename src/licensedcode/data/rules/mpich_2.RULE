@@ -3,6 +3,10 @@ license_expression: mpich
 is_license_text: yes
 relevance: 100
 minimum_coverage: 95
+ignorable_copyrights:
+    - Copyright Notice 1998-2020, Argonne National Laboratory
+ignorable_holders:
+    - Argonne National Laboratory
 ---
 
 COPYRIGHT
