@@ -304,6 +304,13 @@ class TestNpm(PackageTester):
         packages = npm.YarnLockV1Handler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_complex_yarn_lock_v1(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-complex2/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-complex2/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_yarn_lock_v1_complex(self):
         test_file = self.get_test_loc('npm/yarn-lock/v1-complex/yarn.lock')
         expected_loc = self.get_test_loc(
