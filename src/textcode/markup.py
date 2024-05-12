@@ -140,4 +140,4 @@ def demarkup_text(text):
             continue
         else:
             cleaned_append(token)
-    return u' '.join(cleaned)
+    return ''.join(cleaned)
