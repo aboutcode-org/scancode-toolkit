@@ -687,8 +687,7 @@ patterns = [
     (r'^all$', 'NN'),
     (r'^ALL$', 'NN'),
     (r'^NO$', 'NN'),
-    (r'^No$', 'NN'),
-    (r'^no$', 'NN'),
+
     (r'^Some$', 'NN'),
     (r'^[Rr]ights?$', 'RIGHT'),
     (r'^RIGHTS?$', 'RIGHT'),
@@ -709,13 +708,34 @@ patterns = [
     (r'^[Rr]éservés[\.,]*$', 'RESERVED'),
     (r'^[Rr]eserves[\.,]*$', 'RESERVED'),
 
+    # in Spanish Reservados todos los derechos
+    (r'^[Rr]eservados[\.,]*$', 'RESERVED'),
+    (r'^[Tt]odos$', 'NN'),
+    (r'^[Ll]os$', 'NN'),
+    (r'^[Dr]erechos$', 'RIGHT'),
+
+    # in Dutch Alle rechten voorbehouden.
+    (r'^[Aa]lle$', 'NN'),
+    (r'^[Rr]echten$', 'RIGHT'),
+    (r'^[Vv]oorbehouden[\.,]*$', 'RESERVED'),
+
+    # in German Alle Rechte vorbehalten
+    (r'^[Aa]lle$', 'NN'),
+    (r'^[Rr]echte$', 'RIGHT'),
+    (r'^[Vv]orbehalten[\.,]*$', 'RESERVED'),
+
     # used to detect "copyright is held by..."
     (r'^is$', 'IS'),
     (r'^are$', 'IS'),
     (r'^held$', 'HELD'),
 
-    # TODO: in Dutch Alle rechten voorbehouden.
-    # TODO: in Spanish Reservados todos los derechos
+    # NOTICE are a thing in some copyright statements, but not all
+    (r'^NOTICE$', 'NOTICE'),
+    (r'^NOTICES?[\.,]$', 'JUNK'),
+
+    (r'^[Nn]otice$', 'NOTICE'),
+    (r'^[Nn]otices?[\.,]$', 'JUNK'),
+    (r'^[Nn]otices?$', 'JUNK'),
 
     ############################################################################
     # JUNK are things to ignore
@@ -734,17 +754,23 @@ patterns = [
     # short two chars as B3
     (r"^[A-Z][0-9]$", 'NN'),
 
-    # Short words skipping some leading caps
+    # 2-letters short words, skipping some leading caps
     (r'^[BEFHJMNPQRTUVW][a-z]$', 'NN'),
 
-    # misc exceptions
+    # Misc exceptions
     (r'^dead_horse$', 'NN'),
     (r'^A11yance', 'NNP'),
     (r'^Fu$', 'NNP'),
     (r'^W3C\(r\)$', 'COMP'),
 
-    # three or more AsCamelCase GetQueueReference, with some exceptions
-    (r'^OpenStreetMap.?$', 'NAME'),
+    # Three or more AsCamelCase GetQueueReference, with some exceptions
+    (r'^(?:OpenStreetMap|AliasDotCom|AllThingsTalk).?$', 'NAME'),
+
+    (r'^Re-Creating$', 'JUNK'),
+    (r'^[Nn]o$', 'JUNK'),
+    (r'^Earth$', 'NN'),
+    (r'^Maps/Google$', 'NN'),
+
     (r'^([A-Z][a-z]+){3,}$', 'JUNK'),
 
     ############################################################################
@@ -788,7 +814,7 @@ patterns = [
     (r'^[Oo]riginally?$', 'JUNK'),
     (r'^[Rr]epresentations?\.?$', 'JUNK'),
     (r'^works,$', 'JUNK'),
-
+    (r'^grant$', 'JUNK'),
     (r'^Refer$', 'JUNK'),
     (r'^Apt$', 'JUNK'),
     (r'^Agreement$', 'JUNK'),
@@ -829,7 +855,7 @@ patterns = [
     (r'^[Cc]opyrighting$', 'JUNK'),
     (r'^[Aa]uthori.*$', 'JUNK'),
     (r'^such$', 'JUNK'),
-    (r'^[Aa]ssignments?[.,]?$', 'JUNK'),
+    (r'^[Aa]ssignments?[\.,]?$', 'JUNK'),
     (r'^[Bb]uild$', 'JUNK'),
     (r'^[Ss]tring$', 'JUNK'),
     (r'^Implementation-Vendor$', 'JUNK'),
@@ -912,6 +938,7 @@ patterns = [
     (r'^Should$', 'JUNK'),
     (r'^[Ll]icensing\@?$', 'JUNK'),
     (r'^Disclaimer$', 'JUNK'),
+    (r'^Directive.?$', 'JUNK'),
     (r'^LAWS\,?$', 'JUNK'),
     (r'^[Ll]aws?,?$', 'JUNK'),
     (r'^me$', 'JUNK'),
@@ -1087,7 +1114,7 @@ patterns = [
     (r'^GA$', 'JUNK'),
     (r'^unzip$', 'JUNK'),
     (r'^EULA', 'JUNK'),
-    (r'^Terms?[.,]?$', 'JUNK'),
+    (r'^Terms?[\.,]?$', 'JUNK'),
     (r'^Non-Assertion$', 'JUNK'),
 
     # this is not Copr.
@@ -1277,9 +1304,9 @@ patterns = [
     (r'^Education$', 'NN'),
     (r'^Extended', 'NN'),
     (r'^Every$', 'NN'),
+    (r'^Exhibit$', 'NN'),
     (r'^Digitized', 'NN'),
     (r'^[Ds]istributed?.?$', 'NN'),
-
     (r'^Multiply$', 'NN'),
     (r'^Convert$', 'NN'),
     (r'^Compute$', 'NN'),
@@ -1295,7 +1322,7 @@ patterns = [
     (r'^Lexers?.?', 'NN'),
     (r'^Symbols?.?', 'NN'),
     (r'^Tokens?.?', 'NN'),
-
+    (r'^Initial', 'NN'),
     (r'^END$', 'NN'),
     (r'^Entity$', 'NN'),
     (r'^Example', 'NN'),
@@ -1393,9 +1420,8 @@ patterns = [
     (r'^Neither$', 'NN'),
     (r'^Norwegian$', 'NN'),
     (r'^Notes?$', 'NN'),
-    (r'^NOTICE[\.\,]?$', 'NN'),
-    (r'^[Nn]otices?[\.,]?$', 'NN'),
     (r'^NOT$', 'NN'),
+    (r'^Nessus$', 'NN'),
     (r'^NULL$', 'NN'),
     (r'^Objects?$', 'NN'),
     (r'^Open$', 'NN'),
@@ -1488,7 +1514,7 @@ patterns = [
     (r'^Vendor', 'NN'),
     (r'^VIEW$', 'NN'),
     (r'^Visit', 'NN'),
-    (r'^Website', 'NN'),
+    # (r'^Website', 'NN'),
     (r'^Wheel$', 'NN'),
     (r'^Win32$', 'NN'),
     (r'^Work', 'NN'),
@@ -1592,6 +1618,8 @@ patterns = [
     (r'^MessageOne', 'NAME'),
     (r'^Message[A-Z]', 'JUNK'),
     (r'^Short[a-z]*[A-Z]+[a-z]*', 'JUNK'),
+
+    (r'^[Ww]ebsites?[\.,]?', 'JUNK'),
 
     # files
     (r'^.*\.java$', 'NN'),
@@ -1705,7 +1733,7 @@ patterns = [
     (r'^[A-Z][a-z]+[\.,]+(LTD|LTd|LtD|Ltd|ltd|lTD|lTd|ltD).?,?$', 'COMP'),
 
     # company suffix
-    (r'^[Ii]nc[.]?[,\.]?\)?$', 'COMP'),
+    (r'^[Ii]nc[\.]?[,\.]?\)?$', 'COMP'),
     (r'^Incorporated[,\.]?\)?$', 'COMP'),
 
     # ,Inc. suffix without spaces is directly a company name
@@ -1779,7 +1807,7 @@ patterns = [
     # (dutch and belgian) company suffix
     (r'^[Bb]\.?[Vv]\.?|BVBA$', 'COMP'),
     # university
-    (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))[\.,\)]*$', 'UNI'),
+    (r'^\(?[Uu]niv(?:[\.]|ersit(?:y|e|at?|ad?))[\.,\)]*$', 'UNI'),
     (r'^UNIVERSITY$', 'UNI'),
     (r'^College$', 'UNI'),
     # Academia/ie
@@ -2117,6 +2145,12 @@ patterns = [
     # moment/moment is an odd name
     (r'moment/moment$', 'NAME'),
 
+    # single parens are special
+    (r'^[\(\)]$', 'PARENS'),
+
+    # some punctuation combos
+    (r'^(?:=>|->|<-|<=)$', 'JUNK'),
+
     ############################################################################
     # catch all other as Nouns
     ############################################################################
@@ -2366,6 +2400,7 @@ grammar = """
     # Copyright 2018, OpenCensus Authors
     COPYRIGHT: {<COPY>+ <YR-RANGE> <NNP> <AUTHS>}     #1579991
 
+
     NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>?} #5612
 
     #Academy of Motion Picture Arts and Sciences
@@ -2455,7 +2490,8 @@ grammar = """
     # <s>Timothy Terriberry</s>, <s>CSIRO</s>, and other contributors
     ANDCO: {<CC> <CAPS|COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+}          #960
 
-    COMPANY: {<COMPANY|NAME|NAME-EMAIL|NAME-YEAR> <ANDCO>+}     #970
+    # Copyright © 1998-2009 Bill Spitzak (spitzak@users.sourceforge.net ) and others,
+    COMPANY: {<COMPANY|NAME|NAME-EMAIL|NAME-YEAR> <PARENS>? <ANDCO>+}     #970
 
     # de Nemours and Company
     NAME: {<VAN>? <NNP> <ANDCO>+}                             #980
@@ -2564,6 +2600,9 @@ grammar = """
 
     # The Rand Project Developers
     COMPANY: {<COMPANY> <MAINT>} #19603
+
+    #   Copyright (C) 1998-2001 VideoLAN ( Johan Bilien <jobi@via.ecp.fr> and Gildas Bazin <gbazin@netcourrier.com> )
+    NAME: {<PARENS> <NAME> <PARENS>} #19653
 
 
 #################################    #COPYRIGHT: {<COPY> <COPY> <MIT>}        #1802
@@ -2755,7 +2794,7 @@ grammar = """
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
-    # using #2280 above: Copyright 2018 Developers of the Rand project 
+    # using #2280 above: Copyright 2018 Developers of the Rand project
     COPYRIGHT: {<COPYRIGHT2>  <MAINT>  <OF>  <COMPANY>}        #2280.123
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <NN|CAPS>* <COMPANY>?}        #2300
@@ -2803,7 +2842,7 @@ grammar = """
     COPYRIGHT: {<PORTIONS> <COPYRIGHT|COPYRIGHT2>}        #2610
 
     #copyright notice (3dfx Interactive, Inc. 1999),
-    COPYRIGHT: {<COPY> <NN> <COMPANY> <YR-RANGE>}       #2620
+    COPYRIGHT: {<COPY> <NOTICE> <COMPANY> <YR-RANGE>}       #2620
 
     # Copyright (C) <2013>, GENIVI Alliance, Inc.
     COPYRIGHT: {<COPYRIGHT2> <ANDCO>}       #2625
@@ -3032,6 +3071,9 @@ grammar = """
     # (C) Distributed Management Task Force (Distributed is an NN)
     COPYRIGHT: {<COPY> <NN> <NAME>}         #83010
 
+    # Copyright (c) 2014 The Rust Project Developers
+    COPYRIGHT: {<COPYRIGHT>  <MAINT> }       #83020
+
 
 #######################################
 # Copyright is held by ....
@@ -3214,11 +3256,10 @@ def refine_holder(h):
     h = h.strip('/ ~')
     h = strip_solo_quotes(h)
     h = h.replace('( ', ' ').replace(' )', ' ')
-    h = h.strip()
-    h = h.strip('+-')
+    h = h.strip('+- ')
     h = strip_trailing_period(h)
-    h = h.strip()
-    h = h.strip('+-')
+    h = h.strip('+- ')
+    h = ' '.join(h.split())
     if h and h.lower() not in HOLDERS_JUNK:
         return h
 
@@ -3325,7 +3366,7 @@ COPYRIGHTS_JUNK = [
     r'^copyright \(c\)$',
     r'^\(c\) by$',
 
-    r"\(c\) [a-z][a-z] \(c\)",
+    r"\(c\) [a-zA-Z][a-z] \(c\)",
     r"^copyright holder or simply",
     r"^copyright notice\.",
     r"^copyright of uc berkeley's berkeley software distribution",
