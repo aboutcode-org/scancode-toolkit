@@ -86,9 +86,9 @@ del is_on_macos_arm64
 
 def get_etc_os_release_info(os_release_path='/etc/os-release'):
     """
-    Return a dictionary of keys-value pairs from /etc/os-release
+    Return a dictionary of key-value pairs from /etc/os-release
     """
-    cfg_kv = {}
+    os_release_data = {}
     with open(os_release_path) as f:
         for line in f:
             split_line = line.split('=')
@@ -96,8 +96,8 @@ def get_etc_os_release_info(os_release_path='/etc/os-release'):
                 continue
             k = split_line[0].strip()
             v = split_line[-1].strip()
-            cfg_kv[k] = v
-    return cfg_kv
+            os_release_data[k] = v
+    return os_release_data
 
 
 def is_on_ubuntu_22():
