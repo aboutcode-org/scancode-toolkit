@@ -1,6 +1,12 @@
 Release notes
 =============
 
+Version 31.1.0 - (2024-05-XX)
+------------------------------
+
+- Add ``on_macos_arm64`` and ``on_ubuntu_22`` markers to ``commoncode.system``.
+
+
 Version 31.0.3 - (2023-08-25)
 ------------------------------
 
