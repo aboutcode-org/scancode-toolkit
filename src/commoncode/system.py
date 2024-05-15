@@ -71,6 +71,49 @@ on_macos_14_or_higher = is_on_macos_14_or_higher()
 del is_on_macos_14_or_higher
 
 
+def is_on_macos_arm64():
+    """
+    Return True if the current OS is macOS running on Apple Silicon.
+    """
+    import platform
+    return on_mac and platform.machine() == 'arm64'
+
+
+on_macos_arm64 = is_on_macos_arm64()
+
+del is_on_macos_arm64
+
+
+def get_etc_os_release_info(os_release_path='/etc/os-release'):
+    """
+    Return a dictionary of keys-value pairs from /etc/os-release
+    """
+    cfg_kv = {}
+    with open(os_release_path) as f:
+        for line in f:
+            split_line = line.split('=')
+            if not split_line:
+                continue
+            k = split_line[0].strip()
+            v = split_line[-1].strip()
+            cfg_kv[k] = v
+    return cfg_kv
+
+
+def is_on_ubuntu_22():
+    """
+    Return True if the current OS is Ubuntu 22.XX.
+    """
+    if not on_linux:
+        return False
+    os_release_info = get_etc_os_release_info()
+    return os_release_info['ID'] == 'ubuntu' and '22' in os_release_info['VERSION_ID']
+
+on_ubuntu_22 = is_on_ubuntu_22()
+
+del is_on_ubuntu_22
+
+
 def has_case_sensitive_fs():
     """
     Return True if the current FS is case sensitive.
