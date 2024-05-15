@@ -1,9 +1,14 @@
 ---
-license_expression: other-permissive
-is_license_text: yes
-relevance: 100
-is_deprecated: yes
-notes: This is now the cexcept-2008 LICENSE
+key: cexcept-2008
+short_name: cexcept License 2008
+name: cexcept License 2008
+category: Permissive
+owner: nicemice
+spdx_license_key: LicenseRef-scancode-cexcept-2008
+text_urls:
+    - https://github.com/cloudflare/pngcrush/blob/deflate.gcc.amd64/cexcept.h
+other_urls:
+    - http://www.nicemice.net/cexcept/
 ---
 
 This software may be modified only if its author and version

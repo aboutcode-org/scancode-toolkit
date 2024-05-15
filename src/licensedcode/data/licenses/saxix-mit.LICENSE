@@ -2,12 +2,12 @@
 key: saxix-mit
 short_name: Stefano Apostolico MIT License
 name: Stefano Apostolico MIT License
-category: Permissive
+category: Proprietary Free
 owner: Stefano Apostolico
 homepage_url: https://github.com/saxix/django-adminactions/blob/develop/LICENSE
+notes: this is the MIT license text with an extra clause wrt. commercial usage notification.
 spdx_license_key: LicenseRef-scancode-saxix-mit
 minimum_coverage: 95
-notes: this is the MIT license text with an extra clause wrt. commercial usage notification.
 ---
 
 MIT License

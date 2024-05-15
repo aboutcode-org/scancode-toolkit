@@ -1,0 +1,70 @@
+---
+key: osvdb
+short_name: OSVDB License
+name: Open Sourced Vulnerability Database (OSVDB) License
+category: Proprietary Free
+owner: OSVDB
+spdx_license_key: LicenseRef-scancode-osvdb
+text_urls:
+    - https://www.osvdb.org/osvdb_license
+ignorable_copyrights:
+    - (c) Copyright 2002 - 2016 Open Sourced Vulnerability Database (OSVDB)
+    - Copyright, Open Security Foundation
+ignorable_holders:
+    - Open Security Foundation
+    - Open Sourced Vulnerability Database (OSVDB)
+ignorable_authors:
+    - the Open Security Foundation
+ignorable_urls:
+    - http://osvdb.org/
+ignorable_emails:
+    - officers@opensecurityfoundation.org
+---
+
+Open Sourced Vulnerability Database (OSVDB) License
+
+By using this website, including, without limitation copying any content, you agree to the following terms:
+
+This is the Open Sourced Vulnerability Database (OSVDB) License which is operated under the Open Security Foundation (OSF), a 501(c)(3) not-for-profit entity. This license, where applicable, covers all OSVDB data that is distributed via any means, including the web site, API, email, or data exports (e.g. CSV, SQLite, XML, etc.) under the OSVDB license provisions. This License is subject to change without notice.
+
+License Terms
+
+1. All material is Copyright, Open Security Foundation (OSF) / Open Sourced Vulnerability Database (OSVDB). All Rights Reserved.
+
+2. The OSVDB contains contributions made by many individuals on behalf of OSF and OSVDB, both voluntarily and commercially retained, based on published vulnerability information. All contributions made by volunteers become the property of OSF / OSVDB.
+
+3. If the OSVDB is the basis of, or integrated with in any manner a commercially available product or service you MUST notify OSVDB by providing details on the usage and reach a licensing agreement prior to usage. This includes using OSVDB data in security products, security services, generating vulnerability statistics/ metrics, funded academic research, or any form of analytics used in a commercial manner (including 'free' reports used for marketing). Usage requests can be submitted for approval to officers[at]opensecurityfoundation.org. Use of OSVDB in a non-profit or educational organization, in the same manners listed prior requires explicit permission from OSF, and may require licensing.
+
+4. Obtaining data from this website in a programmatic fashion (e.g. scraping via enumeration, web robot, crawler, etc) is prohibited. Such activity is likely to trigger security software that will permanently block your IP from accessing the site.
+
+5. OSVDB must be given required credit if the data is used in any manner, both non-profit or commercially (see #3). The credit requirements are as follows:
+
+    OSVDB must be referenced as the data source in documentation, and
+    OSVDB must be referenced as the data source in any stored output such as reports, and
+    OSVDB must be referenced as the data source during the program's execution in one of the following ways:
+        displayed on screen while program is running, or
+        displayed on screen in "About" window, or
+        displayed on screen at end of program termination (command line tool only), or
+        displayed on screen during program help display (command line tool only).
+
+6. Areas that require reference to the OSVDB as described in section 4 must display the following acknowledgement: "This product includes data from the Open Sourced Vulnerability Database (OSVDB.org) developed by the Open Security Foundation (OSF) and its partners."
+
+7. If you wish to re-brand the OSVDB without meeting the requirements of Section 4, you must secure permission and agree to an alternate commercial license. Contact officers@opensecurityfoundation.org for additional information. Linking to http://osvdb.org/ in any fashion is permitted and encouraged, and does not require any form of license.
+
+8. Redistribution of the OSVDB can only be done under commercial license, with explicit permission by OSF or their commercial partners, and must retain this entire license document whether it is packaged in a distribution, posted on a website, or any other distribution method, unless explicitly stated otherwise in a licensing agreement.
+
+9. NON TRANSFERABILITY: This License is non-transferable. This means that it applies to you and your company, not the people you distribute the product to in any fashion (e.g., customers or users). Customers or users are subject to the original OSVDB License and Copyright and must retain permission or their own license agreement for further redistribution.
+
+10. CONTRIBUTIONS & MODIFICATIONS. OSVDB recognizes the huge benefit in open-source collaboration. OSVDB has gone to great pains to allow the OSVDB data to be used freely, up to a point, while retaining the right to ensure the proper credit is given the project and licensed accordingly. OSVDB believes the copyright and this license together represent a compromise heavily weighted to the benefit of the open-source community and requests that any entities using the OSVDB should consider becoming supporters of the project by contributing information to the database.
+
+In order for OSVDB to maintain control over the database, it is a condition of the License that any modifications (i.e., edits, deletions, or contributions to the OSVDB) you suggest or submit be unencumbered. This means that any contributions or modifications fall under the license terms defined under OSVDB. Note that OSVDB assumes that any information submitted to us via email or committed by the project participants to be free of any encumbrance and which can be incorporated into our master database solely under our own copyright.
+
+11. Trademarked names appear throughout the OSVDB. Rather than list the names and entities that own the trademarks or insert a trademark symbol with each mention of the trademarked name, the names are used only for editorial purposes and to the benefit of the trademark owner with no intention of infringing upon that trademark.
+
+12. NO WARRANTY: THERE IS NO WARRANTY FOR THE OSVDB, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE OSVDB "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK OF USE OF THE OSVDB IS WITH YOU. SHOULD THE OSVDB PROVE FAULTY, INACCURATE, OR OTHERWISE UNACCEPTABLE YOU ASSUME THE COST OF ALL NECESSARY REPAIR OR CORRECTION.
+
+13. DISCLAIMER OF LIABILITY: THE OSVDB IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THE OSVDB, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The database information may change without any notice. Use of the information constitutes acceptance for use in an AS IS condition, and there are NO warranties, implied or otherwise, with regard to this information or its use. Any use of this information is at the user's risk. In no event shall the copyright holder or distributor (OSVDB or OSF) be held liable for any damages whatsoever arising out of or in connection with the use or spread of this information.
+
+© Copyright 2002 - 2016 Open Sourced Vulnerability Database (OSVDB), All Rights Reserved.
