@@ -1,6 +1,12 @@
 Release notes
 =============
 
+Version 31.2.1 - (2024-05-16)
+-----------------------------
+
+- Remove ``commoncode.system.get_etc_os_release_info`` and replace it with ``commoncode.distro_os_release_parser``.
+
+
 Version 31.2.0 - (2024-05-16)
 -----------------------------
 
