@@ -139,7 +139,11 @@ BASE=".[packages]"
 BASE_DEV=".[packages,testing]"
 if [[ $OSTYPE == 'darwin'* ]]; then
     BASE="."
-    BASE_DEV=".[testing]"
+    if [[ $(uname -m) == 'arm64' ]]; then
+        BASE_DEV=".[system_provided,testing]"
+    else
+        BASE_DEV=".[testing]"
+    fi
 fi
 
 # Requirement arguments passed to pip and used by default or with --dev.
