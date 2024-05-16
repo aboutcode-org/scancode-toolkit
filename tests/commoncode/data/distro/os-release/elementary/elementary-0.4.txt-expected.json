@@ -1,0 +1,11 @@
+{
+  "NAME": "elementary OS",
+  "VERSION": "0.4 Loki",
+  "ID": "elementary OS",
+  "ID_LIKE": "ubuntu",
+  "PRETTY_NAME": "elementary OS Loki",
+  "VERSION_ID": "0.4",
+  "HOME_URL": "http://elementary.io/",
+  "SUPPORT_URL": "http://elementary.io/support/",
+  "BUG_REPORT_URL": "https://bugs.launchpad.net/elementary/+filebug"
+}

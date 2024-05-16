@@ -1,0 +1,8 @@
+NAME=Korora
+VERSION="24 (Sheldon)"
+ID=fedora
+VERSION_ID=24
+PRETTY_NAME="Korora 24 (Sheldon)"
+ANSI_COLOR="0;34"
+CPE_NAME="cpe:/o:kororaproject:korora:24"
+HOME_URL="https://kororaproject.org/"

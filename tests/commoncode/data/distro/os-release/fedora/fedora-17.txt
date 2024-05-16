@@ -1,0 +1,7 @@
+NAME=Fedora
+VERSION="17 (Beefy Miracle)"
+ID=fedora
+VERSION_ID=17
+PRETTY_NAME="Fedora 17 (Beefy Miracle)"
+ANSI_COLOR="0;34"
+CPE_NAME="cpe:/o:fedoraproject:fedora:17"
