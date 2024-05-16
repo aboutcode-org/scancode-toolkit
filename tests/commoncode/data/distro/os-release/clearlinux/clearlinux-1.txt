@@ -1,0 +1,13 @@
+#### @tas50 note: this file is at /usr/lib/os-release because Intel doesn't believe in standards
+
+NAME="Clear Linux OS"
+VERSION=1
+ID=clear-linux-os
+ID_LIKE=clear-linux-os
+VERSION_ID=26290
+PRETTY_NAME="Clear Linux OS"
+ANSI_COLOR="1;35"
+HOME_URL="https://clearlinux.org"
+SUPPORT_URL="https://clearlinux.org"
+BUG_REPORT_URL="mailto:dev@lists.clearlinux.org"
+PRIVACY_POLICY_URL="http://www.intel.com/privacy"

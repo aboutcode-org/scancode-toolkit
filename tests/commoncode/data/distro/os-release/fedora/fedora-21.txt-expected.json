@@ -1,0 +1,15 @@
+{
+  "NAME": "Fedora",
+  "VERSION": "21 (Twenty One)",
+  "ID": "fedora",
+  "VERSION_ID": "21",
+  "PRETTY_NAME": "Fedora 21 (Twenty One)",
+  "ANSI_COLOR": "0;34",
+  "CPE_NAME": "cpe:/o:fedoraproject:fedora:21",
+  "HOME_URL": "https://fedoraproject.org/",
+  "BUG_REPORT_URL": "https://bugzilla.redhat.com/",
+  "REDHAT_BUGZILLA_PRODUCT": "Fedora",
+  "REDHAT_BUGZILLA_PRODUCT_VERSION": "21",
+  "REDHAT_SUPPORT_PRODUCT": "Fedora",
+  "REDHAT_SUPPORT_PRODUCT_VERSION": "21"
+}
