@@ -6,9 +6,10 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import getpass
 import os
 import sys
+
+from commoncode.distro import parse_os_release
 
 
 def os_arch():
@@ -84,29 +85,13 @@ on_macos_arm64 = is_on_macos_arm64()
 del is_on_macos_arm64
 
 
-def get_etc_os_release_info(os_release_path='/etc/os-release'):
-    """
-    Return a dictionary of key-value pairs from /etc/os-release
-    """
-    os_release_data = {}
-    with open(os_release_path) as f:
-        for line in f:
-            split_line = line.split('=')
-            if not split_line:
-                continue
-            k = split_line[0].strip()
-            v = split_line[-1].strip()
-            os_release_data[k] = v
-    return os_release_data
-
-
-def is_on_ubuntu_22():
+def is_on_ubuntu_22(os_release_location='/etc/os-release'):
     """
     Return True if the current OS is Ubuntu 22.XX.
     """
     if not on_linux:
         return False
-    os_release_info = get_etc_os_release_info()
+    os_release_info = parse_os_release(os_release_location)
     return os_release_info['ID'] == 'ubuntu' and '22' in os_release_info['VERSION_ID']
 
 on_ubuntu_22 = is_on_ubuntu_22()
