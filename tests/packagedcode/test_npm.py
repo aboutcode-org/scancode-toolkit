@@ -330,6 +330,50 @@ class TestNpm(PackageTester):
         packages = npm.YarnLockV2Handler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_is_datafile_pnpm_shrinkwrap_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
+        assert npm.PnpmShrinkwrapYamlHandler.is_datafile(test_file)
+
+    def test_is_datafile_pnpm_lock_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/pnpm-lock.yaml')
+        assert npm.PnpmLockYamlHandler.is_datafile(test_file)
+
+    def test_parse_pnpm_lock_yaml_v5(self):
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/pnpm-lock.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe-pnpm-lock.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pnpm_lock_yaml_v6(self):
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler/pnpm-lock.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler-pnpm-lock.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pnpm_shrinkwrap_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack-shrinkwrap.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_pnpm_scan_with_simple_package_json(self):
+        test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/')
+        expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe-scan.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_pnpm_scan_with_workspace_package_json(self):
+        test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler/')
+        expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler-scan.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
     def test_vcs_repository_mapper(self):
         package = MockPackage()
         repo = 'git+git://bitbucket.org/vendor/my-private-repo.git'

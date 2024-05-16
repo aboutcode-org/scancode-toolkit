@@ -1,0 +1,3926 @@
+[
+  {
+    "type": "npm",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "JavaScript",
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {
+      "lockfileVersion": "5.4"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:npm/%40babel/runtime@7.18.9",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=6.9.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40headlessui/react@1.6.6",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40mdx-js/mdx@2.1.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40mdx-js/react@2.1.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-android-arm-eabi@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm"
+          ],
+          "os": [
+            "android"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-android-arm64@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "android"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-darwin-arm64@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "darwin"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-darwin-x64@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "darwin"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-linux-arm-gnueabihf@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-linux-arm64-gnu@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-linux-arm64-musl@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-linux-x64-gnu@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-linux-x64-musl@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-win32-arm64-msvc@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "win32"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git-win32-x64-msvc@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "win32"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40napi-rs/simple-git@0.1.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/env@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-android-arm-eabi@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm"
+          ],
+          "os": [
+            "android"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-android-arm64@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "android"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-darwin-arm64@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "darwin"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-darwin-x64@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "darwin"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-freebsd-x64@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "freebsd"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-linux-arm-gnueabihf@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-linux-arm64-gnu@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-linux-arm64-musl@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-linux-x64-gnu@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-linux-x64-musl@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "linux"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-win32-arm64-msvc@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "win32"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-win32-ia32-msvc@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "ia32"
+          ],
+          "os": [
+            "win32"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40next/swc-win32-x64-msvc@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "win32"
+          ],
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/popper@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/primitive@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-arrow@0.1.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-compose-refs@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-context@0.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-id@0.1.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-popper@0.1.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-portal@0.1.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-portal@0.1.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-presence@0.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-primitive@0.1.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-primitive@0.1.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-slot@0.1.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-tooltip@0.1.6",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-use-callback-ref@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-use-controllable-state@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-use-escape-keydown@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-use-layout-effect@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-use-previous@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-use-rect@0.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-use-size@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/react-visually-hidden@0.1.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40radix-ui/rect@0.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40reach/skip-nav@0.16.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40reach/utils@0.16.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/animated@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/core@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/konva@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/native@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/rafz@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/shared@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/three@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/types@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/web@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40react-spring/zdog@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40stitches/react@1.2.8",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40swc/helpers@0.4.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/acorn@4.0.6",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/debug@4.1.7",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/estree-jsx@0.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/estree-jsx@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/estree@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/hast@2.3.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/mdast@3.0.10",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/mdurl@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/mdx@2.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/ms@0.7.31",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/prop-types@15.7.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/react@18.0.17",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/scheduler@0.16.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40types/unist@2.0.6",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/core@10.2.23",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/react@10.2.23",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/acorn-jsx@5.3.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/acorn@8.8.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.4.0"
+          },
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/ansi-styles@3.2.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/arch@2.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/arg@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/argparse@1.0.10",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/assign-symbols@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/astring@1.8.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/attr-accept@2.2.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/bail@2.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/caniuse-lite@1.0.30001375",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/ccount@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/chalk@2.3.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/character-entities-html4@2.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/character-entities-legacy@3.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/character-entities@2.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/character-reference-invalid@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/classnames@2.3.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/clipboardy@1.2.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/color-convert@1.9.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/color-name@1.1.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/colord@2.9.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/comma-separated-tokens@2.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/compute-scroll-into-view@1.0.17",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/cross-spawn@5.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/csstype@3.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/debug@4.3.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=6.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/decode-named-character-reference@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/dequal@2.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=6"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/diff@5.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.3.1"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-android-arm64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "android"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-darwin-64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "darwin"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-darwin-arm64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "darwin"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-freebsd-64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "freebsd"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-freebsd-arm64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "freebsd"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-linux-32@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "ia32"
+          ],
+          "os": [
+            "linux"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-linux-64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "linux"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-linux-arm@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm"
+          ],
+          "os": [
+            "linux"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-linux-arm64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "linux"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-linux-mips64le@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "mips64el"
+          ],
+          "os": [
+            "linux"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-linux-ppc64le@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "ppc64"
+          ],
+          "os": [
+            "linux"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-netbsd-64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "netbsd"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-openbsd-64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "openbsd"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-sunos-64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "sunos"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-windows-32@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "ia32"
+          ],
+          "os": [
+            "win32"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-windows-64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "x64"
+          ],
+          "os": [
+            "win32"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild-windows-arm64@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": true,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "cpu": [
+            "arm64"
+          ],
+          "os": [
+            "win32"
+          ]
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esbuild@0.13.15",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/escape-string-regexp@1.0.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.8.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/escape-string-regexp@5.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=12"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/esprima@4.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          },
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/estree-util-attach-comments@2.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/estree-util-build-jsx@2.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/estree-util-is-identifier-name@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/estree-util-visit@1.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/estree-walker@3.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/execa@0.8.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/extend-shallow@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/extend-shallow@3.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/extend@3.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/file-selector@0.5.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">= 10"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/flexsearch@0.7.21",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/focus-visible@5.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/for-in@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/get-stream@3.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/get-value@2.0.6",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/github-slugger@1.4.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/glslx@0.2.13",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/graceful-fs@4.2.10",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/gray-matter@4.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=6.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/has-flag@2.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/hast-util-to-estree@2.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/hast-util-whitespace@2.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/inline-style-parser@0.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/intersection-observer@0.12.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-alphabetical@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-alphanumerical@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-buffer@2.0.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-decimal@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-extendable@0.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-extendable@1.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-hexadecimal@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-plain-obj@4.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=12"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-plain-object@2.0.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-reference@3.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/is-stream@1.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/isexe@2.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/isobject@3.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/js-tokens@4.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/js-yaml@3.14.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/jsonc-parser@3.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/kind-of@6.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/kleur@4.1.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=6"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/leva@0.9.34",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/longest-streak@3.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/loose-envify@1.4.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/lru-cache@4.1.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/markdown-extensions@1.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/markdown-table@3.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/match-sorter@4.2.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-definitions@5.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-find-and-replace@2.2.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-from-markdown@1.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-gfm-autolink-literal@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-gfm-footnote@1.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-gfm-strikethrough@1.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-gfm-table@1.0.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-gfm-task-list-item@1.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-gfm@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-mdx-expression@1.3.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-mdx-jsx@2.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-mdx@2.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-mdxjs-esm@1.3.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-to-hast@12.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-to-markdown@1.3.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdast-util-to-string@3.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mdurl@1.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/merge-value@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-core-commonmark@1.0.6",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-gfm-autolink-literal@1.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-gfm-footnote@1.0.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-gfm-strikethrough@1.0.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-gfm-table@1.0.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-gfm-tagfilter@1.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-gfm-task-list-item@1.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-gfm@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-mdx-expression@1.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-mdx-jsx@1.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-mdx-md@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-mdxjs-esm@1.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-extension-mdxjs@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-factory-destination@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-factory-label@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-factory-mdx-expression@1.0.6",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-factory-space@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-factory-title@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-factory-whitespace@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-character@1.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-chunked@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-classify-character@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-combine-extensions@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-decode-numeric-character-reference@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-decode-string@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-encode@1.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-events-to-acorn@1.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-html-tag-name@1.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-normalize-identifier@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-resolve-all@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-sanitize-uri@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-subtokenize@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-symbol@1.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark-util-types@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/micromark@3.0.10",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mixin-deep@1.3.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/mri@1.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/ms@2.1.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/nanoid@3.3.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": "^10 || ^12 || ^13.7 || ^14 || >=15.0.1"
+          },
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/next-themes@0.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/next@12.2.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=12.22.0"
+          },
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/nextra-theme-docs@2.0.0-alpha.53",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/nextra-theme-docs@2.0.0-alpha.59",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/nextra@2.0.0-alpha.50",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/nextra@2.0.0-alpha.56",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/npm-run-path@2.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/object-assign@4.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/p-finally@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/p-limit@4.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/parse-entities@4.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/parse-git-url@1.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/parse-numeric-range@1.3.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/path-key@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/periscopic@3.0.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/phenomenon@1.6.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/picocolors@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/postcss@8.4.14",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": "^10 || ^12 || >=14"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/prop-types@15.8.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/property-information@6.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/pseudomap@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/react-colorful@5.6.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/react-dom@18.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/react-dropzone@12.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">= 10.13"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/react-is@16.13.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/react-spring@9.5.5",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/react@18.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/regenerator-runtime@0.13.9",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/rehype-pretty-code@0.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": "^12.16.0 || >=13.2.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/remark-gfm@3.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/remark-mdx@2.1.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/remark-parse@10.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/remark-rehype@10.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/remove-accents@0.4.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/sade@1.8.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=6"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/scheduler@0.23.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/scroll-into-view-if-needed@2.2.29",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/section-matter@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/set-value@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/shebang-command@1.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/shebang-regex@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/shiki@0.10.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/signal-exit@3.0.7",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/slash@3.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=8"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/source-map-js@1.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/space-separated-tokens@2.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/split-string@3.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/sprintf-js@1.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/stringify-entities@4.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/strip-bom-string@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/strip-eof@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/style-to-object@0.3.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/styled-jsx@5.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">= 12.0.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/supports-color@4.5.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/tiny-warning@1.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/title@3.5.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/titleize@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=0.10.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/trim-lines@3.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/trough@2.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/tslib@2.4.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/typescript@4.6.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=4.2.0"
+          },
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unified@10.1.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unist-builder@3.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unist-util-generated@2.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unist-util-is@5.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unist-util-position-from-estree@1.1.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unist-util-position@4.0.3",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unist-util-remove-position@4.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unist-util-stringify-position@3.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unist-util-visit-parents@5.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/unist-util-visit@4.1.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/use-sync-external-store@1.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/uvu@0.5.6",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=8"
+          },
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/v8n@1.5.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/vfile-location@4.0.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/vfile-message@3.1.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/vfile@5.3.4",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/vscode-oniguruma@1.6.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/vscode-textmate@5.2.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/which@1.3.1",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "hasBin": true
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/yallist@2.1.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/yocto-queue@1.0.0",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=12.20"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/zustand@3.7.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {
+          "engines": {
+            "node": ">=12.7.0"
+          }
+        }
+      },
+      {
+        "purl": "pkg:npm/%40use-gesture/zwitch@2.0.2",
+        "extracted_requirement": null,
+        "scope": null,
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "pnpm_lock_yaml",
+    "purl": null
+  }
+]

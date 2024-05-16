@@ -86,6 +86,8 @@ class BaseNpmHandler(models.DatafileHandler):
             '.package-lock.json',
             'npm-shrinkwrap.json',
             'yarn.lock',
+            'shrinkwrap.yaml',
+            'pnpm-lock.yaml'
         }
 
         package_resource = None
@@ -721,6 +723,121 @@ class YarnLockV1Handler(BaseNpmHandler):
             dependencies=dependencies,
         )
         yield models.PackageData.from_data(package_data, package_only)
+
+
+class BasePnpmLockHandler(BaseNpmHandler):
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        Parses and yields package dependencies for all lockfile versions
+        present in the spec: https://github.com/pnpm/spec/blob/master/lockfile/
+        """
+
+        with open(location) as yl:
+            lock_data = saneyaml.load(yl.read())
+
+        lockfile_version = lock_data.get("lockfileVersion")
+        is_shrinkwrap = False
+        if not lockfile_version:
+            lockfile_version = lock_data.get("shrinkwrapVersion")
+            lockfile_minor_version = lock_data.get("shrinkwrapMinorVersion")
+            if lockfile_minor_version:
+                lockfile_version = f"{lockfile_version}.{lockfile_minor_version}"
+            is_shrinkwrap = True
+
+        extra_data = {
+            "lockfileVersion": lockfile_version,
+        }
+        major_v, minor_v = lockfile_version.split(".")
+
+        resolved_packages = lock_data.get("packages", [])
+        dependencies_by_purl = {}
+
+        for purl_fields, data in resolved_packages.items():
+            if major_v == "6":
+                clean_purl_fields = purl_fields.split("(")[0]
+            elif major_v == "5" or is_shrinkwrap:
+                clean_purl_fields = purl_fields.split("_")[0]
+            else:
+                clean_purl_fields = purl_fields
+                raise Exception(lockfile_version, purl_fields)
+
+            sections = clean_purl_fields.split("/")
+            name_version= None
+            if major_v == "6":
+                if len(sections) == 2:
+                    namespace = None
+                    _, name_version = sections
+                elif len(sections) == 3:
+                    _, namespace, name_version = sections
+                
+                name, version = name_version.split("@")
+            elif major_v == "5" or is_shrinkwrap:
+                if len(sections) == 3:
+                    _, name, version = sections
+                elif len(sections) == 4:
+                    _, namespace, name, version = sections
+
+            purl = PackageURL(
+                type=cls.default_package_type,
+                name=name,
+                namespace=namespace,
+                version=version,
+            ).to_string()
+
+            # TODO: add resolved_package and dependencies from the following:
+            # 'peerDependencies', 'optionalDependencies', 'dependencies',
+            # 'transitivePeerDependencies', 'peerDependenciesMeta'
+            # add sha512 from 'resolution'
+            extra_data_fields = ["cpu", "os", "engines", "deprecated", "hasBin"]
+
+            is_dev = data.get("dev", False)
+            is_runtime = not is_dev
+            is_optional = data.get("optional", False)
+
+            extra_data_deps = {}
+            for key in extra_data_fields:
+                value = data.get(key, None)
+                if value is not None:
+                    extra_data_deps[key] = value 
+
+            dependency_data = models.DependentPackage(
+                purl=purl,
+                is_optional=is_optional,
+                is_runtime=is_runtime,
+                is_resolved=True,
+                extra_data=extra_data_deps,
+            )
+            dependencies_by_purl[purl] = dependency_data
+
+        dependencies = list(dependencies_by_purl.values())
+        root_package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+            extra_data=extra_data,
+        )
+        yield models.PackageData.from_data(root_package_data)
+
+
+class PnpmShrinkwrapYamlHandler(BasePnpmLockHandler):
+    datasource_id = 'pnpm_shrinkwrap_yaml'
+    path_patterns = ('*/shrinkwrap.yaml',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'pnpm shrinkwrap.yaml lockfile'
+    documentation_url = 'https://github.com/pnpm/spec/blob/master/lockfile/4.md'
+
+
+class PnpmLockYamlHandler(BasePnpmLockHandler):
+    datasource_id = 'pnpm_lock_yaml'
+    path_patterns = ('*/pnpm-lock.yaml',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'pnpm pnpm-lock.yaml lockfile'
+    documentation_url = 'https://github.com/pnpm/spec/blob/master/lockfile/6.0.md'
 
 
 def get_checksum_and_url(url):
