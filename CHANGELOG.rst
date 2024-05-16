@@ -1,6 +1,12 @@
 Release notes
 =============
 
+Version 31.2.0 - (2024-05-16)
+-----------------------------
+
+- Add ``commoncode.distro.os_release_parser`` from container-inspector to commoncode.
+
+
 Version 31.1.0 - (2024-05-15)
 ------------------------------
 
