@@ -34,7 +34,8 @@
     "source_packages": [],
     "file_references": [],
     "extra_data": {
-      "version": "workspace"
+      "version": "workspace",
+      "rust_edition": "2021"
     },
     "dependencies": [],
     "repository_homepage_url": "https://crates.io/crates/core-api",

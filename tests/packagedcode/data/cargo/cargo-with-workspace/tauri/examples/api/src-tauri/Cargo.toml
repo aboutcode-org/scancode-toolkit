@@ -44,14 +44,3 @@ features = ["test"]
 
 [target."cfg(target_os = \"windows\")".dependencies]
 window-shadows= "0.2"
-
-[features]
-custom-protocol = [ "tauri/custom-protocol" ]
-
-# default to small, optimized release binaries
-[profile.release]
-panic = "abort"
-codegen-units = 1
-lto = true
-incremental = false
-opt-level = "s"
