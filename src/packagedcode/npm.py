@@ -23,6 +23,7 @@ from packagedcode import models
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
+from packagedcode.utils import update_dependencies_as_resolved
 import saneyaml
 
 """
@@ -420,8 +421,9 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 )
             resolved_package.dependencies = sub_deps
             dependency.resolved_package = resolved_package.to_dict()
-            dependencies.append(dependency)
+            dependencies.append(dependency.to_dict())
 
+        update_dependencies_as_resolved(dependencies=dependencies)
         root_package_data.dependencies = dependencies
 
         yield root_package_data
@@ -551,8 +553,9 @@ class YarnLockV2Handler(BaseNpmHandler):
                     is_optional=False,
                     is_runtime=True,
                 )
-            top_dependencies.append(dependency)
+            top_dependencies.append(dependency.to_dict())
 
+        update_dependencies_as_resolved(dependencies=top_dependencies)
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -714,8 +717,9 @@ class YarnLockV1Handler(BaseNpmHandler):
                 is_runtime=True,
                 resolved_package=resolved_package_data.to_dict(),
             )
-            dependencies.append(dep)
+            dependencies.append(dep.to_dict())
 
+        update_dependencies_as_resolved(dependencies=dependencies)
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -811,7 +815,11 @@ class BasePnpmLockHandler(BaseNpmHandler):
             )
             dependencies_by_purl[purl] = dependency_data
 
-        dependencies = list(dependencies_by_purl.values())
+        dependencies = [
+            dep.to_dict()
+            for dep in list(dependencies_by_purl.values())
+        ]
+        update_dependencies_as_resolved(dependencies=dependencies)
         root_package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
