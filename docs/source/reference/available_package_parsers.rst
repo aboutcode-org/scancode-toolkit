@@ -233,6 +233,7 @@ parsers in scancode-toolkit during documentation builds.
      - https://r-pkgs.org/description.html
    * - Debian control file - extracted layout
      - ``*/control.tar.gz-extract/control``
+       ``*/control.tar.xz-extract/control``
      - ``deb``
      - ``debian_control_extracted_deb``
      - None
@@ -716,6 +717,19 @@ parsers in scancode-toolkit during documentation builds.
      - ``rpm_installed_database_sqlite``
      - None
      - https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb
+   * - RPM mariner distroless package manifest
+     - ``*var/lib/rpmmanifest/container-manifest-2``
+     - ``rpm``
+     - ``rpm_mariner_manifest``
+     - None
+     - https://github.com/microsoft/marinara/
+   * - RPM mariner distroless package license files
+     - ``*usr/share/licenses/*/COPYING*``
+       ``*usr/share/licenses/*/LICENSE*``
+     - ``rpm``
+     - ``rpm_package_licenses``
+     - None
+     - https://github.com/microsoft/marinara/
    * - RPM specfile
      - ``*.spec``
      - ``rpm``
@@ -734,6 +748,18 @@ parsers in scancode-toolkit during documentation builds.
      - ``squashfs_disk_image``
      - None
      - https://en.wikipedia.org/wiki/SquashFS
+   * - json dump of swift manifest
+     - ``*/Package.swift.json``
+     - ``swift``
+     - ``swift_package_manifest_json``
+     - swift
+     - https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
+   * - resolved dependency for swift package
+     - ``*/Package.resolved``
+     - ``swift``
+     - ``swift_package_resolved``
+     - swift
+     - https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#package-dependency
    * - Java Web Application Archive
      - ``*.war``
      - ``war``
