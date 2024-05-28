@@ -804,6 +804,20 @@ Package type:  squashfs
   description:       Squashfs disk image
   path_patterns:    
 --------------------------------------------
+Package type:  swift
+  datasource_id:     swift_package_manifest_json
+  documentation URL: https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
+  primary language:  swift
+  description:       json dump of swift manifest
+  path_patterns:    '*/Package.swift.json'
+--------------------------------------------
+Package type:  swift
+  datasource_id:     swift_package_resolved
+  documentation URL: https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#package-dependency
+  primary language:  swift
+  description:       resolved dependency for swift package
+  path_patterns:    '*/Package.resolved'
+--------------------------------------------
 Package type:  war
   datasource_id:     java_war_archive
   documentation URL: https://en.wikipedia.org/wiki/WAR_(file_format)
