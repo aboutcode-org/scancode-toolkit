@@ -19,8 +19,9 @@ from packageurl import PackageURL
 Handle the resolved file and JSON dump of the manifest for Swift packages.
 https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
 
-Run the command below before running the scan:
+Run the commands below before running the scan:
 ``swift package dump-package > Package.swift.json``
+``swift package resolve``
 """
 
 
