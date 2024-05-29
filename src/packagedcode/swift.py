@@ -20,7 +20,8 @@ Handle the resolved file and JSON dump of the manifest for Swift packages.
 https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
 
 Run the commands below before running the scan:
-``swift package dump-package > Package.swift.json``
+
+-  To create a parsable JSON version of the Package.swift manifest, run this: ``swift package dump-package > Package.swift.json``
 ``swift package resolve``
 """
 
