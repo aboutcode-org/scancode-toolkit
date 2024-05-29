@@ -169,7 +169,7 @@ class SwiftPackageResolvedHandler(models.DatafileHandler):
     path_patterns = ("*/Package.resolved",)
     default_package_type = "swift"
     default_primary_language = "swift"
-    description = "resolved dependency for swift package"
+    description = "Resolved full dependency lockfile for Package.swift created with ``swift package resolve``"
     documentation_url = (
         "https://docs.swift.org/package-manager/PackageDescription/"
         "PackageDescription.html#package-dependency"
