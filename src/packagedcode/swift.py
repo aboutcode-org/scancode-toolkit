@@ -116,7 +116,7 @@ class SwiftManifestJsonHandler(models.DatafileHandler):
                 processed_dependencies.append(
                     models.DependentPackage(
                         purl=purl.to_string(),
-                        scope="install",
+                        scope="dependencies",
                         is_runtime=True,
                         is_optional=False,
                         is_resolved=True,
