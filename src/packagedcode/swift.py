@@ -52,7 +52,7 @@ class SwiftManifestJsonHandler(models.DatafileHandler):
     path_patterns = ("*/Package.swift.json",)
     default_package_type = "swift"
     default_primary_language = "Swift"
-    description = "json dump of swift manifest"
+    description = "JSON dump of Package.swift created with ``swift package dump-package > Package.swift.json``"
     documentation_url = "https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html"
 
     @classmethod
