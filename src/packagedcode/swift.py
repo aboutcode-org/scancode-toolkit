@@ -22,7 +22,7 @@ https://docs.swift.org/package-manager/PackageDescription/PackageDescription.htm
 Run the commands below before running the scan:
 
 -  To create a parsable JSON version of the Package.swift manifest, run this: ``swift package dump-package > Package.swift.json``
-``swift package resolve``
+-  To create the Package.resolved lock file, run this: ``swift package resolve``
 """
 
 
