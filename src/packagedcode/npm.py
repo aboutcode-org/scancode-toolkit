@@ -172,6 +172,68 @@ class BaseNpmHandler(models.DatafileHandler):
                 for subchild in cls.walk_npm(child, codebase, depth=depth):
                     yield subchild
 
+    @classmethod
+    def update_dependencies_by_purl(
+        cls,
+        dependencies,
+        scope,
+        dependecies_by_purl,
+        is_runtime=False,
+        is_optional=False,
+        is_resolved=False,
+    ):
+
+        metadata_deps = ['peerDependenciesMeta', 'dependenciesMeta']
+        if type(dependencies) == list:
+            for subdep in dependencies:
+                sdns, _ , sdname = subdep.rpartition('/')
+                dep_purl = PackageURL(
+                    type=cls.default_package_type,
+                    namespace=sdns,
+                    name=sdname
+                ).to_string()
+                dep_package = models.DependentPackage(
+                    purl=dep_purl,
+                    scope=scope,
+                    is_runtime=is_runtime,
+                    is_optional=is_optional,
+                    is_resolved=is_resolved,
+                )
+                dependecies_by_purl[dep_purl] = dep_package
+
+        elif type(dependencies) == dict:
+            for subdep, metadata in dependencies.items():
+                sdns, _ , sdname = subdep.rpartition('/')
+                dep_purl = PackageURL(
+                    type=cls.default_package_type,
+                    namespace=sdns,
+                    name=sdname
+                ).to_string()
+
+                if scope in metadata_deps :
+                    dep_package = dependecies_by_purl.get(dep_purl)
+                    dep_package.is_optional = metadata.get("optional")
+                    continue
+
+                # pnpm has peer dependencies also sometimes in version?
+                # dependencies:
+                #   '@react-spring/animated': 9.5.5_react@18.2.0
+                # TODO: store this relation too?
+                requirement = metadata
+                if 'pnpm' in cls.datasource_id:
+                    if '_' in metadata:
+                        requirement, _extra = metadata.split('_')
+
+                dep_package = models.DependentPackage(
+                    purl=dep_purl,
+                    scope=scope,
+                    extracted_requirement=requirement,
+                    is_runtime=is_runtime,
+                    is_optional=is_optional,
+                    is_resolved=is_resolved,
+                )
+                dependecies_by_purl[dep_purl] = dep_package
+
 
 def get_urls(namespace, name, version, **kwargs):
     return dict(
@@ -308,6 +370,38 @@ class BaseNpmLockHandler(BaseNpmHandler):
 
         deps_mapping = package_data.get(deps_key) or {}
 
+        # Top level package metadata is present here
+        root_pkg = deps_mapping.get("")
+        if root_pkg:
+            pkg_name = root_pkg.get('name')
+            pkg_ns, _ , pkg_name = pkg_name.rpartition('/')
+            pkg_version = root_pkg.get('version')
+            pkg_purl = PackageURL(
+                type=cls.default_package_type,
+                namespace=pkg_ns,
+                name=pkg_name,
+                version=pkg_version,
+            ).to_string()
+            if pkg_purl != root_package_data.purl:
+                if TRACE_NPM:
+                    logger_debug(f'BaseNpmLockHandler: parse: purl mismatch: {pkg_purl} vs {root_package_data.purl}')
+            else:
+                extracted_license_statement = root_pkg.get('license')
+                if extracted_license_statement:
+                    root_package_data.extracted_license_statement = extracted_license_statement
+                    root_package_data.populate_license_fields()
+
+                deps_mapper(
+                    deps=root_pkg.get('devDependencies') or {},
+                    package=root_package_data,
+                    field_name='devDependencies',
+                )
+                deps_mapper(
+                    deps=root_pkg.get('optionalDependencies') or {},
+                    package=root_package_data,
+                    field_name='optionalDependencies',
+                )
+
         dependencies = []
 
         for dep, dep_data in deps_mapping.items():
@@ -326,7 +420,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
             if not dep:
                 # in v2 format the first dep is the same as the top level
                 # package and has no name
-                pass
+                continue
 
             # only present for first top level
             # otherwise get name from dep
@@ -357,9 +451,6 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 is_resolved=True,
             )
 
-            # only seen in v2 for the top level package... but good to keep
-            extracted_license_statement = dep_data.get('license')
-
             # URLs and checksums
             misc = get_urls(ns, name, version)
             resolved = dep_data.get('resolved')
@@ -374,7 +465,6 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 namespace=ns,
                 name=name,
                 version=version,
-                extracted_license_statement=extracted_license_statement,
                 **misc,
             )
             resolved_package = models.PackageData.from_data(resolved_package_mapping, package_only)
@@ -385,13 +475,11 @@ class BaseNpmLockHandler(BaseNpmHandler):
             # v1 as name/constraint pairs
             subrequires = dep_data.get('requires') or {}
 
-            # in v1 these are further nested dependencies
+            # in v1 these are further nested dependencies (TODO: handle these with tests)
             # in v2 these are name/constraint pairs like v1 requires
             subdependencies = dep_data.get('dependencies')
 
             # v2? ignored for now
-            dev_subdependencies = dep_data.get('devDependencies')
-            optional_subdependencies = dep_data.get('optionalDependencies')
             engines = dep_data.get('engines')
             funding = dep_data.get('funding')
 
@@ -401,25 +489,20 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 subdeps_data = subdependencies
             subdeps_data = subdeps_data or {}
 
-            sub_deps = []
-            for subdep, subdep_req in subdeps_data.items():
-                sdns, _ , sdname = subdep.rpartition('/')
-                sdpurl = PackageURL(
-                    type=cls.default_package_type,
-                    namespace=sdns,
-                    name=sdname
-                ).to_string()
-                sub_deps.append(
-                    models.DependentPackage(
-                        purl=sdpurl,
-                        scope=scope,
-                        extracted_requirement=subdep_req,
-                        is_runtime=is_runtime,
-                        is_optional=is_optional,
-                        is_resolved=False,
-                    )
-                )
-            resolved_package.dependencies = sub_deps
+            sub_deps_by_purl = {}
+            cls.update_dependencies_by_purl(
+                dependencies=subdeps_data,
+                scope=scope,
+                dependecies_by_purl=sub_deps_by_purl,
+                is_runtime=is_runtime,
+                is_optional=is_optional,
+                is_resolved=False,
+            )
+
+            resolved_package.dependencies = [
+                sub_dep.to_dict()
+                for sub_dep in sub_deps_by_purl.values()
+            ]
             dependency.resolved_package = resolved_package.to_dict()
             dependencies.append(dependency.to_dict())
 
@@ -535,7 +618,7 @@ class YarnLockV2Handler(BaseNpmHandler):
                 version=version,
             )
 
-            # TODO: add resolved_package with its own deps
+            # TODO: what type of checksum is this?
             checksum = details.get('checksum')
             dependencies = details.get('dependencies') or {}
             peer_dependencies = details.get('peerDependencies') or {}
@@ -543,16 +626,49 @@ class YarnLockV2Handler(BaseNpmHandler):
             # these are file references
             bin = details.get('bin') or []
 
+            deps_for_resolved_by_purl = {}
+            cls.update_dependencies_by_purl(
+                dependencies=dependencies,
+                scope="dependencies",
+                dependecies_by_purl=deps_for_resolved_by_purl,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=peer_dependencies,
+                scope="peerDependencies",
+                dependecies_by_purl=deps_for_resolved_by_purl,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=dependencies_meta,
+                scope="dependenciesMeta",
+                dependecies_by_purl=deps_for_resolved_by_purl,
+            )
+
+            dependencies_for_resolved = [
+                dep_package.to_dict()
+                for dep_package in deps_for_resolved_by_purl.values()
+            ]
+
+            resolved_package_mapping = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                namespace=ns,
+                name=name,
+                version=version,
+                dependencies=dependencies_for_resolved,
+
+            )
+            resolved_package = models.PackageData.from_data(resolved_package_mapping)
             dependency = models.DependentPackage(
-                    purl=str(purl),
-                    extracted_requirement=version,
-                    is_resolved=True,
-                    # FIXME: these are NOT correct
-                    scope='dependencies',
-                    # TODO: get details  from metadata
-                    is_optional=False,
-                    is_runtime=True,
-                )
+                purl=str(purl),
+                extracted_requirement=version,
+                is_resolved=True,
+                resolved_package=resolved_package.to_dict(),
+                # FIXME: these are NOT correct
+                scope='dependencies',
+                is_optional=False,
+                is_runtime=True,
+            )
             top_dependencies.append(dependency.to_dict())
 
         update_dependencies_as_resolved(dependencies=top_dependencies)
@@ -790,10 +906,64 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 version=version,
             ).to_string()
 
-            # TODO: add resolved_package and dependencies from the following:
-            # 'peerDependencies', 'optionalDependencies', 'dependencies',
-            # 'transitivePeerDependencies', 'peerDependenciesMeta'
-            # add sha512 from 'resolution'
+            checksum = data.get('resolution') or {}
+            integrity = checksum.get('integrity')
+            misc = get_algo_hexsum(integrity)
+
+            dependencies = data.get('dependencies') or {}
+            optional_dependencies = data.get('optionalDependencies') or {}
+            transitive_peer_dependencies = data.get('transitivePeerDependencies') or {}
+            peer_dependencies = data.get('peerDependencies') or {}
+            peer_dependencies_meta = data.get('peerDependenciesMeta') or {}
+
+            deps_for_resolved_by_purl = {}
+            cls.update_dependencies_by_purl(
+                dependencies=dependencies,
+                scope='dependencies',
+                dependecies_by_purl=deps_for_resolved_by_purl,
+                is_resolved=True,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=peer_dependencies,
+                scope='peerDependencies',
+                dependecies_by_purl=deps_for_resolved_by_purl,
+                is_optional=True,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=optional_dependencies,
+                scope='optionalDependencies',
+                dependecies_by_purl=deps_for_resolved_by_purl,
+                is_resolved=True,
+                is_optional=True,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=peer_dependencies_meta,
+                scope='peerDependenciesMeta',
+                dependecies_by_purl=deps_for_resolved_by_purl,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=transitive_peer_dependencies,
+                scope='transitivePeerDependencies',
+                dependecies_by_purl=deps_for_resolved_by_purl,
+            )
+
+            dependencies_for_resolved = [
+                dep_package.to_dict()
+                for dep_package in deps_for_resolved_by_purl.values()
+            ]
+
+            resolved_package_mapping = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                namespace=namespace,
+                name=name,
+                version=version,
+                dependencies=dependencies_for_resolved,
+                **misc,
+            )
+            resolved_package = models.PackageData.from_data(resolved_package_mapping)
+
             extra_data_fields = ["cpu", "os", "engines", "deprecated", "hasBin"]
 
             is_dev = data.get("dev", False)
@@ -811,13 +981,14 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 is_optional=is_optional,
                 is_runtime=is_runtime,
                 is_resolved=True,
+                resolved_package=resolved_package.to_dict(),
                 extra_data=extra_data_deps,
             )
             dependencies_by_purl[purl] = dependency_data
 
         dependencies = [
             dep.to_dict()
-            for dep in list(dependencies_by_purl.values())
+            for dep in dependencies_by_purl.values()
         ]
         update_dependencies_as_resolved(dependencies=dependencies)
         root_package_data = dict(
