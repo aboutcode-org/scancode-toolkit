@@ -34,6 +34,7 @@
     "pkg:maven/org.mortbay.jetty/jetty@6.1.5?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

@@ -73,6 +73,7 @@
       "source_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.jar",
@@ -407,6 +408,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -582,6 +584,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -698,6 +701,7 @@
             "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

@@ -98,6 +98,7 @@
     "pkg:maven/org.apache.maven.plugins/maven-plugin-parent@2.0.1?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

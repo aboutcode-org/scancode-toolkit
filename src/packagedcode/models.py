@@ -682,6 +682,14 @@ class PackageData(IdentifiablePackageData):
              'package type or datafile format.'
     )
 
+    is_private = Boolean(
+        default=False,
+        label='is resolved flag',
+        help='True if the associated package for this package manifest '
+             'is never meant to be published to the corresponding package '
+             'repository, and is a private package.'
+    )
+
     extra_data = Mapping(
         label='extra data',
         help='A mapping of arbitrary extra package data.',

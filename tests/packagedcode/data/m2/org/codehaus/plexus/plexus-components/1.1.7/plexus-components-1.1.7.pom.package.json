@@ -34,6 +34,7 @@
     "pkg:maven/org.codehaus.plexus/plexus-components@1.1.7?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

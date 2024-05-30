@@ -34,6 +34,7 @@
     "pkg:maven/org.openqa.selenium.core/selenium-core@0.8.3?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

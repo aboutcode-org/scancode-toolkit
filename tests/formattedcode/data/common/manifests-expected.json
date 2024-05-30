@@ -73,6 +73,7 @@
       "source_packages": [
         "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar",
@@ -174,6 +175,7 @@
       "extracted_license_statement": "- Apache-2.0\n- type: Apache 2.0\n  url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
       "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
@@ -251,6 +253,7 @@
       "extracted_license_statement": "- MIT\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/angular-compare-validator",
       "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
@@ -892,6 +895,7 @@
             "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
@@ -1096,6 +1100,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1390,6 +1395,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1639,6 +1645,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

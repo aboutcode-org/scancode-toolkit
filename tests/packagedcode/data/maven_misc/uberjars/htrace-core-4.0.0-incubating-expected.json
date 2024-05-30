@@ -84,6 +84,7 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -132,6 +133,7 @@
       "source_packages": [
         "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar",
@@ -180,6 +182,7 @@
       "source_packages": [
         "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/jackson-core-2.4.0.jar",
@@ -228,6 +231,7 @@
       "source_packages": [
         "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.4.0/jackson-databind-2.4.0.jar",
@@ -298,6 +302,7 @@
       "source_packages": [
         "pkg:maven/commons-logging/commons-logging@1.1.1?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar",
@@ -368,6 +373,7 @@
       "source_packages": [
         "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/htrace/htrace-core/4.0.0-incubating/htrace-core-4.0.0-incubating.jar",
@@ -939,6 +945,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1076,6 +1083,7 @@
             "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.4.0/",
@@ -1150,6 +1158,7 @@
             "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.4.0/",
@@ -1224,6 +1233,7 @@
             "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1385,6 +1395,7 @@
             "pkg:maven/commons-logging/commons-logging@1.1.1?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1568,6 +1579,7 @@
             "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

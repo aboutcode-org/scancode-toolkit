@@ -119,6 +119,7 @@
     "pkg:maven/plexus/plexus-root@1.0.3?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

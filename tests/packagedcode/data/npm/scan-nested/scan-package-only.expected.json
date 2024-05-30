@@ -61,6 +61,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "lockfile_version": 1
           },
@@ -118,6 +119,7 @@
                     }
                   ]
                 ],
+                "is_private": false,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/ansi-regex",
@@ -181,6 +183,7 @@
                     }
                   ]
                 ],
+                "is_private": false,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
@@ -282,6 +285,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -383,6 +387,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -426,6 +431,7 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/abbrev",
@@ -477,6 +483,7 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
                 "extra_data": {},
                 "dependencies": [
                   {
@@ -539,6 +546,7 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/xtend",
@@ -590,6 +598,7 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/yallist",
@@ -649,6 +658,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "lockfile_version": 1
           },
@@ -706,6 +716,7 @@
                     }
                   ]
                 ],
+                "is_private": false,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/ms",
@@ -769,6 +780,7 @@
                     }
                   ]
                 ],
+                "is_private": false,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/regenerator-runtime",
@@ -832,6 +844,7 @@
                     }
                   ]
                 ],
+                "is_private": false,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
@@ -925,6 +938,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

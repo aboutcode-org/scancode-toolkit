@@ -90,6 +90,7 @@
       "extracted_license_statement": "license: MIT\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {
         "Documentation": "https://mharrisb1.github.io/daglib/"
       },
@@ -354,6 +355,7 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
           "extra_data": {
             "Documentation": "https://mharrisb1.github.io/daglib/"
           },

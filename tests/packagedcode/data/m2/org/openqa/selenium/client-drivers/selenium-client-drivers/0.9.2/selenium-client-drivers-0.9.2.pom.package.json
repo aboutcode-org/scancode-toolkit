@@ -34,6 +34,7 @@
     "pkg:maven/org.openqa.selenium.client-drivers/selenium-client-drivers@0.9.2?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

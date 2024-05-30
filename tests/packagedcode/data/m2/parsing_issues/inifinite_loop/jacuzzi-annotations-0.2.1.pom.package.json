@@ -34,6 +34,7 @@
     "pkg:maven/com.github.albertoanguita/jacuzzi-annotations@%24%7Bversion%7D?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/github/albertoanguita/jacuzzi-annotations/${version}/",

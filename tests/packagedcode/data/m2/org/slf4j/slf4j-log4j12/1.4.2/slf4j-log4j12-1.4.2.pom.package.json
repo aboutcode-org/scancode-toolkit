@@ -34,6 +34,7 @@
     "pkg:maven/org.slf4j/slf4j-log4j12@1.4.2?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

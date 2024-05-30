@@ -639,6 +639,7 @@
     "pkg:maven/commons-lang/commons-lang@2.3?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

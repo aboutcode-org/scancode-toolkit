@@ -282,6 +282,7 @@
     "pkg:maven/commons-validator/commons-validator@1.2.0?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

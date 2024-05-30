@@ -79,6 +79,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,

@@ -43,6 +43,7 @@
       "pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src"
     ],
     "file_references": [],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,

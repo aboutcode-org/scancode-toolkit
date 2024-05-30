@@ -77,6 +77,7 @@
     "pkg:maven/commons-beanutils/commons-beanutils@1.6?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

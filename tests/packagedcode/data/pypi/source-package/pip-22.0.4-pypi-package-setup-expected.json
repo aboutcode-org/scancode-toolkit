@@ -106,6 +106,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/",

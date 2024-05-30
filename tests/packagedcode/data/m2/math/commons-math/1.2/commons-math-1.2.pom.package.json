@@ -203,6 +203,7 @@
     "pkg:maven/commons-math/commons-math@1.2?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

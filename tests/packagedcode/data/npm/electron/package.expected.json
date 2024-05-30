@@ -66,6 +66,7 @@
       "extracted_license_statement": "- MIT\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/electron",
       "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
@@ -254,6 +255,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

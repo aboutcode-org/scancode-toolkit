@@ -34,6 +34,7 @@
     "pkg:maven/org.apache.maven.plugins/maven-assembly-plugin@2.2-beta-2?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

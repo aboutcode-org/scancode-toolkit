@@ -212,7 +212,17 @@ class BaseNpmHandler(models.DatafileHandler):
 
                 if scope in metadata_deps :
                     dep_package = dependecies_by_purl.get(dep_purl)
-                    dep_package.is_optional = metadata.get("optional")
+                    if dep_package:
+                        dep_package.is_optional = metadata.get("optional")
+                    else:
+                        dep_package = models.DependentPackage(
+                            purl=dep_purl,
+                            scope=scope,
+                            is_runtime=is_runtime,
+                            is_optional=metadata.get("optional"),
+                            is_resolved=is_resolved,
+                        )
+                        dependecies_by_purl[dep_purl] = dep_package
                     continue
 
                 # pnpm has peer dependencies also sometimes in version?
@@ -266,7 +276,11 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 
         namespace, name = split_scoped_package_name(name)
 
-        urls = get_urls(namespace, name, version)
+        is_private = json_data.get('private') or False
+        if is_private:
+            urls = {}
+        else:
+            urls = get_urls(namespace, name, version)
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -276,6 +290,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             version=version or None,
             description=json_data.get('description', '').strip() or None,
             homepage_url=homepage_url,
+            is_private=is_private,
             **urls,
         )
         package = models.PackageData.from_data(package_data, package_only)

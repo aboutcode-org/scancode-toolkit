@@ -34,6 +34,7 @@
     "pkg:maven/org.codehaus.cargo/cargo-maven2-plugin@1.0-SNAPSHOT?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

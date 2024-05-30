@@ -66,6 +66,7 @@
       "extracted_license_statement": "Apache-2.0 OR MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://crates.io/crates/tauri",
       "repository_download_url": "https://crates.io/api/v1/crates/tauri/2.0.0-alpha.17/download",
@@ -145,6 +146,7 @@
       "extracted_license_statement": "Apache-2.0 OR MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://crates.io/crates/tauri-runtime",
       "repository_download_url": "https://crates.io/api/v1/crates/tauri-runtime/1.0.0-alpha.4/download",
@@ -224,6 +226,7 @@
       "extracted_license_statement": "Apache-2.0 OR MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://crates.io/crates/tauri-build",
       "repository_download_url": "https://crates.io/api/v1/crates/tauri-build/2.0.0-alpha.11/download",
@@ -303,6 +306,7 @@
       "extracted_license_statement": "Apache-2.0 OR MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://crates.io/crates/restart",
       "repository_download_url": "https://crates.io/api/v1/crates/restart/0.1.0/download",
@@ -380,10 +384,11 @@
       "extracted_license_statement": "- Apache-2.0 OR MIT\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": true,
       "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/tauri-workspace",
-      "repository_download_url": "https://registry.npmjs.org/tauri-workspace/-/tauri-workspace-0.0.0.tgz",
-      "api_data_url": "https://registry.npmjs.org/tauri-workspace/0.0.0",
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
       "package_uid": "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "cargo-with-workspace/package.json"
@@ -695,6 +700,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "workspace": {
               "resolver": "2",
@@ -1077,6 +1083,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/tauri-build",
@@ -1182,6 +1189,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/tauri-runtime",
@@ -1273,6 +1281,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/tauri",
@@ -1392,6 +1401,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/restart",
@@ -1500,6 +1510,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": true,
           "extra_data": {},
           "dependencies": [
             {
@@ -1593,9 +1604,9 @@
               "extra_data": {}
             }
           ],
-          "repository_homepage_url": "https://www.npmjs.com/package/api",
-          "repository_download_url": "https://registry.npmjs.org/api/-/api-1.0.0.tgz",
-          "api_data_url": "https://registry.npmjs.org/api/1.0.0",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
           "datasource_id": "npm_package_json",
           "purl": "pkg:npm/api@1.0.0"
         }
@@ -1662,6 +1673,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1773,6 +1785,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/api",
@@ -1883,6 +1896,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": true,
           "extra_data": {},
           "dependencies": [
             {
@@ -1926,9 +1940,9 @@
               "extra_data": {}
             }
           ],
-          "repository_homepage_url": "https://www.npmjs.com/package/tauri-workspace",
-          "repository_download_url": "https://registry.npmjs.org/tauri-workspace/-/tauri-workspace-0.0.0.tgz",
-          "api_data_url": "https://registry.npmjs.org/tauri-workspace/0.0.0",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
           "datasource_id": "npm_package_json",
           "purl": "pkg:npm/tauri-workspace@0.0.0"
         }

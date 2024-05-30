@@ -83,6 +83,7 @@
       "extracted_license_statement": "MIT OR Apache-2.0",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {
         "workspace": {
           "members": [
@@ -529,6 +530,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "workspace": {
               "members": [

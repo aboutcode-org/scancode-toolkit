@@ -34,6 +34,7 @@
     "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

@@ -34,6 +34,7 @@
     "pkg:maven/org.codehaus.plexus/plexus-active-collections@1.0-beta-2?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

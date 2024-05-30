@@ -147,6 +147,7 @@
     "pkg:maven/dom4j/dom4j@1.6.1?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

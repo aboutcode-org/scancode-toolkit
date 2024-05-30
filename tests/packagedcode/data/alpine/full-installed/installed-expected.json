@@ -87,6 +87,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -228,6 +229,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -549,6 +551,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -807,6 +810,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -993,6 +997,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -1089,6 +1094,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -1185,6 +1191,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -1273,6 +1280,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -1371,6 +1379,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -1467,6 +1476,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -1554,6 +1564,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -1641,6 +1652,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -1764,6 +1776,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -1852,6 +1865,7 @@
       "pkg:alpine/libc-dev@0.7.2-r3"
     ],
     "file_references": [],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [
       {

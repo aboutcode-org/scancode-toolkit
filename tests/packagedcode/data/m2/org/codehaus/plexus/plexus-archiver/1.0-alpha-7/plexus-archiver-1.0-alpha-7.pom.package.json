@@ -49,6 +49,7 @@
     "pkg:maven/org.codehaus.plexus/plexus-archiver@1.0-alpha-7?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

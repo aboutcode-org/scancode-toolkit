@@ -140,6 +140,7 @@
     "pkg:maven/org.codehaus.plexus/plexus@1.0.8?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

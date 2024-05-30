@@ -34,6 +34,7 @@
     "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

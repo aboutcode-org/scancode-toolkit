@@ -33,6 +33,7 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
     "extra_data": {
       "version": "workspace"
     },

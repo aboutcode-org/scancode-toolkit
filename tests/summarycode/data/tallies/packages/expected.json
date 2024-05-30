@@ -58,6 +58,7 @@
       "source_packages": [
         "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
@@ -140,6 +141,7 @@
       "extracted_license_statement": "{'licenses': ['GPLv2'], 'licenselogic': 'single'}",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -217,6 +219,7 @@
       "extracted_license_statement": "- MIT\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",
       "repository_download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
@@ -1182,6 +1185,7 @@
             "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
@@ -1284,6 +1288,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1374,6 +1379,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

@@ -119,6 +119,7 @@
     "pkg:maven/commons-logging/commons-logging@1.1.1?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

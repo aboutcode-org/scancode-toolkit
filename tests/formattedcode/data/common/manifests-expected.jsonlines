@@ -12,7 +12,7 @@
           "--package": true
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-        "output_format_version": "3.0.0",
+        "output_format_version": "3.1.0",
         "message": null,
         "errors": [],
         "warnings": [],
@@ -20,11 +20,11 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.15.0-89-generic-x86_64-with-glibc2.29",
-            "platform_version": "#99~20.04.1-Ubuntu SMP Thu Nov 2 15:16:47 UTC 2023",
-            "python_version": "3.8.10 (default, Nov 22 2023, 10:22:35) \n[GCC 9.4.0]"
+            "platform": "Linux-5.15.0-106-generic-x86_64-with-glibc2.35",
+            "platform_version": "#116-Ubuntu SMP Wed Apr 17 09:17:56 UTC 2024",
+            "python_version": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]"
           },
-          "spdx_license_list_version": "3.22",
+          "spdx_license_list_version": "3.23",
           "files_count": 4
         }
       }
@@ -105,6 +105,7 @@
         "source_packages": [
           "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
         ],
+        "is_private": false,
         "extra_data": {},
         "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
         "repository_download_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar",
@@ -206,6 +207,7 @@
         "extracted_license_statement": "- Apache-2.0\n- type: Apache 2.0\n  url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md\n",
         "notice_text": null,
         "source_packages": [],
+        "is_private": false,
         "extra_data": {},
         "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
         "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
@@ -283,6 +285,7 @@
         "extracted_license_statement": "- MIT\n",
         "notice_text": null,
         "source_packages": [],
+        "is_private": false,
         "extra_data": {},
         "repository_homepage_url": "https://www.npmjs.com/package/angular-compare-validator",
         "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
@@ -938,6 +941,7 @@
               "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
             ],
             "file_references": [],
+            "is_private": false,
             "extra_data": {},
             "dependencies": [],
             "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
@@ -1150,6 +1154,7 @@
             "notice_text": null,
             "source_packages": [],
             "file_references": [],
+            "is_private": false,
             "extra_data": {},
             "dependencies": [
               {
@@ -1452,6 +1457,7 @@
             "notice_text": null,
             "source_packages": [],
             "file_references": [],
+            "is_private": false,
             "extra_data": {},
             "dependencies": [
               {
@@ -1709,6 +1715,7 @@
             "notice_text": null,
             "source_packages": [],
             "file_references": [],
+            "is_private": false,
             "extra_data": {},
             "dependencies": [
               {

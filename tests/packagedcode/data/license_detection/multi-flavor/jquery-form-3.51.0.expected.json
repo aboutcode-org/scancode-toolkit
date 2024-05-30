@@ -84,6 +84,7 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -190,6 +191,7 @@
       "extracted_license_statement": "- MIT\n- GPL-2.0\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://packagist.org/packages/malsup/form",
       "repository_download_url": null,
@@ -337,6 +339,7 @@
       "extracted_license_statement": "- type: MIT\n  url: http://malsup.github.com/mit-license.txt\n- type: GPL\n  url: http://malsup.github.com/gpl-license-v2.txt\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/@liferay/jquery-form",
       "repository_download_url": "https://registry.npmjs.org/@liferay/jquery-form/-/jquery-form-3.51.0-liferay.1.tgz",
@@ -786,6 +789,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -920,6 +924,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1136,6 +1141,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

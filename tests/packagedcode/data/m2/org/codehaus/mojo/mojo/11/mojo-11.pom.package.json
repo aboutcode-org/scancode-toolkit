@@ -34,6 +34,7 @@
     "pkg:maven/org.codehaus.mojo/mojo@11?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

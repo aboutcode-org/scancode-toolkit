@@ -42,6 +42,7 @@
     "pkg:maven/org.mortbay.jetty/maven-jetty-plugin@6.1-SNAPSHOT?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

@@ -36,6 +36,7 @@
     "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

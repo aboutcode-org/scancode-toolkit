@@ -76,6 +76,7 @@
       "extracted_license_statement": "classifiers:\n  - 'License :: OSI Approved :: BSD License'\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {
         "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
       },
@@ -171,6 +172,7 @@
       "extracted_license_statement": "classifiers:\n  - 'License :: OSI Approved :: BSD License'\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {
         "Download-URL": "http://media.djangoproject.com/releases/1.3/Django-1.3.1.tar.gz"
       },
@@ -859,6 +861,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -959,6 +962,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
           },
@@ -1222,6 +1226,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "Download-URL": "http://media.djangoproject.com/releases/1.3/Django-1.3.1.tar.gz"
           },
@@ -1553,6 +1558,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1657,6 +1663,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "Download-URL": "http://media.djangoproject.com/releases/1.3/Django-1.3.1.tar.gz"
           },

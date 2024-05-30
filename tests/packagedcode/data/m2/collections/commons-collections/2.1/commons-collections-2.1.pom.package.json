@@ -70,6 +70,7 @@
     "pkg:maven/commons-collections/commons-collections@2.1?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

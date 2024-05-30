@@ -33,6 +33,7 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -76,6 +77,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -138,6 +140,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -230,6 +233,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -276,8 +280,7 @@
           "sha1": "da977382f91d9af4c400e4aa7dc37d3db07b87e0",
           "md5": null,
           "sha256": null,
-          "sha512":
-          "ac4be2a5b9668a18b3f3e128d35cc3a7976a5a7e977d893cab6ae537d735f1820e2f8a3a9ee63f569943a2871430761f1f8962baba4ee28d50b9d28e3b59c089",
+          "sha512": "ac4be2a5b9668a18b3f3e128d35cc3a7976a5a7e977d893cab6ae537d735f1820e2f8a3a9ee63f569943a2871430761f1f8962baba4ee28d50b9d28e3b59c089",
           "bug_tracking_url": null,
           "code_view_url": null,
           "vcs_url": null,
@@ -293,6 +296,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -375,6 +379,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

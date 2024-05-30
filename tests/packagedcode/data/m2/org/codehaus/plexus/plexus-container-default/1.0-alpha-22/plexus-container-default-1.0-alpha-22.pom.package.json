@@ -34,6 +34,7 @@
     "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-22?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

@@ -49,6 +49,7 @@
     "pkg:maven/doxia/doxia-core@1.0-alpha-4?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

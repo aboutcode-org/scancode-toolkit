@@ -55,6 +55,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": true,
           "extra_data": {},
           "dependencies": [
             {

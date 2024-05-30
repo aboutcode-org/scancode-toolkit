@@ -219,6 +219,7 @@
     "pkg:maven/commons-digester/commons-digester@1.8?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

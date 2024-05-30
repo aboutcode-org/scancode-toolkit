@@ -34,6 +34,7 @@
     "pkg:maven/org.apache.ant/ant-jai@1.7.0?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

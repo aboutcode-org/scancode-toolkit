@@ -73,6 +73,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "documentation_url": "http://johnzon.apache.org/"
           },
@@ -153,6 +154,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -205,6 +207,7 @@
             "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

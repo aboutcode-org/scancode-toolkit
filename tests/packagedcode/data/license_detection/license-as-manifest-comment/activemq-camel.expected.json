@@ -62,6 +62,7 @@
       "source_packages": [
         "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar",
@@ -329,6 +330,7 @@
             "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

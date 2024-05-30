@@ -73,6 +73,7 @@
       "source_packages": [
         "pkg:maven/com.github.peteroupc/numbers@1.7.4?classifier=sources"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/numbers-1.7.4.jar",
@@ -218,6 +219,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -317,6 +319,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -414,6 +417,7 @@
             "pkg:maven/com.github.peteroupc/numbers@1.7.4?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

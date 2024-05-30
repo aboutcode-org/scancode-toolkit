@@ -52,6 +52,7 @@
       "source_packages": [
         "pkg:deb/debian/adduser"
       ],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -125,6 +126,7 @@
             "pkg:deb/debian/adduser"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,

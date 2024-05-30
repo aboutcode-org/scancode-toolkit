@@ -34,6 +34,7 @@
     "pkg:maven/org.apache.shale/shale-parent@1.0.4?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

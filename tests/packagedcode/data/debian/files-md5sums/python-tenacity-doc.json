@@ -47,6 +47,7 @@
       "source_packages": [
         "pkg:deb/debian/python-tenacity"
       ],
+      "is_private": false,
       "extra_data": {
         "multi_arch": "foreign"
       },
@@ -135,6 +136,7 @@
             "pkg:deb/debian/python-tenacity"
           ],
           "file_references": [],
+          "is_private": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -406,6 +408,7 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,

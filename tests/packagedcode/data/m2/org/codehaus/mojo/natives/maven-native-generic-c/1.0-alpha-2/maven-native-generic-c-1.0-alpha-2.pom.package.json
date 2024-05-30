@@ -34,6 +34,7 @@
     "pkg:maven/org.codehaus.mojo.natives/maven-native-generic-c@1.0-alpha-2?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

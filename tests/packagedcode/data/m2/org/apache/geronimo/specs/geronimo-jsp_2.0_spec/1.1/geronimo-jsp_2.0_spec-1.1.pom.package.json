@@ -34,6 +34,7 @@
     "pkg:maven/org.apache.geronimo.specs/geronimo-jsp_2.0_spec@1.1?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

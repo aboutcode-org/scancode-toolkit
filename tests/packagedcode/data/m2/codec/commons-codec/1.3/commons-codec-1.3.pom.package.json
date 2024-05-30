@@ -184,6 +184,7 @@
     "pkg:maven/commons-codec/commons-codec@1.3?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
   "extra_data": {},
   "dependencies": [
     {

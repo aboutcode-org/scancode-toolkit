@@ -86,6 +86,7 @@
       "extracted_license_statement": "MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
       "extra_data": {},
       "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",
       "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
@@ -202,6 +203,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -296,6 +298,7 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
           "extra_data": {},
           "dependencies": [
             {

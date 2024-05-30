@@ -48,17 +48,17 @@
         "license_expression_spdx": "AGPL-3.0-or-later",
         "matches": [
           {
-            "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
-            "from_file": null,
-            "matched_length": 5,
-            "match_coverage": 100.0,
-            "matcher": "1-hash",
             "license_expression": "agpl-3.0-plus",
             "spdx_license_expression": "AGPL-3.0-or-later",
-            "rule_identifier": "spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 5,
+            "match_coverage": 100.0,
             "rule_relevance": 100,
+            "rule_identifier": "spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_agpl-3.0-or-later_for_agpl-3.0-plus.RULE",
             "matched_text": "AGPL-3.0-or-later"
           }
@@ -70,17 +70,17 @@
         "license_expression_spdx": "AGPL-3.0-or-later",
         "matches": [
           {
-            "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
-            "from_file": null,
-            "matched_length": 12,
-            "match_coverage": 100.0,
-            "matcher": "1-hash",
             "license_expression": "agpl-3.0-plus",
             "spdx_license_expression": "AGPL-3.0-or-later",
-            "rule_identifier": "pypi_gnu_affero_general_public_license_v3_or_later.RULE",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 12,
+            "match_coverage": 100.0,
             "rule_relevance": 100,
+            "rule_identifier": "pypi_gnu_affero_general_public_license_v3_or_later.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_affero_general_public_license_v3_or_later.RULE",
             "matched_text": "- 'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)'"
           }
@@ -276,6 +276,7 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
     "extra_data": {
       "Documentation": "https://github.com/SK-415/HarukaBot#readme"
     },
