@@ -166,7 +166,7 @@ class SwiftManifestJsonHandler(models.DatafileHandler):
 
 class SwiftPackageResolvedHandler(models.DatafileHandler):
     datasource_id = "swift_package_resolved"
-    path_patterns = ("*/Package.resolved",)
+    path_patterns = ("*/Package.resolved", "*/.package.resolved")
     default_package_type = "swift"
     default_primary_language = "swift"
     description = "Resolved full dependency lockfile for Package.swift created with ``swift package resolve``"
@@ -179,35 +179,18 @@ class SwiftPackageResolvedHandler(models.DatafileHandler):
     def parse(cls, location, package_only=False):
         with io.open(location, encoding="utf-8") as loc:
             package_resolved = json.load(loc)
+        
+        resolved_doc_version = package_resolved.get("version")
 
-        pinned = package_resolved.get("pins", [])
+        if resolved_doc_version in [2, 3]:
+            yield from packages_from_resolved_v2_and_v3(package_resolved)
+        
+        if resolved_doc_version == 1:
+            yield from packages_from_resolved_v1(package_resolved)
 
-        for dependency in pinned:
-            name = dependency.get("identity")
-            kind = dependency.get("kind")
-            location = dependency.get("location")
-            state = dependency.get("state", {})
-            version = None
-            namespace = None
 
-            if location and kind == "remoteSourceControl":
-                namespace, name = get_namespace_and_name(location)
 
-            version = state.get("version")
-
-            if not version:
-                version = state.get("revision")
-
-            package_data = dict(
-                datasource_id=cls.datasource_id,
-                type=cls.default_package_type,
-                primary_language=cls.default_primary_language,
-                namespace=namespace,
-                name=name,
-                version=version,
-            )
-            yield models.PackageData.from_data(package_data, package_only)
-
+        
     @classmethod
     def assemble(
         cls, package_data, resource, codebase, package_adder=models.add_to_package
@@ -229,6 +212,66 @@ class SwiftPackageResolvedHandler(models.DatafileHandler):
             codebase=codebase,
             package_adder=package_adder,
         )
+    
+def packages_from_resolved_v2_and_v3(package_resolved):
+    pinned = package_resolved.get("pins", [])
+
+    for dependency in pinned:
+        name = dependency.get("identity")
+        kind = dependency.get("kind")
+        location = dependency.get("location")
+        state = dependency.get("state", {})
+        version = None
+        namespace = None
+
+        if location and kind == "remoteSourceControl":
+            namespace, name = get_namespace_and_name(location)
+
+        version = state.get("version")
+
+        if not version:
+            version = state.get("revision")
+
+        package_data = dict(
+            datasource_id=SwiftPackageResolvedHandler.datasource_id,
+            type=SwiftPackageResolvedHandler.default_package_type,
+            primary_language=SwiftPackageResolvedHandler.default_primary_language,
+            namespace=namespace,
+            name=name,
+            version=version,
+        )
+        yield models.PackageData.from_data(package_data, False)
+
+def packages_from_resolved_v1(package_resolved):
+    object = package_resolved.get("object", {})
+    pinned = object.get("pins", [])
+
+    for dependency in pinned:
+        name = dependency.get("package")
+
+        repository_url = dependency.get("repositoryURL")
+        state = dependency.get("state", {})
+        version = None
+        namespace = None
+
+        if repository_url:
+            namespace, name = get_namespace_and_name(repository_url)
+
+        version = state.get("version")
+
+        if not version:
+            version = state.get("revision")
+
+        package_data = dict(
+            datasource_id=SwiftPackageResolvedHandler.datasource_id,
+            type=SwiftPackageResolvedHandler.default_package_type,
+            primary_language=SwiftPackageResolvedHandler.default_primary_language,
+            namespace=namespace,
+            name=name,
+            version=version,
+        )
+        yield models.PackageData.from_data(package_data, False)
+
 
 
 def get_dependencies(dependencies):

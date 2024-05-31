@@ -807,16 +807,16 @@ Package type:  squashfs
 Package type:  swift
   datasource_id:     swift_package_manifest_json
   documentation URL: https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
-  primary language:  swift
-  description:       json dump of swift manifest
+  primary language:  Swift
+  description:       JSON dump of Package.swift created with ``swift package dump-package > Package.swift.json``
   path_patterns:    '*/Package.swift.json'
 --------------------------------------------
 Package type:  swift
   datasource_id:     swift_package_resolved
   documentation URL: https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#package-dependency
   primary language:  swift
-  description:       resolved dependency for swift package
-  path_patterns:    '*/Package.resolved'
+  description:       Resolved full dependency lockfile for Package.swift created with ``swift package resolve``
+  path_patterns:    '*/Package.resolved', '*/.package.resolved'
 --------------------------------------------
 Package type:  war
   datasource_id:     java_war_archive

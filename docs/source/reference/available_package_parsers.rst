@@ -748,14 +748,15 @@ parsers in scancode-toolkit during documentation builds.
      - ``squashfs_disk_image``
      - None
      - https://en.wikipedia.org/wiki/SquashFS
-   * - json dump of swift manifest
+   * - JSON dump of Package.swift created with ``swift package dump-package > Package.swift.json``
      - ``*/Package.swift.json``
      - ``swift``
      - ``swift_package_manifest_json``
-     - swift
+     - Swift
      - https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
-   * - resolved dependency for swift package
+   * - Resolved full dependency lockfile for Package.swift created with ``swift package resolve``
      - ``*/Package.resolved``
+       ``*/.package.resolved``
      - ``swift``
      - ``swift_package_resolved``
      - swift

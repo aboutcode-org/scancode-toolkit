@@ -1,8 +1,8 @@
 [
   {
     "type": "swift",
-    "namespace": null,
-    "name": "github.com%2Fmapbox%2Fmapbox-common-ios",
+    "namespace": "github.com/mapbox",
+    "name": "mapbox-common-ios",
     "version": "24.4.0",
     "qualifiers": {},
     "subpath": null,
@@ -39,12 +39,12 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "swift_package_resolved",
-    "purl": "pkg:swift/github.com%252Fmapbox%252Fmapbox-common-ios@24.4.0"
+    "purl": "pkg:swift/github.com/mapbox/mapbox-common-ios@24.4.0"
   },
   {
     "type": "swift",
-    "namespace": null,
-    "name": "github.com%2Fmapbox%2Fmapbox-core-maps-ios",
+    "namespace": "github.com/mapbox",
+    "name": "mapbox-core-maps-ios",
     "version": "11.4.0",
     "qualifiers": {},
     "subpath": null,
@@ -81,12 +81,12 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "swift_package_resolved",
-    "purl": "pkg:swift/github.com%252Fmapbox%252Fmapbox-core-maps-ios@11.4.0"
+    "purl": "pkg:swift/github.com/mapbox/mapbox-core-maps-ios@11.4.0"
   },
   {
     "type": "swift",
-    "namespace": null,
-    "name": "github.com%2Fmapbox%2Fturf-swift",
+    "namespace": "github.com/mapbox",
+    "name": "turf-swift",
     "version": "2.8.0",
     "qualifiers": {},
     "subpath": null,
@@ -123,6 +123,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "swift_package_resolved",
-    "purl": "pkg:swift/github.com%252Fmapbox%252Fturf-swift@2.8.0"
+    "purl": "pkg:swift/github.com/mapbox/turf-swift@2.8.0"
   }
 ]

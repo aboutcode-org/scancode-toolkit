@@ -82,10 +82,10 @@ class TestSwiftEndtoEnd(PackageTester):
         )
 
     def test_package_scan_swift_end_to_end_full_mapboxmaps_resolved_only(self):
-        test_dir = self.get_test_loc("packages/mapboxmaps_resolved")
+        test_dir = self.get_test_loc("packages/fastlane_resolved_v1")
         result_file = self.get_temp_file("json")
         expected_file = self.get_test_loc(
-            "swift-mapboxmaps-resolved-package-expected.json"
+            "swift-fastlane-resolved-v1-package-expected.json"
         )
         run_scan_click(
             [

@@ -6,7 +6,7 @@
     "version": null,
     "qualifiers": {},
     "subpath": null,
-    "primary_language": "swift",
+    "primary_language": "Swift",
     "description": null,
     "release_date": null,
     "parties": [],
@@ -36,9 +36,9 @@
     "extra_data": {},
     "dependencies": [
       {
-        "purl": "pkg:swift/github.com%252Fmapbox%252Fturf-swift",
+        "purl": "pkg:swift/github.com/mapbox/turf-swift",
         "extracted_requirement": "vers:swift/>=2.8.0|<3.0.0",
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
@@ -46,9 +46,9 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:swift/github.com%252Fmapbox%252Fmapbox-core-maps-ios@11.4.0-rc.2",
+        "purl": "pkg:swift/github.com/mapbox/mapbox-core-maps-ios@11.4.0-rc.2",
         "extracted_requirement": "11.4.0-rc.2",
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
@@ -56,9 +56,9 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:swift/github.com%252Fmapbox%252Fmapbox-common-ios@24.4.0-rc.2",
+        "purl": "pkg:swift/github.com/mapbox/mapbox-common-ios@24.4.0-rc.2",
         "extracted_requirement": "24.4.0-rc.2",
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
