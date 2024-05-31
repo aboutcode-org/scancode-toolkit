@@ -33,7 +33,25 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
+    "extra_data": {
+      "platforms": [
+        {
+          "options": [],
+          "platformName": "ios",
+          "version": "12.0"
+        },
+        {
+          "options": [],
+          "platformName": "macos",
+          "version": "10.15"
+        },
+        {
+          "options": [],
+          "platformName": "visionos",
+          "version": "1.0"
+        }
+      ]
+    },
     "dependencies": [
       {
         "purl": "pkg:swift/github.com/mapbox/turf-swift",

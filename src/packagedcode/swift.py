@@ -64,6 +64,7 @@ class SwiftManifestJsonHandler(models.DatafileHandler):
             )
 
         dependencies = get_dependencies(swift_manifest.get("dependencies"))
+        platforms = swift_manifest.get("platforms", [])
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -72,6 +73,7 @@ class SwiftManifestJsonHandler(models.DatafileHandler):
             namespace=None,
             name=swift_manifest.get("name"),
             dependencies=dependencies,
+            extra_data={"platforms": platforms},
         )
 
         return models.PackageData.from_data(package_data, package_only)
@@ -179,18 +181,15 @@ class SwiftPackageResolvedHandler(models.DatafileHandler):
     def parse(cls, location, package_only=False):
         with io.open(location, encoding="utf-8") as loc:
             package_resolved = json.load(loc)
-        
+
         resolved_doc_version = package_resolved.get("version")
 
         if resolved_doc_version in [2, 3]:
             yield from packages_from_resolved_v2_and_v3(package_resolved)
-        
+
         if resolved_doc_version == 1:
             yield from packages_from_resolved_v1(package_resolved)
 
-
-
-        
     @classmethod
     def assemble(
         cls, package_data, resource, codebase, package_adder=models.add_to_package
@@ -212,7 +211,8 @@ class SwiftPackageResolvedHandler(models.DatafileHandler):
             codebase=codebase,
             package_adder=package_adder,
         )
-    
+
+
 def packages_from_resolved_v2_and_v3(package_resolved):
     pinned = package_resolved.get("pins", [])
 
@@ -241,6 +241,7 @@ def packages_from_resolved_v2_and_v3(package_resolved):
             version=version,
         )
         yield models.PackageData.from_data(package_data, False)
+
 
 def packages_from_resolved_v1(package_resolved):
     object = package_resolved.get("object", {})
@@ -271,7 +272,6 @@ def packages_from_resolved_v1(package_resolved):
             version=version,
         )
         yield models.PackageData.from_data(package_data, False)
-
 
 
 def get_dependencies(dependencies):
@@ -328,4 +328,3 @@ def get_namespace_and_name(url):
     canonical_name = hostname + path
 
     return canonical_name.rsplit("/", 1)
-
