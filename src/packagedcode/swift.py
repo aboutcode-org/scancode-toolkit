@@ -188,9 +188,10 @@ class SwiftPackageResolvedHandler(models.DatafileHandler):
             location = dependency.get("location")
             state = dependency.get("state", {})
             version = None
+            namespace = None
 
             if location and kind == "remoteSourceControl":
-                name = get_canonical_name(location)
+                namespace, name = get_namespace_and_name(location)
 
             version = state.get("version")
 
@@ -201,7 +202,7 @@ class SwiftPackageResolvedHandler(models.DatafileHandler):
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
                 primary_language=cls.default_primary_language,
-                namespace=None,
+                namespace=namespace,
                 name=name,
                 version=version,
             )
@@ -238,13 +239,14 @@ def get_dependencies(dependencies):
             continue
 
         source = source[0]
+        namespace = None
         name = source.get("identity")
         version = None
         is_resolved = False
 
         location = source.get("location")
         if remote := location.get("remote"):
-            name = get_canonical_name(remote[0].get("urlString"))
+            namespace, name = get_namespace_and_name(remote[0].get("urlString"))
 
         requirement = source.get("requirement")
         if exact := requirement.get("exact"):
@@ -258,6 +260,7 @@ def get_dependencies(dependencies):
 
         purl = PackageURL(
             type="swift",
+            namespace=namespace,
             name=name,
             version=version if is_resolved else None,
         )
@@ -265,7 +268,7 @@ def get_dependencies(dependencies):
         dependent_packages.append(
             models.DependentPackage(
                 purl=purl.to_string(),
-                scope="install",
+                scope="dependencies",
                 is_runtime=True,
                 is_optional=False,
                 is_resolved=is_resolved,
@@ -275,10 +278,11 @@ def get_dependencies(dependencies):
     return dependent_packages
 
 
-def get_canonical_name(url):
+def get_namespace_and_name(url):
     parsed_url = parse.urlparse(url)
     hostname = parsed_url.hostname
     path = parsed_url.path.removesuffix(".git")
+    canonical_name = hostname + path
 
-    return parse.quote(hostname + path, safe="")
+    return canonical_name.rsplit("/", 1)
 
