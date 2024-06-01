@@ -1530,7 +1530,13 @@ class Package(PackageData):
         label='datasource ids',
         help='List of the datasource ids used to create this package.'
     )
-
+    
+    license_clarity = List(
+        item_type=dict,
+        label='License Clarity Information',
+        help='List containing the license clarity score and related elements.'
+    )
+    
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
@@ -1543,6 +1549,7 @@ class Package(PackageData):
         mapping.pop('package_uid', None)
         mapping.pop('datafile_paths', None)
         mapping.pop('datasource_ids', None)
+        mapping.pop('license_clarity', None)
         return PackageData.from_dict(mapping)
 
     @classmethod
