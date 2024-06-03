@@ -34,6 +34,15 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+- We now support parsing the Swift manifest JSON dump and the ``Package.resolved`` file https://github.com/nexB/scancode-toolkit/issues/2657.
+- Run the commands below on your local Swift project before running the scan.
+  - ::
+
+      swift package dump-package > Package.swift.json
+  - ::
+
+      swift package resolve
+
 v32.1.0 (next, roadmap)
 ----------------------------
 
