@@ -374,6 +374,25 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_npm_yarn_scan_with_workspace_package_json(self):
+        test_folder = self.get_test_loc('npm/workspace/crystal/')
+        expected_file = self.get_test_loc('npm/workspace/crystal.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_is_datafile_pnpm_workspace_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/workspace/pnpm-workspace.yaml')
+        assert npm.PnpmWorkspaceYamlHandler.is_datafile(test_file)
+
+    def test_parse_pnpm_workspace_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/workspace/pnpm-workspace.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/workspace/pnpm-workspace.yaml-expected.json')
+        packages = npm.PnpmWorkspaceYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_vcs_repository_mapper(self):
         package = MockPackage()
         repo = 'git+git://bitbucket.org/vendor/my-private-repo.git'
