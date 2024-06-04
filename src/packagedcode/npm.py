@@ -8,6 +8,7 @@
 #
 import base64
 import io
+import fnmatch
 import os
 import logging
 import json
@@ -101,55 +102,77 @@ class BaseNpmHandler(models.DatafileHandler):
                 if package_resource:
                     package_resource = package_resource[0]
 
-        if package_resource:
-            assert len(package_resource.package_data) == 1, f'Invalid package.json for {package_resource.path}'
-            pkg_data = package_resource.package_data[0]
-            pkg_data = models.PackageData.from_dict(pkg_data)
-
-            # do we have enough to create a package?
-            if pkg_data.purl:
-                package = models.Package.from_package_data(
-                    package_data=pkg_data,
-                    datafile_path=package_resource.path,
-                )
-                package_uid = package.package_uid
-
-                package.populate_license_fields()
-
-                # Always yield the package resource in all cases and first!
-                yield package
-
-                root = package_resource.parent(codebase)
-                if root:
-                    for npm_res in cls.walk_npm(resource=root, codebase=codebase):
-                        if package_uid and package_uid not in npm_res.for_packages:
-                            package_adder(package_uid, npm_res, codebase)
-                        yield npm_res
-                elif codebase.has_single_resource:
-                    if package_uid and package_uid not in package_resource.for_packages:
-                        package_adder(package_uid, package_resource, codebase)
-                yield package_resource
-
-            else:
-                # we have no package, so deps are not for a specific package uid
-                package_uid = None
-
-            # in all cases yield possible dependencies
-            yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
-
-            # we yield this as we do not want this further processed
-            yield package_resource
-
-            for lock_file in package_resource.siblings(codebase):
-                if lock_file.name in lockfile_names:
-                    yield from yield_dependencies_from_package_resource(lock_file, package_uid)
-
-                    if package_uid and package_uid not in lock_file.for_packages:
-                        package_adder(package_uid, lock_file, codebase)
-                    yield lock_file
-        else:
+        if not package_resource:
             # we do not have a package.json
             yield from yield_dependencies_from_package_resource(resource)
+            return
+
+        assert len(package_resource.package_data) == 1, f'Invalid package.json for {package_resource.path}'
+        pkg_data = package_resource.package_data[0]
+        pkg_data = models.PackageData.from_dict(pkg_data)
+
+        workspace_root_path = package_resource.parent(codebase).path
+        workspaces = pkg_data.extra_data.get('workspaces') or []
+        # Also look for pnpm workspaces
+        if not workspaces:
+            pnpm_workspace_path = os.path.join(workspace_root_path, 'pnpm-workspace.yaml')
+            pnpm_workspace = codebase.get_resource(path=pnpm_workspace_path)
+            if pnpm_workspace:
+                pnpm_workspace_pkg_data = pnpm_workspace.package_data
+                if pnpm_workspace_pkg_data:
+                    workspace_package = pnpm_workspace_pkg_data[0]
+                    extra_data = workspace_package.get('extra_data')
+                    workspaces = extra_data.get('workspaces')
+
+        workspace_members = cls.get_workspace_members(
+            workspaces=workspaces,
+            codebase=codebase,
+            workspace_root_path=workspace_root_path,
+        )
+
+        cls.update_workspace_members(workspace_members, codebase)
+
+        # do we have enough to create a package?
+        if pkg_data.purl:
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=package_resource.path,
+            )
+            package_uid = package.package_uid
+
+            package.populate_license_fields()
+
+            # Always yield the package resource in all cases and first!
+            yield package
+
+            root = package_resource.parent(codebase)
+            if root:
+                for npm_res in cls.walk_npm(resource=root, codebase=codebase):
+                    if package_uid and package_uid not in npm_res.for_packages:
+                        package_adder(package_uid, npm_res, codebase)
+                    yield npm_res
+            elif codebase.has_single_resource:
+                if package_uid and package_uid not in package_resource.for_packages:
+                    package_adder(package_uid, package_resource, codebase)
+            yield package_resource
+
+        else:
+            # we have no package, so deps are not for a specific package uid
+            package_uid = None
+
+        # in all cases yield possible dependencies
+        yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
+
+        # we yield this as we do not want this further processed
+        yield package_resource
+
+        for lock_file in package_resource.siblings(codebase):
+            if lock_file.name in lockfile_names:
+                yield from yield_dependencies_from_package_resource(lock_file, package_uid)
+
+                if package_uid and package_uid not in lock_file.for_packages:
+                    package_adder(package_uid, lock_file, codebase)
+                yield lock_file
 
     @classmethod
     def walk_npm(cls, resource, codebase, depth=0):
@@ -244,6 +267,100 @@ class BaseNpmHandler(models.DatafileHandler):
                 )
                 dependecies_by_purl[dep_purl] = dep_package
 
+    @classmethod
+    def get_workspace_members(cls, workspaces, codebase, workspace_root_path):
+        """
+        Given the workspaces, a list of paths/glob path patterns for npm
+        workspaces present in package.json, the codebase, and the
+        workspace_root_path, which is the parent directory of the
+        package.json which contains the workspaces, get a list of
+        workspace member package.json resources.
+        """
+
+        workspace_members = []
+
+        for workspace_path in workspaces:
+
+            # Case 1: A definite path, instead of a pattern (only one package.json)
+            if '*' not in workspace_path:
+
+                workspace_dir_path = os.path.join(workspace_root_path, workspace_path)
+                workspace_member_path = os.path.join(workspace_dir_path, 'package.json')
+                workspace_member = codebase.get_resource(path=workspace_member_path)
+                if workspace_member and workspace_member.package_data:
+                    workspace_members.append(workspace_member)
+
+            # Case 2: we have glob path which is a directory, relative to the workspace root
+            # Here we have only one * at the last (This is an optimization, this is a very
+            # commonly encountered subcase of case 3)
+            elif '*' == workspace_path[-1] and '*' not in workspace_path.replace('*', ''):
+                workspace_pattern_prefix = workspace_path.replace('*', '')
+                workspace_dir_path = os.path.join(workspace_root_path, workspace_pattern_prefix)
+                workspace_search_dir = codebase.get_resource(path=workspace_dir_path)
+                if not workspace_search_dir:
+                    continue
+
+                for resource in workspace_search_dir.walk(codebase):
+                    if resource.package_data and NpmPackageJsonHandler.is_datafile(
+                        location=resource.location,
+                    ):
+                        workspace_members.append(resource)
+
+            # Case 3: This is a complex glob pattern, we are doing a full codebase walk
+            # and glob matching each resource 
+            else:
+                for resource in workspace_root_path:
+                    if NpmPackageJsonHandler.is_datafile(resource.location) and fnmatch.fnmatch(
+                        name=resource.location, pat=workspace_path,
+                    ):
+                        workspace_members.append(resource)
+
+        return workspace_members
+
+    @classmethod
+    def update_workspace_members(cls, workspace_members, codebase):
+        """
+        """
+        # Collect info needed from all workspace member
+        workspace_package_versions_by_base_purl = {}
+        workspace_dependencies_by_base_purl = {}
+        for workspace_manifest in workspace_members:
+            workspace_package_data = workspace_manifest.package_data[0]
+
+            dependencies = workspace_package_data.get('dependencies')
+            for dependency in dependencies:
+                dep_purl = dependency.get('purl')
+                workspace_dependencies_by_base_purl[dep_purl] = dependency
+
+            is_private = workspace_package_data.get("is_private")
+            package_url = workspace_package_data.get('purl')
+            if is_private or not package_url:
+                continue
+
+            purl = PackageURL.from_string(package_url)
+            base_purl = PackageURL(
+                type=purl.type,
+                namespace=purl.namespace,
+                name=purl.name,
+            ).to_string()
+
+            version = workspace_package_data.get('version')
+            if purl and version:
+                workspace_package_versions_by_base_purl[base_purl] = version
+
+        # Update workspace member package information from
+        # workspace level data 
+        for base_purl, dependency in workspace_dependencies_by_base_purl.items():
+            extracted_requirement = dependency.get('extracted_requirement')
+            if 'workspace' in extracted_requirement:
+                version = workspace_package_versions_by_base_purl.get(base_purl)
+                if version:
+                    new_requirement = extracted_requirement.replace('workspace', version)
+                    dependency['extracted_requirement'] = new_requirement
+
+        for member in workspace_members:
+            member.save(codebase)
+
 
 def get_urls(namespace, name, version, **kwargs):
     return dict(
@@ -303,17 +420,26 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             ('author', partial(party_mapper, party_type='author')),
             ('contributors', partial(party_mapper, party_type='contributor')),
             ('maintainers', partial(party_mapper, party_type='maintainer')),
-
             ('dependencies', partial(deps_mapper, field_name='dependencies')),
             ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
             ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
             ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
             ('bundledDependencies', bundle_deps_mapper),
+            ('resolutions', partial(deps_mapper, field_name='resolutions')),
             ('repository', partial(vcs_repository_mapper, vcs_revision=vcs_revision)),
             ('keywords', keywords_mapper,),
             ('bugs', bugs_mapper),
             ('dist', dist_mapper),
         ]
+
+        extra_data = {}
+        extra_data_fields = ['workspaces', 'engines', 'packageManager']
+        for extra_data_field in extra_data_fields:
+            value = json_data.get(extra_data_field)
+            if value:
+                extra_data[extra_data_field] = value
+
+        package.extra_data = extra_data
 
         for source, func in field_mappers:
             value = json_data.get(source) or None
@@ -1034,6 +1160,36 @@ class PnpmLockYamlHandler(BasePnpmLockHandler):
     documentation_url = 'https://github.com/pnpm/spec/blob/master/lockfile/6.0.md'
 
 
+class PnpmWorkspaceYamlHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'pnpm_workspace_yaml'
+    path_patterns = ('*/pnpm-workspace.yaml',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'pnpm workspace yaml file'
+    documentation_url = 'https://pnpm.io/pnpm-workspace_yaml'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        Parses and gets pnpm workspace locations from the file.
+        """
+        with open(location) as yl:
+            workspace_data = saneyaml.load(yl.read())
+
+        workspaces = workspace_data.get('packages')
+        if workspaces:
+            extra_data = {
+                'workspaces': workspaces,
+            }
+            root_package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                extra_data=extra_data,
+            )
+            yield models.PackageData.from_data(root_package_data)
+
+
 def get_checksum_and_url(url):
     """
     Return a mapping of {download_url, sha1} where the checksum can be a
@@ -1430,11 +1586,13 @@ def deps_mapper(deps, package, field_name):
     https://docs.npmjs.com/files/package.json#devdependencies
     https://docs.npmjs.com/files/package.json#optionaldependencies
     """
+    #TODO: verify, merge and use logic at BaseNpmHandler.update_dependencies_by_purl
     npm_dependency_scopes_attributes = {
         'dependencies': dict(is_runtime=True, is_optional=False),
         'devDependencies': dict(is_runtime=False, is_optional=True),
         'peerDependencies': dict(is_runtime=True, is_optional=False),
         'optionalDependencies': dict(is_runtime=True, is_optional=True),
+        'resolutions': dict(is_runtime=True, is_optional=False, is_resolved=True),
     }
     dependencies = package.dependencies
 

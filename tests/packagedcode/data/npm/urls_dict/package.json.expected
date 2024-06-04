@@ -70,7 +70,11 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
-    "extra_data": {},
+    "extra_data": {
+      "engines": {
+        "node": ">= 0.4.5"
+      }
+    },
     "dependencies": [
       {
         "purl": "pkg:npm/styout",

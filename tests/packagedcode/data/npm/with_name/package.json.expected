@@ -79,7 +79,11 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
-    "extra_data": {},
+    "extra_data": {
+      "engines": {
+        "node": ">=0.6.0"
+      }
+    },
     "dependencies": [],
     "repository_homepage_url": "https://www.npmjs.com/package/bson",
     "repository_download_url": null,

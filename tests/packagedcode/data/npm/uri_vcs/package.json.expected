@@ -87,7 +87,11 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
-    "extra_data": {},
+    "extra_data": {
+      "engines": {
+        "node": "~0.6.0"
+      }
+    },
     "dependencies": [
       {
         "purl": "pkg:npm/optimist",

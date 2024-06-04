@@ -67,7 +67,11 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
-      "extra_data": {},
+      "extra_data": {
+        "engines": {
+          "node": ">= 4.0"
+        }
+      },
       "repository_homepage_url": "https://www.npmjs.com/package/electron",
       "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
       "api_data_url": "https://registry.npmjs.org/electron/3.1.11",
@@ -256,7 +260,11 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
-          "extra_data": {},
+          "extra_data": {
+            "engines": {
+              "node": ">= 4.0"
+            }
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/%40types/node",

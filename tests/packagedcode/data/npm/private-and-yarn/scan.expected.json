@@ -915,7 +915,13 @@
           "source_packages": [],
           "file_references": [],
           "is_private": true,
-          "extra_data": {},
+          "extra_data": {
+            "workspaces": [
+              "ballerina-extension",
+              "browser-app",
+              "electron-app"
+            ]
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/lerna",

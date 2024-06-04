@@ -102,7 +102,11 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
-    "extra_data": {},
+    "extra_data": {
+      "engines": {
+        "node": ">=0.6.21"
+      }
+    },
     "dependencies": [
       {
         "purl": "pkg:npm/bluebird",

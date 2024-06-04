@@ -199,7 +199,11 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
-      "extra_data": {},
+      "extra_data": {
+        "engines": {
+          "node": ">=0.6.21"
+        }
+      },
       "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
       "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
       "api_data_url": "https://registry.npmjs.org/sequelize/3.30.2",
@@ -1182,7 +1186,11 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
-          "extra_data": {},
+          "extra_data": {
+            "engines": {
+              "node": ">=0.6.21"
+            }
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/bluebird",

@@ -29,8 +29,8 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-106-generic-x86_64-with-glibc2.35
-        platform_version: '#116-Ubuntu SMP Wed Apr 17 09:17:56 UTC 2024'
+        platform: Linux-5.15.0-107-generic-x86_64-with-glibc2.35
+        platform_version: '#117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024'
         python_version: 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]
       spdx_license_list_version: '3.23'
       files_count: 4
@@ -217,7 +217,9 @@ packages:
     notice_text:
     source_packages: []
     is_private: no
-    extra_data: {}
+    extra_data:
+      engines:
+        node: '>= 0.8.0'
     repository_homepage_url: https://www.npmjs.com/package/grunt-esvm
     repository_download_url: https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz
     api_data_url: https://registry.npmjs.org/grunt-esvm/3.2.8
@@ -2000,7 +2002,9 @@ files:
         source_packages: []
         file_references: []
         is_private: no
-        extra_data: {}
+        extra_data:
+          engines:
+            node: '>= 0.8.0'
         dependencies:
           - purl: pkg:npm/bluebird
             extracted_requirement: ^2.9.30

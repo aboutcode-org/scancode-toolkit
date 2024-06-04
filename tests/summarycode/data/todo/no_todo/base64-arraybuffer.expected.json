@@ -87,7 +87,11 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
-      "extra_data": {},
+      "extra_data": {
+        "engines": {
+          "node": ">= 0.6.0"
+        }
+      },
       "repository_homepage_url": "https://www.npmjs.com/package/base64-arraybuffer",
       "repository_download_url": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz",
       "api_data_url": "https://registry.npmjs.org/base64-arraybuffer/0.1.4",
@@ -731,7 +735,11 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
-          "extra_data": {},
+          "extra_data": {
+            "engines": {
+              "node": ">= 0.6.0"
+            }
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/grunt",
