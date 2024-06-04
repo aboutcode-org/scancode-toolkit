@@ -371,6 +371,14 @@ class DependentPackage(ModelMixin):
              'been resolved and this dependency url points to an '
              'exact version.')
 
+    is_direct = Boolean(
+        default=True,
+        label='is direct flag',
+        help='True if this dependency version requirement is '
+             'a direct dependency relation between two packages '
+             'as opposed to a transitive dependency relation, '
+             'which are present in lockfiles/dependency list.')
+
     resolved_package = Mapping(
         label='resolved package data',
         help='A mapping of resolved package data for this dependent package, '
@@ -1071,6 +1079,17 @@ class DatafileHandler:
                     T = contenttype.get_type(location)
                     actual_type = T.filetype_file.lower()
                     return any(ft in actual_type for ft in filetypes)
+
+    @classmethod
+    def is_lockfile(cls):
+        """
+        Return True if this is a lockfile, False otherwise.
+
+        This has to be implemented by datafile handlers classes
+        of lockfiles, to return True, in contrast to the default
+        value False.
+        """
+        return False
 
     @classmethod
     def parse(cls, location, package_only=False):

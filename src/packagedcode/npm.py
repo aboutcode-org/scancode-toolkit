@@ -107,6 +107,10 @@ class BaseNpmHandler(models.DatafileHandler):
             yield from yield_dependencies_from_package_resource(resource)
             return
 
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
+            return
+
         assert len(package_resource.package_data) == 1, f'Invalid package.json for {package_resource.path}'
         pkg_data = package_resource.package_data[0]
         pkg_data = models.PackageData.from_dict(pkg_data)
@@ -204,6 +208,7 @@ class BaseNpmHandler(models.DatafileHandler):
         is_runtime=False,
         is_optional=False,
         is_resolved=False,
+        is_direct=True,
     ):
 
         metadata_deps = ['peerDependenciesMeta', 'dependenciesMeta']
@@ -221,6 +226,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     is_runtime=is_runtime,
                     is_optional=is_optional,
                     is_resolved=is_resolved,
+                    is_direct=is_direct,
                 )
                 dependecies_by_purl[dep_purl] = dep_package
 
@@ -244,6 +250,7 @@ class BaseNpmHandler(models.DatafileHandler):
                             is_runtime=is_runtime,
                             is_optional=metadata.get("optional"),
                             is_resolved=is_resolved,
+                            is_direct=is_direct,
                         )
                         dependecies_by_purl[dep_purl] = dep_package
                     continue
@@ -264,6 +271,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     is_runtime=is_runtime,
                     is_optional=is_optional,
                     is_resolved=is_resolved,
+                    is_direct=is_direct,
                 )
                 dependecies_by_purl[dep_purl] = dep_package
 
@@ -477,6 +485,10 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 class BaseNpmLockHandler(BaseNpmHandler):
 
     @classmethod
+    def is_lockfile(cls):
+        return True
+
+    @classmethod
     def parse(cls, location, package_only=False):
 
         with io.open(location, encoding='utf-8') as loc:
@@ -590,6 +602,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_resolved=True,
+                is_direct=False,
             )
 
             # URLs and checksums
@@ -638,6 +651,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_resolved=False,
+                is_direct=True,
             )
 
             resolved_package.dependencies = [
@@ -722,6 +736,10 @@ class YarnLockV2Handler(BaseNpmHandler):
     @classmethod
     def is_datafile(cls, location, filetypes=tuple()):
         return super().is_datafile(location, filetypes=filetypes) and is_yarn_v2(location)
+
+    @classmethod
+    def is_lockfile(cls):
+        return True
 
     @classmethod
     def parse(cls, location, package_only=False):
@@ -832,6 +850,10 @@ class YarnLockV1Handler(BaseNpmHandler):
     default_primary_language = 'JavaScript'
     description = 'yarn.lock lockfile v1 format'
     documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
+
+    @classmethod
+    def is_lockfile(cls):
+        return True
 
     @classmethod
     def is_datafile(cls, location, filetypes=tuple()):
@@ -953,6 +975,7 @@ class YarnLockV1Handler(BaseNpmHandler):
                     scope='dependencies',
                     is_optional=False,
                     is_runtime=True,
+                    is_direct=True,
                 )
                 resolved_package_data.dependencies.append(subdep)
 
@@ -972,6 +995,7 @@ class YarnLockV1Handler(BaseNpmHandler):
                 scope='dependencies',
                 is_optional=False,
                 is_runtime=True,
+                is_direct=False,
                 resolved_package=resolved_package_data.to_dict(),
             )
             dependencies.append(dep.to_dict())
@@ -987,6 +1011,10 @@ class YarnLockV1Handler(BaseNpmHandler):
 
 
 class BasePnpmLockHandler(BaseNpmHandler):
+
+    @classmethod
+    def is_lockfile(cls):
+        return True
 
     @classmethod
     def parse(cls, location, package_only=False):
@@ -1063,12 +1091,14 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 scope='dependencies',
                 dependecies_by_purl=deps_for_resolved_by_purl,
                 is_resolved=True,
+                is_direct=False,
             )
             cls.update_dependencies_by_purl(
                 dependencies=peer_dependencies,
                 scope='peerDependencies',
                 dependecies_by_purl=deps_for_resolved_by_purl,
                 is_optional=True,
+                is_direct=False,
             )
             cls.update_dependencies_by_purl(
                 dependencies=optional_dependencies,
@@ -1076,6 +1106,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 dependecies_by_purl=deps_for_resolved_by_purl,
                 is_resolved=True,
                 is_optional=True,
+                is_direct=False,
             )
             cls.update_dependencies_by_purl(
                 dependencies=peer_dependencies_meta,
@@ -1122,6 +1153,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 is_optional=is_optional,
                 is_runtime=is_runtime,
                 is_resolved=True,
+                is_direct=True,
                 resolved_package=resolved_package.to_dict(),
                 extra_data=extra_data_deps,
             )
@@ -1577,7 +1609,7 @@ def bundle_deps_mapper(bundle_deps, package):
     return package
 
 
-def deps_mapper(deps, package, field_name):
+def deps_mapper(deps, package, field_name, is_direct=True):
     """
     Handle deps such as dependencies, devDependencies, peerDependencies, optionalDependencies
     return a tuple of (dep type, list of deps)
@@ -1630,6 +1662,7 @@ def deps_mapper(deps, package, field_name):
                 purl=purl,
                 scope=field_name,
                 extracted_requirement=requirement,
+                is_direct=is_direct,
                 **dependency_attributes
             )
             dependencies.append(dep)

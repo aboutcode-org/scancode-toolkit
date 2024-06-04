@@ -70,7 +70,11 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
-      "extra_data": {},
+      "extra_data": {
+        "engines": {
+          "node": ">=0.8.0"
+        }
+      },
       "repository_homepage_url": "https://www.npmjs.com/package/busboy",
       "repository_download_url": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
       "api_data_url": "https://registry.npmjs.org/busboy/0.2.14",
@@ -92,6 +96,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/dicer?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -106,6 +111,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/readable-stream?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -236,7 +242,11 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
-          "extra_data": {},
+          "extra_data": {
+            "engines": {
+              "node": ">=0.8.0"
+            }
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/dicer",
@@ -245,6 +255,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -255,6 +266,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

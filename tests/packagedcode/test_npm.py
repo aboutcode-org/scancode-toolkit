@@ -330,6 +330,15 @@ class TestNpm(PackageTester):
         packages = npm.YarnLockV2Handler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_npm_yarn_with_package_json_resolve_dependencies(self):
+        test_folder = self.get_test_loc('npm/yarn-lock/resolve-deps/')
+        expected_file = self.get_test_loc('npm/yarn-lock/resolve-deps.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
     def test_is_datafile_pnpm_shrinkwrap_yaml(self):
         test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
         assert npm.PnpmShrinkwrapYamlHandler.is_datafile(test_file)
