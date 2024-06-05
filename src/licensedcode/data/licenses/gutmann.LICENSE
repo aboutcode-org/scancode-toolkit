@@ -2,6 +2,8 @@
 key: gutmann
 short_name: Gutmann License
 name: Gutmann License
+owner: Peter Gutmann
+category: Permissive
 notes: |
     Added in SPDX license list 3.24
     This was previously the license rule: other-permissive_bsdish_1.RULE

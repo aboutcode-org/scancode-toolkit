@@ -1,7 +1,9 @@
 ---
 key: hpnd-sell-variant-mit-disclaimer-rev
-short_name: HPND sell variant with MIT disclaimer - reverse
+short_name: HPND sell variant with MIT disclaimer reverse
 name: HPND sell variant with MIT disclaimer - reverse
+owner: Ian Stapleton Cordasco
+category: Permissive
 notes: Added in SPDX license list 3.24
 spdx_license_key: HPND-sell-variant-MIT-disclaimer-rev
 other_urls:

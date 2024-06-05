@@ -5,7 +5,7 @@ name: Catharon Open Source License
 category: Permissive
 owner: Catharon
 homepage_url: https://github.com/scummvm/scummvm/blob/master/LICENSES/CatharonLicense.txt
-spdx_license_key: spdx_license_key: Catharon
+spdx_license_key: Catharon
 other_spdx_license_keys:
     - LicenseRef-scancode-catharon-osl
 text_urls:

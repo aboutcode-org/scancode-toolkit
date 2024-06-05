@@ -2,6 +2,8 @@
 key: bsd-2-clause-first-lines
 short_name: BSD 2-Clause - first lines requirement
 name: BSD 2-Clause - first lines requirement
+owner: Nippon Telegraph and Telephone Corporation
+category: Permissive
 notes: |
     Added in SPDX license list 3.24
     This was previously the license rule: freebsd-doc_5.RULE
@@ -10,9 +12,6 @@ other_urls:
     - https://github.com/krb5/krb5/blob/krb5-1.21.2-final/NOTICE#L664-L690
     - https://web.mit.edu/kerberos/krb5-1.21/doc/mitK5license.html
 ---
-
-Copyright (C) 2006,2007,2009 NTT (Nippon Telegraph and Telephone
-Corporation).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions

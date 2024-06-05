@@ -2,6 +2,8 @@
 key: xzoom
 short_name: xzoom License
 name: xzoom License
+owner: Itai Nahshon
+category: Permissive
 notes: |
     Added in SPDX license list 3.24
     This was previously the license rule: other-copyleft_34.RULE
@@ -10,7 +12,6 @@ other_urls:
     - https://metadata.ftp-master.debian.org/changelogs//main/x/xzoom/xzoom_0.3-27_copyright
 ---
 
-Copyright Itai Nahshon 1995, 1996.
 This program is distributed with no warranty.
 
 Source files for this program may be distributed freely.

@@ -1,7 +1,9 @@
 ---
 key: hpnd-export-us-acknowledgement
-short_name: HPND with US Government export control warning and acknowledgment
+short_name: HPND US export acknowledgment
 name: HPND with US Government export control warning and acknowledgment
+owner: University of California
+category: Free Restricted
 notes: |
     Added in SPDX license list 3.24
     This was previously mit-no-advert-export-control_and_proprietary-license_1.RULE
@@ -11,12 +13,10 @@ other_urls:
     - https://web.mit.edu/kerberos/krb5-1.21/doc/mitK5license.html
 ---
 
-Copyright (C) 1994 by the University of Southern California
-
-   EXPORT OF THIS SOFTWARE from the United States of America may
-   require a specific license from the United States Government. It
-   is the responsibility of any person or organization
-   contemplating export to obtain such a license before exporting.
+EXPORT OF THIS SOFTWARE from the United States of America may
+require a specific license from the United States Government. It
+is the responsibility of any person or organization
+contemplating export to obtain such a license before exporting.
 
 WITHIN THAT CONSTRAINT, permission to copy, modify, and distribute
 this software and its documentation in source and binary forms is

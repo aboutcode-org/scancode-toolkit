@@ -2,9 +2,13 @@
 key: any-osi
 short_name: Any OSI License
 name: Any OSI License
+category: Unstated License
+owner: Unstated
 spdx_license_key: any-OSI
 other_urls:
     - https://metacpan.org/pod/Exporter::Tidy#LICENSE
+ignorable_urls:
+    - http://www.opensource.org/licenses/alphabetical
 ---
 
 {{Pick your favourite OSI approved license}} :)

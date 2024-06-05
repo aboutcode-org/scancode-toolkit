@@ -2,6 +2,9 @@
 key: sun-ppp-2000
 short_name: Sun PPP License (2000)
 name: Sun PPP License (2000)
+owner: Oracle (Sun)
+category: Permissive
+spdx_license_key: Sun-PPP-2000
 notes: |
     Added in SPDX license list 3.24
     This is different from sun-prop-non-commercial as
@@ -9,9 +12,6 @@ notes: |
 other_urls:
     - https://github.com/ppp-project/ppp/blob/master/modules/ppp_ahdlc.c#L7-L19
 ---
-
-Copyright (c) 2000 by Sun Microsystems, Inc.
-All rights reserved.
 
 Permission to use, copy, modify, and distribute this software and its
 documentation is hereby granted, provided that the above copyright
