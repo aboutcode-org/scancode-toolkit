@@ -1,0 +1,86 @@
+---
+key: hpnd-sell-variant-mit-disclaimer-rev
+short_name: HPND sell variant with MIT disclaimer - reverse
+name: HPND sell variant with MIT disclaimer - reverse
+notes: |
+    license_expression: hpnd-sell-variant-mit-disclaimer AND mit-old-style
+    license_expression_spdx: HPND-sell-variant-MIT-disclaimer AND LicenseRef-scancode-mit-old-style
+    matches:
+      - license_expression: hpnd-sell-variant-mit-disclaimer
+        spdx_license_expression: HPND-sell-variant-MIT-disclaimer
+        from_file:
+        start_line: 1
+        end_line: 9
+        matcher: 3-seq
+        score: '62.18'
+        matched_length: 74
+        match_coverage: '62.18'
+        rule_relevance: 100
+        rule_identifier: hpnd-sell-variant-mit-disclaimer.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hpnd-sell-variant-mit-disclaimer.LICENSE
+        matched_text: |
+          Disclaimer:
+
+          The software is provided "as is", without warranty of any kind,
+          express or implied, including but not limited to the warranties
+          of merchantability, fitness for a particular purpose and
+          noninfringement. In no event shall the author(s) be liable for
+          any claim, damages or other liability, whether in an action of
+          contract, tort or otherwise, arising from, out of or in connection
+          with the software or the use or other dealings in the software.
+        matched_text_diagnostics: |
+          Disclaimer:
+
+          The software is provided "as is", without warranty of any kind,
+          express or implied, including but not limited to the warranties
+          of merchantability, fitness for a particular purpose and
+          noninfringement. In no event shall the author(s) be liable for
+          any claim, damages or other liability, whether in an action of
+          contract, tort or otherwise, arising from, out of or in connection
+          with the software or the use or other dealings in the software.
+      - license_expression: mit-old-style
+        spdx_license_expression: LicenseRef-scancode-mit-old-style
+        from_file:
+        start_line: 11
+        end_line: 15
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 45
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: mit-old-style_mit-open-group_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-old-style_mit-open-group_1.RULE
+        matched_text: |
+          Permission to use, copy, modify, distribute, and sell this
+          software and its documentation for any purpose is hereby
+          granted without fee, provided that the above copyright notice
+          appear in all copies and that both that copyright notice and
+          this permission notice appear in supporting documentation.
+        matched_text_diagnostics: |
+          Permission to use, copy, modify, distribute, and sell this
+          software and its documentation for any purpose is hereby
+          granted without fee, provided that the above copyright notice
+          appear in all copies and that both that copyright notice and
+          this permission notice appear in supporting documentation.
+    detection_log: []
+    identifier: hpnd_sell_variant_mit_disclaimer_and_mit_old_style-1e531aaf-2010-a1a0-b8ff-0459dbfde4ee
+spdx_license_key: HPND-sell-variant-MIT-disclaimer-rev
+other_urls:
+    - https://github.com/sigmavirus24/x11-ssh-askpass/blob/master/dynlist.c
+---
+
+Disclaimer:
+
+The software is provided "as is", without warranty of any kind,
+express or implied, including but not limited to the warranties
+of merchantability, fitness for a particular purpose and
+noninfringement. In no event shall the author(s) be liable for
+any claim, damages or other liability, whether in an action of
+contract, tort or otherwise, arising from, out of or in connection
+with the software or the use or other dealings in the software.
+         
+Permission to use, copy, modify, distribute, and sell this
+software and its documentation for any purpose is hereby
+granted without fee, provided that the above copyright notice
+appear in all copies and that both that copyright notice and
+this permission notice appear in supporting documentation.

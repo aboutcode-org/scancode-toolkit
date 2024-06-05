@@ -1,0 +1,48 @@
+---
+key: any-osi
+short_name: Any OSI License
+name: Any OSI License
+notes: |
+    WARNING: Other detection type
+    license_expression: free-unknown
+    license_expression_spdx: LicenseRef-scancode-free-unknown
+    matches:
+      - license_expression: free-unknown
+        spdx_license_expression: LicenseRef-scancode-free-unknown
+        from_file:
+        start_line: 1
+        end_line: 1
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 3
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: free-unknown_112.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_112.RULE
+        matched_text: Pick your favourite OSI approved license :)
+        matched_text_diagnostics: OSI approved license :)
+      - license_expression: free-unknown
+        spdx_license_expression: LicenseRef-scancode-free-unknown
+        from_file:
+        start_line: 3
+        end_line: 3
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 5
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: free-unknown_94.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_94.RULE
+        matched_text: http://www.opensource.org/licenses/alphabetical
+        matched_text_diagnostics: http://www.opensource.org/licenses/
+    detection_log:
+      - unknown-match
+    identifier: free_unknown-0a0a450d-da5f-6cd8-1fdd-f45fc44ce2f5
+spdx_license_key: any-OSI
+other_urls:
+    - https://metacpan.org/pod/Exporter::Tidy#LICENSE
+---
+
+Pick your favourite OSI approved license :)
+
+http://www.opensource.org/licenses/alphabetical
