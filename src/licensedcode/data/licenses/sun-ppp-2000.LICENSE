@@ -3,46 +3,9 @@ key: sun-ppp-2000
 short_name: Sun PPP License (2000)
 name: Sun PPP License (2000)
 notes: |
-    license_expression: sun-prop-non-commercial
-    license_expression_spdx: LicenseRef-scancode-sun-prop-non-commercial
-    matches:
-      - license_expression: sun-prop-non-commercial
-        spdx_license_expression: LicenseRef-scancode-sun-prop-non-commercial
-        from_file:
-        start_line: 4
-        end_line: 13
-        matcher: 3-seq
-        score: '68.32'
-        matched_length: 69
-        match_coverage: '68.32'
-        rule_relevance: 100
-        rule_identifier: sun-prop-non-commercial_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/sun-prop-non-commercial_1.RULE
-        matched_text: |
-          Permission to use, copy, modify, and distribute this software and its
-          documentation is hereby granted, provided that the above copyright
-          notice appears in all copies.
-
-          SUN MAKES NO REPRESENTATION OR WARRANTIES ABOUT THE SUITABILITY OF
-          THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
-          TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-          PARTICULAR PURPOSE, OR NON-INFRINGEMENT.  SUN SHALL NOT BE LIABLE FOR
-          ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR
-          DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES
-        matched_text_diagnostics: |
-          Permission to use, copy, modify, and distribute this software and its
-          documentation is hereby granted, provided that [the] [above] [copyright]
-          [notice] [appears] [in] [all] [copies].
-
-          [SUN] [MAKES] [NO] [REPRESENTATION] OR WARRANTIES ABOUT THE SUITABILITY OF
-          THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
-          TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-          PARTICULAR PURPOSE, OR NON-INFRINGEMENT.  SUN SHALL NOT BE LIABLE FOR
-          ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING OR
-          DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES
-    detection_log: []
-    identifier: sun_prop_non_commercial-0af826cd-d09e-2068-a218-79cc10ac20cc
-spdx_license_key: Sun-PPP-2000
+    Added in SPDX license list 3.24
+    This is different from sun-prop-non-commercial as
+    the `NON-COMMERCIAL` part is missing.
 other_urls:
     - https://github.com/ppp-project/ppp/blob/master/modules/ppp_ahdlc.c#L7-L19
 ---

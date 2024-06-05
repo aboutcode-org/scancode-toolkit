@@ -3,67 +3,8 @@ key: mit-khronos-old
 short_name: MIT Khronos - old variant
 name: MIT Khronos - old variant
 notes: |
-    license_expression: khronos
-    license_expression_spdx: LicenseRef-scancode-khronos
-    matches:
-      - license_expression: khronos
-        spdx_license_expression: LicenseRef-scancode-khronos
-        from_file:
-        start_line: 3
-        end_line: 23
-        matcher: 3-seq
-        score: '83.94'
-        matched_length: 162
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: khronos.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/khronos.LICENSE
-        matched_text: |
-          Permission is hereby granted, free of charge, to any person obtaining a copy
-          of this software and/or associated documentation files (the "Materials"),
-          to deal in the Materials without restriction, including without limitation
-          the rights to use, copy, modify, merge, publish, distribute, sublicense,
-          and/or sell copies of the Materials, and to permit persons to whom the
-          Materials are furnished to do so, subject to the following conditions:
-
-          The above copyright notice and this permission notice shall be included in
-          all copies or substantial portions of the Materials.
-
-          MODIFICATIONS TO THIS FILE MAY MEAN IT NO LONGER ACCURATELY REFLECTS KHRONOS
-          STANDARDS. THE UNMODIFIED, NORMATIVE VERSIONS OF KHRONOS SPECIFICATIONS AND
-          HEADER INFORMATION ARE LOCATED AT https://www.khronos.org/registry/
-
-          THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-          OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-          THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-          LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-          FROM,OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS
-          IN THE MATERIALS.
-        matched_text_diagnostics: |
-          Permission is hereby granted, free of charge, to any person obtaining a copy
-          of this software and/or associated documentation files (the "Materials"),
-          to deal in the Materials without restriction, including without limitation
-          the rights to use, copy, modify, merge, publish, distribute, sublicense,
-          and/or sell copies of the Materials, and to permit persons to whom the
-          Materials are furnished to do so, subject to the following conditions:
-
-          The above copyright notice and this permission notice shall be included in
-          all copies or substantial portions of the Materials.
-
-          [MODIFICATIONS] [TO] [THIS] [FILE] [MAY] [MEAN] [IT] [NO] [LONGER] [ACCURATELY] [REFLECTS] [KHRONOS]
-          [STANDARDS]. [THE] [UNMODIFIED], [NORMATIVE] [VERSIONS] [OF] [KHRONOS] [SPECIFICATIONS] [AND]
-          [HEADER] [INFORMATION] [ARE] [LOCATED] [AT] [https]://[www].[khronos].[org]/[registry]/
-
-          THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-          OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-          THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-          LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-          FROM,OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS
-          IN THE MATERIALS.
-    detection_log: []
-    identifier: khronos-911e8656-0e25-6016-5661-9c07d8646f41
+    Added in SPDX license list 3.24
+    This is the same as khronos.LICENSE except the third paragraph
 spdx_license_key: MIT-Khronos-old
 other_urls:
     - https://github.com/KhronosGroup/SPIRV-Cross/blob/main/LICENSES/LicenseRef-KhronosFreeUse.txt

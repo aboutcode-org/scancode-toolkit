@@ -3,71 +3,8 @@ key: ncbi-pd
 short_name: NCBI Public Domain Notice
 name: NCBI Public Domain Notice
 notes: |
-    license_expression: public-domain AND us-govt-public-domain
-    license_expression_spdx: LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain
-    matches:
-      - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
-        from_file:
-        start_line: 1
-        end_line: 1
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 3
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: public-domain_374.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_374.RULE
-        matched_text: PUBLIC DOMAIN NOTICE
-        matched_text_diagnostics: PUBLIC DOMAIN NOTICE
-      - license_expression: us-govt-public-domain
-        spdx_license_expression: LicenseRef-scancode-us-govt-public-domain
-        from_file:
-        start_line: 4
-        end_line: '19'
-        matcher: 3-seq
-        score: '95.33'
-        matched_length: 143
-        match_coverage: '95.33'
-        rule_relevance: 100
-        rule_identifier: us-govt-public-domain_25.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/us-govt-public-domain_25.RULE
-        matched_text: |
-          This software is a "United States Government Work" under the terms of the
-          United States Copyright Act.  It was written as part of the authors'
-          official duties as United States Government employees and thus cannot
-          be copyrighted.  This software is freely available to the public for
-          use. The National Library of Medicine and the U.S. Government have not
-          placed any restriction on its use or reproduction.
-
-          Although all reasonable efforts have been taken to ensure the accuracy
-          and reliability of the software and data, the NLM and the U.S.
-          Government do not and cannot warrant the performance or results that
-          may be obtained by using this software or data. The NLM and the U.S.
-          Government disclaim all warranties, express or implied, including
-          warranties of performance, merchantability or fitness for any
-          particular purpose.
-
-          Please cite the author in any work or product based on this material.
-        matched_text_diagnostics: |
-          is a "United States Government Work" under the terms of the
-          United States Copyright Act.  It was written as part of the [authors]'
-          official duties as United States Government [employees] and thus cannot
-          be copyrighted.  This software is freely available to the public for
-          use. The National Library of Medicine and the U.S. Government have not
-          placed any restriction on its use or reproduction.
-
-          Although all reasonable efforts have been taken to ensure the accuracy
-          and reliability of the software and data, the NLM and the U.S.
-          Government do not and cannot warrant the performance or results that
-          may be obtained by using this software or data. The NLM and the U.S.
-          Government disclaim all warranties, express or implied, including
-          warranties of performance, merchantability or fitness for any
-          particular purpose.
-
-          Please cite the author in any work or product based on this material.
-    detection_log: []
-    identifier: public_domain_and_us_govt_public_domain-e26bbeed-dd23-a7c1-267e-1d68b21c579a
+    Added in SPDX license list 3.24
+    This was before the us-govt-public-domain_25.RULE
 spdx_license_key: NCBI-PD
 other_urls:
     - https://github.com/ncbi/sra-tools/blob/e8e5b6af4edc460156ad9ce5902d0779cffbf685/LICENSE
