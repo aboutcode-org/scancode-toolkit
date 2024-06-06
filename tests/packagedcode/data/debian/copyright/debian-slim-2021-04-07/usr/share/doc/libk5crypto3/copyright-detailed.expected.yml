@@ -752,8 +752,8 @@ license_detections:
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
     identifier: bsd_new-405dd1d5-a75a-5b1c-3698-dad680358560
-  - license_expression: bsd-new AND bsd-2-clause-first-lines
-    license_expression_spdx: BSD-3-Clause AND BSD-2-Clause-first-lines
+  - license_expression: bsd-new
+    license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
         spdx_license_expression: BSD-3-Clause
@@ -797,23 +797,24 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
+    identifier: bsd_new-bcd7c498-0b2c-5abe-4ee7-1e4d56c69bcc
+  - license_expression: bsd-2-clause-first-lines
+    license_expression_spdx: BSD-2-Clause-first-lines
+    matches:
       - license_expression: bsd-2-clause-first-lines
         spdx_license_expression: BSD-2-Clause-first-lines
         from_file:
-        start_line: 679
+        start_line: 682
         end_line: 705
         matcher: 2-aho
         score: '100.0'
-        matched_length: '199'
+        matched_length: 185
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: bsd-2-clause-first-lines.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-2-clause-first-lines.LICENSE
         matched_text: |
-          Copyright (C) 2006,2007,2009 NTT (Nippon Telegraph and Telephone
-             Corporation).  All rights reserved.
-
-             Redistribution and use in source and binary forms, with or without
+          Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
              are met:
 
@@ -837,7 +838,7 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-    identifier: bsd_new_and_bsd_2_clause_first_lines-752c9c54-da95-7a43-7971-494139cd43b3
+    identifier: bsd_2_clause_first_lines-6f015fc4-b8cd-90a5-10f6-9b14c7ee7bfd
   - license_expression: cmu-uc
     license_expression_spdx: MIT-CMU
     matches:
@@ -1031,19 +1032,17 @@ license_detections:
       - license_expression: hpnd-export-us-acknowledgement
         spdx_license_expression: HPND-export-US-acknowledgement
         from_file:
-        start_line: 835
+        start_line: 837
         end_line: 856
         matcher: 2-aho
         score: '100.0'
-        matched_length: 174
+        matched_length: 165
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: hpnd-export-us-acknowledgement.LICENSE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hpnd-export-us-acknowledgement.LICENSE
         matched_text: |
-          Copyright (C) 1994 by the University of Southern California
-
-                EXPORT OF THIS SOFTWARE from the United States of America may
+          EXPORT OF THIS SOFTWARE from the United States of America may
                 require a specific license from the United States Government. It
                 is the responsibility of any person or organization
                 contemplating export to obtain such a license before exporting.
@@ -1063,7 +1062,7 @@ license_detections:
              be held liable for any liability nor for any direct, indirect, or
              consequential damages with respect to any claim by the user or
              distributor of the ksu software.
-    identifier: bsd_simplified_and_hpnd_export_us_acknowledgement-ae58c726-c255-7dc1-e5ac-0d2252b37abc
+    identifier: bsd_simplified_and_hpnd_export_us_acknowledgement-44301bcd-fd8f-70e4-66c1-5897d73ac6aa
   - license_expression: bsd-original-uc
     license_expression_spdx: BSD-4-Clause-UC
     matches:

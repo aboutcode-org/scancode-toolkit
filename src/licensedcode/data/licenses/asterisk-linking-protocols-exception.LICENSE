@@ -2,7 +2,7 @@
 key: asterisk-linking-protocols-exception
 short_name: Asterisk linking protocols exception
 name: Asterisk linking protocols exception
-owner: The Asterisk Project 
+owner: Asterisk
 category: Copyleft Limited
 is_exception: yes
 spdx_license_key: Asterisk-linking-protocols-exception

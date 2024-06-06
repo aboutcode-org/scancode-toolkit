@@ -2,7 +2,7 @@
 key: ppl
 short_name: Peer Production License
 name: Peer Production License
-category: Commercial
+category: Copyleft
 owner: p2pfoundation.net
 spdx_license_key: PPL
 other_urls:
