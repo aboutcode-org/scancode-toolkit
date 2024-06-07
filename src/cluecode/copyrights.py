@@ -2389,7 +2389,7 @@ grammar = """
     NAME-EMAIL: {<NAME> <EMAIL>}        #530
 
     # Project Mayo.
-    NAME-YEAR: {<YR-RANGE> <NAME-EMAIL|COMPANY>+ <NNP>?}        #535
+    NAME-YEAR: {<PARENS>? <YR-RANGE> <NAME-EMAIL|COMPANY>+ <NNP>? <PARENS>?}        #535
 
     NAME-YEAR: {<YR-RANGE> <NAME-EMAIL|COMPANY>+ <CC> <YR-RANGE>}        #540
 
@@ -2404,7 +2404,6 @@ grammar = """
     # Copyright 2018, OpenCensus Authors
     COPYRIGHT: {<COPY>+ <YR-RANGE> <NNP> <AUTHS>}     #1579991
 
-
     NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>?} #5612
 
     #Academy of Motion Picture Arts and Sciences
@@ -2417,6 +2416,8 @@ grammar = """
     NAME: {<PORTIONS> <OF> <NN> <NAME>+} #566
 
     NAME-YEAR: {<YR-RANGE> <NAME>+ <CONTRIBUTORS>?}        #570
+
+    URL: {<PARENS> <URL> <PARENS>}        #5700
 
     #also accept trailing email and URLs
     NAME-YEAR: {<NAME-YEAR> <EMAIL>?<URL>?}        #5701
@@ -2469,7 +2470,6 @@ grammar = """
 
     # this is catching a wide net by treating any bare URL as a company
     COMPANY: {<NNP>? <URL|URL2>}        #830
-
 
     COMPANY: {<COMPANY> <COMP|COMPANY>}        #840
 
@@ -2649,6 +2649,9 @@ grammar = """
     # Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
     COPYRIGHT: {<COPY>+ <NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}        #157999
 
+    # portions copyright The Internet Society, Tom Tromey and Red Hat, Inc.
+    COPYRIGHT: {<PORTIONS>  <COPY>  <NN>  <NAME>}        #157998
+
     COPYRIGHT: {<COPY>+ <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}        #1590
 
     # // (c) (C) → ©
@@ -2736,6 +2739,9 @@ grammar = """
 
     # (c) Copyright 1985-1999 SOME TECHNOLOGY SYSTEMS
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <CAPS> <CAPS> <CAPS>? <CAPS>?} #2271
+
+    # Minpack Copyright Notice (1999) University of Chicago
+    COPYRIGHT: {<COPY>  <NOTICE>  <NAME-YEAR>}  #2273.1
 
     # NAME-COPY is a name with a trailing copyright
     # Daisy (c) 1998
@@ -3081,6 +3087,12 @@ grammar = """
     # Copyright (c) 2014 The Rust Project Developers
     COPYRIGHT: {<COPYRIGHT>  <MAINT> }       #83020
 
+    # copyright its authors
+    COPYRIGHT: {<COPY> <NN> <AUTHS>}       #83030
+
+    # Copyright: 2004-2007 by Internet Systems Consortium, Inc. ("ISC")
+    #            1995-2003 by Internet Software Consortium
+    COPYRIGHT: {<YR-RANGE>  <BY>  <COMPANY> } #1615
 
 #######################################
 # Copyright is held by ....

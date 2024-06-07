@@ -4,10 +4,9 @@ what:
   - holders_summary
   - authors
 copyrights:
-  - copyright its authors
+  - Copyright (1997 3Dfx Interactive, Inc.)
 holders:
-  - its authors
+  - 3Dfx Interactive, Inc.
 holders_summary:
-  - value: its authors
+  - value: 3Dfx Interactive, Inc.
     count: 1
-

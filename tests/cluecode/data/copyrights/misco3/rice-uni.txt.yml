@@ -4,10 +4,9 @@ what:
   - holders_summary
   - authors
 copyrights:
-  - copyright its authors
+  - Copyright (c) 2001, Rice University
 holders:
-  - its authors
+  - Rice University
 holders_summary:
-  - value: its authors
+  - value: Rice University
     count: 1
-

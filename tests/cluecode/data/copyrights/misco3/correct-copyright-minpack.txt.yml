@@ -4,10 +4,9 @@ what:
   - holders_summary
   - authors
 copyrights:
-  - copyright its authors
+  - Copyright Notice (1999) University of Chicago
 holders:
-  - its authors
+  - University of Chicago
 holders_summary:
-  - value: its authors
+  - value: University of Chicago
     count: 1
-
