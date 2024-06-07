@@ -2237,7 +2237,8 @@ grammar = """
     # BY GEORGE J. CARRETTE
     NAME: {<BY> <CAPS> <PN> <CAPS>} #85
 
-    DASHCAPS: {<DASH> <CAPS>}
+    DASHCAPS: {<DASH> <CAPS>} #899999
+
    # INRIA - CIRAD - INRA
     COMPANY: {<COMP> <DASHCAPS>+}        #1280
 
@@ -2266,7 +2267,7 @@ grammar = """
     COMPANY: {<NNP> <IN><NN> <NNP> <NNP>+<COMP>?}        #180
 
     # Commonwealth Scientific and Industrial Research Organisation (CSIRO)
-    COMPANY: {<NNP> <NNP> <CC> <NNP> <COMP> <NNP> <CAPS>}
+    COMPANY: {<NNP> <NNP> <CC> <NNP> <COMP> <NNP> <CAPS>} #190
 
     COMPANY: {<NNP> <CC> <NNP> <COMP> <NNP>*}        #200
 
@@ -2333,6 +2334,9 @@ grammar = """
 
     # Academy of Motion Picture Arts
     NAME: {<NNP|PN>+ <NNP>+}        #351
+
+    # Distributed Management Task Force
+    # NAME: {<NN> <NNP>{3}} #881111
 
     # @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
     NAME: { <NN>? <NN>? <EMAIL> <NAME> } #351.1
@@ -2452,7 +2456,7 @@ grammar = """
     COMPANY: {<COMP|COMPANY|NNP> <NN> <COMPANY|COMPANY> <NNP>+}        #800
 
     # by the Institute of Electrical and Electronics Engineers, Inc.
-    COMPANY: {<BY> <NN> <COMPANY> <OF> <NNP> <CC> <COMPANY>}
+    COMPANY: {<BY> <NN> <COMPANY> <OF> <NNP> <CC> <COMPANY>}  #805
     COMPANY: {<COMPANY> <CC> <AUTH|CONTRIBUTORS|AUTHS>}        #810
 
     # A community of developers
@@ -2461,8 +2465,11 @@ grammar = """
     #  Copyright (c) 2002-2010 The ANGLE Project Authors
     COMPANY: {<NN> <COMP|COMPANY>+ <AUTHS>?}        #820
 
+    ANDCO: {<CC> <NNP>? <NN> <URL>}        #825
+
     # this is catching a wide net by treating any bare URL as a company
     COMPANY: {<NNP>? <URL|URL2>}        #830
+
 
     COMPANY: {<COMPANY> <COMP|COMPANY>}        #840
 
@@ -2543,10 +2550,10 @@ grammar = """
     COMPANY: {<BY> <NN>+ <COMP|COMPANY>}        #1420
 
     # the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation
-    COMPANY: {<NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY>+}
+    COMPANY: {<NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY>+} #1422
 
-    # Copyright (c) 1998-2000 University College London
-    COMPANY: {<UNI> <UNI> <NNP>}
+    # Copyright (c) 1998-2000 University College London #1423
+    COMPANY: {<UNI> <UNI> <NNP>} #1427
 
     # "And" some name
     ANDCO: {<CC>+ <NN> <NNP>+<UNI|COMP>?}        #1430
@@ -2589,8 +2596,8 @@ grammar = """
     # Copyright 2015 The Error Prone Authors.
     NAME: {<NN> <NAME> <CONTRIBUTORS|AUTHS>}        #196023
 
-    # Copyright (C) <s>Suresh P <suresh@ippimail.com></s> #19601
-    NAME: {<NNP> <PN> <EMAIL>}
+    # Copyright (C) <s>Suresh P <suresh@ippimail.com></s> 
+    NAME: {<NNP> <PN> <EMAIL>} #19601.1
 
     # Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET
     NAME: {<NAME> <DASH> <NAME> <CAPS>}                 #19601
@@ -2739,13 +2746,13 @@ grammar = """
     COPYRIGHT: {<NAME-COPY> <NNP>} #2274
 
     # Copyright 1994-2007 (c) RealNetworks, Inc.
-    COPYRIGHT: {<COPY>+ <YR-RANGE> <COPYRIGHT>} #2274
+    COPYRIGHT: {<COPY>+ <YR-RANGE> <COPYRIGHT>} #2275
 
     # Copyright (c) 2017 Contributors et.al.
     COPYRIGHT: {<COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <OTH> } #2276
 
     #Copyright (c) 2020 Contributors as noted in the AUTHORS file
-    COPYRIGHT: {<COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <NN>* <IN>? <NN>* <CAPS|AUTHS|ATH> <JUNK> }
+    COPYRIGHT: {<COPY> <COPY> <YR-RANGE> <CONTRIBUTORS> <NN>* <IN>? <NN>* <CAPS|AUTHS|ATH> <JUNK> } #2277.1
 
     # copyrighted by Object Computing, Inc., St. Louis Missouri, Copyright (C) 2002, all rights reserved.
     COPYRIGHT: {<COPYRIGHT> <COPY>+  <YR-RANGE> <ALLRIGHTRESERVED>} #2278
@@ -2922,9 +2929,9 @@ grammar = """
     COPYRIGHT2: {<COPYRIGHT2> <JUNK> <COMPANY>} # 2010
 
     # copyright C 1988 by the Institute of Electrical and Electronics Engineers, Inc.
-    COPYRIGHT: {<COPY> <PN> <YR-RANGE> <COMPANY>}
+    COPYRIGHT: {<COPY> <PN> <YR-RANGE> <COMPANY>} #2274.1
 
-    COPYRIGHT2: {<NAME-COPY> <COPYRIGHT2>}  #2274
+    COPYRIGHT2: {<NAME-COPY> <COPYRIGHT2>}  #2274.2
 
     # (C) COPYRIGHT 2004 UNIVERSITY OF CHICAGO
     COPYRIGHT: {<COPYRIGHT2> <UNI> <OF> <CAPS>} #2276
@@ -3069,7 +3076,7 @@ grammar = """
     COPYRIGHT: {<COPY> <NN>?<NNP>+ <AUTHS>}         #83004
 
     # (C) Distributed Management Task Force (Distributed is an NN)
-    COPYRIGHT: {<COPY> <NN> <NAME>}         #83010
+    # COPYRIGHT: {<COPY> <NN> <NAME>}         #83010
 
     # Copyright (c) 2014 The Rust Project Developers
     COPYRIGHT: {<COPYRIGHT>  <MAINT> }       #83020
@@ -4030,7 +4037,16 @@ def candidate_lines(numbered_lines):
 
             previous_chars = chars_only
             if TRACE:
-                logger_debug('   candidate_lines: line is <s></s>candidate')
+                logger_debug('   candidate_lines: line is <s></s> candidate')
+
+        elif 'http' in line:
+            # this is for copyright listing many URLs
+            in_copyright = 2
+            candidates_append(numbered_line)
+
+            previous_chars = chars_only
+            if TRACE:
+                logger_debug('   candidate_lines: line is HTTP candidate')
 
         elif in_copyright > 0:
             # these are a sign that the copyrights continue after
@@ -4045,6 +4061,7 @@ def candidate_lines(numbered_lines):
                         'copyrights',
                         'and',
                         'by',
+                        ',',
                     ))
                 )
                 and not has_trailing_year(previous_chars)
@@ -4177,8 +4194,12 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('( C)', ' (c) ')
         .replace('(C)', ' (c) ')
         .replace('(c)', ' (c) ')
-        # the case of \251 is tested by 'weirdencoding.h'
+        .replace('( © )', ' (c) ')
+        .replace('(©)', ' (c) ')
+        .replace('(© )', ' (c) ')
+        .replace('( ©)', ' (c) ')
         .replace('©', ' (c) ')
+        # the case of \251 is tested by 'weirdencoding.h'
         .replace('\251', ' (c) ')
         .replace('&copy;', ' (c) ')
         .replace('&copy', ' (c) ')

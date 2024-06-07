@@ -724,19 +724,24 @@
       "percentage_of_license_text": 92.0,
       "copyrights": [
         {
-          "copyright": "Copyright 2018",
+          "copyright": "Copyright 2018 Developers of the Rand project",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "copyright": "Copyright (c) 2014 The Rust Project",
+          "copyright": "Copyright (c) 2014 The Rust Project Developers",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "holder": "The Rust Project",
+          "holder": "Developers of the Rand project",
+          "start_line": 1,
+          "end_line": 1
+        },
+        {
+          "holder": "The Rust Project Developers",
           "start_line": 2,
           "end_line": 2
         }

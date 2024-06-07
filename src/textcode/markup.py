@@ -136,8 +136,8 @@ def demarkup_text(text):
     cleaned_append = cleaned.append
     for token in tags_and_ents:
         tlow = token.lower()
-        if tlow.startswith(('<', '&', 'href',)) and not any(k in tlow for k in kept_tags):
-            continue
+        if tlow.startswith(('<', '/>', '&', 'href',)) and not any(k in tlow for k in kept_tags):
+            cleaned_append(' ')
         else:
             cleaned_append(token)
     return ''.join(cleaned)
