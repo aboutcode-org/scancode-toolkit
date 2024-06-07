@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "path": "codebase",
+      "type": "directory",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/mit.LICENSE",
+      "type": "file",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/README.txt",
+      "type": "file",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/src",
+      "type": "directory",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/src/a.py",
+      "type": "file",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/tests",
+      "type": "directory",
+      "scan_errors": []
+    },
+    {
+      "path": "codebase/tests/test_a.py",
+      "type": "file",
+      "scan_errors": []
+    }
+  ]
+}
