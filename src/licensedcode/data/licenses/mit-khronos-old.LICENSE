@@ -2,14 +2,15 @@
 key: mit-khronos-old
 short_name: MIT Khronos - old variant
 name: MIT Khronos - old variant
-owner: Khronos Group
 category: Permissive
+owner: Khronos Group
 notes: |
     Added in SPDX license list 3.24
     This is the same as khronos.LICENSE except the third paragraph
 spdx_license_key: MIT-Khronos-old
 other_urls:
     - https://github.com/KhronosGroup/SPIRV-Cross/blob/main/LICENSES/LicenseRef-KhronosFreeUse.txt
+    - https://www.khronos.org/registry/
 ignorable_urls:
     - https://www.khronos.org/registry/
 ---

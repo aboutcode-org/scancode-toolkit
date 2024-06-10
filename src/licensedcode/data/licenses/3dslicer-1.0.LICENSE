@@ -4,7 +4,7 @@ short_name: 3D Slicer License 1.0
 name: 3D Slicer Contribution and Software License Agreement v1.0
 category: Permissive
 owner: Slicer Project
-homepage_url: https://slicer.org/LICENSE
+homepage_url: https://www.slicer.org/wiki/License
 spdx_license_key: 3D-Slicer-1.0
 other_spdx_license_keys:
     - LicenseRef-scancode-3dslicer-1.0
