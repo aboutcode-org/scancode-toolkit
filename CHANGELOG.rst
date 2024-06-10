@@ -34,6 +34,16 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+- Improve cargo package detection support with various improvements
+  and bugfixes:
+  - Fix for parser crashing on cargo workspaces
+  - Fix a bug in dependency parsing (we were not returning any dependencies)
+  - Also support getting dependency versions from workspace
+  - Support more attributes from cargo
+  - Better handle workspace data thorugh extra_data attribute
+  See https://github.com/nexB/scancode-toolkit/pull/3783
+
+
 v32.1.0 (next, roadmap)
 ----------------------------
 
