@@ -13,33 +13,6 @@ license = { workspace = true }
 edition = { workspace = true }
 rust-version = { workspace = true }
 
-[package.metadata.docs.rs]
-no-default-features = true
-features = [
-  "wry",
-  "custom-protocol",
-  "tray-icon",
-  "devtools",
-  "icon-png",
-  "protocol-asset",
-  "test"
-]
-rustc-args = [ "--cfg", "docsrs" ]
-rustdoc-args = [ "--cfg", "docsrs" ]
-default-target = "x86_64-unknown-linux-gnu"
-targets = [
-  "x86_64-pc-windows-msvc",
-  "x86_64-unknown-linux-gnu",
-  "x86_64-apple-darwin",
-  "x86_64-linux-android",
-  "x86_64-apple-ios"
-]
-
-[package.metadata.cargo-udeps.ignore]
-normal = [ "reqwest" ]
-build = [ "tauri-build" ]
-development = [ "quickcheck_macros" ]
-
 [dependencies]
 serde_json = { version = "1.0", features = [ "raw_value" ] }
 serde = { version = "1.0", features = [ "derive", "rc" ] }
@@ -122,73 +95,3 @@ tauri = { path = ".", default-features = false, features = [ "wry" ] }
 tokio = { version = "1", features = [ "full" ] }
 cargo_toml = "0.17"
 http-range = "0.1.5"
-
-[features]
-default = [
-  "wry",
-  "compression",
-  "objc-exception",
-  "tray-icon?/common-controls-v6",
-  "muda/common-controls-v6"
-]
-tray-icon = [ "dep:tray-icon" ]
-test = [ ]
-compression = [ "tauri-macros/compression", "tauri-utils/compression" ]
-wry = [ "tauri-runtime-wry" ]
-objc-exception = [ "tauri-runtime-wry/objc-exception" ]
-linux-ipc-protocol = [ "tauri-runtime-wry/linux-protocol-body", "webkit2gtk/v2_40" ]
-linux-libxdo = [ "tray-icon/libxdo", "muda/libxdo" ]
-isolation = [ "tauri-utils/isolation", "tauri-macros/isolation", "uuid" ]
-custom-protocol = [ "tauri-macros/custom-protocol" ]
-native-tls = [ "reqwest/native-tls" ]
-native-tls-vendored = [ "reqwest/native-tls-vendored" ]
-rustls-tls = [ "reqwest/rustls-tls" ]
-devtools = [ "tauri-runtime/devtools", "tauri-runtime-wry/devtools" ]
-process-relaunch-dangerous-allow-symlink-macos = [ "tauri-utils/process-relaunch-dangerous-allow-symlink-macos" ]
-macos-private-api = [
-  "tauri-runtime/macos-private-api",
-  "tauri-runtime-wry/macos-private-api"
-]
-window-data-url = [ "data-url" ]
-protocol-asset = [ "http-range" ]
-config-json5 = [ "tauri-macros/config-json5" ]
-config-toml = [ "tauri-macros/config-toml" ]
-icon-ico = [ "infer", "ico" ]
-icon-png = [ "infer", "png" ]
-
-[[example]]
-name = "commands"
-path = "../../examples/commands/main.rs"
-
-[[example]]
-name = "helloworld"
-path = "../../examples/helloworld/main.rs"
-
-[[example]]
-name = "multiwindow"
-path = "../../examples/multiwindow/main.rs"
-
-[[example]]
-name = "parent-window"
-path = "../../examples/parent-window/main.rs"
-
-[[example]]
-name = "navigation"
-path = "../../examples/navigation/main.rs"
-
-[[example]]
-name = "splashscreen"
-path = "../../examples/splashscreen/main.rs"
-
-[[example]]
-name = "state"
-path = "../../examples/state/main.rs"
-
-[[example]]
-name = "streaming"
-path = "../../examples/streaming/main.rs"
-
-[[example]]
-name = "isolation"
-path = "../../examples/isolation/main.rs"
-required-features = [ "isolation" ]

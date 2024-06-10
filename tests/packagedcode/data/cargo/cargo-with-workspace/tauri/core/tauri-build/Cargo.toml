@@ -12,19 +12,6 @@ license = { workspace = true }
 edition = { workspace = true }
 rust-version = { workspace = true }
 
-[package.metadata.docs.rs]
-all-features = true
-default-target = "x86_64-unknown-linux-gnu"
-targets = [
-  "x86_64-pc-windows-msvc",
-  "x86_64-unknown-linux-gnu",
-  "x86_64-apple-darwin",
-  "x86_64-linux-android",
-  "x86_64-apple-ios"
-]
-rustc-args = [ "--cfg", "docsrs" ]
-rustdoc-args = [ "--cfg", "docsrs" ]
-
 [dependencies]
 anyhow = "1"
 quote = { version = "1", optional = true }
@@ -43,9 +30,3 @@ dirs-next = "2"
 [target."cfg(target_os = \"macos\")".dependencies]
 swift-rs = { version = "1.0.6", features = [ "build" ] }
 plist = "1"
-
-[features]
-codegen = [ "tauri-codegen", "quote" ]
-isolation = [ "tauri-codegen/isolation", "tauri-utils/isolation" ]
-config-json5 = [ "tauri-utils/config-json5" ]
-config-toml = [ "tauri-utils/config-toml" ]
