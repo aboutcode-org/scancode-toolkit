@@ -52,8 +52,19 @@ v33.0.0 (next next, roadmap)
 
         swift package resolve
 
-v32.1.0 (next, roadmap)
-----------------------------
+- New and updated licenses, including support for newly released
+  SPDX license list versions:
+  - SPDX License List 3.24:
+    This release of the SPDX license list had 25 new licenses
+    and exceptions, and out of them 12 were present as licenses
+    and 5 were present as rules already. There were 3 new
+    license/exception texts added, and the rest 5 were either
+    texts with small variations, additions to texts or several
+    rule texts together. And the rest have been added as new licenses.
+    For more details see https://github.com/nexB/scancode-toolkit/pull/3795
+
+v32.1.0 - 2024-03-23
+---------------------
 
 New CLI options:
 

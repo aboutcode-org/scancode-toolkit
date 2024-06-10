@@ -1,0 +1,9 @@
+---
+license_expression: 3dslicer-1.0
+is_license_reference: yes
+is_continuous: yes
+ignorable_urls:
+    - https://www.slicer.org/LICENSE
+---
+
+{{https://www.slicer.org/LICENSE}}

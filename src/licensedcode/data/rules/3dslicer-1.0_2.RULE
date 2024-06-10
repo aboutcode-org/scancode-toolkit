@@ -1,26 +1,22 @@
 ---
-key: 3dslicer-1.0
-short_name: 3D Slicer License 1.0
-name: 3D Slicer Contribution and Software License Agreement v1.0
-category: Permissive
-owner: Slicer Project
-homepage_url: https://www.slicer.org/wiki/License
-spdx_license_key: 3D-Slicer-1.0
-other_spdx_license_keys:
-    - LicenseRef-scancode-3dslicer-1.0
-text_urls:
-    - https://github.com/Slicer/Slicer/blob/v4.6.2/COPYRIGHT.txt
-faq_url: https://www.slicer.org/wiki/CommercialUse
-other_urls:
-    - https://slicer.readthedocs.io/en/latest/user_guide/about.html#license
-    - https://github.com/Slicer/Slicer/blob/main/License.txt
-    - http://www.slicer.org
-    - http://wiki.na-mic.org/Wiki/index.php/Slicer3
+license_expression: 3dslicer-1.0
+is_license_text: yes
+notes: This is from https://www.slicer.org/LICENSE
 ignorable_authors:
     - The Brigham and Women's Hospital, Inc.
+ignorable_urls:
+    - http://www.slicer.org/
 ---
 
-3D Slicer Contribution and Software License Agreement ("Agreement")
+For more information, please see:
+
+                      http://www.slicer.org
+
+The {{3D Slicer license}} below is a BSD style license, with extensions
+to cover contributions and other issues specific to 3D Slicer.
+
+
+{{3D Slicer Contribution and Software License Agreement}} ("Agreement")
 Version 1.0 (December 20, 2005)
 
 This Agreement covers contributions to and downloads from the 3D
