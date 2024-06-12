@@ -63,6 +63,9 @@ v33.0.0 (next next, roadmap)
     rule texts together. And the rest have been added as new licenses.
     For more details see https://github.com/nexB/scancode-toolkit/pull/3795
 
+  - More new licenses and rules:
+    - 23 new licenses in https://github.com/nexB/scancode-toolkit/pull/3778
+
 v32.1.0 - 2024-03-23
 ---------------------
 
