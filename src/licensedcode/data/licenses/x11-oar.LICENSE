@@ -4,9 +4,12 @@ short_name: X11-Style (OAR)
 name: X11-Style (OAR)
 category: Permissive
 owner: OAR - On-Line Applications Research Corporation
-spdx_license_key: LicenseRef-scancode-x11-oar
+spdx_license_key: OAR
+other_spdx_license_keys:
+    - LicenseRef-scancode-x11-oar
 other_urls:
     - http://www.oarcorp.com/index.htm
+    - https://sourceware.org/git/?p=newlib-cygwin.git;a=blob;f=newlib/libc/string/strsignal.c;hb=HEAD#l35
 minimum_coverage: 80
 ---
 

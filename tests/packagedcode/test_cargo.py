@@ -71,6 +71,18 @@ class TestCargo(PackageTester):
         packages_data = cargo.CargoTomlHandler.parse(test_file)
         self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_cargo_toml_workspace_with_dependencies(self):
+        test_file = self.get_test_loc('cargo/cargo_toml/boring-main/Cargo.toml')
+        expected_loc = self.get_test_loc('cargo/cargo_toml/boring-main/Cargo.toml.expected')
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+    
+    def test_parse_cargo_toml_workspace_with_dependencies_child(self):
+        test_file = self.get_test_loc('cargo/cargo_toml/boring-child/Cargo.toml')
+        expected_loc = self.get_test_loc('cargo/cargo_toml/boring-child/Cargo.toml.expected')
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_cargo_toml_tauri_workspace_in_version(self):
         test_file = self.get_test_loc('cargo/cargo_toml/tauri-examples/Cargo.toml')
         expected_loc = self.get_test_loc('cargo/cargo_toml/tauri-examples/Cargo.toml.expected')
@@ -125,11 +137,20 @@ class TestCargo(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
-    def test_scan_works_on_cargo_workspace(self):
-        test_file = self.get_test_loc('cargo/cargo-with-workspace')
-        expected_file = self.get_test_loc('cargo/cargo-with-workspace.expected.json')
+    def test_scan_works_on_cargo_workspace_tauri(self):
+        test_file = self.get_test_loc('cargo/cargo-with-workspace/tauri/')
+        expected_file = self.get_test_loc('cargo/cargo-with-workspace/tauri.expected.json')
         result_file = self.get_temp_file('results.json')
-        run_scan_click(['--package', '--license', test_file, '--json', result_file])
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_scan_works_on_cargo_workspace_boring(self):
+        test_file = self.get_test_loc('cargo/cargo-with-workspace/boring/')
+        expected_file = self.get_test_loc('cargo/cargo-with-workspace/boring.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )

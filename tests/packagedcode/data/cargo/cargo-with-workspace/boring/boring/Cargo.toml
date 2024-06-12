@@ -1,0 +1,23 @@
+[package]
+name = "boring"
+version = { workspace = true }
+authors = ["Steven Fackler <sfackler@gmail.com>", "Ivan Nikulin <ifaaan@gmail.com>"]
+license = "Apache-2.0"
+description = "BoringSSL bindings"
+repository = { workspace = true }
+documentation = "https://docs.rs/boring"
+readme = "README.md"
+keywords = ["crypto", "tls", "ssl", "dtls"]
+categories = ["cryptography", "api-bindings"]
+edition = { workspace = true }
+
+[dependencies]
+bitflags = { workspace = true }
+foreign-types = { workspace = true }
+once_cell = { workspace = true }
+libc = { workspace = true }
+boring-sys = { workspace = true }
+
+[dev-dependencies]
+hex = { workspace = true }
+rusty-hook = { workspace = true }
