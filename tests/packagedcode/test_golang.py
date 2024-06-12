@@ -35,6 +35,12 @@ class TestGolang(PackageTester):
         expected_loc = self.get_test_loc('golang/gomod/opencensus-service/output.expected.json')
         package = golang.GoModHandler.parse(test_file)
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+    
+    def test_parse_gomod_milvus(self):
+        test_file = self.get_test_loc('golang/gomod/milvus/go.mod')
+        expected_loc = self.get_test_loc('golang/gomod/milvus/output.expected.json')
+        package = golang.GoModHandler.parse(test_file)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_gomod_participle(self):
         test_file = self.get_test_loc('golang/gomod/participle/go.mod')

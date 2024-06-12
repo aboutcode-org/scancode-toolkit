@@ -79,6 +79,19 @@ class GoModHandler(BaseGoModuleHandler):
                 )
             )
 
+        replace = gomods.replace or []
+        for gomod in replace:
+            dependencies.append(
+                models.DependentPackage(
+                    purl=gomod.purl(include_version=True),
+                    extracted_requirement=gomod.version,
+                    scope="replace",
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=False,
+                )
+            )
+
         name = gomods.name
         namespace = gomods.namespace
 
