@@ -1,11 +1,13 @@
 ---
 key: rh-eula-lgpl
-short_name: Red Hat EULA JBoss Enterprise Middleware License
-name: Red Hat EULA JBoss Enterprise Middleware License
+short_name: Red Hat LGPL-Based EULA
+name: Red Hat LGPL-Based End User License Agreement
 category: Copyleft Limited
 owner: Red Hat
-homepage_url: https://www.redhat.com/f/pdf/licenses/GLOBAL_EULA_JBoss_English_20101110.pdf
+homepage_url: https://www.redhat.com/en/about/eulas
 spdx_license_key: LicenseRef-scancode-rh-eula-lgpl
+text_urls:
+    - https://www.redhat.com/licenses/Red_Hat_LGPL-Based_EULA_20191118.pdf
 ignorable_copyrights:
     - Copyright (c) 2010 Red Hat, Inc.
 ignorable_holders:

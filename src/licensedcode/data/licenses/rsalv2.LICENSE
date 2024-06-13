@@ -6,7 +6,8 @@ category: Source-available
 owner: Redis
 homepage_url: https://redis.com/legal/rsalv2-agreement/
 spdx_license_key: LicenseRef-scancode-rsalv2
-faq_url: https://redis.com/blog/rsalv2-sspl-announcement/
+other_urls:
+    - https://redis.com/blog/redis-adopts-dual-source-available-licensing/
 ---
 
 Redis Source Available License 2.0 (RSALv2) Agreement

@@ -5,11 +5,14 @@ name: FFTPACK License 2004
 category: Permissive
 owner: NCAR
 homepage_url: https://github.com/marton78/pffft/blob/master/pffft.c
-spdx_license_key: LicenseRef-scancode-fftpack-2004
+spdx_license_key: NCL
+other_spdx_license_keys:
+    - LicenseRef-scancode-fftpack-2004
 text_urls:
     - https://bitbucket.org/jpommier/pffft/src/master/pffft.c
 other_urls:
     - https://github.com/nexB/scancode-toolkit/issues/1978
+    - https://gitlab.freedesktop.org/pipewire/pipewire/-/blob/master/src/modules/module-filter-chain/pffft.c?ref_type=heads#L1-52
 standard_notice: |
     http://www.cisl.ucar.edu/css/software/fftpack5/ftpk.html
     Copyright (c) 2004 the University Corporation for Atmospheric

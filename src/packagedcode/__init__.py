@@ -39,6 +39,7 @@ from packagedcode import pypi
 from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
+from packagedcode import swift
 from packagedcode import win_pe
 from packagedcode import windows
 
@@ -198,6 +199,9 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     rubygems.GemspecInInstalledVendorBundleSpecificationsHandler,
     rubygems.GemspecInExtractedGemHandler,
     rubygems.GemspecHandler,
+
+    swift.SwiftManifestJsonHandler,
+    swift.SwiftPackageResolvedHandler,
 
     windows.MicrosoftUpdateManifestHandler,
 

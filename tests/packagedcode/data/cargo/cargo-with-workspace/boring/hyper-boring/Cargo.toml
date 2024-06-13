@@ -1,0 +1,28 @@
+[package]
+name = "hyper-boring"
+version = { workspace = true }
+authors = ["Steven Fackler <sfackler@gmail.com>", "Ivan Nikulin <ifaaan@gmail.com>"]
+edition = { workspace = true }
+description = "Hyper TLS support via BoringSSL"
+license = "MIT/Apache-2.0"
+repository = { workspace = true }
+documentation = "https://docs.rs/hyper-boring"
+readme = "README.md"
+exclude = ["test/*"]
+
+[dependencies]
+antidote = { workspace = true }
+http = { workspace = true }
+hyper = { workspace = true, features = ["client"] }
+linked_hash_set = { workspace = true }
+once_cell = { workspace = true }
+boring = { workspace = true }
+tokio = { workspace = true }
+tokio-boring = { workspace = true }
+tower-layer = { workspace = true }
+
+[dev-dependencies]
+hyper = { workspace = true, features = [ "full" ] }
+tokio = { workspace = true, features = [ "full" ] }
+tower = { workspace = true, features = ["util"] }
+futures = { workspace = true }

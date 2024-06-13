@@ -34,8 +34,40 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
-v32.1.0 (next, roadmap)
-----------------------------
+- Improve cargo package detection support with various improvements
+  and bugfixes:
+  - Fix for parser crashing on cargo workspaces
+  - Fix a bug in dependency parsing (we were not returning any dependencies)
+  - Also support getting dependency versions from workspace
+  - Support more attributes from cargo
+  - Better handle workspace data thorugh extra_data attribute
+  See https://github.com/nexB/scancode-toolkit/pull/3783
+
+- We now support parsing the Swift manifest JSON dump and the ``Package.resolved`` file https://github.com/nexB/scancode-toolkit/issues/2657.
+  - Run the commands below on your local Swift project before running the scan.
+    - ::
+
+        swift package dump-package > Package.swift.json
+    - ::
+
+        swift package resolve
+
+- New and updated licenses, including support for newly released
+  SPDX license list versions:
+  - SPDX License List 3.24:
+    This release of the SPDX license list had 25 new licenses
+    and exceptions, and out of them 12 were present as licenses
+    and 5 were present as rules already. There were 3 new
+    license/exception texts added, and the rest 5 were either
+    texts with small variations, additions to texts or several
+    rule texts together. And the rest have been added as new licenses.
+    For more details see https://github.com/nexB/scancode-toolkit/pull/3795
+
+  - More new licenses and rules:
+    - 23 new licenses in https://github.com/nexB/scancode-toolkit/pull/3778
+
+v32.1.0 - 2024-03-23
+---------------------
 
 New CLI options:
 

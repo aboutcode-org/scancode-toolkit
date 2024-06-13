@@ -46,7 +46,13 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "clippy",
+      "lint",
+      "plugin",
+      "development-tools",
+      "development-tools::cargo-plugins"
+    ],
     "homepage_url": null,
     "download_url": null,
     "size": null,
@@ -94,8 +100,180 @@
     "file_references": [],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {},
-    "dependencies": [],
+    "extra_data": {
+      "rust_edition": "2018"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:cargo/clippy_lints",
+        "extracted_requirement": "0.0.212",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "0.0.212",
+          "path": "clippy_lints"
+        }
+      },
+      {
+        "purl": "pkg:cargo/regex",
+        "extracted_requirement": "1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/semver",
+        "extracted_requirement": "0.9",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/rustc_tools_util",
+        "extracted_requirement": "0.1.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "0.1.1",
+          "path": "rustc_tools_util"
+        }
+      },
+      {
+        "purl": "pkg:cargo/clippy_dev",
+        "extracted_requirement": "0.0.1",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "0.0.1",
+          "path": "clippy_dev"
+        }
+      },
+      {
+        "purl": "pkg:cargo/cargo_metadata",
+        "extracted_requirement": "0.7.1",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/compiletest_rs",
+        "extracted_requirement": "0.3.19",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/lazy_static",
+        "extracted_requirement": "1.0",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/serde_derive",
+        "extracted_requirement": "1.0",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/clippy-mini-macro-test",
+        "extracted_requirement": "0.2",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "0.2",
+          "path": "mini-macro"
+        }
+      },
+      {
+        "purl": "pkg:cargo/serde",
+        "extracted_requirement": "1.0",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/derive-new",
+        "extracted_requirement": "0.5",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/rustc-workspace-hack",
+        "extracted_requirement": "1.0.0",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/rustc_tools_util",
+        "extracted_requirement": "0.1.1",
+        "scope": "build-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "0.1.1",
+          "path": "rustc_tools_util"
+        }
+      }
+    ],
     "repository_homepage_url": "https://crates.io/crates/clippy",
     "repository_download_url": "https://crates.io/api/v1/crates/clippy/0.0.212/download",
     "api_data_url": "https://crates.io/api/v1/crates/clippy",

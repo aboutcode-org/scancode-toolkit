@@ -1,0 +1,152 @@
+[
+  {
+    "type": "cargo",
+    "namespace": null,
+    "name": "boring-sys",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Rust",
+    "description": "FFI bindings to BoringSSL",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Alex Crichton",
+        "email": "alex@alexcrichton.com",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Steven Fackler",
+        "email": "sfackler@gmail.com",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Ivan Nikulin",
+        "email": "ifaaan@gmail.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "cryptography",
+      "external-ffi-bindings"
+    ],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "spdx_license_expression": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "MIT",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "version": "workspace",
+      "repository": "workspace",
+      "edition": "workspace",
+      "documentation_url": "https://docs.rs/boring-sys"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:cargo/bindgen",
+        "extracted_requirement": null,
+        "scope": "build-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "workspace": true
+        }
+      },
+      {
+        "purl": "pkg:cargo/cmake",
+        "extracted_requirement": null,
+        "scope": "build-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "workspace": true
+        }
+      },
+      {
+        "purl": "pkg:cargo/fs_extra",
+        "extracted_requirement": null,
+        "scope": "build-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "workspace": true
+        }
+      },
+      {
+        "purl": "pkg:cargo/fslock",
+        "extracted_requirement": null,
+        "scope": "build-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "workspace": true
+        }
+      }
+    ],
+    "repository_homepage_url": "https://crates.io/crates/boring-sys",
+    "repository_download_url": null,
+    "api_data_url": "https://crates.io/api/v1/crates/boring-sys",
+    "datasource_id": "cargo_toml",
+    "purl": "pkg:cargo/boring-sys"
+  }
+]
