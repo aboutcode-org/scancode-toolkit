@@ -393,6 +393,7 @@
       }
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -461,6 +462,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -2024,6 +2026,7 @@
       }
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,

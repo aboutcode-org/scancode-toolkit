@@ -277,6 +277,7 @@
       }
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "Documentation": "https://github.com/SK-415/HarukaBot#readme"
     },
@@ -288,6 +289,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -298,6 +300,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -308,6 +311,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -318,6 +322,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -328,6 +333,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -338,6 +344,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -348,6 +355,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -358,6 +366,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -368,6 +377,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -378,6 +388,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -388,6 +399,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -398,6 +410,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

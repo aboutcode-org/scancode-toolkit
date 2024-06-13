@@ -61,6 +61,7 @@
         "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/johnzon-jsonb-1.2.11.jar",
@@ -83,6 +84,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.3_spec@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -97,6 +99,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-jaxrs_2.1_spec@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -111,6 +114,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-jcdi_2.0_spec@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -125,6 +129,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-jsonb_1.0_spec?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -139,6 +144,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.johnzon/johnzon-mapper@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -153,6 +159,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.cxf/cxf-rt-rs-client?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -167,6 +174,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.cxf/cxf-rt-frontend-jaxrs?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -181,6 +189,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.cxf/cxf-rt-transports-local?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -195,6 +204,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-interceptor_1.2_spec@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -209,6 +219,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-atinject_1.0_spec@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -223,6 +234,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.openwebbeans/openwebbeans-impl?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -543,6 +555,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "documentation_url": "http://johnzon.apache.org/"
           },
@@ -705,6 +718,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -790,6 +804,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -799,6 +814,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -809,6 +825,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -819,6 +836,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -829,6 +847,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -839,6 +858,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -849,6 +869,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -859,6 +880,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -869,6 +891,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -879,6 +902,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -889,6 +913,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -899,6 +924,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

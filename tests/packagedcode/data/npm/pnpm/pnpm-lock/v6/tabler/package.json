@@ -69,62 +69,6 @@
         {
           "path": "./dist/css/tabler.min.css",
           "maxSize": "70 kB"
-        },
-        {
-          "path": "./dist/css/tabler.rtl.css",
-          "maxSize": "75 kB"
-        },
-        {
-          "path": "./dist/css/tabler.rtl.min.css",
-          "maxSize": "70 kB"
-        },
-        {
-          "path": "./dist/css/tabler-flags.css",
-          "maxSize": "2 kB"
-        },
-        {
-          "path": "./dist/css/tabler-flags.min.css",
-          "maxSize": "2 kB"
-        },
-        {
-          "path": "./dist/css/tabler-payments.css",
-          "maxSize": "2 kB"
-        },
-        {
-          "path": "./dist/css/tabler-payments.min.css",
-          "maxSize": "2 kB"
-        },
-        {
-          "path": "./dist/css/tabler-social.css",
-          "maxSize": "2 kB"
-        },
-        {
-          "path": "./dist/css/tabler-social.min.css",
-          "maxSize": "2 kB"
-        },
-        {
-          "path": "./dist/css/tabler-vendors.css",
-          "maxSize": "7 kB"
-        },
-        {
-          "path": "./dist/css/tabler-vendors.min.css",
-          "maxSize": "6 kB"
-        },
-        {
-          "path": "./dist/js/tabler.js",
-          "maxSize": "60 kB"
-        },
-        {
-          "path": "./dist/js/tabler.min.js",
-          "maxSize": "45 kB"
-        },
-        {
-          "path": "./dist/js/tabler.esm.js",
-          "maxSize": "60 kB"
-        },
-        {
-          "path": "./dist/js/tabler.esm.min.js",
-          "maxSize": "45 kB"
         }
       ]
     },

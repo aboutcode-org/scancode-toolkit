@@ -85,6 +85,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -192,6 +193,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://packagist.org/packages/malsup/form",
       "repository_download_url": null,
@@ -340,6 +342,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/@liferay/jquery-form",
       "repository_download_url": "https://registry.npmjs.org/@liferay/jquery-form/-/jquery-form-3.51.0-liferay.1.tgz",
@@ -362,6 +365,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:bower/jquery?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -376,6 +380,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:composer/components/jquery?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -390,6 +395,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/jquery?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -404,6 +410,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/gulp?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -418,6 +425,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/gulp-concat?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -432,6 +440,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/gulp-jshint?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -446,6 +455,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/gulp-uglify?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -460,6 +470,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/gulp-util?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -790,6 +801,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -799,6 +811,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -925,6 +938,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -934,6 +948,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1142,6 +1157,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1151,6 +1167,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1161,6 +1178,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1171,6 +1189,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1181,6 +1200,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1191,6 +1211,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1201,6 +1222,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

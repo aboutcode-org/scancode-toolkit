@@ -91,6 +91,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "Documentation": "https://mharrisb1.github.io/daglib/"
       },
@@ -115,6 +116,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/dask?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -129,6 +131,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/graphviz?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -143,6 +146,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/ipycytoscape?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -157,6 +161,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/networkx?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -356,6 +361,7 @@
             }
           ],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://mharrisb1.github.io/daglib/"
           },
@@ -367,6 +373,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -377,6 +384,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -387,6 +395,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -397,6 +406,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

@@ -74,6 +74,7 @@
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.jar",
@@ -96,6 +97,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.junit/junit-bom@5.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -110,6 +112,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.logmanager/jboss-logmanager@2.1.9.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -124,6 +127,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/log4j/log4j@1.2.16?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -138,6 +142,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.logging.log4j/log4j-api@2.11.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -152,6 +157,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.slf4j/slf4j-api@1.7.25?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -166,6 +172,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.junit.jupiter/junit-jupiter?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -180,6 +187,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/ch.qos.logback/logback-classic@1.2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -194,6 +202,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.logging.log4j/log4j-core@2.11.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -208,6 +217,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.junit/junit-bom@5.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -409,6 +419,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -585,6 +596,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -702,6 +714,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -711,6 +724,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -721,6 +735,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -731,6 +746,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -741,6 +757,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -751,6 +768,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -761,6 +779,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -771,6 +790,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -781,6 +801,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -791,6 +812,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

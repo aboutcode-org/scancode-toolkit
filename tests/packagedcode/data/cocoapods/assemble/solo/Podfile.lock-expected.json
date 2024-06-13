@@ -8,6 +8,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cocoapods/boost@1.76.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -22,6 +23,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cocoapods/Yoga@1.14.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -36,6 +38,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cocoapods/YogaKit@1.18.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -84,6 +87,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -93,6 +97,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -103,6 +108,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -113,6 +119,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

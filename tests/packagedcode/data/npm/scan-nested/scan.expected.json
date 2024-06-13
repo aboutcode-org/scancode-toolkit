@@ -89,6 +89,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",
       "repository_download_url": "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.3.2.tgz",
@@ -199,6 +200,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "engines": {
           "node": ">=0.6.21"
@@ -225,6 +227,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/lodash._baseclone?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -239,6 +242,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -286,6 +290,7 @@
           ]
         ],
         "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/ms",
@@ -307,6 +312,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -354,6 +360,7 @@
           ]
         ],
         "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/regenerator-runtime",
@@ -375,6 +382,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -422,6 +430,7 @@
           ]
         ],
         "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
@@ -443,6 +452,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -457,6 +467,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/wkx?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -471,6 +482,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/chai?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -485,6 +497,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/chai-as-promised?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -499,6 +512,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/watchr?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -513,6 +527,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -560,6 +575,7 @@
           ]
         ],
         "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/ansi-regex",
@@ -581,6 +597,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -628,6 +645,7 @@
           ]
         ],
         "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
@@ -649,6 +667,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -684,6 +703,7 @@
         "source_packages": [],
         "file_references": [],
         "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/abbrev",
@@ -705,6 +725,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -740,6 +761,7 @@
         "source_packages": [],
         "file_references": [],
         "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [
           {
@@ -749,6 +771,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           }
@@ -772,6 +795,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -807,6 +831,7 @@
         "source_packages": [],
         "file_references": [],
         "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/xtend",
@@ -828,6 +853,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -863,6 +889,7 @@
         "source_packages": [],
         "file_references": [],
         "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/yallist",
@@ -939,6 +966,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "lockfile_version": 1
           },
@@ -950,6 +978,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -997,6 +1026,7 @@
                   ]
                 ],
                 "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/ansi-regex",
@@ -1014,6 +1044,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -1061,6 +1092,7 @@
                   ]
                 ],
                 "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
@@ -1186,6 +1218,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "engines": {
               "node": ">=0.6.21"
@@ -1199,6 +1232,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1209,6 +1243,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1219,6 +1254,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1229,6 +1265,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1239,6 +1276,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1294,6 +1332,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1303,6 +1342,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -1338,6 +1378,7 @@
                 "source_packages": [],
                 "file_references": [],
                 "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/abbrev",
@@ -1355,6 +1396,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -1390,6 +1432,7 @@
                 "source_packages": [],
                 "file_references": [],
                 "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
@@ -1399,6 +1442,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }
@@ -1418,6 +1462,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -1453,6 +1498,7 @@
                 "source_packages": [],
                 "file_references": [],
                 "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/xtend",
@@ -1470,6 +1516,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -1505,6 +1552,7 @@
                 "source_packages": [],
                 "file_references": [],
                 "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/yallist",
@@ -1567,6 +1615,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "lockfile_version": 1
           },
@@ -1578,6 +1627,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -1625,6 +1675,7 @@
                   ]
                 ],
                 "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/ms",
@@ -1642,6 +1693,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -1689,6 +1741,7 @@
                   ]
                 ],
                 "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/regenerator-runtime",
@@ -1706,6 +1759,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -1753,6 +1807,7 @@
                   ]
                 ],
                 "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
@@ -1870,6 +1925,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1879,6 +1935,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

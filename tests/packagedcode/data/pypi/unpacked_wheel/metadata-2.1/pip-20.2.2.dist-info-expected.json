@@ -7339,6 +7339,7 @@
       }
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "Documentation": "https://pip.pypa.io",
       "Changelog": "https://pip.pypa.io/en/stable/news/"

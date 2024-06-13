@@ -44,6 +44,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "filesystem-1.1-20.cm2.src.rpm"
     },
@@ -99,6 +100,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "mariner-release-2.0-61.cm2.src.rpm"
     },
@@ -154,6 +156,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "glibc-2.35-6.cm2.src.rpm"
     },
@@ -209,6 +212,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "openssl-1.1.1k-29.cm2.src.rpm"
     },
@@ -264,6 +268,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "tzdata-2024a-1.cm2.src.rpm"
     },
@@ -319,6 +324,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "gcc-11.2.0-8.cm2.src.rpm"
     },
@@ -374,6 +380,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "openssl-1.1.1k-29.cm2.src.rpm"
     },
@@ -429,6 +436,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "glibc-2.35-6.cm2.src.rpm"
     },
@@ -484,6 +492,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "iana-etc-20211115-2.cm2.src.rpm"
     },
@@ -539,6 +548,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "prebuilt-ca-certificates-2.0.0-16.cm2.src.rpm"
     },
@@ -594,6 +604,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "distroless-packages-0.1-3.cm2.src.rpm"
     },
@@ -649,6 +660,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "filename": "distroless-packages-0.1-3.cm2.src.rpm"
     },

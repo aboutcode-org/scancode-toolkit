@@ -698,6 +698,14 @@ class PackageData(IdentifiablePackageData):
              'repository, and is a private package.'
     )
 
+    is_virtual = Boolean(
+        default=False,
+        label='is virtual flag',
+        help='True if this package or any of its files are not present in '
+             'the codebase, but this package was created from a resolved '
+             'package, typically present in a lockfile.'
+    )
+
     extra_data = Mapping(
         label='extra data',
         help='A mapping of arbitrary extra package data.',
@@ -1042,6 +1050,9 @@ class DatafileHandler:
     # Informational: Default primary language for this parser.
     default_primary_language = None
 
+    # If the datafilehandler contains only resolved dependencies
+    is_lockfile = False
+
     # Informational: Description of this parser
     description = None
 
@@ -1079,17 +1090,6 @@ class DatafileHandler:
                     T = contenttype.get_type(location)
                     actual_type = T.filetype_file.lower()
                     return any(ft in actual_type for ft in filetypes)
-
-    @classmethod
-    def is_lockfile(cls):
-        """
-        Return True if this is a lockfile, False otherwise.
-
-        This has to be implemented by datafile handlers classes
-        of lockfiles, to return True, in contrast to the default
-        value False.
-        """
-        return False
 
     @classmethod
     def parse(cls, location, package_only=False):

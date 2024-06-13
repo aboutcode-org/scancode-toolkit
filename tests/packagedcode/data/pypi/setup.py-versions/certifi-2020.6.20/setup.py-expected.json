@@ -99,6 +99,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "Documentation": "https://certifiio.readthedocs.io/en/latest/",
       "Download-URL": "https://github.com/certifi/python-certifi"

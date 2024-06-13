@@ -204,15 +204,24 @@ class BaseNpmHandler(models.DatafileHandler):
         cls,
         dependencies,
         scope,
-        dependecies_by_purl,
+        dependencies_by_purl,
         is_runtime=False,
         is_optional=False,
         is_resolved=False,
         is_direct=True,
     ):
-
+        """
+        Update the `dependencies_by_purl` mapping (which contains the cumulative
+        dependencies for a package metadata) from a list of `dependencies` which
+        have new dependencies or metadata for already existing dependencies.
+        """
+        # npm/pnpm Dependency scopes which contain metadata for dependencies
+        # see documentation below for more details
+        # https://docs.npmjs.com/cli/v10/configuring-npm/package-json#peerdependenciesmeta
+        # https://pnpm.io/package_json#dependenciesmeta
         metadata_deps = ['peerDependenciesMeta', 'dependenciesMeta']
-        if type(dependencies) == list:
+
+        if isinstance(dependencies, list):
             for subdep in dependencies:
                 sdns, _ , sdname = subdep.rpartition('/')
                 dep_purl = PackageURL(
@@ -228,9 +237,9 @@ class BaseNpmHandler(models.DatafileHandler):
                     is_resolved=is_resolved,
                     is_direct=is_direct,
                 )
-                dependecies_by_purl[dep_purl] = dep_package
+                dependencies_by_purl[dep_purl] = dep_package
 
-        elif type(dependencies) == dict:
+        elif isinstance(dependencies, dict):
             for subdep, metadata in dependencies.items():
                 sdns, _ , sdname = subdep.rpartition('/')
                 dep_purl = PackageURL(
@@ -240,7 +249,7 @@ class BaseNpmHandler(models.DatafileHandler):
                 ).to_string()
 
                 if scope in metadata_deps :
-                    dep_package = dependecies_by_purl.get(dep_purl)
+                    dep_package = dependencies_by_purl.get(dep_purl)
                     if dep_package:
                         dep_package.is_optional = metadata.get("optional")
                     else:
@@ -252,7 +261,7 @@ class BaseNpmHandler(models.DatafileHandler):
                             is_resolved=is_resolved,
                             is_direct=is_direct,
                         )
-                        dependecies_by_purl[dep_purl] = dep_package
+                        dependencies_by_purl[dep_purl] = dep_package
                     continue
 
                 # pnpm has peer dependencies also sometimes in version?
@@ -273,7 +282,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     is_resolved=is_resolved,
                     is_direct=is_direct,
                 )
-                dependecies_by_purl[dep_purl] = dep_package
+                dependencies_by_purl[dep_purl] = dep_package
 
     @classmethod
     def get_workspace_members(cls, workspaces, codebase, workspace_root_path):
@@ -328,6 +337,9 @@ class BaseNpmHandler(models.DatafileHandler):
     @classmethod
     def update_workspace_members(cls, workspace_members, codebase):
         """
+        Update all version requirements referencing workspace level
+        package versions with data from all the `workspace_members`.
+        Example: "ruru-components@workspace:^"
         """
         # Collect info needed from all workspace member
         workspace_package_versions_by_base_purl = {}
@@ -485,10 +497,6 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 class BaseNpmLockHandler(BaseNpmHandler):
 
     @classmethod
-    def is_lockfile(cls):
-        return True
-
-    @classmethod
     def parse(cls, location, package_only=False):
 
         with io.open(location, encoding='utf-8') as loc:
@@ -620,6 +628,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 name=name,
                 version=version,
                 **misc,
+                is_virtual=True,
             )
             resolved_package = models.PackageData.from_data(resolved_package_mapping, package_only)
             # these are paths t the root of the installed package in v2
@@ -647,7 +656,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
             cls.update_dependencies_by_purl(
                 dependencies=subdeps_data,
                 scope=scope,
-                dependecies_by_purl=sub_deps_by_purl,
+                dependencies_by_purl=sub_deps_by_purl,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_resolved=False,
@@ -677,6 +686,7 @@ class NpmPackageLockJsonHandler(BaseNpmLockHandler):
     )
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'npm package-lock.json lockfile'
     documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json'
 
@@ -686,6 +696,7 @@ class NpmShrinkwrapJsonHandler(BaseNpmLockHandler):
     path_patterns = ('*/npm-shrinkwrap.json',)
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'npm shrinkwrap.json lockfile'
     documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json'
 
@@ -730,16 +741,13 @@ class YarnLockV2Handler(BaseNpmHandler):
     path_patterns = ('*/yarn.lock',)
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'yarn.lock lockfile v2 format'
     documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
 
     @classmethod
     def is_datafile(cls, location, filetypes=tuple()):
         return super().is_datafile(location, filetypes=filetypes) and is_yarn_v2(location)
-
-    @classmethod
-    def is_lockfile(cls):
-        return True
 
     @classmethod
     def parse(cls, location, package_only=False):
@@ -789,17 +797,17 @@ class YarnLockV2Handler(BaseNpmHandler):
             cls.update_dependencies_by_purl(
                 dependencies=dependencies,
                 scope="dependencies",
-                dependecies_by_purl=deps_for_resolved_by_purl,
+                dependencies_by_purl=deps_for_resolved_by_purl,
             )
             cls.update_dependencies_by_purl(
                 dependencies=peer_dependencies,
                 scope="peerDependencies",
-                dependecies_by_purl=deps_for_resolved_by_purl,
+                dependencies_by_purl=deps_for_resolved_by_purl,
             )
             cls.update_dependencies_by_purl(
                 dependencies=dependencies_meta,
                 scope="dependenciesMeta",
-                dependecies_by_purl=deps_for_resolved_by_purl,
+                dependencies_by_purl=deps_for_resolved_by_purl,
             )
 
             dependencies_for_resolved = [
@@ -815,7 +823,7 @@ class YarnLockV2Handler(BaseNpmHandler):
                 name=name,
                 version=version,
                 dependencies=dependencies_for_resolved,
-
+                is_virtual=True,
             )
             resolved_package = models.PackageData.from_data(resolved_package_mapping)
             dependency = models.DependentPackage(
@@ -848,12 +856,9 @@ class YarnLockV1Handler(BaseNpmHandler):
     path_patterns = ('*/yarn.lock',)
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'yarn.lock lockfile v1 format'
     documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
-
-    @classmethod
-    def is_lockfile(cls):
-        return True
 
     @classmethod
     def is_datafile(cls, location, filetypes=tuple()):
@@ -960,6 +965,7 @@ class YarnLockV1Handler(BaseNpmHandler):
                 name=name,
                 version=version,
                 primary_language=cls.default_primary_language,
+                is_virtual=True,
                 **misc,
             )
             resolved_package_data = models.PackageData.from_data(resolved_package_mapping, package_only)
@@ -1011,10 +1017,6 @@ class YarnLockV1Handler(BaseNpmHandler):
 
 
 class BasePnpmLockHandler(BaseNpmHandler):
-
-    @classmethod
-    def is_lockfile(cls):
-        return True
 
     @classmethod
     def parse(cls, location, package_only=False):
@@ -1089,21 +1091,21 @@ class BasePnpmLockHandler(BaseNpmHandler):
             cls.update_dependencies_by_purl(
                 dependencies=dependencies,
                 scope='dependencies',
-                dependecies_by_purl=deps_for_resolved_by_purl,
+                dependencies_by_purl=deps_for_resolved_by_purl,
                 is_resolved=True,
                 is_direct=False,
             )
             cls.update_dependencies_by_purl(
                 dependencies=peer_dependencies,
                 scope='peerDependencies',
-                dependecies_by_purl=deps_for_resolved_by_purl,
+                dependencies_by_purl=deps_for_resolved_by_purl,
                 is_optional=True,
                 is_direct=False,
             )
             cls.update_dependencies_by_purl(
                 dependencies=optional_dependencies,
                 scope='optionalDependencies',
-                dependecies_by_purl=deps_for_resolved_by_purl,
+                dependencies_by_purl=deps_for_resolved_by_purl,
                 is_resolved=True,
                 is_optional=True,
                 is_direct=False,
@@ -1111,12 +1113,12 @@ class BasePnpmLockHandler(BaseNpmHandler):
             cls.update_dependencies_by_purl(
                 dependencies=peer_dependencies_meta,
                 scope='peerDependenciesMeta',
-                dependecies_by_purl=deps_for_resolved_by_purl,
+                dependencies_by_purl=deps_for_resolved_by_purl,
             )
             cls.update_dependencies_by_purl(
                 dependencies=transitive_peer_dependencies,
                 scope='transitivePeerDependencies',
-                dependecies_by_purl=deps_for_resolved_by_purl,
+                dependencies_by_purl=deps_for_resolved_by_purl,
             )
 
             dependencies_for_resolved = [
@@ -1132,6 +1134,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 name=name,
                 version=version,
                 dependencies=dependencies_for_resolved,
+                is_virtual=True,
                 **misc,
             )
             resolved_package = models.PackageData.from_data(resolved_package_mapping)
@@ -1179,6 +1182,7 @@ class PnpmShrinkwrapYamlHandler(BasePnpmLockHandler):
     path_patterns = ('*/shrinkwrap.yaml',)
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'pnpm shrinkwrap.yaml lockfile'
     documentation_url = 'https://github.com/pnpm/spec/blob/master/lockfile/4.md'
 
@@ -1188,6 +1192,7 @@ class PnpmLockYamlHandler(BasePnpmLockHandler):
     path_patterns = ('*/pnpm-lock.yaml',)
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'pnpm pnpm-lock.yaml lockfile'
     documentation_url = 'https://github.com/pnpm/spec/blob/master/lockfile/6.0.md'
 

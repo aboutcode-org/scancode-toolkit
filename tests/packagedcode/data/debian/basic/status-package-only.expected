@@ -48,6 +48,7 @@
     ],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },
@@ -107,6 +108,7 @@
     ],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },
@@ -166,6 +168,7 @@
     ],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },
@@ -225,6 +228,7 @@
     ],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },
@@ -284,6 +288,7 @@
     ],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -341,6 +346,7 @@
     ],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },

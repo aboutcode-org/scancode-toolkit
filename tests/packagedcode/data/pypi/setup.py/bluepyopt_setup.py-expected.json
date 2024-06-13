@@ -97,6 +97,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -106,6 +107,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -116,6 +118,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -126,6 +129,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -136,6 +140,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -146,6 +151,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -156,6 +162,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -166,6 +173,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -176,6 +184,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -186,6 +195,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -196,6 +206,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -206,6 +217,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

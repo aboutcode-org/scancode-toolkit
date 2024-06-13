@@ -880,6 +880,7 @@
       }
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "Documentation": "https://urllib3.readthedocs.io/"
     },
@@ -891,6 +892,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -901,6 +903,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -911,6 +914,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -921,6 +925,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -931,6 +936,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -941,6 +947,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -951,6 +958,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

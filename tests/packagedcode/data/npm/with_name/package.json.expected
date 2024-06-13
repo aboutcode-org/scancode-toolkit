@@ -79,6 +79,7 @@
     "source_packages": [],
     "file_references": [],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "engines": {
         "node": ">=0.6.0"

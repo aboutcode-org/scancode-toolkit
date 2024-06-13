@@ -1,6 +1,22 @@
 {
   "packages": [],
-  "dependencies": [],
+  "dependencies": [
+    {
+      "purl": "pkg:npm/lerna",
+      "extracted_requirement": "3.13.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/lerna?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "package.json",
+      "datasource_id": "npm_package_json"
+    }
+  ],
   "files": [
     {
       "path": "package.json",
@@ -41,6 +57,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": true,
+          "is_virtual": false,
           "extra_data": {
             "workspaces": [
               "ballerina-extension",
@@ -56,6 +73,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -68,9 +86,7 @@
         }
       ],
       "for_packages": [],
-      "scan_errors": [
-        "get_package_and_deps: Failed to assemble PackageData: PackageData(type='npm', namespace=None, name=None, version=None, datasource_id='npm_package_json'):\nAttributeError: 'bool' object has no attribute 'path'\n"
-      ]
+      "scan_errors": []
     }
   ]
 }

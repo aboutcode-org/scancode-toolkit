@@ -68,6 +68,7 @@
       "pkg:alpine/alpine-baselayout@3.2.0-r22"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "missing_file_references": [
         {
@@ -281,6 +282,7 @@
       "pkg:alpine/musl@1.2.3-r0"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "missing_file_references": [
         {
@@ -386,6 +388,7 @@
       "pkg:alpine/busybox@1.35.0-r15"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "missing_file_references": [
         {
@@ -536,6 +539,7 @@
       "pkg:alpine/alpine-baselayout@3.2.0-r22"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "missing_file_references": [
         {
@@ -749,6 +753,7 @@
       "pkg:alpine/alpine-keys@2.4-r1"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "missing_file_references": [
         {
@@ -1205,6 +1210,7 @@
       "pkg:alpine/ca-certificates@20211220-r0"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "missing_file_references": [
         {
@@ -1310,6 +1316,7 @@
       "pkg:alpine/openssl@1.1.1q-r0"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "missing_file_references": [
         {
@@ -1505,6 +1512,7 @@
       "pkg:alpine/openssl@1.1.1q-r0"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "missing_file_references": [
         {
@@ -1610,6 +1618,7 @@
       "pkg:alpine/busybox@1.35.0-r15"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -1703,6 +1712,7 @@
       "pkg:alpine/zlib@1.2.12-r1"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "missing_file_references": [
         {
@@ -1808,6 +1818,7 @@
       "pkg:alpine/apk-tools@2.12.9-r3"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -1910,6 +1921,7 @@
       "pkg:alpine/pax-utils@1.3.4-r0"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -2003,6 +2015,7 @@
       "pkg:alpine/musl@1.2.3-r0"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "repository_homepage_url": null,
     "repository_download_url": null,
@@ -2132,6 +2145,7 @@
       "pkg:alpine/libc-dev@0.7.2-r3"
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "repository_homepage_url": null,
     "repository_download_url": null,

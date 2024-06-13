@@ -29,8 +29,8 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-107-generic-x86_64-with-glibc2.35
-        platform_version: '#117-Ubuntu SMP Fri Apr 26 12:26:49 UTC 2024'
+        platform: Linux-5.15.0-112-generic-x86_64-with-glibc2.35
+        platform_version: '#122-Ubuntu SMP Thu May 23 07:48:21 UTC 2024'
         python_version: 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]
       spdx_license_list_version: '3.23'
       files_count: 4
@@ -131,6 +131,7 @@ packages:
     source_packages:
       - pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources
     is_private: no
+    is_virtual: no
     extra_data: {}
     repository_homepage_url: https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/
     repository_download_url: https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar
@@ -217,6 +218,7 @@ packages:
     notice_text:
     source_packages: []
     is_private: no
+    is_virtual: no
     extra_data:
       engines:
         node: '>= 0.8.0'
@@ -285,6 +287,7 @@ packages:
     notice_text:
     source_packages: []
     is_private: no
+    is_virtual: no
     extra_data: {}
     repository_homepage_url: https://www.npmjs.com/package/angular-compare-validator
     repository_download_url: https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz
@@ -302,6 +305,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -314,6 +318,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/cli-color?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -326,6 +331,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/cli-table?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -338,6 +344,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/libesvm?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -350,6 +357,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/lodash?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -362,6 +370,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/moment?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -374,6 +383,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/wreck?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -386,6 +396,7 @@ dependencies:
     is_runtime: no
     is_optional: yes
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -398,6 +409,7 @@ dependencies:
     is_runtime: no
     is_optional: yes
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/load-grunt-config?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -410,6 +422,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -422,6 +435,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/%40angular/core?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -434,6 +448,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/%40angular/forms?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -446,6 +461,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/%40angular/common?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -458,6 +474,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/rxjs?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -470,6 +487,7 @@ dependencies:
     is_runtime: yes
     is_optional: no
     is_resolved: no
+    is_direct: yes
     resolved_package: {}
     extra_data: {}
     dependency_uid: pkg:npm/zone.js?uuid=fixed-uid-done-for-testing-5642512d1758
@@ -1797,6 +1815,7 @@ files:
           - pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources
         file_references: []
         is_private: no
+        is_virtual: no
         extra_data: {}
         dependencies: []
         repository_homepage_url: https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/
@@ -2002,6 +2021,7 @@ files:
         source_packages: []
         file_references: []
         is_private: no
+        is_virtual: no
         extra_data:
           engines:
             node: '>= 0.8.0'
@@ -2012,6 +2032,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/cli-color
@@ -2020,6 +2041,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/cli-table
@@ -2028,6 +2050,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/libesvm
@@ -2036,6 +2059,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/lodash
@@ -2044,6 +2068,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/moment
@@ -2052,6 +2077,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/wreck
@@ -2060,6 +2086,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/grunt
@@ -2068,6 +2095,7 @@ files:
             is_runtime: no
             is_optional: yes
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/load-grunt-config
@@ -2076,6 +2104,7 @@ files:
             is_runtime: no
             is_optional: yes
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/grunt
@@ -2084,6 +2113,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
         repository_homepage_url: https://www.npmjs.com/package/grunt-esvm
@@ -2279,6 +2309,7 @@ files:
         source_packages: []
         file_references: []
         is_private: no
+        is_virtual: no
         extra_data: {}
         dependencies:
           - purl: pkg:npm/%40angular/core
@@ -2287,6 +2318,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/%40angular/forms
@@ -2295,6 +2327,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/%40angular/common
@@ -2303,6 +2336,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/rxjs
@@ -2311,6 +2345,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:npm/zone.js
@@ -2319,6 +2354,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
         repository_homepage_url: https://www.npmjs.com/package/angular-compare-validator
@@ -2523,6 +2559,7 @@ files:
         source_packages: []
         file_references: []
         is_private: no
+        is_virtual: no
         extra_data: {}
         dependencies:
           - purl: pkg:pypi/numpy
@@ -2531,6 +2568,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/pandas
@@ -2539,6 +2577,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/deap
@@ -2547,6 +2586,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/efel
@@ -2555,6 +2595,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/ipyparallel
@@ -2563,6 +2604,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/pickleshare
@@ -2571,6 +2613,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/jinja2
@@ -2579,6 +2622,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/future
@@ -2587,6 +2631,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/pebble
@@ -2595,6 +2640,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/scoop
@@ -2603,6 +2649,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
           - purl: pkg:pypi/scoop
@@ -2611,6 +2658,7 @@ files:
             is_runtime: yes
             is_optional: no
             is_resolved: no
+            is_direct: yes
             resolved_package: {}
             extra_data: {}
         repository_homepage_url: https://pypi.org/project/bluepyopt

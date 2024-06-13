@@ -58,6 +58,7 @@
   ],
   "file_references": [],
   "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/c3p0/c3p0/0.9.0.4/",

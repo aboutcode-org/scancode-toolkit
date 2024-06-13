@@ -100,6 +100,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "Documentation": "https://pip.pypa.io",
         "Changelog": "https://pip.pypa.io/en/stable/news/"
@@ -260,6 +261,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/"
@@ -332,6 +334,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -341,6 +344,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -362,6 +366,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -383,6 +388,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -404,6 +410,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -425,6 +432,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -446,6 +454,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -467,6 +476,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -488,6 +498,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -554,6 +565,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -607,6 +619,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -726,6 +739,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/",
@@ -1024,6 +1038,7 @@
             }
           ],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/"

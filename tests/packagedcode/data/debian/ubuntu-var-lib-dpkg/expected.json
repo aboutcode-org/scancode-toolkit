@@ -46,6 +46,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign",
         "missing_file_references": [
@@ -120,6 +121,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign",
         "missing_file_references": [
@@ -338,6 +340,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign",
         "missing_file_references": [
@@ -612,6 +615,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign"
       },
@@ -673,6 +677,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign"
       },
@@ -1682,6 +1687,7 @@
             }
           ],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1889,6 +1895,7 @@
             }
           ],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2330,6 +2337,7 @@
             }
           ],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2582,6 +2590,7 @@
             }
           ],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2647,6 +2656,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2704,6 +2714,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2761,6 +2772,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2818,6 +2830,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2875,6 +2888,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },

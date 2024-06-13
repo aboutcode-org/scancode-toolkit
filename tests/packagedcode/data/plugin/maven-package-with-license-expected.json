@@ -36,6 +36,7 @@
         "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar",
@@ -85,6 +86,7 @@
         "pkg:maven/adarwin/adarwin@1.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/adarwin-1.0.jar",
@@ -134,6 +136,7 @@
         "pkg:maven/org.apache.ant/ant-jai@1.7.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jai/1.7.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jai/1.7.0/ant-jai-1.7.0.jar",
@@ -183,6 +186,7 @@
         "pkg:maven/org.apache.ant/ant-jsch@1.7.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jsch/1.7.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/ant/ant-jsch/1.7.0/ant-jsch-1.7.0.jar",
@@ -270,6 +274,7 @@
         "pkg:maven/aopalliance/aopalliance@1.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar",
@@ -319,6 +324,7 @@
         "pkg:maven/bcel/bcel@5.1?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/bcel/bcel/5.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/bcel/bcel/5.1/bcel-5.1.jar",
@@ -397,6 +403,7 @@
         "pkg:maven/classworlds/classworlds@1.1-alpha-2?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/",
       "repository_download_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar",
@@ -496,6 +503,7 @@
         "pkg:maven/commons-fileupload/commons-fileupload@1.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/commons-fileupload/commons-fileupload/1.0/commons-fileupload-1.0.jar",
@@ -793,6 +801,7 @@
         "pkg:maven/commons-validator/commons-validator@1.2.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/commons-validator/commons-validator/1.2.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/commons-validator/commons-validator/1.2.0/commons-validator-1.2.0.jar",
@@ -842,6 +851,7 @@
         "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/tools-0.0.1.SNAPSHOT.jar",
@@ -927,6 +937,7 @@
         "pkg:maven/easyconf/easyconf@0.9.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/easyconf/easyconf/0.9.0/easyconf-0.9.0.jar",
@@ -1028,6 +1039,7 @@
         "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/findbugs-maven-plugin/1.1.1/findbugs-maven-plugin-1.1.1.jar",
@@ -1077,6 +1089,7 @@
         "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/lcds/flex_app/1.0-SNAPSHOT/flex_app-1.0-SNAPSHOT.jar",
@@ -1126,6 +1139,7 @@
         "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/adobe/ac/samples/bash/bash_flex_app/1.0/bash_flex_app-1.0.jar",
@@ -1221,6 +1235,7 @@
         "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar",
@@ -1270,6 +1285,7 @@
         "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
@@ -1348,6 +1364,7 @@
         "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.jar",
@@ -1443,6 +1460,7 @@
         "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/",
       "repository_download_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.jar",
@@ -1523,6 +1541,7 @@
         "pkg:maven/log4j/log4j@1.2.15?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/",
       "repository_download_url": "https://repo1.maven.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.jar",
@@ -1610,6 +1629,7 @@
         "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/",
       "repository_download_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/logback-access-0.2.5.jar",
@@ -1744,6 +1764,7 @@
         "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar",
@@ -1793,6 +1814,7 @@
         "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/main-1.0.0-SNAPSHOT.jar",
@@ -1842,6 +1864,7 @@
         "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/bundles/axis/1.4_1-SNAPSHOT/axis-1.4_1-SNAPSHOT.jar",
@@ -1891,6 +1914,7 @@
         "pkg:maven/org.modeler/modeler@0.1?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/modeler/modeler/0.1/modeler-0.1.jar",
@@ -1962,6 +1986,7 @@
         "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar",
@@ -2011,6 +2036,7 @@
         "pkg:maven/org.apache.geronimo.specs/specs@1.3?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/specs/1.3/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/specs/specs/1.3/specs-1.3.jar",
@@ -2091,6 +2117,7 @@
         "pkg:maven/org.springframework/spring@2.5.4?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring/2.5.4/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring/2.5.4/spring-2.5.4.jar",
@@ -2171,6 +2198,7 @@
         "pkg:maven/org.springframework/spring-orm@2.5.3?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/spring-orm-2.5.3.jar",
@@ -2251,6 +2279,7 @@
         "pkg:maven/org.springframework/spring-webmvc@2.5.3?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-webmvc/2.5.3/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-webmvc/2.5.3/spring-webmvc-2.5.3.jar",
@@ -2308,6 +2337,7 @@
         "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/startup-trigger-plugin-0.1.jar",
@@ -2357,6 +2387,7 @@
         "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.jar",
@@ -2406,6 +2437,7 @@
         "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/ur.urwerk.test.module-y-1.0.0.jar",
@@ -2455,6 +2487,7 @@
         "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.jar",
@@ -2504,6 +2537,7 @@
         "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/",
       "repository_download_url": "https://repo1.maven.org/maven2/au/com/acegi/xml-format-maven-plugin/3.0.6/xml-format-maven-plugin-3.0.6.jar",
@@ -2526,6 +2560,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-logging/commons-logging-api?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2540,6 +2575,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.camel/camel-jms?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2554,6 +2590,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.activemq/activemq-core?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2568,6 +2605,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.activemq/activemq-pool?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2582,6 +2620,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.0_spec?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2596,6 +2635,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.activemq/activemq-core?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2610,6 +2650,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.camel/camel-core?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2624,6 +2665,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.camel/camel-spring?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2638,6 +2680,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-test?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2652,6 +2695,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2666,6 +2710,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hamcrest/hamcrest-all?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2680,6 +2725,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.ant/ant@1.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2694,6 +2740,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.media/jai-core@1.1.2_01?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2708,6 +2755,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/jai/jai-codec@1.1.2.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2722,6 +2770,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.ant/ant@1.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2736,6 +2785,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.jcraft/jsch@0.1.29?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2750,6 +2800,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/servletapi/servletapi@2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2764,6 +2815,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@3.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2778,6 +2830,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2792,6 +2845,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-digester/commons-digester@1.6?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2806,6 +2860,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.0.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2820,6 +2875,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/oro/oro@2.0.8?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2834,6 +2890,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/xml-apis/xml-apis@2.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2848,6 +2905,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@3.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2862,6 +2920,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/log4j/log4j@1.2.8?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2876,6 +2935,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/servletapi/servletapi@2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2890,6 +2950,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/struts/struts@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2904,6 +2965,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-configuration/commons-configuration@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2918,6 +2980,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-collections/commons-collections@3.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2932,6 +2995,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-lang/commons-lang@2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2946,6 +3010,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/dom4j/dom4j@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2960,6 +3025,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.0.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2974,6 +3040,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-digester/commons-digester@1.6?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2988,6 +3055,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/xerces/xerces@2.2.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3002,6 +3070,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/xml-apis/xml-apis@2.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3016,6 +3085,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/xdoclet/xdoclet@1.2.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3030,6 +3100,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@3.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3044,6 +3115,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-beanutils/commons-beanutils-core@1.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3058,6 +3130,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-beanutils/commons-beanutils-bean-collections@1.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3072,6 +3145,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/xdoclet/xdoclet-web-module@1.2.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3086,6 +3160,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/mx4j/mx4j-jmx@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3100,6 +3175,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/mx4j/mx4j-impl@2.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3114,6 +3190,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.maven/maven-artifact@2.0.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3128,6 +3205,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl@2.0.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3142,6 +3220,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@2.0.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3156,6 +3235,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.maven.doxia/doxia-core@1.0-alpha-8?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3170,6 +3250,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/net.sourceforge.findbugs/findbugs@1.2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3184,6 +3265,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/info.flex-mojos/testing-support?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3198,6 +3280,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.flexunit/flexunit?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3212,6 +3295,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.flexunit/flexunit-optional?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3226,6 +3310,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.ac.samples.lcds/blazeds_service_config@1.0-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3240,6 +3325,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.ac.samples.lcds/flex_remoted_objects@1.0-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3254,6 +3340,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.flex/compiler?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3268,6 +3355,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.flex.framework/flex-framework?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3282,6 +3370,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.cairngorm/cairngorm?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3296,6 +3385,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.cairngorm/cairngorm-enterprise?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3310,6 +3400,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.lcds/fds?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3324,6 +3415,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.ac.samples.bash/bash_blazeds_service_config@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3338,6 +3430,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_remoted_objects@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3352,6 +3445,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.flex/compiler?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3366,6 +3460,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.flex.framework/flex-framework?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3380,6 +3475,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.cairngorm/cairngorm?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3394,6 +3490,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.adobe.flexunit/flexunit?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3408,6 +3505,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/info.flex-mojos/testing-support?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3422,6 +3520,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.myco.foo/common-dependencies@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3436,6 +3535,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3450,6 +3550,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3464,6 +3565,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.myco.foo.bar.baz/baz-bar@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3478,6 +3580,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.myco.foo/common-dependencies@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3492,6 +3595,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework.boot/spring-boot-dependencies@1.4.2.RELEASE?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3506,6 +3610,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework.boot/spring-boot-starter@1.4.2.RELEASE?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3520,6 +3625,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies@Camden.SR5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3534,6 +3640,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.axis/axis@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3548,6 +3655,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.idega.block.platform/com.idega.core?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3562,6 +3670,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.idega.block.platform/com.idega.block.media?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3576,6 +3685,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/itextpdf/itext-paulo?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3590,6 +3700,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/itext/itext-xml?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3604,6 +3715,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/relaxngDatatype/relaxngDatatype@20020414?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3618,6 +3730,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.sun.xml.bind/jaxb-impl@2.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3632,6 +3745,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.sun.xml.bind/jaxb-xjc@2.1.11?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3646,6 +3760,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.sun.xsom/xsom@20081112?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3660,6 +3775,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.mail/mail@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3674,6 +3790,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.jms/jms@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3688,6 +3805,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.sun.jdmk/jmxtools@1.2.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3702,6 +3820,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.sun.jmx/jmxri@1.2.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3716,6 +3835,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/oro/oro@2.0.8?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3730,6 +3850,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@3.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3744,6 +3865,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/ch.qos.logback/logback-core?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3758,6 +3880,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/tomcat/catalina?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3772,6 +3895,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.mortbay.jetty/jetty?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3786,6 +3910,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.caucho/resin?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3800,6 +3925,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.mortbay.jetty/servlet-api-2.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3814,6 +3940,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-7?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3828,6 +3955,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/classworlds/classworlds@1.1-alpha-2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3842,6 +3970,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/plexus/plexus-utils@1.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3856,6 +3985,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@3.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3870,6 +4000,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.axis/axis@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3884,6 +4015,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.ant/ant@1.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3898,6 +4030,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-lang/commons-lang@2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3912,6 +4045,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-digester/commons-digester@2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3926,6 +4060,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/dom4j/dom4j@1.6.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3940,6 +4075,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/hibernate-annotations@3.4.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3954,6 +4090,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/hibernate-entitymanager@3.4.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3968,6 +4105,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/ejb3-persistence@3.3.2.Beta1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3982,6 +4120,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.slf4j/slf4j-jcl@1.4.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -3996,6 +4135,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/postgresql/postgresql@8.3-603.jdbc4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4010,6 +4150,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4024,6 +4165,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-ioc@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4038,6 +4180,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-mail@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4052,6 +4195,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-pdf@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4066,6 +4210,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-remoting@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4080,6 +4225,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-resteasy@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4094,6 +4240,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-ui@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4108,6 +4255,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-debug@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4122,6 +4270,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-excel@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4136,6 +4285,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.seam/jboss-seam-jul@2.2.0.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4150,6 +4300,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.richfaces.framework/richfaces-api@3.3.1.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4164,6 +4315,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.richfaces.framework/richfaces-impl@3.3.1.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4178,6 +4330,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.richfaces.ui/richfaces-ui@3.3.1.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4192,6 +4345,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jbpm/jbpm-jpdl@3.2.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4206,6 +4360,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/jboss/jboss-cache@1.4.1.SP9?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4220,6 +4375,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs@1.1-RC2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4234,6 +4390,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider@1.1-RC2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4248,6 +4405,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/hibernate-core@3.3.1.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4262,6 +4420,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/hibernate-search@3.1.1.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4276,6 +4435,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.transaction/jta@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4290,6 +4450,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.codehaus.groovy/groovy-all@1.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4304,6 +4465,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.drools/drools-core@5.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4318,6 +4480,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.el/jboss-el@1.0_02.CR4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4332,6 +4495,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.tuckey/urlrewritefilter@3.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4346,6 +4510,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.richfaces.samples/glassX@3.3.1.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4360,6 +4525,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.richfaces.samples/darkX@3.3.1.GA?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4374,6 +4540,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.drools/drools-api@5.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4388,6 +4555,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/hibernate-commons-annotations@3.3.0.ga?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4402,6 +4570,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.antlr/antlr@3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4416,6 +4585,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.antlr/antlr-runtime@3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4430,6 +4600,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-digester/commons-digester@1.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4444,6 +4615,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-lang/commons-lang@2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4458,6 +4630,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.h2database/h2@1.1.118?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4472,6 +4645,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/mysql/mysql-connector-java@5.1.10?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4486,6 +4660,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.openejb/openejb-core@3.1.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4500,6 +4675,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@4.7?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4514,6 +4690,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.testng/testng@5.9?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4528,6 +4705,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@3.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4542,6 +4720,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4556,6 +4735,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/asm/asm@2.2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4570,6 +4750,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/asm/asm-commons@2.2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4584,6 +4765,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/asm/asm-util@2.2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4598,6 +4780,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/aspectj/aspectjrt@1.5.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4612,6 +4795,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/aspectj/aspectjweaver@1.5.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4626,6 +4810,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/backport-util-concurrent/backport-util-concurrent@3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4640,6 +4825,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/c3p0/c3p0@0.9.1.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4654,6 +4840,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/cglib/cglib-nodep@2.1_3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4668,6 +4855,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-attributes/commons-attributes-api@2.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4682,6 +4870,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-attributes/commons-attributes-compiler@2.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4696,6 +4885,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-beanutils/commons-beanutils@1.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4710,6 +4900,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-collections/commons-collections@3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4724,6 +4915,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-dbcp/commons-dbcp@1.2.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4738,6 +4930,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-fileupload/commons-fileupload@1.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4752,6 +4945,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-httpclient/commons-httpclient@3.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4766,6 +4960,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4780,6 +4975,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-pool/commons-pool@1.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4794,6 +4990,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.bea.wlplatform/commonj-twm@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4808,6 +5005,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.experlog/xapool@1.5.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4822,6 +5020,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.ibatis/ibatis-sqlmap@2.3.0.677?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4836,6 +5035,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.jamonapi/jamon@2.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4850,6 +5050,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.lowagie/itext@2.0.7?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4864,6 +5065,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.oracle.toplink/toplink@10.1.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4878,6 +5080,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.oracle/toplink-essentials@2.41?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4892,6 +5095,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.oracle/oc4j@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4906,6 +5110,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/freemarker/freemarker@2.3.12?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4920,6 +5125,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/groovy/groovy@1.5.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4934,6 +5140,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/hessian/hessian@3.1.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4948,6 +5155,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/jasperreports/jasperreports@2.0.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4962,6 +5170,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/jexcelapi/jxl@2.6.6?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4976,6 +5185,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/jotm/jotm@2.0.10?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -4990,6 +5200,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/jruby/jruby-bin@1.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5004,6 +5215,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@3.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5018,6 +5230,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/log4j/log4j@1.2.15?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5032,6 +5245,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/net.sf.ehcache/ehcache@1.4.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5046,6 +5260,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.axis/axis@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5060,6 +5275,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.tiles/tiles-api@2.0.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5074,6 +5290,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.tiles/tiles-core@2.0.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5088,6 +5305,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.tiles/tiles-jsp@2.0.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5102,6 +5320,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.beanshell/bsh@2.0b4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5116,6 +5335,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/hibernate@3.2.6.ga?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5130,6 +5350,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.ga?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5144,6 +5365,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/poi/poi@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5158,6 +5380,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/opensymphony/quartz-all@1.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5172,6 +5395,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/struts/struts@1.2.9?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5186,6 +5410,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/taglibs/standard@1.1.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5200,6 +5425,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/tomcat/catalina@5.5.23?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5214,6 +5440,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/velocity/velocity@1.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5228,6 +5455,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/velocity-tools/velocity-tools-generic@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5242,6 +5470,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/velocity-tools/velocity-tools-view@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5256,6 +5485,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.activation/activation@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5270,6 +5500,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.ejb/ejb@3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5284,6 +5515,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.faces/jsf-api@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5298,6 +5530,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.jdo/jdo2-api@2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5312,6 +5545,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.jms/jms@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5326,6 +5560,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.mail/mail@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5340,6 +5575,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5354,6 +5590,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.portlet/portlet-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5368,6 +5605,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.resource/connector-api@1.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5382,6 +5620,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.servlet/jsp-api@2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5396,6 +5635,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.servlet/jstl@1.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5410,6 +5650,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.servlet/servlet-api@2.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5424,6 +5665,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.transaction/jta@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5438,6 +5680,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.xml/jaxrpc-api@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5452,6 +5695,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/aopalliance/aopalliance@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5466,6 +5710,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5480,6 +5725,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.oracle/toplink-essentials@2.41?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5494,6 +5740,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.oracle.toplink/toplink@10.1.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5508,6 +5755,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.ibatis/ibatis-sqlmap@2.3.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5522,6 +5770,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/hibernate@3.2.6.ga?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5536,6 +5785,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.1.ga?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5550,6 +5800,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-aop@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5564,6 +5815,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-beans@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5578,6 +5830,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-context@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5592,6 +5845,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-core@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5606,6 +5860,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-jdbc@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5620,6 +5875,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-tx@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5634,6 +5890,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-web@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5648,6 +5905,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.jdo/jdo2-api@2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5662,6 +5920,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5676,6 +5935,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-attributes/commons-attributes-api@2.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5690,6 +5950,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-attributes/commons-attributes-compiler@2.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5704,6 +5965,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/commons-logging/commons-logging@1.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5718,6 +5980,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.lowagie/itext@2.0.7?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5732,6 +5995,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/freemarker/freemarker@2.3.12?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5746,6 +6010,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/jasperreports/jasperreports@2.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5760,6 +6025,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/jexcelapi/jxl@2.6.6?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5774,6 +6040,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.tiles/tiles-api@2.0.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5788,6 +6055,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.tiles/tiles-core@2.0.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5802,6 +6070,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.tiles/tiles-jsp@2.0.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5816,6 +6085,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/poi/poi@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5830,6 +6100,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/velocity/velocity@1.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5844,6 +6115,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/velocity-tools/velocity-tools-generic@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5858,6 +6130,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/velocity-tools/velocity-tools-view@1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5872,6 +6145,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-beans@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5886,6 +6160,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-context@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5900,6 +6175,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-context-support@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5914,6 +6190,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-core@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5928,6 +6205,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.springframework/spring-web@2.5.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5942,6 +6220,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.servlet/jsp-api@2.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5956,6 +6235,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.servlet/jstl@1.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5970,6 +6250,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/javax.servlet/servlet-api@2.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5984,6 +6265,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.mockito/mockito-all@1.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -5998,6 +6280,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.intel.gpe.clients/gpe-clients-all@2.0.4-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6012,6 +6295,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.intel.gpe.clients/gpe-gridbean-api@2.0.5-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6026,6 +6310,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.intel.gpe/gpe-utils@2.0.5-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6040,6 +6325,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.intel.gpe.clients/gpe-gridbeans-swt@0.0.2-SNAPSHOT?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6054,6 +6340,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@3.8.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6068,6 +6355,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6082,6 +6370,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.hamcrest/hamcrest-core?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6096,6 +6385,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.mockito/mockito-core?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6110,6 +6400,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.maven/maven-plugin-api?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6124,6 +6415,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.maven.plugin-tools/maven-plugin-annotations?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6138,6 +6430,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.codehaus.plexus/plexus-utils?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6152,6 +6445,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.dom4j/dom4j@2.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -6211,6 +6505,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -6220,6 +6515,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6230,6 +6526,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6240,6 +6537,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6250,6 +6548,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6260,6 +6559,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6270,6 +6570,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6280,6 +6581,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6290,6 +6592,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6300,6 +6603,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6310,6 +6614,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6320,6 +6625,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -6404,6 +6710,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/adarwin/adarwin/1.0/",
@@ -6486,6 +6793,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -6495,6 +6803,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6505,6 +6814,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6515,6 +6825,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -6599,6 +6910,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -6608,6 +6920,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6618,6 +6931,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -6740,6 +7054,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/",
@@ -6822,6 +7137,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/bcel/bcel/5.1/",
@@ -6933,6 +7249,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/classworlds/classworlds/1.1-alpha-2/",
@@ -7065,6 +7382,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -7074,6 +7392,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7084,6 +7403,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -7416,6 +7736,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -7425,6 +7746,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7435,6 +7757,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7445,6 +7768,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7455,6 +7779,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7465,6 +7790,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7475,6 +7801,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -7559,6 +7886,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/org/dbwebx/tools/0.0.1.SNAPSHOT/",
@@ -7677,6 +8005,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -7686,6 +8015,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7696,6 +8026,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7706,6 +8037,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7716,6 +8048,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7726,6 +8059,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7736,6 +8070,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7746,6 +8081,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7756,6 +8092,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7766,6 +8103,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7776,6 +8114,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7786,6 +8125,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7796,6 +8136,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7806,6 +8147,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7816,6 +8158,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7826,6 +8169,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7836,6 +8180,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7846,6 +8191,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7856,6 +8202,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -7992,6 +8339,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -8001,6 +8349,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8011,6 +8360,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8021,6 +8371,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8031,6 +8382,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8041,6 +8393,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -8125,6 +8478,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -8134,6 +8488,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8144,6 +8499,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8154,6 +8510,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8164,6 +8521,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8174,6 +8532,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8184,6 +8543,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8194,6 +8554,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8204,6 +8565,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8214,6 +8576,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8224,6 +8587,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -8308,6 +8672,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -8317,6 +8682,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8327,6 +8693,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8337,6 +8704,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8347,6 +8715,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8357,6 +8726,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8367,6 +8737,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8377,6 +8748,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -8507,6 +8879,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -8516,6 +8889,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8526,6 +8900,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8536,6 +8911,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8546,6 +8922,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8556,6 +8933,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8566,6 +8944,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8576,6 +8955,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8586,6 +8966,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -8670,6 +9051,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -8679,6 +9061,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -8792,6 +9175,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -8801,6 +9185,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8811,6 +9196,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8821,6 +9207,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8831,6 +9218,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -8961,6 +9349,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -8970,6 +9359,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8980,6 +9370,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -8990,6 +9381,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9000,6 +9392,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -9115,6 +9508,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -9124,6 +9518,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9134,6 +9529,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9144,6 +9540,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9154,6 +9551,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9164,6 +9562,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9174,6 +9573,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -9296,6 +9696,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -9305,6 +9706,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9315,6 +9717,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9325,6 +9728,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9335,6 +9739,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9345,6 +9750,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -9514,6 +9920,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -9523,6 +9930,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9533,6 +9941,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9543,6 +9952,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9553,6 +9963,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -9637,6 +10048,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/modules/main/1.0.0-SNAPSHOT/",
@@ -9719,6 +10131,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -9728,6 +10141,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -9812,6 +10226,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -9821,6 +10236,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9831,6 +10247,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9841,6 +10258,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9851,6 +10269,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9861,6 +10280,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9871,6 +10291,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9881,6 +10302,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9891,6 +10313,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -9901,6 +10324,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -10007,6 +10431,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -10016,6 +10441,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10026,6 +10452,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10036,6 +10463,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10046,6 +10474,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10056,6 +10485,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10066,6 +10496,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10076,6 +10507,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10086,6 +10518,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10096,6 +10529,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10106,6 +10540,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10116,6 +10551,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10126,6 +10562,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10136,6 +10573,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10146,6 +10584,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10156,6 +10595,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10166,6 +10606,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10176,6 +10617,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10186,6 +10628,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10196,6 +10639,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10206,6 +10650,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10216,6 +10661,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10226,6 +10672,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10236,6 +10683,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10246,6 +10694,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10256,6 +10705,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10266,6 +10716,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10276,6 +10727,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10286,6 +10738,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10296,6 +10749,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10306,6 +10760,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10316,6 +10771,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10326,6 +10782,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10336,6 +10793,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10346,6 +10804,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10356,6 +10815,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10366,6 +10826,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10376,6 +10837,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -10460,6 +10922,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -10469,6 +10932,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -10584,6 +11048,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -10593,6 +11058,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10603,6 +11069,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10613,6 +11080,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10623,6 +11091,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10633,6 +11102,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10643,6 +11113,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10653,6 +11124,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10663,6 +11135,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10673,6 +11146,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10683,6 +11157,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10693,6 +11168,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10703,6 +11179,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10713,6 +11190,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10723,6 +11201,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10733,6 +11212,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10743,6 +11223,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10753,6 +11234,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10763,6 +11245,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10773,6 +11256,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10783,6 +11267,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10793,6 +11278,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10803,6 +11289,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10813,6 +11300,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10823,6 +11311,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10833,6 +11322,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10843,6 +11333,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10853,6 +11344,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10863,6 +11355,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10873,6 +11366,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10883,6 +11377,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10893,6 +11388,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10903,6 +11399,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10913,6 +11410,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10923,6 +11421,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10933,6 +11432,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10943,6 +11443,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10953,6 +11454,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10963,6 +11465,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10973,6 +11476,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10983,6 +11487,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -10993,6 +11498,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11003,6 +11509,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11013,6 +11520,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11023,6 +11531,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11033,6 +11542,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11043,6 +11553,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11053,6 +11564,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11063,6 +11575,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11073,6 +11586,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11083,6 +11597,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11093,6 +11608,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11103,6 +11619,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11113,6 +11630,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11123,6 +11641,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11133,6 +11652,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11143,6 +11663,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11153,6 +11674,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11163,6 +11685,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11173,6 +11696,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11183,6 +11707,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11193,6 +11718,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11203,6 +11729,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11213,6 +11740,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11223,6 +11751,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11233,6 +11762,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -11348,6 +11878,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -11357,6 +11888,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11367,6 +11899,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11377,6 +11910,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11387,6 +11921,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11397,6 +11932,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11407,6 +11943,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11417,6 +11954,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11427,6 +11965,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11437,6 +11976,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11447,6 +11987,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11457,6 +11998,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11467,6 +12009,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11477,6 +12020,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11487,6 +12031,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11497,6 +12042,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11507,6 +12053,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -11622,6 +12169,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -11631,6 +12179,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11641,6 +12190,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11651,6 +12201,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11661,6 +12212,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11671,6 +12223,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11681,6 +12234,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11691,6 +12245,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11701,6 +12256,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11711,6 +12267,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11721,6 +12278,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11731,6 +12289,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11741,6 +12300,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11751,6 +12311,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11761,6 +12322,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11771,6 +12333,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11781,6 +12344,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11791,6 +12355,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11801,6 +12366,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11811,6 +12377,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11821,6 +12388,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11831,6 +12399,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -11841,6 +12410,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -11933,6 +12503,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -11942,6 +12513,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -12026,6 +12598,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -12035,6 +12608,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12045,6 +12619,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12055,6 +12630,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12065,6 +12641,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12075,6 +12652,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -12159,6 +12737,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/ur/urwerk/test/ur.urwerk.test.module-y/1.0.0/",
@@ -12241,6 +12820,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/",
@@ -12323,6 +12903,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -12332,6 +12913,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12342,6 +12924,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12352,6 +12935,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12362,6 +12946,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12372,6 +12957,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12382,6 +12968,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -12392,6 +12979,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

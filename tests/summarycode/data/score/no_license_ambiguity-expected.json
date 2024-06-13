@@ -84,6 +84,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "workspace": {
           "members": [
@@ -531,6 +532,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "workspace": {
               "members": [

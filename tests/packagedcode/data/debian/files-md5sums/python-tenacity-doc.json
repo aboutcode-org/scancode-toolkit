@@ -48,6 +48,7 @@
         "pkg:deb/debian/python-tenacity"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign"
       },
@@ -137,6 +138,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -409,6 +411,7 @@
             }
           ],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,

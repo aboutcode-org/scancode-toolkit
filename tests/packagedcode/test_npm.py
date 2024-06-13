@@ -365,7 +365,7 @@ class TestNpm(PackageTester):
         packages = npm.PnpmLockYamlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_pnpm_scan_with_simple_package_json(self):
+    def test_pnpm_scan_with_workspace_package_json(self):
         test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/')
         expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe-scan.expected.json')
         result_file = self.get_temp_file('results.json')
@@ -374,7 +374,7 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
-    def test_pnpm_scan_with_workspace_package_json(self):
+    def test_pnpm_scan_with_simple_package_json(self):
         test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler/')
         expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler-scan.expected.json')
         result_file = self.get_temp_file('results.json')

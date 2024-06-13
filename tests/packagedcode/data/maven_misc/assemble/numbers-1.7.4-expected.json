@@ -74,6 +74,7 @@
         "pkg:maven/com.github.peteroupc/numbers@1.7.4?classifier=sources"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/numbers-1.7.4.jar",
@@ -96,6 +97,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@4.13-beta-3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -220,6 +222,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -320,6 +323,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -418,6 +422,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -427,6 +432,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

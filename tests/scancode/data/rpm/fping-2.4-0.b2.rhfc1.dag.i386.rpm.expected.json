@@ -67,6 +67,7 @@
         "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
       ],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -155,6 +156,7 @@
           ],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,

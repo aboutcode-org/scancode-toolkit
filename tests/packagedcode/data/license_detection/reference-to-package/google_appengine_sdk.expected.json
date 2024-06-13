@@ -77,6 +77,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
       },
@@ -173,6 +174,7 @@
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "Download-URL": "http://media.djangoproject.com/releases/1.3/Django-1.3.1.tar.gz"
       },
@@ -862,6 +864,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -963,6 +966,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
           },
@@ -1227,6 +1231,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Download-URL": "http://media.djangoproject.com/releases/1.3/Django-1.3.1.tar.gz"
           },
@@ -1559,6 +1564,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1664,6 +1670,7 @@
           "source_packages": [],
           "file_references": [],
           "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Download-URL": "http://media.djangoproject.com/releases/1.3/Django-1.3.1.tar.gz"
           },

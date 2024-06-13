@@ -138,6 +138,7 @@
       }
     ],
     "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "Download-URL": "https://github.com/dbtsai/python-mimeparse/tarball/1.6.0"
     },

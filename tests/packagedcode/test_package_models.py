@@ -66,6 +66,7 @@ class TestModels(PackageTester):
             ('source_packages', []),
             ('file_references', []),
             ('is_private', False),
+            ('is_virtual', False),
             ('extra_data', {}),
             ('dependencies', []),
             ('repository_homepage_url', None),
