@@ -67,6 +67,7 @@
       "datasource_ids": [
         "pubspec_yaml"
       ],
+      "license_clarity": [],
       "purl": "pkg:dart/built_collection@5.1.1"
     }
   ],

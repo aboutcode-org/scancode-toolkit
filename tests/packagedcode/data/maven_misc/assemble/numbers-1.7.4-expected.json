@@ -84,6 +84,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/com.github.peteroupc/numbers@1.7.4"
     }
   ],

@@ -46,6 +46,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2"
     },
     {
@@ -94,6 +95,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/adarwin/adarwin@1.0"
     },
     {
@@ -142,6 +144,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.apache.ant/ant-jai@1.7.0"
     },
     {
@@ -190,6 +193,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.apache.ant/ant-jsch@1.7.0"
     },
     {
@@ -276,6 +280,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/aopalliance/aopalliance@1.0"
     },
     {
@@ -324,6 +329,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/bcel/bcel@5.1"
     },
     {
@@ -401,6 +407,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/classworlds/classworlds@1.1-alpha-2"
     },
     {
@@ -499,6 +506,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/commons-fileupload/commons-fileupload@1.0"
     },
     {
@@ -795,6 +803,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/commons-validator/commons-validator@1.2.0"
     },
     {
@@ -843,6 +852,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.dbwebx/tools@0.0.1.SNAPSHOT"
     },
     {
@@ -927,6 +937,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/easyconf/easyconf@0.9.0"
     },
     {
@@ -1027,6 +1038,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1"
     },
     {
@@ -1075,6 +1087,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_app@1.0-SNAPSHOT"
     },
     {
@@ -1123,6 +1136,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/com.adobe.ac.samples.bash/bash_flex_app@1.0"
     },
     {
@@ -1217,6 +1231,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0"
     },
     {
@@ -1265,6 +1280,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT"
     },
     {
@@ -1342,6 +1358,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT"
     },
     {
@@ -1436,6 +1453,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4"
     },
     {
@@ -1515,6 +1533,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/log4j/log4j@1.2.15"
     },
     {
@@ -1601,6 +1620,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/ch.qos.logback/logback-access@0.2.5"
     },
     {
@@ -1734,6 +1754,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api@1.0-alpha-4"
     },
     {
@@ -1782,6 +1803,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/ur.urwerk.test.modules/main@1.0.0-SNAPSHOT"
     },
     {
@@ -1830,6 +1852,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.apache.geronimo.bundles/axis@1.4_1-SNAPSHOT"
     },
     {
@@ -1878,6 +1901,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.modeler/modeler@0.1"
     },
     {
@@ -1948,6 +1972,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT"
     },
     {
@@ -1996,6 +2021,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.apache.geronimo.specs/specs@1.3"
     },
     {
@@ -2075,6 +2101,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.springframework/spring@2.5.4"
     },
     {
@@ -2154,6 +2181,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.springframework/spring-orm@2.5.3"
     },
     {
@@ -2233,6 +2261,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.springframework/spring-webmvc@2.5.3"
     },
     {
@@ -2289,6 +2318,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1"
     },
     {
@@ -2337,6 +2367,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT"
     },
     {
@@ -2385,6 +2416,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/ur.urwerk.test/ur.urwerk.test.module-y@1.0.0"
     },
     {
@@ -2433,6 +2465,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT"
     },
     {
@@ -2481,6 +2514,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/au.com.acegi/xml-format-maven-plugin@3.0.6"
     }
   ],

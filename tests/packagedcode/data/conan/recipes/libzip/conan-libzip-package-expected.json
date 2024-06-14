@@ -73,6 +73,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/libzip@1.10.1"
     },
     {
@@ -148,6 +149,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/libzip@1.9.2"
     },
     {
@@ -223,6 +225,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/libzip@1.8.0"
     },
     {
@@ -298,6 +301,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/libzip@1.7.3"
     },
     {
@@ -371,6 +375,7 @@
       "datasource_ids": [
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/libzip"
     }
   ],

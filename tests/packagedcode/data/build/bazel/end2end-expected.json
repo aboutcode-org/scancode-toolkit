@@ -44,6 +44,7 @@
       "datasource_ids": [
         "bazel_build"
       ],
+      "license_clarity": [],
       "purl": "pkg:bazel/end2end"
     },
     {
@@ -90,6 +91,7 @@
       "datasource_ids": [
         "bazel_build"
       ],
+      "license_clarity": [],
       "purl": "pkg:bazel/subdir2"
     }
   ],

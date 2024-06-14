@@ -99,6 +99,7 @@
         "chef_cookbook_metadata_rb",
         "chef_cookbook_metadata_json"
       ],
+      "license_clarity": [],
       "purl": "pkg:chef/301@0.1.0"
     }
   ],

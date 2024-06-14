@@ -75,6 +75,7 @@
       "datasource_ids": [
         "cocoapods_podspec"
       ],
+      "license_clarity": [],
       "purl": "pkg:cocoapods/flutter_paytabs_bridge@2.2.5"
     }
   ],

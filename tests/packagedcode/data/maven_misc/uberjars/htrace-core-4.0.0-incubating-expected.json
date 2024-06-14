@@ -95,6 +95,7 @@
       "datasource_ids": [
         "java_jar_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating"
     },
     {
@@ -143,6 +144,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations@2.4.0"
     },
     {
@@ -191,6 +193,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-core@2.4.0"
     },
     {
@@ -239,6 +242,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind@2.4.0"
     },
     {
@@ -309,6 +313,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/commons-logging/commons-logging@1.1.1"
     },
     {
@@ -379,6 +384,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.apache.htrace/htrace-core@4.0.0-incubating"
     }
   ],

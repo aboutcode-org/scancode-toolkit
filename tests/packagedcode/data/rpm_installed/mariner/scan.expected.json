@@ -56,6 +56,7 @@
       "datasource_ids": [
         "rpm_mariner_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/filesystem@1.1-20.cm2?arch=x86_64"
     },
     {
@@ -114,6 +115,7 @@
       "datasource_ids": [
         "rpm_mariner_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/mariner-release@2.0-61.cm2?arch=noarch"
     },
     {
@@ -276,6 +278,7 @@
         "rpm_package_licenses",
         "rpm_package_licenses"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/glibc@2.35-6.cm2?arch=x86_64"
     },
     {
@@ -334,6 +337,7 @@
       "datasource_ids": [
         "rpm_mariner_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/openssl-libs@1.1.1k-29.cm2?arch=x86_64"
     },
     {
@@ -435,6 +439,7 @@
         "rpm_mariner_manifest",
         "rpm_package_licenses"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/tzdata@2024a-1.cm2?arch=noarch"
     },
     {
@@ -493,6 +498,7 @@
       "datasource_ids": [
         "rpm_mariner_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/libgcc@11.2.0-8.cm2?arch=x86_64"
     },
     {
@@ -578,6 +584,7 @@
         "rpm_mariner_manifest",
         "rpm_package_licenses"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/openssl@1.1.1k-29.cm2?arch=x86_64"
     },
     {
@@ -636,6 +643,7 @@
       "datasource_ids": [
         "rpm_mariner_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/glibc-iconv@2.35-6.cm2?arch=x86_64"
     },
     {
@@ -721,6 +729,7 @@
         "rpm_mariner_manifest",
         "rpm_package_licenses"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/iana-etc@20211115-2.cm2?arch=noarch"
     },
     {
@@ -779,6 +788,7 @@
       "datasource_ids": [
         "rpm_mariner_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/prebuilt-ca-certificates@2.0.0-16.cm2?arch=noarch"
     },
     {
@@ -837,6 +847,7 @@
       "datasource_ids": [
         "rpm_mariner_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/distroless-packages-minimal@0.1-3.cm2?arch=x86_64"
     },
     {
@@ -895,6 +906,7 @@
       "datasource_ids": [
         "rpm_mariner_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/mariner/distroless-packages-base@0.1-3.cm2?arch=x86_64"
     }
   ],

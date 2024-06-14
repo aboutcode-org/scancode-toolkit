@@ -99,6 +99,7 @@
       "datasource_ids": [
         "npm_package_json"
       ],
+      "license_clarity": [],
       "purl": "pkg:npm/lodash.clonedeep@4.3.2"
     },
     {
@@ -208,6 +209,7 @@
       "datasource_ids": [
         "npm_package_json"
       ],
+      "license_clarity": [],
       "purl": "pkg:npm/sequelize@3.30.2"
     }
   ],

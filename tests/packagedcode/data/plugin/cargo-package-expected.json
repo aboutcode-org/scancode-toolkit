@@ -75,6 +75,7 @@
       "datasource_ids": [
         "cargo_toml"
       ],
+      "license_clarity": [],
       "purl": "pkg:cargo/clap@2.32.0"
     }
   ],

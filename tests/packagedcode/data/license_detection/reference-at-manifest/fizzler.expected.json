@@ -110,6 +110,7 @@
       "datasource_ids": [
         "nuget_nupsec"
       ],
+      "license_clarity": [],
       "purl": "pkg:nuget/Fizzler@1.3.0"
     }
   ],

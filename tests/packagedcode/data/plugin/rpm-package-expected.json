@@ -69,6 +69,7 @@
       "datasource_ids": [
         "rpm_archive"
       ],
+      "license_clarity": [],
       "purl": "pkg:rpm/alfandega@2.0-1.7.3"
     }
   ],

@@ -87,6 +87,7 @@
       "datasource_ids": [
         "pypi_sdist_pkginfo"
       ],
+      "license_clarity": [],
       "purl": "pkg:pypi/setuptools@58.2.0"
     }
   ],

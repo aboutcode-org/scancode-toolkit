@@ -117,6 +117,7 @@
       "datasource_ids": [
         "pypi_editable_egg_pkginfo"
       ],
+      "license_clarity": [],
       "purl": "pkg:pypi/celery@5.2.7"
     }
   ],

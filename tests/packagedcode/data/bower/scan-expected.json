@@ -130,6 +130,7 @@
       "datasource_ids": [
         "bower_json"
       ],
+      "license_clarity": [],
       "purl": "pkg:bower/John%20Doe"
     }
   ],

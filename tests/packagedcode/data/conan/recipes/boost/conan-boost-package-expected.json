@@ -72,6 +72,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.84.0"
     },
     {
@@ -146,6 +147,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.83.0"
     },
     {
@@ -220,6 +222,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.82.0"
     },
     {
@@ -294,6 +297,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.81.0"
     },
     {
@@ -368,6 +372,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.80.0"
     },
     {
@@ -442,6 +447,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.79.0"
     },
     {
@@ -516,6 +522,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.78.0"
     },
     {
@@ -590,6 +597,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.77.0"
     },
     {
@@ -664,6 +672,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.76.0"
     },
     {
@@ -738,6 +747,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.75.0"
     },
     {
@@ -812,6 +822,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.74.0"
     },
     {
@@ -886,6 +897,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.73.0"
     },
     {
@@ -960,6 +972,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.72.0"
     },
     {
@@ -1034,6 +1047,7 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost@1.71.0"
     },
     {
@@ -1106,6 +1120,7 @@
       "datasource_ids": [
         "conan_conanfile_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:conan/boost"
     }
   ],

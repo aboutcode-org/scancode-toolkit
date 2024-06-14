@@ -113,6 +113,7 @@
       "datasource_ids": [
         "pypi_sdist_pkginfo"
       ],
+      "license_clarity": [],
       "purl": "pkg:pypi/pip@22.0.4"
     }
   ],

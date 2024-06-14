@@ -84,6 +84,7 @@
       "datasource_ids": [
         "maven_pom"
       ],
+      "license_clarity": [],
       "purl": "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final"
     }
   ],

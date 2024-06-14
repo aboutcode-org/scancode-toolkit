@@ -75,6 +75,7 @@
       "datasource_ids": [
         "cocoapods_podspec"
       ],
+      "license_clarity": [],
       "purl": "pkg:cocoapods/CoreMLPredictionsPlugin@%24AMPLIFY_VERSION"
     },
     {
@@ -152,6 +153,7 @@
       "datasource_ids": [
         "cocoapods_podspec"
       ],
+      "license_clarity": [],
       "purl": "pkg:cocoapods/Amplify@%24AMPLIFY_VERSION"
     },
     {
@@ -229,6 +231,7 @@
       "datasource_ids": [
         "cocoapods_podspec"
       ],
+      "license_clarity": [],
       "purl": "pkg:cocoapods/AmplifyPlugins@%24AMPLIFY_VERSION"
     },
     {
@@ -306,6 +309,7 @@
       "datasource_ids": [
         "cocoapods_podspec"
       ],
+      "license_clarity": [],
       "purl": "pkg:cocoapods/AmplifyTestCommon@%24AMPLIFY_VERSION"
     },
     {
@@ -383,6 +387,7 @@
       "datasource_ids": [
         "cocoapods_podspec"
       ],
+      "license_clarity": [],
       "purl": "pkg:cocoapods/AWSPluginsCore@%24AMPLIFY_VERSION"
     },
     {
@@ -460,6 +465,7 @@
       "datasource_ids": [
         "cocoapods_podspec"
       ],
+      "license_clarity": [],
       "purl": "pkg:cocoapods/AWSPredictionsPlugin@%24AMPLIFY_VERSION"
     }
   ],

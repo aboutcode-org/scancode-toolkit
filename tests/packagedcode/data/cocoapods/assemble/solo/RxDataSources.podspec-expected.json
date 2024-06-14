@@ -75,6 +75,7 @@
       "datasource_ids": [
         "cocoapods_podspec"
       ],
+      "license_clarity": [],
       "purl": "pkg:cocoapods/RxDataSources@4.0.1"
     }
   ],

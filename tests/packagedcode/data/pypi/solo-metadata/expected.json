@@ -102,6 +102,7 @@
       "datasource_ids": [
         "pypi_sdist_pkginfo"
       ],
+      "license_clarity": [],
       "purl": "pkg:pypi/scancode-toolkit@31.0.0b1"
     }
   ],

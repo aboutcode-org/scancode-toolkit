@@ -46,6 +46,7 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
+      "license_clarity": [],
       "purl": "pkg:deb/debian/gzip?arch=any"
     },
     {
@@ -94,6 +95,7 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
+      "license_clarity": [],
       "purl": "pkg:deb/debian/gzip-win32?arch=all"
     }
   ],

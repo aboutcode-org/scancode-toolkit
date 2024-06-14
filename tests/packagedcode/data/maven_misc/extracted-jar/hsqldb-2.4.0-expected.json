@@ -52,6 +52,7 @@
       "datasource_ids": [
         "java_osgi_manifest"
       ],
+      "license_clarity": [],
       "purl": "pkg:osgi/org.hsqldb.hsqldb@2.4.0"
     }
   ],

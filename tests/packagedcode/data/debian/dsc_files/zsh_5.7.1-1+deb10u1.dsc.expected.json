@@ -84,6 +84,7 @@
       "datasource_ids": [
         "debian_source_control_dsc"
       ],
+      "license_clarity": [],
       "purl": "pkg:deb/debian/zsh@5.7.1-1%2Bdeb10u1?arch=any%20all"
     }
   ],

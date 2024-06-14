@@ -89,6 +89,7 @@
       "datasource_ids": [
         "pypi_setup_py"
       ],
+      "license_clarity": [],
       "purl": "pkg:pypi/django"
     },
     {
@@ -184,6 +185,7 @@
       "datasource_ids": [
         "pypi_sdist_pkginfo"
       ],
+      "license_clarity": [],
       "purl": "pkg:pypi/django@1.3.1"
     }
   ],

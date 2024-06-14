@@ -62,6 +62,7 @@
         "debian_installed_status_db",
         "debian_installed_md5sums"
       ],
+      "license_clarity": [],
       "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1?arch=amd64"
     }
   ],
