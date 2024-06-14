@@ -18,6 +18,7 @@ from license_expression import LicenseWithExceptionSymbol
 from license_expression import Licensing
 
 from licensedcode.match import LicenseMatch
+from licensedcode.match import MATCH_SPDX_ID
 from licensedcode.models import SpdxRule
 from licensedcode.spans import Span
 from textcode.markup import is_markup_text
@@ -57,8 +58,6 @@ if TRACE or os.environ.get('SCANCODE_DEBUG_LICENSE'):
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
-MATCH_SPDX_ID = '1-spdx-id'
 
 
 def spdx_id_match(idx, query_run, text, expression_symbols=None):

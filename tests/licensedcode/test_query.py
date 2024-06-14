@@ -16,6 +16,7 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
+from licensedcode.match import MATCH_AHO_EXACT
 from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.query import Query
 
@@ -863,7 +864,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         ][0]
 
         expected = LicenseMatch(
-            matcher='2-aho',
+            matcher=MATCH_AHO_EXACT,
             rule=rule,
             qspan=Span(0, 48),
             ispan=Span(0, 48),

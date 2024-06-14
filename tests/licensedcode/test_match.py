@@ -21,6 +21,7 @@ from licensedcode.match import filter_overlapping_matches
 from licensedcode.match import get_full_matched_text
 from licensedcode.match import get_matching_regions
 from licensedcode.match import LicenseMatch
+from licensedcode.match import MATCH_AHO_EXACT
 from licensedcode.match import merge_matches
 from licensedcode.match import reportable_tokens
 from licensedcode.match import restore_non_overlapping
@@ -959,8 +960,8 @@ class TestLicenseMatchFilter(FileBasedTesting):
         query_loc = self.get_test_loc('match_filter/query')
         matches = idx.match(location=query_loc)
         expected = [
-            # filtered: LicenseMatch(matcher='3-seq', rule=rules['rule1.RULE'], qspan=Span(4, 47) | Span(50, 59), ispan=Span(1, 53)),
-            LicenseMatch(matcher='2-aho', rule=rules['rule2.RULE'], qspan=Span(24, 85), ispan=Span(0, 61)),
+            # filtered: LicenseMatch(matcher=MATCH_SEQ, rule=rules['rule1.RULE'], qspan=Span(4, 47) | Span(50, 59), ispan=Span(1, 53)),
+            LicenseMatch(matcher=MATCH_AHO_EXACT, rule=rules['rule2.RULE'], qspan=Span(24, 85), ispan=Span(0, 61)),
         ]
 
         assert matches == expected

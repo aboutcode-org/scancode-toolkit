@@ -10,6 +10,8 @@
 from functools import partial
 import textwrap
 
+from licensedcode.match import MATCH_UNKNOWN
+
 """
 Utility function to trace matched texts used for tracing and testing.
 """
@@ -27,7 +29,7 @@ def get_texts(match, width=80, margin=0):
     """
     qtokens = match.matched_text(whole_lines=False).split()
     mqt = format_text(tokens=qtokens, width=width, margin=margin)
-    if match.matcher == '6-unknown':
+    if match.matcher == MATCH_UNKNOWN:
         itokens = match.rule.text.split()
     else:
         itokens = matched_rule_tokens_str(match)

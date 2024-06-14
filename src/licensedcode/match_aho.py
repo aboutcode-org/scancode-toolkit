@@ -13,6 +13,8 @@ import ahocorasick
 
 from licensedcode import SMALL_RULE
 from licensedcode.match import LicenseMatch
+from licensedcode.match import MATCH_AHO_EXACT
+from licensedcode.match import MATCH_AHO_FRAG
 from licensedcode.spans import Span
 
 """
@@ -73,10 +75,6 @@ def add_sequence(automaton, tids, rid, start=0, with_duplicates=False):
             automaton.add_word(tokens, [value])
     else:
         automaton.add_word(tokens, [value])
-
-
-MATCH_AHO_EXACT = '2-aho'
-MATCH_AHO_FRAG = '5-aho-frag'
 
 
 def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT, **kwargs):

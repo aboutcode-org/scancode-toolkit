@@ -28,6 +28,11 @@ from licensedcode.cache import get_cache
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.match import LicenseMatch
 from licensedcode.match import set_matched_lines
+from licensedcode.match import MATCH_UNKNOWN
+from licensedcode.match import MATCH_UNDETECTED
+from licensedcode.match import MATCH_HASH
+from licensedcode.match import MATCH_AHO_EXACT
+from licensedcode.match import MATCH_SPDX_ID
 from licensedcode.models import UnDetectedRule
 from licensedcode.models import compute_relevance
 from licensedcode.models import Rule
@@ -69,7 +74,6 @@ if TRACE:
         def logger_debug(*args):
             return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-MATCHER_UNDETECTED = '5-undetected'
 
 # All values of match_coverage less than this value then they are not considered
 # as perfect detections
@@ -105,6 +109,7 @@ class DetectionCategory(Enum):
     PACKAGE_ADD_FROM_FILE = 'from-package-file'
     EXTRA_WORDS = 'extra-words'
     UNKNOWN_MATCH = 'unknown-match'
+    UNKNOWN_NGRAMS_MATCH = 'unknown-ngrams-match'
     LICENSE_CLUES = 'license-clues'
     LOW_QUALITY_MATCH_FRAGMENTS = 'low-quality-matches'
     IMPERFECT_COVERAGE = 'imperfect-match-coverage'
@@ -133,6 +138,7 @@ class DetectionRule(Enum):
     CONTAINED_SAME_LICENSE = 'contained-with-same-license'
     UNVERSIONED_FOLLOWED_BY_VERSIONED = 'un-versioned-followed-by-versioned'
     UNDETECTED_LICENSE = 'undetected-license'
+    UNKNOWN_NGRAMS_MATCH = 'unknown-ngrams-match'
     PACKAGE_UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'package-unknown-reference-to-local-file'
     PACKAGE_ADD_FROM_SIBLING_FILE = 'from-package-sibling-file'
     PACKAGE_ADD_FROM_FILE = 'from-package-file'
@@ -1054,8 +1060,15 @@ def is_undetected_license_matches(license_matches):
     if len(license_matches) != 1:
         return False
 
-    if license_matches[0].matcher == MATCHER_UNDETECTED:
+    if license_matches[0].matcher == MATCH_UNDETECTED:
         return True
+
+
+def is_ngrams_unknown_license_matches(license_matches):
+    return all([
+        license_match.matcher == MATCH_UNKNOWN
+        for license_match in license_matches
+    ])
 
 
 def is_correct_detection_non_unknown(license_matches):
@@ -1081,7 +1094,7 @@ def is_correct_detection(license_matches):
     ]
 
     return (
-        all(matcher in ("1-hash", "1-spdx-id", "2-aho") for matcher in matchers)
+        all(matcher in (MATCH_HASH, MATCH_SPDX_ID, MATCH_AHO_EXACT) for matcher in matchers)
         and all(is_match_coverage_perfect)
     )
 
@@ -1457,14 +1470,19 @@ def get_detected_license_expression(
         )
 
     matches_for_expression = None
-    combined_expression = None
     detection_log = []
 
     if analysis == DetectionCategory.FALSE_POSITVE.value:
         if TRACE_ANALYSIS:
             logger_debug(f'analysis {DetectionRule.FALSE_POSITIVE.value}')
         detection_log.append(DetectionRule.FALSE_POSITIVE.value)
-        return detection_log, combined_expression
+        return detection_log, None
+
+    elif analysis == DetectionCategory.UNKNOWN_NGRAMS_MATCH.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionCategory.UNKNOWN_NGRAMS_MATCH.value}')
+        matches_for_expression = license_matches
+        detection_log.append(DetectionRule.UNKNOWN_NGRAMS_MATCH.value)
 
     elif analysis == DetectionCategory.UNDETECTED_LICENSE.value:
         if TRACE_ANALYSIS:
@@ -1525,7 +1543,7 @@ def get_detected_license_expression(
         if TRACE_ANALYSIS:
             logger_debug(f'analysis {DetectionCategory.LICENSE_CLUES.value}')
         detection_log.append(DetectionRule.LICENSE_CLUES.value)
-        return detection_log, combined_expression
+        return detection_log, None
 
     elif analysis == DetectionCategory.LOW_QUALITY_MATCH_FRAGMENTS.value:
         if TRACE_ANALYSIS:
@@ -1533,7 +1551,7 @@ def get_detected_license_expression(
         # TODO: we are temporarily returning these as license clues, and not
         # in detections but ideally we should return synthetic unknowns for these
         detection_log.append(DetectionRule.LOW_QUALITY_MATCH_FRAGMENTS.value)
-        return detection_log, combined_expression
+        return detection_log, None
 
     else:
         if TRACE_ANALYSIS:
@@ -1602,7 +1620,7 @@ def get_undetected_matches(query_string):
         ispan=ispan,
         hispan=hispan,
         query_run_start=match_start,
-        matcher=MATCHER_UNDETECTED,
+        matcher=MATCH_UNDETECTED,
         query=query_run.query,
     )
 
@@ -1658,7 +1676,10 @@ def get_ambiguous_license_detections_by_type(unique_license_detections):
 
         elif is_undetected_license_matches(license_matches=detection.matches):
             ambi_license_detections[DetectionCategory.UNDETECTED_LICENSE.value] = detection
-        
+
+        elif is_ngrams_unknown_license_matches(license_matches=detection.matches):
+            ambi_license_detections[DetectionCategory.UNKNOWN_NGRAMS_MATCH.value] = detection
+
         elif has_correct_license_clue_matches(license_matches=detection.matches):
             ambi_license_detections[DetectionCategory.LICENSE_CLUES.value] = detection
 
@@ -1690,7 +1711,10 @@ def analyze_detection(license_matches, package_license=False):
     if TRACE:
         logger_debug(f'license_matches {license_matches}', f'package_license {package_license}')
 
-    if is_undetected_license_matches(license_matches=license_matches):
+    if is_ngrams_unknown_license_matches(license_matches=license_matches):
+        return DetectionCategory.UNKNOWN_NGRAMS_MATCH.value
+
+    elif is_undetected_license_matches(license_matches=license_matches):
         return DetectionCategory.UNDETECTED_LICENSE.value
 
     elif has_unknown_intro_before_detection(license_matches=license_matches):
@@ -1739,6 +1763,20 @@ def analyze_detection(license_matches, package_license=False):
     # Cases where Match Coverage is a perfect 100 for all matches
     else:
         return DetectionCategory.PERFECT_DETECTION.value
+
+
+def has_low_quality_matches(license_matches):
+    """
+    Given a list of ``license_matches`` LicenseMatch objects, return True if
+    any of the LicenseMatch object is a low quality match, otherwise return
+    False.
+    """
+    for group_of_matches in group_matches(license_matches=license_matches):
+        analysis = analyze_detection(license_matches=group_of_matches,)
+        if analysis == DetectionCategory.LOW_QUALITY_MATCH_FRAGMENTS.value:
+            return True
+
+    return False
 
 
 def group_matches(license_matches, lines_threshold=LINES_THRESHOLD):
@@ -1894,7 +1932,6 @@ def detect_licenses(
     analysis=None,
     post_scan=False,
     package_license=False,
-    unknown_licenses=False,
     min_score=0,
     deadline=sys.maxsize,
     as_expression=False,
@@ -1929,12 +1966,28 @@ def detect_licenses(
         min_score=min_score,
         deadline=deadline,
         as_expression=as_expression,
-        unknown_licenses=unknown_licenses,
+        unknown_licenses=False,
         **kwargs,
     )
 
-    if not license_matches:
-        return
+    # TODO: Instead of analysing all matches once more, and then matching the
+    # whole query with unknown license detection on, we should get query runs
+    # for only the matches with low quality matches and then run the specific
+    # unknown license matching on those parts (outcome would be same, but with
+    # better performance)
+    if has_low_quality_matches(license_matches) or not license_matches:
+        unknown_license_matches = index.match(
+            location=location,
+            query_string=query_string,
+            min_score=min_score,
+            deadline=deadline,
+            unknown_licenses=True,
+            **kwargs,
+        )
+        if not unknown_license_matches:
+            return
+
+        license_matches = unknown_license_matches
 
     if TRACE:
         logger_debug(f"detection: detect_licenses: location: {location}: query_string: {query_string}")

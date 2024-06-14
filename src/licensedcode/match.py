@@ -72,6 +72,16 @@ TRACE_REPR_THRESHOLDS = False
 TRACE_REPR_ALL_MATCHED_TEXTS = False
 
 
+# All matchers
+MATCH_SPDX_ID = '1-spdx-id'
+MATCH_HASH = '1-hash'
+MATCH_AHO_EXACT = '2-aho'
+MATCH_SEQ = '3-seq'
+MATCH_UNDETECTED = '5-undetected'
+MATCH_AHO_FRAG = '5-aho-frag'
+MATCH_UNKNOWN = '6-unknown'
+
+
 def logger_debug(*args): pass
 
 
@@ -2621,7 +2631,7 @@ def is_candidate_false_positive(
         # only tags or refs,
         (match.rule.is_license_reference or match.rule.is_license_tag or match.rule.is_license_intro)
         # but not tags that are SPDX license identifiers
-        and not match.matcher == '1-spdx-id'
+        and not match.matcher == MATCH_SPDX_ID
         # exact matches only
         and match.coverage() == 100
 

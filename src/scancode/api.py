@@ -154,7 +154,6 @@ def get_licenses(
     license_text_diagnostics=False,
     license_diagnostics=False,
     deadline=sys.maxsize,
-    unknown_licenses=False,
     **kwargs,
 ):
     """
@@ -173,8 +172,6 @@ def get_licenses(
     `licenses` data as well as a file-level `percentage_of_license_text` 
     as the percentage of file words detected as license text or notice.
     This is used to determine if a file contains mostly licensing.
-
-    If ``unknown_licenses`` is True, also detect unknown licenses.
     """
     from licensedcode.cache import build_spdx_license_expression
     from licensedcode.cache import get_cache
@@ -191,7 +188,6 @@ def get_licenses(
         location=location,
         min_score=min_score,
         deadline=deadline,
-        unknown_licenses=unknown_licenses,
         **kwargs,
     )
 
