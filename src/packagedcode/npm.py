@@ -881,7 +881,7 @@ class YarnLockV1Handler(BaseNpmHandler):
         with io.open(location, encoding='utf-8') as yl:
             yl_dependencies = yl.read().split('\n\n')
 
-        dependencies = []
+        dependencies_by_purl = {}
         for yl_dependency in yl_dependencies:
             lines = yl_dependency.splitlines(False)
             if all(l.startswith('#') or not l.strip() for l in lines):
@@ -986,15 +986,15 @@ class YarnLockV1Handler(BaseNpmHandler):
                 resolved_package_data.dependencies.append(subdep)
 
             # we create a purl with a version, since we are resolved
-            dep_purl = PackageURL(
+            dep_purl = str(PackageURL(
                 type=cls.default_package_type,
                 namespace=ns,
                 name=name,
                 version=version,
-            )
+            ))
 
             dep = models.DependentPackage(
-                purl=str(dep_purl),
+                purl=dep_purl,
                 extracted_requirement=extracted_requirement,
                 is_resolved=True,
                 # FIXME: these are NOT correct
@@ -1004,8 +1004,14 @@ class YarnLockV1Handler(BaseNpmHandler):
                 is_direct=False,
                 resolved_package=resolved_package_data.to_dict(),
             )
-            dependencies.append(dep.to_dict())
 
+            if not dep_purl in dependencies_by_purl: 
+                dependencies_by_purl[dep_purl] = dep.to_dict()
+            else:
+                # We have duplicate dependencies because of aliases
+                pass
+
+        dependencies = list(dependencies_by_purl.values())
         update_dependencies_as_resolved(dependencies=dependencies)
         package_data = dict(
             datasource_id=cls.datasource_id,
