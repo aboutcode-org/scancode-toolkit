@@ -25,6 +25,8 @@ from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
 from packagedcode.utils import update_dependencies_as_resolved
+from packagedcode.utils import is_path_pattern
+from packagedcode.utils import is_simple_path_pattern
 import saneyaml
 
 """
@@ -299,8 +301,7 @@ class BaseNpmHandler(models.DatafileHandler):
         for workspace_path in workspaces:
 
             # Case 1: A definite path, instead of a pattern (only one package.json)
-            if '*' not in workspace_path:
-
+            if is_path_pattern(workspace_path):
                 workspace_dir_path = os.path.join(workspace_root_path, workspace_path)
                 workspace_member_path = os.path.join(workspace_dir_path, 'package.json')
                 workspace_member = codebase.get_resource(path=workspace_member_path)
@@ -310,8 +311,8 @@ class BaseNpmHandler(models.DatafileHandler):
             # Case 2: we have glob path which is a directory, relative to the workspace root
             # Here we have only one * at the last (This is an optimization, this is a very
             # commonly encountered subcase of case 3)
-            elif '*' == workspace_path[-1] and '*' not in workspace_path.replace('*', ''):
-                workspace_pattern_prefix = workspace_path.replace('*', '')
+            elif is_simple_path_pattern(workspace_path):
+                workspace_pattern_prefix = workspace_path.rstrip('*')
                 workspace_dir_path = os.path.join(workspace_root_path, workspace_pattern_prefix)
                 workspace_search_dir = codebase.get_resource(path=workspace_dir_path)
                 if not workspace_search_dir:
@@ -785,7 +786,8 @@ class YarnLockV2Handler(BaseNpmHandler):
                 version=version,
             )
 
-            # TODO: what type of checksum is this?
+            # TODO: what type of checksum is this? ... this is a complex one
+            # See https://github.com/yarnpkg/berry/blob/f1edfae49d1bab7679ce3061e2749113dc3b80e8/packages/yarnpkg-core/sources/tgzUtils.ts
             checksum = details.get('checksum')
             dependencies = details.get('dependencies') or {}
             peer_dependencies = details.get('peerDependencies') or {}
@@ -826,12 +828,16 @@ class YarnLockV2Handler(BaseNpmHandler):
                 is_virtual=True,
             )
             resolved_package = models.PackageData.from_data(resolved_package_mapping)
+
+            # These are top level dependencies which do not have a
+            # scope defined there, so we are assigning the default
+            # scope, this would be merged with the dependency having
+            # correct scope value when resolved
             dependency = models.DependentPackage(
                 purl=str(purl),
                 extracted_requirement=version,
                 is_resolved=True,
                 resolved_package=resolved_package.to_dict(),
-                # FIXME: these are NOT correct
                 scope='dependencies',
                 is_optional=False,
                 is_runtime=True,
@@ -1008,7 +1014,8 @@ class YarnLockV1Handler(BaseNpmHandler):
             if not dep_purl in dependencies_by_purl: 
                 dependencies_by_purl[dep_purl] = dep.to_dict()
             else:
-                # We have duplicate dependencies because of aliases
+                # FIXME: We have duplicate dependencies because of aliases
+                # should we do something?
                 pass
 
         dependencies = list(dependencies_by_purl.values())

@@ -374,10 +374,11 @@ class DependentPackage(ModelMixin):
     is_direct = Boolean(
         default=True,
         label='is direct flag',
-        help='True if this dependency version requirement is '
-             'a direct dependency relation between two packages '
-             'as opposed to a transitive dependency relation, '
-             'which are present in lockfiles/dependency list.')
+        help='True if this is a direct, first-level dependency, '
+             'defined in the manifest of a package. False if this '
+             'is an indirect, transitive dependency resolved from '
+             'first level dependencies.'
+    )
 
     resolved_package = Mapping(
         label='resolved package data',
@@ -692,18 +693,20 @@ class PackageData(IdentifiablePackageData):
 
     is_private = Boolean(
         default=False,
-        label='is resolved flag',
-        help='True if the associated package for this package manifest '
-             'is never meant to be published to the corresponding package '
-             'repository, and is a private package.'
+        label='is private flag',
+        help='True if this is a private package, either not meant to be '
+             'published on a repository, and/or a local package without a '
+             'name and version used primarily to track dependencies and '
+             'other information, and build this package, for instance with '
+             'JavaScript and PHP applications.'
     )
 
     is_virtual = Boolean(
         default=False,
         label='is virtual flag',
-        help='True if this package or any of its files are not present in '
-             'the codebase, but this package was created from a resolved '
-             'package, typically present in a lockfile.'
+        help='True if this package is created only from a manifest or lockfile, '
+             'and not from its actual packaged code. The files of this package '
+             'are not present in the codebase.'
     )
 
     extra_data = Mapping(

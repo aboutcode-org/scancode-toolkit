@@ -231,30 +231,22 @@ def update_dependencies_as_resolved(dependencies):
 
     # These are only type, namespace and name (without version and qualifiers)
     base_resolved_purls = []
-    base_purl_fields = ["type", "namespace", "name"]
-    try:
-        resolved_packages = [
-            dep.get("resolved_package")
-            for dep in dependencies
-            if dep.get("resolved_package")
-        ]
-    except AttributeError:
-        raise Exception(dependencies)
+    resolved_packages = [
+        dep.get("resolved_package")
+        for dep in dependencies
+        if dep.get("resolved_package")
+    ]
 
     # No resolved packages are present for dependencies
     if not resolved_packages:
         return
 
     for pkg in resolved_packages:
-        purl_mapping = PackageURL.from_string(purl=pkg.get("purl")).to_dict()
-        base_purl_mapping = {
-            purl_field: purl_value
-            for purl_field, purl_value in purl_mapping.items()
-            if purl_field in base_purl_fields
-        }
-        base_resolved_purls.append(
-            PackageURL(**base_purl_mapping).to_string()
-        )
+        purl=pkg.get("purl")
+        if purl:
+            base_resolved_purls.append(
+                get_base_purl(purl=purl)
+            )
 
     for dependency in dependencies:
         resolved_package = dependency.get("resolved_package")
@@ -271,3 +263,24 @@ def update_dependencies_as_resolved(dependencies):
                 dep["is_resolved"] = True
 
 
+def get_base_purl(purl):
+    """
+    Get a base purl with only the type, name and namespace from
+    a given purl.
+    """
+    base_purl_fields = ["type", "namespace", "name"]
+    purl_mapping = PackageURL.from_string(purl=purl).to_dict()
+    base_purl_mapping = {
+        purl_field: purl_value
+        for purl_field, purl_value in purl_mapping.items()
+        if purl_field in base_purl_fields
+    }
+    return PackageURL(**base_purl_mapping).to_string()
+
+
+def is_path_pattern(path):
+   return '*' not in path
+
+
+def is_simple_path_pattern(path):
+   return path.endswith('*') and path.count('*') == 1
