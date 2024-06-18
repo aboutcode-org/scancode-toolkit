@@ -84,7 +84,7 @@
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:npm/%22%40babel/parser%22",
+              "purl": "pkg:npm/%40babel/parser",
               "extracted_requirement": "^7.24.4",
               "scope": "dependencies",
               "is_runtime": true,
@@ -95,7 +95,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%22%40babel/types%22",
+              "purl": "pkg:npm/%40babel/types",
               "extracted_requirement": "^7.24.0",
               "scope": "dependencies",
               "is_runtime": true,
@@ -303,7 +303,7 @@
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:npm/%22%40esbuild/android-arm64%22",
+              "purl": "pkg:npm/%40esbuild/android-arm64",
               "extracted_requirement": "0.19.12",
               "scope": "dependencies",
               "is_runtime": true,
@@ -314,7 +314,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%22%40esbuild/android-x64%22",
+              "purl": "pkg:npm/%40esbuild/android-x64",
               "extracted_requirement": "0.19.12",
               "scope": "dependencies",
               "is_runtime": true,
@@ -501,7 +501,7 @@
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:npm/%22%40types/glob%22",
+              "purl": "pkg:npm/%40types/glob",
               "extracted_requirement": "^7.1.1",
               "scope": "dependencies",
               "is_runtime": true,

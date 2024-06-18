@@ -909,6 +909,8 @@ class YarnLockV1Handler(BaseNpmHandler):
                     # hosted-git-info "^2.1.4"
                     # semver "2 || 3 || 4 || 5"
                     ns_name, _, constraint = stripped.partition(' ')
+                    if '"' in ns_name:
+                        ns_name = ns_name.replace('"', '')
                     ns, _ , name = ns_name.rpartition('/')
                     sub_dependencies.append((ns, name, constraint,))
 
