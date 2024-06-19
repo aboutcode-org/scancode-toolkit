@@ -1662,6 +1662,11 @@ def deps_mapper(deps, package, field_name, is_direct=True):
             deps_by_name[npm_name] = d
 
     for fqname, requirement in deps.items():
+        # Handle cases in ``resolutions`` with ``**`` 
+        # "resolutions": {
+        #   "**/@typescript-eslint/eslint-plugin": "^4.1.1",
+        if fqname.startswith('**'):
+            fqname = fqname.replace('**', '')
         ns, name = split_scoped_package_name(fqname)
         if not name:
             continue
