@@ -47,6 +47,8 @@
       "pkg:deb/debian/util-linux@2.36.1-8%2Bdeb11u1"
     ],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "foreign"
     },

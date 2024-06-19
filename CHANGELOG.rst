@@ -34,6 +34,26 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+v32.2.0 - (next, roadmap)
+-------------------------
+
+- New and improved package/dependency data:
+  - Added new attribute in DependentPackage `is_direct` to aid
+    package resolution and dependency graph creation.
+  - Added new attributes in PackageData: `is_private` and
+    `is_virtual`. #3102 #3811
+  https://github.com/nexB/scancode-toolkit/pull/3779
+
+- Improved javascript package detection:
+  - Add support for pnpm manifests and lockfiles #3766
+  - Add support for npm, pnpm and yarn workspaces #3746
+  - Improve resolved package and dependencies support in lockfiles for
+    yarn.lock, package-lock.json, and pnpm. #3780
+  - Add support for private packages. #3120
+  - Add support for new dependency scopes across javascript
+  - Lots of misc bugfixes in yarn and npm parsers.
+  https://github.com/nexB/scancode-toolkit/pull/3779
+
 - Improve cargo package detection support with various improvements
   and bugfixes:
   - Fix for parser crashing on cargo workspaces
@@ -43,14 +63,10 @@ v33.0.0 (next next, roadmap)
   - Better handle workspace data thorugh extra_data attribute
   See https://github.com/nexB/scancode-toolkit/pull/3783
 
-- We now support parsing the Swift manifest JSON dump and the ``Package.resolved`` file https://github.com/nexB/scancode-toolkit/issues/2657.
-  - Run the commands below on your local Swift project before running the scan.
-    - ::
-
-        swift package dump-package > Package.swift.json
-    - ::
-
-        swift package resolve
+- We now support parsing the Swift manifest JSON dump and the
+  ``Package.resolved`` file https://github.com/nexB/scancode-toolkit/issues/2657.
+  Run the command below on your local Swift project before running the scan:
+    `swift package dump-package > Package.swift.json && swift package resolve``
 
 - New and updated licenses, including support for newly released
   SPDX license list versions:

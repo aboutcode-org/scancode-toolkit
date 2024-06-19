@@ -1,0 +1,44 @@
+{
+  "name": "jest-serializer-simple",
+  "version": "5.0.0-beta.3",
+  "description": "Jest serializer that gives really simple formatting",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepack": "tsc -b",
+    "watch": "tsc -b --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphile/crystal.git"
+  },
+  "keywords": [
+    "jest",
+    "graphql",
+    "schema",
+    "graphile",
+    "graphite"
+  ],
+  "author": "Benjie Gillam <code@benjiegillam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphile/crystal/issues"
+  },
+  "homepage": "https://github.com/graphile/crystal/tree/main/utils/jest-serializer-simple",
+  "dependencies": {
+    "@types/json5": "^2.2.0",
+    "json5": "^2.2.3",
+    "prettier": "^3.0.3",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "jest": "^29.6.4",
+    "pretty-format": "^29.6.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "files": [
+    "dist"
+  ]
+}

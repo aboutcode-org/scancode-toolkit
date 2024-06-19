@@ -581,6 +581,27 @@ Package type:  npm
   path_patterns:    '*/npm-shrinkwrap.json'
 --------------------------------------------
 Package type:  npm
+  datasource_id:     pnpm_lock_yaml
+  documentation URL: https://github.com/pnpm/spec/blob/master/lockfile/6.0.md
+  primary language:  JavaScript
+  description:       pnpm pnpm-lock.yaml lockfile
+  path_patterns:    '*/pnpm-lock.yaml'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     pnpm_shrinkwrap_yaml
+  documentation URL: https://github.com/pnpm/spec/blob/master/lockfile/4.md
+  primary language:  JavaScript
+  description:       pnpm shrinkwrap.yaml lockfile
+  path_patterns:    '*/shrinkwrap.yaml'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     pnpm_workspace_yaml
+  documentation URL: https://pnpm.io/pnpm-workspace_yaml
+  primary language:  JavaScript
+  description:       pnpm workspace yaml file
+  path_patterns:    '*/pnpm-workspace.yaml'
+--------------------------------------------
+Package type:  npm
   datasource_id:     yarn_lock_v1
   documentation URL: https://classic.yarnpkg.com/lang/en/docs/yarn-lock/
   primary language:  JavaScript

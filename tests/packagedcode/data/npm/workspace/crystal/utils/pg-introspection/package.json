@@ -1,0 +1,50 @@
+{
+  "name": "pg-introspection",
+  "version": "0.0.1-beta.8",
+  "description": "Strongly typed PostgreSQL introspection library",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "node dist/index.js",
+    "prepack": "tsc -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphile/crystal.git"
+  },
+  "keywords": [
+    "pg",
+    "postgres",
+    "postgresql",
+    "introspection",
+    "pg_class",
+    "pg_constraint",
+    "pg_attribute",
+    "pg_proc",
+    "graphile",
+    "graphite"
+  ],
+  "author": "Benjie Gillam <benjie@jemjie.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphile/crystal/issues"
+  },
+  "homepage": "https://github.com/graphile/crystal/tree/main/utils/pg-introspection",
+  "devDependencies": {
+    "@types/debug": "4.1.8",
+    "@types/jest": "^29.5.4",
+    "@types/node": "20.5.7",
+    "jest": "^29.6.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=14.17"
+  }
+}

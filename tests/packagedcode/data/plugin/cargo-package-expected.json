@@ -71,6 +71,8 @@
       "extracted_license_statement": "MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "documentation_url": "https://docs.rs/clap/"
       },
@@ -95,6 +97,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/bitflags?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -109,6 +112,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/unicode-width?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -123,6 +127,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/textwrap?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -137,6 +142,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "version": "0.8"
@@ -153,6 +159,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "version": "0.3.5"
@@ -169,6 +176,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "version": "~0.0.166"
@@ -185,6 +193,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "version": "0.2.2"
@@ -201,6 +210,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "version": "0.8"
@@ -217,6 +227,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "version": "0.3.0"
@@ -233,6 +244,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/regex?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -247,6 +259,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/lazy_static?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -261,6 +274,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/version-sync?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -346,6 +360,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "documentation_url": "https://docs.rs/clap/"
           },
@@ -357,6 +373,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -367,6 +384,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -377,6 +395,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -387,6 +406,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "version": "0.8"
@@ -399,6 +419,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "version": "0.3.5"
@@ -411,6 +432,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "version": "~0.0.166"
@@ -423,6 +445,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "version": "0.2.2"
@@ -435,6 +458,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "version": "0.8"
@@ -447,6 +471,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "version": "0.3.0"
@@ -459,6 +484,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -469,6 +495,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -479,6 +506,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

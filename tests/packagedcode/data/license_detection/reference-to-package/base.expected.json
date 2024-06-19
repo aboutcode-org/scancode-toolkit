@@ -76,6 +76,8 @@
       "extracted_license_statement": "classifiers:\n  - 'License :: OSI Approved :: BSD License'\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
       },
@@ -244,6 +246,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
           },

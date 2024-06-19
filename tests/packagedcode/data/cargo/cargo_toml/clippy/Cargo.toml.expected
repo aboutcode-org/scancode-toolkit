@@ -98,6 +98,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "rust_edition": "2018"
     },
@@ -109,6 +111,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "version": "0.0.212",
@@ -122,6 +125,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -132,6 +136,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -142,6 +147,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "version": "0.1.1",
@@ -155,6 +161,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "version": "0.0.1",
@@ -168,6 +175,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -178,6 +186,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -188,6 +197,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -198,6 +208,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -208,6 +219,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "version": "0.2",
@@ -221,6 +233,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -231,6 +244,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -241,6 +255,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -251,6 +266,7 @@
         "is_runtime": false,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "version": "0.1.1",

@@ -371,6 +371,15 @@ class DependentPackage(ModelMixin):
              'been resolved and this dependency url points to an '
              'exact version.')
 
+    is_direct = Boolean(
+        default=True,
+        label='is direct flag',
+        help='True if this is a direct, first-level dependency, '
+             'defined in the manifest of a package. False if this '
+             'is an indirect, transitive dependency resolved from '
+             'first level dependencies.'
+    )
+
     resolved_package = Mapping(
         label='resolved package data',
         help='A mapping of resolved package data for this dependent package, '
@@ -680,6 +689,24 @@ class PackageData(IdentifiablePackageData):
              'manifest. These may not actually exist on the filesystem. '
              'The exact semantics and base of these paths is specific to a '
              'package type or datafile format.'
+    )
+
+    is_private = Boolean(
+        default=False,
+        label='is private flag',
+        help='True if this is a private package, either not meant to be '
+             'published on a repository, and/or a local package without a '
+             'name and version used primarily to track dependencies and '
+             'other information, and build this package, for instance with '
+             'JavaScript and PHP applications.'
+    )
+
+    is_virtual = Boolean(
+        default=False,
+        label='is virtual flag',
+        help='True if this package is created only from a manifest or lockfile, '
+             'and not from its actual packaged code. The files of this package '
+             'are not present in the codebase.'
     )
 
     extra_data = Mapping(
@@ -1025,6 +1052,9 @@ class DatafileHandler:
 
     # Informational: Default primary language for this parser.
     default_primary_language = None
+
+    # If the datafilehandler contains only resolved dependencies
+    is_lockfile = False
 
     # Informational: Description of this parser
     description = None

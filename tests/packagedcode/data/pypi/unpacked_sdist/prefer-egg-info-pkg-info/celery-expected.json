@@ -102,6 +102,8 @@
       "extracted_license_statement": "license: BSD\nclassifiers:\n  - 'License :: OSI Approved :: BSD License'\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "Documentation": "https://docs.celeryproject.org/en/latest/index.html",
         "Changelog": "https://docs.celeryproject.org/en/stable/changelog.html",
@@ -128,6 +130,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/pytz?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -142,6 +145,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/billiard?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -156,6 +160,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/kombu?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -170,6 +175,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/vine?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -184,6 +190,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/click?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -198,6 +205,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/click-didyoumean?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -212,6 +220,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/click-repl?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -226,6 +235,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/click-plugins?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -240,6 +250,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/importlib-metadata?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -254,6 +265,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/pyarango?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -268,6 +280,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/cryptography?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -282,6 +295,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/azure-storage-blob@12.9.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -296,6 +310,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/brotli?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -310,6 +325,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/brotlipy?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -324,6 +340,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/cassandra-driver?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -338,6 +355,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/python-consul2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -352,6 +370,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/pydocumentdb@2.3.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -366,6 +385,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/couchbase?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -380,6 +400,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/pycouchdb?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -394,6 +415,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -408,6 +430,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/boto3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -422,6 +445,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/elasticsearch?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -436,6 +460,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/eventlet?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -450,6 +475,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/gevent?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -464,6 +490,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/librabbitmq?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -478,6 +505,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/pylibmc?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -492,6 +520,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/pymongo?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -506,6 +535,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/msgpack?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -520,6 +550,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/python-memcached?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -534,6 +565,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/pyro4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -548,6 +580,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/pytest-celery?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -562,6 +595,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/redis?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -576,6 +610,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/boto3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -590,6 +625,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/softlayer-messaging?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -604,6 +640,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/ephem?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -618,6 +655,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/sqlalchemy?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -632,6 +670,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/kombu?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -646,6 +685,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/tblib?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -660,6 +700,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/tblib?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -674,6 +715,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/pyyaml?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -688,6 +730,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/kazoo?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -702,6 +745,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/zstandard?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -825,6 +869,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://docs.celeryproject.org/en/latest/index.html",
             "Changelog": "https://docs.celeryproject.org/en/stable/changelog.html",
@@ -6826,6 +6872,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://docs.celeryproject.org/en/latest/index.html",
             "Changelog": "https://docs.celeryproject.org/en/stable/changelog.html",
@@ -6839,6 +6887,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6849,6 +6898,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6859,6 +6909,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6869,6 +6920,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6879,6 +6931,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6889,6 +6942,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6899,6 +6953,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6909,6 +6964,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6919,6 +6975,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6929,6 +6986,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6939,6 +6997,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6949,6 +7008,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6959,6 +7019,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6969,6 +7030,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6979,6 +7041,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6989,6 +7052,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -6999,6 +7063,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7009,6 +7074,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7019,6 +7085,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7029,6 +7096,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7039,6 +7107,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7049,6 +7118,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7059,6 +7129,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7069,6 +7140,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7079,6 +7151,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7089,6 +7162,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7099,6 +7173,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7109,6 +7184,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7119,6 +7195,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7129,6 +7206,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7139,6 +7217,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7149,6 +7228,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7159,6 +7239,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7169,6 +7250,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7179,6 +7261,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7189,6 +7272,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7199,6 +7283,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7209,6 +7294,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7219,6 +7305,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7229,6 +7316,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7239,6 +7327,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -7249,6 +7338,7 @@
               "is_runtime": true,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -7339,6 +7429,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -7348,6 +7440,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7369,6 +7462,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7390,6 +7484,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7411,6 +7506,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7432,6 +7528,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7453,6 +7550,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7474,6 +7572,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7495,6 +7594,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7516,6 +7616,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7537,6 +7638,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7558,6 +7660,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7579,6 +7682,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7600,6 +7704,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7621,6 +7726,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7642,6 +7748,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7663,6 +7770,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7684,6 +7792,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7705,6 +7814,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7726,6 +7836,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7747,6 +7858,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7768,6 +7880,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7789,6 +7902,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7810,6 +7924,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7831,6 +7946,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7852,6 +7968,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7873,6 +7990,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7894,6 +8012,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7915,6 +8034,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7936,6 +8056,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7957,6 +8078,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7978,6 +8100,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -7999,6 +8122,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8020,6 +8144,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8041,6 +8166,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8062,6 +8188,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8083,6 +8210,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8104,6 +8232,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8125,6 +8254,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8146,6 +8276,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8167,6 +8298,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8188,6 +8320,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -8209,6 +8342,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,

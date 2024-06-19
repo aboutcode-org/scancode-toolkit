@@ -63,6 +63,8 @@
       "extracted_license_statement": "Apache-2.0",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "documentation_url": "https://docs.rs/boring",
         "rust_edition": "2021"
@@ -138,6 +140,8 @@
       "extracted_license_statement": "MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "documentation_url": "https://docs.rs/boring-sys",
         "rust_edition": "2021"
@@ -210,6 +214,8 @@
       "extracted_license_statement": "MIT/Apache-2.0",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "documentation_url": "https://docs.rs/tokio-boring",
         "rust_edition": "2021"
@@ -282,6 +288,8 @@
       "extracted_license_statement": "MIT/Apache-2.0",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "documentation_url": "https://docs.rs/hyper-boring",
         "rust_edition": "2021"
@@ -307,6 +315,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/bitflags?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -321,6 +330,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/foreign-types?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -335,6 +345,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/once_cell?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -349,6 +360,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/libc?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -363,6 +375,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/boring-sys?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -377,6 +390,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/hex?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -391,6 +405,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/rusty-hook?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -405,6 +420,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/bindgen?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -419,6 +435,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/cmake?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -433,6 +450,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/fs_extra?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -447,6 +465,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/fslock?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -461,6 +480,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/boring?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -475,6 +495,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/boring-sys?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -489,6 +510,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/once_cell?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -503,6 +525,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/tokio?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -517,6 +540,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/futures?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -531,6 +555,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "features": [
@@ -549,6 +574,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/anyhow?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -563,6 +589,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/antidote?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -577,6 +604,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/http?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -591,6 +619,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "features": [
@@ -609,6 +638,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/linked_hash_set?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -623,6 +653,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/once_cell?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -637,6 +668,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/boring?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -651,6 +683,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/tokio?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -665,6 +698,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/tokio-boring?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -679,6 +713,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/tower-layer?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -693,6 +728,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "features": [
@@ -711,6 +747,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "features": [
@@ -729,6 +766,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "features": [
@@ -747,6 +785,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/futures?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -801,6 +840,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "workspace": {
               "members": [
@@ -963,6 +1004,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "documentation_url": "https://docs.rs/boring-sys",
             "rust_edition": "2021"
@@ -975,6 +1018,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -985,6 +1029,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -995,6 +1040,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1005,6 +1051,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1089,6 +1136,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "documentation_url": "https://docs.rs/boring",
             "rust_edition": "2021"
@@ -1101,6 +1150,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1111,6 +1161,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1121,6 +1172,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1131,6 +1183,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1141,6 +1194,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1151,6 +1205,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1161,6 +1216,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1245,6 +1301,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "documentation_url": "https://docs.rs/hyper-boring",
             "rust_edition": "2021"
@@ -1257,6 +1315,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1267,6 +1326,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1277,6 +1337,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "features": [
@@ -1291,6 +1352,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1301,6 +1363,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1311,6 +1374,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1321,6 +1385,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1331,6 +1396,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1341,6 +1407,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1351,6 +1418,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "features": [
@@ -1365,6 +1433,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "features": [
@@ -1379,6 +1448,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "features": [
@@ -1393,6 +1463,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1477,6 +1548,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "documentation_url": "https://docs.rs/tokio-boring",
             "rust_edition": "2021"
@@ -1489,6 +1562,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1499,6 +1573,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1509,6 +1584,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1519,6 +1595,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1529,6 +1606,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1539,6 +1617,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "features": [
@@ -1553,6 +1632,7 @@
               "is_runtime": false,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
