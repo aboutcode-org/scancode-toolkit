@@ -25,7 +25,7 @@ from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
 from packagedcode.utils import update_dependencies_as_resolved
-from packagedcode.utils import is_path_pattern
+from packagedcode.utils import is_simple_path
 from packagedcode.utils import is_simple_path_pattern
 import saneyaml
 
@@ -301,7 +301,7 @@ class BaseNpmHandler(models.DatafileHandler):
         for workspace_path in workspaces:
 
             # Case 1: A definite path, instead of a pattern (only one package.json)
-            if is_path_pattern(workspace_path):
+            if is_simple_path(workspace_path):
                 workspace_dir_path = os.path.join(workspace_root_path, workspace_path)
                 workspace_member_path = os.path.join(workspace_dir_path, 'package.json')
                 workspace_member = codebase.get_resource(path=workspace_member_path)

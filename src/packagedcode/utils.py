@@ -278,7 +278,7 @@ def get_base_purl(purl):
     return PackageURL(**base_purl_mapping).to_string()
 
 
-def is_path_pattern(path):
+def is_simple_path(path):
    return '*' not in path
 
 
