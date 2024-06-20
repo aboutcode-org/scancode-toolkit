@@ -34,8 +34,8 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
-v32.2.0 - (next, roadmap)
--------------------------
+v32.2.0 - 2024-06-19
+----------------------
 
 - New and improved package/dependency data:
   - Added new attribute in DependentPackage `is_direct` to aid
