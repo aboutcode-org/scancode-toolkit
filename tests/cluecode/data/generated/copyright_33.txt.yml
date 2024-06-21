@@ -6,8 +6,3 @@ copyrights:
   - Copyright 2019
 authors:
   - Pine <cdtsgsz@gmail.com>
-expected_failures:
-  - holders
-  - copyrights
-  - authors
-

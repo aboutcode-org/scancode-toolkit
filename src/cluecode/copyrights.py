@@ -215,8 +215,16 @@ class CopyrightDetector(object):
     """
 
     def __init__(self):
-        self.lexer = lex.Lexer(patterns)
-        self.parser = parse.Parser(grammar, trace=TRACE_DEEP, validate=VALIDATE)
+        """
+        Initialize this detector with a lexer and a parser.
+        """
+        self.lexer = lex.Lexer(matchers=PATTERNS)
+        self.parser = parse.Parser(
+            grammar=GRAMMAR,
+            loop=1,
+            trace=TRACE_DEEP,
+            validate=VALIDATE,
+        )
 
     def detect(self,
         numbered_lines,
@@ -591,7 +599,7 @@ _YEAR_OR_YEAR_YEAR_WITH_PUNCT = fr'({_YEAR_PUNCT}|{_YEAR_YEAR_PUNCT})'
 _YEAR_THEN_YEAR_SHORT = fr'({_YEAR_OR_YEAR_YEAR_WITH_PUNCT}({_YEAR_SHORT_PUNCT})*)'
 _YEAR_DASH_PRESENT = _YEAR + r'[\-~]? ?[Pp]resent\.?,?'
 
-patterns = [
+PATTERNS = [
     ############################################################################
     # COPYRIGHT
     ############################################################################
@@ -877,6 +885,7 @@ patterns = [
     (r'^DISCLAIMS?$', 'JUNK'),
     (r'^SPECIFICALLY$', 'JUNK'),
 
+    (r'^identifying', 'JUNK'),
     (r'^IDENTIFICATION$', 'JUNK'),
     (r'^WARRANTIE?S?$', 'JUNK'),
     (r'^WARRANTS?$', 'JUNK'),
@@ -1267,6 +1276,7 @@ patterns = [
     (r'^But$', 'NN'),
     (r'^Builders?\.?$', 'NN'),
     (r'^Cacute$', 'NN'),
+    (r'^CD$', 'JUNK'),
     (r'^Cell.$', 'NN'),
     (r'^Change\.?[lL]og$', 'NN'),
     (r'^CHANGElogger$', 'NN'),
@@ -1304,9 +1314,11 @@ patterns = [
     (r'^Education$', 'NN'),
     (r'^Extended', 'NN'),
     (r'^Every$', 'NN'),
-    (r'^Exhibit$', 'NN'),
+    (r'^EXHIBIT$', 'JUNK'),
+    (r'^Exhibit$', 'JUNK'),
     (r'^Digitized', 'NN'),
     (r'^[Ds]istributed?.?$', 'NN'),
+    (r'^Distributions?', 'NN'),
     (r'^Multiply$', 'NN'),
     (r'^Convert$', 'NN'),
     (r'^Compute$', 'NN'),
@@ -1314,7 +1326,6 @@ patterns = [
     (r'^Hessian$', 'NN'),
     (r'^Include', 'NN'),
     (r'^Downstream', 'NN'),
-    (r'^Distributions?', 'NN'),
     (r'^Volumes?', 'NN'),
     (r'^Manuals?.?', 'NN'),
     (r'^Update.?', 'NN'),
@@ -1435,8 +1446,8 @@ patterns = [
     (r'^Packaging$', 'NN'),
     (r'^Patent', 'NN'),
     (r'^Pentium$', 'NN'),
-    (r'^[Pp]ermission', 'NN'),
-    (r'^PERMISSIONS?', 'NN'),
+    (r'^[Pp]ermission', 'JUNK'),
+    (r'^PERMISSIONS?', 'JUNK'),
     (r'^PGP$', 'NN'),
     (r'^Phrase', 'NN'),
     (r'^Plugin', 'NN'),
@@ -1871,15 +1882,16 @@ patterns = [
 
     # same for developed, etc...
     (r'^[Cc]oded$', 'AUTH2'),
-    (r'^[Rr]ecoded$', 'AUTH2'),
-    (r'^[Mm]odified$', 'AUTH2'),
-    (r'^[Cc]reated$', 'AUTH2'),
+    (r'^\(?[Rr]ecoded$', 'AUTH2'),
+    (r'^\(?[Mm]odified$', 'AUTH2'),
+    (r'^\(?[Cc]reated$', 'AUTH2'),
     # written is often mispelled
-    (r'^[Ww]ritt?e[dn]$', 'AUTH2'),
+    (r'^\(?[Ww]ritt?e[dn]$', 'AUTH2'),
     # rewritten is often mispelled
-    (r'^[Rr]ewritt?e[dn]$', 'AUTH2'),
-    (r'^[Mm]aintained$', 'AUTH2'),
-    (r'^[Dd]eveloped$', 'AUTH2'),
+    (r'^\(?[Rr]ewritt?e[dn]$', 'AUTH2'),
+    (r'^\(?[Mm]aintained$', 'AUTH2'),
+    (r'^\(?[Dd]eveloped$', 'AUTH2'),
+    (r'^\(?[Au]thored$', 'AUTH2'),
 
     # commiters is interesting, and so a tag of its own
     (r'[Cc]ommitters\.?,?', 'COMMIT'),
@@ -1888,7 +1900,6 @@ patterns = [
     (r'^[Aa]dmins?$', 'MAINT'),
     (r'^[Dd]evelopers?\.?$', 'MAINT'),
     (r'^[Mm]aintainers?\.?$', 'MAINT'),
-    (r'^[Cc]o-maintainers?\.?$', 'MAINT'),
 
     ############################################################################
     # Conjunctions and related
@@ -1965,7 +1976,7 @@ patterns = [
     ############################################################################
 
     # rare cases of trailing + signon years
-    (r'^20[0-1][0-9]\+$', 'YR-PLUS'),
+    (r'^20[0-2][0-9]\+$', 'YR-PLUS'),
 
     # year or year ranges
     # plain year with various leading and trailing punct
@@ -2002,6 +2013,9 @@ patterns = [
 
     # slash dates as in 08/95
     (r'^(0?[1-9]|1[012])/[6-9][0-9][\.,]?$', 'YR'),
+
+    # ISO Dates: YYYY-MM-DD
+    (fr'^{_YEAR}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$', 'YR'),
 
     # weird year
     (r'today.year', 'YR'),
@@ -2162,7 +2176,7 @@ patterns = [
 # Comments in the Grammar are lines that start with #
 # End of line commenst are rules descriptions.
 # One rule per line.
-grammar = """
+GRAMMAR = """
 
 #######################################
 # YEARS
@@ -2336,7 +2350,7 @@ grammar = """
     NAME: {<NNP|PN>+ <NNP>+}        #351
 
     # Distributed Management Task Force
-    # NAME: {<NN> <NNP>{3}} #881111
+    NAME: {<NN> <NNP>{3}} #881111
 
     # @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
     NAME: { <NN>? <NN>? <EMAIL> <NAME> } #351.1
@@ -2407,10 +2421,10 @@ grammar = """
     NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>?} #5612
 
     #Academy of Motion Picture Arts and Sciences
-    NAME: {<NAME> <CC> <NNP>} # 561
+    NAME: {<NAME> <CC> <NNP>} #561
 
     # Adam Weinberger and the GNOME Foundation
-    NAME: {<CC> <NN> <COMPANY>} # 565
+    NAME: {<CC> <NN> <COMPANY>} #565
 
     # (c) 1991-1992, Thomas G. Lane , Part of the Independent JPEG Group's
     NAME: {<PORTIONS> <OF> <NN> <NAME>+} #566
@@ -2497,8 +2511,10 @@ grammar = """
     # <s>Timothy Terriberry</s>, <s>CSIRO</s>, and other contributors
     ANDCO: {<CC> <CAPS|COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+}          #960
 
+    COMPANY: {<COMPANY|NAME|NAME-EMAIL|NAME-YEAR> <ANDCO>+}     #970
+
     # Copyright © 1998-2009 Bill Spitzak (spitzak@users.sourceforge.net ) and others,
-    COMPANY: {<COMPANY|NAME|NAME-EMAIL|NAME-YEAR> <PARENS>? <ANDCO>+}     #970
+    COMPANY: {<COMPANY|NAME|NAME-EMAIL|NAME-YEAR> <PARENS>? <ANDCO>+}     #970.11
 
     # de Nemours and Company
     NAME: {<VAN>? <NNP> <ANDCO>+}                             #980
@@ -2596,7 +2612,7 @@ grammar = """
     # Copyright 2015 The Error Prone Authors.
     NAME: {<NN> <NAME> <CONTRIBUTORS|AUTHS>}        #196023
 
-    # Copyright (C) <s>Suresh P <suresh@ippimail.com></s> 
+    # Copyright (C) <s>Suresh P <suresh@ippimail.com></s>
     NAME: {<NNP> <PN> <EMAIL>} #19601.1
 
     # Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET
@@ -2611,9 +2627,14 @@ grammar = """
     #   Copyright (C) 1998-2001 VideoLAN ( Johan Bilien <jobi@via.ecp.fr> and Gildas Bazin <gbazin@netcourrier.com> )
     NAME: {<PARENS> <NAME> <PARENS>} #19653
 
+    #  by the Initial Developer
+    INITIALDEV:  {<BY>?  <NN>  <NN>  <MAINT>} #19663
 
-#################################    #COPYRIGHT: {<COPY> <COPY> <MIT>}        #1802
-######
+    # UNIVERTSITY OF CHICAGO
+    NAME: {<UNI>  <OF>  <CAPS>} #19673
+
+
+#######################################
 # VARIOUS FORMS OF COPYRIGHT
 #######################################
 
@@ -2648,9 +2669,6 @@ grammar = """
 
     # Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
     COPYRIGHT: {<COPY>+ <NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}        #157999
-
-    # portions copyright The Internet Society, Tom Tromey and Red Hat, Inc.
-    COPYRIGHT: {<PORTIONS>  <COPY>  <NN>  <NAME>}        #157998
 
     COPYRIGHT: {<COPY>+ <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}        #1590
 
@@ -2740,8 +2758,8 @@ grammar = """
     # (c) Copyright 1985-1999 SOME TECHNOLOGY SYSTEMS
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <CAPS> <CAPS> <CAPS>? <CAPS>?} #2271
 
-    # Minpack Copyright Notice (1999) University of Chicago
-    COPYRIGHT: {<COPY>  <NOTICE>  <NAME-YEAR>}  #2273.1
+    # Copyright Notice (1999) University of Chicago. All rights reserved
+    COPYRIGHT: {<COPY>  <NOTICE>  <NAME-YEAR>  <ALLRIGHTRESERVED>? } #2271.1
 
     # NAME-COPY is a name with a trailing copyright
     # Daisy (c) 1998
@@ -2789,7 +2807,6 @@ grammar = """
     # Copyright (C) 2006 XStream committers.
     # Copyright (c) 2019-2021, Open source contributors.
     # Copyright 2007 ZXing authors
-    # Copyright (c) 2002 the Initial Developer
     # Copyright (c) 2024 bgme <i@bgme.me>.
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>+ <CONTRIBUTORS|COMMIT|AUTHS|MAINT>? <EMAIL>? <ALLRIGHTRESERVED>?} #22793.3
 
@@ -2880,9 +2897,6 @@ grammar = """
 
     # maintainer Norbert Tretkowski <nobse@debian.org> 2005-04-16
     AUTHOR: {<BY|MAINT> <NAME-EMAIL> <YR-RANGE>?}  #26382
-
-    # Russ Dill <Russ.Dill@asu.edu> 2001-2003
-    COPYRIGHT: {<NAME-EMAIL> <YR-RANGE>}       #2638
 
     # (C) 2001-2009, <s>Takuo KITAME, Bart Martens, and  Canonical, LTD</s>
     COPYRIGHT: {<COPYRIGHT> <NNP> <COMPANY>}       #26381
@@ -3081,9 +3095,6 @@ grammar = """
     # Copyright OProfile authors
     COPYRIGHT: {<COPY> <NN>?<NNP>+ <AUTHS>}         #83004
 
-    # (C) Distributed Management Task Force (Distributed is an NN)
-    # COPYRIGHT: {<COPY> <NN> <NAME>}         #83010
-
     # Copyright (c) 2014 The Rust Project Developers
     COPYRIGHT: {<COPYRIGHT>  <MAINT> }       #83020
 
@@ -3092,14 +3103,44 @@ grammar = """
 
     # Copyright: 2004-2007 by Internet Systems Consortium, Inc. ("ISC")
     #            1995-2003 by Internet Software Consortium
-    COPYRIGHT: {<YR-RANGE>  <BY>  <COMPANY> } #1615
+    COPYRIGHT: {<COPYRIGHT> <NN> <YR-RANGE>  <BY>  <COMPANY> } #1615
+
+    # Russ Dill <Russ.Dill@asu.edu> 2001-2003
+    # Rewrited by Vladimir Oleynik <dzo@simtreas.ru> (C) 2003
+    COPYRIGHT: {<NAME-EMAIL>  <YR-RANGE>  <AUTH2>  <BY>  <NAME-EMAIL>  <COPY>  <YR-RANGE>} #22793.5
+
+    # portions copyright The Internet Society, Tom Tromey and Red Hat, Inc.
+    COPYRIGHT: {<PORTIONS>  <COPY>  <NN>  <NAME>}        #157998
+
+    # Minpack Copyright Notice (1999) University of Chicago
+    COPYRIGHT: {<COPY>  <NOTICE>  <NAME-YEAR>}  #2273.1
+
+    # Portions created by the Initial Developer are Copyright (C)
+    # the Initial Developer. All Rights Reserved.
+    COPYRIGHT: {<PORTIONS>  <AUTH2>  <INITIALDEV>  <IS>  <COPY|COPYRIGHT2>+  <YR-RANGE>? <INITIALDEV>} #2609.1
+
+    # Portions created by the Initial Developer are Copyright (C) 
+    # the Initial Developer. All Rights Reserved.
+    # and
+    # Portions created by the Initial Developer are Copyright (C) 2002
+    # the Initial Developer. All Rights Reserved.
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2>  <INITIALDEV>  <ALLRIGHTRESERVED>?}  #2609.2
+
+    # Copyright (C) the Initial Developer.
+    COPYRIGHT: {<COPY>+  <INITIALDEV>} #35012
+
+    # (C) Distributed Management Task Force (Distributed is an NN)
+    # COPYRIGHT: {<COPY> <NN>? <NAME>}         #83010
+
+    # Gracenote, Inc., copyright © 2000-2008 Gracenote.
+    # Gracenote Software, copyright © 2000-2008 Gracenote.
+    COPYRIGHT: {<COMPANY> <COPY>{1,2} <NAME-YEAR>}        #157999.12
 
 #######################################
 # Copyright is held by ....
 #######################################
     # Copyright is held by ....
     COPYRIGHT: {<COPY> <IS> <HELD> <BY> <NNP|NAME|COMPANYNAME-EMAIL>+ }         #10989898
-
 
 #######################################
 # Authors
@@ -3194,7 +3235,8 @@ grammar = """
     # Copyright (c) 2015 Jon Schlinkert, contributors.
     COPYRIGHT: { <COPYRIGHT>  <CONTRIBUTORS>} #420121
 
-
+    # J. Schoenwaelder, Copyright (c) 1999
+    # COPYRIGHT: {<NAME> <COPYRIGHT>} #22793.7
 
 #######################################
 # Last resort catch all ending with ALLRIGHTRESERVED
@@ -3246,6 +3288,19 @@ def refine_copyright(c):
     return c.strip()
 
 
+def remove_dupe_holder(h):
+    """
+    Remove duplicated holders
+    """
+    dupes_holders = {
+        "the Initial Developer the Initial Developer": "the Initial Developer",
+    }
+    for src, tgt in dupes_holders.items():
+        if src in h:
+            h = h.replace(src, tgt)
+    return h
+
+
 def refine_holder(h):
     """
     Refine a detected holder.
@@ -3278,6 +3333,7 @@ def refine_holder(h):
     h = h.strip('+- ')
     h = strip_trailing_period(h)
     h = h.strip('+- ')
+    h = remove_dupe_holder(h)
     h = ' '.join(h.split())
     if h and h.lower() not in HOLDERS_JUNK:
         return h
@@ -3694,7 +3750,9 @@ def remove_some_extra_words_and_punct(c):
     c = c.replace(".net'", ".net")
     c = c.replace("mailto:", "")
     c = c.replace("@see", "")
-    return c
+    if c.endswith('as represented by'):
+        c, _, _ = c.partition('as represented by')
+    return c.strip()
 
 
 def strip_prefixes(s, prefixes=()):

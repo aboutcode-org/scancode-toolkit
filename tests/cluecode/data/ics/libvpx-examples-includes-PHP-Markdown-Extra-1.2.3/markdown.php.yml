@@ -18,5 +18,3 @@ holders_summary:
   - value: Michel Fortin
     count: 2
 notes: we do not want a trailing http
-expected_failures:
-  - copyrights
