@@ -2014,9 +2014,6 @@ PATTERNS = [
     # slash dates as in 08/95
     (r'^(0?[1-9]|1[012])/[6-9][0-9][\.,]?$', 'YR'),
 
-    # ISO Dates: YYYY-MM-DD
-    (fr'^{_YEAR}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$', 'YR'),
-
     # weird year
     (r'today.year', 'YR'),
     (r'^\$?LastChangedDate\$?$', 'YR'),
@@ -3104,10 +3101,6 @@ GRAMMAR = """
     # Copyright: 2004-2007 by Internet Systems Consortium, Inc. ("ISC")
     #            1995-2003 by Internet Software Consortium
     COPYRIGHT: {<COPYRIGHT> <NN> <YR-RANGE>  <BY>  <COMPANY> } #1615
-
-    # Russ Dill <Russ.Dill@asu.edu> 2001-2003
-    # Rewrited by Vladimir Oleynik <dzo@simtreas.ru> (C) 2003
-    COPYRIGHT: {<NAME-EMAIL>  <YR-RANGE>  <AUTH2>  <BY>  <NAME-EMAIL>  <COPY>  <YR-RANGE>} #22793.5
 
     # portions copyright The Internet Society, Tom Tromey and Red Hat, Inc.
     COPYRIGHT: {<PORTIONS>  <COPY>  <NN>  <NAME>}        #157998
