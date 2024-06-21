@@ -55,7 +55,13 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "engines": {
+        "node": ">=0.2.4"
+      }
+    },
     "dependencies": [],
     "repository_homepage_url": "https://www.npmjs.com/package/automatta",
     "repository_download_url": "https://registry.npmjs.org/automatta/-/automatta-0.0.1.tgz",

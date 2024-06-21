@@ -1,0 +1,5 @@
+type: npm
+name: vuepack
+version: 0.3.2
+vcs_url: https://github.com/znck/vuepack
+download_url: https://github.com/znck/vuepack/releases/tag/v0.3.2

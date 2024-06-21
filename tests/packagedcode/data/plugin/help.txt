@@ -581,6 +581,27 @@ Package type:  npm
   path_patterns:    '*/npm-shrinkwrap.json'
 --------------------------------------------
 Package type:  npm
+  datasource_id:     pnpm_lock_yaml
+  documentation URL: https://github.com/pnpm/spec/blob/master/lockfile/6.0.md
+  primary language:  JavaScript
+  description:       pnpm pnpm-lock.yaml lockfile
+  path_patterns:    '*/pnpm-lock.yaml'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     pnpm_shrinkwrap_yaml
+  documentation URL: https://github.com/pnpm/spec/blob/master/lockfile/4.md
+  primary language:  JavaScript
+  description:       pnpm shrinkwrap.yaml lockfile
+  path_patterns:    '*/shrinkwrap.yaml'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     pnpm_workspace_yaml
+  documentation URL: https://pnpm.io/pnpm-workspace_yaml
+  primary language:  JavaScript
+  description:       pnpm workspace yaml file
+  path_patterns:    '*/pnpm-workspace.yaml'
+--------------------------------------------
+Package type:  npm
   datasource_id:     yarn_lock_v1
   documentation URL: https://classic.yarnpkg.com/lang/en/docs/yarn-lock/
   primary language:  JavaScript
@@ -777,6 +798,20 @@ Package type:  rpm
   path_patterns:    '*rpm/rpmdb.sqlite'
 --------------------------------------------
 Package type:  rpm
+  datasource_id:     rpm_mariner_manifest
+  documentation URL: https://github.com/microsoft/marinara/
+  primary language:  None
+  description:       RPM mariner distroless package manifest
+  path_patterns:    '*var/lib/rpmmanifest/container-manifest-2'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_package_licenses
+  documentation URL: https://github.com/microsoft/marinara/
+  primary language:  None
+  description:       RPM mariner distroless package license files
+  path_patterns:    '*usr/share/licenses/*/COPYING*', '*usr/share/licenses/*/LICENSE*'
+--------------------------------------------
+Package type:  rpm
   datasource_id:     rpm_spefile
   documentation URL: https://en.wikipedia.org/wiki/RPM_Package_Manager
   primary language:  None
@@ -796,6 +831,20 @@ Package type:  squashfs
   primary language:  None
   description:       Squashfs disk image
   path_patterns:    
+--------------------------------------------
+Package type:  swift
+  datasource_id:     swift_package_manifest_json
+  documentation URL: https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
+  primary language:  Swift
+  description:       JSON dump of Package.swift created with ``swift package dump-package > Package.swift.json``
+  path_patterns:    '*/Package.swift.json'
+--------------------------------------------
+Package type:  swift
+  datasource_id:     swift_package_resolved
+  documentation URL: https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#package-dependency
+  primary language:  swift
+  description:       Resolved full dependency lockfile for Package.swift created with ``swift package resolve``
+  path_patterns:    '*/Package.resolved', '*/.package.resolved'
 --------------------------------------------
 Package type:  war
   datasource_id:     java_war_archive

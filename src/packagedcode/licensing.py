@@ -60,6 +60,13 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
+RESOURCE_TO_PACKAGE_LICENSE_FIELDS = {
+    'detected_license_expression': 'declared_license_expression',
+    'detected_license_expression_spdx': 'declared_license_expression_spdx',
+    'license_detections': 'license_detections',
+}
+
+
 def add_referenced_license_matches_for_package(resource, codebase):
     """
     Return an updated ``resource`` saving it in place, after adding new license

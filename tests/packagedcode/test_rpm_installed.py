@@ -126,6 +126,13 @@ class TestRpmInstalled(PackageTester):
         result = json.loads(json.dumps(result))
         check_result_equals_expected_json(result, expected, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_mariner_rpm_with_licenses(self):
+        test_dir = self.get_test_loc('rpm_installed/mariner/scan/')
+        expected_file = self.get_test_loc(f'rpm_installed/mariner/scan.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--system-package', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
     @pytest.mark.scanslow
     @pytest.mark.skipif(not on_linux, reason='RPM command is only available on Linux')
     def test_scan_system_package_end_to_end_installed_rpms_fedora_bdb(self):

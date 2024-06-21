@@ -44,6 +44,17 @@ class TestRpmBasics(FileBasedTesting):
         )
         check_result_equals_expected_json(result, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_mariner_manifest(self):
+        test_file = self.get_test_loc('rpm_installed/mariner/scan/var/lib/rpmmanifest/container-manifest-2')
+        package_datas = rpm.RpmMarinerContainerManifestHandler.parse(location=test_file)
+        result = [pd.to_dict() for pd in package_datas]
+
+        expected_loc = self.get_test_loc(
+            'rpm_installed/mariner/rpm-manifest-expected.json',
+            must_exist=False,
+        )
+        check_result_equals_expected_json(result, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
         from packagedcode.pyrpm import RPM

@@ -76,6 +76,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "Donate": "https://palletsprojects.com/donate",
       "Documentation": "https://flask.palletsprojects.com/",

@@ -39,6 +39,7 @@ from packagedcode import pypi
 from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
+from packagedcode import swift
 from packagedcode import win_pe
 from packagedcode import windows
 
@@ -149,6 +150,9 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     npm.NpmShrinkwrapJsonHandler,
     npm.YarnLockV1Handler,
     npm.YarnLockV2Handler,
+    npm.PnpmShrinkwrapYamlHandler,
+    npm.PnpmLockYamlHandler,
+    npm.PnpmWorkspaceYamlHandler,
 
     nuget.NugetNupkgHandler,
     nuget.NugetNuspecHandler,
@@ -197,6 +201,9 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     rubygems.GemspecInExtractedGemHandler,
     rubygems.GemspecHandler,
 
+    swift.SwiftManifestJsonHandler,
+    swift.SwiftPackageResolvedHandler,
+
     windows.MicrosoftUpdateManifestHandler,
 
     win_pe.WindowsExecutableHandler,
@@ -217,7 +224,10 @@ SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
 
     debian.DebianInstalledFilelistHandler,
     debian.DebianInstalledMd5sumFilelistHandler,
-    debian.DebianInstalledStatusDatabaseHandler
+    debian.DebianInstalledStatusDatabaseHandler,
+
+    rpm.RpmLicenseFilesHandler,
+    rpm.RpmMarinerContainerManifestHandler
 ]
 
 if on_linux:

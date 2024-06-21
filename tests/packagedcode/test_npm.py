@@ -239,6 +239,13 @@ class TestNpm(PackageTester):
         packages = npm.NpmPackageJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_package_json_with_resolutions(self):
+        test_file = self.get_test_loc('npm/with_resolutions/package.json')
+        expected_loc = self.get_test_loc(
+            'npm/with_resolutions/package.json-expected')
+        packages = npm.NpmPackageJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_is_datafile_package_lock_json_v1(self):
         test_file = self.get_test_loc('npm/package-lock-v1/package-lock.json')
         assert npm.NpmPackageLockJsonHandler.is_datafile(test_file)
@@ -304,10 +311,31 @@ class TestNpm(PackageTester):
         packages = npm.YarnLockV1Handler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_yarn_lock_v1_complex(self):
+    def test_parse_yarn_lock_v1_namespaces(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-2/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-2/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_yarn_lock_v1_complex_with_aliases(self):
         test_file = self.get_test_loc('npm/yarn-lock/v1-complex/yarn.lock')
         expected_loc = self.get_test_loc(
             'npm/yarn-lock/v1-complex/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_yarn_lock_v1_complex_with_multiple_requirements(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-complex2/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-complex2/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_yarn_lock_v1_complex_with_duplicate_aliases(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-complex3/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-complex3/yarn.lock-expected')
         packages = npm.YarnLockV1Handler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
@@ -321,6 +349,78 @@ class TestNpm(PackageTester):
         expected_loc = self.get_test_loc(
             'npm/yarn-lock/v2/yarn.lock-expected')
         packages = npm.YarnLockV2Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_npm_yarn_with_package_json_resolve_dependencies(self):
+        test_folder = self.get_test_loc('npm/yarn-lock/resolve-deps/')
+        expected_file = self.get_test_loc('npm/yarn-lock/resolve-deps.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_is_datafile_pnpm_shrinkwrap_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
+        assert npm.PnpmShrinkwrapYamlHandler.is_datafile(test_file)
+
+    def test_is_datafile_pnpm_lock_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/pnpm-lock.yaml')
+        assert npm.PnpmLockYamlHandler.is_datafile(test_file)
+
+    def test_parse_pnpm_lock_yaml_v5(self):
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/pnpm-lock.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe-pnpm-lock.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pnpm_lock_yaml_v6(self):
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler/pnpm-lock.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler-pnpm-lock.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pnpm_shrinkwrap_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack-shrinkwrap.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_pnpm_scan_with_workspace_package_json(self):
+        test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/')
+        expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe-scan.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_pnpm_scan_with_simple_package_json(self):
+        test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler/')
+        expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v6/tabler-scan.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_npm_yarn_scan_with_workspace_package_json(self):
+        test_folder = self.get_test_loc('npm/workspace/crystal/')
+        expected_file = self.get_test_loc('npm/workspace/crystal.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_is_datafile_pnpm_workspace_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/workspace/pnpm-workspace.yaml')
+        assert npm.PnpmWorkspaceYamlHandler.is_datafile(test_file)
+
+    def test_parse_pnpm_workspace_yaml(self):
+        test_file = self.get_test_loc('npm/pnpm/workspace/pnpm-workspace.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/workspace/pnpm-workspace.yaml-expected.json')
+        packages = npm.PnpmWorkspaceYamlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_vcs_repository_mapper(self):

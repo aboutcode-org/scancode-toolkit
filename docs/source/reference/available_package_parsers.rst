@@ -233,6 +233,7 @@ parsers in scancode-toolkit during documentation builds.
      - https://r-pkgs.org/description.html
    * - Debian control file - extracted layout
      - ``*/control.tar.gz-extract/control``
+       ``*/control.tar.xz-extract/control``
      - ``deb``
      - ``debian_control_extracted_deb``
      - None
@@ -538,6 +539,24 @@ parsers in scancode-toolkit during documentation builds.
      - ``npm_shrinkwrap_json``
      - JavaScript
      - https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json
+   * - pnpm pnpm-lock.yaml lockfile
+     - ``*/pnpm-lock.yaml``
+     - ``npm``
+     - ``pnpm_lock_yaml``
+     - JavaScript
+     - https://github.com/pnpm/spec/blob/master/lockfile/6.0.md
+   * - pnpm shrinkwrap.yaml lockfile
+     - ``*/shrinkwrap.yaml``
+     - ``npm``
+     - ``pnpm_shrinkwrap_yaml``
+     - JavaScript
+     - https://github.com/pnpm/spec/blob/master/lockfile/4.md
+   * - pnpm workspace yaml file
+     - ``*/pnpm-workspace.yaml``
+     - ``npm``
+     - ``pnpm_workspace_yaml``
+     - JavaScript
+     - https://pnpm.io/pnpm-workspace_yaml
    * - yarn.lock lockfile v1 format
      - ``*/yarn.lock``
      - ``npm``
@@ -716,6 +735,19 @@ parsers in scancode-toolkit during documentation builds.
      - ``rpm_installed_database_sqlite``
      - None
      - https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb
+   * - RPM mariner distroless package manifest
+     - ``*var/lib/rpmmanifest/container-manifest-2``
+     - ``rpm``
+     - ``rpm_mariner_manifest``
+     - None
+     - https://github.com/microsoft/marinara/
+   * - RPM mariner distroless package license files
+     - ``*usr/share/licenses/*/COPYING*``
+       ``*usr/share/licenses/*/LICENSE*``
+     - ``rpm``
+     - ``rpm_package_licenses``
+     - None
+     - https://github.com/microsoft/marinara/
    * - RPM specfile
      - ``*.spec``
      - ``rpm``
@@ -734,6 +766,19 @@ parsers in scancode-toolkit during documentation builds.
      - ``squashfs_disk_image``
      - None
      - https://en.wikipedia.org/wiki/SquashFS
+   * - JSON dump of Package.swift created with ``swift package dump-package &gt; Package.swift.json``
+     - ``*/Package.swift.json``
+     - ``swift``
+     - ``swift_package_manifest_json``
+     - Swift
+     - https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
+   * - Resolved full dependency lockfile for Package.swift created with ``swift package resolve``
+     - ``*/Package.resolved``
+       ``*/.package.resolved``
+     - ``swift``
+     - ``swift_package_resolved``
+     - swift
+     - https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#package-dependency
    * - Java Web Application Archive
      - ``*.war``
      - ``war``

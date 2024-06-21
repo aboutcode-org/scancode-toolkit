@@ -114,6 +114,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "documentation": "https://python-gino.org/docs/"
     },

@@ -51,17 +51,17 @@
         "license_expression_spdx": "Apache-2.0",
         "matches": [
           {
-            "score": 100.0,
-            "start_line": 1,
-            "end_line": 1,
-            "from_file": null,
-            "matched_length": 3,
-            "match_coverage": 100.0,
-            "matcher": "1-hash",
             "license_expression": "apache-2.0",
             "spdx_license_expression": "Apache-2.0",
-            "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
             "rule_relevance": 100,
+            "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
             "matched_text": "Apache-2.0"
           }
@@ -284,6 +284,8 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -293,6 +295,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -303,6 +306,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -313,6 +317,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -323,6 +328,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -333,6 +339,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -343,6 +350,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -353,6 +361,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -363,6 +372,7 @@
         "is_runtime": true,
         "is_optional": true,
         "is_resolved": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

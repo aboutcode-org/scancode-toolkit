@@ -1,0 +1,48 @@
+{
+  "name": "eslint-plugin-graphile-export",
+  "version": "0.0.2-beta.4",
+  "description": "ESLint plugin to help ensure your schema is exportable by graphile-export",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepack": "tsc -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphile/crystal.git"
+  },
+  "keywords": [
+    "eslint-plugin",
+    "graphile",
+    "exporter",
+    "schema",
+    "graphite"
+  ],
+  "author": "Benjie Gillam <code@benjiegillam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphile/crystal/issues"
+  },
+  "homepage": "https://graphile.org/",
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "peerDependencies": {
+    "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@babel/types": "^7.22.11",
+    "@types/eslint": "^8.44.2",
+    "@types/estree": "^1.0.1",
+    "@types/jest": "^29.5.4",
+    "jest": "^29.6.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

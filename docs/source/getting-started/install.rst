@@ -160,6 +160,32 @@ in the extracted directory and run::
 
 This will configure ScanCode and display the command line :ref:`cli_help_text`.
 
+.. note::
+   If you encounter a "No matching distribution" error while running the ``./configure`` command on a Mac M1, it may indicate compatibility issues with the current architecture. Here's a step-by-step guide to address this:
+
+   - **Change Mac M1 Architecture to x86_64:**
+     Switch the architecture from amd64 to x86_64 using the command:
+     ::
+
+         env /usr/bin/arch -x86_64 /bin/zsh --login
+   - **Use Rosetta Translation:**
+     Enable Rosetta translation in Terminal by executing:
+     ::
+
+         softwareupdate --install-rosetta
+   - **Transition Homebrew from arm64 to Intel:**
+     Change Homebrew from the arm64 architecture to the Intel (x86) architecture by running:
+     ::
+
+         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+   - **Install Intel-Specific Python:**
+     Use Homebrew to install Python specifically optimized for Intel architecture with:
+     ::
+
+         /usr/local/Homebrew/bin/brew install python3
+
+   Then rerun the ``./configure`` command. This sets up the project according to the new architecture and ensures proper configuration.
+   Following these steps should help resolve compatibility issues and allow smooth operation of the project on Mac M1 devices.
 
 .. _windows_app_install:
 

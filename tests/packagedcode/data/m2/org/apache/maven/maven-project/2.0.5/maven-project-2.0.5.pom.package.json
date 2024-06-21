@@ -34,6 +34,8 @@
     "pkg:maven/org.apache.maven/maven-project@2.0.5?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -43,6 +45,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -53,6 +56,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -63,6 +67,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -73,6 +78,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -83,6 +89,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -93,6 +100,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -103,6 +111,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -113,6 +122,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

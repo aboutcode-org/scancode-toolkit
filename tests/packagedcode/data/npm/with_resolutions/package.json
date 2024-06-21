@@ -1,0 +1,44 @@
+{
+    "homepage": "https://jonghwapark.github.io/brawler/",
+    "name": "client",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@testing-library/jest-dom": "^4.2.4",
+      "@testing-library/react": "^9.3.2",
+      "@testing-library/user-event": "^7.1.2",
+      "@types/classnames": "^2.2.11",
+      "@types/jest": "^26.0.15",
+      "@types/node": "^14.14.0",
+      "@types/react": "^16.9.53",
+      "@types/react-dom": "^16.9.8",
+      "@types/react-redux": "^7.1.9",
+      "@types/react-router-dom": "^5.1.6",
+      "gh-pages": "^3.1.0",
+      "http-proxy-middleware": "^1.1.0",
+      "immutable": "^4.0.0-rc.12",
+      "node-sass": "^4.14.1",
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1",
+      "react-native-web": "^0.16.3",
+      "react-redux": "^7.2.1",
+      "react-router-dom": "^5.2.0",
+      "react-router-redux": "^4.0.8",
+      "react-scripts": "3.4.3",
+      "redux-saga": "^1.1.3",
+      "semantic-ui-css": "^2.4.1",
+      "semantic-ui-react": "^2.0.0",
+      "typescript": "^4.1.3"
+    },
+    "devDependencies": {
+      "axios": "^0.20.0",
+      "classnames": "^2.2.6",
+      "redux": "^4.0.5",
+      "redux-devtools-extension": "^2.13.8"
+    },
+    "resolutions": {
+      "**/@typescript-eslint/eslint-plugin": "^4.1.1",
+      "**/@typescript-eslint/parser": "^4.1.1"
+    }
+  }
+  

@@ -38,32 +38,32 @@
       "license_expression_spdx": "EPL-1.0",
       "matches": [
         {
-          "score": 100.0,
-          "start_line": 1,
-          "end_line": 1,
-          "from_file": null,
-          "matched_length": 6,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
           "license_expression": "epl-1.0",
           "spdx_license_expression": "EPL-1.0",
-          "rule_identifier": "epl-1.0_4.RULE",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 6,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "epl-1.0_4.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_4.RULE",
           "matched_text": "- name: Eclipse Public License - v 1.0"
         },
         {
-          "score": 100.0,
-          "start_line": 2,
-          "end_line": 2,
-          "from_file": null,
-          "matched_length": 8,
-          "match_coverage": 100.0,
-          "matcher": "2-aho",
           "license_expression": "epl-1.0",
           "spdx_license_expression": "EPL-1.0",
-          "rule_identifier": "epl-1.0.RULE",
+          "from_file": null,
+          "start_line": 2,
+          "end_line": 2,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 8,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
+          "rule_identifier": "epl-1.0.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0.RULE",
           "matched_text": "  url: http://www.eclipse.org/legal/epl-v10.html"
         }
@@ -80,6 +80,8 @@
     "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -89,6 +91,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -99,6 +102,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -109,6 +113,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -119,6 +124,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -129,6 +135,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -139,6 +146,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -149,6 +157,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -159,6 +168,7 @@
       "is_runtime": false,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

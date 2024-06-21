@@ -29,12 +29,11 @@ declared_license_expression_spdx: GPL-3.0-or-later WITH GCC-exception-3.1 AND GP
   AND BSD-4.3TAHOE AND BSD-4-Clause-UC AND BSD-3-Clause AND BSD-4-Clause-UC AND BSD-3-Clause-flex
   AND BSD-4-Clause-UC AND (GPL-3.0-only AND GPL-2.0-only AND LGPL-3.0-or-later WITH LicenseRef-scancode-cygwin-exception-lgpl-3.0-plus
   AND LicenseRef-scancode-other-copyleft AND LicenseRef-scancode-other-permissive) AND dtoa
-  AND LicenseRef-scancode-amd-historical AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical
-  AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause AND LicenseRef-scancode-amd-historical
-  AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson
-  AND BSD-2-Clause AND BSD-3-Clause AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later
-  AND LGPL-2.0-or-later AND LicenseRef-scancode-intel-osl-1993 AND HP-1986 AND Spencer-94 AND
-  BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause AND LicenseRef-scancode-unicode
+  AND AMD-newlib AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical
+  AND BSD-3-Clause AND AMD-newlib AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause
+  AND LicenseRef-scancode-x11-hanson AND BSD-2-Clause AND BSD-3-Clause AND LGPL-2.0-or-later
+  AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.0-or-later AND HPND-Intel AND HP-1986
+  AND Spencer-94 AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause AND LicenseRef-scancode-unicode
   AND LicenseRef-scancode-unicode AND LGPL-2.1-or-later
 other_license_expression:
 other_license_expression_spdx:
@@ -1284,10 +1283,10 @@ license_detections:
           OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
     identifier: x11_lucent-0e33f797-24ab-9665-2d4b-10a0ff4d546d
   - license_expression: amd-historical
-    license_expression_spdx: LicenseRef-scancode-amd-historical
+    license_expression_spdx: AMD-newlib
     matches:
       - license_expression: amd-historical
-        spdx_license_expression: LicenseRef-scancode-amd-historical
+        spdx_license_expression: AMD-newlib
         from_file:
         start_line: 944
         end_line: 955
@@ -1448,10 +1447,10 @@ license_detections:
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-ddbdf2af-d93f-9912-6c83-1167bb9d3f80
   - license_expression: amd-historical
-    license_expression_spdx: LicenseRef-scancode-amd-historical
+    license_expression_spdx: AMD-newlib
     matches:
       - license_expression: amd-historical
-        spdx_license_expression: LicenseRef-scancode-amd-historical
+        spdx_license_expression: AMD-newlib
         from_file:
         start_line: 1061
         end_line: 1072
@@ -1808,10 +1807,10 @@ license_detections:
           \ PURPOSE.  See the\nGNU Library General Public License for more details."
     identifier: lgpl_2_1_plus_and_lgpl_2_0_plus-ce146db9-f01c-90ae-37cc-692163db9888
   - license_expression: intel-osl-1993
-    license_expression_spdx: LicenseRef-scancode-intel-osl-1993
+    license_expression_spdx: HPND-Intel
     matches:
       - license_expression: intel-osl-1993
-        spdx_license_expression: LicenseRef-scancode-intel-osl-1993
+        spdx_license_expression: HPND-Intel
         from_file:
         start_line: 1314
         end_line: 1336

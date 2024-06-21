@@ -28,6 +28,9 @@ from commoncode.datautils import Mapping
 from commoncode.datautils import String
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
+from license_expression import combine_expressions
+from license_expression import Licensing
+
 try:
     from typecode import contenttype
 except ImportError:
@@ -118,11 +121,8 @@ Beyond these we have a few secondary models:
 - IdentifiablePackageData: a base class for a Package-like class with a Package URL.
 """
 
-SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
-SCANCODE_DEBUG_PACKAGE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
-
-TRACE = SCANCODE_DEBUG_PACKAGE
-TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE_ASSEMBLY
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+TRACE_UPDATE = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
 
 
 def logger_debug(*args):
@@ -370,6 +370,15 @@ class DependentPackage(ModelMixin):
         help='True if this dependency version requirement has '
              'been resolved and this dependency url points to an '
              'exact version.')
+
+    is_direct = Boolean(
+        default=True,
+        label='is direct flag',
+        help='True if this is a direct, first-level dependency, '
+             'defined in the manifest of a package. False if this '
+             'is an indirect, transitive dependency resolved from '
+             'first level dependencies.'
+    )
 
     resolved_package = Mapping(
         label='resolved package data',
@@ -680,6 +689,24 @@ class PackageData(IdentifiablePackageData):
              'manifest. These may not actually exist on the filesystem. '
              'The exact semantics and base of these paths is specific to a '
              'package type or datafile format.'
+    )
+
+    is_private = Boolean(
+        default=False,
+        label='is private flag',
+        help='True if this is a private package, either not meant to be '
+             'published on a repository, and/or a local package without a '
+             'name and version used primarily to track dependencies and '
+             'other information, and build this package, for instance with '
+             'JavaScript and PHP applications.'
+    )
+
+    is_virtual = Boolean(
+        default=False,
+        label='is virtual flag',
+        help='True if this package is created only from a manifest or lockfile, '
+             'and not from its actual packaged code. The files of this package '
+             'are not present in the codebase.'
     )
 
     extra_data = Mapping(
@@ -1025,6 +1052,9 @@ class DatafileHandler:
 
     # Informational: Default primary language for this parser.
     default_primary_language = None
+
+    # If the datafilehandler contains only resolved dependencies
+    is_lockfile = False
 
     # Informational: Description of this parser
     description = None
@@ -1618,6 +1648,8 @@ class Package(PackageData):
         include_qualifiers=False,
         include_subpath=False,
         ignore_name_check=False,
+        default_relation='AND',
+        licensing=Licensing(),
     ):
         """
         Update this Package with data from the ``package_data`` PackageData.
@@ -1670,15 +1702,15 @@ class Package(PackageData):
             'file_references',
         ])
 
+        license_modified = False
         for name, value in existing.items():
             new_value = new_package_data.get(name)
+            if not new_value:
+                if TRACE_UPDATE: logger_debug(f'  No new value: {name!r}: skipping')
+                continue
 
             if TRACE_UPDATE:
                 logger_debug(f'update: {name!r}={value!r} with new_value: {new_value!r}')
-
-            if not new_value:
-                if TRACE_UPDATE: logger_debug('  No new value: skipping')
-                continue
 
             if not value:
                 if TRACE_UPDATE: logger_debug('  set existing value to new')
@@ -1694,6 +1726,18 @@ class Package(PackageData):
             if name == 'extra_data':
                 value.update(new_value)
 
+            if 'license_detections' in name:
+                license_modified = True
+                license_keys = licensing.license_keys(
+                    expression=new_package_data.get("declared_license_expression"),
+                    unique=True,
+                )
+                if name == 'license_detections' and len(license_keys) > 1:
+                    setattr(self, 'other_license_detections', new_value)
+                else:
+                    merged = value + new_value
+                    setattr(self, name, merged)
+
             if name in list_fields:
                 if TRACE_UPDATE: logger_debug('  merge lists of values')
                 merged = merge_sequences(list1=value, list2=new_value)
@@ -1702,7 +1746,35 @@ class Package(PackageData):
             elif TRACE_UPDATE and value != new_value:
                 if TRACE_UPDATE: logger_debug('  skipping update: no replace')
 
+        if license_modified:
+            self.refresh_license_expressions(default_relation=default_relation)
+
         return True
+
+    def refresh_license_expressions(self, default_relation='AND'):
+        if self.license_detections:
+            self.declared_license_expression = str(combine_expressions(
+                    expressions=[
+                        detection["license_expression"]
+                        for detection in self.license_detections
+                    ],
+                    relation=default_relation,
+            ))
+            self.declared_license_expression_spdx = get_declared_license_expression_spdx(
+                declared_license_expression=self.declared_license_expression,
+            )
+        
+        if self.other_license_detections:
+            self.other_license_expression = str(combine_expressions(
+                expressions=[
+                    detection["license_expression"]
+                    for detection in self.other_license_detections
+                ],
+                relation=default_relation,
+            ))
+            self.other_license_expression_spdx = get_declared_license_expression_spdx(
+                declared_license_expression=self.other_license_expression,
+            )
 
     def get_packages_files(self, codebase):
         """

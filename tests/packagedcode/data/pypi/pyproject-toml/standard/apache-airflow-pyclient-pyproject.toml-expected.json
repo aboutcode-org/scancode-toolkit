@@ -80,6 +80,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "Changelog": "https://github.com/apache/airflow-client-python/blob/main/CHANGELOG.md",
       "Documentation": "https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html",
