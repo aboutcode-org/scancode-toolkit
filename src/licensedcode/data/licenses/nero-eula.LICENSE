@@ -15,9 +15,9 @@ ignorable_copyrights:
     - Copyright (c) 1991-2, RSA Data Security, Inc.
     - Copyright (c) 1992-1999 Dolby Laboratories, Inc.
     - Copyright (c) 1996-2012 Nero AG and its licensors
+    - Copyright (c) 1999-2002. Microsoft Corporation
     - Copyright (c) 2008 Microsoft Corporation
     - Copyright 2011 Dolby Laboratories
-    - Media Technologies. Copyright (c) 1999-2002. Microsoft Corporation
     - copyright (c) 1998-2005 The OpenSSL Project
     - copyright (c) 2000-2008 Gracenote
     - copyright (c) 2000-2008 Gracenote. Gracenote Software
@@ -33,7 +33,6 @@ ignorable_holders:
     - Dr Brian Gladman, Worcester, UK.
     - Gracenote
     - Gracenote. Gracenote Software
-    - Media Technologies. Microsoft Corporation
     - Microsoft Corporation
     - Nero AG and its licensors
     - Nero AG.
