@@ -832,7 +832,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:npm/%40babel/babel-template@6.26.0",
+        "purl": "pkg:npm/babel-template@6.26.0",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
@@ -841,7 +841,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@babel",
+          "namespace": null,
           "name": "babel-template",
           "version": "6.26.0",
           "qualifiers": {},
@@ -937,12 +937,12 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40babel/babel-template@6.26.0"
+          "purl": "pkg:npm/babel-template@6.26.0"
         },
         "extra_data": {}
       },
       {
-        "purl": "pkg:npm/%40babel/split2@2.2.0",
+        "purl": "pkg:npm/split2@2.2.0",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": false,
@@ -951,7 +951,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@babel",
+          "namespace": null,
           "name": "split2",
           "version": "2.2.0",
           "qualifiers": {},
@@ -1003,12 +1003,12 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40babel/split2@2.2.0"
+          "purl": "pkg:npm/split2@2.2.0"
         },
         "extra_data": {}
       },
       {
-        "purl": "pkg:npm/%40babel/sprintf-js@1.0.3",
+        "purl": "pkg:npm/sprintf-js@1.0.3",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": false,
@@ -1017,7 +1017,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@babel",
+          "namespace": null,
           "name": "sprintf-js",
           "version": "1.0.3",
           "qualifiers": {},
@@ -1057,12 +1057,12 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40babel/sprintf-js@1.0.3"
+          "purl": "pkg:npm/sprintf-js@1.0.3"
         },
         "extra_data": {}
       },
       {
-        "purl": "pkg:npm/%40babel/yargs@7.1.0",
+        "purl": "pkg:npm/yargs@7.1.0",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
@@ -1071,7 +1071,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@babel",
+          "namespace": null,
           "name": "yargs",
           "version": "7.1.0",
           "qualifiers": {},
@@ -1255,7 +1255,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40babel/yargs@7.1.0"
+          "purl": "pkg:npm/yargs@7.1.0"
         },
         "extra_data": {}
       },
