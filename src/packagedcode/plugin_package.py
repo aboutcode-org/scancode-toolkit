@@ -16,11 +16,13 @@ import click
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
-from commoncode.cliutils import SCAN_GROUP
+from commoncode.cliutils import SCAN_GROUP, POST_SCAN_GROUP
 from commoncode.resource import Resource
 from commoncode.resource import strip_first_path_segment
 from plugincode.scan import scan_impl
+from plugincode.post_scan import post_scan_impl
 from plugincode.scan import ScanPlugin
+from plugincode.post_scan import PostScanPlugin
 
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
@@ -182,6 +184,13 @@ class PackageScanner(ScanPlugin):
             help='Show the list of supported package manifest parsers and exit.',
             help_group=DOC_GROUP,
         ),
+        PluggableCommandLineOption(
+            ('--package-summary',),
+            is_flag=True,
+            default=False,
+            help='Generate Package Level summary',
+            help_group=POST_SCAN_GROUP,
+        ),
     ]
 
     def is_enabled(self, package, system_package, package_only, **kwargs):
@@ -272,6 +281,30 @@ class PackageScanner(ScanPlugin):
                 if TRACE_LICENSE and modified:
                     logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_from_package: modified: {modified}')
 
+@post_scan_impl
+class PackageSummary(PostScanPlugin):
+    """
+    Summary at the Package Level.
+    """
+    run_order = 8
+    sort_order= 8
+    
+    options = [
+        PluggableCommandLineOption(('--package-summary',),
+        is_flag=True, default=False,
+        help='Generate Package Level summary',
+        help_group=POST_SCAN_GROUP)
+    ]
+
+    def is_enabled(self, package_summary, **kwargs):
+        return package_summary
+
+    def process_codebase(self, codebase, package_summary, **kwargs):
+        """
+        Process the codebase.
+        """
+        if not self.is_enabled(package_summary):
+            return
 
 def add_license_from_file(resource, codebase):
     """

@@ -1531,7 +1531,7 @@ class Package(PackageData):
         help='List of the datasource ids used to create this package.'
     )
     
-    license_clarity = List(
+    license_clarity_score = List(
         item_type=dict,
         label='License Clarity Information',
         help='List containing the license clarity score and related elements.'
@@ -1541,15 +1541,17 @@ class Package(PackageData):
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
 
-    def to_dict(self):
-        return super().to_dict(with_details=False)
+    def to_dict(self, package_summary= False):
+        data = super().to_dict(with_details=False)
+        if not package_summary:
+            data.pop("license_clarity_score")
+        return data
 
     def to_package_data(self):
         mapping = super().to_dict(with_details=True)
         mapping.pop('package_uid', None)
         mapping.pop('datafile_paths', None)
         mapping.pop('datasource_ids', None)
-        mapping.pop('license_clarity', None)
         return PackageData.from_dict(mapping)
 
     @classmethod
