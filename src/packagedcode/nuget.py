@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import json
 import xmltodict
 from packageurl import PackageURL
 
@@ -178,4 +179,45 @@ class NugetNuspecHandler(models.DatafileHandler):
             **urls,
         )
         yield models.PackageData.from_data(package_data, package_only)
+
+class NugetPackagesLockHandler(models.DatafileHandler):
+    datasource_id = 'nuget_packages_lock'
+    path_patterns = ('packages.lock.json',)
+    default_package_type = 'nuget'
+    description = 'NuGet packages.lock.json file'
+    documentation_url = 'https://docs.microsoft.com/en-us/nuget/reference/packages-lock-file'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=..., _bare_filename=False):
+        return super().is_datafile(location, filetypes, _bare_filename) and location.endswith('.lock.json')
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location) as loc:
+            parsed = json.load(loc)
+
+        if not parsed:
+            return
+
+        version = parsed.get('version')
+        dependencies = parsed.get('dependencies', {})
+
+        for target_framework, packages in dependencies.items():
+            for package_name, package_info in packages.items():
+                extra_data = dict(
+                    type=package_info.get('type'),
+                    requested=package_info.get('requested'),
+                    contentHash=package_info.get('contentHash'),
+                    dependencies=package_info.get('dependencies')
+                )
+                yield models.DependentPackage(
+                    purl=str(PackageURL(type='nuget', name=package_name, version=package_info.get('resolved'))),
+                    extracted_requirement=package_info.get('requested'),
+                    scope='dependency',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_resolved=True,
+                    is_direct=False,
+                    extra_data=extra_data,
+                )
 
