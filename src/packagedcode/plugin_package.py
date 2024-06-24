@@ -184,13 +184,6 @@ class PackageScanner(ScanPlugin):
             help='Show the list of supported package manifest parsers and exit.',
             help_group=DOC_GROUP,
         ),
-        PluggableCommandLineOption(
-            ('--package-summary',),
-            is_flag=True,
-            default=False,
-            help='Generate Package Level summary',
-            help_group=POST_SCAN_GROUP,
-        ),
     ]
 
     def is_enabled(self, package, system_package, package_only, **kwargs):
@@ -209,7 +202,7 @@ class PackageScanner(ScanPlugin):
             package_only=package_only,
         )
 
-    def process_codebase(self, codebase, strip_root=False, package_only=False, **kwargs):
+    def process_codebase(self, codebase, strip_root=False, package_only=False, package_summary=False, **kwargs):
         """
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data
@@ -269,7 +262,7 @@ class PackageScanner(ScanPlugin):
                 logger_debug(f'packagedcode: process_codebase: add_license_from_sibling_file: modified: {modified}')
 
         # Create codebase-level packages and dependencies
-        create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
+        create_package_and_deps(codebase, package_summary, strip_root=strip_root, **kwargs)
         #raise Exception()
 
         if has_licenses:
@@ -288,7 +281,7 @@ class PackageSummary(PostScanPlugin):
     """
     run_order = 8
     sort_order= 8
-    
+
     options = [
         PluggableCommandLineOption(('--package-summary',),
         is_flag=True, default=False,
@@ -305,6 +298,7 @@ class PackageSummary(PostScanPlugin):
         """
         if not self.is_enabled(package_summary):
             return
+        
 
 def add_license_from_file(resource, codebase):
     """
@@ -385,7 +379,7 @@ def get_installed_packages(root_dir, processes=2, **kwargs):
     yield from packages_by_uid.values()
 
 
-def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=False, **kwargs):
+def create_package_and_deps(codebase, package_summary ,package_adder=add_to_package, strip_root=False, **kwargs):
     """
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
@@ -397,7 +391,7 @@ def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=F
         **kwargs
     )
 
-    codebase.attributes.packages.extend(package.to_dict() for package in packages)
+    codebase.attributes.packages.extend(package.to_dict(package_summary) for package in packages)
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
 
 
