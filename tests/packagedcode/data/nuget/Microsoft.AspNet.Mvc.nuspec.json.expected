@@ -43,20 +43,17 @@
     "license_detections": [
       {
         "license_expression": "ms-net-library",
-        "license_expression_spdx": "LicenseRef-scancode-ms-net-library",
         "matches": [
           {
-            "license_expression": "ms-net-library",
-            "spdx_license_expression": "LicenseRef-scancode-ms-net-library",
-            "from_file": null,
+            "score": 100.0,
             "start_line": 1,
             "end_line": 1,
-            "matcher": "1-hash",
-            "score": 100.0,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 100,
+            "matcher": "1-hash",
+            "license_expression": "ms-net-library",
             "rule_identifier": "ms-net-library_1.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ms-net-library_1.RULE",
             "matched_text": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm"
           }
@@ -71,8 +68,6 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "is_private": false,
-    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -82,7 +77,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -95,7 +89,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -108,7 +101,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -121,7 +113,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -134,7 +125,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -147,7 +137,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -160,7 +149,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -173,7 +161,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -186,7 +173,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -199,7 +185,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -212,7 +197,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -225,7 +209,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -238,7 +221,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -251,7 +233,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -264,7 +245,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -277,7 +257,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -290,7 +269,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -303,7 +281,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"

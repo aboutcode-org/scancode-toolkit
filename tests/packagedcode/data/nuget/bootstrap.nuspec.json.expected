@@ -43,20 +43,17 @@
     "license_detections": [
       {
         "license_expression": "mit",
-        "license_expression_spdx": "MIT",
         "matches": [
           {
-            "license_expression": "mit",
-            "spdx_license_expression": "MIT",
-            "from_file": null,
+            "score": 100.0,
             "start_line": 1,
             "end_line": 1,
-            "matcher": "1-hash",
-            "score": 100.0,
             "matched_length": 8,
             "match_coverage": 100.0,
-            "rule_relevance": 100,
+            "matcher": "1-hash",
+            "license_expression": "mit",
             "rule_identifier": "mit_180.RULE",
+            "rule_relevance": 100,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_180.RULE",
             "matched_text": "https://github.com/twbs/bootstrap/blob/master/LICENSE"
           }
@@ -71,8 +68,6 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "is_private": false,
-    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -82,7 +77,6 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
-        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }
