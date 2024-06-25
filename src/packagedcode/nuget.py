@@ -180,29 +180,28 @@ class NugetNuspecHandler(models.DatafileHandler):
         )
         yield models.PackageData.from_data(package_data, package_only)
 
+
 class NugetPackagesLockHandler(models.DatafileHandler):
     datasource_id = 'nuget_packages_lock'
-    path_patterns = ('packages.lock.json',)
+    path_patterns = ('*packages.lock.json',)
     default_package_type = 'nuget'
     description = 'NuGet packages.lock.json file'
-    documentation_url = 'https://docs.microsoft.com/en-us/nuget/reference/packages-lock-file'
+    documentation_url = 'https://learn.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-restore'
 
     @classmethod
-    def is_datafile(cls, location, filetypes=..., _bare_filename=False):
-        return super().is_datafile(location, filetypes, _bare_filename) and location.endswith('.lock.json')
-    
-    @staticmethod
-    def get_dependencies(package_info, scope):
+    def get_dependencies(cls, package_info, scope):
         dependencies = []
-        for dep in package_info.get('dependencies', {}):
+        dependencies_mapping = package_info.get("dependencies") or {}
+        for dep in dependencies_mapping:
+            version = dependencies_mapping[dep]
             dependency = models.DependentPackage(
-                purl=str(PackageURL(type='nuget', name=dep, version=package_info["dependencies"][dep])),
-                extracted_requirement=package_info["dependencies"][dep],
+                purl=str(PackageURL(type='nuget', name=dep, version=version)),
+                extracted_requirement=version,
                 is_resolved=True,
                 scope=scope,
                 is_optional=False,
                 is_runtime=True,
-                is_direct=False,
+                is_direct=True,
             )
             dependencies.append(dependency)
         return dependencies
@@ -221,7 +220,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                 target_framework=target_framework,
             )
             for package_name, package_info in packages.items():
-                dependencies = NugetPackagesLockHandler.get_dependencies(package_info=package_info, scope=target_framework)
+                dependencies = cls.get_dependencies(package_info=package_info, scope=target_framework)
                 resolved_package_mapping = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
