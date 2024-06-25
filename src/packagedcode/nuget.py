@@ -205,7 +205,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                 target_framework=target_framework,
             )
             for package_name, package_info in packages.items():
-                dependencies = get_dependencies(package_info)
+                dependencies = get_dependencies(package_info=package_info, scope=target_framework)
                 resolved_package_mapping = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
@@ -256,14 +256,14 @@ class NugetPackagesLockHandler(models.DatafileHandler):
 
 
 
-def get_dependencies(package_info):
+def get_dependencies(package_info, scope):
     dependencies = []
     for dep in package_info.get('dependencies', {}):
         dependency = models.DependentPackage(
             purl=str(PackageURL(type='nuget', name=dep, version=package_info["dependencies"][dep])),
             extracted_requirement=package_info["dependencies"][dep],
             is_resolved=True,
-            scope='dependencies',
+            scope=scope,
             is_optional=False,
             is_runtime=True,
             is_direct=False,

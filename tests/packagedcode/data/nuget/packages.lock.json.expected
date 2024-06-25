@@ -88,7 +88,7 @@
             {
               "purl": "pkg:nuget/McMaster.Extensions.CommandLineUtils@4.0.1",
               "extracted_requirement": "4.0.1",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -99,7 +99,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -110,7 +110,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -176,7 +176,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -187,7 +187,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -198,7 +198,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Binder@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -209,7 +209,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.CommandLine@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -220,7 +220,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@6.0.1",
               "extracted_requirement": "6.0.1",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -231,7 +231,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.FileExtensions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -242,7 +242,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Json@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -253,7 +253,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.UserSecrets@6.0.1",
               "extracted_requirement": "6.0.1",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -264,7 +264,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -275,7 +275,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -286,7 +286,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -297,7 +297,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Physical@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -308,7 +308,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -319,7 +319,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -330,7 +330,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -341,7 +341,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Configuration@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -352,7 +352,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Console@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -363,7 +363,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Debug@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -374,7 +374,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.EventLog@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -385,7 +385,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.EventSource@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -396,7 +396,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Options@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -462,7 +462,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -473,7 +473,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Options@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -484,7 +484,7 @@
             {
               "purl": "pkg:nuget/System.ComponentModel.Annotations@5.0.0",
               "extracted_requirement": "5.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -550,7 +550,7 @@
             {
               "purl": "pkg:nuget/System.ComponentModel.Annotations@5.0.0",
               "extracted_requirement": "5.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -616,7 +616,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -627,7 +627,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Primitives@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -693,7 +693,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Primitives@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -759,7 +759,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -825,7 +825,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -836,7 +836,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -902,7 +902,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -913,7 +913,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -979,7 +979,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -990,7 +990,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1001,7 +1001,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1012,7 +1012,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Physical@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1023,7 +1023,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Primitives@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1089,7 +1089,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1100,7 +1100,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1111,7 +1111,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.FileExtensions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1122,7 +1122,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1133,7 +1133,7 @@
             {
               "purl": "pkg:nuget/System.Text.Json@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1199,7 +1199,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1210,7 +1210,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Json@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1221,7 +1221,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1232,7 +1232,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Physical@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1298,7 +1298,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1309,7 +1309,7 @@
             {
               "purl": "pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1429,7 +1429,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Primitives@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1495,7 +1495,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1506,7 +1506,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1517,7 +1517,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Primitives@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1637,7 +1637,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1648,7 +1648,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1659,7 +1659,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1725,7 +1725,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1736,7 +1736,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1747,7 +1747,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1758,7 +1758,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Options@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1769,7 +1769,7 @@
             {
               "purl": "pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1889,7 +1889,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1900,7 +1900,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1911,7 +1911,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Binder@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1922,7 +1922,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1933,7 +1933,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1944,7 +1944,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1955,7 +1955,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Options@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -1966,7 +1966,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2032,7 +2032,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2043,7 +2043,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2054,7 +2054,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2065,7 +2065,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Configuration@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2076,7 +2076,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Options@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2087,7 +2087,7 @@
             {
               "purl": "pkg:nuget/System.Text.Json@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2153,7 +2153,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2164,7 +2164,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2175,7 +2175,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2241,7 +2241,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2252,7 +2252,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2263,7 +2263,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2274,7 +2274,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Options@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2285,7 +2285,7 @@
             {
               "purl": "pkg:nuget/System.Diagnostics.EventLog@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2351,7 +2351,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2362,7 +2362,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2373,7 +2373,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2384,7 +2384,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Options@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2395,7 +2395,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Primitives@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2406,7 +2406,7 @@
             {
               "purl": "pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2417,7 +2417,7 @@
             {
               "purl": "pkg:nuget/System.Text.Json@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2483,7 +2483,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2494,7 +2494,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Primitives@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2560,7 +2560,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2571,7 +2571,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Binder@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2582,7 +2582,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2593,7 +2593,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Options@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2604,7 +2604,7 @@
             {
               "purl": "pkg:nuget/Microsoft.Extensions.Primitives@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2670,7 +2670,7 @@
             {
               "purl": "pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2790,7 +2790,7 @@
             {
               "purl": "pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -2964,7 +2964,7 @@
             {
               "purl": "pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -3030,7 +3030,7 @@
             {
               "purl": "pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
@@ -3041,7 +3041,7 @@
             {
               "purl": "pkg:nuget/System.Text.Encodings.Web@6.0.0",
               "extracted_requirement": "6.0.0",
-              "scope": "dependencies",
+              "scope": "net6.0",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
