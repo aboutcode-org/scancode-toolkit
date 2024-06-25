@@ -238,7 +238,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                 elif package_type == "Transitive":
                     is_direct = False
                 else:
-                    raise Exception(f"Unknown package type: {package_type}")
+                    raise Exception(f"Unknown package type: {package_type} for package {package_name} in {location}")
                     
 
                 version = package_info.get('resolved')
@@ -261,10 +261,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             extra_data=extra_data,
-            dependencies=top_dependencies, 
-            # TODO: Check if we to put virtual or private for packages without a name and version
-            # is_virtual=True,
-            # is_private=True,
+            dependencies=top_dependencies,
         )
         yield models.PackageData.from_data(package_data, package_only)
 

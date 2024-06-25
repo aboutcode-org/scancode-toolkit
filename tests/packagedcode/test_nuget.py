@@ -68,3 +68,7 @@ class TestNuget(PackageTester):
         package = nuget.NugetPackagesLockHandler.parse(location=test_file)
         expected_loc = self.get_test_loc('nuget/packages.lock.json.expected')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES, package_only=True)
+    
+    def test_package_lock_json_is_package_data_file(self):
+        test_file = self.get_test_loc('nuget/packages.lock.json')
+        assert nuget.NugetPackagesLockHandler.is_datafile(test_file)
