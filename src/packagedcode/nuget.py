@@ -211,11 +211,11 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                 type=cls.default_package_type,
                 primary_language=cls.default_primary_language,
                 name=package_name,
-                version=package_info.get('version'),
                 dependencies=[
                     dep.to_dict() for dep in dependencies
                 ],
                 is_virtual=True,
+                version=package_info.get('resolved'),
                 )
                 resolved_package = models.PackageData.from_data(resolved_package_mapping)
                 dependency = models.DependentPackage(

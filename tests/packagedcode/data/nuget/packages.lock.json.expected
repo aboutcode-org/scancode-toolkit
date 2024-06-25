@@ -51,7 +51,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "McMaster.Extensions.Hosting.CommandLine",
-          "version": null,
+          "version": "4.0.1",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -123,7 +123,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/McMaster.Extensions.Hosting.CommandLine"
+          "purl": "pkg:nuget/McMaster.Extensions.Hosting.CommandLine@4.0.1"
         },
         "extra_data": {}
       },
@@ -139,7 +139,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Hosting",
-          "version": null,
+          "version": "6.0.1",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -409,7 +409,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Hosting"
+          "purl": "pkg:nuget/Microsoft.Extensions.Hosting@6.0.1"
         },
         "extra_data": {}
       },
@@ -425,7 +425,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Options.DataAnnotations",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -497,7 +497,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Options.DataAnnotations"
+          "purl": "pkg:nuget/Microsoft.Extensions.Options.DataAnnotations@6.0.0"
         },
         "extra_data": {}
       },
@@ -513,7 +513,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "McMaster.Extensions.CommandLineUtils",
-          "version": null,
+          "version": "4.0.1",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -563,7 +563,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/McMaster.Extensions.CommandLineUtils"
+          "purl": "pkg:nuget/McMaster.Extensions.CommandLineUtils@4.0.1"
         },
         "extra_data": {}
       },
@@ -579,7 +579,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Configuration",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -640,7 +640,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Configuration"
+          "purl": "pkg:nuget/Microsoft.Extensions.Configuration@6.0.0"
         },
         "extra_data": {}
       },
@@ -656,7 +656,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Configuration.Abstractions",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -706,7 +706,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions"
+          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Abstractions@6.0.0"
         },
         "extra_data": {}
       },
@@ -722,7 +722,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Configuration.Binder",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -772,7 +772,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Binder"
+          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Binder@6.0.0"
         },
         "extra_data": {}
       },
@@ -788,7 +788,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Configuration.CommandLine",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -849,7 +849,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.CommandLine"
+          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.CommandLine@6.0.0"
         },
         "extra_data": {}
       },
@@ -865,7 +865,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Configuration.EnvironmentVariables",
-          "version": null,
+          "version": "6.0.1",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -926,7 +926,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables"
+          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.EnvironmentVariables@6.0.1"
         },
         "extra_data": {}
       },
@@ -942,7 +942,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Configuration.FileExtensions",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1036,7 +1036,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.FileExtensions"
+          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.FileExtensions@6.0.0"
         },
         "extra_data": {}
       },
@@ -1052,7 +1052,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Configuration.Json",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1146,7 +1146,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Json"
+          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.Json@6.0.0"
         },
         "extra_data": {}
       },
@@ -1162,7 +1162,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Configuration.UserSecrets",
-          "version": null,
+          "version": "6.0.1",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1245,7 +1245,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.UserSecrets"
+          "purl": "pkg:nuget/Microsoft.Extensions.Configuration.UserSecrets@6.0.1"
         },
         "extra_data": {}
       },
@@ -1261,7 +1261,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.DependencyInjection",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1322,7 +1322,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection"
+          "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection@6.0.0"
         },
         "extra_data": {}
       },
@@ -1338,7 +1338,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.DependencyInjection.Abstractions",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1376,7 +1376,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions"
+          "purl": "pkg:nuget/Microsoft.Extensions.DependencyInjection.Abstractions@6.0.0"
         },
         "extra_data": {}
       },
@@ -1392,7 +1392,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.FileProviders.Abstractions",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1442,7 +1442,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions"
+          "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Abstractions@6.0.0"
         },
         "extra_data": {}
       },
@@ -1458,7 +1458,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.FileProviders.Physical",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1530,7 +1530,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Physical"
+          "purl": "pkg:nuget/Microsoft.Extensions.FileProviders.Physical@6.0.0"
         },
         "extra_data": {}
       },
@@ -1546,7 +1546,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.FileSystemGlobbing",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1584,7 +1584,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.FileSystemGlobbing"
+          "purl": "pkg:nuget/Microsoft.Extensions.FileSystemGlobbing@6.0.0"
         },
         "extra_data": {}
       },
@@ -1600,7 +1600,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Hosting.Abstractions",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1672,7 +1672,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Hosting.Abstractions"
+          "purl": "pkg:nuget/Microsoft.Extensions.Hosting.Abstractions@6.0.0"
         },
         "extra_data": {}
       },
@@ -1688,7 +1688,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Logging",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1782,7 +1782,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Logging"
+          "purl": "pkg:nuget/Microsoft.Extensions.Logging@6.0.0"
         },
         "extra_data": {}
       },
@@ -1798,7 +1798,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Logging.Abstractions",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1836,7 +1836,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions"
+          "purl": "pkg:nuget/Microsoft.Extensions.Logging.Abstractions@6.0.0"
         },
         "extra_data": {}
       },
@@ -1852,7 +1852,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Logging.Configuration",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -1979,7 +1979,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Logging.Configuration"
+          "purl": "pkg:nuget/Microsoft.Extensions.Logging.Configuration@6.0.0"
         },
         "extra_data": {}
       },
@@ -1995,7 +1995,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Logging.Console",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2100,7 +2100,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Logging.Console"
+          "purl": "pkg:nuget/Microsoft.Extensions.Logging.Console@6.0.0"
         },
         "extra_data": {}
       },
@@ -2116,7 +2116,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Logging.Debug",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2188,7 +2188,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Logging.Debug"
+          "purl": "pkg:nuget/Microsoft.Extensions.Logging.Debug@6.0.0"
         },
         "extra_data": {}
       },
@@ -2204,7 +2204,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Logging.EventLog",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2298,7 +2298,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Logging.EventLog"
+          "purl": "pkg:nuget/Microsoft.Extensions.Logging.EventLog@6.0.0"
         },
         "extra_data": {}
       },
@@ -2314,7 +2314,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Logging.EventSource",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2430,7 +2430,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Logging.EventSource"
+          "purl": "pkg:nuget/Microsoft.Extensions.Logging.EventSource@6.0.0"
         },
         "extra_data": {}
       },
@@ -2446,7 +2446,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Options",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2507,7 +2507,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Options"
+          "purl": "pkg:nuget/Microsoft.Extensions.Options@6.0.0"
         },
         "extra_data": {}
       },
@@ -2523,7 +2523,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Options.ConfigurationExtensions",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2617,7 +2617,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions"
+          "purl": "pkg:nuget/Microsoft.Extensions.Options.ConfigurationExtensions@6.0.0"
         },
         "extra_data": {}
       },
@@ -2633,7 +2633,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "Microsoft.Extensions.Primitives",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2683,7 +2683,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/Microsoft.Extensions.Primitives"
+          "purl": "pkg:nuget/Microsoft.Extensions.Primitives@6.0.0"
         },
         "extra_data": {}
       },
@@ -2699,7 +2699,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "System.ComponentModel.Annotations",
-          "version": null,
+          "version": "5.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2737,7 +2737,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/System.ComponentModel.Annotations"
+          "purl": "pkg:nuget/System.ComponentModel.Annotations@5.0.0"
         },
         "extra_data": {}
       },
@@ -2753,7 +2753,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "System.Diagnostics.DiagnosticSource",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2803,7 +2803,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/System.Diagnostics.DiagnosticSource"
+          "purl": "pkg:nuget/System.Diagnostics.DiagnosticSource@6.0.0"
         },
         "extra_data": {}
       },
@@ -2819,7 +2819,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "System.Diagnostics.EventLog",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2857,7 +2857,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/System.Diagnostics.EventLog"
+          "purl": "pkg:nuget/System.Diagnostics.EventLog@6.0.0"
         },
         "extra_data": {}
       },
@@ -2873,7 +2873,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "System.Runtime.CompilerServices.Unsafe",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2911,7 +2911,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/System.Runtime.CompilerServices.Unsafe"
+          "purl": "pkg:nuget/System.Runtime.CompilerServices.Unsafe@6.0.0"
         },
         "extra_data": {}
       },
@@ -2927,7 +2927,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "System.Text.Encodings.Web",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -2977,7 +2977,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/System.Text.Encodings.Web"
+          "purl": "pkg:nuget/System.Text.Encodings.Web@6.0.0"
         },
         "extra_data": {}
       },
@@ -2993,7 +2993,7 @@
           "type": "nuget",
           "namespace": null,
           "name": "System.Text.Json",
-          "version": null,
+          "version": "6.0.0",
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
@@ -3054,7 +3054,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "nuget_packages_lock",
-          "purl": "pkg:nuget/System.Text.Json"
+          "purl": "pkg:nuget/System.Text.Json@6.0.0"
         },
         "extra_data": {}
       }
