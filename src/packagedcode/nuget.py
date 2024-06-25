@@ -190,6 +190,22 @@ class NugetPackagesLockHandler(models.DatafileHandler):
     @classmethod
     def is_datafile(cls, location, filetypes=..., _bare_filename=False):
         return super().is_datafile(location, filetypes, _bare_filename) and location.endswith('.lock.json')
+    
+    @staticmethod
+    def get_dependencies(package_info, scope):
+        dependencies = []
+        for dep in package_info.get('dependencies', {}):
+            dependency = models.DependentPackage(
+                purl=str(PackageURL(type='nuget', name=dep, version=package_info["dependencies"][dep])),
+                extracted_requirement=package_info["dependencies"][dep],
+                is_resolved=True,
+                scope=scope,
+                is_optional=False,
+                is_runtime=True,
+                is_direct=False,
+            )
+            dependencies.append(dependency)
+        return dependencies
 
     @classmethod
     def parse(cls, location, package_only=False):
@@ -205,7 +221,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                 target_framework=target_framework,
             )
             for package_name, package_info in packages.items():
-                dependencies = get_dependencies(package_info=package_info, scope=target_framework)
+                dependencies = NugetPackagesLockHandler.get_dependencies(package_info=package_info, scope=target_framework)
                 resolved_package_mapping = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
@@ -254,19 +270,3 @@ class NugetPackagesLockHandler(models.DatafileHandler):
         )
         yield models.PackageData.from_data(package_data, package_only)
 
-
-
-def get_dependencies(package_info, scope):
-    dependencies = []
-    for dep in package_info.get('dependencies', {}):
-        dependency = models.DependentPackage(
-            purl=str(PackageURL(type='nuget', name=dep, version=package_info["dependencies"][dep])),
-            extracted_requirement=package_info["dependencies"][dep],
-            is_resolved=True,
-            scope=scope,
-            is_optional=False,
-            is_runtime=True,
-            is_direct=False,
-        )
-        dependencies.append(dependency)
-    return dependencies
