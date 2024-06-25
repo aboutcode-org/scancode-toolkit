@@ -218,15 +218,28 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                 version=package_info.get('resolved'),
                 )
                 resolved_package = models.PackageData.from_data(resolved_package_mapping)
+                package_type = package_info.get('type')
+                if package_type == "Direct":
+                    is_direct = True
+                elif package_type == "Transitive":
+                    is_direct = False
+                else:
+                    raise Exception(f"Unknown package type: {package_type}")
+                    
+
+                version = package_info.get('resolved')
+                requested = package_info.get('requested')
                 dependency = models.DependentPackage(
-                    purl=str(PackageURL(type='nuget', name=package_name, version=package_info.get('resolved'))),
-                    extracted_requirement=package_info.get('requested') or package_info.get('resolved'),
+                    purl=str(PackageURL(type='nuget', name=package_name, version=version)),
+                    extracted_requirement=requested or version,
                     is_resolved=True,
                     resolved_package=resolved_package.to_dict(),
-                    scope=package_info.get('type'),
+                    # We use the target framework as scope since there is no concept of scope in .NET
+                    # and we may have different resolutions for different target frameworks
+                    scope=target_framework,
                     is_optional=False,
                     is_runtime=True,
-                    is_direct=True if package_info.get('type') == 'Direct' else False,
+                    is_direct=is_direct,
                 )
                 top_dependencies.append(dependency.to_dict())
         package_data = dict(
@@ -234,7 +247,10 @@ class NugetPackagesLockHandler(models.DatafileHandler):
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             extra_data=extra_data,
-            dependencies=top_dependencies,
+            dependencies=top_dependencies, 
+            # TODO: Check if we to put virtual or private for packages without a name and version
+            # is_virtual=True,
+            # is_private=True,
         )
         yield models.PackageData.from_data(package_data, package_only)
 
