@@ -199,25 +199,58 @@ class NugetPackagesLockHandler(models.DatafileHandler):
         if not parsed:
             return
 
-        version = parsed.get('version')
-        dependencies = parsed.get('dependencies', {})
-
-        for target_framework, packages in dependencies.items():
+        top_dependencies = []
+        for target_framework, packages in parsed.get('dependencies', {}).items():
+            extra_data = dict(
+                target_framework=target_framework,
+            )
             for package_name, package_info in packages.items():
-                extra_data = dict(
-                    type=package_info.get('type'),
-                    requested=package_info.get('requested'),
-                    contentHash=package_info.get('contentHash'),
-                    dependencies=package_info.get('dependencies')
+                dependencies = get_dependencies(package_info)
+                resolved_package_mapping = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                name=package_name,
+                version=package_info.get('version'),
+                dependencies=[
+                    dep.to_dict() for dep in dependencies
+                ],
+                is_virtual=True,
                 )
-                yield models.DependentPackage(
+                resolved_package = models.PackageData.from_data(resolved_package_mapping)
+                dependency = models.DependentPackage(
                     purl=str(PackageURL(type='nuget', name=package_name, version=package_info.get('resolved'))),
-                    extracted_requirement=package_info.get('requested'),
-                    scope='dependency',
-                    is_runtime=True,
-                    is_optional=False,
+                    extracted_requirement=package_info.get('requested') or package_info.get('resolved'),
                     is_resolved=True,
-                    is_direct=False,
-                    extra_data=extra_data,
+                    resolved_package=resolved_package.to_dict(),
+                    scope=package_info.get('type'),
+                    is_optional=False,
+                    is_runtime=True,
+                    is_direct=True if package_info.get('type') == 'Direct' else False,
                 )
+                top_dependencies.append(dependency.to_dict())
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            extra_data=extra_data,
+            dependencies=top_dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
 
+
+
+def get_dependencies(package_info):
+    dependencies = []
+    for dep in package_info.get('dependencies', {}):
+        dependency = models.DependentPackage(
+            purl=str(PackageURL(type='nuget', name=dep, version=package_info["dependencies"][dep])),
+            extracted_requirement=package_info["dependencies"][dep],
+            is_resolved=True,
+            scope='dependencies',
+            is_optional=False,
+            is_runtime=True,
+            is_direct=False,
+        )
+        dependencies.append(dependency)
+    return dependencies
