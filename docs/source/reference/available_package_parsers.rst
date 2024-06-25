@@ -766,8 +766,9 @@ parsers in scancode-toolkit during documentation builds.
      - ``squashfs_disk_image``
      - None
      - https://en.wikipedia.org/wiki/SquashFS
-   * - JSON dump of Package.swift created with ``swift package dump-package &gt; Package.swift.json``
+   * - JSON dump of Package.swift created by DepLock or with ``swift package dump-package &gt; Package.swift.json``
      - ``*/Package.swift.json``
+       ``*/Packages.swift.deplock``
      - ``swift``
      - ``swift_package_manifest_json``
      - Swift

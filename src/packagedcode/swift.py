@@ -49,10 +49,10 @@ if TRACE:
 
 class SwiftManifestJsonHandler(models.DatafileHandler):
     datasource_id = "swift_package_manifest_json"
-    path_patterns = ("*/Package.swift.json",)
+    path_patterns = ("*/Package.swift.json", "*/Packages.swift.deplock")
     default_package_type = "swift"
     default_primary_language = "Swift"
-    description = "JSON dump of Package.swift created with ``swift package dump-package > Package.swift.json``"
+    description = "JSON dump of Package.swift created by DepLock or with ``swift package dump-package > Package.swift.json``"
     documentation_url = "https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html"
 
     @classmethod
