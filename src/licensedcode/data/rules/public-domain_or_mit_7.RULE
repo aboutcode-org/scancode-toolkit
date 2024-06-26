@@ -4,6 +4,10 @@ is_license_notice: yes
 notes: Seen in JSONCPP
 ignorable_urls:
     - http://en.wikipedia.org/wiki/MIT_License
+ignorable_copyrights:
+  - Copyright The Authors
+ignorable_holders:
+  - The Authors
 ---
 
 Authors explicitly disclaim copyright in all

@@ -3,8 +3,9 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 1998-2010 Gilles Vollant (minizip) http://www.winimage.com/zLibDll/minizip.html
-  - Copyright (c) 2009-2010 Mathias Svensson http://result42.com
+  - Copyright (c) 1998-2010 Gilles Vollant (minizip) ( http://www.winimage.com/zLibDll/minizip.html
+    )
+  - Copyright (c) 2009-2010 Mathias Svensson ( http://result42.com )
   - Copyright 1998-2004 Gilles Vollant - http://www.winimage.com/zLibDll
 holders:
   - Gilles Vollant

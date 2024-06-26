@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) brandonocasey <brandonocasey@gmail.com>
+  - Copyright (c) 2024 bgme <i@bgme.me>
+holders:
+  - brandonocasey
+  - bgme
+holders_summary:
+  - value: bgme
+    count: 1
+  - value: brandonocasey
+    count: 1

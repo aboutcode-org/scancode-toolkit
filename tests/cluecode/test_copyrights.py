@@ -31,4 +31,8 @@ class TestCopyrightDataDriven(FileBasedTesting):
     pass
 
 
-build_tests(copyright_tests=load_copyright_tests(), clazz=TestCopyrightDataDriven, regen=REGEN_TEST_FIXTURES)
+build_tests(
+    copyright_tests=load_copyright_tests(generate_missing=REGEN_TEST_FIXTURES),
+    clazz=TestCopyrightDataDriven,
+    regen=REGEN_TEST_FIXTURES,
+)

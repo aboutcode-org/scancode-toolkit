@@ -2,6 +2,10 @@
 license_expression: afpl-8.0
 is_license_text: yes
 notes: Aladin FPL v8, short
+ignorable_copyrights:
+    - copyright is held by Aladdin Enterprises
+ignorable_holders:
+    - Aladdin Enterprises
 ---
 
 Aladdin Enterprises hereby grants to anyone the permission to apply this License to their own work, as long as the entire License (including the above notices and this paragraph) is copied with no changes, additions, or deletions except for changing the first paragraph of Section 0 to include a suitable description of the work to which the license is being applied and of the person or entity that holds the copyright in the work, and, if the License is being applied to a work created in a country other than the United States, replacing the first paragraph of Section 6 with an appropriate reference to the laws of the appropriate country. 

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright 2018 Developers of the Rand project
+holders:
+  - Developers of the Rand project
+holders_summary:
+  - value: Developers of the Rand project
+    count: 1
