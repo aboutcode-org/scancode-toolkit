@@ -1,0 +1,6 @@
+{
+  "extends": "@borderless/ts-scripts/configs/tsconfig.json",
+  "compilerOptions": {
+    "composite": true
+  }
+}
