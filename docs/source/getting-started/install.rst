@@ -424,7 +424,7 @@ To uninstall, run::
 Install from Fedora's repository
 --------------------------------
 
-The package is available in Fedora 40 and newer. Run:
+The package is available in Fedora 40 and newer. Run::
 
     dnf install scancode-toolkit
 
