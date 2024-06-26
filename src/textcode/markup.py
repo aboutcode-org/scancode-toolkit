@@ -108,7 +108,22 @@ def demarkup(location):
         yield demarkup_text(line)
 
 
-get_tags_and_entities = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;|href|[\'"]?\/\>)', re.IGNORECASE).split
+get_tags_and_entities = re.compile(
+    r'('
+    r'</?[^\s></]+(?:>'
+    r'|'
+    r'\s)?'
+    r'|'
+    r'&[^\s&]+;'
+    r'|'
+    r'href'
+    r'|'
+    '[\'"]?\/\>'
+    r'|'
+    r'/>'
+    r')',
+    re.IGNORECASE,
+).split
 
 
 def demarkup_text(text):
@@ -136,8 +151,8 @@ def demarkup_text(text):
     cleaned_append = cleaned.append
     for token in tags_and_ents:
         tlow = token.lower()
-        if tlow.startswith(('<', '&', 'href',)) and not any(k in tlow for k in kept_tags):
-            continue
+        if tlow.startswith(('<', '/>', '"/>', "'/>", '&', 'href',)) and not any(k in tlow for k in kept_tags):
+            cleaned_append(' ')
         else:
             cleaned_append(token)
-    return u' '.join(cleaned)
+    return ''.join(cleaned)

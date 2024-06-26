@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright Notice (1999) University of Chicago
+holders:
+  - University of Chicago
+holders_summary:
+  - value: University of Chicago
+    count: 1

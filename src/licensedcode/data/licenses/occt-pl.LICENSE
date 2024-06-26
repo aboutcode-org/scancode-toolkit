@@ -7,11 +7,13 @@ owner: Open Cascade
 homepage_url: http://www.opencascade.com/content/occt-public-license
 spdx_license_key: OCCT-PL
 ignorable_copyrights:
+    - Copyright The Initial Developer
     - copyright (c) OPEN CASCADE SAS, 2001
     - copyright (c) Open CASCADE SAS, 2001
 ignorable_holders:
     - OPEN CASCADE SAS
     - Open CASCADE SAS
+    - The Initial Developer
 ---
 
 Open CASCADE Technology Public License 

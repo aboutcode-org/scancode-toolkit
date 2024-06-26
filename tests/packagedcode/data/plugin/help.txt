@@ -636,6 +636,13 @@ Package type:  nuget
   description:       NuGet nuspec package manifest
   path_patterns:    '*.nuspec'
 --------------------------------------------
+Package type:  nuget
+  datasource_id:     nuget_packages_lock
+  documentation URL: https://learn.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-restore
+  primary language:  None
+  description:       NuGet packages.lock.json file
+  path_patterns:    '*packages.lock.json'
+--------------------------------------------
 Package type:  opam
   datasource_id:     opam_file
   documentation URL: https://opam.ocaml.org/doc/Manual.html#Common-file-format
