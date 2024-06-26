@@ -207,6 +207,9 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     windows.MicrosoftUpdateManifestHandler,
 
     win_pe.WindowsExecutableHandler,
+
+    # These are handlers for deplock generated files
+    pypi.PipInspectDeplockHandler,
 ]
 
 if on_linux:

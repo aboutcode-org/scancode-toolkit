@@ -714,6 +714,13 @@ Package type:  pypi
   path_patterns:    '*/EGG-INFO/PKG-INFO'
 --------------------------------------------
 Package type:  pypi
+  datasource_id:     pypi_inspect_deplock
+  documentation URL: https://pip.pypa.io/en/stable/cli/pip_inspect/
+  primary language:  Python
+  description:       Python poetry pyproject.toml
+  path_patterns:    '*pip-inspect.deplock'
+--------------------------------------------
+Package type:  pypi
   datasource_id:     pypi_poetry_pyproject_toml
   documentation URL: https://packaging.python.org/en/latest/specifications/pyproject-toml/
   primary language:  Python

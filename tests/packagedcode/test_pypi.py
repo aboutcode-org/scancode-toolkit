@@ -349,6 +349,20 @@ class TestPyprojectTomlFileHandler(PackageTester):
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
+class TestPipInspectDeplockHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pip_inspect_deplock(self):
+        test_file = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock')
+        assert pypi.PipInspectDeplockHandler.is_datafile(test_file)
+
+    def test_parse_pip_inspect_deplock_univers(self):
+        test_file = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock')
+        package = pypi.PipInspectDeplockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
 class TestPipRequirementsFileHandler(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
