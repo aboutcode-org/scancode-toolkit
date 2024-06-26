@@ -1531,11 +1531,7 @@ class Package(PackageData):
         help='List of the datasource ids used to create this package.'
     )
     
-    license_clarity_score = List(
-        item_type=dict,
-        label='License Clarity Information',
-        help='List containing the license clarity score and related elements.'
-    )
+    license_clarity_score = attr.ib(default=attr.Factory(dict))
     
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.package_uid:
