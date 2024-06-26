@@ -24,7 +24,7 @@ class TestMarkup(FileBasedTesting):
         test_file = self.get_test_loc(u'markup/java.jsp')
         assert markup.is_markup(test_file)
 
-    def test_jsp_demarkup(self, regen=True):
+    def test_jsp_demarkup(self, regen=False):
         test_file = self.get_test_loc(u'markup/java.jsp')
         result = list(markup.demarkup(test_file))
         expected_loc = self.get_test_loc(u'markup/java.jsp-expected.json')
