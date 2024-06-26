@@ -768,7 +768,7 @@ parsers in scancode-toolkit during documentation builds.
      - https://en.wikipedia.org/wiki/SquashFS
    * - JSON dump of Package.swift created by DepLock or with ``swift package dump-package &gt; Package.swift.json``
      - ``*/Package.swift.json``
-       ``*/Packages.swift.deplock``
+       ``*/Package.swift.deplock``
      - ``swift``
      - ``swift_package_manifest_json``
      - Swift
@@ -785,7 +785,7 @@ parsers in scancode-toolkit during documentation builds.
      - ``swift``
      - ``swift_package_show_dependencies``
      - Swift
-     - None
+     - https://forums.swift.org/t/swiftpm-show-dependencies-without-fetching-dependencies/51154
    * - Java Web Application Archive
      - ``*.war``
      - ``war``

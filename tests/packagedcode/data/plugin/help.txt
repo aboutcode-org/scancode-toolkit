@@ -829,8 +829,8 @@ Package type:  swift
   datasource_id:     swift_package_manifest_json
   documentation URL: https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
   primary language:  Swift
-  description:       JSON dump of Package.swift created with ``swift package dump-package > Package.swift.json``
-  path_patterns:    '*/Package.swift.json'
+  description:       JSON dump of Package.swift created by DepLock or with ``swift package dump-package > Package.swift.json``
+  path_patterns:    '*/Package.swift.json', '*/Package.swift.deplock'
 --------------------------------------------
 Package type:  swift
   datasource_id:     swift_package_resolved
@@ -838,6 +838,13 @@ Package type:  swift
   primary language:  swift
   description:       Resolved full dependency lockfile for Package.swift created with ``swift package resolve``
   path_patterns:    '*/Package.resolved', '*/.package.resolved'
+--------------------------------------------
+Package type:  swift
+  datasource_id:     swift_package_show_dependencies
+  documentation URL: https://forums.swift.org/t/swiftpm-show-dependencies-without-fetching-dependencies/51154
+  primary language:  Swift
+  description:       Swift dependency graph created by DepLock
+  path_patterns:    '*/swift-show-dependencies.deplock'
 --------------------------------------------
 Package type:  war
   datasource_id:     java_war_archive
