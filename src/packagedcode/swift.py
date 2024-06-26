@@ -227,7 +227,7 @@ class SwiftManifestJsonHandler(models.DatafileHandler):
                 datafile_path=datafile_path,
             )
 
-            if swift_show_dependencies_resource:
+            if swift_show_dependencies_resources:
                 package.datafile_paths.append(swift_show_dependencies_resource.path)
                 package.datasource_ids.append(
                     SwiftShowDependenciesDepLockHandler.datasource_id
