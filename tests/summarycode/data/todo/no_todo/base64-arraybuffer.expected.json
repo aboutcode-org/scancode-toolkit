@@ -97,7 +97,6 @@
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:npm/base64-arraybuffer@0.1.4"
     }
   ],

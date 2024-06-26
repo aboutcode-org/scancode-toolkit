@@ -71,7 +71,6 @@
         "debian_installed_status_db",
         "debian_installed_files_list"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/ubuntu/base-files@11ubuntu5?arch=amd64"
     },
     {
@@ -289,7 +288,6 @@
         "debian_installed_status_db",
         "debian_installed_md5sums"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/base-passwd@3.5.47?arch=amd64"
     },
     {
@@ -563,7 +561,6 @@
         "debian_installed_files_list",
         "debian_installed_md5sums"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/ubuntu/bash@5.0-6ubuntu1?arch=amd64"
     },
     {
@@ -624,7 +621,6 @@
       "datasource_ids": [
         "debian_installed_status_db"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/ubuntu/e2fsprogs@1.46.2-2?arch=amd64"
     },
     {
@@ -685,7 +681,6 @@
       "datasource_ids": [
         "debian_installed_status_db"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/ubuntu/tar@1.30%2Bdfsg-7?arch=amd64"
     }
   ],

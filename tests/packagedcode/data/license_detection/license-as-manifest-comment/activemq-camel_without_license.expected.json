@@ -46,7 +46,6 @@
       "datasource_ids": [
         "maven_pom"
       ],
-      "license_clarity": [],
       "purl": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2"
     }
   ],

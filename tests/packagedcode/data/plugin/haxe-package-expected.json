@@ -80,7 +80,6 @@
       "datasource_ids": [
         "haxelib_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:haxe/hxsocketio@0.1.0"
     }
   ],

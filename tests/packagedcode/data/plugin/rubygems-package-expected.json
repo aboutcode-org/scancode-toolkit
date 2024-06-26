@@ -96,7 +96,6 @@
       "datasource_ids": [
         "gem_archive"
       ],
-      "license_clarity": [],
       "purl": "pkg:gem/m2r@2.1.0"
     }
   ],

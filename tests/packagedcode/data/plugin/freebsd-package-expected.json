@@ -80,7 +80,6 @@
       "datasource_ids": [
         "freebsd_compact_manifest"
       ],
-      "license_clarity": [],
       "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
     }
   ],

@@ -190,7 +190,6 @@
       "debian_copyright_in_package",
       "debian_installed_md5sums"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
@@ -564,7 +563,6 @@
       "debian_copyright_in_package",
       "debian_installed_md5sums"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",

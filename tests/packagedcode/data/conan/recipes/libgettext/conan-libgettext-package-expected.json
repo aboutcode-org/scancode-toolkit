@@ -74,7 +74,6 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
-      "license_clarity": [],
       "purl": "pkg:conan/libgettext@0.22"
     },
     {
@@ -151,7 +150,6 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
-      "license_clarity": [],
       "purl": "pkg:conan/libgettext@0.21"
     },
     {
@@ -228,7 +226,6 @@
         "conan_conandata_yml",
         "conan_conanfile_py"
       ],
-      "license_clarity": [],
       "purl": "pkg:conan/libgettext@0.20.1"
     },
     {
@@ -303,7 +300,6 @@
       "datasource_ids": [
         "conan_conanfile_py"
       ],
-      "license_clarity": [],
       "purl": "pkg:conan/libgettext"
     }
   ],

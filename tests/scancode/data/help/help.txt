@@ -114,7 +114,8 @@ Options:
                              contain over 90% of source files as children and
                              descendants. Count the number of source files in a
                              directory as a new source_file_counts attribute
-    --package-summary        Generate Package Level summary
+    --package-summary        Summarize scans by providing License Clarity Score at
+                             the Package attribute level.
     --summary                Summarize scans by providing declared origin
                              information and other detected origin info at the
                              codebase attribute level.

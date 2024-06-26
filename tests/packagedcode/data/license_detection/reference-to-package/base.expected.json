@@ -89,7 +89,6 @@
       "datasource_ids": [
         "pypi_sdist_pkginfo"
       ],
-      "license_clarity": [],
       "purl": "pkg:pypi/django@1.2.5"
     }
   ],

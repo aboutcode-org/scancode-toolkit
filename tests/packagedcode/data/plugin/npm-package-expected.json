@@ -56,7 +56,6 @@
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:npm/cookie-signature@1.0.3"
     }
   ],

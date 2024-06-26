@@ -44,7 +44,6 @@
       "datasource_ids": [
         "buck_file"
       ],
-      "license_clarity": [],
       "purl": "pkg:buck/end2end"
     },
     {
@@ -114,7 +113,6 @@
       "datasource_ids": [
         "buck_file"
       ],
-      "license_clarity": [],
       "purl": "pkg:buck/bin"
     }
   ],

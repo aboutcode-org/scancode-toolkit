@@ -60,7 +60,6 @@
       "datasource_ids": [
         "debian_control_extracted_deb"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/python-tenacity-doc@8.2.1-1?arch=all"
     }
   ],

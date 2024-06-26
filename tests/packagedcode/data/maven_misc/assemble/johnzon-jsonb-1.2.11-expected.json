@@ -71,7 +71,6 @@
       "datasource_ids": [
         "maven_pom"
       ],
-      "license_clarity": [],
       "purl": "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11"
     }
   ],

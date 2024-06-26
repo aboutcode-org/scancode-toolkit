@@ -77,7 +77,6 @@
       "datasource_ids": [
         "cargo_toml"
       ],
-      "license_clarity": [],
       "purl": "pkg:cargo/tauri@2.0.0-alpha.17"
     },
     {
@@ -157,7 +156,6 @@
       "datasource_ids": [
         "cargo_toml"
       ],
-      "license_clarity": [],
       "purl": "pkg:cargo/tauri-runtime@1.0.0-alpha.4"
     },
     {
@@ -237,7 +235,6 @@
       "datasource_ids": [
         "cargo_toml"
       ],
-      "license_clarity": [],
       "purl": "pkg:cargo/tauri-build@2.0.0-alpha.11"
     },
     {
@@ -317,7 +314,6 @@
       "datasource_ids": [
         "cargo_toml"
       ],
-      "license_clarity": [],
       "purl": "pkg:cargo/restart@0.1.0"
     },
     {
@@ -395,7 +391,6 @@
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:npm/tauri-workspace@0.0.0"
     }
   ],

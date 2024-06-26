@@ -84,7 +84,6 @@
       "datasource_ids": [
         "maven_pom"
       ],
-      "license_clarity": [],
       "purl": "pkg:maven/javax.persistence/persistence-api@1.0"
     },
     {
@@ -186,7 +185,6 @@
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:npm/grunt-esvm@3.2.8"
     },
     {
@@ -264,7 +262,6 @@
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:npm/angular-compare-validator@0.1.1"
     }
   ],

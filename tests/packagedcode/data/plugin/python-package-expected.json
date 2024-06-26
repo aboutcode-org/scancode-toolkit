@@ -75,7 +75,6 @@
       "datasource_ids": [
         "pypi_setup_py"
       ],
-      "license_clarity": [],
       "purl": "pkg:pypi/arpy@0.1.1"
     },
     {
@@ -183,7 +182,6 @@
       "datasource_ids": [
         "pypi_wheel"
       ],
-      "license_clarity": [],
       "purl": "pkg:pypi/atomicwrites@1.2.1"
     },
     {
@@ -253,7 +251,6 @@
       "datasource_ids": [
         "chef_cookbook_metadata_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:chef/six@1.10.0"
     },
     {
@@ -359,7 +356,6 @@
       "datasource_ids": [
         "pypi_wheel_metadata"
       ],
-      "license_clarity": [],
       "purl": "pkg:pypi/six@1.10.0"
     },
     {
@@ -437,7 +433,6 @@
       "datasource_ids": [
         "pypi_sdist_pkginfo"
       ],
-      "license_clarity": [],
       "purl": "pkg:pypi/ticketimport@0.7a"
     }
   ],

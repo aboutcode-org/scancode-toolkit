@@ -46,7 +46,6 @@
       "datasource_ids": [
         "maven_pom"
       ],
-      "license_clarity": [],
       "purl": "pkg:maven/org.activiti/activiti-image-generator@7-201802-EA"
     }
   ],

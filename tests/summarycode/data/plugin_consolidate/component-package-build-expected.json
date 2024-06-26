@@ -44,7 +44,6 @@
       "datasource_ids": [
         "buck_file"
       ],
-      "license_clarity": [],
       "purl": "pkg:buck/demo"
     },
     {
@@ -114,7 +113,6 @@
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:npm/test-package@0.0.1"
     }
   ],

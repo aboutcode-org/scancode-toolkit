@@ -63,7 +63,6 @@
       "datasource_ids": [
         "debian_source_control_dsc"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/adduser@3.118%2Bdeb11u1?arch=all"
     }
   ],

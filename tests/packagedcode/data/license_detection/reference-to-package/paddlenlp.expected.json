@@ -105,7 +105,6 @@
       "datasource_ids": [
         "pypi_setup_py"
       ],
-      "license_clarity": [],
       "purl": "pkg:pypi/paddlenlp"
     }
   ],

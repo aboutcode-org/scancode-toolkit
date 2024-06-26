@@ -113,7 +113,6 @@
       "datasource_ids": [
         "java_jar_manifest"
       ],
-      "license_clarity": [],
       "purl": "pkg:jar/Jackson-dataformat-XML@2.13.5"
     }
   ],

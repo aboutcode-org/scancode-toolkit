@@ -75,7 +75,6 @@
       "datasource_ids": [
         "cargo_toml"
       ],
-      "license_clarity": [],
       "purl": "pkg:cargo/apple-xar@0.4.0-pre"
     },
     {
@@ -167,7 +166,6 @@
       "datasource_ids": [
         "cargo_toml"
       ],
-      "license_clarity": [],
       "purl": "pkg:cargo/daachorse@0.4.1"
     }
   ],

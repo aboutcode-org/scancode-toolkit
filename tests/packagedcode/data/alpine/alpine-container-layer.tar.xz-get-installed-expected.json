@@ -90,7 +90,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/etc/fstab",
@@ -303,7 +302,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/lib/ld-musl-x86_64.so.1",
@@ -408,7 +406,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/bin/busybox",
@@ -576,7 +573,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/etc/motd",
@@ -933,7 +929,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/etc/apk/keys/alpine-devel@lists.alpinelinux.org-4a6a0840.rsa.pub",
@@ -1227,7 +1222,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/etc/ssl/certs/ca-certificates.crt",
@@ -1341,7 +1335,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/etc/ssl/ct_log_list.cnf",
@@ -1527,7 +1520,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/lib/libssl.so.1.1",
@@ -1620,7 +1612,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/usr/bin/ssl_client",
@@ -1725,7 +1716,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/lib/libz.so.1.2.12",
@@ -1818,7 +1808,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/lib/libapk.so.3.12.0",
@@ -1920,7 +1909,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/usr/bin/scanelf",
@@ -2013,7 +2001,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [
       {
         "path": "alpine-container-layer.tar.xz/sbin/ldconfig",
@@ -2142,7 +2129,6 @@
     "datasource_ids": [
       "alpine_installed_db"
     ],
-    "license_clarity": [],
     "resources": [],
     "purl": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64"
   }

@@ -82,7 +82,6 @@
       "datasource_ids": [
         "nuget_nupsec"
       ],
-      "license_clarity": [],
       "purl": "pkg:nuget/Castle.Core@4.2.1"
     }
   ],

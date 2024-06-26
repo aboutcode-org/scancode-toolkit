@@ -80,7 +80,6 @@
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:npm/npm@2.13.5"
     }
   ],

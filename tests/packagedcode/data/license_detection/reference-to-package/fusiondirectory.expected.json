@@ -46,7 +46,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory?arch=all"
     },
     {
@@ -95,7 +94,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-alias?arch=all"
     },
     {
@@ -144,7 +142,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-alias-schema?arch=all"
     },
     {
@@ -193,7 +190,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-applications?arch=all"
     },
     {
@@ -242,7 +238,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-applications-schema?arch=all"
     },
     {
@@ -291,7 +286,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-argonaut?arch=all"
     },
     {
@@ -340,7 +334,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-argonaut-schema?arch=all"
     },
     {
@@ -389,7 +382,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-audit?arch=all"
     },
     {
@@ -438,7 +430,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-audit-schema?arch=all"
     },
     {
@@ -487,7 +478,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-autofs?arch=all"
     },
     {
@@ -536,7 +526,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-autofs-schema?arch=all"
     },
     {
@@ -585,7 +574,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-certificates?arch=all"
     },
     {
@@ -634,7 +622,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-community?arch=all"
     },
     {
@@ -683,7 +670,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-community-schema?arch=all"
     },
     {
@@ -732,7 +718,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-cyrus?arch=all"
     },
     {
@@ -781,7 +766,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-cyrus-schema?arch=all"
     },
     {
@@ -830,7 +814,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-debconf?arch=all"
     },
     {
@@ -879,7 +862,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-debconf-schema?arch=all"
     },
     {
@@ -928,7 +910,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-developers?arch=all"
     },
     {
@@ -977,7 +958,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-dhcp?arch=all"
     },
     {
@@ -1026,7 +1006,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-dhcp-schema?arch=all"
     },
     {
@@ -1075,7 +1054,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-dns?arch=all"
     },
     {
@@ -1124,7 +1102,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-dns-schema?arch=all"
     },
     {
@@ -1173,7 +1150,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-dovecot?arch=all"
     },
     {
@@ -1222,7 +1198,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-dovecot-schema?arch=all"
     },
     {
@@ -1271,7 +1246,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-dsa?arch=all"
     },
     {
@@ -1320,7 +1294,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-dsa-schema?arch=all"
     },
     {
@@ -1369,7 +1342,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ejbca?arch=all"
     },
     {
@@ -1418,7 +1390,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ejbca-schema?arch=all"
     },
     {
@@ -1467,7 +1438,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-fai?arch=all"
     },
     {
@@ -1516,7 +1486,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-fai-schema?arch=all"
     },
     {
@@ -1565,7 +1534,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-freeradius?arch=all"
     },
     {
@@ -1614,7 +1582,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-freeradius-schema?arch=all"
     },
     {
@@ -1663,7 +1630,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-fusioninventory?arch=all"
     },
     {
@@ -1712,7 +1678,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-fusioninventory-schema?arch=all"
     },
     {
@@ -1761,7 +1726,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-gpg?arch=all"
     },
     {
@@ -1810,7 +1774,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-gpg-schema?arch=all"
     },
     {
@@ -1859,7 +1822,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ipmi?arch=all"
     },
     {
@@ -1908,7 +1870,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ipmi-schema?arch=all"
     },
     {
@@ -1957,7 +1918,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ldapdump?arch=all"
     },
     {
@@ -2006,7 +1966,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ldapmanager?arch=all"
     },
     {
@@ -2055,7 +2014,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-mail?arch=all"
     },
     {
@@ -2104,7 +2062,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-mail-schema?arch=all"
     },
     {
@@ -2153,7 +2110,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-mixedgroups?arch=all"
     },
     {
@@ -2202,7 +2158,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-nagios?arch=all"
     },
     {
@@ -2251,7 +2206,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-nagios-schema?arch=all"
     },
     {
@@ -2300,7 +2254,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-netgroups?arch=all"
     },
     {
@@ -2349,7 +2302,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-netgroups-schema?arch=all"
     },
     {
@@ -2398,7 +2350,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-newsletter?arch=all"
     },
     {
@@ -2447,7 +2398,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-newsletter-schema?arch=all"
     },
     {
@@ -2496,7 +2446,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-opsi?arch=all"
     },
     {
@@ -2545,7 +2494,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-opsi-schema?arch=all"
     },
     {
@@ -2594,7 +2542,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-personal?arch=all"
     },
     {
@@ -2643,7 +2590,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-personal-schema?arch=all"
     },
     {
@@ -2692,7 +2638,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-posix?arch=all"
     },
     {
@@ -2741,7 +2686,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-postfix?arch=all"
     },
     {
@@ -2790,7 +2734,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-postfix-schema?arch=all"
     },
     {
@@ -2839,7 +2782,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ppolicy?arch=all"
     },
     {
@@ -2888,7 +2830,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ppolicy-schema?arch=all"
     },
     {
@@ -2937,7 +2878,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-puppet?arch=all"
     },
     {
@@ -2986,7 +2926,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-puppet-schema?arch=all"
     },
     {
@@ -3035,7 +2974,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-pureftpd?arch=all"
     },
     {
@@ -3084,7 +3022,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-pureftpd-schema?arch=all"
     },
     {
@@ -3133,7 +3070,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-quota?arch=all"
     },
     {
@@ -3182,7 +3118,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-quota-schema?arch=all"
     },
     {
@@ -3231,7 +3166,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-renater-partage?arch=all"
     },
     {
@@ -3280,7 +3214,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-renater-partage-schema?arch=all"
     },
     {
@@ -3329,7 +3262,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-repository?arch=all"
     },
     {
@@ -3378,7 +3310,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-repository-schema?arch=all"
     },
     {
@@ -3427,7 +3358,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-samba?arch=all"
     },
     {
@@ -3476,7 +3406,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-samba-schema?arch=all"
     },
     {
@@ -3525,7 +3454,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-sogo?arch=all"
     },
     {
@@ -3574,7 +3502,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-sogo-schema?arch=all"
     },
     {
@@ -3623,7 +3550,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-spamassassin?arch=all"
     },
     {
@@ -3672,7 +3598,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-spamassassin-schema?arch=all"
     },
     {
@@ -3721,7 +3646,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-squid?arch=all"
     },
     {
@@ -3770,7 +3694,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-squid-schema?arch=all"
     },
     {
@@ -3819,7 +3742,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ssh?arch=all"
     },
     {
@@ -3868,7 +3790,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-ssh-schema?arch=all"
     },
     {
@@ -3917,7 +3838,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-subcontracting?arch=all"
     },
     {
@@ -3966,7 +3886,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-subcontracting-schema?arch=all"
     },
     {
@@ -4015,7 +3934,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-sudo?arch=all"
     },
     {
@@ -4064,7 +3982,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-sudo-schema?arch=all"
     },
     {
@@ -4113,7 +4030,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-supann?arch=all"
     },
     {
@@ -4162,7 +4078,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-supann-schema?arch=all"
     },
     {
@@ -4211,7 +4126,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-sympa?arch=all"
     },
     {
@@ -4260,7 +4174,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-sympa-schema?arch=all"
     },
     {
@@ -4309,7 +4222,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-systems?arch=all"
     },
     {
@@ -4358,7 +4270,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-systems-schema?arch=all"
     },
     {
@@ -4407,7 +4318,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-user-reminder?arch=all"
     },
     {
@@ -4456,7 +4366,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-user-reminder-schema?arch=all"
     },
     {
@@ -4505,7 +4414,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-weblink?arch=all"
     },
     {
@@ -4554,7 +4462,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-weblink-schema?arch=all"
     },
     {
@@ -4603,7 +4510,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-webservice?arch=all"
     },
     {
@@ -4652,7 +4558,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-plugin-webservice-schema?arch=all"
     },
     {
@@ -4701,7 +4606,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-schema?arch=all"
     },
     {
@@ -4750,7 +4654,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-smarty3-acl-render?arch=all"
     },
     {
@@ -4799,7 +4702,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-theme-oxygen?arch=all"
     },
     {
@@ -4848,7 +4750,6 @@
       "datasource_ids": [
         "debian_control_in_source"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/debian/fusiondirectory-webservice-shell?arch=all"
     }
   ],

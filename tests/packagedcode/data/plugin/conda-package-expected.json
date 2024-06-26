@@ -67,7 +67,6 @@
       "datasource_ids": [
         "conda_meta_yaml"
       ],
-      "license_clarity": [],
       "purl": "pkg:conda/requests-kerberos@0.8.0"
     }
   ],

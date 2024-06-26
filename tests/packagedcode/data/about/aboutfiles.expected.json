@@ -75,7 +75,6 @@
       "datasource_ids": [
         "about_file"
       ],
-      "license_clarity": [],
       "purl": "pkg:about/apipkg@1.4"
     },
     {
@@ -165,7 +164,6 @@
       "datasource_ids": [
         "about_file"
       ],
-      "license_clarity": [],
       "purl": "pkg:about/appdirs@1.4.3"
     }
   ],

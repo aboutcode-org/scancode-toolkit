@@ -75,7 +75,6 @@
       "datasource_ids": [
         "pypi_setup_cfg"
       ],
-      "license_clarity": [],
       "purl": "pkg:pypi/click@attr:%20click.__version__"
     }
   ],

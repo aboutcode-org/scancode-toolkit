@@ -82,7 +82,6 @@
       "datasource_ids": [
         "cran_description"
       ],
-      "license_clarity": [],
       "purl": "pkg:cran/codetools@0.2-16"
     }
   ],

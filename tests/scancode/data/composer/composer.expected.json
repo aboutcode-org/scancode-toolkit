@@ -75,7 +75,6 @@
       "datasource_ids": [
         "php_composer_json"
       ],
-      "license_clarity": [],
       "purl": "pkg:composer/laravel/laravel"
     }
   ],

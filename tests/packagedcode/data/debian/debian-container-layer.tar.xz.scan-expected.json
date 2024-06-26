@@ -191,7 +191,6 @@
         "debian_copyright_in_package",
         "debian_installed_md5sums"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64"
     },
     {
@@ -331,7 +330,6 @@
         "debian_copyright_in_package",
         "debian_installed_md5sums"
       ],
-      "license_clarity": [],
       "purl": "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64"
     }
   ],

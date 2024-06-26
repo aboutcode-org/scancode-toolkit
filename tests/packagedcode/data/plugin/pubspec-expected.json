@@ -59,7 +59,6 @@
       "datasource_ids": [
         "pubspec_yaml"
       ],
-      "license_clarity": [],
       "purl": "pkg:dart/openapi@1.0.0"
     }
   ],
