@@ -47,6 +47,45 @@ if TRACE:
         return logger.debug(" ".join(isinstance(a, str) and a or repr(a) for a in args))
 
 
+class SwiftShowDependenciesDepLockHandler(models.DatafileHandler):
+    datasource_id = "swift_package_show_dependencies"
+    path_patterns = ("*/swift-show-dependencies.deplock",)
+    default_package_type = "swift"
+    default_primary_language = "Swift"
+    description = "Swift dependency graph created by DepLock"
+    documentation_url = ""
+
+    @classmethod
+    def _parse(cls, swift_dependency_relation, package_only=False):
+
+        if TRACE:
+            logger_debug(
+                f"SwiftShowDependenciesDepLockHandler: deplock: package: {swift_dependency_relation}"
+            )
+
+        dependencies = get_flatten_dependencies(
+            swift_dependency_relation.get("dependencies")
+        )
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            namespace=None,
+            name=swift_dependency_relation.get("name"),
+            dependencies=dependencies,
+        )
+
+        return models.PackageData.from_data(package_data, package_only)
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with io.open(location, encoding="utf-8") as loc:
+            swift_dependency_relation = json.load(loc)
+
+        yield cls._parse(swift_dependency_relation, package_only)
+
+
 class SwiftManifestJsonHandler(models.DatafileHandler):
     datasource_id = "swift_package_manifest_json"
     path_patterns = ("*/Package.swift.json", "*/Packages.swift.deplock")
@@ -328,3 +367,149 @@ def get_namespace_and_name(url):
     canonical_name = hostname + path
 
     return canonical_name.rsplit("/", 1)
+
+
+def get_flatten_dependencies(dependency_tree):
+    dependencies = []
+
+    transitive_dependencies = []
+
+    # process direct dependency
+    for dependency in dependency_tree:
+        dependencies_for_direct = []
+        repository_url = dependency.get("url")
+        version = dependency.get("version")
+        namespace, name = get_namespace_and_name(repository_url)
+        purl = PackageURL(
+            type="swift",
+            namespace=namespace,
+            name=name,
+            version=version,
+        )
+
+        transitives = dependency.get("dependencies", [])
+        transitive_dependencies.append(transitives)
+        for transitive in transitives:
+            transitive_repository_url = transitive.get("url")
+            transitive_version = transitive.get("version")
+            transitive_namespace, transitive_name = get_namespace_and_name(
+                transitive_repository_url
+            )
+            transitive_purl = PackageURL(
+                type="swift",
+                namespace=transitive_namespace,
+                name=transitive_name,
+                version=transitive_version,
+            )
+
+            dependency_for_direct = models.DependentPackage(
+                purl=transitive_purl.to_string(),
+                scope="dependencies",
+                extracted_requirement=transitive_version,
+                is_runtime=False,
+                is_optional=False,
+                is_resolved=True,
+                is_direct=True,
+            ).to_dict()
+
+            dependencies_for_direct.append(dependency_for_direct)
+
+        direct_dependency_mapping = dict(
+            datasource_id=SwiftShowDependenciesDepLockHandler.datasource_id,
+            type=SwiftShowDependenciesDepLockHandler.default_package_type,
+            primary_language=SwiftShowDependenciesDepLockHandler.default_primary_language,
+            namespace=namespace,
+            name=name,
+            version=version,
+            dependencies=dependencies_for_direct,
+            is_virtual=True,
+        )
+        direct_dependency = models.PackageData.from_data(direct_dependency_mapping)
+
+        dependencies.append(
+            models.DependentPackage(
+                purl=purl.to_string(),
+                scope="dependencies",
+                extracted_requirement=version,
+                is_runtime=False,
+                is_optional=False,
+                is_resolved=True,
+                is_direct=True,
+                resolved_package=direct_dependency,
+            )
+        )
+
+    # process all transitive dependencies
+    while transitive_dependencies:
+        transitive_dependency_tree = transitive_dependencies.pop(0)
+        if not transitive_dependency_tree:
+            continue
+
+        for item in transitive_dependency_tree:
+            dependencies_of_transitive_dependency = item.get("dependencies", [])
+            # add nested dependencies in transitive_dependencies queue for processing
+            transitive_dependencies.append(dependencies_of_transitive_dependency)
+
+            transitive_dependency_repository_url = item.get("url")
+            transitive_dependency_version = item.get("version")
+            transitive_dependency_namespace, transitive_dependency_name = (
+                get_namespace_and_name(transitive_dependency_repository_url)
+            )
+            transitive_dependency_purl = PackageURL(
+                type="swift",
+                namespace=transitive_dependency_namespace,
+                name=transitive_dependency_name,
+                version=transitive_dependency_version,
+            )
+
+            dependencies_for_transitive = []
+            for dep in dependencies_of_transitive_dependency:
+                dep_repository_url = dep.get("url")
+                dep_version = dep.get("version")
+                dep_namespace, dep_name = get_namespace_and_name(dep_repository_url)
+                dep_purl = PackageURL(
+                    type="swift",
+                    namespace=dep_namespace,
+                    name=dep_name,
+                    version=dep_version,
+                )
+
+                dependency_for_transitive = models.DependentPackage(
+                    purl=dep_purl.to_string(),
+                    scope="dependencies",
+                    extracted_requirement=dep_version,
+                    is_runtime=False,
+                    is_optional=False,
+                    is_resolved=True,
+                    is_direct=True,
+                ).to_dict()
+                dependencies_for_transitive.append(dependency_for_transitive)
+
+            transitive_dependency_mapping = dict(
+                datasource_id=SwiftShowDependenciesDepLockHandler.datasource_id,
+                type=SwiftShowDependenciesDepLockHandler.default_package_type,
+                primary_language=SwiftShowDependenciesDepLockHandler.default_primary_language,
+                namespace=transitive_dependency_namespace,
+                name=transitive_dependency_name,
+                version=transitive_dependency_version,
+                dependencies=dependencies_for_transitive,
+                is_virtual=True,
+            )
+            transitive_dependency_package = models.PackageData.from_data(
+                transitive_dependency_mapping
+            )
+
+            dependencies.append(
+                models.DependentPackage(
+                    purl=transitive_dependency_purl.to_string(),
+                    scope="dependencies",
+                    extracted_requirement=transitive_dependency_version,
+                    is_runtime=False,
+                    is_optional=False,
+                    is_resolved=True,
+                    is_direct=False,
+                    resolved_package=transitive_dependency_package,
+                )
+            )
+
+    return dependencies

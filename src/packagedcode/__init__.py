@@ -202,6 +202,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     swift.SwiftManifestJsonHandler,
     swift.SwiftPackageResolvedHandler,
+    swift.SwiftShowDependenciesDepLockHandler,
 
     windows.MicrosoftUpdateManifestHandler,
 

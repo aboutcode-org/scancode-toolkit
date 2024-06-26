@@ -780,6 +780,12 @@ parsers in scancode-toolkit during documentation builds.
      - ``swift_package_resolved``
      - swift
      - https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#package-dependency
+   * - Swift dependency graph created by DepLock
+     - ``*/swift-show-dependencies.deplock``
+     - ``swift``
+     - ``swift_package_show_dependencies``
+     - Swift
+     - None
    * - Java Web Application Archive
      - ``*.war``
      - ``war``
