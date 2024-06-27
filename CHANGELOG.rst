@@ -38,6 +38,10 @@ v33.0.0 (next next, roadmap)
   from nuget lockfile `packages.lock.json`.
   See https://github.com/nexB/scancode-toolkit/pull/3825
 
+- Add support for parsing resolved packages and dependency relationships
+  from cocoapods lockfile `Podfile.lock`.
+  See https://github.com/nexB/scancode-toolkit/pull/3827
+
 v32.2.0 - 2024-06-19
 ----------------------
 

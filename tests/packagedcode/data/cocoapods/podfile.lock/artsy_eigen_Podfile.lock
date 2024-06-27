@@ -1,0 +1,111 @@
+PODS:
+  - Aerodramus (2.0.0):
+    - ISO8601DateFormatter
+  - AFNetworkActivityLogger (2.0.4):
+    - AFNetworking/NSURLConnection (~> 2.0)
+    - AFNetworking/NSURLSession (~> 2.0)
+  - AFNetworking/NSURLConnection (2.7.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.7.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.7.0)
+  - AFNetworking/Security (2.7.0)
+  - AFNetworking/Serialization (2.7.0)
+  - Analytics (4.1.8)
+  - AppAuth (1.7.3):
+    - AppAuth/Core (= 1.7.3)
+    - AppAuth/ExternalUserAgent (= 1.7.3)
+  - AppAuth/Core (1.7.3)
+  - AppAuth/ExternalUserAgent (1.7.3):
+    - AppAuth/Core
+  - Appboy-iOS-SDK (4.4.4):
+    - Appboy-iOS-SDK/UI (= 4.4.4)
+  - Appboy-iOS-SDK/ContentCards (4.4.4):
+    - Appboy-iOS-SDK/Core
+  - Appboy-iOS-SDK/Core (4.4.4)
+  - Appboy-iOS-SDK/InAppMessage (4.4.4):
+    - Appboy-iOS-SDK/Core
+  - Appboy-iOS-SDK/NewsFeed (4.4.4):
+    - Appboy-iOS-SDK/Core
+  - Appboy-iOS-SDK/UI (4.4.4):
+    - Appboy-iOS-SDK/ContentCards
+    - Appboy-iOS-SDK/Core
+    - Appboy-iOS-SDK/InAppMessage
+    - Appboy-iOS-SDK/NewsFeed
+  - appcenter-core (5.0.0):
+    - AppCenterReactNativeShared (~> 5.0)
+  - AppCenter/Core (5.0.3)
+  - AppCenterReactNativeShared (5.0.0):
+    - AppCenter/Core (= 5.0.3)
+  - Base64 (1.1.2)
+  - boost (1.76.0)
+  - ISO8601DateFormatter (0.7.1)
+  - Pulley (2.6.2)
+  - SwiftyJSON (5.0.2)
+
+DEPENDENCIES:
+  - Aerodramus (= 2.0.0)
+  - AFNetworkActivityLogger
+  - AFNetworking/NSURLConnection (= 2.7.0)
+  - AFNetworking/NSURLSession (= 2.7.0)
+  - appcenter-core (from `../node_modules/appcenter`)
+  - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
+  - Pulley (from `https://github.com/artsy/Pulley.git`, branch `master`)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON/`, commit `af76cf3ef710b6ca5f8c05f3a31307d44a3c5828`)
+
+SPEC REPOS:
+  https://github.com/artsy/Specs.git:
+    - Aerodramus
+  trunk:
+    - AFNetworkActivityLogger
+    - AFNetworking
+    - Analytics
+    - AppAuth
+    - Appboy-iOS-SDK
+    - AppCenter
+    - AppCenterReactNativeShared
+
+EXTERNAL SOURCES:
+  appcenter-core:
+    :path: "../node_modules/appcenter"
+  boost:
+    :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
+  Pulley:
+    :branch: master
+    :git: https://github.com/artsy/Pulley.git
+  SwiftyJSON:
+    :commit: af76cf3ef710b6ca5f8c05f3a31307d44a3c5828
+    :git: https://github.com/SwiftyJSON/SwiftyJSON/
+
+CHECKOUT OPTIONS:
+  ISO8601DateFormatter:
+    :commit: 1a48b819c85903ded669e74e476aceffebf311fc
+    :git: https://github.com/artsy/iso-8601-date-formatter
+  Pulley:
+    :commit: f677b18b332ea3798dc379879dbc0d038efd3ccc
+    :git: https://github.com/artsy/Pulley.git
+  SwiftyJSON:
+    :commit: af76cf3ef710b6ca5f8c05f3a31307d44a3c5828
+    :git: https://github.com/SwiftyJSON/SwiftyJSON/
+
+SPEC CHECKSUMS:
+  Aerodramus: a22de7451c8fc85ae5d974f5d6a656f59046fffc
+  AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
+  AFNetworking: 9d57de7506959955d82fb5274ee4bec86b930e52
+  Analytics: 9655e0e1c71ea98107cfcb2b14891168acc6c6c9
+  AppAuth: a13994980c1ec792f7e2e665acd4d4aa6be43240
+  Appboy-iOS-SDK: b05b957ab645d0a9a43d3f35195ad69202b89edc
+  AppCenter: a4070ec3d4418b5539067a51f57155012e486ebd
+  appcenter-core: e192ea8b373bebd3e44998882b43311078bd7dda
+  AppCenterReactNativeShared: 01df23849b1c3c6eb8c4049f54322635650e98f0
+  boost: 7dcd2de282d72e344012f7d6564d024930a6a440
+  Pulley: edc993fb57f7eb20541c8453d0fce10559f21dac
+  SwiftyJSON: 576fbf26942d5ef414daad8870b1642413ecc00c
+
+PODFILE CHECKSUM: 5692a82aae086bb5c68f7181faa1760979de637c
+
+COCOAPODS: 1.14.3
