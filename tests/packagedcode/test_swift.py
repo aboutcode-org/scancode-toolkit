@@ -102,7 +102,7 @@ class TestSwiftEndtoEnd(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
-    def test_package_scan_swift_end_to_end_full_mapboxmaps_resolved_only(self):
+    def test_package_scan_swift_end_to_end_full_vercelui_resolved_only(self):
         test_dir = self.get_test_loc("packages/vercelui")
         result_file = self.get_temp_file("json")
         expected_file = self.get_test_loc(

@@ -64,14 +64,15 @@ class SwiftShowDependenciesDepLockHandler(models.DatafileHandler):
             )
 
         dependencies = get_flatten_dependencies(
-            swift_dependency_relation.get("dependencies")
+            dependency_tree=swift_dependency_relation.get("dependencies")
         )
 
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
-            namespace=None,
+            # ``namespace`` is derived from repo URL and same is not available in dependency graph
+            # See related issue: https://github.com/nexB/scancode-toolkit/issues/3793
             name=swift_dependency_relation.get("name"),
             dependencies=dependencies,
         )

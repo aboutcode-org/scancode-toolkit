@@ -24,29 +24,6 @@
           }
         }
       ]
-    },
-    {
-      "sourceControl" : [
-        {
-          "identity" : "tokamak",
-          "location" : {
-            "remote" : [
-              {
-                "urlString" : "https://github.com/TokamakUI/Tokamak"
-              }
-            ]
-          },
-          "productFilter" : null,
-          "requirement" : {
-            "range" : [
-              {
-                "lowerBound" : "0.11.1",
-                "upperBound" : "1.0.0"
-              }
-            ]
-          }
-        }
-      ]
     }
   ],
   "name" : "VercelUI",
