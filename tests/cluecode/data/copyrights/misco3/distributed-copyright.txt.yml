@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2010 GSyC/LibreSoft, Universidad Rey Juan Carlos
+  - Copyright (c) Distributed Management Task Force
+holders:
+  - GSyC/LibreSoft, Universidad Rey Juan Carlos
+  - Distributed Management Task Force
+holders_summary:
+  - value: Distributed Management Task Force
+    count: 1
+  - value: GSyC/LibreSoft, Universidad Rey Juan Carlos
+    count: 1

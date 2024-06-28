@@ -156,6 +156,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     nuget.NugetNupkgHandler,
     nuget.NugetNuspecHandler,
+    nuget.NugetPackagesLockHandler,
 
     opam.OpamFileHandler,
 
@@ -203,6 +204,7 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
 
     swift.SwiftManifestJsonHandler,
     swift.SwiftPackageResolvedHandler,
+    swift.SwiftShowDependenciesDepLockHandler,
 
     windows.MicrosoftUpdateManifestHandler,
 

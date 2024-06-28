@@ -1,0 +1,17 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2015-2020 Formidable Labs
+  - Copyright (c) 2016-2020 Alexey Svetliakov <https://github.com/asvetliakov> , snerks <https://github.com/snerks>
+    , Krzysztof Cebula https://github.com
+holders:
+  - Formidable Labs
+  - Alexey Svetliakov , snerks , Krzysztof Cebula
+holders_summary:
+  - value: Alexey Svetliakov , snerks , Krzysztof Cebula
+    count: 1
+  - value: Formidable Labs
+    count: 1

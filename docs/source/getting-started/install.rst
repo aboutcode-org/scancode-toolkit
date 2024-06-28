@@ -34,6 +34,11 @@ For advanced usage and experienced users, you can also use any of these mode:
     ``pip``. This is recommended for developers or users familiar with Python
     that want to embed ScanCode as a library.
 
+- :ref:`fedora_install`
+
+    ScanCode is part of main Fedora Linux repository. It will automatically install
+    all dependencies. This is recommended for production deployments.
+
 ----
 
 Before Installing
@@ -410,6 +415,22 @@ For more information on Python virtualenv, visit this
 To uninstall, run::
 
     pip uninstall scancode-toolkit
+
+
+----
+
+.. _fedora_install:
+
+Install from Fedora's repository
+--------------------------------
+
+The package is available in Fedora 40 and newer. Run::
+
+    dnf install scancode-toolkit
+
+To uninstall, run::
+
+    dnf remove scancode-toolkit
 
 
 ----

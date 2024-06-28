@@ -7,20 +7,19 @@ copyrights:
   - Copyright (c) 2001-2005 Novell
   - Copyright (c) Microsoft Corporation
   - Copyright (c) 2007 James Newton-King
-  - Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie
-    Poole
+  - Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov, Charlie Poole
   - Copyright (c) 2000-2004 Philip A. Craig
-  - Portions Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov
-    , Charlie Poole
+  - Portions Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov,
+    Charlie Poole
   - Copyright (c) 2000-2004 Philip A. Craig
   - Copyright (c) 2007, 2008 LShift Ltd.
   - Copyright (c) 2007, 2008 Cohesive Financial Technologies LLC.
   - Copyright (c) 2007, 2008 Rabbit Technologies Ltd.
-  - Copyright (c) 2007, 2008 LShift Ltd., Cohesive Financial Technologies LLC. , and Rabbit
-    Technologies Ltd.
-  - Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit
-    Technologies Ltd.
-  - Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies
+  - Copyright (c) 2007, 2008 LShift Ltd., Cohesive Financial Technologies LLC., and Rabbit Technologies
+    Ltd.
+  - Copyright (c) 2007, 2008 LShift Ltd., Cohesive Financial Technologies LLC., and Rabbit Technologies
+    Ltd.
+  - Copyright (c) 2007 LShift Ltd., Cohesive Financial Technologies LLC., and Rabbit Technologies
     Ltd.
   - Copyright (c) ???? Simon Mourier <simonm@microsoft.com>
 holders:
@@ -28,21 +27,21 @@ holders:
   - Novell
   - Microsoft Corporation
   - James Newton-King
-  - James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole
+  - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov, Charlie Poole
   - Philip A. Craig
-  - James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole
+  - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov, Charlie Poole
   - Philip A. Craig
   - LShift Ltd.
   - Cohesive Financial Technologies LLC.
   - Rabbit Technologies Ltd.
-  - LShift Ltd., Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
-  - LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
-  - LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
+  - LShift Ltd., Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.
+  - LShift Ltd., Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.
+  - LShift Ltd., Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.
   - Simon Mourier
 holders_summary:
-  - value: LShift Ltd., Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
+  - value: LShift Ltd., Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.
     count: 3
-  - value: James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole
+  - value: James W. Newkirk, Michael C. Two, Alexei A. Vorontsov, Charlie Poole
     count: 2
   - value: Philip A. Craig
     count: 2
