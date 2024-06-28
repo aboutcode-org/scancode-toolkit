@@ -155,7 +155,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/coverage",
-              "extracted_requirement": "coverage[toml]>=5.0.2; extra == \"dev\"",
+              "extracted_requirement": ">=5.0.2",
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -166,7 +166,7 @@
             },
             {
               "purl": "pkg:pypi/hypothesis",
-              "extracted_requirement": "hypothesis; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -177,7 +177,7 @@
             },
             {
               "purl": "pkg:pypi/pympler",
-              "extracted_requirement": "pympler; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -188,7 +188,7 @@
             },
             {
               "purl": "pkg:pypi/pytest",
-              "extracted_requirement": "pytest>=4.3.0; extra == \"dev\"",
+              "extracted_requirement": ">=4.3.0",
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -199,7 +199,7 @@
             },
             {
               "purl": "pkg:pypi/six",
-              "extracted_requirement": "six; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -210,7 +210,7 @@
             },
             {
               "purl": "pkg:pypi/mypy",
-              "extracted_requirement": "mypy; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -221,7 +221,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-mypy-plugins",
-              "extracted_requirement": "pytest-mypy-plugins; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -232,7 +232,7 @@
             },
             {
               "purl": "pkg:pypi/zope-interface",
-              "extracted_requirement": "zope.interface; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -243,7 +243,7 @@
             },
             {
               "purl": "pkg:pypi/furo",
-              "extracted_requirement": "furo; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -254,7 +254,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx",
-              "extracted_requirement": "sphinx; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -265,7 +265,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-notfound-page",
-              "extracted_requirement": "sphinx-notfound-page; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -276,7 +276,7 @@
             },
             {
               "purl": "pkg:pypi/pre-commit",
-              "extracted_requirement": "pre-commit; extra == \"dev\"",
+              "extracted_requirement": null,
               "scope": "dev",
               "is_runtime": true,
               "is_optional": true,
@@ -287,7 +287,7 @@
             },
             {
               "purl": "pkg:pypi/furo",
-              "extracted_requirement": "furo; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -298,7 +298,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx",
-              "extracted_requirement": "sphinx; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -309,7 +309,7 @@
             },
             {
               "purl": "pkg:pypi/zope-interface",
-              "extracted_requirement": "zope.interface; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -320,7 +320,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-notfound-page",
-              "extracted_requirement": "sphinx-notfound-page; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -331,7 +331,7 @@
             },
             {
               "purl": "pkg:pypi/coverage",
-              "extracted_requirement": "coverage[toml]>=5.0.2; extra == \"tests\"",
+              "extracted_requirement": ">=5.0.2",
               "scope": "tests",
               "is_runtime": true,
               "is_optional": true,
@@ -342,7 +342,7 @@
             },
             {
               "purl": "pkg:pypi/hypothesis",
-              "extracted_requirement": "hypothesis; extra == \"tests\"",
+              "extracted_requirement": null,
               "scope": "tests",
               "is_runtime": true,
               "is_optional": true,
@@ -353,7 +353,7 @@
             },
             {
               "purl": "pkg:pypi/pympler",
-              "extracted_requirement": "pympler; extra == \"tests\"",
+              "extracted_requirement": null,
               "scope": "tests",
               "is_runtime": true,
               "is_optional": true,
@@ -364,7 +364,7 @@
             },
             {
               "purl": "pkg:pypi/pytest",
-              "extracted_requirement": "pytest>=4.3.0; extra == \"tests\"",
+              "extracted_requirement": ">=4.3.0",
               "scope": "tests",
               "is_runtime": true,
               "is_optional": true,
@@ -375,7 +375,7 @@
             },
             {
               "purl": "pkg:pypi/six",
-              "extracted_requirement": "six; extra == \"tests\"",
+              "extracted_requirement": null,
               "scope": "tests",
               "is_runtime": true,
               "is_optional": true,
@@ -386,7 +386,7 @@
             },
             {
               "purl": "pkg:pypi/mypy",
-              "extracted_requirement": "mypy; extra == \"tests\"",
+              "extracted_requirement": null,
               "scope": "tests",
               "is_runtime": true,
               "is_optional": true,
@@ -397,7 +397,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-mypy-plugins",
-              "extracted_requirement": "pytest-mypy-plugins; extra == \"tests\"",
+              "extracted_requirement": null,
               "scope": "tests",
               "is_runtime": true,
               "is_optional": true,
@@ -408,7 +408,7 @@
             },
             {
               "purl": "pkg:pypi/zope-interface",
-              "extracted_requirement": "zope.interface; extra == \"tests\"",
+              "extracted_requirement": null,
               "scope": "tests",
               "is_runtime": true,
               "is_optional": true,
@@ -419,7 +419,7 @@
             },
             {
               "purl": "pkg:pypi/coverage",
-              "extracted_requirement": "coverage[toml]>=5.0.2; extra == \"tests_no_zope\"",
+              "extracted_requirement": ">=5.0.2",
               "scope": "tests_no_zope",
               "is_runtime": true,
               "is_optional": true,
@@ -430,7 +430,7 @@
             },
             {
               "purl": "pkg:pypi/hypothesis",
-              "extracted_requirement": "hypothesis; extra == \"tests_no_zope\"",
+              "extracted_requirement": null,
               "scope": "tests_no_zope",
               "is_runtime": true,
               "is_optional": true,
@@ -441,7 +441,7 @@
             },
             {
               "purl": "pkg:pypi/pympler",
-              "extracted_requirement": "pympler; extra == \"tests_no_zope\"",
+              "extracted_requirement": null,
               "scope": "tests_no_zope",
               "is_runtime": true,
               "is_optional": true,
@@ -452,7 +452,7 @@
             },
             {
               "purl": "pkg:pypi/pytest",
-              "extracted_requirement": "pytest>=4.3.0; extra == \"tests_no_zope\"",
+              "extracted_requirement": ">=4.3.0",
               "scope": "tests_no_zope",
               "is_runtime": true,
               "is_optional": true,
@@ -463,7 +463,7 @@
             },
             {
               "purl": "pkg:pypi/six",
-              "extracted_requirement": "six; extra == \"tests_no_zope\"",
+              "extracted_requirement": null,
               "scope": "tests_no_zope",
               "is_runtime": true,
               "is_optional": true,
@@ -474,7 +474,7 @@
             },
             {
               "purl": "pkg:pypi/mypy",
-              "extracted_requirement": "mypy; extra == \"tests_no_zope\"",
+              "extracted_requirement": null,
               "scope": "tests_no_zope",
               "is_runtime": true,
               "is_optional": true,
@@ -485,7 +485,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-mypy-plugins",
-              "extracted_requirement": "pytest-mypy-plugins; extra == \"tests_no_zope\"",
+              "extracted_requirement": null,
               "scope": "tests_no_zope",
               "is_runtime": true,
               "is_optional": true,
@@ -574,7 +574,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/pyparsing",
-              "extracted_requirement": "pyparsing>=2.0.2",
+              "extracted_requirement": ">=2.0.2",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -599,7 +599,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "is_direct": false,
+        "is_direct": true,
         "resolved_package": {
           "type": "pypi",
           "namespace": null,
@@ -911,7 +911,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "is_direct": false,
+        "is_direct": true,
         "resolved_package": {
           "type": "pypi",
           "namespace": null,
@@ -959,7 +959,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/sphinx",
-              "extracted_requirement": "sphinx>=3.5; extra == \"docs\"",
+              "extracted_requirement": ">=3.5",
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -970,7 +970,7 @@
             },
             {
               "purl": "pkg:pypi/jaraco-packaging",
-              "extracted_requirement": "jaraco.packaging>=9.3; extra == \"docs\"",
+              "extracted_requirement": ">=9.3",
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -981,7 +981,7 @@
             },
             {
               "purl": "pkg:pypi/rst-linker",
-              "extracted_requirement": "rst.linker>=1.9; extra == \"docs\"",
+              "extracted_requirement": ">=1.9",
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -992,7 +992,7 @@
             },
             {
               "purl": "pkg:pypi/furo",
-              "extracted_requirement": "furo; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1003,7 +1003,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-lint",
-              "extracted_requirement": "sphinx-lint; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1014,7 +1014,7 @@
             },
             {
               "purl": "pkg:pypi/jaraco-tidelift",
-              "extracted_requirement": "jaraco.tidelift>=1.4; extra == \"docs\"",
+              "extracted_requirement": ">=1.4",
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1025,7 +1025,7 @@
             },
             {
               "purl": "pkg:pypi/pygments-github-lexers@0.0.5",
-              "extracted_requirement": "pygments-github-lexers==0.0.5; extra == \"docs\"",
+              "extracted_requirement": "==0.0.5",
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1036,7 +1036,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-favicon",
-              "extracted_requirement": "sphinx-favicon; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1047,7 +1047,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-inline-tabs",
-              "extracted_requirement": "sphinx-inline-tabs; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1058,7 +1058,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-reredirects",
-              "extracted_requirement": "sphinx-reredirects; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1069,7 +1069,7 @@
             },
             {
               "purl": "pkg:pypi/sphinxcontrib-towncrier",
-              "extracted_requirement": "sphinxcontrib-towncrier; extra == \"docs\"",
+              "extracted_requirement": null,
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1080,7 +1080,7 @@
             },
             {
               "purl": "pkg:pypi/sphinx-notfound-page",
-              "extracted_requirement": "sphinx-notfound-page<2,>=1; extra == \"docs\"",
+              "extracted_requirement": "<2,>=1",
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1091,7 +1091,7 @@
             },
             {
               "purl": "pkg:pypi/pyproject-hooks",
-              "extracted_requirement": "pyproject-hooks!=1.1; extra == \"docs\"",
+              "extracted_requirement": "!=1.1",
               "scope": "docs",
               "is_runtime": true,
               "is_optional": true,
@@ -1102,7 +1102,7 @@
             },
             {
               "purl": "pkg:pypi/pytest",
-              "extracted_requirement": "pytest!=8.1.1,>=6; extra == \"testing\"",
+              "extracted_requirement": "!=8.1.1,>=6",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1113,7 +1113,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-checkdocs",
-              "extracted_requirement": "pytest-checkdocs>=2.4; extra == \"testing\"",
+              "extracted_requirement": ">=2.4",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1124,7 +1124,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-mypy",
-              "extracted_requirement": "pytest-mypy; extra == \"testing\"",
+              "extracted_requirement": null,
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1135,7 +1135,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-enabler",
-              "extracted_requirement": "pytest-enabler>=2.2; extra == \"testing\"",
+              "extracted_requirement": ">=2.2",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1146,7 +1146,7 @@
             },
             {
               "purl": "pkg:pypi/virtualenv",
-              "extracted_requirement": "virtualenv>=13.0.0; extra == \"testing\"",
+              "extracted_requirement": ">=13.0.0",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1157,7 +1157,7 @@
             },
             {
               "purl": "pkg:pypi/wheel",
-              "extracted_requirement": "wheel; extra == \"testing\"",
+              "extracted_requirement": null,
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1168,7 +1168,7 @@
             },
             {
               "purl": "pkg:pypi/pip",
-              "extracted_requirement": "pip>=19.1; extra == \"testing\"",
+              "extracted_requirement": ">=19.1",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1179,7 +1179,7 @@
             },
             {
               "purl": "pkg:pypi/packaging",
-              "extracted_requirement": "packaging>=23.2; extra == \"testing\"",
+              "extracted_requirement": ">=23.2",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1190,7 +1190,7 @@
             },
             {
               "purl": "pkg:pypi/jaraco-envs",
-              "extracted_requirement": "jaraco.envs>=2.2; extra == \"testing\"",
+              "extracted_requirement": ">=2.2",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1201,7 +1201,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-xdist",
-              "extracted_requirement": "pytest-xdist>=3; extra == \"testing\"",
+              "extracted_requirement": ">=3",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1212,7 +1212,7 @@
             },
             {
               "purl": "pkg:pypi/jaraco-path",
-              "extracted_requirement": "jaraco.path>=3.2.0; extra == \"testing\"",
+              "extracted_requirement": ">=3.2.0",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1223,7 +1223,7 @@
             },
             {
               "purl": "pkg:pypi/build",
-              "extracted_requirement": "build[virtualenv]>=1.0.3; extra == \"testing\"",
+              "extracted_requirement": ">=1.0.3",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1234,7 +1234,7 @@
             },
             {
               "purl": "pkg:pypi/filelock",
-              "extracted_requirement": "filelock>=3.4.0; extra == \"testing\"",
+              "extracted_requirement": ">=3.4.0",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1245,7 +1245,7 @@
             },
             {
               "purl": "pkg:pypi/ini2toml",
-              "extracted_requirement": "ini2toml[lite]>=0.14; extra == \"testing\"",
+              "extracted_requirement": ">=0.14",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1256,7 +1256,7 @@
             },
             {
               "purl": "pkg:pypi/tomli-w",
-              "extracted_requirement": "tomli-w>=1.0.0; extra == \"testing\"",
+              "extracted_requirement": ">=1.0.0",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1267,7 +1267,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-timeout",
-              "extracted_requirement": "pytest-timeout; extra == \"testing\"",
+              "extracted_requirement": null,
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1278,7 +1278,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-home",
-              "extracted_requirement": "pytest-home>=0.5; extra == \"testing\"",
+              "extracted_requirement": ">=0.5",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1289,7 +1289,7 @@
             },
             {
               "purl": "pkg:pypi/mypy@1.10.0",
-              "extracted_requirement": "mypy==1.10.0; extra == \"testing\"",
+              "extracted_requirement": "==1.10.0",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1300,7 +1300,7 @@
             },
             {
               "purl": "pkg:pypi/tomli",
-              "extracted_requirement": "tomli; extra == \"testing\"",
+              "extracted_requirement": null,
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1311,7 +1311,7 @@
             },
             {
               "purl": "pkg:pypi/importlib-metadata",
-              "extracted_requirement": "importlib-metadata; extra == \"testing\"",
+              "extracted_requirement": null,
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1322,7 +1322,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-subprocess",
-              "extracted_requirement": "pytest-subprocess; extra == \"testing\"",
+              "extracted_requirement": null,
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1333,7 +1333,7 @@
             },
             {
               "purl": "pkg:pypi/pyproject-hooks",
-              "extracted_requirement": "pyproject-hooks!=1.1; extra == \"testing\"",
+              "extracted_requirement": "!=1.1",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1344,7 +1344,7 @@
             },
             {
               "purl": "pkg:pypi/jaraco-test",
-              "extracted_requirement": "jaraco.test; extra == \"testing\"",
+              "extracted_requirement": null,
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1355,7 +1355,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-cov",
-              "extracted_requirement": "pytest-cov; platform_python_implementation != \"PyPy\" and extra == \"testing\"",
+              "extracted_requirement": null,
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1366,7 +1366,7 @@
             },
             {
               "purl": "pkg:pypi/jaraco-develop",
-              "extracted_requirement": "jaraco.develop>=7.21; (python_version >= \"3.9\" and sys_platform != \"cygwin\") and extra == \"testing\"",
+              "extracted_requirement": ">=7.21",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1377,7 +1377,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-ruff",
-              "extracted_requirement": "pytest-ruff>=0.3.2; sys_platform != \"cygwin\" and extra == \"testing\"",
+              "extracted_requirement": ">=0.3.2",
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1388,7 +1388,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-perf",
-              "extracted_requirement": "pytest-perf; sys_platform != \"cygwin\" and extra == \"testing\"",
+              "extracted_requirement": null,
               "scope": "testing",
               "is_runtime": true,
               "is_optional": true,
@@ -1413,7 +1413,7 @@
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": true,
-        "is_direct": false,
+        "is_direct": true,
         "resolved_package": {
           "type": "pypi",
           "namespace": null,
@@ -1457,7 +1457,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/pytest",
-              "extracted_requirement": "pytest>=6.0.0; extra == \"test\"",
+              "extracted_requirement": ">=6.0.0",
               "scope": "test",
               "is_runtime": true,
               "is_optional": true,
@@ -1468,7 +1468,7 @@
             },
             {
               "purl": "pkg:pypi/setuptools",
-              "extracted_requirement": "setuptools>=65; extra == \"test\"",
+              "extracted_requirement": ">=65",
               "scope": "test",
               "is_runtime": true,
               "is_optional": true,
@@ -1488,7 +1488,7 @@
       },
       {
         "purl": "pkg:pypi/sphinx",
-        "extracted_requirement": "Sphinx>=5.0.2; extra == \"docs\"",
+        "extracted_requirement": ">=5.0.2",
         "scope": "docs",
         "is_runtime": true,
         "is_optional": true,
@@ -1499,7 +1499,7 @@
       },
       {
         "purl": "pkg:pypi/sphinx-rtd-theme",
-        "extracted_requirement": "sphinx-rtd-theme>=1.0.0; extra == \"docs\"",
+        "extracted_requirement": ">=1.0.0",
         "scope": "docs",
         "is_runtime": true,
         "is_optional": true,
@@ -1510,7 +1510,7 @@
       },
       {
         "purl": "pkg:pypi/sphinx-reredirects",
-        "extracted_requirement": "sphinx-reredirects>=0.1.2; extra == \"docs\"",
+        "extracted_requirement": ">=0.1.2",
         "scope": "docs",
         "is_runtime": true,
         "is_optional": true,
@@ -1521,7 +1521,7 @@
       },
       {
         "purl": "pkg:pypi/doc8",
-        "extracted_requirement": "doc8>=0.11.2; extra == \"docs\"",
+        "extracted_requirement": ">=0.11.2",
         "scope": "docs",
         "is_runtime": true,
         "is_optional": true,
@@ -1532,7 +1532,7 @@
       },
       {
         "purl": "pkg:pypi/pytest",
-        "extracted_requirement": "pytest!=7.0.0,>=6; extra == \"testing\"",
+        "extracted_requirement": "!=7.0.0,>=6",
         "scope": "testing",
         "is_runtime": true,
         "is_optional": true,
@@ -1543,7 +1543,7 @@
       },
       {
         "purl": "pkg:pypi/pytest-xdist",
-        "extracted_requirement": "pytest-xdist>=2; extra == \"testing\"",
+        "extracted_requirement": ">=2",
         "scope": "testing",
         "is_runtime": true,
         "is_optional": true,
@@ -1554,7 +1554,7 @@
       },
       {
         "purl": "pkg:pypi/aboutcode-toolkit",
-        "extracted_requirement": "aboutcode-toolkit>=7.0.2; extra == \"testing\"",
+        "extracted_requirement": ">=7.0.2",
         "scope": "testing",
         "is_runtime": true,
         "is_optional": true,
@@ -1565,7 +1565,7 @@
       },
       {
         "purl": "pkg:pypi/pycodestyle",
-        "extracted_requirement": "pycodestyle>=2.8.0; extra == \"testing\"",
+        "extracted_requirement": ">=2.8.0",
         "scope": "testing",
         "is_runtime": true,
         "is_optional": true,
@@ -1576,7 +1576,7 @@
       },
       {
         "purl": "pkg:pypi/twine",
-        "extracted_requirement": "twine; extra == \"testing\"",
+        "extracted_requirement": null,
         "scope": "testing",
         "is_runtime": true,
         "is_optional": true,
@@ -1587,7 +1587,7 @@
       },
       {
         "purl": "pkg:pypi/black",
-        "extracted_requirement": "black; extra == \"testing\"",
+        "extracted_requirement": null,
         "scope": "testing",
         "is_runtime": true,
         "is_optional": true,
@@ -1598,7 +1598,7 @@
       },
       {
         "purl": "pkg:pypi/commoncode",
-        "extracted_requirement": "commoncode; extra == \"testing\"",
+        "extracted_requirement": null,
         "scope": "testing",
         "is_runtime": true,
         "is_optional": true,
@@ -1609,7 +1609,7 @@
       },
       {
         "purl": "pkg:pypi/isort",
-        "extracted_requirement": "isort>=5.10.1; extra == \"testing\"",
+        "extracted_requirement": ">=5.10.1",
         "scope": "testing",
         "is_runtime": true,
         "is_optional": true,

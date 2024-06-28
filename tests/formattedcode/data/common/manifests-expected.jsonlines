@@ -12,7 +12,7 @@
           "--package": true
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-        "output_format_version": "3.1.0",
+        "output_format_version": "3.2.0",
         "message": null,
         "errors": [],
         "warnings": [],
@@ -24,7 +24,7 @@
             "platform_version": "#122-Ubuntu SMP Thu May 23 07:48:21 UTC 2024",
             "python_version": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]"
           },
-          "spdx_license_list_version": "3.23",
+          "spdx_license_list_version": "3.24",
           "files_count": 4
         }
       }
@@ -1765,7 +1765,7 @@
             "dependencies": [
               {
                 "purl": "pkg:pypi/numpy",
-                "extracted_requirement": "numpy>=1.6",
+                "extracted_requirement": ">=1.6",
                 "scope": "install",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1776,7 +1776,7 @@
               },
               {
                 "purl": "pkg:pypi/pandas",
-                "extracted_requirement": "pandas>=0.18",
+                "extracted_requirement": ">=0.18",
                 "scope": "install",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1787,7 +1787,7 @@
               },
               {
                 "purl": "pkg:pypi/deap",
-                "extracted_requirement": "deap",
+                "extracted_requirement": null,
                 "scope": "install",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1798,7 +1798,7 @@
               },
               {
                 "purl": "pkg:pypi/efel",
-                "extracted_requirement": "efel>=2.13",
+                "extracted_requirement": ">=2.13",
                 "scope": "install",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1809,7 +1809,7 @@
               },
               {
                 "purl": "pkg:pypi/ipyparallel",
-                "extracted_requirement": "ipyparallel",
+                "extracted_requirement": null,
                 "scope": "install",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1820,7 +1820,7 @@
               },
               {
                 "purl": "pkg:pypi/pickleshare",
-                "extracted_requirement": "pickleshare>=0.7.3",
+                "extracted_requirement": ">=0.7.3",
                 "scope": "install",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1831,7 +1831,7 @@
               },
               {
                 "purl": "pkg:pypi/jinja2",
-                "extracted_requirement": "Jinja2>=2.8",
+                "extracted_requirement": ">=2.8",
                 "scope": "install",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1842,7 +1842,7 @@
               },
               {
                 "purl": "pkg:pypi/future",
-                "extracted_requirement": "future",
+                "extracted_requirement": null,
                 "scope": "install",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1853,7 +1853,7 @@
               },
               {
                 "purl": "pkg:pypi/pebble",
-                "extracted_requirement": "Pebble>=4.3.10",
+                "extracted_requirement": ">=4.3.10",
                 "scope": "install",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1864,7 +1864,7 @@
               },
               {
                 "purl": "pkg:pypi/scoop",
-                "extracted_requirement": "scoop>=0.7",
+                "extracted_requirement": ">=0.7",
                 "scope": "all",
                 "is_runtime": true,
                 "is_optional": false,
@@ -1875,7 +1875,7 @@
               },
               {
                 "purl": "pkg:pypi/scoop",
-                "extracted_requirement": "scoop>=0.7",
+                "extracted_requirement": ">=0.7",
                 "scope": "scoop",
                 "is_runtime": true,
                 "is_optional": false,

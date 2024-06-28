@@ -102,7 +102,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/numpy",
-        "extracted_requirement": "numpy>=1.6",
+        "extracted_requirement": ">=1.6",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -113,7 +113,7 @@
       },
       {
         "purl": "pkg:pypi/pandas",
-        "extracted_requirement": "pandas>=0.18",
+        "extracted_requirement": ">=0.18",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -124,7 +124,7 @@
       },
       {
         "purl": "pkg:pypi/deap",
-        "extracted_requirement": "deap",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -135,7 +135,7 @@
       },
       {
         "purl": "pkg:pypi/efel",
-        "extracted_requirement": "efel>=2.13",
+        "extracted_requirement": ">=2.13",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -146,7 +146,7 @@
       },
       {
         "purl": "pkg:pypi/ipyparallel",
-        "extracted_requirement": "ipyparallel",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -157,7 +157,7 @@
       },
       {
         "purl": "pkg:pypi/pickleshare",
-        "extracted_requirement": "pickleshare>=0.7.3",
+        "extracted_requirement": ">=0.7.3",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -168,7 +168,7 @@
       },
       {
         "purl": "pkg:pypi/jinja2",
-        "extracted_requirement": "Jinja2>=2.8",
+        "extracted_requirement": ">=2.8",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -179,7 +179,7 @@
       },
       {
         "purl": "pkg:pypi/future",
-        "extracted_requirement": "future",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -190,7 +190,7 @@
       },
       {
         "purl": "pkg:pypi/pebble",
-        "extracted_requirement": "Pebble>=4.3.10",
+        "extracted_requirement": ">=4.3.10",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -201,7 +201,7 @@
       },
       {
         "purl": "pkg:pypi/scoop",
-        "extracted_requirement": "scoop>=0.7",
+        "extracted_requirement": ">=0.7",
         "scope": "all",
         "is_runtime": true,
         "is_optional": false,
@@ -212,7 +212,7 @@
       },
       {
         "purl": "pkg:pypi/scoop",
-        "extracted_requirement": "scoop>=0.7",
+        "extracted_requirement": ">=0.7",
         "scope": "scoop",
         "is_runtime": true,
         "is_optional": false,

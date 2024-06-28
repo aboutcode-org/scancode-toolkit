@@ -108,7 +108,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/cdp-backend@3.0.16",
-              "extracted_requirement": "cdp-backend[pipeline]==3.0.16",
+              "extracted_requirement": "==3.0.16",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -119,7 +119,7 @@
             },
             {
               "purl": "pkg:pypi/cdp-scrapers",
-              "extracted_requirement": "cdp-scrapers>=0.4.0",
+              "extracted_requirement": ">=0.4.0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -130,7 +130,7 @@
             },
             {
               "purl": "pkg:pypi/black",
-              "extracted_requirement": "black>=19.10b0",
+              "extracted_requirement": ">=19.10b0",
               "scope": "test",
               "is_runtime": true,
               "is_optional": false,
@@ -141,7 +141,7 @@
             },
             {
               "purl": "pkg:pypi/flake8",
-              "extracted_requirement": "flake8>=3.8.3",
+              "extracted_requirement": ">=3.8.3",
               "scope": "test",
               "is_runtime": true,
               "is_optional": false,
@@ -152,7 +152,7 @@
             },
             {
               "purl": "pkg:pypi/flake8-debugger",
-              "extracted_requirement": "flake8-debugger>=3.2.1",
+              "extracted_requirement": ">=3.2.1",
               "scope": "test",
               "is_runtime": true,
               "is_optional": false,

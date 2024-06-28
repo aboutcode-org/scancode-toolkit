@@ -356,6 +356,12 @@ class TestPipInspectDeplockHandler(PackageTester):
         test_file = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock')
         assert pypi.PipInspectDeplockHandler.is_datafile(test_file)
 
+    def test_parse_pip_inspect_deplock_simple(self):
+        test_file = self.get_test_loc('pypi/deplock/simple/pip-inspect.deplock')
+        package = pypi.PipInspectDeplockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/deplock/simple/pip-inspect.deplock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_pip_inspect_deplock_univers(self):
         test_file = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock')
         package = pypi.PipInspectDeplockHandler.parse(test_file)

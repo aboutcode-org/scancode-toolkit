@@ -677,7 +677,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/markupsafe",
-        "extracted_requirement": "MarkupSafe>=0.23",
+        "extracted_requirement": ">=0.23",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -688,7 +688,7 @@
       },
       {
         "purl": "pkg:pypi/babel",
-        "extracted_requirement": "Babel>=0.8; extra == \"i18n\"",
+        "extracted_requirement": ">=0.8",
         "scope": "i18n",
         "is_runtime": true,
         "is_optional": true,

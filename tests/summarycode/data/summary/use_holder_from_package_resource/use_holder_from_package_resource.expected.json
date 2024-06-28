@@ -109,7 +109,7 @@
   "dependencies": [
     {
       "purl": "pkg:pypi/pybind11",
-      "extracted_requirement": "pybind11>=2.5.0",
+      "extracted_requirement": ">=2.5.0",
       "scope": "setup",
       "is_runtime": true,
       "is_optional": false,
@@ -330,7 +330,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/pybind11",
-              "extracted_requirement": "pybind11>=2.5.0",
+              "extracted_requirement": ">=2.5.0",
               "scope": "setup",
               "is_runtime": true,
               "is_optional": false,

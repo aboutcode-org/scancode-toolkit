@@ -615,10 +615,11 @@ class PipInspectDeplockHandler(models.DatafileHandler):
 
         for package_metadata in installed_packages:
             package_metadata_dep = package_metadata.get('metadata')
+            is_requested = package_metadata.get('requested')
 
             # `direct_url` is only present for root package
             # `requested` is true for root package and direct dependencies only
-            if package_metadata.get('requested') and 'direct_url' in package_metadata:
+            if is_requested and 'direct_url' in package_metadata:
                 main_package_metadata = package_metadata_dep
                 main_package_requires = main_package_metadata.get('requires_dist')
                 dependencies_for_main = get_requires_dependencies(
@@ -645,6 +646,8 @@ class PipInspectDeplockHandler(models.DatafileHandler):
                 is_resolved=True,
                 resolved_package=package_data_dep.to_dict()
             )
+            if is_requested:
+                dependency.is_direct = True
             dependencies.append(dependency)
 
         dependency_mappings = []
@@ -1650,6 +1653,15 @@ def get_requires_dependencies(requires, default_scope='install', is_direct=True)
         extra = get_extra(req.marker)
         scope = extra or default_scope
 
+        extra_data = {}
+        if req.marker:
+            platform = get_python_version_os(req.marker)
+            if platform:
+                extra_data = platform
+
+        extracted_requirement = None
+        if requirement:
+            extracted_requirement = requirement
         dependent_packages.append(
             models.DependentPackage(
                 purl=purl.to_string(),
@@ -1658,7 +1670,8 @@ def get_requires_dependencies(requires, default_scope='install', is_direct=True)
                 is_optional=True if bool(extra) else False,
                 is_resolved=is_resolved,
                 is_direct=is_direct,
-                extracted_requirement=str(req),
+                extracted_requirement=extracted_requirement,
+                extra_data=extra_data,
         ))
 
     return dependent_packages
@@ -1688,6 +1701,47 @@ def get_extra(marker):
             and isinstance(value, markers.Value)
         ):
             return value.value
+
+
+def get_python_version_os(marker):
+    """
+    Return the "python_version" or "os related values of a ``marker``
+    requirement Marker or None.
+    """
+    platform_data = {}
+    python_version_operators = ['<', '>=', '==', '<=', '<']
+
+    if not marker or not isinstance(marker, markers.Marker):
+        return platform_data
+
+    marks = getattr(marker, '_markers', [])
+
+    for mark in marks:
+        # filter for variable(extra) == value tuples of (Variable, Op, Value)
+        if not isinstance(mark, tuple) and not len(mark) == 3:
+            continue
+
+        variable, operator, value = mark
+
+        if (
+            isinstance(variable, markers.Variable)
+            and variable.value == 'python_version'
+            and isinstance(operator, markers.Op)
+            and operator.value in python_version_operators
+            and isinstance(value, markers.Value)
+        ):
+            platform_data["python_version"] = f"{operator.value} {value.value}"
+        
+        if (
+            isinstance(variable, markers.Variable)
+            and variable.value == 'sys_platform'
+            and isinstance(operator, markers.Op)
+            and operator.value == '=='
+            and isinstance(value, markers.Value)
+        ):
+            platform_data["sys_platform"] = f"{operator.value} {value.value}"
+
+    return platform_data
 
 
 def get_dparse2_supported_file_name(file_name):

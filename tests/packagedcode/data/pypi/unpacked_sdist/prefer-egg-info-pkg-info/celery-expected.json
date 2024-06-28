@@ -125,7 +125,7 @@
   "dependencies": [
     {
       "purl": "pkg:pypi/pytz",
-      "extracted_requirement": "pytz>=2021.3",
+      "extracted_requirement": ">=2021.3",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -140,7 +140,7 @@
     },
     {
       "purl": "pkg:pypi/billiard",
-      "extracted_requirement": "billiard<4.0,>=3.6.4.0",
+      "extracted_requirement": "<4.0,>=3.6.4.0",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -155,7 +155,7 @@
     },
     {
       "purl": "pkg:pypi/kombu",
-      "extracted_requirement": "kombu<6.0,>=5.2.3",
+      "extracted_requirement": "<6.0,>=5.2.3",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -170,7 +170,7 @@
     },
     {
       "purl": "pkg:pypi/vine",
-      "extracted_requirement": "vine<6.0,>=5.0.0",
+      "extracted_requirement": "<6.0,>=5.0.0",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -185,7 +185,7 @@
     },
     {
       "purl": "pkg:pypi/click",
-      "extracted_requirement": "click<9.0,>=8.0.3",
+      "extracted_requirement": "<9.0,>=8.0.3",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -200,7 +200,7 @@
     },
     {
       "purl": "pkg:pypi/click-didyoumean",
-      "extracted_requirement": "click-didyoumean>=0.0.3",
+      "extracted_requirement": ">=0.0.3",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -215,7 +215,7 @@
     },
     {
       "purl": "pkg:pypi/click-repl",
-      "extracted_requirement": "click-repl>=0.2.0",
+      "extracted_requirement": ">=0.2.0",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -230,7 +230,7 @@
     },
     {
       "purl": "pkg:pypi/click-plugins",
-      "extracted_requirement": "click-plugins>=1.1.1",
+      "extracted_requirement": ">=1.1.1",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
@@ -245,14 +245,16 @@
     },
     {
       "purl": "pkg:pypi/importlib-metadata",
-      "extracted_requirement": "importlib-metadata>=1.4.0; python_version < \"3.8\"",
+      "extracted_requirement": ">=1.4.0",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
       "is_direct": true,
       "resolved_package": {},
-      "extra_data": {},
+      "extra_data": {
+        "python_version": "< 3.8"
+      },
       "dependency_uid": "pkg:pypi/importlib-metadata?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pypi/celery@5.2.7?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "celery/celery.egg-info/PKG-INFO",
@@ -260,7 +262,7 @@
     },
     {
       "purl": "pkg:pypi/pyarango",
-      "extracted_requirement": "pyArango>=1.3.2; extra == \"arangodb\"",
+      "extracted_requirement": ">=1.3.2",
       "scope": "arangodb",
       "is_runtime": true,
       "is_optional": true,
@@ -275,7 +277,7 @@
     },
     {
       "purl": "pkg:pypi/cryptography",
-      "extracted_requirement": "cryptography; extra == \"auth\"",
+      "extracted_requirement": null,
       "scope": "auth",
       "is_runtime": true,
       "is_optional": true,
@@ -290,7 +292,7 @@
     },
     {
       "purl": "pkg:pypi/azure-storage-blob@12.9.0",
-      "extracted_requirement": "azure-storage-blob==12.9.0; extra == \"azureblockblob\"",
+      "extracted_requirement": "==12.9.0",
       "scope": "azureblockblob",
       "is_runtime": true,
       "is_optional": true,
@@ -305,7 +307,7 @@
     },
     {
       "purl": "pkg:pypi/brotli",
-      "extracted_requirement": "brotli>=1.0.0; platform_python_implementation == \"CPython\" and extra == \"brotli\"",
+      "extracted_requirement": ">=1.0.0",
       "scope": "brotli",
       "is_runtime": true,
       "is_optional": true,
@@ -320,7 +322,7 @@
     },
     {
       "purl": "pkg:pypi/brotlipy",
-      "extracted_requirement": "brotlipy>=0.7.0; platform_python_implementation == \"PyPy\" and extra == \"brotli\"",
+      "extracted_requirement": ">=0.7.0",
       "scope": "brotli",
       "is_runtime": true,
       "is_optional": true,
@@ -335,7 +337,7 @@
     },
     {
       "purl": "pkg:pypi/cassandra-driver",
-      "extracted_requirement": "cassandra-driver<3.21.0; extra == \"cassandra\"",
+      "extracted_requirement": "<3.21.0",
       "scope": "cassandra",
       "is_runtime": true,
       "is_optional": true,
@@ -350,7 +352,7 @@
     },
     {
       "purl": "pkg:pypi/python-consul2",
-      "extracted_requirement": "python-consul2; extra == \"consul\"",
+      "extracted_requirement": null,
       "scope": "consul",
       "is_runtime": true,
       "is_optional": true,
@@ -365,7 +367,7 @@
     },
     {
       "purl": "pkg:pypi/pydocumentdb@2.3.2",
-      "extracted_requirement": "pydocumentdb==2.3.2; extra == \"cosmosdbsql\"",
+      "extracted_requirement": "==2.3.2",
       "scope": "cosmosdbsql",
       "is_runtime": true,
       "is_optional": true,
@@ -380,7 +382,7 @@
     },
     {
       "purl": "pkg:pypi/couchbase",
-      "extracted_requirement": "couchbase>=3.0.0; (platform_python_implementation != \"PyPy\" and (platform_system != \"Windows\" or python_version < \"3.10\")) and extra == \"couchbase\"",
+      "extracted_requirement": ">=3.0.0",
       "scope": "couchbase",
       "is_runtime": true,
       "is_optional": true,
@@ -395,7 +397,7 @@
     },
     {
       "purl": "pkg:pypi/pycouchdb",
-      "extracted_requirement": "pycouchdb; extra == \"couchdb\"",
+      "extracted_requirement": null,
       "scope": "couchdb",
       "is_runtime": true,
       "is_optional": true,
@@ -410,7 +412,7 @@
     },
     {
       "purl": "pkg:pypi/django",
-      "extracted_requirement": "Django>=1.11; extra == \"django\"",
+      "extracted_requirement": ">=1.11",
       "scope": "django",
       "is_runtime": true,
       "is_optional": true,
@@ -425,7 +427,7 @@
     },
     {
       "purl": "pkg:pypi/boto3",
-      "extracted_requirement": "boto3>=1.9.178; extra == \"dynamodb\"",
+      "extracted_requirement": ">=1.9.178",
       "scope": "dynamodb",
       "is_runtime": true,
       "is_optional": true,
@@ -440,7 +442,7 @@
     },
     {
       "purl": "pkg:pypi/elasticsearch",
-      "extracted_requirement": "elasticsearch; extra == \"elasticsearch\"",
+      "extracted_requirement": null,
       "scope": "elasticsearch",
       "is_runtime": true,
       "is_optional": true,
@@ -455,7 +457,7 @@
     },
     {
       "purl": "pkg:pypi/eventlet",
-      "extracted_requirement": "eventlet>=0.32.0; python_version < \"3.10\" and extra == \"eventlet\"",
+      "extracted_requirement": ">=0.32.0",
       "scope": "eventlet",
       "is_runtime": true,
       "is_optional": true,
@@ -470,7 +472,7 @@
     },
     {
       "purl": "pkg:pypi/gevent",
-      "extracted_requirement": "gevent>=1.5.0; extra == \"gevent\"",
+      "extracted_requirement": ">=1.5.0",
       "scope": "gevent",
       "is_runtime": true,
       "is_optional": true,
@@ -485,7 +487,7 @@
     },
     {
       "purl": "pkg:pypi/librabbitmq",
-      "extracted_requirement": "librabbitmq>=1.5.0; extra == \"librabbitmq\"",
+      "extracted_requirement": ">=1.5.0",
       "scope": "librabbitmq",
       "is_runtime": true,
       "is_optional": true,
@@ -500,7 +502,7 @@
     },
     {
       "purl": "pkg:pypi/pylibmc",
-      "extracted_requirement": "pylibmc; platform_system != \"Windows\" and extra == \"memcache\"",
+      "extracted_requirement": null,
       "scope": "memcache",
       "is_runtime": true,
       "is_optional": true,
@@ -515,7 +517,7 @@
     },
     {
       "purl": "pkg:pypi/pymongo",
-      "extracted_requirement": "pymongo[srv]>=3.11.1; extra == \"mongodb\"",
+      "extracted_requirement": ">=3.11.1",
       "scope": "mongodb",
       "is_runtime": true,
       "is_optional": true,
@@ -530,7 +532,7 @@
     },
     {
       "purl": "pkg:pypi/msgpack",
-      "extracted_requirement": "msgpack; extra == \"msgpack\"",
+      "extracted_requirement": null,
       "scope": "msgpack",
       "is_runtime": true,
       "is_optional": true,
@@ -545,7 +547,7 @@
     },
     {
       "purl": "pkg:pypi/python-memcached",
-      "extracted_requirement": "python-memcached; extra == \"pymemcache\"",
+      "extracted_requirement": null,
       "scope": "pymemcache",
       "is_runtime": true,
       "is_optional": true,
@@ -560,7 +562,7 @@
     },
     {
       "purl": "pkg:pypi/pyro4",
-      "extracted_requirement": "pyro4; extra == \"pyro\"",
+      "extracted_requirement": null,
       "scope": "pyro",
       "is_runtime": true,
       "is_optional": true,
@@ -575,7 +577,7 @@
     },
     {
       "purl": "pkg:pypi/pytest-celery",
-      "extracted_requirement": "pytest-celery; extra == \"pytest\"",
+      "extracted_requirement": null,
       "scope": "pytest",
       "is_runtime": true,
       "is_optional": true,
@@ -590,7 +592,7 @@
     },
     {
       "purl": "pkg:pypi/redis",
-      "extracted_requirement": "redis!=4.0.0,!=4.0.1,>=3.4.1; extra == \"redis\"",
+      "extracted_requirement": "!=4.0.0,!=4.0.1,>=3.4.1",
       "scope": "redis",
       "is_runtime": true,
       "is_optional": true,
@@ -605,7 +607,7 @@
     },
     {
       "purl": "pkg:pypi/boto3",
-      "extracted_requirement": "boto3>=1.9.125; extra == \"s3\"",
+      "extracted_requirement": ">=1.9.125",
       "scope": "s3",
       "is_runtime": true,
       "is_optional": true,
@@ -620,7 +622,7 @@
     },
     {
       "purl": "pkg:pypi/softlayer-messaging",
-      "extracted_requirement": "softlayer_messaging>=1.0.3; extra == \"slmq\"",
+      "extracted_requirement": ">=1.0.3",
       "scope": "slmq",
       "is_runtime": true,
       "is_optional": true,
@@ -635,7 +637,7 @@
     },
     {
       "purl": "pkg:pypi/ephem",
-      "extracted_requirement": "ephem; platform_python_implementation != \"PyPy\" and extra == \"solar\"",
+      "extracted_requirement": null,
       "scope": "solar",
       "is_runtime": true,
       "is_optional": true,
@@ -650,7 +652,7 @@
     },
     {
       "purl": "pkg:pypi/sqlalchemy",
-      "extracted_requirement": "sqlalchemy; extra == \"sqlalchemy\"",
+      "extracted_requirement": null,
       "scope": "sqlalchemy",
       "is_runtime": true,
       "is_optional": true,
@@ -665,7 +667,7 @@
     },
     {
       "purl": "pkg:pypi/kombu",
-      "extracted_requirement": "kombu[sqs]; extra == \"sqs\"",
+      "extracted_requirement": null,
       "scope": "sqs",
       "is_runtime": true,
       "is_optional": true,
@@ -680,7 +682,7 @@
     },
     {
       "purl": "pkg:pypi/tblib",
-      "extracted_requirement": "tblib>=1.3.0; python_version < \"3.8.0\" and extra == \"tblib\"",
+      "extracted_requirement": ">=1.3.0",
       "scope": "tblib",
       "is_runtime": true,
       "is_optional": true,
@@ -695,7 +697,7 @@
     },
     {
       "purl": "pkg:pypi/tblib",
-      "extracted_requirement": "tblib>=1.5.0; python_version >= \"3.8.0\" and extra == \"tblib\"",
+      "extracted_requirement": ">=1.5.0",
       "scope": "tblib",
       "is_runtime": true,
       "is_optional": true,
@@ -710,7 +712,7 @@
     },
     {
       "purl": "pkg:pypi/pyyaml",
-      "extracted_requirement": "PyYAML>=3.10; extra == \"yaml\"",
+      "extracted_requirement": ">=3.10",
       "scope": "yaml",
       "is_runtime": true,
       "is_optional": true,
@@ -725,7 +727,7 @@
     },
     {
       "purl": "pkg:pypi/kazoo",
-      "extracted_requirement": "kazoo>=1.3.1; extra == \"zookeeper\"",
+      "extracted_requirement": ">=1.3.1",
       "scope": "zookeeper",
       "is_runtime": true,
       "is_optional": true,
@@ -740,7 +742,7 @@
     },
     {
       "purl": "pkg:pypi/zstandard",
-      "extracted_requirement": "zstandard; extra == \"zstd\"",
+      "extracted_requirement": null,
       "scope": "zstd",
       "is_runtime": true,
       "is_optional": true,
@@ -6882,7 +6884,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/pytz",
-              "extracted_requirement": "pytz>=2021.3",
+              "extracted_requirement": ">=2021.3",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -6893,7 +6895,7 @@
             },
             {
               "purl": "pkg:pypi/billiard",
-              "extracted_requirement": "billiard<4.0,>=3.6.4.0",
+              "extracted_requirement": "<4.0,>=3.6.4.0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -6904,7 +6906,7 @@
             },
             {
               "purl": "pkg:pypi/kombu",
-              "extracted_requirement": "kombu<6.0,>=5.2.3",
+              "extracted_requirement": "<6.0,>=5.2.3",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -6915,7 +6917,7 @@
             },
             {
               "purl": "pkg:pypi/vine",
-              "extracted_requirement": "vine<6.0,>=5.0.0",
+              "extracted_requirement": "<6.0,>=5.0.0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -6926,7 +6928,7 @@
             },
             {
               "purl": "pkg:pypi/click",
-              "extracted_requirement": "click<9.0,>=8.0.3",
+              "extracted_requirement": "<9.0,>=8.0.3",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -6937,7 +6939,7 @@
             },
             {
               "purl": "pkg:pypi/click-didyoumean",
-              "extracted_requirement": "click-didyoumean>=0.0.3",
+              "extracted_requirement": ">=0.0.3",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -6948,7 +6950,7 @@
             },
             {
               "purl": "pkg:pypi/click-repl",
-              "extracted_requirement": "click-repl>=0.2.0",
+              "extracted_requirement": ">=0.2.0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -6959,7 +6961,7 @@
             },
             {
               "purl": "pkg:pypi/click-plugins",
-              "extracted_requirement": "click-plugins>=1.1.1",
+              "extracted_requirement": ">=1.1.1",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
@@ -6970,18 +6972,20 @@
             },
             {
               "purl": "pkg:pypi/importlib-metadata",
-              "extracted_requirement": "importlib-metadata>=1.4.0; python_version < \"3.8\"",
+              "extracted_requirement": ">=1.4.0",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
               "is_direct": true,
               "resolved_package": {},
-              "extra_data": {}
+              "extra_data": {
+                "python_version": "< 3.8"
+              }
             },
             {
               "purl": "pkg:pypi/pyarango",
-              "extracted_requirement": "pyArango>=1.3.2; extra == \"arangodb\"",
+              "extracted_requirement": ">=1.3.2",
               "scope": "arangodb",
               "is_runtime": true,
               "is_optional": true,
@@ -6992,7 +6996,7 @@
             },
             {
               "purl": "pkg:pypi/cryptography",
-              "extracted_requirement": "cryptography; extra == \"auth\"",
+              "extracted_requirement": null,
               "scope": "auth",
               "is_runtime": true,
               "is_optional": true,
@@ -7003,7 +7007,7 @@
             },
             {
               "purl": "pkg:pypi/azure-storage-blob@12.9.0",
-              "extracted_requirement": "azure-storage-blob==12.9.0; extra == \"azureblockblob\"",
+              "extracted_requirement": "==12.9.0",
               "scope": "azureblockblob",
               "is_runtime": true,
               "is_optional": true,
@@ -7014,7 +7018,7 @@
             },
             {
               "purl": "pkg:pypi/brotli",
-              "extracted_requirement": "brotli>=1.0.0; platform_python_implementation == \"CPython\" and extra == \"brotli\"",
+              "extracted_requirement": ">=1.0.0",
               "scope": "brotli",
               "is_runtime": true,
               "is_optional": true,
@@ -7025,7 +7029,7 @@
             },
             {
               "purl": "pkg:pypi/brotlipy",
-              "extracted_requirement": "brotlipy>=0.7.0; platform_python_implementation == \"PyPy\" and extra == \"brotli\"",
+              "extracted_requirement": ">=0.7.0",
               "scope": "brotli",
               "is_runtime": true,
               "is_optional": true,
@@ -7036,7 +7040,7 @@
             },
             {
               "purl": "pkg:pypi/cassandra-driver",
-              "extracted_requirement": "cassandra-driver<3.21.0; extra == \"cassandra\"",
+              "extracted_requirement": "<3.21.0",
               "scope": "cassandra",
               "is_runtime": true,
               "is_optional": true,
@@ -7047,7 +7051,7 @@
             },
             {
               "purl": "pkg:pypi/python-consul2",
-              "extracted_requirement": "python-consul2; extra == \"consul\"",
+              "extracted_requirement": null,
               "scope": "consul",
               "is_runtime": true,
               "is_optional": true,
@@ -7058,7 +7062,7 @@
             },
             {
               "purl": "pkg:pypi/pydocumentdb@2.3.2",
-              "extracted_requirement": "pydocumentdb==2.3.2; extra == \"cosmosdbsql\"",
+              "extracted_requirement": "==2.3.2",
               "scope": "cosmosdbsql",
               "is_runtime": true,
               "is_optional": true,
@@ -7069,7 +7073,7 @@
             },
             {
               "purl": "pkg:pypi/couchbase",
-              "extracted_requirement": "couchbase>=3.0.0; (platform_python_implementation != \"PyPy\" and (platform_system != \"Windows\" or python_version < \"3.10\")) and extra == \"couchbase\"",
+              "extracted_requirement": ">=3.0.0",
               "scope": "couchbase",
               "is_runtime": true,
               "is_optional": true,
@@ -7080,7 +7084,7 @@
             },
             {
               "purl": "pkg:pypi/pycouchdb",
-              "extracted_requirement": "pycouchdb; extra == \"couchdb\"",
+              "extracted_requirement": null,
               "scope": "couchdb",
               "is_runtime": true,
               "is_optional": true,
@@ -7091,7 +7095,7 @@
             },
             {
               "purl": "pkg:pypi/django",
-              "extracted_requirement": "Django>=1.11; extra == \"django\"",
+              "extracted_requirement": ">=1.11",
               "scope": "django",
               "is_runtime": true,
               "is_optional": true,
@@ -7102,7 +7106,7 @@
             },
             {
               "purl": "pkg:pypi/boto3",
-              "extracted_requirement": "boto3>=1.9.178; extra == \"dynamodb\"",
+              "extracted_requirement": ">=1.9.178",
               "scope": "dynamodb",
               "is_runtime": true,
               "is_optional": true,
@@ -7113,7 +7117,7 @@
             },
             {
               "purl": "pkg:pypi/elasticsearch",
-              "extracted_requirement": "elasticsearch; extra == \"elasticsearch\"",
+              "extracted_requirement": null,
               "scope": "elasticsearch",
               "is_runtime": true,
               "is_optional": true,
@@ -7124,7 +7128,7 @@
             },
             {
               "purl": "pkg:pypi/eventlet",
-              "extracted_requirement": "eventlet>=0.32.0; python_version < \"3.10\" and extra == \"eventlet\"",
+              "extracted_requirement": ">=0.32.0",
               "scope": "eventlet",
               "is_runtime": true,
               "is_optional": true,
@@ -7135,7 +7139,7 @@
             },
             {
               "purl": "pkg:pypi/gevent",
-              "extracted_requirement": "gevent>=1.5.0; extra == \"gevent\"",
+              "extracted_requirement": ">=1.5.0",
               "scope": "gevent",
               "is_runtime": true,
               "is_optional": true,
@@ -7146,7 +7150,7 @@
             },
             {
               "purl": "pkg:pypi/librabbitmq",
-              "extracted_requirement": "librabbitmq>=1.5.0; extra == \"librabbitmq\"",
+              "extracted_requirement": ">=1.5.0",
               "scope": "librabbitmq",
               "is_runtime": true,
               "is_optional": true,
@@ -7157,7 +7161,7 @@
             },
             {
               "purl": "pkg:pypi/pylibmc",
-              "extracted_requirement": "pylibmc; platform_system != \"Windows\" and extra == \"memcache\"",
+              "extracted_requirement": null,
               "scope": "memcache",
               "is_runtime": true,
               "is_optional": true,
@@ -7168,7 +7172,7 @@
             },
             {
               "purl": "pkg:pypi/pymongo",
-              "extracted_requirement": "pymongo[srv]>=3.11.1; extra == \"mongodb\"",
+              "extracted_requirement": ">=3.11.1",
               "scope": "mongodb",
               "is_runtime": true,
               "is_optional": true,
@@ -7179,7 +7183,7 @@
             },
             {
               "purl": "pkg:pypi/msgpack",
-              "extracted_requirement": "msgpack; extra == \"msgpack\"",
+              "extracted_requirement": null,
               "scope": "msgpack",
               "is_runtime": true,
               "is_optional": true,
@@ -7190,7 +7194,7 @@
             },
             {
               "purl": "pkg:pypi/python-memcached",
-              "extracted_requirement": "python-memcached; extra == \"pymemcache\"",
+              "extracted_requirement": null,
               "scope": "pymemcache",
               "is_runtime": true,
               "is_optional": true,
@@ -7201,7 +7205,7 @@
             },
             {
               "purl": "pkg:pypi/pyro4",
-              "extracted_requirement": "pyro4; extra == \"pyro\"",
+              "extracted_requirement": null,
               "scope": "pyro",
               "is_runtime": true,
               "is_optional": true,
@@ -7212,7 +7216,7 @@
             },
             {
               "purl": "pkg:pypi/pytest-celery",
-              "extracted_requirement": "pytest-celery; extra == \"pytest\"",
+              "extracted_requirement": null,
               "scope": "pytest",
               "is_runtime": true,
               "is_optional": true,
@@ -7223,7 +7227,7 @@
             },
             {
               "purl": "pkg:pypi/redis",
-              "extracted_requirement": "redis!=4.0.0,!=4.0.1,>=3.4.1; extra == \"redis\"",
+              "extracted_requirement": "!=4.0.0,!=4.0.1,>=3.4.1",
               "scope": "redis",
               "is_runtime": true,
               "is_optional": true,
@@ -7234,7 +7238,7 @@
             },
             {
               "purl": "pkg:pypi/boto3",
-              "extracted_requirement": "boto3>=1.9.125; extra == \"s3\"",
+              "extracted_requirement": ">=1.9.125",
               "scope": "s3",
               "is_runtime": true,
               "is_optional": true,
@@ -7245,7 +7249,7 @@
             },
             {
               "purl": "pkg:pypi/softlayer-messaging",
-              "extracted_requirement": "softlayer_messaging>=1.0.3; extra == \"slmq\"",
+              "extracted_requirement": ">=1.0.3",
               "scope": "slmq",
               "is_runtime": true,
               "is_optional": true,
@@ -7256,7 +7260,7 @@
             },
             {
               "purl": "pkg:pypi/ephem",
-              "extracted_requirement": "ephem; platform_python_implementation != \"PyPy\" and extra == \"solar\"",
+              "extracted_requirement": null,
               "scope": "solar",
               "is_runtime": true,
               "is_optional": true,
@@ -7267,7 +7271,7 @@
             },
             {
               "purl": "pkg:pypi/sqlalchemy",
-              "extracted_requirement": "sqlalchemy; extra == \"sqlalchemy\"",
+              "extracted_requirement": null,
               "scope": "sqlalchemy",
               "is_runtime": true,
               "is_optional": true,
@@ -7278,7 +7282,7 @@
             },
             {
               "purl": "pkg:pypi/kombu",
-              "extracted_requirement": "kombu[sqs]; extra == \"sqs\"",
+              "extracted_requirement": null,
               "scope": "sqs",
               "is_runtime": true,
               "is_optional": true,
@@ -7289,7 +7293,7 @@
             },
             {
               "purl": "pkg:pypi/tblib",
-              "extracted_requirement": "tblib>=1.3.0; python_version < \"3.8.0\" and extra == \"tblib\"",
+              "extracted_requirement": ">=1.3.0",
               "scope": "tblib",
               "is_runtime": true,
               "is_optional": true,
@@ -7300,7 +7304,7 @@
             },
             {
               "purl": "pkg:pypi/tblib",
-              "extracted_requirement": "tblib>=1.5.0; python_version >= \"3.8.0\" and extra == \"tblib\"",
+              "extracted_requirement": ">=1.5.0",
               "scope": "tblib",
               "is_runtime": true,
               "is_optional": true,
@@ -7311,7 +7315,7 @@
             },
             {
               "purl": "pkg:pypi/pyyaml",
-              "extracted_requirement": "PyYAML>=3.10; extra == \"yaml\"",
+              "extracted_requirement": ">=3.10",
               "scope": "yaml",
               "is_runtime": true,
               "is_optional": true,
@@ -7322,7 +7326,7 @@
             },
             {
               "purl": "pkg:pypi/kazoo",
-              "extracted_requirement": "kazoo>=1.3.1; extra == \"zookeeper\"",
+              "extracted_requirement": ">=1.3.1",
               "scope": "zookeeper",
               "is_runtime": true,
               "is_optional": true,
@@ -7333,7 +7337,7 @@
             },
             {
               "purl": "pkg:pypi/zstandard",
-              "extracted_requirement": "zstandard; extra == \"zstd\"",
+              "extracted_requirement": null,
               "scope": "zstd",
               "is_runtime": true,
               "is_optional": true,

@@ -39,7 +39,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pytest",
-        "extracted_requirement": "pytest",
+        "extracted_requirement": null,
         "scope": "test",
         "is_runtime": true,
         "is_optional": false,

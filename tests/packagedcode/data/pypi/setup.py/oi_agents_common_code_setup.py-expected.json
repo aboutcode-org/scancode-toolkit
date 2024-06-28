@@ -119,7 +119,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/ipython",
-        "extracted_requirement": "ipython",
+        "extracted_requirement": null,
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -130,7 +130,7 @@
       },
       {
         "purl": "pkg:pypi/coverage",
-        "extracted_requirement": "coverage",
+        "extracted_requirement": null,
         "scope": "test",
         "is_runtime": true,
         "is_optional": false,

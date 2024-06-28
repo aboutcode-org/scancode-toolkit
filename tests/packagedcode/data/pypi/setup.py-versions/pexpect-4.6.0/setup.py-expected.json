@@ -112,7 +112,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/ptyprocess",
-        "extracted_requirement": "ptyprocess>=0.5",
+        "extracted_requirement": ">=0.5",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
