@@ -766,8 +766,9 @@ parsers in scancode-toolkit during documentation builds.
      - ``squashfs_disk_image``
      - None
      - https://en.wikipedia.org/wiki/SquashFS
-   * - JSON dump of Package.swift created with ``swift package dump-package &gt; Package.swift.json``
+   * - JSON dump of Package.swift created by DepLock or with ``swift package dump-package &gt; Package.swift.json``
      - ``*/Package.swift.json``
+       ``*/Package.swift.deplock``
      - ``swift``
      - ``swift_package_manifest_json``
      - Swift
@@ -779,6 +780,12 @@ parsers in scancode-toolkit during documentation builds.
      - ``swift_package_resolved``
      - swift
      - https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#package-dependency
+   * - Swift dependency graph created by DepLock
+     - ``*/swift-show-dependencies.deplock``
+     - ``swift``
+     - ``swift_package_show_dependencies``
+     - Swift
+     - https://forums.swift.org/t/swiftpm-show-dependencies-without-fetching-dependencies/51154
    * - Java Web Application Archive
      - ``*.war``
      - ``war``
