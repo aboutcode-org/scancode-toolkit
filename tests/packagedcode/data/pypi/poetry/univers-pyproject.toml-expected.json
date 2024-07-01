@@ -71,7 +71,7 @@
       {
         "purl": "pkg:pypi/attrs",
         "extracted_requirement": "^21.2.0",
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
@@ -82,7 +82,7 @@
       {
         "purl": "pkg:pypi/packaging",
         "extracted_requirement": "21.0",
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
@@ -93,7 +93,7 @@
       {
         "purl": "pkg:pypi/semantic-version",
         "extracted_requirement": "^2.8.5",
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,
@@ -104,7 +104,7 @@
       {
         "purl": "pkg:pypi/semver",
         "extracted_requirement": "^2.13.0",
-        "scope": "install",
+        "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
         "is_resolved": false,

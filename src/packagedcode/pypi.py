@@ -494,6 +494,7 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
             parsed_dependencies = get_requires_dependencies(
                 requires=deps,
                 default_scope=dep_type,
+                is_optional=True,
             )
             dependencies.extend(parsed_dependencies)
 
@@ -608,26 +609,29 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
         )
 
     @classmethod
-    def parse_non_group_dependencies(cls, dependencies, dev=False):
+    def parse_non_group_dependencies(
+        cls,
+        dependencies,
+        scope="install",
+        is_optional=False,
+        is_runtime=True,
+    ):
         dependency_mappings = []
         for dep_name, requirement in dependencies.items():
-            if not dev and dep_name == "python":
+            if is_runtime and dep_name == "python":
                 continue
 
             purl = PackageURL(
                 type=cls.default_package_type,
                 name=dep_name,
             )
-            is_optional = False
-            if dev:
-                is_optional = True
 
             extra_data = {}
             if isinstance(requirement, str):
                 extracted_requirement = requirement
             elif isinstance(requirement, dict):
                 extracted_requirement = requirement.get("version")
-                is_optional = requirement.get("optional", is_optional)
+                is_optional = requirement.get("optional", False)
                 python_version = requirement.get("python")
                 if python_version:
                     extra_data["python_version"] = python_version
@@ -635,8 +639,8 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
             dependency = models.DependentPackage(
                 purl=purl.to_string(),
                 extracted_requirement=extracted_requirement,
-                scope="install",
-                is_runtime=True,
+                scope=scope,
+                is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_direct=True,
                 is_resolved=False,
@@ -672,11 +676,13 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
         dependencies = []
         parsed_deps = cls.parse_non_group_dependencies(
             dependencies=poetry_data.get("dependencies", {}),
+            scope="dependencies",
         )
         dependencies.extend(parsed_deps)
         parsed_deps = cls.parse_non_group_dependencies(
             dependencies=poetry_data.get("dev-dependencies", {}),
-            dev=True,
+            scope="dev-dependencies",
+            is_runtime=False,
         )
         dependencies.extend(parsed_deps)
 
@@ -690,7 +696,7 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
                     purl=purl.to_string(),
                     extracted_requirement=requirement,
                     scope=group_name,
-                    is_runtime=True,
+                    is_runtime=False,
                     is_optional=False,
                     is_direct=True,
                     is_resolved=False,
@@ -745,7 +751,7 @@ class PoetryLockHandler(BasePoetryPythonLayout):
                 dependency = models.DependentPackage(
                     purl=purl.to_string(),
                     extracted_requirement=requirement,
-                    scope="install",
+                    scope="dependencies",
                     is_runtime=True,
                     is_optional=False,
                     is_direct=True,
@@ -770,8 +776,8 @@ class PoetryLockHandler(BasePoetryPythonLayout):
                         purl=purl.to_string(),
                         extracted_requirement=requirement,
                         scope=group_name,
-                        is_runtime=True,
-                        is_optional=True,
+                        is_runtime=False,
+                        is_optional=False,
                         is_direct=True,
                         is_resolved=False,
                     )
@@ -1871,7 +1877,13 @@ def get_dist_dependencies(dist):
     return get_requires_dependencies(requires=dist.requires)
 
 
-def get_requires_dependencies(requires, default_scope='install', is_direct=True):
+def get_requires_dependencies(
+    requires,
+    default_scope='install',
+    is_direct=True,
+    is_optional=False,
+    is_runtime=True,
+):
     """
     Return a list of DependentPackage found in a ``requires`` list of
     requirement strings or an empty list.
@@ -1918,12 +1930,16 @@ def get_requires_dependencies(requires, default_scope='install', is_direct=True)
         extracted_requirement = None
         if requirement:
             extracted_requirement = requirement
+
+        if is_optional or bool(extra):
+            is_optional = True
+
         dependent_packages.append(
             models.DependentPackage(
                 purl=purl.to_string(),
                 scope=scope,
-                is_runtime=True,
-                is_optional=True if bool(extra) else False,
+                is_runtime=is_runtime,
+                is_optional=is_optional,
                 is_resolved=is_resolved,
                 is_direct=is_direct,
                 extracted_requirement=extracted_requirement,
