@@ -34,6 +34,10 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+
+v32.2.1 - 2024-07-02
+---------------------
+
 - Add support for parsing resolved packages and dependency relationships
   from nuget lockfile `packages.lock.json`.
   See https://github.com/nexB/scancode-toolkit/pull/3825
@@ -59,6 +63,12 @@ v33.0.0 (next next, roadmap)
 
 - Add support for pyproject.toml files in python projects.
   See https://github.com/nexB/scancode-toolkit/issues/3753
+
+- More improved copyright detection, see
+  https://github.com/nexB/scancode-toolkit/pull/3752
+
+- ``scancode-toolkit`` is now installable from the fedora repo.
+  See https://github.com/nexB/scancode-toolkit/pull/3824
 
 v32.2.0 - 2024-06-19
 ----------------------
