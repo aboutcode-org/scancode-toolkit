@@ -25,14 +25,6 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos11_cpython
-          image_name: macOS-11
-          python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
-          test_suites:
-              all: venv/bin/pytest -n 2 -vvs
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
           job_name: macos12_cpython
           image_name: macOS-12
           python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
@@ -49,9 +41,17 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos14_cpython
+          job_name: macos14_cpython_arm64
           image_name: macOS-14
           python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
+          test_suites:
+              all: venv/bin/pytest -n 2 -vvs
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: macos14_cpython
+          image_name: macOS-14-large
+          python_versions: ['3.8', '3.8', '3.9', '3.10', '3.12']
           test_suites:
               all: venv/bin/pytest -n 2 -vvs
 
