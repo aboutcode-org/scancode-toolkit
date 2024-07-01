@@ -587,6 +587,12 @@ parsers in scancode-toolkit during documentation builds.
      - ``nuget_nupsec``
      - None
      - https://docs.microsoft.com/en-us/nuget/reference/nuspec
+   * - NuGet packages.lock.json file
+     - ``*packages.lock.json``
+     - ``nuget``
+     - ``nuget_packages_lock``
+     - None
+     - https://learn.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-restore
    * - Ocaml Opam file
      - ``*opam``
      - ``opam``
@@ -661,12 +667,30 @@ parsers in scancode-toolkit during documentation builds.
      - ``pypi_egg_pkginfo``
      - Python
      - https://peps.python.org/pep-0376/
+   * - Python poetry pyproject.toml
+     - ``*pip-inspect.deplock``
+     - ``pypi``
+     - ``pypi_inspect_deplock``
+     - Python
+     - https://pip.pypa.io/en/stable/cli/pip_inspect/
+   * - Python poetry lockfile
+     - ``*poetry.lock``
+     - ``pypi``
+     - ``pypi_poetry_lock``
+     - Python
+     - https://python-poetry.org/docs/basic-usage/#installing-with-poetrylock
+   * - Python poetry pyproject.toml
+     - ``*pyproject.toml``
+     - ``pypi``
+     - ``pypi_poetry_pyproject_toml``
+     - Python
+     - https://packaging.python.org/en/latest/specifications/pyproject-toml/
    * - Python pyproject.toml
      - ``*pyproject.toml``
      - ``pypi``
      - ``pypi_pyproject_toml``
      - Python
-     - https://peps.python.org/pep-0621/
+     - https://packaging.python.org/en/latest/specifications/pyproject-toml/
    * - PyPI extracted sdist PKG-INFO
      - ``*/PKG-INFO``
      - ``pypi``

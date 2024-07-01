@@ -126,14 +126,6 @@ jobs:
           test_suites:
               all: venv/bin/pytest -n 2 -vvs
 
-    - template: etc/ci/azure-posix.yml
-      parameters:
-          job_name: macos14_cpython
-          image_name: macOS-14-large
-          python_versions: ['3.8', '3.8', '3.9', '3.10', '3.12']
-          test_suites:
-              all: venv/bin/pytest -n 2 -vvs
-
     - template: etc/ci/azure-win.yml
       parameters:
           job_name: win2019_cpython_1
