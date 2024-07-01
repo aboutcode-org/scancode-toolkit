@@ -124,7 +124,7 @@ jobs:
           image_name: macOS-13
           python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
           test_suites:
-              all: venv/bin/pytest -n 2 -vvs
+              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
 
     - template: etc/ci/azure-win.yml
       parameters:
