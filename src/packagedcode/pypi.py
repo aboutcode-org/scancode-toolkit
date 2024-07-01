@@ -484,6 +484,19 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
         if license_file:
             extra_data['license_file'] = license_file
 
+        dependencies = []
+        parsed_dependencies = get_requires_dependencies(
+            requires=project_data.get("dependencies", []),
+        )
+        dependencies.extend(parsed_dependencies)
+
+        for dep_type, deps in project_data.get("optional-dependencies", {}).items():
+            parsed_dependencies = get_requires_dependencies(
+                requires=deps,
+                default_scope=dep_type,
+            )
+            dependencies.extend(parsed_dependencies)
+
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -494,6 +507,7 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
             description=description,
             keywords=get_keywords(project_data),
             parties=get_pyproject_toml_parties(project_data),
+            dependencies=dependencies,
             extra_data=extra_data,
             **urls,
         )
@@ -510,7 +524,75 @@ def is_poetry_pyproject_toml(location):
         return False
 
 
-class PoetryPyprojectTomlHandler(BaseExtractedPythonLayout):
+class BasePoetryPythonLayout(BaseExtractedPythonLayout):
+    """
+    Base class for poetry python projects.
+    """
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
+
+        package_resource = None
+        if resource.name == 'pyproject.toml':
+            package_resource = resource
+        elif resource.name == 'poetry.lock':
+            if resource.has_parent():
+                siblings = resource.siblings(codebase)
+                package_resource = [r for r in siblings if r.name == 'pyproject.toml']
+                if package_resource:
+                    package_resource = package_resource[0]
+
+        if not package_resource:
+            # we do not have a pyproject.toml
+            yield from yield_dependencies_from_package_resource(resource)
+            return
+
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
+            return
+
+        assert len(package_resource.package_data) == 1, f'Invalid pyproject.toml for {package_resource.path}'
+        pkg_data = package_resource.package_data[0]
+        pkg_data = models.PackageData.from_dict(pkg_data)
+
+        if pkg_data.purl:
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=package_resource.path,
+            )
+            package_uid = package.package_uid
+            package.populate_license_fields()
+            yield package
+
+            root = package_resource.parent(codebase)
+            if root:
+                for pypi_res in cls.walk_pypi(resource=root, codebase=codebase):
+                    if package_uid and package_uid not in pypi_res.for_packages:
+                        package_adder(package_uid, pypi_res, codebase)
+                    yield pypi_res
+
+            yield package_resource
+
+        else:
+            # we have no package, so deps are not for a specific package uid
+            package_uid = None
+
+        # in all cases yield possible dependencies
+        yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
+
+        # we yield this as we do not want this further processed
+        yield package_resource
+
+        for lock_file in package_resource.siblings(codebase):
+            if lock_file.name == 'poetry.lock':
+                yield from yield_dependencies_from_package_resource(lock_file, package_uid)
+
+                if package_uid and package_uid not in lock_file.for_packages:
+                    package_adder(package_uid, lock_file, codebase)
+                yield lock_file
+
+
+class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
     datasource_id = 'pypi_poetry_pyproject_toml'
     path_patterns = ('*pyproject.toml',)
     default_package_type = 'pypi'
@@ -526,13 +608,52 @@ class PoetryPyprojectTomlHandler(BaseExtractedPythonLayout):
         )
 
     @classmethod
+    def parse_non_group_dependencies(cls, dependencies, dev=False):
+        dependency_mappings = []
+        for dep_name, requirement in dependencies.items():
+            if not dev and dep_name == "python":
+                continue
+
+            purl = PackageURL(
+                type=cls.default_package_type,
+                name=dep_name,
+            )
+            is_optional = False
+            if dev:
+                is_optional = True
+
+            extra_data = {}
+            if isinstance(requirement, str):
+                extracted_requirement = requirement
+            elif isinstance(requirement, dict):
+                extracted_requirement = requirement.get("version")
+                is_optional = requirement.get("optional", is_optional)
+                python_version = requirement.get("python")
+                if python_version:
+                    extra_data["python_version"] = python_version
+
+            dependency = models.DependentPackage(
+                purl=purl.to_string(),
+                extracted_requirement=extracted_requirement,
+                scope="install",
+                is_runtime=True,
+                is_optional=is_optional,
+                is_direct=True,
+                is_resolved=False,
+                extra_data=extra_data,
+            )
+            dependency_mappings.append(dependency.to_dict())
+
+        return dependency_mappings
+
+    @classmethod
     def parse(cls, location, package_only=False):
         toml_data = toml.load(location, _dict=dict)
 
         tool_data = toml_data.get('tool')
         if not tool_data:
             return
-        
+
         poetry_data = tool_data.get('poetry')
         if not poetry_data:
             return
@@ -548,6 +669,34 @@ class PoetryPyprojectTomlHandler(BaseExtractedPythonLayout):
         if license_file:
             extra_data['license_file'] = license_file
 
+        dependencies = []
+        parsed_deps = cls.parse_non_group_dependencies(
+            dependencies=poetry_data.get("dependencies", {}),
+        )
+        dependencies.extend(parsed_deps)
+        parsed_deps = cls.parse_non_group_dependencies(
+            dependencies=poetry_data.get("dev-dependencies", {}),
+            dev=True,
+        )
+        dependencies.extend(parsed_deps)
+
+        for group_name, group_deps in poetry_data.get("group", {}).items():
+            for name, requirement in group_deps.get("dependencies", {}).items():
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=name,
+                )
+                dependency = models.DependentPackage(
+                    purl=purl.to_string(),
+                    extracted_requirement=requirement,
+                    scope=group_name,
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=True,
+                    is_resolved=False,
+                )
+                dependencies.append(dependency.to_dict())
+
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -559,7 +708,114 @@ class PoetryPyprojectTomlHandler(BaseExtractedPythonLayout):
             keywords=get_keywords(poetry_data),
             parties=get_pyproject_toml_parties(poetry_data),
             extra_data=extra_data,
+            dependencies=dependencies,
             **urls,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class PoetryLockHandler(BasePoetryPythonLayout):
+    datasource_id = 'pypi_poetry_lock'
+    path_patterns = ('*poetry.lock',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python poetry lockfile'
+    documentation_url = 'https://python-poetry.org/docs/basic-usage/#installing-with-poetrylock'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        toml_data = toml.load(location, _dict=dict)
+
+        packages = toml_data.get('package')
+        if not packages:
+            return
+
+        metadata = toml_data.get('metadata')
+
+        dependencies = []
+        for package in packages:
+            dependencies_for_resolved = []
+
+            deps = package.get("dependencies") or {}
+            for name, requirement in deps.items():
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=name,
+                )
+                dependency = models.DependentPackage(
+                    purl=purl.to_string(),
+                    extracted_requirement=requirement,
+                    scope="install",
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=True,
+                    is_resolved=False,
+                )
+                dependencies_for_resolved.append(dependency.to_dict())
+
+            extra_deps = package.get("extras") or {}
+            for group_name, group_deps in extra_deps.items():
+                for dep in group_deps:
+                    if " (" in dep and ")" in dep:
+                        name, requirement = dep.split(" (")
+                        requirement = requirement.rstrip(")")
+                    else:
+                        requirement = None
+                        name = dep
+                    purl = PackageURL(
+                        type=cls.default_package_type,
+                        name=name,
+                    )
+                    dependency = models.DependentPackage(
+                        purl=purl.to_string(),
+                        extracted_requirement=requirement,
+                        scope=group_name,
+                        is_runtime=True,
+                        is_optional=True,
+                        is_direct=True,
+                        is_resolved=False,
+                    )
+                    dependencies_for_resolved.append(dependency.to_dict())
+
+            name = package.get('name')
+            version = package.get('version')
+            urls = get_pypi_urls(name, version)
+            package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language='Python',
+                name=name,
+                version=version,
+                description=metadata.get('description'),
+                is_virtual=True,
+                dependencies=dependencies_for_resolved,
+                **urls,
+            )
+            resolved_package = models.PackageData.from_data(package_data, package_only)
+
+            is_optional = package.get("is_optional") or True
+            dependency = models.DependentPackage(
+                purl=resolved_package.purl,
+                extracted_requirement=None,
+                scope=None,
+                is_runtime=True,
+                is_optional=is_optional,
+                is_direct=False,
+                is_resolved=True,
+                resolved_package=resolved_package.to_dict()
+            )
+            dependencies.append(dependency.to_dict())
+
+        extra_data = {}
+        extra_data['python_version'] = metadata.get("python-versions")
+        extra_data['lock_version'] = metadata.get("lock-version")
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            extra_data=extra_data,
+            dependencies=dependencies,
         )
         yield models.PackageData.from_data(package_data, package_only)
 

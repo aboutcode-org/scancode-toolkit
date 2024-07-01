@@ -119,7 +119,277 @@
     "extra_data": {
       "documentation": "https://python-gino.org/docs/"
     },
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/sqlalchemy",
+        "extracted_requirement": ">=1.3,<1.4",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/asyncpg",
+        "extracted_requirement": ">=0.18,<1.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/aiomysql",
+        "extracted_requirement": "^0.0.22",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/contextvars",
+        "extracted_requirement": "^2.4",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "<3.7"
+        }
+      },
+      {
+        "purl": "pkg:pypi/importlib-metadata",
+        "extracted_requirement": "^2.0.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "<3.8"
+        }
+      },
+      {
+        "purl": "pkg:pypi/gino-starlette",
+        "extracted_requirement": "^0.1.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "^3.6"
+        }
+      },
+      {
+        "purl": "pkg:pypi/gino-aiohttp",
+        "extracted_requirement": "^0.2.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "^3.6"
+        }
+      },
+      {
+        "purl": "pkg:pypi/gino-tornado",
+        "extracted_requirement": "^0.1.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "^3.5.2"
+        }
+      },
+      {
+        "purl": "pkg:pypi/gino-sanic",
+        "extracted_requirement": "^0.1.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "^3.6"
+        }
+      },
+      {
+        "purl": "pkg:pypi/gino-quart",
+        "extracted_requirement": "^0.1.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "^3.7"
+        }
+      },
+      {
+        "purl": "pkg:pypi/psycopg2-binary",
+        "extracted_requirement": "^2.9.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/click",
+        "extracted_requirement": "^8.0.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest",
+        "extracted_requirement": "^7.0.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-asyncio",
+        "extracted_requirement": "^0.16.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-mock",
+        "extracted_requirement": "^3.6.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-cov",
+        "extracted_requirement": "^3.0.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/black",
+        "extracted_requirement": "^22.1.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": ">=3.6.2"
+        }
+      },
+      {
+        "purl": "pkg:pypi/mypy",
+        "extracted_requirement": "^0.931",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx",
+        "extracted_requirement": "^4.3.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx-rtd-theme",
+        "extracted_requirement": "^1.0.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinxcontrib-apidoc",
+        "extracted_requirement": "^0.3.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx-autobuild",
+        "extracted_requirement": "^2021.3.14",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx-intl",
+        "extracted_requirement": "^2.0.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": "https://pypi.org/project/gino",
     "repository_download_url": "https://pypi.org/packages/source/g/gino/gino-1.1.0-rc.1.tar.gz",
     "api_data_url": "https://pypi.org/pypi/gino/1.1.0-rc.1/json",

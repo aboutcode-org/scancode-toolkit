@@ -728,6 +728,13 @@ Package type:  pypi
   path_patterns:    '*pip-inspect.deplock'
 --------------------------------------------
 Package type:  pypi
+  datasource_id:     pypi_poetry_lock
+  documentation URL: https://python-poetry.org/docs/basic-usage/#installing-with-poetrylock
+  primary language:  Python
+  description:       Python poetry lockfile
+  path_patterns:    '*poetry.lock'
+--------------------------------------------
+Package type:  pypi
   datasource_id:     pypi_poetry_pyproject_toml
   documentation URL: https://packaging.python.org/en/latest/specifications/pyproject-toml/
   primary language:  Python

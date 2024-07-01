@@ -87,7 +87,30 @@
       "Documentation": "https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html",
       "Download": "https://archive.apache.org/dist/airflow/clients/python/"
     },
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/python-dateutil",
+        "extracted_requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/urllib3",
+        "extracted_requirement": ">=1.25.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": "https://pypi.org/project/apache-airflow-client",
     "repository_download_url": null,
     "api_data_url": "https://pypi.org/pypi/apache-airflow-client/json",

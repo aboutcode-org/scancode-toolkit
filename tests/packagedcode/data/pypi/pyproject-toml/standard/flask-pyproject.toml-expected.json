@@ -85,7 +85,98 @@
       "Chat": "https://discord.gg/pallets",
       "license_file": "LICENSE.txt"
     },
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/werkzeug",
+        "extracted_requirement": ">=3.0.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/jinja2",
+        "extracted_requirement": ">=3.1.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/itsdangerous",
+        "extracted_requirement": ">=2.1.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/click",
+        "extracted_requirement": ">=8.1.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/blinker",
+        "extracted_requirement": ">=1.6.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/importlib-metadata",
+        "extracted_requirement": ">=3.6.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "< 3.10"
+        }
+      },
+      {
+        "purl": "pkg:pypi/asgiref",
+        "extracted_requirement": ">=3.2",
+        "scope": "async",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/python-dotenv",
+        "extracted_requirement": null,
+        "scope": "dotenv",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": "https://pypi.org/project/Flask",
     "repository_download_url": "https://pypi.org/packages/source/F/Flask/Flask-3.1.0.dev.tar.gz",
     "api_data_url": "https://pypi.org/pypi/Flask/3.1.0.dev/json",

@@ -109,7 +109,223 @@
       "Funding": "https://github.com/sponsors/hynek",
       "Tidelift": "https://tidelift.com/subscription/pkg/pypi-attrs?utm_source=pypi-attrs&utm_medium=pypi"
     },
-    "dependencies": [],
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/importlib-metadata",
+        "extracted_requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "< 3.8"
+        }
+      },
+      {
+        "purl": "pkg:pypi/pytest-mypy-plugins",
+        "extracted_requirement": null,
+        "scope": "tests-mypy",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": ">= 3.8"
+        }
+      },
+      {
+        "purl": "pkg:pypi/mypy",
+        "extracted_requirement": "<1.10,>=1.6",
+        "scope": "tests-mypy",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": ">= 3.8"
+        }
+      },
+      {
+        "purl": "pkg:pypi/cloudpickle",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/hypothesis",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pympler",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest",
+        "extracted_requirement": ">=4.3.0",
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-xdist",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/attrs",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/attrs",
+        "extracted_requirement": null,
+        "scope": "cov",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/coverage",
+        "extracted_requirement": ">=5.3",
+        "scope": "cov",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/furo",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/myst-parser",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx-notfound-page",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinxcontrib-towncrier",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/towncrier",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/attrs",
+        "extracted_requirement": null,
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pre-commit",
+        "extracted_requirement": null,
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": "https://pypi.org/project/attrs",
     "repository_download_url": null,
     "api_data_url": "https://pypi.org/pypi/attrs/json",

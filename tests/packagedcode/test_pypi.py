@@ -79,6 +79,13 @@ class TestPyPiEndtoEnd(PackageTester):
         run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_poetry_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/poetry/univers/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/poetry/univers-package-assembly-expected.json')
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
 
 class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -332,20 +339,45 @@ class TestPyprojectTomlFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/lc0-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+
+class TestPoetryHandler(PackageTester):
+
     def test_is_pyproject_toml_poetry(self):
         test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy/pyproject.toml')
         assert pypi.PoetryPyprojectTomlHandler.is_datafile(test_file)
-    
+
     def test_parse_pyproject_toml_poetry_gerapy(self):
         test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy/pyproject.toml')
         package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
         expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-    
+
     def test_parse_pyproject_toml_poetry_gino(self):
         test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gino/pyproject.toml')
         package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
         expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/gino-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_poetry_connexion(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/connexion/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/connexion-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_is_poetry_lock(self):
+        test_file = self.get_test_loc('pypi/poetry/univers/poetry.lock')
+        assert pypi.PoetryLockHandler.is_datafile(test_file)
+
+    def test_parse_poetry_lock_univers(self):
+        test_file = self.get_test_loc('pypi/poetry/univers/poetry.lock')
+        package = pypi.PoetryLockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/poetry/univers-poetry.lock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_poetry_univers(self):
+        test_file = self.get_test_loc('pypi/poetry/univers/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/poetry/univers-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
