@@ -32,7 +32,7 @@ headers:
         platform: Linux-5.15.0-112-generic-x86_64-with-glibc2.35
         platform_version: '#122-Ubuntu SMP Thu May 23 07:48:21 UTC 2024'
         python_version: 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]
-      spdx_license_list_version: '3.23'
+      spdx_license_list_version: '3.22'
       files_count: 4
 summary:
   declared_license_expression: apache-2.0 AND cddl-1.0 AND mit
