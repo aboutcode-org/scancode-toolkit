@@ -70,7 +70,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/setuptools",
-        "extracted_requirement": "setuptools",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -81,7 +81,7 @@
       },
       {
         "purl": "pkg:pypi/mock",
-        "extracted_requirement": "mock",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

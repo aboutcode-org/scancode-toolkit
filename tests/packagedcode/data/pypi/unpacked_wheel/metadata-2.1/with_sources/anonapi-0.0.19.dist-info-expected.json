@@ -208,7 +208,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pyyaml",
-        "extracted_requirement": "pyyaml",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

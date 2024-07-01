@@ -373,7 +373,7 @@
     },
     {
       "purl": "pkg:pypi/cython",
-      "extracted_requirement": "cython",
+      "extracted_requirement": null,
       "scope": "setup",
       "is_runtime": true,
       "is_optional": false,
@@ -388,7 +388,7 @@
     },
     {
       "purl": "pkg:pypi/numpy",
-      "extracted_requirement": "numpy",
+      "extracted_requirement": null,
       "scope": "setup",
       "is_runtime": true,
       "is_optional": false,
@@ -1723,7 +1723,7 @@
           "dependencies": [
             {
               "purl": "pkg:pypi/cython",
-              "extracted_requirement": "cython",
+              "extracted_requirement": null,
               "scope": "setup",
               "is_runtime": true,
               "is_optional": false,
@@ -1734,7 +1734,7 @@
             },
             {
               "purl": "pkg:pypi/numpy",
-              "extracted_requirement": "numpy",
+              "extracted_requirement": null,
               "scope": "setup",
               "is_runtime": true,
               "is_optional": false,

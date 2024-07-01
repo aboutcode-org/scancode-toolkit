@@ -111,21 +111,20 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos11_cpython
-          python_architecture: x64
-          image_name: macOS-11
-          python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
-          test_suites:
-              all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
-
-    - template: etc/ci/azure-posix.yml
-      parameters:
           job_name: macos12_cpython
           image_name: macOS-12
           python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
           python_architecture: x64
           test_suites:
               all: venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py --reruns 2
+
+    - template: etc/ci/azure-posix.yml
+      parameters:
+          job_name: macos13_cpython
+          image_name: macOS-13
+          python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
+          test_suites:
+              all: venv/bin/pytest -n 2 -vvs
 
     - template: etc/ci/azure-win.yml
       parameters:
@@ -204,19 +203,19 @@ jobs:
           python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-
+  
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos11_cpython_latest_from_pip
-          image_name: macos-11
+          job_name: macos12_cpython_latest_from_pip
+          image_name: macos-12
           python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos12_cpython_latest_from_pip
-          image_name: macos-12
+          job_name: macos13_cpython_latest_from_pip
+          image_name: macos-13
           python_versions: ['3.8', '3.9', '3.10', '3.11', '3.12']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py

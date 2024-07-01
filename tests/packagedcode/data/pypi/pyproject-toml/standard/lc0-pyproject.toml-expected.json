@@ -1,0 +1,61 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "lczero_bindings",
+    "version": "0.1.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Leela Chess Zero Python bindings",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "The LCZero Authors",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Programming Language :: Python :: 3",
+      "Topic :: Games/Entertainment :: Board Games",
+      "Topic :: Scientific/Engineering :: Artificial Intelligence",
+      "Environment :: GPU"
+    ],
+    "homepage_url": "https://github.com/LeelaChessZero/lc0",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "license_file": "COPYING"
+    },
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/lczero_bindings",
+    "repository_download_url": "https://pypi.org/packages/source/l/lczero_bindings/lczero_bindings-0.1.0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/lczero_bindings/0.1.0/json",
+    "datasource_id": "pypi_pyproject_toml",
+    "purl": "pkg:pypi/lczero-bindings@0.1.0"
+  }
+]

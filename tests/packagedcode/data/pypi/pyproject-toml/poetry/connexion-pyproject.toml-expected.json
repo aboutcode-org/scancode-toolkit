@@ -1,0 +1,439 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "sphinxemoji",
+    "version": "3.0.dev0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Connexion - API first applications with OpenAPI/Swagger",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Robbe Sneyders",
+        "email": "robbe.sneyders@gmail.com",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Ruwan Lambrichts",
+        "email": "ruwan.lambrichts@ml6.eu",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Daniel Grossmann-Kavanagh",
+        "email": "me@danielgk.com",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Henning Jacobs",
+        "email": "henning.jacobs@zalando.de",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Jo\u00e3o Santos",
+        "email": "joao.santos@zalando.de",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": "Robbe Sneyders",
+        "email": "robbe.sneyders@gmail.com",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": "Ruwan Lambrichts",
+        "email": "ruwan.lambrichts@ml6.eu",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "api",
+      "swagger",
+      "openapi",
+      "Development Status :: 5 - Production/Stable",
+      "Intended Audience :: Developers",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Topic :: Internet",
+      "Topic :: Internet :: WWW/HTTP",
+      "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+      "Topic :: Software Development",
+      "Topic :: Software Development :: Libraries",
+      "Topic :: Software Development :: Libraries :: Python Modules",
+      "Typing :: Typed"
+    ],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "https://github.com/spec-first/connexion",
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "apache-2.0",
+    "declared_license_expression_spdx": "Apache-2.0",
+    "license_detections": [
+      {
+        "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
+        "matches": [
+          {
+            "license_expression": "apache-2.0",
+            "spdx_license_expression": "Apache-2.0",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "matched_text": "Apache-2.0"
+          }
+        ],
+        "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+      },
+      {
+        "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
+        "matches": [
+          {
+            "license_expression": "apache-2.0",
+            "spdx_license_expression": "Apache-2.0",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 95.0,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "rule_relevance": 95,
+            "rule_identifier": "pypi_apache_no-version.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
+            "matched_text": "- 'License :: OSI Approved :: Apache Software License'"
+          }
+        ],
+        "identifier": "apache_2_0-e267f9d9-ae62-e9c9-9cc2-8cd0a1e4928f"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "license: Apache-2.0\nclassifiers:\n  - 'License :: OSI Approved :: Apache Software License'\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/asgiref",
+        "extracted_requirement": ">= 3.4",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/httpx",
+        "extracted_requirement": ">= 0.23",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/inflection",
+        "extracted_requirement": ">= 0.3.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/jsonschema",
+        "extracted_requirement": ">=4.17.3",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/jinja2",
+        "extracted_requirement": ">= 3.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/python-multipart",
+        "extracted_requirement": ">= 0.0.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyyaml",
+        "extracted_requirement": ">= 5.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/requests",
+        "extracted_requirement": ">= 2.27",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/starlette",
+        "extracted_requirement": ">= 0.35",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/typing-extensions",
+        "extracted_requirement": ">= 4.6.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/werkzeug",
+        "extracted_requirement": ">= 2.2.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/a2wsgi",
+        "extracted_requirement": ">= 1.7",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/flask",
+        "extracted_requirement": ">= 2.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/swagger-ui-bundle",
+        "extracted_requirement": ">= 1.1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/uvicorn",
+        "extracted_requirement": ">= 0.17.6",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/jsf",
+        "extracted_requirement": ">=0.10.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pre-commit",
+        "extracted_requirement": "~2.21.0",
+        "scope": "tests",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest",
+        "extracted_requirement": "7.2.1",
+        "scope": "tests",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-asyncio",
+        "extracted_requirement": "~0.18.3",
+        "scope": "tests",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-cov",
+        "extracted_requirement": "~2.12.1",
+        "scope": "tests",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx",
+        "extracted_requirement": "5.3.0",
+        "scope": "docs",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx-copybutton",
+        "extracted_requirement": "0.5.2",
+        "scope": "docs",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx-design",
+        "extracted_requirement": "0.4.1",
+        "scope": "docs",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx-rtd-theme",
+        "extracted_requirement": "1.2.0",
+        "scope": "docs",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinxemoji",
+        "extracted_requirement": "0.2.0",
+        "scope": "docs",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/connexion",
+    "repository_download_url": "https://pypi.org/packages/source/c/connexion/connexion-3.0.dev0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/connexion/3.0.dev0/json",
+    "datasource_id": "pypi_poetry_pyproject_toml",
+    "purl": "pkg:pypi/sphinxemoji@3.0.dev0"
+  }
+]

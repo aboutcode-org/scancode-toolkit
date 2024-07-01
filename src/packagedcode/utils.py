@@ -209,6 +209,26 @@ def yield_dependencies_from_package_data(package_data, datafile_path, package_ui
         )
 
 
+def parse_maintainer_name_email(maintainer):
+    """
+    Get name and email values from a author/maintainer string.
+
+    Example string:
+    Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>
+    """
+    email_wrappers = ["<", ">"]
+    has_email = "@" in maintainer and all([
+        True 
+        for char in email_wrappers
+        if char in maintainer
+    ])
+    if not has_email:
+        return maintainer, None
+
+    name, _, email = maintainer.rpartition("<")
+    return name.rstrip(" "), email.rstrip(">")
+
+
 def yield_dependencies_from_package_resource(resource, package_uid=None):
     """
     Yield a Dependency for each dependency from each package from``resource.package_data``

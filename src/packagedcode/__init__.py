@@ -173,6 +173,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     # pypi.PypiSdistArchiveHandler,
     pypi.PypiWheelHandler,
     pypi.PyprojectTomlHandler,
+    pypi.PoetryPyprojectTomlHandler,
+    pypi.PoetryLockHandler,
     pypi.PythonEditableInstallationPkgInfoFile,
     pypi.PythonEggPkgInfoFile,
     pypi.PythonInstalledWheelMetadataFile,
@@ -208,6 +210,9 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     windows.MicrosoftUpdateManifestHandler,
 
     win_pe.WindowsExecutableHandler,
+
+    # These are handlers for deplock generated files
+    pypi.PipInspectDeplockHandler,
 ]
 
 if on_linux:

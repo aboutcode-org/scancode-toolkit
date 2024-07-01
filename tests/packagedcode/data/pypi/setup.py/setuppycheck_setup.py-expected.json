@@ -74,7 +74,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/mock",
-        "extracted_requirement": "mock",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,

@@ -118,7 +118,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/werkzeug",
-        "extracted_requirement": "Werkzeug>=0.14",
+        "extracted_requirement": ">=0.14",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -129,7 +129,7 @@
       },
       {
         "purl": "pkg:pypi/jinja2",
-        "extracted_requirement": "Jinja2>=2.10",
+        "extracted_requirement": ">=2.10",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -140,7 +140,7 @@
       },
       {
         "purl": "pkg:pypi/itsdangerous",
-        "extracted_requirement": "itsdangerous>=0.24",
+        "extracted_requirement": ">=0.24",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -151,7 +151,7 @@
       },
       {
         "purl": "pkg:pypi/click",
-        "extracted_requirement": "click>=5.1",
+        "extracted_requirement": ">=5.1",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -162,7 +162,7 @@
       },
       {
         "purl": "pkg:pypi/python-dotenv",
-        "extracted_requirement": "python-dotenv",
+        "extracted_requirement": null,
         "scope": "dotenv",
         "is_runtime": true,
         "is_optional": false,
@@ -173,7 +173,7 @@
       },
       {
         "purl": "pkg:pypi/pytest",
-        "extracted_requirement": "pytest>=3",
+        "extracted_requirement": ">=3",
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -184,7 +184,7 @@
       },
       {
         "purl": "pkg:pypi/coverage",
-        "extracted_requirement": "coverage",
+        "extracted_requirement": null,
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -195,7 +195,7 @@
       },
       {
         "purl": "pkg:pypi/tox",
-        "extracted_requirement": "tox",
+        "extracted_requirement": null,
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -206,7 +206,7 @@
       },
       {
         "purl": "pkg:pypi/sphinx",
-        "extracted_requirement": "sphinx",
+        "extracted_requirement": null,
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -217,7 +217,7 @@
       },
       {
         "purl": "pkg:pypi/pallets-sphinx-themes",
-        "extracted_requirement": "pallets-sphinx-themes",
+        "extracted_requirement": null,
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -228,7 +228,7 @@
       },
       {
         "purl": "pkg:pypi/sphinxcontrib-log-cabinet",
-        "extracted_requirement": "sphinxcontrib-log-cabinet",
+        "extracted_requirement": null,
         "scope": "dev",
         "is_runtime": true,
         "is_optional": false,
@@ -239,7 +239,7 @@
       },
       {
         "purl": "pkg:pypi/sphinx",
-        "extracted_requirement": "sphinx",
+        "extracted_requirement": null,
         "scope": "docs",
         "is_runtime": true,
         "is_optional": false,
@@ -250,7 +250,7 @@
       },
       {
         "purl": "pkg:pypi/pallets-sphinx-themes",
-        "extracted_requirement": "pallets-sphinx-themes",
+        "extracted_requirement": null,
         "scope": "docs",
         "is_runtime": true,
         "is_optional": false,
@@ -261,7 +261,7 @@
       },
       {
         "purl": "pkg:pypi/sphinxcontrib-log-cabinet",
-        "extracted_requirement": "sphinxcontrib-log-cabinet",
+        "extracted_requirement": null,
         "scope": "docs",
         "is_runtime": true,
         "is_optional": false,

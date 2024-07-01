@@ -70,7 +70,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/psutil",
-        "extracted_requirement": "psutil",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -81,7 +81,7 @@
       },
       {
         "purl": "pkg:pypi/colorama",
-        "extracted_requirement": "colorama",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -92,7 +92,7 @@
       },
       {
         "purl": "pkg:pypi/six",
-        "extracted_requirement": "six",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
@@ -103,7 +103,7 @@
       },
       {
         "purl": "pkg:pypi/pathlib2",
-        "extracted_requirement": "pathlib2",
+        "extracted_requirement": null,
         "scope": ":python_version<\"3.4\"",
         "is_runtime": true,
         "is_optional": false,
@@ -114,7 +114,7 @@
       },
       {
         "purl": "pkg:pypi/backports-shutil-get-terminal-size",
-        "extracted_requirement": "backports.shutil_get_terminal_size",
+        "extracted_requirement": null,
         "scope": ":python_version<\"3.3\"",
         "is_runtime": true,
         "is_optional": false,
@@ -125,7 +125,7 @@
       },
       {
         "purl": "pkg:pypi/decorator",
-        "extracted_requirement": "decorator<5",
+        "extracted_requirement": "<5",
         "scope": ":python_version<=\"2.7\"",
         "is_runtime": true,
         "is_optional": false,
@@ -136,7 +136,7 @@
       },
       {
         "purl": "pkg:pypi/pyte",
-        "extracted_requirement": "pyte<0.8.1",
+        "extracted_requirement": "<0.8.1",
         "scope": ":python_version<=\"2.7\"",
         "is_runtime": true,
         "is_optional": false,
@@ -147,7 +147,7 @@
       },
       {
         "purl": "pkg:pypi/decorator",
-        "extracted_requirement": "decorator",
+        "extracted_requirement": null,
         "scope": ":python_version>\"2.7\"",
         "is_runtime": true,
         "is_optional": false,
@@ -158,7 +158,7 @@
       },
       {
         "purl": "pkg:pypi/pyte",
-        "extracted_requirement": "pyte",
+        "extracted_requirement": null,
         "scope": ":python_version>\"2.7\"",
         "is_runtime": true,
         "is_optional": false,
@@ -169,7 +169,7 @@
       },
       {
         "purl": "pkg:pypi/win-unicode-console",
-        "extracted_requirement": "win_unicode_console",
+        "extracted_requirement": null,
         "scope": ":sys_platform=='win32'",
         "is_runtime": true,
         "is_optional": false,

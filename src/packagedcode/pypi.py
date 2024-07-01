@@ -27,6 +27,7 @@ import importlib_metadata
 import packvers as packaging
 import pip_requirements_parser
 import pkginfo2
+import toml
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
@@ -38,8 +39,10 @@ from packvers.utils import canonicalize_name
 
 from packagedcode import models
 from packagedcode.utils import build_description
+from packagedcode.utils import parse_maintainer_name_email
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
+from packagedcode.utils import get_base_purl
 
 try:
     from zipfile import Path as ZipPath
@@ -149,7 +152,7 @@ class BaseExtractedPythonLayout(models.DatafileHandler):
         datafile_name_patterns = (
             'Pipfile.lock',
             'Pipfile',
-        ) + PipRequirementsFileHandler.path_patterns
+        ) + PipRequirementsFileHandler.path_patterns + PyprojectTomlHandler.path_patterns
 
         # TODO: we want PKG-INFO first, then (setup.py, setup.cfg), then pyproject.toml for poetry
         # then we have the rest of the lock files (pipfile, pipfile.lock, etc.)
@@ -448,14 +451,501 @@ def get_resource_for_path(path, root, codebase):
     return root
 
 
-# FIXME: Implement me
-class PyprojectTomlHandler(models.NonAssemblableDatafileHandler):
+class PyprojectTomlHandler(BaseExtractedPythonLayout):
     datasource_id = 'pypi_pyproject_toml'
     path_patterns = ('*pyproject.toml',)
     default_package_type = 'pypi'
     default_primary_language = 'Python'
     description = 'Python pyproject.toml'
-    documentation_url = 'https://peps.python.org/pep-0621/'
+    documentation_url = 'https://packaging.python.org/en/latest/specifications/pyproject-toml/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return (
+            super().is_datafile(location, filetypes=filetypes)
+            and not is_poetry_pyproject_toml(location)
+        )
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        package_data = toml.load(location, _dict=dict)
+        project_data = package_data.get("project")
+        if not project_data:
+            return
+
+        name = project_data.get('name')
+        version = project_data.get('version')
+        description = project_data.get('description') or ''
+        description = description.strip()
+
+        urls, extra_data = get_urls(metainfo=project_data, name=name, version=version)
+
+        extracted_license_statement, license_file = get_declared_license(project_data)
+        if license_file:
+            extra_data['license_file'] = license_file
+
+        dependencies = []
+        parsed_dependencies = get_requires_dependencies(
+            requires=project_data.get("dependencies", []),
+        )
+        dependencies.extend(parsed_dependencies)
+
+        for dep_type, deps in project_data.get("optional-dependencies", {}).items():
+            parsed_dependencies = get_requires_dependencies(
+                requires=deps,
+                default_scope=dep_type,
+                is_optional=True,
+            )
+            dependencies.extend(parsed_dependencies)
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            name=name,
+            version=version,
+            extracted_license_statement=extracted_license_statement,
+            description=description,
+            keywords=get_keywords(project_data),
+            parties=get_pyproject_toml_parties(project_data),
+            dependencies=dependencies,
+            extra_data=extra_data,
+            **urls,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+def is_poetry_pyproject_toml(location):
+    with open(location, 'r') as file:
+        data = file.read()
+
+    if "tool.poetry" in data:
+        return True
+    else:
+        return False
+
+
+class BasePoetryPythonLayout(BaseExtractedPythonLayout):
+    """
+    Base class for poetry python projects.
+    """
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
+
+        package_resource = None
+        if resource.name == 'pyproject.toml':
+            package_resource = resource
+        elif resource.name == 'poetry.lock':
+            if resource.has_parent():
+                siblings = resource.siblings(codebase)
+                package_resource = [r for r in siblings if r.name == 'pyproject.toml']
+                if package_resource:
+                    package_resource = package_resource[0]
+
+        if not package_resource:
+            # we do not have a pyproject.toml
+            yield from yield_dependencies_from_package_resource(resource)
+            return
+
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
+            return
+
+        assert len(package_resource.package_data) == 1, f'Invalid pyproject.toml for {package_resource.path}'
+        pkg_data = package_resource.package_data[0]
+        pkg_data = models.PackageData.from_dict(pkg_data)
+
+        if pkg_data.purl:
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=package_resource.path,
+            )
+            package_uid = package.package_uid
+            package.populate_license_fields()
+            yield package
+
+            root = package_resource.parent(codebase)
+            if root:
+                for pypi_res in cls.walk_pypi(resource=root, codebase=codebase):
+                    if package_uid and package_uid not in pypi_res.for_packages:
+                        package_adder(package_uid, pypi_res, codebase)
+                    yield pypi_res
+
+            yield package_resource
+
+        else:
+            # we have no package, so deps are not for a specific package uid
+            package_uid = None
+
+        # in all cases yield possible dependencies
+        yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
+
+        # we yield this as we do not want this further processed
+        yield package_resource
+
+        for lock_file in package_resource.siblings(codebase):
+            if lock_file.name == 'poetry.lock':
+                yield from yield_dependencies_from_package_resource(lock_file, package_uid)
+
+                if package_uid and package_uid not in lock_file.for_packages:
+                    package_adder(package_uid, lock_file, codebase)
+                yield lock_file
+
+
+class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
+    datasource_id = 'pypi_poetry_pyproject_toml'
+    path_patterns = ('*pyproject.toml',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python poetry pyproject.toml'
+    documentation_url = 'https://packaging.python.org/en/latest/specifications/pyproject-toml/'
+
+    @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return (
+            super().is_datafile(location, filetypes=filetypes)
+            and is_poetry_pyproject_toml(location)
+        )
+
+    @classmethod
+    def parse_non_group_dependencies(
+        cls,
+        dependencies,
+        scope="install",
+        is_optional=False,
+        is_runtime=True,
+    ):
+        dependency_mappings = []
+        for dep_name, requirement in dependencies.items():
+            if is_runtime and dep_name == "python":
+                continue
+
+            purl = PackageURL(
+                type=cls.default_package_type,
+                name=dep_name,
+            )
+
+            extra_data = {}
+            if isinstance(requirement, str):
+                extracted_requirement = requirement
+            elif isinstance(requirement, dict):
+                extracted_requirement = requirement.get("version")
+                is_optional = requirement.get("optional", False)
+                python_version = requirement.get("python")
+                if python_version:
+                    extra_data["python_version"] = python_version
+
+            dependency = models.DependentPackage(
+                purl=purl.to_string(),
+                extracted_requirement=extracted_requirement,
+                scope=scope,
+                is_runtime=is_runtime,
+                is_optional=is_optional,
+                is_direct=True,
+                is_resolved=False,
+                extra_data=extra_data,
+            )
+            dependency_mappings.append(dependency.to_dict())
+
+        return dependency_mappings
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        toml_data = toml.load(location, _dict=dict)
+
+        tool_data = toml_data.get('tool')
+        if not tool_data:
+            return
+
+        poetry_data = tool_data.get('poetry')
+        if not poetry_data:
+            return
+
+        name = poetry_data.get('name')
+        version = poetry_data.get('version')
+        description = poetry_data.get('description') or ''
+        description = description.strip()
+
+        urls, extra_data = get_urls(metainfo=poetry_data, name=name, version=version, poetry=True)
+
+        extracted_license_statement, license_file = get_declared_license(poetry_data)
+        if license_file:
+            extra_data['license_file'] = license_file
+
+        dependencies = []
+        parsed_deps = cls.parse_non_group_dependencies(
+            dependencies=poetry_data.get("dependencies", {}),
+            scope="dependencies",
+        )
+        dependencies.extend(parsed_deps)
+        parsed_deps = cls.parse_non_group_dependencies(
+            dependencies=poetry_data.get("dev-dependencies", {}),
+            scope="dev-dependencies",
+            is_runtime=False,
+        )
+        dependencies.extend(parsed_deps)
+
+        for group_name, group_deps in poetry_data.get("group", {}).items():
+            for name, requirement in group_deps.get("dependencies", {}).items():
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=name,
+                )
+                dependency = models.DependentPackage(
+                    purl=purl.to_string(),
+                    extracted_requirement=requirement,
+                    scope=group_name,
+                    is_runtime=False,
+                    is_optional=False,
+                    is_direct=True,
+                    is_resolved=False,
+                )
+                dependencies.append(dependency.to_dict())
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            name=name,
+            version=version,
+            extracted_license_statement=extracted_license_statement,
+            description=description,
+            keywords=get_keywords(poetry_data),
+            parties=get_pyproject_toml_parties(poetry_data),
+            extra_data=extra_data,
+            dependencies=dependencies,
+            **urls,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class PoetryLockHandler(BasePoetryPythonLayout):
+    datasource_id = 'pypi_poetry_lock'
+    path_patterns = ('*poetry.lock',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python poetry lockfile'
+    documentation_url = 'https://python-poetry.org/docs/basic-usage/#installing-with-poetrylock'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        toml_data = toml.load(location, _dict=dict)
+
+        packages = toml_data.get('package')
+        if not packages:
+            return
+
+        metadata = toml_data.get('metadata')
+
+        dependencies = []
+        for package in packages:
+            dependencies_for_resolved = []
+
+            deps = package.get("dependencies") or {}
+            for name, requirement in deps.items():
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=name,
+                )
+                dependency = models.DependentPackage(
+                    purl=purl.to_string(),
+                    extracted_requirement=requirement,
+                    scope="dependencies",
+                    is_runtime=True,
+                    is_optional=False,
+                    is_direct=True,
+                    is_resolved=False,
+                )
+                dependencies_for_resolved.append(dependency.to_dict())
+
+            extra_deps = package.get("extras") or {}
+            for group_name, group_deps in extra_deps.items():
+                for dep in group_deps:
+                    if " (" in dep and ")" in dep:
+                        name, requirement = dep.split(" (")
+                        requirement = requirement.rstrip(")")
+                    else:
+                        requirement = None
+                        name = dep
+                    purl = PackageURL(
+                        type=cls.default_package_type,
+                        name=name,
+                    )
+                    dependency = models.DependentPackage(
+                        purl=purl.to_string(),
+                        extracted_requirement=requirement,
+                        scope=group_name,
+                        is_runtime=False,
+                        is_optional=False,
+                        is_direct=True,
+                        is_resolved=False,
+                    )
+                    dependencies_for_resolved.append(dependency.to_dict())
+
+            name = package.get('name')
+            version = package.get('version')
+            urls = get_pypi_urls(name, version)
+            package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language='Python',
+                name=name,
+                version=version,
+                description=metadata.get('description'),
+                is_virtual=True,
+                dependencies=dependencies_for_resolved,
+                **urls,
+            )
+            resolved_package = models.PackageData.from_data(package_data, package_only)
+
+            is_optional = package.get("is_optional") or True
+            dependency = models.DependentPackage(
+                purl=resolved_package.purl,
+                extracted_requirement=None,
+                scope=None,
+                is_runtime=True,
+                is_optional=is_optional,
+                is_direct=False,
+                is_resolved=True,
+                resolved_package=resolved_package.to_dict()
+            )
+            dependencies.append(dependency.to_dict())
+
+        extra_data = {}
+        extra_data['python_version'] = metadata.get("python-versions")
+        extra_data['lock_version'] = metadata.get("lock-version")
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            extra_data=extra_data,
+            dependencies=dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class PipInspectDeplockHandler(models.DatafileHandler):
+    datasource_id = 'pypi_inspect_deplock'
+    path_patterns = ('*pip-inspect.deplock',)
+    default_package_type = 'pypi'
+    default_primary_language = 'Python'
+    description = 'Python poetry pyproject.toml'
+    # These are files generated by deplock, see https://github.com/nexB/dependency-inspector
+    documentation_url = 'https://pip.pypa.io/en/stable/cli/pip_inspect/'
+
+    @classmethod
+    def get_resolved_package_from_metadata(cls, metadata, package_only=False):
+
+        requires_dist = metadata.get('requires_dist')
+        dependencies_for_resolved = get_requires_dependencies(
+            requires=requires_dist,
+        )
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language='Python',
+            name=metadata.get('name'),
+            version=metadata.get('version'),
+            extracted_license_statement=metadata.get('license'),
+            description=metadata.get('description'),
+            keywords=metadata.get('keywords'),
+            is_virtual=True,
+            dependencies=[
+                dep.to_dict()
+                for dep in dependencies_for_resolved
+            ],
+        )
+        return models.PackageData.from_data(package_data, package_only)
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+
+        with open(location) as f:
+            content = f.read()
+
+        data = json.loads(content)
+        installed_packages = data.get('installed')
+        if not installed_packages:
+            return
+
+        main_package_metadata = {}
+        dependencies = []
+
+        direct_deps_of_main_package = []
+
+        for package_metadata in installed_packages:
+            package_metadata_dep = package_metadata.get('metadata')
+            is_requested = package_metadata.get('requested')
+
+            # `direct_url` is only present for root package
+            # `requested` is true for root package and direct dependencies only
+            if is_requested and 'direct_url' in package_metadata:
+                main_package_metadata = package_metadata_dep
+                main_package_requires = main_package_metadata.get('requires_dist')
+                dependencies_for_main = get_requires_dependencies(
+                    requires=main_package_requires,
+                )
+                direct_deps_of_main_package.extend([
+                    get_base_purl(dep.purl)
+                    for dep in dependencies_for_main
+                ])
+                continue
+
+            package_data_dep = cls.get_resolved_package_from_metadata(
+                metadata=package_metadata_dep,
+                package_only=package_only,
+            )
+            dep_purl = package_data_dep.purl
+            dependency = models.DependentPackage(
+                purl=dep_purl,
+                extracted_requirement=None,
+                scope=None,
+                is_runtime=True,
+                is_optional=False,
+                is_direct=False,
+                is_resolved=True,
+                resolved_package=package_data_dep.to_dict()
+            )
+            if is_requested:
+                dependency.is_direct = True
+            dependencies.append(dependency)
+
+        dependency_mappings = []
+        resolved_main_dependencies = []
+
+        # Update is_direct for direct dependencies
+        for dep in dependencies:
+            base_purl = get_base_purl(dep.purl)
+            if base_purl in direct_deps_of_main_package:
+                dep.is_direct = True
+                resolved_main_dependencies.append(base_purl)
+
+            dependency_mappings.append(dep.to_dict())
+
+        pip_version = data.get('pip_version')
+        inspect_version = data.get('version')
+        extra_data = {
+            "pip_version": pip_version,
+            "inspect_version": inspect_version,
+        }
+
+        package_data_main = cls.get_resolved_package_from_metadata(
+            metadata=main_package_metadata,
+            package_only=package_only,
+        )
+
+        main_dependencies = []
+        for dep in package_data_main.dependencies:
+            base_purl = get_base_purl(purl=dep.get('purl'))
+            if base_purl not in resolved_main_dependencies:
+                main_dependencies.append(dep)
+
+        package_data_main.dependencies = dependencies
+        package_data_main.dependencies.extend(main_dependencies)
+        package_data_main.extra_data = extra_data
+        yield package_data_main
 
 
 META_DIR_SUFFIXES = '.dist-info', '.egg-info', 'EGG-INFO',
@@ -487,8 +977,11 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
 
     urls, extra_data = get_urls(metainfo=meta, name=name, version=version)
 
-    dependencies = get_dist_dependencies(dist)
+    extracted_license_statement, license_file = get_declared_license(metainfo=meta)
+    if license_file:
+        extra_data['license_file'] = license_file
 
+    dependencies = get_dist_dependencies(dist)
     file_references = list(get_file_references(dist))
 
     package_data = dict(
@@ -497,7 +990,7 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
         primary_language='Python',
         name=name,
         version=version,
-        extracted_license_statement=get_declared_license(meta),
+        extracted_license_statement=extracted_license_statement,
         description=get_description(metainfo=meta, location=str(location)),
         keywords=get_keywords(meta),
         parties=get_parties(meta),
@@ -628,6 +1121,9 @@ class PypiSdistArchiveHandler(models.DatafileHandler):
         name = sdist.name
         version = sdist.version
         urls, extra_data = get_urls(metainfo=sdist, name=name, version=version)
+        extracted_license_statement, license_file = get_declared_license(metainfo=sdist)
+        if license_file:
+            extra_data['license_file'] = license_file
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -636,7 +1132,7 @@ class PypiSdistArchiveHandler(models.DatafileHandler):
             name=name,
             version=version,
             description=get_description(sdist, location=location),
-            extracted_license_statement=get_declared_license(sdist),
+            extracted_license_statement=extracted_license_statement,
             keywords=get_keywords(sdist),
             parties=get_parties(sdist),
             extra_data=extra_data,
@@ -672,6 +1168,10 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
         python_requires = get_setup_py_python_requires(setup_args)
         extra_data.update(python_requires)
 
+        extracted_license_statement, license_file = get_declared_license(metainfo=setup_args)
+        if license_file:
+            extra_data['license_file'] = license_file
+
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -680,7 +1180,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             version=version,
             description=get_description(setup_args),
             parties=get_setup_parties(setup_args),
-            extracted_license_statement=get_declared_license(setup_args),
+            extracted_license_statement=extracted_license_statement,
             dependencies=dependencies,
             keywords=get_keywords(setup_args),
             extra_data=extra_data,
@@ -1146,15 +1646,23 @@ def get_legacy_description(location):
 
 def get_declared_license(metainfo):
     """
-    Return a mapping of declared license information found in a ``metainfo``
-    object or mapping.
+    Return a mapping of declared license information and license file name
+    found in a ``metainfo`` package data mapping.
     """
     declared_license = {}
     # TODO: We should make the declared license as it is, this should be
     # updated in scancode to parse a pure string
     lic = get_attribute(metainfo, 'License')
+
+    license_file = None
+    if lic and 'file' in lic:
+        license_file = lic.pop('file')
+
     if lic and not lic == 'UNKNOWN':
-        declared_license['license'] = lic
+        if 'text' in lic:
+            declared_license['license'] = lic.get('text')
+        else:
+            declared_license['license'] = lic
 
     license_classifiers, _ = get_classifiers(metainfo)
     if license_classifiers:
@@ -1163,7 +1671,7 @@ def get_declared_license(metainfo):
     if not declared_license:
         declared_license = None
 
-    return declared_license
+    return declared_license, license_file
 
 
 def get_classifiers(metainfo):
@@ -1175,6 +1683,7 @@ def get_classifiers(metainfo):
     classifiers = (
         get_attribute(metainfo, 'Classifier', multiple=True)
         or get_attribute(metainfo, 'Classifiers', multiple=True)
+        or get_attribute(metainfo, 'classifiers', multiple=True)
     )
     if not classifiers:
         return [], []
@@ -1218,7 +1727,6 @@ def get_parties(
     author_email_key='Author-email',
     maintainer_key='Maintainer',
     maintainer_email_key='Maintainer-email',
-
 ):
     """
     Return a list of parties found in a ``metainfo`` object or mapping.
@@ -1263,6 +1771,47 @@ def get_setup_parties(setup_kwargs):
         maintainer_key='maintainer',
         maintainer_email_key='maintainer_email',
     )
+
+
+def get_pyproject_toml_parties(metainfo):
+
+    parties = []
+    authors = metainfo.get('authors') or []
+    for author in authors:
+        add_pyproject_toml_party(
+            parties=parties,
+            party=author,
+            role='author',
+        )
+
+    maintainers = metainfo.get('maintainers') or []
+    for maintainer in maintainers:
+        add_pyproject_toml_party(
+            parties=parties,
+            party=maintainer,
+            role='maintainer',
+        )
+
+    return parties
+
+
+def add_pyproject_toml_party(parties, party, role):
+
+    if type(party) is str:
+        name, email = parse_maintainer_name_email(party)
+        parties.append(models.Party(
+            type=models.party_person,
+            name=name,
+            role=role,
+            email=email,
+        ))
+    else:
+        parties.append(models.Party(
+            type=models.party_person,
+            name=party.get('name'),
+            role=role,
+            email=party.get('email'),
+        ))
 
 
 def get_setup_py_python_requires(setup_args):
@@ -1328,7 +1877,13 @@ def get_dist_dependencies(dist):
     return get_requires_dependencies(requires=dist.requires)
 
 
-def get_requires_dependencies(requires, default_scope='install'):
+def get_requires_dependencies(
+    requires,
+    default_scope='install',
+    is_direct=True,
+    is_optional=False,
+    is_runtime=True,
+):
     """
     Return a list of DependentPackage found in a ``requires`` list of
     requirement strings or an empty list.
@@ -1366,14 +1921,29 @@ def get_requires_dependencies(requires, default_scope='install'):
         extra = get_extra(req.marker)
         scope = extra or default_scope
 
+        extra_data = {}
+        if req.marker:
+            platform = get_python_version_os(req.marker)
+            if platform:
+                extra_data = platform
+
+        extracted_requirement = None
+        if requirement:
+            extracted_requirement = requirement
+
+        if is_optional or bool(extra):
+            is_optional = True
+
         dependent_packages.append(
             models.DependentPackage(
                 purl=purl.to_string(),
                 scope=scope,
-                is_runtime=True,
-                is_optional=True if bool(extra) else False,
+                is_runtime=is_runtime,
+                is_optional=is_optional,
                 is_resolved=is_resolved,
-                extracted_requirement=str(req),
+                is_direct=is_direct,
+                extracted_requirement=extracted_requirement,
+                extra_data=extra_data,
         ))
 
     return dependent_packages
@@ -1403,6 +1973,47 @@ def get_extra(marker):
             and isinstance(value, markers.Value)
         ):
             return value.value
+
+
+def get_python_version_os(marker):
+    """
+    Return the "python_version" or "os related values of a ``marker``
+    requirement Marker or None.
+    """
+    platform_data = {}
+    python_version_operators = ['<', '>=', '==', '<=', '<']
+
+    if not marker or not isinstance(marker, markers.Marker):
+        return platform_data
+
+    marks = getattr(marker, '_markers', [])
+
+    for mark in marks:
+        # filter for variable(extra) == value tuples of (Variable, Op, Value)
+        if not isinstance(mark, tuple) and not len(mark) == 3:
+            continue
+
+        variable, operator, value = mark
+
+        if (
+            isinstance(variable, markers.Variable)
+            and variable.value == 'python_version'
+            and isinstance(operator, markers.Op)
+            and operator.value in python_version_operators
+            and isinstance(value, markers.Value)
+        ):
+            platform_data["python_version"] = f"{operator.value} {value.value}"
+        
+        if (
+            isinstance(variable, markers.Variable)
+            and variable.value == 'sys_platform'
+            and isinstance(operator, markers.Op)
+            and operator.value == '=='
+            and isinstance(value, markers.Value)
+        ):
+            platform_data["sys_platform"] = f"{operator.value} {value.value}"
+
+    return platform_data
 
 
 def get_dparse2_supported_file_name(file_name):
@@ -1643,7 +2254,7 @@ def get_pypi_urls(name, version, **kwargs):
     )
 
 
-def get_urls(metainfo, name, version):
+def get_urls(metainfo, name, version, poetry=False):
     """
     Return a mapping of standard URLs and a mapping of extra-data URls for URLs
     of this package:
@@ -1706,11 +2317,18 @@ def get_urls(metainfo, name, version):
     )
     add_url(homepage_url, _attribute='homepage_url')
 
-    project_urls = (
-        get_attribute(metainfo, 'Project-URL', multiple=True)
-        or get_attribute(metainfo, 'project_urls')
-        or []
-    )
+    if poetry:
+        url_fields = ["homepage", "repository", "documentation"]
+        project_urls = {}
+        for url_field in url_fields:
+            project_urls[url_field] = metainfo.get(url_field)
+    else:
+        project_urls = (
+            get_attribute(metainfo, 'Project-URL', multiple=True)
+            or get_attribute(metainfo, 'project_urls')
+            or get_attribute(metainfo, 'urls')
+            or []
+        )
 
     if isinstance(project_urls, list):
         # these come from METADATA and we convert them back to a mapping

@@ -113,7 +113,7 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/pykerberos",
-        "extracted_requirement": "pykerberos; extra == \"gssapi\"",
+        "extracted_requirement": null,
         "scope": "gssapi",
         "is_runtime": true,
         "is_optional": true,
@@ -124,7 +124,7 @@
       },
       {
         "purl": "pkg:pypi/dnspython",
-        "extracted_requirement": "dnspython<2.0.0,>=1.8.0; extra == \"srv\"",
+        "extracted_requirement": "<2.0.0,>=1.8.0",
         "scope": "srv",
         "is_runtime": true,
         "is_optional": true,
@@ -135,7 +135,7 @@
       },
       {
         "purl": "pkg:pypi/ipaddress",
-        "extracted_requirement": "ipaddress; extra == \"tls\"",
+        "extracted_requirement": null,
         "scope": "tls",
         "is_runtime": true,
         "is_optional": true,

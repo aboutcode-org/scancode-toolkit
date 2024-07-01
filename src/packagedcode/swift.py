@@ -418,7 +418,7 @@ def get_dependencies(dependencies):
 def get_namespace_and_name(url):
     parsed_url = parse.urlparse(url)
     hostname = parsed_url.hostname
-    path = parsed_url.path.removesuffix(".git")
+    path = parsed_url.path.replace(".git", "")
     canonical_name = hostname + path
 
     return canonical_name.rsplit("/", 1)
