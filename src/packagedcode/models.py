@@ -1537,7 +1537,7 @@ class Package(PackageData):
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
 
-    def to_dict(self, package_summary= False):
+    def to_dict(self, package_summary=False):
         data = super().to_dict(with_details=False)
         if not package_summary:
             data.pop("license_clarity_score")

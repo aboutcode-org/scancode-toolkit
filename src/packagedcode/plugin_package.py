@@ -16,7 +16,8 @@ import click
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
-from commoncode.cliutils import SCAN_GROUP, POST_SCAN_GROUP
+from commoncode.cliutils import SCAN_GROUP
+from commoncode.cliutils import POST_SCAN_GROUP
 from commoncode.resource import Resource
 from commoncode.resource import strip_first_path_segment
 from plugincode.scan import scan_impl
@@ -285,8 +286,9 @@ class PackageSummary(PostScanPlugin):
     options = [
         PluggableCommandLineOption(('--package-summary',),
         is_flag=True, default=False,
-        help='Summarize scans by providing License Clarity Score at the '
-        'Package attribute level.',
+        help='Summarize scans by providing License Clarity Score' 
+        'and populating other license/copyright attributes '
+        'for package instances.',
         help_group=POST_SCAN_GROUP)
     ]
 
@@ -380,7 +382,7 @@ def get_installed_packages(root_dir, processes=2, **kwargs):
     yield from packages_by_uid.values()
 
 
-def create_package_and_deps(codebase, package_summary= False ,package_adder=add_to_package, strip_root=False, **kwargs):
+def create_package_and_deps(codebase, package_summary=False , package_adder=add_to_package, strip_root=False, **kwargs):
     """
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
