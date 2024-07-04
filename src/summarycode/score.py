@@ -510,4 +510,57 @@ def get_primary_license(declared_license_expressions):
 
 def compute_license_score_package_level(package):
     scoring_elements = ScoringElements()
+    license_detections= package['license_detections']
+    declared_license_expressions= package['declared_license_expression']
+    unique_declared_license_expressions = unique(declared_license_expressions)
+
+    # other_license_detections = get_field_values_from_codebase_resources(
+    #     codebase=codebase, field_name='license_detections', key_files_only=False
+    # )
+    # other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
+    # other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
+    
+    other_license_matches= []
+    copyright= package['copyright']
+    license_match_mappings = get_matches_from_detection_mappings(license_detections)
+    license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
+    declared_license_categories = get_license_categories(license_matches)
+    
+    scoring_elements.declared_license = bool(license_matches)
+    if scoring_elements.declared_license:
+        scoring_elements.score += 40
+        
+    scoring_elements.identification_precision = check_declared_licenses(license_matches)
+    if scoring_elements.identification_precision:
+        scoring_elements.score += 40
+    
+    scoring_elements.has_license_text = check_for_license_texts(license_matches)
+    if scoring_elements.has_license_text:
+        scoring_elements.score += 10
+        
+    scoring_elements.declared_copyrights = bool(copyright)
+    if scoring_elements.declared_copyrights:
+        scoring_elements.score += 10
+
+    is_permissively_licensed = check_declared_license_categories(declared_license_categories)
+    if is_permissively_licensed:
+        scoring_elements.conflicting_license_categories = check_for_conflicting_licenses(
+            other_license_matches
+        )
+        if scoring_elements.conflicting_license_categories and scoring_elements.score > 0:
+            scoring_elements.score -= 20
+        
+    declared_license_expression = get_primary_license(unique_declared_license_expressions)
+    if not declared_license_expression:
+        combined_declared_license_expression = combine_expressions(
+            unique_declared_license_expressions
+        )
+        if combined_declared_license_expression:
+            declared_license_expression = str(
+                Licensing().parse(combined_declared_license_expression).simplify()
+            )
+        scoring_elements.ambiguous_compound_licensing = True
+        if scoring_elements.score > 0:
+            scoring_elements.score -= 10
+
     return scoring_elements
