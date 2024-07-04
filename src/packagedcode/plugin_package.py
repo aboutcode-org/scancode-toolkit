@@ -39,6 +39,7 @@ from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
 from packagedcode.models import PackageWithResources
+from summarycode.score import  compute_license_score_package_level
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 TRACE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
@@ -302,6 +303,11 @@ class PackageSummary(PostScanPlugin):
         if not self.is_enabled(package_summary):
             return
         
+        packages= codebase.attributes.packages
+        for package in packages:
+            scoring_elements= compute_license_score_package_level(package)
+            license_clarity_score= scoring_elements.to_dict()
+            package['license_clarity_score'] = license_clarity_score
 
 def add_license_from_file(resource, codebase):
     """

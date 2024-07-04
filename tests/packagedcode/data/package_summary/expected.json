@@ -78,14 +78,22 @@
       "repository_homepage_url": "https://www.npmjs.com/package/change-case",
       "repository_download_url": "https://registry.npmjs.org/change-case/-/change-case-5.4.4.tgz",
       "api_data_url": "https://registry.npmjs.org/change-case/5.4.4",
-      "package_uid": "pkg:npm/change-case@5.4.4?uuid=3ec06699-ba25-47d5-9380-15bab2ea320b",
+      "package_uid": "pkg:npm/change-case@5.4.4?uuid=4a92fd99-f970-46cd-a41c-e18f60134f97",
       "datafile_paths": [
         "change-case-change-case-5.4.4/packages/change-case/package.json"
       ],
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity_score": {},
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": false
+      },
       "purl": "pkg:npm/change-case@5.4.4"
     },
     {
@@ -166,14 +174,22 @@
       "repository_homepage_url": "https://www.npmjs.com/package/sponge-case",
       "repository_download_url": "https://registry.npmjs.org/sponge-case/-/sponge-case-2.0.3.tgz",
       "api_data_url": "https://registry.npmjs.org/sponge-case/2.0.3",
-      "package_uid": "pkg:npm/sponge-case@2.0.3?uuid=65634f0d-5a3e-4fa2-95c6-cb489816580e",
+      "package_uid": "pkg:npm/sponge-case@2.0.3?uuid=f060868a-9007-45fd-b4b4-902c93e54124",
       "datafile_paths": [
         "change-case-change-case-5.4.4/packages/sponge-case/package.json"
       ],
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity_score": {},
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": false
+      },
       "purl": "pkg:npm/sponge-case@2.0.3"
     },
     {
@@ -252,14 +268,22 @@
       "repository_homepage_url": "https://www.npmjs.com/package/swap-case",
       "repository_download_url": "https://registry.npmjs.org/swap-case/-/swap-case-3.0.3.tgz",
       "api_data_url": "https://registry.npmjs.org/swap-case/3.0.3",
-      "package_uid": "pkg:npm/swap-case@3.0.3?uuid=a3012a5a-4c2a-41aa-afbb-79004b0ef6d5",
+      "package_uid": "pkg:npm/swap-case@3.0.3?uuid=986758b2-5634-4a9d-9ce1-d9d4c7dfccf2",
       "datafile_paths": [
         "change-case-change-case-5.4.4/packages/swap-case/package.json"
       ],
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity_score": {},
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": false
+      },
       "purl": "pkg:npm/swap-case@3.0.3"
     },
     {
@@ -338,14 +362,22 @@
       "repository_homepage_url": "https://www.npmjs.com/package/title-case",
       "repository_download_url": "https://registry.npmjs.org/title-case/-/title-case-4.3.1.tgz",
       "api_data_url": "https://registry.npmjs.org/title-case/4.3.1",
-      "package_uid": "pkg:npm/title-case@4.3.1?uuid=d19afd88-9843-46a5-a3b7-3200f6033c8b",
+      "package_uid": "pkg:npm/title-case@4.3.1?uuid=a93d331b-8fc4-48a9-8354-8e3219082cb0",
       "datafile_paths": [
         "change-case-change-case-5.4.4/packages/title-case/package.json"
       ],
       "datasource_ids": [
         "npm_package_json"
       ],
-      "license_clarity_score": {},
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": false
+      },
       "purl": "pkg:npm/title-case@4.3.1"
     }
   ],
@@ -359,7 +391,7 @@
       "is_resolved": false,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40borderless/ts-scripts?uuid=8a4ceb73-b26b-4d6c-bd28-fbc14d9bb032",
+      "dependency_uid": "pkg:npm/%40borderless/ts-scripts?uuid=706d0eeb-bb48-4adf-b49b-0fa7e1f0c80e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package.json",
       "datasource_id": "npm_package_json"
@@ -373,7 +405,7 @@
       "is_resolved": false,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40vitest/coverage-v8?uuid=4499d3b4-57cd-426f-af30-f787f5ff029f",
+      "dependency_uid": "pkg:npm/%40vitest/coverage-v8?uuid=d453fa0b-1092-4f15-ac7c-f93538aa0a2f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package.json",
       "datasource_id": "npm_package_json"
@@ -387,7 +419,7 @@
       "is_resolved": false,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:npm/typescript?uuid=cf42aa37-e5f4-4e1d-8ef1-b890731c54d4",
+      "dependency_uid": "pkg:npm/typescript?uuid=9f55d7fa-c8cf-4d85-a45b-a56b55a078bd",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package.json",
       "datasource_id": "npm_package_json"
@@ -401,7 +433,7 @@
       "is_resolved": false,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:npm/vitest?uuid=8d4b56d6-1ef0-4545-b19b-e8477603a691",
+      "dependency_uid": "pkg:npm/vitest?uuid=e80a5064-37bf-45dd-971e-829e4ae1d852",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package.json",
       "datasource_id": "npm_package_json"
@@ -456,7 +488,7 @@
         "purl": "pkg:npm/root"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/root?uuid=8c15c467-5841-4254-a6cf-5dd2bc8858b9",
+      "dependency_uid": "pkg:npm/root?uuid=29aae0bd-5763-4c99-b9e2-8b64ce8bff86",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -544,7 +576,7 @@
         "purl": "pkg:npm/%40ampproject/remapping@2.2.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40ampproject/remapping@2.2.1?uuid=d11c22b1-b826-4772-bfa6-2a0f6dad8454",
+      "dependency_uid": "pkg:npm/%40ampproject/remapping@2.2.1?uuid=8199eee5-b348-44b9-8b28-22973b31b7b8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -611,7 +643,7 @@
         "purl": "pkg:npm/%40babel/helper-string-parser@7.23.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40babel/helper-string-parser@7.23.4?uuid=904cedf3-35cf-47ab-9097-0c718be9b52c",
+      "dependency_uid": "pkg:npm/%40babel/helper-string-parser@7.23.4?uuid=66b217f1-01a7-4e58-bf0e-ad1efeb6f0fa",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -678,7 +710,7 @@
         "purl": "pkg:npm/%40babel/helper-validator-identifier@7.22.20"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40babel/helper-validator-identifier@7.22.20?uuid=6ca997c4-b71e-47ef-a7f2-ee32229e090b",
+      "dependency_uid": "pkg:npm/%40babel/helper-validator-identifier@7.22.20?uuid=7f9c7a80-8205-48b5-bf9d-7bceaf4c9896",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -745,7 +777,7 @@
         "purl": "pkg:npm/%40babel/parser@7.23.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40babel/parser@7.23.5?uuid=4f60e553-9543-4544-bd14-574697c7ec30",
+      "dependency_uid": "pkg:npm/%40babel/parser@7.23.5?uuid=db3f04e4-b1d2-4741-b040-9e364b1873ab",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -843,7 +875,7 @@
         "purl": "pkg:npm/%40babel/types@7.23.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40babel/types@7.23.5?uuid=9419263b-56b1-430b-a8fd-20163a761902",
+      "dependency_uid": "pkg:npm/%40babel/types@7.23.5?uuid=190f6433-b0cd-43c0-bc66-1e2887eb1e73",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -910,7 +942,7 @@
         "purl": "pkg:npm/%40bcoe/v8-coverage@0.2.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40bcoe/v8-coverage@0.2.3?uuid=b0cab31c-8cef-4238-bbf1-bac7f78b6278",
+      "dependency_uid": "pkg:npm/%40bcoe/v8-coverage@0.2.3?uuid=05d77293-2911-494c-ac40-266d2739620a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1078,7 +1110,7 @@
         "purl": "pkg:npm/%40borderless/ts-scripts@0.15.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40borderless/ts-scripts@0.15.0?uuid=fda15d08-e3d4-4bd8-8e6d-e47b3102c288",
+      "dependency_uid": "pkg:npm/%40borderless/ts-scripts@0.15.0?uuid=1a149da0-fea3-4ddb-887f-0759eff592bb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1156,7 +1188,7 @@
         "purl": "pkg:npm/brace-expansion@2.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/brace-expansion@2.0.1?uuid=49559fca-9ca4-4fdc-89fe-1dd48c784543",
+      "dependency_uid": "pkg:npm/brace-expansion@2.0.1?uuid=c81f922b-58ce-484c-91dd-8f4eaf024c7d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1223,7 +1255,7 @@
         "purl": "pkg:npm/ci-info@3.8.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ci-info@3.8.0?uuid=d632cad9-db98-4553-ab52-97ad4cf39f0d",
+      "dependency_uid": "pkg:npm/ci-info@3.8.0?uuid=9bb52823-97ac-480d-add8-1b9e8f11b8ea",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1311,7 +1343,7 @@
         "purl": "pkg:npm/find-up@6.3.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/find-up@6.3.0?uuid=61ce2704-ae20-4c83-aa18-81447b74a42e",
+      "dependency_uid": "pkg:npm/find-up@6.3.0?uuid=4487b104-ea18-4057-a642-3d010147dc57",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1429,7 +1461,7 @@
         "purl": "pkg:npm/glob@10.3.9"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/glob@10.3.9?uuid=e2d3cc10-d0e8-47e9-bad7-677f33f18aaf",
+      "dependency_uid": "pkg:npm/glob@10.3.9?uuid=bf23e461-efdb-465b-9974-1b3820d5eb1a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1507,7 +1539,7 @@
         "purl": "pkg:npm/locate-path@7.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/locate-path@7.2.0?uuid=974f6b87-c9ff-4c4a-9c05-ea6c4d95231d",
+      "dependency_uid": "pkg:npm/locate-path@7.2.0?uuid=9f2d78f1-cb3e-4bf0-9e1f-7339dd9cc25a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1585,7 +1617,7 @@
         "purl": "pkg:npm/minimatch@9.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/minimatch@9.0.3?uuid=36980a65-3153-43a0-8dbb-d77e18066e61",
+      "dependency_uid": "pkg:npm/minimatch@9.0.3?uuid=e516c6de-27d3-4c7b-b77c-84ad2dbed725",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1652,7 +1684,7 @@
         "purl": "pkg:npm/minipass@7.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/minipass@7.0.3?uuid=7f36a1d7-d37f-4b75-b6e7-cfea420eeb9f",
+      "dependency_uid": "pkg:npm/minipass@7.0.3?uuid=029cad57-ab3b-41e7-ae5c-9e7c7d320576",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1730,7 +1762,7 @@
         "purl": "pkg:npm/p-limit@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/p-limit@4.0.0?uuid=2951cfff-a9a5-40a1-b098-0a526b1c41c7",
+      "dependency_uid": "pkg:npm/p-limit@4.0.0?uuid=ba3f020e-047e-452e-8c62-60c8903f9b6f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1808,7 +1840,7 @@
         "purl": "pkg:npm/p-locate@6.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/p-locate@6.0.0?uuid=bd271d72-ea3b-4aa8-b8c0-54a8e4ba3246",
+      "dependency_uid": "pkg:npm/p-locate@6.0.0?uuid=0f2a0fe5-1edc-4c67-b403-e796e4e8a8fe",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1875,7 +1907,7 @@
         "purl": "pkg:npm/path-exists@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/path-exists@5.0.0?uuid=bbf098c5-ccf2-4eb7-a7ce-c33abeb4dd0d",
+      "dependency_uid": "pkg:npm/path-exists@5.0.0?uuid=26913739-4545-472b-be7a-3e4551c5fbf2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -1953,7 +1985,7 @@
         "purl": "pkg:npm/rimraf@5.0.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/rimraf@5.0.4?uuid=7f02f80c-1b33-416b-8e22-dc5679978fca",
+      "dependency_uid": "pkg:npm/rimraf@5.0.4?uuid=878f74be-820e-49bd-bac7-e66ab7a23856",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2020,7 +2052,7 @@
         "purl": "pkg:npm/%40esbuild/android-arm@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/android-arm@0.19.8?uuid=0e99e93c-3fe9-48d8-8aca-38070501c967",
+      "dependency_uid": "pkg:npm/%40esbuild/android-arm@0.19.8?uuid=123d2274-cfde-4d4f-8a80-66177d03fdb2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2087,7 +2119,7 @@
         "purl": "pkg:npm/%40esbuild/android-arm64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/android-arm64@0.19.8?uuid=0560d0b3-05a3-4c5d-bd35-821aae92efd4",
+      "dependency_uid": "pkg:npm/%40esbuild/android-arm64@0.19.8?uuid=615890f3-544c-4855-9100-53b725c96bfe",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2154,7 +2186,7 @@
         "purl": "pkg:npm/%40esbuild/android-x64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/android-x64@0.19.8?uuid=d01bb4ab-a423-42c2-b712-314b4f35ea44",
+      "dependency_uid": "pkg:npm/%40esbuild/android-x64@0.19.8?uuid=f3658df4-52bc-49b9-acc4-44becf058365",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2221,7 +2253,7 @@
         "purl": "pkg:npm/%40esbuild/darwin-arm64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/darwin-arm64@0.19.8?uuid=4870c679-cd51-4359-adca-4a96f18a4f72",
+      "dependency_uid": "pkg:npm/%40esbuild/darwin-arm64@0.19.8?uuid=373bf375-c6ef-4974-ad59-3998b612c0b1",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2288,7 +2320,7 @@
         "purl": "pkg:npm/%40esbuild/darwin-x64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/darwin-x64@0.19.8?uuid=c7dc835c-1af1-4700-92e1-a2b81cd2e5dc",
+      "dependency_uid": "pkg:npm/%40esbuild/darwin-x64@0.19.8?uuid=85807a86-f4fe-4979-8b85-ab71abac90ca",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2355,7 +2387,7 @@
         "purl": "pkg:npm/%40esbuild/freebsd-arm64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/freebsd-arm64@0.19.8?uuid=17227540-047c-4eb9-aa0f-35781c25adfd",
+      "dependency_uid": "pkg:npm/%40esbuild/freebsd-arm64@0.19.8?uuid=b860512d-935d-4df9-89ee-f5a719512dc5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2422,7 +2454,7 @@
         "purl": "pkg:npm/%40esbuild/freebsd-x64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/freebsd-x64@0.19.8?uuid=605bb20d-fa23-459d-ae23-76c03e4be915",
+      "dependency_uid": "pkg:npm/%40esbuild/freebsd-x64@0.19.8?uuid=2d306d8e-cc36-4aff-8aae-04ba8813bf07",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2489,7 +2521,7 @@
         "purl": "pkg:npm/%40esbuild/linux-arm@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/linux-arm@0.19.8?uuid=65452783-170e-4051-b42f-5571274b8951",
+      "dependency_uid": "pkg:npm/%40esbuild/linux-arm@0.19.8?uuid=57ffcad5-8797-49f1-9dc8-a3f01a14a181",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2556,7 +2588,7 @@
         "purl": "pkg:npm/%40esbuild/linux-arm64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/linux-arm64@0.19.8?uuid=589d9fca-2ca3-4488-914a-a88eafb3276c",
+      "dependency_uid": "pkg:npm/%40esbuild/linux-arm64@0.19.8?uuid=d85fc398-04bc-4e95-8feb-ec05a4ba7b72",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2623,7 +2655,7 @@
         "purl": "pkg:npm/%40esbuild/linux-ia32@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/linux-ia32@0.19.8?uuid=28351583-1ac7-41a3-b83f-7c5e20af9ac2",
+      "dependency_uid": "pkg:npm/%40esbuild/linux-ia32@0.19.8?uuid=6f8a1bce-19a7-4fcc-8e4a-64b5d26e5598",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2690,7 +2722,7 @@
         "purl": "pkg:npm/%40esbuild/linux-loong64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/linux-loong64@0.19.8?uuid=98f538ec-ed76-4c81-8a83-2fc56b079409",
+      "dependency_uid": "pkg:npm/%40esbuild/linux-loong64@0.19.8?uuid=cc3cb1d2-e756-4819-8d66-5babde35ce1d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2757,7 +2789,7 @@
         "purl": "pkg:npm/%40esbuild/linux-mips64el@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/linux-mips64el@0.19.8?uuid=b6358a35-51b3-4508-b69d-d115b6793ec1",
+      "dependency_uid": "pkg:npm/%40esbuild/linux-mips64el@0.19.8?uuid=c094b9d0-1a8f-4944-bbf9-b5a45916a144",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2824,7 +2856,7 @@
         "purl": "pkg:npm/%40esbuild/linux-ppc64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/linux-ppc64@0.19.8?uuid=e4feeac6-1338-4318-b868-1afe60a34430",
+      "dependency_uid": "pkg:npm/%40esbuild/linux-ppc64@0.19.8?uuid=9b952ec6-f8ca-499a-af73-4e073f0b5309",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2891,7 +2923,7 @@
         "purl": "pkg:npm/%40esbuild/linux-riscv64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/linux-riscv64@0.19.8?uuid=d9f2e9a5-46fa-4820-8c29-06a2671fa887",
+      "dependency_uid": "pkg:npm/%40esbuild/linux-riscv64@0.19.8?uuid=e4956dd0-3ad7-4c18-9c9e-f6e182589985",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -2958,7 +2990,7 @@
         "purl": "pkg:npm/%40esbuild/linux-s390x@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/linux-s390x@0.19.8?uuid=b937554a-4dc0-4195-a854-324771ed1947",
+      "dependency_uid": "pkg:npm/%40esbuild/linux-s390x@0.19.8?uuid=486e1274-f1f0-40c2-bcd0-7de11db948aa",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3025,7 +3057,7 @@
         "purl": "pkg:npm/%40esbuild/linux-x64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/linux-x64@0.19.8?uuid=480ce675-8b24-4103-b2ad-65ae36f49878",
+      "dependency_uid": "pkg:npm/%40esbuild/linux-x64@0.19.8?uuid=2795ff61-5b41-4b8f-9d4d-c5d39e781865",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3092,7 +3124,7 @@
         "purl": "pkg:npm/%40esbuild/netbsd-x64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/netbsd-x64@0.19.8?uuid=c5005df8-4278-47d0-aeca-2c8ea856914f",
+      "dependency_uid": "pkg:npm/%40esbuild/netbsd-x64@0.19.8?uuid=e9dc3799-4371-4fef-881c-767b77d543d2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3159,7 +3191,7 @@
         "purl": "pkg:npm/%40esbuild/openbsd-x64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/openbsd-x64@0.19.8?uuid=111bf803-a4c5-4ab9-8517-c8259b8579bb",
+      "dependency_uid": "pkg:npm/%40esbuild/openbsd-x64@0.19.8?uuid=41931e30-4c0a-458c-a37a-ad706220fc57",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3226,7 +3258,7 @@
         "purl": "pkg:npm/%40esbuild/sunos-x64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/sunos-x64@0.19.8?uuid=253577a5-99d4-4ea7-99dc-eb95167e09f8",
+      "dependency_uid": "pkg:npm/%40esbuild/sunos-x64@0.19.8?uuid=324f9522-4a42-46fa-b514-c9e5f583d777",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3293,7 +3325,7 @@
         "purl": "pkg:npm/%40esbuild/win32-arm64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/win32-arm64@0.19.8?uuid=6faa9598-157d-4015-8afc-cd83a667bf1e",
+      "dependency_uid": "pkg:npm/%40esbuild/win32-arm64@0.19.8?uuid=e7580edf-10cf-45f0-adda-50950db5a83e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3360,7 +3392,7 @@
         "purl": "pkg:npm/%40esbuild/win32-ia32@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/win32-ia32@0.19.8?uuid=c6a2f100-f22a-4af5-8fd9-22302bc497d2",
+      "dependency_uid": "pkg:npm/%40esbuild/win32-ia32@0.19.8?uuid=f64d7371-6769-44c7-8ad1-fb1f430196a9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3427,7 +3459,7 @@
         "purl": "pkg:npm/%40esbuild/win32-x64@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40esbuild/win32-x64@0.19.8?uuid=10cf9d0a-819b-4076-b764-db596ad87295",
+      "dependency_uid": "pkg:npm/%40esbuild/win32-x64@0.19.8?uuid=3c248a44-d95d-464e-8082-3171d35956cf",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3555,7 +3587,7 @@
         "purl": "pkg:npm/%40isaacs/cliui@8.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40isaacs/cliui@8.0.2?uuid=8ab67211-84d7-4f2b-84d1-ea6e9646fa08",
+      "dependency_uid": "pkg:npm/%40isaacs/cliui@8.0.2?uuid=5544054d-c057-4f51-a68b-cc19f53d9893",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3622,7 +3654,7 @@
         "purl": "pkg:npm/%40istanbuljs/schema@0.1.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40istanbuljs/schema@0.1.3?uuid=178c1380-e015-415b-9b37-af5fbbe77218",
+      "dependency_uid": "pkg:npm/%40istanbuljs/schema@0.1.3?uuid=c4f8498e-eba1-416e-92df-b8a1c91dc322",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3700,7 +3732,7 @@
         "purl": "pkg:npm/%40jest/schemas@29.6.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40jest/schemas@29.6.3?uuid=9f75b965-6f2f-47c0-a0f8-d5938ff603b1",
+      "dependency_uid": "pkg:npm/%40jest/schemas@29.6.3?uuid=c1140ff7-e9eb-4659-a4a2-a9e01464b090",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3798,7 +3830,7 @@
         "purl": "pkg:npm/%40jridgewell/gen-mapping@0.3.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40jridgewell/gen-mapping@0.3.3?uuid=0c9627e3-f0c0-4429-9c71-3c6daf827021",
+      "dependency_uid": "pkg:npm/%40jridgewell/gen-mapping@0.3.3?uuid=509c46a5-2310-4057-b95d-aa15407cf2c8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3865,7 +3897,7 @@
         "purl": "pkg:npm/%40jridgewell/resolve-uri@3.1.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40jridgewell/resolve-uri@3.1.1?uuid=5c0f531e-2761-4361-a217-70023418cce9",
+      "dependency_uid": "pkg:npm/%40jridgewell/resolve-uri@3.1.1?uuid=075b7a91-fc35-43a7-9338-b768ad0e925b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -3932,7 +3964,7 @@
         "purl": "pkg:npm/%40jridgewell/set-array@1.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40jridgewell/set-array@1.1.2?uuid=c4087d18-3f07-4ef2-a039-3bbc61116966",
+      "dependency_uid": "pkg:npm/%40jridgewell/set-array@1.1.2?uuid=5cc4ff4c-3307-49b9-960f-125f2199fdf5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4020,7 +4052,7 @@
         "purl": "pkg:npm/%40jridgewell/source-map@0.3.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40jridgewell/source-map@0.3.5?uuid=e1748d73-5528-4694-8219-d7a93cf6b54b",
+      "dependency_uid": "pkg:npm/%40jridgewell/source-map@0.3.5?uuid=4bd6950a-17e7-437f-9bc5-0e6cabe18f22",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4087,7 +4119,7 @@
         "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.4.15"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40jridgewell/sourcemap-codec@1.4.15?uuid=5b8f339c-516d-4040-a868-2b7fdcdec74e",
+      "dependency_uid": "pkg:npm/%40jridgewell/sourcemap-codec@1.4.15?uuid=84679259-9d32-405d-9d3d-c3c894a65a1a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4175,7 +4207,7 @@
         "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.19"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40jridgewell/trace-mapping@0.3.19?uuid=c02030ec-83b9-44a7-933a-6e619493050b",
+      "dependency_uid": "pkg:npm/%40jridgewell/trace-mapping@0.3.19?uuid=089a6e85-fa9d-457a-851d-98d5e4fdc4b7",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4263,7 +4295,7 @@
         "purl": "pkg:npm/%40nodelib/fs.scandir@2.1.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40nodelib/fs.scandir@2.1.5?uuid=95c0d4e4-ed94-419d-8a8a-1f62dadd882d",
+      "dependency_uid": "pkg:npm/%40nodelib/fs.scandir@2.1.5?uuid=e946e31a-b774-4e18-989f-e580f67cb36a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4330,7 +4362,7 @@
         "purl": "pkg:npm/%40nodelib/fs.stat@2.0.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40nodelib/fs.stat@2.0.5?uuid=3f40b3f1-653b-4974-937c-bd3126aa2773",
+      "dependency_uid": "pkg:npm/%40nodelib/fs.stat@2.0.5?uuid=1de671a9-30be-4b15-9769-87d6f0a1d44f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4418,7 +4450,7 @@
         "purl": "pkg:npm/%40nodelib/fs.walk@1.2.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40nodelib/fs.walk@1.2.8?uuid=8275c012-1428-48e3-85d0-f682ee375b2d",
+      "dependency_uid": "pkg:npm/%40nodelib/fs.walk@1.2.8?uuid=cb9304b8-46be-47f3-8ea8-cabb43b2242c",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4485,7 +4517,7 @@
         "purl": "pkg:npm/%40pkgjs/parseargs@0.11.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40pkgjs/parseargs@0.11.0?uuid=e82e07fb-5970-432e-be05-88f803f30a74",
+      "dependency_uid": "pkg:npm/%40pkgjs/parseargs@0.11.0?uuid=05197a69-0dd4-4b50-ba7d-921edad083b7",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4613,7 +4645,7 @@
         "purl": "pkg:npm/%40pkgr/utils@2.4.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40pkgr/utils@2.4.2?uuid=ce976f1c-4924-48a7-b63c-864225890bc9",
+      "dependency_uid": "pkg:npm/%40pkgr/utils@2.4.2?uuid=655650cd-e1ce-405b-b0e5-c89383210221",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4680,7 +4712,7 @@
         "purl": "pkg:npm/%40rollup/rollup-android-arm-eabi@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-android-arm-eabi@4.6.1?uuid=2441cb8d-44b2-44a6-b789-6ccddc40c06d",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-android-arm-eabi@4.6.1?uuid=a2f2dbae-c55e-4b87-bd46-0258f9d74959",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4747,7 +4779,7 @@
         "purl": "pkg:npm/%40rollup/rollup-android-arm64@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-android-arm64@4.6.1?uuid=89031716-3f7f-4de0-8c88-7a3015a4c861",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-android-arm64@4.6.1?uuid=7c365cef-294b-402a-8b77-a6a2c793b1c5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4814,7 +4846,7 @@
         "purl": "pkg:npm/%40rollup/rollup-darwin-arm64@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-darwin-arm64@4.6.1?uuid=5a232b0a-01c1-44f4-affc-ac827ecd93ae",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-darwin-arm64@4.6.1?uuid=0abe0a7b-4464-49f8-9975-5e8b921fe770",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4881,7 +4913,7 @@
         "purl": "pkg:npm/%40rollup/rollup-darwin-x64@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-darwin-x64@4.6.1?uuid=8416cf0a-2f55-4929-959b-2fbdecc2f207",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-darwin-x64@4.6.1?uuid=0f68b975-1ab7-4065-bbda-6e0a9ab72607",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -4948,7 +4980,7 @@
         "purl": "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.6.1?uuid=b0bd95ee-1b62-403c-8c0a-259551f2c68c",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-arm-gnueabihf@4.6.1?uuid=99e9519b-832b-48f2-aec5-7186e6664481",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5015,7 +5047,7 @@
         "purl": "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.6.1?uuid=2752869b-0ad9-4077-b081-eab248d48554",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-arm64-gnu@4.6.1?uuid=ad8613ed-88d6-48c3-bc54-e25250ee3e62",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5082,7 +5114,7 @@
         "purl": "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.6.1?uuid=8d0df407-c73b-4cec-bce3-d348e125cf19",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-arm64-musl@4.6.1?uuid=66e01c49-e8dd-43e8-a232-4c287a3b79f9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5149,7 +5181,7 @@
         "purl": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.6.1?uuid=128ab952-53ee-4429-85c3-cb30328e2964",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-x64-gnu@4.6.1?uuid=fa265bb7-9809-4732-bd29-1dde56881bf2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5216,7 +5248,7 @@
         "purl": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.6.1?uuid=08d453de-60ef-48b7-bd5d-1edb83d37a80",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-linux-x64-musl@4.6.1?uuid=dff3d9c1-faeb-4859-a38b-1e1e306838c1",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5283,7 +5315,7 @@
         "purl": "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.6.1?uuid=8253253b-3855-4872-b020-73e580de5e9c",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-win32-arm64-msvc@4.6.1?uuid=897dca04-3b42-4c8e-b2e4-aa4f614a63ab",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5350,7 +5382,7 @@
         "purl": "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.6.1?uuid=82d24a07-0c81-47d8-b1ec-1abb457bdd6d",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-win32-ia32-msvc@4.6.1?uuid=67b2da89-1251-413d-ba4b-ac65193af773",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5417,7 +5449,7 @@
         "purl": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.6.1?uuid=3328f572-7ceb-4e69-83b5-d1be31e33ce6",
+      "dependency_uid": "pkg:npm/%40rollup/rollup-win32-x64-msvc@4.6.1?uuid=93881fdf-c4bd-4953-b389-7a66bb6c8f8d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5484,7 +5516,7 @@
         "purl": "pkg:npm/%40sinclair/typebox@0.27.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40sinclair/typebox@0.27.8?uuid=88ad4f8e-984b-4584-9a8f-5f23f4a661b1",
+      "dependency_uid": "pkg:npm/%40sinclair/typebox@0.27.8?uuid=af09105c-f34a-46ee-84c0-5f6d43ddaa8f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5551,7 +5583,7 @@
         "purl": "pkg:npm/%40types/istanbul-lib-coverage@2.0.6"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40types/istanbul-lib-coverage@2.0.6?uuid=4cb33327-1dc0-45e8-a90b-747f416868ea",
+      "dependency_uid": "pkg:npm/%40types/istanbul-lib-coverage@2.0.6?uuid=52400498-11f3-4ed9-88f4-925eee2c91bf",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5629,7 +5661,7 @@
         "purl": "pkg:npm/%40types/node@20.10.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40types/node@20.10.3?uuid=98709942-abcf-4338-887e-380f0667ace5",
+      "dependency_uid": "pkg:npm/%40types/node@20.10.3?uuid=237c98d8-ec3f-44e6-8fb4-6eb859ce1b12",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5827,7 +5859,7 @@
         "purl": "pkg:npm/%40vitest/coverage-v8@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40vitest/coverage-v8@1.0.1?uuid=e444cedf-6400-4618-90f6-7951ab22f19d",
+      "dependency_uid": "pkg:npm/%40vitest/coverage-v8@1.0.1?uuid=6e793442-ff5d-4c6d-9c52-0d2dccc53188",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -5925,7 +5957,7 @@
         "purl": "pkg:npm/%40vitest/expect@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40vitest/expect@1.0.1?uuid=e4f5380a-8f06-45ce-85f3-c62b3c400ba9",
+      "dependency_uid": "pkg:npm/%40vitest/expect@1.0.1?uuid=12eb5273-8567-4cd3-a28b-588c9106e55f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6023,7 +6055,7 @@
         "purl": "pkg:npm/%40vitest/runner@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40vitest/runner@1.0.1?uuid=aae4d24e-cb99-4a1c-a374-e2290a11d8c5",
+      "dependency_uid": "pkg:npm/%40vitest/runner@1.0.1?uuid=3ac83732-97f8-4f2c-86af-56d987ee18ba",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6121,7 +6153,7 @@
         "purl": "pkg:npm/%40vitest/snapshot@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40vitest/snapshot@1.0.1?uuid=542b2f3c-4c2e-42f1-92fa-1f7062480a0b",
+      "dependency_uid": "pkg:npm/%40vitest/snapshot@1.0.1?uuid=6d57013c-217d-4a1b-bd72-77c4af416cd4",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6199,7 +6231,7 @@
         "purl": "pkg:npm/%40vitest/spy@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40vitest/spy@1.0.1?uuid=ee2c0a17-5d0a-4707-8190-186b80f62526",
+      "dependency_uid": "pkg:npm/%40vitest/spy@1.0.1?uuid=010b1320-e79d-409a-845f-37f1b8382d60",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6297,7 +6329,7 @@
         "purl": "pkg:npm/%40vitest/utils@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40vitest/utils@1.0.1?uuid=b3103345-b67b-4265-9d24-16933a170641",
+      "dependency_uid": "pkg:npm/%40vitest/utils@1.0.1?uuid=760207c3-393f-48df-8b58-036a5e642526",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6364,7 +6396,7 @@
         "purl": "pkg:npm/acorn@8.11.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/acorn@8.11.2?uuid=9bde179b-50b1-43a1-addd-813c254f44bb",
+      "dependency_uid": "pkg:npm/acorn@8.11.2?uuid=7a2c277f-ef08-44dd-ad63-00c176e41b55",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6431,7 +6463,7 @@
         "purl": "pkg:npm/acorn-walk@8.3.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/acorn-walk@8.3.0?uuid=8720fb50-c5f6-4aa6-9bff-9679af6252ba",
+      "dependency_uid": "pkg:npm/acorn-walk@8.3.0?uuid=d552fe72-841d-45e3-867f-7163bc5d29a9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6509,7 +6541,7 @@
         "purl": "pkg:npm/agent-base@7.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/agent-base@7.1.0?uuid=a704b5ae-d092-49de-b4ac-e2d619b09926",
+      "dependency_uid": "pkg:npm/agent-base@7.1.0?uuid=7946c08d-e687-4281-95d6-4081a542803d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6587,7 +6619,7 @@
         "purl": "pkg:npm/ansi-escapes@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ansi-escapes@5.0.0?uuid=0ab7336e-125b-420b-8f34-f46d3d9be4d7",
+      "dependency_uid": "pkg:npm/ansi-escapes@5.0.0?uuid=bd75e4cf-48a3-42bc-b96d-ba7f30ebb0e8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6654,7 +6686,7 @@
         "purl": "pkg:npm/ansi-regex@6.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ansi-regex@6.0.1?uuid=e999a3c7-d67b-48d3-a2d7-7003d395cb23",
+      "dependency_uid": "pkg:npm/ansi-regex@6.0.1?uuid=029817aa-cedb-4f0e-88f5-a060791c597b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6721,7 +6753,7 @@
         "purl": "pkg:npm/ansi-styles@6.2.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ansi-styles@6.2.1?uuid=ff0de5a4-24e1-4e1b-b798-fe36b143ef41",
+      "dependency_uid": "pkg:npm/ansi-styles@6.2.1?uuid=9e0de9be-c54c-477e-a41c-1a988509861e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6788,7 +6820,7 @@
         "purl": "pkg:npm/arg@5.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/arg@5.0.2?uuid=c6f15da3-c95c-4bc4-9130-c05f7cc657f6",
+      "dependency_uid": "pkg:npm/arg@5.0.2?uuid=0c216c32-01b7-4e1c-9cf8-3a3f8572f0c7",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6855,7 +6887,7 @@
         "purl": "pkg:npm/assertion-error@1.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/assertion-error@1.1.0?uuid=f68ce083-f060-48ab-a903-8278e35a26a5",
+      "dependency_uid": "pkg:npm/assertion-error@1.1.0?uuid=4658457c-9746-4b60-957f-2b1c9bc8f554",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6922,7 +6954,7 @@
         "purl": "pkg:npm/asynckit@0.4.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/asynckit@0.4.0?uuid=a0b976c2-2020-46ee-8cbe-7040a7c6f612",
+      "dependency_uid": "pkg:npm/asynckit@0.4.0?uuid=d744a7f7-fc31-4bbc-a5d6-bfe3dd9cccc5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -6989,7 +7021,7 @@
         "purl": "pkg:npm/balanced-match@1.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/balanced-match@1.0.0?uuid=3b8832ff-99a5-49db-af55-ce76ec265f0c",
+      "dependency_uid": "pkg:npm/balanced-match@1.0.0?uuid=a587b6e3-d8e7-48b6-8b01-65dc1bb212c8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7056,7 +7088,7 @@
         "purl": "pkg:npm/big-integer@1.6.51"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/big-integer@1.6.51?uuid=d2559f32-4cd3-42a4-a789-702c03e59f53",
+      "dependency_uid": "pkg:npm/big-integer@1.6.51?uuid=e055d44e-4cd1-4937-91c1-faea539122bd",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7134,7 +7166,7 @@
         "purl": "pkg:npm/bplist-parser@0.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/bplist-parser@0.2.0?uuid=c58b3b32-d1ed-47a6-8422-111d29536dbb",
+      "dependency_uid": "pkg:npm/bplist-parser@0.2.0?uuid=ed1058ee-ce20-4380-9a0f-82980b5cd495",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7222,7 +7254,7 @@
         "purl": "pkg:npm/brace-expansion@1.1.11"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/brace-expansion@1.1.11?uuid=155d75ee-f415-4f6b-9682-d3051904c536",
+      "dependency_uid": "pkg:npm/brace-expansion@1.1.11?uuid=6d4dc234-9da6-4fe6-9fb5-362e26bc36a4",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7300,7 +7332,7 @@
         "purl": "pkg:npm/braces@3.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/braces@3.0.2?uuid=9df7f1c4-6059-44c9-8c90-a8bf3a31dd87",
+      "dependency_uid": "pkg:npm/braces@3.0.2?uuid=970f1ec5-d2fe-4582-b570-0e674f01d535",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7367,7 +7399,7 @@
         "purl": "pkg:npm/buffer-from@1.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/buffer-from@1.1.2?uuid=9e8cffc0-32bf-4cfc-be86-917641cec179",
+      "dependency_uid": "pkg:npm/buffer-from@1.1.2?uuid=9d4c2b13-3659-422f-b484-256c3d5141aa",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7445,7 +7477,7 @@
         "purl": "pkg:npm/bundle-name@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/bundle-name@3.0.0?uuid=b8ba21a9-7e3d-4f06-8f66-389db10e8fb6",
+      "dependency_uid": "pkg:npm/bundle-name@3.0.0?uuid=3c93d52c-6d44-4269-b89c-eb62b1837471",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7512,7 +7544,7 @@
         "purl": "pkg:npm/cac@6.7.14"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/cac@6.7.14?uuid=f209f6ae-1480-451d-ac68-a723a9b3a85d",
+      "dependency_uid": "pkg:npm/cac@6.7.14?uuid=8d2ab5f7-5c36-4915-99a6-db6177b11a34",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7650,7 +7682,7 @@
         "purl": "pkg:npm/chai@4.3.10"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/chai@4.3.10?uuid=7f2d8a9c-b9c2-4fd3-822c-2f75f9c51020",
+      "dependency_uid": "pkg:npm/chai@4.3.10?uuid=6d871985-751c-4a85-afaf-1cedb168f958",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7717,7 +7749,7 @@
         "purl": "pkg:npm/chalk@5.3.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/chalk@5.3.0?uuid=f5bfe035-bef1-4982-80d6-215f32e25a05",
+      "dependency_uid": "pkg:npm/chalk@5.3.0?uuid=8163dd81-d0b2-4478-b9f7-332e06d8d08e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7784,7 +7816,7 @@
         "purl": "pkg:npm/change-case"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/change-case?uuid=30782473-db63-4222-a8e4-1fe592694924",
+      "dependency_uid": "pkg:npm/change-case?uuid=f8c1c6b6-d2b9-4026-831c-ff5ea60f3347",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7862,7 +7894,7 @@
         "purl": "pkg:npm/check-error@1.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/check-error@1.0.3?uuid=7d44182b-59ce-4c42-bc37-742a934d3c2e",
+      "dependency_uid": "pkg:npm/check-error@1.0.3?uuid=2a895013-a084-47ca-8b0a-c649a0c55f2f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -7940,7 +7972,7 @@
         "purl": "pkg:npm/cli-cursor@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/cli-cursor@4.0.0?uuid=9e86a6c9-6e23-429a-a404-02082ab08631",
+      "dependency_uid": "pkg:npm/cli-cursor@4.0.0?uuid=250ed338-00ea-4190-9b23-5e1d7f28769a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8028,7 +8060,7 @@
         "purl": "pkg:npm/cli-truncate@3.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/cli-truncate@3.1.0?uuid=9557dd8b-f6bc-4c53-bc56-007770a2125d",
+      "dependency_uid": "pkg:npm/cli-truncate@3.1.0?uuid=56a1bda6-1b5e-4c67-ae1b-40e8507f7054",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8106,7 +8138,7 @@
         "purl": "pkg:npm/color-convert@2.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/color-convert@2.0.1?uuid=2bb46749-4896-4d5e-a74c-dad2a43b5b12",
+      "dependency_uid": "pkg:npm/color-convert@2.0.1?uuid=e5bf7b8f-9c0f-4835-a9e9-a7a82a5c04e8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8173,7 +8205,7 @@
         "purl": "pkg:npm/color-name@1.1.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/color-name@1.1.4?uuid=6e893334-a0c3-4220-882d-682e5ca61791",
+      "dependency_uid": "pkg:npm/color-name@1.1.4?uuid=32ca351f-2117-47eb-8fbf-782ee299bc63",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8240,7 +8272,7 @@
         "purl": "pkg:npm/colorette@2.0.20"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/colorette@2.0.20?uuid=08498a80-78cd-4204-b78d-c8bee3b60a7d",
+      "dependency_uid": "pkg:npm/colorette@2.0.20?uuid=7a4331c3-7ee5-4b4c-96a3-c1e2258a366b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8318,7 +8350,7 @@
         "purl": "pkg:npm/combined-stream@1.0.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/combined-stream@1.0.8?uuid=5dbb8305-d53d-4a23-a58b-124c380debe6",
+      "dependency_uid": "pkg:npm/combined-stream@1.0.8?uuid=ccf7d9f6-45fc-4e3f-ac2f-2c750a4eb575",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8385,7 +8417,7 @@
         "purl": "pkg:npm/commander@11.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/commander@11.1.0?uuid=4fd1178b-be76-4a0e-8ecb-489886ac64ef",
+      "dependency_uid": "pkg:npm/commander@11.1.0?uuid=614349cf-cd3f-48f9-9d6f-29a1dd7a858b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8452,7 +8484,7 @@
         "purl": "pkg:npm/concat-map@0.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/concat-map@0.0.1?uuid=c0bcc125-6e7e-4805-9693-3d4beb56526f",
+      "dependency_uid": "pkg:npm/concat-map@0.0.1?uuid=e53f4a41-a4e9-4ff6-966b-9a6fdaf8c29d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8519,7 +8551,7 @@
         "purl": "pkg:npm/convert-source-map@2.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/convert-source-map@2.0.0?uuid=4b7fad3d-c5c9-4559-81f5-6f78c0723f2b",
+      "dependency_uid": "pkg:npm/convert-source-map@2.0.0?uuid=1e9b577d-7148-4625-8bce-ef8ba9364cce",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8617,7 +8649,7 @@
         "purl": "pkg:npm/cross-spawn@7.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/cross-spawn@7.0.3?uuid=d3db2f3c-02b7-4756-af59-1209fcc18cb9",
+      "dependency_uid": "pkg:npm/cross-spawn@7.0.3?uuid=e7e46c1e-ab88-4667-ad70-28457b71a0b6",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8695,7 +8727,7 @@
         "purl": "pkg:npm/cssstyle@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/cssstyle@3.0.0?uuid=7420be92-49cb-42b1-9f1c-a8106362d681",
+      "dependency_uid": "pkg:npm/cssstyle@3.0.0?uuid=189c064a-7053-4526-b537-a79ac81ff74d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8783,7 +8815,7 @@
         "purl": "pkg:npm/data-urls@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/data-urls@5.0.0?uuid=abf5ad5b-533e-432c-b53c-f87524275ea8",
+      "dependency_uid": "pkg:npm/data-urls@5.0.0?uuid=89b7e3bb-fb30-46e1-b248-39575a075bbb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8861,7 +8893,7 @@
         "purl": "pkg:npm/debug@4.3.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/debug@4.3.4?uuid=84a6996d-af3a-47bb-96e8-da491282765c",
+      "dependency_uid": "pkg:npm/debug@4.3.4?uuid=d9af7fea-5ba4-491c-9f46-dc6f750b7403",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -8928,7 +8960,7 @@
         "purl": "pkg:npm/decimal.js@10.4.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/decimal.js@10.4.3?uuid=49a6c47e-3cc8-4c5f-9519-2a37cbd63353",
+      "dependency_uid": "pkg:npm/decimal.js@10.4.3?uuid=22a343a6-3021-425e-9b76-fbf4fe48ec73",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9006,7 +9038,7 @@
         "purl": "pkg:npm/deep-eql@4.1.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/deep-eql@4.1.3?uuid=83910acf-9bb6-4f9a-9247-94cd80ee3ce2",
+      "dependency_uid": "pkg:npm/deep-eql@4.1.3?uuid=bcacfa4a-6b33-46c8-a98e-44c14d96e12b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9114,7 +9146,7 @@
         "purl": "pkg:npm/default-browser@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/default-browser@4.0.0?uuid=7c4e01fb-660b-4a73-8d47-d82332d78daf",
+      "dependency_uid": "pkg:npm/default-browser@4.0.0?uuid=49dcdadf-4507-479e-9ef6-132f641dccfe",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9202,7 +9234,7 @@
         "purl": "pkg:npm/default-browser-id@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/default-browser-id@3.0.0?uuid=72f22a60-cc98-4132-a00d-804d7fa31754",
+      "dependency_uid": "pkg:npm/default-browser-id@3.0.0?uuid=5460d9cb-b684-4308-b71a-11ea8535a56d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9360,7 +9392,7 @@
         "purl": "pkg:npm/execa@7.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/execa@7.2.0?uuid=cdeb9ab6-32f0-43dc-8c4c-d87946576c3d",
+      "dependency_uid": "pkg:npm/execa@7.2.0?uuid=b7d636d7-17cf-43a7-9fd7-4e459e726115",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9427,7 +9459,7 @@
         "purl": "pkg:npm/get-stream@6.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/get-stream@6.0.1?uuid=8ee89de5-4eb8-49c7-a77b-99e9fe8b5217",
+      "dependency_uid": "pkg:npm/get-stream@6.0.1?uuid=d5ef936a-bf06-45bd-b5e9-f8458f060b90",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9494,7 +9526,7 @@
         "purl": "pkg:npm/human-signals@4.3.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/human-signals@4.3.1?uuid=4a013ccf-2fa9-4054-b1ea-b042f502c2cc",
+      "dependency_uid": "pkg:npm/human-signals@4.3.1?uuid=19a46d8b-8e6c-4b7d-b4f6-4657d498dada",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9561,7 +9593,7 @@
         "purl": "pkg:npm/signal-exit@3.0.7"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/signal-exit@3.0.7?uuid=1c0fc80c-9655-48b7-8764-d884dae57deb",
+      "dependency_uid": "pkg:npm/signal-exit@3.0.7?uuid=be504cff-481d-4710-a12c-49009ccef520",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9628,7 +9660,7 @@
         "purl": "pkg:npm/define-lazy-prop@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/define-lazy-prop@3.0.0?uuid=430d42dd-13f8-41bf-8a4f-ba88e8f9cfd9",
+      "dependency_uid": "pkg:npm/define-lazy-prop@3.0.0?uuid=e66f58c6-ec9b-4b0e-84f6-e7bbd374b38e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9695,7 +9727,7 @@
         "purl": "pkg:npm/delayed-stream@1.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/delayed-stream@1.0.0?uuid=999e40c2-e8e1-4cd9-9be9-9476ec5ecdbe",
+      "dependency_uid": "pkg:npm/delayed-stream@1.0.0?uuid=8978663f-d219-4c47-9905-483df060279c",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9762,7 +9794,7 @@
         "purl": "pkg:npm/detect-indent@7.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/detect-indent@7.0.1?uuid=b1659470-a4c8-4d8f-bac3-efa968beb242",
+      "dependency_uid": "pkg:npm/detect-indent@7.0.1?uuid=c1e41667-578e-4bd5-895c-b87dc20f1904",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9829,7 +9861,7 @@
         "purl": "pkg:npm/detect-newline@4.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/detect-newline@4.0.1?uuid=96d5f57b-01e5-479e-9a7b-484ef049deac",
+      "dependency_uid": "pkg:npm/detect-newline@4.0.1?uuid=944fc9c3-5b44-4810-8195-e5a23945d872",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9896,7 +9928,7 @@
         "purl": "pkg:npm/diff-sequences@29.6.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/diff-sequences@29.6.3?uuid=a8b54668-47c0-4975-aad2-e6a8d3d6e2ee",
+      "dependency_uid": "pkg:npm/diff-sequences@29.6.3?uuid=cea7d6f4-ea9e-4e7f-8e45-3937b3b2203f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -9974,7 +10006,7 @@
         "purl": "pkg:npm/dir-glob@3.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/dir-glob@3.0.1?uuid=df6294f9-a53e-4339-9516-a1d95b7ae379",
+      "dependency_uid": "pkg:npm/dir-glob@3.0.1?uuid=0e0a186d-80b6-4408-a23a-b93445d798e0",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10041,7 +10073,7 @@
         "purl": "pkg:npm/eastasianwidth@0.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/eastasianwidth@0.2.0?uuid=44e78976-ee5d-41ec-b2dd-834059a108cf",
+      "dependency_uid": "pkg:npm/eastasianwidth@0.2.0?uuid=f7337211-91b9-4a10-81c7-5fb6d297d1a9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10108,7 +10140,7 @@
         "purl": "pkg:npm/emoji-regex@9.2.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/emoji-regex@9.2.2?uuid=cd2e85a1-740f-47e2-9528-075373d66bbc",
+      "dependency_uid": "pkg:npm/emoji-regex@9.2.2?uuid=3d15549c-b55a-424d-8890-73adba8b4bc9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10175,7 +10207,7 @@
         "purl": "pkg:npm/entities@4.5.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/entities@4.5.0?uuid=df1d17b9-d218-485d-a3db-377687ddfb0e",
+      "dependency_uid": "pkg:npm/entities@4.5.0?uuid=df9acca6-36d5-487d-ac0e-bf1c160ef15a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10242,7 +10274,7 @@
         "purl": "pkg:npm/esbuild@0.19.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/esbuild@0.19.8?uuid=55883781-c760-4bad-a688-2711d95bc47a",
+      "dependency_uid": "pkg:npm/esbuild@0.19.8?uuid=3e5063f2-3799-4848-ac27-6faf55fa31d6",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10309,7 +10341,7 @@
         "purl": "pkg:npm/eventemitter3@5.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/eventemitter3@5.0.1?uuid=f375cc3f-78e1-4edf-a47e-c05008ddbee4",
+      "dependency_uid": "pkg:npm/eventemitter3@5.0.1?uuid=a478816e-cc4b-4b4a-8093-4e1919ea9643",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10467,7 +10499,7 @@
         "purl": "pkg:npm/execa@8.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/execa@8.0.1?uuid=558fb875-f131-4ec2-8c0f-1a34da57d050",
+      "dependency_uid": "pkg:npm/execa@8.0.1?uuid=c481b996-5ee6-4bcb-95f8-fb4ebb06f89e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10585,7 +10617,7 @@
         "purl": "pkg:npm/fast-glob@3.3.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/fast-glob@3.3.1?uuid=b5f1ca08-9529-462d-a41e-01fa79cf53e2",
+      "dependency_uid": "pkg:npm/fast-glob@3.3.1?uuid=8bf0ea79-d4c1-4e1a-94d7-96d4021c4a05",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10663,7 +10695,7 @@
         "purl": "pkg:npm/fastq@1.15.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/fastq@1.15.0?uuid=6b01b821-43f4-4500-84f1-d4d119377af5",
+      "dependency_uid": "pkg:npm/fastq@1.15.0?uuid=6de40b24-ae2f-4669-8c6b-608d2213a0d5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10741,7 +10773,7 @@
         "purl": "pkg:npm/fill-range@7.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/fill-range@7.0.1?uuid=c927721f-c44c-4a1b-8a85-3f6441f014a6",
+      "dependency_uid": "pkg:npm/fill-range@7.0.1?uuid=66dac270-29b3-4e3b-8861-305fe683867b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10829,7 +10861,7 @@
         "purl": "pkg:npm/foreground-child@3.1.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/foreground-child@3.1.1?uuid=7926f11f-dbd0-401a-be0d-9792538a7dcc",
+      "dependency_uid": "pkg:npm/foreground-child@3.1.1?uuid=aabfe0c5-ed25-4ed6-8194-5b46e81159ab",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10927,7 +10959,7 @@
         "purl": "pkg:npm/form-data@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/form-data@4.0.0?uuid=c4dead7a-0c20-49a3-a4c5-13dd80189649",
+      "dependency_uid": "pkg:npm/form-data@4.0.0?uuid=7a8bdb9d-e6b3-42ce-a257-90fd747de23f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -10994,7 +11026,7 @@
         "purl": "pkg:npm/fs.realpath@1.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/fs.realpath@1.0.0?uuid=374de5a9-da8f-4688-8f2d-72780113585d",
+      "dependency_uid": "pkg:npm/fs.realpath@1.0.0?uuid=59227930-9c6f-492f-85d4-0257b26ac8d4",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11061,7 +11093,7 @@
         "purl": "pkg:npm/fsevents@2.3.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/fsevents@2.3.3?uuid=414a55c0-b6cd-46f0-9a3a-2c38957f1d4c",
+      "dependency_uid": "pkg:npm/fsevents@2.3.3?uuid=37a4cb5c-d2be-41a8-91ff-fb1bb614d4ea",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11128,7 +11160,7 @@
         "purl": "pkg:npm/get-func-name@2.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/get-func-name@2.0.2?uuid=d7dcf3e2-e7ad-4a65-91f7-a5088761af09",
+      "dependency_uid": "pkg:npm/get-func-name@2.0.2?uuid=670473b8-cee0-4606-ae84-382fc7f3f8e2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11195,7 +11227,7 @@
         "purl": "pkg:npm/get-stdin@9.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/get-stdin@9.0.0?uuid=7be04c55-2834-414e-aadd-2514739df06a",
+      "dependency_uid": "pkg:npm/get-stdin@9.0.0?uuid=4ef17f4f-1ba2-49dc-abe5-f8f31b9f9c77",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11262,7 +11294,7 @@
         "purl": "pkg:npm/get-stream@8.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/get-stream@8.0.1?uuid=bef274d3-987b-46d9-beae-073e94274141",
+      "dependency_uid": "pkg:npm/get-stream@8.0.1?uuid=21ebcec9-d16e-4b18-bb85-d4e27b2a5a36",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11329,7 +11361,7 @@
         "purl": "pkg:npm/git-hooks-list@3.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/git-hooks-list@3.1.0?uuid=9d8eafdb-3e75-417c-b8e7-8f3d135733a5",
+      "dependency_uid": "pkg:npm/git-hooks-list@3.1.0?uuid=98628511-b396-4019-8086-56b2c18655b0",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11457,7 +11489,7 @@
         "purl": "pkg:npm/glob@7.2.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/glob@7.2.3?uuid=434977ca-6882-4a64-83ee-d59b40fe5e58",
+      "dependency_uid": "pkg:npm/glob@7.2.3?uuid=2121c5c7-3636-41f6-8f15-f2e2549973f2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11535,7 +11567,7 @@
         "purl": "pkg:npm/glob-parent@5.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/glob-parent@5.1.2?uuid=82b30a17-4bb0-4077-8116-0102255f03cd",
+      "dependency_uid": "pkg:npm/glob-parent@5.1.2?uuid=0a004046-8b32-44bf-8f02-6639b0571e2a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11653,7 +11685,7 @@
         "purl": "pkg:npm/globby@13.2.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/globby@13.2.2?uuid=65807bec-15dc-4348-9555-90306a9d086d",
+      "dependency_uid": "pkg:npm/globby@13.2.2?uuid=97631d3e-a9b4-48af-9287-4afc64c2b104",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11720,7 +11752,7 @@
         "purl": "pkg:npm/has-flag@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/has-flag@4.0.0?uuid=437906ec-3ff3-49f8-8c16-ca0a9e49a0ee",
+      "dependency_uid": "pkg:npm/has-flag@4.0.0?uuid=64349c7d-8477-464d-99c0-fbf2bafeaec5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11798,7 +11830,7 @@
         "purl": "pkg:npm/html-encoding-sniffer@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/html-encoding-sniffer@4.0.0?uuid=c112207f-0c53-4616-8b39-35913945a2a8",
+      "dependency_uid": "pkg:npm/html-encoding-sniffer@4.0.0?uuid=f74e1786-a758-4f97-aa6e-c01c85a0cc73",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11865,7 +11897,7 @@
         "purl": "pkg:npm/html-escaper@2.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/html-escaper@2.0.2?uuid=0e7525b2-bfa1-4205-8299-9786b2fc6210",
+      "dependency_uid": "pkg:npm/html-escaper@2.0.2?uuid=1d14e500-723e-4778-8a92-ce804ab999d7",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -11953,7 +11985,7 @@
         "purl": "pkg:npm/http-proxy-agent@7.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/http-proxy-agent@7.0.0?uuid=1e190eab-c7ee-4f8a-8238-40e805bb72cb",
+      "dependency_uid": "pkg:npm/http-proxy-agent@7.0.0?uuid=a350c33a-cb49-4222-a5da-df6b75f7324f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12041,7 +12073,7 @@
         "purl": "pkg:npm/https-proxy-agent@7.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/https-proxy-agent@7.0.2?uuid=ea1fed02-e08e-4f23-af1b-385e57be2ae0",
+      "dependency_uid": "pkg:npm/https-proxy-agent@7.0.2?uuid=46871978-0489-4bf6-9e1e-68079377f44f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12108,7 +12140,7 @@
         "purl": "pkg:npm/human-signals@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/human-signals@5.0.0?uuid=fceeb54a-36b9-42d6-ad57-399f81c96cad",
+      "dependency_uid": "pkg:npm/human-signals@5.0.0?uuid=67665059-2062-4b54-89c1-216f56e26063",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12175,7 +12207,7 @@
         "purl": "pkg:npm/husky@8.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/husky@8.0.3?uuid=f8b9f8fd-16bf-435a-a057-c720dbf9f3b0",
+      "dependency_uid": "pkg:npm/husky@8.0.3?uuid=6af903a2-4585-4e96-8e25-19e8b83cba63",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12253,7 +12285,7 @@
         "purl": "pkg:npm/iconv-lite@0.6.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/iconv-lite@0.6.3?uuid=7487fc5c-06af-4089-b765-5464c36ebe37",
+      "dependency_uid": "pkg:npm/iconv-lite@0.6.3?uuid=5bb1bfeb-efd2-46e2-a246-edde632c8a54",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12320,7 +12352,7 @@
         "purl": "pkg:npm/ignore@5.2.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ignore@5.2.4?uuid=3bce6546-ff9b-4db1-bd3b-d7c7baeed532",
+      "dependency_uid": "pkg:npm/ignore@5.2.4?uuid=40f4df98-6290-40af-8ede-ad24f792f95e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12408,7 +12440,7 @@
         "purl": "pkg:npm/inflight@1.0.6"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/inflight@1.0.6?uuid=491dc7ea-7d8c-4648-bac5-7a307075c9e0",
+      "dependency_uid": "pkg:npm/inflight@1.0.6?uuid=9cc26477-8833-42f5-997c-ad131211f20d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12475,7 +12507,7 @@
         "purl": "pkg:npm/inherits@2.0.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/inherits@2.0.4?uuid=6f138305-6f66-4f72-9dc3-bd67745760ae",
+      "dependency_uid": "pkg:npm/inherits@2.0.4?uuid=43ff38a6-808d-4453-aedf-3ece8a4c4604",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12542,7 +12574,7 @@
         "purl": "pkg:npm/is-docker@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-docker@3.0.0?uuid=8f5dd1ba-810a-4819-a8aa-d09df64fd49f",
+      "dependency_uid": "pkg:npm/is-docker@3.0.0?uuid=2521d1f3-f373-43db-99ba-5e89664be701",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12609,7 +12641,7 @@
         "purl": "pkg:npm/is-extglob@2.1.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-extglob@2.1.1?uuid=ec4e3b4f-2e84-48c0-9f5a-c64a10c18861",
+      "dependency_uid": "pkg:npm/is-extglob@2.1.1?uuid=e91143ab-e5ce-4b43-ab5a-29488611d0e8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12676,7 +12708,7 @@
         "purl": "pkg:npm/is-fullwidth-code-point@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-fullwidth-code-point@4.0.0?uuid=8829533f-e1c8-45af-af3c-182a599c4bcc",
+      "dependency_uid": "pkg:npm/is-fullwidth-code-point@4.0.0?uuid=4fef3d2a-b529-41b9-83aa-aace2352be3f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12754,7 +12786,7 @@
         "purl": "pkg:npm/is-glob@4.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-glob@4.0.3?uuid=41551c70-f2f6-4509-b723-73bce74c0c94",
+      "dependency_uid": "pkg:npm/is-glob@4.0.3?uuid=66fe855d-2ef9-4f54-891b-eee46c74ca32",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12832,7 +12864,7 @@
         "purl": "pkg:npm/is-inside-container@1.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-inside-container@1.0.0?uuid=836bec71-a98f-4ad7-ae07-bd00c582f8f9",
+      "dependency_uid": "pkg:npm/is-inside-container@1.0.0?uuid=89b80fae-2486-4b87-9f88-5521fe1e3e77",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12899,7 +12931,7 @@
         "purl": "pkg:npm/is-number@7.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-number@7.0.0?uuid=c38e3483-538d-474c-bda8-ced754dd76e1",
+      "dependency_uid": "pkg:npm/is-number@7.0.0?uuid=53b484e2-56a8-4d18-891f-82d7d10f3443",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -12966,7 +12998,7 @@
         "purl": "pkg:npm/is-plain-obj@4.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-plain-obj@4.1.0?uuid=3e83ca04-138f-47ff-b742-6e9622b67c1a",
+      "dependency_uid": "pkg:npm/is-plain-obj@4.1.0?uuid=017452bc-7555-4f28-b75f-5fa030d81505",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13033,7 +13065,7 @@
         "purl": "pkg:npm/is-potential-custom-element-name@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-potential-custom-element-name@1.0.1?uuid=f225253a-22c5-486e-9e8b-565378f59a4f",
+      "dependency_uid": "pkg:npm/is-potential-custom-element-name@1.0.1?uuid=52fab740-6b14-44c2-a67a-0a4c2d1ad38d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13100,7 +13132,7 @@
         "purl": "pkg:npm/is-stream@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-stream@3.0.0?uuid=48899bec-0f30-4f51-9011-1bd07011faaa",
+      "dependency_uid": "pkg:npm/is-stream@3.0.0?uuid=a10d6a8f-fc34-4dae-a8df-5aba0b58bf73",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13178,7 +13210,7 @@
         "purl": "pkg:npm/is-wsl@2.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-wsl@2.2.0?uuid=a43fd356-f46c-487b-9498-e3c960b4108b",
+      "dependency_uid": "pkg:npm/is-wsl@2.2.0?uuid=e1bfcd91-6dd6-48be-acb0-76b1eb1f5e23",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13245,7 +13277,7 @@
         "purl": "pkg:npm/is-docker@2.2.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-docker@2.2.1?uuid=22ff8bee-da92-49e7-b564-3c2701163cc1",
+      "dependency_uid": "pkg:npm/is-docker@2.2.1?uuid=189a7bde-1d14-44a6-9d53-5c726ebd7ea6",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13312,7 +13344,7 @@
         "purl": "pkg:npm/isexe@2.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/isexe@2.0.0?uuid=30b740c4-8bf7-4ee8-bb08-34e835e0b383",
+      "dependency_uid": "pkg:npm/isexe@2.0.0?uuid=e292deaf-9b5f-4567-b159-726ac4b3eedf",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13379,7 +13411,7 @@
         "purl": "pkg:npm/istanbul-lib-coverage@3.2.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/istanbul-lib-coverage@3.2.2?uuid=57abca02-0b85-4ddc-8667-9c004f06bf68",
+      "dependency_uid": "pkg:npm/istanbul-lib-coverage@3.2.2?uuid=71cd3efe-f882-4879-9868-fccc7b6c03fb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13477,7 +13509,7 @@
         "purl": "pkg:npm/istanbul-lib-report@3.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/istanbul-lib-report@3.0.1?uuid=7a90f665-e0ec-4320-9437-eb7139d394ec",
+      "dependency_uid": "pkg:npm/istanbul-lib-report@3.0.1?uuid=2fc06d5e-7887-4dd5-adc6-8286c35bc077",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13575,7 +13607,7 @@
         "purl": "pkg:npm/istanbul-lib-source-maps@4.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/istanbul-lib-source-maps@4.0.1?uuid=a30be592-7576-41fc-9659-387f2b6677e9",
+      "dependency_uid": "pkg:npm/istanbul-lib-source-maps@4.0.1?uuid=91d2a4f3-0ee4-429a-9fdb-ff8470c72374",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13663,7 +13695,7 @@
         "purl": "pkg:npm/istanbul-reports@3.1.6"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/istanbul-reports@3.1.6?uuid=09d31681-883f-483d-8425-13605aef3058",
+      "dependency_uid": "pkg:npm/istanbul-reports@3.1.6?uuid=d1c94346-eaad-4d07-a17e-c2db314a2ce2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -13741,7 +13773,7 @@
         "purl": "pkg:npm/jackspeak@2.3.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/jackspeak@2.3.5?uuid=4d5a31af-82ed-4e7c-ad83-6a78f6f9a4db",
+      "dependency_uid": "pkg:npm/jackspeak@2.3.5?uuid=71c96ca9-faf1-41cd-92fc-62bcd43ba6ca",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14019,7 +14051,7 @@
         "purl": "pkg:npm/jsdom@23.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/jsdom@23.0.1?uuid=cb556838-59f4-421e-baa8-38f1d78f3dd4",
+      "dependency_uid": "pkg:npm/jsdom@23.0.1?uuid=84daf837-3afc-4230-9217-0eff89b53e41",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14086,7 +14118,7 @@
         "purl": "pkg:npm/jsonc-parser@3.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/jsonc-parser@3.2.0?uuid=37e97e82-d39d-4b9c-a1c6-4885e3f84379",
+      "dependency_uid": "pkg:npm/jsonc-parser@3.2.0?uuid=7beed84f-7091-4074-ae0e-0af0e8942d04",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14153,7 +14185,7 @@
         "purl": "pkg:npm/lilconfig@2.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/lilconfig@2.1.0?uuid=1d19f9e4-8cd3-4456-acf2-510a74b5c803",
+      "dependency_uid": "pkg:npm/lilconfig@2.1.0?uuid=52ed4198-833b-4fc2-85b9-157be912efce",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14321,7 +14353,7 @@
         "purl": "pkg:npm/lint-staged@15.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/lint-staged@15.0.2?uuid=5905f44c-0811-443d-9cd8-37034ef0f8b1",
+      "dependency_uid": "pkg:npm/lint-staged@15.0.2?uuid=16f77332-ec31-49b3-8d5a-ffba1a4030c1",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14449,7 +14481,7 @@
         "purl": "pkg:npm/listr2@7.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/listr2@7.0.2?uuid=daf98c13-4481-477a-a06d-580fb4367ff8",
+      "dependency_uid": "pkg:npm/listr2@7.0.2?uuid=08fe068a-4012-4417-92ae-1aaedb392bf1",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14537,7 +14569,7 @@
         "purl": "pkg:npm/local-pkg@0.5.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/local-pkg@0.5.0?uuid=a7c66419-16b8-423c-8fcd-06aac52a6e18",
+      "dependency_uid": "pkg:npm/local-pkg@0.5.0?uuid=c2ce7672-13cb-4bd5-a457-77757c8dfab8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14655,7 +14687,7 @@
         "purl": "pkg:npm/log-update@5.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/log-update@5.0.1?uuid=d7a6b24f-1c1b-4e33-a99d-b203ace469f3",
+      "dependency_uid": "pkg:npm/log-update@5.0.1?uuid=86a8a743-9e76-4afe-9252-8e0e39347856",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14733,7 +14765,7 @@
         "purl": "pkg:npm/loupe@2.3.7"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/loupe@2.3.7?uuid=f76ff7e8-2300-4acd-870a-7965a4bf05df",
+      "dependency_uid": "pkg:npm/loupe@2.3.7?uuid=cdf93dd6-d21a-4691-b83e-b53b0f3bc4a8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14811,7 +14843,7 @@
         "purl": "pkg:npm/lru-cache@6.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/lru-cache@6.0.0?uuid=804cbd47-9a03-4729-adc6-e7cfd2a9fdc4",
+      "dependency_uid": "pkg:npm/lru-cache@6.0.0?uuid=e57b1336-f042-4b06-baa1-35317c3fba4a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14889,7 +14921,7 @@
         "purl": "pkg:npm/magic-string@0.30.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/magic-string@0.30.5?uuid=565aad64-9559-4d4b-8b90-66b29d7d8c84",
+      "dependency_uid": "pkg:npm/magic-string@0.30.5?uuid=cfc7caff-1246-44ec-b0e1-df0d4b4ba314",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -14987,7 +15019,7 @@
         "purl": "pkg:npm/magicast@0.3.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/magicast@0.3.2?uuid=fb858dfa-a8de-45c2-9201-e62c65fe46ee",
+      "dependency_uid": "pkg:npm/magicast@0.3.2?uuid=83ca3f2f-80ca-40e7-8079-f5b5edce33fe",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15065,7 +15097,7 @@
         "purl": "pkg:npm/make-dir@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/make-dir@4.0.0?uuid=f8810619-1a7c-4c55-a87b-3289e2420152",
+      "dependency_uid": "pkg:npm/make-dir@4.0.0?uuid=820ac71d-b8f9-4620-af47-19eb85ec10d4",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15132,7 +15164,7 @@
         "purl": "pkg:npm/merge-stream@2.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/merge-stream@2.0.0?uuid=838bf282-26e1-4795-ade5-5328dc694fe9",
+      "dependency_uid": "pkg:npm/merge-stream@2.0.0?uuid=d7485653-e174-497a-98af-7f69e2bb9ae2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15199,7 +15231,7 @@
         "purl": "pkg:npm/merge2@1.4.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/merge2@1.4.1?uuid=1a885bbb-8202-40cd-a5a1-e4c1a50178ef",
+      "dependency_uid": "pkg:npm/merge2@1.4.1?uuid=60949fc3-f722-4c0a-9412-295741be1fdb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15287,7 +15319,7 @@
         "purl": "pkg:npm/micromatch@4.0.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/micromatch@4.0.5?uuid=b047bed7-6b23-4210-b0bd-fbd424b85534",
+      "dependency_uid": "pkg:npm/micromatch@4.0.5?uuid=d4f46d98-e811-48ae-b307-e00e5513780b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15354,7 +15386,7 @@
         "purl": "pkg:npm/mime-db@1.52.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/mime-db@1.52.0?uuid=9084e997-7a0e-4a29-98e3-840c19214b3a",
+      "dependency_uid": "pkg:npm/mime-db@1.52.0?uuid=22ecebf4-3ace-4ff3-869e-77176c7bb34a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15432,7 +15464,7 @@
         "purl": "pkg:npm/mime-types@2.1.35"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/mime-types@2.1.35?uuid=11a03e1d-1f9c-441f-856f-a9fc69dde9af",
+      "dependency_uid": "pkg:npm/mime-types@2.1.35?uuid=e1a027da-640c-4abd-b0c8-8805b20a51cb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15499,7 +15531,7 @@
         "purl": "pkg:npm/mimic-fn@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/mimic-fn@4.0.0?uuid=e3e18841-6ac5-495e-805e-f5961432b529",
+      "dependency_uid": "pkg:npm/mimic-fn@4.0.0?uuid=3acfcc80-6633-4e4b-bb71-345be252ca86",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15577,7 +15609,7 @@
         "purl": "pkg:npm/minimatch@3.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/minimatch@3.1.2?uuid=b79b4f95-7175-4c44-aed2-d230906360af",
+      "dependency_uid": "pkg:npm/minimatch@3.1.2?uuid=bab2f487-6873-401a-91ae-c4c03719eed8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15685,7 +15717,7 @@
         "purl": "pkg:npm/mlly@1.4.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/mlly@1.4.2?uuid=e8ee9a82-12f1-42b7-b87c-a0fd16a4adf5",
+      "dependency_uid": "pkg:npm/mlly@1.4.2?uuid=fd26f2b6-37b7-4224-ad64-41f19944698f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15752,7 +15784,7 @@
         "purl": "pkg:npm/ms@2.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ms@2.1.2?uuid=8a8607a8-c102-443e-8330-5a816fb77fdd",
+      "dependency_uid": "pkg:npm/ms@2.1.2?uuid=3328391e-67be-4779-9d25-89a89e4a45df",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15819,7 +15851,7 @@
         "purl": "pkg:npm/nanoid@3.3.7"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/nanoid@3.3.7?uuid=0f8b0134-0e82-40aa-bb4d-6d417993084b",
+      "dependency_uid": "pkg:npm/nanoid@3.3.7?uuid=972dc68c-596e-4ea9-9185-9b4a4ea475cf",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15897,7 +15929,7 @@
         "purl": "pkg:npm/npm-run-path@5.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/npm-run-path@5.1.0?uuid=8bb92537-e248-4c67-8533-a5486b66ca6a",
+      "dependency_uid": "pkg:npm/npm-run-path@5.1.0?uuid=33db54a6-d503-4db9-949f-6c39ece713b1",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -15964,7 +15996,7 @@
         "purl": "pkg:npm/path-key@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/path-key@4.0.0?uuid=64871f7c-1b67-4929-9543-e7817bf934f2",
+      "dependency_uid": "pkg:npm/path-key@4.0.0?uuid=8b152864-4d01-4556-93a5-a7941648263e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16031,7 +16063,7 @@
         "purl": "pkg:npm/nwsapi@2.2.7"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/nwsapi@2.2.7?uuid=a45e746c-5d34-4a92-82f4-9a0ef69dd5ee",
+      "dependency_uid": "pkg:npm/nwsapi@2.2.7?uuid=c77c988c-d919-4578-b99c-bce718d39fa0",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16109,7 +16141,7 @@
         "purl": "pkg:npm/once@1.4.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/once@1.4.0?uuid=841fe164-24e1-4542-b872-b36f3e4d0577",
+      "dependency_uid": "pkg:npm/once@1.4.0?uuid=2391d059-7a00-4c4e-82c9-fbe81b463969",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16187,7 +16219,7 @@
         "purl": "pkg:npm/onetime@6.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/onetime@6.0.0?uuid=71832ec0-1ed1-4187-9646-f67350d444fa",
+      "dependency_uid": "pkg:npm/onetime@6.0.0?uuid=5dc4a3b5-e36d-4867-a917-c7841bf497aa",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16295,7 +16327,7 @@
         "purl": "pkg:npm/open@9.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/open@9.1.0?uuid=c69a511d-1510-40ff-8d61-56ff3f226bce",
+      "dependency_uid": "pkg:npm/open@9.1.0?uuid=b839108b-ee2e-48a6-a08e-fabef8e8fb8c",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16373,7 +16405,7 @@
         "purl": "pkg:npm/p-limit@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/p-limit@5.0.0?uuid=f51451c6-3ac8-4568-91ab-a81ce3dd8d90",
+      "dependency_uid": "pkg:npm/p-limit@5.0.0?uuid=ccbb7518-a13e-4d5f-b6eb-2c0655d4e2b5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16451,7 +16483,7 @@
         "purl": "pkg:npm/parse5@7.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/parse5@7.1.2?uuid=bfdf1256-9a47-444c-bab0-665727b392d0",
+      "dependency_uid": "pkg:npm/parse5@7.1.2?uuid=9ba72186-3595-4957-8642-247210a16a7d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16518,7 +16550,7 @@
         "purl": "pkg:npm/path-is-absolute@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/path-is-absolute@1.0.1?uuid=f5974f11-4a2c-48d5-9fa5-fe2b285e24df",
+      "dependency_uid": "pkg:npm/path-is-absolute@1.0.1?uuid=ad9ddccf-87ad-4cd3-9bae-4d9a85784fda",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16585,7 +16617,7 @@
         "purl": "pkg:npm/path-key@3.1.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/path-key@3.1.1?uuid=36371021-7a82-41e3-92be-a7182d723c8b",
+      "dependency_uid": "pkg:npm/path-key@3.1.1?uuid=053624a3-a57c-44a2-a9ff-81e2f8b6ba4d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16673,7 +16705,7 @@
         "purl": "pkg:npm/path-scurry@1.10.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/path-scurry@1.10.1?uuid=616f6891-c648-4bc6-8298-397f1669a1ea",
+      "dependency_uid": "pkg:npm/path-scurry@1.10.1?uuid=1548c751-b387-4fa9-8c0b-54561bdb9bcb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16740,7 +16772,7 @@
         "purl": "pkg:npm/lru-cache@10.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/lru-cache@10.0.1?uuid=21ad2295-4b80-4abf-aad7-539c12805376",
+      "dependency_uid": "pkg:npm/lru-cache@10.0.1?uuid=5b1b5d17-ee59-4bb8-8777-e1be184b750e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16807,7 +16839,7 @@
         "purl": "pkg:npm/minipass@7.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/minipass@7.0.3?uuid=0df5abd7-5f65-49fd-a1d3-0ff0da6b811a",
+      "dependency_uid": "pkg:npm/minipass@7.0.3?uuid=e28caab8-0630-44db-b7c9-25d16c781fbd",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16874,7 +16906,7 @@
         "purl": "pkg:npm/path-type@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/path-type@4.0.0?uuid=98abd2e3-2caa-4050-88db-90630b76b2f6",
+      "dependency_uid": "pkg:npm/path-type@4.0.0?uuid=b43d9e86-3324-43d6-a5a8-4666bfac1f18",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -16941,7 +16973,7 @@
         "purl": "pkg:npm/pathe@1.1.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/pathe@1.1.1?uuid=4bd60d73-95a7-489a-a5f7-9fee326c2dab",
+      "dependency_uid": "pkg:npm/pathe@1.1.1?uuid=895436f3-878e-4e0e-841c-c4fd83f752ec",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17008,7 +17040,7 @@
         "purl": "pkg:npm/pathval@1.1.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/pathval@1.1.1?uuid=23d4dfc5-e8b8-4e50-b03f-2989fb79c78b",
+      "dependency_uid": "pkg:npm/pathval@1.1.1?uuid=252e14df-6538-4b52-b8f0-6f60a2c13e56",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17075,7 +17107,7 @@
         "purl": "pkg:npm/picocolors@1.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/picocolors@1.0.0?uuid=0cce7bee-e66c-44dc-a17e-d43f1a5993df",
+      "dependency_uid": "pkg:npm/picocolors@1.0.0?uuid=1c199855-7c10-471d-aa6b-334a1a668578",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17142,7 +17174,7 @@
         "purl": "pkg:npm/picomatch@2.3.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/picomatch@2.3.1?uuid=25b0eb8e-2776-4302-be50-b2b81e1570e1",
+      "dependency_uid": "pkg:npm/picomatch@2.3.1?uuid=7fba6857-b455-41f9-85b4-c570f431ac88",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17209,7 +17241,7 @@
         "purl": "pkg:npm/pidtree@0.6.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/pidtree@0.6.0?uuid=cc944bfd-9417-46e0-9016-cfbc7a2c2520",
+      "dependency_uid": "pkg:npm/pidtree@0.6.0?uuid=51dd21d2-2154-4355-97c6-143763cdfd1f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17297,7 +17329,7 @@
         "purl": "pkg:npm/pkg-conf@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/pkg-conf@4.0.0?uuid=866f1252-98b1-4719-8080-84ab678e4eee",
+      "dependency_uid": "pkg:npm/pkg-conf@4.0.0?uuid=eb923d91-59be-4601-b610-f888f0377af3",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17385,7 +17417,7 @@
         "purl": "pkg:npm/find-up@6.3.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/find-up@6.3.0?uuid=62928428-80c6-4341-bf67-04b88ceca8ed",
+      "dependency_uid": "pkg:npm/find-up@6.3.0?uuid=e1bec955-179b-4bce-8718-4fdf346af525",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17452,7 +17484,7 @@
         "purl": "pkg:npm/load-json-file@7.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/load-json-file@7.0.1?uuid=806a156a-8c79-4460-9fd4-be6b50655f95",
+      "dependency_uid": "pkg:npm/load-json-file@7.0.1?uuid=66eb366e-1aa6-4b12-87fd-a16ac3b41acc",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17530,7 +17562,7 @@
         "purl": "pkg:npm/locate-path@7.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/locate-path@7.2.0?uuid=9a337f63-6a64-44ce-baa4-12f0ecd35c96",
+      "dependency_uid": "pkg:npm/locate-path@7.2.0?uuid=a5a9d381-b58c-4f28-a655-b20786c7caa0",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17608,7 +17640,7 @@
         "purl": "pkg:npm/p-limit@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/p-limit@4.0.0?uuid=940386c2-af15-45b4-8ac2-99ab50b3fdb3",
+      "dependency_uid": "pkg:npm/p-limit@4.0.0?uuid=2f47cc36-5705-4cf4-9e2e-31de1947c768",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17686,7 +17718,7 @@
         "purl": "pkg:npm/p-locate@6.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/p-locate@6.0.0?uuid=24264bcf-6b82-4690-9587-e0ccccedcba3",
+      "dependency_uid": "pkg:npm/p-locate@6.0.0?uuid=54cbf7e1-2851-4ec5-ae6f-9b89c5efb92d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17753,7 +17785,7 @@
         "purl": "pkg:npm/path-exists@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/path-exists@5.0.0?uuid=44e979e5-2b57-43dc-bda6-552b249769eb",
+      "dependency_uid": "pkg:npm/path-exists@5.0.0?uuid=f98a4bac-9c30-4873-9953-25a65fcdf0c9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17851,7 +17883,7 @@
         "purl": "pkg:npm/pkg-types@1.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/pkg-types@1.0.3?uuid=528b8879-0525-49ec-9a74-c433b0dfa11f",
+      "dependency_uid": "pkg:npm/pkg-types@1.0.3?uuid=12eca3b8-1f4e-431d-832e-98862413277a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -17949,7 +17981,7 @@
         "purl": "pkg:npm/postcss@8.4.32"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/postcss@8.4.32?uuid=986c6370-0c24-4798-9ae9-a0ba0ece0f1e",
+      "dependency_uid": "pkg:npm/postcss@8.4.32?uuid=81294514-d136-433d-bf8e-de7d0ed7fc3b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18016,7 +18048,7 @@
         "purl": "pkg:npm/prettier@3.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/prettier@3.0.3?uuid=0ebf3e20-9f57-4b31-bdb5-672e66e78c76",
+      "dependency_uid": "pkg:npm/prettier@3.0.3?uuid=c78d0ade-36e4-4fc7-952b-2f835012379f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18104,7 +18136,7 @@
         "purl": "pkg:npm/prettier-plugin-packagejson@2.4.6"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/prettier-plugin-packagejson@2.4.6?uuid=a417b055-edd8-4fc2-91db-da2500181c73",
+      "dependency_uid": "pkg:npm/prettier-plugin-packagejson@2.4.6?uuid=107d3da8-d3e1-4736-9e8a-21d1e865d434",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18202,7 +18234,7 @@
         "purl": "pkg:npm/pretty-format@29.7.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/pretty-format@29.7.0?uuid=b089d7dc-1efa-490e-8cda-f07a2c36641b",
+      "dependency_uid": "pkg:npm/pretty-format@29.7.0?uuid=223b2360-374e-4ed9-8130-6a718fae690f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18269,7 +18301,7 @@
         "purl": "pkg:npm/ansi-styles@5.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ansi-styles@5.2.0?uuid=7e6e4957-be9b-46ca-b283-b2c25fef9a4c",
+      "dependency_uid": "pkg:npm/ansi-styles@5.2.0?uuid=f427c3c2-12b3-472c-a332-71425a9337dd",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18336,7 +18368,7 @@
         "purl": "pkg:npm/psl@1.9.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/psl@1.9.0?uuid=a3f69e41-e1c9-402f-abd1-1641138f2e2f",
+      "dependency_uid": "pkg:npm/psl@1.9.0?uuid=c1e4fe70-65c1-4a18-b502-5389f601c384",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18403,7 +18435,7 @@
         "purl": "pkg:npm/punycode@2.3.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/punycode@2.3.1?uuid=6736d3eb-b844-48b0-a5ac-c88d62a1c98c",
+      "dependency_uid": "pkg:npm/punycode@2.3.1?uuid=db659109-4c9d-4432-abcb-0c7e943d62b6",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18470,7 +18502,7 @@
         "purl": "pkg:npm/querystringify@2.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/querystringify@2.2.0?uuid=ff1bd715-91ce-4813-9381-0a481417610e",
+      "dependency_uid": "pkg:npm/querystringify@2.2.0?uuid=bbff197b-d647-4846-b22a-f358d64c7af3",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18537,7 +18569,7 @@
         "purl": "pkg:npm/queue-microtask@1.2.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/queue-microtask@1.2.3?uuid=1f3c3eac-34d0-4fbd-8203-4bc381d9e71f",
+      "dependency_uid": "pkg:npm/queue-microtask@1.2.3?uuid=0cb84bd1-4dc2-4535-a84b-e747a8fb7d0c",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18604,7 +18636,7 @@
         "purl": "pkg:npm/react-is@18.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/react-is@18.2.0?uuid=91641b7d-e33b-404b-aefd-0aaa961bd480",
+      "dependency_uid": "pkg:npm/react-is@18.2.0?uuid=6505e5cb-ca19-44e9-a996-a774ba9da2d7",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18671,7 +18703,7 @@
         "purl": "pkg:npm/requires-port@1.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/requires-port@1.0.0?uuid=c8743f16-4cc9-4030-a6fa-7c730d331582",
+      "dependency_uid": "pkg:npm/requires-port@1.0.0?uuid=51c002c3-3b68-49b4-8618-0a09fef49138",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18759,7 +18791,7 @@
         "purl": "pkg:npm/restore-cursor@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/restore-cursor@4.0.0?uuid=db3530d8-300b-4dfd-8bc9-f9067ccbd83f",
+      "dependency_uid": "pkg:npm/restore-cursor@4.0.0?uuid=9374bacf-eb6f-4742-8ad3-526d91cd36ef",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18826,7 +18858,7 @@
         "purl": "pkg:npm/mimic-fn@2.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/mimic-fn@2.1.0?uuid=c1bb86c8-68bb-4615-b9fb-996450ffb4ae",
+      "dependency_uid": "pkg:npm/mimic-fn@2.1.0?uuid=7108df32-5dca-4dc1-b78d-d2d2efc0db75",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18904,7 +18936,7 @@
         "purl": "pkg:npm/onetime@5.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/onetime@5.1.2?uuid=1ad6f892-3adf-481e-8a79-9aabdf190264",
+      "dependency_uid": "pkg:npm/onetime@5.1.2?uuid=45f1794f-64be-4c82-9f9b-834b414b4ab9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -18971,7 +19003,7 @@
         "purl": "pkg:npm/signal-exit@3.0.7"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/signal-exit@3.0.7?uuid=93e025ab-5ef5-42a5-9e22-0018835b616d",
+      "dependency_uid": "pkg:npm/signal-exit@3.0.7?uuid=f88e0975-38b7-4110-a24a-d78b4385dca7",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19038,7 +19070,7 @@
         "purl": "pkg:npm/reusify@1.0.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/reusify@1.0.4?uuid=d5718688-6cc7-4bd3-978d-13171bdc5766",
+      "dependency_uid": "pkg:npm/reusify@1.0.4?uuid=9800ef9a-c32b-4272-936d-4edbc0d1b1c5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19105,7 +19137,7 @@
         "purl": "pkg:npm/rfdc@1.3.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/rfdc@1.3.0?uuid=c670b4bf-5f1d-49b9-b9e4-4453e577c28a",
+      "dependency_uid": "pkg:npm/rfdc@1.3.0?uuid=72fa8eb5-a308-4958-857d-0c0295188e47",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19172,7 +19204,7 @@
         "purl": "pkg:npm/rollup@4.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/rollup@4.6.1?uuid=10003798-b994-4cb0-8c31-07a60b76219d",
+      "dependency_uid": "pkg:npm/rollup@4.6.1?uuid=49393087-acc2-4e53-b06c-0b455ef621d5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19239,7 +19271,7 @@
         "purl": "pkg:npm/rrweb-cssom@0.6.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/rrweb-cssom@0.6.0?uuid=804bb0c8-5390-43e1-b69c-6b6e0daa332e",
+      "dependency_uid": "pkg:npm/rrweb-cssom@0.6.0?uuid=696fba27-bc0b-4a33-8fc3-df2d4f8dba09",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19317,7 +19349,7 @@
         "purl": "pkg:npm/run-applescript@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/run-applescript@5.0.0?uuid=3e4f6521-60c9-40f0-b5ff-04e4938b5e4b",
+      "dependency_uid": "pkg:npm/run-applescript@5.0.0?uuid=92fce1ba-9aa2-4639-bdd3-4187b2601e69",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19475,7 +19507,7 @@
         "purl": "pkg:npm/execa@5.1.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/execa@5.1.1?uuid=e1a5c055-4631-4ddc-af30-f466b73cbbda",
+      "dependency_uid": "pkg:npm/execa@5.1.1?uuid=02aa91ce-b69e-43cf-8687-1dcf09a29bde",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19542,7 +19574,7 @@
         "purl": "pkg:npm/get-stream@6.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/get-stream@6.0.1?uuid=9f033842-1236-4e27-a9cb-bf8aa8aa9ea1",
+      "dependency_uid": "pkg:npm/get-stream@6.0.1?uuid=83e43191-1138-4861-85ca-373c8ba9ad76",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19609,7 +19641,7 @@
         "purl": "pkg:npm/human-signals@2.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/human-signals@2.1.0?uuid=ac5576a8-89c4-4605-b90e-f1e6963fa94e",
+      "dependency_uid": "pkg:npm/human-signals@2.1.0?uuid=93a28e0e-863b-4244-93f6-47ee32821407",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19676,7 +19708,7 @@
         "purl": "pkg:npm/is-stream@2.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-stream@2.0.1?uuid=ae26c09b-f937-461c-9919-c64b08d84e00",
+      "dependency_uid": "pkg:npm/is-stream@2.0.1?uuid=462467df-7274-4f36-b1c0-837b1473375d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19743,7 +19775,7 @@
         "purl": "pkg:npm/mimic-fn@2.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/mimic-fn@2.1.0?uuid=f7d09d6e-946b-4913-8fc7-b185b35e7180",
+      "dependency_uid": "pkg:npm/mimic-fn@2.1.0?uuid=5ccab9c6-ac99-4bd8-9341-b0ac63087dea",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19821,7 +19853,7 @@
         "purl": "pkg:npm/npm-run-path@4.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/npm-run-path@4.0.1?uuid=7ba47e06-fe1d-4da4-be61-21a660cb2753",
+      "dependency_uid": "pkg:npm/npm-run-path@4.0.1?uuid=cc36d1d2-9039-403e-b920-48283590aaea",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19899,7 +19931,7 @@
         "purl": "pkg:npm/onetime@5.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/onetime@5.1.2?uuid=c1352959-20b4-4c29-bfca-e13db744a5e3",
+      "dependency_uid": "pkg:npm/onetime@5.1.2?uuid=48342a9e-9a08-4ff5-87af-0c0601c6961b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -19966,7 +19998,7 @@
         "purl": "pkg:npm/signal-exit@3.0.7"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/signal-exit@3.0.7?uuid=ca9f2760-2a5b-418d-8f08-af1ae4c720cd",
+      "dependency_uid": "pkg:npm/signal-exit@3.0.7?uuid=d6beabca-8041-4563-8ea7-665069fc2a8d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20033,7 +20065,7 @@
         "purl": "pkg:npm/strip-final-newline@2.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/strip-final-newline@2.0.0?uuid=1ad494ca-d70a-44f4-a910-630ce5342a69",
+      "dependency_uid": "pkg:npm/strip-final-newline@2.0.0?uuid=81c0e46c-81fd-468d-8f9e-94ad2eb71b03",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20111,7 +20143,7 @@
         "purl": "pkg:npm/run-parallel@1.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/run-parallel@1.2.0?uuid=d044762e-b0a9-4564-b8f1-3200e46285d8",
+      "dependency_uid": "pkg:npm/run-parallel@1.2.0?uuid=11ae75f5-231b-432e-b989-eb2443e58340",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20178,7 +20210,7 @@
         "purl": "pkg:npm/safer-buffer@2.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/safer-buffer@2.1.2?uuid=92f99394-c7b2-4bb2-960c-8fc7f471fc22",
+      "dependency_uid": "pkg:npm/safer-buffer@2.1.2?uuid=2e9895aa-d885-473d-a9e5-458c72938481",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20256,7 +20288,7 @@
         "purl": "pkg:npm/saxes@6.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/saxes@6.0.0?uuid=90607353-086c-416a-b53d-e0c9bac812cc",
+      "dependency_uid": "pkg:npm/saxes@6.0.0?uuid=1f07e765-f59b-4805-83f9-1fa2f206b430",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20334,7 +20366,7 @@
         "purl": "pkg:npm/semver@7.5.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/semver@7.5.4?uuid=13a32fc0-7ae0-486d-835f-5a954741866a",
+      "dependency_uid": "pkg:npm/semver@7.5.4?uuid=2d83ed9f-4729-46d2-8078-1e611d35d48f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20412,7 +20444,7 @@
         "purl": "pkg:npm/shebang-command@2.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/shebang-command@2.0.0?uuid=71847f74-af87-40de-a2f6-bc251dd828b7",
+      "dependency_uid": "pkg:npm/shebang-command@2.0.0?uuid=3fcf139c-afdf-4c61-995a-33b2202abfde",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20479,7 +20511,7 @@
         "purl": "pkg:npm/shebang-regex@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/shebang-regex@3.0.0?uuid=e4104557-e2f1-4e4f-b2e3-3916ba116131",
+      "dependency_uid": "pkg:npm/shebang-regex@3.0.0?uuid=8690c70c-bac2-4e6e-89da-600e4c8c72e4",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20546,7 +20578,7 @@
         "purl": "pkg:npm/siginfo@2.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/siginfo@2.0.0?uuid=0b6b4b3a-4af9-49ff-b21f-aa8c38bfb43c",
+      "dependency_uid": "pkg:npm/siginfo@2.0.0?uuid=a8a14f6d-161c-4c9b-967e-7b3b0506d3d9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20613,7 +20645,7 @@
         "purl": "pkg:npm/signal-exit@4.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/signal-exit@4.1.0?uuid=1a3b9c04-99ff-436f-be48-719eb2b5372d",
+      "dependency_uid": "pkg:npm/signal-exit@4.1.0?uuid=4453b477-5fc7-4fda-82df-f18ff24842fb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20680,7 +20712,7 @@
         "purl": "pkg:npm/slash@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/slash@4.0.0?uuid=24de7cb6-48a9-42eb-9186-d6018b7b7c5e",
+      "dependency_uid": "pkg:npm/slash@4.0.0?uuid=8a6ec803-00d5-4aa3-8639-6ec16331379e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20768,7 +20800,7 @@
         "purl": "pkg:npm/slice-ansi@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/slice-ansi@5.0.0?uuid=30f8424f-499b-4d7b-8fd4-a9a8db3e9111",
+      "dependency_uid": "pkg:npm/slice-ansi@5.0.0?uuid=3631fc40-e658-4f32-9ac1-b853b77e4cc9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20835,7 +20867,7 @@
         "purl": "pkg:npm/sort-object-keys@1.1.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/sort-object-keys@1.1.3?uuid=c6e81e82-be8a-46d5-acb0-c831c7147cb7",
+      "dependency_uid": "pkg:npm/sort-object-keys@1.1.3?uuid=5f01b531-8079-41b7-a547-8b678f243863",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -20973,7 +21005,7 @@
         "purl": "pkg:npm/sort-package-json@2.6.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/sort-package-json@2.6.0?uuid=5401d65a-75e4-4da6-9dd0-0c5647f3ae3c",
+      "dependency_uid": "pkg:npm/sort-package-json@2.6.0?uuid=c1b41e57-5e4f-4020-b7d9-4142af48dd11",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21040,7 +21072,7 @@
         "purl": "pkg:npm/source-map@0.6.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/source-map@0.6.1?uuid=383a0c53-4ed7-4608-933d-eb38c3cbc4dc",
+      "dependency_uid": "pkg:npm/source-map@0.6.1?uuid=66e029d7-110f-486a-ab89-c9f294c33332",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21107,7 +21139,7 @@
         "purl": "pkg:npm/source-map-js@1.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/source-map-js@1.0.2?uuid=12b48070-f65d-44cf-bd9f-3b04cffa71f7",
+      "dependency_uid": "pkg:npm/source-map-js@1.0.2?uuid=fdb821ce-917f-464a-b586-af7209b251f8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21195,7 +21227,7 @@
         "purl": "pkg:npm/source-map-support@0.5.21"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/source-map-support@0.5.21?uuid=64dad8ba-f08a-4761-9519-2dfe796cb3c7",
+      "dependency_uid": "pkg:npm/source-map-support@0.5.21?uuid=fb955b5f-b6ae-4d80-be3e-6ef24cec0414",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21262,7 +21294,7 @@
         "purl": "pkg:npm/sponge-case"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/sponge-case?uuid=9a8eb039-3f42-4503-9c70-a04f63f40c28",
+      "dependency_uid": "pkg:npm/sponge-case?uuid=e99117bf-9347-4dfc-a067-f3037e1731b3",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21329,7 +21361,7 @@
         "purl": "pkg:npm/stackback@0.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/stackback@0.0.2?uuid=6373cbf0-d981-4867-a60d-ea565d087ad4",
+      "dependency_uid": "pkg:npm/stackback@0.0.2?uuid=d3b37cb0-2710-4cd3-ab43-fb9b0397b060",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21396,7 +21428,7 @@
         "purl": "pkg:npm/std-env@3.6.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/std-env@3.6.0?uuid=11a55ccd-835d-420c-8d90-f5e42b3a871c",
+      "dependency_uid": "pkg:npm/std-env@3.6.0?uuid=708bef17-be9f-400d-914a-0d76fae96212",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21463,7 +21495,7 @@
         "purl": "pkg:npm/string-argv@0.3.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/string-argv@0.3.2?uuid=535c8141-5bf4-4608-8f85-e95c289d2325",
+      "dependency_uid": "pkg:npm/string-argv@0.3.2?uuid=d2088436-b149-4ec8-931e-5ec0ad7d79e2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21561,7 +21593,7 @@
         "purl": "pkg:npm/string-width@5.1.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/string-width@5.1.2?uuid=e11b0b60-3ca7-4916-8514-0887adb46004",
+      "dependency_uid": "pkg:npm/string-width@5.1.2?uuid=0b42c4ff-f6bd-476e-ad5c-97a8f0af0be8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21659,7 +21691,7 @@
         "purl": "pkg:npm/string-width@4.2.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/string-width@4.2.3?uuid=c02384bc-1fe7-4554-8a73-5a1dec8789d5",
+      "dependency_uid": "pkg:npm/string-width@4.2.3?uuid=3f2d8c28-d1ea-4cea-a3ce-b9257b05e9df",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21726,7 +21758,7 @@
         "purl": "pkg:npm/ansi-regex@5.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ansi-regex@5.0.1?uuid=48756c25-4e01-488f-97f8-dbc04732329f",
+      "dependency_uid": "pkg:npm/ansi-regex@5.0.1?uuid=6d6eab8b-9fbf-46f0-add3-912fb6030f5d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21793,7 +21825,7 @@
         "purl": "pkg:npm/emoji-regex@8.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/emoji-regex@8.0.0?uuid=abd0dd79-9899-43d8-aa3c-132010a7589f",
+      "dependency_uid": "pkg:npm/emoji-regex@8.0.0?uuid=668a55d1-53f3-41df-88e2-0b1e7f50f352",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21860,7 +21892,7 @@
         "purl": "pkg:npm/is-fullwidth-code-point@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-fullwidth-code-point@3.0.0?uuid=5da0cd70-9170-4e81-ba84-c42680d89383",
+      "dependency_uid": "pkg:npm/is-fullwidth-code-point@3.0.0?uuid=808aa937-fb0f-4517-a43c-81ea4a649174",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -21938,7 +21970,7 @@
         "purl": "pkg:npm/strip-ansi@6.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/strip-ansi@6.0.1?uuid=7241b744-15f9-407f-82db-87c8dde62a8f",
+      "dependency_uid": "pkg:npm/strip-ansi@6.0.1?uuid=d0608469-c2ed-4fcb-ba39-a95df7173a5a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22016,7 +22048,7 @@
         "purl": "pkg:npm/strip-ansi@7.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/strip-ansi@7.1.0?uuid=9a9d3ac3-a81b-46df-9481-ad5db2ceacde",
+      "dependency_uid": "pkg:npm/strip-ansi@7.1.0?uuid=54d6abe9-d365-4967-81f4-945b0b37cb26",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22094,7 +22126,7 @@
         "purl": "pkg:npm/strip-ansi@6.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/strip-ansi@6.0.1?uuid=25f47732-4022-482b-b12e-850e4b2edc87",
+      "dependency_uid": "pkg:npm/strip-ansi@6.0.1?uuid=64c621df-87f6-42d6-bb1d-b3ddf23b3f58",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22161,7 +22193,7 @@
         "purl": "pkg:npm/ansi-regex@5.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ansi-regex@5.0.1?uuid=ed177d9e-e959-4deb-ab3f-32de37c58899",
+      "dependency_uid": "pkg:npm/ansi-regex@5.0.1?uuid=6ee46ac4-4ab2-4af7-8612-7e3f3445118c",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22228,7 +22260,7 @@
         "purl": "pkg:npm/strip-final-newline@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/strip-final-newline@3.0.0?uuid=b59801c5-fea3-4c03-8292-ec01044453ce",
+      "dependency_uid": "pkg:npm/strip-final-newline@3.0.0?uuid=a7ded192-3b55-4e10-b058-2634b6fa2ca7",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22306,7 +22338,7 @@
         "purl": "pkg:npm/strip-literal@1.3.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/strip-literal@1.3.0?uuid=62165795-7299-4b21-b743-b83530683e59",
+      "dependency_uid": "pkg:npm/strip-literal@1.3.0?uuid=be61c030-61ab-4690-ae4a-9e6ae5847909",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22384,7 +22416,7 @@
         "purl": "pkg:npm/supports-color@7.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/supports-color@7.2.0?uuid=73873054-0943-493b-a414-ac7f4e24bb25",
+      "dependency_uid": "pkg:npm/supports-color@7.2.0?uuid=ecf54445-a564-48c6-a459-f09b5108f6ab",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22451,7 +22483,7 @@
         "purl": "pkg:npm/swap-case"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/swap-case?uuid=e027c368-9ff2-448f-8fe1-90d4e26fe790",
+      "dependency_uid": "pkg:npm/swap-case?uuid=d432b86c-a4a3-4d02-9c94-75b70d58cf39",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22518,7 +22550,7 @@
         "purl": "pkg:npm/symbol-tree@3.2.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/symbol-tree@3.2.4?uuid=e5c64358-1d0c-4fce-a237-586732d1f42c",
+      "dependency_uid": "pkg:npm/symbol-tree@3.2.4?uuid=0885ae7a-b593-4445-852e-bbbbdd0ade12",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22606,7 +22638,7 @@
         "purl": "pkg:npm/synckit@0.8.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/synckit@0.8.5?uuid=60e80542-127d-4dea-aa76-54e6e02f7f1b",
+      "dependency_uid": "pkg:npm/synckit@0.8.5?uuid=378fc7db-6b74-420f-9d35-89c0097446d9",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22714,7 +22746,7 @@
         "purl": "pkg:npm/terser@5.25.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/terser@5.25.0?uuid=2f3e4f60-e40a-48c8-bb7b-bc30d684051c",
+      "dependency_uid": "pkg:npm/terser@5.25.0?uuid=e3da8cf6-107f-4b33-af20-48dc881a8e8b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22781,7 +22813,7 @@
         "purl": "pkg:npm/commander@2.20.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/commander@2.20.3?uuid=75881a48-8d3c-4cfc-a944-ffe1d152f829",
+      "dependency_uid": "pkg:npm/commander@2.20.3?uuid=8d1f41f2-2c7f-41b1-8f56-a53778ba67d5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22879,7 +22911,7 @@
         "purl": "pkg:npm/test-exclude@6.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/test-exclude@6.0.0?uuid=549783e8-bc0b-4bc1-882a-0bd93a5c5a8e",
+      "dependency_uid": "pkg:npm/test-exclude@6.0.0?uuid=170a1487-d340-4948-868c-92ff09fedfa5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -22946,7 +22978,7 @@
         "purl": "pkg:npm/tinybench@2.5.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/tinybench@2.5.1?uuid=d2cb04dc-13ef-462f-9594-57d6a9862c02",
+      "dependency_uid": "pkg:npm/tinybench@2.5.1?uuid=1cab55df-ea67-4926-aba5-9ae7010fed0e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23013,7 +23045,7 @@
         "purl": "pkg:npm/tinypool@0.8.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/tinypool@0.8.1?uuid=1fdd129e-4b40-4979-ad4e-ec32d91c22c4",
+      "dependency_uid": "pkg:npm/tinypool@0.8.1?uuid=3ede16aa-00e1-44f4-8488-79caf661c185",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23080,7 +23112,7 @@
         "purl": "pkg:npm/tinyspy@2.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/tinyspy@2.2.0?uuid=1a6abadd-0493-4d3a-8d32-8cfe9283cb48",
+      "dependency_uid": "pkg:npm/tinyspy@2.2.0?uuid=db78045e-27e6-48ea-af7c-007f5fa9fb4e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23147,7 +23179,7 @@
         "purl": "pkg:npm/title-case"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/title-case?uuid=5e4b6510-72cf-418d-bc83-aa1134af7dd1",
+      "dependency_uid": "pkg:npm/title-case?uuid=72c66629-1c16-4b3b-a8aa-1c4e865b0d5d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23214,7 +23246,7 @@
         "purl": "pkg:npm/titleize@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/titleize@3.0.0?uuid=0d11c628-567f-4f20-8100-c7a50d10a30f",
+      "dependency_uid": "pkg:npm/titleize@3.0.0?uuid=13c2941e-d77f-4d1f-be50-77670af6724a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23281,7 +23313,7 @@
         "purl": "pkg:npm/to-fast-properties@2.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/to-fast-properties@2.0.0?uuid=0ea1bffb-cd71-4d1a-b340-2b15a27c7f2a",
+      "dependency_uid": "pkg:npm/to-fast-properties@2.0.0?uuid=c0d21940-4722-4010-a684-f0b1e09b9619",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23359,7 +23391,7 @@
         "purl": "pkg:npm/to-regex-range@5.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/to-regex-range@5.0.1?uuid=d397d2ac-3c46-446a-a045-a15a5b16a7d8",
+      "dependency_uid": "pkg:npm/to-regex-range@5.0.1?uuid=9c8a48d6-ac8a-4e1c-946f-bb160395ed7e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23467,7 +23499,7 @@
         "purl": "pkg:npm/tough-cookie@4.1.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/tough-cookie@4.1.3?uuid=64491724-cf5a-446d-b59a-f099be0e0fcb",
+      "dependency_uid": "pkg:npm/tough-cookie@4.1.3?uuid=58ca1856-e661-4404-8926-8f2543234fe4",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23545,7 +23577,7 @@
         "purl": "pkg:npm/tr46@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/tr46@5.0.0?uuid=c1b6b8bd-1794-44e6-b2c6-6dd317717f1b",
+      "dependency_uid": "pkg:npm/tr46@5.0.0?uuid=0e57000e-0d5d-4355-9846-4a14ccb8209a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23612,7 +23644,7 @@
         "purl": "pkg:npm/tslib@2.6.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/tslib@2.6.2?uuid=936b938c-150f-49ed-94a3-de3a0a90ef72",
+      "dependency_uid": "pkg:npm/tslib@2.6.2?uuid=cd6cf741-ea44-450c-b053-fa4a639b6a02",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23679,7 +23711,7 @@
         "purl": "pkg:npm/type-detect@4.0.8"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/type-detect@4.0.8?uuid=08ef6ff5-6b3f-48b4-bcb7-a1856b1d1d1d",
+      "dependency_uid": "pkg:npm/type-detect@4.0.8?uuid=4cebc2fc-2e9b-4891-9197-2504d509f9c6",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23746,7 +23778,7 @@
         "purl": "pkg:npm/type-fest@1.4.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/type-fest@1.4.0?uuid=8d8ac8d5-4a0a-4e44-bd8c-0428dc5952b5",
+      "dependency_uid": "pkg:npm/type-fest@1.4.0?uuid=2b32c5fa-9736-41e6-8283-65657a1ac226",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23813,7 +23845,7 @@
         "purl": "pkg:npm/typescript@5.2.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/typescript@5.2.2?uuid=07ed9db7-088b-4ee6-8f59-f27e21799cb4",
+      "dependency_uid": "pkg:npm/typescript@5.2.2?uuid=07fa02de-4635-4810-8f6f-01716545e972",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23880,7 +23912,7 @@
         "purl": "pkg:npm/ufo@1.3.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ufo@1.3.2?uuid=2e3c095d-dda4-4226-ae17-439f19911897",
+      "dependency_uid": "pkg:npm/ufo@1.3.2?uuid=aa022951-2f56-41cb-8b21-95fabe18b9b8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -23947,7 +23979,7 @@
         "purl": "pkg:npm/undici-types@5.26.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/undici-types@5.26.5?uuid=a919631a-f226-472d-9163-1bb6fa111804",
+      "dependency_uid": "pkg:npm/undici-types@5.26.5?uuid=6663049c-587e-430f-855a-afc6253146a3",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24014,7 +24046,7 @@
         "purl": "pkg:npm/universalify@0.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/universalify@0.2.0?uuid=883f8d62-5194-4fe8-8fc4-ef7363740967",
+      "dependency_uid": "pkg:npm/universalify@0.2.0?uuid=a9818005-f9b0-4bf6-9b1b-93e6a217a7ad",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24081,7 +24113,7 @@
         "purl": "pkg:npm/untildify@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/untildify@4.0.0?uuid=4fc35a4f-a224-45d3-bf95-7310998ad345",
+      "dependency_uid": "pkg:npm/untildify@4.0.0?uuid=228b4257-3780-4ca3-81de-c7332671dade",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24169,7 +24201,7 @@
         "purl": "pkg:npm/url-parse@1.5.10"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/url-parse@1.5.10?uuid=06f72f86-f12f-4a13-8e13-50e27b5bd446",
+      "dependency_uid": "pkg:npm/url-parse@1.5.10?uuid=5a5133b3-a398-4cf9-a28f-f15f7355dde3",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24267,7 +24299,7 @@
         "purl": "pkg:npm/v8-to-istanbul@9.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/v8-to-istanbul@9.2.0?uuid=6f66860f-4622-448a-84f2-377f9c8bc03c",
+      "dependency_uid": "pkg:npm/v8-to-istanbul@9.2.0?uuid=50037317-4f2c-48e1-9c18-3dfe74528435",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24365,7 +24397,7 @@
         "purl": "pkg:npm/vite@5.0.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/vite@5.0.5?uuid=b626a480-b150-40df-a124-0c5c9be3952f",
+      "dependency_uid": "pkg:npm/vite@5.0.5?uuid=fbf229e8-8944-431e-a52d-7d07bda0bb3b",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24483,7 +24515,7 @@
         "purl": "pkg:npm/vite-node@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/vite-node@1.0.1?uuid=54a7d08d-36cd-4676-9d00-81db53b8c99a",
+      "dependency_uid": "pkg:npm/vite-node@1.0.1?uuid=8f528162-f4f4-4989-b023-ec4e39b7b28a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24761,7 +24793,7 @@
         "purl": "pkg:npm/vitest@1.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/vitest@1.0.1?uuid=2079ecc2-6f4b-45ca-aa22-67664554627c",
+      "dependency_uid": "pkg:npm/vitest@1.0.1?uuid=4d031f93-1d0c-444c-88bc-0d7a200d3b47",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24839,7 +24871,7 @@
         "purl": "pkg:npm/w3c-xmlserializer@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/w3c-xmlserializer@5.0.0?uuid=3673849c-6433-437a-9f9f-151686338572",
+      "dependency_uid": "pkg:npm/w3c-xmlserializer@5.0.0?uuid=27bd60a4-5130-43a6-b101-df02a738ca58",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24906,7 +24938,7 @@
         "purl": "pkg:npm/webidl-conversions@7.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/webidl-conversions@7.0.0?uuid=265027ac-490e-43f6-8e8b-c1c29bcc6e91",
+      "dependency_uid": "pkg:npm/webidl-conversions@7.0.0?uuid=39ba0476-9b4b-4a5a-b449-95cf83386fec",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -24984,7 +25016,7 @@
         "purl": "pkg:npm/whatwg-encoding@3.1.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/whatwg-encoding@3.1.1?uuid=6cbc5f43-fa68-49dc-9d59-6de14ca5ba77",
+      "dependency_uid": "pkg:npm/whatwg-encoding@3.1.1?uuid=fa396ab7-cd4d-4dde-b3cf-b357d1518fb0",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25051,7 +25083,7 @@
         "purl": "pkg:npm/whatwg-mimetype@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/whatwg-mimetype@4.0.0?uuid=c3846ba2-bdbb-4ab6-9330-9c6d747a2c10",
+      "dependency_uid": "pkg:npm/whatwg-mimetype@4.0.0?uuid=41b494fe-4981-4fa7-9b24-05f71c54d3cc",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25139,7 +25171,7 @@
         "purl": "pkg:npm/whatwg-url@14.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/whatwg-url@14.0.0?uuid=c3a9c597-0977-40c7-a795-5d400cb3f221",
+      "dependency_uid": "pkg:npm/whatwg-url@14.0.0?uuid=1649d48a-1019-4e71-9216-6147ebe132c0",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25217,7 +25249,7 @@
         "purl": "pkg:npm/which@2.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/which@2.0.2?uuid=8cea8d2f-f635-41b0-ba7d-c4966265ac25",
+      "dependency_uid": "pkg:npm/which@2.0.2?uuid=a9dde551-eb45-4d9a-aaee-e6296addc366",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25305,7 +25337,7 @@
         "purl": "pkg:npm/why-is-node-running@2.2.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/why-is-node-running@2.2.2?uuid=84e9cf0a-d6c9-4337-9021-892213341961",
+      "dependency_uid": "pkg:npm/why-is-node-running@2.2.2?uuid=cfe5731a-7fe9-49be-899f-102f3c36e16c",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25403,7 +25435,7 @@
         "purl": "pkg:npm/wrap-ansi@8.1.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/wrap-ansi@8.1.0?uuid=7e7a4f23-ba8f-4d35-9232-2f93dc465601",
+      "dependency_uid": "pkg:npm/wrap-ansi@8.1.0?uuid=e34d587e-c731-439c-9871-ca6dad0cfb4a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25501,7 +25533,7 @@
         "purl": "pkg:npm/wrap-ansi@7.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/wrap-ansi@7.0.0?uuid=381011f5-9916-4217-a2e9-5f9f2c2680a0",
+      "dependency_uid": "pkg:npm/wrap-ansi@7.0.0?uuid=ed9d9b29-a50b-4a57-8037-da2e5ef11caf",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25568,7 +25600,7 @@
         "purl": "pkg:npm/ansi-regex@5.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ansi-regex@5.0.1?uuid=ef2db0b5-5532-47a7-9cae-45f23b20029d",
+      "dependency_uid": "pkg:npm/ansi-regex@5.0.1?uuid=61ff4360-ed76-4b8f-9a1a-b607f658d494",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25646,7 +25678,7 @@
         "purl": "pkg:npm/ansi-styles@4.3.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ansi-styles@4.3.0?uuid=dccff21a-4b45-46bb-baf0-aaa83e2cc540",
+      "dependency_uid": "pkg:npm/ansi-styles@4.3.0?uuid=702ef3e9-c6e5-4039-adc3-e19e7a9e96b8",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25713,7 +25745,7 @@
         "purl": "pkg:npm/emoji-regex@8.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/emoji-regex@8.0.0?uuid=932818c9-5393-472b-ae91-e2b102b53c53",
+      "dependency_uid": "pkg:npm/emoji-regex@8.0.0?uuid=46e36bef-b66a-45a2-82f7-0a1922f1c4ea",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25780,7 +25812,7 @@
         "purl": "pkg:npm/is-fullwidth-code-point@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/is-fullwidth-code-point@3.0.0?uuid=23ae11d0-63b3-419f-ba6b-802b2c824dd6",
+      "dependency_uid": "pkg:npm/is-fullwidth-code-point@3.0.0?uuid=f312c2ba-08ef-493d-9de0-f0c863a88b1c",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25878,7 +25910,7 @@
         "purl": "pkg:npm/string-width@4.2.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/string-width@4.2.3?uuid=dc52c334-e142-4a01-a07a-ea03331c0d2e",
+      "dependency_uid": "pkg:npm/string-width@4.2.3?uuid=fb4ed182-11d4-4212-9ef3-eb9b09f93943",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -25956,7 +25988,7 @@
         "purl": "pkg:npm/strip-ansi@6.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/strip-ansi@6.0.1?uuid=91633e5f-28d3-4725-aef2-eac6911b38da",
+      "dependency_uid": "pkg:npm/strip-ansi@6.0.1?uuid=9257a098-9648-43de-ace2-32b131a55b5d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26023,7 +26055,7 @@
         "purl": "pkg:npm/wrappy@1.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/wrappy@1.0.2?uuid=72520eaf-2b72-4629-a21e-73a7186e3801",
+      "dependency_uid": "pkg:npm/wrappy@1.0.2?uuid=16132c81-6e1a-44b9-ada8-112f937aced5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26090,7 +26122,7 @@
         "purl": "pkg:npm/ws@8.14.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/ws@8.14.2?uuid=76f658d9-fc3d-4abf-837d-be47822f11d3",
+      "dependency_uid": "pkg:npm/ws@8.14.2?uuid=48ea0d74-5df7-4826-b19f-540d2e491a6d",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26157,7 +26189,7 @@
         "purl": "pkg:npm/xml-name-validator@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/xml-name-validator@5.0.0?uuid=b3868542-f35d-4f56-a902-512b3f548499",
+      "dependency_uid": "pkg:npm/xml-name-validator@5.0.0?uuid=a593fed8-28c9-42dd-b0c2-81ae01592327",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26224,7 +26256,7 @@
         "purl": "pkg:npm/xmlchars@2.2.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/xmlchars@2.2.0?uuid=0d5aca7c-5555-4292-97d8-47aa066f3b63",
+      "dependency_uid": "pkg:npm/xmlchars@2.2.0?uuid=6470db81-8c0c-412c-a4e0-84ac5048a139",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26291,7 +26323,7 @@
         "purl": "pkg:npm/yallist@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/yallist@4.0.0?uuid=8be11583-4bbc-4120-9fa3-04c75a471033",
+      "dependency_uid": "pkg:npm/yallist@4.0.0?uuid=05d14d78-270e-4e61-9086-1e6f82c9b9be",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26358,7 +26390,7 @@
         "purl": "pkg:npm/yaml@2.3.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/yaml@2.3.3?uuid=4b7b6e31-bce7-4a9f-8aad-c6efb9b4f674",
+      "dependency_uid": "pkg:npm/yaml@2.3.3?uuid=617ed30a-1581-4e15-b2f1-26220a90824c",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26425,7 +26457,7 @@
         "purl": "pkg:npm/yocto-queue@1.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/yocto-queue@1.0.0?uuid=87eade35-bdd5-4022-97aa-8882cf1b1fa9",
+      "dependency_uid": "pkg:npm/yocto-queue@1.0.0?uuid=8204c05a-363b-4f0f-9ca8-1159d2e166e4",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26492,7 +26524,7 @@
         "purl": "pkg:npm/zod@3.22.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/zod@3.22.4?uuid=f4cb2fba-d8de-4e7d-88f4-0f32872dac90",
+      "dependency_uid": "pkg:npm/zod@3.22.4?uuid=9de93d0e-a335-4c84-8c5c-798d6921f96c",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26593,7 +26625,7 @@
         "purl": "pkg:npm/packages/camel-case@5.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/camel-case@5.0.0?uuid=e2e131d7-22e2-4714-a794-33a48929be9c",
+      "dependency_uid": "pkg:npm/packages/camel-case@5.0.0?uuid=69adcadc-798c-4a96-bb27-2bac16687b3f",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26694,7 +26726,7 @@
         "purl": "pkg:npm/packages/capital-case@2.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/capital-case@2.0.0?uuid=f31d6beb-9184-430c-8fbc-a723ded91222",
+      "dependency_uid": "pkg:npm/packages/capital-case@2.0.0?uuid=37b1ce6f-883b-47e9-b7ff-1d89530f0c75",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26784,7 +26816,7 @@
         "purl": "pkg:npm/packages/change-case@5.4.4"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/change-case@5.4.4?uuid=ddb7087e-3301-4774-9024-e6d6fdf02741",
+      "dependency_uid": "pkg:npm/packages/change-case@5.4.4?uuid=ba4c9474-131e-4ce5-af5a-aba4aa689f52",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26874,7 +26906,7 @@
         "purl": "pkg:npm/packages/change-case-of-keys@0.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/change-case-of-keys@0.0.0?uuid=a3f96e22-6b57-4263-8232-4ac544246e1a",
+      "dependency_uid": "pkg:npm/packages/change-case-of-keys@0.0.0?uuid=91c886f0-269a-4d67-add4-80778e731f99",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -26975,7 +27007,7 @@
         "purl": "pkg:npm/packages/constant-case@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/constant-case@4.0.0?uuid=30c72fe5-d755-4b08-bca6-1a12b9f5ec58",
+      "dependency_uid": "pkg:npm/packages/constant-case@4.0.0?uuid=e7cb5251-5092-412b-ae34-9e790c5cbe25",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27076,7 +27108,7 @@
         "purl": "pkg:npm/packages/dot-case@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/dot-case@4.0.0?uuid=b3e7f782-8c78-4227-a532-97021ea18f81",
+      "dependency_uid": "pkg:npm/packages/dot-case@4.0.0?uuid=0d4fb8b9-bf1c-4739-be77-6913692fd6a5",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27177,7 +27209,7 @@
         "purl": "pkg:npm/packages/header-case@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/header-case@3.0.0?uuid=0b736368-77a2-48b9-b7bd-4b609e1f3bc5",
+      "dependency_uid": "pkg:npm/packages/header-case@3.0.0?uuid=7d02dc40-3103-4233-8436-3e754a8c8fdc",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27267,7 +27299,7 @@
         "purl": "pkg:npm/packages/is-lower-case@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/is-lower-case@3.0.0?uuid=3e27296e-7922-4cf0-8ec7-22663aa9d013",
+      "dependency_uid": "pkg:npm/packages/is-lower-case@3.0.0?uuid=690c763c-e8a5-4710-98af-7adebb9da672",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27357,7 +27389,7 @@
         "purl": "pkg:npm/packages/is-upper-case@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/is-upper-case@3.0.0?uuid=499c8e66-cec3-457d-818c-9c944cf4cff9",
+      "dependency_uid": "pkg:npm/packages/is-upper-case@3.0.0?uuid=7bcd4464-8280-4df8-b8f7-37dd3f66ae9a",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27447,7 +27479,7 @@
         "purl": "pkg:npm/packages/lower-case@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/lower-case@3.0.0?uuid=95c02b00-c7da-4242-8fbf-1018ac78b2e9",
+      "dependency_uid": "pkg:npm/packages/lower-case@3.0.0?uuid=677207bd-747b-412d-aad9-371dcc5c03b2",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27537,7 +27569,7 @@
         "purl": "pkg:npm/packages/lower-case-first@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/lower-case-first@3.0.0?uuid=636cf0ad-e469-4b99-92aa-80562a09b8be",
+      "dependency_uid": "pkg:npm/packages/lower-case-first@3.0.0?uuid=85ffc449-8806-4c2b-9a32-b64774fc3bef",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27627,7 +27659,7 @@
         "purl": "pkg:npm/packages/no-case@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/no-case@4.0.0?uuid=d147408e-3b85-42ec-8a09-f2c921c8efad",
+      "dependency_uid": "pkg:npm/packages/no-case@4.0.0?uuid=a429cc93-085e-4f66-8260-5cf36e91c9f6",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27728,7 +27760,7 @@
         "purl": "pkg:npm/packages/param-case@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/param-case@4.0.0?uuid=e7c9235b-eb6e-4458-a6e1-d9f4068fa970",
+      "dependency_uid": "pkg:npm/packages/param-case@4.0.0?uuid=1eb0b435-faa2-4e0d-b442-72d2aed77aeb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27829,7 +27861,7 @@
         "purl": "pkg:npm/packages/pascal-case@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/pascal-case@4.0.0?uuid=0655cec7-081c-4de1-b010-f51fcdc52341",
+      "dependency_uid": "pkg:npm/packages/pascal-case@4.0.0?uuid=8f9597fb-9891-411f-bca0-d927de1eb747",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -27930,7 +27962,7 @@
         "purl": "pkg:npm/packages/path-case@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/path-case@4.0.0?uuid=edeef62e-fcdc-4081-87b0-ef978d673fb3",
+      "dependency_uid": "pkg:npm/packages/path-case@4.0.0?uuid=327b904c-21cc-4a21-9bf1-c850f931d981",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -28031,7 +28063,7 @@
         "purl": "pkg:npm/packages/sentence-case@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/sentence-case@4.0.0?uuid=1b00ad21-6f65-4285-9fc6-fda377bb479e",
+      "dependency_uid": "pkg:npm/packages/sentence-case@4.0.0?uuid=67daabfd-cd49-4c64-8c52-9a013197f59e",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -28132,7 +28164,7 @@
         "purl": "pkg:npm/packages/snake-case@4.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/snake-case@4.0.0?uuid=5f4c3c1a-c291-4a82-b290-67774cf42d13",
+      "dependency_uid": "pkg:npm/packages/snake-case@4.0.0?uuid=bde0dc86-a111-412b-9b30-a16747ec9ccb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -28222,7 +28254,7 @@
         "purl": "pkg:npm/packages/sponge-case@2.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/sponge-case@2.0.3?uuid=95220397-308d-4eb3-819c-0a327b4ac4e4",
+      "dependency_uid": "pkg:npm/packages/sponge-case@2.0.3?uuid=bdb7c8a6-aa79-453e-8f61-dae217de5aeb",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -28312,7 +28344,7 @@
         "purl": "pkg:npm/packages/swap-case@3.0.3"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/swap-case@3.0.3?uuid=994a6a44-1ddd-4952-8f6c-c9362cfde048",
+      "dependency_uid": "pkg:npm/packages/swap-case@3.0.3?uuid=83664266-7d15-49bb-9561-690c4ef54045",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -28402,7 +28434,7 @@
         "purl": "pkg:npm/packages/title-case@4.3.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/title-case@4.3.1?uuid=447d1909-6653-49fe-a683-d3f9613d9b13",
+      "dependency_uid": "pkg:npm/packages/title-case@4.3.1?uuid=584f4f84-6b64-4e3f-a2ff-140f999f0fed",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -28492,7 +28524,7 @@
         "purl": "pkg:npm/packages/upper-case@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/upper-case@3.0.0?uuid=81131b83-3aee-4db3-aac1-68bb9fbf6784",
+      "dependency_uid": "pkg:npm/packages/upper-case@3.0.0?uuid=fb4062fd-1fb1-4f82-83d6-6a027d69d1ac",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -28582,7 +28614,7 @@
         "purl": "pkg:npm/packages/upper-case-first@3.0.0"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/packages/upper-case-first@3.0.0?uuid=ae200a4b-258b-4cf6-ae3d-c9f95fecaf50",
+      "dependency_uid": "pkg:npm/packages/upper-case-first@3.0.0?uuid=f5f9c969-f59e-4ed9-89cc-aff5f25aa2d4",
       "for_package_uid": null,
       "datafile_path": "change-case-change-case-5.4.4/package-lock.json",
       "datasource_id": "npm_package_lock_json"
@@ -55629,7 +55661,7 @@
         }
       ],
       "for_packages": [
-        "pkg:npm/change-case@5.4.4?uuid=3ec06699-ba25-47d5-9380-15bab2ea320b"
+        "pkg:npm/change-case@5.4.4?uuid=4a92fd99-f970-46cd-a41c-e18f60134f97"
       ],
       "scan_errors": []
     },
@@ -55638,7 +55670,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/change-case@5.4.4?uuid=3ec06699-ba25-47d5-9380-15bab2ea320b"
+        "pkg:npm/change-case@5.4.4?uuid=4a92fd99-f970-46cd-a41c-e18f60134f97"
       ],
       "scan_errors": []
     },
@@ -55647,7 +55679,7 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/change-case@5.4.4?uuid=3ec06699-ba25-47d5-9380-15bab2ea320b"
+        "pkg:npm/change-case@5.4.4?uuid=4a92fd99-f970-46cd-a41c-e18f60134f97"
       ],
       "scan_errors": []
     },
@@ -55656,7 +55688,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/change-case@5.4.4?uuid=3ec06699-ba25-47d5-9380-15bab2ea320b"
+        "pkg:npm/change-case@5.4.4?uuid=4a92fd99-f970-46cd-a41c-e18f60134f97"
       ],
       "scan_errors": []
     },
@@ -55665,7 +55697,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/change-case@5.4.4?uuid=3ec06699-ba25-47d5-9380-15bab2ea320b"
+        "pkg:npm/change-case@5.4.4?uuid=4a92fd99-f970-46cd-a41c-e18f60134f97"
       ],
       "scan_errors": []
     },
@@ -55674,7 +55706,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/change-case@5.4.4?uuid=3ec06699-ba25-47d5-9380-15bab2ea320b"
+        "pkg:npm/change-case@5.4.4?uuid=4a92fd99-f970-46cd-a41c-e18f60134f97"
       ],
       "scan_errors": []
     },
@@ -55683,7 +55715,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/change-case@5.4.4?uuid=3ec06699-ba25-47d5-9380-15bab2ea320b"
+        "pkg:npm/change-case@5.4.4?uuid=4a92fd99-f970-46cd-a41c-e18f60134f97"
       ],
       "scan_errors": []
     },
@@ -55783,7 +55815,7 @@
         }
       ],
       "for_packages": [
-        "pkg:npm/sponge-case@2.0.3?uuid=65634f0d-5a3e-4fa2-95c6-cb489816580e"
+        "pkg:npm/sponge-case@2.0.3?uuid=f060868a-9007-45fd-b4b4-902c93e54124"
       ],
       "scan_errors": []
     },
@@ -55792,7 +55824,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/sponge-case@2.0.3?uuid=65634f0d-5a3e-4fa2-95c6-cb489816580e"
+        "pkg:npm/sponge-case@2.0.3?uuid=f060868a-9007-45fd-b4b4-902c93e54124"
       ],
       "scan_errors": []
     },
@@ -55801,7 +55833,7 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/sponge-case@2.0.3?uuid=65634f0d-5a3e-4fa2-95c6-cb489816580e"
+        "pkg:npm/sponge-case@2.0.3?uuid=f060868a-9007-45fd-b4b4-902c93e54124"
       ],
       "scan_errors": []
     },
@@ -55810,7 +55842,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/sponge-case@2.0.3?uuid=65634f0d-5a3e-4fa2-95c6-cb489816580e"
+        "pkg:npm/sponge-case@2.0.3?uuid=f060868a-9007-45fd-b4b4-902c93e54124"
       ],
       "scan_errors": []
     },
@@ -55819,7 +55851,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/sponge-case@2.0.3?uuid=65634f0d-5a3e-4fa2-95c6-cb489816580e"
+        "pkg:npm/sponge-case@2.0.3?uuid=f060868a-9007-45fd-b4b4-902c93e54124"
       ],
       "scan_errors": []
     },
@@ -55917,7 +55949,7 @@
         }
       ],
       "for_packages": [
-        "pkg:npm/swap-case@3.0.3?uuid=a3012a5a-4c2a-41aa-afbb-79004b0ef6d5"
+        "pkg:npm/swap-case@3.0.3?uuid=986758b2-5634-4a9d-9ce1-d9d4c7dfccf2"
       ],
       "scan_errors": []
     },
@@ -55926,7 +55958,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/swap-case@3.0.3?uuid=a3012a5a-4c2a-41aa-afbb-79004b0ef6d5"
+        "pkg:npm/swap-case@3.0.3?uuid=986758b2-5634-4a9d-9ce1-d9d4c7dfccf2"
       ],
       "scan_errors": []
     },
@@ -55935,7 +55967,7 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/swap-case@3.0.3?uuid=a3012a5a-4c2a-41aa-afbb-79004b0ef6d5"
+        "pkg:npm/swap-case@3.0.3?uuid=986758b2-5634-4a9d-9ce1-d9d4c7dfccf2"
       ],
       "scan_errors": []
     },
@@ -55944,7 +55976,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/swap-case@3.0.3?uuid=a3012a5a-4c2a-41aa-afbb-79004b0ef6d5"
+        "pkg:npm/swap-case@3.0.3?uuid=986758b2-5634-4a9d-9ce1-d9d4c7dfccf2"
       ],
       "scan_errors": []
     },
@@ -55953,7 +55985,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/swap-case@3.0.3?uuid=a3012a5a-4c2a-41aa-afbb-79004b0ef6d5"
+        "pkg:npm/swap-case@3.0.3?uuid=986758b2-5634-4a9d-9ce1-d9d4c7dfccf2"
       ],
       "scan_errors": []
     },
@@ -56051,7 +56083,7 @@
         }
       ],
       "for_packages": [
-        "pkg:npm/title-case@4.3.1?uuid=d19afd88-9843-46a5-a3b7-3200f6033c8b"
+        "pkg:npm/title-case@4.3.1?uuid=a93d331b-8fc4-48a9-8354-8e3219082cb0"
       ],
       "scan_errors": []
     },
@@ -56060,7 +56092,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/title-case@4.3.1?uuid=d19afd88-9843-46a5-a3b7-3200f6033c8b"
+        "pkg:npm/title-case@4.3.1?uuid=a93d331b-8fc4-48a9-8354-8e3219082cb0"
       ],
       "scan_errors": []
     },
@@ -56069,7 +56101,7 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/title-case@4.3.1?uuid=d19afd88-9843-46a5-a3b7-3200f6033c8b"
+        "pkg:npm/title-case@4.3.1?uuid=a93d331b-8fc4-48a9-8354-8e3219082cb0"
       ],
       "scan_errors": []
     },
@@ -56078,7 +56110,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/title-case@4.3.1?uuid=d19afd88-9843-46a5-a3b7-3200f6033c8b"
+        "pkg:npm/title-case@4.3.1?uuid=a93d331b-8fc4-48a9-8354-8e3219082cb0"
       ],
       "scan_errors": []
     },
@@ -56087,7 +56119,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/title-case@4.3.1?uuid=d19afd88-9843-46a5-a3b7-3200f6033c8b"
+        "pkg:npm/title-case@4.3.1?uuid=a93d331b-8fc4-48a9-8354-8e3219082cb0"
       ],
       "scan_errors": []
     }

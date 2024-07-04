@@ -507,3 +507,7 @@ def get_primary_license(declared_license_expressions):
         return next(iter(single_expressions_by_joined_expressions))
     else:
         return None
+
+def compute_license_score_package_level(package):
+    scoring_elements = ScoringElements()
+    return scoring_elements
