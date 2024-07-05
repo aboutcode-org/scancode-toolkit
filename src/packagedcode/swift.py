@@ -81,7 +81,7 @@ class BaseSwiftDatafileHandler(models.DatafileHandler):
         ):
             processed_package = package_data
             processed_dependencies = package_data.dependencies
-        # If manifest is available then use the manifest for to construct top-level package.
+        # If manifest is available then use the manifest to construct top-level package.
         elif swift_manifest_resource and resource.name in (
             "Package.swift.json",
             "Package.swift.deplock",

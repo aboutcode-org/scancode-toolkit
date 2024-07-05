@@ -19,6 +19,24 @@ from scancode_config import REGEN_TEST_FIXTURES
 class TestSwiftHandler(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), "data/swift")
 
+    def test_swift_manifest_json_dump_is_datafile(self):
+        test_file = self.get_test_loc(
+            "packages/mapboxmaps_manifest_and_resolved/Package.swift.json"
+        )
+        assert swift.SwiftManifestJsonHandler.is_datafile(test_file)
+
+    def test_swift_package_resolved_is_datafile(self):
+        test_file = self.get_test_loc(
+            "packages/mapboxmaps_manifest_and_resolved/Package.resolved"
+        )
+        assert swift.SwiftPackageResolvedHandler.is_datafile(test_file)
+
+    def test_swift_show_dependencies_deplock_is_datafile(self):
+        test_file = self.get_test_loc(
+            "packages/vercelui/swift-show-dependencies.deplock"
+        )
+        assert swift.SwiftShowDependenciesDepLockHandler.is_datafile(test_file)
+
     def test_parse_for_mapboxmaps_manifest(self):
         test_file = self.get_test_loc(
             "packages/mapboxmaps_manifest_and_resolved/Package.swift.json"
@@ -33,6 +51,16 @@ class TestSwiftHandler(PackageTester):
         )
         expected_loc = self.get_test_loc("swift-maboxmaps-resolved-parse-expected.json")
         packages = swift.SwiftPackageResolvedHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_for_show_dependencies_deplock(self):
+        test_file = self.get_test_loc(
+            "packages/vercelui/swift-show-dependencies.deplock"
+        )
+        expected_loc = self.get_test_loc(
+            "swift-vercelui-show-dependencies-parse-expected.json"
+        )
+        packages = swift.SwiftShowDependenciesDepLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
@@ -105,9 +133,7 @@ class TestSwiftEndtoEnd(PackageTester):
     def test_package_scan_swift_end_to_end_full_vercelui(self):
         test_dir = self.get_test_loc("packages/vercelui")
         result_file = self.get_temp_file("json")
-        expected_file = self.get_test_loc(
-            "swift-vercelui-expected.json"
-        )
+        expected_file = self.get_test_loc("swift-vercelui-expected.json")
         run_scan_click(
             [
                 "--package",
