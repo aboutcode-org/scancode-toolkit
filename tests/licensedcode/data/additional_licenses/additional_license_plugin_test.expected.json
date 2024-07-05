@@ -100,7 +100,7 @@
           "matches": [
             {
               "license_expression": "example-installed-1",
-              "spdx_license_expression": "scancode-example-installed1",
+              "license_expression_spdx": "scancode-example-installed1",
               "from_file": "additional_license_plugin_test.txt",
               "start_line": 1,
               "end_line": 1,

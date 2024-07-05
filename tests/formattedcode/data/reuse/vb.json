@@ -740,7 +740,7 @@
       "licenses": [
         {
           "license_expression": "jboss-eula",
-          "spdx_license_expression": "LicenseRef-scancode-jboss-eula",
+          "license_expression_spdx": "LicenseRef-scancode-jboss-eula",
           "detection_log": [
             "not-combined"
           ],
@@ -842,7 +842,7 @@
       "licenses": [
         {
           "license_expression": "lgpl-2.1",
-          "spdx_license_expression": "LGPL-2.1-only",
+          "license_expression_spdx": "LGPL-2.1-only",
           "detection_log": [
             "not-combined"
           ],
@@ -994,7 +994,7 @@
       "licenses": [
         {
           "license_expression": "apache-1.1",
-          "spdx_license_expression": "Apache-1.1",
+          "license_expression_spdx": "Apache-1.1",
           "detection_log": [
             "not-combined"
           ],
@@ -1102,7 +1102,7 @@
       "licenses": [
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "detection_log": [
             "not-combined"
           ],
@@ -1192,7 +1192,7 @@
       "licenses": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
+          "license_expression_spdx": "MIT",
           "detection_log": [
             "not-combined"
           ],
@@ -1294,7 +1294,7 @@
       "licenses": [
         {
           "license_expression": "cpl-1.0",
-          "spdx_license_expression": "CPL-1.0",
+          "license_expression_spdx": "CPL-1.0",
           "detection_log": [
             "not-combined"
           ],
@@ -1384,7 +1384,7 @@
       "licenses": [
         {
           "license_expression": "lgpl-2.1",
-          "spdx_license_expression": "LGPL-2.1-only",
+          "license_expression_spdx": "LGPL-2.1-only",
           "detection_log": [
             "not-combined"
           ],
@@ -1536,7 +1536,7 @@
       "licenses": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "spdx_license_expression": "LGPL-2.1-or-later",
+          "license_expression_spdx": "LGPL-2.1-or-later",
           "detection_log": [
             "not-combined"
           ],
@@ -1644,7 +1644,7 @@
       "licenses": [
         {
           "license_expression": "cc-by-2.5",
-          "spdx_license_expression": "CC-BY-2.5",
+          "license_expression_spdx": "CC-BY-2.5",
           "detection_log": [
             "not-combined"
           ],
@@ -1752,7 +1752,7 @@
       "licenses": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "spdx_license_expression": "LGPL-2.1-or-later",
+          "license_expression_spdx": "LGPL-2.1-or-later",
           "detection_log": [
             "not-combined"
           ],
@@ -1952,7 +1952,7 @@
       "licenses": [
         {
           "license_expression": "lgpl-2.1-plus",
-          "spdx_license_expression": "LGPL-2.1-or-later",
+          "license_expression_spdx": "LGPL-2.1-or-later",
           "detection_log": [
             "not-combined"
           ],
@@ -2054,7 +2054,7 @@
       "licenses": [
         {
           "license_expression": "public-domain",
-          "spdx_license_expression": "LicenseRef-scancode-public-domain",
+          "license_expression_spdx": "LicenseRef-scancode-public-domain",
           "detection_log": [
             "not-combined"
           ],
@@ -2099,7 +2099,7 @@
         },
         {
           "license_expression": "public-domain-disclaimer",
-          "spdx_license_expression": "LicenseRef-scancode-public-domain-disclaimer",
+          "license_expression_spdx": "LicenseRef-scancode-public-domain-disclaimer",
           "detection_log": [
             "not-combined"
           ],
@@ -2247,7 +2247,7 @@
       "licenses": [
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
@@ -2387,7 +2387,7 @@
       "licenses": [
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
@@ -2543,7 +2543,7 @@
       "licenses": [
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
@@ -2626,7 +2626,7 @@
         },
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "not-combined"
           ],
@@ -2730,7 +2730,7 @@
       "licenses": [
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "not-combined"
           ],
@@ -2832,7 +2832,7 @@
       "licenses": [
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
@@ -2972,7 +2972,7 @@
       "licenses": [
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
@@ -3152,7 +3152,7 @@
       "licenses": [
         {
           "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-          "spdx_license_expression": "GPL-2.0-or-later WITH LicenseRef-scancode-ada-linking-exception",
+          "license_expression_spdx": "GPL-2.0-or-later WITH LicenseRef-scancode-ada-linking-exception",
           "detection_log": [
             "not-combined"
           ],
@@ -3362,7 +3362,7 @@
       "licenses": [
         {
           "license_expression": "boost-1.0",
-          "spdx_license_expression": "BSL-1.0",
+          "license_expression_spdx": "BSL-1.0",
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
@@ -3502,7 +3502,7 @@
       "licenses": [
         {
           "license_expression": "boost-1.0",
-          "spdx_license_expression": "BSL-1.0",
+          "license_expression_spdx": "BSL-1.0",
           "detection_log": [
             "not-combined"
           ],
@@ -3592,7 +3592,7 @@
       "licenses": [
         {
           "license_expression": "boost-1.0",
-          "spdx_license_expression": "BSL-1.0",
+          "license_expression_spdx": "BSL-1.0",
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
@@ -3675,7 +3675,7 @@
         },
         {
           "license_expression": "boost-1.0",
-          "spdx_license_expression": "BSL-1.0",
+          "license_expression_spdx": "BSL-1.0",
           "detection_log": [
             "unknown-reference-to-local-file"
           ],
@@ -3857,7 +3857,7 @@
       "licenses": [
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "not-combined"
           ],
@@ -4005,7 +4005,7 @@
       "licenses": [
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "not-combined"
           ],
@@ -4109,7 +4109,7 @@
       "licenses": [
         {
           "license_expression": "zlib",
-          "spdx_license_expression": "Zlib",
+          "license_expression_spdx": "Zlib",
           "detection_log": [
             "not-combined"
           ],
@@ -4253,7 +4253,7 @@
       "licenses": [
         {
           "license_expression": "mit-old-style",
-          "spdx_license_expression": "LicenseRef-scancode-mit-old-style",
+          "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
           "detection_log": [
             "not-combined"
           ],

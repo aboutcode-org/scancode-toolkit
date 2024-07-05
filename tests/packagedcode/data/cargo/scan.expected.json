@@ -44,7 +44,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0",
-              "spdx_license_expression": "MPL-2.0",
+              "license_expression_spdx": "MPL-2.0",
               "from_file": "scan/Cargo.toml",
               "start_line": 1,
               "end_line": 1,
@@ -142,7 +142,7 @@
           "matches": [
             {
               "license_expression": "mit OR apache-2.0",
-              "spdx_license_expression": "MIT OR Apache-2.0",
+              "license_expression_spdx": "MIT OR Apache-2.0",
               "from_file": "scan/dac/Cargo.toml",
               "start_line": 1,
               "end_line": 1,
@@ -1187,7 +1187,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0",
-                  "spdx_license_expression": "MPL-2.0",
+                  "license_expression_spdx": "MPL-2.0",
                   "from_file": "scan/Cargo.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -1554,7 +1554,7 @@
               "matches": [
                 {
                   "license_expression": "mit OR apache-2.0",
-                  "spdx_license_expression": "MIT OR Apache-2.0",
+                  "license_expression_spdx": "MIT OR Apache-2.0",
                   "from_file": "scan/dac/Cargo.toml",
                   "start_line": 1,
                   "end_line": 1,

@@ -48,7 +48,7 @@
           "matches": [
             {
               "license_expression": "cc0-1.0",
-              "spdx_license_expression": "CC0-1.0",
+              "license_expression_spdx": "CC0-1.0",
               "from_file": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
               "start_line": 1,
               "end_line": 2,
@@ -395,7 +395,7 @@
               "matches": [
                 {
                   "license_expression": "cc0-1.0",
-                  "spdx_license_expression": "CC0-1.0",
+                  "license_expression_spdx": "CC0-1.0",
                   "from_file": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
                   "start_line": 1,
                   "end_line": 2,
@@ -456,7 +456,7 @@
           "matches": [
             {
               "license_expression": "cc0-1.0",
-              "spdx_license_expression": "CC0-1.0",
+              "license_expression_spdx": "CC0-1.0",
               "from_file": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
               "start_line": 86,
               "end_line": 91,

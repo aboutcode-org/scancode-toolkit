@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-hauppauge-firmware-oem
     matches:
       - license_expression: hauppauge-firmware-oem
-        spdx_license_expression: LicenseRef-scancode-hauppauge-firmware-oem
+        license_expression_spdx: LicenseRef-scancode-hauppauge-firmware-oem
         from_file:
         start_line: 6
         end_line: 154

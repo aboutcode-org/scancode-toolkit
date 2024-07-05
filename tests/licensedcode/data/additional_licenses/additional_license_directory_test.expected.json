@@ -174,7 +174,7 @@
           "matches": [
             {
               "license_expression": "example1",
-              "spdx_license_expression": "scancode-example1",
+              "license_expression_spdx": "scancode-example1",
               "from_file": "additional_license_directory_test.txt",
               "start_line": 1,
               "end_line": 1,
@@ -188,7 +188,7 @@
             },
             {
               "license_expression": "example2",
-              "spdx_license_expression": "scancode-example2",
+              "license_expression_spdx": "scancode-example2",
               "from_file": "additional_license_directory_test.txt",
               "start_line": 1,
               "end_line": 5,

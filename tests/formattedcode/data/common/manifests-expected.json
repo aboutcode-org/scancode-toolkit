@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "cddl-1.0",
-              "spdx_license_expression": "CDDL-1.0",
+              "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 1,
               "end_line": 1,
@@ -48,7 +48,7 @@
             },
             {
               "license_expression": "cddl-1.0",
-              "spdx_license_expression": "CDDL-1.0",
+              "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 2,
               "end_line": 2,
@@ -131,7 +131,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -153,7 +153,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -236,7 +236,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "manifests/npm-license-string/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -876,7 +876,7 @@
               "matches": [
                 {
                   "license_expression": "cddl-1.0",
-                  "spdx_license_expression": "CDDL-1.0",
+                  "license_expression_spdx": "CDDL-1.0",
                   "from_file": "manifests/maven/persistence-api-1.0.pom",
                   "start_line": 1,
                   "end_line": 1,
@@ -891,7 +891,7 @@
                 },
                 {
                   "license_expression": "cddl-1.0",
-                  "spdx_license_expression": "CDDL-1.0",
+                  "license_expression_spdx": "CDDL-1.0",
                   "from_file": "manifests/maven/persistence-api-1.0.pom",
                   "start_line": 2,
                   "end_line": 2,
@@ -940,7 +940,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 17,
               "end_line": 19,
@@ -954,7 +954,7 @@
             },
             {
               "license_expression": "cddl-1.0",
-              "spdx_license_expression": "CDDL-1.0",
+              "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 18,
               "end_line": 20,
@@ -1077,7 +1077,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "manifests/npm-license-mapping/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1099,7 +1099,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "manifests/npm-license-mapping/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1261,7 +1261,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 6,
               "end_line": 6,
@@ -1282,7 +1282,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 20,
               "end_line": 20,
@@ -1409,7 +1409,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "manifests/npm-license-string/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1512,7 +1512,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "manifests/npm-license-string/package.json",
               "start_line": 4,
               "end_line": 4,
@@ -1643,7 +1643,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "manifests/pypi/bluepyopt_setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1665,7 +1665,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "manifests/pypi/bluepyopt_setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1832,7 +1832,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 9,
               "end_line": 20,
@@ -1853,7 +1853,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 65,
               "end_line": 65,
@@ -1874,7 +1874,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 74,
               "end_line": 75,

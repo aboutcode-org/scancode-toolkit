@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
               "start_line": 2,
               "end_line": 4,
@@ -62,7 +62,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
               "start_line": 5,
               "end_line": 6,
@@ -282,7 +282,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
               "start_line": 2,
               "end_line": 15,
@@ -354,7 +354,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
               "start_line": 2,
               "end_line": 11,
@@ -781,7 +781,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
               "start_line": 11,
               "end_line": 11,
@@ -795,7 +795,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
               "start_line": 13,
               "end_line": 13,
@@ -809,7 +809,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
               "start_line": 15,
               "end_line": 15,
@@ -823,7 +823,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/DEPENDENCIES",
               "start_line": 19,
               "end_line": 19,
@@ -859,7 +859,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
               "start_line": 2,
               "end_line": 4,
@@ -921,7 +921,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "htrace-core-4.0.0-incubating/META-INF/LICENSE",
                   "start_line": 2,
                   "end_line": 4,
@@ -942,7 +942,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
                   "start_line": 5,
                   "end_line": 6,
@@ -1002,7 +1002,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/NOTICE",
               "start_line": 5,
               "end_line": 6,
@@ -1399,7 +1399,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
                   "start_line": 2,
                   "end_line": 15,
@@ -1504,7 +1504,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/commons-logging/commons-logging/pom.xml",
               "start_line": 2,
               "end_line": 15,
@@ -1589,7 +1589,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
                   "start_line": 2,
                   "end_line": 11,
@@ -1683,7 +1683,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "htrace-core-4.0.0-incubating/META-INF/maven/org.apache.htrace/htrace-core/pom.xml",
               "start_line": 2,
               "end_line": 11,

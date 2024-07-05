@@ -25,7 +25,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause OR GPL-1.0-or-later
     matches:
       - license_expression: bsd-new OR gpl-1.0-plus
-        spdx_license_expression: BSD-3-Clause OR GPL-1.0-or-later
+        license_expression_spdx: BSD-3-Clause OR GPL-1.0-or-later
         from_file:
         start_line: 91
         end_line: 121
@@ -73,7 +73,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-unicode
     matches:
       - license_expression: unicode
-        spdx_license_expression: LicenseRef-scancode-unicode
+        license_expression_spdx: LicenseRef-scancode-unicode
         from_file:
         start_line: 126
         end_line: 156
@@ -121,7 +121,7 @@ other_license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 171
         end_line: 187
@@ -155,7 +155,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: '194'
         end_line: '194'
@@ -168,7 +168,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: '195'
         end_line: 209
@@ -200,7 +200,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-only AND LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 211
         end_line: 211
@@ -213,7 +213,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 212
         end_line: 223
@@ -238,7 +238,7 @@ other_license_detections:
           You should have received a copy of the GNU Lesser General Public License
           along with this program; If not, see <http://www.gnu.org/licenses/>.
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 225
         end_line: 226
@@ -257,7 +257,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later OR MIT
     matches:
       - license_expression: gpl-2.0-plus OR mit
-        spdx_license_expression: GPL-2.0-or-later OR MIT
+        license_expression_spdx: GPL-2.0-or-later OR MIT
         from_file:
         start_line: 229
         end_line: 265

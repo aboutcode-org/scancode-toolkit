@@ -51,7 +51,7 @@
         "matches": [
           {
             "license_expression": "apache-2.0 AND scancode-acknowledgment",
-            "spdx_license_expression": "Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment",
+            "license_expression_spdx": "Apache-2.0 AND LicenseRef-scancode-scancode-acknowledgment",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -66,7 +66,7 @@
           },
           {
             "license_expression": "cc0-1.0",
-            "spdx_license_expression": "CC0-1.0",
+            "license_expression_spdx": "CC0-1.0",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -88,7 +88,7 @@
         "matches": [
           {
             "license_expression": "apache-2.0",
-            "spdx_license_expression": "Apache-2.0",
+            "license_expression_spdx": "Apache-2.0",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -110,7 +110,7 @@
         "matches": [
           {
             "license_expression": "free-unknown",
-            "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+            "license_expression_spdx": "LicenseRef-scancode-free-unknown",
             "from_file": null,
             "start_line": 2,
             "end_line": 2,

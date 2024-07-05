@@ -39,7 +39,7 @@
       "matches": [
         {
           "license_expression": "cpl-1.0",
-          "spdx_license_expression": "CPL-1.0",
+          "license_expression_spdx": "CPL-1.0",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,
@@ -54,7 +54,7 @@
         },
         {
           "license_expression": "cpl-1.0",
-          "spdx_license_expression": "CPL-1.0",
+          "license_expression_spdx": "CPL-1.0",
           "from_file": null,
           "start_line": 2,
           "end_line": 2,

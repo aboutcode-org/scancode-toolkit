@@ -19,7 +19,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 26
         end_line: 45
@@ -56,7 +56,7 @@ other_license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 48
         end_line: 67
@@ -93,7 +93,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 71
         end_line: 71
@@ -106,7 +106,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 72
         end_line: 86
@@ -138,7 +138,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-warranty-disclaimer
     matches:
       - license_expression: warranty-disclaimer
-        spdx_license_expression: LicenseRef-scancode-warranty-disclaimer
+        license_expression_spdx: LicenseRef-scancode-warranty-disclaimer
         from_file:
         start_line: 89
         end_line: 89

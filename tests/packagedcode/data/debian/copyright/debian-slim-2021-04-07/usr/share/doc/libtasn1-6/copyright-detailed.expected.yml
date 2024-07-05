@@ -10,7 +10,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later AND GPL-3.0-or-later
     matches:
       - license_expression: lgpl-2.1-plus AND gpl-3.0-plus
-        spdx_license_expression: LGPL-2.1-or-later AND GPL-3.0-or-later
+        license_expression_spdx: LGPL-2.1-or-later AND GPL-3.0-or-later
         from_file:
         start_line: 14
         end_line: 15
@@ -29,7 +29,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 23
         end_line: 42
@@ -66,7 +66,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later AND GFDL-1.3-only AND GFDL-1.3-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 50
         end_line: 70
@@ -100,7 +100,7 @@ license_detections:
           The documentation is distributed under the terms of the GNU Free
           Documentation License (
       - license_expression: gfdl-1.3
-        spdx_license_expression: GFDL-1.3-only
+        license_expression_spdx: GFDL-1.3-only
         from_file:
         start_line: 69
         end_line: 70
@@ -115,7 +115,7 @@ license_detections:
           The documentation is distributed under the terms of the GNU Free
           Documentation License (FDL 1.3):
       - license_expression: gfdl-1.3-plus
-        spdx_license_expression: GFDL-1.3-or-later
+        license_expression_spdx: GFDL-1.3-or-later
         from_file:
         start_line: 74
         end_line: 83

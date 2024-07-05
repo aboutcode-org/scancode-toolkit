@@ -125,7 +125,7 @@
           "matches": [
             {
               "license_expression": "x11-xconsortium-veillard",
-              "spdx_license_expression": "LicenseRef-scancode-x11-xconsortium-veillard",
+              "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
               "from_file": "scan-unknown-reference-copyright/Copyright",
               "start_line": 7,
               "end_line": 26,
@@ -160,7 +160,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "scan-unknown-reference-copyright/build_glob.py",
               "start_line": 9,
               "end_line": 9,
@@ -176,7 +176,7 @@
             },
             {
               "license_expression": "x11-xconsortium-veillard",
-              "spdx_license_expression": "LicenseRef-scancode-x11-xconsortium-veillard",
+              "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
               "from_file": "scan-unknown-reference-copyright/Copyright",
               "start_line": 7,
               "end_line": 26,
@@ -213,7 +213,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "scan-unknown-reference-copyright/c14n.c",
               "start_line": 8,
               "end_line": 8,
@@ -229,7 +229,7 @@
             },
             {
               "license_expression": "x11-xconsortium-veillard",
-              "spdx_license_expression": "LicenseRef-scancode-x11-xconsortium-veillard",
+              "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
               "from_file": "scan-unknown-reference-copyright/Copyright",
               "start_line": 7,
               "end_line": 26,
@@ -286,7 +286,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "scan-unknown-reference-copyright/include/libxml/c14n.h",
               "start_line": 13,
               "end_line": 13,
@@ -302,7 +302,7 @@
             },
             {
               "license_expression": "x11-xconsortium-veillard",
-              "spdx_license_expression": "LicenseRef-scancode-x11-xconsortium-veillard",
+              "license_expression_spdx": "LicenseRef-scancode-x11-xconsortium-veillard",
               "from_file": "scan-unknown-reference-copyright/Copyright",
               "start_line": 7,
               "end_line": 26,

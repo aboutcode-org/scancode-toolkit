@@ -57,7 +57,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "celery/celery.egg-info/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -79,7 +79,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "celery/celery.egg-info/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -825,7 +825,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "celery/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -847,7 +847,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "celery/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -959,7 +959,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "celery/celery.egg-info/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -981,7 +981,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "celery/celery.egg-info/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,

@@ -189,7 +189,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "unambiguous/README.txt",
               "start_line": 3,
               "end_line": 3,
@@ -203,7 +203,7 @@
             },
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "unambiguous/README.txt",
               "start_line": 3,
               "end_line": 3,
@@ -276,7 +276,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "unambiguous/apache-2.0.LICENSE",
               "start_line": 1,
               "end_line": 176,
@@ -337,7 +337,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "unambiguous/mit.LICENSE",
               "start_line": 1,
               "end_line": 18,

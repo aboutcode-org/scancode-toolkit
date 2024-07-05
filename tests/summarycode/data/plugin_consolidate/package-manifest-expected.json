@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-manifest/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -210,7 +210,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "package-manifest/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -257,7 +257,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-manifest/package.json",
               "start_line": 4,
               "end_line": 4,

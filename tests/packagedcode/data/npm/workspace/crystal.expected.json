@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/grafast/bench/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -131,7 +131,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/grafast/dataplan-json/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -225,7 +225,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/grafast/dataplan-pg/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -322,7 +322,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/grafast/grafast/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -412,7 +412,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/grafast/grafserv/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -507,7 +507,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/grafast/grafserv-persisted/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -595,7 +595,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/grafast/ruru/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -686,7 +686,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/grafast/ruru-components/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -831,7 +831,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/graphile-build/graphile-build/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -927,7 +927,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/graphile-build/graphile-build-pg/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1020,7 +1020,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/graphile-build/graphile-simplify-inflection/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1109,7 +1109,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/graphile-build/graphile-utils/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1258,7 +1258,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/postgraphile/pgl/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1354,7 +1354,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/postgraphile/postgraphile/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1495,7 +1495,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/eslint-plugin-graphile-export/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1582,7 +1582,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "crystal/utils/graphile/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1669,7 +1669,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/graphile-config/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1762,7 +1762,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/graphile-export/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1851,7 +1851,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/jest-serializer-graphql-schema/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -1936,7 +1936,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/jest-serializer-simple/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -2026,7 +2026,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/lds/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -2109,7 +2109,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/lru/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -2203,7 +2203,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/pg-introspection/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -2298,7 +2298,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/pg-sql2/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -2393,7 +2393,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "crystal/utils/tamedevil/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -13562,7 +13562,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/grafast/bench/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -13765,7 +13765,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/grafast/dataplan-json/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -13950,7 +13950,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/grafast/dataplan-pg/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -14479,7 +14479,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/grafast/grafast/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -14947,7 +14947,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/grafast/grafserv-persisted/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -15176,7 +15176,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/grafast/grafserv/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -15640,7 +15640,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/grafast/ruru-components/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -15977,7 +15977,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/grafast/ruru/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -16585,7 +16585,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/graphile-build/graphile-build-pg/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -17081,7 +17081,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/graphile-build/graphile-build/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -17430,7 +17430,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/graphile-build/graphile-simplify-inflection/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -17566,7 +17566,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/graphile-build/graphile-utils/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -18640,7 +18640,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/postgraphile/pgl/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -19080,7 +19080,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/postgraphile/postgraphile/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -19905,7 +19905,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/eslint-plugin-graphile-export/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -20112,7 +20112,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/graphile-config/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -20384,7 +20384,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/graphile-export/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -20676,7 +20676,7 @@
               "matches": [
                 {
                   "license_expression": "unknown-license-reference",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
                   "from_file": "crystal/utils/graphile/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -20911,7 +20911,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/jest-serializer-graphql-schema/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -21098,7 +21098,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/jest-serializer-simple/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -21301,7 +21301,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/lds/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -21497,7 +21497,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/lru/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -21671,7 +21671,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/pg-introspection/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -21857,7 +21857,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/pg-sql2/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -22065,7 +22065,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "crystal/utils/tamedevil/package.json",
                   "start_line": 1,
                   "end_line": 1,

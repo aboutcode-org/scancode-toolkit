@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -264,7 +264,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "package-files-not-counted-in-license-holders/package/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -311,7 +311,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/package.json",
               "start_line": 5,
               "end_line": 5,
@@ -384,7 +384,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/src1",
               "start_line": 2,
               "end_line": 2,
@@ -457,7 +457,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/src2",
               "start_line": 2,
               "end_line": 2,
@@ -530,7 +530,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/package/src3",
               "start_line": 2,
               "end_line": 2,
@@ -601,7 +601,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/src1",
               "start_line": 2,
               "end_line": 2,
@@ -672,7 +672,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-files-not-counted-in-license-holders/src2",
               "start_line": 2,
               "end_line": 2,

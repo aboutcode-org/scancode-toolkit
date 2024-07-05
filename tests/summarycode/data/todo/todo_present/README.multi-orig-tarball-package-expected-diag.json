@@ -48,7 +48,7 @@
       "license_clues": [
         {
           "license_expression": "borceux",
-          "spdx_license_expression": "Borceux",
+          "license_expression_spdx": "Borceux",
           "from_file": "README.multi-orig-tarball-package",
           "start_line": 1,
           "end_line": 3,
