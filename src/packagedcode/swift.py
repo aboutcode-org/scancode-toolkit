@@ -47,7 +47,129 @@ if TRACE:
         return logger.debug(" ".join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-class SwiftShowDependenciesDepLockHandler(models.DatafileHandler):
+class BaseSwiftDatafileHandler(models.DatafileHandler):
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
+        swift_manifest_resource = None
+        swift_show_dependencies_resource = None
+        swift_resolved_package_resource = None
+        processed_package = None
+        add_datafile_paths = []
+        add_datasource_ids = []
+        processed_dependencies = []
+
+        for r in resource.siblings(codebase):
+            if r.name in ("Package.swift.json", "Package.swift.deplock"):
+                swift_manifest_resource = r
+            elif r.name in ("Package.resolved", ".package.resolved"):
+                swift_resolved_package_resource = r
+            elif r.name == "swift-show-dependencies.deplock":
+                swift_show_dependencies_resource = r
+
+        # If only Package.resolved is available then yield all dependency as package.
+        if (
+            not swift_manifest_resource
+            and not swift_show_dependencies_resource
+            and resource.name in ("Package.resolved", ".package.resolved")
+        ):
+            processed_package = package_data
+            processed_dependencies = package_data.dependencies
+        # If no manifest but have dependency graph from `deplock` then use it construct top-level package.
+        elif (
+            not swift_manifest_resource
+            and resource.name == "swift-show-dependencies.deplock"
+        ):
+            processed_package = package_data
+            processed_dependencies = package_data.dependencies
+        # If manifest is available then use the manifest for to construct top-level package.
+        elif swift_manifest_resource and resource.name in (
+            "Package.swift.json",
+            "Package.swift.deplock",
+        ):
+            processed_dependencies = package_data.dependencies
+            # Dependencies from `swift-show-dependencies.deplock` supersedes dependencies from other datafiles.
+            if swift_show_dependencies_resource:
+                swift_show_dependencies_package_data = models.PackageData.from_dict(
+                    swift_show_dependencies_resource.package_data[0]
+                )
+                processed_dependencies = (
+                    swift_show_dependencies_package_data.dependencies
+                )
+            # Use dependencies from `Package.resolved` when `swift-show-dependencies.deplock` is not present.
+            elif swift_resolved_package_resource:
+                swift_resolved_package_data = (
+                    swift_resolved_package_resource.package_data
+                )
+
+                resolved_dependencies = []
+                for package in swift_resolved_package_data:
+                    version = package.get("version")
+                    name = package.get("name")
+
+                    purl = PackageURL(
+                        type=cls.default_package_type, name=name, version=version
+                    )
+                    resolved_dependencies.append(
+                        models.DependentPackage(
+                            purl=purl.to_string(),
+                            scope="dependencies",
+                            is_runtime=True,
+                            is_optional=False,
+                            is_resolved=True,
+                            extracted_requirement=version,
+                        )
+                    )
+
+                    for dependency in processed_dependencies[:]:
+                        dependency_purl = PackageURL.from_string(dependency.purl)
+
+                        if dependency_purl.name == name:
+                            processed_dependencies.remove(dependency)
+
+                processed_dependencies.extend(resolved_dependencies)
+
+            processed_package = package_data
+            if swift_show_dependencies_resource:
+                add_datafile_paths.append(swift_show_dependencies_resource.path)
+                add_datasource_ids.append(
+                    SwiftShowDependenciesDepLockHandler.datasource_id
+                )
+            elif swift_resolved_package_resource:
+                add_datafile_paths.append(swift_resolved_package_resource.path)
+                add_datasource_ids.append(SwiftPackageResolvedHandler.datasource_id)
+
+        if processed_package and processed_package.purl:
+            package = models.Package.from_package_data(
+                package_data=processed_package,
+                datafile_path=resource.path,
+            )
+
+            package.datafile_paths.extend(add_datafile_paths)
+            package.datasource_ids.extend(add_datasource_ids)
+
+            package.populate_license_fields()
+            yield package
+
+            parent = resource.parent(codebase)
+            cls.assign_package_to_resources(
+                package=package,
+                resource=parent,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+
+        if processed_dependencies:
+            yield from models.Dependency.from_dependent_packages(
+                dependent_packages=processed_dependencies,
+                datafile_path=resource.path,
+                datasource_id=processed_package.datasource_id,
+                package_uid=package.package_uid,
+            )
+
+        yield resource
+
+
+class SwiftShowDependenciesDepLockHandler(BaseSwiftDatafileHandler):
     datasource_id = "swift_package_show_dependencies"
     path_patterns = ("*/swift-show-dependencies.deplock",)
     default_package_type = "swift"
@@ -86,32 +208,8 @@ class SwiftShowDependenciesDepLockHandler(models.DatafileHandler):
 
         yield cls._parse(swift_dependency_relation, package_only)
 
-    @classmethod
-    def assemble(
-        cls, package_data, resource, codebase, package_adder=models.add_to_package
-    ):
-        siblings = resource.siblings(codebase)
-        swift_manifest_resource = [
-            r
-            for r in siblings
-            if r.name in ("Package.swift.json", "Package.swift.deplock")
-        ]
 
-        # Skip the assembly if the Swift manifest is present.
-        # SwiftManifestJsonHandler's assembly will take care of the
-        # dependencies from swift-show-dependencies.deplock file.
-        if swift_manifest_resource:
-            return []
-
-        yield from super(SwiftShowDependenciesDepLockHandler, cls).assemble(
-            package_data=package_data,
-            resource=resource,
-            codebase=codebase,
-            package_adder=package_adder,
-        )
-
-
-class SwiftManifestJsonHandler(models.DatafileHandler):
+class SwiftManifestJsonHandler(BaseSwiftDatafileHandler):
     datasource_id = "swift_package_manifest_json"
     path_patterns = ("*/Package.swift.json", "*/Package.swift.deplock")
     default_package_type = "swift"
@@ -149,116 +247,8 @@ class SwiftManifestJsonHandler(models.DatafileHandler):
 
         yield cls._parse(swift_manifest, package_only)
 
-    @classmethod
-    def assemble(
-        cls,
-        package_data,
-        resource,
-        codebase,
-        package_adder=models.add_to_package,
-    ):
-        """
-        Use the dependencies from `Package.resolved` to create the
-        top-level package with resolved dependencies.
-        """
-        siblings = resource.siblings(codebase)
-        processed_dependencies = []
-        swift_resolved_package_resource = [
-            r for r in siblings if r.name == "Package.resolved"
-        ]
 
-        swift_show_dependencies_resources = [
-            r for r in siblings if r.name == "swift-show-dependencies.deplock"
-        ]
-
-        if swift_show_dependencies_resources:
-            swift_show_dependencies_resource = swift_show_dependencies_resources[0]
-            swift_show_dependencies_package_data = (
-                swift_show_dependencies_resource.package_data
-            )
-
-            # Dependencies from `swift-show-dependencies.deplock` supersede dependencies from other datafiles.
-            processed_dependencies = swift_show_dependencies_package_data[0][
-                "dependencies"
-            ]
-            processed_dependencies = [
-                models.DependentPackage.from_dict(i) for i in processed_dependencies
-            ]
-
-        # Use dependencies from `Package.resolved` when `swift-show-dependencies.deplock` is not present.
-        else:
-            dependencies_from_manifest = package_data.dependencies
-
-            if swift_resolved_package_resource:
-                swift_resolved_package_resource = swift_resolved_package_resource[0]
-                swift_resolved_package_data = (
-                    swift_resolved_package_resource.package_data
-                )
-
-                for package in swift_resolved_package_data:
-                    version = package.get("version")
-                    name = package.get("name")
-
-                    purl = PackageURL(
-                        type=cls.default_package_type, name=name, version=version
-                    )
-                    processed_dependencies.append(
-                        models.DependentPackage(
-                            purl=purl.to_string(),
-                            scope="dependencies",
-                            is_runtime=True,
-                            is_optional=False,
-                            is_resolved=True,
-                            extracted_requirement=version,
-                        )
-                    )
-
-                    for dependency in dependencies_from_manifest[:]:
-                        dependency_purl = PackageURL.from_string(dependency.purl)
-
-                        if dependency_purl.name == name:
-                            dependencies_from_manifest.remove(dependency)
-
-            processed_dependencies.extend(dependencies_from_manifest)
-
-        datafile_path = resource.path
-        if package_data.purl:
-            package = models.Package.from_package_data(
-                package_data=package_data,
-                datafile_path=datafile_path,
-            )
-
-            if swift_show_dependencies_resources:
-                package.datafile_paths.append(swift_show_dependencies_resource.path)
-                package.datasource_ids.append(
-                    SwiftShowDependenciesDepLockHandler.datasource_id
-                )
-            elif swift_resolved_package_resource:
-                package.datafile_paths.append(swift_resolved_package_resource.path)
-                package.datasource_ids.append(SwiftPackageResolvedHandler.datasource_id)
-
-            package.populate_license_fields()
-            yield package
-
-            parent = resource.parent(codebase)
-            cls.assign_package_to_resources(
-                package=package,
-                resource=parent,
-                codebase=codebase,
-                package_adder=package_adder,
-            )
-
-        if processed_dependencies:
-            yield from models.Dependency.from_dependent_packages(
-                dependent_packages=processed_dependencies,
-                datafile_path=datafile_path,
-                datasource_id=package_data.datasource_id,
-                package_uid=package.package_uid,
-            )
-        yield resource
-
-
-class SwiftPackageResolvedHandler(models.DatafileHandler):
+class SwiftPackageResolvedHandler(BaseSwiftDatafileHandler):
     datasource_id = "swift_package_resolved"
     path_patterns = ("*/Package.resolved", "*/.package.resolved")
     default_package_type = "swift"
@@ -281,30 +271,6 @@ class SwiftPackageResolvedHandler(models.DatafileHandler):
 
         if resolved_doc_version == 1:
             yield from packages_from_resolved_v1(package_resolved)
-
-    @classmethod
-    def assemble(
-        cls, package_data, resource, codebase, package_adder=models.add_to_package
-    ):
-        siblings = resource.siblings(codebase)
-        swift_manifest_resource = [
-            r
-            for r in siblings
-            if r.name in ("Package.swift.json", "Package.swift.deplock")
-        ]
-
-        # Skip the assembly if the ``Package.swift.json`` manifest is present.
-        # SwiftManifestJsonHandler's assembly will take care of the resolved
-        # dependencies from Package.resolved file.
-        if swift_manifest_resource:
-            return []
-
-        yield from super(SwiftPackageResolvedHandler, cls).assemble(
-            package_data=package_data,
-            resource=resource,
-            codebase=codebase,
-            package_adder=package_adder,
-        )
 
 
 def packages_from_resolved_v2_and_v3(package_resolved):
