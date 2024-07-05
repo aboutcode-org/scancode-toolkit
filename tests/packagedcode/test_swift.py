@@ -102,11 +102,32 @@ class TestSwiftEndtoEnd(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
-    def test_package_scan_swift_end_to_end_full_vercelui_resolved_only(self):
+    def test_package_scan_swift_end_to_end_full_vercelui(self):
         test_dir = self.get_test_loc("packages/vercelui")
         result_file = self.get_temp_file("json")
         expected_file = self.get_test_loc(
             "swift-vercelui-expected.json"
+        )
+        run_scan_click(
+            [
+                "--package",
+                "--strip-root",
+                "--processes",
+                "-1",
+                test_dir,
+                "--json",
+                result_file,
+            ]
+        )
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_package_scan_swift_end_to_end_full_vercelui_show_dependencies_only(self):
+        test_dir = self.get_test_loc("packages/vercelui_show_dependencies")
+        result_file = self.get_temp_file("json")
+        expected_file = self.get_test_loc(
+            "swift-vercelui-show-dependencies-expected.json"
         )
         run_scan_click(
             [
