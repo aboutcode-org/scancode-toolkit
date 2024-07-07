@@ -290,6 +290,7 @@ class PackageSummary(PostScanPlugin):
         help='Summarize scans by providing License Clarity Score' 
         'and populating other license/copyright attributes '
         'for package instances.',
+        required_options=['classify'],
         help_group=POST_SCAN_GROUP)
     ]
 
