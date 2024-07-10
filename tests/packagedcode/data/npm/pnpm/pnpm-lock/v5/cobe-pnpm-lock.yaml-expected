@@ -788,7 +788,7 @@
         }
       },
       {
-        "purl": "pkg:npm/%40napi-rs/nextra@2.0.0-alpha.56",
+        "purl": "pkg:npm/nextra@2.0.0-alpha.56",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
@@ -797,7 +797,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@napi-rs",
+          "namespace": null,
           "name": "nextra",
           "version": "2.0.0-alpha.56",
           "qualifiers": {},
@@ -970,12 +970,12 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40napi-rs/nextra@2.0.0-alpha.56"
+          "purl": "pkg:npm/nextra@2.0.0-alpha.56"
         },
         "extra_data": {}
       },
       {
-        "purl": "pkg:npm/%40napi-rs/react-is@16.13.1",
+        "purl": "pkg:npm/react-is@16.13.1",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
@@ -984,7 +984,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@napi-rs",
+          "namespace": null,
           "name": "react-is",
           "version": "16.13.1",
           "qualifiers": {},
@@ -1024,12 +1024,12 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40napi-rs/react-is@16.13.1"
+          "purl": "pkg:npm/react-is@16.13.1"
         },
         "extra_data": {}
       },
       {
-        "purl": "pkg:npm/%40napi-rs/react-spring@9.5.5",
+        "purl": "pkg:npm/react-spring@9.5.5",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
@@ -1038,7 +1038,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@napi-rs",
+          "namespace": null,
           "name": "react-spring",
           "version": "9.5.5",
           "qualifiers": {},
@@ -1244,12 +1244,12 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40napi-rs/react-spring@9.5.5"
+          "purl": "pkg:npm/react-spring@9.5.5"
         },
         "extra_data": {}
       },
       {
-        "purl": "pkg:npm/%40napi-rs/remark-gfm@3.0.1",
+        "purl": "pkg:npm/remark-gfm@3.0.1",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
@@ -1258,7 +1258,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@napi-rs",
+          "namespace": null,
           "name": "remark-gfm",
           "version": "3.0.1",
           "qualifiers": {},
@@ -1354,12 +1354,12 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40napi-rs/remark-gfm@3.0.1"
+          "purl": "pkg:npm/remark-gfm@3.0.1"
         },
         "extra_data": {}
       },
       {
-        "purl": "pkg:npm/%40napi-rs/styled-jsx@5.0.2",
+        "purl": "pkg:npm/styled-jsx@5.0.2",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
@@ -1368,7 +1368,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@napi-rs",
+          "namespace": null,
           "name": "styled-jsx",
           "version": "5.0.2",
           "qualifiers": {},
@@ -1442,7 +1442,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40napi-rs/styled-jsx@5.0.2"
+          "purl": "pkg:npm/styled-jsx@5.0.2"
         },
         "extra_data": {
           "engines": {
@@ -1451,7 +1451,7 @@
         }
       },
       {
-        "purl": "pkg:npm/%40napi-rs/zustand@3.7.2",
+        "purl": "pkg:npm/zustand@3.7.2",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
@@ -1460,7 +1460,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@napi-rs",
+          "namespace": null,
           "name": "zustand",
           "version": "3.7.2",
           "qualifiers": {},
@@ -1512,7 +1512,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40napi-rs/zustand@3.7.2"
+          "purl": "pkg:npm/zustand@3.7.2"
         },
         "extra_data": {
           "engines": {
@@ -1521,7 +1521,7 @@
         }
       },
       {
-        "purl": "pkg:npm/%40napi-rs/zwitch@2.0.2",
+        "purl": "pkg:npm/zwitch@2.0.2",
         "extracted_requirement": null,
         "scope": null,
         "is_runtime": true,
@@ -1530,7 +1530,7 @@
         "is_direct": true,
         "resolved_package": {
           "type": "npm",
-          "namespace": "@napi-rs",
+          "namespace": null,
           "name": "zwitch",
           "version": "2.0.2",
           "qualifiers": {},
@@ -1570,7 +1570,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "pnpm_lock_yaml",
-          "purl": "pkg:npm/%40napi-rs/zwitch@2.0.2"
+          "purl": "pkg:npm/zwitch@2.0.2"
         },
         "extra_data": {}
       }

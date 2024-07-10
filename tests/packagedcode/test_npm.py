@@ -413,6 +413,15 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_npm_scan_with_workspace_with_purl_package_json(self):
+        test_folder = self.get_test_loc('npm/workspace/change-case/')
+        expected_file = self.get_test_loc('npm/workspace/change-case.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', '--license', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
     def test_is_datafile_pnpm_workspace_yaml(self):
         test_file = self.get_test_loc('npm/pnpm/workspace/pnpm-workspace.yaml')
         assert npm.PnpmWorkspaceYamlHandler.is_datafile(test_file)
