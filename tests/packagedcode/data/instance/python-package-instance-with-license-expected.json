@@ -81,6 +81,8 @@
       "extracted_license_statement": "BSD-3-Clause license_files: LICENSE.rst",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -103,6 +105,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:generic/python?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -112,11 +115,12 @@
     },
     {
       "purl": "pkg:pypi/colorama",
-      "extracted_requirement": "colorama; platform_system == \"Windows\"",
+      "extracted_requirement": null,
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/colorama?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -126,13 +130,16 @@
     },
     {
       "purl": "pkg:pypi/importlib-metadata",
-      "extracted_requirement": "importlib-metadata; python_version < \"3.8\"",
+      "extracted_requirement": null,
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
-      "extra_data": {},
+      "extra_data": {
+        "python_version": "< 3.8"
+      },
       "dependency_uid": "pkg:pypi/importlib-metadata?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:pypi/click@attr:%20click.__version__?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "setup.py",
@@ -403,6 +410,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -412,6 +421,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -555,27 +565,33 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:pypi/colorama",
-              "extracted_requirement": "colorama; platform_system == \"Windows\"",
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/importlib-metadata",
-              "extracted_requirement": "importlib-metadata; python_version < \"3.8\"",
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
-              "extra_data": {}
+              "extra_data": {
+                "python_version": "< 3.8"
+              }
             }
           ],
           "repository_homepage_url": "https://pypi.org/project/click",

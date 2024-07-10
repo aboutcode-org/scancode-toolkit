@@ -31,11 +31,11 @@ copyrights:
   - Copyright (c) 2007 Ihar Hrachyshka
   - Copyright (c) 2004, 2005 Miloslav Trmac
   - Copyright (c) 2003 Peter Mato
-  - Copyright (c) 2004, 2005 Danijel Studen , Denis Lackovic , Ivan Jankovic
+  - Copyright (c) 2004, 2005 Danijel Studen, Denis Lackovic, Ivan Jankovic
   - Copyright (c) 1994 X Consortium
   - Copyright (c) 2006 Alexander Larsson
   - Copyright (c) 2000-2003 Ximian Inc.
-  - Copyright (c) 1995-1997 Peter Mattis , Spencer Kimball and Josh MacDonald
+  - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
   - Copyright (c) 1999, 2000 Robert Bihlmeyer
   - Copyright (c) Crispin Flowerday
   - Copyright (c) 2008 Frederic Peters
@@ -44,8 +44,7 @@ copyrights:
   - Copyright (c) 2001-2004 Red Hat, Inc.
   - Copyright (c) 2004 Scott James Remnant
   - Copyright (c) 1998-2006 by the
-  - Copyright (c) 2008 Sebastien Bacher , Andreas Moog , Emilio Pozuelo Monfort and Josselin
-    Mouette
+  - Copyright (c) 2008 Sebastien Bacher, Andreas Moog, Emilio Pozuelo Monfort and Josselin Mouette
 holders:
   - Stefan Walter
   - Adam Schreiber
@@ -75,11 +74,11 @@ holders:
   - Ihar Hrachyshka
   - Miloslav Trmac
   - Peter Mato
-  - Danijel Studen , Denis Lackovic , Ivan Jankovic
+  - Danijel Studen, Denis Lackovic, Ivan Jankovic
   - X Consortium
   - Alexander Larsson
   - Ximian Inc.
-  - Peter Mattis , Spencer Kimball and Josh MacDonald
+  - Peter Mattis, Spencer Kimball and Josh MacDonald
   - Robert Bihlmeyer
   - Crispin Flowerday
   - Frederic Peters
@@ -87,7 +86,7 @@ holders:
   - Mario Blattermann
   - Red Hat, Inc.
   - Scott James Remnant
-  - Sebastien Bacher , Andreas Moog , Emilio Pozuelo Monfort and Josselin Mouette
+  - Sebastien Bacher, Andreas Moog, Emilio Pozuelo Monfort and Josselin Mouette
 holders_summary:
   - value: Adam Schreiber
     count: 1
@@ -105,7 +104,7 @@ holders_summary:
     count: 1
   - value: Daniel Nylander
     count: 1
-  - value: Danijel Studen , Denis Lackovic , Ivan Jankovic
+  - value: Danijel Studen, Denis Lackovic, Ivan Jankovic
     count: 1
   - value: Dave Camp
     count: 1
@@ -141,7 +140,7 @@ holders_summary:
     count: 1
   - value: Peter Mato
     count: 1
-  - value: Peter Mattis , Spencer Kimball and Josh MacDonald
+  - value: Peter Mattis, Spencer Kimball and Josh MacDonald
     count: 1
   - value: Red Hat
     count: 1
@@ -151,7 +150,7 @@ holders_summary:
     count: 1
   - value: Scott James Remnant
     count: 1
-  - value: Sebastien Bacher , Andreas Moog , Emilio Pozuelo Monfort and Josselin Mouette
+  - value: Sebastien Bacher, Andreas Moog, Emilio Pozuelo Monfort and Josselin Mouette
     count: 1
   - value: Shaun McCance
     count: 1

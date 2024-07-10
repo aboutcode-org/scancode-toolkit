@@ -66,7 +66,13 @@
       "extracted_license_statement": "- MIT\n",
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {},
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "engines": {
+          "node": ">= 4.0"
+        }
+      },
       "repository_homepage_url": "https://www.npmjs.com/package/electron",
       "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
       "api_data_url": "https://registry.npmjs.org/electron/3.1.11",
@@ -88,6 +94,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/%40types/node?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -102,6 +109,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/electron-download?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -116,6 +124,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/extract-zip?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -130,6 +139,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/home-path?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -144,6 +154,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/path-exists?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -158,6 +169,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/standard?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -254,7 +266,13 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "engines": {
+              "node": ">= 4.0"
+            }
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/%40types/node",
@@ -263,6 +281,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -273,6 +292,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -283,6 +303,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -293,6 +314,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -303,6 +325,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -313,6 +336,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

@@ -17,9 +17,9 @@ other_urls:
     - https://opensource.org/licenses/NASA-1.3
 minimum_coverage: 10
 ignorable_copyrights:
-    - Copyright YEAR United States Government as represented by
+    - Copyright YEAR United States Government
 ignorable_holders:
-    - United States Government as represented by
+    - United States Government
 ---
 
 NASA OPEN SOURCE AGREEMENT VERSION 1.3

@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) Distributed Webs Project, LLC. <legal@distributedwebs.org>
+  - Copyright (c) 2014 Mathias Buus
+holders:
+  - Distributed Webs Project, LLC.
+  - Mathias Buus
+holders_summary:
+  - value: Distributed Webs Project, LLC.
+    count: 1
+  - value: Mathias Buus
+    count: 1

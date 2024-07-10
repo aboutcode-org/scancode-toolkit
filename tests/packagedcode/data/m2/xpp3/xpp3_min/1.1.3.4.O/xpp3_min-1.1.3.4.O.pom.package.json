@@ -34,6 +34,8 @@
     "pkg:maven/xpp3/xpp3_min@1.1.3.4.O?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/xpp3/xpp3_min/1.1.3.4.O/",

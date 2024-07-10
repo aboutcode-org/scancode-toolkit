@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - copyright its authors
+holders:
+  - its authors
+holders_summary:
+  - value: its authors
+    count: 1

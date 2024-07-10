@@ -73,6 +73,8 @@
       "source_packages": [
         "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar",
@@ -174,7 +176,13 @@
       "extracted_license_statement": "- Apache-2.0\n- type: Apache 2.0\n  url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md\n",
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {},
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "engines": {
+          "node": ">= 0.8.0"
+        }
+      },
       "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
       "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
       "api_data_url": "https://registry.npmjs.org/grunt-esvm/3.2.8",
@@ -251,6 +259,8 @@
       "extracted_license_statement": "- MIT\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/angular-compare-validator",
       "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
@@ -273,6 +283,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -287,6 +298,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/cli-color?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -301,6 +313,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/cli-table?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -315,6 +328,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/libesvm?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -329,6 +343,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/lodash?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -343,6 +358,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/moment?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -357,6 +373,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/wreck?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -371,6 +388,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -385,6 +403,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/load-grunt-config?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -399,6 +418,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -413,6 +433,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/%40angular/core?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -427,6 +448,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/%40angular/forms?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -441,6 +463,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/%40angular/common?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -455,6 +478,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/rxjs?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -469,6 +493,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/zone.js?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -892,6 +917,8 @@
             "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
@@ -1096,7 +1123,13 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "engines": {
+              "node": ">= 0.8.0"
+            }
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/bluebird",
@@ -1105,6 +1138,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1115,6 +1149,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1125,6 +1160,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1135,6 +1171,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1145,6 +1182,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1155,6 +1193,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1165,6 +1204,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1175,6 +1215,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1185,6 +1226,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1195,6 +1237,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1390,6 +1433,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1399,6 +1444,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1409,6 +1455,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1419,6 +1466,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1429,6 +1477,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1439,6 +1488,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1639,115 +1689,128 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:pypi/numpy",
-              "extracted_requirement": "numpy>=1.6",
+              "extracted_requirement": ">=1.6",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pandas",
-              "extracted_requirement": "pandas>=0.18",
+              "extracted_requirement": ">=0.18",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/deap",
-              "extracted_requirement": "deap",
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/efel",
-              "extracted_requirement": "efel>=2.13",
+              "extracted_requirement": ">=2.13",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/ipyparallel",
-              "extracted_requirement": "ipyparallel",
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pickleshare",
-              "extracted_requirement": "pickleshare>=0.7.3",
+              "extracted_requirement": ">=0.7.3",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/jinja2",
-              "extracted_requirement": "Jinja2>=2.8",
+              "extracted_requirement": ">=2.8",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/future",
-              "extracted_requirement": "future",
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pebble",
-              "extracted_requirement": "Pebble>=4.3.10",
+              "extracted_requirement": ">=4.3.10",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/scoop",
-              "extracted_requirement": "scoop>=0.7",
+              "extracted_requirement": ">=0.7",
               "scope": "all",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/scoop",
-              "extracted_requirement": "scoop>=0.7",
+              "extracted_requirement": ">=0.7",
               "scope": "scoop",
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

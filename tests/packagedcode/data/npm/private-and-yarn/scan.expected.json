@@ -8,6 +8,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/lerna?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -22,6 +23,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "@babel",
@@ -56,6 +58,8 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [
           {
@@ -65,6 +69,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           }
@@ -88,6 +93,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "@ballerina",
@@ -122,15 +128,18 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [
           {
-            "purl": "pkg:npm/%22%40types/swagger-parser%22",
+            "purl": "pkg:npm/%40types/swagger-parser",
             "extracted_requirement": "^4.0.2",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -141,6 +150,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -151,6 +161,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -161,6 +172,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -171,6 +183,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -181,6 +194,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -191,6 +205,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           }
@@ -214,6 +229,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "@ballerina",
@@ -248,15 +264,18 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [
           {
-            "purl": "pkg:npm/%22%40ballerina/lang-service%22",
+            "purl": "pkg:npm/%40ballerina/lang-service",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -267,6 +286,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -277,6 +297,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -287,6 +308,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -297,6 +319,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -307,6 +330,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           }
@@ -330,6 +354,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "@ballerina",
@@ -364,6 +389,8 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [
           {
@@ -373,6 +400,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           }
@@ -396,6 +424,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "@ballerina",
@@ -430,45 +459,51 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [
           {
-            "purl": "pkg:npm/%22%40ballerina/ast-model%22",
+            "purl": "pkg:npm/%40ballerina/ast-model",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false,
+            "is_resolved": true,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
           {
-            "purl": "pkg:npm/%22%40ballerina/font%22",
+            "purl": "pkg:npm/%40ballerina/font",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false,
+            "is_resolved": true,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
           {
-            "purl": "pkg:npm/%22%40ballerina/lang-service%22",
+            "purl": "pkg:npm/%40ballerina/lang-service",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
           {
-            "purl": "pkg:npm/%22%40ballerina/theme%22",
+            "purl": "pkg:npm/%40ballerina/theme",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -479,6 +514,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -489,6 +525,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -499,6 +536,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           }
@@ -522,6 +560,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "@ballerina",
@@ -556,65 +595,73 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [
           {
-            "purl": "pkg:npm/%22%40ballerina/api-designer%22",
+            "purl": "pkg:npm/%40ballerina/api-designer",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false,
+            "is_resolved": true,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
           {
-            "purl": "pkg:npm/%22%40ballerina/ballerina-by-examples%22",
+            "purl": "pkg:npm/%40ballerina/ballerina-by-examples",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false,
+            "is_resolved": true,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
           {
-            "purl": "pkg:npm/%22%40ballerina/diagram%22",
+            "purl": "pkg:npm/%40ballerina/diagram",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false,
+            "is_resolved": true,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
           {
-            "purl": "pkg:npm/%22%40ballerina/documentation%22",
+            "purl": "pkg:npm/%40ballerina/documentation",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false,
+            "is_resolved": true,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
           {
-            "purl": "pkg:npm/%22%40ballerina/theme%22",
+            "purl": "pkg:npm/%40ballerina/theme",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
           {
-            "purl": "pkg:npm/%22%40ballerina/tracing%22",
+            "purl": "pkg:npm/%40ballerina/tracing",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           }
@@ -638,6 +685,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "@ballerina",
@@ -672,15 +720,18 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [
           {
-            "purl": "pkg:npm/%22%40ballerina/ast-model%22",
+            "purl": "pkg:npm/%40ballerina/ast-model",
             "extracted_requirement": "^0.99.0-RC3",
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false,
+            "is_resolved": true,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -691,6 +742,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -701,6 +753,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -711,6 +764,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           }
@@ -734,6 +788,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "@ballerina",
@@ -768,6 +823,8 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [],
         "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/font",
@@ -789,6 +846,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": false,
       "resolved_package": {
         "type": "npm",
         "namespace": "",
@@ -823,6 +881,8 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
         "extra_data": {},
         "dependencies": [
           {
@@ -832,6 +892,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           },
@@ -842,6 +903,7 @@
             "is_runtime": true,
             "is_optional": false,
             "is_resolved": false,
+            "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
           }
@@ -905,7 +967,15 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "is_private": true,
+          "is_virtual": false,
+          "extra_data": {
+            "workspaces": [
+              "ballerina-extension",
+              "browser-app",
+              "electron-app"
+            ]
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/lerna",
@@ -914,6 +984,7 @@
               "is_runtime": false,
               "is_optional": true,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -966,6 +1037,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -975,6 +1048,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "@babel",
@@ -1009,6 +1083,8 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
@@ -1018,6 +1094,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }
@@ -1037,6 +1114,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "@ballerina",
@@ -1071,15 +1149,18 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
-                    "purl": "pkg:npm/%22%40types/swagger-parser%22",
+                    "purl": "pkg:npm/%40types/swagger-parser",
                     "extracted_requirement": "^4.0.2",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1090,6 +1171,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1100,6 +1182,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1110,6 +1193,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1120,6 +1204,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1130,6 +1215,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1140,6 +1226,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }
@@ -1159,6 +1246,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "@ballerina",
@@ -1193,15 +1281,18 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
-                    "purl": "pkg:npm/%22%40ballerina/lang-service%22",
+                    "purl": "pkg:npm/%40ballerina/lang-service",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1212,6 +1303,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1222,6 +1314,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1232,6 +1325,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1242,6 +1336,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1252,6 +1347,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }
@@ -1271,6 +1367,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "@ballerina",
@@ -1305,6 +1402,8 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
@@ -1314,6 +1413,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }
@@ -1333,6 +1433,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "@ballerina",
@@ -1367,45 +1468,51 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
-                    "purl": "pkg:npm/%22%40ballerina/ast-model%22",
+                    "purl": "pkg:npm/%40ballerina/ast-model",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_resolved": true,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
                   {
-                    "purl": "pkg:npm/%22%40ballerina/font%22",
+                    "purl": "pkg:npm/%40ballerina/font",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_resolved": true,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
                   {
-                    "purl": "pkg:npm/%22%40ballerina/lang-service%22",
+                    "purl": "pkg:npm/%40ballerina/lang-service",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
                   {
-                    "purl": "pkg:npm/%22%40ballerina/theme%22",
+                    "purl": "pkg:npm/%40ballerina/theme",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1416,6 +1523,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1426,6 +1534,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1436,6 +1545,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }
@@ -1455,6 +1565,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "@ballerina",
@@ -1489,65 +1600,73 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
-                    "purl": "pkg:npm/%22%40ballerina/api-designer%22",
+                    "purl": "pkg:npm/%40ballerina/api-designer",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_resolved": true,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
                   {
-                    "purl": "pkg:npm/%22%40ballerina/ballerina-by-examples%22",
+                    "purl": "pkg:npm/%40ballerina/ballerina-by-examples",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_resolved": true,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
                   {
-                    "purl": "pkg:npm/%22%40ballerina/diagram%22",
+                    "purl": "pkg:npm/%40ballerina/diagram",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_resolved": true,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
                   {
-                    "purl": "pkg:npm/%22%40ballerina/documentation%22",
+                    "purl": "pkg:npm/%40ballerina/documentation",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_resolved": true,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
                   {
-                    "purl": "pkg:npm/%22%40ballerina/theme%22",
+                    "purl": "pkg:npm/%40ballerina/theme",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
                   {
-                    "purl": "pkg:npm/%22%40ballerina/tracing%22",
+                    "purl": "pkg:npm/%40ballerina/tracing",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }
@@ -1567,6 +1686,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "@ballerina",
@@ -1601,15 +1721,18 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
-                    "purl": "pkg:npm/%22%40ballerina/ast-model%22",
+                    "purl": "pkg:npm/%40ballerina/ast-model",
                     "extracted_requirement": "^0.99.0-RC3",
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_resolved": true,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1620,6 +1743,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1630,6 +1754,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1640,6 +1765,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }
@@ -1659,6 +1785,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "@ballerina",
@@ -1693,6 +1820,8 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/@ballerina/font",
@@ -1710,6 +1839,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -1744,6 +1874,8 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
@@ -1753,6 +1885,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   },
@@ -1763,6 +1896,7 @@
                     "is_runtime": true,
                     "is_optional": false,
                     "is_resolved": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }

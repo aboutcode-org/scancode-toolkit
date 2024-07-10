@@ -32,7 +32,6 @@ expected_failures = set([
     'test_fossology_copyright_testdata19',
     'test_fossology_copyright_testdata78',
     'test_fossology_copyright_testdata86',
-    'test_fossology_copyright_testdata93',
 ])
 
 

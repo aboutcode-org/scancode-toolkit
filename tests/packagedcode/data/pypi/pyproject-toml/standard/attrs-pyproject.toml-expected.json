@@ -1,0 +1,335 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "attrs",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Classes Without Boilerplate",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Hynek Schlawack",
+        "email": "hs@ox.cx",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "class",
+      "attribute",
+      "boilerplate",
+      "Development Status :: 5 - Production/Stable",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: Implementation :: CPython",
+      "Programming Language :: Python :: Implementation :: PyPy",
+      "Typing :: Typed"
+    ],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "https://github.com/python-attrs/attrs",
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "spdx_license_expression": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+      },
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "spdx_license_expression": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "pypi_mit_license.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+            "matched_text": "- 'License :: OSI Approved :: MIT License'"
+          }
+        ],
+        "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "license: MIT\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "Documentation": "https://www.attrs.org/",
+      "Changelog": "https://www.attrs.org/en/stable/changelog.html",
+      "Funding": "https://github.com/sponsors/hynek",
+      "Tidelift": "https://tidelift.com/subscription/pkg/pypi-attrs?utm_source=pypi-attrs&utm_medium=pypi"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/importlib-metadata",
+        "extracted_requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "< 3.8"
+        }
+      },
+      {
+        "purl": "pkg:pypi/pytest-mypy-plugins",
+        "extracted_requirement": null,
+        "scope": "tests-mypy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": ">= 3.8"
+        }
+      },
+      {
+        "purl": "pkg:pypi/mypy",
+        "extracted_requirement": "<1.10,>=1.6",
+        "scope": "tests-mypy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": ">= 3.8"
+        }
+      },
+      {
+        "purl": "pkg:pypi/cloudpickle",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/hypothesis",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pympler",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest",
+        "extracted_requirement": ">=4.3.0",
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-xdist",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/attrs",
+        "extracted_requirement": null,
+        "scope": "tests",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/attrs",
+        "extracted_requirement": null,
+        "scope": "cov",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/coverage",
+        "extracted_requirement": ">=5.3",
+        "scope": "cov",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/furo",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/myst-parser",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinx-notfound-page",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sphinxcontrib-towncrier",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/towncrier",
+        "extracted_requirement": null,
+        "scope": "docs",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/attrs",
+        "extracted_requirement": null,
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pre-commit",
+        "extracted_requirement": null,
+        "scope": "dev",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/attrs",
+    "repository_download_url": null,
+    "api_data_url": "https://pypi.org/pypi/attrs/json",
+    "datasource_id": "pypi_pyproject_toml",
+    "purl": "pkg:pypi/attrs"
+  }
+]

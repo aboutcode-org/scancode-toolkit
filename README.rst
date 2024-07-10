@@ -161,6 +161,8 @@ There are a few common ways to `install ScanCode <https://scancode-toolkit.readt
 - `Run in a Docker container with a git clone and "docker run"
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-via-docker>`_
 
+- In Fedora 40+ you can `dnf install scancode-toolkit`
+
 
 Quick Start
 ===========

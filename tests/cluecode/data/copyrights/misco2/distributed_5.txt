@@ -1,0 +1,1 @@
+Copyright 2018 (c) DistributedLock is licensed under the MIT License.

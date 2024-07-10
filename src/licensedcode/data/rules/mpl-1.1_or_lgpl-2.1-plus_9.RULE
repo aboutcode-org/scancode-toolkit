@@ -4,8 +4,6 @@ is_license_reference: yes
 relevance: 100
 minimum_coverage: 99
 notes: javassist license choice
-ignorable_authors:
-    - the Initial Developer
 ---
 
 the Original Code is . 

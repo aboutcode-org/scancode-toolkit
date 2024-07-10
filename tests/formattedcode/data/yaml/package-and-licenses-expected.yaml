@@ -110,6 +110,8 @@ packages:
     extracted_license_statement: Apache-2.0
     notice_text:
     source_packages: []
+    is_private: no
+    is_virtual: no
     extra_data: {}
     repository_homepage_url:
     repository_download_url:
@@ -1459,6 +1461,8 @@ files:
         notice_text:
         source_packages: []
         file_references: []
+        is_private: no
+        is_virtual: no
         extra_data: {}
         dependencies: []
         repository_homepage_url:

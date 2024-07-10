@@ -1,0 +1,48 @@
+{
+  "name": "title-case",
+  "version": "4.3.1",
+  "description": "Transform a string into title case following English rules",
+  "keywords": [
+    "title",
+    "case",
+    "english",
+    "capital",
+    "sentence",
+    "convert",
+    "transform"
+  ],
+  "homepage": "https://github.com/blakeembrey/change-case/tree/master/packages/title-case#readme",
+  "bugs": {
+    "url": "https://github.com/blakeembrey/change-case/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeembrey/change-case.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "bench": "vitest bench",
+    "build": "ts-scripts build",
+    "format": "ts-scripts format",
+    "prepublishOnly": "npm run build",
+    "specs": "ts-scripts specs",
+    "test": "ts-scripts test"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
