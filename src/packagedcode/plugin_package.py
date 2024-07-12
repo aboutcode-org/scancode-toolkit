@@ -13,6 +13,7 @@ import os
 
 import attr
 import click
+import copy
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
@@ -39,6 +40,7 @@ from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
 from packagedcode.models import PackageWithResources
+from packagedcode.models import get_files_for_packages
 from summarycode.score import  compute_license_score_package_level
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
@@ -304,12 +306,34 @@ class PackageSummary(PostScanPlugin):
         if not self.is_enabled(package_summary):
             return
         
-        packages= codebase.attributes.packages
-        for package in packages:
+        packages = codebase.attributes.packages
+        resource_for_packages = list(get_files_for_packages(codebase))
+        packages_copy = copy.deepcopy(packages) # created a deep copy 
+        package_resources = {}
+
+        for resource, package_uid in resource_for_packages:
+            if package_uid not in package_resources:
+                package_resources[package_uid] = []
+            package_resources[package_uid].append(resource)
+
+        for package in packages_copy:
+            package_uid = package['package_uid']
+            if package_uid in package_resources:
+                resources_for_package = package_resources[package_uid]
+                for resource in resources_for_package:
+                    package['resources']= resource.to_dict()
+            else:
+                print(f"No resources found for package {package_uid}")
+                
+        for package in packages_copy:
             scoring_elements= compute_license_score_package_level(package)
             license_clarity_score= scoring_elements.to_dict()
-            package['license_clarity_score'] = license_clarity_score
 
+        # adding license_clarity_score to package attribute(orignal)
+        for package in packages:
+            package['license_clarity_score'] = license_clarity_score
+        
+        
 def add_license_from_file(resource, codebase):
     """
     Given a Resource, check if the detected package_data doesn't have license detections
