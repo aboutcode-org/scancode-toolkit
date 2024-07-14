@@ -510,18 +510,29 @@ def get_primary_license(declared_license_expressions):
 
 def compute_license_score_package_level(package):
     scoring_elements = ScoringElements()
-    license_detections= package['license_detections']
-    declared_license_expressions= package['declared_license_expression']
+    license_detections = get_field_values_from_package_resources(
+    package=package,
+    field_name='license_detections',
+    key_files_only=True,
+    )
+    license_match_mappings = get_matches_from_detection_mappings(license_detections) # have to go therough once.
+    license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
+    declared_license_expressions = get_field_values_from_package_resources(
+        package=package,
+        field_name='detected_license_expression',
+        key_files_only=True,
+        is_string=True,
+    )
     unique_declared_license_expressions = unique(declared_license_expressions)
-
-    # other_license_detections = get_field_values_from_codebase_resources(
-    #     codebase=codebase, field_name='license_detections', key_files_only=False
-    # )
-    # other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
-    # other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
+    copyrights = get_field_values_from_package_resources(
+        package=package, field_name='copyrights', key_files_only=True
+    )
+    other_license_detections = get_field_values_from_package_resources(
+        package=package, field_name='license_detections', key_files_only=False
+    )
+    other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
+    other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
     
-    other_license_matches= []
-    copyright= package['copyright']
     license_match_mappings = get_matches_from_detection_mappings(license_detections)
     license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
     declared_license_categories = get_license_categories(license_matches)
@@ -538,7 +549,7 @@ def compute_license_score_package_level(package):
     if scoring_elements.has_license_text:
         scoring_elements.score += 10
         
-    scoring_elements.declared_copyrights = bool(copyright)
+    scoring_elements.declared_copyrights = bool(copyrights)
     if scoring_elements.declared_copyrights:
         scoring_elements.score += 10
 
@@ -564,3 +575,29 @@ def compute_license_score_package_level(package):
             scoring_elements.score -= 10
 
     return scoring_elements
+
+
+def get_field_values_from_package_resources(
+    package,
+    field_name,
+    key_files_only=False,
+    is_string=False
+):
+    values = []
+    for resource in package['resources']:
+        if key_files_only:
+            if not resource.get('is_key_file', False):
+                continue
+        else:
+            if resource.get('is_key_file', False):
+                continue
+        
+        if is_string:
+            value = resource.get(field_name)
+            if value:
+                values.append(value)
+        else:
+            for value in resource.get(field_name, []):
+                values.append(value)
+    
+    return values
