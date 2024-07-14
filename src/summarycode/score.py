@@ -80,10 +80,10 @@ class LicenseClarityScore(PostScanPlugin):
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
 
-def compute_license_score(codebase):
+def compute_license_score(resources, is_codebase=False):
     """
     Return a mapping of scoring elements and a license clarity score computed at
-    the codebase level.
+    the codebase/package level.
 
     The license clarity score is a value from 0-100 calculated by combining the
     weighted values determined for each of the scoring elements:
@@ -129,36 +129,36 @@ def compute_license_score(codebase):
 
     scoring_elements = ScoringElements()
     license_detections = get_field_values_from_resources(
-        resources=codebase,
+        resources=resources,
         field_name='license_detections',
         key_files_only=True,
-        is_codebase=True
+        is_codebase=is_codebase
     )
     license_match_mappings = get_matches_from_detection_mappings(license_detections)
     license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
     declared_license_expressions = get_field_values_from_resources(
-        resources=codebase,
+        resources=resources,
         field_name='detected_license_expression',
         key_files_only=True,
         is_string=True,
-        is_codebase=True
+        is_codebase=is_codebase
     )
 
     unique_declared_license_expressions = unique(declared_license_expressions)
     declared_license_categories = get_license_categories(license_matches)
 
     copyrights = get_field_values_from_resources(
-        resources=codebase,
+        resources=resources,
         field_name='copyrights',
         key_files_only=True,
-        is_codebase=True
+        is_codebase=is_codebase
     )
 
     other_license_detections = get_field_values_from_resources(
-        resources=codebase,
+        resources=resources,
         field_name='license_detections',
         key_files_only=False,
-        is_codebase=True
+        is_codebase=is_codebase
     )
     other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
     other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
@@ -332,35 +332,37 @@ def get_field_values_from_resources(
     values = []
     
     if is_codebase:
-        resource_list = resources.walk(topdown=True)
-    else:
-        resource_list = resources['resources']
-    
-    for resource in resource_list:
-        if key_files_only:
-            if is_codebase:
+        for resource in resources.walk(topdown=True):
+            if key_files_only:
                 if not resource.is_key_file:
                     continue
             else:
-                if not resource.get('is_key_file', False):
-                    continue
-        else:
-            if is_codebase:
                 if resource.is_key_file:
+                    continue
+            if is_string:
+                value = getattr(resource, field_name, None) or None
+                if value:
+                    values.append(value)
+            else:
+                for value in getattr(resource, field_name, []) or []:
+                    values.append(value)
+
+    else:
+        for resource in resources['resources']:
+            if key_files_only:
+                if not resource.get('is_key_file', False):
                     continue
             else:
                 if resource.get('is_key_file', False):
                     continue
-
-        if is_string:
-            value = getattr(resource, field_name, None) if is_codebase else resource.get(field_name)
-            if value:
-                values.append(value)
-        else:
-            field_values = getattr(resource, field_name, []) if is_codebase else resource.get(field_name, [])
-            for value in field_values:
-                values.append(value)
-
+            if is_string:
+                value = resource.get(field_name)
+                if value:
+                    values.append(value)
+            else:
+                for value in resource.get(field_name, []):
+                    values.append(value)
+                    
     return values
 
 
@@ -532,79 +534,3 @@ def get_primary_license(declared_license_expressions):
         return next(iter(single_expressions_by_joined_expressions))
     else:
         return None
-
-def compute_license_score_package_level(package):
-    scoring_elements = ScoringElements()
-    license_detections = get_field_values_from_resources(
-        resources=package,
-        field_name='license_detections',
-        key_files_only=True,
-        is_codebase=False
-    )
-    license_match_mappings = get_matches_from_detection_mappings(license_detections)
-    license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
-    declared_license_expressions = get_field_values_from_resources(
-        resources=package,
-        field_name='detected_license_expression',
-        key_files_only=True,
-        is_string=True,
-        is_codebase=False
-    )
-    unique_declared_license_expressions = unique(declared_license_expressions)
-    copyrights = get_field_values_from_resources(
-        resources=package,
-        field_name='copyrights',
-        key_files_only=True,
-        is_codebase=False
-    )
-    other_license_detections = get_field_values_from_resources(
-        resources=package,
-        field_name='license_detections',
-        key_files_only=False,
-        is_codebase=False
-    )
-    other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
-    other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
-    
-    license_match_mappings = get_matches_from_detection_mappings(license_detections)
-    license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
-    declared_license_categories = get_license_categories(license_matches)
-    
-    scoring_elements.declared_license = bool(license_matches)
-    if scoring_elements.declared_license:
-        scoring_elements.score += 40
-        
-    scoring_elements.identification_precision = check_declared_licenses(license_matches)
-    if scoring_elements.identification_precision:
-        scoring_elements.score += 40
-    
-    scoring_elements.has_license_text = check_for_license_texts(license_matches)
-    if scoring_elements.has_license_text:
-        scoring_elements.score += 10
-        
-    scoring_elements.declared_copyrights = bool(copyrights)
-    if scoring_elements.declared_copyrights:
-        scoring_elements.score += 10
-
-    is_permissively_licensed = check_declared_license_categories(declared_license_categories)
-    if is_permissively_licensed:
-        scoring_elements.conflicting_license_categories = check_for_conflicting_licenses(
-            other_license_matches
-        )
-        if scoring_elements.conflicting_license_categories and scoring_elements.score > 0:
-            scoring_elements.score -= 20
-        
-    declared_license_expression = get_primary_license(unique_declared_license_expressions)
-    if not declared_license_expression:
-        combined_declared_license_expression = combine_expressions(
-            unique_declared_license_expressions
-        )
-        if combined_declared_license_expression:
-            declared_license_expression = str(
-                Licensing().parse(combined_declared_license_expression).simplify()
-            )
-        scoring_elements.ambiguous_compound_licensing = True
-        if scoring_elements.score > 0:
-            scoring_elements.score -= 10
-
-    return scoring_elements

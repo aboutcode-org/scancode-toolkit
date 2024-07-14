@@ -108,11 +108,11 @@ class ScanSummary(PostScanPlugin):
             )
 
         if declared_license_expression:
-            scoring_elements, _ = compute_license_score(codebase)
+            scoring_elements, _ = compute_license_score(codebase,is_codebase=True)
         else:
             # If we did not get a declared license expression from detected
             # package data, then we use the results from `compute_license_score`
-            scoring_elements, declared_license_expression = compute_license_score(codebase)
+            scoring_elements, declared_license_expression = compute_license_score(codebase, is_codebase=True)
         other_license_expressions = remove_from_tallies(
             declared_license_expression, license_expressions_tallies
         )

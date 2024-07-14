@@ -41,7 +41,7 @@ from packagedcode.models import Package
 from packagedcode.models import PackageData
 from packagedcode.models import PackageWithResources
 from packagedcode.models import get_files_for_packages
-from summarycode.score import  compute_license_score_package_level
+from summarycode.score import  compute_license_score
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 TRACE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
@@ -322,7 +322,7 @@ class PackageSummary(PostScanPlugin):
             if package_uid in package_resources:
                 package['resources'] = [resource.to_dict() for resource in package_resources[package_uid]]
                 
-            scoring_elements= compute_license_score_package_level(package)
+            scoring_elements, _= compute_license_score(package, is_codebase=False)
             license_clarity_score= scoring_elements.to_dict()
 
         for package in packages:
