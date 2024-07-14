@@ -316,20 +316,15 @@ class PackageSummary(PostScanPlugin):
                 package_resources[package_uid] = []
             package_resources[package_uid].append(resource)
 
+        # Add a 'resources' field to each package in packages_copy
         for package in packages_copy:
             package_uid = package['package_uid']
             if package_uid in package_resources:
-                resources_for_package = package_resources[package_uid]
-                for resource in resources_for_package:
-                    package['resources']= resource.to_dict()
-            else:
-                print(f"No resources found for package {package_uid}")
+                package['resources'] = [resource.to_dict() for resource in package_resources[package_uid]]
                 
-        for package in packages_copy:
             scoring_elements= compute_license_score_package_level(package)
             license_clarity_score= scoring_elements.to_dict()
 
-        # adding license_clarity_score to package attribute(orignal)
         for package in packages:
             package['license_clarity_score'] = license_clarity_score
         
