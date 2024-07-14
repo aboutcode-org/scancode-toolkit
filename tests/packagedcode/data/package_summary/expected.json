@@ -88,13 +88,13 @@
         "npm_package_json"
       ],
       "license_clarity_score": {
-        "score": 70,
+        "score": 90,
         "declared_license": true,
         "identification_precision": true,
         "has_license_text": false,
-        "declared_copyrights": false,
+        "declared_copyrights": true,
         "conflicting_license_categories": false,
-        "ambiguous_compound_licensing": true
+        "ambiguous_compound_licensing": false
       },
       "purl": "pkg:npm/change-case@5.4.4"
     },
@@ -186,13 +186,13 @@
         "npm_package_json"
       ],
       "license_clarity_score": {
-        "score": 70,
+        "score": 90,
         "declared_license": true,
         "identification_precision": true,
         "has_license_text": false,
-        "declared_copyrights": false,
+        "declared_copyrights": true,
         "conflicting_license_categories": false,
-        "ambiguous_compound_licensing": true
+        "ambiguous_compound_licensing": false
       },
       "purl": "pkg:npm/sponge-case@2.0.3"
     },
@@ -282,13 +282,13 @@
         "npm_package_json"
       ],
       "license_clarity_score": {
-        "score": 70,
+        "score": 90,
         "declared_license": true,
         "identification_precision": true,
         "has_license_text": false,
-        "declared_copyrights": false,
+        "declared_copyrights": true,
         "conflicting_license_categories": false,
-        "ambiguous_compound_licensing": true
+        "ambiguous_compound_licensing": false
       },
       "purl": "pkg:npm/swap-case@3.0.3"
     },
@@ -378,13 +378,13 @@
         "npm_package_json"
       ],
       "license_clarity_score": {
-        "score": 70,
+        "score": 90,
         "declared_license": true,
         "identification_precision": true,
         "has_license_text": false,
-        "declared_copyrights": false,
+        "declared_copyrights": true,
         "conflicting_license_categories": false,
-        "ambiguous_compound_licensing": true
+        "ambiguous_compound_licensing": false
       },
       "purl": "pkg:npm/title-case@4.3.1"
     }
@@ -29512,6 +29512,74 @@
       "datasource_id": "npm_package_lock_json"
     }
   ],
+  "license_detections": [
+    {
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 7,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/README.md",
+          "start_line": 22,
+          "end_line": 24,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 4,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/change-case/package.json",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+          "rule_url": null
+        }
+      ]
+    },
+    {
+      "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 3,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/LICENSE",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_26.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+        }
+      ]
+    }
+  ],
   "files": [
     {
       "path": "change-case-change-case-5.4.4",
@@ -29523,6 +29591,14 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -29540,6 +29616,48 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_26.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+            }
+          ],
+          "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 33.33,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Blake Embrey",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -29557,6 +29675,36 @@
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/README.md",
+              "start_line": 22,
+              "end_line": 24,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.53,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -29587,9 +29735,52 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": null,
-          "declared_license_expression_spdx": null,
-          "license_detections": [],
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/LICENSE",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit_26.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+                }
+              ],
+              "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996"
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/README.md",
+                  "start_line": 22,
+                  "end_line": 24,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit_30.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+                }
+              ],
+              "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+            }
+          ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
@@ -57271,6 +57462,323 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4234,
+          "end_line": 4234,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4242,
+          "end_line": 4242,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4252,
+          "end_line": 4252,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4257,
+          "end_line": 4257,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4275,
+          "end_line": 4275,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4283,
+          "end_line": 4283,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4291,
+          "end_line": 4291,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4299,
+          "end_line": 4299,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4304,
+          "end_line": 4304,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4309,
+          "end_line": 4309,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4314,
+          "end_line": 4314,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4319,
+          "end_line": 4319,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4324,
+          "end_line": 4324,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4332,
+          "end_line": 4332,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4340,
+          "end_line": 4340,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4348,
+          "end_line": 4348,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4356,
+          "end_line": 4356,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4363,
+          "end_line": 4363,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4367,
+          "end_line": 4367,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4371,
+          "end_line": 4371,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4376,
+          "end_line": 4376,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "spdx_license_expression": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/package-lock.json",
+          "start_line": 4381,
+          "end_line": 4381,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        }
+      ],
+      "percentage_of_license_text": 0.31,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57301,9 +57809,52 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": null,
-          "declared_license_expression_spdx": null,
-          "license_detections": [],
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/LICENSE",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit_26.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+                }
+              ],
+              "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996"
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/README.md",
+                  "start_line": 22,
+                  "end_line": 24,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit_30.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+                }
+              ],
+              "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+            }
+          ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
@@ -57382,6 +57933,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57399,6 +57958,14 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57413,6 +57980,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57513,6 +58088,42 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/change-case/package.json",
+              "start_line": 24,
+              "end_line": 24,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.5,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Blake Embrey",
+          "start_line": 25,
+          "end_line": 26
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -57527,6 +58138,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57541,6 +58160,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57555,6 +58182,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57569,6 +58204,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57583,6 +58226,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57597,6 +58248,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57611,6 +58270,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57711,6 +58378,42 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/sponge-case/package.json",
+              "start_line": 24,
+              "end_line": 24,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.72,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Nate Rabins",
+          "start_line": 25,
+          "end_line": 26
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -57725,6 +58428,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57739,6 +58450,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57753,6 +58472,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57767,6 +58494,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57781,6 +58516,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57879,6 +58622,42 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/swap-case/package.json",
+              "start_line": 22,
+              "end_line": 22,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.63,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Blake Embrey",
+          "start_line": 23,
+          "end_line": 24
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -57893,6 +58672,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57907,6 +58694,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57921,6 +58716,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57935,6 +58738,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -57949,6 +58760,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -58047,6 +58866,42 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/title-case/package.json",
+              "start_line": 22,
+              "end_line": 22,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.74,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Blake Embrey",
+          "start_line": 23,
+          "end_line": 24
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -58061,6 +58916,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -58075,6 +58938,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -58089,6 +58960,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -58103,6 +58982,14 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     },
     {
@@ -58120,6 +59007,14 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
       "scan_errors": []
     }
   ]
