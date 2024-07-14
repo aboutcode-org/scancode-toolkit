@@ -21,7 +21,7 @@ from packagedcode.utils import combine_expressions
 from packagedcode import models
 from summarycode.copyright_tallies import canonical_holder
 from summarycode.score import compute_license_score
-from summarycode.score import get_field_values_from_codebase_resources
+from summarycode.score import get_field_values_from_resources
 from summarycode.score import unique
 from summarycode.tallies import compute_codebase_tallies
 
@@ -167,8 +167,8 @@ def get_declared_holders(codebase, holders_tallies):
     entry_by_holders = {
         fingerprints.generate(entry['value']): entry for entry in holders_tallies if entry['value']
     }
-    key_file_holders = get_field_values_from_codebase_resources(
-        codebase, 'holders', key_files_only=True
+    key_file_holders = get_field_values_from_resources(
+        resources=codebase, field_name='holders', key_files_only=True, is_codebase=True
     )
     entry_by_key_file_holders = {
         fingerprints.generate(canonical_holder(entry['holder'])): entry
