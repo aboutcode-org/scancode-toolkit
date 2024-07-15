@@ -75,7 +75,7 @@ class LicenseClarityScore(PostScanPlugin):
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        scoring_elements, declared_license_expression = compute_license_score(codebase)
+        scoring_elements, declared_license_expression = compute_license_score(codebase, is_codebase=True)
         codebase.attributes.summary['declared_license_expression'] = declared_license_expression
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
