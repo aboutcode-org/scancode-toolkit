@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "gpl-2.0 WITH mysql-linking-exception-2018",
-          "spdx_license_expression": "GPL-2.0-only WITH LicenseRef-scancode-mysql-linking-exception-2018",
+          "license_expression_spdx": "GPL-2.0-only WITH LicenseRef-scancode-mysql-linking-exception-2018",
           "from_file": null,
           "start_line": 1,
           "end_line": 5,
@@ -53,7 +53,7 @@
       "matches": [
         {
           "license_expression": "unknown",
-          "spdx_license_expression": "LicenseRef-scancode-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
           "from_file": null,
           "start_line": 1,
           "end_line": 5,

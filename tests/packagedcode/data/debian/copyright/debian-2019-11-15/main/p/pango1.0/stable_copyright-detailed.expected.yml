@@ -34,7 +34,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 85
         end_line: 87
@@ -54,7 +54,7 @@ other_license_detections:
     license_expression_spdx: ICU
     matches:
       - license_expression: x11
-        spdx_license_expression: ICU
+        license_expression_spdx: ICU
         from_file:
         start_line: 90
         end_line: 116
@@ -98,7 +98,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.0-or-later
     matches:
       - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later
         from_file:
         start_line: 118
         end_line: 118
@@ -111,7 +111,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
       - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later
         from_file:
         start_line: 119
         end_line: 130
@@ -140,7 +140,7 @@ other_license_detections:
     license_expression_spdx: TCL
     matches:
       - license_expression: tcl
-        spdx_license_expression: TCL
+        license_expression_spdx: TCL
         from_file:
         start_line: 133
         end_line: 171
@@ -196,7 +196,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-unicode
     matches:
       - license_expression: unicode
-        spdx_license_expression: LicenseRef-scancode-unicode
+        license_expression_spdx: LicenseRef-scancode-unicode
         from_file:
         start_line: 174
         end_line: 224

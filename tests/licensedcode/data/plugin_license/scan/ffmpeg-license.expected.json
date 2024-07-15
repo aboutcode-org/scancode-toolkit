@@ -237,7 +237,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 3,
               "end_line": 13,
@@ -261,7 +261,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 54,
               "end_line": 54,
@@ -277,7 +277,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 55,
               "end_line": 55,
@@ -293,7 +293,7 @@
             },
             {
               "license_expression": "lgpl-3.0 AND gpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only AND GPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only AND GPL-3.0-only",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 56,
               "end_line": 57,
@@ -317,7 +317,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 59,
               "end_line": 59,
@@ -333,7 +333,7 @@
             },
             {
               "license_expression": "ijg",
-              "spdx_license_expression": "IJG",
+              "license_expression_spdx": "IJG",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 62,
               "end_line": 63,
@@ -349,7 +349,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 67,
               "end_line": 67,
@@ -375,7 +375,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 79,
               "end_line": 79,
@@ -399,7 +399,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 88,
               "end_line": 89,
@@ -415,7 +415,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 91,
               "end_line": 91,
@@ -431,7 +431,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 94,
               "end_line": 94,
@@ -453,7 +453,7 @@
       "license_clues": [
         {
           "license_expression": "gpl-2.0",
-          "spdx_license_expression": "GPL-2.0-only",
+          "license_expression_spdx": "GPL-2.0-only",
           "from_file": "ffmpeg-LICENSE.md",
           "start_line": 100,
           "end_line": 100,
@@ -469,7 +469,7 @@
         },
         {
           "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
+          "license_expression_spdx": "LGPL-2.0-or-later",
           "from_file": "ffmpeg-LICENSE.md",
           "start_line": 101,
           "end_line": 101,
@@ -485,7 +485,7 @@
         },
         {
           "license_expression": "proprietary-license",
-          "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
           "from_file": "ffmpeg-LICENSE.md",
           "start_line": 102,
           "end_line": 102,
@@ -501,7 +501,7 @@
         },
         {
           "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
+          "license_expression_spdx": "LGPL-2.0-or-later",
           "from_file": "ffmpeg-LICENSE.md",
           "start_line": 104,
           "end_line": 104,

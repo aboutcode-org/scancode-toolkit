@@ -82,7 +82,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan-ref/LICENSE",
               "start_line": 1,
               "end_line": 1,
@@ -117,7 +117,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "scan-ref/license-notice.txt",
               "start_line": 34,
               "end_line": 34,
@@ -133,7 +133,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan-ref/LICENSE",
               "start_line": 1,
               "end_line": 1,

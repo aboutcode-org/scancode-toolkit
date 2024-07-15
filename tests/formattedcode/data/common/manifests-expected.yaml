@@ -29,8 +29,8 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-112-generic-x86_64-with-glibc2.35
-        platform_version: '#122-Ubuntu SMP Thu May 23 07:48:21 UTC 2024'
+        platform: Linux-5.15.0-113-generic-x86_64-with-glibc2.35
+        platform_version: '#123-Ubuntu SMP Mon Jun 10 08:16:17 UTC 2024'
         python_version: 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]
       spdx_license_list_version: '3.24'
       files_count: 4
@@ -95,7 +95,7 @@ packages:
         license_expression_spdx: CDDL-1.0
         matches:
           - license_expression: cddl-1.0
-            spdx_license_expression: CDDL-1.0
+            license_expression_spdx: CDDL-1.0
             from_file: manifests/maven/persistence-api-1.0.pom
             start_line: 1
             end_line: 1
@@ -108,7 +108,7 @@ packages:
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE
             matched_text: '- name: Common Development and Distribution License (CDDL) v1.0'
           - license_expression: cddl-1.0
-            spdx_license_expression: CDDL-1.0
+            license_expression_spdx: CDDL-1.0
             from_file: manifests/maven/persistence-api-1.0.pom
             start_line: 2
             end_line: 2
@@ -178,7 +178,7 @@ packages:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: manifests/npm-license-mapping/package.json
             start_line: 1
             end_line: 1
@@ -195,7 +195,7 @@ packages:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: manifests/npm-license-mapping/package.json
             start_line: 1
             end_line: 1
@@ -266,7 +266,7 @@ packages:
         license_expression_spdx: MIT
         matches:
           - license_expression: mit
-            spdx_license_expression: MIT
+            license_expression_spdx: MIT
             from_file: manifests/npm-license-string/package.json
             start_line: 1
             end_line: 1
@@ -1778,7 +1778,7 @@ files:
             license_expression_spdx: CDDL-1.0
             matches:
               - license_expression: cddl-1.0
-                spdx_license_expression: CDDL-1.0
+                license_expression_spdx: CDDL-1.0
                 from_file: manifests/maven/persistence-api-1.0.pom
                 start_line: 1
                 end_line: 1
@@ -1791,7 +1791,7 @@ files:
                 rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE
                 matched_text: '- name: Common Development and Distribution License (CDDL) v1.0'
               - license_expression: cddl-1.0
-                spdx_license_expression: CDDL-1.0
+                license_expression_spdx: CDDL-1.0
                 from_file: manifests/maven/persistence-api-1.0.pom
                 start_line: 2
                 end_line: 2
@@ -1837,7 +1837,7 @@ files:
         license_expression_spdx: CDDL-1.0
         matches:
           - license_expression: unknown-license-reference
-            spdx_license_expression: LicenseRef-scancode-unknown-license-reference
+            license_expression_spdx: LicenseRef-scancode-unknown-license-reference
             from_file: manifests/maven/persistence-api-1.0.pom
             start_line: 17
             end_line: '19'
@@ -1853,7 +1853,7 @@ files:
                 <license>
                   <name>Common Development and Distribution License (CDDL) v1.0</name>
           - license_expression: cddl-1.0
-            spdx_license_expression: CDDL-1.0
+            license_expression_spdx: CDDL-1.0
             from_file: manifests/maven/persistence-api-1.0.pom
             start_line: 18
             end_line: 20
@@ -1980,7 +1980,7 @@ files:
             license_expression_spdx: Apache-2.0
             matches:
               - license_expression: apache-2.0
-                spdx_license_expression: Apache-2.0
+                license_expression_spdx: Apache-2.0
                 from_file: manifests/npm-license-mapping/package.json
                 start_line: 1
                 end_line: 1
@@ -1997,7 +1997,7 @@ files:
             license_expression_spdx: Apache-2.0
             matches:
               - license_expression: apache-2.0
-                spdx_license_expression: Apache-2.0
+                license_expression_spdx: Apache-2.0
                 from_file: manifests/npm-license-mapping/package.json
                 start_line: 1
                 end_line: 1
@@ -2135,7 +2135,7 @@ files:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: manifests/npm-license-mapping/package.json
             start_line: 6
             end_line: 6
@@ -2152,7 +2152,7 @@ files:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: manifests/npm-license-mapping/package.json
             start_line: 20
             end_line: 20
@@ -2287,7 +2287,7 @@ files:
             license_expression_spdx: MIT
             matches:
               - license_expression: mit
-                spdx_license_expression: MIT
+                license_expression_spdx: MIT
                 from_file: manifests/npm-license-string/package.json
                 start_line: 1
                 end_line: 1
@@ -2376,7 +2376,7 @@ files:
         license_expression_spdx: MIT
         matches:
           - license_expression: mit
-            spdx_license_expression: MIT
+            license_expression_spdx: MIT
             from_file: manifests/npm-license-string/package.json
             start_line: 4
             end_line: 4
@@ -2517,7 +2517,7 @@ files:
             license_expression_spdx: LGPL-3.0-only
             matches:
               - license_expression: lgpl-3.0
-                spdx_license_expression: LGPL-3.0-only
+                license_expression_spdx: LGPL-3.0-only
                 from_file: manifests/pypi/bluepyopt_setup.py
                 start_line: 1
                 end_line: 1
@@ -2534,7 +2534,7 @@ files:
             license_expression_spdx: LGPL-3.0-only
             matches:
               - license_expression: lgpl-3.0
-                spdx_license_expression: LGPL-3.0-only
+                license_expression_spdx: LGPL-3.0-only
                 from_file: manifests/pypi/bluepyopt_setup.py
                 start_line: 1
                 end_line: 1
@@ -2679,7 +2679,7 @@ files:
         license_expression_spdx: LGPL-3.0-only
         matches:
           - license_expression: lgpl-3.0
-            spdx_license_expression: LGPL-3.0-only
+            license_expression_spdx: LGPL-3.0-only
             from_file: manifests/pypi/bluepyopt_setup.py
             start_line: 9
             end_line: 20
@@ -2708,7 +2708,7 @@ files:
         license_expression_spdx: LGPL-3.0-only
         matches:
           - license_expression: lgpl-3.0
-            spdx_license_expression: LGPL-3.0-only
+            license_expression_spdx: LGPL-3.0-only
             from_file: manifests/pypi/bluepyopt_setup.py
             start_line: 65
             end_line: 65
@@ -2725,7 +2725,7 @@ files:
         license_expression_spdx: LGPL-3.0-only
         matches:
           - license_expression: lgpl-3.0
-            spdx_license_expression: LGPL-3.0-only
+            license_expression_spdx: LGPL-3.0-only
             from_file: manifests/pypi/bluepyopt_setup.py
             start_line: 74
             end_line: 75

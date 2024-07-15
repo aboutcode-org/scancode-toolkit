@@ -47,7 +47,7 @@
         "matches": [
           {
             "license_expression": "ms-net-library-2018-11",
-            "spdx_license_expression": "LicenseRef-scancode-ms-net-library-2018-11",
+            "license_expression_spdx": "LicenseRef-scancode-ms-net-library-2018-11",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,

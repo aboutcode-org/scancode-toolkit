@@ -163,7 +163,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "scan/usr/share/licenses/glibc/COPYING",
               "start_line": 1,
               "end_line": 2,
@@ -187,7 +187,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1",
-              "spdx_license_expression": "LGPL-2.1-only",
+              "license_expression_spdx": "LGPL-2.1-only",
               "from_file": "scan/usr/share/licenses/glibc/COPYING.LIB",
               "start_line": 1,
               "end_line": 2,
@@ -215,7 +215,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan/usr/share/licenses/glibc/LICENSES",
               "start_line": 1,
               "end_line": 1,
@@ -239,7 +239,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "scan/usr/share/licenses/glibc/LICENSES",
               "start_line": 6,
               "end_line": 6,
@@ -387,7 +387,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "scan/usr/share/licenses/tzdata/LICENSE",
               "start_line": 2,
               "end_line": 2,
@@ -403,7 +403,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "scan/usr/share/licenses/tzdata/LICENSE",
               "start_line": 5,
               "end_line": 5,
@@ -550,7 +550,7 @@
           "matches": [
             {
               "license_expression": "openssl-ssleay",
-              "spdx_license_expression": "OpenSSL",
+              "license_expression_spdx": "OpenSSL",
               "from_file": "scan/usr/share/licenses/openssl/LICENSE",
               "start_line": 1,
               "end_line": 2,
@@ -697,7 +697,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan/usr/share/licenses/iana-etc/LICENSE",
               "start_line": 1,
               "end_line": 1,
@@ -996,7 +996,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "scan/usr/share/licenses/glibc/COPYING",
                   "start_line": 1,
                   "end_line": 2,
@@ -1075,7 +1075,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.1",
-                  "spdx_license_expression": "LGPL-2.1-only",
+                  "license_expression_spdx": "LGPL-2.1-only",
                   "from_file": "scan/usr/share/licenses/glibc/COPYING.LIB",
                   "start_line": 1,
                   "end_line": 2,
@@ -1154,7 +1154,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "scan/usr/share/licenses/glibc/LICENSES",
                   "start_line": 1,
                   "end_line": 1,
@@ -1178,7 +1178,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "scan/usr/share/licenses/glibc/LICENSES",
                   "start_line": 6,
                   "end_line": 6,
@@ -1264,7 +1264,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "scan/usr/share/licenses/iana-etc/LICENSE",
                   "start_line": 1,
                   "end_line": 1,
@@ -1350,7 +1350,7 @@
               "matches": [
                 {
                   "license_expression": "openssl-ssleay",
-                  "spdx_license_expression": "OpenSSL",
+                  "license_expression_spdx": "OpenSSL",
                   "from_file": "scan/usr/share/licenses/openssl/LICENSE",
                   "start_line": 1,
                   "end_line": 2,
@@ -1436,7 +1436,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "scan/usr/share/licenses/tzdata/LICENSE",
                   "start_line": 2,
                   "end_line": 2,
@@ -1452,7 +1452,7 @@
                 },
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "scan/usr/share/licenses/tzdata/LICENSE",
                   "start_line": 5,
                   "end_line": 5,

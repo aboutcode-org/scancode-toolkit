@@ -794,7 +794,7 @@ class LicenseMatch(object):
         result = {}
 
         result['license_expression'] = self.rule.license_expression
-        result['spdx_license_expression'] = self.rule.spdx_license_expression()
+        result['license_expression_spdx'] = self.rule.spdx_license_expression()
         result['from_file'] = file_path
         result['start_line'] = self.start_line
         result['end_line'] = self.end_line

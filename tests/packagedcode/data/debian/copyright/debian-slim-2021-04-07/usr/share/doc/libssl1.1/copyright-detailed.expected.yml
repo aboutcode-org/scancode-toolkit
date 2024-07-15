@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: OpenSSL
     matches:
       - license_expression: openssl-ssleay
-        spdx_license_expression: OpenSSL
+        license_expression_spdx: OpenSSL
         from_file:
         start_line: 10
         end_line: 133

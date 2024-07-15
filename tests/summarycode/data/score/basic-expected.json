@@ -53,7 +53,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "basic/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -434,7 +434,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "basic/README.md",
               "start_line": 20,
               "end_line": 37,
@@ -509,7 +509,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "basic/index.js",
               "start_line": 2,
               "end_line": 19,
@@ -608,7 +608,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "basic/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -804,7 +804,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "basic/package.json",
               "start_line": 7,
               "end_line": 7,

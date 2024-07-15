@@ -9,7 +9,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
     matches:
       - license_expression: gpl-2.0-plus AND public-domain
-        spdx_license_expression: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
+        license_expression_spdx: GPL-2.0-or-later AND LicenseRef-scancode-public-domain
         from_file:
         start_line: 8
         end_line: 11
@@ -30,7 +30,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-smail-gpl
     matches:
       - license_expression: smail-gpl
-        spdx_license_expression: LicenseRef-scancode-smail-gpl
+        license_expression_spdx: LicenseRef-scancode-smail-gpl
         from_file:
         start_line: 18
         end_line: 161

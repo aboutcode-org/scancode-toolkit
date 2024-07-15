@@ -34,7 +34,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 67
         end_line: 67
@@ -47,7 +47,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 68
         end_line: 82
@@ -79,7 +79,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-only
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 84
         end_line: 84
@@ -92,7 +92,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 85
         end_line: 96
@@ -117,7 +117,7 @@ other_license_detections:
           You should have received a copy of the GNU Lesser General Public License
           along with this library.  If not, see <http://www.gnu.org/licenses/>.
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 98
         end_line: 99

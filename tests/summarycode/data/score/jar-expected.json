@@ -45,7 +45,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
               "start_line": 1,
               "end_line": 1,
@@ -60,7 +60,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
               "start_line": 2,
               "end_line": 2,
@@ -503,7 +503,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/META-INF/LICENSE.txt",
               "start_line": 2,
               "end_line": 202,
@@ -587,7 +587,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "jar/META-INF/LICENSE.txt",
                   "start_line": 2,
                   "end_line": 202,
@@ -904,7 +904,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
                   "start_line": 1,
                   "end_line": 1,
@@ -919,7 +919,7 @@
                 },
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
                   "start_line": 2,
                   "end_line": 2,
@@ -1073,7 +1073,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
               "start_line": 24,
               "end_line": 30,
@@ -1259,7 +1259,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/org/jboss/logging/AbstractLoggerProvider.java",
               "start_line": 6,
               "end_line": 16,
@@ -1334,7 +1334,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/org/jboss/logging/AbstractMdcLoggerProvider.java",
               "start_line": 6,
               "end_line": 16,

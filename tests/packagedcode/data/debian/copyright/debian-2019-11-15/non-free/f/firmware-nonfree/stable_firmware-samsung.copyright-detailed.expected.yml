@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 6
         end_line: 13

@@ -10,7 +10,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 14
         end_line: 31
@@ -45,7 +45,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-amd-linux-firmware
     matches:
       - license_expression: amd-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-amd-linux-firmware
+        license_expression_spdx: LicenseRef-scancode-amd-linux-firmware
         from_file:
         start_line: 38
         end_line: 86

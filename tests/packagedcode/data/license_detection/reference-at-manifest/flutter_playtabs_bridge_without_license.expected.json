@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "flutter_playtabs_bridge/flutter_paytabs_bridge.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -134,7 +134,7 @@
               "matches": [
                 {
                   "license_expression": "unknown-license-reference",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
                   "from_file": "flutter_playtabs_bridge/flutter_paytabs_bridge.podspec",
                   "start_line": 1,
                   "end_line": 1,

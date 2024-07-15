@@ -105,7 +105,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "scan-unknown-intro-with-imperfect-matches/LICENSE.md",
               "start_line": 9,
               "end_line": 9,
@@ -121,7 +121,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan-unknown-intro-with-imperfect-matches/LICENSE.md",
               "start_line": 11,
               "end_line": 11,
@@ -137,7 +137,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan-unknown-intro-with-imperfect-matches/LICENSE.md",
               "start_line": 11,
               "end_line": 11,
@@ -153,7 +153,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan-unknown-intro-with-imperfect-matches/LICENSE.md",
               "start_line": 13,
               "end_line": 13,
@@ -169,7 +169,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan-unknown-intro-with-imperfect-matches/LICENSE.md",
               "start_line": 16,
               "end_line": 20,

@@ -49,7 +49,7 @@
         "matches": [
           {
             "license_expression": "apache-2.0 OR mit",
-            "spdx_license_expression": "Apache-2.0 OR MIT",
+            "license_expression_spdx": "Apache-2.0 OR MIT",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,

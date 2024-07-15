@@ -100,7 +100,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "scan-unknown-intro-long-gaps-between/LICENSE-dist.txt",
               "start_line": 1,
               "end_line": 1,
@@ -116,7 +116,7 @@
             },
             {
               "license_expression": "x11-lucent",
-              "spdx_license_expression": "dtoa",
+              "license_expression_spdx": "dtoa",
               "from_file": "scan-unknown-intro-long-gaps-between/LICENSE-dist.txt",
               "start_line": 8,
               "end_line": 14,
@@ -142,7 +142,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "scan-unknown-intro-long-gaps-between/LICENSE-dist.txt",
               "start_line": 18,
               "end_line": 18,
@@ -158,7 +158,7 @@
             },
             {
               "license_expression": "bzip2-libbzip-2010",
-              "spdx_license_expression": "bzip2-1.0.6",
+              "license_expression_spdx": "bzip2-1.0.6",
               "from_file": "scan-unknown-intro-long-gaps-between/LICENSE-dist.txt",
               "start_line": 25,
               "end_line": 54,

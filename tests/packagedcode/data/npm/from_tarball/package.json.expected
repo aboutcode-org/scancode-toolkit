@@ -45,7 +45,7 @@
         "matches": [
           {
             "license_expression": "artistic-2.0",
-            "spdx_license_expression": "Artistic-2.0",
+            "license_expression_spdx": "Artistic-2.0",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,

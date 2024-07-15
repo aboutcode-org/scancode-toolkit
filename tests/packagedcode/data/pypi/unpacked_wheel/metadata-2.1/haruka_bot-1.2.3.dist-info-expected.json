@@ -49,7 +49,7 @@
         "matches": [
           {
             "license_expression": "agpl-3.0-plus",
-            "spdx_license_expression": "AGPL-3.0-or-later",
+            "license_expression_spdx": "AGPL-3.0-or-later",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -71,7 +71,7 @@
         "matches": [
           {
             "license_expression": "agpl-3.0-plus",
-            "spdx_license_expression": "AGPL-3.0-or-later",
+            "license_expression_spdx": "AGPL-3.0-or-later",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,

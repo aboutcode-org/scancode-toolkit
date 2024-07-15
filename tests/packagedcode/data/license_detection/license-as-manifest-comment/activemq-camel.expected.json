@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "activemq-camel/activemq-camel-pom.xml",
               "start_line": 3,
               "end_line": 16,
@@ -312,7 +312,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "activemq-camel/activemq-camel-pom.xml",
                   "start_line": 3,
                   "end_line": 16,
@@ -487,7 +487,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "activemq-camel/activemq-camel-pom.xml",
               "start_line": 3,
               "end_line": 16,

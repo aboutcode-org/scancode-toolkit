@@ -16,7 +16,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-only
     matches:
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 25
         end_line: 25
@@ -29,7 +29,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 26
         end_line: 39

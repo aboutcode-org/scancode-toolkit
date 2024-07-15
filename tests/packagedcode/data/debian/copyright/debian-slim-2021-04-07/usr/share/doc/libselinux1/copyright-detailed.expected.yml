@@ -9,7 +9,7 @@ license_detections:
     license_expression_spdx: libselinux-1.0
     matches:
       - license_expression: selinux-nsa-declaration-1.0
-        spdx_license_expression: libselinux-1.0
+        license_expression_spdx: libselinux-1.0
         from_file:
         start_line: 7
         end_line: 27
@@ -47,7 +47,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 32
         end_line: 33
@@ -66,7 +66,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 38
         end_line: 50
@@ -96,7 +96,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 56
         end_line: 65

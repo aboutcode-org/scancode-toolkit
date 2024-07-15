@@ -82,7 +82,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "license-ref-see-copying/COPYING",
               "start_line": 1,
               "end_line": 1,
@@ -117,7 +117,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "license-ref-see-copying/ref",
               "start_line": 1,
               "end_line": 1,
@@ -133,7 +133,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "license-ref-see-copying/COPYING",
               "start_line": 1,
               "end_line": 1,

@@ -54,7 +54,7 @@
         "matches": [
           {
             "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
-            "spdx_license_expression": "LGPL-3.0-only WITH OCaml-LGPL-linking-exception",
+            "license_expression_spdx": "LGPL-3.0-only WITH OCaml-LGPL-linking-exception",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,

@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 17
         end_line: 17
@@ -25,7 +25,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-bsd-unmodified
     matches:
       - license_expression: bsd-unmodified
-        spdx_license_expression: LicenseRef-scancode-bsd-unmodified
+        license_expression_spdx: LicenseRef-scancode-bsd-unmodified
         from_file:
         start_line: 22
         end_line: 41

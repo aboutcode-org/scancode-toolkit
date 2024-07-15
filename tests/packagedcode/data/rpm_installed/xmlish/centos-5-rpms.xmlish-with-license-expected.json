@@ -34,7 +34,7 @@
         "matches": [
           {
             "license_expression": "public-domain",
-            "spdx_license_expression": "LicenseRef-scancode-public-domain",
+            "license_expression_spdx": "LicenseRef-scancode-public-domain",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -356,7 +356,7 @@
         "matches": [
           {
             "license_expression": "public-domain",
-            "spdx_license_expression": "LicenseRef-scancode-public-domain",
+            "license_expression_spdx": "LicenseRef-scancode-public-domain",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,

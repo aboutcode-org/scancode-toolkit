@@ -55,7 +55,7 @@ license_detections:
       GPL-2.0-or-later)
     matches:
       - license_expression: lgpl-2.1-plus AND gpl-3.0-plus AND (lgpl-3.0-plus AND gpl-2.0-plus)
-        spdx_license_expression: LGPL-2.1-or-later AND GPL-3.0-or-later AND (LGPL-3.0-or-later
+        license_expression_spdx: LGPL-2.1-or-later AND GPL-3.0-or-later AND (LGPL-3.0-or-later
           AND GPL-2.0-or-later)
         from_file:
         start_line: 221
@@ -86,7 +86,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 244
         end_line: 255
@@ -115,7 +115,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later AND GFDL-1.1-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 265
         end_line: 276
@@ -140,7 +140,7 @@ license_detections:
            * You should have received a copy of the GNU General Public License
            * along with this program.  If not, see <http://www.gnu.org/licenses/>.
       - license_expression: gfdl-1.1-plus
-        spdx_license_expression: GFDL-1.1-or-later
+        license_expression_spdx: GFDL-1.1-or-later
         from_file:
         start_line: 280
         end_line: 281
@@ -159,7 +159,7 @@ license_detections:
     license_expression_spdx: GFDL-1.3-or-later
     matches:
       - license_expression: gfdl-1.3-plus
-        spdx_license_expression: GFDL-1.3-or-later
+        license_expression_spdx: GFDL-1.3-or-later
         from_file:
         start_line: 286
         end_line: 291
@@ -183,7 +183,7 @@ license_detections:
       AND GFDL-1.3-only
     matches:
       - license_expression: lgpl-2.0-plus AND lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3
-        spdx_license_expression: LGPL-2.0-or-later AND LGPL-3.0-only AND GPL-1.0-or-later AND
+        license_expression_spdx: LGPL-2.0-or-later AND LGPL-3.0-only AND GPL-1.0-or-later AND
           GPL-3.0-only AND GFDL-1.3-only
         from_file:
         start_line: 321
@@ -208,7 +208,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later AND (LGPL-3.0-or-later OR GPL-2.0-or-later)
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 336
         end_line: 337
@@ -223,7 +223,7 @@ license_detections:
           released under
           the GNU Lesser General Public License (LGPL) version 2.1 or later.
       - license_expression: lgpl-3.0-plus OR gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later OR GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later OR GPL-2.0-or-later
         from_file:
         start_line: 340
         end_line: 342
@@ -243,7 +243,7 @@ license_detections:
     license_expression_spdx: LGPL-2.0-or-later AND GPL-3.0-only
     matches:
       - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later
         from_file:
         start_line: 347
         end_line: 347
@@ -256,7 +256,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_48.RULE
         matched_text: GNU LGPL
       - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
+        license_expression_spdx: GPL-3.0-only
         from_file:
         start_line: 349
         end_line: 349
@@ -273,7 +273,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause OR GPL-1.0-or-later
     matches:
       - license_expression: bsd-new OR gpl-1.0-plus
-        spdx_license_expression: BSD-3-Clause OR GPL-1.0-or-later
+        license_expression_spdx: BSD-3-Clause OR GPL-1.0-or-later
         from_file:
         start_line: 370
         end_line: 402
@@ -323,7 +323,7 @@ license_detections:
     license_expression_spdx: BSD-2-Clause
     matches:
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 417
         end_line: 435
@@ -359,7 +359,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 446
         end_line: 447
@@ -378,7 +378,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 458
         end_line: 469
@@ -407,7 +407,7 @@ license_detections:
     license_expression_spdx: CC0-1.0
     matches:
       - license_expression: cc0-1.0
-        spdx_license_expression: CC0-1.0
+        license_expression_spdx: CC0-1.0
         from_file:
         start_line: 476
         end_line: 504
@@ -455,7 +455,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 510
         end_line: 510
@@ -468,7 +468,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
         matched_text: 'License: Expat'
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 511
         end_line: 527
@@ -502,7 +502,7 @@ license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 533
         end_line: 543
@@ -526,7 +526,7 @@ license_detections:
            *  See the License for the specific language governing permissions and
            *  limitations under the License.
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 546
         end_line: 548
@@ -546,7 +546,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 556
         end_line: 556
@@ -563,7 +563,7 @@ license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 564
         end_line: 566
@@ -583,7 +583,7 @@ license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 572
         end_line: 585
@@ -614,7 +614,7 @@ license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 591
         end_line: 604
@@ -645,7 +645,7 @@ license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 610
         end_line: 611
@@ -660,7 +660,7 @@ license_detections:
           Comment: On Debian systems the complete license text is available in
            /usr/share/common-licenses/Apache-2.0
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 612
         end_line: 614
@@ -680,7 +680,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 619
         end_line: 619
@@ -693,7 +693,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
         matched_text: 'License: Expat'
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 620
         end_line: 636
@@ -727,7 +727,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 645
         end_line: 645
@@ -740,7 +740,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
         matched_text: 'License: Expat'
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 646
         end_line: 662
@@ -774,7 +774,7 @@ license_detections:
     license_expression_spdx: MIT AND LGPL-2.1-or-later
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 667
         end_line: 667
@@ -787,7 +787,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
         matched_text: 'License: Expat'
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 668
         end_line: 684
@@ -817,7 +817,7 @@ license_detections:
            * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
            * DEALINGS IN THE SOFTWARE.
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 688
         end_line: 688
@@ -834,7 +834,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 695
         end_line: 695
@@ -847,7 +847,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 699
         end_line: 699
@@ -864,7 +864,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 705
         end_line: 705
@@ -877,7 +877,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
         matched_text: 'License: Expat'
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 706
         end_line: 723
@@ -912,7 +912,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 729
         end_line: 729
@@ -929,7 +929,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 735
         end_line: 735
@@ -946,7 +946,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 741
         end_line: 741
@@ -959,7 +959,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 745
         end_line: 745
@@ -972,7 +972,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 749
         end_line: 749
@@ -985,7 +985,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 753
         end_line: 753
@@ -1002,7 +1002,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 759
         end_line: 759
@@ -1019,7 +1019,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 764
         end_line: 764
@@ -1032,7 +1032,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 768
         end_line: 768
@@ -1045,7 +1045,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 772
         end_line: 772
@@ -1058,7 +1058,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 776
         end_line: 776
@@ -1071,7 +1071,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 780
         end_line: 780
@@ -1088,7 +1088,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 785
         end_line: 785
@@ -1101,7 +1101,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 789
         end_line: 789
@@ -1118,7 +1118,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 794
         end_line: 794
@@ -1135,7 +1135,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 799
         end_line: 799
@@ -1148,7 +1148,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 803
         end_line: 803
@@ -1165,7 +1165,7 @@ license_detections:
     license_expression_spdx: (LGPL-3.0-or-later AND GPL-2.0-or-later) AND MIT
     matches:
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 808
         end_line: 808
@@ -1178,7 +1178,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 809
         end_line: 826
@@ -1213,7 +1213,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 838
         end_line: 855
@@ -1250,7 +1250,7 @@ license_detections:
       AND (LGPL-3.0-or-later OR GPL-2.0-or-later)
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 866
         end_line: 877
@@ -1275,7 +1275,7 @@ license_detections:
            * You should have received a copy of the GNU Lesser General Public
            * License along with this program; if not, see <http://www.gnu.org/licenses/>.
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 880
         end_line: 880
@@ -1288,7 +1288,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 884
         end_line: 884
@@ -1301,7 +1301,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_and_gpl-2.0-plus_1.RULE
         matched_text: 'License: LGPLv3+_or_GPLv2+'
       - license_expression: lgpl-3.0-plus OR gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later OR GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later OR GPL-2.0-or-later
         from_file:
         start_line: 885
         end_line: 907
@@ -1341,7 +1341,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 927
         end_line: 927
@@ -1358,7 +1358,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 940
         end_line: 940
@@ -1375,7 +1375,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 945
         end_line: 945
@@ -1388,7 +1388,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 949
         end_line: 949
@@ -1405,7 +1405,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 954
         end_line: 954
@@ -1422,7 +1422,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later AND LGPL-2.1-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 964
         end_line: 964
@@ -1435,7 +1435,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 968
         end_line: 968
@@ -1448,7 +1448,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_299.RULE
         matched_text: 'License: LGPLv2.1+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 972
         end_line: 972
@@ -1465,7 +1465,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 978
         end_line: 978
@@ -1482,7 +1482,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 983
         end_line: 983
@@ -1499,7 +1499,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 988
         end_line: 988
@@ -1516,7 +1516,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 993
         end_line: 993
@@ -1533,7 +1533,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 999
         end_line: 999
@@ -1550,7 +1550,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1006
         end_line: 1006
@@ -1567,7 +1567,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1011
         end_line: 1011
@@ -1580,7 +1580,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1015
         end_line: 1015
@@ -1593,7 +1593,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1019
         end_line: 1019
@@ -1610,7 +1610,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later AND LGPL-2.1-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1024
         end_line: 1024
@@ -1623,7 +1623,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1028
         end_line: 1028
@@ -1636,7 +1636,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1032
         end_line: 1032
@@ -1649,7 +1649,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1036
         end_line: 1036
@@ -1662,7 +1662,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 1040
         end_line: 1040
@@ -1679,7 +1679,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1047
         end_line: 1047
@@ -1696,7 +1696,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1052
         end_line: 1052
@@ -1709,7 +1709,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1056
         end_line: 1056
@@ -1726,7 +1726,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1061
         end_line: 1061
@@ -1739,7 +1739,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1065
         end_line: 1065
@@ -1752,7 +1752,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_112.RULE
         matched_text: 'License: GPLv3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 1069
         end_line: 1069
@@ -1769,7 +1769,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 1074
         end_line: 1074
@@ -1782,7 +1782,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_195.RULE
         matched_text: 'License: BSD-3-Clause'
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 1077
         end_line: 1097

@@ -35,7 +35,7 @@ other_license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 84
         end_line: 84
@@ -48,7 +48,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 85
         end_line: 95
@@ -72,7 +72,7 @@ other_license_detections:
           See the License for the specific language governing permissions and
           limitations under the License.
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 97
         end_line: 98
@@ -91,7 +91,7 @@ other_license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 101
         end_line: 118
@@ -126,7 +126,7 @@ other_license_detections:
     license_expression_spdx: PSF-2.0
     matches:
       - license_expression: psf-2.0
-        spdx_license_expression: PSF-2.0
+        license_expression_spdx: PSF-2.0
         from_file:
         start_line: 121
         end_line: 169
@@ -192,7 +192,7 @@ other_license_detections:
     license_expression_spdx: BSD-2-Clause
     matches:
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 172
         end_line: '191'
@@ -229,7 +229,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: '194'
         end_line: 217
@@ -270,7 +270,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 76
         end_line: 76

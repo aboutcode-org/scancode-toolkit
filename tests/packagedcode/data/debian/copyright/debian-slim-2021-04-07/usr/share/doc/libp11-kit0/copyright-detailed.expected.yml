@@ -27,7 +27,7 @@ other_license_detections:
     license_expression_spdx: FSFULLRWD
     matches:
       - license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
+        license_expression_spdx: FSFULLRWD
         from_file:
         start_line: 17
         end_line: 24
@@ -52,7 +52,7 @@ other_license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 61
         end_line: 71
@@ -80,7 +80,7 @@ other_license_detections:
     license_expression_spdx: ISC AND LicenseRef-scancode-ibm-dhcp
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 80
         end_line: 91
@@ -105,7 +105,7 @@ other_license_detections:
           ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
           SOFTWARE.
       - license_expression: ibm-dhcp
-        spdx_license_expression: LicenseRef-scancode-ibm-dhcp
+        license_expression_spdx: LicenseRef-scancode-ibm-dhcp
         from_file:
         start_line: 96
         end_line: 115
@@ -142,7 +142,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-free-unknown
     matches:
       - license_expression: free-unknown
-        spdx_license_expression: LicenseRef-scancode-free-unknown
+        license_expression_spdx: LicenseRef-scancode-free-unknown
         from_file:
         start_line: 160
         end_line: 160
@@ -159,7 +159,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 165
         end_line: 187
@@ -199,7 +199,7 @@ other_license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 46
         end_line: 55
@@ -226,7 +226,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 151
         end_line: 152

@@ -54,7 +54,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -76,7 +76,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -214,7 +214,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -236,7 +236,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -585,7 +585,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/pyproject.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -607,7 +607,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/pyproject.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -631,12 +631,12 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/"
           },
-          "is_private": false,
-          "is_virtual": false,
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/pip",
           "repository_download_url": null,
@@ -762,7 +762,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -784,7 +784,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -907,7 +907,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/src/pip.egg-info/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -929,7 +929,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/src/pip.egg-info/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,

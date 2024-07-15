@@ -39,7 +39,7 @@
       "matches": [
         {
           "license_expression": "mpl-1.1",
-          "spdx_license_expression": "MPL-1.1",
+          "license_expression_spdx": "MPL-1.1",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,
@@ -54,7 +54,7 @@
         },
         {
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
-          "spdx_license_expression": "MPL-1.1 OR LGPL-2.1-or-later",
+          "license_expression_spdx": "MPL-1.1 OR LGPL-2.1-or-later",
           "from_file": null,
           "start_line": 2,
           "end_line": 2,
@@ -69,7 +69,7 @@
         },
         {
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
-          "spdx_license_expression": "MPL-1.1 OR LGPL-2.1-or-later",
+          "license_expression_spdx": "MPL-1.1 OR LGPL-2.1-or-later",
           "from_file": null,
           "start_line": 3,
           "end_line": 3,

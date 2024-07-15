@@ -197,7 +197,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "spdx-expressions.txt",
               "start_line": 2,
               "end_line": 2,
@@ -213,7 +213,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "spdx-expressions.txt",
               "start_line": 4,
               "end_line": 4,

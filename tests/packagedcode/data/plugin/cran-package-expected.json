@@ -48,7 +48,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "package/DESCRIPTION",
               "start_line": 1,
               "end_line": 1,
@@ -157,7 +157,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "package/DESCRIPTION",
                   "start_line": 1,
                   "end_line": 1,

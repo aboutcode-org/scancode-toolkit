@@ -164,7 +164,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus OR artistic-1.0",
-              "spdx_license_expression": "GPL-1.0-or-later OR Artistic-1.0",
+              "license_expression_spdx": "GPL-1.0-or-later OR Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 3,
               "end_line": 11,
@@ -178,7 +178,7 @@
             },
             {
               "license_expression": "gpl-1.0",
-              "spdx_license_expression": "GPL-1.0-only",
+              "license_expression_spdx": "GPL-1.0-only",
               "from_file": "LICENSE4",
               "start_line": 13,
               "end_line": 13,
@@ -192,7 +192,7 @@
             },
             {
               "license_expression": "gpl-1.0",
-              "spdx_license_expression": "GPL-1.0-only",
+              "license_expression_spdx": "GPL-1.0-only",
               "from_file": "LICENSE4",
               "start_line": 17,
               "end_line": 19,
@@ -206,7 +206,7 @@
             },
             {
               "license_expression": "gpl-1.0",
-              "spdx_license_expression": "GPL-1.0-only",
+              "license_expression_spdx": "GPL-1.0-only",
               "from_file": "LICENSE4",
               "start_line": 21,
               "end_line": 270,
@@ -220,7 +220,7 @@
             },
             {
               "license_expression": "artistic-1.0",
-              "spdx_license_expression": "Artistic-1.0",
+              "license_expression_spdx": "Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 273,
               "end_line": 273,
@@ -234,7 +234,7 @@
             },
             {
               "license_expression": "artistic-1.0",
-              "spdx_license_expression": "Artistic-1.0",
+              "license_expression_spdx": "Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 277,
               "end_line": 279,
@@ -248,7 +248,7 @@
             },
             {
               "license_expression": "artistic-1.0",
-              "spdx_license_expression": "Artistic-1.0",
+              "license_expression_spdx": "Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 281,
               "end_line": 281,
@@ -262,7 +262,7 @@
             },
             {
               "license_expression": "artistic-1.0",
-              "spdx_license_expression": "Artistic-1.0",
+              "license_expression_spdx": "Artistic-1.0",
               "from_file": "LICENSE4",
               "start_line": 283,
               "end_line": 372,
@@ -276,7 +276,7 @@
             },
             {
               "license_expression": "warranty-disclaimer",
-              "spdx_license_expression": "LicenseRef-scancode-warranty-disclaimer",
+              "license_expression_spdx": "LicenseRef-scancode-warranty-disclaimer",
               "from_file": "LICENSE4",
               "start_line": 374,
               "end_line": 376,

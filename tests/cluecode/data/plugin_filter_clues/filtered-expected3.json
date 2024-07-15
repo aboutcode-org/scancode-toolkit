@@ -52,7 +52,7 @@
           "matches": [
             {
               "license_expression": "pcre",
-              "spdx_license_expression": "LicenseRef-scancode-pcre",
+              "license_expression_spdx": "LicenseRef-scancode-pcre",
               "from_file": "LICENSE3",
               "start_line": 1,
               "end_line": 47,

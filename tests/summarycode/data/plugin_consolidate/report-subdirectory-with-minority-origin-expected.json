@@ -128,7 +128,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "report-subdirectory-with-minority-origin/b",
               "start_line": 3,
               "end_line": 7,
@@ -199,7 +199,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "report-subdirectory-with-minority-origin/c",
               "start_line": 3,
               "end_line": 7,
@@ -270,7 +270,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "report-subdirectory-with-minority-origin/d",
               "start_line": 3,
               "end_line": 7,
@@ -378,7 +378,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "report-subdirectory-with-minority-origin/minority_holder/a",
               "start_line": 3,
               "end_line": 7,

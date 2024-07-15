@@ -67,7 +67,7 @@
       "matches": [
         {
           "license_expression": "apache-1.1",
-          "spdx_license_expression": "Apache-1.1",
+          "license_expression_spdx": "Apache-1.1",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,
@@ -82,7 +82,7 @@
         },
         {
           "license_expression": "apache-1.1",
-          "spdx_license_expression": "Apache-1.1",
+          "license_expression_spdx": "Apache-1.1",
           "from_file": null,
           "start_line": 2,
           "end_line": 2,

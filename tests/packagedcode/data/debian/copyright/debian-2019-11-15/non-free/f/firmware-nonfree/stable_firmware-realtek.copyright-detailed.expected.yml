@@ -10,7 +10,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 9
         end_line: 11
@@ -30,7 +30,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
+        license_expression_spdx: LicenseRef-scancode-intel
         from_file:
         start_line: 18
         end_line: 53

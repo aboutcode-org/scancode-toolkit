@@ -37,7 +37,7 @@ other_license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 93
         end_line: 93
@@ -50,7 +50,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 94
         end_line: 107
@@ -81,7 +81,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 109
         end_line: 109
@@ -94,7 +94,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 110
         end_line: 124
@@ -126,7 +126,7 @@ other_license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 126
         end_line: 126
@@ -139,7 +139,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 127
         end_line: 141
@@ -171,7 +171,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.0-or-later
     matches:
       - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later
         from_file:
         start_line: 143
         end_line: 143
@@ -184,7 +184,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
       - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later
         from_file:
         start_line: 144
         end_line: 155
@@ -213,7 +213,7 @@ other_license_detections:
     license_expression_spdx: CC0-1.0
     matches:
       - license_expression: cc0-1.0
-        spdx_license_expression: CC0-1.0
+        license_expression_spdx: CC0-1.0
         from_file:
         start_line: 157
         end_line: 157
@@ -226,7 +226,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
         matched_text: 'License: cc0-1.0'
       - license_expression: cc0-1.0
-        spdx_license_expression: CC0-1.0
+        license_expression_spdx: CC0-1.0
         from_file:
         start_line: 158
         end_line: 179
@@ -265,7 +265,7 @@ other_license_detections:
     license_expression_spdx: CC-BY-SA-3.0
     matches:
       - license_expression: cc-by-sa-3.0
-        spdx_license_expression: CC-BY-SA-3.0
+        license_expression_spdx: CC-BY-SA-3.0
         from_file:
         start_line: 182
         end_line: 488
@@ -589,7 +589,7 @@ other_license_detections:
     license_expression_spdx: CC-BY-SA-4.0
     matches:
       - license_expression: cc-by-sa-4.0
-        spdx_license_expression: CC-BY-SA-4.0
+        license_expression_spdx: CC-BY-SA-4.0
         from_file:
         start_line: 491
         end_line: 491
@@ -602,7 +602,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-4.0_36.RULE
         matched_text: http://creativecommons.org/licenses/by-sa/4.0/
       - license_expression: cc-by-sa-4.0
-        spdx_license_expression: CC-BY-SA-4.0
+        license_expression_spdx: CC-BY-SA-4.0
         from_file:
         start_line: 493
         end_line: 914

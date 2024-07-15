@@ -23,7 +23,7 @@ other_license_detections:
     license_expression_spdx: FSFULLR
     matches:
       - license_expression: fsf-unlimited
-        spdx_license_expression: FSFULLR
+        license_expression_spdx: FSFULLR
         from_file:
         start_line: 27
         end_line: 29
@@ -43,7 +43,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later WITH Libtool-exception
     matches:
       - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
-        spdx_license_expression: GPL-2.0-or-later WITH Libtool-exception
+        license_expression_spdx: GPL-2.0-or-later WITH Libtool-exception
         from_file:
         start_line: 39
         end_line: 51
@@ -73,7 +73,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 54
         end_line: 54
@@ -86,7 +86,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 55
         end_line: 61
@@ -110,7 +110,7 @@ other_license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 63
         end_line: 63
@@ -123,7 +123,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 64
         end_line: 70
@@ -147,7 +147,7 @@ other_license_detections:
     license_expression_spdx: BSD-2-Clause
     matches:
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 73
         end_line: 95

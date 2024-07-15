@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-qlogic-firmware
     matches:
       - license_expression: qlogic-firmware
-        spdx_license_expression: LicenseRef-scancode-qlogic-firmware
+        license_expression_spdx: LicenseRef-scancode-qlogic-firmware
         from_file:
         start_line: 7
         end_line: 34

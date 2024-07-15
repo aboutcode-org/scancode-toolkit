@@ -44,7 +44,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": null,
               "start_line": 1,
               "end_line": 1,
@@ -129,7 +129,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": null,
               "start_line": 1,
               "end_line": 1,
@@ -214,7 +214,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": null,
               "start_line": 1,
               "end_line": 1,
@@ -296,7 +296,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "tauri/core/tests/restart/Cargo.toml",
               "start_line": 1,
               "end_line": 1,
@@ -377,7 +377,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "tauri/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -2769,7 +2769,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "tauri/core/tests/restart/Cargo.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -3143,7 +3143,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "tauri/examples/api/src-tauri/Cargo.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -3348,7 +3348,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "tauri/package.json",
                   "start_line": 1,
                   "end_line": 1,

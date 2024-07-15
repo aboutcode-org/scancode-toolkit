@@ -24,7 +24,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 38
         end_line: 61
@@ -58,7 +58,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 63
         end_line: 63
@@ -71,7 +71,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 64
         end_line: 74
@@ -95,7 +95,7 @@ other_license_detections:
           You should have received a copy of the GNU General Public License
           along with this program. If not, see <http://www.gnu.org/licenses/>.
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 76
         end_line: 77
@@ -114,7 +114,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 79
         end_line: 79
@@ -127,7 +127,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 80
         end_line: 94
@@ -159,7 +159,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-only
     matches:
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 96
         end_line: 96
@@ -172,7 +172,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 97
         end_line: 110
@@ -203,7 +203,7 @@ other_license_detections:
     license_expression_spdx: ISC AND LicenseRef-scancode-ibm-dhcp
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 113
         end_line: 123
@@ -227,7 +227,7 @@ other_license_detections:
           ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
           CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       - license_expression: ibm-dhcp
-        spdx_license_expression: LicenseRef-scancode-ibm-dhcp
+        license_expression_spdx: LicenseRef-scancode-ibm-dhcp
         from_file:
         start_line: 127
         end_line: 145
@@ -263,7 +263,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-xfree86-1.0
     matches:
       - license_expression: xfree86-1.0
-        spdx_license_expression: LicenseRef-scancode-xfree86-1.0
+        license_expression_spdx: LicenseRef-scancode-xfree86-1.0
         from_file:
         start_line: 148
         end_line: 169

@@ -10,7 +10,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 11
         end_line: 48
@@ -65,7 +65,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-marvell-firmware
     matches:
       - license_expression: marvell-firmware
-        spdx_license_expression: LicenseRef-scancode-marvell-firmware
+        license_expression_spdx: LicenseRef-scancode-marvell-firmware
         from_file:
         start_line: 55
         end_line: 84

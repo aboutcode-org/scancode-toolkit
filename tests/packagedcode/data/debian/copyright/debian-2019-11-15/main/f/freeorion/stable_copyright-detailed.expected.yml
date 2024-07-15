@@ -33,7 +33,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 69
         end_line: 69
@@ -46,7 +46,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 70
         end_line: 83
@@ -77,7 +77,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.1-only
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 85
         end_line: 85
@@ -90,7 +90,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 86
         end_line: 94
@@ -112,7 +112,7 @@ other_license_detections:
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           Lesser General Public License for more details.
       - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later
         from_file:
         start_line: 96
         end_line: 96
@@ -125,7 +125,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_215.RULE
         matched_text: the GNU Library General Public License
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 97
         end_line: 97
@@ -142,7 +142,7 @@ other_license_detections:
     license_expression_spdx: BSL-1.0
     matches:
       - license_expression: boost-1.0
-        spdx_license_expression: BSL-1.0
+        license_expression_spdx: BSL-1.0
         from_file:
         start_line: 100
         end_line: 122
@@ -182,7 +182,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 125
         end_line: 139
@@ -214,7 +214,7 @@ other_license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 141
         end_line: 141
@@ -227,7 +227,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 142
         end_line: 143
@@ -246,7 +246,7 @@ other_license_detections:
     license_expression_spdx: CC-BY-SA-3.0
     matches:
       - license_expression: cc-by-sa-3.0
-        spdx_license_expression: CC-BY-SA-3.0
+        license_expression_spdx: CC-BY-SA-3.0
         from_file:
         start_line: 146
         end_line: 521
@@ -639,7 +639,7 @@ other_license_detections:
     license_expression_spdx: Bitstream-Vera
     matches:
       - license_expression: bitstream
-        spdx_license_expression: Bitstream-Vera
+        license_expression_spdx: Bitstream-Vera
         from_file:
         start_line: 524
         end_line: 566
@@ -695,7 +695,7 @@ other_license_detections:
           Inc., respectively. For further information, contact: fonts at gnome dot
           org.
       - license_expression: bitstream
-        spdx_license_expression: Bitstream-Vera
+        license_expression_spdx: Bitstream-Vera
         from_file:
         start_line: 573
         end_line: 614
@@ -754,7 +754,7 @@ other_license_detections:
     license_expression_spdx: CC-BY-SA-3.0 AND GPL-2.0-only
     matches:
       - license_expression: cc-by-sa-3.0
-        spdx_license_expression: CC-BY-SA-3.0
+        license_expression_spdx: CC-BY-SA-3.0
         from_file:
         start_line: '19'
         end_line: 21
@@ -770,7 +770,7 @@ other_license_detections:
           Attribution-Share Alike 3.0 Unported license.
           (http://creativecommons.org/licenses/by-sa/3.0/)
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 26
         end_line: 27

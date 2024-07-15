@@ -46,7 +46,7 @@
           "matches": [
             {
               "license_expression": "artistic-2.0 OR mit",
-              "spdx_license_expression": "Artistic-2.0 OR MIT",
+              "license_expression_spdx": "Artistic-2.0 OR MIT",
               "from_file": "scan/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -501,7 +501,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "scan/copyr.java",
               "start_line": 3,
               "end_line": 16,
@@ -517,7 +517,7 @@
             },
             {
               "license_expression": "mit OR bsd-simplified",
-              "spdx_license_expression": "MIT OR BSD-2-Clause",
+              "license_expression_spdx": "MIT OR BSD-2-Clause",
               "from_file": "scan/copyr.java",
               "start_line": 19,
               "end_line": 19,
@@ -590,7 +590,7 @@
               "matches": [
                 {
                   "license_expression": "artistic-2.0 OR mit",
-                  "spdx_license_expression": "Artistic-2.0 OR MIT",
+                  "license_expression_spdx": "Artistic-2.0 OR MIT",
                   "from_file": "scan/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -637,7 +637,7 @@
           "matches": [
             {
               "license_expression": "artistic-2.0",
-              "spdx_license_expression": "Artistic-2.0",
+              "license_expression_spdx": "Artistic-2.0",
               "from_file": "scan/package.json",
               "start_line": 28,
               "end_line": 28,

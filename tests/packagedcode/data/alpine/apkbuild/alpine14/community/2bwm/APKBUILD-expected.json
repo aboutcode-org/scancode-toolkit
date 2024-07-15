@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "isc",
-          "spdx_license_expression": "ISC",
+          "license_expression_spdx": "ISC",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,

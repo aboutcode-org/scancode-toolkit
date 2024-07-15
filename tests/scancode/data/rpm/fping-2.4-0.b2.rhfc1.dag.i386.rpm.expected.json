@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "unknown",
-              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "from_file": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",
               "start_line": 1,
               "end_line": 1,
@@ -129,7 +129,7 @@
               "matches": [
                 {
                   "license_expression": "unknown",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown",
                   "from_file": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",
                   "start_line": 1,
                   "end_line": 1,

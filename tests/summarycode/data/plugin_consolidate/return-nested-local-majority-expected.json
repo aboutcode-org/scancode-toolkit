@@ -213,7 +213,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "return-nested-local-majority/foo/bar",
               "start_line": 2,
               "end_line": 2,
@@ -227,7 +227,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "return-nested-local-majority/foo/bar",
               "start_line": 2,
               "end_line": 2,
@@ -298,7 +298,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "return-nested-local-majority/foo/bax",
               "start_line": 2,
               "end_line": 2,
@@ -312,7 +312,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "return-nested-local-majority/foo/bax",
               "start_line": 2,
               "end_line": 2,
@@ -420,7 +420,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "return-nested-local-majority/foo/local-majority/baz",
               "start_line": 2,
               "end_line": 2,
@@ -434,7 +434,7 @@
             },
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "return-nested-local-majority/foo/local-majority/baz",
               "start_line": 2,
               "end_line": 2,
@@ -505,7 +505,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "return-nested-local-majority/foo/qux",
               "start_line": 2,
               "end_line": 2,
@@ -519,7 +519,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "return-nested-local-majority/foo/qux",
               "start_line": 2,
               "end_line": 2,

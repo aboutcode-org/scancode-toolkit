@@ -12,7 +12,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 22
         end_line: 41
@@ -49,7 +49,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 47
         end_line: 69
@@ -89,7 +89,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 78
         end_line: 89
@@ -118,7 +118,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 95
         end_line: 117
@@ -158,7 +158,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 126
         end_line: 137
@@ -187,7 +187,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 145
         end_line: 157
@@ -217,7 +217,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 162
         end_line: 173
@@ -246,7 +246,7 @@ license_detections:
     license_expression_spdx: FSFULLR
     matches:
       - license_expression: fsf-unlimited
-        spdx_license_expression: FSFULLR
+        license_expression_spdx: FSFULLR
         from_file:
         start_line: 180
         end_line: 182
@@ -266,7 +266,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: '193'
         end_line: 214
@@ -301,7 +301,7 @@ license_detections:
              This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 213
         end_line: 224
@@ -330,7 +330,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 233
         end_line: 244
@@ -359,7 +359,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 253
         end_line: 264
@@ -388,7 +388,7 @@ license_detections:
     license_expression_spdx: GFDL-1.2-or-later
     matches:
       - license_expression: gfdl-1.2-plus
-        spdx_license_expression: GFDL-1.2-or-later
+        license_expression_spdx: GFDL-1.2-or-later
         from_file:
         start_line: 272
         end_line: 277
@@ -411,7 +411,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 285
         end_line: 299

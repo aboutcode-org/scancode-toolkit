@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later AND GPL-2.0-only
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 16
         end_line: 41
@@ -47,7 +47,7 @@ license_detections:
           On Debian GNU/Linux systems, the complete text of the GNU General
           Public License can be found in `/usr/share/common-licenses/
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 36
         end_line: 46

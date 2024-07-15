@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "gpl-2.0 AND lgpl-2.0-plus",
-          "spdx_license_expression": "GPL-2.0-only AND LGPL-2.0-or-later",
+          "license_expression_spdx": "GPL-2.0-only AND LGPL-2.0-or-later",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,

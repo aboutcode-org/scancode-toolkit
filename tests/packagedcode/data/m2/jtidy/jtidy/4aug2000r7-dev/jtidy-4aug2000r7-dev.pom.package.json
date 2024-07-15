@@ -39,7 +39,7 @@
       "matches": [
         {
           "license_expression": "tidy",
-          "spdx_license_expression": "HTMLTIDY",
+          "license_expression_spdx": "HTMLTIDY",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,

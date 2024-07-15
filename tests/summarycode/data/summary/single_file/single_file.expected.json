@@ -117,7 +117,7 @@
           "matches": [
             {
               "license_expression": "jetty",
-              "spdx_license_expression": "LicenseRef-scancode-jetty",
+              "license_expression_spdx": "LicenseRef-scancode-jetty",
               "from_file": "codebase/jetty.LICENSE",
               "start_line": 1,
               "end_line": 132,

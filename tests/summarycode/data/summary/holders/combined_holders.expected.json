@@ -189,7 +189,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "combined_holders/README.txt",
               "start_line": 3,
               "end_line": 3,
@@ -203,7 +203,7 @@
             },
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "combined_holders/README.txt",
               "start_line": 3,
               "end_line": 3,
@@ -286,7 +286,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "combined_holders/apache-2.0.LICENSE",
               "start_line": 1,
               "end_line": 176,
@@ -347,7 +347,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "combined_holders/mit.LICENSE",
               "start_line": 1,
               "end_line": 18,
@@ -447,7 +447,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "combined_holders/src/a.py",
               "start_line": 1,
               "end_line": 1,
@@ -461,7 +461,7 @@
             },
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "combined_holders/src/a.py",
               "start_line": 1,
               "end_line": 1,
@@ -561,7 +561,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "combined_holders/tests/test_a.py",
               "start_line": 1,
               "end_line": 1,
@@ -575,7 +575,7 @@
             },
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "combined_holders/tests/test_a.py",
               "start_line": 1,
               "end_line": 1,

@@ -61,7 +61,7 @@
         "matches": [
           {
             "license_expression": "python",
-            "spdx_license_expression": "Python-2.0",
+            "license_expression_spdx": "Python-2.0",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -83,7 +83,7 @@
         "matches": [
           {
             "license_expression": "python",
-            "spdx_license_expression": "Python-2.0",
+            "license_expression_spdx": "Python-2.0",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,

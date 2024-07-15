@@ -408,7 +408,7 @@
           "matches": [
             {
               "license_expression": "example-installed-1",
-              "spdx_license_expression": "scancode-example-installed1",
+              "license_expression_spdx": "scancode-example-installed1",
               "from_file": "additional_license_combined_test.txt",
               "start_line": 1,
               "end_line": 1,
@@ -422,7 +422,7 @@
             },
             {
               "license_expression": "example-installed-2",
-              "spdx_license_expression": "LicenseRef-scancode-example-installed2",
+              "license_expression_spdx": "LicenseRef-scancode-example-installed2",
               "from_file": "additional_license_combined_test.txt",
               "start_line": 3,
               "end_line": 3,
@@ -436,7 +436,7 @@
             },
             {
               "license_expression": "example1",
-              "spdx_license_expression": "scancode-example1",
+              "license_expression_spdx": "scancode-example1",
               "from_file": "additional_license_combined_test.txt",
               "start_line": 5,
               "end_line": 5,
@@ -450,7 +450,7 @@
             },
             {
               "license_expression": "example2",
-              "spdx_license_expression": "scancode-example2",
+              "license_expression_spdx": "scancode-example2",
               "from_file": "additional_license_combined_test.txt",
               "start_line": 5,
               "end_line": 9,
@@ -464,7 +464,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "additional_license_combined_test.txt",
               "start_line": 12,
               "end_line": 12,

@@ -16,7 +16,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 9
         end_line: 28
@@ -53,7 +53,7 @@ license_detections:
     license_expression_spdx: Linux-OpenIB
     matches:
       - license_expression: linux-openib
-        spdx_license_expression: Linux-OpenIB
+        license_expression_spdx: Linux-OpenIB
         from_file:
         start_line: 35
         end_line: 55
@@ -91,7 +91,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-qlogic-microcode
     matches:
       - license_expression: qlogic-microcode
-        spdx_license_expression: LicenseRef-scancode-qlogic-microcode
+        license_expression_spdx: LicenseRef-scancode-qlogic-microcode
         from_file:
         start_line: 61
         end_line: 96
@@ -144,7 +144,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 102
         end_line: 104
@@ -160,7 +160,7 @@ license_detections:
           in hexadecimal or equivalent format, provided this copyright notice is
           accompanying it.
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 106
         end_line: 112
@@ -184,7 +184,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 117
         end_line: 119
