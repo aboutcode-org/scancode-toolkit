@@ -153,6 +153,34 @@ def compute_license_score(resources, is_codebase=False):
         key_files_only=True,
         is_codebase=is_codebase
     )
+    holders = get_field_values_from_resources(
+        resources=resources,
+        field_name='holders',
+        key_files_only=True,
+        is_codebase=is_codebase
+    )
+    notice_texts = get_field_values_from_resources(
+        resources=resources,
+        field_name='notice_text',
+        key_files_only=True,
+        is_codebase=is_codebase
+    )
+
+    # Populating the Package Attributes 
+    packageAttrs= PackageSummaryAttributes()
+    
+    copyright_values = [copyright.get('copyright') for copyright in copyrights if copyright.get('copyright')]
+    joined_copyrights = ", ".join(copyright_values) if copyright_values else None
+    
+    holder_values = [holder.get('holder') for holder in holders if holder.get('holder')]
+    joined_holders = ", ".join(holder_values) if holder_values else None
+    
+    notice_text_values = [notice_text.get('notice_text') for notice_text in notice_texts if notice_text.get('notice_text')]
+    joined_notice_text = ", ".join(notice_text_values) if notice_text_values else None
+    
+    packageAttrs.copyright = joined_copyrights
+    packageAttrs.holder = joined_holders
+    packageAttrs.notice_text = joined_notice_text
 
     other_license_detections = get_field_values_from_resources(
         resources=resources,
@@ -201,7 +229,9 @@ def compute_license_score(resources, is_codebase=False):
         scoring_elements.ambiguous_compound_licensing = True
         if scoring_elements.score > 0:
             scoring_elements.score -= 10
-
+            
+    if not is_codebase:
+        return scoring_elements, packageAttrs
     return scoring_elements, declared_license_expression or None
 
 
@@ -239,6 +269,12 @@ class ScoringElements:
             'ambiguous_compound_licensing': self.ambiguous_compound_licensing,
         }
 
+@attr.s()
+class PackageSummaryAttributes:
+    copyright= attr.ib(default=None)
+    holder= attr.ib(default=None)
+    notice_text= attr.ib(default=None)
+    
 
 # minimum score to consider a license detection as good.
 

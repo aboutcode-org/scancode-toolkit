@@ -322,11 +322,13 @@ class PackageSummary(PostScanPlugin):
             if package_uid in package_resources:
                 package['resources'] = [resource.to_dict() for resource in package_resources[package_uid]]
                 
-            scoring_elements, _= compute_license_score(package, is_codebase=False)
+            scoring_elements, package_attrs= compute_license_score(package, is_codebase=False)
             license_clarity_score= scoring_elements.to_dict()
 
         for package in packages:
             package['license_clarity_score'] = license_clarity_score
+            package['copyright']= package_attrs.copyright
+            package['holder']= package_attrs.holder
         
         
 def add_license_from_file(resource, codebase):
