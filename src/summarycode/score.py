@@ -165,7 +165,12 @@ def compute_license_score(resources, is_codebase=False):
         key_files_only=True,
         is_codebase=is_codebase
     )
-
+    other_license_detections = get_field_values_from_resources(
+        resources=resources,
+        field_name='license_detections',
+        key_files_only=False,
+        is_codebase=is_codebase
+    )
     # Populating the Package Attributes 
     packageAttrs= PackageSummaryAttributes()
     
@@ -178,16 +183,14 @@ def compute_license_score(resources, is_codebase=False):
     notice_text_values = [notice_text.get('notice_text') for notice_text in notice_texts if notice_text.get('notice_text')]
     joined_notice_text = ", ".join(notice_text_values) if notice_text_values else None
     
+    other_license_detections_values = [other_license_detection.get('other_license_detection') for other_license_detection in other_license_detections if other_license_detection.get('other_license_detection')]
+    joined_other_license_expression = ", ".join(other_license_detections_values) if other_license_detections_values else None
+    
     packageAttrs.copyright = joined_copyrights
     packageAttrs.holder = joined_holders
     packageAttrs.notice_text = joined_notice_text
+    packageAttrs.other_license_expression= joined_other_license_expression
 
-    other_license_detections = get_field_values_from_resources(
-        resources=resources,
-        field_name='license_detections',
-        key_files_only=False,
-        is_codebase=is_codebase
-    )
     other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
     other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
 
@@ -274,6 +277,7 @@ class PackageSummaryAttributes:
     copyright= attr.ib(default=None)
     holder= attr.ib(default=None)
     notice_text= attr.ib(default=None)
+    other_license_expression= attr.ib(default=None)
     
 
 # minimum score to consider a license detection as good.
