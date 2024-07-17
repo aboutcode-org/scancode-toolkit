@@ -175,7 +175,6 @@ def compute_license_score(resources, is_codebase=False):
     )
     
     # Populating the Package Attributes 
-    packageAttrs= PackageSummaryAttributes()
     copyright_values = [copyright.get('copyright') for copyright in copyrights if copyright.get('copyright')]
     joined_copyrights = ", ".join(copyright_values) if copyright_values else None
     
@@ -194,10 +193,13 @@ def compute_license_score(resources, is_codebase=False):
     joined_other_license_expressions = ", ".join(other_license_expressions) if other_license_expressions else ""
     if not joined_other_license_expressions:
         joined_other_license_expressions = None
-    packageAttrs.copyright = joined_copyrights
-    packageAttrs.holder = joined_holders
-    packageAttrs.notice_text = joined_notice_text
-    packageAttrs.other_license_expression= joined_other_license_expressions
+    
+    packageAttrs= PackageSummaryAttributes(
+        copyright = joined_copyrights,
+        holder = joined_holders,
+        notice_text = joined_notice_text,
+        other_license_expression= joined_other_license_expressions
+    )
 
     other_license_detections = get_field_values_from_resources(
         resources=resources,
