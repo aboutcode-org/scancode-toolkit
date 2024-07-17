@@ -143,8 +143,16 @@ def compute_license_score(resources, is_codebase=False):
         is_string=True,
         is_codebase=is_codebase
     )
+    declared_license_expressions_spdx=get_field_values_from_resources(
+        resources=resources,
+        field_name='detected_license_expression_spdx',
+        key_files_only=True,
+        is_string=True,
+        is_codebase=is_codebase
+    )
 
     unique_declared_license_expressions = unique(declared_license_expressions)
+    unique_declared_license_expressions_spdx= unique(declared_license_expressions_spdx)
     # print("Declared License Expression: ", unique_declared_license_expressions)
     declared_license_categories = get_license_categories(license_matches)
 
@@ -173,6 +181,13 @@ def compute_license_score(resources, is_codebase=False):
         is_string=True,
         is_codebase=is_codebase
     )
+    other_license_expressions_spdx= get_field_values_from_resources(
+        resources=resources,
+        field_name='detected_license_expression_spdx',
+        key_files_only=False,
+        is_string=True,
+        is_codebase=is_codebase
+    )
     
     # Populating the Package Attributes 
     copyright_values = [copyright.get('copyright') for copyright in copyrights if copyright.get('copyright')]
@@ -185,12 +200,20 @@ def compute_license_score(resources, is_codebase=False):
     joined_notice_text = ", ".join(notice_text_values) if notice_text_values else None
     
     unique_other_license_expressions = unique(other_license_expressions)
+    unique_other_license_expressions_spdx= unique(other_license_expressions_spdx)
     other_license_expressions=[]
+    other_license_expressions_spdx=[]
     for other_license_expression in unique_other_license_expressions:
-        if other_license_expression not in declared_license_expressions:
+        if other_license_expression not in unique_declared_license_expressions:
             other_license_expressions.append(other_license_expression)
+    
+    for other_license_expression_spdx in unique_other_license_expressions_spdx:
+        if other_license_expression_spdx not in unique_declared_license_expressions_spdx:
+            other_license_expressions_spdx.append(other_license_expression_spdx)
             
-    joined_other_license_expressions = ", ".join(other_license_expressions) if other_license_expressions else ""
+    joined_other_license_expressions = ", ".join(other_license_expressions) if other_license_expressions else None
+    joined_other_license_expressions_spdx = ", ".join(other_license_expressions_spdx) if other_license_expressions_spdx else None
+
     if not joined_other_license_expressions:
         joined_other_license_expressions = None
     
@@ -198,7 +221,8 @@ def compute_license_score(resources, is_codebase=False):
         copyright = joined_copyrights,
         holder = joined_holders,
         notice_text = joined_notice_text,
-        other_license_expression= joined_other_license_expressions
+        other_license_expression= joined_other_license_expressions,
+        other_license_expression_spdx= joined_other_license_expressions_spdx
     )
 
     other_license_detections = get_field_values_from_resources(
@@ -294,13 +318,15 @@ class PackageSummaryAttributes:
     holder= attr.ib(default=None)
     notice_text= attr.ib(default=None)
     other_license_expression= attr.ib(default=None)
-
+    other_license_expression_spdx= attr.ib(default=None)
+    
     def to_dict(self):
         return {
             'copyright': self.copyright,
             'holder': self.holder,
             'notice_text': self.notice_text,
             'other_license_expression': self.other_license_expression,
+            'other_license_expression_spdx': self.other_license_expression_spdx
         }
 
 # minimum score to consider a license detection as good.

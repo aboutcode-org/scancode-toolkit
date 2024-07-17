@@ -328,8 +328,9 @@ class PackageSummary(PostScanPlugin):
                 'license_clarity_score': license_clarity_score,
                 'copyright': package_attrs.copyright,
                 'holder': package_attrs.holder,
+                'notice_text': package_attrs.notice_text,
                 'other_license_expression': package_attrs.other_license_expression,
-                'notice_text': package_attrs.notice_text
+                'other_license_expression_spdx': package_attrs.other_license_expression_spdx
             }
 
         for package in packages:
@@ -339,9 +340,10 @@ class PackageSummary(PostScanPlugin):
                 package['license_clarity_score'] = package_attrs['license_clarity_score']
                 package['copyright'] = package_attrs['copyright']
                 package['holder'] = package_attrs['holder']
-                package['other_license_expression'] = package_attrs['other_license_expression']
                 package['notice_text'] = package_attrs['notice_text']
-
+                package['other_license_expression'] = package_attrs['other_license_expression']
+                package['other_license_expression_spdx']= package_attrs['other_license_expression_spdx']
+                
         
         
 def add_license_from_file(resource, codebase):
