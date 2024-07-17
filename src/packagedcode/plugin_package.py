@@ -310,7 +310,7 @@ class PackageSummary(PostScanPlugin):
         resource_for_packages = list(get_files_for_packages(codebase))
         packages_copy = copy.deepcopy(packages) # created a deep copy 
         package_resources = {}
-
+        package_attributes_map={}
         for resource, package_uid in resource_for_packages:
             if package_uid not in package_resources:
                 package_resources[package_uid] = []
@@ -324,11 +324,24 @@ class PackageSummary(PostScanPlugin):
                 
             scoring_elements, package_attrs= compute_license_score(package, is_codebase=False)
             license_clarity_score= scoring_elements.to_dict()
+            package_attributes_map[package_uid] = {
+                'license_clarity_score': license_clarity_score,
+                'copyright': package_attrs.copyright,
+                'holder': package_attrs.holder,
+                'other_license_expression': package_attrs.other_license_expression,
+                'notice_text': package_attrs.notice_text
+            }
 
         for package in packages:
-            package['license_clarity_score'] = license_clarity_score
-            package['copyright']= package_attrs.copyright
-            package['holder']= package_attrs.holder
+            package_uid = package['package_uid']
+            if package_uid in package_attributes_map:
+                package_attrs = package_attributes_map[package_uid]
+                package['license_clarity_score'] = package_attrs['license_clarity_score']
+                package['copyright'] = package_attrs['copyright']
+                package['holder'] = package_attrs['holder']
+                package['other_license_expression'] = package_attrs['other_license_expression']
+                package['notice_text'] = package_attrs['notice_text']
+
         
         
 def add_license_from_file(resource, codebase):

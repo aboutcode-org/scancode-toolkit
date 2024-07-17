@@ -145,6 +145,7 @@ def compute_license_score(resources, is_codebase=False):
     )
 
     unique_declared_license_expressions = unique(declared_license_expressions)
+    # print("Declared License Expression: ", unique_declared_license_expressions)
     declared_license_categories = get_license_categories(license_matches)
 
     copyrights = get_field_values_from_resources(
@@ -165,15 +166,16 @@ def compute_license_score(resources, is_codebase=False):
         key_files_only=True,
         is_codebase=is_codebase
     )
-    other_license_detections = get_field_values_from_resources(
+    other_license_expressions = get_field_values_from_resources(
         resources=resources,
-        field_name='license_detections',
+        field_name='detected_license_expression',
         key_files_only=False,
+        is_string=True,
         is_codebase=is_codebase
     )
+    
     # Populating the Package Attributes 
     packageAttrs= PackageSummaryAttributes()
-    
     copyright_values = [copyright.get('copyright') for copyright in copyrights if copyright.get('copyright')]
     joined_copyrights = ", ".join(copyright_values) if copyright_values else None
     
@@ -183,14 +185,26 @@ def compute_license_score(resources, is_codebase=False):
     notice_text_values = [notice_text.get('notice_text') for notice_text in notice_texts if notice_text.get('notice_text')]
     joined_notice_text = ", ".join(notice_text_values) if notice_text_values else None
     
-    other_license_detections_values = [other_license_detection.get('other_license_detection') for other_license_detection in other_license_detections if other_license_detection.get('other_license_detection')]
-    joined_other_license_expression = ", ".join(other_license_detections_values) if other_license_detections_values else None
-    
+    unique_other_license_expressions = unique(other_license_expressions)
+    other_license_expressions=[]
+    for other_license_expression in unique_other_license_expressions:
+        if other_license_expression not in declared_license_expressions:
+            other_license_expressions.append(other_license_expression)
+            
+    joined_other_license_expressions = ", ".join(other_license_expressions) if other_license_expressions else ""
+    if not joined_other_license_expressions:
+        joined_other_license_expressions = None
     packageAttrs.copyright = joined_copyrights
     packageAttrs.holder = joined_holders
     packageAttrs.notice_text = joined_notice_text
-    packageAttrs.other_license_expression= joined_other_license_expression
+    packageAttrs.other_license_expression= joined_other_license_expressions
 
+    other_license_detections = get_field_values_from_resources(
+        resources=resources,
+        field_name='license_detections',
+        key_files_only=False,
+        is_codebase=is_codebase
+    )
     other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
     other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
 
@@ -278,7 +292,14 @@ class PackageSummaryAttributes:
     holder= attr.ib(default=None)
     notice_text= attr.ib(default=None)
     other_license_expression= attr.ib(default=None)
-    
+
+    def to_dict(self):
+        return {
+            'copyright': self.copyright,
+            'holder': self.holder,
+            'notice_text': self.notice_text,
+            'other_license_expression': self.other_license_expression,
+        }
 
 # minimum score to consider a license detection as good.
 
