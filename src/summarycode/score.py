@@ -321,13 +321,7 @@ class PackageSummaryAttributes:
     other_license_expression_spdx= attr.ib(default=None)
     
     def to_dict(self):
-        return {
-            'copyright': self.copyright,
-            'holder': self.holder,
-            'notice_text': self.notice_text,
-            'other_license_expression': self.other_license_expression,
-            'other_license_expression_spdx': self.other_license_expression_spdx
-        }
+        return attr.asdict(self, dict_factory=dict)
 
 # minimum score to consider a license detection as good.
 

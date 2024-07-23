@@ -278,21 +278,36 @@ class PackageScanner(ScanPlugin):
                 if TRACE_LICENSE and modified:
                     logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_from_package: modified: {modified}')
 
+def get_package_resources(codebase):
+    """
+    Get resources for each package in the codebase.
+    """
+    resource_for_packages = list(get_files_for_packages(codebase))
+    package_resources = {}
+
+    for resource, package_uid in resource_for_packages:
+        if package_uid not in package_resources:
+            package_resources[package_uid] = []
+        package_resources[package_uid].append(resource)
+
+    return package_resources
+    
 @post_scan_impl
 class PackageSummary(PostScanPlugin):
     """
     Summary at the Package Level.
     """
     run_order = 11
-    sort_order= 11
+    sort_order = 11
 
     options = [
         PluggableCommandLineOption(('--package-summary',),
-        is_flag=True, default=False,
+        is_flag=True,
+        default=False,
         help='Summarize scans by providing License Clarity Score' 
         'and populating other license/copyright attributes '
-        'for package instances.',
-        required_options=['classify'],
+        'for package instances from their key files and other files.',
+        required_options=['classify', 'package'],
         help_group=POST_SCAN_GROUP)
     ]
 
@@ -303,19 +318,19 @@ class PackageSummary(PostScanPlugin):
         """
         Process the codebase.
         """
-        if not self.is_enabled(package_summary):
-            return
         
         packages = codebase.attributes.packages
-        resource_for_packages = list(get_files_for_packages(codebase))
-        packages_copy = copy.deepcopy(packages) # created a deep copy 
-        package_resources = {}
-        package_attributes_map={}
-        for resource, package_uid in resource_for_packages:
-            if package_uid not in package_resources:
-                package_resources[package_uid] = []
-            package_resources[package_uid].append(resource)
-
+        package_resources = get_package_resources(codebase)
+        packages_copy = copy.deepcopy(packages)  # created a deep copy 
+        package_attributes_map = {}
+        attributes_to_update = [
+            'license_clarity_score', 
+            'copyright', 
+            'holder', 
+            'notice_text', 
+            'other_license_expression', 
+            'other_license_expression_spdx'
+            ]
         # Add a 'resources' field to each package in packages_copy
         for package in packages_copy:
             package_uid = package['package_uid']
@@ -332,19 +347,14 @@ class PackageSummary(PostScanPlugin):
                 'other_license_expression': package_attrs.other_license_expression,
                 'other_license_expression_spdx': package_attrs.other_license_expression_spdx
             }
-
+            
         for package in packages:
             package_uid = package['package_uid']
             if package_uid in package_attributes_map:
                 package_attrs = package_attributes_map[package_uid]
-                package['license_clarity_score'] = package_attrs['license_clarity_score']
-                package['copyright'] = package_attrs['copyright']
-                package['holder'] = package_attrs['holder']
-                package['notice_text'] = package_attrs['notice_text']
-                package['other_license_expression'] = package_attrs['other_license_expression']
-                package['other_license_expression_spdx']= package_attrs['other_license_expression_spdx']
+                for attribute in attributes_to_update:
+                    package[attribute] = package_attrs[attribute]
                 
-        
         
 def add_license_from_file(resource, codebase):
     """
