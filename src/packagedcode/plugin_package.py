@@ -304,7 +304,7 @@ class PackageSummary(PostScanPlugin):
         PluggableCommandLineOption(('--package-summary',),
         is_flag=True,
         default=False,
-        help='Summarize scans by providing License Clarity Score' 
+        help='Summarize scans by providing License Clarity Score ' 
         'and populating other license/copyright attributes '
         'for package instances from their key files and other files.',
         required_options=['classify', 'package'],
@@ -321,7 +321,7 @@ class PackageSummary(PostScanPlugin):
         
         packages = codebase.attributes.packages
         package_resources = get_package_resources(codebase)
-        packages_copy = copy.deepcopy(packages)  # created a deep copy 
+        packages_copy = copy.deepcopy(packages)
         package_attributes_map = {}
         attributes_to_update = [
             'license_clarity_score', 
@@ -331,7 +331,6 @@ class PackageSummary(PostScanPlugin):
             'other_license_expression', 
             'other_license_expression_spdx'
             ]
-        # Add a 'resources' field to each package in packages_copy
         for package in packages_copy:
             package_uid = package['package_uid']
             if package_uid in package_resources:
