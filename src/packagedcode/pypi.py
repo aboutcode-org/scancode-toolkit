@@ -1093,7 +1093,7 @@ class PypiEggHandler(models.DatafileHandler):
                         package_only=package_only,
                     )
 
-
+# FIXME: this is NOT used
 class PypiSdistArchiveHandler(models.DatafileHandler):
     datasource_id = 'pypi_sdist'
     path_patterns = ('*.tar.gz', '*.tar.bz2', '*.zip',)

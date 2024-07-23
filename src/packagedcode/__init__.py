@@ -7,8 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import attr
-
 from commoncode.system import on_linux
 from packagedcode import about
 from packagedcode import alpine
@@ -254,6 +252,7 @@ ALL_DATAFILE_HANDLERS = (
     ]
 )
 
+# registry of all handler classes keyed by datasource_id
 HANDLER_BY_DATASOURCE_ID = {handler.datasource_id: handler for handler in ALL_DATAFILE_HANDLERS}
 
 
@@ -263,8 +262,8 @@ class UnknownPackageDatasource(Exception):
 
 def get_package_handler(package_data):
     """
-    Return the DatafileHandler class that corresponds to a ``package_data``
-    PackageData object. Raise a UnknownPackageDatasource error if the
+    Return the DatafileHandler class that for a ``package_data``
+    PackageData class datasource_id. Raise a UnknownPackageDatasource error if the
     DatafileHandler is not found.
     """
     ppc = HANDLER_BY_DATASOURCE_ID.get(package_data.datasource_id)

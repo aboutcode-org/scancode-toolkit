@@ -433,6 +433,8 @@ class BaseRegInstalledProgramHandler(models.DatafileHandler):
 
 class InstalledProgramFromDockerSoftwareDeltaHandler(BaseRegInstalledProgramHandler):
     datasource_id = 'win_reg_installed_programs_docker_software_delta'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*/Hives/Software_Delta',)
     description = 'Windows Registry Installed Program - Docker Software Delta'
     root_path_relative_to_datafile_path = '../../Files'
@@ -440,6 +442,8 @@ class InstalledProgramFromDockerSoftwareDeltaHandler(BaseRegInstalledProgramHand
 
 class InstalledProgramFromDockerFilesSoftwareHandler(BaseRegInstalledProgramHandler):
     datasource_id = 'win_reg_installed_programs_docker_file_software'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*/Files/Windows/System32/config/SOFTWARE',)
     description = 'Windows Registry Installed Program - Docker SOFTWARE'
     root_path_relative_to_datafile_path = '../../../..'
@@ -447,6 +451,8 @@ class InstalledProgramFromDockerFilesSoftwareHandler(BaseRegInstalledProgramHand
 
 class InstalledProgramFromDockerUtilityvmSoftwareHandler(BaseRegInstalledProgramHandler):
     datasource_id = 'win_reg_installed_programs_docker_utility_software'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*/UtilityVM/Files/Windows/System32/config/SOFTWARE',)
     description = 'Windows Registry Installed Program - Docker UtilityVM SOFTWARE'
     root_path_relative_to_datafile_path = '../../../..'
