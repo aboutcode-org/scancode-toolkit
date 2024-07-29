@@ -26,10 +26,8 @@ class BasePhpComposerHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
-        datafile_name_patterns = (
-            'composer.json',
-            'composer.lock',
-        )
+        datafile_name_patterns = \
+            PhpComposerJsonHandler.path_patterns + PhpComposerLockHandler.path_patterns
 
         if resource.has_parent():
             dir_resource = resource.parent(codebase)

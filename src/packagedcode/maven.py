@@ -72,7 +72,7 @@ class MavenBasePackageHandler(models.DatafileHandler):
 
         # This order is important as we want pom.xml to be used for package
         # creation and then to update from MANIFEST later 
-        manifest_path_pattern = '*/META-INF/MANIFEST.MF'
+        manifest_path_pattern = JavaJarManifestHandler.path_patterns[0]
         nested_pom_xml_path_pattern = '*/META-INF/maven/**/pom.xml'
         datafile_name_patterns = (nested_pom_xml_path_pattern, manifest_path_pattern)
 

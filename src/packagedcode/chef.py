@@ -146,8 +146,11 @@ class BaseChefMetadataHandler(models.DatafileHandler):
         """
         Assemble Package from Chef metadata.rb, then from metadata.json files.
         """
+        datafile_name_patterns = (
+            ChefMetadataRbHandler.path_patterns + ChefMetadataJsonHandler.path_patterns
+        )
         yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=('metadata.rb', 'metadata.json',),
+            datafile_name_patterns=datafile_name_patterns,
             directory=resource.parent(codebase),
             codebase=codebase,
             package_adder=package_adder,

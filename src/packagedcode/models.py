@@ -1279,7 +1279,7 @@ class DatafileHandler:
             else:
                 # FIXME: What is the package_data is NOT for the same package as package?
                 # FIXME: What if the update did not do anything? (it does return True or False)
-                # FIXME: There we would be missing out packges AND/OR errors
+                # FIXME: There we would be missing out packages AND/OR errors
                 package.update(
                     package_data=package_data,
                     datafile_path=resource.path,
@@ -1309,7 +1309,7 @@ class DatafileHandler:
             yield package
         yield from dependencies
 
-        # Associate Package to Resources and yield them
+        # Associate Package to the manifest resources and yield them
         for resource in resources:
             package_adder(package_uid, resource, codebase)
             yield resource
@@ -1318,11 +1318,12 @@ class DatafileHandler:
             package_adder(package_uid, resource, codebase)
             yield resource
 
-        # the whole parent subtree of the base_resource is for this package
+        # the whole parent subtree of the base_resource is for this package,
+        # so assign resources to package
         if package_uid:
             for res in base_resource.walk(codebase):
                 package_adder(package_uid, res, codebase)
-                yield res
+
             if parent_resource:
                 package_adder(package_uid, parent_resource, codebase)
                 yield parent_resource
@@ -1368,7 +1369,10 @@ class DatafileHandler:
         # we iterate on datafile_name_patterns because their order matters
         for datafile_name_pattern in datafile_name_patterns:
             for sibling in siblings:
-                if fnmatchcase(sibling.name, datafile_name_pattern):
+                if (
+                    fnmatchcase(sibling.name, datafile_name_pattern) or 
+                    fnmatchcase(sibling.location, datafile_name_pattern)
+                ):
                     for package_data in sibling.package_data:
                         package_data = PackageData.from_dict(package_data)
                         pkgdata_resources.append((package_data, sibling,))

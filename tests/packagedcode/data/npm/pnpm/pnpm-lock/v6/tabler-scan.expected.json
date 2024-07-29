@@ -90,6 +90,54 @@
         "npm_package_json"
       ],
       "purl": "pkg:npm/%40tabler/core@1.0.0-beta20"
+    },
+    {
+      "type": "npm",
+      "namespace": "@tabler",
+      "name": "core",
+      "version": "1.0.0-beta20",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "https://github.com/tabler/tabler/",
+      "download_url": "https://github.com/tabler/tabler/releases/tag/v1.0.0-beta20",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:npm/%40tabler/core@1.0.0-beta20?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "tabler/tabler.ABOUT"
+      ],
+      "datasource_ids": [
+        "about_file"
+      ],
+      "purl": "pkg:npm/%40tabler/core@1.0.0-beta20"
     }
   ],
   "dependencies": [
@@ -6965,15 +7013,7 @@
           "primary_language": null,
           "description": null,
           "release_date": null,
-          "parties": [
-            {
-              "type": "person",
-              "role": "owner",
-              "name": "None",
-              "email": null,
-              "url": null
-            }
-          ],
+          "parties": [],
           "keywords": [],
           "homepage_url": "https://github.com/tabler/tabler/",
           "download_url": "https://github.com/tabler/tabler/releases/tag/v1.0.0-beta20",
@@ -7009,6 +7049,7 @@
         }
       ],
       "for_packages": [
+        "pkg:npm/%40tabler/core@1.0.0-beta20?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:npm/%40tabler/core@1.0.0-beta20?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []

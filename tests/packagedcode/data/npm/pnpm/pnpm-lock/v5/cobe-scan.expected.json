@@ -10,15 +10,7 @@
       "primary_language": null,
       "description": null,
       "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "owner",
-          "name": "None",
-          "email": null,
-          "url": null
-        }
-      ],
+      "parties": [],
       "keywords": [],
       "homepage_url": "https://cobe.vercel.app/",
       "download_url": "https://github.com/shuding/cobe/releases/tag/0.6.3",
@@ -43,9 +35,7 @@
       "source_packages": [],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {
-        "missing_file_references": []
-      },
+      "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
@@ -2215,15 +2205,7 @@
           "primary_language": null,
           "description": null,
           "release_date": null,
-          "parties": [
-            {
-              "type": "person",
-              "role": "owner",
-              "name": "None",
-              "email": null,
-              "url": null
-            }
-          ],
+          "parties": [],
           "keywords": [],
           "homepage_url": "https://cobe.vercel.app/",
           "download_url": "https://github.com/shuding/cobe/releases/tag/0.6.3",

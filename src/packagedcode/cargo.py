@@ -39,6 +39,7 @@ if TRACE:
 
 
 class CargoBaseHandler(models.DatafileHandler):
+ 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         """
@@ -46,6 +47,10 @@ class CargoBaseHandler(models.DatafileHandler):
         support cargo workspaces where we have multiple packages from
         a repository and some shared information present at top-level.
         """
+        datafile_name_patterns = (
+            CargoLockHandler.path_patterns + CargoTomlHandler.path_patterns
+        )
+
         workspace = package_data.extra_data.get('workspace', {})
         workspace_members = workspace.get("members", [])
         workspace_package_data = workspace.get("package", {})
@@ -89,14 +94,14 @@ class CargoBaseHandler(models.DatafileHandler):
                         resource.save(codebase)
 
                 yield from cls.assemble_from_many_datafiles(
-                    datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
+                    datafile_name_patterns=datafile_name_patterns,
                     directory=workspace_directory,
                     codebase=codebase,
                     package_adder=package_adder,
                 )
         else:
             yield from cls.assemble_from_many_datafiles(
-                datafile_name_patterns=('Cargo.toml', 'cargo.toml', 'Cargo.lock', 'cargo.lock'),
+                datafile_name_patterns=datafile_name_patterns,
                 directory=resource.parent(codebase),
                 codebase=codebase,
                 package_adder=package_adder,

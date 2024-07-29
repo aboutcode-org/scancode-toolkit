@@ -376,7 +376,7 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
     packages = []
     dependencies = []
 
-    seen_resource_paths = set()
+    seen_package_manifest_paths = set()
 
     has_single_resource = codebase.has_single_resource
     # track resource ids that have been already processed
@@ -384,7 +384,7 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
         if not resource.package_data:
             continue
 
-        if resource.path in seen_resource_paths:
+        if resource.path in seen_package_manifest_paths:
             continue
 
         if TRACE_ASSEMBLY:
@@ -430,12 +430,12 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                         dependencies.append(item)
 
                     elif isinstance(item, Resource):
-                        seen_resource_paths.add(item.path)
+                        seen_package_manifest_paths.add(item.path)
 
                         if TRACE_ASSEMBLY:
                             logger_debug(
-                                '    get_package_and_deps: seen_resource_path:',
-                                seen_resource_paths,
+                                '    get_package_and_deps: seen_package_manifest_paths:',
+                                seen_package_manifest_paths,
                             )
 
                     else:

@@ -32,8 +32,11 @@ class BaseGoModuleHandler(models.DatafileHandler):
         """
         Always use go.mod first then go.sum
         """
+        datafile_name_patterns = (
+            GoModHandler.path_patterns + GoSumHandler.path_patterns
+        )
         yield from cls.assemble_from_many_datafiles(
-            datafile_name_patterns=('go.mod', 'go.sum',),
+            datafile_name_patterns=datafile_name_patterns,
             directory=resource.parent(codebase),
             codebase=codebase,
             package_adder=package_adder,
