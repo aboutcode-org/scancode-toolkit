@@ -108,11 +108,11 @@ class ScanSummary(PostScanPlugin):
             )
 
         if declared_license_expression:
-            scoring_elements, _ = compute_license_score(codebase,is_codebase=True)
+            scoring_elements, _ = compute_license_score(codebase)
         else:
             # If we did not get a declared license expression from detected
             # package data, then we use the results from `compute_license_score`
-            scoring_elements, declared_license_expression = compute_license_score(codebase, is_codebase=True)
+            scoring_elements, declared_license_expression = compute_license_score(codebase)
         other_license_expressions = remove_from_tallies(
             declared_license_expression, license_expressions_tallies
         )
@@ -168,7 +168,7 @@ def get_declared_holders(codebase, holders_tallies):
         fingerprints.generate(entry['value']): entry for entry in holders_tallies if entry['value']
     }
     key_file_holders = get_field_values_from_resources(
-        resources=codebase, field_name='holders', key_files_only=True, is_codebase=True
+        codebase, package_resources=None, field_name='holders', key_files_only=True
     )
     entry_by_key_file_holders = {
         fingerprints.generate(canonical_holder(entry['holder'])): entry

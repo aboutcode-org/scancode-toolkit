@@ -80,7 +80,7 @@ class LicenseClarityScore(PostScanPlugin):
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
 
-def compute_license_score(resources, is_codebase=False):
+def compute_license_score(codebase, package_resources=None):
     """
     Return a mapping of scoring elements and a license clarity score computed at
     the codebase/package level.
@@ -129,64 +129,63 @@ def compute_license_score(resources, is_codebase=False):
 
     scoring_elements = ScoringElements()
     license_detections = get_field_values_from_resources(
-        resources=resources,
+        codebase,
+        package_resources,
         field_name='license_detections',
         key_files_only=True,
-        is_codebase=is_codebase
     )
     license_match_mappings = get_matches_from_detection_mappings(license_detections)
     license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
     declared_license_expressions = get_field_values_from_resources(
-        resources=resources,
+        codebase,
+        package_resources,
         field_name='detected_license_expression',
         key_files_only=True,
         is_string=True,
-        is_codebase=is_codebase
     )
     declared_license_expressions_spdx=get_field_values_from_resources(
-        resources=resources,
+        codebase,
+        package_resources,
         field_name='detected_license_expression_spdx',
         key_files_only=True,
         is_string=True,
-        is_codebase=is_codebase
     )
 
     unique_declared_license_expressions = unique(declared_license_expressions)
     unique_declared_license_expressions_spdx= unique(declared_license_expressions_spdx)
-    # print("Declared License Expression: ", unique_declared_license_expressions)
     declared_license_categories = get_license_categories(license_matches)
 
     copyrights = get_field_values_from_resources(
-        resources=resources,
+        codebase,
+        package_resources,
         field_name='copyrights',
         key_files_only=True,
-        is_codebase=is_codebase
     )
     holders = get_field_values_from_resources(
-        resources=resources,
+        codebase,
+        package_resources,
         field_name='holders',
         key_files_only=True,
-        is_codebase=is_codebase
     )
     notice_texts = get_field_values_from_resources(
-        resources=resources,
+        codebase,
+        package_resources,
         field_name='notice_text',
         key_files_only=True,
-        is_codebase=is_codebase
     )
     other_license_expressions = get_field_values_from_resources(
-        resources=resources,
+        codebase,
+        package_resources,
         field_name='detected_license_expression',
         key_files_only=False,
         is_string=True,
-        is_codebase=is_codebase
     )
     other_license_expressions_spdx= get_field_values_from_resources(
-        resources=resources,
+        codebase,
+        package_resources,
         field_name='detected_license_expression_spdx',
         key_files_only=False,
         is_string=True,
-        is_codebase=is_codebase
     )
     
     # Populating the Package Attributes 
@@ -226,10 +225,10 @@ def compute_license_score(resources, is_codebase=False):
     )
 
     other_license_detections = get_field_values_from_resources(
-        resources=resources,
+        codebase,
+        package_resources,
         field_name='license_detections',
         key_files_only=False,
-        is_codebase=is_codebase
     )
     other_license_match_mappings = get_matches_from_detection_mappings(other_license_detections)
     other_license_matches = LicenseMatchFromResult.from_dicts(other_license_match_mappings)
@@ -273,7 +272,7 @@ def compute_license_score(resources, is_codebase=False):
         if scoring_elements.score > 0:
             scoring_elements.score -= 10
             
-    if not is_codebase:
+    if package_resources:
         return scoring_elements, packageAttrs
     return scoring_elements, declared_license_expression or None
 
@@ -396,11 +395,11 @@ def check_declared_licenses(license_match_objects):
     return any(is_good_license(license_match_object) for license_match_object in license_match_objects)
 
 def get_field_values_from_resources(
-    resources,
+    codebase,
+    package_resources,
     field_name,
     key_files_only=False,
     is_string=False,
-    is_codebase=False
 ):
     """
     Return a list of values from the `field_name` field of the Resources from
@@ -414,24 +413,23 @@ def get_field_values_from_resources(
     """
     values = []
     
-    if is_codebase:
-        for resource in resources.walk(topdown=True):
-            if key_files_only:
-                if not resource.is_key_file:
-                    continue
-            else:
-                if resource.is_key_file:
-                    continue
-            if is_string:
-                value = getattr(resource, field_name, None) or None
-                if value:
-                    values.append(value)
-            else:
-                for value in getattr(resource, field_name, []) or []:
-                    values.append(value)
+    for resource in codebase.walk(topdown=True):
+        if key_files_only:
+            if not resource.is_key_file:
+                continue
+        else:
+            if resource.is_key_file:
+                continue
+        if is_string:
+            value = getattr(resource, field_name, None) or None
+            if value:
+                values.append(value)
+        else:
+            for value in getattr(resource, field_name, []) or []:
+                values.append(value)
 
-    else:
-        for resource in resources['resources']:
+    if package_resources:
+        for resource in package_resources:
             if key_files_only:
                 if not resource.get('is_key_file', False):
                     continue
