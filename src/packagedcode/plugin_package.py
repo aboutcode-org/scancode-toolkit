@@ -321,7 +321,6 @@ class PackageSummary(PostScanPlugin):
         
         packages = codebase.attributes.packages
         package_resources = get_package_resources(codebase)
-        packages_copy = copy.deepcopy(packages)
         package_attributes_map = {}
         attributes_to_update = [
             'license_clarity_score', 
@@ -331,12 +330,12 @@ class PackageSummary(PostScanPlugin):
             'other_license_expression', 
             'other_license_expression_spdx'
             ]
-        for package in packages_copy:
+            
+        for package in packages:
             package_uid = package['package_uid']
             if package_uid in package_resources:
-                package['resources'] = [resource.to_dict() for resource in package_resources[package_uid]]
-                
-            scoring_elements, package_attrs= compute_license_score(package, is_codebase=False)
+                package_resource = [resource.to_dict() for resource in package_resources[package_uid]]
+            scoring_elements, package_attrs= compute_license_score(codebase, package_resource)
             license_clarity_score= scoring_elements.to_dict()
             package_attributes_map[package_uid] = {
                 'license_clarity_score': license_clarity_score,
@@ -346,9 +345,6 @@ class PackageSummary(PostScanPlugin):
                 'other_license_expression': package_attrs.other_license_expression,
                 'other_license_expression_spdx': package_attrs.other_license_expression_spdx
             }
-            
-        for package in packages:
-            package_uid = package['package_uid']
             if package_uid in package_attributes_map:
                 package_attrs = package_attributes_map[package_uid]
                 for attribute in attributes_to_update:
