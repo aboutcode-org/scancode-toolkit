@@ -1234,7 +1234,7 @@ class ResolvedPurl(NamedTuple):
     is_resolved: bool
 
 
-class BaseDependencyFileHandler(models.DatafileHandler):
+class BaseDependencyFileHandler(BaseExtractedPythonLayout):
     """
     Base class for a dependency files parsed with the same library
     """

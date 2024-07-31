@@ -261,7 +261,6 @@ class PackageScanner(ScanPlugin):
 
         # Create codebase-level packages and dependencies
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
-        #raise Exception()
 
         if has_licenses:
             # This step is dependent on top level packages
@@ -271,6 +270,9 @@ class PackageScanner(ScanPlugin):
                 modified = list(add_referenced_license_detection_from_package(resource, codebase))
                 if TRACE_LICENSE and modified:
                     logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_from_package: modified: {modified}')
+
+        if TRACE_LICENSE or TRACE_ASSEMBLY:
+            raise Exception()
 
 
 def add_license_from_file(resource, codebase):
@@ -388,14 +390,17 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
             continue
 
         if TRACE_ASSEMBLY:
-            logger_debug('get_package_and_deps: location:', resource.location)
+            logger_debug('get_package_and_deps: path:', resource.path)
 
         for package_data in resource.package_data:
             try:
                 package_data = PackageData.from_dict(mapping=package_data)
 
                 if TRACE_ASSEMBLY:
-                    logger_debug('  get_package_and_deps: package_data:', package_data)
+                    logger_debug(
+                        '  get_package_and_deps: package_data:',
+                        package_data.purl, package_data.datasource_id,
+                    )
 
                 # Find a handler for this package datasource to assemble collect
                 # packages and deps
@@ -411,9 +416,6 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                 )
 
                 for item in items:
-                    if TRACE_ASSEMBLY:
-                        logger_debug('    get_package_and_deps: item:', item)
-
                     if isinstance(item, Package):
                         if strip_root and not has_single_resource:
                             item.datafile_paths = [
@@ -428,11 +430,14 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                         if strip_root and not has_single_resource:
                             item.datafile_path = strip_first_path_segment(item.datafile_path)
                         dependencies.append(item)
+                        if TRACE_ASSEMBLY:
+                            logger_debug('    get_package_and_deps: Dependency:', item.purl)
 
                     elif isinstance(item, Resource):
                         seen_package_manifest_paths.add(item.path)
 
                         if TRACE_ASSEMBLY:
+                            logger_debug('    get_package_and_deps: Resource:', item.path)
                             logger_debug(
                                 '    get_package_and_deps: seen_package_manifest_paths:',
                                 seen_package_manifest_paths,
