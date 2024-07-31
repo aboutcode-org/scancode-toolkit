@@ -41,7 +41,6 @@ try:
 except ImportError:
     licensing = None
 
-from packagedcode.licensing import get_declared_license_expression_spdx
 
 """
 This module contain data models for package and dependencies, abstracting and
@@ -755,27 +754,23 @@ class PackageData(IdentifiablePackageData):
 
         Skip the license/copyright detection step if `package_only` is True.
         """
-        if "purl" in package_data:
-            package_data.pop("purl")
+        package_mapping = package_data.copy()
+        if "purl" in package_mapping:
+            package_mapping.pop("purl")
 
-        package_data = cls(**package_data)
+        package_data_obj = cls(**package_mapping)
 
         if not package_only:
-            package_data.populate_license_fields()
-            package_data.populate_holder_field()
+            package_data_obj.populate_license_fields()
+            package_data_obj.populate_holder_field()
         else:
-            package_data.normalize_extracted_license_statement()
+            package_data_obj.normalize_extracted_license_statement()
 
-        return package_data
+        return package_data_obj
 
     @property
     def can_assemble(self):
-        from packagedcode import HANDLER_BY_DATASOURCE_ID
-        handler = HANDLER_BY_DATASOURCE_ID.get(self.datasource_id)
-        if issubclass(handler, NonAssemblableDatafileHandler):
-            return False
-
-        return True
+        return is_from_assemblable_handler(self.datasource_id)
 
     def normalize_extracted_license_statement(self):
         """
@@ -836,6 +831,8 @@ class PackageData(IdentifiablePackageData):
         object, and add the declared_license_expression (and the spdx expression)
         and corresponding LicenseDetection data.
         """
+        from packagedcode.licensing import get_declared_license_expression_spdx
+
         if not self.declared_license_expression and self.extracted_license_statement:
 
             self.license_detections, self.declared_license_expression = \
@@ -974,6 +971,22 @@ class PackageData(IdentifiablePackageData):
             default_relation_license=default_relation_license,
             datasource_id=self.datasource_id,
         )
+
+
+def is_from_assemblable_handler(datasource_id):
+    """
+    Return True if the corresponding datafile handler for a
+    `datasource_id` can be assembled in a package instance.
+    """
+    if not datasource_id:
+        return False
+
+    from packagedcode import HANDLER_BY_DATASOURCE_ID
+    handler = HANDLER_BY_DATASOURCE_ID.get(datasource_id)
+    if issubclass(handler, NonAssemblableDatafileHandler):
+        return False
+
+    return True
 
 
 def get_default_relation_license(datasource_id):
@@ -1471,6 +1484,8 @@ class DatafileHandler:
         object, and add the declared_license_expression (and the spdx expression)
         and corresponding LicenseDetection data.
         """
+        from packagedcode.licensing import get_declared_license_expression_spdx
+
         if not package_data.declared_license_expression and package_data.extracted_license_statement:
 
             package_data.license_detections, package_data.declared_license_expression = \
@@ -1762,6 +1777,12 @@ class Package(PackageData):
         return True
 
     def refresh_license_expressions(self, default_relation='AND'):
+        """
+        Re-populate the declared and other license expressions from the
+        license detections and other license detections for a package.
+        """
+        from packagedcode.licensing import get_declared_license_expression_spdx
+
         if self.license_detections:
             self.declared_license_expression = str(combine_expressions(
                     expressions=[

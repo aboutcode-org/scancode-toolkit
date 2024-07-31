@@ -286,31 +286,6 @@
       ]
     },
     {
-      "identifier": "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d",
-      "license_expression": "bsd-new",
-      "license_expression_spdx": "BSD-3-Clause",
-      "detection_count": 2,
-      "detection_log": [],
-      "reference_matches": [
-        {
-          "license_expression": "bsd-new",
-          "license_expression_spdx": "BSD-3-Clause",
-          "from_file": "google_appengine_sdk/django-1.3/LICENSE",
-          "start_line": 4,
-          "end_line": 27,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 214,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "bsd-new_683.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE",
-          "matched_text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
-          "matched_text_diagnostics": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-        }
-      ]
-    },
-    {
       "identifier": "bsd_new-734cc7c8-5d13-b9e1-3f7c-d04a0d9396c7",
       "license_expression": "bsd-new",
       "license_expression_spdx": "BSD-3-Clause",
@@ -349,6 +324,31 @@
           "rule_identifier": "pypi_bsd_license.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
           "matched_text": "- 'License :: OSI Approved :: BSD License'"
+        }
+      ]
+    },
+    {
+      "identifier": "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d",
+      "license_expression": "bsd-new",
+      "license_expression_spdx": "BSD-3-Clause",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": "google_appengine_sdk/django-1.3/LICENSE",
+          "start_line": 4,
+          "end_line": 27,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 214,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "bsd-new_683.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE",
+          "matched_text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
+          "matched_text_diagnostics": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
         }
       ]
     }
@@ -1528,34 +1528,9 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "bsd-new",
-          "declared_license_expression_spdx": "BSD-3-Clause",
-          "license_detections": [
-            {
-              "license_expression": "bsd-new",
-              "license_expression_spdx": "BSD-3-Clause",
-              "matches": [
-                {
-                  "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
-                  "from_file": "google_appengine_sdk/django-1.3/LICENSE",
-                  "start_line": 4,
-                  "end_line": 27,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 214,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "bsd-new_683.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_683.RULE",
-                  "matched_text": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
-                  "matched_text_diagnostics": "Redistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n    1. Redistributions of source code must retain the above copyright notice, \n       this list of conditions and the following disclaimer.\n    \n    2. Redistributions in binary form must reproduce the above copyright \n       notice, this list of conditions and the following disclaimer in the\n       documentation and/or other materials provided with the distribution.\n\n    3. Neither the name of Django nor the names of its contributors may be used\n       to endorse or promote products derived from this software without\n       specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-                }
-              ],
-              "detection_log": [],
-              "identifier": "bsd_new-72cae3bc-4423-3a9e-be84-ee8bb5120a4d"
-            }
-          ],
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],

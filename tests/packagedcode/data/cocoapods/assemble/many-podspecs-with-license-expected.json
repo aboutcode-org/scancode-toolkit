@@ -1042,7 +1042,7 @@
       "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
-      "detection_count": 3,
+      "detection_count": 1,
       "reference_matches": [
         {
           "license_expression": "apache-2.0",
@@ -1774,31 +1774,9 @@
           "vcs_url": "",
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "apache-2.0",
-          "declared_license_expression_spdx": "Apache-2.0",
-          "license_detections": [
-            {
-              "license_expression": "apache-2.0",
-              "license_expression_spdx": "Apache-2.0",
-              "matches": [
-                {
-                  "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
-                  "from_file": "many-podspecs/amplify-ios.LICENSE",
-                  "start_line": 2,
-                  "end_line": 175,
-                  "matcher": "1-hash",
-                  "score": 100.0,
-                  "matched_length": 1405,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_70.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
-                }
-              ],
-              "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
-            }
-          ],
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
@@ -1855,31 +1833,9 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "apache-2.0",
-          "declared_license_expression_spdx": "Apache-2.0",
-          "license_detections": [
-            {
-              "license_expression": "apache-2.0",
-              "license_expression_spdx": "Apache-2.0",
-              "matches": [
-                {
-                  "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
-                  "from_file": "many-podspecs/amplify-ios.LICENSE",
-                  "start_line": 2,
-                  "end_line": 175,
-                  "matcher": "1-hash",
-                  "score": 100.0,
-                  "matched_length": 1405,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_70.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_70.RULE"
-                }
-              ],
-              "identifier": "apache_2_0-08479bef-4de5-8be8-0987-1bec0c232b20"
-            }
-          ],
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
