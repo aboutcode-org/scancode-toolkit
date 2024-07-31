@@ -1,0 +1,890 @@
+{
+  "summary": {
+    "declared_license_expression": "mit",
+    "license_clarity_score": {
+      "score": 100,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": true,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    },
+    "declared_holder": "Nick Galbreath",
+    "primary_language": "Python",
+    "other_license_expressions": [
+      {
+        "value": "bsd-new",
+        "count": 3
+      },
+      {
+        "value": null,
+        "count": 1
+      }
+    ],
+    "other_holders": [
+      {
+        "value": null,
+        "count": 1
+      }
+    ],
+    "other_languages": []
+  },
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "BunkerWeb",
+      "version": "1.5.8",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Make your web services secure by default !",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Bunkerity",
+          "email": "contact@bunkerity.com",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "bunkerweb/LICENSE.md",
+              "start_line": 4,
+              "end_line": 21,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 161,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+            }
+          ],
+          "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://pypi.org/project/BunkerWeb",
+      "repository_download_url": "https://pypi.org/packages/source/B/BunkerWeb/BunkerWeb-1.5.8.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/BunkerWeb/1.5.8/json",
+      "package_uid": "pkg:pypi/bunkerweb@1.5.8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "bunkerweb/pyproject.toml"
+      ],
+      "datasource_ids": [
+        "pypi_pyproject_toml"
+      ],
+      "purl": "pkg:pypi/bunkerweb@1.5.8"
+    }
+  ],
+  "dependencies": [],
+  "license_detections": [
+    {
+      "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
+      "license_expression": "bsd-new",
+      "license_expression_spdx": "BSD-3-Clause",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": "bunkerweb/deps/libinjection/setup.py",
+          "start_line": 41,
+          "end_line": 41,
+          "matcher": "2-aho",
+          "score": 99.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 99,
+          "rule_identifier": "pypi_bsd_license.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "bsd_new-90c8b089-2f85-4a93-d0c8-a411247c6395",
+      "license_expression": "bsd-new",
+      "license_expression_spdx": "BSD-3-Clause",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": "bunkerweb/deps/libinjection/setup.py",
+          "start_line": 6,
+          "end_line": 6,
+          "matcher": "2-aho",
+          "score": 99.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 99,
+          "rule_identifier": "bsd-new_26.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_26.RULE"
+        },
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "bunkerweb/deps/libinjection/setup.py",
+          "start_line": 6,
+          "end_line": 6,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "unknown-license-reference_98.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_98.RULE"
+        },
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
+          "start_line": 4,
+          "end_line": 29,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 216,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "bsd-new_105.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_105.RULE"
+        },
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
+          "start_line": 32,
+          "end_line": 32,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 7,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "bsd-new_226.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_226.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "bsd_new-99f77058-447d-ca1d-7b17-8e92d1a664e4",
+      "license_expression": "bsd-new",
+      "license_expression_spdx": "BSD-3-Clause",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
+          "start_line": 4,
+          "end_line": 29,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 216,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "bsd-new_105.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_105.RULE"
+        },
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
+          "start_line": 32,
+          "end_line": 32,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 7,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "bsd-new_226.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_226.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "bunkerweb/LICENSE.md",
+          "start_line": 4,
+          "end_line": 21,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "bunkerweb",
+      "type": "directory",
+      "name": "bunkerweb",
+      "base_name": "bunkerweb",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 4,
+      "dirs_count": 2,
+      "size_count": 4405,
+      "scan_errors": []
+    },
+    {
+      "path": "bunkerweb/LICENSE.md",
+      "type": "file",
+      "name": "LICENSE.md",
+      "base_name": "LICENSE",
+      "extension": ".md",
+      "size": 1084,
+      "sha1": "242b333ee88b352d41d2aafe9994a9f77de370f1",
+      "md5": "caa29ac8cda378ef687072b0b1c8c0e4",
+      "sha256": "9a5ef97962dd0750ed94f1ee3aa029136aa2a06586026b179730a777f50c8702",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/bunkerweb@1.5.8?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "bunkerweb/LICENSE.md",
+              "start_line": 4,
+              "end_line": 21,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 161,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+            }
+          ],
+          "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 94.71,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2012-2016, Nick Galbreath",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Nick Galbreath",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "bunkerweb/deps",
+      "type": "directory",
+      "name": "deps",
+      "base_name": "deps",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 2,
+      "dirs_count": 1,
+      "size_count": 2998,
+      "scan_errors": []
+    },
+    {
+      "path": "bunkerweb/deps/libinjection",
+      "type": "directory",
+      "name": "libinjection",
+      "base_name": "libinjection",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 2,
+      "dirs_count": 0,
+      "size_count": 2998,
+      "scan_errors": []
+    },
+    {
+      "path": "bunkerweb/deps/libinjection/COPYING.txt",
+      "type": "file",
+      "name": "COPYING.txt",
+      "base_name": "COPYING",
+      "extension": ".txt",
+      "size": 1574,
+      "sha1": "16eb1fced5e1f443e68b3ff36f3328ac8f31d893",
+      "md5": "2493d74f84f74417cd51943cb1141a42",
+      "sha256": "88ef2e3f1383c20ad745a60edbce61fe510eda64e6b09a0e833c3660c9386810",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/bunkerweb@1.5.8?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "bsd-new",
+      "detected_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "matches": [
+            {
+              "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
+              "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
+              "start_line": 4,
+              "end_line": 29,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 216,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "bsd-new_105.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_105.RULE"
+            },
+            {
+              "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
+              "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
+              "start_line": 32,
+              "end_line": 32,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "bsd-new_226.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_226.RULE"
+            }
+          ],
+          "identifier": "bsd_new-99f77058-447d-ca1d-7b17-8e92d1a664e4"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 94.09,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2012-2016, Nick Galbreath",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Nick Galbreath",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "bunkerweb/deps/libinjection/setup.py",
+      "type": "file",
+      "name": "setup.py",
+      "base_name": "setup",
+      "extension": ".py",
+      "size": 1424,
+      "sha1": "a56c141912506e2eb94bfa164687131ff21fb298",
+      "md5": "ea7cba7d908eaa03a5b49b245b8119ef",
+      "sha256": "d61b7ebe3ebdb52e4e1ffe8ae28313ea7560ab619f9f0b211f6cd988d849f907",
+      "mime_type": "text/plain",
+      "file_type": "Python script, ASCII text executable",
+      "programming_language": "Python",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": true,
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "libinjection",
+          "version": "3.9.1",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Wrapper around libinjection c-code to detect sqli",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Nick Galbreath",
+              "email": "nickg@client9.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "Intended Audience :: Developers",
+            "Topic :: Database",
+            "Topic :: Security",
+            "Operating System :: OS Independent",
+            "Development Status :: 3 - Alpha",
+            "Topic :: Internet :: Log Analysis",
+            "Topic :: Internet :: WWW/HTTP"
+          ],
+          "homepage_url": "https://libinjection.client9.com/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "bsd-new",
+          "declared_license_expression_spdx": "BSD-3-Clause",
+          "license_detections": [
+            {
+              "license_expression": "bsd-new",
+              "license_expression_spdx": "BSD-3-Clause",
+              "matches": [
+                {
+                  "license_expression": "bsd-new",
+                  "spdx_license_expression": "BSD-3-Clause",
+                  "from_file": "bunkerweb/deps/libinjection/setup.py",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 99.0,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 99,
+                  "rule_identifier": "pypi_bsd_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+                  "matched_text": "- 'License :: OSI Approved :: BSD License'"
+                }
+              ],
+              "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "classifiers:\n  - 'License :: OSI Approved :: BSD License'\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://pypi.org/project/libinjection",
+          "repository_download_url": "https://pypi.org/packages/source/l/libinjection/libinjection-3.9.1.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/libinjection/3.9.1/json",
+          "datasource_id": "pypi_setup_py",
+          "purl": "pkg:pypi/libinjection@3.9.1"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/bunkerweb@1.5.8?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "bsd-new",
+      "detected_license_expression_spdx": "BSD-3-Clause",
+      "license_detections": [
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "matches": [
+            {
+              "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
+              "from_file": "bunkerweb/deps/libinjection/setup.py",
+              "start_line": 6,
+              "end_line": 6,
+              "matcher": "2-aho",
+              "score": 99.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 99,
+              "rule_identifier": "bsd-new_26.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_26.RULE"
+            },
+            {
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "bunkerweb/deps/libinjection/setup.py",
+              "start_line": 6,
+              "end_line": 6,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "unknown-license-reference_98.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_98.RULE"
+            },
+            {
+              "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
+              "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
+              "start_line": 4,
+              "end_line": 29,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 216,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "bsd-new_105.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_105.RULE"
+            },
+            {
+              "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
+              "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
+              "start_line": 32,
+              "end_line": 32,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 7,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "bsd-new_226.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_226.RULE"
+            }
+          ],
+          "identifier": "bsd_new-90c8b089-2f85-4a93-d0c8-a411247c6395",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
+        },
+        {
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "matches": [
+            {
+              "license_expression": "bsd-new",
+              "spdx_license_expression": "BSD-3-Clause",
+              "from_file": "bunkerweb/deps/libinjection/setup.py",
+              "start_line": 41,
+              "end_line": 41,
+              "matcher": "2-aho",
+              "score": 99.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 99,
+              "rule_identifier": "pypi_bsd_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE"
+            }
+          ],
+          "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 7.58,
+      "copyrights": [
+        {
+          "copyright": "Copyright 2012, 2013, 2014 Nick Galbreath nickg@client9.com",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Nick Galbreath",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "authors": [
+        {
+          "author": "Nick Galbreath",
+          "start_line": 31,
+          "end_line": 31
+        }
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "bunkerweb/pyproject.toml",
+      "type": "file",
+      "name": "pyproject.toml",
+      "base_name": "pyproject",
+      "extension": ".toml",
+      "size": 323,
+      "sha1": "e97ff042e27bc5be29abf6483ea57c3abfbfba83",
+      "md5": "bef2744dd896358a9e799e90cb890883",
+      "sha256": "2e71a200631f19ee4ebaf8a3c0efe859aa3eeef35adba95268282147ad7b8253",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "BunkerWeb",
+          "version": "1.5.8",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Make your web services secure by default !",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Bunkerity",
+              "email": "contact@bunkerity.com",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "bunkerweb/LICENSE.md",
+                  "start_line": 4,
+                  "end_line": 21,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 161,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit.LICENSE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+                }
+              ],
+              "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://pypi.org/project/BunkerWeb",
+          "repository_download_url": "https://pypi.org/packages/source/B/BunkerWeb/BunkerWeb-1.5.8.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/BunkerWeb/1.5.8/json",
+          "datasource_id": "pypi_pyproject_toml",
+          "purl": "pkg:pypi/bunkerweb@1.5.8"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/bunkerweb@1.5.8?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

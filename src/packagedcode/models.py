@@ -1189,7 +1189,7 @@ class DatafileHandler:
         starting ``resource`` in the ``codebase``.
 
         This default implementation  assigns the package to the whole
-        ``resource`` tree. Since ``resource`` is a file y default, this means
+        ``resource`` tree. Since ``resource`` is a file by default, this means
         that only the datafile ``resource`` is assigned to the ``package`` by
         default.
 
