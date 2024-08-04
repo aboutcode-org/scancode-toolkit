@@ -133,7 +133,7 @@ class TestPlugins(PackageTester):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('package_summary/expected.json')
 
-        run_scan_click(['--package','--license','--copyright', '--strip-root', '--processes', '-1','--package-summary', '--classify','--json-pp', result_file, test_dir])
+        run_scan_click(['--package','--license','--copyright', '--strip-root', '--processes', '-1', '--package-summary', '--classify', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
     
     def test_py_whl_ecosystem_with_package_summary(self):
@@ -141,7 +141,16 @@ class TestPlugins(PackageTester):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('package_summary/python-whl-expected.json')
 
-        run_scan_click(['--package','--license','--copyright', '--strip-root', '--processes', '-1','--package-summary','--summary' , '--classify','--json-pp', result_file, test_dir])
+        run_scan_click(['--package','--license','--copyright', '--strip-root', '--processes', '-1', '--package-summary', '--summary' , '--classify', '--json-pp', result_file, test_dir])
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+    
+    # Package Attribute tests
+    def test_copyright_attribute(self):
+        test_dir = self.get_test_loc('package_summary/package_attributes/copyright') 
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('package_summary/package_attributes/copyright-expected.json')
+
+        run_scan_click(['--package','--license','--copyright', '--strip-root', '--processes', '-1', '--package-summary', '--classify', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
     
     @skipIf(on_windows, 'somehow this fails on Windows')
