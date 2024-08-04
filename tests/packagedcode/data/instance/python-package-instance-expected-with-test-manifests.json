@@ -315,17 +315,6 @@
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:generic/python",
-              "extracted_requirement": "python_requires>=3.6",
-              "scope": "python",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false,
-              "is_direct": true,
-              "resolved_package": {},
-              "extra_data": {}
-            },
-            {
               "purl": "pkg:pypi/pytest",
               "extracted_requirement": "pytest>=4.6",
               "scope": "testing",

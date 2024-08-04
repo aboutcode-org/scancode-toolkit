@@ -18,6 +18,7 @@ import sys
 import tempfile
 import zipfile
 from configparser import ConfigParser
+from fnmatch import fnmatchcase
 from pathlib import Path
 from typing import NamedTuple
 
@@ -83,6 +84,10 @@ class PythonEggPkgInfoFile(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
+        """
+        Parse package data from a PKG-INFO file and other manifests present in
+        neighboring files as needed when an installed layout is found.
+        """
         yield parse_metadata(
             location=location,
             datasource_id=cls.datasource_id,
@@ -108,6 +113,10 @@ class PythonEditableInstallationPkgInfoFile(models.DatafileHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
+        """
+        Parse package data from a PKG-INFO file and other manifests present in
+        neighboring files as needed when an installed layout is found.
+        """
         yield parse_metadata(
             location=location,
             datasource_id=cls.datasource_id,
@@ -150,12 +159,11 @@ class BaseExtractedPythonLayout(models.DatafileHandler):
     def assemble(cls, package_data, resource, codebase, package_adder):
         # a source distribution can have many manifests
         datafile_name_patterns = (
-            'Pipfile.lock',
-            'Pipfile',
-        ) + PipRequirementsFileHandler.path_patterns + PyprojectTomlHandler.path_patterns
+            PipfileHandler.path_patterns + PipfileLockHandler.path_patterns
+            + PipRequirementsFileHandler.path_patterns + PyprojectTomlHandler.path_patterns
+        )
 
-        # TODO: we want PKG-INFO first, then (setup.py, setup.cfg), then pyproject.toml for poetry
-        # then we have the rest of the lock files (pipfile, pipfile.lock, etc.)
+        is_datafile_pypi = any(fnmatchcase(resource.path, pat) for pat in datafile_name_patterns)
 
         package_resource = None
         if resource.name == 'PKG-INFO':
@@ -186,18 +194,21 @@ class BaseExtractedPythonLayout(models.DatafileHandler):
                             continue
                         package_resource = child
                         break
-        elif resource.name in datafile_name_patterns:
+
+        elif is_datafile_pypi:
             if resource.has_parent():
                 siblings = resource.siblings(codebase)
-                package_resource = [r for r in siblings if r.name == 'PKG-INFO']
+                package_resources = [r for r in siblings if r.name == 'PKG-INFO']
                 if package_resource:
-                    package_resource = package_resource[0]
+                    package_resource = package_resources[0]
 
         package = None
         if package_resource:
             pkg_data = package_resource.package_data[0]
             pkg_data = models.PackageData.from_dict(pkg_data)
             if pkg_data.purl:
+                # We yield only the package and the resource, and not dependencies because
+                # PKG-INFO also has the dependencies from 
                 package = create_package_from_package_data(
                     package_data=pkg_data,
                     datafile_path=package_resource.path
@@ -207,11 +218,6 @@ class BaseExtractedPythonLayout(models.DatafileHandler):
                 package_adder(package.package_uid, package_resource, codebase)
                 yield package_resource
 
-                yield from yield_dependencies_from_package_data(
-                    package_data=pkg_data,
-                    datafile_path=package_resource.path,
-                    package_uid=package.package_uid
-                )
         else:
             setup_resources = []
             if resource.has_parent():
@@ -221,31 +227,50 @@ class BaseExtractedPythonLayout(models.DatafileHandler):
                     if r.name in ('setup.py', 'setup.cfg')
                     and r.package_data
                 ]
+                if setup_resources:
+                    setup_package_data = [
+                        (setup_resource, models.PackageData.from_dict(setup_resource.package_data[0]))
+                        for setup_resource in setup_resources
+                    ]
+                    setup_package_data = sorted(setup_package_data, key=lambda s: bool(s[1].purl), reverse=True)
+                    for setup_resource, setup_pkg_data in setup_package_data:
+                        if setup_pkg_data.purl:
+                            if not package:
+                                package = create_package_from_package_data(
+                                    package_data=setup_pkg_data,
+                                    datafile_path=setup_resource.path,
+                                )
+                                yield package
+                                package_resource = setup_resource
+                            else:
+                                package.update(setup_pkg_data, setup_resource.path)
+                    if package:
+                        for setup_resource, setup_pkg_data in setup_package_data:
+                            package_adder(package.package_uid, setup_resource, codebase)
+                            yield setup_resource
 
-                setup_package_data = [
-                    (setup_resource, models.PackageData.from_dict(setup_resource.package_data[0]))
-                    for setup_resource in setup_resources
-                ]
-                setup_package_data = sorted(setup_package_data, key=lambda s: bool(s[1].purl), reverse=True)
-                for setup_resource, setup_pkg_data in setup_package_data:
-                    if setup_pkg_data.purl:
-                        if not package:
-                            package = create_package_from_package_data(
+                            yield from yield_dependencies_from_package_data(
                                 package_data=setup_pkg_data,
                                 datafile_path=setup_resource.path,
+                                package_uid=package.package_uid
                             )
-                            yield package
-                            package_resource = setup_resource
-                        else:
-                            package.update(setup_pkg_data, setup_resource.path)
-                if package:
-                    for setup_resource, setup_pkg_data in setup_package_data:
-                        package_adder(package.package_uid, setup_resource, codebase)
-                        yield setup_resource
+                else:
+                    package_resource = resource
+                    pkg_data = package_resource.package_data[0]
+                    pkg_data = models.PackageData.from_dict(pkg_data)
+                    if pkg_data.purl:
+                        package = create_package_from_package_data(
+                            package_data=pkg_data,
+                            datafile_path=package_resource.path
+                        )
+                        yield package
+
+                        package_adder(package.package_uid, package_resource, codebase)
+                        yield package_resource
 
                         yield from yield_dependencies_from_package_data(
-                            package_data=setup_pkg_data,
-                            datafile_path=setup_resource.path,
+                            package_data=pkg_data,
+                            datafile_path=package_resource.path,
                             package_uid=package.package_uid
                         )
 
@@ -275,12 +300,20 @@ class BaseExtractedPythonLayout(models.DatafileHandler):
         else:
             package_uid = None
 
+        # Yield dependencies from sibling manifests
         if package_resource:
             for sibling in package_resource.siblings(codebase):
-                if sibling and sibling.name in datafile_name_patterns:
+                if not sibling:
+                    continue
+
+                is_sibling_pypi_manifest = any(
+                    fnmatchcase(sibling.path, pat)
+                    for pat in datafile_name_patterns
+                )
+                if is_sibling_pypi_manifest:
                     yield from yield_dependencies_from_package_resource(
                         resource=sibling,
-                        package_uid=package_uid
+                        package_uid=package_uid,
                     )
 
                     if package_uid and package_uid not in sibling.for_packages:
@@ -992,6 +1025,10 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
     if license_file:
         extra_data['license_file'] = license_file
 
+    # FIXME: We are getting dependencies from other sibling files, this is duplicated
+    # data at the package_data level, is this necessary? We also have the entire dependency
+    # relationships here at requires.txt present in ``.egg-info`` should we store these
+    # nicely?
     dependencies = get_dist_dependencies(dist)
     file_references = list(get_file_references(dist))
 
@@ -1251,6 +1288,8 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
         with open(location) as f:
             parser.read_file(f)
 
+        extra_data = {}
+
         for section in parser.values():
             if section.name == 'options':
                 scope_by_sub_section = {
@@ -1266,22 +1305,10 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                         reqs = list(get_requirement_from_section(section=section, sub_section=sub_section))
                         dependent_packages.extend(cls.parse_reqs(reqs, scope))
                         continue
+
+                    # This is not a dependency, merely a required python version
                     python_requires_specifier = section[sub_section]
-                    purl = PackageURL(
-                        type="generic",
-                        name="python",
-                    )
-                    resolved_purl = get_resolved_purl(purl=purl, specifiers=SpecifierSet(python_requires_specifier))
-                    dependent_packages.append(
-                        models.DependentPackage(
-                            purl=str(resolved_purl.purl),
-                            scope=scope,
-                            is_runtime=True,
-                            is_optional=False,
-                            is_resolved=resolved_purl.is_resolved,
-                            extracted_requirement=f"python_requires{python_requires_specifier}",
-                        )
-                    )
+                    extra_data["python_requires"] = python_requires_specifier
 
             if section.name == "options.extras_require":
                 for sub_section in section:

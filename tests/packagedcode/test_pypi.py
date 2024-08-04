@@ -296,7 +296,7 @@ class TestPypiUnpackedSdist(PackageTester):
         # `celery/celery.egg-info/PKG-INFO`
         vc = VirtualCodebase(location=result_file)
         for dep in vc.attributes.dependencies:
-            assert dep['datafile_path'] == 'celery/celery.egg-info/PKG-INFO'
+            assert dep['datafile_path'] == 'celery/celery.egg-info/requires.txt'
         for pkg in vc.attributes.packages:
             for path in pkg['datafile_paths']:
                 assert path == 'celery/celery.egg-info/PKG-INFO'
