@@ -163,15 +163,15 @@ class TestConanFileParser(testcase.FileBasedTesting):
         )
 
 
-def test_is_constraint_resolved():
+def test_is_constraint_pinned():
     constraint1 = "[>=1.2.11 <2]"
     expected1 = False
 
     constraint2 = "cci.20210118"
     expected2 = True
 
-    assert conan.is_constraint_resolved(constraint1) == expected1
-    assert conan.is_constraint_resolved(constraint2) == expected2
+    assert conan.is_constraint_pinned(constraint1) == expected1
+    assert conan.is_constraint_pinned(constraint2) == expected2
 
 
 def test_get_dependencies():
