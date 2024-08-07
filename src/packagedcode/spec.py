@@ -204,7 +204,7 @@ def get_dependent_packages(lines, location, package_type):
                 purl=PackageURL(type=package_type, name=dep.name).to_string(),
                 extracted_requirement=', '.join(dep.requirement),
                 scope=key,
-                is_resolved=False,
+                is_pinned=False,
                 **flags,
             )
 

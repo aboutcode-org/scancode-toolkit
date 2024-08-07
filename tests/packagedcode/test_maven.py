@@ -261,7 +261,7 @@ class TestMavenMisc(BaseMavenCase):
         test_file = self.get_test_loc('maven2/log4j/log4j-pom.xml')
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
 
-    def test_package_dependency_populate_is_resolved_field(self):
+    def test_package_dependency_populate_is_pinned_field(self):
         test_file = self.get_test_loc('maven_misc/parse/swagger-java-sample-app_2.10-1.3.1.pom')
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
 

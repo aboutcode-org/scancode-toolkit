@@ -182,7 +182,7 @@ def test_get_dependencies():
             scope="install",
             is_runtime=True,
             is_optional=False,
-            is_resolved=False,
+            is_pinned=False,
             extracted_requirement="[>=1.2.11 <2]",
         ),
         models.DependentPackage(
@@ -190,7 +190,7 @@ def test_get_dependencies():
             scope="install",
             is_runtime=True,
             is_optional=False,
-            is_resolved=True,
+            is_pinned=True,
             extracted_requirement="1.0.8",
         ),
         models.DependentPackage(
@@ -198,7 +198,7 @@ def test_get_dependencies():
             scope="install",
             is_runtime=True,
             is_optional=False,
-            is_resolved=True,
+            is_pinned=True,
             extracted_requirement="5.4.4",
         ),
     ]

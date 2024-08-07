@@ -63,12 +63,12 @@
         }
       ]
     }, 
-    "is_resolved": {
+    "is_pinned": {
       "oneOf": [
         {
           "type": "boolean", 
-          "title": "is resolved flag", 
-          "description": "True if this dependency version requirement has been resolved and this dependency url points to an exact version."
+          "title": "is pinned flag", 
+          "description": "True if this dependency version requirement has been pinned and this dependency points to an exact version."
         }, 
         {
           "type": "null"

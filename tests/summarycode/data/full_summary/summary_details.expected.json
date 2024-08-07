@@ -28,7 +28,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/abbrev",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -40,7 +40,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/ansi",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -52,7 +52,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/ansicolors",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -64,7 +64,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/ansistyles",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -76,7 +76,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/archy",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -88,7 +88,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/async-some",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -100,7 +100,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/block-stream",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -112,7 +112,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/char-spinner",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -124,7 +124,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/chmodr",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -136,7 +136,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/chownr",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -148,7 +148,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/cmd-shim",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -160,7 +160,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/columnify",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -172,7 +172,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/config-chain",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -184,7 +184,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/dezalgo",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -196,7 +196,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/editor",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -208,7 +208,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/fs-vacuum",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -220,7 +220,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/fs-write-stream-atomic",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -232,7 +232,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/fstream",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -244,7 +244,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/fstream-npm",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -256,7 +256,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/github-url-from-git",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -268,7 +268,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/github-url-from-username-repo",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -280,7 +280,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/glob",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -292,7 +292,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/graceful-fs",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -304,7 +304,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/hosted-git-info",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -316,7 +316,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/inflight",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -328,7 +328,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/inherits",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -340,7 +340,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/ini",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -352,7 +352,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/init-package-json",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -364,7 +364,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/lockfile",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -376,7 +376,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/lru-cache",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -388,7 +388,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/minimatch",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -400,7 +400,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/mkdirp",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -412,7 +412,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/node-gyp",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -424,7 +424,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/nopt",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -436,7 +436,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/normalize-git-url",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -448,7 +448,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/normalize-package-data",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -460,7 +460,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/npm-cache-filename",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -472,7 +472,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/npm-install-checks",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -484,7 +484,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/npm-package-arg",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -496,7 +496,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/npm-registry-client",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -508,7 +508,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/npm-user-validate",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -520,7 +520,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/npmlog",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -532,7 +532,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/once",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -544,7 +544,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/opener",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -556,7 +556,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/osenv",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -568,7 +568,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/path-is-inside",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -580,7 +580,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/read",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -592,7 +592,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/read-installed",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -604,7 +604,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/read-package-json",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -616,7 +616,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/readable-stream",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -628,7 +628,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/realize-package-specifier",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -640,7 +640,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/request",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -652,7 +652,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/retry",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -664,7 +664,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/rimraf",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -676,7 +676,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/semver",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -688,7 +688,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/sha",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -700,7 +700,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/slide",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -712,7 +712,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/sorted-object",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -724,7 +724,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/spdx",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -736,7 +736,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/tar",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -748,7 +748,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/text-table",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -760,7 +760,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/uid-number",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -772,7 +772,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/umask",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -784,7 +784,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/validate-npm-package-name",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -796,7 +796,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/which",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -808,7 +808,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/wrappy",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -820,7 +820,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/write-file-atomic",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -832,7 +832,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/validate-npm-package-license",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -844,7 +844,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/deep-equal",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -856,7 +856,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/marked",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -868,7 +868,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/marked-man",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -880,7 +880,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/nock",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -892,7 +892,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/npm-registry-couchapp",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -904,7 +904,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/npm-registry-mock",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -916,7 +916,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/require-inject",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -928,7 +928,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/sprintf-js",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -940,7 +940,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "resolved_package": {},
       "dependency_uid": "pkg:npm/tap",
       "for_package": "pkg:npm/npm@2.13.5",
@@ -7397,7 +7397,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7406,7 +7406,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7415,7 +7415,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7424,7 +7424,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7433,7 +7433,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7442,7 +7442,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7451,7 +7451,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7460,7 +7460,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7469,7 +7469,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7478,7 +7478,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7487,7 +7487,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7496,7 +7496,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7505,7 +7505,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7514,7 +7514,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7523,7 +7523,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7532,7 +7532,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7541,7 +7541,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7550,7 +7550,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7559,7 +7559,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7568,7 +7568,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7577,7 +7577,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7586,7 +7586,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7595,7 +7595,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7604,7 +7604,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7613,7 +7613,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7622,7 +7622,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7631,7 +7631,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7640,7 +7640,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7649,7 +7649,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7658,7 +7658,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7667,7 +7667,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7676,7 +7676,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7685,7 +7685,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7694,7 +7694,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7703,7 +7703,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7712,7 +7712,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7721,7 +7721,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7730,7 +7730,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7739,7 +7739,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7748,7 +7748,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7757,7 +7757,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7766,7 +7766,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7775,7 +7775,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7784,7 +7784,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7793,7 +7793,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7802,7 +7802,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7811,7 +7811,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7820,7 +7820,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7829,7 +7829,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7838,7 +7838,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7847,7 +7847,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7856,7 +7856,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7865,7 +7865,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7874,7 +7874,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7883,7 +7883,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7892,7 +7892,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7901,7 +7901,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7910,7 +7910,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7919,7 +7919,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7928,7 +7928,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7937,7 +7937,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7946,7 +7946,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7955,7 +7955,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7964,7 +7964,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7973,7 +7973,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7982,7 +7982,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -7991,7 +7991,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8000,7 +8000,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8009,7 +8009,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8018,7 +8018,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8027,7 +8027,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8036,7 +8036,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8045,7 +8045,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8054,7 +8054,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8063,7 +8063,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8072,7 +8072,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             },
             {
@@ -8081,7 +8081,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "resolved_package": {}
             }
           ],

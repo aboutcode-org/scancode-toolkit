@@ -208,7 +208,7 @@ class SwiftManifestJsonHandler(models.DatafileHandler):
                             scope="dependencies",
                             is_runtime=True,
                             is_optional=False,
-                            is_resolved=True,
+                            is_pinned=True,
                             extracted_requirement=version,
                         )
                     )
@@ -379,7 +379,7 @@ def get_dependencies(dependencies):
         namespace = None
         name = source.get("identity")
         version = None
-        is_resolved = False
+        is_pinned = False
 
         location = source.get("location")
         if remote := location.get("remote"):
@@ -388,7 +388,7 @@ def get_dependencies(dependencies):
         requirement = source.get("requirement")
         if exact := requirement.get("exact"):
             version = exact[0]
-            is_resolved = True
+            is_pinned = True
         elif range := requirement.get("range"):
             bound = range[0]
             lower_bound = bound.get("lowerBound")
@@ -399,7 +399,7 @@ def get_dependencies(dependencies):
             type="swift",
             namespace=namespace,
             name=name,
-            version=version if is_resolved else None,
+            version=version if is_pinned else None,
         )
 
         dependent_packages.append(
@@ -408,7 +408,7 @@ def get_dependencies(dependencies):
                 scope="dependencies",
                 is_runtime=True,
                 is_optional=False,
-                is_resolved=is_resolved,
+                is_pinned=is_pinned,
                 extracted_requirement=version,
             )
         )
@@ -500,7 +500,7 @@ def get_dependent_package_from_subtree(dependency, is_top_level_dependency):
             extracted_requirement=transitive_version,
             is_runtime=False,
             is_optional=False,
-            is_resolved=True,
+            is_pinned=True,
             is_direct=True,
         ).to_dict()
 
@@ -524,7 +524,7 @@ def get_dependent_package_from_subtree(dependency, is_top_level_dependency):
         extracted_requirement=version,
         is_runtime=False,
         is_optional=False,
-        is_resolved=True,
+        is_pinned=True,
         is_direct=is_top_level_dependency,
         resolved_package=parent_dependency,
     )

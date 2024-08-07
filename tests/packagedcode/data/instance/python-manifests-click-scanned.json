@@ -57,7 +57,7 @@
             "scope": "install",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false
+            "is_pinned": false
           },
           {
             "purl": "pkg:pypi/importlib-metadata",
@@ -65,7 +65,7 @@
             "scope": "install",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false
+            "is_pinned": false
           }
         ],
         "source_packages": [],
@@ -144,7 +144,7 @@
             "scope": "install",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false
+            "is_pinned": false
           },
           {
             "purl": "pkg:pypi/importlib-metadata",
@@ -152,7 +152,7 @@
             "scope": "install",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false
+            "is_pinned": false
           }
         ],
         "source_packages": [],
@@ -196,7 +196,7 @@
             "scope": "install",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false
+            "is_pinned": false
           }
         ],
         "source_packages": [],

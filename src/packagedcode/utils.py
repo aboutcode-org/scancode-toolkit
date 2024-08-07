@@ -243,10 +243,10 @@ def update_dependencies_as_resolved(dependencies):
     """
     For a list of dependency mappings with their respective
     resolved packages, update in place the dependencies for those
-    resolved packages as resolved (update `is_resolved` as True),
+    resolved packages as resolved (update `is_pinned` as True),
     if the requirement is also present as a resolved package.
     """
-    #TODO: Use vers to mark update `is_resolved` even in the case
+    #TODO: Use vers to mark update `is_pinned` even in the case
     # of incomplete resolution/partially pinned dependencies
 
     # These are only type, namespace and name (without version and qualifiers)
@@ -280,7 +280,7 @@ def update_dependencies_as_resolved(dependencies):
         for dep in dependencies_from_resolved:
             dep_purl = dep.get("purl")
             if dep_purl in base_resolved_purls:
-                dep["is_resolved"] = True
+                dep["is_pinned"] = True
 
 
 def get_base_purl(purl):

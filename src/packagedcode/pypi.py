@@ -676,7 +676,7 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
                 is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_direct=True,
-                is_resolved=False,
+                is_pinned=False,
                 extra_data=extra_data,
             )
             dependency_mappings.append(dependency.to_dict())
@@ -732,7 +732,7 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
                     is_runtime=False,
                     is_optional=False,
                     is_direct=True,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
                 dependencies.append(dependency.to_dict())
 
@@ -788,7 +788,7 @@ class PoetryLockHandler(BasePoetryPythonLayout):
                     is_runtime=True,
                     is_optional=False,
                     is_direct=True,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
                 dependencies_for_resolved.append(dependency.to_dict())
 
@@ -812,7 +812,7 @@ class PoetryLockHandler(BasePoetryPythonLayout):
                         is_runtime=False,
                         is_optional=False,
                         is_direct=True,
-                        is_resolved=False,
+                        is_pinned=False,
                     )
                     dependencies_for_resolved.append(dependency.to_dict())
 
@@ -840,7 +840,7 @@ class PoetryLockHandler(BasePoetryPythonLayout):
                 is_runtime=True,
                 is_optional=is_optional,
                 is_direct=False,
-                is_resolved=True,
+                is_pinned=True,
                 resolved_package=resolved_package.to_dict()
             )
             dependencies.append(dependency.to_dict())
@@ -938,7 +938,7 @@ class PipInspectDeplockHandler(models.DatafileHandler):
                 is_runtime=True,
                 is_optional=False,
                 is_direct=False,
-                is_resolved=True,
+                is_pinned=True,
                 resolved_package=package_data_dep.to_dict()
             )
             if is_requested:
@@ -1231,7 +1231,7 @@ class ResolvedPurl(NamedTuple):
     A resolved PURL
     """
     purl: PackageURL
-    is_resolved: bool
+    is_pinned: bool
 
 
 class BaseDependencyFileHandler(models.DatafileHandler):
@@ -1369,7 +1369,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                         scope=scope,
                         is_runtime=True,
                         is_optional=False,
-                        is_resolved=resolved_purl.is_resolved,
+                        is_pinned=resolved_purl.is_pinned,
                         extracted_requirement=req
                     )
                 )
@@ -1381,15 +1381,15 @@ def get_resolved_purl(purl: PackageURL, specifiers: SpecifierSet):
     Check if the purl is resolved and return a ResolvedPurl.
     If the purl is resolved, update its version to the pinned version
     """
-    is_resolved = False
+    is_pinned = False
     if len(specifiers) == 1:
         specifier = list(specifiers)[0]
         if specifier.operator in ('==', '==='):
-            is_resolved = True
+            is_pinned = True
             purl = purl._replace(version=specifier.version)
     return ResolvedPurl(
         purl=purl,
-        is_resolved=is_resolved,
+        is_pinned=is_pinned,
     )
 
 
@@ -1532,7 +1532,7 @@ def get_requirements_txt_dependencies(location, include_nested=False):
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=req.is_pinned or False,
+                is_pinned=req.is_pinned or False,
                 extracted_requirement=requirement,
                 extra_data=dict(
                     is_editable=req.is_editable,
@@ -1922,7 +1922,7 @@ def get_requires_dependencies(
     for req in (requires or []):
         req = Requirement(req)
         name = canonicalize_name(req.name)
-        is_resolved = False
+        is_pinned = False
         purl = PackageURL(type='pypi', name=name)
         # note: packaging.requirements.Requirement.specifier is a
         # packaging.specifiers.SpecifierSet object and a SpecifierSet._specs is
@@ -1941,7 +1941,7 @@ def get_requires_dependencies(
             if len(specifiers) == 1:
                 specifier = list(specifiers)[0]
                 if specifier.operator in ('==', '==='):
-                    is_resolved = True
+                    is_pinned = True
                     purl = purl._replace(version=specifier.version)
 
         # we use the extra as scope if available
@@ -1967,7 +1967,7 @@ def get_requires_dependencies(
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=is_resolved,
+                is_pinned=is_pinned,
                 is_direct=is_direct,
                 extracted_requirement=extracted_requirement,
                 extra_data=extra_data,
@@ -2077,7 +2077,7 @@ def parse_with_dparse2(location, file_name=None):
 
     for dependency in dep_file.dependencies:
         requirement = dependency.name
-        is_resolved = False
+        is_pinned = False
         purl = PackageURL(type='pypi', name=dependency.name)
 
         # note: dparse2.dependencies.Dependency.specs comes from
@@ -2099,7 +2099,7 @@ def parse_with_dparse2(location, file_name=None):
             if len(specifiers) == 1:
                 specifier = list(specifiers)[0]
                 if specifier.operator in ('==', '==='):
-                    is_resolved = True
+                    is_pinned = True
                     purl = purl._replace(version=specifier.version)
 
         dependent_packages.append(
@@ -2109,7 +2109,7 @@ def parse_with_dparse2(location, file_name=None):
                 scope='install',
                 is_runtime=True,
                 is_optional=False,
-                is_resolved=is_resolved,
+                is_pinned=is_pinned,
                 extracted_requirement=requirement
             )
         )
