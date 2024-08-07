@@ -75,7 +75,7 @@ def _get_dep_packs(deps, extra_data):
             scope='dependency',
             is_runtime=True,
             is_optional=False,
-            is_resolved=False,
+            is_pinned=False,
             extra_data=extra,
         )
 
@@ -196,7 +196,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
             dependency = models.DependentPackage(
                 purl=str(PackageURL(type='nuget', name=name, version=version)),
                 extracted_requirement=version,
-                is_resolved=True,
+                is_pinned=True,
                 scope=scope,
                 is_optional=False,
                 is_runtime=True,
@@ -246,7 +246,7 @@ class NugetPackagesLockHandler(models.DatafileHandler):
                 dependency = models.DependentPackage(
                     purl=str(PackageURL(type='nuget', name=package_name, version=version)),
                     extracted_requirement=requested or version,
-                    is_resolved=True,
+                    is_pinned=True,
                     resolved_package=resolved_package.to_dict(),
                     # We use the target framework as scope since there is no concept of scope in .NET
                     # and we may have different resolutions for different target frameworks

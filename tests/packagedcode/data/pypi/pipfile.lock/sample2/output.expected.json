@@ -31,7 +31,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/attrs@18.1.0",
@@ -39,7 +39,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/contextlib2@0.5.5",
@@ -47,7 +47,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/coverage@4.5.1",
@@ -55,7 +55,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/funcsigs@1.0.2",
@@ -63,7 +63,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/mock@2.0.0",
@@ -71,7 +71,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/more-itertools@4.2.0",
@@ -79,7 +79,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/pbr@4.2.0",
@@ -87,7 +87,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/pluggy@0.6.0",
@@ -95,7 +95,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/py@1.5.4",
@@ -103,7 +103,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/pytest@3.6.3",
@@ -111,7 +111,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/pytest-cov@2.5.1",
@@ -119,7 +119,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/pytest-vcr@0.3.0",
@@ -127,7 +127,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/pyyaml@3.13",
@@ -135,7 +135,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/six@1.11.0",
@@ -143,7 +143,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/vcrpy@1.13.0",
@@ -151,7 +151,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/wrapt@1.10.11",
@@ -159,7 +159,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     }
   ],
   "source_packages": [],

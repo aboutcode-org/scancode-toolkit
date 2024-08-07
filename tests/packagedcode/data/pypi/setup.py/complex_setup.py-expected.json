@@ -74,7 +74,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -85,7 +85,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -96,7 +96,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -107,7 +107,7 @@
         "scope": ":python_version<\"3.4\"",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -118,7 +118,7 @@
         "scope": ":python_version<\"3.3\"",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -129,7 +129,7 @@
         "scope": ":python_version<=\"2.7\"",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -140,7 +140,7 @@
         "scope": ":python_version<=\"2.7\"",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -151,7 +151,7 @@
         "scope": ":python_version>\"2.7\"",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -162,7 +162,7 @@
         "scope": ":python_version>\"2.7\"",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -173,7 +173,7 @@
         "scope": ":sys_platform=='win32'",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}

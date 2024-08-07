@@ -175,7 +175,8 @@
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {},
                     "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -341,7 +342,8 @@
                                     "scope": "dependencies",
                                     "is_runtime": true,
                                     "is_optional": false,
-                                    "is_resolved": false,
+                                    "is_pinned": false,
+                                    "is_direct": true,
                                     "resolved_package": {},
                                     "extra_data": {}
                                 }

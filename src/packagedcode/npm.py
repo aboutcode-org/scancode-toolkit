@@ -308,7 +308,7 @@ class BaseNpmHandler(models.DatafileHandler):
         dependencies_by_purl,
         is_runtime=False,
         is_optional=False,
-        is_resolved=False,
+        is_pinned=False,
         is_direct=True,
     ):
         """
@@ -335,7 +335,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     scope=scope,
                     is_runtime=is_runtime,
                     is_optional=is_optional,
-                    is_resolved=is_resolved,
+                    is_pinned=is_pinned,
                     is_direct=is_direct,
                 )
                 dependencies_by_purl[dep_purl] = dep_package
@@ -359,7 +359,7 @@ class BaseNpmHandler(models.DatafileHandler):
                             scope=scope,
                             is_runtime=is_runtime,
                             is_optional=metadata.get("optional"),
-                            is_resolved=is_resolved,
+                            is_pinned=is_pinned,
                             is_direct=is_direct,
                         )
                         dependencies_by_purl[dep_purl] = dep_package
@@ -380,7 +380,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     extracted_requirement=requirement,
                     is_runtime=is_runtime,
                     is_optional=is_optional,
-                    is_resolved=is_resolved,
+                    is_pinned=is_pinned,
                     is_direct=is_direct,
                 )
                 dependencies_by_purl[dep_purl] = dep_package
@@ -709,7 +709,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=True,
+                is_pinned=True,
                 is_direct=False,
             )
 
@@ -759,7 +759,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 dependencies_by_purl=sub_deps_by_purl,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=False,
+                is_pinned=False,
                 is_direct=True,
             )
 
@@ -935,7 +935,7 @@ class YarnLockV2Handler(BaseNpmHandler):
             dependency = models.DependentPackage(
                 purl=str(purl),
                 extracted_requirement=version,
-                is_resolved=True,
+                is_pinned=True,
                 resolved_package=resolved_package.to_dict(),
                 scope='dependencies',
                 is_optional=False,
@@ -1103,7 +1103,7 @@ class YarnLockV1Handler(BaseNpmHandler):
             dep = models.DependentPackage(
                 purl=dep_purl,
                 extracted_requirement=extracted_requirement,
-                is_resolved=True,
+                is_pinned=True,
                 # FIXME: these are NOT correct
                 scope='dependencies',
                 is_optional=False,
@@ -1207,7 +1207,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 dependencies=dependencies,
                 scope='dependencies',
                 dependencies_by_purl=deps_for_resolved_by_purl,
-                is_resolved=True,
+                is_pinned=True,
                 is_direct=False,
             )
             cls.update_dependencies_by_purl(
@@ -1221,7 +1221,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 dependencies=optional_dependencies,
                 scope='optionalDependencies',
                 dependencies_by_purl=deps_for_resolved_by_purl,
-                is_resolved=True,
+                is_pinned=True,
                 is_optional=True,
                 is_direct=False,
             )
@@ -1270,7 +1270,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 purl=purl,
                 is_optional=is_optional,
                 is_runtime=is_runtime,
-                is_resolved=True,
+                is_pinned=True,
                 is_direct=True,
                 resolved_package=resolved_package.to_dict(),
                 extra_data=extra_data_deps,
@@ -1744,7 +1744,7 @@ def deps_mapper(deps, package, field_name, is_direct=True):
         'devDependencies': dict(is_runtime=False, is_optional=True),
         'peerDependencies': dict(is_runtime=True, is_optional=False),
         'optionalDependencies': dict(is_runtime=True, is_optional=True),
-        'resolutions': dict(is_runtime=True, is_optional=False, is_resolved=True),
+        'resolutions': dict(is_runtime=True, is_optional=False, is_pinned=True),
     }
     dependencies = package.dependencies
 

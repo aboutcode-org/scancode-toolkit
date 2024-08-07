@@ -82,7 +82,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -93,7 +93,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -104,7 +104,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -115,7 +115,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -126,7 +126,7 @@
         "scope": "security",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -137,7 +137,7 @@
         "scope": "security",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -148,7 +148,7 @@
         "scope": "security",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -159,7 +159,7 @@
         "scope": "socks",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -170,7 +170,7 @@
         "scope": "socks:sys_platform == \"win32\" and python_version == \"2.7\"",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}

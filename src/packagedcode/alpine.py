@@ -1014,7 +1014,7 @@ def D_dependencies_handler(value, dependencies=None, **kwargs):
 
         requirement = None
         version = None
-        is_resolved = False
+        is_pinned = False
         segments = split_name_and_requirement(dep)
         if len(segments) == 1:
             # we have no requirement...just a plain name
@@ -1027,7 +1027,7 @@ def D_dependencies_handler(value, dependencies=None, **kwargs):
             operator = ''.join(sorted(operator))
             if operator == '=':
                 version = ver
-                is_resolved = True
+                is_pinned = True
 
             requirement = operator + ver
 
@@ -1042,7 +1042,7 @@ def D_dependencies_handler(value, dependencies=None, **kwargs):
             purl=purl,
             scope=scope,
             extracted_requirement=requirement,
-            is_resolved=is_resolved,
+            is_pinned=is_pinned,
         )
         if dependency not in dependencies:
             dependencies.append(dependency.to_dict())

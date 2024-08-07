@@ -60,7 +60,7 @@ class GodepsHandler(models.NonAssemblableDatafileHandler):
                     scope='Deps',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
             )
 

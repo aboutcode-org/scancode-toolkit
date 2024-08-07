@@ -364,11 +364,11 @@ class DependentPackage(ModelMixin):
         label='is optional flag',
         help='True if this dependency is an optional dependency')
 
-    is_resolved = Boolean(
+    is_pinned = Boolean(
         default=False,
-        label='is resolved flag',
+        label='is pinned flag',
         help='True if this dependency version requirement has '
-             'been resolved and this dependency url points to an '
+             'been pinned and this dependency points to an '
              'exact version.')
 
     is_direct = Boolean(

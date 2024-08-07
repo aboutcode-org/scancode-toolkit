@@ -159,7 +159,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -170,7 +170,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -181,7 +181,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -192,7 +192,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -203,7 +203,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}

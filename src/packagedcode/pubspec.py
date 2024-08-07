@@ -220,13 +220,13 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
             name=name,
             version=version,
         )
-        is_resolved = True
+        is_pinned = True
     else:
         purl = PackageURL(
             type='pubspec',
             name=name,
         )
-        is_resolved = False
+        is_pinned = False
 
     dep = models.DependentPackage(
         purl=purl.to_string(),
@@ -234,7 +234,7 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,
-        is_resolved=is_resolved,
+        is_pinned=is_pinned,
     )
     return dep
 

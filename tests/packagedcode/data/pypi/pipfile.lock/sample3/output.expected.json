@@ -31,7 +31,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     }
   ],
   "source_packages": [],

@@ -1053,7 +1053,7 @@ def get_dependencies(pom):
             if dversion == 'latest.release':
                 dversion = None
 
-            is_resolved = bool(dversion and not any(c in dversion for c in '$[,]'))
+            is_pinned = bool(dversion and not any(c in dversion for c in '$[,]'))
 
             dqualifiers = {}
             # FIXME: this is missing from the original Pom parser
@@ -1065,7 +1065,7 @@ def get_dependencies(pom):
             # if packaging and packaging != 'jar':
             #     qualifiers['packaging'] = packaging
 
-            if is_resolved:
+            if is_pinned:
                 dpurl = models.PackageURL(
                     type='maven',
                     namespace=dgroup_id,
@@ -1091,7 +1091,7 @@ def get_dependencies(pom):
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=is_resolved,
+                is_pinned=is_pinned,
             )
             dependencies.append(dep_pack)
 
