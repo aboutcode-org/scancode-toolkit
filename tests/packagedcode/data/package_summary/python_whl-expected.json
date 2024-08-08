@@ -94,7 +94,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+              "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -116,7 +116,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+              "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
               "start_line": 1,
               "end_line": 1,
               "matcher": "1-hash",
@@ -267,7 +267,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample/builder/__init__.py",
+          "from_file": "python_whl/sample/builder/__init__.py",
           "start_line": 1,
           "end_line": 1,
           "matcher": "2-aho",
@@ -281,7 +281,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample/builder/__init__.py",
+          "from_file": "python_whl/sample/builder/__init__.py",
           "start_line": 2,
           "end_line": 2,
           "matcher": "2-aho",
@@ -303,7 +303,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample/builder/_htmlparser.py",
+          "from_file": "python_whl/sample/builder/_htmlparser.py",
           "start_line": 4,
           "end_line": 5,
           "matcher": "3-seq",
@@ -325,7 +325,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample/__init__.py",
+          "from_file": "python_whl/sample/__init__.py",
           "start_line": 20,
           "end_line": 21,
           "matcher": "3-seq",
@@ -347,7 +347,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+          "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
           "start_line": 1,
           "end_line": 1,
           "matcher": "1-hash",
@@ -369,7 +369,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+          "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
           "start_line": 1,
           "end_line": 1,
           "matcher": "1-hash",
@@ -391,7 +391,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample-0.1.0.dist-info/licenses/LICENSE",
+          "from_file": "python_whl/sample-0.1.0.dist-info/licenses/LICENSE",
           "start_line": 1,
           "end_line": 1,
           "matcher": "2-aho",
@@ -405,7 +405,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample-0.1.0.dist-info/licenses/LICENSE",
+          "from_file": "python_whl/sample-0.1.0.dist-info/licenses/LICENSE",
           "start_line": 5,
           "end_line": 23,
           "matcher": "2-aho",
@@ -419,7 +419,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample-0.1.0.dist-info/licenses/LICENSE",
+          "from_file": "python_whl/sample-0.1.0.dist-info/licenses/LICENSE",
           "start_line": 26,
           "end_line": 26,
           "matcher": "2-aho",
@@ -433,7 +433,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample-0.1.0.dist-info/licenses/LICENSE",
+          "from_file": "python_whl/sample-0.1.0.dist-info/licenses/LICENSE",
           "start_line": 30,
           "end_line": 30,
           "matcher": "2-aho",
@@ -455,7 +455,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+          "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
           "start_line": 8,
           "end_line": 9,
           "matcher": "2-aho",
@@ -469,7 +469,7 @@
         {
           "license_expression": "unknown-license-reference",
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-          "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+          "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
           "start_line": 10,
           "end_line": 10,
           "matcher": "2-aho",
@@ -483,7 +483,7 @@
         {
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
-          "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+          "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
           "start_line": 14,
           "end_line": 14,
           "matcher": "2-aho",
@@ -597,7 +597,7 @@
                 {
                   "license_expression": "mit",
                   "spdx_license_expression": "MIT",
-                  "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+                  "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
                   "start_line": 1,
                   "end_line": 1,
                   "matcher": "1-hash",
@@ -619,7 +619,7 @@
                 {
                   "license_expression": "mit",
                   "spdx_license_expression": "MIT",
-                  "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+                  "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
                   "start_line": 1,
                   "end_line": 1,
                   "matcher": "1-hash",
@@ -831,7 +831,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+              "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
               "start_line": 8,
               "end_line": 9,
               "matcher": "2-aho",
@@ -845,7 +845,7 @@
             {
               "license_expression": "unknown-license-reference",
               "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
-              "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+              "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
               "start_line": 10,
               "end_line": 10,
               "matcher": "2-aho",
@@ -859,7 +859,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample-0.1.0.dist-info/METADATA",
+              "from_file": "python_whl/sample-0.1.0.dist-info/METADATA",
               "start_line": 14,
               "end_line": 14,
               "matcher": "2-aho",
@@ -981,7 +981,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample-0.1.0.dist-info/licenses/LICENSE",
+              "from_file": "python_whl/sample-0.1.0.dist-info/licenses/LICENSE",
               "start_line": 1,
               "end_line": 1,
               "matcher": "2-aho",
@@ -995,7 +995,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample-0.1.0.dist-info/licenses/LICENSE",
+              "from_file": "python_whl/sample-0.1.0.dist-info/licenses/LICENSE",
               "start_line": 5,
               "end_line": 23,
               "matcher": "2-aho",
@@ -1009,7 +1009,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample-0.1.0.dist-info/licenses/LICENSE",
+              "from_file": "python_whl/sample-0.1.0.dist-info/licenses/LICENSE",
               "start_line": 26,
               "end_line": 26,
               "matcher": "2-aho",
@@ -1023,7 +1023,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample-0.1.0.dist-info/licenses/LICENSE",
+              "from_file": "python_whl/sample-0.1.0.dist-info/licenses/LICENSE",
               "start_line": 30,
               "end_line": 30,
               "matcher": "2-aho",
@@ -1099,7 +1099,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/__init__.py",
+              "from_file": "python_whl/sample/__init__.py",
               "start_line": 20,
               "end_line": 21,
               "matcher": "3-seq",
@@ -1179,7 +1179,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/builder/__init__.py",
+              "from_file": "python_whl/sample/builder/__init__.py",
               "start_line": 1,
               "end_line": 1,
               "matcher": "2-aho",
@@ -1193,7 +1193,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/builder/__init__.py",
+              "from_file": "python_whl/sample/builder/__init__.py",
               "start_line": 2,
               "end_line": 2,
               "matcher": "2-aho",
@@ -1237,7 +1237,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/builder/_html5lib.py",
+              "from_file": "python_whl/sample/builder/_html5lib.py",
               "start_line": 1,
               "end_line": 1,
               "matcher": "2-aho",
@@ -1251,7 +1251,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/builder/_html5lib.py",
+              "from_file": "python_whl/sample/builder/_html5lib.py",
               "start_line": 2,
               "end_line": 2,
               "matcher": "2-aho",
@@ -1295,7 +1295,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/builder/_htmlparser.py",
+              "from_file": "python_whl/sample/builder/_htmlparser.py",
               "start_line": 4,
               "end_line": 5,
               "matcher": "3-seq",
@@ -1339,7 +1339,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/builder/_lxml.py",
+              "from_file": "python_whl/sample/builder/_lxml.py",
               "start_line": 1,
               "end_line": 1,
               "matcher": "2-aho",
@@ -1353,7 +1353,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/builder/_lxml.py",
+              "from_file": "python_whl/sample/builder/_lxml.py",
               "start_line": 2,
               "end_line": 2,
               "matcher": "2-aho",
@@ -1417,7 +1417,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/tests/__init__.py",
+              "from_file": "python_whl/sample/tests/__init__.py",
               "start_line": 4,
               "end_line": 4,
               "matcher": "2-aho",
@@ -1431,7 +1431,7 @@
             {
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
-              "from_file": "python.whl-extract/sample/tests/__init__.py",
+              "from_file": "python_whl/sample/tests/__init__.py",
               "start_line": 5,
               "end_line": 5,
               "matcher": "2-aho",
