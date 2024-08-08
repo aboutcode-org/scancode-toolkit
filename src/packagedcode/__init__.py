@@ -7,8 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import attr
-
 from commoncode.system import on_linux
 from packagedcode import about
 from packagedcode import alpine
@@ -46,6 +44,20 @@ from packagedcode import windows
 if on_linux:
     from packagedcode import msi
     from packagedcode import win_reg
+
+
+def get_additional_datafile_handlers():
+    """
+    Return a list of Python module paths to datafile handlers provided by a
+    plugin.
+    """
+    from importlib_metadata import entry_points
+    additional_datafile_handlers = entry_points(group='scancode_additional_datafile_handlers')
+    datafile_handlers = []
+    for handler in additional_datafile_handlers:
+        datafile_handlers.append(handler.load())
+    return datafile_handlers
+
 
 # Note: the order matters: from the most to the least specific parser.
 # a handler classes MUST be added to this list to be active
@@ -251,7 +263,7 @@ ALL_DATAFILE_HANDLERS = (
     APPLICATION_PACKAGE_DATAFILE_HANDLERS + [
         p for p in SYSTEM_PACKAGE_DATAFILE_HANDLERS
         if p not in APPLICATION_PACKAGE_DATAFILE_HANDLERS
-    ]
+    ] + get_additional_datafile_handlers()
 )
 
 HANDLER_BY_DATASOURCE_ID = {handler.datasource_id: handler for handler in ALL_DATAFILE_HANDLERS}
