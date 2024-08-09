@@ -36,7 +36,7 @@ The ``<format>`` name will be automatically added to the ``--format`` command li
 (if called) the scanned data will be passed to the plugin.
 
 2. `Post-scan <https://github.com/aboutcode-org/scancode-toolkit/issues/704>`_ :
-------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 In this stage, the plugins are supposed to run **after** the scanning is done. Some uses for these
 plugins were:
@@ -68,7 +68,7 @@ The command line option for this plugin will be automatically created using the 
 doctring as its help text and (if called) the scanned files will be passed to the plugin.
 
 3. `Pre-scan <https://github.com/aboutcode-org/scancode-toolkit/issues/719>`_ :
------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 In this stage, the plugins are supposed to run **before** the scan starts. So the potential uses
 for these types of plugins were to:
