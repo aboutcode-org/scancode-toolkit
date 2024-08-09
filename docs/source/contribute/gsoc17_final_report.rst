@@ -13,7 +13,7 @@ This project’s purpose was to create a decoupled plugin architecture for
 stages of a scan and can be coupled at runtime. These stages were,
 
 1. `Format <https://github.com/aboutcode-org/scancode-toolkit/issues/639>`_ :
----------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
 In this stage, the plugins are supposed to run **after** the scanning is done and ``post-scan``
 plugins are called. These plugins could be used for:
