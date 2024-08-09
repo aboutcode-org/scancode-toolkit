@@ -12,5 +12,5 @@ Detailed Installation and Usage guide can be found here -  :ref:`scancode-workbe
     This tutorial uses the 32.x version of Scancode Toolkit, and Scancode Workbench 4.0.x (This version of ScanCode Workbench is compatible with scans from any ScanCode Toolkit develop
     version/branch at or after v32.x). If you are using an older version of Scancode Toolkit, check
     respective versions of this documentation. Also refer the Scancode Workbench
-    `release highlights <https://github.com/nexB/scancode-workbench/releases/>`_.
+    `release highlights <https://github.com/aboutcode-org/scancode-workbench/releases/>`_.
 ..

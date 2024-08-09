@@ -91,7 +91,7 @@ Before you start using ScanCode
    Alternatively, you can also :ref:`source_code_install`.
 
 #. Run ``scancode -h`` to make sure Scancode was installed properly.
-   If this shows any Error, refer the `Common Installation Errors Issue <https://github.com/nexB/scancode-toolkit/issues/1837>`_
+   If this shows any Error, refer the `Common Installation Errors Issue <https://github.com/aboutcode-org/scancode-toolkit/issues/1837>`_
    for common errors.
 
 .. note::
@@ -121,7 +121,7 @@ Once you are all set up with Scancode Toolkit, i.e. Running ``scancode -h`` show
    follow the basic instructions.
 
 #. ScanCode generates output files with scan results. You can visualize ``JSON`` result files using
-   `Scancode Workbench <https://github.com/nexB/scancode-workbench>`_. Follow this tutorial :ref:`how_to_visualize_scan_results`
+   `Scancode Workbench <https://github.com/aboutcode-org/scancode-workbench>`_. Follow this tutorial :ref:`how_to_visualize_scan_results`
    to visualize the scan results.
 
 .. _newcomer_scancode_tips:
@@ -156,8 +156,8 @@ The How-To's are:
 ScanCode Versions
 ^^^^^^^^^^^^^^^^^
 
-#. You can see all Scancode Toolkit versions on the `GitHub release page <https://github.com/nexB/scancode-toolkit/releases>`_.
-#. Read the `CHANGELOG <https://github.com/nexB/scancode-toolkit/blob/develop/CHANGELOG.rst>`_ for more information on specific releases.
+#. You can see all Scancode Toolkit versions on the `GitHub release page <https://github.com/aboutcode-org/scancode-toolkit/releases>`_.
+#. Read the `CHANGELOG <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/CHANGELOG.rst>`_ for more information on specific releases.
 #. If you want to use/test a specific version of Scancode Toolkit, you can follow the instructions
    in :ref:`source_code_install` docs.
 
@@ -225,7 +225,7 @@ If you are looking to Contribute to Scancode Toolkit, this is where you start.
 General Information
 ^^^^^^^^^^^^^^^^^^^
 
-#. Also refer the `Contribution <https://github.com/nexB/scancode-toolkit/blob/develop/CONTRIBUTING.rst>`_ page here.
+#. Also refer the `Contribution <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/CONTRIBUTING.rst>`_ page here.
 #. For more Project Ideas, refer :ref:`contributor_project_ideas`.
 #. Before committing your work, make sure you have read this post on :ref:`good_commit_messages`.
 
@@ -238,8 +238,8 @@ If you haven't contributed to Scancode Toolkit refer :ref:`newcomer_good_first_i
 
 To determine where to contribute, you can refer:
 
-#. ScanCode Toolkit tracks issues via the `GitHub Issue tracker <https://github.com/nexB/scancode-toolkit/issues>`_
-#. Broad `milestones <https://github.com/nexB/scancode-toolkit/milestones>`_ for upcoming versions are also maintained.
+#. ScanCode Toolkit tracks issues via the `GitHub Issue tracker <https://github.com/aboutcode-org/scancode-toolkit/issues>`_
+#. Broad `milestones <https://github.com/aboutcode-org/scancode-toolkit/milestones>`_ for upcoming versions are also maintained.
 
 And documentation related to contributing code can be referred at :ref:`contrib_code_dev`.
 
@@ -248,7 +248,7 @@ And documentation related to contributing code can be referred at :ref:`contrib_
 Good First Issues
 ^^^^^^^^^^^^^^^^^
 
-A `good first issue <https://github.com/nexB/scancode-toolkit/labels/good%20first%20issue>`_
+A `good first issue <https://github.com/aboutcode-org/scancode-toolkit/labels/good%20first%20issue>`_
 means it's recommended for people who haven't contributed to Scancode Toolkit before.
 
 .. _newcomer_add_functionalirty:
@@ -262,7 +262,7 @@ They are:
 #. Add the functionality to Scancode itself.
 #. Add plugins if the functionality is very much application dependent.
 
-Refer `enhancement issues <https://github.com/nexB/scancode-toolkit/labels/enhancement>`_ for the first type of
+Refer `enhancement issues <https://github.com/aboutcode-org/scancode-toolkit/labels/enhancement>`_ for the first type of
 enhancements. If you want to add a plugin to implement the functionality, refer all the
 :ref:`plugin_tutorials`.
 
@@ -287,10 +287,10 @@ The sections in this page cover the following:
 
 You can contribute to the following Open Issues on documentation.
 
-#. `First Timers Only Issues List <https://github.com/nexB/scancode-toolkit/issues/1826>`_
-#. `Documentation Inconsistencies Tracker <https://github.com/nexB/scancode-toolkit/issues/1813>`_
-#. `ScanCode Toolkit Documentation Roadmap <https://github.com/nexB/scancode-toolkit/issues/1824>`_
-#. `Issues with label Documentation <https://github.com/nexB/scancode-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation>`_
+#. `First Timers Only Issues List <https://github.com/aboutcode-org/scancode-toolkit/issues/1826>`_
+#. `Documentation Inconsistencies Tracker <https://github.com/aboutcode-org/scancode-toolkit/issues/1813>`_
+#. `ScanCode Toolkit Documentation Roadmap <https://github.com/aboutcode-org/scancode-toolkit/issues/1824>`_
+#. `Issues with label Documentation <https://github.com/aboutcode-org/scancode-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation>`_
 
 .. note::
 
