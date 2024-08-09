@@ -34,7 +34,7 @@ class TestPackageSummary(PackageTester):
     def test_package_summary_for_rubygems(self):
         test_dir = self.get_test_loc('package_summary/npm') 
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('package_summary/npm-expected.json')
+        expected_file = self.get_test_loc('package_summary/rubygems-expected.json')
 
         run_scan_click(['--package','--license','--copyright', '--strip-root', '--processes', '-1', '--package-summary', '--summary' , '--classify', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
