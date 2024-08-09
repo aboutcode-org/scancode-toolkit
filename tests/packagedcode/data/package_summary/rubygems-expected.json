@@ -1,24 +1,24 @@
 {
   "summary": {
-    "declared_license_expression": "mit",
+    "declared_license_expression": "proprietary-license AND apache-2.0",
     "license_clarity_score": {
-      "score": 70,
+      "score": 100,
       "declared_license": true,
       "identification_precision": true,
-      "has_license_text": false,
+      "has_license_text": true,
       "declared_copyrights": true,
-      "conflicting_license_categories": true,
+      "conflicting_license_categories": false,
       "ambiguous_compound_licensing": false
     },
-    "declared_holder": "Blake Embrey",
+    "declared_holder": "Chef Software Inc.",
     "primary_language": null,
     "other_license_expressions": [
       {
         "value": null,
-        "count": 2
+        "count": 5
       },
       {
-        "value": "gpl-3.0-plus",
+        "value": "apache-2.0",
         "count": 1
       }
     ],
@@ -26,33 +26,44 @@
       {
         "value": null,
         "count": 7
+      },
+      {
+        "value": "Dominik Richter",
+        "count": 1
       }
     ],
     "other_languages": []
   },
   "packages": [
     {
-      "type": "npm",
+      "type": "gem",
       "namespace": null,
-      "name": "change-case",
-      "version": null,
+      "name": "inspec-bin",
+      "version": "InspecBin::VERSION",
       "qualifiers": {},
       "subpath": null,
-      "primary_language": "JavaScript",
-      "description": null,
+      "primary_language": "Ruby",
+      "description": "Infrastructure and compliance testing.\nInSpec executable for inspec gem. Use of this executable may require accepting a license agreement.\"\n\nPackaged distributions of Progress\u00ae Chef\u00ae products obtained from RubyGems are made available pursuant to the Progress Chef EULA at https://www.chef.io/end-user-license-agreement, unless there is an executed agreement in effect between you and Progress that covers the Progress Chef products (\"Master Agreement\"), in which case the Master Agreement shall govern.\n\nSource code obtained from the Chef GitHub repository is made available under Apache-2.0, a copy of which is included.",
       "release_date": null,
       "parties": [
         {
           "type": "person",
           "role": "author",
-          "name": "Blake Embrey",
-          "email": "hello@blakeembrey.com",
-          "url": "http://blakeembrey.me"
+          "name": "Chef InSpec Core Engineering",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": null,
+          "email": "inspec@chef.io",
+          "url": null
         }
       ],
       "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
+      "homepage_url": "https://github.com/inspec/inspec/tree/main/inspec-bin",
+      "download_url": "https://rubygems.org/downloads/inspec-bin-InspecBin::VERSION.gem",
       "size": null,
       "sha1": null,
       "md5": null,
@@ -61,86 +72,93 @@
       "bug_tracking_url": null,
       "code_view_url": null,
       "vcs_url": null,
-      "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
-      "holder": "Blake Embrey",
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "unknown",
+      "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
       "license_detections": [
         {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
           "matches": [
             {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "npm/codebase/packages/change-case/package.json",
+              "license_expression": "unknown",
+              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "from_file": "rubygems/inspec-bin.gemspec",
               "start_line": 1,
               "end_line": 1,
-              "matcher": "1-spdx-id",
+              "matcher": "5-undetected",
               "score": 100.0,
-              "matched_length": 1,
+              "matched_length": 4,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-              "rule_url": null,
-              "matched_text": "MIT"
+              "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+              "matched_text": "license LicenseRef-Chef-EULA"
             }
           ],
-          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+          "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036"
         }
       ],
-      "other_license_expression": "gpl-3.0-plus",
-      "other_license_expression_spdx": "GPL-3.0-or-later",
+      "other_license_expression": "proprietary-license AND apache-2.0",
+      "other_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
       "other_license_detections": [],
-      "extracted_license_statement": "- MIT\n",
+      "extracted_license_statement": "LicenseRef-Chef-EULA",
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
       "is_virtual": false,
       "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/change-case",
-      "repository_download_url": null,
-      "api_data_url": "https://registry.npmjs.org/change-case",
-      "package_uid": "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "repository_homepage_url": "https://rubygems.org/gems/inspec-bin/versions/InspecBin::VERSION",
+      "repository_download_url": "https://rubygems.org/downloads/inspec-bin-InspecBin::VERSION.gem",
+      "api_data_url": "https://rubygems.org/api/v2/rubygems/inspec-bin/versions/InspecBin::VERSION.json",
+      "package_uid": "pkg:gem/inspec-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "codebase/packages/change-case/package.json"
+        "inspec-bin.gemspec"
       ],
       "datasource_ids": [
-        "npm_package_json"
+        "gemspec"
       ],
       "license_clarity_score": {
-        "score": 70,
-        "declared_license": true,
-        "identification_precision": true,
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
         "has_license_text": false,
-        "declared_copyrights": true,
+        "declared_copyrights": false,
         "conflicting_license_categories": true,
-        "ambiguous_compound_licensing": false
+        "ambiguous_compound_licensing": true
       },
-      "purl": "pkg:npm/change-case"
+      "purl": "pkg:gem/inspec-bin@InspecBin::VERSION"
     },
     {
-      "type": "npm",
+      "type": "gem",
       "namespace": null,
-      "name": "sponge-case",
-      "version": null,
+      "name": "inspec-core-bin",
+      "version": "InspecBin::VERSION",
       "qualifiers": {},
       "subpath": null,
-      "primary_language": "JavaScript",
-      "description": null,
+      "primary_language": "Ruby",
+      "description": "Infrastructure and compliance testing.\nInSpec executable for inspec-core gem. Use of this executable may require accepting a license agreement.\n\nPackaged distributions of Progress\u00ae Chef\u00ae products obtained from RubyGems are made available pursuant to the Progress Chef EULA at https://www.chef.io/end-user-license-agreement, unless there is an executed agreement in effect between you and Progress that covers the Progress Chef products (\"Master Agreement\"), in which case the Master Agreement shall govern.\n\nSource code obtained from the Chef GitHub repository is made available under Apache-2.0, a copy of which is included.",
       "release_date": null,
       "parties": [
         {
           "type": "person",
           "role": "author",
-          "name": "Nate Rabins",
-          "email": "nrabins@gmail.com",
-          "url": "http://rabins.dev"
+          "name": "Chef InSpec Core Engineering",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": null,
+          "email": "inspec@chef.io",
+          "url": null
         }
       ],
       "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
+      "homepage_url": "https://github.com/inspec/inspec/tree/main/inspec-bin",
+      "download_url": "https://rubygems.org/downloads/inspec-core-bin-InspecBin::VERSION.gem",
       "size": null,
       "sha1": null,
       "md5": null,
@@ -149,335 +167,320 @@
       "bug_tracking_url": null,
       "code_view_url": null,
       "vcs_url": null,
-      "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
-      "holder": "Blake Embrey",
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "unknown",
+      "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
       "license_detections": [
         {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
           "matches": [
             {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "npm/codebase/packages/sponge-case/package.json",
+              "license_expression": "unknown",
+              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "from_file": "rubygems/inspec-core-bin.gemspec",
               "start_line": 1,
               "end_line": 1,
-              "matcher": "1-spdx-id",
+              "matcher": "5-undetected",
               "score": 100.0,
-              "matched_length": 1,
+              "matched_length": 4,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-              "rule_url": null,
-              "matched_text": "MIT"
+              "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+              "matched_text": "license LicenseRef-Chef-EULA"
             }
           ],
-          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+          "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036"
         }
       ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
+      "other_license_expression": "proprietary-license AND apache-2.0",
+      "other_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
       "other_license_detections": [],
-      "extracted_license_statement": "- MIT\n",
+      "extracted_license_statement": "LicenseRef-Chef-EULA",
       "notice_text": null,
       "source_packages": [],
       "is_private": false,
       "is_virtual": false,
       "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/sponge-case",
-      "repository_download_url": null,
-      "api_data_url": "https://registry.npmjs.org/sponge-case",
-      "package_uid": "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "repository_homepage_url": "https://rubygems.org/gems/inspec-core-bin/versions/InspecBin::VERSION",
+      "repository_download_url": "https://rubygems.org/downloads/inspec-core-bin-InspecBin::VERSION.gem",
+      "api_data_url": "https://rubygems.org/api/v2/rubygems/inspec-core-bin/versions/InspecBin::VERSION.json",
+      "package_uid": "pkg:gem/inspec-core-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
-        "codebase/packages/sponge-case/package.json"
+        "inspec-core-bin.gemspec"
       ],
       "datasource_ids": [
-        "npm_package_json"
+        "gemspec"
       ],
       "license_clarity_score": {
-        "score": 90,
-        "declared_license": true,
-        "identification_precision": true,
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
         "has_license_text": false,
-        "declared_copyrights": true,
-        "conflicting_license_categories": false,
-        "ambiguous_compound_licensing": false
+        "declared_copyrights": false,
+        "conflicting_license_categories": true,
+        "ambiguous_compound_licensing": true
       },
-      "purl": "pkg:npm/sponge-case"
-    },
-    {
-      "type": "npm",
-      "namespace": null,
-      "name": "swap-case",
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "JavaScript",
-      "description": null,
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Blake Embrey",
-          "email": "hello@blakeembrey.com",
-          "url": "http://blakeembrey.me"
-        }
-      ],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
-      "holder": "Blake Embrey",
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "npm/codebase/packages/swap-case/package.json",
-              "start_line": 1,
-              "end_line": 1,
-              "matcher": "1-spdx-id",
-              "score": 100.0,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-              "rule_url": null,
-              "matched_text": "MIT"
-            }
-          ],
-          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "- MIT\n",
-      "notice_text": null,
-      "source_packages": [],
-      "is_private": false,
-      "is_virtual": false,
-      "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/swap-case",
-      "repository_download_url": null,
-      "api_data_url": "https://registry.npmjs.org/swap-case",
-      "package_uid": "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "codebase/packages/swap-case/package.json"
-      ],
-      "datasource_ids": [
-        "npm_package_json"
-      ],
-      "license_clarity_score": {
-        "score": 90,
-        "declared_license": true,
-        "identification_precision": true,
-        "has_license_text": false,
-        "declared_copyrights": true,
-        "conflicting_license_categories": false,
-        "ambiguous_compound_licensing": false
-      },
-      "purl": "pkg:npm/swap-case"
-    },
-    {
-      "type": "npm",
-      "namespace": null,
-      "name": "title-case",
-      "version": null,
-      "qualifiers": {},
-      "subpath": null,
-      "primary_language": "JavaScript",
-      "description": null,
-      "release_date": null,
-      "parties": [
-        {
-          "type": "person",
-          "role": "author",
-          "name": "Blake Embrey",
-          "email": "hello@blakeembrey.com",
-          "url": "http://blakeembrey.me"
-        }
-      ],
-      "keywords": [],
-      "homepage_url": null,
-      "download_url": null,
-      "size": null,
-      "sha1": null,
-      "md5": null,
-      "sha256": null,
-      "sha512": null,
-      "bug_tracking_url": null,
-      "code_view_url": null,
-      "vcs_url": null,
-      "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
-      "holder": "Blake Embrey",
-      "declared_license_expression": "mit",
-      "declared_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "npm/codebase/packages/title-case/package.json",
-              "start_line": 1,
-              "end_line": 1,
-              "matcher": "1-spdx-id",
-              "score": 100.0,
-              "matched_length": 1,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-              "rule_url": null,
-              "matched_text": "MIT"
-            }
-          ],
-          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
-        }
-      ],
-      "other_license_expression": null,
-      "other_license_expression_spdx": null,
-      "other_license_detections": [],
-      "extracted_license_statement": "- MIT\n",
-      "notice_text": null,
-      "source_packages": [],
-      "is_private": false,
-      "is_virtual": false,
-      "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/title-case",
-      "repository_download_url": null,
-      "api_data_url": "https://registry.npmjs.org/title-case",
-      "package_uid": "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "datafile_paths": [
-        "codebase/packages/title-case/package.json"
-      ],
-      "datasource_ids": [
-        "npm_package_json"
-      ],
-      "license_clarity_score": {
-        "score": 90,
-        "declared_license": true,
-        "identification_precision": true,
-        "has_license_text": false,
-        "declared_copyrights": true,
-        "conflicting_license_categories": false,
-        "ambiguous_compound_licensing": false
-      },
-      "purl": "pkg:npm/title-case"
+      "purl": "pkg:gem/inspec-core-bin@InspecBin::VERSION"
     }
   ],
-  "dependencies": [],
+  "dependencies": [
+    {
+      "purl": "pkg:gem/rake",
+      "extracted_requirement": "",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/rake?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/inspec-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "inspec-bin.gemspec",
+      "datasource_id": "gemspec"
+    },
+    {
+      "purl": "pkg:gem/inspec",
+      "extracted_requirement": "",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/inspec?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/inspec-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "inspec-bin.gemspec",
+      "datasource_id": "gemspec"
+    },
+    {
+      "purl": "pkg:gem/rake",
+      "extracted_requirement": "",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/rake?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/inspec-core-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "inspec-core-bin.gemspec",
+      "datasource_id": "gemspec"
+    },
+    {
+      "purl": "pkg:gem/inspec-core",
+      "extracted_requirement": "",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/inspec-core?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/inspec-core-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "inspec-core-bin.gemspec",
+      "datasource_id": "gemspec"
+    }
+  ],
   "license_detections": [
     {
-      "identifier": "gpl_3_0_plus-c07595af-3cea-8c65-c6fc-d8a3300f35b5",
-      "license_expression": "gpl-3.0-plus",
-      "license_expression_spdx": "GPL-3.0-or-later",
+      "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
       "reference_matches": [
         {
-          "license_expression": "gpl-3.0-plus",
-          "license_expression_spdx": "GPL-3.0-or-later",
-          "from_file": "npm/codebase/packages/change-case/src/index.js",
-          "start_line": 1,
-          "end_line": 12,
-          "matcher": "1-hash",
-          "score": 100.0,
-          "matched_length": 102,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "gpl-3.0-plus_60.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_60.RULE"
-        }
-      ]
-    },
-    {
-      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
-      "license_expression": "mit",
-      "license_expression_spdx": "MIT",
-      "detection_count": 4,
-      "reference_matches": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "npm/codebase/packages/change-case/package.json",
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "rubygems/LICENSE",
           "start_line": 3,
-          "end_line": 3,
+          "end_line": 13,
           "matcher": "2-aho",
           "score": 100.0,
+          "matched_length": 85,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "proprietary_license_and_apache_2_0-38837872-6ecc-3da0-f84f-664e5069146e",
+      "license_expression": "proprietary-license AND apache-2.0",
+      "license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+      "detection_count": 3,
+      "reference_matches": [
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "rubygems/inspec-bin.gemspec",
+          "start_line": 12,
+          "end_line": 12,
+          "matcher": "2-aho",
+          "score": 90.0,
           "matched_length": 2,
           "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "mit_30.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-        }
-      ]
-    },
-    {
-      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
-      "license_expression": "mit",
-      "license_expression_spdx": "MIT",
-      "detection_count": 4,
-      "reference_matches": [
+          "rule_relevance": 90,
+          "rule_identifier": "license-intro_22.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE"
+        },
         {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "npm/codebase/packages/change-case/package.json",
-          "start_line": 1,
-          "end_line": 1,
-          "matcher": "1-spdx-id",
-          "score": 100.0,
-          "matched_length": 1,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-          "rule_url": null
-        }
-      ]
-    },
-    {
-      "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996",
-      "license_expression": "mit",
-      "license_expression_spdx": "MIT",
-      "detection_count": 2,
-      "reference_matches": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "npm/codebase/LICENSE",
-          "start_line": 1,
-          "end_line": 1,
+          "license_expression": "proprietary-license",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+          "from_file": "rubygems/inspec-bin.gemspec",
+          "start_line": 14,
+          "end_line": 14,
           "matcher": "2-aho",
           "score": 100.0,
           "matched_length": 4,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "mit_26.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+          "rule_identifier": "proprietary-license_72.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_72.RULE"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "rubygems/inspec-bin.gemspec",
+          "start_line": 16,
+          "end_line": 16,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036",
+      "license_expression": "unknown",
+      "license_expression_spdx": "LicenseRef-scancode-unknown",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
+          "from_file": "rubygems/inspec-bin.gemspec",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "5-undetected",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2"
         }
       ]
     }
   ],
   "files": [
     {
-      "path": "codebase",
+      "path": "Gemfile",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "rubygems/LICENSE",
+              "start_line": 3,
+              "end_line": 13,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 85,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_7.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 93.41,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2019 Chef Software Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Chef Software Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "bin",
       "type": "directory",
       "package_data": [],
       "for_packages": [],
@@ -497,82 +500,268 @@
       "scan_errors": []
     },
     {
-      "path": "codebase/LICENSE",
+      "path": "bin/inspec",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [
+        {
+          "copyright": "Copyright 2015 Dominik Richter",
+          "start_line": 2,
+          "end_line": 2
+        }
       ],
-      "is_legal": true,
+      "holders": [
+        {
+          "holder": "Dominik Richter",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "checksums.yaml",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
-      "is_key_file": true,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "inspec-bin.gemspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "gem",
+          "namespace": null,
+          "name": "inspec-bin",
+          "version": "InspecBin::VERSION",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "Infrastructure and compliance testing.\nInSpec executable for inspec gem. Use of this executable may require accepting a license agreement.\"\n\nPackaged distributions of Progress\u00ae Chef\u00ae products obtained from RubyGems are made available pursuant to the Progress Chef EULA at https://www.chef.io/end-user-license-agreement, unless there is an executed agreement in effect between you and Progress that covers the Progress Chef products (\"Master Agreement\"), in which case the Master Agreement shall govern.\n\nSource code obtained from the Chef GitHub repository is made available under Apache-2.0, a copy of which is included.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Chef InSpec Core Engineering",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": null,
+              "email": "inspec@chef.io",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/inspec/inspec/tree/main/inspec-bin",
+          "download_url": "https://rubygems.org/downloads/inspec-bin-InspecBin::VERSION.gem",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "unknown",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+          "license_detections": [
+            {
+              "license_expression": "unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
+              "matches": [
+                {
+                  "license_expression": "unknown",
+                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "from_file": "rubygems/inspec-bin.gemspec",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "5-undetected",
+                  "score": 100.0,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+                  "matched_text": "license LicenseRef-Chef-EULA"
+                }
+              ],
+              "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "LicenseRef-Chef-EULA",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:gem/rake",
+              "extracted_requirement": "",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/inspec",
+              "extracted_requirement": "",
+              "scope": "dependency",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://rubygems.org/gems/inspec-bin/versions/InspecBin::VERSION",
+          "repository_download_url": "https://rubygems.org/downloads/inspec-bin-InspecBin::VERSION.gem",
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/inspec-bin/versions/InspecBin::VERSION.json",
+          "datasource_id": "gemspec",
+          "purl": "pkg:gem/inspec-bin@InspecBin::VERSION"
+        }
+      ],
+      "for_packages": [
+        "pkg:gem/inspec-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "proprietary-license AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
       "license_detections": [
         {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
+          "license_expression": "proprietary-license AND apache-2.0",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
           "matches": [
             {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "npm/codebase/LICENSE",
-              "start_line": 1,
-              "end_line": 1,
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "rubygems/inspec-bin.gemspec",
+              "start_line": 12,
+              "end_line": 12,
+              "matcher": "2-aho",
+              "score": 90.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 90,
+              "rule_identifier": "license-intro_22.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE"
+            },
+            {
+              "license_expression": "proprietary-license",
+              "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+              "from_file": "rubygems/inspec-bin.gemspec",
+              "start_line": 14,
+              "end_line": 14,
               "matcher": "2-aho",
               "score": 100.0,
               "matched_length": 4,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "mit_26.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+              "rule_identifier": "proprietary-license_72.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_72.RULE"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "rubygems/inspec-bin.gemspec",
+              "start_line": 16,
+              "end_line": 16,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
           ],
-          "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996"
+          "identifier": "proprietary_license_and_apache_2_0-38837872-6ecc-3da0-f84f-664e5069146e"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 33.33,
-      "copyrights": [
-        {
-          "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
-          "start_line": 3,
-          "end_line": 3
-        }
-      ],
-      "holders": [
-        {
-          "holder": "Blake Embrey",
-          "start_line": 3,
-          "end_line": 3
-        }
-      ],
+      "percentage_of_license_text": 4.29,
+      "copyrights": [],
+      "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
-      "path": "codebase/package.json",
+      "path": "inspec-core-bin.gemspec",
       "type": "file",
       "package_data": [
         {
-          "type": "npm",
+          "type": "gem",
           "namespace": null,
-          "name": null,
-          "version": null,
+          "name": "inspec-core-bin",
+          "version": "InspecBin::VERSION",
           "qualifiers": {},
           "subpath": null,
-          "primary_language": "JavaScript",
-          "description": null,
+          "primary_language": "Ruby",
+          "description": "Infrastructure and compliance testing.\nInSpec executable for inspec-core gem. Use of this executable may require accepting a license agreement.\n\nPackaged distributions of Progress\u00ae Chef\u00ae products obtained from RubyGems are made available pursuant to the Progress Chef EULA at https://www.chef.io/end-user-license-agreement, unless there is an executed agreement in effect between you and Progress that covers the Progress Chef products (\"Master Agreement\"), in which case the Master Agreement shall govern.\n\nSource code obtained from the Chef GitHub repository is made available under Apache-2.0, a copy of which is included.",
           "release_date": null,
-          "parties": [],
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Chef InSpec Core Engineering",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": null,
+              "email": "inspec@chef.io",
+              "url": null
+            }
+          ],
           "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
+          "homepage_url": "https://github.com/inspec/inspec/tree/main/inspec-bin",
+          "download_url": "https://rubygems.org/downloads/inspec-core-bin-InspecBin::VERSION.gem",
           "size": null,
           "sha1": null,
           "md5": null,
@@ -583,84 +772,146 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "mit",
-          "declared_license_expression_spdx": "MIT",
+          "declared_license_expression": "unknown",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
           "license_detections": [
             {
-              "license_expression": "mit",
-              "license_expression_spdx": "MIT",
+              "license_expression": "unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "matches": [
                 {
-                  "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
-                  "from_file": "npm/codebase/LICENSE",
+                  "license_expression": "unknown",
+                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "from_file": "rubygems/inspec-core-bin.gemspec",
                   "start_line": 1,
                   "end_line": 1,
-                  "matcher": "2-aho",
+                  "matcher": "5-undetected",
                   "score": 100.0,
                   "matched_length": 4,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "mit_26.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+                  "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+                  "matched_text": "license LicenseRef-Chef-EULA"
                 }
               ],
-              "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996"
+              "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036"
             }
           ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": null,
+          "extracted_license_statement": "LicenseRef-Chef-EULA",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {
-            "workspaces": [
-              "packages/*"
-            ]
-          },
-          "dependencies": [],
-          "repository_homepage_url": null,
-          "repository_download_url": null,
-          "api_data_url": null,
-          "datasource_id": "npm_package_json",
-          "purl": null
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:gem/rake",
+              "extracted_requirement": "",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/inspec-core",
+              "extracted_requirement": "",
+              "scope": "dependency",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://rubygems.org/gems/inspec-core-bin/versions/InspecBin::VERSION",
+          "repository_download_url": "https://rubygems.org/downloads/inspec-core-bin-InspecBin::VERSION.gem",
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/inspec-core-bin/versions/InspecBin::VERSION.json",
+          "datasource_id": "gemspec",
+          "purl": "pkg:gem/inspec-core-bin@InspecBin::VERSION"
         }
       ],
       "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:gem/inspec-core-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
+      "detected_license_expression": "proprietary-license AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "proprietary-license AND apache-2.0",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "rubygems/inspec-core-bin.gemspec",
+              "start_line": 15,
+              "end_line": 15,
+              "matcher": "2-aho",
+              "score": 90.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 90,
+              "rule_identifier": "license-intro_22.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE"
+            },
+            {
+              "license_expression": "proprietary-license",
+              "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+              "from_file": "rubygems/inspec-core-bin.gemspec",
+              "start_line": 17,
+              "end_line": 17,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "proprietary-license_72.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_72.RULE"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "rubygems/inspec-core-bin.gemspec",
+              "start_line": 19,
+              "end_line": 19,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+            }
+          ],
+          "identifier": "proprietary_license_and_apache_2_0-38837872-6ecc-3da0-f84f-664e5069146e"
+        }
+      ],
       "license_clues": [],
-      "percentage_of_license_text": 0,
+      "percentage_of_license_text": 3.67,
       "copyrights": [],
       "holders": [],
       "authors": [],
       "scan_errors": []
     },
     {
-      "path": "codebase/packages",
+      "path": "lib",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
-        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -677,12 +928,10 @@
       "scan_errors": []
     },
     {
-      "path": "codebase/packages/change-case",
+      "path": "lib/inspec-bin",
       "type": "directory",
       "package_data": [],
-      "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -699,658 +948,90 @@
       "scan_errors": []
     },
     {
-      "path": "codebase/packages/change-case/package.json",
+      "path": "lib/inspec-bin/version.rb",
       "type": "file",
-      "package_data": [
-        {
-          "type": "npm",
-          "namespace": null,
-          "name": "change-case",
-          "version": null,
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "JavaScript",
-          "description": null,
-          "release_date": null,
-          "parties": [
-            {
-              "type": "person",
-              "role": "author",
-              "name": "Blake Embrey",
-              "email": "hello@blakeembrey.com",
-              "url": "http://blakeembrey.me"
-            }
-          ],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "holder": null,
-          "declared_license_expression": "mit",
-          "declared_license_expression_spdx": "MIT",
-          "license_detections": [
-            {
-              "license_expression": "mit",
-              "license_expression_spdx": "MIT",
-              "matches": [
-                {
-                  "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
-                  "from_file": "npm/codebase/packages/change-case/package.json",
-                  "start_line": 1,
-                  "end_line": 1,
-                  "matcher": "1-spdx-id",
-                  "score": 100.0,
-                  "matched_length": 1,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-                  "rule_url": null,
-                  "matched_text": "MIT"
-                }
-              ],
-              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
-            }
-          ],
-          "other_license_expression": null,
-          "other_license_expression_spdx": null,
-          "other_license_detections": [],
-          "extracted_license_statement": "- MIT\n",
-          "notice_text": null,
-          "source_packages": [],
-          "file_references": [],
-          "is_private": false,
-          "is_virtual": false,
-          "extra_data": {},
-          "dependencies": [],
-          "repository_homepage_url": "https://www.npmjs.com/package/change-case",
-          "repository_download_url": null,
-          "api_data_url": "https://registry.npmjs.org/change-case",
-          "datasource_id": "npm_package_json",
-          "purl": "pkg:npm/change-case"
-        }
-      ],
-      "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "package_data": [],
+      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "metadata",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": "proprietary-license AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
       "license_detections": [
         {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
+          "license_expression": "proprietary-license AND apache-2.0",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
           "matches": [
             {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "npm/codebase/packages/change-case/package.json",
-              "start_line": 3,
-              "end_line": 3,
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "rubygems/metadata",
+              "start_line": 42,
+              "end_line": 42,
               "matcher": "2-aho",
-              "score": 100.0,
+              "score": 90.0,
               "matched_length": 2,
               "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-            }
-          ],
-          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 11.76,
-      "copyrights": [],
-      "holders": [],
-      "authors": [
-        {
-          "author": "Blake Embrey",
-          "start_line": 4,
-          "end_line": 5
-        }
-      ],
-      "scan_errors": []
-    },
-    {
-      "path": "codebase/packages/change-case/src",
-      "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "codebase/packages/change-case/src/index.js",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "gpl-3.0-plus",
-      "detected_license_expression_spdx": "GPL-3.0-or-later",
-      "license_detections": [
-        {
-          "license_expression": "gpl-3.0-plus",
-          "license_expression_spdx": "GPL-3.0-or-later",
-          "matches": [
+              "rule_relevance": 90,
+              "rule_identifier": "license-intro_22.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE"
+            },
             {
-              "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
-              "from_file": "npm/codebase/packages/change-case/src/index.js",
-              "start_line": 1,
-              "end_line": 12,
-              "matcher": "1-hash",
-              "score": 100.0,
-              "matched_length": 102,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "gpl-3.0-plus_60.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_60.RULE"
-            }
-          ],
-          "identifier": "gpl_3_0_plus-c07595af-3cea-8c65-c6fc-d8a3300f35b5"
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 100.0,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "codebase/packages/sponge-case",
-      "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "codebase/packages/sponge-case/package.json",
-      "type": "file",
-      "package_data": [
-        {
-          "type": "npm",
-          "namespace": null,
-          "name": "sponge-case",
-          "version": null,
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "JavaScript",
-          "description": null,
-          "release_date": null,
-          "parties": [
-            {
-              "type": "person",
-              "role": "author",
-              "name": "Nate Rabins",
-              "email": "nrabins@gmail.com",
-              "url": "http://rabins.dev"
-            }
-          ],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "holder": null,
-          "declared_license_expression": "mit",
-          "declared_license_expression_spdx": "MIT",
-          "license_detections": [
-            {
-              "license_expression": "mit",
-              "license_expression_spdx": "MIT",
-              "matches": [
-                {
-                  "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
-                  "from_file": "npm/codebase/packages/sponge-case/package.json",
-                  "start_line": 1,
-                  "end_line": 1,
-                  "matcher": "1-spdx-id",
-                  "score": 100.0,
-                  "matched_length": 1,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-                  "rule_url": null,
-                  "matched_text": "MIT"
-                }
-              ],
-              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
-            }
-          ],
-          "other_license_expression": null,
-          "other_license_expression_spdx": null,
-          "other_license_detections": [],
-          "extracted_license_statement": "- MIT\n",
-          "notice_text": null,
-          "source_packages": [],
-          "file_references": [],
-          "is_private": false,
-          "is_virtual": false,
-          "extra_data": {},
-          "dependencies": [],
-          "repository_homepage_url": "https://www.npmjs.com/package/sponge-case",
-          "repository_download_url": null,
-          "api_data_url": "https://registry.npmjs.org/sponge-case",
-          "datasource_id": "npm_package_json",
-          "purl": "pkg:npm/sponge-case"
-        }
-      ],
-      "for_packages": [
-        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "npm/codebase/packages/sponge-case/package.json",
-              "start_line": 3,
-              "end_line": 3,
+              "license_expression": "proprietary-license",
+              "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+              "from_file": "rubygems/metadata",
+              "start_line": 44,
+              "end_line": 44,
               "matcher": "2-aho",
               "score": 100.0,
-              "matched_length": 2,
+              "matched_length": 4,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-            }
-          ],
-          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 11.76,
-      "copyrights": [],
-      "holders": [],
-      "authors": [
-        {
-          "author": "Nate Rabins",
-          "start_line": 4,
-          "end_line": 5
-        }
-      ],
-      "scan_errors": []
-    },
-    {
-      "path": "codebase/packages/swap-case",
-      "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "codebase/packages/swap-case/package.json",
-      "type": "file",
-      "package_data": [
-        {
-          "type": "npm",
-          "namespace": null,
-          "name": "swap-case",
-          "version": null,
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "JavaScript",
-          "description": null,
-          "release_date": null,
-          "parties": [
+              "rule_identifier": "proprietary-license_72.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_72.RULE"
+            },
             {
-              "type": "person",
-              "role": "author",
-              "name": "Blake Embrey",
-              "email": "hello@blakeembrey.com",
-              "url": "http://blakeembrey.me"
-            }
-          ],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "holder": null,
-          "declared_license_expression": "mit",
-          "declared_license_expression_spdx": "MIT",
-          "license_detections": [
-            {
-              "license_expression": "mit",
-              "license_expression_spdx": "MIT",
-              "matches": [
-                {
-                  "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
-                  "from_file": "npm/codebase/packages/swap-case/package.json",
-                  "start_line": 1,
-                  "end_line": 1,
-                  "matcher": "1-spdx-id",
-                  "score": 100.0,
-                  "matched_length": 1,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-                  "rule_url": null,
-                  "matched_text": "MIT"
-                }
-              ],
-              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
-            }
-          ],
-          "other_license_expression": null,
-          "other_license_expression_spdx": null,
-          "other_license_detections": [],
-          "extracted_license_statement": "- MIT\n",
-          "notice_text": null,
-          "source_packages": [],
-          "file_references": [],
-          "is_private": false,
-          "is_virtual": false,
-          "extra_data": {},
-          "dependencies": [],
-          "repository_homepage_url": "https://www.npmjs.com/package/swap-case",
-          "repository_download_url": null,
-          "api_data_url": "https://registry.npmjs.org/swap-case",
-          "datasource_id": "npm_package_json",
-          "purl": "pkg:npm/swap-case"
-        }
-      ],
-      "for_packages": [
-        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "npm/codebase/packages/swap-case/package.json",
-              "start_line": 3,
-              "end_line": 3,
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "rubygems/metadata",
+              "start_line": 46,
+              "end_line": 46,
               "matcher": "2-aho",
               "score": 100.0,
-              "matched_length": 2,
+              "matched_length": 3,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
             }
           ],
-          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+          "identifier": "proprietary_license_and_apache_2_0-38837872-6ecc-3da0-f84f-664e5069146e"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 11.76,
-      "copyrights": [],
-      "holders": [],
-      "authors": [
-        {
-          "author": "Blake Embrey",
-          "start_line": 4,
-          "end_line": 5
-        }
-      ],
-      "scan_errors": []
-    },
-    {
-      "path": "codebase/packages/title-case",
-      "type": "directory",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "codebase/packages/title-case/package.json",
-      "type": "file",
-      "package_data": [
-        {
-          "type": "npm",
-          "namespace": null,
-          "name": "title-case",
-          "version": null,
-          "qualifiers": {},
-          "subpath": null,
-          "primary_language": "JavaScript",
-          "description": null,
-          "release_date": null,
-          "parties": [
-            {
-              "type": "person",
-              "role": "author",
-              "name": "Blake Embrey",
-              "email": "hello@blakeembrey.com",
-              "url": "http://blakeembrey.me"
-            }
-          ],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "size": null,
-          "sha1": null,
-          "md5": null,
-          "sha256": null,
-          "sha512": null,
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_url": null,
-          "copyright": null,
-          "holder": null,
-          "declared_license_expression": "mit",
-          "declared_license_expression_spdx": "MIT",
-          "license_detections": [
-            {
-              "license_expression": "mit",
-              "license_expression_spdx": "MIT",
-              "matches": [
-                {
-                  "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
-                  "from_file": "npm/codebase/packages/title-case/package.json",
-                  "start_line": 1,
-                  "end_line": 1,
-                  "matcher": "1-spdx-id",
-                  "score": 100.0,
-                  "matched_length": 1,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
-                  "rule_url": null,
-                  "matched_text": "MIT"
-                }
-              ],
-              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
-            }
-          ],
-          "other_license_expression": null,
-          "other_license_expression_spdx": null,
-          "other_license_detections": [],
-          "extracted_license_statement": "- MIT\n",
-          "notice_text": null,
-          "source_packages": [],
-          "file_references": [],
-          "is_private": false,
-          "is_virtual": false,
-          "extra_data": {},
-          "dependencies": [],
-          "repository_homepage_url": "https://www.npmjs.com/package/title-case",
-          "repository_download_url": null,
-          "api_data_url": "https://registry.npmjs.org/title-case",
-          "datasource_id": "npm_package_json",
-          "purl": "pkg:npm/title-case"
-        }
-      ],
-      "for_packages": [
-        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "npm/codebase/packages/title-case/package.json",
-              "start_line": 3,
-              "end_line": 3,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-            }
-          ],
-          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 11.76,
-      "copyrights": [],
-      "holders": [],
-      "authors": [
-        {
-          "author": "Blake Embrey",
-          "start_line": 4,
-          "end_line": 5
-        }
-      ],
-      "scan_errors": []
-    },
-    {
-      "path": "codebase/packages/title-case/tsconfig.json",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
+      "percentage_of_license_text": 2.98,
       "copyrights": [],
       "holders": [],
       "authors": [],
