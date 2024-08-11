@@ -37,6 +37,8 @@ v33.0.0 (next next, roadmap)
 - Update link references of ownership from nexB to aboutcode-org
   See https://github.com/aboutcode-org/scancode-toolkit/issues/3885
 
+- Fix Python ``SyntaxWarning`` in extractcode module.
+
 
 v32.2.1 - 2024-07-02
 ---------------------

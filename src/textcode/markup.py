@@ -118,7 +118,7 @@ get_tags_and_entities = re.compile(
     r'|'
     r'href'
     r'|'
-    '[\'"]?\/\>'
+    r'[\'"]?\/\>'
     r'|'
     r'/>'
     r')',
