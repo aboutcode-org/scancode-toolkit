@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -14,32 +14,38 @@ from commoncode import paths
 class TestPortablePath(TestCase):
 
     def test_safe_path_mixed_slashes(self):
-        test = paths.safe_path('C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\drupal6/drupal.js')
+        test = paths.safe_path(
+            'C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\drupal6/drupal.js')
         expected = 'C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js'
         assert test == expected
 
     def test_safe_path_mixed_slashes_and_spaces(self):
-        test = paths.safe_path('C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\parallel uploads/drupal.js')
+        test = paths.safe_path(
+            'C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\parallel uploads/drupal.js')
         expected = 'C/Documents_and_Settings/Boki/Desktop/head/patches/parallel_uploads/drupal.js'
         assert test == expected
 
     def test_safe_path_windows_style(self):
-        test = paths.safe_path('C:\\Documents and Settings\\Administrator\\Desktop\\siftDemoV4_old\\defs.h')
+        test = paths.safe_path(
+            'C:\\Documents and Settings\\Administrator\\Desktop\\siftDemoV4_old\\defs.h')
         expected = 'C/Documents_and_Settings/Administrator/Desktop/siftDemoV4_old/defs.h'
         assert test == expected
 
     def test_safe_path_windows_style_mixed_slashes_no_spaces(self):
-        test = paths.safe_path('C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\imagefield/imagefield.css')
+        test = paths.safe_path(
+            'C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\imagefield/imagefield.css')
         expected = 'C/Documents_and_Settings/Boki/Desktop/head/patches/imagefield/imagefield.css'
         assert test == expected
 
     def test_safe_path_windows_style_spaces(self):
-        test = paths.safe_path('C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\js delete\\imagefield.css')
+        test = paths.safe_path(
+            'C:\\Documents and Settings\\Boki\\Desktop\\head\\patches\\js delete\\imagefield.css')
         expected = 'C/Documents_and_Settings/Boki/Desktop/head/patches/js_delete/imagefield.css'
         assert test == expected
 
     def test_safe_path_windows_style_posix_slashes(self):
-        test = paths.safe_path('C:/Documents and Settings/Alex Burgel/workspace/Hibernate3.2/test/org/hibernate/test/AllTests.java')
+        test = paths.safe_path(
+            'C:/Documents and Settings/Alex Burgel/workspace/Hibernate3.2/test/org/hibernate/test/AllTests.java')
         expected = 'C/Documents_and_Settings/Alex_Burgel/workspace/Hibernate3.2/test/org/hibernate/test/AllTests.java'
         assert test == expected
 
@@ -79,7 +85,8 @@ class TestPortablePath(TestCase):
         assert test == expected
 
     def test_safe_path_windows_style_many_dots(self):
-        test = paths.safe_path('.\\includes\\.\\..\\..\\..\\webform.components.inc\\.')
+        test = paths.safe_path(
+            '.\\includes\\.\\..\\..\\..\\webform.components.inc\\.')
         expected = 'dotdot/dotdot/webform.components.inc'
         assert test == expected
 
@@ -89,7 +96,8 @@ class TestPortablePath(TestCase):
         assert test == expected
 
     def test_safe_path_posix_style_many_dots(self):
-        test = paths.safe_path('./includes/./../../../../webform.components.inc/.')
+        test = paths.safe_path(
+            './includes/./../../../../webform.components.inc/.')
         expected = 'dotdot/dotdot/dotdot/webform.components.inc'
         assert test == expected
 
@@ -117,12 +125,14 @@ class TestPortablePath(TestCase):
         assert test == expected
 
     def test_resolve_4(self):
-        test = paths.resolve('////.//includes/./../..//..///../webform.components.inc/.')
+        test = paths.resolve(
+            '////.//includes/./../..//..///../webform.components.inc/.')
         expected = 'dotdot/dotdot/dotdot/webform.components.inc'
         assert test == expected
 
     def test_resolve_5(self):
-        test = paths.resolve(u'////.//includes/./../..//..///../webform.components.inc/.')
+        test = paths.resolve(
+            u'////.//includes/./../..//..///../webform.components.inc/.')
         expected = u'dotdot/dotdot/dotdot/webform.components.inc'
         assert test == expected
 
@@ -133,11 +143,13 @@ class TestPortablePath(TestCase):
 
     def test_portable_filename(self):
         expected = 'A___file__with_Spaces.mov'
-        assert paths.portable_filename("A:\\ file/ with Spaces.mov") == expected
+        assert paths.portable_filename(
+            "A:\\ file/ with Spaces.mov") == expected
 
         # Test `preserve_spaces` option. Spaces should not be replaced
         expected = 'Program Files (x86)'
-        assert paths.portable_filename("Program Files (x86)", preserve_spaces=True) == expected
+        assert paths.portable_filename(
+            "Program Files (x86)", preserve_spaces=True) == expected
 
         # Unresolved relative paths will be treated as a single filename. Use
         # resolve instead if you want to resolve paths:
@@ -146,7 +158,8 @@ class TestPortablePath(TestCase):
 
         # Unicode name are transliterated:
         expected = 'This_contain_UMLAUT_umlauts.txt'
-        assert paths.portable_filename(u'This contain UMLAUT \xfcml\xe4uts.txt') == expected
+        assert paths.portable_filename(
+            u'This contain UMLAUT \xfcml\xe4uts.txt') == expected
 
         # Check to see if illegal Windows filenames are properly handled
         for illegal_window_name in paths.ILLEGAL_WINDOWS_NAMES:
@@ -155,13 +168,15 @@ class TestPortablePath(TestCase):
             assert paths.portable_filename(illegal_window_name) == expected
 
             # Allow files with names that are illegal on Windows
-            assert paths.portable_filename(illegal_window_name, posix_only=True) == illegal_window_name
+            assert paths.portable_filename(
+                illegal_window_name, posix_only=True) == illegal_window_name
 
         # Check to see if the posix_only option does and does not replace
         # punctuation characters that are illegal in Windows filenames
         for valid_posix_path_char in paths.posix_legal_punctuation:
             test_name = f'test{valid_posix_path_char}'
-            assert paths.portable_filename(test_name, posix_only=True) == test_name
+            assert paths.portable_filename(
+                test_name, posix_only=True) == test_name
             if valid_posix_path_char not in paths.legal_punctuation:
                 expected = f'test_'
                 assert paths.portable_filename(test_name) == expected
@@ -291,7 +306,8 @@ class TestCommonPath(TestCase):
 
     def test_common_path_suffix_match_only_whole_segments(self):
         # only segments are honored, commonality within segment is ignored
-        test = paths.common_path_suffix('this/is/aaaa/great/path', 'this/is/aaaaa/great/path')
+        test = paths.common_path_suffix(
+            'this/is/aaaa/great/path', 'this/is/aaaaa/great/path')
         assert test == ('great/path', 2)
 
     def test_common_path_suffix_two_root(self):

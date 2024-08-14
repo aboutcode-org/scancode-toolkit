@@ -3,7 +3,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -24,7 +24,8 @@ without introducing ..
 
 '''
     assert len([p[1] for p in text.lines(t)]) == 5
-    expected = ['This problem is.', 'It is therefore', 'However,we', 'without introducing ..', 'However, I have']
+    expected = ['This problem is.', 'It is therefore',
+                'However,we', 'without introducing ..', 'However, I have']
     assert [p for p in text.lines(t)] == expected
 
 
@@ -35,7 +36,8 @@ def test_foldcase():
 
 def test_nopunctuation():
     test = '''This problem is about sequence-bunching, %^$^%**^&*Â©Â©^(*&(*()()_+)_!@@#:><>>?/./,.,';][{}{]just'''
-    expected = ['This', 'problem', 'is', 'about', 'sequence', 'bunching', 'Â', 'Â', 'just']
+    expected = ['This', 'problem', 'is', 'about',
+                'sequence', 'bunching', 'Â', 'Â', 'just']
     assert text.nopunctuation(test).split() == expected
 
     test = 'This problem is about: sequence-bunching\n\n just \n'

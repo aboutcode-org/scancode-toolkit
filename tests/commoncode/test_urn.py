@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -89,7 +89,7 @@ class URNTestCase(unittest.TestCase):
 
     def test_decode_build_is_idempotent(self):
         u1 = urn.encode('component', owner__name='org%', name='name%',
-                       version='version%')
+                        version='version%')
         m, f = urn.decode(u1)
         u3 = urn.encode(m, **f)
         assert u3 == u1
@@ -100,11 +100,11 @@ class URNTestCase(unittest.TestCase):
 
     def test_decode_raise_exception_if_incorrect_ns(self):
         with self.assertRaises(urn.URNValidationError):
-                urn.decode('urn:x:x:x')
+            urn.decode('urn:x:x:x')
 
     def test_decode_raise_exception_if_incorrect_prefix_or_ns(self):
         with self.assertRaises(urn.URNValidationError):
-                urn.decode('x:x:x:x')
+            urn.decode('x:x:x:x')
 
     def test_decode_raise_exception_if_too_short_license(self):
         with self.assertRaises(urn.URNValidationError):

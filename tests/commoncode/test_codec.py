@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -56,7 +56,7 @@ class TestCodec(TestCase):
         assert result == expected
 
     def test_urlsafe_b64encode_int_zero(self):
-        assert urlsafe_b64encode_int(0) ==  b'AA=='
+        assert urlsafe_b64encode_int(0) == b'AA=='
 
     def test_urlsafe_b64encode_int_basic(self):
         assert urlsafe_b64encode_int(123123123123) == b'HKq1w7M='

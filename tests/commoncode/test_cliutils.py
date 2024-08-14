@@ -2,20 +2,19 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.cliutils import GroupedHelpCommand
+from commoncode.cliutils import fixed_width_file_name
+from commoncode.testcase import FileDrivenTesting
+from click.testing import CliRunner
 import os
 
 import click
 click.disable_unicode_literals_warning = True
-from click.testing import CliRunner
-
-from commoncode.testcase import FileDrivenTesting
-from commoncode.cliutils import fixed_width_file_name
-from commoncode.cliutils import GroupedHelpCommand
-from commoncode.cliutils import PluggableCommandLineOption
 
 
 class TestFixedWidthFilename(FileDrivenTesting):
@@ -51,22 +50,26 @@ class TestFixedWidthFilename(FileDrivenTesting):
         assert test == expected
 
     def test_fixed_width_file_name_with_posix_path_without_shortening(self):
-        test = fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js', 25)
+        test = fixed_width_file_name(
+            'C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js', 25)
         expected = 'drupal.js'
         assert test == expected
 
     def test_fixed_width_file_name_with_posix_path_with_shortening(self):
-        test = fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/012345678901234567890123.c', 25)
+        test = fixed_width_file_name(
+            'C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/012345678901234567890123.c', 25)
         expected = '0123456789...4567890123.c'
         assert test == expected
 
     def test_fixed_width_file_name_with_win_path_without_shortening(self):
-        test = fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\drupal.js', 25)
+        test = fixed_width_file_name(
+            'C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\drupal.js', 25)
         expected = 'drupal.js'
         assert test == expected
 
     def test_fixed_width_file_name_with_win_path_with_shortening(self):
-        test = fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c', 25)
+        test = fixed_width_file_name(
+            'C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c', 25)
         expected = '0123456789...4567890123.c'
         assert test == expected
 
@@ -92,7 +95,7 @@ class TestGroupedHelpCommand(FileDrivenTesting):
         result = runner.invoke(scan, ['--help'])
         from commoncode.cliutils import MISC_GROUP
         assert MISC_GROUP in result.output
-        assert  '--opt   Help text for option' in result.output
+        assert '--opt   Help text for option' in result.output
 
     def test_GroupedHelpCommand_with_help_group_and_sort_order_with_custom_class(self):
 

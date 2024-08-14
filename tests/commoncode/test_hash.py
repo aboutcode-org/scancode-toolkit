@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -75,15 +75,18 @@ class TestHash(FileBasedTesting):
 
     def test_sha256_checksum(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
-        assert u'1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35' == sha256(test_file)
+        assert u'1b598db6fee8f1ec7bb919c0adf68956f3d20af8c9934a9cf2db52e1347efd35' == sha256(
+            test_file)
 
     def test_sha512_checksum(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
-        assert u'5be9e01cd20ff288fd3c3fc46be5c2747eaa2c526197125330947a95cdb418222176b182a4680f0e435ba8f114363c45a67b30eed9a9222407e63ccbde46d3b4' == sha512(test_file)
+        assert u'5be9e01cd20ff288fd3c3fc46be5c2747eaa2c526197125330947a95cdb418222176b182a4680f0e435ba8f114363c45a67b30eed9a9222407e63ccbde46d3b4' == sha512(
+            test_file)
 
     def test_checksum_sha1(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')
-        assert '3ca69e8d6c234a469d16ac28a4a658c92267c423' == checksum(test_file, 'sha1')
+        assert '3ca69e8d6c234a469d16ac28a4a658c92267c423' == checksum(
+            test_file, 'sha1')
 
     def test_checksum_md5(self):
         test_file = self.get_test_loc('hash/dir1/a.txt')

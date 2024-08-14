@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -27,7 +27,7 @@ class FilesetTest(commoncode.testcase.FileBasedTesting):
 
     def test_is_included_in_fileset(self):
         incs = {'/common/src/*': '.scanignore'}
-        excs = {'/common/src/*.so':'.scanignore'}
+        excs = {'/common/src/*.so': '.scanignore'}
         assert not fileset.is_included(None, incs, excs)
         assert not fileset.is_included('', incs, excs)
         assert not fileset.is_included('/', incs, excs)
@@ -46,12 +46,12 @@ class FilesetTest(commoncode.testcase.FileBasedTesting):
 
     def test_is_included_is_included_exclusions(self):
         incs = {'/src/*': '.scanignore'}
-        excs = {'/src/*.so':'.scanignore'}
+        excs = {'/src/*.so': '.scanignore'}
         assert not fileset.is_included('/src/dist/build/mylib.so', incs, excs)
 
     def test_is_included_is_included_exclusions_2(self):
         incs = {'src': '.scanignore'}
-        excs = {'src/*.so':'.scanignore'}
+        excs = {'src/*.so': '.scanignore'}
         assert fileset.is_included('/some/src/this/that', incs, excs)
         assert not fileset.is_included('/src/dist/build/mylib.so', incs, excs)
 

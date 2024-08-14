@@ -3,7 +3,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -140,7 +140,8 @@ class TestCommand(FileBasedTesting):
         d2 = self.get_temp_dir('bar')
         filename = 'baz'
 
-        assert None == command.find_in_path(filename, searchable_paths=(d1, d2,))
+        assert None == command.find_in_path(
+            filename, searchable_paths=(d1, d2,))
 
         f2 = os.path.join(d2, filename)
         with open(f2, 'w') as o:

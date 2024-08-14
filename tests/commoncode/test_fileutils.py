@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -301,7 +301,8 @@ class TestFileUtilsWalk(FileBasedTesting):
     def test_fileutils_walk(self):
         test_dir = self.get_test_loc('fileutils/walk')
         base = self.get_test_loc('fileutils')
-        result = [(as_posixpath(t.replace(base, '')), d, sorted(f),) for t, d, f in fileutils.walk(test_dir)]
+        result = [(as_posixpath(t.replace(base, '')), d, sorted(f),)
+                  for t, d, f in fileutils.walk(test_dir)]
         expected = [
             ('/walk', ['d1'], ['f', 'unicode.zip']),
             ('/walk/d1', ['d2'], ['f1']),
@@ -336,7 +337,8 @@ class TestFileUtilsWalk(FileBasedTesting):
 
     @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_walk_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = self.extract_test_tar_raw(
+            'fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
@@ -347,7 +349,8 @@ class TestFileUtilsWalk(FileBasedTesting):
 
     @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_os_walk_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = self.extract_test_tar_raw(
+            'fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
         result = list(os.walk(test_dir))[0]
@@ -361,7 +364,8 @@ class TestFileUtilsWalk(FileBasedTesting):
         test_link = join(temp_dir, 'test-dir-link')
         os.symlink(test_dir, test_link)
         results = list(fileutils.walk(test_link, follow_symlinks=True))
-        results = [(os.path.basename(top), dirs, files) for top, dirs, files in results]
+        results = [(os.path.basename(top), dirs, files)
+                   for top, dirs, files in results]
         expected = [
             ('test-dir-link', ['dir'], ['a']),
             ('dir', [], ['b'])
@@ -375,7 +379,8 @@ class TestFileUtilsIter(FileBasedTesting):
     def test_resource_iter(self):
         test_dir = self.get_test_loc('fileutils/walk')
         base = self.get_test_loc('fileutils')
-        result = [as_posixpath(f.replace(base, '')) for f in fileutils.resource_iter(test_dir, with_dirs=False)]
+        result = [as_posixpath(f.replace(base, ''))
+                  for f in fileutils.resource_iter(test_dir, with_dirs=False)]
         expected = [
             '/walk/f',
             '/walk/unicode.zip',
@@ -387,13 +392,15 @@ class TestFileUtilsIter(FileBasedTesting):
 
     def test_resource_iter_can_iterate_a_single_file(self):
         test_file = self.get_test_loc('fileutils/walk/f')
-        result = [as_posixpath(f) for f in fileutils.resource_iter(test_file, with_dirs=False)]
+        result = [as_posixpath(f) for f in fileutils.resource_iter(
+            test_file, with_dirs=False)]
         expected = [as_posixpath(test_file)]
         assert result == expected
 
     def test_resource_iter_can_iterate_a_single_file_with_dirs(self):
         test_file = self.get_test_loc('fileutils/walk/f')
-        result = [as_posixpath(f) for f in fileutils.resource_iter(test_file, with_dirs=True)]
+        result = [as_posixpath(f) for f in fileutils.resource_iter(
+            test_file, with_dirs=True)]
         expected = [as_posixpath(test_file)]
         assert result == expected
 
@@ -482,7 +489,8 @@ class TestFileUtilsIter(FileBasedTesting):
 
         test_dir = str(test_dir)
 
-        result = sorted([p.replace(test_dir, '') for p in fileutils.resource_iter(test_dir)])
+        result = sorted([p.replace(test_dir, '')
+                        for p in fileutils.resource_iter(test_dir)])
         if on_linux:
             expected = [
                 u'/2.csv',
@@ -505,7 +513,8 @@ class TestFileUtilsIter(FileBasedTesting):
 
     @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_resource_iter_can_walk_non_utf8_path_from_unicode_path_with_dirs(self):
-        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = self.extract_test_tar_raw(
+            'fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
         result = list(fileutils.resource_iter(test_dir, with_dirs=True))
@@ -513,7 +522,8 @@ class TestFileUtilsIter(FileBasedTesting):
 
     @skipIf(on_macos_14_or_higher, 'Cannot handle yet byte paths on macOS 10.14+. See https://github.com/nexB/scancode-toolkit/issues/1635')
     def test_resource_iter_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = self.extract_test_tar_raw(
+            'fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
         result = list(fileutils.resource_iter(test_dir, with_dirs=False))
@@ -525,7 +535,8 @@ class TestFileUtilsIter(FileBasedTesting):
         temp_dir = fileutils.get_temp_dir()
         test_link = join(temp_dir, 'test-dir-link')
         os.symlink(test_dir, test_link)
-        result = [os.path.basename(f) for f in fileutils.resource_iter(test_dir, follow_symlinks=True)]
+        result = [os.path.basename(f) for f in fileutils.resource_iter(
+            test_dir, follow_symlinks=True)]
         expected = [
             'dir',
             'a',
@@ -546,7 +557,7 @@ class TestBaseName(FileBasedTesting):
         result = fileutils.file_base_name(join(test_dir, test_file))
         assert result == expected_name
 
-    def test_file_base_name_on_file_path_for_dot_file  (self):
+    def test_file_base_name_on_file_path_for_dot_file(self):
         test_dir = self.get_test_loc('fileutils/basename')
         test_file = 'a/.a/'
         expected_name = '.a'
@@ -876,7 +887,8 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
@@ -888,7 +900,8 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
@@ -900,7 +913,8 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
@@ -912,7 +926,8 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
@@ -924,7 +939,8 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
@@ -936,7 +952,8 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
@@ -948,7 +965,8 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
@@ -960,7 +978,8 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
@@ -972,7 +991,8 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
 
@@ -984,6 +1004,7 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.as_posixpath(result)
         assert result == expected_name
 
-        result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
+        result = fileutils.parent_directory(
+            (os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)

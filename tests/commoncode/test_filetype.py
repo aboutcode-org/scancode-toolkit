@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -57,14 +57,14 @@ class TypeTest(commoncode.testcase.FileBasedTesting):
 
         # symlinks and special files are not supported on win
         if on_posix:
-            expected += [ ('2-SYMTYPE', 'l'), ('6-FIFOTYPE', 's'), ]
+            expected += [('2-SYMTYPE', 'l'), ('6-FIFOTYPE', 's'), ]
 
         try:
             assert sorted(results) == sorted(expected)
         except Exception as e:
             if on_windows and py3:
                 # On some Windows symlinkes are detected OK (Windows 10?) but not in Windows 7
-                expected += [ ('2-SYMTYPE', 'l') ]
+                expected += [('2-SYMTYPE', 'l')]
                 assert sorted(results) == sorted(expected)
             else:
                 raise e

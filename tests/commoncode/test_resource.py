@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -270,7 +270,8 @@ class TestCodebase(FileBasedTesting):
         codebase = Codebase(test_codebase, strip_root=True)
         root = codebase.root
 
-        c1 = codebase._get_or_create_resource('child1', parent=root, is_file=True)
+        c1 = codebase._get_or_create_resource(
+            'child1', parent=root, is_file=True)
         codebase._get_or_create_resource('child2', parent=c1, is_file=False)
 
         results = list(codebase.walk(skip_root=True))
@@ -281,8 +282,10 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase, strip_root=True)
 
-        c1 = codebase._get_or_create_resource('some child', parent=codebase.root, is_file=True)
-        c2 = codebase._get_or_create_resource('some child2', parent=c1, is_file=False)
+        c1 = codebase._get_or_create_resource(
+            'some child', parent=codebase.root, is_file=True)
+        c2 = codebase._get_or_create_resource(
+            'some child2', parent=c1, is_file=False)
         c2.is_filtered = True
         codebase.save_resource(c2)
 
@@ -306,7 +309,8 @@ class TestCodebase(FileBasedTesting):
 
     def test_walk_skipped_directories_should_not_be_yielded(self):
         # Resources that we continue past should not be added to the result list
-        test_codebase = self.get_test_loc('resource/skip_directories_during_walk')
+        test_codebase = self.get_test_loc(
+            'resource/skip_directories_during_walk')
         cdbs = Codebase(test_codebase)
 
         def _ignored(resource, codebase):
@@ -326,7 +330,8 @@ class TestCodebase(FileBasedTesting):
     def test__create_resource_can_add_child_to_file(self):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase)
-        codebase._get_or_create_resource('some child', codebase.root, is_file=True)
+        codebase._get_or_create_resource(
+            'some child', codebase.root, is_file=True)
         results = list(codebase.walk())
         expected = [('et131x.h', True), ('some child', True)]
         assert [(r.name, r.is_file) for r in results] == expected
@@ -334,7 +339,8 @@ class TestCodebase(FileBasedTesting):
     def test__create_resource_can_add_child_to_dir(self):
         test_codebase = self.get_temp_dir('resource')
         codebase = Codebase(test_codebase)
-        codebase._get_or_create_resource('some child', codebase.root, is_file=False)
+        codebase._get_or_create_resource(
+            'some child', codebase.root, is_file=False)
         results = list(codebase.walk())
         expected = [('resource', False), ('some child', False)]
         assert [(r.name, r.is_file) for r in results] == expected
@@ -354,7 +360,8 @@ class TestCodebase(FileBasedTesting):
         codebase = Codebase(test_codebase)
         assert codebase.get_resource('resource/a').path == 'resource/a'
         assert codebase.get_resource('/resource/c').path == 'resource/c'
-        assert codebase.get_resource('resource/dsasda/../b/').path == 'resource/b'
+        assert codebase.get_resource(
+            'resource/dsasda/../b/').path == 'resource/b'
 
     def test_Resource_build_path(self):
         test_dir = self.get_test_loc('resource/samples')
@@ -491,7 +498,8 @@ class TestCodebase(FileBasedTesting):
 
         res = codebase.get_resource('dist/simple/META-INF/MANIFEST.MF')
         assert res.name == 'MANIFEST.MF'
-        assert res.full_root_path.endswith('resource/dist/simple/META-INF/MANIFEST.MF')
+        assert res.full_root_path.endswith(
+            'resource/dist/simple/META-INF/MANIFEST.MF')
         assert res.distance(codebase) == 3
 
     def test_skip_files_and_subdirs_of_ignored_dirs(self):
@@ -542,7 +550,8 @@ class TestCodebase(FileBasedTesting):
             'level2_file4',
             'level2_file5',
         ].sort()
-        expected_dirs = ['level1_dir1', 'level1_dir2', 'level2_dir1', 'level2_dir3'].sort()
+        expected_dirs = ['level1_dir1', 'level1_dir2',
+                         'level2_dir1', 'level2_dir3'].sort()
         self.assertEqual(result_dirs, expected_dirs)
         self.assertEqual(result_files, expected_files)
 
@@ -652,7 +661,8 @@ class TestCodebaseWithPath(FileBasedTesting):
         check_against_expected_json_file(results, expected_file, regen=False)
 
     def test_VirtualCodebase_with_paths_works(self):
-        test_codebase = self.get_test_loc('resource/with_path/virtual-codebase.json')
+        test_codebase = self.get_test_loc(
+            'resource/with_path/virtual-codebase.json')
         paths = ['codebase/other dir/file']
         codebase = VirtualCodebase(location=test_codebase, paths=paths)
         assert not codebase.errors
@@ -664,7 +674,8 @@ class TestCodebaseWithPath(FileBasedTesting):
         check_against_expected_json_file(results, expected_file, regen=False)
 
     def test_VirtualCodebase_codebase_attributes_assignment(self):
-        test_codebase = self.get_test_loc('resource/with_path/virtual-codebase.json')
+        test_codebase = self.get_test_loc(
+            'resource/with_path/virtual-codebase.json')
         vc = VirtualCodebase(
             location=test_codebase,
             codebase_attributes=dict(
@@ -691,7 +702,8 @@ class TestCodebaseCache(FileBasedTesting):
         assert not exists(cp)
         assert exists(parent_directory(cp))
 
-        child = codebase._get_or_create_resource(name='child', parent=root, is_file=True)
+        child = codebase._get_or_create_resource(
+            name='child', parent=root, is_file=True)
         child.size = 12
         codebase.save_resource(child)
         child_2 = codebase.get_resource(path=child.path)
@@ -769,7 +781,8 @@ class TestVirtualCodebase(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
     def test_virtual_codebase_walk_defaults(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         codebase = VirtualCodebase(location=test_file)
         results = list(codebase.walk())
         expected = [
@@ -785,7 +798,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_topdown(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         codebase = VirtualCodebase(location=test_file)
         results = list(codebase.walk(topdown=True))
         expected = [
@@ -801,7 +815,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_bottomup(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         codebase = VirtualCodebase(location=test_file)
         results = list(codebase.walk(topdown=False))
         expected = [
@@ -817,7 +832,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_skip_root_basic(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         results = list(virtual_codebase.walk(skip_root=True))
         expected = [
@@ -832,21 +848,26 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_get_path_with_strip_root_and_walk_with_skip_root(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/stripped-and-skipped-root.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/stripped-and-skipped-root.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
-        results = [r.get_path(strip_root=True) for r in virtual_codebase.walk(skip_root=True)]
+        results = [r.get_path(strip_root=True)
+                   for r in virtual_codebase.walk(skip_root=True)]
         expected = ['README', 'screenshot.png']
         assert expected == results
 
     def test_virtual_codebase_to_list_with_strip_root_and_walk_with_skip_root(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/stripped-and-skipped-root.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/stripped-and-skipped-root.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         results = virtual_codebase.to_list(strip_root=True, skinny=True)
-        expected = [{'path': 'README', 'type': 'file'}, {'path': 'screenshot.png', 'type': 'file'}]
+        expected = [{'path': 'README', 'type': 'file'},
+                    {'path': 'screenshot.png', 'type': 'file'}]
         assert expected == results
 
     def test_virtual_codebase_walk_filtered_with_filtered_root(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         virtual_codebase.root.is_filtered = True
         virtual_codebase.save_resource(virtual_codebase.root)
@@ -864,7 +885,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_filtered_with_all_filtered(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         for res in virtual_codebase.walk():
             res.is_filtered = True
@@ -875,14 +897,16 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_compute_counts_filtered_None(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         results = virtual_codebase.compute_counts(skip_filtered=True)
         expected = (5, 3, 2228)
         assert results == expected
 
     def test_virtual_codebase_compute_counts_filtered_None_with_size(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         for res in virtual_codebase.walk():
             if res.is_file:
@@ -894,14 +918,16 @@ class TestVirtualCodebase(FileBasedTesting):
         assert results == expected
 
     def test_virtual_codebase_compute_counts_filtered_None_with_cache(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         results = virtual_codebase.compute_counts(skip_filtered=True)
         expected = (5, 3, 2228)
         assert results == expected
 
     def test_virtual_codebase_compute_counts_filtered_all(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         for res in virtual_codebase.walk():
             res.is_filtered = True
@@ -911,7 +937,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert results == expected
 
     def test_virtual_codebase_compute_counts_filtered_all_with_cache(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         for res in virtual_codebase.walk():
             res.is_filtered = True
@@ -921,7 +948,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert results == expected
 
     def test_virtual_codebase_compute_counts_filtered_files(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         for res in virtual_codebase.walk():
             if res.is_file:
@@ -932,7 +960,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert results == expected
 
     def test_virtual_codebase_compute_counts_filtered_dirs(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         for res in virtual_codebase.walk():
             if not res.is_file:
@@ -943,7 +972,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert results == expected
 
     def test_virtual_codebase_walk_filtered_dirs(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         for res in virtual_codebase.walk():
             if not res.is_file:
@@ -960,7 +990,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_filtered_skip_root(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         virtual_codebase.root.is_filtered = True
         virtual_codebase.save_resource(virtual_codebase.root)
@@ -977,7 +1008,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_filtered_all_skip_root(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/virtual_codebase.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         for res in virtual_codebase.walk():
             res.is_filtered = True
@@ -988,21 +1020,24 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_skip_root_single_file(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         results = list(virtual_codebase.walk(skip_root=True))
         expected = [('et131x.h', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_filtered_with_skip_root_and_single_file_not_filtered(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         results = list(virtual_codebase.walk_filtered(skip_root=True))
         expected = [('et131x.h', True)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_filtered__with_skip_root_and_filtered_single_file(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         virtual_codebase.root.is_filtered = True
         virtual_codebase.save_resource(virtual_codebase.root)
@@ -1011,7 +1046,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_skip_root_single_file_with_children(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
 
         c1 = virtual_codebase._get_or_create_resource(
@@ -1025,11 +1061,13 @@ class TestVirtualCodebase(FileBasedTesting):
             is_file=False,
         )
         results = list(virtual_codebase.walk(skip_root=True))
-        expected = [('et131x.h', True), ('some child', True), ('some child2', False)]
+        expected = [('et131x.h', True), ('some child', True),
+                    ('some child2', False)]
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_walk_filtered_with_skip_root_and_single_file_with_children(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
 
         c1 = virtual_codebase._get_or_create_resource(
@@ -1058,7 +1096,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase__create_resource_can_add_child_to_file(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/et131x.h.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         virtual_codebase._get_or_create_resource(
             'some child',
@@ -1070,7 +1109,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase__create_resource_can_add_child_to_dir(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/resource.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/resource.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         virtual_codebase._get_or_create_resource(
             'some child',
@@ -1082,10 +1122,13 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [(r.name, r.is_file) for r in results] == expected
 
     def test_virtual_codebase_get_resource(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/resource.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/resource.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
-        assert not (virtual_codebase.root is virtual_codebase.get_resource('resource'))
-        assert virtual_codebase.get_resource('resource') == virtual_codebase.root
+        assert not (
+            virtual_codebase.root is virtual_codebase.get_resource('resource'))
+        assert virtual_codebase.get_resource(
+            'resource') == virtual_codebase.root
 
     def test_virtual_codebase_can_process_minimal_resources_without_info(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/noinfo.json')
@@ -1109,7 +1152,8 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [r.to_dict() for r in codebase.walk()] == expected
 
     def test_virtual_codebase_can_process_minimal_resources_with_only_path(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/only-path.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/only-path.json')
         codebase = VirtualCodebase(location=scan_data)
         expected = [
             {'path': 'samples', 'type': 'directory', 'scan_errors': []},
@@ -1118,16 +1162,20 @@ class TestVirtualCodebase(FileBasedTesting):
         assert [r.to_dict() for r in codebase.walk()] == expected
 
     def test_VirtualCodebase_account_fingerprint_attribute(self):
-        test_file = self.get_test_loc("resource/virtual_codebase/fingerprint_attribute.json")
+        test_file = self.get_test_loc(
+            "resource/virtual_codebase/fingerprint_attribute.json")
         codebase = VirtualCodebase(test_file)
-        resources_fingerprint = [resource.fingerprint for resource in codebase.walk()]
+        resources_fingerprint = [
+            resource.fingerprint for resource in codebase.walk()]
         assert "e30cf09443e7878dfed3288886e97542" in resources_fingerprint
         assert None in resources_fingerprint
-        assert codebase.get_resource('apache_to_all_notable_lic_new') == codebase.root
+        assert codebase.get_resource(
+            'apache_to_all_notable_lic_new') == codebase.root
         assert resources_fingerprint.count(None) == 2
 
     def test_VirtualCodebase_works_with_mapping_backed_codebase(self):
-        test_file = self.get_test_loc("resource/virtual_codebase/license-scan.json")
+        test_file = self.get_test_loc(
+            "resource/virtual_codebase/license-scan.json")
         codebase = VirtualCodebase(test_file)
         resource = codebase.get_resource('scan-ref/license-notice.txt')
         assert resource
@@ -1145,7 +1193,8 @@ class TestCodebaseLowestCommonParent(FileBasedTesting):
         assert lcp.name == 'test1'
 
     def test_virtual_codebase_has_default_for_plugin_attributes(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/only-path.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/only-path.json')
         VirtualCodebase(location=scan_data)
 
     def test_lowest_common_parent_strip(self):
@@ -1200,28 +1249,33 @@ class TestVirtualCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
     def test_virtual_codebase_cache_default(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/codebase-for-cache-tests.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/codebase-for-cache-tests.json')
         virtual_codebase = VirtualCodebase(location=scan_data)
         assert virtual_codebase.temp_dir
         assert virtual_codebase.cache_dir
         virtual_codebase.cache_dir
         root = virtual_codebase.root
 
-        cp = virtual_codebase._get_resource_cache_location(root.path, create_dirs=False)
+        cp = virtual_codebase._get_resource_cache_location(
+            root.path, create_dirs=False)
         assert not exists(cp)
 
-        cp = virtual_codebase._get_resource_cache_location(root.path, create_dirs=True)
+        cp = virtual_codebase._get_resource_cache_location(
+            root.path, create_dirs=True)
         assert not exists(cp)
         assert exists(parent_directory(cp))
 
-        child = virtual_codebase._get_or_create_resource('child', root, is_file=True)
+        child = virtual_codebase._get_or_create_resource(
+            'child', root, is_file=True)
         child.size = 12
         virtual_codebase.save_resource(child)
         child_2 = virtual_codebase.get_resource(child.path)
         assert child_2 == child
 
     def test_virtual_codebase_cache_all_in_memory(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/codebase-for-cache-tests.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/codebase-for-cache-tests.json')
         virtual_codebase = VirtualCodebase(location=scan_data, max_in_memory=0)
         for path, res in virtual_codebase.resources_by_path.items():
             assert res != Codebase.CACHED_RESOURCE
@@ -1242,8 +1296,10 @@ class TestVirtualCodebaseCache(FileBasedTesting):
         )
 
     def test_virtual_codebase_cache_all_on_disk(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/codebase-for-cache-tests.json')
-        virtual_codebase = VirtualCodebase(location=scan_data, max_in_memory=-1)
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/codebase-for-cache-tests.json')
+        virtual_codebase = VirtualCodebase(
+            location=scan_data, max_in_memory=-1)
         for path, res in virtual_codebase.resources_by_path.items():
 
             if res != Codebase.CACHED_RESOURCE:
@@ -1252,7 +1308,8 @@ class TestVirtualCodebaseCache(FileBasedTesting):
                 res = virtual_codebase.get_resource(path)
 
             if res.is_root:
-                assert virtual_codebase.get_resource(path) == virtual_codebase.root
+                assert virtual_codebase.get_resource(
+                    path) == virtual_codebase.root
                 assert virtual_codebase._exists_in_memory(path)
                 assert not virtual_codebase._exists_on_disk(path)
             else:
@@ -1266,7 +1323,8 @@ class TestVirtualCodebaseCache(FileBasedTesting):
         )
 
     def test_virtual_codebase_cache_mixed_two_in_memory(self):
-        scan_data = self.get_test_loc('resource/virtual_codebase/codebase-for-cache-tests.json')
+        scan_data = self.get_test_loc(
+            'resource/virtual_codebase/codebase-for-cache-tests.json')
         virtual_codebase = VirtualCodebase(location=scan_data, max_in_memory=2)
         counter = 0
 
@@ -1276,7 +1334,8 @@ class TestVirtualCodebaseCache(FileBasedTesting):
 
             if res.is_root:
                 assert (
-                    virtual_codebase.get_resource(path).to_dict() == virtual_codebase.root.to_dict()
+                    virtual_codebase.get_resource(
+                        path).to_dict() == virtual_codebase.root.to_dict()
                 )
                 assert virtual_codebase._exists_in_memory(path)
                 assert not virtual_codebase._exists_on_disk(path)
@@ -1302,7 +1361,8 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
     def test_VirtualCodebase_can_be_created_from_json_file(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/from_file.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/from_file.json')
         codebase = VirtualCodebase(test_file)
         results = sorted(r.name for r in codebase.walk())
         expected = ['bar.svg', 'han']
@@ -1357,7 +1417,8 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         assert results == expected
 
     def test_VirtualCodebase_create_from_scan_with_no_root_and_missing_parents(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/samples-only-findings.json')
         result_file = self.get_test_loc(
             'resource/virtual_codebase/samples-only-findings-expected.json'
         )
@@ -1368,18 +1429,24 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         assert results == expected
 
     def test_VirtualCodebase_check_that_already_existing_parent_is_updated_properly(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/root-is-not-first-resource.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/root-is-not-first-resource.json')
         codebase = VirtualCodebase(test_file)
-        results = sorted((r.to_dict() for r in codebase.walk()), key=lambda x: tuple(x.items()))
+        results = sorted((r.to_dict() for r in codebase.walk()),
+                         key=lambda x: tuple(x.items()))
         expected = [
-            {'path': 'samples', 'type': 'directory', 'summary': ['asd'], 'scan_errors': []},
-            {'path': 'samples/NOTICE', 'type': 'file', 'summary': [], 'scan_errors': []},
+            {'path': 'samples', 'type': 'directory',
+                'summary': ['asd'], 'scan_errors': []},
+            {'path': 'samples/NOTICE', 'type': 'file',
+                'summary': [], 'scan_errors': []},
         ]
         assert results == expected
 
     def test_VirtualCodebase_create_from_multiple_scans(self):
-        test_file_1 = self.get_test_loc('resource/virtual_codebase/combine-1.json')
-        test_file_2 = self.get_test_loc('resource/virtual_codebase/combine-2.json')
+        test_file_1 = self.get_test_loc(
+            'resource/virtual_codebase/combine-1.json')
+        test_file_2 = self.get_test_loc(
+            'resource/virtual_codebase/combine-2.json')
         vinput = (test_file_1, test_file_2)
         codebase = VirtualCodebase(vinput)
         results = [r.to_dict(with_info=False) for r in codebase.walk()]
@@ -1407,7 +1474,8 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         check_against_expected_json_file(results, expected_file, regen=False)
 
     def test_VirtualCodebase_compute_counts_with_full_root_info_one(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/full-root-info-one.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/full-root-info-one.json')
         codebase = VirtualCodebase(test_file)
         resource = [r for r in codebase.walk() if r.is_file][0]
         assert resource.path == 'home/foobar/scancode-toolkit/samples/README'
@@ -1417,7 +1485,8 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         assert size_count == 236
 
     def test_VirtualCodebase_with_full_root_info_one(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/full-root-info-one.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/full-root-info-one.json')
         codebase = VirtualCodebase(test_file)
         results = [r.to_dict(with_info=True) for r in codebase.walk()]
         expected_file = self.get_test_loc(
@@ -1426,7 +1495,8 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         check_against_expected_json_file(results, expected_file, regen=False)
 
     def test_VirtualCodebase_with_full_root_info_many(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/full-root-info-many.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/full-root-info-many.json')
         codebase = VirtualCodebase(test_file)
         results = [r.to_dict(with_info=True) for r in codebase.walk()]
         expected_file = self.get_test_loc(
@@ -1438,17 +1508,20 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         # was failing with
         # size_count += child.size
         # TypeError: unsupported operand type(s) for +=: 'int' and 'NoneType'
-        test_file = self.get_test_loc('resource/virtual_codebase/node-16-slim.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/node-16-slim.json')
         codebase = VirtualCodebase(test_file)
         codebase.compute_counts()
 
     def test_VirtualCodebase_can_be_created_with_single_path(self):
-        test_file = self.get_test_loc('resource/virtual_codebase/docker-hello-world.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/docker-hello-world.json')
         VirtualCodebase(test_file)
 
     def test_VirtualCodebase_can_be_created_without_RecursionError(self):
         # was failing with RecursionError: maximum recursion depth exceeded
-        test_file = self.get_test_loc('resource/virtual_codebase/zephyr-binary.json')
+        test_file = self.get_test_loc(
+            'resource/virtual_codebase/zephyr-binary.json')
         VirtualCodebase(test_file)
 
     def test_VirtualCodebase_can_be_created_with_repeated_root_directory(self):
@@ -1468,7 +1541,8 @@ class TestResource(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
     def test_Resource_extracted_to_extracted_from(self):
-        test_file = self.get_test_loc('resource/resource/test-extracted-from-to.json')
+        test_file = self.get_test_loc(
+            'resource/resource/test-extracted-from-to.json')
         codebase = VirtualCodebase(location=test_file)
         results = []
         for r in codebase.walk(topdown=True):
@@ -1534,7 +1608,8 @@ class TestResource(FileBasedTesting):
         assert results == expected
 
     def test_virtualcode_Resource_can_walk(self):
-        test_file = self.get_test_loc('resource/resource/test-extracted-from-to.json')
+        test_file = self.get_test_loc(
+            'resource/resource/test-extracted-from-to.json')
         codebase = VirtualCodebase(location=test_file)
         results = [r.path for r in codebase.walk(topdown=True)]
 
