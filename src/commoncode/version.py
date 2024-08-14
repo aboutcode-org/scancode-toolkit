@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -22,19 +22,19 @@ def VERSION_PATTERNS_REGEX():
             r'((\.|\-)(((alpha|dev|beta|rc|FINAL|final|pre)(\-|\_)\d+[A-Za-z]?'
             r'(\-RELEASE)?)|alpha|dev(\.\d+\.\d+)?'
             r'|beta|BETA|final|FINAL|release|fixed|(cr\d(\_\d*)?)))?',
-        #
-        r'[A-Za-z]?(\d+\_){1,3}\d+\_?[A-Za-z]{0,2}\d+',
-        #
-        r'(b|rc|r|v|RC|alpha|beta|BETA|M|m|pre|revision-)\d+(\-\d+)?',
-        #
-        r'current|previous|latest|alpha|beta',
-        #
-        r'\d{4}-\d{2}-\d{2}',
-        #
-        r'(\d(\-|\_)){1,2}\d',
-        #
-        r'\d{5,14}',
-    ]]
+            #
+            r'[A-Za-z]?(\d+\_){1,3}\d+\_?[A-Za-z]{0,2}\d+',
+            #
+            r'(b|rc|r|v|RC|alpha|beta|BETA|M|m|pre|revision-)\d+(\-\d+)?',
+            #
+            r'current|previous|latest|alpha|beta',
+            #
+            r'\d{4}-\d{2}-\d{2}',
+            #
+            r'(\d(\-|\_)){1,2}\d',
+            #
+            r'\d{5,14}',
+            ]]
 
 
 def hint(path):

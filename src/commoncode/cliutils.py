@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -154,18 +154,18 @@ Try the '--help' option for help on options and arguments.'''
 
 
 # overriden and copied from Click to work around Click woes for
-# https://github.com/nexB/scancode-toolkit/issues/2583
+# https://github.com/aboutcode-org/scancode-toolkit/issues/2583
 class DebuggedProgressBar(ProgressBar):
 
     # overriden and copied from Click to work around Click woes for
-    # https://github.com/nexB/scancode-toolkit/issues/2583
+    # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
     def make_step(self, n_steps):
         # always increment
         self.pos += n_steps or 1
         super(DebuggedProgressBar, self).make_step(n_steps)
 
     # overriden and copied from Click to work around Click woes for
-    # https://github.com/nexB/scancode-toolkit/issues/2583
+    # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
     def generator(self):
         if self.is_hidden:
             yield from self.iter
@@ -290,7 +290,7 @@ def progressmanager(
     # Click 8. See https://github.com/pallets/click/pull/1698
     # Note that we use this argument on Click 8 in order to fix a regression
     # that this same PR introduced by Click and tracked originally at
-    # https://github.com/nexB/scancode-toolkit/issues/2583
+    # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
     # Here we create a dummy progress_class and then for the attribute presence.
     pb = progress_class([])
     if hasattr(pb, 'update_min_steps'):
@@ -328,7 +328,7 @@ def fixed_width_file_name(path, max_length=25):
     len_ext = len(ext)
     remaining_length = max_length - len_ext - dots
 
-    if remaining_length < 5  or remaining_length < (len_ext + dots):
+    if remaining_length < 5 or remaining_length < (len_ext + dots):
         return ''
 
     prefix_and_suffix_length = abs(remaining_length // 2)
@@ -473,8 +473,10 @@ class PluggableCommandLineOption(click.Option):
         Validate `value` against declared `required_options` or
         `conflicting_options` dependencies.
         """
-        _validate_option_dependencies(ctx, self, value, self.required_options, required=True)
-        _validate_option_dependencies(ctx, self, value, self.conflicting_options, required=False)
+        _validate_option_dependencies(
+            ctx, self, value, self.required_options, required=True)
+        _validate_option_dependencies(
+            ctx, self, value, self.conflicting_options, required=False)
 
     def get_help_record(self, ctx):
         if not self.hidden:
@@ -497,11 +499,13 @@ def validate_option_dependencies(ctx):
             continue
         if not isinstance(param, PluggableCommandLineOption):
             if TRACE:
-                logger_debug('  validate_option_dependencies: skip param:', param)
+                logger_debug(
+                    '  validate_option_dependencies: skip param:', param)
             continue
         value = values.get(param.name)
         if TRACE:
-            logger_debug('  validate_option_dependencies: param:', param, 'value:', value)
+            logger_debug('  validate_option_dependencies: param:',
+                         param, 'value:', value)
         param.validate_dependencies(ctx, value)
 
 
@@ -534,7 +538,7 @@ def _validate_option_dependencies(ctx, param, value, other_option_names, require
     if TRACE:
         logger_debug()
         logger_debug('Checking param:', param)
-        logger_debug('  value:', value, 'is_set:' , is_set)
+        logger_debug('  value:', value, 'is_set:', is_set)
 
     if not is_set:
         return
@@ -582,7 +586,7 @@ def _validate_option_dependencies(ctx, param, value, other_option_names, require
 
         if TRACE:
             logger_debug('    Checking oparam:', oparam)
-            logger_debug('      value:', ovalue, 'ois_set:' , ois_set)
+            logger_debug('      value:', ovalue, 'ois_set:', ois_set)
 
         # by convention the last opt is the long form
         oopt = oparam.opts[-1]
@@ -594,7 +598,7 @@ def _validate_option_dependencies(ctx, param, value, other_option_names, require
                    'You must set all of these options if you use this option.' % locals())
             raise click.UsageError(msg)
 
-        if not required  and ois_set:
+        if not required and ois_set:
             msg = ('The option %(opt)s cannot be used together with the %(oopts)s option(s) '
                    'and %(oopt)s is used. '
                    'You can set only one of these options at a time.' % locals())

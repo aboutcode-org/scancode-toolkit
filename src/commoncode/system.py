@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -93,6 +93,7 @@ def is_on_ubuntu_22(os_release_location='/etc/os-release'):
         return False
     os_release_info = parse_os_release(os_release_location)
     return os_release_info['ID'] == 'ubuntu' and '22' in os_release_info['VERSION_ID']
+
 
 on_ubuntu_22 = is_on_ubuntu_22()
 

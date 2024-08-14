@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -38,4 +38,4 @@ def secs_from_epoch(d):
     """
     # FIXME: what does this do?
     return calendar.timegm(datetime.strptime(d.split('.')[0],
-                                    '%Y-%m-%d %H:%M:%S').timetuple())
+                                             '%Y-%m-%d %H:%M:%S').timetuple())

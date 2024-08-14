@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -164,14 +164,14 @@ ignores_Maven = {
 
 ignores_VCS = {
     '.bzr': 'Default ignore: Bazaar artifact',
-    '.bzrignore' : 'Default ignore: Bazaar config artifact',
+    '.bzrignore': 'Default ignore: Bazaar config artifact',
 
     '.git': 'Default ignore: Git artifact',
-    '.gitignore' : 'Default ignore: Git config artifact',
+    '.gitignore': 'Default ignore: Git config artifact',
     '.gitattributes': 'Default ignore: Git config artifact',
 
     '.hg': 'Default ignore: Mercurial artifact',
-    '.hgignore' : 'Default ignore: Mercurial config artifact',
+    '.hgignore': 'Default ignore: Mercurial config artifact',
 
     '.repo': 'Default ignore: Multiple Git repository artifact',
 
@@ -226,8 +226,8 @@ ignores_Build_scripts = {
 }
 
 ignores_CI = {
-    '.travis.yml' : 'Default ignore: Travis config',
-    '.coveragerc' : 'Default ignore: Coverall config',
+    '.travis.yml': 'Default ignore: Travis config',
+    '.coveragerc': 'Default ignore: Coverall config',
 }
 
 ignores_Python = {

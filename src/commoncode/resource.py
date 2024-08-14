@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -159,11 +159,13 @@ class Header(object):
 
     tool_name = String(help='Name of the tool used such as scancode-toolkit.')
     tool_version = String(default='', help='Tool version used such as v1.2.3.')
-    options = Mapping(help='Mapping of key/values describing the options used with this tool.')
+    options = Mapping(
+        help='Mapping of key/values describing the options used with this tool.')
     notice = String(default='', help='Notice text for this tool.')
     start_timestamp = String(help='Start timestamp for this header.')
     end_timestamp = String(help='End timestamp for this header.')
-    output_format_version = String(help='Version for the output data format, such as v1.1 .')
+    output_format_version = String(
+        help='Version for the output data format, such as v1.1 .')
     duration = String(help='Scan duration in seconds.')
     message = String(help='Message text.')
     errors = List(help='List of error messages.')
@@ -292,7 +294,8 @@ class Codebase:
         self.is_file = filetype_is_file(location)
 
         # True if this codebase root is a file or an empty directory.
-        self.has_single_resource = bool(self.is_file or not os.listdir(location))
+        self.has_single_resource = bool(
+            self.is_file or not os.listdir(location))
 
         ########################################################################
         # Set up caching, summary, timing, and error info
@@ -309,7 +312,7 @@ class Codebase:
         """
         paths = (clean_path(p) for p in (paths or []) if p)
         # we sort by path segments (e.g. essentially a topo sort)
-        _sorter = lambda p: p.split('/')
+        def _sorter(p): return p.split('/')
         return sorted(paths, key=_sorter)
 
     def _setup_essentials(self, temp_dir=temp_dir, max_in_memory=10000):
@@ -438,7 +441,8 @@ class Codebase:
         # Codebase attributes to use. Configured with plugin attributes if
         # present.
         self.codebase_attributes = self._collect_codebase_attributes()
-        cbac = _CodebaseAttributes.from_attributes(attributes=self.codebase_attributes)
+        cbac = _CodebaseAttributes.from_attributes(
+            attributes=self.codebase_attributes)
         self.attributes = cbac()
 
         # Resource sub-class to use. Configured with plugin attributes if present
@@ -487,7 +491,8 @@ class Codebase:
             # create all parents. The last parent is the one we want to use
             parent = root
             if TRACE:
-                logger_debug('Codebase._create_resources_from_paths: parent', parent)
+                logger_debug(
+                    'Codebase._create_resources_from_paths: parent', parent)
             for parent_path in get_ancestor_paths(path, include_self=False):
                 if TRACE:
                     logger_debug(
@@ -497,7 +502,8 @@ class Codebase:
                     continue
                 newpar = parents_by_path.get(parent_path)
                 if TRACE:
-                    logger_debug('  Codebase._create_resources_from_paths: newpar', repr(newpar))
+                    logger_debug(
+                        '  Codebase._create_resources_from_paths: newpar', repr(newpar))
 
                 if not newpar:
                     newpar = self._get_or_create_resource(
@@ -527,7 +533,8 @@ class Codebase:
                 is_file=isfile(res_loc),
             )
             if TRACE:
-                logger_debug('Codebase._create_resources_from_paths: resource', res)
+                logger_debug(
+                    'Codebase._create_resources_from_paths: resource', res)
 
     def _create_resources_from_root(self, root):
         # without paths we walks the root location top-down
@@ -588,7 +595,8 @@ class Codebase:
         """
         # we cannot recreate a root if it exists!!
         if self.root:
-            raise TypeError('Root resource already exists and cannot be recreated')
+            raise TypeError(
+                'Root resource already exists and cannot be recreated')
 
         location = self.location
         name = file_name(location)
@@ -597,7 +605,8 @@ class Codebase:
         path = Resource.build_path(root_location=location, location=location)
 
         if TRACE:
-            logger_debug(f'  Codebase._create_root_resource: {path} is_file: {self.is_file}')
+            logger_debug(
+                f'  Codebase._create_root_resource: {path} is_file: {self.is_file}')
             logger_debug()
 
         root = self.resource_class(
@@ -638,11 +647,13 @@ class Codebase:
         existing = self.get_resource(path)
         if existing:
             if TRACE:
-                logger_debug('  Codebase._get_or_create_resource: path  already exists:', path)
+                logger_debug(
+                    '  Codebase._get_or_create_resource: path  already exists:', path)
             return existing
 
         if self._use_disk_cache_for_resource():
-            cache_location = self._get_resource_cache_location(path=path, create_dirs=True)
+            cache_location = self._get_resource_cache_location(
+                path=path, create_dirs=True)
         else:
             cache_location = None
 
@@ -752,18 +763,20 @@ class Codebase:
         """
         path = clean_path(path)
         if not self._exists_in_memory(path):
-            cache_location = self._get_resource_cache_location(path, create_dirs=False)
+            cache_location = self._get_resource_cache_location(
+                path, create_dirs=False)
             if cache_location:
                 return exists(cache_location)
 
-    ########### FIXME: the PATH SHOULD NOT INCLUDE THE ROOT NAME
+    # FIXME: the PATH SHOULD NOT INCLUDE THE ROOT NAME
     def get_resource(self, path):
         """
         Return the Resource with `path` or None if it does not exists.
         The ``path`` must be relative to the root (and including the root
         name as its first segment).
         """
-        assert isinstance(path, str), f'Invalid path: {path!r} is not a string.'
+        assert isinstance(
+            path, str), f'Invalid path: {path!r} is not a string.'
         path = clean_path(path)
         if TRACE:
             msg = ['  Codebase.get_resource:', 'path:', path]
@@ -788,7 +801,8 @@ class Codebase:
             pass
         else:
             # this should never happen
-            raise Exception(f'get_resource: Internal error when getting {path!r}')
+            raise Exception(
+                f'get_resource: Internal error when getting {path!r}')
 
         if TRACE:
             logger_debug('    Resource:', res)
@@ -830,7 +844,8 @@ class Codebase:
 
         # TODO: consider messagepack or protobuf for compact/faster processing?
         with open(cache_location, 'w') as cached:
-            cached.write(json.dumps(resource.serialize(), check_circular=False))
+            cached.write(json.dumps(
+                resource.serialize(), check_circular=False))
 
     # TODO: consider adding a small LRU cache in front of this for perf?
     def _load_resource(self, path):
@@ -838,7 +853,8 @@ class Codebase:
         Return a Resource with ``path`` loaded from the disk cache.
         """
         path = clean_path(path)
-        cache_location = self._get_resource_cache_location(path, create_dirs=False)
+        cache_location = self._get_resource_cache_location(
+            path, create_dirs=False)
 
         if TRACE:
             logger_debug(
@@ -849,7 +865,8 @@ class Codebase:
             )
 
         if not exists(cache_location):
-            raise ResourceNotInCache(f'Failed to load Resource: {path} from {cache_location!r}')
+            raise ResourceNotInCache(
+                f'Failed to load Resource: {path} from {cache_location!r}')
 
         # TODO: consider messagepack or protobuf for compact/faster processing
         try:
@@ -863,7 +880,8 @@ class Codebase:
                 cached_data = cached.read()
             msg = (
                 f'ERROR: failed to load resource from cached location: {cache_location} '
-                'with content:\n\n' + repr(cached_data) + '\n\n' + traceback.format_exc()
+                'with content:\n\n' +
+                repr(cached_data) + '\n\n' + traceback.format_exc()
             )
             raise Exception(msg) from e
 
@@ -873,7 +891,8 @@ class Codebase:
         Does not remove children.
         """
         if resource.is_root:
-            raise TypeError(f'Cannot remove the root resource from codebase: {resource!r}')
+            raise TypeError(
+                f'Cannot remove the root resource from codebase: {resource!r}')
 
         # remove from in-memory cache. The disk cache is cleared on exit.
         self.resources_by_path.pop(resource.path, None)
@@ -890,7 +909,8 @@ class Codebase:
             logger_debug('  resource', resource)
 
         if resource.is_root:
-            raise TypeError(f'Cannot remove the root resource from codebase: {resource!r}')
+            raise TypeError(
+                f'Cannot remove the root resource from codebase: {resource!r}')
 
         removed_paths = set()
 
@@ -1387,9 +1407,10 @@ class Resource(object):
 
         child_path = partial(posixpath_join, self.path)
         get_child = codebase.get_resource
-        children = [get_child(path=child_path(name)) for name in children_names]
+        children = [get_child(path=child_path(name))
+                    for name in children_names]
 
-        _sorter = lambda r: (r.has_children(), r.name.lower(), r.name)
+        def _sorter(r): return (r.has_children(), r.name.lower(), r.name)
         return sorted((c for c in children if c), key=_sorter)
 
     def has_parent(self):
@@ -1504,10 +1525,11 @@ class Resource(object):
 
         # this will catch every attribute that has been added dynamically, such
         # as scan-provided resource_attributes
-        other_data = attr.asdict(self, filter=self_fields_filter, dict_factory=dict)
+        other_data = attr.asdict(
+            self, filter=self_fields_filter, dict_factory=dict)
 
         # FIXME: make a deep copy of the data first!!!!
-        # see https://github.com/nexB/scancode-toolkit/issues/1199
+        # see https://github.com/aboutcode-org/scancode-toolkit/issues/1199
         res.update(other_data)
 
         if with_timing:
@@ -1720,7 +1742,8 @@ class VirtualCodebase(Codebase):
                 files = scan_data.get('files')
                 if files:
                     for f in files:
-                        f['path'] = posixpath_join(f'codebase-{idx}', clean_path(f['path']))
+                        f['path'] = posixpath_join(
+                            f'codebase-{idx}', clean_path(f['path']))
                     combined_scan_data['files'].extend(files)
                 else:
                     raise Exception(
@@ -1833,7 +1856,8 @@ class VirtualCodebase(Codebase):
         # Codebase attributes to use. Configured with scan_data and plugin
         # attributes if present.
         self.codebase_attributes = self._collect_codebase_attributes(scan_data)
-        cbac = _CodebaseAttributes.from_attributes(attributes=self.codebase_attributes)
+        cbac = _CodebaseAttributes.from_attributes(
+            attributes=self.codebase_attributes)
         self.attributes = cbac()
 
         # now populate top level codebase attributes
@@ -2053,12 +2077,14 @@ class VirtualCodebase(Codebase):
         """
         # we cannot recreate a root if it exists!!
         if self.root:
-            raise TypeError('Root resource already exists and cannot be recreated')
+            raise TypeError(
+                'Root resource already exists and cannot be recreated')
 
         path = clean_path(path)
 
         if TRACE:
-            logger_debug(f'  VirtualCodebase._create_root_resource: {path!r} is_file: {is_file}')
+            logger_debug(
+                f'  VirtualCodebase._create_root_resource: {path!r} is_file: {is_file}')
 
         root = self.resource_class(
             name=name,
@@ -2076,7 +2102,8 @@ class VirtualCodebase(Codebase):
         return root
 
 
-KNOW_PROPS = set(['type', 'base_name', 'extension', 'path', 'name', 'path_segments'])
+KNOW_PROPS = set(['type', 'base_name', 'extension',
+                 'path', 'name', 'path_segments'])
 
 
 def remove_properties_and_basics(resource_data):
