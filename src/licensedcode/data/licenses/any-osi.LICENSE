@@ -1,0 +1,18 @@
+---
+key: any-osi
+short_name: Any OSI License
+name: Any OSI License
+category: Unstated License
+owner: Unspecified
+spdx_license_key: any-OSI
+minimum_coverage: 100
+other_urls:
+    - http://www.opensource.org/licenses/alphabetical
+    - https://metacpan.org/pod/Exporter::Tidy#LICENSE
+ignorable_urls:
+    - http://www.opensource.org/licenses/alphabetical
+---
+
+Pick your favourite OSI approved license :)
+
+http://www.opensource.org/licenses/alphabetical

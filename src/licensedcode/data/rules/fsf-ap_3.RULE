@@ -1,6 +1,10 @@
 ---
 license_expression: fsf-ap
 is_license_notice: yes
+is_deprecated: yes
+notes: |
+    Added in SPDX license list 3.23
+    Replaced by license: fsfap-no-warranty-disclaimer
 ---
 
 Copying and distribution of this file, with or without modification, are

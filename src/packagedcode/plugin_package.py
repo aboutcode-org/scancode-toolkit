@@ -112,7 +112,6 @@ def get_available_package_parsers(docs=False):
     return all_data_packages
 
 
-
 @scan_impl
 class PackageScanner(ScanPlugin):
     """
@@ -161,7 +160,20 @@ class PackageScanner(ScanPlugin):
             help_group=SCAN_GROUP,
             sort_order=21,
         ),
-
+        PluggableCommandLineOption(
+            (
+                '--package-only',
+            ),
+            is_flag=True,
+            default=False,
+            conflicting_options=['license', 'summary', 'package', 'system_package'],
+            help=(
+                'Scan for system and application package data and skip '
+                'license/copyright detection and top-level package creation.'
+            ),
+            help_group=SCAN_GROUP,
+            sort_order=22,
+        ),
         PluggableCommandLineOption(
             ('--list-packages',),
             is_flag=True,
@@ -172,10 +184,10 @@ class PackageScanner(ScanPlugin):
         ),
     ]
 
-    def is_enabled(self, package, system_package, **kwargs):
-        return package or system_package
+    def is_enabled(self, package, system_package, package_only, **kwargs):
+        return package or system_package or package_only
 
-    def get_scanner(self, package=True, system_package=False, **kwargs):
+    def get_scanner(self, package=True, system_package=False, package_only=False, **kwargs):
         """
         Return a scanner callable to scan a file for package data.
         """
@@ -185,9 +197,10 @@ class PackageScanner(ScanPlugin):
             get_package_data,
             application=package,
             system=system_package,
+            package_only=package_only,
         )
 
-    def process_codebase(self, codebase, strip_root=False, **kwargs):
+    def process_codebase(self, codebase, strip_root=False, package_only=False, **kwargs):
         """
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data
@@ -196,6 +209,11 @@ class PackageScanner(ScanPlugin):
         Also perform additional package license detection that depends on either
         file license detection or the package detections.
         """
+        # If we only want purls, we want to skip both the package
+        # assembly and the extra package license detection steps
+        if package_only:
+            return
+
         has_licenses = hasattr(codebase.root, 'license_detections')
 
         # These steps add proper license detections to package_data and hence
@@ -403,6 +421,8 @@ def get_package_and_deps(codebase, package_adder=add_to_package, strip_root=Fals
                                 for dfp in item.datafile_paths
                             ]
                         packages.append(item)
+                        if TRACE:
+                            logger_debug('    get_package_and_deps: Package:', item.purl)
 
                     elif isinstance(item, Dependency):
                         if strip_root and not has_single_resource:

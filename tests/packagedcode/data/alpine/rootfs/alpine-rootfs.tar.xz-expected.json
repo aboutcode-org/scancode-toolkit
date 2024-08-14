@@ -68,6 +68,8 @@
       "source_packages": [
         "pkg:alpine/musl@1.2.2-r7"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -161,6 +163,8 @@
       "source_packages": [
         "pkg:alpine/busybox@1.34.1-r5"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -254,6 +258,8 @@
       "source_packages": [
         "pkg:alpine/alpine-baselayout@3.2.0-r18"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -374,6 +380,8 @@
       "source_packages": [
         "pkg:alpine/alpine-keys@2.4-r1"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -629,6 +637,8 @@
       "source_packages": [
         "pkg:alpine/ca-certificates@20211220-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -722,6 +732,8 @@
       "source_packages": [
         "pkg:alpine/openssl@1.1.1n-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -842,6 +854,8 @@
       "source_packages": [
         "pkg:alpine/openssl@1.1.1n-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -935,6 +949,8 @@
       "source_packages": [
         "pkg:alpine/libretls@3.3.4-r3"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -1028,6 +1044,8 @@
       "source_packages": [
         "pkg:alpine/busybox@1.34.1-r5"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1109,6 +1127,8 @@
       "source_packages": [
         "pkg:alpine/zlib@1.2.12-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -1202,6 +1222,8 @@
       "source_packages": [
         "pkg:alpine/apk-tools@2.12.7-r3"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1283,6 +1305,8 @@
       "source_packages": [
         "pkg:alpine/pax-utils@1.3.3-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1364,6 +1388,8 @@
       "source_packages": [
         "pkg:alpine/musl@1.2.2-r7"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1445,6 +1471,8 @@
       "source_packages": [
         "pkg:alpine/libc-dev@0.7.2-r3"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1467,6 +1495,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/ca-certificates-bundle?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -1481,6 +1510,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/musl?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -1495,6 +1525,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/ca-certificates-bundle?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -1509,6 +1540,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/scanelf?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -1523,6 +1555,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/musl-utils?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2249,6 +2282,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2390,6 +2425,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2720,6 +2757,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3167,6 +3206,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3263,6 +3304,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3440,6 +3483,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3536,6 +3581,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3632,6 +3679,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -3641,6 +3690,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -3730,6 +3780,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3826,6 +3878,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3922,6 +3976,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -3931,6 +3987,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -3941,6 +3998,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -4030,6 +4088,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -4153,6 +4213,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -4162,6 +4224,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -4241,6 +4304,8 @@
             "pkg:alpine/libc-dev@0.7.2-r3"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -4250,6 +4315,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

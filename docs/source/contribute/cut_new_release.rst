@@ -41,7 +41,7 @@ Tag and publish
 Automated Release Process
 -------------------------
 
-- We have an `automated release script <https://github.com/nexB/scancode-toolkit/actions/workflows/scancode-release.yml>`_
+- We have an `automated release script <https://github.com/aboutcode-org/scancode-toolkit/actions/workflows/scancode-release.yml>`_
   triggered by a pushed tag, where jobs run to:
 
   - Build pypi wheels and sdist archives

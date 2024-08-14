@@ -1,6 +1,10 @@
 ---
 license_expression: proprietary-license
 is_license_text: yes
+is_deprecated: yes
+notes: |
+    Added in SPDX license list 3.24
+    This is now ppl.LICENSE
 ---
 
 LICENSE

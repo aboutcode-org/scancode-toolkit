@@ -79,10 +79,7 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
     expected = [rule.identifier, '100']
     results = flatten((m.rule.identifier, str(int(m.coverage()))) for m in matches)
 
-    try:
-        assert results == expected
-    except:
-
+    if results != expected:
         from licensedcode.tracing import get_texts
         rule_file = rule.rule_file()
         # On failure, we compare again to get additional failure details such as
@@ -145,9 +142,7 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
         print('expected')
         pprint(expected)
 
-    try:
-        assert result == expected
-    except:
+    if result != expected:
         # On failure, we compare again to get additional failure details such as
         # a clickable text_file path.
 

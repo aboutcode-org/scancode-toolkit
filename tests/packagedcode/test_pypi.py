@@ -39,10 +39,17 @@ class TestPyPiEndtoEnd(PackageTester):
         run_scan_click(['--package', '--license', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_pypi_end_to_end_package_only(self):
+        test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-only-expected.json')
+        run_scan_click(['--package-only', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_package_scan_pypi_setup_py_end_to_end(self):
         test_dir = self.get_test_loc('pypi/source-package/pip-22.0.4/setup.py')
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-setup-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('pypi/source-package/pip-22.0.4-pypi-package-setup-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
@@ -69,6 +76,13 @@ class TestPyPiEndtoEnd(PackageTester):
         test_dir = self.get_test_loc('pypi/unpacked_wheel/daglib_wheel_extracted/')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('pypi/unpacked_wheel/daglib_wheel_extracted-expected.json')
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_package_scan_poetry_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/poetry/univers/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/poetry/univers-package-assembly-expected.json')
         run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
@@ -266,14 +280,14 @@ class TestPypiUnpackedSdist(PackageTester):
 
     def test_can_parse_solo_metadata_from_command_line(self):
         test_file = self.get_test_loc('pypi/solo-metadata/PKG-INFO')
-        expected_file = self.get_test_loc('pypi/solo-metadata/expected.json', must_exist=False)
+        expected_file = self.get_test_loc('pypi/solo-metadata/expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_metadata_prefer_pkg_info_from_egg_info_from_command_line(self):
         test_file = self.get_test_loc('pypi/unpacked_sdist/prefer-egg-info-pkg-info/celery')
-        expected_file = self.get_test_loc('pypi/unpacked_sdist/prefer-egg-info-pkg-info/celery-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('pypi/unpacked_sdist/prefer-egg-info-pkg-info/celery-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
@@ -282,10 +296,109 @@ class TestPypiUnpackedSdist(PackageTester):
         # `celery/celery.egg-info/PKG-INFO`
         vc = VirtualCodebase(location=result_file)
         for dep in vc.attributes.dependencies:
-            self.assertEqual(dep['datafile_path'], 'celery/celery.egg-info/PKG-INFO')
+            assert dep['datafile_path'] == 'celery/celery.egg-info/requires.txt'
         for pkg in vc.attributes.packages:
             for path in pkg['datafile_paths']:
-                self.assertEqual(path, 'celery/celery.egg-info/PKG-INFO')
+                assert path == 'celery/celery.egg-info/PKG-INFO'
+
+
+class TestPyprojectTomlFileHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pyproject_toml_standard(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/attrs/pyproject.toml')
+        assert pypi.PyprojectTomlHandler.is_datafile(test_file)
+
+    def test_parse_pyproject_toml_standard_attrs(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/attrs/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/attrs-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_apache_airflow(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_apache_airflow_client(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow-pyclient/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow-pyclient-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_flask(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/flask/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/flask-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_lc0(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/lc0/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/lc0-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
+class TestPoetryHandler(PackageTester):
+
+    def test_is_pyproject_toml_poetry(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy/pyproject.toml')
+        assert pypi.PoetryPyprojectTomlHandler.is_datafile(test_file)
+
+    def test_parse_pyproject_toml_poetry_gerapy(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_poetry_gino(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gino/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/gino-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_poetry_connexion(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/connexion/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/connexion-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_is_poetry_lock(self):
+        test_file = self.get_test_loc('pypi/poetry/univers/poetry.lock')
+        assert pypi.PoetryLockHandler.is_datafile(test_file)
+
+    def test_parse_poetry_lock_univers(self):
+        test_file = self.get_test_loc('pypi/poetry/univers/poetry.lock')
+        package = pypi.PoetryLockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/poetry/univers-poetry.lock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_poetry_univers(self):
+        test_file = self.get_test_loc('pypi/poetry/univers/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/poetry/univers-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
+class TestPipInspectDeplockHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pip_inspect_deplock(self):
+        test_file = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock')
+        assert pypi.PipInspectDeplockHandler.is_datafile(test_file)
+
+    def test_parse_pip_inspect_deplock_simple(self):
+        test_file = self.get_test_loc('pypi/deplock/simple/pip-inspect.deplock')
+        package = pypi.PipInspectDeplockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/deplock/simple/pip-inspect.deplock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pip_inspect_deplock_univers(self):
+        test_file = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock')
+        package = pypi.PipInspectDeplockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 class TestPipRequirementsFileHandler(PackageTester):
@@ -417,47 +530,23 @@ class TestPipRequirementsFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/requirements_txt/invalid_spec/output.expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_PipRequirementsFileHandler_is_datafile(self):
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('dev-requirements.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirement.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements.in', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements.pip', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements-dev.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('some-requirements-dev.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requires.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('requirements/base.txt', _bare_filename=True),
-            True
-        )
-        self.assertEqual(
-            pypi.PipRequirementsFileHandler.is_datafile('reqs.txt', _bare_filename=True),
-            True
-        )
+@pytest.mark.parametrize(
+    'filename',
+    [
+        'dev-requirements.txt',
+        'reqs.txt',
+        'requirements/base.txt',
+        'requirements-dev.txt',
+        'requirements.in',
+        'requirements.pip',
+        'requirements.txt',
+        'requirement.txt',
+        'requires.txt',
+        'some-requirements-dev.txt',
+    ]
+)
+def test_PipRequirementsFileHandler_is_datafile(filename):
+    assert pypi.PipRequirementsFileHandler.is_datafile(location=filename, _bare_filename=True)
 
 
 class TestPyPiPipfile(PackageTester):
@@ -563,25 +652,25 @@ class TestPyPiSetupPyNames(PackageTester):
     def test_parse_setup_py_with_name(self):
         test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py')
         package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_setup_py_without_name(self):
         test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py')
         package = pypi.PythonSetupPyHandler.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_get_setup_py_args_with_name(self):
         test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py')
         kwargs = pypi.get_setup_py_args(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.args.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/with_name-setup.py.args.expected.json')
         check_result_equals_expected_json(kwargs, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_get_setup_py_args_without_name(self):
         test_file = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py')
         kwargs = pypi.get_setup_py_args(test_file)
-        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.args.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('pypi/setup.py-name-or-no-name/without_name-setup.py.args.expected.json')
         check_result_equals_expected_json(kwargs, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
@@ -607,7 +696,7 @@ def check_setup_py_parsing(test_loc):
 
     expected_loc2 = f'{test_loc}-expected.json'
     packages_data = pypi.PythonSetupPyHandler.parse(test_loc)
-    test_envt.check_packages_data(
+    env.check_packages_data(
         packages_data=packages_data,
         expected_loc=expected_loc2,
         regen=REGEN_TEST_FIXTURES,
@@ -615,12 +704,12 @@ def check_setup_py_parsing(test_loc):
     )
 
 
-test_envt = PackageTester()
+env = PackageTester()
 
 
 @pytest.mark.parametrize(
     'test_loc',
-    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'setup.py-versions'))),
+    get_setup_py_test_files(os.path.abspath(os.path.join(env.test_data_dir, 'pypi', 'setup.py-versions'))),
 )
 def test_parse_setup_py_with_computed_versions(test_loc):
     check_setup_py_parsing(test_loc)
@@ -628,7 +717,7 @@ def test_parse_setup_py_with_computed_versions(test_loc):
 
 @pytest.mark.parametrize(
     'test_loc',
-    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'setup.py')))
+    get_setup_py_test_files(os.path.abspath(os.path.join(env.test_data_dir, 'pypi', 'setup.py')))
 )
 def test_parse_setup_py(test_loc):
     check_setup_py_parsing(test_loc)
@@ -636,7 +725,7 @@ def test_parse_setup_py(test_loc):
 
 @pytest.mark.parametrize(
     'test_loc',
-    get_setup_py_test_files(os.path.abspath(os.path.join(test_envt.test_data_dir, 'pypi', 'more_setup.py'))),
+    get_setup_py_test_files(os.path.abspath(os.path.join(env.test_data_dir, 'pypi', 'more_setup.py'))),
 )
 def test_parse_more_setup_py(test_loc):
     check_setup_py_parsing(test_loc)

@@ -48,7 +48,7 @@ class TestMarkup(FileBasedTesting):
         ),
         (
             """<td width="30%">Copyright &copy; 2006 <a href="trolltech.html">Trolltech</a></td>""",
-            ' width="30%">Copyright  &copy;  2006   ="trolltech.html">Trolltech  ',
+            ' width="30%">Copyright &copy; 2006   ="trolltech.html">Trolltech  ',
         ),
         (
             "<p>SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1</p>",

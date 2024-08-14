@@ -177,6 +177,18 @@ parsers in scancode-toolkit during documentation builds.
      - ``php_composer_lock``
      - PHP
      - https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+   * - conan external source
+     - ``*/conandata.yml``
+     - ``conan``
+     - ``conan_conandata_yml``
+     - C++
+     - https://docs.conan.io/2/tutorial/creating_packages/handle_sources_in_packages.html#using-the-conandata-yml-file
+   * - conan recipe
+     - ``*/conanfile.py``
+     - ``conan``
+     - ``conan_conanfile_py``
+     - C++
+     - https://docs.conan.io/2.0/reference/conanfile.html
    * - Conda meta.yml manifest
      - ``*/meta.yaml``
      - ``conda``
@@ -221,6 +233,7 @@ parsers in scancode-toolkit during documentation builds.
      - https://r-pkgs.org/description.html
    * - Debian control file - extracted layout
      - ``*/control.tar.gz-extract/control``
+       ``*/control.tar.xz-extract/control``
      - ``deb``
      - ``debian_control_extracted_deb``
      - None
@@ -241,6 +254,13 @@ parsers in scancode-toolkit during documentation builds.
      - ``*/debian/copyright``
      - ``deb``
      - ``debian_copyright_in_source``
+     - None
+     - https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+   * - Debian machine readable file standalone
+     - ``*/copyright``
+       ``*_copyright``
+     - ``deb``
+     - ``debian_copyright_standalone``
      - None
      - https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
    * - Debian binary package archive
@@ -519,6 +539,24 @@ parsers in scancode-toolkit during documentation builds.
      - ``npm_shrinkwrap_json``
      - JavaScript
      - https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json
+   * - pnpm pnpm-lock.yaml lockfile
+     - ``*/pnpm-lock.yaml``
+     - ``npm``
+     - ``pnpm_lock_yaml``
+     - JavaScript
+     - https://github.com/pnpm/spec/blob/master/lockfile/6.0.md
+   * - pnpm shrinkwrap.yaml lockfile
+     - ``*/shrinkwrap.yaml``
+     - ``npm``
+     - ``pnpm_shrinkwrap_yaml``
+     - JavaScript
+     - https://github.com/pnpm/spec/blob/master/lockfile/4.md
+   * - pnpm workspace yaml file
+     - ``*/pnpm-workspace.yaml``
+     - ``npm``
+     - ``pnpm_workspace_yaml``
+     - JavaScript
+     - https://pnpm.io/pnpm-workspace_yaml
    * - yarn.lock lockfile v1 format
      - ``*/yarn.lock``
      - ``npm``
@@ -549,6 +587,12 @@ parsers in scancode-toolkit during documentation builds.
      - ``nuget_nupsec``
      - None
      - https://docs.microsoft.com/en-us/nuget/reference/nuspec
+   * - NuGet packages.lock.json file
+     - ``*packages.lock.json``
+     - ``nuget``
+     - ``nuget_packages_lock``
+     - None
+     - https://learn.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-restore
    * - Ocaml Opam file
      - ``*opam``
      - ``opam``
@@ -623,12 +667,30 @@ parsers in scancode-toolkit during documentation builds.
      - ``pypi_egg_pkginfo``
      - Python
      - https://peps.python.org/pep-0376/
+   * - Python poetry pyproject.toml
+     - ``*pip-inspect.deplock``
+     - ``pypi``
+     - ``pypi_inspect_deplock``
+     - Python
+     - https://pip.pypa.io/en/stable/cli/pip_inspect/
+   * - Python poetry lockfile
+     - ``*poetry.lock``
+     - ``pypi``
+     - ``pypi_poetry_lock``
+     - Python
+     - https://python-poetry.org/docs/basic-usage/#installing-with-poetrylock
+   * - Python poetry pyproject.toml
+     - ``*pyproject.toml``
+     - ``pypi``
+     - ``pypi_poetry_pyproject_toml``
+     - Python
+     - https://packaging.python.org/en/latest/specifications/pyproject-toml/
    * - Python pyproject.toml
      - ``*pyproject.toml``
      - ``pypi``
      - ``pypi_pyproject_toml``
      - Python
-     - https://peps.python.org/pep-0621/
+     - https://packaging.python.org/en/latest/specifications/pyproject-toml/
    * - PyPI extracted sdist PKG-INFO
      - ``*/PKG-INFO``
      - ``pypi``
@@ -697,6 +759,19 @@ parsers in scancode-toolkit during documentation builds.
      - ``rpm_installed_database_sqlite``
      - None
      - https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb
+   * - RPM mariner distroless package manifest
+     - ``*var/lib/rpmmanifest/container-manifest-2``
+     - ``rpm``
+     - ``rpm_mariner_manifest``
+     - None
+     - https://github.com/microsoft/marinara/
+   * - RPM mariner distroless package license files
+     - ``*usr/share/licenses/*/COPYING*``
+       ``*usr/share/licenses/*/LICENSE*``
+     - ``rpm``
+     - ``rpm_package_licenses``
+     - None
+     - https://github.com/microsoft/marinara/
    * - RPM specfile
      - ``*.spec``
      - ``rpm``
@@ -715,6 +790,26 @@ parsers in scancode-toolkit during documentation builds.
      - ``squashfs_disk_image``
      - None
      - https://en.wikipedia.org/wiki/SquashFS
+   * - JSON dump of Package.swift created by DepLock or with ``swift package dump-package &gt; Package.swift.json``
+     - ``*/Package.swift.json``
+       ``*/Package.swift.deplock``
+     - ``swift``
+     - ``swift_package_manifest_json``
+     - Swift
+     - https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
+   * - Resolved full dependency lockfile for Package.swift created with ``swift package resolve``
+     - ``*/Package.resolved``
+       ``*/.package.resolved``
+     - ``swift``
+     - ``swift_package_resolved``
+     - swift
+     - https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#package-dependency
+   * - Swift dependency graph created by DepLock
+     - ``*/swift-show-dependencies.deplock``
+     - ``swift``
+     - ``swift_package_show_dependencies``
+     - Swift
+     - https://forums.swift.org/t/swiftpm-show-dependencies-without-fetching-dependencies/51154
    * - Java Web Application Archive
      - ``*.war``
      - ``war``

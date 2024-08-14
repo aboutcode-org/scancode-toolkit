@@ -8,11 +8,11 @@ ignorable_urls:
 ---
 
 * This code is derivative work based on the STemWin which is licensed under
-  * MCD-ST Liberty SW License Agreement V2, available at:
+  * {{MCD-ST Liberty SW License Agreement V2}}, available at:
   *
   *     http://www.st.com/software_license_agreement_liberty_v2
   *
-  * However this source code itself is licensed under (CC BY-SA 3.0), available at:
+  * However this source code itself is {{licensed under (CC BY-SA 3.0)}}, available at:
   *
   *     http://creativecommons.org/licenses/by-sa/3.0
   *

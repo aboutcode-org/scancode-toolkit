@@ -5,8 +5,12 @@ name: Bison exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-bison-exception-2.0
+spdx_license_key: Bison-exception-1.24
+other_spdx_license_keys:
+    - LicenseRef-scancode-bison-exception-2.0
 faq_url: http://www.gnu.org/software/bison/manual/bison.html#Conditions
+other_urls:
+    - https://github.com/arineng/rwhoisd/blob/master/rwhoisd/mkdb/y.tab.c#L180
 standard_notice: |
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free

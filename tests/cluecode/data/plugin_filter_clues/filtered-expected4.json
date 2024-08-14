@@ -1,0 +1,340 @@
+{
+  "license_detections": [
+    {
+      "identifier": "gpl_1_0_plus_or_artistic_1_0__and_gpl_1_0_and_artistic_1_0_and_warranty_disclaimer-a1de207d-6b62-18b8-f372-e9820f733de3",
+      "license_expression": "(gpl-1.0-plus OR artistic-1.0) AND gpl-1.0 AND artistic-1.0 AND warranty-disclaimer",
+      "license_expression_spdx": "(GPL-1.0-or-later OR Artistic-1.0) AND GPL-1.0-only AND Artistic-1.0 AND LicenseRef-scancode-warranty-disclaimer",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "gpl-1.0-plus OR artistic-1.0",
+          "license_expression_spdx": "GPL-1.0-or-later OR Artistic-1.0",
+          "from_file": "LICENSE4",
+          "start_line": 3,
+          "end_line": 11,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 59,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl-1.0-plus_or_artistic-1.0_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_2.RULE"
+        },
+        {
+          "license_expression": "gpl-1.0",
+          "license_expression_spdx": "GPL-1.0-only",
+          "from_file": "LICENSE4",
+          "start_line": 13,
+          "end_line": 13,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 9,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl-1.0_10.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_10.RULE"
+        },
+        {
+          "license_expression": "gpl-1.0",
+          "license_expression_spdx": "GPL-1.0-only",
+          "from_file": "LICENSE4",
+          "start_line": 17,
+          "end_line": 19,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 15,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl-1.0_37.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_37.RULE"
+        },
+        {
+          "license_expression": "gpl-1.0",
+          "license_expression_spdx": "GPL-1.0-only",
+          "from_file": "LICENSE4",
+          "start_line": 21,
+          "end_line": 270,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2039,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl-1.0.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0.LICENSE"
+        },
+        {
+          "license_expression": "artistic-1.0",
+          "license_expression_spdx": "Artistic-1.0",
+          "from_file": "LICENSE4",
+          "start_line": 273,
+          "end_line": 273,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "artistic-1.0_9.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_9.RULE"
+        },
+        {
+          "license_expression": "artistic-1.0",
+          "license_expression_spdx": "Artistic-1.0",
+          "from_file": "LICENSE4",
+          "start_line": 277,
+          "end_line": 279,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 11,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "artistic-1.0_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_7.RULE"
+        },
+        {
+          "license_expression": "artistic-1.0",
+          "license_expression_spdx": "Artistic-1.0",
+          "from_file": "LICENSE4",
+          "start_line": 281,
+          "end_line": 281,
+          "matcher": "2-aho",
+          "score": 90.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 90,
+          "rule_identifier": "artistic-1.0_11.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_11.RULE"
+        },
+        {
+          "license_expression": "artistic-1.0",
+          "license_expression_spdx": "Artistic-1.0",
+          "from_file": "LICENSE4",
+          "start_line": 283,
+          "end_line": 372,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 729,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "artistic-1.0_4.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_4.RULE"
+        },
+        {
+          "license_expression": "warranty-disclaimer",
+          "license_expression_spdx": "LicenseRef-scancode-warranty-disclaimer",
+          "from_file": "LICENSE4",
+          "start_line": 374,
+          "end_line": 376,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 26,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "warranty-disclaimer_72.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_72.RULE"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE4",
+      "type": "file",
+      "name": "LICENSE4",
+      "base_name": "LICENSE4",
+      "extension": "",
+      "size": 18407,
+      "sha1": "8a2e40b4eb23cc05a0b78330d919a7ffacde7a9a",
+      "md5": "d5d03e14130735213e0532277df33cab",
+      "sha256": "e4bd79e88b577d66d351597c0d4114b9ee2e31f0544795e87a88ca1b0dd38383",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "detected_license_expression": "(gpl-1.0-plus OR artistic-1.0) AND gpl-1.0 AND artistic-1.0 AND warranty-disclaimer",
+      "detected_license_expression_spdx": "(GPL-1.0-or-later OR Artistic-1.0) AND GPL-1.0-only AND Artistic-1.0 AND LicenseRef-scancode-warranty-disclaimer",
+      "license_detections": [
+        {
+          "license_expression": "(gpl-1.0-plus OR artistic-1.0) AND gpl-1.0 AND artistic-1.0 AND warranty-disclaimer",
+          "license_expression_spdx": "(GPL-1.0-or-later OR Artistic-1.0) AND GPL-1.0-only AND Artistic-1.0 AND LicenseRef-scancode-warranty-disclaimer",
+          "matches": [
+            {
+              "license_expression": "gpl-1.0-plus OR artistic-1.0",
+              "spdx_license_expression": "GPL-1.0-or-later OR Artistic-1.0",
+              "from_file": "LICENSE4",
+              "start_line": 3,
+              "end_line": 11,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 59,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "gpl-1.0-plus_or_artistic-1.0_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_or_artistic-1.0_2.RULE"
+            },
+            {
+              "license_expression": "gpl-1.0",
+              "spdx_license_expression": "GPL-1.0-only",
+              "from_file": "LICENSE4",
+              "start_line": 13,
+              "end_line": 13,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 9,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "gpl-1.0_10.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_10.RULE"
+            },
+            {
+              "license_expression": "gpl-1.0",
+              "spdx_license_expression": "GPL-1.0-only",
+              "from_file": "LICENSE4",
+              "start_line": 17,
+              "end_line": 19,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 15,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "gpl-1.0_37.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_37.RULE"
+            },
+            {
+              "license_expression": "gpl-1.0",
+              "spdx_license_expression": "GPL-1.0-only",
+              "from_file": "LICENSE4",
+              "start_line": 21,
+              "end_line": 270,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2039,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "gpl-1.0.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-1.0.LICENSE"
+            },
+            {
+              "license_expression": "artistic-1.0",
+              "spdx_license_expression": "Artistic-1.0",
+              "from_file": "LICENSE4",
+              "start_line": 273,
+              "end_line": 273,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "artistic-1.0_9.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_9.RULE"
+            },
+            {
+              "license_expression": "artistic-1.0",
+              "spdx_license_expression": "Artistic-1.0",
+              "from_file": "LICENSE4",
+              "start_line": 277,
+              "end_line": 279,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 11,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "artistic-1.0_7.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_7.RULE"
+            },
+            {
+              "license_expression": "artistic-1.0",
+              "spdx_license_expression": "Artistic-1.0",
+              "from_file": "LICENSE4",
+              "start_line": 281,
+              "end_line": 281,
+              "matcher": "2-aho",
+              "score": 90.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 90,
+              "rule_identifier": "artistic-1.0_11.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_11.RULE"
+            },
+            {
+              "license_expression": "artistic-1.0",
+              "spdx_license_expression": "Artistic-1.0",
+              "from_file": "LICENSE4",
+              "start_line": 283,
+              "end_line": 372,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 729,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "artistic-1.0_4.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-1.0_4.RULE"
+            },
+            {
+              "license_expression": "warranty-disclaimer",
+              "spdx_license_expression": "LicenseRef-scancode-warranty-disclaimer",
+              "from_file": "LICENSE4",
+              "start_line": 374,
+              "end_line": 376,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 26,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "warranty-disclaimer_72.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/warranty-disclaimer_72.RULE"
+            }
+          ],
+          "identifier": "gpl_1_0_plus_or_artistic_1_0__and_gpl_1_0_and_artistic_1_0_and_warranty_disclaimer-a1de207d-6b62-18b8-f372-e9820f733de3"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 98.57,
+      "copyrights": [
+        {
+          "copyright": "copyright (c) 2013 by Mark Jason Dominus <mjd@cpan.org>",
+          "start_line": 1,
+          "end_line": 1
+        },
+        {
+          "copyright": "Copyright (c) 2013 by Mark Jason Dominus <mjd@cpan.org>",
+          "start_line": 15,
+          "end_line": 15
+        },
+        {
+          "copyright": "Copyright (c) 2013 by Mark Jason Dominus <mjd@cpan.org>",
+          "start_line": 275,
+          "end_line": 275
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Mark Jason Dominus",
+          "start_line": 1,
+          "end_line": 1
+        },
+        {
+          "holder": "Mark Jason Dominus",
+          "start_line": 15,
+          "end_line": 15
+        },
+        {
+          "holder": "Mark Jason Dominus",
+          "start_line": 275,
+          "end_line": 275
+        }
+      ],
+      "authors": [],
+      "emails": [],
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

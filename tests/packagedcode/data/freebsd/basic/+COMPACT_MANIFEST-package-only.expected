@@ -1,0 +1,64 @@
+[
+  {
+    "type": "freebsd",
+    "namespace": null,
+    "name": "dmidecode",
+    "version": "2.12",
+    "qualifiers": {
+      "arch": "freebsd:10:x86:64",
+      "origin": "sysutils/dmidecode"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "Dmidecode is a tool or dumping a computer's DMI (some say SMBIOS) table\ncontents in a human-readable format. The output contains a description of the\nsystem's hardware components, as well as other useful pieces of information\nsuch as serial numbers and BIOS revision.\n\nWWW: http://www.nongnu.org/dmidecode/",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": null,
+        "email": "anders@FreeBSD.org",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "sysutils"
+    ],
+    "homepage_url": "http://www.nongnu.org/dmidecode/",
+    "download_url": "https://pkg.freebsd.org/freebsd:10:x86:64/latest/All/dmidecode-2.12.txz",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": {
+      "licenses": [
+        "GPLv2"
+      ],
+      "licenselogic": "single"
+    },
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "freebsd_compact_manifest",
+    "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode"
+  }
+]

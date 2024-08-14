@@ -6,8 +6,8 @@ copyrights:
   - Copyright 1991 by the Massachusetts Institute of Technology
   - Copyright (c) 2001 AT&T
   - Copyright (c) 2004-2006 by Henrique de Moraes Holschuh <hmh@debian.org>
-  - Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO
-    , and other contributors
+  - Copyright 2005-2007 Christopher Montgomery, Jean-Marc Valin, Timothy Terriberry, CSIRO,
+    and other contributors
   - Copyright (c) 2007 James Newton-King
   - Copyright (c) 2006, SHIMODA Hiroshi <piro@p.club.ne.jp>
   - Copyright (c) 2006, FUJITA Yuji <yuji@webmasters.gr.jp>
@@ -23,7 +23,7 @@ holders:
   - the Massachusetts Institute of Technology
   - AT&T
   - Henrique de Moraes Holschuh
-  - Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other contributors
+  - Christopher Montgomery, Jean-Marc Valin, Timothy Terriberry, CSIRO, and other contributors
   - James Newton-King
   - SHIMODA Hiroshi
   - FUJITA Yuji
@@ -40,8 +40,7 @@ holders_summary:
     count: 1
   - value: Academy of Motion Picture Arts and Sciences
     count: 1
-  - value: Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other
-      contributors
+  - value: Christopher Montgomery, Jean-Marc Valin, Timothy Terriberry, CSIRO, and other contributors
     count: 1
   - value: Corporation for National Research Initiatives
     count: 1

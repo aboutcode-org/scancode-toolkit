@@ -21,13 +21,13 @@ from packagedcode import debian
 from packagedcode import debian_copyright
 from packagedcode import distro
 from packagedcode import conda
+from packagedcode import conan
 from packagedcode import cocoapods
 from packagedcode import cran
 from packagedcode import freebsd
 from packagedcode import godeps
 from packagedcode import golang
 from packagedcode import haxe
-from packagedcode import jar_manifest
 from packagedcode import maven
 from packagedcode import misc
 from packagedcode import npm
@@ -39,6 +39,7 @@ from packagedcode import pypi
 from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
+from packagedcode import swift
 from packagedcode import win_pe
 from packagedcode import windows
 
@@ -77,9 +78,13 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     conda.CondaYamlHandler,
     conda.CondaMetaYamlHandler,
 
+    conan.ConanFileHandler,
+    conan.ConanDataHandler,
+
     cran.CranDescriptionFileHandler,
 
     debian_copyright.DebianCopyrightFileInPackageHandler,
+    debian_copyright.StandaloneDebianCopyrightFileHandler,
     debian.DebianDscFileHandler,
 
     debian.DebianControlFileInExtractedDebHandler,
@@ -145,9 +150,13 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     npm.NpmShrinkwrapJsonHandler,
     npm.YarnLockV1Handler,
     npm.YarnLockV2Handler,
+    npm.PnpmShrinkwrapYamlHandler,
+    npm.PnpmLockYamlHandler,
+    npm.PnpmWorkspaceYamlHandler,
 
     nuget.NugetNupkgHandler,
     nuget.NugetNuspecHandler,
+    nuget.NugetPackagesLockHandler,
 
     opam.OpamFileHandler,
 
@@ -164,6 +173,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     # pypi.PypiSdistArchiveHandler,
     pypi.PypiWheelHandler,
     pypi.PyprojectTomlHandler,
+    pypi.PoetryPyprojectTomlHandler,
+    pypi.PoetryLockHandler,
     pypi.PythonEditableInstallationPkgInfoFile,
     pypi.PythonEggPkgInfoFile,
     pypi.PythonInstalledWheelMetadataFile,
@@ -192,9 +203,16 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     rubygems.GemspecInExtractedGemHandler,
     rubygems.GemspecHandler,
 
+    swift.SwiftManifestJsonHandler,
+    swift.SwiftPackageResolvedHandler,
+    swift.SwiftShowDependenciesDepLockHandler,
+
     windows.MicrosoftUpdateManifestHandler,
 
     win_pe.WindowsExecutableHandler,
+
+    # These are handlers for deplock generated files
+    pypi.PipInspectDeplockHandler,
 ]
 
 if on_linux:
@@ -208,13 +226,14 @@ SYSTEM_PACKAGE_DATAFILE_HANDLERS = [
     debian_copyright.DebianCopyrightFileInPackageHandler,
     debian_copyright.DebianCopyrightFileInSourceHandler,
 
-    # TODO: consider activating? debian_copyright.StandaloneDebianCopyrightFileHandler,
-
     debian.DebianDistrolessInstalledDatabaseHandler,
 
     debian.DebianInstalledFilelistHandler,
     debian.DebianInstalledMd5sumFilelistHandler,
     debian.DebianInstalledStatusDatabaseHandler,
+
+    rpm.RpmLicenseFilesHandler,
+    rpm.RpmMarinerContainerManifestHandler
 ]
 
 if on_linux:

@@ -2,11 +2,11 @@
   "packages": [
     {
       "type": "deb",
-      "namespace": null,
+      "namespace": "ubuntu",
       "name": "libncurses5",
       "version": "6.1-1ubuntu1",
       "qualifiers": {
-        "architecture": "amd64"
+        "arch": "amd64"
       },
       "subpath": null,
       "primary_language": null,
@@ -16,8 +16,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-          "email": null,
+          "name": "Ubuntu Developers",
+          "email": "ubuntu-devel-discuss@lists.ubuntu.com",
           "url": null
         }
       ],
@@ -45,15 +45,17 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [
-        "pkg:deb/ncurses"
+        "pkg:deb/ubuntu/ncurses"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "same"
       },
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "end-to-end.tgz/var/lib/dpkg/status",
         "end-to-end.tgz/var/lib/dpkg/info/libncurses5:amd64.md5sums"
@@ -62,7 +64,7 @@
         "debian_installed_status_db",
         "debian_installed_md5sums"
       ],
-      "purl": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64"
+      "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1?arch=amd64"
     }
   ],
   "dependencies": [],
@@ -93,7 +95,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -123,7 +125,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -132,7 +134,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -141,7 +143,7 @@
       "type": "file",
       "package_data": [],
       "for_packages": [
-        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -264,6 +266,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -274,7 +278,7 @@
         }
       ],
       "for_packages": [
-        "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -284,11 +288,11 @@
       "package_data": [
         {
           "type": "deb",
-          "namespace": null,
+          "namespace": "ubuntu",
           "name": "libncurses5",
           "version": "6.1-1ubuntu1",
           "qualifiers": {
-            "architecture": "amd64"
+            "arch": "amd64"
           },
           "subpath": null,
           "primary_language": null,
@@ -298,8 +302,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-              "email": null,
+              "name": "Ubuntu Developers",
+              "email": "ubuntu-devel-discuss@lists.ubuntu.com",
               "url": null
             }
           ],
@@ -327,9 +331,11 @@
           "extracted_license_statement": null,
           "notice_text": null,
           "source_packages": [
-            "pkg:deb/ncurses"
+            "pkg:deb/ubuntu/ncurses"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "same"
           },
@@ -338,7 +344,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
-          "purl": "pkg:deb/libncurses5@6.1-1ubuntu1?architecture=amd64"
+          "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1?arch=amd64"
         }
       ],
       "for_packages": [],

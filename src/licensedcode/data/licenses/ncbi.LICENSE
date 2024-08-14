@@ -5,9 +5,20 @@ name: NCBI Public Domain Notice
 category: Public Domain
 owner: NCBI
 homepage_url: https://github.com/ncbi/ngs/blob/master/LICENSE#L8
-spdx_license_key: LicenseRef-scancode-ncbi
+spdx_license_key: NCBI-PD
+other_spdx_license_keys:
+    - LicenseRef-scancode-ncbi
 other_urls:
     - https://blast.ncbi.nlm.nih.gov/Blast.cgi
+    - https://github.com/ncbi/sra-tools/blob/e8e5b6af4edc460156ad9ce5902d0779cffbf685/LICENSE
+    - https://github.com/ncbi/datasets/blob/0ea4cd16b61e5b799d9cc55aecfa016d6c9bd2bf/LICENSE.md
+    - https://github.com/ncbi/gprobe/blob/de64d30fee8b4c4013094d7d3139ea89b5dd1ace/LICENSE
+    - https://github.com/ncbi/egapx/blob/08930b9dec0c69b2d1a05e5153c7b95ef0a3eb0f/LICENSE
+    - https://github.com/ncbi/datasets/blob/master/LICENSE.md
+notes: |
+    Added in SPDX license list 3.24
+    This was before the us-govt-public-domain_25.RULE
+    Earlier text is now a rule
 ---
 
 PUBLIC DOMAIN NOTICE

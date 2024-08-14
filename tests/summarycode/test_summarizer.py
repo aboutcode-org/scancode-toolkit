@@ -21,7 +21,6 @@ from summarycode.summarizer import remove_from_tallies
 from summarycode.summarizer import get_primary_language
 from summarycode.summarizer import get_holders_from_copyright
 
-
 pytestmark = pytest.mark.scanslow
 
 
@@ -125,6 +124,18 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_summary_root_package_with_embedded_packages(self):
+        test_dir = self.get_test_loc('summary/embedded_packages/bunkerweb')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('summary/embedded_packages/bunkerweb.expected.json')
+        run_scan_click([
+            '-clip',
+            '--summary',
+            '--classify',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
     def test_summary_use_holder_from_package_resource(self):
         test_dir = self.get_test_loc('summary/use_holder_from_package_resource/codebase')
         result_file = self.get_temp_file('json')
@@ -173,7 +184,6 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
-
     def test_remove_from_tallies(self):
         tallies = [
             {
@@ -205,7 +215,7 @@ class TestScanSummary(FileDrivenTesting):
             }
         ]
         result_1 = remove_from_tallies(test_entry_1, copy(tallies))
-        assert(result_1, expected_1)
+        assert result_1 == expected_1
 
         test_entry_2 = [
             {
@@ -224,7 +234,7 @@ class TestScanSummary(FileDrivenTesting):
             },
         ]
         result_2 = remove_from_tallies(test_entry_2, copy(tallies))
-        assert(result_2, expected_2)
+        assert result_2 == expected_2
 
         test_entry_3 = 'apache-2.0'
         expected_3 = [
@@ -238,7 +248,7 @@ class TestScanSummary(FileDrivenTesting):
             }
         ]
         result_3 = remove_from_tallies(test_entry_3, copy(tallies))
-        assert(result_3, expected_3)
+        assert result_3 == expected_3
 
     def test_get_primary_language(self):
         language_tallies = [
@@ -257,19 +267,18 @@ class TestScanSummary(FileDrivenTesting):
         ]
         expected_1 = 'Python'
         result_1 = get_primary_language(language_tallies)
-        assert(result_1, expected_1)
+        assert result_1 == expected_1
 
     def test_get_holders_from_copyright(self):
-        test_copyright = 'Copyright (c) 2017, The University of Chicago. All rights reserved.'
-        expected_1 = ['The University of Chicago']
-        result_1 = get_holders_from_copyright(test_copyright)
-        assert(result_1, expected_1)
+        test_copyright_string = 'Copyright (c) 2017, The University of Chicago. All rights reserved.'
+        result = list(get_holders_from_copyright(test_copyright_string))
+        assert result == ['The University of Chicago']
 
-        test_copyrights = [
+        test_copyright_lines = [
             'Copyright (c) 2017, The University of Chicago. All rights reserved.',
             'Copyright (c) MIT',
             'Copyright (c) Apache Software Foundation',
         ]
-        expected_2 = ['The University of Chicago', 'MIT', 'Apache Software Foundation']
-        result_2 = get_holders_from_copyright(test_copyrights)
-        assert(result_2, expected_2)
+
+        result = list(get_holders_from_copyright(test_copyright_lines))
+        assert result == ['The University of Chicago', 'MIT', 'Apache Software Foundation']

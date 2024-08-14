@@ -4,7 +4,12 @@ short_name: NVIDIA 2002 License
 name: NVIDIA 2002 License
 category: Permissive
 owner: NVIDIA
-spdx_license_key: LicenseRef-scancode-nvidia-2002
+spdx_license_key: AML-glslang
+other_spdx_license_keys:
+    - LicenseRef-scancode-nvidia-2002
+other_urls:
+    - https://github.com/KhronosGroup/glslang/blob/main/LICENSE.txt#L949
+    - https://docs.omniverse.nvidia.com/install-guide/latest/common/licenses.html
 ---
 
 NVIDIA Corporation("NVIDIA") supplies this software to you in

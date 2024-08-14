@@ -49,7 +49,7 @@ class GoModHandler(BaseGoModuleHandler):
     documentation_url = 'https://go.dev/ref/mod'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         gomods = go_mod.parse_gomod(location)
 
         dependencies = []
@@ -89,7 +89,7 @@ class GoModHandler(BaseGoModuleHandler):
         if namespace and name:
             repository_homepage_url = f'https://pkg.go.dev/{namespace}/{name}'
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -100,6 +100,7 @@ class GoModHandler(BaseGoModuleHandler):
             dependencies=dependencies,
             primary_language=cls.default_primary_language,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 class GoSumHandler(BaseGoModuleHandler):
@@ -111,7 +112,7 @@ class GoSumHandler(BaseGoModuleHandler):
     documentation_url = 'https://go.dev/ref/mod#go-sum-files'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         gosums = go_mod.parse_gosum(location)
         package_dependencies = []
         for gosum in gosums:
@@ -126,9 +127,10 @@ class GoSumHandler(BaseGoModuleHandler):
                 )
             )
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             dependencies=package_dependencies,
             primary_language=cls.default_primary_language,
         )
+        yield models.PackageData.from_data(package_data, package_only)

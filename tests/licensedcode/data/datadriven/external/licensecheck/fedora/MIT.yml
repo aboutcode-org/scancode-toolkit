@@ -33,7 +33,7 @@ license_expressions:
   - x11 AND other-permissive
   - widget-workshop
   - other-permissive
-  - other-permissive
+  - openvision
   - other-permissive
   - other-permissive
   - unixcrypt

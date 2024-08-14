@@ -79,7 +79,7 @@ class CondaMetaYamlHandler(models.DatafileHandler):
         )
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         metayaml = get_meta_yaml_data(location)
         package_element = metayaml.get('package') or {}
         package_name = package_element.get('name')
@@ -118,7 +118,7 @@ class CondaMetaYamlHandler(models.DatafileHandler):
                     )
                 )
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=package_name,
@@ -131,6 +131,7 @@ class CondaMetaYamlHandler(models.DatafileHandler):
             extracted_license_statement=extracted_license_statement,
             dependencies=dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 def get_meta_yaml_data(location):

@@ -2,11 +2,11 @@
   "packages": [
     {
       "type": "deb",
-      "namespace": null,
+      "namespace": "ubuntu",
       "name": "base-files",
       "version": "11ubuntu5",
       "qualifiers": {
-        "architecture": "amd64"
+        "arch": "amd64"
       },
       "subpath": null,
       "primary_language": null,
@@ -16,8 +16,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-          "email": null,
+          "name": "Ubuntu Developers",
+          "email": "ubuntu-devel-discuss@lists.ubuntu.com",
           "url": null
         }
       ],
@@ -45,6 +45,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign",
         "missing_file_references": [
@@ -62,7 +64,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:deb/base-files@11ubuntu5?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:deb/ubuntu/base-files@11ubuntu5?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ubuntu-var-lib-dpkg/var/lib/dpkg/status",
         "ubuntu-var-lib-dpkg/var/lib/dpkg/info/base-files.list"
@@ -71,15 +73,15 @@
         "debian_installed_status_db",
         "debian_installed_files_list"
       ],
-      "purl": "pkg:deb/base-files@11ubuntu5?architecture=amd64"
+      "purl": "pkg:deb/ubuntu/base-files@11ubuntu5?arch=amd64"
     },
     {
       "type": "deb",
-      "namespace": null,
+      "namespace": "debian",
       "name": "base-passwd",
       "version": "3.5.47",
       "qualifiers": {
-        "architecture": "amd64"
+        "arch": "amd64"
       },
       "subpath": null,
       "primary_language": null,
@@ -89,8 +91,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Colin Watson <cjwatson@debian.org>",
-          "email": null,
+          "name": "Colin Watson",
+          "email": "cjwatson@debian.org",
           "url": null
         }
       ],
@@ -118,6 +120,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign",
         "missing_file_references": [
@@ -279,7 +283,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:deb/base-passwd@3.5.47?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:deb/debian/base-passwd@3.5.47?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ubuntu-var-lib-dpkg/var/lib/dpkg/status",
         "ubuntu-var-lib-dpkg/var/lib/dpkg/info/base-passwd.md5sums"
@@ -288,15 +292,15 @@
         "debian_installed_status_db",
         "debian_installed_md5sums"
       ],
-      "purl": "pkg:deb/base-passwd@3.5.47?architecture=amd64"
+      "purl": "pkg:deb/debian/base-passwd@3.5.47?arch=amd64"
     },
     {
       "type": "deb",
-      "namespace": null,
+      "namespace": "ubuntu",
       "name": "bash",
       "version": "5.0-6ubuntu1",
       "qualifiers": {
-        "architecture": "amd64"
+        "arch": "amd64"
       },
       "subpath": null,
       "primary_language": null,
@@ -306,8 +310,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-          "email": null,
+          "name": "Ubuntu Developers",
+          "email": "ubuntu-devel-discuss@lists.ubuntu.com",
           "url": null
         }
       ],
@@ -335,6 +339,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign",
         "missing_file_references": [
@@ -550,7 +556,7 @@
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:deb/bash@5.0-6ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:deb/ubuntu/bash@5.0-6ubuntu1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ubuntu-var-lib-dpkg/var/lib/dpkg/status",
         "ubuntu-var-lib-dpkg/var/lib/dpkg/info/bash.list",
@@ -561,15 +567,77 @@
         "debian_installed_files_list",
         "debian_installed_md5sums"
       ],
-      "purl": "pkg:deb/bash@5.0-6ubuntu1?architecture=amd64"
+      "purl": "pkg:deb/ubuntu/bash@5.0-6ubuntu1?arch=amd64"
     },
     {
       "type": "deb",
-      "namespace": null,
+      "namespace": "ubuntu",
+      "name": "e2fsprogs",
+      "version": "1.46.2-2",
+      "qualifiers": {
+        "arch": "amd64"
+      },
+      "subpath": null,
+      "primary_language": null,
+      "description": "ext2/ext3/ext4 file system utilities\n The ext2, ext3 and ext4 file systems are successors of the original ext\n (\"extended\") file system. They are the main file system types used for\n hard disks on Debian and other Linux systems.\n .\n This package contains programs for creating, checking, and maintaining\n ext2/3/4-based file systems.  It also includes the \"badblocks\" program,\n which can be used to scan for bad blocks on a disk or other storage device.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "maintainer",
+          "name": "Theodore Y. Ts'o",
+          "email": "tytso@mit.edu",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "admin"
+      ],
+      "homepage_url": "http://e2fsprogs.sourceforge.net",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "multi_arch": "foreign"
+      },
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:deb/ubuntu/e2fsprogs@1.46.2-2?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "ubuntu-var-lib-dpkg/var/lib/dpkg/status"
+      ],
+      "datasource_ids": [
+        "debian_installed_status_db"
+      ],
+      "purl": "pkg:deb/ubuntu/e2fsprogs@1.46.2-2?arch=amd64"
+    },
+    {
+      "type": "deb",
+      "namespace": "ubuntu",
       "name": "tar",
       "version": "1.30+dfsg-7",
       "qualifiers": {
-        "architecture": "amd64"
+        "arch": "amd64"
       },
       "subpath": null,
       "primary_language": null,
@@ -579,8 +647,8 @@
         {
           "type": null,
           "role": "maintainer",
-          "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-          "email": null,
+          "name": "Ubuntu Developers",
+          "email": "ubuntu-devel-discuss@lists.ubuntu.com",
           "url": null
         }
       ],
@@ -608,20 +676,22 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign"
       },
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "package_uid": "pkg:deb/tar@1.30%2Bdfsg-7?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "package_uid": "pkg:deb/ubuntu/tar@1.30%2Bdfsg-7?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "ubuntu-var-lib-dpkg/var/lib/dpkg/status"
       ],
       "datasource_ids": [
         "debian_installed_status_db"
       ],
-      "purl": "pkg:deb/tar@1.30%2Bdfsg-7?architecture=amd64"
+      "purl": "pkg:deb/ubuntu/tar@1.30%2Bdfsg-7?arch=amd64"
     }
   ],
   "dependencies": [],
@@ -1616,6 +1686,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1626,7 +1698,7 @@
         }
       ],
       "for_packages": [
-        "pkg:deb/base-files@11ubuntu5?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/ubuntu/base-files@11ubuntu5?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -1822,6 +1894,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1832,7 +1906,7 @@
         }
       ],
       "for_packages": [
-        "pkg:deb/base-passwd@3.5.47?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/debian/base-passwd@3.5.47?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -2262,6 +2336,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2272,7 +2348,7 @@
         }
       ],
       "for_packages": [
-        "pkg:deb/bash@5.0-6ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/ubuntu/bash@5.0-6ubuntu1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -2513,6 +2589,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2523,7 +2601,7 @@
         }
       ],
       "for_packages": [
-        "pkg:deb/bash@5.0-6ubuntu1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:deb/ubuntu/bash@5.0-6ubuntu1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -2533,11 +2611,11 @@
       "package_data": [
         {
           "type": "deb",
-          "namespace": null,
+          "namespace": "ubuntu",
           "name": "base-files",
           "version": "11ubuntu5",
           "qualifiers": {
-            "architecture": "amd64"
+            "arch": "amd64"
           },
           "subpath": null,
           "primary_language": null,
@@ -2547,8 +2625,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-              "email": null,
+              "name": "Ubuntu Developers",
+              "email": "ubuntu-devel-discuss@lists.ubuntu.com",
               "url": null
             }
           ],
@@ -2577,6 +2655,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2585,15 +2665,15 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
-          "purl": "pkg:deb/base-files@11ubuntu5?architecture=amd64"
+          "purl": "pkg:deb/ubuntu/base-files@11ubuntu5?arch=amd64"
         },
         {
           "type": "deb",
-          "namespace": null,
+          "namespace": "debian",
           "name": "base-passwd",
           "version": "3.5.47",
           "qualifiers": {
-            "architecture": "amd64"
+            "arch": "amd64"
           },
           "subpath": null,
           "primary_language": null,
@@ -2603,8 +2683,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Colin Watson <cjwatson@debian.org>",
-              "email": null,
+              "name": "Colin Watson",
+              "email": "cjwatson@debian.org",
               "url": null
             }
           ],
@@ -2633,6 +2713,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2641,15 +2723,15 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
-          "purl": "pkg:deb/base-passwd@3.5.47?architecture=amd64"
+          "purl": "pkg:deb/debian/base-passwd@3.5.47?arch=amd64"
         },
         {
           "type": "deb",
-          "namespace": null,
+          "namespace": "ubuntu",
           "name": "bash",
           "version": "5.0-6ubuntu1",
           "qualifiers": {
-            "architecture": "amd64"
+            "arch": "amd64"
           },
           "subpath": null,
           "primary_language": null,
@@ -2659,8 +2741,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-              "email": null,
+              "name": "Ubuntu Developers",
+              "email": "ubuntu-devel-discuss@lists.ubuntu.com",
               "url": null
             }
           ],
@@ -2689,6 +2771,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2697,15 +2781,73 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
-          "purl": "pkg:deb/bash@5.0-6ubuntu1?architecture=amd64"
+          "purl": "pkg:deb/ubuntu/bash@5.0-6ubuntu1?arch=amd64"
         },
         {
           "type": "deb",
-          "namespace": null,
+          "namespace": "ubuntu",
+          "name": "e2fsprogs",
+          "version": "1.46.2-2",
+          "qualifiers": {
+            "arch": "amd64"
+          },
+          "subpath": null,
+          "primary_language": null,
+          "description": "ext2/ext3/ext4 file system utilities\n The ext2, ext3 and ext4 file systems are successors of the original ext\n (\"extended\") file system. They are the main file system types used for\n hard disks on Debian and other Linux systems.\n .\n This package contains programs for creating, checking, and maintaining\n ext2/3/4-based file systems.  It also includes the \"badblocks\" program,\n which can be used to scan for bad blocks on a disk or other storage device.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "maintainer",
+              "name": "Theodore Y. Ts'o",
+              "email": "tytso@mit.edu",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "admin"
+          ],
+          "homepage_url": "http://e2fsprogs.sourceforge.net",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "multi_arch": "foreign"
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_installed_status_db",
+          "purl": "pkg:deb/ubuntu/e2fsprogs@1.46.2-2?arch=amd64"
+        },
+        {
+          "type": "deb",
+          "namespace": "ubuntu",
           "name": "tar",
           "version": "1.30+dfsg-7",
           "qualifiers": {
-            "architecture": "amd64"
+            "arch": "amd64"
           },
           "subpath": null,
           "primary_language": null,
@@ -2715,8 +2857,8 @@
             {
               "type": null,
               "role": "maintainer",
-              "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-              "email": null,
+              "name": "Ubuntu Developers",
+              "email": "ubuntu-devel-discuss@lists.ubuntu.com",
               "url": null
             }
           ],
@@ -2745,6 +2887,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2753,7 +2897,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "debian_installed_status_db",
-          "purl": "pkg:deb/tar@1.30%2Bdfsg-7?architecture=amd64"
+          "purl": "pkg:deb/ubuntu/tar@1.30%2Bdfsg-7?arch=amd64"
         }
       ],
       "for_packages": [],

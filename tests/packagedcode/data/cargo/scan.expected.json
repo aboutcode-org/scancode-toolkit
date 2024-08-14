@@ -19,7 +19,10 @@
           "url": null
         }
       ],
-      "keywords": [],
+      "keywords": [
+        "apple",
+        "xar"
+      ],
       "homepage_url": "https://github.com/indygreg/PyOxidizer",
       "download_url": null,
       "size": null,
@@ -64,7 +67,11 @@
       "extracted_license_statement": "MPL-2.0",
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {},
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "rust_edition": "2021"
+      },
       "repository_homepage_url": "https://crates.io/crates/apple-xar",
       "repository_download_url": "https://crates.io/api/v1/crates/apple-xar/0.4.0-pre/download",
       "api_data_url": "https://crates.io/api/v1/crates/apple-xar",
@@ -103,7 +110,17 @@
           "url": null
         }
       ],
-      "keywords": [],
+      "keywords": [
+        "search",
+        "text",
+        "aho",
+        "multi",
+        "double-array",
+        "text-processing",
+        "algorithms",
+        "data-structures",
+        "no-std"
+      ],
       "homepage_url": "https://github.com/daac-tools/daachorse",
       "download_url": null,
       "size": null,
@@ -148,7 +165,17 @@
       "extracted_license_statement": "MIT OR Apache-2.0",
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {},
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "workspace": {
+          "members": [
+            "bench",
+            "daacfind"
+          ]
+        },
+        "rust_edition": "2021"
+      },
       "repository_homepage_url": "https://crates.io/crates/daachorse",
       "repository_download_url": "https://crates.io/api/v1/crates/daachorse/0.4.1/download",
       "api_data_url": "https://crates.io/api/v1/crates/daachorse",
@@ -164,12 +191,352 @@
   ],
   "dependencies": [
     {
+      "purl": "pkg:cargo/base64",
+      "extracted_requirement": "0.13",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/base64?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/bcder",
+      "extracted_requirement": "0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/bcder?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/bzip2",
+      "extracted_requirement": "0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/bzip2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/chrono",
+      "extracted_requirement": "0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "0.4",
+        "features": [
+          "serde"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/chrono?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/digest",
+      "extracted_requirement": "0.10",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/digest?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/log",
+      "extracted_requirement": "0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/log?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/md-5",
+      "extracted_requirement": "0.10",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/md-5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/flate2",
+      "extracted_requirement": "1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/flate2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/rand",
+      "extracted_requirement": "0.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/rand?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/reqwest",
+      "extracted_requirement": "0.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "0.11",
+        "default-features": false
+      },
+      "dependency_uid": "pkg:cargo/reqwest?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/scroll",
+      "extracted_requirement": "0.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "0.11",
+        "features": [
+          "derive"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/scroll?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/serde-xml-rs",
+      "extracted_requirement": "0.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/serde-xml-rs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/serde",
+      "extracted_requirement": "1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "1.0",
+        "features": [
+          "derive"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/serde?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/sha1",
+      "extracted_requirement": "0.10",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/sha1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/sha2",
+      "extracted_requirement": "0.10",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/sha2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/thiserror",
+      "extracted_requirement": "1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/thiserror?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/url",
+      "extracted_requirement": "2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/url?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/xml-rs",
+      "extracted_requirement": "0.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/xml-rs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/xz2",
+      "extracted_requirement": "0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/xz2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/cryptographic-message-syntax",
+      "extracted_requirement": "0.15.0-pre",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "../cryptographic-message-syntax",
+        "version": "0.15.0-pre"
+      },
+      "dependency_uid": "pkg:cargo/cryptographic-message-syntax?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/x509-certificate",
+      "extracted_requirement": "0.13.0-pre",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "../x509-certificate",
+        "version": "0.13.0-pre"
+      },
+      "dependency_uid": "pkg:cargo/x509-certificate?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/apple-xar@0.4.0-pre?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "scan/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
       "purl": "pkg:cargo/ahash@0.7.4",
       "extracted_requirement": "0.7.4",
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/ahash@0.7.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -184,6 +551,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/autocfg@1.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -198,6 +566,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/cfg-if@0.1.10?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -212,6 +581,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/cfg-if@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -226,6 +596,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/chrono@0.4.19?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -240,6 +611,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/getrandom@0.2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -254,6 +626,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/hashbrown@0.11.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -268,6 +641,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/libc@0.2.97?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -282,6 +656,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/log@0.4.14?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -296,6 +671,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/memory_units@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -310,6 +686,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/num-integer@0.1.44?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -324,6 +701,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/num-traits@0.2.14?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -338,6 +716,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/once_cell@1.8.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -352,6 +731,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/proxy-wasm@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -366,6 +746,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/time@0.1.43?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -380,6 +761,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/version_check@0.9.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -394,6 +776,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/wasi@0.10.2%2Bwasi-snapshot-preview1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -408,6 +791,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/wee_alloc@0.4.5?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -422,6 +806,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/winapi@0.3.9?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -436,6 +821,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/winapi-i686-pc-windows-gnu@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -450,6 +836,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:cargo/winapi-x86_64-pc-windows-gnu@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -504,6 +891,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -513,6 +902,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -523,6 +913,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -533,6 +924,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -543,6 +935,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -553,6 +946,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -563,6 +957,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -573,6 +968,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -583,6 +979,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -593,6 +990,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -603,6 +1001,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -613,6 +1012,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -623,6 +1023,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -633,6 +1034,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -643,6 +1045,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -653,6 +1056,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -663,6 +1067,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -673,6 +1078,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -683,6 +1089,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -693,6 +1100,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -703,6 +1111,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -713,6 +1122,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -752,7 +1162,10 @@
               "url": null
             }
           ],
-          "keywords": [],
+          "keywords": [
+            "apple",
+            "xar"
+          ],
           "homepage_url": "https://github.com/indygreg/PyOxidizer",
           "download_url": null,
           "size": null,
@@ -798,8 +1211,268 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
-          "dependencies": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "rust_edition": "2021"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/base64",
+              "extracted_requirement": "0.13",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/bcder",
+              "extracted_requirement": "0.6",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/bzip2",
+              "extracted_requirement": "0.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/chrono",
+              "extracted_requirement": "0.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "0.4",
+                "features": [
+                  "serde"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/digest",
+              "extracted_requirement": "0.10",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/log",
+              "extracted_requirement": "0.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/md-5",
+              "extracted_requirement": "0.10",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/flate2",
+              "extracted_requirement": "1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/rand",
+              "extracted_requirement": "0.8",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/reqwest",
+              "extracted_requirement": "0.11",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "0.11",
+                "default-features": false
+              }
+            },
+            {
+              "purl": "pkg:cargo/scroll",
+              "extracted_requirement": "0.11",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "0.11",
+                "features": [
+                  "derive"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/serde-xml-rs",
+              "extracted_requirement": "0.5",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/serde",
+              "extracted_requirement": "1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "1.0",
+                "features": [
+                  "derive"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/sha1",
+              "extracted_requirement": "0.10",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/sha2",
+              "extracted_requirement": "0.10",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/thiserror",
+              "extracted_requirement": "1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/url",
+              "extracted_requirement": "2.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/xml-rs",
+              "extracted_requirement": "0.8",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/xz2",
+              "extracted_requirement": "0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/cryptographic-message-syntax",
+              "extracted_requirement": "0.15.0-pre",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "path": "../cryptographic-message-syntax",
+                "version": "0.15.0-pre"
+              }
+            },
+            {
+              "purl": "pkg:cargo/x509-certificate",
+              "extracted_requirement": "0.13.0-pre",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "path": "../x509-certificate",
+                "version": "0.13.0-pre"
+              }
+            }
+          ],
           "repository_homepage_url": "https://crates.io/crates/apple-xar",
           "repository_download_url": "https://crates.io/api/v1/crates/apple-xar/0.4.0-pre/download",
           "api_data_url": "https://crates.io/api/v1/crates/apple-xar",
@@ -849,7 +1522,17 @@
               "url": null
             }
           ],
-          "keywords": [],
+          "keywords": [
+            "search",
+            "text",
+            "aho",
+            "multi",
+            "double-array",
+            "text-processing",
+            "algorithms",
+            "data-structures",
+            "no-std"
+          ],
           "homepage_url": "https://github.com/daac-tools/daachorse",
           "download_url": null,
           "size": null,
@@ -895,7 +1578,17 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "workspace": {
+              "members": [
+                "bench",
+                "daacfind"
+              ]
+            },
+            "rust_edition": "2021"
+          },
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/daachorse",
           "repository_download_url": "https://crates.io/api/v1/crates/daachorse/0.4.1/download",

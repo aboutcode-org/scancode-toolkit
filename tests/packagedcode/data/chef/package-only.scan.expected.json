@@ -1,0 +1,157 @@
+{
+  "packages": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "package",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "package/metadata.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "chef",
+          "namespace": null,
+          "name": "301",
+          "version": "0.1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "Installs/Configures 301",
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "maintainer",
+              "name": "Mark Wilkerson",
+              "email": "mark@segfawlt.net",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:chef/nodejs",
+              "extracted_requirement": ">= 0.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",
+          "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
+          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
+          "datasource_id": "chef_cookbook_metadata_json",
+          "purl": "pkg:chef/301@0.1.0"
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "package/metadata.rb",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "chef",
+          "namespace": null,
+          "name": "301",
+          "version": "0.1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "Installs/Configures 301",
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "maintainer",
+              "name": "Mark Wilkerson",
+              "email": "mark@segfawlt.net",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:chef/nodejs",
+              "extracted_requirement": null,
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/",
+          "repository_download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
+          "api_data_url": "https://supermarket.chef.io/api/v1/cookbooks/301/versions/0.1.0",
+          "datasource_id": "chef_cookbook_metadata_rb",
+          "purl": "pkg:chef/301@0.1.0"
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}

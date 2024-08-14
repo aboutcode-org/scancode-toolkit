@@ -24,15 +24,15 @@ other_license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0 AND gpl-2.0 WIT
 other_license_expression_spdx: GPL-2.0-only WITH x11vnc-openssl-exception AND GPL-2.0-only WITH
   x11vnc-openssl-exception AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (Zlib AND (GPL-1.0-or-later AND GPL-1.0-or-later))
-  AND (GPL-1.0-or-later AND Zlib) AND LicenseRef-scancode-ssleay-windows AND LicenseRef-scancode-public-domain
+  AND (GPL-1.0-or-later AND Zlib) AND SSLeay-standalone AND LicenseRef-scancode-public-domain
   AND BSD-3-Clause AND NTP
 license_detections: []
 other_license_detections:
   - license_expression: ssleay-windows
-    license_expression_spdx: LicenseRef-scancode-ssleay-windows
+    license_expression_spdx: SSLeay-standalone
     matches:
       - license_expression: ssleay-windows
-        spdx_license_expression: LicenseRef-scancode-ssleay-windows
+        spdx_license_expression: SSLeay-standalone
         from_file:
         start_line: 43
         end_line: 100

@@ -30,7 +30,7 @@ class CranDescriptionFileHandler(models.DatafileHandler):
     documentation_url = 'https://r-pkgs.org/description.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         cran_desc = get_cran_description(location)
 
         name = cran_desc.get('Package')
@@ -93,7 +93,7 @@ class CranDescriptionFileHandler(models.DatafileHandler):
         # TODO: Let's handle the release date as a Date type
         # release_date = cran_desc.get('Date/Publication'),
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -105,6 +105,7 @@ class CranDescriptionFileHandler(models.DatafileHandler):
             dependencies=package_dependencies,
             repository_homepage_url=f'https://cran.r-project.org/package={name}',
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 # FIXME: THIS IS NOT YAML but RFC 822
 
