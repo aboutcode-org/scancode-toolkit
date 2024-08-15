@@ -321,6 +321,8 @@ class PackageSummary(PostScanPlugin):
         
         packages = codebase.attributes.packages
         package_resources = get_package_resources(codebase)
+        print("Here the package resources will start")
+        print(package_resources)
         package_attributes_map = {}
         attributes_to_update = [
             'license_clarity_score', 
@@ -335,7 +337,7 @@ class PackageSummary(PostScanPlugin):
             package_uid = package['package_uid']
             if package_uid in package_resources:
                 package_resource = [resource.to_dict() for resource in package_resources[package_uid]]
-            scoring_elements, package_attrs= compute_license_score(codebase=None, package_resources=package_resource)
+            scoring_elements, package_attrs= compute_license_score(resources=package_resource)
             license_clarity_score= scoring_elements.to_dict()
             package_attributes_map[package_uid] = {
                 'license_clarity_score': license_clarity_score,

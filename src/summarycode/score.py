@@ -75,12 +75,12 @@ class LicenseClarityScore(PostScanPlugin):
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        scoring_elements, declared_license_expression = compute_license_score(codebase)
+        scoring_elements, declared_license_expression = compute_license_score(resources=None)
         codebase.attributes.summary['declared_license_expression'] = declared_license_expression
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
 
-def compute_license_score(codebase, package_resources=None):
+def compute_license_score(resources):
     """
     Return a mapping of scoring elements and a license clarity score computed at
     the codebase/package level.
@@ -129,23 +129,20 @@ def compute_license_score(codebase, package_resources=None):
 
     scoring_elements = ScoringElements()
     license_detections = get_field_values_from_resources(
-        codebase,
-        package_resources,
+        resources,
         field_name='license_detections',
         key_files_only=True,
     )
     license_match_mappings = get_matches_from_detection_mappings(license_detections)
     license_matches = LicenseMatchFromResult.from_dicts(license_match_mappings)
     declared_license_expressions = get_field_values_from_resources(
-        codebase,
-        package_resources,
+        resources,
         field_name='detected_license_expression',
         key_files_only=True,
         is_string=True,
     )
     declared_license_expressions_spdx=get_field_values_from_resources(
-        codebase,
-        package_resources,
+        resources,
         field_name='detected_license_expression_spdx',
         key_files_only=True,
         is_string=True,
@@ -156,33 +153,28 @@ def compute_license_score(codebase, package_resources=None):
     declared_license_categories = get_license_categories(license_matches)
 
     copyrights = get_field_values_from_resources(
-        codebase,
-        package_resources,
+        resources,
         field_name='copyrights',
         key_files_only=True,
     )
     holders = get_field_values_from_resources(
-        codebase,
-        package_resources,
+        resources,
         field_name='holders',
         key_files_only=True,
     )
     notice_texts = get_field_values_from_resources(
-        codebase,
-        package_resources,
+        resources,
         field_name='notice_text',
         key_files_only=True,
     )
     other_license_expressions = get_field_values_from_resources(
-        codebase,
-        package_resources,
+        resources,
         field_name='detected_license_expression',
         key_files_only=False,
         is_string=True,
     )
     other_license_expressions_spdx= get_field_values_from_resources(
-        codebase,
-        package_resources,
+        resources,
         field_name='detected_license_expression_spdx',
         key_files_only=False,
         is_string=True,
@@ -225,8 +217,7 @@ def compute_license_score(codebase, package_resources=None):
     )
 
     other_license_detections = get_field_values_from_resources(
-        codebase,
-        package_resources,
+        resources,
         field_name='license_detections',
         key_files_only=False,
     )
@@ -272,9 +263,10 @@ def compute_license_score(codebase, package_resources=None):
         if scoring_elements.score > 0:
             scoring_elements.score -= 10
             
-    if package_resources:
-        return scoring_elements, packageAttrs
-    return scoring_elements, declared_license_expression or None
+    # if package_resources:
+    #     return scoring_elements, packageAttrs
+    # return scoring_elements, declared_license_expression or None
+    return scoring_elements, packageAttrs
 
 
 def unique(objects):
@@ -395,8 +387,7 @@ def check_declared_licenses(license_match_objects):
     return any(is_good_license(license_match_object) for license_match_object in license_match_objects)
 
 def get_field_values_from_resources(
-    codebase,
-    package_resources,
+    resources,
     field_name,
     key_files_only=False,
     is_string=False,
@@ -412,37 +403,37 @@ def get_field_values_from_resources(
     that are not classified as key files.
     """
     values = []
-    if codebase:
-        for resource in codebase.walk(topdown=True):
-            if key_files_only:
-                if not resource.is_key_file:
-                    continue
-            else:
-                if resource.is_key_file:
-                    continue
-            if is_string:
-                value = getattr(resource, field_name, None) or None
-                if value:
-                    values.append(value)
-            else:
-                for value in getattr(resource, field_name, []) or []:
-                    values.append(value)
+    # if codebase:
+    #     for resource in codebase.walk(topdown=True):
+    #         if key_files_only:
+    #             if not resource.is_key_file:
+    #                 continue
+    #         else:
+    #             if resource.is_key_file:
+    #                 continue
+    #         if is_string:
+    #             value = getattr(resource, field_name, None) or None
+    #             if value:
+    #                 values.append(value)
+    #         else:
+    #             for value in getattr(resource, field_name, []) or []:
+    #                 values.append(value)
 
-    if package_resources:
-        for resource in package_resources:
-            if key_files_only:
-                if not resource.get('is_key_file', False):
-                    continue
-            else:
-                if resource.get('is_key_file', False):
-                    continue
-            if is_string:
-                value = resource.get(field_name)
-                if value:
-                    values.append(value)
-            else:
-                for value in resource.get(field_name, []):
-                    values.append(value)
+    
+    for resource in resources:
+        if key_files_only:
+            if not resource.get('is_key_file', False):
+                continue
+        else:
+            if resource.get('is_key_file', False):
+                continue
+        if is_string:
+            value = resource.get(field_name)
+            if value:
+                values.append(value)
+        else:
+            for value in resource.get(field_name, []):
+                values.append(value)
                     
     return values
 

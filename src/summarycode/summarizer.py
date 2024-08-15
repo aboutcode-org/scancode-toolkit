@@ -106,19 +106,19 @@ class ScanSummary(PostScanPlugin):
                 top_level_packages=top_level_packages,
                 codebase=codebase,
             )
-
+        codebase_resources= get_codebase_resources(codebase)
         if declared_license_expression:
-            scoring_elements, _ = compute_license_score(codebase)
+            scoring_elements, _ = compute_license_score(resources=codebase_resources)
         else:
             # If we did not get a declared license expression from detected
             # package data, then we use the results from `compute_license_score`
-            scoring_elements, declared_license_expression = compute_license_score(codebase)
+            scoring_elements, declared_license_expression = compute_license_score(resources=codebase_resources)
         other_license_expressions = remove_from_tallies(
             declared_license_expression, license_expressions_tallies
         )
 
         if not declared_holders:
-            declared_holders = get_declared_holders(codebase, holders_tallies)
+            declared_holders = get_declared_holders(codebase_resources, holders_tallies)
         other_holders = remove_from_tallies(declared_holders, holders_tallies)
         declared_holder = ', '.join(declared_holders)
 
@@ -156,7 +156,7 @@ def remove_from_tallies(entry, tallies):
     return pruned_tallies
 
 
-def get_declared_holders(codebase, holders_tallies):
+def get_declared_holders(codebase_resources, holders_tallies):
     """
     Return a list of declared holders from a codebase using the holders
     detected from key files.
@@ -168,7 +168,7 @@ def get_declared_holders(codebase, holders_tallies):
         fingerprints.generate(entry['value']): entry for entry in holders_tallies if entry['value']
     }
     key_file_holders = get_field_values_from_resources(
-        codebase, package_resources=None, field_name='holders', key_files_only=True
+        resources=codebase_resources, field_name='holders', key_files_only=True
     )
     entry_by_key_file_holders = {
         fingerprints.generate(canonical_holder(entry['holder'])): entry
@@ -313,6 +313,30 @@ def get_holders_from_copyright(copyrght):
 
     for holder_detection in holder_detections:
         yield holder_detection.holder
+
+def get_codebase_resources(codebase):
+    """
+    Get resources for the codebase.
+    """
+    codebase_resources= []
+    for resource in codebase.walk(topdown=True):
+        codebase_resources.append(resource)
+        
+        # if key_files_only:
+        #     if not resource.is_key_file:
+        #         continue
+        # else:
+        #     if resource.is_key_file:
+        #         continue
+        # if is_string:
+        #     value = getattr(resource, field_name, None) or None
+        #     if value:
+        #         values.append(value)
+        # else:
+        #     for value in getattr(resource, field_name, []) or []:
+        #         values.append(value)
+    print(codebase_resources)
+    return codebase_resources
 
 
 def is_key_package(package, codebase):
