@@ -108,11 +108,11 @@ class ScanSummary(PostScanPlugin):
             )
         codebase_resources= get_codebase_resources(codebase)
         if declared_license_expression:
-            scoring_elements, _ = compute_license_score(resources=codebase_resources)
+            scoring_elements, _, _ = compute_license_score(resources=codebase_resources)
         else:
             # If we did not get a declared license expression from detected
             # package data, then we use the results from `compute_license_score`
-            scoring_elements, declared_license_expression = compute_license_score(resources=codebase_resources)
+            scoring_elements,_, declared_license_expression = compute_license_score(resources=codebase_resources)
         other_license_expressions = remove_from_tallies(
             declared_license_expression, license_expressions_tallies
         )
@@ -320,22 +320,8 @@ def get_codebase_resources(codebase):
     """
     codebase_resources= []
     for resource in codebase.walk(topdown=True):
-        codebase_resources.append(resource)
+        codebase_resources.append(resource.to_dict())
         
-        # if key_files_only:
-        #     if not resource.is_key_file:
-        #         continue
-        # else:
-        #     if resource.is_key_file:
-        #         continue
-        # if is_string:
-        #     value = getattr(resource, field_name, None) or None
-        #     if value:
-        #         values.append(value)
-        # else:
-        #     for value in getattr(resource, field_name, []) or []:
-        #         values.append(value)
-    print(codebase_resources)
     return codebase_resources
 
 

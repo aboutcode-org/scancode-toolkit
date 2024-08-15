@@ -75,7 +75,7 @@ class LicenseClarityScore(PostScanPlugin):
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        scoring_elements, declared_license_expression = compute_license_score(resources=None)
+        scoring_elements,_, declared_license_expression = compute_license_score(resources=None)
         codebase.attributes.summary['declared_license_expression'] = declared_license_expression
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
@@ -266,7 +266,7 @@ def compute_license_score(resources):
     # if package_resources:
     #     return scoring_elements, packageAttrs
     # return scoring_elements, declared_license_expression or None
-    return scoring_elements, packageAttrs
+    return scoring_elements, packageAttrs, declared_license_expression or None
 
 
 def unique(objects):
@@ -403,22 +403,6 @@ def get_field_values_from_resources(
     that are not classified as key files.
     """
     values = []
-    # if codebase:
-    #     for resource in codebase.walk(topdown=True):
-    #         if key_files_only:
-    #             if not resource.is_key_file:
-    #                 continue
-    #         else:
-    #             if resource.is_key_file:
-    #                 continue
-    #         if is_string:
-    #             value = getattr(resource, field_name, None) or None
-    #             if value:
-    #                 values.append(value)
-    #         else:
-    #             for value in getattr(resource, field_name, []) or []:
-    #                 values.append(value)
-
     
     for resource in resources:
         if key_files_only:
