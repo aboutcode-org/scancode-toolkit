@@ -126,10 +126,10 @@ Installation as an Application: Downloading Releases
 -----------------------------------------------------
 
 Get the Scancode Toolkit tarball archive of a specific version and your
-operating system by going to the `project releases page <https://github.com/nexB/scancode-toolkit/releases/>`_
+operating system by going to the `project releases page <https://github.com/aboutcode-org/scancode-toolkit/releases/>`_
 
 For example, Version 30.0.1 archive can be obtained from
-`Toolkit release 30.0.1 <https://github.com/nexB/scancode-toolkit/releases/tag/v30.0.1>`_
+`Toolkit release 30.0.1 <https://github.com/aboutcode-org/scancode-toolkit/releases/tag/v30.0.1>`_
 under assets options.
 
 .. Note::
@@ -198,7 +198,7 @@ Installation on Windows 10
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Download the latest ScanCode release zip file for Windows from the latest
-  version at https://github.com/nexB/scancode-toolkit/releases/
+  version at https://github.com/aboutcode-org/scancode-toolkit/releases/
 
 - In the File Explorer, select the downloaded ScanCode zip and right-click.
 
@@ -274,7 +274,7 @@ The prerequisite is a working `docker installation <https://docs.docker.com/engi
 Download the ScanCode-Toolkit Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- ``git clone https://github.com/nexB/scancode-toolkit`` to get the latest
+- ``git clone https://github.com/aboutcode-org/scancode-toolkit`` to get the latest
   ( :ref:`source_code_install` ) source code.
 
 
@@ -329,7 +329,7 @@ Download the ScanCode-Toolkit Source Code
 
 Run the following once you have `Git <https://git-scm.com/>`_ installed::
 
-    git clone https://github.com/nexB/scancode-toolkit.git
+    git clone https://github.com/aboutcode-org/scancode-toolkit.git
     cd scancode-toolkit
 
 
@@ -381,8 +381,8 @@ the standard Python package management tool.
     for ARM (like py-ahocorasick, intbitset). See :ref:`system_requirements` for
     more information. See related issues for more info:
 
-    - `Fallback pure-python deps <https://github.com/nexB/scancode-toolkit/issues/3210>`_
-    - `pip install failing on M1 <https://github.com/nexB/scancode-toolkit/issues/3205>`_
+    - `Fallback pure-python deps <https://github.com/aboutcode-org/scancode-toolkit/issues/3210>`_
+    - `pip install failing on M1 <https://github.com/aboutcode-org/scancode-toolkit/issues/3205>`_
 
 The steps are:
 
