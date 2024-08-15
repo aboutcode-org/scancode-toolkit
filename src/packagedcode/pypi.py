@@ -438,11 +438,9 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
     @classmethod
     def get_top_level_resources(cls, manifest_resource, codebase):
         if '.dist-info' in manifest_resource.path:
-            print("", manifest_resource.path)
             path_segments = manifest_resource.path.split('.dist-info')
             leading_segment = path_segments[0].strip()
             dist_info_dir_path = f'{leading_segment}.dist-info'
-            print("", dist_info_dir_path)
             meta_inf_resource = codebase.get_resource(dist_info_dir_path)
             if meta_inf_resource:
                 yield meta_inf_resource
