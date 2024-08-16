@@ -39,6 +39,13 @@ class TestPackageSummary(PackageTester):
         run_scan_click(['--package','--license','--copyright', '--strip-root', '--processes', '-1', '--package-summary', '--summary' , '--classify', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
     
+    def test_package_summary_for_rust(self):
+        test_dir = self.get_test_loc('package_summary/rust') 
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('package_summary/rust-expected.json')
+
+        run_scan_click(['--package','--license','--copyright', '--strip-root', '--processes', '-1', '--package-summary', '--summary' , '--classify', '--json-pp', result_file, test_dir])
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
     
     # # Package Attribute tests
     # def test_package_summary__does_summarize_npm_copyright(self): 
