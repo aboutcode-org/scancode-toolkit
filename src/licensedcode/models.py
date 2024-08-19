@@ -12,7 +12,6 @@ import sys
 import traceback
 from collections import Counter
 from collections import defaultdict
-from collections import OrderedDict
 from hashlib import sha1
 from itertools import chain
 from operator import itemgetter
@@ -1425,13 +1424,35 @@ class BasicRule:
             'Mutually exclusive from any is_license_* flag')
     )
 
+    is_required_phrase = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this is rule text is a required phrase. '
+            'A required phrase is often a part of another larger rule text '
+            'but is an essential section of the rule text which must be '
+            'present in the case of partial matches, otherwise the match '
+            'will be a false positive and misleading.')
+    )
+
+    skip_collecting_required_phrases = attr.ib(
+        default=False,
+        repr=False,
+        metadata=dict(
+            help='True if this rule needs to be skipped while collecting '
+            'required phrase rules. Required phrase rules are created out '
+            'of other rule texts which have marked required phrases, '
+            'because some marked required phrases are special and should '
+            'not be applied to other rules.')
+    )
+
     language = attr.ib(
         default='en',
         repr=False,
         metadata=dict(
             help='Two-letter ISO 639-1 language code if this license text is '
             'not in English. See https://en.wikipedia.org/wiki/ISO_639-1 .')
-        )
+    )
 
     minimum_coverage = attr.ib(
         default=0,
@@ -1472,7 +1493,7 @@ class BasicRule:
             'words in its matched range? The default is to allow non-continuous '
             'approximate matches. Any extra unmatched known or unknown word is '
             'considered to break a match continuity. This attribute is either '
-            'stored or computed when the whole rule text is a {{key phrase}}.')
+            'stored or computed when the whole rule text is a {{required phrase}}.')
     )
 
     relevance = attr.ib(
@@ -1616,11 +1637,11 @@ class BasicRule:
             help='Text of this rule')
     )
 
-    key_phrase_spans = attr.ib(
+    required_phrase_spans = attr.ib(
         default=attr.Factory(list),
         repr=False,
         metadata=dict(
-            help='List of spans representing key phrases for this rule. These are Spans '
+            help='List of spans representing required phrases for this rule. These are Spans '
             'of rule text position spans that must be present for this rule to be matched. '
             'Key phrases are enclosed in {{double curly braces}} in the rule text.'
         )
@@ -1793,6 +1814,28 @@ class BasicRule:
         # license flag instead
         return self.license_expression and 'unknown' in self.license_expression
 
+    @property
+    def license_flag_names(self):
+        return (
+            'is_license_text',
+            'is_license_notice',
+            'is_license_reference',
+            'is_license_tag',
+            'is_license_intro',
+            'is_license_clue',
+        )
+
+    @property
+    def license_flags(self):
+        return {
+            license_flag_name: getattr(self, license_flag_name)
+            for license_flag_name in self.license_flag_names
+        }
+
+    @property
+    def license_flag_values(self):
+        return self.license_flags.values()
+
     def validate(self, licensing=None, thorough=False):
         """
         Validate this rule using the provided ``licensing`` Licensing and yield
@@ -1800,17 +1843,8 @@ class BasicRule:
         """
         is_false_positive = self.is_false_positive
 
-        license_flags = (
-            self.is_license_notice,
-            self.is_license_text,
-            self.is_license_reference,
-            self.is_license_tag,
-            self.is_license_intro,
-            self.is_license_clue,
-        )
-
-        has_license_flags = any(license_flags)
-        has_many_license_flags = len([l for l in license_flags if l]) != 1
+        has_license_flags = any(self.license_flag_values)
+        has_many_license_flags = len([l for l in self.license_flag_values if l]) != 1
 
         license_expression = self.license_expression
 
@@ -1862,6 +1896,12 @@ class BasicRule:
 
             if not check_is_list_of_strings(self.referenced_filenames):
                 yield 'referenced_filenames must be a list of strings'
+
+            if (self.is_license_clue or self.is_license_intro) and self.is_required_phrase:
+                yield 'License intro/clue rules cannot be required phrase rules'
+
+            if self.is_required_phrase and self.skip_collecting_required_phrases:
+                yield 'We can skip collecting required phrases only in non required phrase rules'
 
             if not all(check_is_list_of_strings(i) for i in ignorables):
                 yield 'ignorables must be a list of strings'
@@ -1954,15 +1994,10 @@ class BasicRule:
         Return a list of boolean attributes for a rule which are set to True.
         """
 
-        rule_boolean_attributes = [
-            'is_license_text',
-            'is_license_notice',
-            'is_license_reference',
-            'is_license_tag',
-            'is_license_intro',
-            'is_license_clue',
+        rule_boolean_attributes = self.license_flag_names + (
+            'is_required_phrase',
             'is_continuous',
-        ]
+        )
 
         mapping = {}
         for attribute in rule_boolean_attributes:
@@ -1987,6 +2022,8 @@ class BasicRule:
         data['is_license_tag'] = self.is_license_tag
         data['is_license_intro'] = self.is_license_intro
         data['is_license_clue'] = self.is_license_clue
+        data['is_required_phrase'] = self.is_required_phrase
+        data['skip_collecting_required_phrases'] = self.skip_collecting_required_phrases
         data['is_continuous'] = self.is_continuous
         data['is_builtin'] = self.is_builtin
         data['is_from_license'] = self.is_from_license
@@ -2017,14 +2054,10 @@ class BasicRule:
         if self.license_expression:
             data['license_expression'] = self.license_expression
 
-        flags = (
+        flags = self.license_flag_names + (
             'is_false_positive',
-            'is_license_text',
-            'is_license_notice',
-            'is_license_reference',
-            'is_license_tag',
-            'is_license_intro',
-            'is_license_clue',
+            'is_required_phrase',
+            'skip_collecting_required_phrases',
             'is_continuous',
             'is_deprecated'
         )
@@ -2180,9 +2213,9 @@ class Rule(BasicRule):
         self.stopwords_by_pos = stopwords_by_pos
         self.set_relevance()
 
-        # set key phrase spans that must be present for the rule
+        # set required phrase spans that must be present for the rule
         # to pass through refinement
-        self.key_phrase_spans = self.build_key_phrase_spans()
+        self.required_phrase_spans = self.build_required_phrase_spans()
         self._set_continuous()
 
         return toks
@@ -2191,26 +2224,29 @@ class Rule(BasicRule):
         """
         Set the "is_continuous" flag if this rule must be matched exactly
         without gaps, stopwords or unknown words. Must run after
-        key_phrase_spans computation.
+        required_phrase_spans computation.
         """
         if (
             not self.is_continuous
-            and self.key_phrase_spans
-            and len(self.key_phrase_spans) == 1
-            and len(self.key_phrase_spans[0]) == self.length
+            and self.required_phrase_spans
+            and len(self.required_phrase_spans) == 1
+            and len(self.required_phrase_spans[0]) == self.length
         ):
             self.is_continuous = True
 
-    def build_key_phrase_spans(self):
+    def build_required_phrase_spans(self):
         """
-        Return a list of Spans marking key phrases token positions of that must
+        Return a list of Spans marking required phrases token positions of that must
         be present for this rule to be matched.
         """
-        from licensedcode.required_phrases import get_key_phrase_spans
+        from licensedcode.required_phrases import get_required_phrase_spans
         if self.is_from_license:
             return []
         try:
-            return list(get_key_phrase_spans(self.text))
+            return [
+                required_phrase.span
+                for required_phrase in get_required_phrase_spans(self.text)
+            ]
         except Exception as e:
             raise InvalidRule(f'Invalid rule: {self}') from e
 
@@ -2241,7 +2277,7 @@ class Rule(BasicRule):
 
         self.is_small = self.length < small_rule
 
-    def dump(self, rules_data_dir):
+    def dump(self, rules_data_dir, **kwargs):
         """
         Dump a representation of this rule as a .RULE file stored in
         ``rules_data_dir`` as a UTF-8 file having:
@@ -2258,6 +2294,8 @@ class Rule(BasicRule):
         rule_file = self.rule_file(rules_data_dir=rules_data_dir)
 
         metadata = self.to_dict()
+        if kwargs:
+            metadata.update(kwargs)
         content = self.text
         output = dumps_frontmatter(content=content, metadata=metadata)
         with open(rule_file, 'w') as of:
@@ -2300,6 +2338,8 @@ class Rule(BasicRule):
         self.license_expression = data.get('license_expression')
 
         self.is_false_positive = data.get('is_false_positive', False)
+        self.is_required_phrase = data.get('is_required_phrase', False)
+        self.skip_collecting_required_phrases = data.get('skip_collecting_required_phrases', False)
 
         relevance = as_int(float(data.get('relevance') or 0))
         # Keep track if we have a stored relevance of not.
@@ -2359,7 +2399,7 @@ class Rule(BasicRule):
         - relevance is computed based on the rule length
         """
 
-        if self.is_false_positive:
+        if self.is_false_positive or self.is_required_phrase:
             self.relevance = 100
             self.has_stored_relevance = True
             return
@@ -2814,6 +2854,26 @@ def build_ignorables_mapping(copyrights, holders, authors, urls, emails):
     return {k: v for k, v in sorted(ignorables.items()) if v}
 
 
+def rule_exists(text):
+    """
+    Return the matched rule if the text is an existing rule matched
+    exactly, False otherwise.
+    """
+    from licensedcode.match_hash import MATCH_HASH
+    from licensedcode import cache
+
+    idx = cache.get_index()
+
+    matches = idx.match(query_string=text)
+    if not matches:
+        return False
+    if len(matches) > 1:
+        return False
+    match = matches[0]
+    if match.matcher == MATCH_HASH and match.score() == 100:
+        return match.rule.identifier
+
+
 def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
     """
     Return a new, unique and non-existing base location in ``rules_directory``
@@ -2842,10 +2902,9 @@ def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):
         idx += 1
 
 
-def get_rules_by_expression(rules_data_dir=rules_data_dir):
+def get_rules_by_identifier(rules_data_dir=rules_data_dir):
     """
-    Get a dictionary (sorted by license_expression) of {license_expression: rules}
-    where `rules` is a list of all rule objects having the `license_expression`.
+    Get a dictionary of {rule_identifier: rule} for all license rules.
     """
     rules = list(load_rules(rules_data_dir=rules_data_dir))
 
@@ -2854,6 +2913,14 @@ def get_rules_by_expression(rules_data_dir=rules_data_dir):
         for rule in rules
     }
 
+    return rules_by_identifier
+
+
+def map_rules_by_expression(rules_by_identifier):
+    """
+    Get a dictionary (sorted by license_expression) of {license_expression: rules}
+    from a dictionary of rules by their identifier.
+    """
     rules_by_expression = defaultdict(list)
 
     for rule in rules_by_identifier.values():
@@ -2861,4 +2928,13 @@ def get_rules_by_expression(rules_data_dir=rules_data_dir):
         if rule.license_expression:
             rules_by_expression[rule.license_expression].append(rule)
 
-    return OrderedDict(sorted(rules_by_expression.items()))
+    return dict(sorted(rules_by_expression.items()))
+
+
+def get_rules_by_expression(rules_data_dir=rules_data_dir):
+    """
+    Get a dictionary (sorted by license_expression) of {license_expression: rules}
+    where `rules` is a list of all rule objects having the `license_expression`.
+    """
+    rules_by_identifier = get_rules_by_identifier(rules_data_dir)
+    return map_rules_by_expression(rules_by_identifier)

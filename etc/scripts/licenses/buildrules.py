@@ -16,6 +16,7 @@ from licensedcode import cache
 from licensedcode import models
 from licensedcode import match_hash
 from licensedcode import frontmatter
+from licensedcode.models import rule_exists
 from license_expression import Licensing
 
 """
@@ -127,23 +128,6 @@ def load_data(location="00-new-licenses.txt"):
             continue
 
     return rules
-
-
-def rule_exists(text):
-    """
-    Return the matched rule identifier if the text is an existing rule matched
-    exactly, False otherwise.
-    """
-    idx = cache.get_index()
-
-    matches = idx.match(query_string=text)
-    if not matches:
-        return False
-    if len(matches) > 1:
-        return False
-    match = matches[0]
-    if match.matcher == match_hash.MATCH_HASH and match.score() == 100:
-        return match.rule.identifier
 
 
 def all_rule_by_tokens():

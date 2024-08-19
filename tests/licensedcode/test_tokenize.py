@@ -17,7 +17,7 @@ from time import time
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode.tokenize import index_tokenizer
-from licensedcode.tokenize import key_phrase_tokenizer
+from licensedcode.tokenize import required_phrase_tokenizer
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
@@ -406,110 +406,117 @@ class TestTokenizers(FileBasedTesting):
         result = [list(index_tokenizer(line)) for _ln, line in lines]
         check_results(result, expected_file, regen=regen)
 
-    def test_key_phrase_tokenizer_on_html_like_texts(self, regen=REGEN_TEST_FIXTURES):
+    def test_required_phrase_tokenizer_on_html_like_texts(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
-        expected_file = test_file + '.expected.key_phrase_tokenizer.json'
+        expected_file = test_file + '.expected.required_phrase_tokenizer.json'
         lines = query_lines(test_file)
-        result = [list(key_phrase_tokenizer(line)) for _ln, line in lines]
+        result = [list(required_phrase_tokenizer(line)) for _ln, line in lines]
         check_results(result, expected_file, regen=regen)
 
-    def test_key_phrase_tokenizer_lines_on_html_like_texts_2(self, regen=REGEN_TEST_FIXTURES):
+    def test_required_phrase_tokenizer_lines_on_html_like_texts_2(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.html')
-        expected_file = test_file + '.expected.key_phrase_tokenizer.json'
+        expected_file = test_file + '.expected.required_phrase_tokenizer.json'
         lines = query_lines(test_file)
-        result = [list(key_phrase_tokenizer(line)) for _ln, line in lines]
+        result = [list(required_phrase_tokenizer(line)) for _ln, line in lines]
         check_results(result, expected_file, regen=regen)
 
-    def test_key_phrase_tokenizer_handles_empty_string(self):
+    def test_required_phrase_tokenizer_handles_empty_string(self):
         text = ''
-        result = list(key_phrase_tokenizer(text))
+        result = list(required_phrase_tokenizer(text))
         assert result == []
 
-    def test_key_phrase_tokenizer_handles_blank_lines(self):
+    def test_required_phrase_tokenizer_handles_blank_lines(self):
         text = u' \n\n\t  '
-        result = list(key_phrase_tokenizer(text))
+        result = list(required_phrase_tokenizer(text))
         assert result == []
 
-    def test_key_phrase_tokenizer_handles_blank_lines2(self):
+    def test_required_phrase_tokenizer_handles_blank_lines2(self):
         text = ' \n\t  '
-        result = list(key_phrase_tokenizer(text))
+        result = list(required_phrase_tokenizer(text))
         assert result == []
 
-    def test_key_phrase_tokenizer_handles_empty_lines(self):
+    def test_required_phrase_tokenizer_handles_empty_lines(self):
         text = u'\n\n'
         expected = []
-        assert list(key_phrase_tokenizer(text)) == expected
+        assert list(required_phrase_tokenizer(text)) == expected
 
-    def test_key_phrase_tokenizer_does_not_crash_on_unicode_rules_text_1(self):
+    def test_required_phrase_tokenizer_does_not_crash_on_unicode_rules_text_1(self):
         test_file = self.get_test_loc('tokenize/unicode/12290.txt')
         with io.open(test_file, encoding='utf-8') as test:
-            list(key_phrase_tokenizer(test.read()))
+            list(required_phrase_tokenizer(test.read()))
 
-    def test_key_phrase_does_not_crash_on_unicode_rules_text_2(self):
+    def test_required_phrase_does_not_crash_on_unicode_rules_text_2(self):
         test_file = self.get_test_loc('tokenize/unicode/12319.txt')
         with io.open(test_file, encoding='utf-8') as test:
-            list(key_phrase_tokenizer(test.read()))
+            list(required_phrase_tokenizer(test.read()))
 
-    def test_key_phrase_does_not_crash_on_unicode_rules_text_3(self):
+    def test_required_phrase_does_not_crash_on_unicode_rules_text_3(self):
         test_file = self.get_test_loc('tokenize/unicode/12405.txt')
         with io.open(test_file, encoding='utf-8') as test:
-            list(key_phrase_tokenizer(test.read()))
+            list(required_phrase_tokenizer(test.read()))
 
-    def test_key_phrase_does_not_crash_on_unicode_rules_text_4(self):
+    def test_required_phrase_does_not_crash_on_unicode_rules_text_4(self):
         test_file = self.get_test_loc('tokenize/unicode/12407.txt')
         with io.open(test_file, encoding='utf-8') as test:
-            list(key_phrase_tokenizer(test.read()))
+            list(required_phrase_tokenizer(test.read()))
 
-    def test_key_phrase_does_not_crash_on_unicode_rules_text_5(self):
+    def test_required_phrase_does_not_crash_on_unicode_rules_text_5(self):
         test_file = self.get_test_loc('tokenize/unicode/12420.txt')
         with io.open(test_file, encoding='utf-8') as test:
-            list(key_phrase_tokenizer(test.read()))
+            list(required_phrase_tokenizer(test.read()))
 
-    def test_key_phrase_tokenizer_returns_same_word_tokens_as_index_tokenizer(self):
+    def test_required_phrase_tokenizer_returns_same_word_tokens_as_index_tokenizer(self):
         """
-        It is important that the `key_phrase_tokenizer` returns the same amount
-        of tokens (excluding key_phrase markup) as the `index_tokenizer` so that
+        It is important that the `required_phrase_tokenizer` returns the same amount
+        of tokens (excluding required_phrase markup) as the `index_tokenizer` so that
         they Span positions derived from the tokens line up.
         """
         text = 'Redistribution \n\n comma and   use in \n\t binary \xe4r till\xe5tet.'
 
-        key_phrase_tokens = key_phrase_tokenizer(text)
+        required_phrase_tokens = required_phrase_tokenizer(text)
         index_tokens = index_tokenizer(text)
 
-        assert list(key_phrase_tokens) == list(index_tokens)
+        assert list(required_phrase_tokens) == list(index_tokens)
 
-    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_for_multiple_token_key_phrases(self):
+    def test_required_phrase_tokenizer_returns_required_phrase_markup_as_tokens_for_multiple_token_required_phrases(self):
         text = 'Redistribution and {{use in binary}} is permitted.'
-        assert list(key_phrase_tokenizer(text)) == [
+        assert list(required_phrase_tokenizer(text)) == [
             'redistribution', 'and', '{{', 'use', 'in',
             'binary', '}}', 'is', 'permitted',
         ]
 
-    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_after_newline(self):
+    def test_required_phrase_tokenizer_returns_required_phrase_for_multiple_required_phrases(self):
+        text = 'Redistribution and {{use}} in {{binary}} is permitted.'
+        assert list(required_phrase_tokenizer(text)) == [
+            'redistribution', 'and', '{{', 'use', '}}', 'in',
+            '{{', 'binary', '}}', 'is', 'permitted',
+        ]
+
+    def test_required_phrase_tokenizer_returns_required_phrase_markup_as_tokens_after_newline(self):
         text = '{{IS_RIGHT\nThis program is distributed under GPL\n}}IS_RIGHT'
-        assert list(key_phrase_tokenizer(text)) == [
+        assert list(required_phrase_tokenizer(text)) == [
             '{{', 'is', 'right', 'this', 'program', 'is',
             'distributed', 'under', 'gpl', '}}', 'is', 'right'
         ]
 
-    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_when_separated_by_space(self):
+    def test_required_phrase_tokenizer_returns_required_phrase_markup_as_tokens_when_separated_by_space(self):
         text = 'Redistribution {{ is }} permitted.'
-        assert list(key_phrase_tokenizer(text)) == ['redistribution', '{{', 'is', '}}', 'permitted']
+        assert list(required_phrase_tokenizer(text)) == ['redistribution', '{{', 'is', '}}', 'permitted']
 
-    def test_key_phrase_tokenizer_returns_key_phrase_markup_as_tokens_for_single_token_key_phrase(self):
+    def test_required_phrase_tokenizer_returns_required_phrase_markup_as_tokens_for_single_token_required_phrase(self):
         text = 'Redistribution {{is}} permitted.'
-        assert list(key_phrase_tokenizer(text)) == ['redistribution', '{{', 'is', '}}', 'permitted']
+        assert list(required_phrase_tokenizer(text)) == ['redistribution', '{{', 'is', '}}', 'permitted']
 
-    def test_key_phrase_tokenizer_returns_nested_key_phrase_markup_as_tokens(self):
+    def test_required_phrase_tokenizer_returns_nested_required_phrase_markup_as_tokens(self):
         text = 'Redistribution {{is {{not}} really}} permitted.'
-        assert list(key_phrase_tokenizer(text)) == [
+        assert list(required_phrase_tokenizer(text)) == [
             'redistribution', '{{', 'is', '{{', 'not', '}}',
             'really', '}}', 'permitted'
         ]
 
-    def test_key_phrase_tokenizer_ignores_invalid_key_phrase_markup(self):
+    def test_required_phrase_tokenizer_ignores_invalid_required_phrase_markup(self):
         text = 'Redistribution {{{is not really}}} { {permitted} }, I am {afraid}.'
-        assert list(key_phrase_tokenizer(text)) == [
+        assert list(required_phrase_tokenizer(text)) == [
             'redistribution', '{{', 'is', 'not', 'really', '}}', 'permitted',
             'i', 'am', 'afraid'
         ]

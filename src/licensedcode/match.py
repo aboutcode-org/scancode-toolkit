@@ -55,7 +55,7 @@ TRACE_FILTER_RULE_MIN_COVERAGE = False
 TRACE_FILTER_BELOW_MIN_SCORE = False
 TRACE_FILTER_SINGLE_WORD_GIBBERISH = False
 TRACE_SET_LINES = False
-TRACE_KEY_PHRASES = False
+TRACE_REQUIRED_PHRASES = False
 TRACE_REGIONS = False
 TRACE_FILTER_LICENSE_LIST = False
 TRACE_FILTER_LICENSE_LIST_DETAILED = False
@@ -91,7 +91,7 @@ if (TRACE
     or TRACE_MATCHED_TEXT_DETAILS
     or TRACE_HIGHLIGHTED_TEXT
     or TRACE_FILTER_SINGLE_WORD_GIBBERISH
-    or TRACE_KEY_PHRASES
+    or TRACE_REQUIRED_PHRASES
     or TRACE_REGIONS
     or TRACE_FILTER_LICENSE_LIST
     or TRACE_FILTER_LICENSE_LIST_DETAILED
@@ -133,7 +133,7 @@ if (TRACE
 
 class DiscardReason(IntEnum):
     NOT_DISCARDED = 0
-    MISSING_KEY_PHRASES = 1
+    MISSING_REQUIRED_PHRASES = 1
     BELOW_MIN_COVERAGE = 2
     SPURIOUS_SINGLE_TOKEN = 3
     TOO_SHORT = 4
@@ -634,15 +634,15 @@ class LicenseMatch(object):
             discard_reason = DiscardReason.NOT_DISCARDED
 
         elif (
-            self.discard_reason == DiscardReason.MISSING_KEY_PHRASES
-            and other.discard_reason == DiscardReason.MISSING_KEY_PHRASES
+            self.discard_reason == DiscardReason.MISSING_REQUIRED_PHRASES
+            and other.discard_reason == DiscardReason.MISSING_REQUIRED_PHRASES
         ):
-            discard_reason = DiscardReason.MISSING_KEY_PHRASES
+            discard_reason = DiscardReason.MISSING_REQUIRED_PHRASES
 
-        elif self.discard_reason == DiscardReason.MISSING_KEY_PHRASES:
+        elif self.discard_reason == DiscardReason.MISSING_REQUIRED_PHRASES:
             discard_reason = other.discard_reason
 
-        elif other.discard_reason == DiscardReason.MISSING_KEY_PHRASES:
+        elif other.discard_reason == DiscardReason.MISSING_REQUIRED_PHRASES:
             discard_reason = self.discard_reason
 
         else:
@@ -2116,17 +2116,17 @@ def filter_false_positive_matches(
     return kept, discarded
 
 
-def filter_matches_missing_key_phrases(
+def filter_matches_missing_required_phrases(
     matches,
-    trace=TRACE_KEY_PHRASES,
-    reason=DiscardReason.MISSING_KEY_PHRASES,
+    trace=TRACE_REQUIRED_PHRASES,
+    reason=DiscardReason.MISSING_REQUIRED_PHRASES,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches  given a ``matches`` list of LicenseMatch by removing
-    all ``matches`` that do not contain all key phrases defined in their matched
+    all ``matches`` that do not contain all required phrases defined in their matched
     rule.
-    A key phrase must be matched exactly without gaps or unknown words.
+    A required phrase must be matched exactly without gaps or unknown words.
 
     A rule with "is_continuous" set to True is the same as if its whole text
     was defined as a keyphrase and is processed here too.
@@ -2143,14 +2143,14 @@ def filter_matches_missing_key_phrases(
     discarded_append = discarded.append
 
     if trace:
-        logger_debug('filter_matches_missing_key_phrases')
+        logger_debug('filter_matches_missing_required_phrases')
 
     for match in matches:
         if trace:
             logger_debug('  CHECKING KEY PHRASES for:', match)
 
         is_continuous = match.rule.is_continuous
-        ikey_spans = match.rule.key_phrase_spans
+        ikey_spans = match.rule.required_phrase_spans
 
         if not (ikey_spans or is_continuous):
             kept_append(match)
@@ -2180,11 +2180,11 @@ def filter_matches_missing_key_phrases(
             # use whole ispan in this case
             ikey_spans = [match.ispan]
 
-        # keep matches as candidate if they contain all key phrase positions in the ispan
+        # keep matches as candidate if they contain all required phrase positions in the ispan
         if trace:
             print('    CANDIDATE TO KEEP: all ikey_span in match.ispan:', ikey_spans, ispan)
 
-        # discard matches that contain key phrases, but interrupted by
+        # discard matches that contain required phrases, but interrupted by
         # unknown or stop words.
 
         unknown_by_pos = match.query.unknowns_by_pos
@@ -2195,7 +2195,7 @@ def filter_matches_missing_key_phrases(
         istopwords_by_pos = match.rule.stopwords_by_pos
         istopwords_by_pos_get = istopwords_by_pos.get
 
-        # iterate on each key phrase span to ensure that they are continuous
+        # iterate on each required phrase span to ensure that they are continuous
         # and contain no unknown words on the query side
 
         is_valid = True
@@ -2204,7 +2204,7 @@ def filter_matches_missing_key_phrases(
 
         for ikey_span in ikey_spans:
 
-            # check that are no gaps in the key phrase span on the query side
+            # check that are no gaps in the required phrase span on the query side
             # BUT, do not redo the check for is_continuous already checked above
             if is_continuous:
                 qkey_span = qspan
@@ -2225,13 +2225,13 @@ def filter_matches_missing_key_phrases(
                     is_valid = False
                     break
 
-            # check that key phrase spans does not contain stop words and does
+            # check that required phrase spans does not contain stop words and does
             # not contain unknown words
 
-            # NOTE: we do not check the last qkey_span position of a key phrase
+            # NOTE: we do not check the last qkey_span position of a required phrase
             # since unknown is a number of words after a given span position:
             # these are pinned to the last position and we would not care for
-            # what unknown or stop words show up after a key phrase ends.
+            # what unknown or stop words show up after a required phrase ends.
 
             qkey_span_end = qkey_span.end
             contains_unknown = any(
@@ -2694,7 +2694,7 @@ def refine_matches(
     # FIXME: we should have only a single loop on all the matches at once!!
     # and not 10's of loops!!!
 
-    matches, discarded = filter_matches_missing_key_phrases(matches)
+    matches, discarded = filter_matches_missing_required_phrases(matches)
     all_discarded_extend(discarded)
     _log(matches, discarded, 'HAS KEY PHRASES')
 

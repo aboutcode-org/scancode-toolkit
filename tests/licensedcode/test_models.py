@@ -228,6 +228,7 @@ class TestRule(FileBasedTesting):
                 r.is_license_intro,
                 r.is_license_clue,
                 r.is_false_positive,
+                r.is_required_phrases,
             ]
             number_of_flags_set = 0
             for rule_flag in rule_flags:
@@ -583,16 +584,16 @@ class TestRule(FileBasedTesting):
         ]
         assert validations == expected
 
-    def test_key_phrases_yields_spans(self):
+    def test_required_phrases_yields_spans(self):
         rule_text = (
             'This released software is {{released}} by under {{the MIT license}}. '
             'Which is a license originating at Massachusetts Institute of Technology (MIT).'
         )
         rule = models.Rule(license_expression='mit', text=rule_text)
-        key_phrase_spans = list(rule.build_key_phrase_spans())
-        assert key_phrase_spans == [Span(4), Span(7, 9)]
+        required_phrase_spans = list(rule.build_required_phrase_spans())
+        assert required_phrase_spans == [Span(4), Span(7, 9)]
 
-    def test_key_phrases_raises_exception_when_markup_is_not_closed(self):
+    def test_required_phrases_raises_exception_when_markup_is_not_closed(self):
         rule_text = (
             'This released software is {{released}} by under {{the MIT license. '
             'Which is a license originating at Massachusetts Institute of Technology (MIT).'
@@ -600,7 +601,7 @@ class TestRule(FileBasedTesting):
         rule = models.Rule(license_expression='mit', text=rule_text)
 
         try:
-            list(rule.build_key_phrase_spans())
+            list(rule.build_required_phrase_spans())
             raise Exception('Exception should be raised')
         except InvalidRule:
             pass
