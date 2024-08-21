@@ -6,7 +6,16 @@ category: Copyleft Limited
 owner: Unspecified
 homepage_url: http://mo.morsi.org/blog/2009/08/13/lesser_affero_gplv3/
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-linking-exception-agpl-3.0
+spdx_license_key: romic-exception
+other_spdx_license_keys:
+    - LicenseRef-scancode-linking-exception-agpl-3.0
+other_urls:
+    - https://github.com/zenbones/SmallMind/blob/3c62b5995fe7f27c453f140ff9b60560a0893f2a/COPYRIGHT#L25-L30
+    - https://github.com/savearray2/py.js/blob/b781273c08c8afa89f4954de4ecf42ec01429bae/README.md#license
+    - https://github.com/CubeArtisan/cubeartisan/blob/2c6ab53455237b88a3ea07be02a838a135c4ab79/LICENSE.LESSER#L10-L15
+    - https://web.archive.org/web/20210124015834/http://mo.morsi.org/blog/2009/08/13/lesser_affero_gplv3/
+    - https://sourceforge.net/p/romic/code/ci/3ab2856180cf0d8b007609af53154cf092efc58f/tree/COPYING
+    - https://github.com/moll/node-mitm/blob/bbf24b8bd7596dc6e091e625363161ce91984fc7/LICENSE#L8-L11
 ---
 
 Additional permission under the GNU Affero GPL version 3 section 7:
