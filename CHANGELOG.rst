@@ -37,6 +37,14 @@ v33.0.0 (next next, roadmap)
 - Update link references of ownership from nexB to aboutcode-org
   See https://github.com/aboutcode-org/scancode-toolkit/issues/3885
 
+- New and updated licenses, including support for newly released
+  SPDX license list versions:
+  - SPDX License List 3.25.0:
+    This release of the SPDX license list had 9 new licenses
+    and exceptions, and out of them 5 were present as licenses
+    and 2 were present as rules already. There were 2 new
+    license/exception texts added, and also 1 license was deprecated.
+    For more details see https://github.com/aboutcode-org/scancode-toolkit/pull/3897
 
 v32.2.1 - 2024-07-02
 ---------------------
