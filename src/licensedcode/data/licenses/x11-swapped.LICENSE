@@ -3,7 +3,7 @@ key: x11-swapped
 short_name: X11 swapped final paragraphs
 name: X11 swapped final paragraphs
 category: Permissive
-owner: Unspecified
+owner: Derick Eddington
 notes: |
     Added in SPDX license list 3.25
     This was previously the license rule: x11-xconsortium_37.RULE
