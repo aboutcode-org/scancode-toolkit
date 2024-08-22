@@ -10,6 +10,9 @@ other_urls:
     - https://www.gnu.org/licenses/gpl-faq.en.html#GPLIncompatibleLibs
     - https://erlang.org/pipermail/erlang-questions/2012-May/066355.html
     - https://gitea.osmocom.org/erlang/osmo_ss7/src/commit/2286c1b8738d715950026650bf53f19a69d6ed0e/src/ss7_links.erl#L20
+ignorable_urls:
+    - https://www.erlang.org/
+    - https://www.erlang.org/EPLICENSE
 ---
 
 If you modify this Program, or any covered work, by linking or
