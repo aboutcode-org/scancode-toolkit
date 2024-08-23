@@ -9,7 +9,10 @@
 
 from itertools import groupby
 
-import ahocorasick
+try:
+    import ahocorasick
+except ImportError:
+    import ahocode.ahocode as ahocorasick
 
 from licensedcode import SMALL_RULE
 from licensedcode.match import LicenseMatch
