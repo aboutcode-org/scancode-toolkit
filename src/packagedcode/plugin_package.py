@@ -334,7 +334,8 @@ class PackageSummary(PostScanPlugin):
         for package in packages:
             package_uid = package['package_uid']
             if package_uid in package_resources:
-                package_resource = [resource.to_dict() for resource in package_resources[package_uid]]
+                package_resource = [resource for resource in package_resources[package_uid]]
+                
             scoring_elements, package_attrs, _= compute_license_score(resources=package_resource)
             license_clarity_score= scoring_elements.to_dict()
             package_attributes_map[package_uid] = {

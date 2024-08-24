@@ -11,6 +11,7 @@ import attr
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
+from commoncode.resource import Resource
 from license_expression import Licensing
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -75,7 +76,7 @@ class LicenseClarityScore(PostScanPlugin):
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        codebase_resources= get_codebase_resources(codebase)
+        codebase_resources = get_codebase_resources(codebase)
         scoring_elements,_, declared_license_expression = compute_license_score(resources= codebase_resources)
         codebase.attributes.summary['declared_license_expression'] = declared_license_expression
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
@@ -401,20 +402,21 @@ def get_field_values_from_resources(
     that are not classified as key files.
     """
     values = []
-    
     for resource in resources:
+        resource_dict = resource.to_dict()
+
         if key_files_only:
-            if not resource.get('is_key_file', False):
+            if not resource_dict.get('is_key_file', False):
                 continue
         else:
-            if resource.get('is_key_file', False):
+            if resource_dict.get('is_key_file', False):
                 continue
         if is_string:
-            value = resource.get(field_name)
+            value = resource_dict.get(field_name)
             if value:
                 values.append(value)
         else:
-            for value in resource.get(field_name, []):
+            for value in resource_dict.get(field_name, []):
                 values.append(value)
                     
     return values
@@ -425,7 +427,7 @@ def get_codebase_resources(codebase):
     """
     codebase_resources= []
     for resource in codebase.walk(topdown=True):
-        codebase_resources.append(resource.to_dict())
+        codebase_resources.append(resource)
         
     return codebase_resources
 
