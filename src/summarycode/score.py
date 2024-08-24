@@ -11,7 +11,6 @@ import attr
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import POST_SCAN_GROUP
-from commoncode.resource import Resource
 from license_expression import Licensing
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -421,6 +420,7 @@ def get_field_values_from_resources(
                     
     return values
 
+
 def get_codebase_resources(codebase):
     """
     Get resources for the codebase.
@@ -430,6 +430,7 @@ def get_codebase_resources(codebase):
         codebase_resources.append(resource)
         
     return codebase_resources
+
 
 def get_categories_from_match(license_match, licensing=Licensing()):
     """
