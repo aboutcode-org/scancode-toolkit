@@ -75,7 +75,8 @@ class LicenseClarityScore(PostScanPlugin):
     def process_codebase(self, codebase, license_clarity_score, **kwargs):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
-        scoring_elements,_, declared_license_expression = compute_license_score(resources=None)
+        codebase_resources= get_codebase_resources(codebase)
+        scoring_elements,_, declared_license_expression = compute_license_score(resources= codebase_resources)
         codebase.attributes.summary['declared_license_expression'] = declared_license_expression
         codebase.attributes.summary['license_clarity_score'] = scoring_elements.to_dict()
 
@@ -263,9 +264,6 @@ def compute_license_score(resources):
         if scoring_elements.score > 0:
             scoring_elements.score -= 10
             
-    # if package_resources:
-    #     return scoring_elements, packageAttrs
-    # return scoring_elements, declared_license_expression or None
     return scoring_elements, packageAttrs, declared_license_expression or None
 
 
@@ -421,6 +419,15 @@ def get_field_values_from_resources(
                     
     return values
 
+def get_codebase_resources(codebase):
+    """
+    Get resources for the codebase.
+    """
+    codebase_resources= []
+    for resource in codebase.walk(topdown=True):
+        codebase_resources.append(resource.to_dict())
+        
+    return codebase_resources
 
 def get_categories_from_match(license_match, licensing=Licensing()):
     """

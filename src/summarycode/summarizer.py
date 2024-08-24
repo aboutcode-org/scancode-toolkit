@@ -22,6 +22,7 @@ from packagedcode import models
 from summarycode.copyright_tallies import canonical_holder
 from summarycode.score import compute_license_score
 from summarycode.score import get_field_values_from_resources
+from summarycode.score import get_codebase_resources
 from summarycode.score import unique
 from summarycode.tallies import compute_codebase_tallies
 
@@ -313,16 +314,6 @@ def get_holders_from_copyright(copyrght):
 
     for holder_detection in holder_detections:
         yield holder_detection.holder
-
-def get_codebase_resources(codebase):
-    """
-    Get resources for the codebase.
-    """
-    codebase_resources= []
-    for resource in codebase.walk(topdown=True):
-        codebase_resources.append(resource.to_dict())
-        
-    return codebase_resources
 
 
 def is_key_package(package, codebase):
