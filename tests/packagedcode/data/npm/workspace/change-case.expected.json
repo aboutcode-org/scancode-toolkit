@@ -464,7 +464,7 @@
       "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996",
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
-      "detection_count": 2,
+      "detection_count": 1,
       "reference_matches": [
         {
           "license_expression": "mit",
@@ -563,31 +563,9 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "mit",
-          "declared_license_expression_spdx": "MIT",
-          "license_detections": [
-            {
-              "license_expression": "mit",
-              "license_expression_spdx": "MIT",
-              "matches": [
-                {
-                  "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
-                  "from_file": "change-case/LICENSE",
-                  "start_line": 1,
-                  "end_line": 1,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 4,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "mit_26.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
-                }
-              ],
-              "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996"
-            }
-          ],
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],

@@ -31,6 +31,7 @@ from licensedcode.spans import Span
 from licensedcode import query
 
 from packagedcode.utils import combine_expressions
+from packagedcode.models import PackageData
 from summarycode.classify import check_resource_name_start_and_end
 from summarycode.classify import LEGAL_STARTS_ENDS
 from summarycode.classify import README_STARTS_ENDS
@@ -351,32 +352,40 @@ def add_license_from_sibling_file(resource, codebase):
     if not resource.is_file:
         return
 
-    package_data = resource.package_data
-    if not package_data:
+    package_data_mappings = resource.package_data
+    if not package_data_mappings:
         return
 
-    for pkg in package_data:
+    for pkg in package_data_mappings:
         pkg_license_detections = pkg["license_detections"]
         if pkg_license_detections:
             return
 
-    license_detections, license_expression = get_license_detections_from_sibling_file(
-        resource=resource,
-        codebase=codebase,
-    )
+    package_data_mapping = resource.package_data[0]
+    package_data = PackageData.from_data(package_data_mapping)
+    license_detections = None
+
+    # We do not want to get licenses detections populated from sibling files
+    # for package manifests which are not the primary package manifests, without
+    # purls (example: dependency lockfiles/requirements/other build manifests)
+    if package_data.purl and package_data.can_assemble:
+        license_detections, license_expression = get_license_detections_from_sibling_file(
+            resource=resource,
+            codebase=codebase,
+        )
+
     if not license_detections:
         return
 
-    package = resource.package_data[0]
-    package["license_detections"] = license_detections
-    package["declared_license_expression"] = license_expression
-    package["declared_license_expression_spdx"] = str(build_spdx_license_expression(
-        license_expression=package["declared_license_expression"],
+    package_data_mapping["license_detections"] = license_detections
+    package_data_mapping["declared_license_expression"] = license_expression
+    package_data_mapping["declared_license_expression_spdx"] = str(build_spdx_license_expression(
+        license_expression=package_data_mapping["declared_license_expression"],
         licensing=get_cache().licensing,
     ))
 
     codebase.save_resource(resource)
-    return package
+    return package_data_mapping
 
 
 def is_legal_or_readme(resource):

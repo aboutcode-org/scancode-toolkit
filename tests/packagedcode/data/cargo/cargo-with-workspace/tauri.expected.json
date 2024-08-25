@@ -414,6 +414,128 @@
         "npm_package_json"
       ],
       "purl": "pkg:npm/tauri-workspace@0.0.0"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "api",
+      "version": "1.0.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/api/-/api-1.0.0.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": true,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "tauri/examples/api/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/api@1.0.0"
+    },
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "api",
+      "version": "0.1.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "An example Tauri Application showcasing the api",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0 OR mit",
+      "declared_license_expression_spdx": "Apache-2.0 OR MIT",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0 OR mit",
+          "license_expression_spdx": "Apache-2.0 OR MIT",
+          "matches": [
+            {
+              "license_expression": "apache-2.0 OR mit",
+              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "from_file": "tauri/examples/api/src-tauri/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_or_mit_36.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE",
+              "matched_text": "Apache-2.0 OR MIT"
+            }
+          ],
+          "identifier": "apache_2_0_or_mit-70d858d7-8968-9e7f-b90f-18b72fb96bef"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Apache-2.0 OR MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "rust_version": "1.70",
+        "rust_edition": "2021"
+      },
+      "repository_homepage_url": "https://crates.io/crates/api",
+      "repository_download_url": "https://crates.io/api/v1/crates/api/0.1.0/download",
+      "api_data_url": "https://crates.io/api/v1/crates/api",
+      "package_uid": "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "tauri/examples/api/src-tauri/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "purl": "pkg:cargo/api@0.1.0"
     }
   ],
   "dependencies": [
@@ -1543,6 +1665,334 @@
       "for_package_uid": "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "tauri/package.json",
       "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/%40tauri-apps/api",
+      "extracted_requirement": "../../tooling/api/dist",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/%40tauri-apps/api?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/%40zerodevx/svelte-json-view",
+      "extracted_requirement": "0.2.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/%40zerodevx/svelte-json-view?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/%40iconify-json/codicon",
+      "extracted_requirement": "^1.1.10",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/%40iconify-json/codicon?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/%40iconify-json/ph",
+      "extracted_requirement": "^1.1.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/%40iconify-json/ph?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/internal-ip",
+      "extracted_requirement": "^7.0.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/internal-ip?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/unocss",
+      "extracted_requirement": "^0.39.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/unocss?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/%40sveltejs/vite-plugin-svelte",
+      "extracted_requirement": "^2.4.6",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/%40sveltejs/vite-plugin-svelte?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/svelte",
+      "extracted_requirement": "^4.2.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/svelte?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/vite",
+      "extracted_requirement": "^4.4.9",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/vite?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:cargo/addr2line@0.21.0",
+      "extracted_requirement": "0.21.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/addr2line@0.21.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.lock",
+      "datasource_id": "cargo_lock"
+    },
+    {
+      "purl": "pkg:cargo/adler@1.0.2",
+      "extracted_requirement": "1.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/adler@1.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.lock",
+      "datasource_id": "cargo_lock"
+    },
+    {
+      "purl": "pkg:cargo/aead@0.5.2",
+      "extracted_requirement": "0.5.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/aead@0.5.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": null,
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.lock",
+      "datasource_id": "cargo_lock"
+    },
+    {
+      "purl": "pkg:cargo/tauri-build",
+      "extracted_requirement": null,
+      "scope": "build-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "../../../core/tauri-build",
+        "features": [
+          "codegen",
+          "isolation"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/tauri-build?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/serde_json",
+      "extracted_requirement": "1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/serde_json?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/serde",
+      "extracted_requirement": "1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "1.0",
+        "features": [
+          "derive"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/serde?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tiny_http",
+      "extracted_requirement": "0.11",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/tiny_http?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/log",
+      "extracted_requirement": "0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/log?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tauri-plugin-sample",
+      "extracted_requirement": null,
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "./tauri-plugin-sample/"
+      },
+      "dependency_uid": "pkg:cargo/tauri-plugin-sample?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tauri",
+      "extracted_requirement": null,
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "../../../core/tauri",
+        "features": [
+          "protocol-asset",
+          "icon-ico",
+          "icon-png",
+          "isolation",
+          "macos-private-api",
+          "tray-icon"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/tauri?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tauri",
+      "extracted_requirement": null,
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "../../../core/tauri",
+        "features": [
+          "test"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/tauri?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "tauri/examples/api/src-tauri/Cargo.toml",
+      "datasource_id": "cargo_toml"
     }
   ],
   "files": [
@@ -3005,7 +3455,8 @@
         }
       ],
       "for_packages": [
-        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -3014,7 +3465,8 @@
       "type": "directory",
       "package_data": [],
       "for_packages": [
-        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -3102,7 +3554,9 @@
         }
       ],
       "for_packages": [
-        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },
@@ -3299,7 +3753,9 @@
         }
       ],
       "for_packages": [
-        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+        "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/api@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:cargo/api@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     },

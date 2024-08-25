@@ -56,11 +56,9 @@ def assemble_extracted_gem(cls, package_data, resource, codebase, package_adder)
     An assemble implementation shared by handlers for manifests found in an
     extracted gem using extractcode.
     """
-    datafile_name_patterns = (
-        'metadata.gz-extract/metadata.gz-extract',
-        'data.gz-extract/*.gemspec',
-        'data.gz-extract/Gemfile',
-        'data.gz-extract/Gemfile.lock',
+    datafile_name_patterns = ('metadata.gz-extract/metadata.gz-extract',) + (
+        GemspecHandler.path_patterns + GemfileHandler.path_patterns
+        + GemfileLockHandler.path_patterns
     )
 
     gemroot = get_ancestor(levels_up=2, resource=resource, codebase=codebase)
@@ -105,11 +103,9 @@ class BaseGemProjectHandler(models.DatafileHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         datafile_name_patterns = (
-            '*.gemspec',
-            'Gemfile',
-            'Gemfile.lock',
+            GemspecHandler.path_patterns + GemfileHandler.path_patterns
+            + GemfileLockHandler.path_patterns
         )
-
         yield from cls.assemble_from_many_datafiles(
             datafile_name_patterns=datafile_name_patterns,
             directory=resource.parent(codebase),

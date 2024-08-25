@@ -79,9 +79,11 @@ class AboutFileHandler(models.DatafileHandler):
         declared_license_expression = package_data.get('license_expression')
 
         owner = package_data.get('owner')
-        if not isinstance(owner, str):
-            owner = repr(owner)
-        parties = [models.Party(type=models.party_person, name=owner, role='owner')]
+        parties = []
+        if owner:
+            if not isinstance(owner, str):
+                owner = repr(owner)
+            parties.append(models.Party(type=models.party_person, name=owner, role='owner'))
 
         # FIXME: also include notice_file and license_file(s) as file_references
         file_references = []
@@ -157,7 +159,8 @@ class AboutFileHandler(models.DatafileHandler):
                     missing = sorted(file_references_by_path.values(), key=lambda r: r.path)
                     package.extra_data['missing_file_references'] = missing
             else:
-                package.extra_data['missing_file_references'] = package_data.file_references[:]
+                if package.file_references:
+                    package.extra_data['missing_file_references'] = package_data.file_references[:]
 
         # we yield this as we do not want this further processed
         yield resource

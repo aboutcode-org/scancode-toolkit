@@ -217,8 +217,6 @@ class LicenseScanner(ScanPlugin):
                     f'before: {license_expressions_before}\n'
                     f'after : {license_expressions_after}'
                 )
-        
-        #raise Exception()
 
         license_detections = collect_license_detections(
             codebase=codebase,

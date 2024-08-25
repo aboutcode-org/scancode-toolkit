@@ -112,266 +112,6 @@
   ],
   "dependencies": [
     {
-      "purl": "pkg:pypi/jieba",
-      "extracted_requirement": "jieba",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/jieba?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
-      "purl": "pkg:pypi/colorlog",
-      "extracted_requirement": "colorlog",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/colorlog?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
-      "purl": "pkg:pypi/colorama",
-      "extracted_requirement": "colorama",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/colorama?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
-      "purl": "pkg:pypi/seqeval",
-      "extracted_requirement": "seqeval",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/seqeval?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
-      "purl": "pkg:pypi/multiprocess",
-      "extracted_requirement": "multiprocess",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/multiprocess?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
-      "purl": "pkg:pypi/datasets",
-      "extracted_requirement": "datasets>=2.0.0",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/datasets?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
-      "purl": "pkg:pypi/tqdm",
-      "extracted_requirement": "tqdm",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/tqdm?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
-      "purl": "pkg:pypi/paddlefsl",
-      "extracted_requirement": "paddlefsl",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/paddlefsl?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
-      "purl": "pkg:pypi/sentencepiece",
-      "extracted_requirement": "sentencepiece",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/sentencepiece?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
-      "purl": "pkg:pypi/paddle2onnx",
-      "extracted_requirement": "paddle2onnx",
-      "scope": "install",
-      "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
-      "is_direct": true,
-      "resolved_package": {},
-      "extra_data": {
-        "is_editable": false,
-        "link": null,
-        "hash_options": [],
-        "is_constraint": false,
-        "is_archive": null,
-        "is_wheel": false,
-        "is_url": null,
-        "is_vcs_url": null,
-        "is_name_at_url": false,
-        "is_local_path": null
-      },
-      "dependency_uid": "pkg:pypi/paddle2onnx?uuid=fixed-uid-done-for-testing-5642512d1758",
-      "for_package_uid": null,
-      "datafile_path": "requirements.txt",
-      "datasource_id": "pip_requirements"
-    },
-    {
       "purl": "pkg:pypi/cython",
       "extracted_requirement": null,
       "scope": "setup",
@@ -721,10 +461,35 @@
       ]
     },
     {
-      "identifier": "apache_2_0-8a372204-beb1-cb75-7598-6680ba430098",
+      "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "paddlenlp/hubconf.py",
+          "start_line": 3,
+          "end_line": 13,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 85,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE",
+          "matched_text": "# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.",
+          "matched_text_diagnostics": "Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License."
+        }
+      ]
+    },
+    {
+      "identifier": "apache_2_0-8a372204-beb1-cb75-7598-6680ba430098",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
       "detection_log": [
         "unknown-reference-to-local-file"
       ],
@@ -783,7 +548,7 @@
       "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
-      "detection_count": 2,
+      "detection_count": 1,
       "detection_log": [],
       "reference_matches": [
         {
@@ -808,7 +573,7 @@
       "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
-      "detection_count": 2,
+      "detection_count": 1,
       "detection_log": [],
       "reference_matches": [
         {
@@ -826,31 +591,6 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE",
           "matched_text": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/",
           "matched_text_diagnostics": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/"
-        }
-      ]
-    },
-    {
-      "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
-      "license_expression": "apache-2.0",
-      "license_expression_spdx": "Apache-2.0",
-      "detection_count": 2,
-      "detection_log": [],
-      "reference_matches": [
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "from_file": "paddlenlp/hubconf.py",
-          "start_line": 3,
-          "end_line": 13,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 85,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_7.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE",
-          "matched_text": "# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.",
-          "matched_text_diagnostics": "Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#     http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License."
         }
       ]
     },
@@ -1567,116 +1307,9 @@
           "vcs_url": null,
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "apache-2.0",
-          "declared_license_expression_spdx": "Apache-2.0",
-          "license_detections": [
-            {
-              "license_expression": "apache-2.0",
-              "license_expression_spdx": "Apache-2.0",
-              "matches": [
-                {
-                  "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
-                  "from_file": "paddlenlp/LICENSE",
-                  "start_line": 3,
-                  "end_line": 5,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 12,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_791.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE",
-                  "matched_text": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/",
-                  "matched_text_diagnostics": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/"
-                }
-              ],
-              "detection_log": [],
-              "identifier": "apache_2_0-aef5c472-cdfd-dc5f-c152-40e3d96f140e"
-            },
-            {
-              "license_expression": "apache-2.0",
-              "license_expression_spdx": "Apache-2.0",
-              "matches": [
-                {
-                  "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
-                  "from_file": "paddlenlp/README.md",
-                  "start_line": 305,
-                  "end_line": 307,
-                  "matcher": "2-aho",
-                  "score": 66.67,
-                  "matched_length": 4,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_1215.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1215.RULE",
-                  "matched_text": "License\n\nPaddleNLP\u9075\u5faa[Apache-2.0\u5f00\u6e90\u534f\u8bae](./LICENSE)\u3002",
-                  "matched_text_diagnostics": "License\n\n[PaddleNLP\u9075\u5faa][Apache-2.[0\u5f00\u6e90\u534f\u8bae]](./LICENSE)\u3002"
-                }
-              ],
-              "detection_log": [],
-              "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80"
-            },
-            {
-              "license_expression": "apache-2.0",
-              "license_expression_spdx": "Apache-2.0",
-              "matches": [
-                {
-                  "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
-                  "from_file": "paddlenlp/README_en.md",
-                  "start_line": 6,
-                  "end_line": 8,
-                  "matcher": "3-seq",
-                  "score": 80.0,
-                  "matched_length": 8,
-                  "match_coverage": 80.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_469.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_469.RULE",
-                  "matched_text": "## License\n\nPaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
-                  "matched_text_diagnostics": "License\n\n[PaddleNLP] [is] [provided] under the [Apache-2.0 License](./LICENSE)."
-                },
-                {
-                  "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
-                  "from_file": "paddlenlp/README_en.md",
-                  "start_line": 8,
-                  "end_line": 8,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 9,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_83.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_83.RULE",
-                  "matched_text": "PaddleNLP is provided under the [Apache-2.0 License](./LICENSE).",
-                  "matched_text_diagnostics": "is provided under the [Apache-2.0 License](./LICENSE)."
-                },
-                {
-                  "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
-                  "from_file": "paddlenlp/LICENSE",
-                  "start_line": 3,
-                  "end_line": 5,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 12,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_791.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE",
-                  "matched_text": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/",
-                  "matched_text_diagnostics": "Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/"
-                }
-              ],
-              "detection_log": [
-                "unknown-reference-to-local-file"
-              ],
-              "identifier": "apache_2_0-8a372204-beb1-cb75-7598-6680ba430098"
-            }
-          ],
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],

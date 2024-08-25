@@ -13,6 +13,7 @@ import os
 import logging
 import sys
 from functools import partial
+from fnmatch import fnmatchcase
 
 import saneyaml
 from packageurl import PackageURL
@@ -142,9 +143,10 @@ class BasePodHandler(models.DatafileHandler):
         else:
             # do we have more than one podspec?
             parent = resource.parent(codebase)
+            podspec_path_pattern = PodspecHandler.path_patterns[0] 
             sibling_podspecs = [
                 r for r in parent.children(codebase)
-                if r.name.endswith('.podspec')
+                if fnmatchcase(r.name, podspec_path_pattern)
             ]
 
             siblings_counts = len(sibling_podspecs)
@@ -152,8 +154,7 @@ class BasePodHandler(models.DatafileHandler):
             has_multiple_podspec = siblings_counts > 1
 
             datafile_name_patterns = (
-                'Podfile.lock',
-                'Podfile',
+                PodfileHandler.path_patterns + PodfileLockHandler.path_patterns
             )
 
             if has_single_podspec:

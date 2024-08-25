@@ -161,7 +161,7 @@ class BaseNpmHandler(models.DatafileHandler):
                 for npm_res in cls.walk_npm(resource=workspace_root, codebase=codebase):
                     if package_uid and package_uid not in npm_res.for_packages:
                         package_adder(package_uid, npm_res, codebase)
-                    yield npm_res
+
             yield package_resource
 
         elif workspaces:
@@ -190,7 +190,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     for npm_res in cls.walk_npm(resource=workspace_root, codebase=codebase):
                         if package_uid and not npm_res.for_packages:
                             package_adder(package_uid, npm_res, codebase)
-                        yield npm_res
+
                 yield package_resource
 
         else:
@@ -257,7 +257,6 @@ class BaseNpmHandler(models.DatafileHandler):
             for npm_res in cls.walk_npm(resource=member_root, codebase=codebase):
                 if package_uid and package_uid not in npm_res.for_packages:
                     package_adder(package_uid, npm_res, codebase)
-                yield npm_res
 
             yield from cls.yield_npm_dependencies_and_resources(
                 package_resource=workspace_member,
