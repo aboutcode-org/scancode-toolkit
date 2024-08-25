@@ -14,18 +14,18 @@
     "primary_language": null,
     "other_license_expressions": [
       {
-        "value": "mit",
-        "count": 7
+        "value": null,
+        "count": 2
       },
       {
-        "value": null,
-        "count": 3
+        "value": "mit",
+        "count": 2
       }
     ],
     "other_holders": [
       {
         "value": null,
-        "count": 9
+        "count": 3
       },
       {
         "value": "Isaac Muse",
@@ -47,7 +47,7 @@
       "qualifiers": {},
       "subpath": null,
       "primary_language": "Python",
-      "description": "Screen-scraping library\nBeautiful Soup is a library that makes it easy to scrape information\nfrom web pages. It sits atop an HTML or XML parser, providing Pythonic\nidioms for iterating, searching, and modifying the parse tree.\n\n# Quick start\n\n```\n>>> from bs4 import BeautifulSoup\n>>> soup = BeautifulSoup(\"<p>Some<b>bad<i>HTML\")\n>>> print(soup.prettify())\n<html>\n <body>\n  <p>\n   Some\n   <b>\n    bad\n    <i>\n     HTML\n    </i>\n   </b>\n  </p>\n </body>\n</html>\n>>> soup.find(text=\"bad\")\n'bad'\n>>> soup.i\n<i>HTML</i>\n#\n>>> soup = BeautifulSoup(\"<tag1>Some<tag2/>bad<tag3>XML\", \"xml\")\n#\n>>> print(soup.prettify())\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<tag1>\n Some\n <tag2/>\n bad\n <tag3>\n  XML\n </tag3>\n</tag1>\n```\n\nTo go beyond the basics, [comprehensive documentation is available](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).\n\n# Links\n\n* [Homepage](https://www.crummy.com/software/BeautifulSoup/bs4/)\n* [Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)\n* [Discussion group](https://groups.google.com/group/beautifulsoup/)\n* [Development](https://code.launchpad.net/beautifulsoup/)\n* [Bug tracker](https://bugs.launchpad.net/beautifulsoup/)\n* [Complete changelog](https://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/view/head:/CHANGELOG)\n\n# Note on Python 2 sunsetting\n\nBeautiful Soup's support for Python 2 was discontinued on December 31,\n2020: one year after the sunset date for Python 2 itself. From this\npoint onward, new Beautiful Soup development will exclusively target\nPython 3. The final release of Beautiful Soup 4 to support Python 2\nwas 4.9.3.\n\n# Supporting the project\n\nIf you use Beautiful Soup as part of your professional work, please consider a\n[Tidelift subscription](https://tidelift.com/subscription/pkg/pypi-beautifulsoup4?utm_source=pypi-beautifulsoup4&utm_medium=referral&utm_campaign=readme).\nThis will support many of the free software projects your organization\ndepends on, not just Beautiful Soup.\n\nIf you use Beautiful Soup for personal projects, the best way to say\nthank you is to read\n[Tool Safety](https://www.crummy.com/software/BeautifulSoup/zine/), a zine I\nwrote about what Beautiful Soup has taught me about software\ndevelopment.\n\n# Building the documentation\n\nThe bs4/doc/ directory contains full documentation in Sphinx\nformat. Run `make html` in that directory to create HTML\ndocumentation.\n\n# Running the unit tests\n\nBeautiful Soup supports unit test discovery using Pytest:\n\n```\n$ pytest\n```",
+      "description": "Screen-scraping library\nBeautiful Soup is a library that makes it easy to scrape information\nfrom web pages. It sits atop an HTML or XML parser, providing Pythonic\nidioms for iterating, searching, and modifying the parse tree.",
       "release_date": null,
       "parties": [
         {
@@ -132,8 +132,8 @@
           "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
         }
       ],
-      "other_license_expression": "mit",
-      "other_license_expression_spdx": "MIT",
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
       "other_license_detections": [],
       "extracted_license_statement": "license: MIT License\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
       "notice_text": null,
@@ -259,64 +259,6 @@
   ],
   "license_detections": [
     {
-      "identifier": "mit-5efc8b4c-330e-42ff-3423-92f89eb9526a",
-      "license_expression": "mit",
-      "license_expression_spdx": "MIT",
-      "detection_count": 4,
-      "reference_matches": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "python_whl/sample/builder/__init__.py",
-          "start_line": 1,
-          "end_line": 1,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 11,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "mit_413.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_413.RULE"
-        },
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "python_whl/sample/builder/__init__.py",
-          "start_line": 2,
-          "end_line": 2,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "mit_30.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-        }
-      ]
-    },
-    {
-      "identifier": "mit-10691223-5437-037e-cdc7-2fea369a7666",
-      "license_expression": "mit",
-      "license_expression_spdx": "MIT",
-      "detection_count": 1,
-      "reference_matches": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "python_whl/sample/builder/_htmlparser.py",
-          "start_line": 4,
-          "end_line": 5,
-          "matcher": "3-seq",
-          "score": 63.16,
-          "matched_length": 12,
-          "match_coverage": 63.16,
-          "rule_relevance": 100,
-          "rule_identifier": "mit_264.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_264.RULE"
-        }
-      ]
-    },
-    {
       "identifier": "mit-1f8486fd-7f89-7615-577f-4f2da8721e17",
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
@@ -326,8 +268,8 @@
           "license_expression": "mit",
           "license_expression_spdx": "MIT",
           "from_file": "python_whl/sample/__init__.py",
-          "start_line": 20,
-          "end_line": 21,
+          "start_line": 11,
+          "end_line": 12,
           "matcher": "3-seq",
           "score": 63.16,
           "matched_length": 12,
@@ -550,7 +492,7 @@
           "qualifiers": {},
           "subpath": null,
           "primary_language": "Python",
-          "description": "Screen-scraping library\nBeautiful Soup is a library that makes it easy to scrape information\nfrom web pages. It sits atop an HTML or XML parser, providing Pythonic\nidioms for iterating, searching, and modifying the parse tree.\n\n# Quick start\n\n```\n>>> from bs4 import BeautifulSoup\n>>> soup = BeautifulSoup(\"<p>Some<b>bad<i>HTML\")\n>>> print(soup.prettify())\n<html>\n <body>\n  <p>\n   Some\n   <b>\n    bad\n    <i>\n     HTML\n    </i>\n   </b>\n  </p>\n </body>\n</html>\n>>> soup.find(text=\"bad\")\n'bad'\n>>> soup.i\n<i>HTML</i>\n#\n>>> soup = BeautifulSoup(\"<tag1>Some<tag2/>bad<tag3>XML\", \"xml\")\n#\n>>> print(soup.prettify())\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<tag1>\n Some\n <tag2/>\n bad\n <tag3>\n  XML\n </tag3>\n</tag1>\n```\n\nTo go beyond the basics, [comprehensive documentation is available](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).\n\n# Links\n\n* [Homepage](https://www.crummy.com/software/BeautifulSoup/bs4/)\n* [Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)\n* [Discussion group](https://groups.google.com/group/beautifulsoup/)\n* [Development](https://code.launchpad.net/beautifulsoup/)\n* [Bug tracker](https://bugs.launchpad.net/beautifulsoup/)\n* [Complete changelog](https://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/view/head:/CHANGELOG)\n\n# Note on Python 2 sunsetting\n\nBeautiful Soup's support for Python 2 was discontinued on December 31,\n2020: one year after the sunset date for Python 2 itself. From this\npoint onward, new Beautiful Soup development will exclusively target\nPython 3. The final release of Beautiful Soup 4 to support Python 2\nwas 4.9.3.\n\n# Supporting the project\n\nIf you use Beautiful Soup as part of your professional work, please consider a\n[Tidelift subscription](https://tidelift.com/subscription/pkg/pypi-beautifulsoup4?utm_source=pypi-beautifulsoup4&utm_medium=referral&utm_campaign=readme).\nThis will support many of the free software projects your organization\ndepends on, not just Beautiful Soup.\n\nIf you use Beautiful Soup for personal projects, the best way to say\nthank you is to read\n[Tool Safety](https://www.crummy.com/software/BeautifulSoup/zine/), a zine I\nwrote about what Beautiful Soup has taught me about software\ndevelopment.\n\n# Building the documentation\n\nThe bs4/doc/ directory contains full documentation in Sphinx\nformat. Run `make html` in that directory to create HTML\ndocumentation.\n\n# Running the unit tests\n\nBeautiful Soup supports unit test discovery using Pytest:\n\n```\n$ pytest\n```",
+          "description": "Screen-scraping library\nBeautiful Soup is a library that makes it easy to scrape information\nfrom web pages. It sits atop an HTML or XML parser, providing Pythonic\nidioms for iterating, searching, and modifying the parse tree.",
           "release_date": null,
           "parties": [
             {
@@ -641,98 +583,7 @@
           "extracted_license_statement": "license: MIT License\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
           "notice_text": null,
           "source_packages": [],
-          "file_references": [
-            {
-              "path": "sample/__init__.py",
-              "size": 33822,
-              "sha1": null,
-              "md5": null,
-              "sha256": "92adf6702b5088d8e353d5f08c3d1bd637573795840bcee726a4925b73e15643",
-              "sha512": null,
-              "extra_data": {}
-            },
-            {
-              "path": "sample/builder/_html5lib.py",
-              "size": 19114,
-              "sha1": null,
-              "md5": null,
-              "sha256": "d30fa198f339c16476883b91091e8cbd8e993d76e0fe181d7729be616aa3d37b",
-              "sha512": null,
-              "extra_data": {}
-            },
-            {
-              "path": "sample/builder/_htmlparser.py",
-              "size": 14923,
-              "sha1": null,
-              "md5": null,
-              "sha256": "fd50f9674f23e80f5860c478cbb6537dd333c22081b1251000fb8789807e5992",
-              "sha512": null,
-              "extra_data": {}
-            },
-            {
-              "path": "sample/builder/_lxml.py",
-              "size": 14948,
-              "sha1": null,
-              "md5": null,
-              "sha256": "c8a74cc7591d5fb1f60a8a704961189b84a0adf91df960e3f076ec91c68b6ae5",
-              "sha512": null,
-              "extra_data": {}
-            },
-            {
-              "path": "sample/tests/__init__.py",
-              "size": 48392,
-              "sha1": null,
-              "md5": null,
-              "sha256": "3727537a076cfebecca0e12e40b4ba4c599303d4f02b72b1261c0492a8c21934",
-              "sha512": null,
-              "extra_data": {}
-            },
-            {
-              "path": "samples-0.1.0.dist-info/METADATA",
-              "size": 3790,
-              "sha1": null,
-              "md5": null,
-              "sha256": "524392d64a088e56a4232f50d6edb208dc03105394652acb72c6d5fa64c89f3e",
-              "sha512": null,
-              "extra_data": {}
-            },
-            {
-              "path": "samples-0.1.0.dist-info/WHEEL",
-              "size": 87,
-              "sha1": null,
-              "md5": null,
-              "sha256": "99161210bdc887a8396bf095308730885fffd007b8fe02d8874d5814dc22ab59",
-              "sha512": null,
-              "extra_data": {}
-            },
-            {
-              "path": "samples-0.1.0.dist-info/licenses/AUTHORS",
-              "size": 2176,
-              "sha1": null,
-              "md5": null,
-              "sha256": "b9221d6eb05bd6ca1b75797b56b954beebe29b674df64177307e04767d162861",
-              "sha512": null,
-              "extra_data": {}
-            },
-            {
-              "path": "samples-0.1.0.dist-info/licenses/LICENSE",
-              "size": 1441,
-              "sha1": null,
-              "md5": null,
-              "sha256": "55b4d8d4b1e5bc86d10efac91b74c87bcb77526b0f5b9edaf8b9cd2adc7397b2",
-              "sha512": null,
-              "extra_data": {}
-            },
-            {
-              "path": "samples-0.1.0.dist-info/RECORD",
-              "size": null,
-              "sha1": null,
-              "md5": null,
-              "sha256": null,
-              "sha512": null,
-              "extra_data": {}
-            }
-          ],
+          "file_references": [],
           "is_private": false,
           "is_virtual": false,
           "extra_data": {
@@ -875,27 +726,7 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 2.35,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "sample-0.1.0.dist-info/RECORD",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
+      "percentage_of_license_text": 6.09,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1081,9 +912,7 @@
       "path": "sample/__init__.py",
       "type": "file",
       "package_data": [],
-      "for_packages": [
-        "pkg:pypi/beautifulsoup4@4.12.3?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
+      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1100,8 +929,8 @@
               "license_expression": "mit",
               "spdx_license_expression": "MIT",
               "from_file": "python_whl/sample/__init__.py",
-              "start_line": 20,
-              "end_line": 21,
+              "start_line": 11,
+              "end_line": 12,
               "matcher": "3-seq",
               "score": 63.16,
               "matched_length": 12,
@@ -1115,342 +944,28 @@
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 9.68,
+      "percentage_of_license_text": 17.14,
       "copyrights": [
         {
           "copyright": "Copyright (c) 2004-2024 Leonard Richardson",
-          "start_line": 19,
-          "end_line": 19
+          "start_line": 10,
+          "end_line": 10
         }
       ],
       "holders": [
         {
           "holder": "Leonard Richardson",
-          "start_line": 19,
-          "end_line": 19
+          "start_line": 10,
+          "end_line": 10
         }
       ],
       "authors": [
         {
           "author": "Leonard Richardson (leonardr@segfault.org)",
-          "start_line": 17,
-          "end_line": 17
+          "start_line": 8,
+          "end_line": 8
         }
       ],
-      "scan_errors": []
-    },
-    {
-      "path": "sample/builder",
-      "type": "directory",
-      "package_data": [],
-      "for_packages": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "sample/builder/__init__.py",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "python_whl/sample/builder/__init__.py",
-              "start_line": 1,
-              "end_line": 1,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 11,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_413.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_413.RULE"
-            },
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "python_whl/sample/builder/__init__.py",
-              "start_line": 2,
-              "end_line": 2,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-            }
-          ],
-          "identifier": "mit-5efc8b4c-330e-42ff-3423-92f89eb9526a"
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 100.0,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "sample/builder/_html5lib.py",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/beautifulsoup4@4.12.3?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "python_whl/sample/builder/_html5lib.py",
-              "start_line": 1,
-              "end_line": 1,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 11,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_413.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_413.RULE"
-            },
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "python_whl/sample/builder/_html5lib.py",
-              "start_line": 2,
-              "end_line": 2,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-            }
-          ],
-          "identifier": "mit-5efc8b4c-330e-42ff-3423-92f89eb9526a"
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 86.67,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "sample/builder/_htmlparser.py",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/beautifulsoup4@4.12.3?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "python_whl/sample/builder/_htmlparser.py",
-              "start_line": 4,
-              "end_line": 5,
-              "matcher": "3-seq",
-              "score": 63.16,
-              "matched_length": 12,
-              "match_coverage": 63.16,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_264.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_264.RULE"
-            }
-          ],
-          "identifier": "mit-10691223-5437-037e-cdc7-2fea369a7666"
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 38.71,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "sample/builder/_lxml.py",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/beautifulsoup4@4.12.3?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "python_whl/sample/builder/_lxml.py",
-              "start_line": 1,
-              "end_line": 1,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 11,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_413.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_413.RULE"
-            },
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "python_whl/sample/builder/_lxml.py",
-              "start_line": 2,
-              "end_line": 2,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-            }
-          ],
-          "identifier": "mit-5efc8b4c-330e-42ff-3423-92f89eb9526a"
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 81.25,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "sample/tests",
-      "type": "directory",
-      "package_data": [],
-      "for_packages": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "sample/tests/__init__.py",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/beautifulsoup4@4.12.3?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
-      "license_detections": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "matches": [
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "python_whl/sample/tests/__init__.py",
-              "start_line": 4,
-              "end_line": 4,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 11,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_413.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_413.RULE"
-            },
-            {
-              "license_expression": "mit",
-              "spdx_license_expression": "MIT",
-              "from_file": "python_whl/sample/tests/__init__.py",
-              "start_line": 5,
-              "end_line": 5,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_30.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-            }
-          ],
-          "identifier": "mit-5efc8b4c-330e-42ff-3423-92f89eb9526a"
-        }
-      ],
-      "license_clues": [],
-      "percentage_of_license_text": 65.0,
-      "copyrights": [],
-      "holders": [],
-      "authors": [],
       "scan_errors": []
     }
   ]

@@ -15,7 +15,7 @@
     "other_license_expressions": [
       {
         "value": null,
-        "count": 5
+        "count": 4
       },
       {
         "value": "apache-2.0",
@@ -25,7 +25,7 @@
     "other_holders": [
       {
         "value": null,
-        "count": 7
+        "count": 6
       },
       {
         "value": "Dominik Richter",
@@ -456,26 +456,6 @@
           "end_line": 1
         }
       ],
-      "authors": [],
-      "scan_errors": []
-    },
-    {
-      "path": "README.md",
-      "type": "file",
-      "package_data": [],
-      "for_packages": [],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": true,
-      "is_top_level": true,
-      "is_key_file": true,
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [],
-      "percentage_of_license_text": 0,
-      "copyrights": [],
-      "holders": [],
       "authors": [],
       "scan_errors": []
     },
