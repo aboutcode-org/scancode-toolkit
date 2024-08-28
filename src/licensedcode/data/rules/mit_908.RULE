@@ -6,4 +6,4 @@ ignorable_urls:
     - http://choosealicense.com/licenses/mit
 ---
 
-is made available under the [MIT License](http://choosealicense.com/licenses/mit/).
+is made available {{under the [MIT License}}](http://choosealicense.com/licenses/mit/).

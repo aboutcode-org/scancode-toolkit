@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.TXT
 ---
 
-is licensed under the [MIT license](LICENSE.TXT).
+is {{licensed under the [MIT}} license](LICENSE.TXT).

@@ -6,4 +6,4 @@ ignorable_urls:
     - https://opensource.org/license/mit
 ---
 
-The custom code in this repo is governed by [The MIT License](https://opensource.org/license/mit/)
+The custom code in this repo is governed by [{{The MIT License}}](https://opensource.org/license/mit/)

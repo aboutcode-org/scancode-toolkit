@@ -6,6 +6,6 @@ ignorable_urls:
     - http://opensource.org/licenses/MIT
 ---
 
-## License
+## {{License
 
-[MIT](http://opensource.org/licenses/MIT)
+[MIT}}](http://opensource.org/licenses/MIT)

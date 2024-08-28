@@ -6,5 +6,5 @@ ignorable_urls:
     - http://opensource.org/licenses/mit-license.html
 ---
 
-Font Awesome CSS, LESS, and Sass files are licensed under the MIT License:
+Font Awesome CSS, LESS, and Sass files are {{licensed under the MIT}} License:
 http://opensource.org/licenses/mit-license.html
