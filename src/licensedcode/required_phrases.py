@@ -52,11 +52,6 @@ def get_required_phrase_spans(text):
     >>> x = get_required_phrase_spans(text)
     >>> assert x == [Span(4, 6)], x
 
-    >>> text = 'This is enclosed in {{double curly braces}}'
-    >>> #       0    1  2        3    4      5     6
-    >>> x = get_required_phrase_spans(text)
-    >>> assert x == ['double', 'curly', 'braces'], x
-
     >>> text = 'This is {{enclosed}} a  {{double curly braces}} or not'
     >>> #       0    1    2          SW   3      4     5        6  7
     >>> x = get_required_phrase_spans(text)
@@ -114,7 +109,7 @@ def get_required_phrase_texts(text):
     >>> text = 'This is enclosed in {{double curly braces}}'
     >>> #       0    1  2        3    4      5     6
     >>> x = get_required_phrase_texts(text=text)
-    >>> assert x == ['double', 'curly', 'braces'], x
+    >>> assert x == ['double curly braces'], x
     """
     return [
         required_phrase.text

@@ -1832,10 +1832,6 @@ class BasicRule:
             for license_flag_name in self.license_flag_names
         }
 
-    @property
-    def license_flag_values(self):
-        return self.license_flags.values()
-
     def validate(self, licensing=None, thorough=False):
         """
         Validate this rule using the provided ``licensing`` Licensing and yield
@@ -1843,9 +1839,8 @@ class BasicRule:
         """
         is_false_positive = self.is_false_positive
 
-        has_license_flags = any(self.license_flag_values)
-        has_no_license_flags = len([l for l in self.license_flag_values if l]) == 0
-        has_many_license_flags = len([l for l in self.license_flag_values if l]) > 1
+        has_license_flags = any(self.license_flags.values())
+        has_many_license_flags = sum(self.license_flags.values()) > 1
 
         license_expression = self.license_expression
 
@@ -1888,9 +1883,6 @@ class BasicRule:
 
             if not (0 <= self.relevance <= 100):
                 yield 'Invalid rule relevance. Should be between 0 and 100.'
-            
-            if has_no_license_flags:
-                yield 'Invalid rule no is_license_* flags present.'
 
             if has_many_license_flags:
                 yield 'Invalid rule is_license_* flags. Only one allowed.'
@@ -2295,6 +2287,8 @@ class Rule(BasicRule):
         rule_file = self.rule_file(rules_data_dir=rules_data_dir)
 
         metadata = self.to_dict()
+        # This can be used to pass objects to dump on the rule file with
+        # other rule metadata, like debugging collection of required phrases
         if kwargs:
             metadata.update(kwargs)
         content = self.text
@@ -2328,7 +2322,7 @@ class Rule(BasicRule):
             raise e
 
         known_attributes = set(attr.fields_dict(self.__class__))
-        # This is an attirbute used to debug marking required phrases, and is not needed
+        # This is an attribute used to debug marking required phrases, and is not needed
         if "sources" in data:
             data.pop("sources")
         data_file_attributes = set(data)

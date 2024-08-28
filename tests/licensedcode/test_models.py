@@ -228,7 +228,6 @@ class TestRule(FileBasedTesting):
                 r.is_license_intro,
                 r.is_license_clue,
                 r.is_false_positive,
-                r.is_required_phrases,
             ]
             number_of_flags_set = 0
             for rule_flag in rule_flags:
@@ -577,9 +576,7 @@ class TestRule(FileBasedTesting):
             validations.extend(rule.validate())
         expected = [
             'Unknown language: foobar',
-            'Invalid rule is_license_* flags. Only one allowed.',
             'At least one is_license_* flag is needed.',
-            'Invalid rule is_license_* flags. Only one allowed.',
             'At least one is_license_* flag is needed.',
         ]
         assert validations == expected

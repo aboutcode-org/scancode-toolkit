@@ -181,25 +181,21 @@ def get_non_overlapping_spans(old_required_phrase_spans, new_required_phrase_spa
         return new_required_phrase_spans
     
     for new_span in new_required_phrase_spans:
-        if not any(
+        if any(
             old_span.overlap(new_span) != 0
             for old_span in old_required_phrase_spans
         ):
-            yield new_span
+            continue
+
+        yield new_span
 
 
 def combine_tokens(token_tuples):
     """
     Returns a string `combined_text` combining token tuples from the list `token_tuples`,
     which are token tuples created by the tokenizer functions.
-    """
-    combined_text = ''
-    
-    for token_tuple in token_tuples:
-        _value, token = token_tuple
-        combined_text += token
-        
-    return combined_text
+    """ 
+    return ''.join(token for _, token in token_tuples)
 
 
 def add_required_phrase_markers(text, required_phrase_span):
@@ -208,11 +204,10 @@ def add_required_phrase_markers(text, required_phrase_span):
     markers to the `text` around the tokens which the span represents, while
     being mindful of whitespace and stopwords.
     """
-    tokens_tuples_without_markers = list(matched_query_text_tokenizer(text))
     tokens_tuples_with_markers = []
     token_index = 0
 
-    for token_tuple in tokens_tuples_without_markers:
+    for token_tuple in matched_query_text_tokenizer(text):
         
         is_word, token = token_tuple
 

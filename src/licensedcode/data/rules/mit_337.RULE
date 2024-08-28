@@ -6,5 +6,5 @@ ignorable_urls:
     - http://www.opensource.org/licenses/mit-license.php
 ---
 
-This is the http://www.opensource.org/licenses/mit-license.php MIT Software License
+This is the http://www.opensource.org/licenses/mit-license.php {{MIT Software License}}
 which is OSI-certified, and GPL-compatible.
