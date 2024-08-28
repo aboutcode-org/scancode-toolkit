@@ -115,17 +115,18 @@ def required_phrase_tokenizer(text, stopwords=STOPWORDS):
             yield token
 
 
-def return_spans_for_required_phrase_in_text(text, required_phrase):
+def return_spans_for_required_phrase_in_text(text, required_phrase, preserve_case=False):
     """
     Returns a list of Spans where in `text`, the `required_phrase` exists,
     and if it doesn't exist anywhere, returns an empty list.
     """
     spans_with_required_phrase = []
-    
-    text_tokens = list(index_tokenizer(text))
-    required_phrase_tokens = list(index_tokenizer(required_phrase))
+
+    text_tokens = list(index_tokenizer(text=text, preserve_case=preserve_case))
+    required_phrase_tokens = list(index_tokenizer(text=required_phrase, preserve_case=preserve_case))
     required_phrase_first_token = required_phrase_tokens[0]
 
+    # Initial check to see if all tokens in the required phrase are present
     if all([
         required_phrase_token in text_tokens
         for required_phrase_token in required_phrase_tokens
@@ -143,7 +144,7 @@ def return_spans_for_required_phrase_in_text(text, required_phrase):
                 spans_with_required_phrase.append(
                     Span(start_pos, end_pos-1)
                 )
-    
+
     return spans_with_required_phrase
 
 
@@ -156,9 +157,13 @@ def get_ignorable_spans(rule):
     ignorables = rule.referenced_filenames + rule.ignorable_urls
     for ignorable in ignorables:
         ignorable_spans.extend(
-            return_spans_for_required_phrase_in_text(text=rule.text, required_phrase=ignorable)
+            return_spans_for_required_phrase_in_text(
+                text=rule.text,
+                required_phrase=ignorable,
+                preserve_case=True,
+            )
         )
-    
+
     return ignorable_spans
 
 
@@ -226,7 +231,7 @@ def add_required_phrase_markers(text, required_phrase_span):
     return combine_tokens(tokens_tuples_with_markers)
 
 
-def index_tokenizer(text, stopwords=STOPWORDS):
+def index_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
     """
     Return an iterable of tokens from a rule or query ``text`` using index
     tokenizing rules. Ignore words that exist as lowercase in the ``stopwords``
@@ -250,7 +255,9 @@ def index_tokenizer(text, stopwords=STOPWORDS):
     """
     if not text:
         return []
-    words = word_splitter(text.lower())
+    if not preserve_case:
+        text = text.lower()
+    words = word_splitter(text)
     return (token for token in words if token and token not in stopwords)
 
 

@@ -1844,7 +1844,8 @@ class BasicRule:
         is_false_positive = self.is_false_positive
 
         has_license_flags = any(self.license_flag_values)
-        has_many_license_flags = len([l for l in self.license_flag_values if l]) != 1
+        has_no_license_flags = len([l for l in self.license_flag_values if l]) == 0
+        has_many_license_flags = len([l for l in self.license_flag_values if l]) > 1
 
         license_expression = self.license_expression
 
@@ -1887,6 +1888,9 @@ class BasicRule:
 
             if not (0 <= self.relevance <= 100):
                 yield 'Invalid rule relevance. Should be between 0 and 100.'
+            
+            if has_no_license_flags:
+                yield 'Invalid rule no is_license_* flags present.'
 
             if has_many_license_flags:
                 yield 'Invalid rule is_license_* flags. Only one allowed.'
@@ -2243,10 +2247,7 @@ class Rule(BasicRule):
         if self.is_from_license:
             return []
         try:
-            return [
-                required_phrase.span
-                for required_phrase in get_required_phrase_spans(self.text)
-            ]
+            return get_required_phrase_spans(self.text)
         except Exception as e:
             raise InvalidRule(f'Invalid rule: {self}') from e
 
@@ -2327,6 +2328,9 @@ class Rule(BasicRule):
             raise e
 
         known_attributes = set(attr.fields_dict(self.__class__))
+        # This is an attirbute used to debug marking required phrases, and is not needed
+        if "sources" in data:
+            data.pop("sources")
         data_file_attributes = set(data)
         if with_checks:
             unknown_attributes = data_file_attributes.difference(known_attributes)
@@ -2870,8 +2874,16 @@ def rule_exists(text):
     if len(matches) > 1:
         return False
     match = matches[0]
-    if match.matcher == MATCH_HASH and match.score() == 100:
-        return match.rule.identifier
+    if match.matcher == MATCH_HASH and match.coverage() == 100:
+        return match.rule
+
+
+def get_rule_id_for_text(text):
+    rule = rule_exists(text=text)
+    if rule:
+        return rule.identifier
+    else:
+        return False
 
 
 def find_rule_base_location(name_prefix, rules_directory=rules_data_dir):

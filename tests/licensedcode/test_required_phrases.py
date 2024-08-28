@@ -10,10 +10,17 @@
 import os
 from unittest import TestCase as TestCaseClass
 
+import pytest
+
 from licensedcode.required_phrases import get_required_phrases
 from licensedcode.required_phrases import get_required_phrase_spans
 from licensedcode.required_phrases import get_required_phrase_texts
+from licensedcode.required_phrases import add_required_phrases_from_other_rules
+from licensedcode.required_phrases import add_required_phrases_from_license_fields
+from licensedcode.required_phrases import ListOfRequiredPhrases
+from licensedcode.required_phrases import RequiredPhraseDetails
 from licensedcode.models import InvalidRule
+from licensedcode.models import Rule
 from licensedcode.spans import Span
 
 
@@ -33,6 +40,10 @@ class TestGetKeyPhrases(TestCaseClass):
             for required_phrase in get_required_phrases(text=self.text)
         ]
         assert required_phrase_tokens == [['released'], ['the', 'mit', 'license']]
+
+    def test_get_required_phrase_texts(self):
+        required_phrase_texts = get_required_phrase_texts(text=self.text)
+        assert required_phrase_texts == ['released', 'the mit license']
 
     def test_get_required_phrases_raises_exception_required_phrase_markup_is_not_closed(self):
         text = 'This software is {{released by under the MIT license.'
@@ -72,3 +83,74 @@ class TestGetKeyPhrases(TestCaseClass):
             raise Exception('Exception should be raised')
         except InvalidRule:
             pass
+
+    def test_get_required_phrase_texts_with_markup(self):
+        text = (
+            "Lua is free software distributed under the terms of the"
+            "<A HREF='http://www.opensource.org/licenses/mit-license.html'>{{MIT license}}</A>"
+            "reproduced below;"
+        )
+        required_phrase_texts = get_required_phrase_texts(text=text)
+        assert required_phrase_texts == ['mit license']
+
+    def test_get_required_phrase_spans_with_markup(self):
+        text = (
+            "Lua is free software distributed under the terms of the"
+            "<A HREF='http://www.opensource.org/licenses/mit-license.html'>{{MIT license}}</A>"
+            "reproduced below;"
+        )
+        required_phrase_spans = get_required_phrase_spans(text=text)
+        assert required_phrase_spans == [Span(18, 19)]
+
+
+class TestListOfRequiredPhrases(TestCaseClass):
+
+    required_phrase_texts = [
+        "mit",
+        "the MIT License",
+        "MIT License with Disclaimer",
+        "licenses: mit",
+        "MIT license",
+    ]
+    required_phrases = [
+        RequiredPhraseDetails(
+            required_phrase_text=text,
+            license_expression="mit",
+            length=len(text),
+            rule=Rule(
+                license_expression="mit",
+                identifier="mit_231.RULE",
+                text=text,
+                is_required_phrase=True,
+                is_license_tag=True,
+            ),
+            sources=["mit_231.RULE"],
+        )
+        for text in required_phrase_texts
+    ]
+    required_phrases_list = ListOfRequiredPhrases(required_phrases=required_phrases)
+
+    def test_sort_required_phrases_works(self):
+        self.required_phrases_list.sort_required_phrases()
+        expected_sorted_texts = [
+            "MIT License with Disclaimer",
+            "the MIT License",
+            "licenses: mit",
+            "MIT license",
+            "mit",
+        ]
+        assert [
+            required_phrase.required_phrase_text
+            for required_phrase in self.required_phrases_list.required_phrases
+        ] == expected_sorted_texts
+
+
+class TestKeyPhrasesCanBeMarked(TestCaseClass):
+
+    @pytest.mark.scanslow
+    def can_more_key_phrases_be_marked_from_other_rules(self):
+        add_required_phrases_from_other_rules(can_mark_required_phrase_test=True)
+
+    @pytest.mark.scanslow
+    def can_more_key_phrases_be_marked_from_license_attribtues(self):
+        add_required_phrases_from_license_fields(can_mark_required_phrase_test=True)

@@ -18,6 +18,7 @@ from commoncode.testcase import FileBasedTesting
 
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import required_phrase_tokenizer
+from licensedcode.tokenize import return_spans_for_required_phrase_in_text
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
@@ -25,6 +26,7 @@ from licensedcode.tokenize import ngrams
 from licensedcode.tokenize import select_ngrams
 from licensedcode.tokenize import tokens_and_non_tokens
 from licensedcode.tokenize import word_splitter
+from licensedcode.spans import Span
 from scancode_config import REGEN_TEST_FIXTURES
 
 
@@ -520,6 +522,11 @@ class TestTokenizers(FileBasedTesting):
             'redistribution', '{{', 'is', 'not', 'really', '}}', 'permitted',
             'i', 'am', 'afraid'
         ]
+    
+    def test_return_spans_for_required_phrase_in_text(self):
+        text = "is released under the MIT license. See the LICENSE"
+        required_phrase_spans = return_spans_for_required_phrase_in_text(text=text, required_phrase="mit license")
+        assert required_phrase_spans == [Span(4, 5)]
 
 
 class TestNgrams(FileBasedTesting):

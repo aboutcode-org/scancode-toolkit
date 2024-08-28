@@ -16,10 +16,9 @@ from license_expression import Licensing
 from licensedcode import TINY_RULE
 
 from commoncode.cliutils import PluggableCommandLineOption
-from licensedcode.models import map_rules_by_expression
-from licensedcode.models import get_rules_by_identifier
 from licensedcode.models import get_rules_by_expression
 from licensedcode.models import load_licenses
+from licensedcode.models import load_rules
 from licensedcode.models import InvalidRule
 from licensedcode.models import rules_data_dir
 from licensedcode.models import Rule
@@ -34,6 +33,11 @@ from licensedcode.tokenize import get_non_overlapping_spans
 from licensedcode.tokenize import add_required_phrase_markers
 from licensedcode.tokenize import REQUIRED_PHRASE_OPEN
 from licensedcode.tokenize import REQUIRED_PHRASE_CLOSE
+
+
+# Add the rule identifier here to trace required phrase collection or required
+# phrase marking for a specific rule (Example: "mit_12.RULE")
+TRACE_REQUIRED_PHRASE_FOR_RULES = []
 
   
 def get_required_phrase_spans(text):
@@ -182,6 +186,48 @@ def get_required_phrases(text):
         raise InvalidRule(f'Invalid rule with dangling required phrase missing final closing braces', text)
 
 
+def get_normalized_tokens(text, skip_required_phrase_markers=True):
+
+    required_phrase_markers = [REQUIRED_PHRASE_CLOSE, REQUIRED_PHRASE_OPEN]
+    tokens = [
+        token
+        for token in required_phrase_tokenizer(text)
+    ]
+    if skip_required_phrase_markers:
+        tokens = [
+            token
+            for token in tokens
+            if token not in required_phrase_markers
+        ]
+
+    return tokens
+
+
+def get_normalized_text(text, skip_required_phrase_markers=True):
+    return " ".join(
+        get_normalized_tokens(
+            text=text,
+            skip_required_phrase_markers=skip_required_phrase_markers,
+        )
+    )
+
+
+def get_num_tokens(text):
+    return len(get_normalized_tokens(text))
+
+def is_text_license_reference(text):
+
+    words_license_reference = ['http', 'https', 'io', 'com', 'txt', 'md', 'file']
+    if any(
+        True
+        for word in words_license_reference
+        if word in text
+    ):
+        return True
+
+    return False
+
+
 @attr.s
 class RequiredPhraseDetails:
 
@@ -221,28 +267,34 @@ class RequiredPhraseDetails:
     def create_required_phrase_details(
         cls,
         license_expression,
-        rule,
         required_phrase_text,
         sources,
         length,
     ):
 
-        base_name = f"{rule.license_expression}_required_phrase"
+        base_name = f"{license_expression}_required_phrase"
         base_loc = find_rule_base_location(name_prefix=base_name)
-        identifier = f"{base_loc}.RULE"
+        file_path = f"{base_loc}.RULE"
+        identifier = file_path.split('/')[-1]
+
+        normalized_text = get_normalized_text(required_phrase_text)
 
         rule = Rule(
             license_expression=license_expression,
             identifier=identifier,
-            text=required_phrase_text,
+            text=normalized_text,
             is_required_phrase=True,
         )
+        if is_text_license_reference(required_phrase_text):
+            rule.is_license_reference = True
+        else:
+            rule.is_license_tag = True
         rule.dump(rules_data_dir)
 
         return cls(
             license_expression=license_expression,
             rule=rule,
-            required_phrase_text=required_phrase_text,
+            required_phrase_text=normalized_text,
             sources=sources,
             length=length,
         )
@@ -261,29 +313,56 @@ class ListOfRequiredPhrases:
             help='A list of RequiredPhraseDetails objects for all the required phrases.')
     )
 
-    def match_required_phrase_present(self, required_phrase_text, rules_by_id=None):
-        # check in all rules which are in the index
-        rule_id = rule_exists(text=required_phrase_text)
-        if not rule_id:
-            # check in all rules which are in the collected list of required phrases
-            for required_phrase in self.required_phrases:
-                if required_phrase.required_phrase_text == required_phrase_text:
-                    rule = required_phrase.rule
-                    return rule
+    def match_required_phrase_present(self, required_phrase_text):
+        """
+        Check if a required_phrase_text is present in the list of required_phrases
+        or it is a rule in the index.
+        Note: Order is important, as the list of required_phrases has both new rules which are
+        not yet in the index and old rules also present in the index.
+        """
+        normalized_text = get_normalized_text(required_phrase_text)
 
-        if rule_id and rules_by_id:
-            rule = rules_by_id.get(rule_id)
+        # check if this required_phrase_text is present in the collected list of required phrases
+        for required_phrase in self.required_phrases:
+            if required_phrase.required_phrase_text == normalized_text:
+                rule = required_phrase.rule
+                return rule
+
+        # check if this required_phrase_text is present as a rule in the index
+        rule = rule_exists(text=required_phrase_text)
+        if rule:
             return rule
 
     def update_required_phrase_sources(self, rule):
+        """
+        Given a rule update the required phrases list with this rule
 
+        Note: this should only be called on a rule that is obtained from the
+        match_required_phrase_present function so that the rule is present in the
+        index/required phrases list. 
+        """
+        # if rule is present as a required phrase rule in the list then
+        # add identifier to sources of the required phrase rule
         for required_phrase in self.required_phrases:
             if required_phrase.rule.identifier == rule.identifier:
                 required_phrase.update_sources(rule.identifier)
                 return
-        
-        #TODO:
-        # Update old rules which are required phrases
+
+        # if rule is present as a rule in the index, set the is_required_phrase flag
+        # and add to the list of required phrase rules
+        if not rule.is_required_phrase:
+            rule.is_required_phrase = True
+            rule.dump(rules_data_dir)
+
+        normalized_text = get_normalized_text(rule.text) 
+        required_phrase_detail = RequiredPhraseDetails(
+            license_expression=rule.license_expression,
+            rule=rule,
+            required_phrase_text=normalized_text,
+            sources=[rule.identifier],
+            length=len(normalized_text),
+        )
+        self.required_phrases.append(required_phrase_detail)
 
     def sort_required_phrases(self):
         self.required_phrases = sorted(
@@ -292,14 +371,38 @@ class ListOfRequiredPhrases:
             reverse=True,
         )
 
+    def add_variations_of_required_phrases(self):
+
+        words_to_skip = ["the"]
+        for required_phrase in self.required_phrases:
+            skip_words_present = [
+                skip_word
+                for skip_word in words_to_skip
+                if skip_word in required_phrase.required_phrase_text
+            ]
+            for skip_word in skip_words_present:
+                required_phrase_without_skip_word = required_phrase.required_phrase_text.replace(skip_word, "")
+                matched_rule = self.match_required_phrase_present(required_phrase_without_skip_word)
+                if not matched_rule:
+                    required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
+                        license_expression=required_phrase.license_expression,
+                        required_phrase_text=required_phrase_without_skip_word,
+                        sources=[required_phrase.rule.identifier],
+                        length=len(required_phrase_without_skip_word),
+                    )
+                    self.required_phrases.append(required_phrase_detail)
+                else:
+                    self.update_required_phrase_sources(matched_rule)
+
 
 def collect_required_phrases_in_rules(
-    rules_by_identifier,
     rules_by_expression,
     license_expression=None,
+    verbose=False,
 ):
 
-    # 
+    # A mapping of {license_expression: ListOfRequiredPhrases} for all applicable
+    # license_expressions
     required_phrases_by_expression = {}
 
     licensing = Licensing()
@@ -311,32 +414,59 @@ def collect_required_phrases_in_rules(
         if len(license_keys) != 1:
             continue
 
+        if verbose:
+            click.echo(f'Collecting required phrases for license_expression: {license_expression}')
+
         required_phrases_list = ListOfRequiredPhrases()
 
         for rule in rules:
             if rule.skip_collecting_required_phrases:
                 continue
 
-            required_phrase_texts_in_rule = get_required_phrase_texts(rule.text)
+            for required_phrase_text in get_required_phrase_texts(rule.text):
+                if get_num_tokens(required_phrase_text) < 2:
+                    if verbose:
+                        click.echo(f'WARNING: single word required phrases in: {rule.identifier}, skipping.')
+                    continue
 
-            for required_phrase_text in required_phrase_texts_in_rule:
                 required_phrase_rule = required_phrases_list.match_required_phrase_present(
                     required_phrase_text=required_phrase_text,
-                    rules_by_id=rules_by_identifier,
                 )
                 if not required_phrase_rule:
-                    required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
-                        license_expression=license_expression,
-                        required_phrase_text=required_phrase_text,
-                        sources=[rule.identifier],
-                        length=len(required_phrase_text),
-                    )
-                    required_phrases_list.required_phrases.append(required_phrase_detail)
+                    if not is_text_license_reference(required_phrase_text):
+                        required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
+                            license_expression=license_expression,
+                            required_phrase_text=required_phrase_text,
+                            sources=[rule.identifier],
+                            length=len(required_phrase_text),
+                        )
+                        required_phrases_list.required_phrases.append(required_phrase_detail)
                 else:
-                    required_phrases_list.update_required_phrase_sources(rule)
+                    required_phrases_list.update_required_phrase_sources(required_phrase_rule)
 
+                if rule.identifier in TRACE_REQUIRED_PHRASE_FOR_RULES:
+                    click.echo(
+                        f"Collecting from rule: {rule.identifier} "
+                        f"Required phrase: '{required_phrase_text}' "
+                        f"Matched rule: {required_phrase_rule}"
+                    )
+
+        # Add add new variations of the required phrases already present in the list
+        required_phrases_list.add_variations_of_required_phrases()
+
+        # We need to sort required phrases by length so we look for and mark the longest possible
+        # required phrases before the shorter ones contained in the same (substrings)
         required_phrases_list.sort_required_phrases()
         required_phrases_by_expression[license_expression] = required_phrases_list
+
+        if verbose:
+            count = len(required_phrases_list.required_phrases)
+            texts_with_source = {
+                required_phrase.required_phrase_text: required_phrase.sources
+                for required_phrase in required_phrases_list.required_phrases
+            }
+            click.echo(f'Collected {count} required phrases for license_expression: {license_expression}')
+            click.echo(f'Collected required phrases texts: \n {texts_with_source}')
 
     return required_phrases_by_expression
 
@@ -345,23 +475,30 @@ def update_required_phrases_from_other_rules(
     required_phrases_by_expression,
     rules_by_expression,
     write_required_phrases=False,
+    verbose=False,
 ):
 
     # add required phrases to rules from other rules
     for license_expression, rules in rules_by_expression.items():
-
         if not license_expression in required_phrases_by_expression:
             continue
+
+        if verbose:
+            click.echo(f'marking required phrases in rule texts for license_expression: {license_expression}')
 
         required_phrases_for_expression = required_phrases_by_expression.get(license_expression)
         add_required_phrases_for_required_phrases(
             rules=rules,
             required_phrases=required_phrases_for_expression.required_phrases,
+            verbose=verbose,
         )
 
     if write_required_phrases:
-        for required_phrases_list in required_phrases_by_expression.values():
-            for required_phrase_detail in required_phrases_list:
+        for license_expression, required_phrases_list in required_phrases_by_expression.items():
+            if verbose:
+                click.echo(f'Writing required phrases sources for license_expression: {license_expression}')
+
+            for required_phrase_detail in required_phrases_list.required_phrases:
                 if required_phrase_detail.sources:
                     required_phrase_detail.rule.dump(
                         rules_data_dir=rules_data_dir,
@@ -372,11 +509,11 @@ def update_required_phrases_from_other_rules(
 def add_required_phrases_from_other_rules(
     license_expression=None,
     write_required_phrases=False,
+    verbose=False,
+    can_mark_required_phrase_test=False,
 ):
 
-    rules_by_identifier = get_rules_by_identifier()
-    rules_by_expression = map_rules_by_expression(rules_by_identifier)
-
+    rules_by_expression = get_rules_by_expression()
     if license_expression:
         rules_by_expression = {license_expression: rules_by_expression[license_expression]}
     else:
@@ -384,18 +521,19 @@ def add_required_phrases_from_other_rules(
 
     required_phrases_by_expression = collect_required_phrases_in_rules(
         license_expression=license_expression,
-        rules_by_identifier=rules_by_identifier,
         rules_by_expression=rules_by_expression,
+        verbose=verbose,
     )
 
     update_required_phrases_from_other_rules(
         required_phrases_by_expression=required_phrases_by_expression,
         rules_by_expression=rules_by_expression,
         write_required_phrases=write_required_phrases,
+        verbose=verbose,
     )
 
 
-def add_required_phrases_for_required_phrases(required_phrases, rules):
+def add_required_phrases_for_required_phrases(required_phrases, rules, verbose=False):
 
     for rule in rules:
         # skip small rules
@@ -403,13 +541,23 @@ def add_required_phrases_for_required_phrases(required_phrases, rules):
             continue
 
         for required_phrase in required_phrases:
+            debug = False
+            if rule.identifier in TRACE_REQUIRED_PHRASE_FOR_RULES:
+                click.echo(
+                    f"Trying to updating rule: {rule.identifier} "
+                    f"with required phrase: '{required_phrase.required_phrase_text}'."
+                )
+                debug = True
+
             add_required_phrase_to_rule(
                 rule=rule,
                 required_phrase=required_phrase.required_phrase_text,
+                debug_data=required_phrase.sources,
+                debug=debug,
             )
 
 
-def add_required_phrases_for_license_fields(licence_object, rules):
+def add_required_phrases_for_license_fields(licence_object, rules, verbose=False):
 
     license_fields_mapping_by_order = {
         "name": licence_object.name,
@@ -427,7 +575,7 @@ def add_required_phrases_for_license_fields(licence_object, rules):
             add_required_phrase_to_rule(rule=rule, required_phrase=license_field_value)
 
 
-def add_required_phrase_to_rule(rule, required_phrase):
+def add_required_phrase_to_rule(rule, required_phrase, debug_data=None, debug=False):
 
     # Reload from file as there could be changes from other license fields
     rule_file = os.path.join(rules_data_dir, rule.identifier)
@@ -452,8 +600,16 @@ def add_required_phrase_to_rule(rule, required_phrase):
         )
     )
 
+    if new_required_phrase_spans and debug:
+        click.echo(f"New required phrase spans for {rule.identifier}: {new_required_phrase_spans}")
+        click.echo(f"Old required phrase spans: {old_required_phrase_spans}")
+        click.echo(f"Ignorable spans: {ignorable_spans}")
+        click.echo(f"required phrase spans to add: {spans_to_add}")
+        ignorable_debug = rule.referenced_filenames + rule.ignorable_urls
+        click.echo(f"debug ignorables: {ignorable_debug}")
+
     text_rule = reloaded_rule.text
-    
+
     # we add required phrase markers for the non-overlapping spans
     for span_to_add in spans_to_add:
         text_rule = add_required_phrase_markers(
@@ -463,12 +619,21 @@ def add_required_phrase_to_rule(rule, required_phrase):
 
     # write the rule on disk if there are any updates
     if text_rule != reloaded_rule.text:
-        click.echo(f"Updating rule: {reloaded_rule.identifier}")
+        if debug:
+            click.echo(
+                f"Updating rule: {reloaded_rule.identifier} "
+                f"with required phrase: {required_phrase} "
+                f"debug data: {debug_data} /n"
+            )
         reloaded_rule.text = text_rule
         reloaded_rule.dump(rules_data_dir)
 
 
-def add_required_phrases_from_license_fields(license_expression=None, reindex=False, cli=False):
+def add_required_phrases_from_license_fields(
+    license_expression=None,
+    verbose=False,
+    can_mark_required_phrase_test=False,
+):
     """
     For all rules with the `license_expression`, add required phrases from the
     license fields.
@@ -492,16 +657,20 @@ def add_required_phrases_from_license_fields(license_expression=None, reindex=Fa
         license_key = license_keys.pop()    
         licence_object = licenses[license_key]
 
-        if cli:
+        if verbose:
             click.echo(f'Updating rules with required phrases for license_expression: {license_key}')
 
-        add_required_phrases_for_license_fields(licence_object=licence_object, rules=rules)
+        add_required_phrases_for_license_fields(licence_object=licence_object, rules=rules, verbose=verbose)
 
-    if reindex:
-        from licensedcode.cache import get_index
-        if cli:
-            click.echo('Rebuilding the license index...')
-        get_index(force=True)
+
+def delete_required_phrase_rules_debug(rules_data_dir):
+    required_phrase_rules = [
+        rule
+        for rule in load_rules(rules_data_dir=rules_data_dir)
+        if rule.is_required_phrase
+    ]
+    for rule in required_phrase_rules:
+        rule.dump(rules_data_dir)
 
 
 @click.command(name='add-required-phrases')
@@ -520,7 +689,7 @@ def add_required_phrases_from_license_fields(license_expression=None, reindex=Fa
     "--reindex",
     is_flag=True,
     default=False,
-    help="Also reindex the license/rules to check for inconsistencies. ",
+    help="Also reindex the license/rules to check for inconsistencies.",
     cls=PluggableCommandLineOption,
 )
 @click.option(
@@ -528,7 +697,7 @@ def add_required_phrases_from_license_fields(license_expression=None, reindex=Fa
     "--delete-required-phrases-debug",
     is_flag=True,
     default=False,
-    help="Write into their corresponding rule files the sources for all required phrase rules.",
+    help="Delete the sources for all required phrase rules and exit.",
     cls=PluggableCommandLineOption,
 )
 @click.option(
@@ -536,26 +705,71 @@ def add_required_phrases_from_license_fields(license_expression=None, reindex=Fa
     "--write-required-phrases",
     is_flag=True,
     default=False,
-    help="Also reindex the license/rules to check for inconsistencies. ",
+    help="Write into their corresponding rule files the sources for all required phrase rules.",
+    cls=PluggableCommandLineOption,
+)
+@click.option(
+    "-o",
+    "--from-other-rules",
+    is_flag=True,
+    default=False,
+    help="Mark required phrases from already marked required phrases in other rules.",
+    cls=PluggableCommandLineOption,
+)
+@click.option(
+    "-l",
+    "--from-license-attributes",
+    is_flag=True,
+    default=False,
+    help="Mark required phrases from license attributes.",
+    cls=PluggableCommandLineOption,
+)
+@click.option(
+    "-v",
+    "--verbose",
+    is_flag=True,
+    default=False,
+    help="Print logging information.",
     cls=PluggableCommandLineOption,
 )
 @click.help_option("-h", "--help")
-def add_required_phrases(license_expression, reindex, delete_required_phrases_debug, write_required_phrases):
+def add_required_phrases(
+    license_expression,
+    verbose,
+    reindex,
+    from_other_rules,
+    from_license_attributes,
+    delete_required_phrases_debug,
+    write_required_phrases,
+):
     """
     For all rules with the `license_expression`, add required phrases from the
     license fields.
     """
+    if delete_required_phrases_debug:
+        delete_required_phrase_rules_debug(rules_data_dir)
+        return
 
-    # creates a list of all required phrases and adds rule files for them
-    add_required_phrases_from_other_rules(
-        delete_required_phrases_debug=delete_required_phrases_debug,
-        write_required_phrases=write_required_phrases,
-    )
+    # create a list of all required phrases from existing rules, add
+    # rule files for them and mark those required phrases if present in other rules
+    if from_other_rules:
+        add_required_phrases_from_other_rules(
+            license_expression=license_expression,
+            write_required_phrases=write_required_phrases,
+            verbose=verbose,
+        )
 
-    # Marks required phrases in already present rules
-    add_required_phrases_from_license_fields(
-        license_expression=license_expression,
-        reindex=reindex,
-        cli=True
-    )
+    # marks required phrases in existing rules from license attributes like name,
+    # short name and optionally license keys
+    if from_license_attributes:
+        add_required_phrases_from_license_fields(
+            license_expression=license_expression,
+            reindex=reindex,
+            verbose=verbose,
+        )
 
+    if reindex:
+        from licensedcode.cache import get_index
+        if verbose:
+            click.echo('Rebuilding the license index...')
+        get_index(force=True)

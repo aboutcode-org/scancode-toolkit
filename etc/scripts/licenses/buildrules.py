@@ -16,7 +16,7 @@ from licensedcode import cache
 from licensedcode import models
 from licensedcode import match_hash
 from licensedcode import frontmatter
-from licensedcode.models import rule_exists
+from licensedcode.models import get_rule_id_for_text
 from license_expression import Licensing
 
 """
@@ -330,7 +330,7 @@ def cli(licenses_file, dump_to_file_on_errors=False):
 
         text = rule.text
 
-        existing_rule = rule_exists(text)
+        existing_rule = get_rule_id_for_text(text)
         skinny_text = " ".join(text[:80].split()).replace("{", " ").replace("}", " ")
 
         existing_msg = (
