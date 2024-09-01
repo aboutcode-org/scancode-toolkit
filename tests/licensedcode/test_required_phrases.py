@@ -19,6 +19,11 @@ from licensedcode.required_phrases import add_required_phrases_from_other_rules
 from licensedcode.required_phrases import add_required_phrases_from_license_fields
 from licensedcode.required_phrases import ListOfRequiredPhrases
 from licensedcode.required_phrases import RequiredPhraseDetails
+from licensedcode.required_phrases import return_spans_for_required_phrase_in_text
+from licensedcode.required_phrases import add_required_phrase_markers
+from licensedcode.tokenize import get_normalized_tokens
+from licensedcode.tokenize import matched_query_text_tokenizer
+from licensedcode.stopwords import STOPWORDS
 from licensedcode.models import InvalidRule
 from licensedcode.models import Rule
 from licensedcode.spans import Span
@@ -144,6 +149,49 @@ class TestListOfRequiredPhrases(TestCaseClass):
             for required_phrase in self.required_phrases_list.required_phrases
         ] == expected_sorted_texts
 
+
+class TestRequiredPhraseSpansinText:
+
+    text_with_stopwords = (
+        "A copy of the GNU General Public License is available as "
+        "/usr/share/common-licenses/GPL-2 in the Debian GNU/Linux distribution. "
+        "A copy of the GNU General Public License is available as "
+        "/usr/share/common-licenses/GPL-2 in the Debian GNU/Linux distribution."
+    )
+
+    text_with_stopwords_and_marked_required_phrases = (
+        "A copy of the GNU General Public License is available as "
+        "/{{usr/share/common-licenses/GPL-2}} in the Debian GNU/Linux distribution. "
+        "A copy of the GNU General Public License is available as "
+        "/{{usr/share/common-licenses/GPL-2}} in the Debian GNU/Linux distribution."
+    )
+
+    def test_get_required_phrase_spans_with_or_without_specified_texts_is_same(self):
+        required_phrase_spans_specified = return_spans_for_required_phrase_in_text(
+            text=self.text_with_stopwords,
+            required_phrase="usr share common licenses gpl 2",
+        )
+
+        required_phrase_spans_unspecified = get_required_phrase_spans(
+            text=self.text_with_stopwords_and_marked_required_phrases,
+        )
+        assert required_phrase_spans_specified == required_phrase_spans_unspecified
+
+    def test_get_required_phrase_and_add_required_phrase_matches(self):
+
+        required_phrase_spans_specified = return_spans_for_required_phrase_in_text(
+            text=self.text_with_stopwords,
+            required_phrase="usr share common licenses gpl 2",
+        )
+
+        text = self.text_with_stopwords
+        for span in required_phrase_spans_specified:
+            text = add_required_phrase_markers(
+                text=text,
+                required_phrase_span=span,
+            )
+
+        assert text == self.text_with_stopwords_and_marked_required_phrases
 
 class TestKeyPhrasesCanBeMarked(TestCaseClass):
 

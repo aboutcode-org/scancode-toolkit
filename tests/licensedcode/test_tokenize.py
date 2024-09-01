@@ -19,6 +19,7 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import required_phrase_tokenizer
 from licensedcode.tokenize import return_spans_for_required_phrase_in_text
+from licensedcode.tokenize import add_required_phrase_markers
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
@@ -523,10 +524,72 @@ class TestTokenizers(FileBasedTesting):
             'i', 'am', 'afraid'
         ]
     
+
+class TestSpansinText:
+
+    text_with_articles = (
+        "A copy of the GNU General Public License is available as "
+        "/usr/share/common-licenses/GPL-2 in the Debian GNU/Linux distribution. "
+        "A copy of the GNU General Public License is available as "
+        "/usr/share/common-licenses/GPL-2 in the Debian GNU/Linux distribution."
+    )
+
+    text_with_articles_and_marked_required_phrases = (
+        "A copy of the GNU General Public License is available as "
+        "/{{usr/share/common-licenses/GPL-2}} in the Debian GNU/Linux distribution. "
+        "A copy of the GNU General Public License is available as "
+        "/{{usr/share/common-licenses/GPL-2}} in the Debian GNU/Linux distribution."
+    )
+
+    text_with_extra_characters = (
+        "This is the http://www.opensource.org/licenses/mit-license.php MIT "
+        "Software License which is OSI-certified, and GPL-compatible."
+    )
+
+    text_with_extra_characters_and_marked_required_phrases = (
+        "This is the http://www.opensource.org/licenses/mit-license.php {{MIT "
+        "Software License}} which is OSI-certified, and GPL-compatible."
+    )
+
     def test_return_spans_for_required_phrase_in_text(self):
         text = "is released under the MIT license. See the LICENSE"
         required_phrase_spans = return_spans_for_required_phrase_in_text(text=text, required_phrase="mit license")
         assert required_phrase_spans == [Span(4, 5)]
+
+    def test_return_spans_for_required_phrase_in_text_multiple(self):
+        required_phrase_spans = return_spans_for_required_phrase_in_text(
+            text=self.text_with_articles,
+            required_phrase="usr share common licenses gpl 2",
+        )
+        assert required_phrase_spans == [Span(10, 15), Span(32, 37)]
+
+    def test_mark_required_phrase_in_text_with_multiple_spans(self):
+        required_phrase_spans = return_spans_for_required_phrase_in_text(
+            text=self.text_with_articles,
+            required_phrase="usr share common licenses gpl 2",
+        )
+        text = self.text_with_articles
+        for span in required_phrase_spans:
+            text = add_required_phrase_markers(
+                text=text,
+                required_phrase_span=span,
+            )
+
+        assert text == self.text_with_articles_and_marked_required_phrases
+
+    def test_mark_required_phrase_in_text_with_extra_characters(self):
+        required_phrase_spans = return_spans_for_required_phrase_in_text(
+            text=self.text_with_extra_characters,
+            required_phrase="mit software license",
+        )
+        text = self.text_with_extra_characters
+        for span in required_phrase_spans:
+            text = add_required_phrase_markers(
+                text=text,
+                required_phrase_span=span,
+            )
+
+        assert text == self.text_with_extra_characters_and_marked_required_phrases
 
 
 class TestNgrams(FileBasedTesting):

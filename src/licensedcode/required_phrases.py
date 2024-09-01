@@ -33,11 +33,12 @@ from licensedcode.tokenize import get_non_overlapping_spans
 from licensedcode.tokenize import add_required_phrase_markers
 from licensedcode.tokenize import REQUIRED_PHRASE_OPEN
 from licensedcode.tokenize import REQUIRED_PHRASE_CLOSE
+from licensedcode.tokenize import get_normalized_tokens
 
 
 # Add the rule identifier here to trace required phrase collection or required
 # phrase marking for a specific rule (Example: "mit_12.RULE")
-TRACE_REQUIRED_PHRASE_FOR_RULES = []
+TRACE_REQUIRED_PHRASE_FOR_RULES = ["bsd-new_newlib.RULE"]
 
   
 def get_required_phrase_spans(text):
@@ -180,22 +181,6 @@ def get_required_phrases(text):
     if required_phrase.required_phrase_tokens or in_required_phrase:
         raise InvalidRule(f'Invalid rule with dangling required phrase missing final closing braces', text)
 
-
-def get_normalized_tokens(text, skip_required_phrase_markers=True):
-
-    required_phrase_markers = [REQUIRED_PHRASE_CLOSE, REQUIRED_PHRASE_OPEN]
-    tokens = [
-        token
-        for token in required_phrase_tokenizer(text)
-    ]
-    if skip_required_phrase_markers:
-        tokens = [
-            token
-            for token in tokens
-            if token not in required_phrase_markers
-        ]
-
-    return tokens
 
 
 def get_normalized_text(text, skip_required_phrase_markers=True):
@@ -584,7 +569,7 @@ def add_required_phrase_to_rule(rule, required_phrase, debug_data=None, debug=Fa
 
     # we get spans for already existing required phrases and ignorables
     ignorable_spans = get_ignorable_spans(reloaded_rule)
-    old_required_phrase_spans = reloaded_rule.build_required_phrase_spans()
+    old_required_phrase_spans = get_required_phrase_spans(reloaded_rule.text)
 
     # we verify whether there are spans which overlap with the
     # already present required phrases or ignorables
@@ -609,7 +594,7 @@ def add_required_phrase_to_rule(rule, required_phrase, debug_data=None, debug=Fa
     for span_to_add in spans_to_add:
         text_rule = add_required_phrase_markers(
             text=text_rule,
-            required_phrase_span=span_to_add
+            required_phrase_span=span_to_add,
         )
 
     # write the rule on disk if there are any updates

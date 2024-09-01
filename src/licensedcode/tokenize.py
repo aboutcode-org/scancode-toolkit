@@ -86,7 +86,7 @@ REQUIRED_PHRASE_CLOSE = '}}'
 # FIXME: this should be folded in a single pass tokenization with the index_tokenizer
 
 
-def required_phrase_tokenizer(text, stopwords=STOPWORDS):
+def required_phrase_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
     """
     Yield tokens from a rule ``text`` including required phrases {{brace}} markers.
     This tokenizer behaves the same as as the ``index_tokenizer`` returning also
@@ -110,9 +110,26 @@ def required_phrase_tokenizer(text, stopwords=STOPWORDS):
     """
     if not text:
         return
-    for token in required_phrase_splitter(text.lower()):
+    if not preserve_case:
+        text = text.lower()
+
+    for token in required_phrase_splitter(text):
         if token and token not in stopwords:
             yield token
+
+
+def get_normalized_tokens(text, skip_required_phrase_markers=True, preserve_case=False):
+
+    required_phrase_markers = [REQUIRED_PHRASE_CLOSE, REQUIRED_PHRASE_OPEN]
+    tokens = list(required_phrase_tokenizer(text=text, preserve_case=preserve_case))
+    if skip_required_phrase_markers:
+        tokens = [
+            token
+            for token in tokens
+            if token not in required_phrase_markers
+        ]
+
+    return tokens
 
 
 def return_spans_for_required_phrase_in_text(text, required_phrase, preserve_case=False):
@@ -122,8 +139,16 @@ def return_spans_for_required_phrase_in_text(text, required_phrase, preserve_cas
     """
     spans_with_required_phrase = []
 
-    text_tokens = list(index_tokenizer(text=text, preserve_case=preserve_case))
-    required_phrase_tokens = list(index_tokenizer(text=required_phrase, preserve_case=preserve_case))
+    text_tokens = list(get_normalized_tokens(
+        text=text,
+        preserve_case=preserve_case,
+        skip_required_phrase_markers=True,
+    ))
+    required_phrase_tokens = list(get_normalized_tokens(
+        text=required_phrase,
+        preserve_case=preserve_case,
+        skip_required_phrase_markers=True,
+    ))
     required_phrase_first_token = required_phrase_tokens[0]
 
     # Initial check to see if all tokens in the required phrase are present
@@ -208,18 +233,18 @@ def add_required_phrase_markers(text, required_phrase_span):
     token_index = 0
 
     for token_tuple in matched_query_text_tokenizer(text):
-        
+
         is_word, token = token_tuple
 
-        if is_word and token not in STOPWORDS:
+        if is_word and token.lower() not in STOPWORDS:
             if token_index == required_phrase_span.start:
                 tokens_tuples_with_markers.append((False, REQUIRED_PHRASE_OPEN))
 
             token_index += 1
 
         tokens_tuples_with_markers.append(token_tuple)
-        
-        if is_word and token not in STOPWORDS: 
+
+        if is_word and token.lower() not in STOPWORDS: 
             if token_index == required_phrase_span.end + 1:
                 tokens_tuples_with_markers.append((False, REQUIRED_PHRASE_CLOSE))
             
