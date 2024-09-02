@@ -8,7 +8,7 @@ ignorable_urls:
     - https://tldrlegal.com/license/mit-license
 ---
 
-MIT license
+{{MIT license}}
 
 https://jquery.org/license/
 https://tldrlegal.com/license/mit-license

@@ -7,4 +7,4 @@ ignorable_urls:
     - https://spdx.org/licenses
 ---
 
-[![License - MIT](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/)
+[![{{License - MIT}}](https://img.shields.io/badge/license-MIT-9400d3.svg)](https://spdx.org/licenses/)

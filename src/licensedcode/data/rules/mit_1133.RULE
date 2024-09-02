@@ -8,4 +8,4 @@ ignorable_urls:
     - http://www.opensource.org/licenses/MIT
 ---
 
-MIT License http://www.opensource.org/licenses/MIT: MIT
+{{MIT License}} http://www.opensource.org/licenses/MIT: MIT

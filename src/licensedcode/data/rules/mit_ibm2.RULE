@@ -4,8 +4,8 @@ is_license_notice: yes
 relevance: 100
 ---
 
-This project is licensed under the MIT License, full text below.
+This project is {{licensed under the MIT}} License, full text below.
 
 --------
 
-MIT license
+{{MIT license}}

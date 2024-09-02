@@ -5,7 +5,7 @@ relevance: 100
 minimum_coverage: 99
 ---
 
-The MIT License (MIT)
+{{The MIT License}} (MIT)
 
 Copyright (c) <%= Time.now.year %> <%= author %> <<%= email %>>
 

@@ -6,4 +6,4 @@ relevance: 100
 minimum_coverage: 100
 ---
 
-'MIT-Style': 'MIT',
+'{{MIT-Style}}': 'MIT',

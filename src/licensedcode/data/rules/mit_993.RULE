@@ -4,6 +4,6 @@ is_license_notice: yes
 relevance: 100
 ---
 
-under an MIT LICENSE
+under an {{MIT LICENSE
 
- MIT Compiled License
+ MIT}} Compiled License

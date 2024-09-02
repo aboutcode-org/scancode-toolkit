@@ -5,5 +5,5 @@ ignorable_urls:
     - https://opensource.org/licenses/MIT
 ---
 
-This project bundles the following dependencies under the MIT license. (https://opensource.org/licenses/MIT)
+This project bundles the following dependencies {{under the MIT license}}. (https://opensource.org/licenses/MIT)
 See bundled license files for details.

@@ -6,5 +6,5 @@ ignorable_urls:
     - http://mit-license.org/
 ---
 
-made available under [the MIT
-license](http://mit-license.org/).
+made available {{under [the MIT
+license}}](http://mit-license.org/).

@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.md
 ---
 
-distributed under the MIT License. See LICENSE.md for details.
+{{distributed under the MIT License}}. See LICENSE.md for details.
