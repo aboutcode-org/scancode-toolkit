@@ -306,8 +306,7 @@ def make_non_executable(location):
         current_stat = stat.S_IMODE(os.lstat(location).st_mode)
         os.chmod(location, current_stat & ~stat.S_IEXEC)
 
-
-def get_test_file_pairs(test_dir):
+def get_test_file_pairs(test_dir, template_to_generate_missing_yaml=None):
     """
     Yield tuples of (data_file, test_file) from a test data `test_dir` directory.
     Raise exception for orphaned/dangling files.
