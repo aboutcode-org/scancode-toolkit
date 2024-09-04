@@ -1,6 +1,13 @@
 Release notes
 =============
 
+Version 31.2.2 - (2024-09-05)
+-----------------------------
+
+- Add new optional argument to generate test data files from a template
+- Migrate URLs to new aboutcode.org org
+
+
 Version 31.2.1 - (2024-05-16)
 -----------------------------
 
