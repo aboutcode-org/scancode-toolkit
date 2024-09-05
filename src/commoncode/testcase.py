@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -138,7 +138,7 @@ class FileDrivenTesting(object):
             extension = '.txt'
 
         if extension and not extension.startswith('.'):
-                extension = '.' + extension
+            extension = '.' + extension
 
         file_name = file_name + extension
         temp_dir = self.get_temp_dir(dir_name)
@@ -167,7 +167,8 @@ class FileDrivenTesting(object):
         if sub_dir_path:
             # create a sub directory hierarchy if requested
             sub_dir_path = to_os_native_path(sub_dir_path)
-            test_run_temp_subdir = path.join(test_run_temp_subdir, sub_dir_path)
+            test_run_temp_subdir = path.join(
+                test_run_temp_subdir, sub_dir_path)
             fileutils.create_dir(test_run_temp_subdir)
         return test_run_temp_subdir
 
@@ -237,7 +238,8 @@ class dircmp(filecmp.dircmp):
         Find out differences between common files.
         Ensure we are using content comparison, not os.stat-only.
         """
-        comp = filecmp.cmpfiles(self.left, self.right, self.common_files, shallow=False)
+        comp = filecmp.cmpfiles(self.left, self.right,
+                                self.common_files, shallow=False)
         self.same_files, self.diff_files, self.funny_files = comp
 
 
@@ -248,7 +250,7 @@ def is_same(dir1, dir2):
     """
     compared = dircmp(dir1, dir2)
     if (compared.left_only or compared.right_only or compared.diff_files
-        or compared.funny_files):
+            or compared.funny_files):
         return False
 
     for subdir in compared.common_dirs:
@@ -347,8 +349,10 @@ def get_test_file_pairs(test_dir):
 
     # ensure that we haev no dangling files
     if dangling_test_files or dangling_data_files:
-        msg = ['Dangling missing test files without a YAML data file:'] + sorted(dangling_test_files)
-        msg += ['Dangling missing YAML data files without a test file'] + sorted(dangling_data_files)
+        msg = ['Dangling missing test files without a YAML data file:'] + \
+            sorted(dangling_test_files)
+        msg += ['Dangling missing YAML data files without a test file'] + \
+            sorted(dangling_data_files)
         msg = '\n'.join(msg)
         print(msg)
         raise Exception(msg)
@@ -370,7 +374,8 @@ def get_test_file_pairs(test_dir):
     dupes = list(chain.from_iterable(
         paths for paths in paths_ignoring_case.values() if len(paths) != 1))
     if dupes:
-        msg = ['Non unique test/data file(s) found when ignoring case!'] + sorted(dupes)
+        msg = [
+            'Non unique test/data file(s) found when ignoring case!'] + sorted(dupes)
 
         msg = '\n'.join(msg)
         print(msg)

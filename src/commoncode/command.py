@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -170,12 +170,15 @@ def get_env(base_vars=None, lib_dir=None):
         new_path = f'{lib_dir}'
         # on Linux/posix
         ld_lib_path = os.environ.get(LD_LIBRARY_PATH)
-        env_vars.update({LD_LIBRARY_PATH: update_path_var(ld_lib_path, new_path)})
+        env_vars.update(
+            {LD_LIBRARY_PATH: update_path_var(ld_lib_path, new_path)})
         # on Mac, though LD_LIBRARY_PATH should work too
         dyld_lib_path = os.environ.get(DYLD_LIBRARY_PATH)
-        env_vars.update({DYLD_LIBRARY_PATH: update_path_var(dyld_lib_path, new_path)})
+        env_vars.update(
+            {DYLD_LIBRARY_PATH: update_path_var(dyld_lib_path, new_path)})
 
-    env_vars = {text.as_unicode(k): text.as_unicode(v) for k, v in env_vars.items()}
+    env_vars = {text.as_unicode(k): text.as_unicode(v)
+                for k, v in env_vars.items()}
 
     return env_vars
 
@@ -216,7 +219,8 @@ def load_shared_library(dll_loc, *args):
     Return the loaded shared library object from the ``dll_loc`` location.
     """
     if not dll_loc or not path.exists(dll_loc):
-        raise ImportError(f'Shared library does not exists: dll_loc: {dll_loc}')
+        raise ImportError(
+            f'Shared library does not exists: dll_loc: {dll_loc}')
 
     if not isinstance(dll_loc, str):
         dll_loc = os.fsdecode(dll_loc)

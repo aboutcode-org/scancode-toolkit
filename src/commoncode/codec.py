@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -13,8 +13,9 @@ from base64 import urlsafe_b64encode as b64encode
 Numbers to bytes or strings and URLs coder/decoders.
 """
 
-c2i = lambda c: c
-i2c = lambda i: bytes([i])
+
+def c2i(c): return c
+def i2c(i): return bytes([i])
 
 
 def num_to_bin(num):

@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -40,7 +40,8 @@ def download_url(url, file_name=None, verify=True, timeout=10):
 
     status = response.status_code
     if status != 200:
-        msg = 'download_url: Download failed for %(url)r with %(status)r' % locals()
+        msg = 'download_url: Download failed for %(url)r with %(status)r' % locals(
+        )
         logger.error(msg)
         raise Exception(msg)
 

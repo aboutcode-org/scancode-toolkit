@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0 AND Python-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -321,7 +321,7 @@ def walk(location, ignored=None, follow_symlinks=False):
             logger_debug('walk: ignored:', location, is_ignored)
         return
 
-    if filetype.is_file(location, follow_symlinks=follow_symlinks) :
+    if filetype.is_file(location, follow_symlinks=follow_symlinks):
         yield parent_directory(location), [], [file_name(location)]
 
     elif filetype.is_dir(location, follow_symlinks=follow_symlinks):

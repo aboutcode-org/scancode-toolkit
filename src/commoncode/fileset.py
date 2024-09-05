@@ -2,7 +2,7 @@
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/commoncode for support or download.
+# See https://github.com/aboutcode-org/commoncode for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -83,14 +83,16 @@ def is_included(path, includes=None, excludes=None):
     if includes:
         included = get_matches(path, includes, all_matches=False)
         if TRACE:
-            logger.debug('in_fileset: path: %(path)r included:%(included)r' % locals())
+            logger.debug(
+                'in_fileset: path: %(path)r included:%(included)r' % locals())
         if not included:
             return False
 
     if excludes:
         excluded = get_matches(path, excludes, all_matches=False)
         if TRACE:
-            logger.debug('in_fileset: path: %(path)r excluded:%(excluded)r .' % locals())
+            logger.debug(
+                'in_fileset: path: %(path)r excluded:%(excluded)r .' % locals())
         if excluded:
             return False
 
@@ -115,11 +117,13 @@ def get_matches(path, patterns, all_matches=False):
     segments = paths.split(pathstripped)
 
     if TRACE:
-        logger.debug('_match: path: %(path)r patterns:%(patterns)r.' % locals())
+        logger.debug(
+            '_match: path: %(path)r patterns:%(patterns)r.' % locals())
 
     matches = []
     if not isinstance(patterns, dict):
-        assert isinstance(patterns, (list, tuple)), 'Invalid patterns: {}'.format(patterns)
+        assert isinstance(patterns, (list, tuple)
+                          ), 'Invalid patterns: {}'.format(patterns)
         patterns = {p: p for p in patterns}
 
     for pat, value in patterns.items():
