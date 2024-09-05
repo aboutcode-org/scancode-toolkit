@@ -7,7 +7,7 @@
 #
 
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 from commoncode.system import on_posix
 from commoncode.functional import memoize
@@ -164,7 +164,10 @@ def get_last_modified_date(location):
     yyyymmdd = ''
     if is_file(location):
         utc_date = datetime.isoformat(
-            datetime.utcfromtimestamp(os.path.getmtime(location))
+            datetime.fromtimestamp(
+                os.path.getmtime(location),
+                tz=timezone.utc,
+            )
         )
         yyyymmdd = utc_date[:10]
     return yyyymmdd
