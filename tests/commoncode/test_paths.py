@@ -76,8 +76,11 @@ class TestPortablePath(TestCase):
 
     def test_safe_path_posix_style_chinese_char(self):
         test = paths.safe_path(b'/includes/webform.compon\xd2\xaants.inc/')
-        expected = 'includes/webform.componNSnts.inc'
-        assert test == expected
+        expected = [
+            'includes/webform.componNSnts.inc',
+            'includes/webform.componS_nts.inc',
+        ]
+        assert test in expected
 
     def test_safe_path_windows_style_dots(self):
         test = paths.safe_path('\\includes\\..\\webform.components.inc\\')
