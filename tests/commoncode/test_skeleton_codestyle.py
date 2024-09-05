@@ -7,9 +7,9 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import configparser
 import subprocess
 import unittest
-import configparser
 
 
 class BaseTests(unittest.TestCase):

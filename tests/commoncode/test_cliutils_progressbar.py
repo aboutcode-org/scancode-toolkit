@@ -8,13 +8,12 @@
 
 import os
 
-from commoncode.testcase import FileDrivenTesting
 from commoncode.cliutils import progressmanager
+from commoncode.testcase import FileDrivenTesting
 
 
 class TestProgressBar(FileDrivenTesting):
-
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+    test_data_dir = os.path.join(os.path.dirname(__file__), "data")
 
     def test_progressmanager_works(self):
         iterable = range(10)
