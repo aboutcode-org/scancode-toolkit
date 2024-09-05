@@ -7,10 +7,11 @@
 #
 
 import os
-from datetime import datetime, timezone
+from datetime import datetime
+from datetime import timezone
 
-from commoncode.system import on_posix
 from commoncode.functional import memoize
+from commoncode.system import on_posix
 
 """
 Low level file type utilities, essentially a wrapper around os.path and stat.
@@ -77,7 +78,7 @@ def get_link_target(location):
     Return the link target for `location` if this is a Link or an empty
     string.
     """
-    target = ''
+    target = ""
     # always false on windows, until Python supports junctions/links
     if on_posix and is_link(location):
         try:
@@ -91,12 +92,38 @@ def get_link_target(location):
 
 # Map of type checker function -> short type code
 # The order of types check matters: link -> file -> directory -> special
-TYPES = dict([
-    (is_link, ('l', 'link',)),
-    (is_file, ('f', 'file',)),
-    (is_dir, ('d', 'directory',)),
-    (is_special, ('s', 'special',))
-])
+TYPES = dict(
+    [
+        (
+            is_link,
+            (
+                "l",
+                "link",
+            ),
+        ),
+        (
+            is_file,
+            (
+                "f",
+                "file",
+            ),
+        ),
+        (
+            is_dir,
+            (
+                "d",
+                "directory",
+            ),
+        ),
+        (
+            is_special,
+            (
+                "s",
+                "special",
+            ),
+        ),
+    ]
+)
 
 
 def get_type(location, short=True):
@@ -161,7 +188,7 @@ def get_last_modified_date(location):
     Return the last modified date stamp of a file as YYYYMMDD format. The date
     of non-files (dir, links, special) is always an empty string.
     """
-    yyyymmdd = ''
+    yyyymmdd = ""
     if is_file(location):
         utc_date = datetime.isoformat(
             datetime.fromtimestamp(
@@ -174,8 +201,8 @@ def get_last_modified_date(location):
 
 
 counting_functions = {
-    'file_count': lambda _: 1,
-    'file_size': os.path.getsize,
+    "file_count": lambda _: 1,
+    "file_size": os.path.getsize,
 }
 
 
@@ -205,8 +232,9 @@ def counter(location, counting_function):
         count_fun = counting_functions[counting_function]
         return count_fun(location)
     elif is_dir(location):
-        count += sum(counter(os.path.join(location, p), counting_function)
-                     for p in os.listdir(location))
+        count += sum(
+            counter(os.path.join(location, p), counting_function) for p in os.listdir(location)
+        )
     return count
 
 
@@ -216,7 +244,7 @@ def get_file_count(location):
     or 1 if `location` is a file. Only regular files are counted. Everything
     else has a zero size.
     """
-    return counter(location, 'file_count')
+    return counter(location, "file_count")
 
 
 def get_size(location):
@@ -225,4 +253,4 @@ def get_size(location):
     directory, the cumulative size of all files in this directory tree. Only
     regular files have a size. Everything else has a zero size.
     """
-    return counter(location, 'file_size')
+    return counter(location, "file_size")

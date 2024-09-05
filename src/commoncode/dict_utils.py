@@ -1,4 +1,3 @@
-
 # Copyright (c) 2003-2012 Raymond Hettinger
 # SPDX-License-Identifier: Python-2.0
 

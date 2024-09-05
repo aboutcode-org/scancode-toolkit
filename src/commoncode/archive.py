@@ -6,12 +6,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from functools import partial
-import os
-from os import path
 import gzip
+import os
 import tarfile
 import zipfile
+from functools import partial
+from os import path
 
 from commoncode.system import on_windows
 
@@ -47,7 +47,7 @@ def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
     # always for using bytes for paths on all OSses... tar seems to use bytes internally
     # and get confused otherwise
     location = os.fsencode(location)
-    with open(location, 'rb') as input_tar:
+    with open(location, "rb") as input_tar:
         tar = None
         try:
             tar = tarfile.open(fileobj=input_tar)
@@ -69,7 +69,7 @@ def extract_zip(location, target_dir, *args, **kwargs):
     Extract a zip archive file at location in the target_dir directory.
     """
     if not path.isfile(location) and zipfile.is_zipfile(location):
-        raise Exception('Incorrect zip file %(location)r' % locals())
+        raise Exception("Incorrect zip file %(location)r" % locals())
 
     with zipfile.ZipFile(location) as zipf:
         for info in zipf.infolist():
@@ -82,7 +82,7 @@ def extract_zip(location, target_dir, *args, **kwargs):
                 if not path.exists(target):
                     os.makedirs(target)
             if not path.exists(target):
-                with open(target, 'wb') as f:
+                with open(target, "wb") as f:
                     f.write(content)
 
 
@@ -92,7 +92,7 @@ def extract_zip_raw(location, target_dir, *args, **kwargs):
     Use the builtin extractall function
     """
     if not path.isfile(location) and zipfile.is_zipfile(location):
-        raise Exception('Incorrect zip file %(location)r' % locals())
+        raise Exception("Incorrect zip file %(location)r" % locals())
 
     with zipfile.ZipFile(location) as zipf:
         zipf.extractall(path=target_dir)
@@ -124,6 +124,6 @@ def get_gz_compressed_file_content(location):
     Uncompress a compressed file at `location` and return its content as a byte
     string. Raise Exceptions on errors.
     """
-    with gzip.GzipFile(location, 'rb') as compressed:
+    with gzip.GzipFile(location, "rb") as compressed:
         content = compressed.read()
     return content

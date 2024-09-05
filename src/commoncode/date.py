@@ -7,12 +7,12 @@
 #
 
 import calendar
-from datetime import datetime
 import os
+from datetime import datetime
 
 
 def isoformat(utc_date):
-    return datetime.isoformat(utc_date).replace('T', ' ')
+    return datetime.isoformat(utc_date).replace("T", " ")
 
 
 def get_file_mtime(location, iso=True):
@@ -20,7 +20,7 @@ def get_file_mtime(location, iso=True):
     Return a string containing the last modified date of a file formatted
     as an ISO time stamp if ISO is True or as a raw number since epoch.
     """
-    date = ''
+    date = ""
     # FIXME: use file types
     if not os.path.isdir(location):
         mtime = os.stat(location).st_mtime
@@ -37,5 +37,4 @@ def secs_from_epoch(d):
     Return a number of seconds since epoch for a date time stamp
     """
     # FIXME: what does this do?
-    return calendar.timegm(datetime.strptime(d.split('.')[0],
-                                             '%Y-%m-%d %H:%M:%S').timetuple())
+    return calendar.timegm(datetime.strptime(d.split(".")[0], "%Y-%m-%d %H:%M:%S").timetuple())

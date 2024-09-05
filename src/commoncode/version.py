@@ -12,29 +12,31 @@ from os import path
 
 
 def VERSION_PATTERNS_REGEX():
-    return [re.compile(x) for x in [
-        # Eclipse features
-        r'v\d+\.feature\_(\d+\.){1,3}\d+',
-
-        # Common version patterns
-        r'(M?(v\d+(\-|\_))?\d+\.){1,3}\d+[A-Za-z0-9]*((\.|\-|_|~)'
-            r'(b|B|rc|r|v|RC|alpha|beta|BETA|M|m|pre|vm|G)?\d+((\-|\.)\d+)?)?'
-            r'((\.|\-)(((alpha|dev|beta|rc|FINAL|final|pre)(\-|\_)\d+[A-Za-z]?'
-            r'(\-RELEASE)?)|alpha|dev(\.\d+\.\d+)?'
-            r'|beta|BETA|final|FINAL|release|fixed|(cr\d(\_\d*)?)))?',
+    return [
+        re.compile(x)
+        for x in [
+            # Eclipse features
+            r"v\d+\.feature\_(\d+\.){1,3}\d+",
+            # Common version patterns
+            r"(M?(v\d+(\-|\_))?\d+\.){1,3}\d+[A-Za-z0-9]*((\.|\-|_|~)"
+            r"(b|B|rc|r|v|RC|alpha|beta|BETA|M|m|pre|vm|G)?\d+((\-|\.)\d+)?)?"
+            r"((\.|\-)(((alpha|dev|beta|rc|FINAL|final|pre)(\-|\_)\d+[A-Za-z]?"
+            r"(\-RELEASE)?)|alpha|dev(\.\d+\.\d+)?"
+            r"|beta|BETA|final|FINAL|release|fixed|(cr\d(\_\d*)?)))?",
             #
-            r'[A-Za-z]?(\d+\_){1,3}\d+\_?[A-Za-z]{0,2}\d+',
+            r"[A-Za-z]?(\d+\_){1,3}\d+\_?[A-Za-z]{0,2}\d+",
             #
-            r'(b|rc|r|v|RC|alpha|beta|BETA|M|m|pre|revision-)\d+(\-\d+)?',
+            r"(b|rc|r|v|RC|alpha|beta|BETA|M|m|pre|revision-)\d+(\-\d+)?",
             #
-            r'current|previous|latest|alpha|beta',
+            r"current|previous|latest|alpha|beta",
             #
-            r'\d{4}-\d{2}-\d{2}',
+            r"\d{4}-\d{2}-\d{2}",
             #
-            r'(\d(\-|\_)){1,2}\d',
+            r"(\d(\-|\_)){1,2}\d",
             #
-            r'\d{5,14}',
-            ]]
+            r"\d{5,14}",
+        ]
+    ]
 
 
 def hint(path):
@@ -43,7 +45,7 @@ def hint(path):
     the version does not start with v.
     """
     for pattern in VERSION_PATTERNS_REGEX():
-        segments = path.split('/')
+        segments = path.split("/")
         # skip the first path segment unless there's only one segment
         first_segment = 1 if len(segments) > 1 else 0
         interesting_segments = segments[first_segment:]
@@ -53,8 +55,8 @@ def hint(path):
             if version:
                 v = version.group(0)
                 # prefix with v space
-                if not v.lower().startswith('v'):
-                    v = f'v {v}'
+                if not v.lower().startswith("v"):
+                    v = f"v {v}"
                 return v
 
 
@@ -117,7 +119,7 @@ def is_moslty_num(s):
     return False
 
 
-NameVersion = namedtuple('NameVersion', 'name, version')
+NameVersion = namedtuple("NameVersion", "name, version")
 
 
 def get_jar_nv(filename):

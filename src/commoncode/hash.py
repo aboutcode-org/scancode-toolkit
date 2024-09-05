@@ -11,9 +11,9 @@ import hashlib
 import sys
 from functools import partial
 
+from commoncode import filetype
 from commoncode.codec import bin_to_num
 from commoncode.codec import urlsafe_b64encode
-from commoncode import filetype
 
 """
 Hashes and checksums.
@@ -33,19 +33,18 @@ def _hash_mod(bitsize, hmodule):
     """
 
     class hasher(object):
-
         def __init__(self, msg=None):
             self.digest_size = bitsize // 8
-            self.h = msg and hmodule(msg).digest()[:self.digest_size] or None
+            self.h = msg and hmodule(msg).digest()[: self.digest_size] or None
 
         def digest(self):
             return bytes(self.h)
 
         def hexdigest(self):
-            return self.h and binascii.hexlify(self.h).decode('utf-8')
+            return self.h and binascii.hexlify(self.h).decode("utf-8")
 
         def b64digest(self):
-            return self.h and urlsafe_b64encode(self.h).decode('utf-8')
+            return self.h and urlsafe_b64encode(self.h).decode("utf-8")
 
         def intdigest(self):
             return self.h and int(bin_to_num(self.h))
@@ -72,7 +71,7 @@ _hashmodules_by_bitsize = {
     160: _hash_mod(160, hashlib.sha1),
     256: _hash_mod(256, hashlib.sha256),
     384: _hash_mod(384, hashlib.sha384),
-    512: _hash_mod(512, hashlib.sha512)
+    512: _hash_mod(512, hashlib.sha512),
 }
 
 
@@ -94,29 +93,29 @@ class sha1_git_hasher(object):
 
     def _compute(self, msg):
         # note: bytes interpolation is new in Python 3.5
-        git_blob_msg = b'blob %d\0%s' % (len(msg), msg)
+        git_blob_msg = b"blob %d\0%s" % (len(msg), msg)
         return hashlib.sha1(git_blob_msg).digest()
 
     def digest(self):
         return bytes(self.h)
 
     def hexdigest(self):
-        return self.h and binascii.hexlify(self.h).decode('utf-8')
+        return self.h and binascii.hexlify(self.h).decode("utf-8")
 
     def b64digest(self):
-        return self.h and urlsafe_b64encode(self.h).decode('utf-8')
+        return self.h and urlsafe_b64encode(self.h).decode("utf-8")
 
     def intdigest(self):
         return self.h and int(bin_to_num(self.h))
 
 
 _hashmodules_by_name = {
-    'md5': get_hasher(128),
-    'sha1': get_hasher(160),
-    'sha1_git': sha1_git_hasher,
-    'sha256': get_hasher(256),
-    'sha384': get_hasher(384),
-    'sha512': get_hasher(512)
+    "md5": get_hasher(128),
+    "sha1": get_hasher(160),
+    "sha1_git": sha1_git_hasher,
+    "sha256": get_hasher(256),
+    "sha384": get_hasher(384),
+    "sha512": get_hasher(512),
 }
 
 
@@ -131,7 +130,7 @@ def checksum(location, name, base64=False):
     hasher = _hashmodules_by_name[name]
 
     # fixme: we should read in chunks?
-    with open(location, 'rb') as f:
+    with open(location, "rb") as f:
         hashable = f.read()
 
     hashed = hasher(hashable)
@@ -142,30 +141,30 @@ def checksum(location, name, base64=False):
 
 
 def md5(location):
-    return checksum(location, name='md5', base64=False)
+    return checksum(location, name="md5", base64=False)
 
 
 def sha1(location):
-    return checksum(location, name='sha1', base64=False)
+    return checksum(location, name="sha1", base64=False)
 
 
 def b64sha1(location):
-    return checksum(location, name='sha1', base64=True)
+    return checksum(location, name="sha1", base64=True)
 
 
 def sha256(location):
-    return checksum(location, name='sha256', base64=False)
+    return checksum(location, name="sha256", base64=False)
 
 
 def sha512(location):
-    return checksum(location, name='sha512', base64=False)
+    return checksum(location, name="sha512", base64=False)
 
 
 def sha1_git(location):
-    return checksum(location, name='sha1_git', base64=False)
+    return checksum(location, name="sha1_git", base64=False)
 
 
-def multi_checksums(location, checksum_names=('md5', 'sha1', 'sha256', 'sha512', 'sha1_git')):
+def multi_checksums(location, checksum_names=("md5", "sha1", "sha256", "sha512", "sha1_git")):
     """
     Return a mapping of hexdigest checksums keyed by checksum name from the content
     of the file at `location`. Use the `checksum_names` list of checksum names.
@@ -177,7 +176,7 @@ def multi_checksums(location, checksum_names=('md5', 'sha1', 'sha256', 'sha512',
         return results
 
     # fixme: we should read in chunks?
-    with open(location, 'rb') as f:
+    with open(location, "rb") as f:
         hashable = f.read()
 
     for name in checksum_names:

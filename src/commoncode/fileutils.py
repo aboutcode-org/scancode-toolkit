@@ -7,14 +7,13 @@
 #
 
 import errno
-import os
 import ntpath
+import os
 import posixpath
 import shutil
 import stat
 import sys
 import tempfile
-
 from os import fsdecode
 
 try:
@@ -33,7 +32,9 @@ except NameError:
     class WindowsError(Exception):
         pass
 
+
 import logging
+
 logger = logging.getLogger(__name__)
 
 TRACE = False
@@ -48,7 +49,8 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
+        return logger.debug(" ".join(isinstance(a, str) and a or repr(a) for a in args))
+
 
 """
 File, paths and directory utility functions.
@@ -68,8 +70,7 @@ def create_dir(location):
 
     if os.path.exists(location):
         if not os.path.isdir(location):
-            err = ('Cannot create directory: existing file '
-                   'in the way ''%(location)s.')
+            err = "Cannot create directory: existing file " "in the way " "%(location)s."
             raise OSError(err % locals())
     else:
         # may fail on win if the path is too long
@@ -96,7 +97,7 @@ def create_dir(location):
                 raise
 
 
-def get_temp_dir(base_dir=_base_temp_dir, prefix=''):
+def get_temp_dir(base_dir=_base_temp_dir, prefix=""):
     """
     Return the path to a new existing unique temporary directory, created under
     the `base_dir` base directory using the `prefix` prefix.
@@ -108,7 +109,7 @@ def get_temp_dir(base_dir=_base_temp_dir, prefix=''):
 
     has_base = bool(base_dir)
     if not has_base:
-        base_dir = os.getenv('SCANCODE_TMP')
+        base_dir = os.getenv("SCANCODE_TMP")
         if not base_dir:
             base_dir = tempfile.gettempdir()
 
@@ -116,9 +117,10 @@ def get_temp_dir(base_dir=_base_temp_dir, prefix=''):
         create_dir(base_dir)
 
     if not has_base:
-        prefix = 'scancode-tk-'
+        prefix = "scancode-tk-"
 
     return tempfile.mkdtemp(prefix=prefix, dir=base_dir)
+
 
 #
 # PATHS AND NAMES MANIPULATIONS
@@ -145,8 +147,8 @@ def is_posixpath(location):
     Return False if the `location` path is likely a Windows-like path using backslash
     as path separators (e.g. "\").
     """
-    has_slashes = '/' in location
-    has_backslashes = '\\' in location
+    has_slashes = "/" in location
+    has_backslashes = "\\" in location
     # windows paths with drive
     if location:
         drive, _ = ntpath.splitdrive(location)
@@ -168,7 +170,7 @@ def as_posixpath(location):
     accepts gracefully POSIX paths on Windows.
     """
     location = prepare_path(location)
-    return location.replace('\\', '/')
+    return location.replace("\\", "/")
 
 
 def as_winpath(location):
@@ -177,7 +179,7 @@ def as_winpath(location):
     `location` path.
     """
     location = prepare_path(location)
-    return location.replace('/', '\\')
+    return location.replace("/", "\\")
 
 
 def split_parent_resource(path, force_posix=False):
@@ -186,7 +188,7 @@ def split_parent_resource(path, force_posix=False):
     """
     use_posix = force_posix or is_posixpath(path)
     splitter = use_posix and posixpath or ntpath
-    path_no_trailing_speps = path.rstrip('\\/')
+    path_no_trailing_speps = path.rstrip("\\/")
     return splitter.split(path_no_trailing_speps)
 
 
@@ -196,7 +198,7 @@ def resource_name(path, force_posix=False):
     is the last path segment.
     """
     _left, right = split_parent_resource(path, force_posix)
-    return right or ''
+    return right or ""
 
 
 def file_name(path, force_posix=False):
@@ -213,8 +215,8 @@ def parent_directory(path, force_posix=False, with_trail=True):
     """
     left, _right = split_parent_resource(path, force_posix)
     use_posix = force_posix or is_posixpath(path)
-    sep = '/' if use_posix else '\\'
-    trail = sep if with_trail and left != sep else ''
+    sep = "/" if use_posix else "\\"
+    trail = sep if with_trail and left != sep else ""
     return left + trail
 
 
@@ -241,19 +243,19 @@ def splitext_name(file_name, is_file=True):
     """
 
     if not file_name:
-        return '', ''
+        return "", ""
     file_name = fsdecode(file_name)
 
     if not is_file:
-        return file_name, ''
+        return file_name, ""
 
-    if file_name.startswith('.') and '.' not in file_name[1:]:
+    if file_name.startswith(".") and "." not in file_name[1:]:
         # .dot files base name is the full name and they do not have an extension
-        return file_name, ''
+        return file_name, ""
 
     base_name, extension = posixpath.splitext(file_name)
     # handle composed extensions of tar.gz, bz, zx,etc
-    if base_name.endswith('.tar'):
+    if base_name.endswith(".tar"):
         base_name, extension2 = posixpath.splitext(base_name)
         extension = extension2 + extension
     return base_name, extension
@@ -266,29 +268,35 @@ def splitext(path, force_posix=False):
     the file name minus its extension. Return an empty extension string for a
     directory.
     """
-    base_name = ''
-    extension = ''
+    base_name = ""
+    extension = ""
     if not path:
         return base_name, extension
 
-    is_dir = path.endswith(('\\', '/',))
-    path = as_posixpath(path).strip('/')
+    is_dir = path.endswith(
+        (
+            "\\",
+            "/",
+        )
+    )
+    path = as_posixpath(path).strip("/")
     name = resource_name(path, force_posix)
     if is_dir:
         # directories never have an extension
         base_name = name
-        extension = ''
-    elif name.startswith('.') and '.' not in name[1:]:
+        extension = ""
+    elif name.startswith(".") and "." not in name[1:]:
         # .dot files base name is the full name and they do not have an extension
         base_name = name
-        extension = ''
+        extension = ""
     else:
         base_name, extension = posixpath.splitext(name)
         # handle composed extensions of tar.gz, tar.bz2, zx,etc
-        if base_name.endswith('.tar'):
+        if base_name.endswith(".tar"):
             base_name, extension2 = posixpath.splitext(base_name)
             extension = extension2 + extension
     return base_name, extension
+
 
 #
 # DIRECTORY AND FILES WALKING/ITERATION
@@ -318,7 +326,7 @@ def walk(location, ignored=None, follow_symlinks=False):
     is_ignored = ignored(location) if ignored else False
     if is_ignored:
         if TRACE:
-            logger_debug('walk: ignored:', location, is_ignored)
+            logger_debug("walk: ignored:", location, is_ignored)
         return
 
     if filetype.is_file(location, follow_symlinks=follow_symlinks):
@@ -331,14 +339,16 @@ def walk(location, ignored=None, follow_symlinks=False):
         for name in os.listdir(location):
             loc = os.path.join(location, name)
             if filetype.is_special(loc) or (ignored and ignored(loc)):
-                if (follow_symlinks
-                        and filetype.is_link(loc)
-                        and not filetype.is_broken_link(location)):
+                if (
+                    follow_symlinks
+                    and filetype.is_link(loc)
+                    and not filetype.is_broken_link(location)
+                ):
                     pass
                 else:
                     if TRACE:
                         ign = ignored and ignored(loc)
-                        logger_debug('walk: ignored:', loc, ign)
+                        logger_debug("walk: ignored:", loc, ign)
                     continue
             # special files and symlinks are always ignored
             if filetype.is_dir(loc, follow_symlinks=follow_symlinks):
@@ -348,7 +358,9 @@ def walk(location, ignored=None, follow_symlinks=False):
         yield location, dirs, files
 
         for dr in dirs:
-            for tripple in walk(os.path.join(location, dr), ignored, follow_symlinks=follow_symlinks):
+            for tripple in walk(
+                os.path.join(location, dr), ignored, follow_symlinks=follow_symlinks
+            ):
                 yield tripple
 
 
@@ -367,6 +379,8 @@ def resource_iter(location, ignored=ignore_nothing, with_dirs=True, follow_symli
                 yield os.path.join(top, d)
         for f in files:
             yield os.path.join(top, f)
+
+
 #
 # COPY
 #
@@ -450,7 +464,7 @@ def copytime(src, dst):
     """
     errors = []
     st = os.stat(src)
-    if hasattr(os, 'utime'):
+    if hasattr(os, "utime"):
         try:
             os.utime(dst, (st.st_atime, st.st_mtime))
         except OSError as why:
@@ -460,6 +474,7 @@ def copytime(src, dst):
             else:
                 errors.append((src, dst, str(why)))
     return errors
+
 
 #
 # PERMISSIONS
@@ -516,6 +531,7 @@ def chmod_tree(location, flags):
             for f in files:
                 chmod(os.path.join(top, f), flags, recurse=False)
 
+
 #
 # DELETION
 #
@@ -527,7 +543,7 @@ def _rm_handler(function, path, excinfo):  # NOQA
     This retries deleting once before giving up.
     """
     if TRACE:
-        logger_debug('_rm_handler:', 'path:', path, 'excinfo:', excinfo)
+        logger_debug("_rm_handler:", "path:", path, "excinfo:", excinfo)
     if function in (os.rmdir, os.listdir):
         try:
             chmod(path, RW, recurse=True)
@@ -536,7 +552,7 @@ def _rm_handler(function, path, excinfo):  # NOQA
             pass
 
         if os.path.exists(path):
-            logger.warning('Failed to delete directory %s', path)
+            logger.warning("Failed to delete directory %s", path)
 
     elif function == os.remove:
         try:
@@ -545,7 +561,7 @@ def _rm_handler(function, path, excinfo):  # NOQA
             pass
 
         if os.path.exists(path):
-            logger.warning('Failed to delete file %s', path)
+            logger.warning("Failed to delete file %s", path)
 
 
 def delete(location, _err_handler=_rm_handler):

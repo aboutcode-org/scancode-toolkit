@@ -32,11 +32,5 @@ def parse_os_release(location):
     """
     with open(location) as osrl:
         lines = (line.strip() for line in osrl)
-        lines = (
-            line.partition('=') for line in lines
-            if line and not line.startswith('#')
-        )
-        return {
-            key.strip(): ''.join(shlex.split(value))
-            for key, _, value in lines
-        }
+        lines = (line.partition("=") for line in lines if line and not line.startswith("#"))
+        return {key.strip(): "".join(shlex.split(value)) for key, _, value in lines}

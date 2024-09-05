@@ -7,9 +7,8 @@
 #
 
 import functools
-
-from types import GeneratorType
 from array import array
+from types import GeneratorType
 
 
 def flatten(seq):
@@ -87,8 +86,7 @@ def memoize(fun):
         if kwargs:
             return fun(*args, **kwargs)
         # convert any list args to a tuple
-        args = tuple(tuple(arg) if isinstance(arg, (list, tuple, array)) else arg
-                     for arg in args)
+        args = tuple(tuple(arg) if isinstance(arg, (list, tuple, array)) else arg for arg in args)
         try:
             return memos[args]
         except KeyError:

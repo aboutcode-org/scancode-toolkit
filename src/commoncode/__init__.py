@@ -14,16 +14,16 @@ def set_re_max_cache(max_cache=1000000):
     libraries use a lot of regexes: therefore 100 is not enough to benefit from
     caching.
     """
-    import re
     import fnmatch
+    import re
 
-    remax = getattr(re, '_MAXCACHE', 0)
+    remax = getattr(re, "_MAXCACHE", 0)
     if remax < max_cache:
-        setattr(re, '_MAXCACHE', max_cache)
+        setattr(re, "_MAXCACHE", max_cache)
 
-    fnmatchmax = getattr(fnmatch, '_MAXCACHE', 0)
+    fnmatchmax = getattr(fnmatch, "_MAXCACHE", 0)
     if fnmatchmax < max_cache:
-        setattr(fnmatch, '_MAXCACHE', max_cache)
+        setattr(fnmatch, "_MAXCACHE", max_cache)
 
 
 set_re_max_cache()
