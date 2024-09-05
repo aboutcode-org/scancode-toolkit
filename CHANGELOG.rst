@@ -1,6 +1,17 @@
 Release notes
 =============
 
+Version 32.0.0 - (2024-09-05)
+-----------------------------
+
+- Add new optional argument to generate YAML test data files from a template
+- Migrate URLs to new aboutcode.org org
+- Drop support for Python 3.7
+- Replace charset_normalizer by chardet because of unstable behavior between minor versions
+  See https://github.com/jawah/charset_normalizer/issues/520
+- Adopt black and isort style
+
+
 Version 31.2.1 - (2024-05-16)
 -----------------------------
 
