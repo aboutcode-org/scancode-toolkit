@@ -11,8 +11,8 @@ import logging
 import re
 import unicodedata
 
-from text_unidecode import unidecode
 from bs4.dammit import UnicodeDammit
+from text_unidecode import unidecode
 
 """
 A text processing module providing functions to process and prepare text
@@ -49,24 +49,24 @@ def foldcase(text):
 
 
 def nopunc():
-    return re.compile(r'[\W_]', re.MULTILINE | re.UNICODE)
+    return re.compile(r"[\W_]", re.MULTILINE | re.UNICODE)
 
 
 def nopunctuation(text):
-    u"""
+    """
     Replaces any non alphanum symbol (i.e. punctuation) in text with space.
     Preserve the characters offsets by replacing punctuation with spaces.
     Warning: this also drops line endings.
     """
     if not isinstance(text, str):
         text = as_unicode(text)
-    return re.sub(nopunc(), ' ', text)
+    return re.sub(nopunc(), " ", text)
 
 
-CR = '\r'
-LF = '\n'
+CR = "\r"
+LF = "\n"
 CRLF = CR + LF
-CRLF_NO_CR = ' ' + LF
+CRLF_NO_CR = " " + LF
 
 
 def unixlinesep(text, preserve=False):
@@ -85,7 +85,7 @@ def nolinesep(text):
     """
     if not isinstance(text, str):
         text = as_unicode(text)
-    return text.replace(CR, ' ').replace(LF, ' ')
+    return text.replace(CR, " ").replace(LF, " ")
 
 
 def toascii(s, translit=False):
@@ -110,11 +110,11 @@ def toascii(s, translit=False):
     if translit:
         converted = unidecode(s)
     else:
-        converted = unicodedata.normalize('NFKD', s)
+        converted = unicodedata.normalize("NFKD", s)
 
-    converted = converted.replace('[?]', '_')
-    converted = converted.encode('ascii', 'ignore')
-    return converted.decode('ascii')
+    converted = converted.replace("[?]", "_")
+    converted = converted.encode("ascii", "ignore")
+    return converted.decode("ascii")
 
 
 def python_safe_name(s):
@@ -126,9 +126,9 @@ def python_safe_name(s):
     s = toascii(s)
     s = foldcase(s)
     s = nopunctuation(s)
-    s = s.replace(' ', '_')
-    s = '_'.join(s.split())
-    s = s.strip('_')
+    s = s.replace(" ", "_")
+    s = "_".join(s.split())
+    s = s.strip("_")
     return s
 
 
@@ -138,9 +138,9 @@ def as_unicode(s):
     """
     if isinstance(s, str):
         return s
-    if s == b'':
-        return u''
+    if s == b"":
+        return ""
     if not s:
         return s
-    assert isinstance(s, bytes), 's must be bytes but is: {}'.format(s)
+    assert isinstance(s, bytes), "s must be bytes but is: {}".format(s)
     return UnicodeDammit(s).markup

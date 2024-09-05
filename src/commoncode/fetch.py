@@ -35,19 +35,18 @@ def download_url(url, file_name=None, verify=True, timeout=10):
     try:
         response = requests.get(url, **requests_args)
     except (ConnectionError, InvalidSchema) as e:
-        logger.error('download_url: Download failed for %(url)r' % locals())
+        logger.error("download_url: Download failed for %(url)r" % locals())
         raise
 
     status = response.status_code
     if status != 200:
-        msg = 'download_url: Download failed for %(url)r with %(status)r' % locals(
-        )
+        msg = "download_url: Download failed for %(url)r with %(status)r" % locals()
         logger.error(msg)
         raise Exception(msg)
 
-    tmp_dir = fileutils.get_temp_dir(prefix='fetch-')
+    tmp_dir = fileutils.get_temp_dir(prefix="fetch-")
     output_file = os.path.join(tmp_dir, file_name)
-    with open(output_file, 'wb') as out:
+    with open(output_file, "wb") as out:
         out.write(response.content)
 
     return output_file

@@ -6,20 +6,19 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import ctypes
 import contextlib
+import ctypes
 import io
-import os
-from os import path
-
 import logging
+import os
 import signal
 import subprocess
+from os import path
 
+from commoncode import text
 from commoncode.fileutils import get_temp_dir
 from commoncode.system import on_posix
 from commoncode.system import on_windows
-from commoncode import text
 
 """
 Wrapper for executing external commands in sub-processes which works
@@ -33,15 +32,16 @@ TRACE = False
 
 if TRACE:
     import sys
+
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
 # current directory is the root dir of this library
 curr_dir = path.dirname(path.dirname(path.abspath(__file__)))
 
-PATH_ENV_VAR = 'PATH'
-LD_LIBRARY_PATH = 'LD_LIBRARY_PATH'
-DYLD_LIBRARY_PATH = 'DYLD_LIBRARY_PATH'
+PATH_ENV_VAR = "PATH"
+LD_LIBRARY_PATH = "LD_LIBRARY_PATH"
+DYLD_LIBRARY_PATH = "DYLD_LIBRARY_PATH"
 
 
 def execute(cmd_loc, args, cwd=None, env=None, to_files=False, log=TRACE):
@@ -68,10 +68,10 @@ def execute(cmd_loc, args, cwd=None, env=None, to_files=False, log=TRACE):
     cwd = cwd or curr_dir
 
     # temp files for stderr and stdout
-    tmp_dir = get_temp_dir(prefix='cmd-')
+    tmp_dir = get_temp_dir(prefix="cmd-")
 
-    sop = path.join(tmp_dir, 'stdout')
-    sep = path.join(tmp_dir, 'stderr')
+    sop = path.join(tmp_dir, "stdout")
+    sep = path.join(tmp_dir, "stderr")
 
     # shell==True is DANGEROUS but we are not running arbitrary commands
     # though we can execute commands that just happen to be in the path
@@ -81,15 +81,15 @@ def execute(cmd_loc, args, cwd=None, env=None, to_files=False, log=TRACE):
     if log:
         printer = logger.debug if TRACE else lambda x: print(x)
         printer(
-            'Executing command %(cmd_loc)r as:\n%(full_cmd)r\nwith: env=%(env)r\n'
-            'shell=%(shell)r\ncwd=%(cwd)r\nstdout=%(sop)r\nstderr=%(sep)r'
-            % locals())
+            "Executing command %(cmd_loc)r as:\n%(full_cmd)r\nwith: env=%(env)r\n"
+            "shell=%(shell)r\ncwd=%(cwd)r\nstdout=%(sop)r\nstderr=%(sep)r" % locals()
+        )
 
     proc = None
     rc = 100
 
     try:
-        with io.open(sop, 'wb') as stdout, io.open(sep, 'wb') as stderr, pushd(cmd_dir):
+        with io.open(sop, "wb") as stdout, io.open(sep, "wb") as stderr, pushd(cmd_dir):
             proc = subprocess.Popen(
                 full_cmd,
                 cwd=cwd,
@@ -108,11 +108,11 @@ def execute(cmd_loc, args, cwd=None, env=None, to_files=False, log=TRACE):
 
     if not to_files:
         # return output as ASCII string loaded from the output files
-        with open(sop, 'rb') as so:
+        with open(sop, "rb") as so:
             sor = so.read()
             sop = text.toascii(sor).strip()
 
-        with open(sep, 'rb') as se:
+        with open(sep, "rb") as se:
             ser = se.read()
             sep = text.toascii(ser).strip()
 
@@ -167,18 +167,15 @@ def get_env(base_vars=None, lib_dir=None):
 
     # Create and add LD environment variables
     if lib_dir and on_posix:
-        new_path = f'{lib_dir}'
+        new_path = f"{lib_dir}"
         # on Linux/posix
         ld_lib_path = os.environ.get(LD_LIBRARY_PATH)
-        env_vars.update(
-            {LD_LIBRARY_PATH: update_path_var(ld_lib_path, new_path)})
+        env_vars.update({LD_LIBRARY_PATH: update_path_var(ld_lib_path, new_path)})
         # on Mac, though LD_LIBRARY_PATH should work too
         dyld_lib_path = os.environ.get(DYLD_LIBRARY_PATH)
-        env_vars.update(
-            {DYLD_LIBRARY_PATH: update_path_var(dyld_lib_path, new_path)})
+        env_vars.update({DYLD_LIBRARY_PATH: update_path_var(dyld_lib_path, new_path)})
 
-    env_vars = {text.as_unicode(k): text.as_unicode(v)
-                for k, v in env_vars.items()}
+    env_vars = {text.as_unicode(k): text.as_unicode(v) for k, v in env_vars.items()}
 
     return env_vars
 
@@ -198,9 +195,9 @@ def close(proc):
         except IOError:
             pass
 
-    close_pipe(getattr(proc, 'stdin', None))
-    close_pipe(getattr(proc, 'stdout', None))
-    close_pipe(getattr(proc, 'stderr', None))
+    close_pipe(getattr(proc, "stdin", None))
+    close_pipe(getattr(proc, "stdout", None))
+    close_pipe(getattr(proc, "stderr", None))
 
     try:
         # Ensure process death otherwise proc.wait may hang in some cases
@@ -219,8 +216,7 @@ def load_shared_library(dll_loc, *args):
     Return the loaded shared library object from the ``dll_loc`` location.
     """
     if not dll_loc or not path.exists(dll_loc):
-        raise ImportError(
-            f'Shared library does not exists: dll_loc: {dll_loc}')
+        raise ImportError(f"Shared library does not exists: dll_loc: {dll_loc}")
 
     if not isinstance(dll_loc, str):
         dll_loc = os.fsdecode(dll_loc)
@@ -232,19 +228,22 @@ def load_shared_library(dll_loc, *args):
         with pushd(dll_dir):
             lib = ctypes.CDLL(dll_loc)
     except OSError as e:
-        from pprint import pformat
         import traceback
-        msgs = tuple([
-            f'ctypes.CDLL("{dll_loc}")',
-            'os.environ:\n{}'.format(pformat(dict(os.environ))),
-            traceback.format_exc(),
-        ])
+        from pprint import pformat
+
+        msgs = tuple(
+            [
+                f'ctypes.CDLL("{dll_loc}")',
+                "os.environ:\n{}".format(pformat(dict(os.environ))),
+                traceback.format_exc(),
+            ]
+        )
         raise Exception(msgs) from e
 
     if lib and lib._name:
         return lib
 
-    raise Exception(f'Failed to load shared library with ctypes: {dll_loc}')
+    raise Exception(f"Failed to load shared library with ctypes: {dll_loc}")
 
 
 @contextlib.contextmanager
@@ -271,7 +270,7 @@ def update_path_var(existing_path_var, new_path):
     if not new_path:
         return existing_path_var
 
-    existing_path_var = existing_path_var or ''
+    existing_path_var = existing_path_var or ""
 
     existing_path_var = os.fsdecode(existing_path_var)
     new_path = os.fsdecode(new_path)
@@ -296,7 +295,11 @@ def update_path_var(existing_path_var, new_path):
     return updated_path_var
 
 
-PATH_VARS = DYLD_LIBRARY_PATH, LD_LIBRARY_PATH, 'PATH',
+PATH_VARS = (
+    DYLD_LIBRARY_PATH,
+    LD_LIBRARY_PATH,
+    "PATH",
+)
 
 
 def searchable_paths(env_vars=PATH_VARS):
@@ -306,7 +309,7 @@ def searchable_paths(env_vars=PATH_VARS):
     """
     dirs = []
     for env_var in env_vars:
-        value = os.environ.get(env_var, '') or ''
+        value = os.environ.get(env_var, "") or ""
         dirs.extend(value.split(os.pathsep))
     dirs = [os.path.realpath(d.strip()) for d in dirs if d.strip()]
     return tuple(d for d in dirs if os.path.isdir(d))

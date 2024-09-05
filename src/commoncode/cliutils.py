@@ -11,11 +11,11 @@ import sys
 
 import click
 
-from click.utils import echo
-from click.termui import style
-from click.types import BoolParamType
 # FIXME: this is NOT API
 from click._termui_impl import ProgressBar
+from click.termui import style
+from click.types import BoolParamType
+from click.utils import echo
 
 from commoncode.fileutils import file_name
 from commoncode.fileutils import splitext
@@ -31,13 +31,14 @@ def logger_debug(*args):
 
 if TRACE:
     import logging
+
     logger = logging.getLogger(__name__)
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, str)
-                                     and a or repr(a) for a in args))
+        return logger.debug(" ".join(isinstance(a, str) and a or repr(a) for a in args))
+
 
 """
 Command line UI utilities for improved options, help and progress reporting.
@@ -51,7 +52,7 @@ class BaseCommand(click.Command):
 
     # override this in sub-classes with a command-specific message such as
     # "Try 'scancode --help' for help on options and arguments."
-    short_usage_help = ''
+    short_usage_help = ""
 
     def get_usage(self, ctx):
         """
@@ -61,8 +62,12 @@ class BaseCommand(click.Command):
         return super(BaseCommand, self).get_usage(ctx) + self.short_usage_help
 
     def main(
-        self, args=None, prog_name=None, complete_var=None,
-        standalone_mode=True, **extra,
+        self,
+        args=None,
+        prog_name=None,
+        complete_var=None,
+        standalone_mode=True,
+        **extra,
     ):
         """
         Workaround click 4.0 bug https://github.com/mitsuhiko/click/issues/365
@@ -83,14 +88,20 @@ class GroupedHelpCommand(BaseCommand):
     help where each option is grouped by group in the help.
     """
 
-    short_usage_help = '''
-Try the '--help' option for help on options and arguments.'''
+    short_usage_help = """
+Try the '--help' option for help on options and arguments."""
 
     def __init__(
-        self, name, context_settings=None, callback=None, params=None,
+        self,
+        name,
+        context_settings=None,
+        callback=None,
+        params=None,
         help=None,  # NOQA
-        epilog=None, short_help=None,
-        options_metavar='[OPTIONS]', add_help_option=True,
+        epilog=None,
+        short_help=None,
+        options_metavar="[OPTIONS]",
+        add_help_option=True,
         plugin_options=(),
     ):
         """
@@ -120,19 +131,21 @@ Try the '--help' option for help on options and arguments.'''
         to MISC_GROUP group.
         """
         # this mapping defines the CLI help presentation order
-        help_groups = dict([
-            (SCAN_GROUP, []),
-            (OTHER_SCAN_GROUP, []),
-            (SCAN_OPTIONS_GROUP, []),
-            (OUTPUT_GROUP, []),
-            (OUTPUT_FILTER_GROUP, []),
-            (OUTPUT_CONTROL_GROUP, []),
-            (PRE_SCAN_GROUP, []),
-            (POST_SCAN_GROUP, []),
-            (CORE_GROUP, []),
-            (MISC_GROUP, []),
-            (DOC_GROUP, []),
-        ])
+        help_groups = dict(
+            [
+                (SCAN_GROUP, []),
+                (OTHER_SCAN_GROUP, []),
+                (SCAN_OPTIONS_GROUP, []),
+                (OUTPUT_GROUP, []),
+                (OUTPUT_FILTER_GROUP, []),
+                (OUTPUT_CONTROL_GROUP, []),
+                (PRE_SCAN_GROUP, []),
+                (POST_SCAN_GROUP, []),
+                (CORE_GROUP, []),
+                (MISC_GROUP, []),
+                (DOC_GROUP, []),
+            ]
+        )
 
         for param in self.get_params(ctx):
             # Get the list of option's name and help text
@@ -140,11 +153,11 @@ Try the '--help' option for help on options and arguments.'''
             if not help_record:
                 continue
             # organize options by group
-            help_group = getattr(param, 'help_group', MISC_GROUP)
-            sort_order = getattr(param, 'sort_order', 100)
+            help_group = getattr(param, "help_group", MISC_GROUP)
+            sort_order = getattr(param, "sort_order", 100)
             help_groups[help_group].append((sort_order, help_record))
 
-        with formatter.section('Options'):
+        with formatter.section("Options"):
             for group, help_records in help_groups.items():
                 if not help_records:
                     continue
@@ -156,7 +169,6 @@ Try the '--help' option for help on options and arguments.'''
 # overriden and copied from Click to work around Click woes for
 # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
 class DebuggedProgressBar(ProgressBar):
-
     # overriden and copied from Click to work around Click woes for
     # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
     def make_step(self, n_steps):
@@ -221,7 +233,7 @@ class ProgressLogger(ProgressBar):
         if self.item_show_func:
             item_info = self.item_show_func(self.current_item)
         else:
-            item_info = '.'
+            item_info = "."
         if item_info:
             return item_info
 
@@ -230,16 +242,16 @@ class ProgressLogger(ProgressBar):
 
 
 BAR_WIDTH = 20
-BAR_SEP_LEN = len(' ')
+BAR_SEP_LEN = len(" ")
 
 
 def progressmanager(
     iterable=None,
     length=None,
-    fill_char='#',
-    empty_char='-',
+    fill_char="#",
+    empty_char="-",
     bar_template=None,
-    info_sep=' ',
+    info_sep=" ",
     show_eta=False,
     show_percent=False,
     show_pos=True,
@@ -264,10 +276,7 @@ def progressmanager(
         progress_class = ProgressLogger
     else:
         progress_class = EnhancedProgressBar
-        bar_template = (
-            '[%(bar)s]' + ' ' + '%(info)s'
-            if bar_template is None else bar_template
-        )
+        bar_template = "[%(bar)s]" + " " + "%(info)s" if bar_template is None else bar_template
 
     kwargs = dict(
         iterable=iterable,
@@ -293,8 +302,8 @@ def progressmanager(
     # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
     # Here we create a dummy progress_class and then for the attribute presence.
     pb = progress_class([])
-    if hasattr(pb, 'update_min_steps'):
-        kwargs['update_min_steps'] = update_min_steps
+    if hasattr(pb, "update_min_steps"):
+        kwargs["update_min_steps"] = update_min_steps
 
     return progress_class(**kwargs)
 
@@ -317,7 +326,7 @@ def fixed_width_file_name(path, max_length=25):
     >>> assert fwfn == ''
     """
     if not path:
-        return ''
+        return ""
 
     # get the path as unicode for display!
     filename = file_name(path)
@@ -329,13 +338,13 @@ def fixed_width_file_name(path, max_length=25):
     remaining_length = max_length - len_ext - dots
 
     if remaining_length < 5 or remaining_length < (len_ext + dots):
-        return ''
+        return ""
 
     prefix_and_suffix_length = abs(remaining_length // 2)
     prefix = base_name[:prefix_and_suffix_length]
-    ellipsis = dots * '.'
+    ellipsis = dots * "."
     suffix = base_name[-prefix_and_suffix_length:]
-    return '{prefix}{ellipsis}{suffix}{ext}'.format(**locals())
+    return "{prefix}{ellipsis}{suffix}{ext}".format(**locals())
 
 
 def file_name_max_len(used_width=BAR_WIDTH + 1 + 7 + 1 + 8 + 1):
@@ -359,13 +368,13 @@ def file_name_max_len(used_width=BAR_WIDTH + 1 + 7 + 1 + 8 + 1):
     return max_filename_length
 
 
-def path_progress_message(item, verbose=False, prefix='Scanned: '):
+def path_progress_message(item, verbose=False, prefix="Scanned: "):
     """
     Return a styled message suitable for progress display when processing a path
     for an `item` tuple of (location, rid, scan_errors, *other items)
     """
     if not item:
-        return ''
+        return ""
     location = item[0]
     errors = item[2]
     location = toascii(location)
@@ -374,25 +383,25 @@ def path_progress_message(item, verbose=False, prefix='Scanned: '):
         max_file_name_len = file_name_max_len()
         # do not display a file name in progress bar if there is no space available
         if max_file_name_len <= 10:
-            return ''
+            return ""
         progress_line = fixed_width_file_name(location, max_file_name_len)
 
-    color = 'red' if errors else 'green'
+    color = "red" if errors else "green"
     return style(prefix) + style(progress_line, fg=color)
 
 
 # CLI help groups
-SCAN_GROUP = 'primary scans'
-SCAN_OPTIONS_GROUP = 'scan options'
-OTHER_SCAN_GROUP = 'other scans'
-OUTPUT_GROUP = 'output formats'
-OUTPUT_CONTROL_GROUP = 'output control'
-OUTPUT_FILTER_GROUP = 'output filters'
-PRE_SCAN_GROUP = 'pre-scan'
-POST_SCAN_GROUP = 'post-scan'
-MISC_GROUP = 'miscellaneous'
-DOC_GROUP = 'documentation'
-CORE_GROUP = 'core'
+SCAN_GROUP = "primary scans"
+SCAN_OPTIONS_GROUP = "scan options"
+OTHER_SCAN_GROUP = "other scans"
+OUTPUT_GROUP = "output formats"
+OUTPUT_CONTROL_GROUP = "output control"
+OUTPUT_FILTER_GROUP = "output filters"
+PRE_SCAN_GROUP = "pre-scan"
+POST_SCAN_GROUP = "post-scan"
+MISC_GROUP = "miscellaneous"
+DOC_GROUP = "documentation"
+CORE_GROUP = "core"
 
 
 class PluggableCommandLineOption(click.Option):
@@ -431,7 +440,7 @@ class PluggableCommandLineOption(click.Option):
         # a sequence of other option name strings that this option
         # conflicts with if they are set
         conflicting_options=(),
-        **kwargs
+        **kwargs,
     ):
         super(PluggableCommandLineOption, self).__init__(
             param_decls=param_decls,
@@ -446,7 +455,7 @@ class PluggableCommandLineOption(click.Option):
             allow_from_autoenv=allow_from_autoenv,
             type=type,
             help=help,
-            **kwargs
+            **kwargs,
         )
 
         self.help_group = help_group
@@ -463,9 +472,9 @@ class PluggableCommandLineOption(click.Option):
         conflicting_options = self.conflicting_options
 
         return (
-            'PluggableCommandLineOption<name=%(name)r, '
-            'required_options=%(required_options)r, '
-            'conflicting_options=%(conflicting_options)r>' % locals()
+            "PluggableCommandLineOption<name=%(name)r, "
+            "required_options=%(required_options)r, "
+            "conflicting_options=%(conflicting_options)r>" % locals()
         )
 
     def validate_dependencies(self, ctx, value):
@@ -473,10 +482,8 @@ class PluggableCommandLineOption(click.Option):
         Validate `value` against declared `required_options` or
         `conflicting_options` dependencies.
         """
-        _validate_option_dependencies(
-            ctx, self, value, self.required_options, required=True)
-        _validate_option_dependencies(
-            ctx, self, value, self.conflicting_options, required=False)
+        _validate_option_dependencies(ctx, self, value, self.required_options, required=True)
+        _validate_option_dependencies(ctx, self, value, self.conflicting_options, required=False)
 
     def get_help_record(self, ctx):
         if not self.hidden:
@@ -490,22 +497,20 @@ def validate_option_dependencies(ctx):
     """
     values = ctx.params
     if TRACE:
-        logger_debug('validate_option_dependencies: values:')
+        logger_debug("validate_option_dependencies: values:")
         for va in sorted(values.items()):
-            logger_debug('  ', va)
+            logger_debug("  ", va)
 
     for param in ctx.command.params:
         if param.is_eager:
             continue
         if not isinstance(param, PluggableCommandLineOption):
             if TRACE:
-                logger_debug(
-                    '  validate_option_dependencies: skip param:', param)
+                logger_debug("  validate_option_dependencies: skip param:", param)
             continue
         value = values.get(param.name)
         if TRACE:
-            logger_debug('  validate_option_dependencies: param:',
-                         param, 'value:', value)
+            logger_debug("  validate_option_dependencies: param:", param, "value:", value)
         param.validate_dependencies(ctx, value)
 
 
@@ -537,8 +542,8 @@ def _validate_option_dependencies(ctx, param, value, other_option_names, require
 
     if TRACE:
         logger_debug()
-        logger_debug('Checking param:', param)
-        logger_debug('  value:', value, 'is_set:', is_set)
+        logger_debug("Checking param:", param)
+        logger_debug("  value:", value, "is_set:", is_set)
 
     if not is_set:
         return
@@ -556,27 +561,29 @@ def _validate_option_dependencies(ctx, param, value, other_option_names, require
 
     if TRACE:
         logger_debug()
-        logger_debug('  Available other params:')
+        logger_debug("  Available other params:")
         for oparam in oparams:
-            logger_debug('    other param:', oparam)
-            logger_debug('      value:', ctx.params.get(oparam.name))
+            logger_debug("    other param:", oparam)
+            logger_debug("      value:", ctx.params.get(oparam.name))
         if required:
-            logger_debug('    missing names:', missing_onames)
+            logger_debug("    missing names:", missing_onames)
 
     if required and missing_onames:
         opt = param.opts[-1]
         oopts = [oparam.opts[-1] for oparam in oparams]
-        omopts = ['--' + oname.replace('_', '-') for oname in missing_onames]
+        omopts = ["--" + oname.replace("_", "-") for oname in missing_onames]
         oopts.extend(omopts)
-        oopts = ', '.join(oopts)
-        msg = ('The option %(opt)s requires the option(s) %(all_opts)s.'
-               'and is missing %(omopts)s. '
-               'You must set all of these options if you use this option.' % locals())
+        oopts = ", ".join(oopts)
+        msg = (
+            "The option %(opt)s requires the option(s) %(all_opts)s."
+            "and is missing %(omopts)s. "
+            "You must set all of these options if you use this option." % locals()
+        )
         raise click.UsageError(msg)
 
     if TRACE:
         logger_debug()
-        logger_debug('  Checking other params:')
+        logger_debug("  Checking other params:")
 
     opt = param.opts[-1]
 
@@ -585,21 +592,25 @@ def _validate_option_dependencies(ctx, param, value, other_option_names, require
         ois_set = _is_set(ovalue, oparam)
 
         if TRACE:
-            logger_debug('    Checking oparam:', oparam)
-            logger_debug('      value:', ovalue, 'ois_set:', ois_set)
+            logger_debug("    Checking oparam:", oparam)
+            logger_debug("      value:", ovalue, "ois_set:", ois_set)
 
         # by convention the last opt is the long form
         oopt = oparam.opts[-1]
-        oopts = ', '.join(oparam.opts[-1] for oparam in oparams)
-        all_opts = '%(opt)s and %(oopts)s' % locals()
+        oopts = ", ".join(oparam.opts[-1] for oparam in oparams)
+        all_opts = "%(opt)s and %(oopts)s" % locals()
         if required and not ois_set:
-            msg = ('The option %(opt)s requires the option(s) %(oopts)s '
-                   'and is missing %(oopt)s. '
-                   'You must set all of these options if you use this option.' % locals())
+            msg = (
+                "The option %(opt)s requires the option(s) %(oopts)s "
+                "and is missing %(oopt)s. "
+                "You must set all of these options if you use this option." % locals()
+            )
             raise click.UsageError(msg)
 
         if not required and ois_set:
-            msg = ('The option %(opt)s cannot be used together with the %(oopts)s option(s) '
-                   'and %(oopt)s is used. '
-                   'You can set only one of these options at a time.' % locals())
+            msg = (
+                "The option %(opt)s cannot be used together with the %(oopts)s option(s) "
+                "and %(oopt)s is used. "
+                "You can set only one of these options at a time." % locals()
+            )
             raise click.UsageError(msg)

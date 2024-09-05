@@ -8,4 +8,7 @@
 
 unicode = str  # NOQA
 long = int  # NOQA
-integer_types = int, long,
+integer_types = (
+    int,
+    long,
+)

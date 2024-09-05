@@ -16,22 +16,22 @@ def os_arch():
     """
     Return a tuple for the current the OS and architecture.
     """
-    if sys.maxsize > 2 ** 32:
-        arch = '64'
+    if sys.maxsize > 2**32:
+        arch = "64"
     else:
-        arch = '32'
+        arch = "32"
 
     sys_platform = str(sys.platform).lower()
-    if sys_platform.startswith('linux'):
-        os = 'linux'
-    elif 'win32' in sys_platform:
-        os = 'win'
-    elif 'darwin' in sys_platform:
-        os = 'mac'
-    elif 'freebsd' in sys_platform:
-        os = 'freebsd'
+    if sys_platform.startswith("linux"):
+        os = "linux"
+    elif "win32" in sys_platform:
+        os = "win"
+    elif "darwin" in sys_platform:
+        os = "mac"
+    elif "freebsd" in sys_platform:
+        os = "freebsd"
     else:
-        raise Exception('Unsupported OS/platform %r' % sys_platform)
+        raise Exception("Unsupported OS/platform %r" % sys_platform)
     return os, arch
 
 
@@ -39,17 +39,17 @@ def os_arch():
 # OS/Arch
 #
 current_os, current_arch = os_arch()
-on_windows = current_os == 'win'
-on_windows_32 = on_windows and current_arch == '32'
-on_windows_64 = on_windows and current_arch == '64'
-on_mac = current_os == 'mac'
-on_linux = current_os == 'linux'
-on_freebsd = current_os == 'freebsd'
+on_windows = current_os == "win"
+on_windows_32 = on_windows and current_arch == "32"
+on_windows_64 = on_windows and current_arch == "64"
+on_mac = current_os == "mac"
+on_linux = current_os == "linux"
+on_freebsd = current_os == "freebsd"
 on_posix = not on_windows and (on_mac or on_linux or on_freebsd)
 
-current_os_arch = '%(current_os)s-%(current_arch)s' % locals()
-noarch = 'noarch'
-current_os_noarch = '%(current_os)s-%(noarch)s' % locals()
+current_os_arch = "%(current_os)s-%(current_arch)s" % locals()
+noarch = "noarch"
+current_os_noarch = "%(current_os)s-%(noarch)s" % locals()
 
 del os_arch
 
@@ -61,10 +61,11 @@ def is_on_macos_14_or_higher():
     filesystem encodings.
     """
     import platform
+
     macos_ver = platform.mac_ver()
     macos_ver = macos_ver[0]
-    macos_ver = macos_ver.split('.')
-    return macos_ver > ['10', '14']
+    macos_ver = macos_ver.split(".")
+    return macos_ver > ["10", "14"]
 
 
 on_macos_14_or_higher = is_on_macos_14_or_higher()
@@ -77,7 +78,8 @@ def is_on_macos_arm64():
     Return True if the current OS is macOS running on Apple Silicon.
     """
     import platform
-    return on_mac and platform.machine() == 'arm64'
+
+    return on_mac and platform.machine() == "arm64"
 
 
 on_macos_arm64 = is_on_macos_arm64()
@@ -85,14 +87,15 @@ on_macos_arm64 = is_on_macos_arm64()
 del is_on_macos_arm64
 
 
-def is_on_ubuntu_22(os_release_location='/etc/os-release'):
+def is_on_ubuntu_22(os_release_location="/etc/os-release"):
     """
     Return True if the current OS is Ubuntu 22.XX.
     """
     if not on_linux:
         return False
     os_release_info = parse_os_release(os_release_location)
-    return os_release_info['ID'] == 'ubuntu' and '22' in os_release_info['VERSION_ID']
+    return os_release_info["ID"] == "ubuntu" and "22" in os_release_info["VERSION_ID"]
+
 
 try:
     on_ubuntu_22 = is_on_ubuntu_22()
@@ -126,11 +129,11 @@ is_case_sensitive_fs = has_case_sensitive_fs()
 # Shared library file extensions
 #
 if on_windows:
-    lib_ext = '.dll'
+    lib_ext = ".dll"
 if on_mac:
-    lib_ext = '.dylib'
+    lib_ext = ".dylib"
 if on_linux or on_freebsd:
-    lib_ext = '.so'
+    lib_ext = ".so"
 
 #
 # Python versions
@@ -157,5 +160,6 @@ py310 = py3 and _sys_v1 == 10
 # The system does not display the Windows Error Reporting dialog.
 if on_windows:
     import ctypes
+
     # 3 is SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX
     ctypes.windll.kernel32.SetErrorMode(3)  # @UndefinedVariable

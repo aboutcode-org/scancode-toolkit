@@ -83,16 +83,14 @@ def is_included(path, includes=None, excludes=None):
     if includes:
         included = get_matches(path, includes, all_matches=False)
         if TRACE:
-            logger.debug(
-                'in_fileset: path: %(path)r included:%(included)r' % locals())
+            logger.debug("in_fileset: path: %(path)r included:%(included)r" % locals())
         if not included:
             return False
 
     if excludes:
         excluded = get_matches(path, excludes, all_matches=False)
         if TRACE:
-            logger.debug(
-                'in_fileset: path: %(path)r excluded:%(excluded)r .' % locals())
+            logger.debug("in_fileset: path: %(path)r excluded:%(excluded)r ." % locals())
         if excluded:
             return False
 
@@ -110,41 +108,39 @@ def get_matches(path, patterns, all_matches=False):
         return False
 
     path = fileutils.as_posixpath(path).lower()
-    pathstripped = path.lstrip('/0')
+    pathstripped = path.lstrip("/0")
     if not pathstripped:
         return False
 
     segments = paths.split(pathstripped)
 
     if TRACE:
-        logger.debug(
-            '_match: path: %(path)r patterns:%(patterns)r.' % locals())
+        logger.debug("_match: path: %(path)r patterns:%(patterns)r." % locals())
 
     matches = []
     if not isinstance(patterns, dict):
-        assert isinstance(patterns, (list, tuple)
-                          ), 'Invalid patterns: {}'.format(patterns)
+        assert isinstance(patterns, (list, tuple)), "Invalid patterns: {}".format(patterns)
         patterns = {p: p for p in patterns}
 
     for pat, value in patterns.items():
         if not pat or not pat.strip():
             continue
 
-        value = value or ''
-        pat = pat.lstrip('/').lower()
-        is_plain = '/' not in pat
+        value = value or ""
+        pat = pat.lstrip("/").lower()
+        is_plain = "/" not in pat
 
         if is_plain:
             if any(fnmatch.fnmatchcase(s, pat) for s in segments):
                 matches.append(value)
                 if not all_matches:
                     break
-        elif (fnmatch.fnmatchcase(path, pat) or fnmatch.fnmatchcase(pathstripped, pat)):
+        elif fnmatch.fnmatchcase(path, pat) or fnmatch.fnmatchcase(pathstripped, pat):
             matches.append(value)
             if not all_matches:
                 break
     if TRACE:
-        logger.debug('_match: matches: %(matches)r' % locals())
+        logger.debug("_match: matches: %(matches)r" % locals())
 
     if not all_matches:
         if matches:
@@ -161,9 +157,9 @@ def load(location):
     if not location:
         return tuple()
     fn = os.path.abspath(os.path.normpath(os.path.expanduser(location)))
-    msg = ('File %(location)s does not exist or not a file.') % locals()
-    assert (os.path.exists(fn) and os.path.isfile(fn)), msg
-    mode = 'r'
+    msg = ("File %(location)s does not exist or not a file.") % locals()
+    assert os.path.exists(fn) and os.path.isfile(fn), msg
+    mode = "r"
     with open(fn, mode) as f:
         return [l.strip() for l in f if l and l.strip()]
 
@@ -175,9 +171,9 @@ def includes_excludes(patterns, message):
     value in the returned mappings. Ignore pattern as comments if prefixed
     with #. Use an empty string is message is None.
     """
-    message = message or ''
-    BANG = '!'
-    POUND = '#'
+    message = message or ""
+    BANG = "!"
+    POUND = "#"
     included = {}
     excluded = {}
     if not patterns:

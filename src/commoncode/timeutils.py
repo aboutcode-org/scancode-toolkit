@@ -25,7 +25,7 @@ class UTC(tzinfo):
         return None
 
     def tzname(self, dt):  # NOQA
-        return 'UTC'
+        return "UTC"
 
     def dst(self, dt):  # NOQA
         return None
@@ -61,7 +61,7 @@ def time2tstamp(dt=None, path_safe=True):
     datim = dt or datetime.utcnow()
     iso = datim.isoformat()
     if path_safe:
-        iso = iso.replace(':', '').replace('/', '_')
+        iso = iso.replace(":", "").replace("/", "_")
     return iso
 
 
@@ -70,11 +70,11 @@ def tstamp2time(stamp):
     Convert a UTC timestamp to a datetime object.
     """
     # handle both basic and extended formats
-    tformat = '%Y-%m-%dT%H%M%S' if stamp[4] == '-' else '%Y%m%dT%H%M%S'
+    tformat = "%Y-%m-%dT%H%M%S" if stamp[4] == "-" else "%Y%m%dT%H%M%S"
     # normalize
-    dt_ms = stamp.strip().replace('Z', '').replace(':', '')
+    dt_ms = stamp.strip().replace("Z", "").replace(":", "")
 
-    dt_ms = dt_ms.split('.')
+    dt_ms = dt_ms.split(".")
     isodatim = dt_ms[0]
     datim = datetime.strptime(isodatim, tformat)
     # all stamps must be UTC

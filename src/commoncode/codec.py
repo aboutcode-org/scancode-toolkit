@@ -14,8 +14,12 @@ Numbers to bytes or strings and URLs coder/decoders.
 """
 
 
-def c2i(c): return c
-def i2c(i): return bytes([i])
+def c2i(c):
+    return c
+
+
+def i2c(i):
+    return bytes([i])
 
 
 def num_to_bin(num):
@@ -26,16 +30,16 @@ def num_to_bin(num):
     """
     # Zero is not encoded but returned as an empty value
     if num == 0:
-        return b'\x00'
+        return b"\x00"
 
-    return num.to_bytes((num.bit_length() + 7) // 8, 'big')
+    return num.to_bytes((num.bit_length() + 7) // 8, "big")
 
 
 def bin_to_num(binstr):
     """
     Convert a big endian byte-ordered binary string to an integer or long.
     """
-    return int.from_bytes(binstr, byteorder='big', signed=False)
+    return int.from_bytes(binstr, byteorder="big", signed=False)
 
 
 def urlsafe_b64encode(s):
@@ -50,7 +54,7 @@ def urlsafe_b64decode(b64):
     Decode a url safe base64-encoded string.
     Note that we use stddecode to work around a bug in the standard library.
     """
-    b = b64.replace(b'-', b'+').replace(b'_', b'/')
+    b = b64.replace(b"-", b"+").replace(b"_", b"/")
     return stddecode(b)
 
 

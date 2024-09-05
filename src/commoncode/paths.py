@@ -9,14 +9,13 @@
 import ntpath
 import posixpath
 import re
-
 from os.path import commonprefix
 
-from commoncode.text import as_unicode
-from commoncode.text import toascii
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import as_winpath
 from commoncode.fileutils import is_posixpath
+from commoncode.text import as_unicode
+from commoncode.text import toascii
 
 """
 Various path utilities such as common prefix and suffix functions, conversion
@@ -53,18 +52,15 @@ def safe_path(path, posix=False, preserve_spaces=False, posix_only=False):
 
     segments = [s.strip() for s in path.split(path_sep) if s.strip()]
     segments = [
-        portable_filename(
-            s,
-            preserve_spaces=preserve_spaces,
-            posix_only=posix_only
-        ) for s in segments
+        portable_filename(s, preserve_spaces=preserve_spaces, posix_only=posix_only)
+        for s in segments
     ]
 
     if not segments:
-        return '_'
+        return "_"
 
     # always return posix
-    path = '/'.join(segments)
+    path = "/".join(segments)
     return as_posixpath(path)
 
 
@@ -78,7 +74,7 @@ def path_handlers(path, posix=True):
     is_posix = is_posixpath(path)
     use_posix = posix or is_posix
     pathmod = use_posix and posixpath or ntpath
-    path_sep = '/' if use_posix else '\\'
+    path_sep = "/" if use_posix else "\\"
     return pathmod, path_sep
 
 
@@ -94,11 +90,11 @@ def resolve(path, posix=True):
     Windows path with blackslash separators otherwise.
     """
     if not path:
-        return '.'
+        return "."
 
     path = path.strip()
     if not path:
-        return '.'
+        return "."
 
     if not is_posixpath(path):
         path = as_winpath(path)
@@ -110,7 +106,7 @@ def resolve(path, posix=True):
     segments = [s.strip() for s in path.split(path_sep) if s.strip()]
 
     # remove empty (// or ///) or blank (space only) or single dot segments
-    segments = [s for s in segments if s and s != '.']
+    segments = [s for s in segments if s and s != "."]
 
     path = path_sep.join(segments)
 
@@ -123,30 +119,30 @@ def resolve(path, posix=True):
     segments = [s.strip() for s in segments if s and s.strip()]
 
     # is this a windows absolute path? if yes strip the colon to make this relative
-    if segments and len(segments[0]) == 2 and segments[0].endswith(':'):
+    if segments and len(segments[0]) == 2 and segments[0].endswith(":"):
         segments[0] = segments[0][:-1]
 
     # replace any remaining (usually leading) .. segment with a literal "dotdot"
-    dotdot = 'dotdot'
-    dd = '..'
+    dotdot = "dotdot"
+    dd = ".."
     segments = [dotdot if s == dd else s for s in segments if s]
     if segments:
         path = path_sep.join(segments)
     else:
-        path = '.'
+        path = "."
 
     path = as_posixpath(path)
 
     return path
 
 
-legal_punctuation = r'!\#$%&\(\)\+,\-\.;\=@\[\]_\{\}\~'
-legal_spaces = r' '
-legal_alphanumeric = r'A-Za-z0-9'
+legal_punctuation = r"!\#$%&\(\)\+,\-\.;\=@\[\]_\{\}\~"
+legal_spaces = r" "
+legal_alphanumeric = r"A-Za-z0-9"
 legal_chars = legal_alphanumeric + legal_punctuation
 legal_chars_inc_spaces = legal_chars + legal_spaces
-illegal_chars_re = r'[^' + legal_chars + r']'
-illegal_chars_exc_spaces_re = r'[^' + legal_chars_inc_spaces + r']'
+illegal_chars_re = r"[^" + legal_chars + r"]"
+illegal_chars_exc_spaces_re = r"[^" + legal_chars_inc_spaces + r"]"
 replace_illegal_chars = re.compile(illegal_chars_re).sub
 replace_illegal_chars_exc_spaces = re.compile(illegal_chars_exc_spaces_re).sub
 
@@ -154,18 +150,38 @@ replace_illegal_chars_exc_spaces = re.compile(illegal_chars_exc_spaces_re).sub
 posix_legal_punctuation = r'<:"/>\|\*\^\\\'`\?' + legal_punctuation
 posix_legal_chars = legal_alphanumeric + posix_legal_punctuation
 posix_legal_chars_inc_spaces = posix_legal_chars + legal_spaces
-posix_illegal_chars_re = r'[^' + posix_legal_chars + r']'
-posix_illegal_chars_exc_spaces_re = r'[^' + posix_legal_chars_inc_spaces + r']'
+posix_illegal_chars_re = r"[^" + posix_legal_chars + r"]"
+posix_illegal_chars_exc_spaces_re = r"[^" + posix_legal_chars_inc_spaces + r"]"
 replace_illegal_posix_chars = re.compile(posix_illegal_chars_re).sub
-replace_illegal_posix_chars_exc_spaces = re.compile(
-    posix_illegal_chars_exc_spaces_re).sub
+replace_illegal_posix_chars_exc_spaces = re.compile(posix_illegal_chars_exc_spaces_re).sub
 
 
-ILLEGAL_WINDOWS_NAMES = set([
-    'com1', 'com2', 'com3', 'com4', 'com5', 'com6', 'com7', 'com8', 'com9',
-    'lpt1', 'lpt2', 'lpt3', 'lpt4', 'lpt5', 'lpt6', 'lpt7', 'lpt8', 'lpt9',
-    'aux', 'con', 'nul', 'prn'
-])
+ILLEGAL_WINDOWS_NAMES = set(
+    [
+        "com1",
+        "com2",
+        "com3",
+        "com4",
+        "com5",
+        "com6",
+        "com7",
+        "com8",
+        "com9",
+        "lpt1",
+        "lpt2",
+        "lpt3",
+        "lpt4",
+        "lpt5",
+        "lpt6",
+        "lpt7",
+        "lpt8",
+        "lpt9",
+        "aux",
+        "con",
+        "nul",
+        "prn",
+    ]
+)
 
 
 def portable_filename(filename, preserve_spaces=False, posix_only=False):
@@ -192,32 +208,32 @@ def portable_filename(filename, preserve_spaces=False, posix_only=False):
     filename = toascii(filename, translit=True)
 
     if not filename:
-        return '_'
+        return "_"
 
     if posix_only:
         if preserve_spaces:
-            filename = replace_illegal_posix_chars_exc_spaces('_', filename)
+            filename = replace_illegal_posix_chars_exc_spaces("_", filename)
         else:
-            filename = replace_illegal_posix_chars('_', filename)
+            filename = replace_illegal_posix_chars("_", filename)
     else:
         if preserve_spaces:
-            filename = replace_illegal_chars_exc_spaces('_', filename)
+            filename = replace_illegal_chars_exc_spaces("_", filename)
         else:
-            filename = replace_illegal_chars('_', filename)
+            filename = replace_illegal_chars("_", filename)
 
     if not posix_only:
-        basename, dot, extension = filename.partition('.')
+        basename, dot, extension = filename.partition(".")
         if basename.lower() in ILLEGAL_WINDOWS_NAMES:
-            filename = ''.join([basename, '_', dot, extension])
+            filename = "".join([basename, "_", dot, extension])
 
     # no name made only of dots.
-    if set(filename) == set(['.']):
-        filename = 'dot' * len(filename)
+    if set(filename) == set(["."]):
+        filename = "dot" * len(filename)
 
     # replaced any leading dotdot
-    if filename != '..' and filename.startswith('..'):
-        while filename.startswith('..'):
-            filename = filename.replace('..', '__', 1)
+    if filename != ".." and filename.startswith(".."):
+        while filename.startswith(".."):
+            filename = filename.replace("..", "__", 1)
 
     return filename
 
@@ -233,7 +249,12 @@ def common_prefix(s1, s2):
     """
     if not s1 or not s2:
         return None, 0
-    common = commonprefix((s1, s2,))
+    common = commonprefix(
+        (
+            s1,
+            s2,
+        )
+    )
     if common:
         return common, len(common)
     else:
@@ -276,8 +297,8 @@ def split(p):
     """
     if not p:
         return []
-    p = p.strip('/').split('/')
-    return [] if p == [''] else p
+    p = p.strip("/").split("/")
+    return [] if p == [""] else p
 
 
 def _common_path(p1, p2, common_func):
@@ -287,5 +308,5 @@ def _common_path(p1, p2, common_func):
     function.
     """
     common, lgth = common_func(split(p1), split(p2))
-    common = '/'.join(common) if common else None
+    common = "/".join(common) if common else None
     return common, lgth
