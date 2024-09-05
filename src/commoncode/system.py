@@ -94,8 +94,10 @@ def is_on_ubuntu_22(os_release_location='/etc/os-release'):
     os_release_info = parse_os_release(os_release_location)
     return os_release_info['ID'] == 'ubuntu' and '22' in os_release_info['VERSION_ID']
 
-
-on_ubuntu_22 = is_on_ubuntu_22()
+try:
+    on_ubuntu_22 = is_on_ubuntu_22()
+except FileNotFoundError:
+    on_ubuntu_22 = False
 
 del is_on_ubuntu_22
 
