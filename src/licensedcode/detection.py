@@ -1163,6 +1163,25 @@ def is_false_positive(license_matches, package_license=False):
     if package_license:
         return False
 
+    has_copyrights = all(
+        True
+        for license_match in license_matches
+        if "copyright" in license_match.matched_text().lower() 
+    )
+    has_full_relevance = all(
+        True
+        for license_match in license_matches
+        if license_match.rule.relevance == 100
+    )
+    if has_copyrights or has_full_relevance:
+        return False
+
+    has_low_relevance = all(
+        True
+        for license_match in license_matches
+        if license_match.rule.relevance < 60
+    )
+
     start_line_region = min(
         license_match.start_line for license_match in license_matches
     )
@@ -1194,13 +1213,13 @@ def is_false_positive(license_matches, package_license=False):
 
     is_single_match = len(license_matches) == 1
 
-    if is_single_match and is_bare_rule:
+    if is_single_match and is_bare_rule and has_low_relevance:
         return True
 
     if is_gpl and all_match_rule_length_one:
         return True
 
-    if start_line_region > FALSE_POSITIVE_START_LINE_THRESHOLD and any(
+    if has_low_relevance and start_line_region > FALSE_POSITIVE_START_LINE_THRESHOLD and any(
         match_rule_length_value <= FALSE_POSITIVE_RULE_LENGTH_THRESHOLD
         for match_rule_length_value in match_rule_length_values
     ):
