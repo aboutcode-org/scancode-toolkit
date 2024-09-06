@@ -7,10 +7,11 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import logging
 import os
 import re
+import sys
 
-import saneyaml
 import toml
 from packageurl import PackageURL
 
@@ -19,6 +20,22 @@ from packagedcode import models
 """
 Handle Rust cargo crates
 """
+
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_CARGO', False)
+
+
+def logger_debug(*args):
+    pass
+
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
 class CargoBaseHandler(models.DatafileHandler):
@@ -29,7 +46,7 @@ class CargoBaseHandler(models.DatafileHandler):
         support cargo workspaces where we have multiple packages from
         a repository and some shared information present at top-level.
         """
-        workspace = package_data.extra_data.get("workspace", {})
+        workspace = package_data.extra_data.get('workspace', {})
         workspace_members = workspace.get("members", [])
         workspace_package_data = workspace.get("package", {})
         attributes_to_copy = [
@@ -39,10 +56,13 @@ class CargoBaseHandler(models.DatafileHandler):
         ]
         if "license" in workspace_package_data:
             for attribute in attributes_to_copy:
+                package_data.extra_data[attribute] = 'workspace'
                 workspace_package_data[attribute] = getattr(package_data, attribute)
 
         workspace_root_path = resource.parent(codebase).path
         if workspace_package_data and workspace_members:
+
+            # TODO: support glob patterns found in cargo workspaces
             for workspace_member_path in workspace_members:
                 workspace_directory_path = os.path.join(workspace_root_path, workspace_member_path)
                 workspace_directory = codebase.get_resource(path=workspace_directory_path)
@@ -56,9 +76,13 @@ class CargoBaseHandler(models.DatafileHandler):
                         if not resource.package_data:
                             continue
 
+                        if TRACE:
+                            logger_debug(f"Resource manifest to update: {resource.path}")
+
                         updated_package_data = cls.update_resource_package_data(
-                            package_data=workspace_package_data,
-                            old_package_data=resource.package_data.pop(),
+                            workspace=workspace,
+                            workspace_package_data=workspace_package_data,
+                            resource_package_data=resource.package_data.pop(),
                             mapping=CARGO_ATTRIBUTE_MAPPING,
                         )
                         resource.package_data.append(updated_package_data)
@@ -79,20 +103,61 @@ class CargoBaseHandler(models.DatafileHandler):
             )
 
     @classmethod
-    def update_resource_package_data(cls, package_data, old_package_data, mapping=None):
+    def update_resource_package_data(cls, workspace, workspace_package_data, resource_package_data, mapping=None):
 
-        for attribute in old_package_data.keys():
+        extra_data = resource_package_data["extra_data"]
+        for attribute in resource_package_data.keys():
             if attribute in mapping:
                 replace_by_attribute = mapping.get(attribute)
-                old_package_data[attribute] = package_data.get(replace_by_attribute)
+                if not replace_by_attribute in extra_data:
+                    continue
+
+                extra_data.pop(replace_by_attribute)
+                replace_by_value = workspace_package_data.get(replace_by_attribute)
+                if replace_by_value:
+                    resource_package_data[attribute] = replace_by_value
             elif attribute == "parties":
-                old_package_data[attribute] = list(get_parties(
-                    person_names=package_data.get("authors"),
+                resource_package_data[attribute] = list(get_parties(
+                    person_names=workspace_package_data.get("authors", []),
                     party_role='author',
                 ))
+                if "authors" in extra_data:
+                    extra_data.pop("authors")
 
-        return old_package_data
+        extra_data_copy = extra_data.copy()
+        for key, value in extra_data_copy.items():
+            if value == 'workspace':
+                extra_data.pop(key)
 
+            if key in workspace_package_data:
+                workspace_value = workspace_package_data.get(key)
+                if workspace_value and key in mapping:
+                    replace_by_attribute = mapping.get(key)
+                    extra_data[replace_by_attribute] = workspace_value
+
+        # refresh purl if version updated from workspace
+        if "version" in workspace_package_data:
+            resource_package_data["purl"] = PackageURL(
+                type=cls.default_package_type,
+                name=resource_package_data["name"],
+                namespace=resource_package_data["namespace"],
+                version=resource_package_data["version"],
+            ).to_string()
+
+        workspace_dependencies = dependency_mapper(dependencies=workspace.get('dependencies', {}))
+        deps_by_purl = {}
+        for dependency in workspace_dependencies:
+            deps_by_purl[dependency.purl] = dependency
+        
+        for dep_mapping in resource_package_data['dependencies']:
+            workspace_dependency = deps_by_purl.get(dep_mapping['purl'], None)
+            if workspace_dependency and workspace_dependency.extracted_requirement:
+                dep_mapping['extracted_requirement'] = workspace_dependency.extracted_requirement
+            
+            if 'workspace' in dep_mapping["extra_data"]:
+                dep_mapping['extra_data'].pop('workspace')
+
+        return resource_package_data
 
 
 class CargoTomlHandler(CargoBaseHandler):
@@ -105,16 +170,21 @@ class CargoTomlHandler(CargoBaseHandler):
 
     @classmethod
     def parse(cls, location, package_only=False):
-        package_data = toml.load(location, _dict=dict)
-        core_package_data = package_data.get('package', {})
-        workspace = package_data.get('workspace', {})
+        package_data_toml = toml.load(location, _dict=dict)
+        workspace = package_data_toml.get('workspace', {})
+        core_package_data = package_data_toml.get('package', {})
         extra_data = {}
+        if workspace:
+            extra_data['workspace'] = workspace
+
+        package_data = core_package_data.copy()
+        for key, value in package_data.items():
+            if isinstance(value, dict) and 'workspace' in value:
+                core_package_data.pop(key)
+                extra_data[key] = 'workspace'
 
         name = core_package_data.get('name')
         version = core_package_data.get('version')
-        if isinstance(version, dict) and "workspace" in version:
-            version = None
-            extra_data["version"] = "workspace"
 
         description = core_package_data.get('description') or ''
         description = description.strip()
@@ -132,22 +202,28 @@ class CargoTomlHandler(CargoBaseHandler):
 
         # cargo dependencies are complex and can be overriden at multiple levels
         dependencies = []
-        for key, value in core_package_data.items():
+        for key, value in package_data_toml.items():
             if key.endswith('dependencies'):
                 dependencies.extend(dependency_mapper(dependencies=value, scope=key))
 
         # TODO: add file refs:
         # - readme, include and exclude
-        # TODO: other URLs
-        # - documentation
 
         vcs_url = core_package_data.get('repository')
         homepage_url = core_package_data.get('homepage')
         repository_homepage_url = name and f'https://crates.io/crates/{name}'
         repository_download_url = name and version and f'https://crates.io/api/v1/crates/{name}/{version}/download'
         api_data_url = name and f'https://crates.io/api/v1/crates/{name}'
-        if workspace:
-            extra_data["workspace"] = workspace
+
+        extra_data_mappings = {
+            "documentation": "documentation_url",
+            "rust-version": "rust_version",
+            "edition": "rust_edition",
+        }
+        for cargo_attribute, extra_attribute in extra_data_mappings.items():
+            value = core_package_data.get(cargo_attribute)
+            if value:
+                extra_data[extra_attribute] = value
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -156,6 +232,7 @@ class CargoTomlHandler(CargoBaseHandler):
             version=version,
             primary_language=cls.default_primary_language,
             description=description,
+            keywords=keywords,
             parties=parties,
             extracted_license_statement=extracted_license_statement,
             vcs_url=vcs_url,
@@ -171,6 +248,7 @@ class CargoTomlHandler(CargoBaseHandler):
 
 CARGO_ATTRIBUTE_MAPPING = {
     # Fields in PackageData model: Fields in cargo
+    "version": "version",
     "homepage_url": "homepage",
     "vcs_url": "repository",
     "keywords": "categories",
@@ -179,6 +257,9 @@ CARGO_ATTRIBUTE_MAPPING = {
     "license_detections": "license_detections",
     "declared_license_expression": "declared_license_expression",
     "declared_license_expression_spdx": "declared_license_expression_spdx",
+    # extra data fields (reverse mapping)
+    "edition": "rust_edition",
+    "rust-version": "rust_version",
 }
 
 
@@ -237,25 +318,36 @@ def dependency_mapper(dependencies, scope='dependencies'):
     """
     is_runtime = not scope.endswith(('dev-dependencies', 'build-dependencies'))
     for name, requirement in dependencies.items():
+        extra_data = {}
+        extracted_requirement = None
         if isinstance(requirement, str):
             # plain version requirement
             is_optional = False
+            extracted_requirement = requirement
+
         elif isinstance(requirement, dict):
-            # complex requirement, with more than version are harder to handle
-            # so we just dump
+            # complex requirement, we extract version if available
+            # everything else is just dumped in extra data
+            # here {workspace = true} means dependency version
+            # should be inherited
             is_optional = requirement.pop('optional', False)
-            requirement = saneyaml.dump(requirement)
+            if 'version' in requirement:
+                extracted_requirement = requirement.get('version')
+
+            if requirement:
+                extra_data = requirement
 
         yield models.DependentPackage(
             purl=PackageURL(
                 type='cargo',
                 name=name,
             ).to_string(),
-            extracted_requirement=requirement,
+            extracted_requirement=extracted_requirement,
             scope=scope,
             is_runtime=is_runtime,
             is_optional=is_optional,
             is_resolved=False,
+            extra_data=extra_data,
         )
 
 

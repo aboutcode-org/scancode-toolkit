@@ -22,6 +22,7 @@
     "code_view_url": null,
     "vcs_url": null,
     "copyright": null,
+    "holder": null,
     "declared_license_expression": null,
     "declared_license_expression_spdx": null,
     "license_detections": [],
@@ -42,13 +43,14 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "win_reg_installed_programs_docker_file_software",
-    "holder": null,
     "purl": "pkg:windows-program/microsoft-dot-net-framework@4.8.04084"
   }
 ]

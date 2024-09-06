@@ -111,6 +111,7 @@ def build_package_data(package_data, package_only=False):
         repository_homepage_url=get_repository_homepage_url(ns, name),
         api_data_url=get_api_data_url(ns, name),
         primary_language=PhpComposerJsonHandler.default_primary_language,
+        is_private=is_private,
     )
     package = models.PackageData.from_data(package_mapping, package_only)
 

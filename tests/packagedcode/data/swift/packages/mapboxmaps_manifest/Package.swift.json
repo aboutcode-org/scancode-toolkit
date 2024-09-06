@@ -1,0 +1,323 @@
+{
+  "cLanguageStandard" : null, 
+  "cxxLanguageStandard" : null,
+  "dependencies" : [
+    {
+      "sourceControl" : [
+        {
+          "identity" : "turf-swift",
+          "location" : {
+            "remote" : [
+              {
+                "urlString" : "https://github.com/mapbox/turf-swift.git"
+              }
+            ]
+          },
+          "productFilter" : null,
+          "requirement" : {
+            "range" : [
+              {
+                "lowerBound" : "2.8.0",
+                "upperBound" : "3.0.0"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sourceControl" : [
+        {
+          "identity" : "mapbox-core-maps-ios",
+          "location" : {
+            "remote" : [
+              {
+                "urlString" : "https://github.com/mapbox/mapbox-core-maps-ios.git"
+              }
+            ]
+          },
+          "productFilter" : null,
+          "requirement" : {
+            "exact" : [
+              "11.4.0-rc.2"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "sourceControl" : [
+        {
+          "identity" : "mapbox-common-ios",
+          "location" : {
+            "remote" : [
+              {
+                "urlString" : "https://github.com/mapbox/mapbox-common-ios.git"
+              }
+            ]
+          },
+          "productFilter" : null,
+          "requirement" : {
+            "exact" : [
+              "24.4.0-rc.2"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "name" : "MapboxMaps",
+  "packageKind" : {
+    "root" : [
+      "/workspace"
+    ]
+  },
+  "pkgConfig" : null,
+  "platforms" : [
+    {
+      "options" : [
+
+      ],
+      "platformName" : "ios",
+      "version" : "12.0"
+    },
+    {
+      "options" : [
+
+      ],
+      "platformName" : "macos",
+      "version" : "10.15"
+    },
+    {
+      "options" : [
+
+      ],
+      "platformName" : "visionos",
+      "version" : "1.0"
+    }
+  ],
+  "products" : [
+    {
+      "name" : "MapboxMaps",
+      "targets" : [
+        "MapboxMaps"
+      ],
+      "type" : {
+        "library" : [
+          "automatic"
+        ]
+      }
+    }
+  ],
+  "providers" : null,
+  "swiftLanguageVersions" : null,
+  "targets" : [
+    {
+      "dependencies" : [
+        {
+          "product" : [
+            "MapboxCoreMaps",
+            "mapbox-core-maps-ios",
+            null,
+            null
+          ]
+        },
+        {
+          "product" : [
+            "MapboxCommon",
+            "mapbox-common-ios",
+            null,
+            null
+          ]
+        },
+        {
+          "product" : [
+            "Turf",
+            "turf-swift",
+            null,
+            null
+          ]
+        }
+      ],
+      "exclude" : [
+        "Info.plist"
+      ],
+      "name" : "MapboxMaps",
+      "packageAccess" : true,
+      "resources" : [
+        {
+          "path" : "MapboxMaps.json",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "PrivacyInfo.xcprivacy",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        }
+      ],
+      "settings" : [
+
+      ],
+      "type" : "regular"
+    },
+    {
+      "dependencies" : [
+        {
+          "byName" : [
+            "MapboxMaps",
+            null
+          ]
+        }
+      ],
+      "exclude" : [
+
+      ],
+      "name" : "MapboxMapsTests",
+      "packageAccess" : true,
+      "resources" : [
+        {
+          "path" : "MigrationGuide/Fixtures/polygon.geojson",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Helpers/MapboxAccessToken",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Resources/empty-style-chicago.json",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testDoesNotShowAttribution().png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testDoesNotShowLogo().png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testDoesNotShowLogoAndAttribution().png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testShowsLogoAndAttribution().png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testSnapshotAttribution-100.png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testSnapshotAttribution-150.png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testSnapshotAttribution-200.png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testSnapshotAttribution-250.png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testSnapshotAttribution-300.png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testSnapshotAttribution-50.png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testSnapshotLogoVisibility.png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Snapshot/testSnapshotOverlay.png",
+          "rule" : {
+            "copy" : {
+
+            }
+          }
+        },
+        {
+          "path" : "Resources/MapInitOptionsTests.xib",
+          "rule" : {
+            "process" : {
+
+            }
+          }
+        }
+      ],
+      "settings" : [
+
+      ],
+      "type" : "test"
+    }
+  ],
+  "toolsVersion" : {
+    "_version" : "5.9.0"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "name": "grafserv",
+  "version": "0.1.1-beta.13",
+  "description": "A highly optimized server for GraphQL, powered by Grafast",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./envelop": {
+      "types": "./dist/envelop/index.d.ts",
+      "default": "./dist/envelop/index.js"
+    },
+    "./node": {
+      "types": "./dist/servers/node/index.d.ts",
+      "default": "./dist/servers/node/index.js"
+    },
+    "./express/v4": {
+      "types": "./dist/servers/express/v4/index.d.ts",
+      "default": "./dist/servers/express/v4/index.js"
+    },
+    "./lambda/v1": {
+      "types": "./dist/servers/lambda/v1/index.d.ts",
+      "default": "./dist/servers/lambda/v1/index.js"
+    },
+    "./koa/v2": {
+      "types": "./dist/servers/koa/v2/index.d.ts",
+      "default": "./dist/servers/koa/v2/index.js"
+    },
+    "./fastify/v4": {
+      "types": "./dist/servers/fastify/v4/index.d.ts",
+      "default": "./dist/servers/fastify/v4/index.js"
+    },
+    "./h3/v1": {
+      "types": "./dist/servers/h3/v1/index.d.ts",
+      "default": "./dist/servers/h3/v1/index.js"
+    },
+    "./ruru": {
+      "types": "./fwd/ruru/index.d.ts",
+      "node": "./fwd/ruru/index.js",
+      "default": "./fwd/ruru/index.js"
+    },
+    "./ruru/server": {
+      "types": "./fwd/ruru/server/index.d.ts",
+      "node": "./fwd/ruru/server/index.js",
+      "default": "./fwd/ruru/server/index.js"
+    },
+    "./ruru/cli": {
+      "types": "./fwd/ruru/cli/index.d.ts",
+      "node": "./fwd/ruru/cli/index.js",
+      "default": "./fwd/ruru/cli/index.js"
+    }
+  },
+  "scripts": {
+    "prepack": "tsc -b",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphile/crystal.git"
+  },
+  "keywords": [
+    "server",
+    "grafast",
+    "graphql",
+    "graphile",
+    "fast",
+    "graphite"
+  ],
+  "author": "Benjie Gillam <code@benjiegillam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphile/crystal/issues"
+  },
+  "homepage": "https://github.com/graphile/crystal/tree/main/grafast/grafserv",
+  "dependencies": {
+    "@graphile/lru": "workspace:^",
+    "debug": "^4.3.4",
+    "eventemitter3": "^5.0.1",
+    "graphile-config": "workspace:^",
+    "graphql-ws": "^5.14.0",
+    "ruru": "workspace:^",
+    "tslib": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=16.10"
+  },
+  "peerDependencies": {
+    "@envelop/core": "^5.0.0",
+    "grafast": "workspace:^",
+    "graphile-config": "workspace:^",
+    "graphql": "^16.1.0-experimental-stream-defer.6",
+    "h3": "^1.7.1",
+    "ws": "^8.12.1"
+  },
+  "peerDependenciesMeta": {
+    "@envelop/core": {
+      "optional": true
+    },
+    "h3": {
+      "optional": true
+    },
+    "ws": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@envelop/core": "^5.0.0",
+    "@fastify/websocket": "^8.2.0",
+    "@types/aws-lambda": "^8.10.123",
+    "@types/express": "^4.17.17",
+    "@types/koa": "^2.13.8",
+    "@types/koa-bodyparser": "^4.3.10",
+    "@whatwg-node/fetch": "^0.9.10",
+    "express": "^4.19.2",
+    "fastify": "^4.22.1",
+    "grafast": "workspace:^",
+    "graphql-http": "^1.22.0",
+    "h3": "^1.8.1",
+    "jest": "^29.6.4",
+    "jest-serializer-graphql-schema": "workspace:^",
+    "koa": "^2.14.2",
+    "koa-bodyparser": "^4.4.1",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "files": [
+    "dist",
+    "fwd",
+    "index.js"
+  ]
+}

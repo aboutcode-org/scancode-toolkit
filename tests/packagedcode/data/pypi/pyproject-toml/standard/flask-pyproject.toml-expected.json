@@ -1,0 +1,186 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "Flask",
+    "version": "3.1.0.dev",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "A simple framework for building complex web applications.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": "Pallets",
+        "email": "contact@palletsprojects.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 5 - Production/Stable",
+      "Environment :: Web Environment",
+      "Framework :: Flask",
+      "Intended Audience :: Developers",
+      "Operating System :: OS Independent",
+      "Programming Language :: Python",
+      "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+      "Topic :: Internet :: WWW/HTTP :: WSGI",
+      "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+      "Topic :: Software Development :: Libraries :: Application Frameworks",
+      "Typing :: Typed"
+    ],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": "https://github.com/pallets/flask/",
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "bsd-new",
+    "declared_license_expression_spdx": "BSD-3-Clause",
+    "license_detections": [
+      {
+        "license_expression": "bsd-new",
+        "license_expression_spdx": "BSD-3-Clause",
+        "matches": [
+          {
+            "license_expression": "bsd-new",
+            "spdx_license_expression": "BSD-3-Clause",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 99.0,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 99,
+            "rule_identifier": "pypi_bsd_license.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
+            "matched_text": "- 'License :: OSI Approved :: BSD License'"
+          }
+        ],
+        "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "classifiers:\n  - 'License :: OSI Approved :: BSD License'\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "Donate": "https://palletsprojects.com/donate",
+      "Documentation": "https://flask.palletsprojects.com/",
+      "Changes": "https://flask.palletsprojects.com/changes/",
+      "Chat": "https://discord.gg/pallets",
+      "license_file": "LICENSE.txt"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/werkzeug",
+        "extracted_requirement": ">=3.0.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/jinja2",
+        "extracted_requirement": ">=3.1.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/itsdangerous",
+        "extracted_requirement": ">=2.1.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/click",
+        "extracted_requirement": ">=8.1.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/blinker",
+        "extracted_requirement": ">=1.6.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/importlib-metadata",
+        "extracted_requirement": ">=3.6.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": "< 3.10"
+        }
+      },
+      {
+        "purl": "pkg:pypi/asgiref",
+        "extracted_requirement": ">=3.2",
+        "scope": "async",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/python-dotenv",
+        "extracted_requirement": null,
+        "scope": "dotenv",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/Flask",
+    "repository_download_url": "https://pypi.org/packages/source/F/Flask/Flask-3.1.0.dev.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/Flask/3.1.0.dev/json",
+    "datasource_id": "pypi_pyproject_toml",
+    "purl": "pkg:pypi/flask@3.1.0.dev"
+  }
+]

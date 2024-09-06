@@ -229,7 +229,7 @@
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       },
       "@rdf:about": "#SPDXRef-DOCUMENT",
-      "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.23",
+      "rdfs:comment": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.\nSPDX License List: 3.25",
       "spdx:name": "SPDX Document created by ScanCode Toolkit",
       "spdx:specVersion": "SPDX-2.2"
     },

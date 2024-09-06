@@ -135,6 +135,8 @@
     "source_packages": [
       "pkg:deb/ubuntu/ncurses"
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same",
       "missing_file_references": [
@@ -318,6 +320,8 @@
             "notice_text": null,
             "source_packages": [],
             "file_references": [],
+            "is_private": false,
+            "is_virtual": false,
             "extra_data": {},
             "dependencies": [],
             "repository_homepage_url": null,
@@ -409,6 +413,8 @@
                 "extra_data": {}
               }
             ],
+            "is_private": false,
+            "is_virtual": false,
             "extra_data": {},
             "dependencies": [],
             "repository_homepage_url": null,
@@ -526,6 +532,8 @@
     "source_packages": [
       "pkg:deb/ubuntu/libndp"
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same",
       "missing_file_references": [
@@ -655,6 +663,8 @@
             "notice_text": null,
             "source_packages": [],
             "file_references": [],
+            "is_private": false,
+            "is_virtual": false,
             "extra_data": {},
             "dependencies": [],
             "repository_homepage_url": null,
@@ -737,6 +747,8 @@
                 "extra_data": {}
               }
             ],
+            "is_private": false,
+            "is_virtual": false,
             "extra_data": {},
             "dependencies": [],
             "repository_homepage_url": null,

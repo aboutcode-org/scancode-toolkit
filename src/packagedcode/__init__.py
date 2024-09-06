@@ -39,6 +39,7 @@ from packagedcode import pypi
 from packagedcode import readme
 from packagedcode import rpm
 from packagedcode import rubygems
+from packagedcode import swift
 from packagedcode import win_pe
 from packagedcode import windows
 
@@ -149,9 +150,13 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     npm.NpmShrinkwrapJsonHandler,
     npm.YarnLockV1Handler,
     npm.YarnLockV2Handler,
+    npm.PnpmShrinkwrapYamlHandler,
+    npm.PnpmLockYamlHandler,
+    npm.PnpmWorkspaceYamlHandler,
 
     nuget.NugetNupkgHandler,
     nuget.NugetNuspecHandler,
+    nuget.NugetPackagesLockHandler,
 
     opam.OpamFileHandler,
 
@@ -168,6 +173,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     # pypi.PypiSdistArchiveHandler,
     pypi.PypiWheelHandler,
     pypi.PyprojectTomlHandler,
+    pypi.PoetryPyprojectTomlHandler,
+    pypi.PoetryLockHandler,
     pypi.PythonEditableInstallationPkgInfoFile,
     pypi.PythonEggPkgInfoFile,
     pypi.PythonInstalledWheelMetadataFile,
@@ -196,9 +203,16 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     rubygems.GemspecInExtractedGemHandler,
     rubygems.GemspecHandler,
 
+    swift.SwiftManifestJsonHandler,
+    swift.SwiftPackageResolvedHandler,
+    swift.SwiftShowDependenciesDepLockHandler,
+
     windows.MicrosoftUpdateManifestHandler,
 
     win_pe.WindowsExecutableHandler,
+
+    # These are handlers for deplock generated files
+    pypi.PipInspectDeplockHandler,
 ]
 
 if on_linux:

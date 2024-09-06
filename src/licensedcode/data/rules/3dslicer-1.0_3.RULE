@@ -1,0 +1,11 @@
+---
+license_expression: 3dslicer-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://www.slicer.org/
+---
+
+For more information, please see:
+http://www.slicer.org
+The {{3D Slicer license}} below is a BSD style license, with extensions
+to cover contributions and other issues specific to 3D Slicer.

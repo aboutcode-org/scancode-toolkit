@@ -1,0 +1,21 @@
+[package]
+name = "boring-sys"
+version = { workspace = true }
+authors = ["Alex Crichton <alex@alexcrichton.com>",
+           "Steven Fackler <sfackler@gmail.com>",
+           "Ivan Nikulin <ifaaan@gmail.com>"]
+license = "MIT"
+description = "FFI bindings to BoringSSL"
+repository = { workspace = true }
+documentation = "https://docs.rs/boring-sys"
+links = "boringssl"
+build = "build/main.rs"
+readme = "README.md"
+categories = ["cryptography", "external-ffi-bindings"]
+edition = { workspace = true }
+
+[build-dependencies]
+bindgen = { workspace = true }
+cmake = { workspace = true }
+fs_extra = { workspace = true }
+fslock = { workspace = true }

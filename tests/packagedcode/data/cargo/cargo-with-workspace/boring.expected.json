@@ -1,0 +1,1653 @@
+{
+  "packages": [
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "boring",
+      "version": "4.6.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "BoringSSL bindings",
+      "release_date": null,
+      "parties": [],
+      "keywords": [
+        "crypto",
+        "tls",
+        "ssl",
+        "dtls",
+        "cryptography",
+        "api-bindings"
+      ],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/cloudflare/boring",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "boring/boring/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "matched_text": "Apache-2.0"
+            }
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Apache-2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "documentation_url": "https://docs.rs/boring",
+        "rust_edition": "2021"
+      },
+      "repository_homepage_url": "https://crates.io/crates/boring",
+      "repository_download_url": null,
+      "api_data_url": "https://crates.io/api/v1/crates/boring",
+      "package_uid": "pkg:cargo/boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "boring/boring/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "purl": "pkg:cargo/boring@4.6.0"
+    },
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "boring-sys",
+      "version": "4.6.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "FFI bindings to BoringSSL",
+      "release_date": null,
+      "parties": [],
+      "keywords": [
+        "cryptography",
+        "external-ffi-bindings"
+      ],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/cloudflare/boring",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "boring/boring-sys/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "documentation_url": "https://docs.rs/boring-sys",
+        "rust_edition": "2021"
+      },
+      "repository_homepage_url": "https://crates.io/crates/boring-sys",
+      "repository_download_url": null,
+      "api_data_url": "https://crates.io/api/v1/crates/boring-sys",
+      "package_uid": "pkg:cargo/boring-sys@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "boring/boring-sys/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "purl": "pkg:cargo/boring-sys@4.6.0"
+    },
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "tokio-boring",
+      "version": "4.6.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "An implementation of SSL streams for Tokio backed by BoringSSL",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "https://github.com/cloudflare/boring",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/cloudflare/boring",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit OR apache-2.0",
+      "declared_license_expression_spdx": "MIT OR Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "mit OR apache-2.0",
+          "license_expression_spdx": "MIT OR Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "mit OR apache-2.0",
+              "spdx_license_expression": "MIT OR Apache-2.0",
+              "from_file": "boring/tokio-boring/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 99.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 99,
+              "rule_identifier": "mit_or_apache-2.0_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_1.RULE",
+              "matched_text": "MIT/Apache-2.0"
+            }
+          ],
+          "identifier": "mit_or_apache_2_0-48698550-8e33-0b55-dc83-ac89d00625dd"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT/Apache-2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "documentation_url": "https://docs.rs/tokio-boring",
+        "rust_edition": "2021"
+      },
+      "repository_homepage_url": "https://crates.io/crates/tokio-boring",
+      "repository_download_url": null,
+      "api_data_url": "https://crates.io/api/v1/crates/tokio-boring",
+      "package_uid": "pkg:cargo/tokio-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "boring/tokio-boring/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "purl": "pkg:cargo/tokio-boring@4.6.0"
+    },
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "hyper-boring",
+      "version": "4.6.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "Hyper TLS support via BoringSSL",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/cloudflare/boring",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit OR apache-2.0",
+      "declared_license_expression_spdx": "MIT OR Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "mit OR apache-2.0",
+          "license_expression_spdx": "MIT OR Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "mit OR apache-2.0",
+              "spdx_license_expression": "MIT OR Apache-2.0",
+              "from_file": "boring/hyper-boring/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 99.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 99,
+              "rule_identifier": "mit_or_apache-2.0_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_1.RULE",
+              "matched_text": "MIT/Apache-2.0"
+            }
+          ],
+          "identifier": "mit_or_apache_2_0-48698550-8e33-0b55-dc83-ac89d00625dd"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT/Apache-2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "documentation_url": "https://docs.rs/hyper-boring",
+        "rust_edition": "2021"
+      },
+      "repository_homepage_url": "https://crates.io/crates/hyper-boring",
+      "repository_download_url": null,
+      "api_data_url": "https://crates.io/api/v1/crates/hyper-boring",
+      "package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "boring/hyper-boring/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "purl": "pkg:cargo/hyper-boring@4.6.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:cargo/bitflags",
+      "extracted_requirement": "2.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/bitflags?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/foreign-types",
+      "extracted_requirement": "0.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/foreign-types?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/once_cell",
+      "extracted_requirement": "1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/once_cell?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/libc",
+      "extracted_requirement": "0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/libc?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/boring-sys",
+      "extracted_requirement": "4.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/boring-sys?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/hex",
+      "extracted_requirement": "0.4",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/hex?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/rusty-hook",
+      "extracted_requirement": "^0.11",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/rusty-hook?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/bindgen",
+      "extracted_requirement": "0.68.1",
+      "scope": "build-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/bindgen?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring-sys@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring-sys/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/cmake",
+      "extracted_requirement": "0.1.18",
+      "scope": "build-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/cmake?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring-sys@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring-sys/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/fs_extra",
+      "extracted_requirement": "1.3.0",
+      "scope": "build-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/fs_extra?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring-sys@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring-sys/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/fslock",
+      "extracted_requirement": "0.2",
+      "scope": "build-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/fslock?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/boring-sys@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/boring-sys/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/boring",
+      "extracted_requirement": "4.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/boring?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tokio-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/tokio-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/boring-sys",
+      "extracted_requirement": "4.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/boring-sys?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tokio-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/tokio-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/once_cell",
+      "extracted_requirement": "1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/once_cell?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tokio-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/tokio-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tokio",
+      "extracted_requirement": "1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/tokio?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tokio-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/tokio-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/futures",
+      "extracted_requirement": "0.3",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/futures?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tokio-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/tokio-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tokio",
+      "extracted_requirement": "1",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "features": [
+          "full"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/tokio?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tokio-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/tokio-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/anyhow",
+      "extracted_requirement": "1",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/anyhow?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/tokio-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/tokio-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/antidote",
+      "extracted_requirement": "1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/antidote?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/http",
+      "extracted_requirement": "0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/http?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/hyper",
+      "extracted_requirement": "0.14",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "features": [
+          "client"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/hyper?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/linked_hash_set",
+      "extracted_requirement": "0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/linked_hash_set?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/once_cell",
+      "extracted_requirement": "1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/once_cell?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/boring",
+      "extracted_requirement": "4.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/boring?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tokio",
+      "extracted_requirement": "1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/tokio?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tokio-boring",
+      "extracted_requirement": "4.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/tokio-boring?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tower-layer",
+      "extracted_requirement": "0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/tower-layer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/hyper",
+      "extracted_requirement": "0.14",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "features": [
+          "full"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/hyper?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tokio",
+      "extracted_requirement": "1",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "features": [
+          "full"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/tokio?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/tower",
+      "extracted_requirement": "0.4",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "features": [
+          "util"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/tower?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/futures",
+      "extracted_requirement": "0.3",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/futures?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "boring/hyper-boring/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    }
+  ],
+  "files": [
+    {
+      "path": "boring",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "workspace": {
+              "members": [
+                "boring",
+                "boring-sys",
+                "tokio-boring",
+                "hyper-boring"
+              ],
+              "resolver": "2",
+              "package": {
+                "version": "4.6.0",
+                "repository": "https://github.com/cloudflare/boring",
+                "edition": "2021"
+              },
+              "metadata": {
+                "release": {
+                  "pre-release-commit-message": "Release {{version}}",
+                  "shared-version": true,
+                  "tag-prefix": "",
+                  "publish": false
+                }
+              },
+              "dependencies": {
+                "boring-sys": {
+                  "version": "4.6.0",
+                  "path": "./boring-sys"
+                },
+                "boring": {
+                  "version": "4.6.0",
+                  "path": "./boring"
+                },
+                "tokio-boring": {
+                  "version": "4.6.0",
+                  "path": "./tokio-boring"
+                },
+                "bindgen": {
+                  "version": "0.68.1",
+                  "default-features": false,
+                  "features": [
+                    "runtime"
+                  ]
+                },
+                "cmake": "0.1.18",
+                "fs_extra": "1.3.0",
+                "fslock": "0.2",
+                "bitflags": "2.4",
+                "foreign-types": "0.5",
+                "libc": "0.2",
+                "hex": "0.4",
+                "rusty-hook": "^0.11",
+                "futures": "0.3",
+                "tokio": "1",
+                "anyhow": "1",
+                "antidote": "1.0.0",
+                "http": "0.2",
+                "hyper": {
+                  "version": "0.14",
+                  "default-features": false
+                },
+                "linked_hash_set": "0.1",
+                "once_cell": "1.0",
+                "tower": "0.4",
+                "tower-layer": "0.3"
+              }
+            }
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "cargo_toml",
+          "purl": null
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/boring",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/boring-sys",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/boring-sys/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "boring-sys",
+          "version": "4.6.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "FFI bindings to BoringSSL",
+          "release_date": null,
+          "parties": [],
+          "keywords": [
+            "cryptography",
+            "external-ffi-bindings"
+          ],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/cloudflare/boring",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "boring/boring-sys/Cargo.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://docs.rs/boring-sys",
+            "rust_edition": "2021"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/bindgen",
+              "extracted_requirement": "0.68.1",
+              "scope": "build-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/cmake",
+              "extracted_requirement": "0.1.18",
+              "scope": "build-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/fs_extra",
+              "extracted_requirement": "1.3.0",
+              "scope": "build-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/fslock",
+              "extracted_requirement": "0.2",
+              "scope": "build-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://crates.io/crates/boring-sys",
+          "repository_download_url": null,
+          "api_data_url": "https://crates.io/api/v1/crates/boring-sys",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/boring-sys@4.6.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/boring-sys@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/boring/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "boring",
+          "version": "4.6.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "BoringSSL bindings",
+          "release_date": null,
+          "parties": [],
+          "keywords": [
+            "crypto",
+            "tls",
+            "ssl",
+            "dtls",
+            "cryptography",
+            "api-bindings"
+          ],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/cloudflare/boring",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "matches": [
+                {
+                  "license_expression": "apache-2.0",
+                  "spdx_license_expression": "Apache-2.0",
+                  "from_file": "boring/boring/Cargo.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "matched_text": "Apache-2.0"
+                }
+              ],
+              "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache-2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://docs.rs/boring",
+            "rust_edition": "2021"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/bitflags",
+              "extracted_requirement": "2.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/foreign-types",
+              "extracted_requirement": "0.5",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/once_cell",
+              "extracted_requirement": "1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/libc",
+              "extracted_requirement": "0.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/boring-sys",
+              "extracted_requirement": "4.6.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/hex",
+              "extracted_requirement": "0.4",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/rusty-hook",
+              "extracted_requirement": "^0.11",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://crates.io/crates/boring",
+          "repository_download_url": null,
+          "api_data_url": "https://crates.io/api/v1/crates/boring",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/boring@4.6.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/hyper-boring",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/hyper-boring/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "hyper-boring",
+          "version": "4.6.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "Hyper TLS support via BoringSSL",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/cloudflare/boring",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit OR apache-2.0",
+          "declared_license_expression_spdx": "MIT OR Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "mit OR apache-2.0",
+              "license_expression_spdx": "MIT OR Apache-2.0",
+              "matches": [
+                {
+                  "license_expression": "mit OR apache-2.0",
+                  "spdx_license_expression": "MIT OR Apache-2.0",
+                  "from_file": "boring/hyper-boring/Cargo.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 99.0,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 99,
+                  "rule_identifier": "mit_or_apache-2.0_1.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_1.RULE",
+                  "matched_text": "MIT/Apache-2.0"
+                }
+              ],
+              "identifier": "mit_or_apache_2_0-48698550-8e33-0b55-dc83-ac89d00625dd"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT/Apache-2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://docs.rs/hyper-boring",
+            "rust_edition": "2021"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/antidote",
+              "extracted_requirement": "1.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/http",
+              "extracted_requirement": "0.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/hyper",
+              "extracted_requirement": "0.14",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "features": [
+                  "client"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/linked_hash_set",
+              "extracted_requirement": "0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/once_cell",
+              "extracted_requirement": "1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/boring",
+              "extracted_requirement": "4.6.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/tokio",
+              "extracted_requirement": "1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/tokio-boring",
+              "extracted_requirement": "4.6.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/tower-layer",
+              "extracted_requirement": "0.3",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/hyper",
+              "extracted_requirement": "0.14",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "features": [
+                  "full"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/tokio",
+              "extracted_requirement": "1",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "features": [
+                  "full"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/tower",
+              "extracted_requirement": "0.4",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "features": [
+                  "util"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/futures",
+              "extracted_requirement": "0.3",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://crates.io/crates/hyper-boring",
+          "repository_download_url": null,
+          "api_data_url": "https://crates.io/api/v1/crates/hyper-boring",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/hyper-boring@4.6.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/hyper-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/tokio-boring",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "boring/tokio-boring/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "tokio-boring",
+          "version": "4.6.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "An implementation of SSL streams for Tokio backed by BoringSSL",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "https://github.com/cloudflare/boring",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/cloudflare/boring",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit OR apache-2.0",
+          "declared_license_expression_spdx": "MIT OR Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "mit OR apache-2.0",
+              "license_expression_spdx": "MIT OR Apache-2.0",
+              "matches": [
+                {
+                  "license_expression": "mit OR apache-2.0",
+                  "spdx_license_expression": "MIT OR Apache-2.0",
+                  "from_file": "boring/tokio-boring/Cargo.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 99.0,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 99,
+                  "rule_identifier": "mit_or_apache-2.0_1.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_1.RULE",
+                  "matched_text": "MIT/Apache-2.0"
+                }
+              ],
+              "identifier": "mit_or_apache_2_0-48698550-8e33-0b55-dc83-ac89d00625dd"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT/Apache-2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://docs.rs/tokio-boring",
+            "rust_edition": "2021"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/boring",
+              "extracted_requirement": "4.6.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/boring-sys",
+              "extracted_requirement": "4.6.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/once_cell",
+              "extracted_requirement": "1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/tokio",
+              "extracted_requirement": "1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/futures",
+              "extracted_requirement": "0.3",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/tokio",
+              "extracted_requirement": "1",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "features": [
+                  "full"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/anyhow",
+              "extracted_requirement": "1",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://crates.io/crates/tokio-boring",
+          "repository_download_url": null,
+          "api_data_url": "https://crates.io/api/v1/crates/tokio-boring",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/tokio-boring@4.6.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/tokio-boring@4.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

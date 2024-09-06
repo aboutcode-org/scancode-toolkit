@@ -58,6 +58,8 @@
       "source_packages": [
         "pkg:rpm/alfandega@2.0-1.7.3?arch=src"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -137,6 +139,8 @@
             "pkg:rpm/alfandega@2.0-1.7.3?arch=src"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,

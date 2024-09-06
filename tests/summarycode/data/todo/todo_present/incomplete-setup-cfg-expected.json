@@ -41,19 +41,10 @@
         "notice_text": null,
         "source_packages": [],
         "file_references": [],
+        "is_private": false,
+        "is_virtual": false,
         "extra_data": {},
-        "dependencies": [
-          {
-            "purl": "pkg:generic/python",
-            "extracted_requirement": "python_requires>=3.7",
-            "scope": "python",
-            "is_runtime": true,
-            "is_optional": false,
-            "is_resolved": false,
-            "resolved_package": {},
-            "extra_data": {}
-          }
-        ],
+        "dependencies": [],
         "repository_homepage_url": null,
         "repository_download_url": null,
         "api_data_url": null,
@@ -101,19 +92,10 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
-          "dependencies": [
-            {
-              "purl": "pkg:generic/python",
-              "extracted_requirement": "python_requires>=3.7",
-              "scope": "python",
-              "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false,
-              "resolved_package": {},
-              "extra_data": {}
-            }
-          ],
+          "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null,
