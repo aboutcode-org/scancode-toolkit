@@ -581,6 +581,8 @@ _YEAR_YEAR = (r'('
     '(20[0-3][0-9][\\.,\\-])+20[0-3][0-9]'  # 2001-2012
     '|'
     '(20[0-3][0-9][\\.,\\-])+20[0-3]x'  # 2001-201x
+    '|'
+    '(20[0-3][0-9][\\.,\\-])+20[0-3][0-9]a'  # 2001-2012a
 ')')
 
 _PUNCT = (
@@ -1257,6 +1259,7 @@ PATTERNS = [
     (r'^Activation\.?$', 'NN'),
     (r'^Act[\.,]?$', 'NN'),
     (r'^Added$', 'NN'),
+    (r'^added$', 'JUNK'),
     (r'^As$', 'NN'),
     (r'^I$', 'NN'),
     (r'^Additional$', 'NN'),
@@ -1350,6 +1353,11 @@ PATTERNS = [
     (r'^Entity$', 'NN'),
     (r'^Example', 'NN'),
     (r'^Except', 'NN'),
+    (r'^Fragments$', 'NN'),
+    (r'^With$', 'NN'),
+    (r'^Tick$', 'NN'),
+    (r'^Dynamic$', 'NN'),
+
     (r'^When$', 'NN'),
     # (r'^Owner$', 'NN'),
     (r'^Specifications?$', 'NN'),
@@ -1567,6 +1575,14 @@ PATTERNS = [
     (r'^They$', 'JUNK'),
     (r'^Branched$', 'NN'),
 
+    (r'^Improved$', 'NN'),
+    (r'^Designed$', 'NN'),
+    (r'^Organised$', 'NN'),
+    (r'^Re-organised$', 'NN'),
+    (r'^Swap$', 'NN'),
+    (r'^Adapted$', 'JUNK'),
+    (r'^Thumb$', 'NN'),
+
     # alone this is not enough for an NNP
     (r'^Free$', 'NN'),
 
@@ -1620,6 +1636,7 @@ PATTERNS = [
     (r'^Unlike$', 'NN'),
     (r'^Compression$', 'NN'),
     (r'^Letter$', 'NN'),
+    (r'^Moved$', 'NN'),
 
     # dual caps that are not NNP
     (r'^Make[A-Z]', 'JUNK'),
@@ -1799,6 +1816,9 @@ PATTERNS = [
     (r'^(S\.?A\.?S?|Sas|sas|A\/S|AG,?|AB|Labs?|[Cc][Oo]|Research|Center|INRIA|Societe|KG)[,\.]?$', 'COMP'),
     # French SARL
     (r'^(SARL|S\.A\.R\.L\.)[\.,\)]*$', 'COMP'),
+    # More company suffix : a.s. in Czechia and otehrs
+    (r'^(a\.s\.|S\.r\.l\.?)$', 'COMP'),
+    (r'^Vertriebsges\.m\.b\.H\.?,?$', 'COMP'),
 
     # company suffix : AS: this is frequent beyond Norway.
     (r'^AS', 'CAPS'),
@@ -2069,6 +2089,9 @@ PATTERNS = [
 
     # proper noun with apostrophe ': d'Itri
     (r"^[a-z]'[A-Z]?[a-z]+[,\.]?$", 'NNP'),
+
+    # exceptions to all CAPS words
+    (r'^[A-Z]{3,4}[0-9]{4},?$', 'NN'),
 
     # all CAPS word, at least 1 char long such as MIT, including an optional trailing comma or dot
     (r'^[A-Z0-9]+,?$', 'CAPS'),
@@ -2679,6 +2702,9 @@ GRAMMAR = """
 
     # Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
     COPYRIGHT: {<COPY>+ <NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}        #157999
+
+    # Copyright (c) 2014 Czech Technical University in Prague
+    COPYRIGHT: {<COPYRIGHT>  <NN>  <UNI>  <NAME>}                     #157999-name
 
     COPYRIGHT: {<COPY>+ <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}        #1590
 
