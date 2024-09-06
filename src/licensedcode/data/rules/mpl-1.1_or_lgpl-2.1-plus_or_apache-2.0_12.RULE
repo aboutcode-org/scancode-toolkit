@@ -7,8 +7,6 @@ ignorable_copyrights:
     - Copyright (c) 1999- Shigeru Chiba
 ignorable_holders:
     - Shigeru Chiba
-ignorable_authors:
-    - the Initial Developer
 ignorable_urls:
     - http://www.mozilla.org/MPL/
 ---
