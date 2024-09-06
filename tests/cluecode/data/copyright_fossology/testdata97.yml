@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1993, 1994 Andrew Moore, Talke Studio
+  - Copyright (c) 2006, 2007 Antonio Diaz Diaz
+  - Copyright (c) 1997-2007 James Troup
+  - Copyright (c) 1993, 2006, 2007 Free Software Foundation, Inc.
+holders:
+  - Andrew Moore, Talke Studio
+  - Antonio Diaz Diaz
+  - James Troup
+  - Free Software Foundation, Inc.
+authors:
+  - Matt Kraai <kraai@alumni.carnegiemellon.edu>

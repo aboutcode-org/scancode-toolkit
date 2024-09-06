@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2001- Valek Filippov
+holders:
+  - Valek Filippov
+authors:
+  - URW++ Design & Development GmbH Valek Filippov <frob@df.ru>
