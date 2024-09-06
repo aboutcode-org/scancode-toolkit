@@ -348,8 +348,8 @@ license_detections:
            * USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
            * DAMAGE.
     identifier: bsd_new_or_gpl_1_0_plus-f8085429-0058-17f2-8a37-27a1965c9f8a
-  - license_expression: x11-xconsortium AND public-domain
-    license_expression_spdx: X11 AND LicenseRef-scancode-public-domain
+  - license_expression: x11-xconsortium
+    license_expression_spdx: X11
     matches:
       - license_expression: x11-xconsortium
         spdx_license_expression: X11
@@ -385,6 +385,10 @@ license_detections:
             be used in advertising or otherwise to promote the sale, use or other deal-
             ings in this Software without prior written authorization from the X Consor-
             tium.
+    identifier: x11_xconsortium-8bc3e205-5f29-ecad-90bc-2f492c65be46
+  - license_expression: public-domain
+    license_expression_spdx: LicenseRef-scancode-public-domain
+    matches:
       - license_expression: public-domain
         spdx_license_expression: LicenseRef-scancode-public-domain
         from_file:
@@ -398,7 +402,7 @@ license_detections:
         rule_identifier: public-domain_bare_words.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: Public domain
-    identifier: x11_xconsortium_and_public_domain-3a4b5640-3d0e-289d-2ed6-5568ba1f72cd
+    identifier: public_domain-3dd945ae-65df-7d90-6467-60f8ecf2eb77
   - license_expression: public-domain AND ocb-open-source-2013
     license_expression_spdx: LicenseRef-scancode-public-domain AND LicenseRef-scancode-ocb-open-source-2013
     matches:
