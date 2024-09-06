@@ -1,0 +1,9 @@
+---
+license_expression: gpl-2.0-plus
+is_license_reference: yes
+minimum_coverage: 100
+---
+
+MODULE_LICENSE("GPL");
+    // Actually dual-licensed, but it doesn't matter for
+	// the sake of this tag. It's Free Software.
