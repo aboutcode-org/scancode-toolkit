@@ -129,6 +129,7 @@ class CopyrightTest(object):
 COPYRIGHT_TEST_TEMPLATE ="""what:
   - copyrights
   - holders
+  - authors
 copyrights:
   - 
 holders:
@@ -140,7 +141,7 @@ def load_copyright_tests(test_dir=test_env.test_data_dir, generate_missing=False
     Yield an iterable of CopyrightTest loaded from test data files in `test_dir`.
     """
     test_dirs = (path.join(test_dir, td) for td in
-        ('copyrights', 'ics', 'holders', 'authors', 'years', 'generated'))
+        ('copyrights', 'ics', 'holders', 'authors', 'years', 'generated', 'copyright_fossology'))
 
     gen_missing_temp = generate_missing and COPYRIGHT_TEST_TEMPLATE or None
     all_test_files = chain.from_iterable(
