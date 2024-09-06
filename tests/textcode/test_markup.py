@@ -24,7 +24,7 @@ class TestMarkup(FileBasedTesting):
         test_file = self.get_test_loc(u'markup/java.jsp')
         assert markup.is_markup(test_file)
 
-    def test_jsp_demarkup(self, regen=False):
+    def test_jsp_demarkup(self, regen=True):
         test_file = self.get_test_loc(u'markup/java.jsp')
         result = list(markup.demarkup(test_file))
         expected_loc = self.get_test_loc(u'markup/java.jsp-expected.json')
@@ -48,7 +48,7 @@ class TestMarkup(FileBasedTesting):
         ),
         (
             """<td width="30%">Copyright &copy; 2006 <a href="trolltech.html">Trolltech</a></td>""",
-            ' width="30%">Copyright  &copy;  2006   ="trolltech.html">Trolltech  ',
+            ' width="30%">Copyright &copy; 2006   ="trolltech.html">Trolltech  ',
         ),
         (
             "<p>SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1</p>",

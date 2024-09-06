@@ -54,7 +54,7 @@ ply==3.11
 publicsuffix2==2.20191221
 pyahocorasick==2.1.0
 pycparser==2.21
-pygmars==0.7.0
+pygmars==0.9.0
 Pygments==2.13.0
 pymaven-patch==0.3.2
 pyparsing==3.0.9

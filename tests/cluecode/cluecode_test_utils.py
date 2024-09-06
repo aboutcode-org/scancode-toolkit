@@ -126,6 +126,15 @@ class CopyrightTest(object):
             df.write(self.dumps())
 
 
+COPYRIGHT_TEST_TEMPLATE ="""what:
+  - copyrights
+  - holders
+copyrights:
+  - 
+holders:
+  - 
+"""
+
 def load_copyright_tests(test_dir=test_env.test_data_dir, generate_missing=False):
     """
     Yield an iterable of CopyrightTest loaded from test data files in `test_dir`.
@@ -133,8 +142,9 @@ def load_copyright_tests(test_dir=test_env.test_data_dir, generate_missing=False
     test_dirs = (path.join(test_dir, td) for td in
         ('copyrights', 'ics', 'holders', 'authors', 'years', 'generated'))
 
+    gen_missing_temp = generate_missing and COPYRIGHT_TEST_TEMPLATE or None
     all_test_files = chain.from_iterable(
-        get_test_file_pairs(td, generate_missing=generate_missing)
+        get_test_file_pairs(td, template_to_generate_missing_yaml=gen_missing_temp)
         for td in test_dirs
     )
 

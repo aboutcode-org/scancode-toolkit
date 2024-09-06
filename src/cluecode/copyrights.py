@@ -869,6 +869,9 @@ PATTERNS = [
     (r'^Implementation-Vendor$', 'JUNK'),
     (r'^dnl$', 'JUNK'),
 
+    (r'^as$', 'NN'),
+    (r'^[Vv]isit$', 'JUNK'),
+
     (r'^rem$', 'JUNK'),
     (r'^REM$', 'JUNK'),
     (r'^Supports$', 'JUNK'),
@@ -995,6 +998,11 @@ PATTERNS = [
     (r'^Privacy$', 'JUNK'),
     (r'^within$', 'JUNK'),
 
+    (r'^official$', 'JUNK'),
+    (r'^duties$', 'JUNK'),
+    (r'^civil$', 'JUNK'),
+    (r'^servants?$', 'JUNK'),
+
     # various trailing words that are junk
     (r'^Copyleft$', 'JUNK'),
     (r'^LegalCopyright$', 'JUNK'),
@@ -1060,6 +1068,7 @@ PATTERNS = [
     # FIXME: may be lowercase instead?
     (r'^Title:?$', 'JUNK'),
     (r'^Debianized-By:?$', 'JUNK'),
+    (r'^[Dd]ebianized$', 'JUNK'),
     (r'^Upstream-Maintainer:?$', 'JUNK'),
     (r'^Content', 'JUNK'),
     (r'^Upstream-Author:?$', 'JUNK'),
@@ -1307,7 +1316,7 @@ PATTERNS = [
     (r'^DISCLAIMED', 'NN'),
     (r'^Docs?$', 'NN'),
     (r'^DOCUMENTATION', 'NN'),
-    (r'^Download', 'NN'),
+    (r'^Download', 'JUNK'),
     (r'^DOM$', 'NN'),
     (r'^Do$', 'NN'),
     (r'^DoubleClick$', 'NN'),
@@ -1341,6 +1350,8 @@ PATTERNS = [
     (r'^Except', 'NN'),
     (r'^When$', 'NN'),
     # (r'^Owner$', 'NN'),
+    (r'^Specifications?$', 'NN'),
+    (r'^Final$', 'NN'),
     (r'^Holds$', 'NN'),
     (r'^Image', 'NN'),
     (r'^Supplier', 'NN'),
@@ -1369,7 +1380,7 @@ PATTERNS = [
     (r'^GnuPG$', 'NN'),
     (r'^Government.', 'NNP'),
     (r'^OProfile$', 'NNP'),
-    (r'^Government', 'NN'),
+    (r'^Government$', 'COMP'),
     (r'^Grants?\.?,?$', 'NN'),
     (r'^Header', 'NN'),
     (r'^HylaFAX$', 'NN'),
@@ -1513,7 +1524,7 @@ PATTERNS = [
     (r'^Those$', 'NN'),
     (r'^Timer', 'NN'),
     (r'^TODO$', 'NN'),
-    (r'^Tool.?$', 'NN'),
+    (r'^Tools?.?$', 'NN'),
     (r'^Trademarks?$', 'NN'),
     (r'^True$', 'NN'),
     (r'^TRUE$', 'NN'),
@@ -1563,19 +1574,6 @@ PATTERNS = [
     (r'^AM$', 'NN'),
     (r'^PM$', 'NN'),
 
-    (r'^January$', 'NN'),
-    (r'^February$', 'NN'),
-    (r'^March$', 'NN'),
-    (r'^April$', 'NN'),
-    (r'^May$', 'NN'),
-    (r'^June$', 'NN'),
-    (r'^July$', 'NN'),
-    (r'^August$', 'NN'),
-    (r'^September$', 'NN'),
-    (r'^October$', 'NN'),
-    (r'^November$', 'NN'),
-    (r'^December$', 'NN'),
-
     (r'^Name[\.,]?$', 'NN'),
     (r'^Co-Author[\.,]?$', 'NN'),
     (r'^Author\'s$', 'NN'),
@@ -1584,10 +1582,12 @@ PATTERNS = [
     (r'^Convention[\.,]?$', 'NN'),
     (r'^Paris[\.,]?$', 'NN'),
 
-    # we do not include Jan and Jun that are common enough first names
-    (r'^(Feb|Mar|Apr|May|Jul|Aug|Sep|Oct|Nov|Dec)$', 'NN'),
-    (r'^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$', 'NN'),
-    (r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)$', 'NN'),
+    (r'^([Jj]anuary|[Ff]ebruary|[Mm]arch|[Aa]pril|[Jj]uly|[Aa]ugust|[Ss]eptember|[Oo]ctober|[Nn]ovember|[Dd]ecember)$', 'NN'),
+    # we do not include May, Jan and Jun that are common enough first names
+    (r'^(Feb|Mar|Apr|Jul|Aug|Sep|Oct|Nov|Dec),?$', 'MONTH'),
+
+    (r'^([Mm]onday|[Tt]uesday|[Ww]ednesday|[Tt]hursday|[Ff]riday|[Ss]aturday|[Ss]unday),?$', 'DAY'),
+    (r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun|May),?$', 'NN'),
 
     # misc words that are not NNs
     # lowercase verbs ending in "ing"
@@ -1862,10 +1862,11 @@ PATTERNS = [
     ############################################################################
 
     # "authors" or "contributors" is interesting, and so a tag of its own
+    (r'^[Aa]uthors,$', 'AUTHDOT'),
     (r'^[Aa]uthor$', 'AUTH'),
     (r'^[Aa]uthor\.$', 'AUTHDOT'),
     (r'^[Aa]uthors?\.$', 'AUTHDOT'),
-    (r'^[Aa]uthors|author\'$', 'AUTHS'),
+    (r'^([Aa]uthors|author\')$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)\.?$', 'AUTHDOT'),
     # as javadoc
@@ -1978,7 +1979,7 @@ PATTERNS = [
     ############################################################################
 
     # rare cases of trailing + signon years
-    (r'^20[0-1][0-9]\+$', 'YR-PLUS'),
+    (r'^20[0-3][0-9]\+$', 'YR-PLUS'),
 
     # year or year ranges
     # plain year with various leading and trailing punct
@@ -2006,6 +2007,9 @@ PATTERNS = [
     (r'^(' + _YEAR_YEAR + ')+$', 'YR'),
 
     (r'^(' + _YEAR_DASH_PRESENT + ')+$', 'YR'),
+
+    # ISO dates as in 2024-12-09
+    (r'^' + _YEAR + '-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$', 'YR'),
 
     # 88, 93, 94, 95, 96: this is a pattern mostly used in FSF copyrights
     (r'^[8-9][0-9],$', 'YR'),
@@ -2176,12 +2180,7 @@ PATTERNS = [
 # End of line commenst are rules descriptions.
 # One rule per line.
 
-USE_MAIN_BRANCH = False or os.environ.get('SCANCODE_COPYRIGHT_USE_MAIN_BRANCH', False)
-
-if USE_MAIN_BRANCH:
-    from cluecode.copyrightorig import grammar as GRAMMAR
-else:
-    GRAMMAR = """
+GRAMMAR = """
 
 #######################################
 # YEARS
@@ -3111,7 +3110,7 @@ else:
     COPYRIGHT: {<COPYRIGHT>  <MAINT> }       #83020
 
     # copyright its authors
-    COPYRIGHT: {<COPY> <NN> <AUTHS>}       #83030
+    COPYRIGHT: {<COPY> <NN> <AUTHDOT>}       #83030
 
     # Copyright: 2004-2007 by Internet Systems Consortium, Inc. ("ISC")
     #            1995-2003 by Internet Software Consortium
@@ -3234,7 +3233,7 @@ else:
     COPYRIGHT: {<COPY> <BY>? <AUTHOR>+  <YR-RANGE>*}        #2800-1
 
     COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}        #2820
-    COPYRIGHT: {<AUTHOR> <YR-RANGE>}        #2830
+
     # copyrighted by MIT
     COPYRIGHT: {<COPY> <BY> <MIT>} #2840
 
@@ -3556,11 +3555,14 @@ AUTHORS_PREFIXES = frozenset(set.union(
         'author\'',
         'authors,',
         'authorship',
+        'maintainer',
+        'co-maintainer',
         'or',
         'spdx-filecontributor',
         '</b>',
         'mailto:',
         "name'",
+        "a",
     ])
 ))
 
