@@ -1,0 +1,6 @@
+
+
+ * Copyright (C) IBM Corporation, 2011-2015
+ *
+ * Designer of the Power data compression engine:
+ *   Bulent Abali <abali@us.ibm.com>

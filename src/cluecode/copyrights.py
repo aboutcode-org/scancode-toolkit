@@ -815,6 +815,9 @@ PATTERNS = [
     (r'^@?link:?$', 'JUNK'),
     (r'@license:?$', 'JUNK'),
 
+    # hex is JUNK 0x3fc3/0x7cff
+    (r'^0x[a-fA-F0-9]+', 'JUNK'),
+
     # found in crypto certificates and LDAP
     (r'^O=$', 'JUNK'),
     (r'^OU=?$', 'JUNK'),
@@ -1045,7 +1048,7 @@ PATTERNS = [
     (r'^Owner$', 'JUNK'),
     (r'^behalf$', 'JUNK'),
     (r'^know-how$', 'JUNK'),
-    (r'^interfaces?,?$', 'JUNK'),
+    (r'^[Ii]nterfaces?,?$', 'JUNK'),
     (r'^than$', 'JUNK'),
     (r'^whom$', 'JUNK'),
     (r'^However,?$', 'JUNK'),
@@ -1206,6 +1209,10 @@ PATTERNS = [
     (r'^False.?$', 'JUNK'),
     (r'^True.?$', 'JUNK'),
 
+    (r'^high$', 'JUNK'),
+    (r'^low$', 'JUNK'),
+    (r'^on$', 'JUNK'),
+
     (r'^imports?$', 'JUNK'),
     (r'^[Ww]arnings?$', 'JUNK'),
     (r'^[Ww]hether$', 'JUNK'),
@@ -1303,7 +1310,7 @@ PATTERNS = [
     (r'^Code$', 'NN'),
     (r'^Collators?$', 'NN'),
     (r'^Commercial', 'NN'),
-    (r'^Commons$', 'NN'),
+    (r'^Commons?$', 'NN'),
     # TODO: Compilation could be JUNK?
     (r'^Compilation', 'NN'),
     (r'^Contact', 'NN'),
@@ -1357,6 +1364,16 @@ PATTERNS = [
     (r'^With$', 'NN'),
     (r'^Tick$', 'NN'),
     (r'^Dynamic$', 'NN'),
+    (r'^Battery$', 'NN'),
+    (r'^Charger$', 'NN'),
+    (r'^Dynamic$', 'NN'),
+    (r'^Bugfixes?$', 'NN'),
+    (r'^Likes?$', 'NN'),
+    (r'^STA$', 'NN'),
+
+    (r'^Interrupt$', 'NN'),
+    (r'^cleanups?$', 'JUNK'),
+    (r'^Tape$', 'NN'),
 
     (r'^When$', 'NN'),
     # (r'^Owner$', 'NN'),
@@ -1384,8 +1401,8 @@ PATTERNS = [
     (r'^Gaim$', 'NN'),
     (r'^Generated', 'NN'),
     (r'^Glib$', 'NN'),
-    (r'^GPLd', 'NN'),
-    (r'^GPL\'d', 'NN'),
+    (r'^GPLd?\.?$', 'NN'),
+    (r'^GPL\'d$', 'NN'),
     (r'^Gnome$', 'NN'),
     (r'^GnuPG$', 'NN'),
     (r'^Government.', 'NNP'),
@@ -1477,7 +1494,7 @@ PATTERNS = [
     (r'^POSIX$', 'NN'),
     (r'^Possible', 'NN'),
     (r'^Powered$', 'NN'),
-    (r'^defined$', 'NN'),
+    (r'^defined?$', 'JUNK'),
     (r'^Predefined$', 'NN'),
     (r'^Promise$', 'NN'),
     (r'^Products?\.?$', 'NN'),
@@ -1576,7 +1593,7 @@ PATTERNS = [
     (r'^Branched$', 'NN'),
 
     (r'^Improved$', 'NN'),
-    (r'^Designed$', 'NN'),
+    (r'^Designe[dr]$', 'NN'),
     (r'^Organised$', 'NN'),
     (r'^Re-organised$', 'NN'),
     (r'^Swap$', 'NN'),
@@ -1896,6 +1913,9 @@ PATTERNS = [
 
     # et al.
     (r'^al\.$', 'AUTHDOT'),
+
+    # in Linux LKMs
+    (r'^MODULEAUTHOR$', 'AUTH'),
 
     # Contributor(s)
     (r'^[Cc]ontributors[,\.]?$', 'CONTRIBUTORS'),
@@ -3548,7 +3568,8 @@ COPYRIGHTS_JUNK = [
     r'^\(c\) Object c$',
     r'^copyright headers?',
     r'Copyright \(c\) 2021 Dot',
-    r'^\(c\) \(c\) B$'
+    r'^\(c\) \(c\) B$',
+    r'^\(c\) group$',
 ]
 
 # a collection of junk junk matcher callables
@@ -3591,6 +3612,7 @@ AUTHORS_PREFIXES = frozenset(set.union(
         'mailto:',
         "name'",
         "a",
+        "moduleauthor",
     ])
 ))
 
@@ -4301,6 +4323,8 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         # C and C++ style comment markers
         .replace('/*', ' ').replace('*/', ' ')
         .strip().strip('/*#')
+        # in rst
+        .replace('|copy|', ' (c) ')
         # un common pipe chars in some ascii art
         .replace('|', ' ')
 
