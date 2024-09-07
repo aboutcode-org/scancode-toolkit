@@ -298,14 +298,13 @@ class CopyrightDetector(object):
         non_holder_labels_mini = frozenset([
             'COPY',
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
-            'HOLDER', 'AUTHOR',
             'IS', 'HELD',
         ])
 
         non_authors_labels = frozenset([
             'COPY',
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
-            'HOLDER', 'AUTHOR',
+            'AUTH', 'AUTH2', 'HOLDER',
             'IS', 'HELD',
         ])
 
@@ -322,10 +321,9 @@ class CopyrightDetector(object):
                 copyrght = build_detection_from_node(
                     node=tree_node,
                     cls=CopyrightDetection,
-                    ignores=non_copyright_labels,
+                    ignored_labels=non_copyright_labels,
                     include_copyright_allrights=include_copyright_allrights,
                     refiner=refine_copyright,
-                    junk=COPYRIGHTS_JUNK,
                 )
 
                 if TRACE or TRACE_DEEP:
@@ -340,7 +338,7 @@ class CopyrightDetector(object):
                         holder = build_detection_from_node(
                             node=tree_node,
                             cls=HolderDetection,
-                            ignores=non_holder_labels,
+                            ignored_labels=non_holder_labels,
                             refiner=refine_holder,
                         )
 
@@ -351,7 +349,7 @@ class CopyrightDetector(object):
                             holder = build_detection_from_node(
                                 node=tree_node,
                                 cls=HolderDetection,
-                                ignores=non_holder_labels_mini,
+                                ignored_labels=non_holder_labels_mini,
                                 refiner=refine_holder,
                             )
 
@@ -365,9 +363,8 @@ class CopyrightDetector(object):
                 author = build_detection_from_node(
                     node=tree_node,
                     cls=AuthorDetection,
-                    ignores=non_authors_labels,
+                    ignored_labels=non_authors_labels,
                     refiner=refine_author,
-                    junk=AUTHORS_JUNK,
                 )
 
                 if author:
@@ -385,15 +382,21 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
     We perform a simple tokenization on spaces, tabs and some punctuation: =;
     """
     for start_line, line in numbered_lines:
+        pos = 0
+
         if TRACE_TOK:
             logger_debug('  get_tokens: bare line: ' + repr(line))
+
+        # if not line.strip():
+        #     yield Token(value="\n", label="EMPTY_LINE", start_line=start_line, pos=pos)
+        #     pos += 1
+        #     continue
 
         line = prepare_text_line(line)
 
         if TRACE_TOK:
             logger_debug('  get_tokens: preped line: ' + repr(line))
 
-        pos = 0
         for tok in splitter(line):
             # strip trailing quotes+comma
             if tok.endswith("',"):
@@ -406,7 +409,7 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
                 .strip()
             )
 
-            # the tokenizer allows a sinble colon or dot to be atoken and we discard these
+            # the tokenizer allows a single colon or dot to be a token and we discard these
             if tok and tok not in ':.':
                 yield Token(value=tok, start_line=start_line, pos=pos)
                 pos += 1
@@ -475,42 +478,45 @@ class AuthorDetection(Detection):
     end_line = attr.ib()
 
 
+def filter_tokens(node, ignored_labels=frozenset()):
+    """
+    Yield tokens for this parse tree Tree, ignoring nodes with a label in the ``ignored_labels`` set.
+    The order reflects the order of the leaves in the tree's hierarchical structure, breadth-first.
+    """
+    for token in node:
+        if token.label in ignored_labels:
+            continue
+        if isinstance(token, Tree):
+            yield from filter_tokens(token, ignored_labels=ignored_labels)
+        else:
+            yield token
+
+
 def build_detection_from_node(
     node,
     cls,
-    ignores=frozenset(),
+    ignored_labels=frozenset(),
     include_copyright_allrights=False,
     refiner=None,
-    junk=frozenset(),
-    junk_patterns=frozenset(),
 ):
     """
     Return a ``cls`` Detection object from a pygmars.tree.Tree ``node`` with a
     space-normalized string value or None.
 
-    Filter ``node`` Tokens with a type found in the ``ignores`` set of ignorable
+    Filter ``node`` Tokens with a type found in the ``ignored_labels`` set of ignorable
     token types.
 
     For copyright detection, include trailing "All rights reserved" if
     ``include_copyright_allrights`` is True.
 
     Apply the ``refiner`` callable function to the detection string.
-
-    Return None if the value exists in the ``junk`` strings set or is matched by
-    any of the regex in the ``junk_patterns`` set.
     """
     include_copyright_allrights = (
         cls == CopyrightDetection
         and include_copyright_allrights
     )
 
-    if ignores:
-        leaves = [
-            token for token in node.leaves()
-            if token.label not in ignores
-        ]
-    else:
-        leaves = node.leaves()
+    leaves = list(filter_tokens(node, ignored_labels=ignored_labels))
 
     if include_copyright_allrights:
         filtered = leaves
@@ -545,7 +551,7 @@ def build_detection_from_node(
     if refiner:
         node_string = refiner(node_string)
 
-    if node_string and not is_junk_copyryright(node_string):
+    if node_string and not is_junk_copyright(node_string):
         start_line = filtered[0].start_line
         end_line = filtered[-1].start_line
 
@@ -1370,6 +1376,8 @@ PATTERNS = [
     (r'^Bugfixes?$', 'NN'),
     (r'^Likes?$', 'NN'),
     (r'^STA$', 'NN'),
+    (r'^Page$', 'NN'),
+    (r'^Todo/Under$', 'JUNK'),
 
     (r'^Interrupt$', 'NN'),
     (r'^cleanups?$', 'JUNK'),
@@ -2071,7 +2079,7 @@ PATTERNS = [
     (r'^\$?date-of-document$', 'YR'),
 
     # cardinal numbers
-    (r'^-?[0-9]+(.[0-9]+)?\.?$', 'CD'),
+    (r'^-?[0-9]+(.[0-9]+)?[\.,]?$', 'CD'),
 
     ############################################################################
     # All caps and proper nouns
@@ -2239,6 +2247,8 @@ GRAMMAR = """
     YR-RANGE: {<YR-AND>+}        #70
     YR-RANGE: {<YR-RANGE>+ <DASH|TO> <YR-RANGE>+}        #71
     YR-RANGE: {<YR-RANGE>+ <DASH>?}        #72
+    # Copyright (c) 1999, 2000, 01, 03, 06 Ralf Baechle
+    YR-RANGE: {<YR-RANGE> <CD>+}        #72.2
 
     CD: {<BARE-YR>} #bareyear
 
@@ -3178,7 +3188,7 @@ GRAMMAR = """
     # the Initial Developer. All Rights Reserved.
     COPYRIGHT: {<PORTIONS>  <AUTH2>  <INITIALDEV>  <IS>  <COPY|COPYRIGHT2>+  <YR-RANGE>? <INITIALDEV>} #2609.1
 
-    # Portions created by the Initial Developer are Copyright (C) 
+    # Portions created by the Initial Developer are Copyright (C)
     # the Initial Developer. All Rights Reserved.
     # and
     # Portions created by the Initial Developer are Copyright (C) 2002
@@ -3576,7 +3586,7 @@ COPYRIGHTS_JUNK = [
 COPYRIGHTS_JUNK_PATTERN_MATCHERS = [re.compile(p, re.IGNORECASE).match for p in COPYRIGHTS_JUNK]
 
 
-def is_junk_copyryright(s, patterns=COPYRIGHTS_JUNK_PATTERN_MATCHERS):
+def is_junk_copyright(s, patterns=COPYRIGHTS_JUNK_PATTERN_MATCHERS):
     """
     Return True if the string ``s`` matches any junk patterns.
     """

@@ -1,12 +1,10 @@
 what:
-  - authors
-  - authors_summary
   - copyrights
   - holders
+  - authors
 copyrights:
   - Russ Dill <Russ.Dill@asu.edu> 2001-2003
   - Vladimir Oleynik <dzo@simtreas.ru> (c) 2003
 holders:
   - Russ Dill
   - Vladimir Oleynik <dzo@simtreas.ru>
-notes: these are detected as copyrights, not authors
