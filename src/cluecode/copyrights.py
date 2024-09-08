@@ -381,18 +381,29 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
 
     We perform a simple tokenization on spaces, tabs and some punctuation: =;
     """
+    last_line = ""
     for start_line, line in numbered_lines:
         pos = 0
 
         if TRACE_TOK:
             logger_debug('  get_tokens: bare line: ' + repr(line))
 
-        # if not line.strip():
-        #     yield Token(value="\n", label="EMPTY_LINE", start_line=start_line, pos=pos)
-        #     pos += 1
-        #     continue
+        if not line.strip():
+            stripped = last_line.lower().strip(string.punctuation)
+            if (
+                stripped.startswith("copyright")
+                or stripped.endswith(("by", "copyright","0", "1", "2", "3", "4", "5", "6", "7", "8", "9"))
+            ):
+                continue
+            else:
+                yield Token(value="\n", label="EMPTY_LINE", start_line=start_line, pos=pos)
+                pos += 1
+                last_line = ""
+                continue
 
         line = prepare_text_line(line)
+
+        last_line = line
 
         if TRACE_TOK:
             logger_debug('  get_tokens: preped line: ' + repr(line))
@@ -922,6 +933,7 @@ PATTERNS = [
     (r'DeclareUnicodeCharacter$', 'JUNK'),
     (r'^Language-Team$', 'JUNK'),
     (r'^Last-Translator$', 'JUNK'),
+    (r'^Translated$', 'JUNK'),
     (r'^OMAP730$', 'JUNK'),
     (r'^Law\.$', 'JUNK'),
     (r'^dylid$', 'JUNK'),
@@ -1601,7 +1613,7 @@ PATTERNS = [
     (r'^Branched$', 'NN'),
 
     (r'^Improved$', 'NN'),
-    (r'^Designe[dr]$', 'NN'),
+    (r'^Designed$', 'NN'),
     (r'^Organised$', 'NN'),
     (r'^Re-organised$', 'NN'),
     (r'^Swap$', 'NN'),
@@ -1900,6 +1912,8 @@ PATTERNS = [
 
     # Various rare company names/suffix
     (r'^FedICT$', 'COMPANY'),
+    (r'^10gen$', 'COMPANY'),
+
 
     # Division, District
     (r'^(District|Division)\)?[,\.]?$', 'COMP'),
