@@ -1483,7 +1483,7 @@ PATTERNS = [
     (r'^Initials$', 'NN'),
     (r'^Licen[cs]e', 'NN'),
     (r'^License-Alias\:?$', 'NN'),
-    (r'^Linux$', 'NN'),
+    (r'^Linux$', 'LINUX'),
     (r'^Locker$', 'NN'),
     (r'^Log$', 'NN'),
     (r'^Logos?$', 'NN'),
@@ -1788,6 +1788,8 @@ PATTERNS = [
     (r'werkstaetten\.?$', 'NNP'),
     (r'werken$', 'NNP'),
     (r'various\.?$', 'NNP'),
+    (r'SuSE$', 'COMPANY'),
+    (r'Suse$', 'COMPANY'),
 
     # treat Attributable as proper noun as it is seen in Author tags such as in:
     # @author not attributable
@@ -1869,6 +1871,8 @@ PATTERNS = [
     # More company suffix : a.s. in Czechia and otehrs
     (r'^(a\.s\.|S\.r\.l\.?)$', 'COMP'),
     (r'^Vertriebsges\.m\.b\.H\.?,?$', 'COMP'),
+    # Iceland
+    (r'^(ehf|hf|svf|ohf)\.,?$', 'COMP'),
 
     # company suffix : AS: this is frequent beyond Norway.
     (r'^AS', 'CAPS'),
@@ -2408,7 +2412,7 @@ GRAMMAR = """
     # Project contributors
     COMPANY: {<COMP> <CONTRIBUTORS>}   #256
 
-    COMPANY: {<COMP>+}        #260
+    COMPANY: {<LINUX>? <COMP>+}        #260
 
     # Nokia Corporation and/or its subsidiary(-ies)
     COMPANY: {<COMPANY> <CC> <NN> <COMPANY>}   #265
@@ -2505,7 +2509,7 @@ GRAMMAR = """
     # Copyright 2018, OpenCensus Authors
     COPYRIGHT: {<COPY>+ <YR-RANGE> <NNP> <AUTHS>}     #1579991
 
-    NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>?} #5612
+    NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>? <LINUX>?} #5612
 
     #Academy of Motion Picture Arts and Sciences
     NAME: {<NAME> <CC> <NNP>} #561
@@ -2889,7 +2893,7 @@ GRAMMAR = """
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <CONTRIBUTORS> <ALLRIGHTRESERVED>?} #22791
 
     # Copyright 1996, 1997 Linux International.
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>  <NNP>} #22792
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <LINUX|NN>  <NNP>} #22792
 
     # Copyright (C) 2001-2008 the LGPL VGABios developers Team
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <COMPANY>}  #22793.1
@@ -2917,7 +2921,7 @@ GRAMMAR = """
     COPYRIGHT: {<COPY> <YR-RANGE> <COPY>  <NNP>}        #230020
 
     #  Copyright (C) 1999-2000 VA Linux Systems
-    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <NN>  <NNP>} #2280-1
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <NN|LINUX>  <NNP>} #2280-1
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
@@ -3037,7 +3041,7 @@ GRAMMAR = """
     COPYRIGHT: {<COPY> <PN>?  <YR-RANGE> <BY> <NN> <NAME>}   #2007
 
     # Copyright (C) 2005 SUSE Linux Products GmbH.
-    COPYRIGHT: {<COPYRIGHT2> <CAPS> <NN> <COMPANY>} #2008
+    COPYRIGHT: {<COPYRIGHT2> <CAPS|COMPANY> <NN|LINUX> <COMPANY>} #2008
 
     # Copyright (c) 2016-2018 JSR 371 expert group and contributors
     COPYRIGHT: {<COPYRIGHT2>  <CAPS>  <CD>  <COMPANY>  <NAME>} #2009.1
