@@ -791,6 +791,7 @@ PATTERNS = [
     (r'^A11yance', 'NNP'),
     (r'^Fu$', 'NNP'),
     (r'^W3C\(r\)$', 'COMP'),
+    (r'^TeX$', 'NNP'),
 
     # Three or more AsCamelCase GetQueueReference, with some exceptions
     (r'^(?:OpenStreetMap|AliasDotCom|AllThingsTalk).?$', 'NAME'),
@@ -1633,6 +1634,9 @@ PATTERNS = [
     (r'^Adapted$', 'JUNK'),
     (r'^Thumb$', 'NN'),
 
+    # SEEN IN  Copyright (c) 1997 Dan error_act (dmalek@jlc.net)
+    (r'^error_act$', 'NN'),
+
     # alone this is not enough for an NNP
     (r'^Free$', 'NN'),
 
@@ -1687,6 +1691,7 @@ PATTERNS = [
     (r'^Compression$', 'NN'),
     (r'^Letter$', 'NN'),
     (r'^Moved$', 'NN'),
+    (r'^Phone$', 'NN'),
 
     # dual caps that are not NNP
     (r'^Make[A-Z]', 'JUNK'),
@@ -1790,6 +1795,11 @@ PATTERNS = [
     (r'various\.?$', 'NNP'),
     (r'SuSE$', 'COMPANY'),
     (r'Suse$', 'COMPANY'),
+    (r'\(Winbond\),?$', 'COMP'),
+
+    #     copyright           : (C) 2002 by karsten wiese
+    (r'karsten$', 'NNP'),
+    (r'wiese$', 'NNP'),
 
     # treat Attributable as proper noun as it is seen in Author tags such as in:
     # @author not attributable
@@ -1823,8 +1833,10 @@ PATTERNS = [
     (r'^.+,Inc\.$', 'COMPANY'),
 
     (r'^[Cc]ompany[,\.]?\)?$', 'COMP'),
-    (r'^Limited[,\.]??$', 'COMP'),
-    (r'^LIMITED[,\.]??$', 'COMP'),
+    (r'^Limited[,\.]?$', 'COMP'),
+    (r'^LIMITED[,\.]?$', 'COMP'),
+
+    (r'^COMPANY,LTD$', 'COMP'),
 
     # Caps company suffixes
     (r'^INC[\.,\)]*$', 'COMP'),
@@ -1873,6 +1885,9 @@ PATTERNS = [
     (r'^Vertriebsges\.m\.b\.H\.?,?$', 'COMP'),
     # Iceland
     (r'^(ehf|hf|svf|ohf)\.,?$', 'COMP'),
+
+    # company abbreviations
+    (r'^(SPRL|srl)[\.,]?$', 'COMP'),
 
     # company suffix : AS: this is frequent beyond Norway.
     (r'^AS', 'CAPS'),
@@ -2412,6 +2427,9 @@ GRAMMAR = """
     # Project contributors
     COMPANY: {<COMP> <CONTRIBUTORS>}   #256
 
+    # Copyright (C) 2013 Ideas on board SPRL
+    COMPANY: {<NNP>  <JUNK>  <NN>  <COMP>} #259
+
     COMPANY: {<LINUX>? <COMP>+}        #260
 
     # Nokia Corporation and/or its subsidiary(-ies)
@@ -2437,11 +2455,21 @@ GRAMMAR = """
     # NAME-YEAR starts or ends with a YEAR range
     NAME-YEAR: {<YR-RANGE> <NNP> <NNP>+} #350
 
+    COPYRIGHT: {<COPY>  <YR-RANGE>  <NNP>  <NN>  <NNP>  <NNP>  <NNP>  <EMAIL>} #350.1
+
+    # Copyright (C) 1995-06 ICP vortex, Achim Leubner
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <NN>  <NNP> <NNP> } #350.2
+
     # Academy of Motion Picture Arts
     NAME: {<NNP|PN>+ <NNP>+}        #351
 
     # Distributed Management Task Force
     NAME: {<NN> <NNP>{3}} #881111
+
+    # Rudolf Marek <r.marek@assembler.cz>
+    # David Hubbard <david.c.hubbard@gmail.com>
+    # Daniel J Blueman <daniel.blueman@gmail.com>
+    # NAME: { <NAME> <EMAIL> } #351.0
 
     # @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
     NAME: { <NN>? <NN>? <EMAIL> <NAME> } #351.1
@@ -3000,7 +3028,7 @@ GRAMMAR = """
     AUTHOR: {<BY|MAINT> <NAME-EMAIL> <YR-RANGE>?}  #26382
 
     # Russ Dill <Russ.Dill@asu.edu> 2001-2003
-    COPYRIGHT: {<NAME-EMAIL> <YR-RANGE>}       #2638
+    # COPYRIGHT: {<NAME-EMAIL> <YR-RANGE>}       #2638
 
     # (C) 2001-2009, <s>Takuo KITAME, Bart Martens, and  Canonical, LTD</s>
     COPYRIGHT: {<COPYRIGHT> <NNP> <COMPANY>}       #26381

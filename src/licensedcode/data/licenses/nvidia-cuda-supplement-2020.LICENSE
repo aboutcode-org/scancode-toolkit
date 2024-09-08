@@ -45,7 +45,8 @@ ignorable_holders:
     - Yann Collet
     - Zoltan Herczeg
 ignorable_authors:
-    - Ahmad Abdelfattah (ahmad.ahmad@kaust.edu.sa) David Keyes (david.keyes@kaust.edu.sa)
+    - Ahmad Abdelfattah (ahmad.ahmad@kaust.edu.sa) David Keyes (david.keyes@kaust.edu.sa) Hatem
+        Ltaief (hatem.ltaief@kaust.edu.sa)
     - Ahmad M. Abdelfattah, David Keyes, and Hatem Ltaief
     - D. E. Shaw Research
     - Davide Barbieri

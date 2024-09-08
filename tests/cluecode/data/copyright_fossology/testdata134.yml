@@ -9,4 +9,5 @@ holders:
   - Free Software Foundation, Inc.
 authors:
   - Ian Jackson, Erick Branderhorst, Galen Hazelwood, and Josip Rodin. Today
-  - the Debian
+  - the Debian TeX Task Force <debian-tex-maint@lists.debian.org>
+  - Karl Berry <karl@cs.umb.edu>

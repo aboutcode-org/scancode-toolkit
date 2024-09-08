@@ -71,6 +71,8 @@ statement_markers = (
     '</s>',
     '<s/>',
     'by ',  # note the trailing space
+    # common for emails
+    '@',
 )
 
 '''
