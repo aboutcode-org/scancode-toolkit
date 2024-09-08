@@ -1357,11 +1357,18 @@ PATTERNS = [
     (r'^EXHIBIT$', 'JUNK'),
     (r'^Exhibit$', 'JUNK'),
     (r'^Digitized', 'NN'),
+    (r'^OPENING', 'JUNK'),
     (r'^[Ds]istributed?.?$', 'NN'),
     (r'^Distributions?', 'NN'),
     (r'^Multiply$', 'NN'),
     (r'^Convert$', 'NN'),
     (r'^Compute$', 'NN'),
+
+    (r'^\(Computer$', 'JUNK'),
+    (r'^Programs\)', 'JUNK'),
+    (r'^Regulations', 'JUNK'),
+    (r'^message\.', 'JUNK'),
+
     (r'^Case$', 'NN'),
     (r'^Hessian$', 'NN'),
     (r'^Include', 'NN'),
@@ -1434,6 +1441,10 @@ PATTERNS = [
     (r'^IA64$', 'NN'),
     (r'^IDEA$', 'NN'),
     (r'^Id$', 'NN'),
+
+    # micapitalized last name 
+    (r'^king$', 'NNP'),
+
     (r'^IDENTIFICATION?\.?$', 'NN'),
     (r'^IEEE$', 'NN'),
     (r'^If$', 'NN'),
@@ -1444,6 +1455,8 @@ PATTERNS = [
     (r'^INCLUDING', 'NN'),
     (r'^Indemnification', 'NN'),
     (r'^Indemnified', 'NN'),
+    (r'^Unified$', 'NN'),
+    (r'^Cleaned$', 'JUNK'),
     (r'^Information', 'NN'),
     (r'^In$', 'NN'),
     (r'^Intellij$', 'NN'),
@@ -1540,7 +1553,7 @@ PATTERNS = [
     (r'^[Rr]espective', 'NN'),
     (r'^SAX$', 'NN'),
     (r'^Sections?$', 'NN'),
-    (r'^Send$', 'NN'),
+    (r'^Send$', 'JUNK'),
     (r'^Separa', 'NN'),
     (r'^Service$', 'NN'),
     (r'^Several$', 'NN'),
@@ -2160,7 +2173,8 @@ PATTERNS = [
     # a .sh shell scripts is NOT an email.
     (r'^.*\.sh\.?$', 'JUNK'),
     # email eventually in parens or brackets with some trailing punct. Note the @ or "at "
-    (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,3}[\>\)\.\,]*$', 'EMAIL'),
+    (r'^(?:[A-Za-z])*[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,3}[\>\)\.\,]*$', 'EMAIL'),
+
     # mailto URLs
     (r'^mailto:.{2,}@.{2,}\.[a-z]{2,3}', 'EMAIL'),
 
@@ -2902,6 +2916,9 @@ GRAMMAR = """
     # Copyright 2018 (c) DistributedLock
     COPYRIGHT: {<COPY> <YR-RANGE> <COPY>  <NNP>}        #230020
 
+    #  Copyright (C) 1999-2000 VA Linux Systems
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <NN>  <NNP>} #2280-1
+
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
     # using #2280 above: Copyright 2018 Developers of the Rand project
@@ -3042,6 +3059,9 @@ GRAMMAR = """
     # NAME-CAPS is made of all caps words
     #Copyright or Copr. CNRS
     NAME-CAPS: {<CAPS>+}        #2530
+
+    # (C) SGI 2006, Christoph Lameter
+    COPYRIGHT: {<COPY>  <NAME-CAPS>  <NAME-YEAR> } #25501
 
     #Copyright or Copr. CNRS
     COPYRIGHT: {<COPY> <NN> <COPY> <COPYRIGHT|NAME-CAPS>}        #2560
