@@ -50,6 +50,21 @@ def test_demarkup_files(test_file, regen=SCANCODE_REGEN_TEST_FIXTURES):
     "test_file",
     list(markup_test_dir.glob("*")),
 )
+def test_strip_markup_files(test_file, regen=SCANCODE_REGEN_TEST_FIXTURES):
+    result = list(markup.demarkup(location=test_file, stripper=markup.strip_markup_text))
+    expected_loc = markup_expected_dir / f"{test_file.name}.stripmarkup.json"
+    if regen:
+        expected_loc.write_text(json.dumps(result, indent=2))
+
+    expected = expected_loc.read_text()
+
+    assert json.dumps(result, indent=2) == expected
+
+
+@pytest.mark.parametrize(
+    "test_file",
+    list(markup_test_dir.glob("*")),
+)
 def test_get_tags_and_entities(test_file):
     lines = test_file.read_text(errors=" ").splitlines(True)
     result = ["".join(get_tags_and_entities(l)) for l in lines]
