@@ -102,7 +102,7 @@ def demarkup(location):
     """
     from textcode.analysis import unicode_text_lines
 
-    for line in unicode_text_lines(location):
+    for line in unicode_text_lines(location, decrlf=True):
         if TRACE:
             logger_debug(f'demarkup: {line} : demarked: {demarkup_text(line)}')
         yield demarkup_text(line)
@@ -118,7 +118,7 @@ get_tags_and_entities = re.compile(
     r'|'
     r'href'
     r'|'
-    '[\'"]?\/\>'
+    '[\'"]?/>'
     r'|'
     r'/>'
     r')',
@@ -136,7 +136,9 @@ def demarkup_text(text):
     # note: <s> are from debian copyright files
     kept_tags = (
         'lic', 'copy', 'www', 'http', 'auth', 'contr', 'leg', 'inc', '@',
-        '<s>', '</s>', '169', 'a9'
+        '<s>', '</s>', '169', 'a9',
+        # in <red hat
+        'red'
     )
 
     # find start and closing tags or the first white space whichever comes first

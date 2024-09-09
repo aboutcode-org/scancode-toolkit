@@ -1,644 +1,665 @@
-
-
-
-Label (Java 2 Platform SE 5.0_13)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function windowTitle()
-{
-    parent.document.title="Label (Java 2 Platform SE 5.0_13)";
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-      Overview 
-      Package 
-    Class 
-      Use 
-      Tree 
-      Deprecated 
-      Index 
-      Help 
-  
-
-
-
-JavaTM 2 PlatformStandard Ed. 5.0_13
-
-
-
-
-
- PREV CLASS 
- NEXT CLASS
-
-  FRAMES   
- NO FRAMES   
- 
-  <!--
-  if(window==top) {
-    document.writeln('<A HREF="../../allclasses-noframe.html"><B>All Classes</B></A>');
-  }
-  //-->
-
-
-  All Classes
-
-
-
-
-
-
-
-  SUMMARY: NESTED | FIELD | CONSTR | METHOD
-
-DETAIL: FIELD | CONSTR | METHOD
-
-
-
-
-
-
-
-
-
-java.awt
-
-Class Label
-java.lang.Object
-  java.awt.Component
-      java.awt.Label
-
-
-All Implemented Interfaces: ImageObserver, MenuContainer, Serializable, Accessible
-
-
-
-public class Labelextends Componentimplements Accessible
-
-
-
-A Label object is a component for placing text in a
- container. A label displays a single line of read-only text.
- The text can be changed by the application, but a user cannot edit it
- directly.
- 
- For example, the code . . .
- 
-  setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
- add(new Label("Hi There!"));
- add(new Label("Another Label"));
- 
- 
- produces the following labels:
- 
- 
-
-
-
-
-Since:
-  JDK1.0
-See Also:Serialized Form
-
-
-
-
-
-
-
-
-
-Nested Class Summary
-
-
-
-protected  class
-Label.AccessibleAWTLabel
-
-
-          This class implements accessibility support for the 
- Label class.
-
-
- 
-
-
-Nested classes/interfaces inherited from class java.awt.Component
-
-
-Component.AccessibleAWTComponent, Component.BltBufferStrategy, Component.FlipBufferStrategy
-
-
- 
-
-
-
-
-
-
-Field Summary
-
-
-
-static int
-CENTER
-
-
-          Indicates that the label should be centered.
-
-
-
-static int
-LEFT
-
-
-          Indicates that the label should be left justified.
-
-
-
-static int
-RIGHT
-
-
-          Indicates that the label should be right justified.
-
-
- 
-
-
-Fields inherited from class java.awt.Component
-
-
-BOTTOM_ALIGNMENT, CENTER_ALIGNMENT, LEFT_ALIGNMENT, RIGHT_ALIGNMENT, TOP_ALIGNMENT
-
-
- 
-
-
-Fields inherited from interface java.awt.image.ImageObserver
-
-
-ABORT, ALLBITS, ERROR, FRAMEBITS, HEIGHT, PROPERTIES, SOMEBITS, WIDTH
-
-
- 
-
-
-
-
-
-
-Constructor Summary
-
-
-Label()
-
-
-          Constructs an empty label.
-
-
-Label(String text)
-
-
-          Constructs a new label with the specified string of text,
- left justified.
-
-
-Label(String text,
-      int alignment)
-
-
-          Constructs a new label that presents the specified string of
- text with the specified alignment.
-
-
- 
-
-
-
-
-
-
-Method Summary
-
-
-
- void
-addNotify()
-
-
-          Creates the peer for this label.
-
-
-
- AccessibleContext
-getAccessibleContext()
-
-
-          Gets the AccessibleContext associated with this Label.
-
-
-
- int
-getAlignment()
-
-
-          Gets the current alignment of this label.
-
-
-
- String
-getText()
-
-
-          Gets the text of this label.
-
-
-
-protected  String
-paramString()
-
-
-          Returns a string representing the state of this Label.
-
-
-
- void
-setAlignment(int alignment)
-
-
-          Sets the alignment for this label to the specified alignment.
-
-
-
- void
-setText(String text)
-
-
-          Sets the text for this label to the specified text.
-
-
- 
-
-
-Methods inherited from class java.awt.Component
-
-
-action, add, addComponentListener, addFocusListener, addHierarchyBoundsListener, addHierarchyListener, addInputMethodListener, addKeyListener, addMouseListener, addMouseMotionListener, addMouseWheelListener, addPropertyChangeListener, addPropertyChangeListener, applyComponentOrientation, areFocusTraversalKeysSet, bounds, checkImage, checkImage, coalesceEvents, contains, contains, createImage, createImage, createVolatileImage, createVolatileImage, deliverEvent, disable, disableEvents, dispatchEvent, doLayout, enable, enable, enableEvents, enableInputMethods, firePropertyChange, firePropertyChange, firePropertyChange, firePropertyChange, firePropertyChange, firePropertyChange, firePropertyChange, firePropertyChange, firePropertyChange, getAlignmentX, getAlignmentY, getBackground, getBounds, getBounds, getColorModel, getComponentAt, getComponentAt, getComponentListeners, getComponentOrientation, getCursor, getDropTarget, getFocusCycleRootAncestor, getFocusListeners, getFocusTraversalKeys, getFocusTraversalKeysEnabled, getFont, getFontMetrics, getForeground, getGraphics, getGraphicsConfiguration, getHeight, getHierarchyBoundsListeners, getHierarchyListeners, getIgnoreRepaint, getInputContext, getInputMethodListeners, getInputMethodRequests, getKeyListeners, getListeners, getLocale, getLocation, getLocation, getLocationOnScreen, getMaximumSize, getMinimumSize, getMouseListeners, getMouseMotionListeners, getMousePosition, getMouseWheelListeners, getName, getParent, getPeer, getPreferredSize, getPropertyChangeListeners, getPropertyChangeListeners, getSize, getSize, getToolkit, getTreeLock, getWidth, getX, getY, gotFocus, handleEvent, hasFocus, hide, imageUpdate, inside, invalidate, isBackgroundSet, isCursorSet, isDisplayable, isDoubleBuffered, isEnabled, isFocusable, isFocusCycleRoot, isFocusOwner, isFocusTraversable, isFontSet, isForegroundSet, isLightweight, isMaximumSizeSet, isMinimumSizeSet, isOpaque, isPreferredSizeSet, isShowing, isValid, isVisible, keyDown, keyUp, layout, list, list, list, list, list, locate, location, lostFocus, minimumSize, mouseDown, mouseDrag, mouseEnter, mouseExit, mouseMove, mouseUp, move, nextFocus, paint, paintAll, postEvent, preferredSize, prepareImage, prepareImage, print, printAll, processComponentEvent, processEvent, processFocusEvent, processHierarchyBoundsEvent, processHierarchyEvent, processInputMethodEvent, processKeyEvent, processMouseEvent, processMouseMotionEvent, processMouseWheelEvent, remove, removeComponentListener, removeFocusListener, removeHierarchyBoundsListener, removeHierarchyListener, removeInputMethodListener, removeKeyListener, removeMouseListener, removeMouseMotionListener, removeMouseWheelListener, removeNotify, removePropertyChangeListener, removePropertyChangeListener, repaint, repaint, repaint, repaint, requestFocus, requestFocus, requestFocusInWindow, requestFocusInWindow, reshape, resize, resize, setBackground, setBounds, setBounds, setComponentOrientation, setCursor, setDropTarget, setEnabled, setFocusable, setFocusTraversalKeys, setFocusTraversalKeysEnabled, setFont, setForeground, setIgnoreRepaint, setLocale, setLocation, setLocation, setMaximumSize, setMinimumSize, setName, setPreferredSize, setSize, setSize, setVisible, show, show, size, toString, transferFocus, transferFocusBackward, transferFocusUpCycle, update, validate
-
-
- 
-
-
-Methods inherited from class java.lang.Object
-
-
-clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait
-
-
- 
-
-
-
-
-
-
-
-
-Field Detail
-
-
-
-
-LEFT
-public static final int LEFT
-
-Indicates that the label should be left justified.
-
-
-See Also:Constant Field Values
-
-
-
-
-CENTER
-public static final int CENTER
-
-Indicates that the label should be centered.
-
-
-See Also:Constant Field Values
-
-
-
-
-RIGHT
-public static final int RIGHT
-
-Indicates that the label should be right justified.
-
-
-Since:
-  JDK1.0t.
-See Also:Constant Field Values
-
-
-
-
-
-
-
-
-Constructor Detail
-
-
-
-
-Label
-public Label()
-      throws HeadlessException
-
-Constructs an empty label.
- The text of the label is the empty string "".
-
-
-
-Throws:
-HeadlessException - if GraphicsEnvironment.isHeadless()
- returns true.See Also:GraphicsEnvironment.isHeadless()
-
-
-
-
-Label
-public Label(String text)
-      throws HeadlessException
-
-Constructs a new label with the specified string of text,
- left justified.
-
-
-Parameters:text - the string that the label presents.
-        A null value
-        will be accepted without causing a NullPointerException
-        to be thrown.
-Throws:
-HeadlessException - if GraphicsEnvironment.isHeadless()
- returns true.See Also:GraphicsEnvironment.isHeadless()
-
-
-
-
-Label
-public Label(String text,
-             int alignment)
-      throws HeadlessException
-
-Constructs a new label that presents the specified string of
- text with the specified alignment.
- Possible values for alignment are Label.LEFT,
- Label.RIGHT, and Label.CENTER.
-
-
-Parameters:text - the string that the label presents.
-        A null value
-        will be accepted without causing a NullPointerException
-        to be thrown.alignment - the alignment value.
-Throws:
-HeadlessException - if GraphicsEnvironment.isHeadless()
- returns true.See Also:GraphicsEnvironment.isHeadless()
-
-
-
-
-
-
-
-
-Method Detail
-
-
-
-
-addNotify
-public void addNotify()
-
-Creates the peer for this label.  The peer allows us to
- modify the appearance of the label without changing its
- functionality.
-
-
-Overrides:addNotify in class Component
-
-
-See Also:Component.isDisplayable(), 
-Component.removeNotify()
-
-
-
-
-
-getAlignment
-public int getAlignment()
-
-Gets the current alignment of this label. Possible values are
- Label.LEFT, Label.RIGHT, and
- Label.CENTER.
-
-
-
-
-
-See Also:setAlignment(int)
-
-
-
-
-
-setAlignment
-public void setAlignment(int alignment)
-
-Sets the alignment for this label to the specified alignment.
- Possible values are Label.LEFT,
- Label.RIGHT, and Label.CENTER.
-
-
-
-
-
-Parameters:alignment - the alignment to be set.
-Throws:
-IllegalArgumentException - if an improper value for
-                          alignment is given.See Also:getAlignment()
-
-
-
-
-
-getText
-public String getText()
-
-Gets the text of this label.
-
-
-
-
-
-
-Returns:the text of this label, or null if 
-             the text has been set to null.See Also:setText(java.lang.String)
-
-
-
-
-
-setText
-public void setText(String text)
-
-Sets the text for this label to the specified text.
-
-
-
-
-
-Parameters:text - the text that this label displays. If 
-             text is null, it is 
-             treated for display purposes like an empty 
-             string "".See Also:getText()
-
-
-
-
-
-paramString
-protected String paramString()
-
-Returns a string representing the state of this Label.
- This method is intended to be used only for debugging purposes, and the 
- content and format of the returned string may vary between 
- implementations. The returned string may be empty but may not be 
- null.
-
-
-Overrides:paramString in class Component
-
-
-
-Returns:the parameter string of this label
-
-
-
-
-
-getAccessibleContext
-public AccessibleContext getAccessibleContext()
-
-Gets the AccessibleContext associated with this Label. 
- For labels, the AccessibleContext takes the form of an 
- AccessibleAWTLabel. 
- A new AccessibleAWTLabel instance is created if necessary.
-
-
-Specified by:getAccessibleContext in interface AccessibleOverrides:getAccessibleContext in class Component
-
-
-
-Returns:an AccessibleAWTLabel that serves as the 
-         AccessibleContext of this Label
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-      Overview 
-      Package 
-    Class 
-      Use 
-      Tree 
-      Deprecated 
-      Index 
-      Help 
-  
-
-
-
-JavaTM 2 PlatformStandard Ed. 5.0_13
-
-
-
-
-
- PREV CLASS 
- NEXT CLASS
-
-  FRAMES   
- NO FRAMES   
- 
-  <!--
-  if(window==top) {
-    document.writeln('<A HREF="../../allclasses-noframe.html"><B>All Classes</B></A>');
-  }
-  //-->
-
-
-  All Classes
-
-
-
-
-
-
-
-  SUMMARY: NESTED | FIELD | CONSTR | METHOD
-
-DETAIL: FIELD | CONSTR | METHOD
-
-
-
-
-
-
-Submit a bug or featureFor further API reference and developer documentation, see Java 2 SDK SE Developer Documentation. That documentation contains more detailed, developer-targeted descriptions, with conceptual overviews, definitions of terms, workarounds, and working code examples. Copyright 2004 Sun Microsystems, Inc. All rights reserved. Use is subject to license terms. Also see the documentation redistribution policy.
-
-
+[
+  " HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n",
+  " \n",
+  " \n",
+  " \n",
+  " Generated by javadoc (build 1.5.0_13) on Fri Jun 27 03:49:51 PDT 2008 -->\n",
+  " \n",
+  "Label (Java 2 Platform SE 5.0_13)\n",
+  " \n",
+  "\n",
+  " NAME=\"keywords\" CONTENT=\"java.awt.Label class\">\n",
+  " NAME=\"keywords\" CONTENT=\"LEFT\">\n",
+  " NAME=\"keywords\" CONTENT=\"CENTER\">\n",
+  " NAME=\"keywords\" CONTENT=\"RIGHT\">\n",
+  " NAME=\"keywords\" CONTENT=\"addNotify()\">\n",
+  " NAME=\"keywords\" CONTENT=\"getAlignment()\">\n",
+  " NAME=\"keywords\" CONTENT=\"setAlignment()\">\n",
+  " NAME=\"keywords\" CONTENT=\"getText()\">\n",
+  " NAME=\"keywords\" CONTENT=\"setText()\">\n",
+  " NAME=\"keywords\" CONTENT=\"paramString()\">\n",
+  " NAME=\"keywords\" CONTENT=\"getAccessibleContext()\">\n",
+  "\n",
+  " REL =\"stylesheet\" TYPE=\"text/css\"  =\"../../stylesheet.css\" TITLE=\"Style\">\n",
+  "\n",
+  " type=\"text/javascript\">\n",
+  "function windowTitle()\n",
+  "{\n",
+  "    parent.document.title=\"Label (Java 2 Platform SE 5.0_13)\";\n",
+  "}\n",
+  " \n",
+  " \n",
+  " \n",
+  "\n",
+  " \n",
+  "\n",
+  " BGCOLOR=\"white\" onload=\"windowTitle();\">\n",
+  "\n",
+  "\n",
+  " ========= START OF TOP NAVBAR ======= -->\n",
+  " NAME=\"navbar_top\"> --> \n",
+  "  =\"#skip-navbar_top\" title=\"Skip navigation links\"> \n",
+  " BORDER=\"0\" WIDTH=\"100%\" CELLPADDING=\"1\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " \n",
+  " COLSPAN=2 BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">\n",
+  " NAME=\"navbar_top_firstrow\"> --> \n",
+  " BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"3\" SUMMARY=\"\">\n",
+  "   ALIGN=\"center\" VALIGN=\"top\">\n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"../../overview-summary.html\"> CLASS=\"NavBarFont1\"> Overview     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"package-summary.html\"> CLASS=\"NavBarFont1\"> Package     \n",
+  "   BGCOLOR=\"#FFFFFF\" CLASS=\"NavBarCell1Rev\">   CLASS=\"NavBarFont1Rev\"> Class    \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"class-use/Label.html\"> CLASS=\"NavBarFont1\"> Use     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"package-tree.html\"> CLASS=\"NavBarFont1\"> Tree     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"../../deprecated-list.html\"> CLASS=\"NavBarFont1\"> Deprecated     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"../../index-files/index-1.html\"> CLASS=\"NavBarFont1\"> Index     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"../../help-doc.html\"> CLASS=\"NavBarFont1\"> Help     \n",
+  "   \n",
+  " \n",
+  " \n",
+  " ALIGN=\"right\" VALIGN=\"top\" ROWSPAN=3> \n",
+  " Java  size=-2>TM   2 Platform Standard Ed. 5.0_13  \n",
+  " \n",
+  " \n",
+  "\n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"NavBarCell2\"> SIZE=\"-2\">\n",
+  "   =\"../../java/awt/KeyEventPostProcessor.html\" title=\"interface in java.awt\"> PREV CLASS   \n",
+  "   =\"../../java/awt/Label.AccessibleAWTLabel.html\" title=\"class in java.awt\"> NEXT CLASS    \n",
+  " BGCOLOR=\"white\" CLASS=\"NavBarCell2\"> SIZE=\"-2\">\n",
+  "    =\"../../index.html?java/awt/Label.html\" target=\"_top\"> FRAMES     \n",
+  "   =\"Label.html\" target=\"_top\"> NO FRAMES     \n",
+  "  type=\"text/javascript\">\n",
+  "   ",
+  "  if(window==top) {\n",
+  "    document.writeln('  =\"../../allclasses-noframe.html\"> All Classes  ');\n",
+  "  }\n",
+  "  //-->\n",
+  " \n",
+  " \n",
+  "    =\"../../allclasses-noframe.html\"> All Classes  \n",
+  " \n",
+  "\n",
+  "\n",
+  "  \n",
+  " \n",
+  " \n",
+  " VALIGN=\"top\" CLASS=\"NavBarCell3\"> SIZE=\"-2\">\n",
+  "  SUMMARY:   =\"#nested_class_summary\">NESTED  |   =\"#field_summary\">FIELD  |   =\"#constructor_summary\">CONSTR  |   =\"#method_summary\">METHOD   \n",
+  " VALIGN=\"top\" CLASS=\"NavBarCell3\"> SIZE=\"-2\">\n",
+  "DETAIL:   =\"#field_detail\">FIELD  |   =\"#constructor_detail\">CONSTR  |   =\"#method_detail\">METHOD   \n",
+  " \n",
+  " \n",
+  " NAME=\"skip-navbar_top\"> \n",
+  " ========= END OF TOP NAVBAR ========= -->\n",
+  "\n",
+  " \n",
+  " ======== START OF CLASS DATA ======== -->\n",
+  " \n",
+  " SIZE=\"-1\">\n",
+  "java.awt \n",
+  " \n",
+  "Class Label \n",
+  " \n",
+  "  =\"../../java/lang/Object.html\" title=\"class in java.lang\">java.lang.Object \n",
+  "   SRC=\"../../resources/inherit.gif\" ALT=\"extended by \">  =\"../../java/awt/Component.html\" title=\"class in java.awt\">java.awt.Component \n",
+  "       SRC=\"../../resources/inherit.gif\" ALT=\"extended by \"> java.awt.Label \n",
+  " \n",
+  " \n",
+  "  All Implemented Interfaces:     =\"../../java/awt/image/ImageObserver.html\" title=\"interface in java.awt.image\">ImageObserver ,   =\"../../java/awt/MenuContainer.html\" title=\"interface in java.awt\">MenuContainer ,   =\"../../java/io/Serializable.html\" title=\"interface in java.io\">Serializable ,   =\"../../javax/accessibility/Accessible.html\" title=\"interface in javax.accessibility\">Accessible  \n",
+  " \n",
+  " \n",
+  " \n",
+  "  public class  Label  extends   =\"../../java/awt/Component.html\" title=\"class in java.awt\">Component  implements   =\"../../javax/accessibility/Accessible.html\" title=\"interface in javax.accessibility\">Accessible  \n",
+  " \n",
+  "\n",
+  " \n",
+  "A  Label  object is a component for placing text in a\n",
+  " container. A label displays a single line of read-only text.\n",
+  " The text can be changed by the application, but a user cannot edit it\n",
+  " directly.\n",
+  "  \n",
+  " For example, the code . . .\n",
+  "  \n",
+  "    \n",
+  " setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));\n",
+  " add(new Label(\"Hi There!\"));\n",
+  " add(new Label(\"Another Label\"));\n",
+  "    \n",
+  "  \n",
+  " produces the following labels:\n",
+  "  \n",
+  "  src=\"doc-files/Label-1.gif\" alt=\"Two labels: 'Hi There!' and 'Another label'\"\n",
+  " ALIGN=center HSPACE=10 VSPACE=7>\n",
+  " \n",
+  "\n",
+  " \n",
+  " \n",
+  "  Since:  \n",
+  "   JDK1.0 \n",
+  "  See Also:    =\"../../serialized-form.html#java.awt.Label\">Serialized Form  \n",
+  " \n",
+  "\n",
+  " \n",
+  " ======== NESTED CLASS SUMMARY ======== -->\n",
+  "\n",
+  " NAME=\"nested_class_summary\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">\n",
+  " ALIGN=\"left\" COLSPAN=\"2\"> SIZE=\"+2\">\n",
+  " Nested Class Summary   \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  " protected  class   \n",
+  "     =\"../../java/awt/Label.AccessibleAWTLabel.html\" title=\"class in java.awt\">Label.AccessibleAWTLabel   \n",
+  "\n",
+  " \n",
+  "          This class implements accessibility support for the \n",
+  "  Label  class. \n",
+  " \n",
+  " \n",
+  "  NAME=\"nested_classes_inherited_from_class_java.awt.Component\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#EEEEFF\" CLASS=\"TableSubHeadingColor\">\n",
+  " ALIGN=\"left\"> Nested classes/interfaces inherited from class java.awt.  =\"../../java/awt/Component.html\" title=\"class in java.awt\">Component   \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  "    =\"../../java/awt/Component.AccessibleAWTComponent.html\" title=\"class in java.awt\">Component.AccessibleAWTComponent ,   =\"../../java/awt/Component.BltBufferStrategy.html\" title=\"class in java.awt\">Component.BltBufferStrategy ,   =\"../../java/awt/Component.FlipBufferStrategy.html\" title=\"class in java.awt\">Component.FlipBufferStrategy   \n",
+  " \n",
+  " \n",
+  " \n",
+  " =========== FIELD SUMMARY =========== -->\n",
+  "\n",
+  " NAME=\"field_summary\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">\n",
+  " ALIGN=\"left\" COLSPAN=\"2\"> SIZE=\"+2\">\n",
+  " Field Summary   \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  " static int   \n",
+  "     =\"../../java/awt/Label.html#CENTER\">CENTER   \n",
+  "\n",
+  " \n",
+  "          Indicates that the label should be centered. \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  " static int   \n",
+  "     =\"../../java/awt/Label.html#LEFT\">LEFT   \n",
+  "\n",
+  " \n",
+  "          Indicates that the label should be left justified. \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  " static int   \n",
+  "     =\"../../java/awt/Label.html#RIGHT\">RIGHT   \n",
+  "\n",
+  " \n",
+  "          Indicates that the label should be right justified. \n",
+  " \n",
+  " \n",
+  "  NAME=\"fields_inherited_from_class_java.awt.Component\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#EEEEFF\" CLASS=\"TableSubHeadingColor\">\n",
+  " ALIGN=\"left\"> Fields inherited from class java.awt.  =\"../../java/awt/Component.html\" title=\"class in java.awt\">Component   \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  "    =\"../../java/awt/Component.html#BOTTOM_ALIGNMENT\">BOTTOM_ALIGNMENT ,   =\"../../java/awt/Component.html#CENTER_ALIGNMENT\">CENTER_ALIGNMENT ,   =\"../../java/awt/Component.html#LEFT_ALIGNMENT\">LEFT_ALIGNMENT ,   =\"../../java/awt/Component.html#RIGHT_ALIGNMENT\">RIGHT_ALIGNMENT ,   =\"../../java/awt/Component.html#TOP_ALIGNMENT\">TOP_ALIGNMENT   \n",
+  " \n",
+  " \n",
+  "  NAME=\"fields_inherited_from_class_java.awt.image.ImageObserver\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#EEEEFF\" CLASS=\"TableSubHeadingColor\">\n",
+  " ALIGN=\"left\"> Fields inherited from interface java.awt.image.  =\"../../java/awt/image/ImageObserver.html\" title=\"interface in java.awt.image\">ImageObserver   \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  "    =\"../../java/awt/image/ImageObserver.html#ABORT\">ABORT ,   =\"../../java/awt/image/ImageObserver.html#ALLBITS\">ALLBITS ,   =\"../../java/awt/image/ImageObserver.html#ERROR\">ERROR ,   =\"../../java/awt/image/ImageObserver.html#FRAMEBITS\">FRAMEBITS ,   =\"../../java/awt/image/ImageObserver.html#HEIGHT\">HEIGHT ,   =\"../../java/awt/image/ImageObserver.html#PROPERTIES\">PROPERTIES ,   =\"../../java/awt/image/ImageObserver.html#SOMEBITS\">SOMEBITS ,   =\"../../java/awt/image/ImageObserver.html#WIDTH\">WIDTH   \n",
+  " \n",
+  " \n",
+  " \n",
+  " ======== CONSTRUCTOR SUMMARY ======== -->\n",
+  "\n",
+  " NAME=\"constructor_summary\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">\n",
+  " ALIGN=\"left\" COLSPAN=\"2\"> SIZE=\"+2\">\n",
+  " Constructor Summary   \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  "     =\"../../java/awt/Label.html#Label()\">Label  () \n",
+  "\n",
+  " \n",
+  "          Constructs an empty label. \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  "     =\"../../java/awt/Label.html#Label(java.lang.String)\">Label  (  =\"../../java/lang/String.html\" title=\"class in java.lang\">String  text) \n",
+  "\n",
+  " \n",
+  "          Constructs a new label with the specified string of text,\n",
+  " left justified. \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  "     =\"../../java/awt/Label.html#Label(java.lang.String, int)\">Label  (  =\"../../java/lang/String.html\" title=\"class in java.lang\">String  text,\n",
+  "      int alignment) \n",
+  "\n",
+  " \n",
+  "          Constructs a new label that presents the specified string of\n",
+  " text with the specified alignment. \n",
+  " \n",
+  " \n",
+  " \n",
+  " ========== METHOD SUMMARY =========== -->\n",
+  "\n",
+  " NAME=\"method_summary\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">\n",
+  " ALIGN=\"left\" COLSPAN=\"2\"> SIZE=\"+2\">\n",
+  " Method Summary   \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  "  void   \n",
+  "     =\"../../java/awt/Label.html#addNotify()\">addNotify  () \n",
+  "\n",
+  " \n",
+  "          Creates the peer for this label. \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  "    =\"../../javax/accessibility/AccessibleContext.html\" title=\"class in javax.accessibility\">AccessibleContext    \n",
+  "     =\"../../java/awt/Label.html#getAccessibleContext()\">getAccessibleContext  () \n",
+  "\n",
+  " \n",
+  "          Gets the AccessibleContext associated with this Label. \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  "  int   \n",
+  "     =\"../../java/awt/Label.html#getAlignment()\">getAlignment  () \n",
+  "\n",
+  " \n",
+  "          Gets the current alignment of this label. \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  "    =\"../../java/lang/String.html\" title=\"class in java.lang\">String    \n",
+  "     =\"../../java/awt/Label.html#getText()\">getText  () \n",
+  "\n",
+  " \n",
+  "          Gets the text of this label. \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  " protected    =\"../../java/lang/String.html\" title=\"class in java.lang\">String    \n",
+  "     =\"../../java/awt/Label.html#paramString()\">paramString  () \n",
+  "\n",
+  " \n",
+  "          Returns a string representing the state of this  Label . \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  "  void   \n",
+  "     =\"../../java/awt/Label.html#setAlignment(int)\">setAlignment  (int alignment) \n",
+  "\n",
+  " \n",
+  "          Sets the alignment for this label to the specified alignment. \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  " ALIGN=\"right\" VALIGN=\"top\" WIDTH=\"1%\"> SIZE=\"-1\">\n",
+  "  void   \n",
+  "     =\"../../java/awt/Label.html#setText(java.lang.String)\">setText  (  =\"../../java/lang/String.html\" title=\"class in java.lang\">String  text) \n",
+  "\n",
+  " \n",
+  "          Sets the text for this label to the specified text. \n",
+  " \n",
+  " \n",
+  "  NAME=\"methods_inherited_from_class_java.awt.Component\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#EEEEFF\" CLASS=\"TableSubHeadingColor\">\n",
+  " ALIGN=\"left\"> Methods inherited from class java.awt.  =\"../../java/awt/Component.html\" title=\"class in java.awt\">Component   \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  "    =\"../../java/awt/Component.html#action(java.awt.Event, java.lang.Object)\">action ,   =\"../../java/awt/Component.html#add(java.awt.PopupMenu)\">add ,   =\"../../java/awt/Component.html#addComponentListener(java.awt.event.ComponentListener)\">addComponentListener ,   =\"../../java/awt/Component.html#addFocusListener(java.awt.event.FocusListener)\">addFocusListener ,   =\"../../java/awt/Component.html#addHierarchyBoundsListener(java.awt.event.HierarchyBoundsListener)\">addHierarchyBoundsListener ,   =\"../../java/awt/Component.html#addHierarchyListener(java.awt.event.HierarchyListener)\">addHierarchyListener ,   =\"../../java/awt/Component.html#addInputMethodListener(java.awt.event.InputMethodListener)\">addInputMethodListener ,   =\"../../java/awt/Component.html#addKeyListener(java.awt.event.KeyListener)\">addKeyListener ,   =\"../../java/awt/Component.html#addMouseListener(java.awt.event.MouseListener)\">addMouseListener ,   =\"../../java/awt/Component.html#addMouseMotionListener(java.awt.event.MouseMotionListener)\">addMouseMotionListener ,   =\"../../java/awt/Component.html#addMouseWheelListener(java.awt.event.MouseWheelListener)\">addMouseWheelListener ,   =\"../../java/awt/Component.html#addPropertyChangeListener(java.beans.PropertyChangeListener)\">addPropertyChangeListener ,   =\"../../java/awt/Component.html#addPropertyChangeListener(java.lang.String, java.beans.PropertyChangeListener)\">addPropertyChangeListener ,   =\"../../java/awt/Component.html#applyComponentOrientation(java.awt.ComponentOrientation)\">applyComponentOrientation ,   =\"../../java/awt/Component.html#areFocusTraversalKeysSet(int)\">areFocusTraversalKeysSet ,   =\"../../java/awt/Component.html#bounds()\">bounds ,   =\"../../java/awt/Component.html#checkImage(java.awt.Image, java.awt.image.ImageObserver)\">checkImage ,   =\"../../java/awt/Component.html#checkImage(java.awt.Image, int, int, java.awt.image.ImageObserver)\">checkImage ,   =\"../../java/awt/Component.html#coalesceEvents(java.awt.AWTEvent, java.awt.AWTEvent)\">coalesceEvents ,   =\"../../java/awt/Component.html#contains(int, int)\">contains ,   =\"../../java/awt/Component.html#contains(java.awt.Point)\">contains ,   =\"../../java/awt/Component.html#createImage(java.awt.image.ImageProducer)\">createImage ,   =\"../../java/awt/Component.html#createImage(int, int)\">createImage ,   =\"../../java/awt/Component.html#createVolatileImage(int, int)\">createVolatileImage ,   =\"../../java/awt/Component.html#createVolatileImage(int, int, java.awt.ImageCapabilities)\">createVolatileImage ,   =\"../../java/awt/Component.html#deliverEvent(java.awt.Event)\">deliverEvent ,   =\"../../java/awt/Component.html#disable()\">disable ,   =\"../../java/awt/Component.html#disableEvents(long)\">disableEvents ,   =\"../../java/awt/Component.html#dispatchEvent(java.awt.AWTEvent)\">dispatchEvent ,   =\"../../java/awt/Component.html#doLayout()\">doLayout ,   =\"../../java/awt/Component.html#enable()\">enable ,   =\"../../java/awt/Component.html#enable(boolean)\">enable ,   =\"../../java/awt/Component.html#enableEvents(long)\">enableEvents ,   =\"../../java/awt/Component.html#enableInputMethods(boolean)\">enableInputMethods ,   =\"../../java/awt/Component.html#firePropertyChange(java.lang.String, boolean, boolean)\">firePropertyChange ,   =\"../../java/awt/Component.html#firePropertyChange(java.lang.String, byte, byte)\">firePropertyChange ,   =\"../../java/awt/Component.html#firePropertyChange(java.lang.String, char, char)\">firePropertyChange ,   =\"../../java/awt/Component.html#firePropertyChange(java.lang.String, double, double)\">firePropertyChange ,   =\"../../java/awt/Component.html#firePropertyChange(java.lang.String, float, float)\">firePropertyChange ,   =\"../../java/awt/Component.html#firePropertyChange(java.lang.String, int, int)\">firePropertyChange ,   =\"../../java/awt/Component.html#firePropertyChange(java.lang.String, long, long)\">firePropertyChange ,   =\"../../java/awt/Component.html#firePropertyChange(java.lang.String, java.lang.Object, java.lang.Object)\">firePropertyChange ,   =\"../../java/awt/Component.html#firePropertyChange(java.lang.String, short, short)\">firePropertyChange ,   =\"../../java/awt/Component.html#getAlignmentX()\">getAlignmentX ,   =\"../../java/awt/Component.html#getAlignmentY()\">getAlignmentY ,   =\"../../java/awt/Component.html#getBackground()\">getBackground ,   =\"../../java/awt/Component.html#getBounds()\">getBounds ,   =\"../../java/awt/Component.html#getBounds(java.awt.Rectangle)\">getBounds ,   =\"../../java/awt/Component.html#getColorModel()\">getColorModel ,   =\"../../java/awt/Component.html#getComponentAt(int, int)\">getComponentAt ,   =\"../../java/awt/Component.html#getComponentAt(java.awt.Point)\">getComponentAt ,   =\"../../java/awt/Component.html#getComponentListeners()\">getComponentListeners ,   =\"../../java/awt/Component.html#getComponentOrientation()\">getComponentOrientation ,   =\"../../java/awt/Component.html#getCursor()\">getCursor ,   =\"../../java/awt/Component.html#getDropTarget()\">getDropTarget ,   =\"../../java/awt/Component.html#getFocusCycleRootAncestor()\">getFocusCycleRootAncestor ,   =\"../../java/awt/Component.html#getFocusListeners()\">getFocusListeners ,   =\"../../java/awt/Component.html#getFocusTraversalKeys(int)\">getFocusTraversalKeys ,   =\"../../java/awt/Component.html#getFocusTraversalKeysEnabled()\">getFocusTraversalKeysEnabled ,   =\"../../java/awt/Component.html#getFont()\">getFont ,   =\"../../java/awt/Component.html#getFontMetrics(java.awt.Font)\">getFontMetrics ,   =\"../../java/awt/Component.html#getForeground()\">getForeground ,   =\"../../java/awt/Component.html#getGraphics()\">getGraphics ,   =\"../../java/awt/Component.html#getGraphicsConfiguration()\">getGraphicsConfiguration ,   =\"../../java/awt/Component.html#getHeight()\">getHeight ,   =\"../../java/awt/Component.html#getHierarchyBoundsListeners()\">getHierarchyBoundsListeners ,   =\"../../java/awt/Component.html#getHierarchyListeners()\">getHierarchyListeners ,   =\"../../java/awt/Component.html#getIgnoreRepaint()\">getIgnoreRepaint ,   =\"../../java/awt/Component.html#getInputContext()\">getInputContext ,   =\"../../java/awt/Component.html#getInputMethodListeners()\">getInputMethodListeners ,   =\"../../java/awt/Component.html#getInputMethodRequests()\">getInputMethodRequests ,   =\"../../java/awt/Component.html#getKeyListeners()\">getKeyListeners ,   =\"../../java/awt/Component.html#getListeners(java.lang.Class)\">getListeners ,   =\"../../java/awt/Component.html#getLocale()\">getLocale ,   =\"../../java/awt/Component.html#getLocation()\">getLocation ,   =\"../../java/awt/Component.html#getLocation(java.awt.Point)\">getLocation ,   =\"../../java/awt/Component.html#getLocationOnScreen()\">getLocationOnScreen ,   =\"../../java/awt/Component.html#getMaximumSize()\">getMaximumSize ,   =\"../../java/awt/Component.html#getMinimumSize()\">getMinimumSize ,   =\"../../java/awt/Component.html#getMouseListeners()\">getMouseListeners ,   =\"../../java/awt/Component.html#getMouseMotionListeners()\">getMouseMotionListeners ,   =\"../../java/awt/Component.html#getMousePosition()\">getMousePosition ,   =\"../../java/awt/Component.html#getMouseWheelListeners()\">getMouseWheelListeners ,   =\"../../java/awt/Component.html#getName()\">getName ,   =\"../../java/awt/Component.html#getParent()\">getParent ,   =\"../../java/awt/Component.html#getPeer()\">getPeer ,   =\"../../java/awt/Component.html#getPreferredSize()\">getPreferredSize ,   =\"../../java/awt/Component.html#getPropertyChangeListeners()\">getPropertyChangeListeners ,   =\"../../java/awt/Component.html#getPropertyChangeListeners(java.lang.String)\">getPropertyChangeListeners ,   =\"../../java/awt/Component.html#getSize()\">getSize ,   =\"../../java/awt/Component.html#getSize(java.awt.Dimension)\">getSize ,   =\"../../java/awt/Component.html#getToolkit()\">getToolkit ,   =\"../../java/awt/Component.html#getTreeLock()\">getTreeLock ,   =\"../../java/awt/Component.html#getWidth()\">getWidth ,   =\"../../java/awt/Component.html#getX()\">getX ,   =\"../../java/awt/Component.html#getY()\">getY ,   =\"../../java/awt/Component.html#gotFocus(java.awt.Event, java.lang.Object)\">gotFocus ,   =\"../../java/awt/Component.html#handleEvent(java.awt.Event)\">handleEvent ,   =\"../../java/awt/Component.html#hasFocus()\">hasFocus ,   =\"../../java/awt/Component.html#hide()\">hide ,   =\"../../java/awt/Component.html#imageUpdate(java.awt.Image, int, int, int, int, int)\">imageUpdate ,   =\"../../java/awt/Component.html#inside(int, int)\">inside ,   =\"../../java/awt/Component.html#invalidate()\">invalidate ,   =\"../../java/awt/Component.html#isBackgroundSet()\">isBackgroundSet ,   =\"../../java/awt/Component.html#isCursorSet()\">isCursorSet ,   =\"../../java/awt/Component.html#isDisplayable()\">isDisplayable ,   =\"../../java/awt/Component.html#isDoubleBuffered()\">isDoubleBuffered ,   =\"../../java/awt/Component.html#isEnabled()\">isEnabled ,   =\"../../java/awt/Component.html#isFocusable()\">isFocusable ,   =\"../../java/awt/Component.html#isFocusCycleRoot(java.awt.Container)\">isFocusCycleRoot ,   =\"../../java/awt/Component.html#isFocusOwner()\">isFocusOwner ,   =\"../../java/awt/Component.html#isFocusTraversable()\">isFocusTraversable ,   =\"../../java/awt/Component.html#isFontSet()\">isFontSet ,   =\"../../java/awt/Component.html#isForegroundSet()\">isForegroundSet ,   =\"../../java/awt/Component.html#isLightweight()\">isLightweight ,   =\"../../java/awt/Component.html#isMaximumSizeSet()\">isMaximumSizeSet ,   =\"../../java/awt/Component.html#isMinimumSizeSet()\">isMinimumSizeSet ,   =\"../../java/awt/Component.html#isOpaque()\">isOpaque ,   =\"../../java/awt/Component.html#isPreferredSizeSet()\">isPreferredSizeSet ,   =\"../../java/awt/Component.html#isShowing()\">isShowing ,   =\"../../java/awt/Component.html#isValid()\">isValid ,   =\"../../java/awt/Component.html#isVisible()\">isVisible ,   =\"../../java/awt/Component.html#keyDown(java.awt.Event, int)\">keyDown ,   =\"../../java/awt/Component.html#keyUp(java.awt.Event, int)\">keyUp ,   =\"../../java/awt/Component.html#layout()\">layout ,   =\"../../java/awt/Component.html#list()\">list ,   =\"../../java/awt/Component.html#list(java.io.PrintStream)\">list ,   =\"../../java/awt/Component.html#list(java.io.PrintStream, int)\">list ,   =\"../../java/awt/Component.html#list(java.io.PrintWriter)\">list ,   =\"../../java/awt/Component.html#list(java.io.PrintWriter, int)\">list ,   =\"../../java/awt/Component.html#locate(int, int)\">locate ,   =\"../../java/awt/Component.html#location()\">location ,   =\"../../java/awt/Component.html#lostFocus(java.awt.Event, java.lang.Object)\">lostFocus ,   =\"../../java/awt/Component.html#minimumSize()\">minimumSize ,   =\"../../java/awt/Component.html#mouseDown(java.awt.Event, int, int)\">mouseDown ,   =\"../../java/awt/Component.html#mouseDrag(java.awt.Event, int, int)\">mouseDrag ,   =\"../../java/awt/Component.html#mouseEnter(java.awt.Event, int, int)\">mouseEnter ,   =\"../../java/awt/Component.html#mouseExit(java.awt.Event, int, int)\">mouseExit ,   =\"../../java/awt/Component.html#mouseMove(java.awt.Event, int, int)\">mouseMove ,   =\"../../java/awt/Component.html#mouseUp(java.awt.Event, int, int)\">mouseUp ,   =\"../../java/awt/Component.html#move(int, int)\">move ,   =\"../../java/awt/Component.html#nextFocus()\">nextFocus ,   =\"../../java/awt/Component.html#paint(java.awt.Graphics)\">paint ,   =\"../../java/awt/Component.html#paintAll(java.awt.Graphics)\">paintAll ,   =\"../../java/awt/Component.html#postEvent(java.awt.Event)\">postEvent ,   =\"../../java/awt/Component.html#preferredSize()\">preferredSize ,   =\"../../java/awt/Component.html#prepareImage(java.awt.Image, java.awt.image.ImageObserver)\">prepareImage ,   =\"../../java/awt/Component.html#prepareImage(java.awt.Image, int, int, java.awt.image.ImageObserver)\">prepareImage ,   =\"../../java/awt/Component.html#print(java.awt.Graphics)\">print ,   =\"../../java/awt/Component.html#printAll(java.awt.Graphics)\">printAll ,   =\"../../java/awt/Component.html#processComponentEvent(java.awt.event.ComponentEvent)\">processComponentEvent ,   =\"../../java/awt/Component.html#processEvent(java.awt.AWTEvent)\">processEvent ,   =\"../../java/awt/Component.html#processFocusEvent(java.awt.event.FocusEvent)\">processFocusEvent ,   =\"../../java/awt/Component.html#processHierarchyBoundsEvent(java.awt.event.HierarchyEvent)\">processHierarchyBoundsEvent ,   =\"../../java/awt/Component.html#processHierarchyEvent(java.awt.event.HierarchyEvent)\">processHierarchyEvent ,   =\"../../java/awt/Component.html#processInputMethodEvent(java.awt.event.InputMethodEvent)\">processInputMethodEvent ,   =\"../../java/awt/Component.html#processKeyEvent(java.awt.event.KeyEvent)\">processKeyEvent ,   =\"../../java/awt/Component.html#processMouseEvent(java.awt.event.MouseEvent)\">processMouseEvent ,   =\"../../java/awt/Component.html#processMouseMotionEvent(java.awt.event.MouseEvent)\">processMouseMotionEvent ,   =\"../../java/awt/Component.html#processMouseWheelEvent(java.awt.event.MouseWheelEvent)\">processMouseWheelEvent ,   =\"../../java/awt/Component.html#remove(java.awt.MenuComponent)\">remove ,   =\"../../java/awt/Component.html#removeComponentListener(java.awt.event.ComponentListener)\">removeComponentListener ,   =\"../../java/awt/Component.html#removeFocusListener(java.awt.event.FocusListener)\">removeFocusListener ,   =\"../../java/awt/Component.html#removeHierarchyBoundsListener(java.awt.event.HierarchyBoundsListener)\">removeHierarchyBoundsListener ,   =\"../../java/awt/Component.html#removeHierarchyListener(java.awt.event.HierarchyListener)\">removeHierarchyListener ,   =\"../../java/awt/Component.html#removeInputMethodListener(java.awt.event.InputMethodListener)\">removeInputMethodListener ,   =\"../../java/awt/Component.html#removeKeyListener(java.awt.event.KeyListener)\">removeKeyListener ,   =\"../../java/awt/Component.html#removeMouseListener(java.awt.event.MouseListener)\">removeMouseListener ,   =\"../../java/awt/Component.html#removeMouseMotionListener(java.awt.event.MouseMotionListener)\">removeMouseMotionListener ,   =\"../../java/awt/Component.html#removeMouseWheelListener(java.awt.event.MouseWheelListener)\">removeMouseWheelListener ,   =\"../../java/awt/Component.html#removeNotify()\">removeNotify ,   =\"../../java/awt/Component.html#removePropertyChangeListener(java.beans.PropertyChangeListener)\">removePropertyChangeListener ,   =\"../../java/awt/Component.html#removePropertyChangeListener(java.lang.String, java.beans.PropertyChangeListener)\">removePropertyChangeListener ,   =\"../../java/awt/Component.html#repaint()\">repaint ,   =\"../../java/awt/Component.html#repaint(int, int, int, int)\">repaint ,   =\"../../java/awt/Component.html#repaint(long)\">repaint ,   =\"../../java/awt/Component.html#repaint(long, int, int, int, int)\">repaint ,   =\"../../java/awt/Component.html#requestFocus()\">requestFocus ,   =\"../../java/awt/Component.html#requestFocus(boolean)\">requestFocus ,   =\"../../java/awt/Component.html#requestFocusInWindow()\">requestFocusInWindow ,   =\"../../java/awt/Component.html#requestFocusInWindow(boolean)\">requestFocusInWindow ,   =\"../../java/awt/Component.html#reshape(int, int, int, int)\">reshape ,   =\"../../java/awt/Component.html#resize(java.awt.Dimension)\">resize ,   =\"../../java/awt/Component.html#resize(int, int)\">resize ,   =\"../../java/awt/Component.html#setBackground(java.awt.Color)\">setBackground ,   =\"../../java/awt/Component.html#setBounds(int, int, int, int)\">setBounds ,   =\"../../java/awt/Component.html#setBounds(java.awt.Rectangle)\">setBounds ,   =\"../../java/awt/Component.html#setComponentOrientation(java.awt.ComponentOrientation)\">setComponentOrientation ,   =\"../../java/awt/Component.html#setCursor(java.awt.Cursor)\">setCursor ,   =\"../../java/awt/Component.html#setDropTarget(java.awt.dnd.DropTarget)\">setDropTarget ,   =\"../../java/awt/Component.html#setEnabled(boolean)\">setEnabled ,   =\"../../java/awt/Component.html#setFocusable(boolean)\">setFocusable ,   =\"../../java/awt/Component.html#setFocusTraversalKeys(int, java.util.Set)\">setFocusTraversalKeys ,   =\"../../java/awt/Component.html#setFocusTraversalKeysEnabled(boolean)\">setFocusTraversalKeysEnabled ,   =\"../../java/awt/Component.html#setFont(java.awt.Font)\">setFont ,   =\"../../java/awt/Component.html#setForeground(java.awt.Color)\">setForeground ,   =\"../../java/awt/Component.html#setIgnoreRepaint(boolean)\">setIgnoreRepaint ,   =\"../../java/awt/Component.html#setLocale(java.util.Locale)\">setLocale ,   =\"../../java/awt/Component.html#setLocation(int, int)\">setLocation ,   =\"../../java/awt/Component.html#setLocation(java.awt.Point)\">setLocation ,   =\"../../java/awt/Component.html#setMaximumSize(java.awt.Dimension)\">setMaximumSize ,   =\"../../java/awt/Component.html#setMinimumSize(java.awt.Dimension)\">setMinimumSize ,   =\"../../java/awt/Component.html#setName(java.lang.String)\">setName ,   =\"../../java/awt/Component.html#setPreferredSize(java.awt.Dimension)\">setPreferredSize ,   =\"../../java/awt/Component.html#setSize(java.awt.Dimension)\">setSize ,   =\"../../java/awt/Component.html#setSize(int, int)\">setSize ,   =\"../../java/awt/Component.html#setVisible(boolean)\">setVisible ,   =\"../../java/awt/Component.html#show()\">show ,   =\"../../java/awt/Component.html#show(boolean)\">show ,   =\"../../java/awt/Component.html#size()\">size ,   =\"../../java/awt/Component.html#toString()\">toString ,   =\"../../java/awt/Component.html#transferFocus()\">transferFocus ,   =\"../../java/awt/Component.html#transferFocusBackward()\">transferFocusBackward ,   =\"../../java/awt/Component.html#transferFocusUpCycle()\">transferFocusUpCycle ,   =\"../../java/awt/Component.html#update(java.awt.Graphics)\">update ,   =\"../../java/awt/Component.html#validate()\">validate   \n",
+  " \n",
+  " \n",
+  "  NAME=\"methods_inherited_from_class_java.lang.Object\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#EEEEFF\" CLASS=\"TableSubHeadingColor\">\n",
+  " ALIGN=\"left\"> Methods inherited from class java.lang.  =\"../../java/lang/Object.html\" title=\"class in java.lang\">Object   \n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"TableRowColor\">\n",
+  "    =\"../../java/lang/Object.html#clone()\">clone ,   =\"../../java/lang/Object.html#equals(java.lang.Object)\">equals ,   =\"../../java/lang/Object.html#finalize()\">finalize ,   =\"../../java/lang/Object.html#getClass()\">getClass ,   =\"../../java/lang/Object.html#hashCode()\">hashCode ,   =\"../../java/lang/Object.html#notify()\">notify ,   =\"../../java/lang/Object.html#notifyAll()\">notifyAll ,   =\"../../java/lang/Object.html#wait()\">wait ,   =\"../../java/lang/Object.html#wait(long)\">wait ,   =\"../../java/lang/Object.html#wait(long, int)\">wait   \n",
+  " \n",
+  " \n",
+  " \n",
+  " \n",
+  "\n",
+  " ============ FIELD DETAIL =========== -->\n",
+  "\n",
+  " NAME=\"field_detail\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">\n",
+  " ALIGN=\"left\" COLSPAN=\"1\"> SIZE=\"+2\">\n",
+  " Field Detail   \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"LEFT\"> -->  \n",
+  "LEFT \n",
+  " \n",
+  "public static final int  LEFT  \n",
+  " \n",
+  " Indicates that the label should be left justified.\n",
+  " \n",
+  " \n",
+  "  See Also:    =\"../../constant-values.html#java.awt.Label.LEFT\">Constant Field Values  \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"CENTER\"> -->  \n",
+  "CENTER \n",
+  " \n",
+  "public static final int  CENTER  \n",
+  " \n",
+  " Indicates that the label should be centered.\n",
+  " \n",
+  " \n",
+  "  See Also:    =\"../../constant-values.html#java.awt.Label.CENTER\">Constant Field Values  \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"RIGHT\"> -->  \n",
+  "RIGHT \n",
+  " \n",
+  "public static final int  RIGHT  \n",
+  " \n",
+  " Indicates that the label should be right justified.\n",
+  " \n",
+  " \n",
+  "  Since:  \n",
+  "   JDK1.0t. \n",
+  "  See Also:    =\"../../constant-values.html#java.awt.Label.RIGHT\">Constant Field Values  \n",
+  " \n",
+  "\n",
+  " ========= CONSTRUCTOR DETAIL ======== -->\n",
+  "\n",
+  " NAME=\"constructor_detail\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">\n",
+  " ALIGN=\"left\" COLSPAN=\"1\"> SIZE=\"+2\">\n",
+  " Constructor Detail   \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"Label()\"> -->  \n",
+  "Label \n",
+  " \n",
+  "public  Label ()\n",
+  "      throws   =\"../../java/awt/HeadlessException.html\" title=\"class in java.awt\">HeadlessException  \n",
+  " \n",
+  " Constructs an empty label.\n",
+  " The text of the label is the empty string  \"\" .\n",
+  " \n",
+  " \n",
+  "\n",
+  "  Throws: \n",
+  "    =\"../../java/awt/HeadlessException.html\" title=\"class in java.awt\">HeadlessException   - if GraphicsEnvironment.isHeadless()\n",
+  " returns true.  See Also:    =\"../../java/awt/GraphicsEnvironment.html#isHeadless()\"> GraphicsEnvironment.isHeadless()   \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"Label(java.lang.String)\"> -->  \n",
+  "Label \n",
+  " \n",
+  "public  Label (  =\"../../java/lang/String.html\" title=\"class in java.lang\">String  text)\n",
+  "      throws   =\"../../java/awt/HeadlessException.html\" title=\"class in java.awt\">HeadlessException  \n",
+  " \n",
+  " Constructs a new label with the specified string of text,\n",
+  " left justified.\n",
+  " \n",
+  " \n",
+  "  Parameters:   text  - the string that the label presents.\n",
+  "        A  null  value\n",
+  "        will be accepted without causing a NullPointerException\n",
+  "        to be thrown.\n",
+  "  Throws: \n",
+  "    =\"../../java/awt/HeadlessException.html\" title=\"class in java.awt\">HeadlessException   - if GraphicsEnvironment.isHeadless()\n",
+  " returns true.  See Also:    =\"../../java/awt/GraphicsEnvironment.html#isHeadless()\"> GraphicsEnvironment.isHeadless()   \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"Label(java.lang.String, int)\"> -->  \n",
+  "Label \n",
+  " \n",
+  "public  Label (  =\"../../java/lang/String.html\" title=\"class in java.lang\">String  text,\n",
+  "             int alignment)\n",
+  "      throws   =\"../../java/awt/HeadlessException.html\" title=\"class in java.awt\">HeadlessException  \n",
+  " \n",
+  " Constructs a new label that presents the specified string of\n",
+  " text with the specified alignment.\n",
+  " Possible values for  alignment  are  Label.LEFT ,\n",
+  "  Label.RIGHT , and  Label.CENTER .\n",
+  " \n",
+  " \n",
+  "  Parameters:   text  - the string that the label presents.\n",
+  "        A  null  value\n",
+  "        will be accepted without causing a NullPointerException\n",
+  "        to be thrown.  alignment  - the alignment value.\n",
+  "  Throws: \n",
+  "    =\"../../java/awt/HeadlessException.html\" title=\"class in java.awt\">HeadlessException   - if GraphicsEnvironment.isHeadless()\n",
+  " returns true.  See Also:    =\"../../java/awt/GraphicsEnvironment.html#isHeadless()\"> GraphicsEnvironment.isHeadless()   \n",
+  " \n",
+  "\n",
+  " ============ METHOD DETAIL ========== -->\n",
+  "\n",
+  " NAME=\"method_detail\"> --> \n",
+  " BORDER=\"1\" WIDTH=\"100%\" CELLPADDING=\"3\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " BGCOLOR=\"#CCCCFF\" CLASS=\"TableHeadingColor\">\n",
+  " ALIGN=\"left\" COLSPAN=\"1\"> SIZE=\"+2\">\n",
+  " Method Detail   \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"addNotify()\"> -->  \n",
+  "addNotify \n",
+  " \n",
+  "public void  addNotify () \n",
+  " \n",
+  " Creates the peer for this label.  The peer allows us to\n",
+  " modify the appearance of the label without changing its\n",
+  " functionality.\n",
+  " \n",
+  "  \n",
+  "  Overrides:     =\"../../java/awt/Component.html#addNotify()\">addNotify   in class    =\"../../java/awt/Component.html\" title=\"class in java.awt\">Component   \n",
+  " \n",
+  "  \n",
+  "  See Also:    =\"../../java/awt/Component.html#isDisplayable()\"> Component.isDisplayable()  , \n",
+  "  =\"../../java/awt/Component.html#removeNotify()\"> Component.removeNotify()   \n",
+  " \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"getAlignment()\"> -->  \n",
+  "getAlignment \n",
+  " \n",
+  "public int  getAlignment () \n",
+  " \n",
+  " Gets the current alignment of this label. Possible values are\n",
+  "  Label.LEFT ,  Label.RIGHT , and\n",
+  "  Label.CENTER .\n",
+  " \n",
+  "  \n",
+  " \n",
+  " \n",
+  "  \n",
+  "  See Also:    =\"../../java/awt/Label.html#setAlignment(int)\"> setAlignment(int)   \n",
+  " \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"setAlignment(int)\"> -->  \n",
+  "setAlignment \n",
+  " \n",
+  "public void  setAlignment (int alignment) \n",
+  " \n",
+  " Sets the alignment for this label to the specified alignment.\n",
+  " Possible values are  Label.LEFT ,\n",
+  "  Label.RIGHT , and  Label.CENTER .\n",
+  " \n",
+  "  \n",
+  " \n",
+  " \n",
+  "  \n",
+  "  Parameters:   alignment  - the alignment to be set.\n",
+  "  Throws: \n",
+  "    =\"../../java/lang/IllegalArgumentException.html\" title=\"class in java.lang\">IllegalArgumentException   - if an improper value for\n",
+  "                           alignment  is given.  See Also:    =\"../../java/awt/Label.html#getAlignment()\"> getAlignment()   \n",
+  " \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"getText()\"> -->  \n",
+  "getText \n",
+  " \n",
+  "public   =\"../../java/lang/String.html\" title=\"class in java.lang\">String   getText () \n",
+  " \n",
+  " Gets the text of this label.\n",
+  " \n",
+  "  \n",
+  " \n",
+  " \n",
+  "  \n",
+  "\n",
+  "  Returns:  the text of this label, or  null  if \n",
+  "             the text has been set to  null .  See Also:    =\"../../java/awt/Label.html#setText(java.lang.String)\"> setText(java.lang.String)   \n",
+  " \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"setText(java.lang.String)\"> -->  \n",
+  "setText \n",
+  " \n",
+  "public void  setText (  =\"../../java/lang/String.html\" title=\"class in java.lang\">String  text) \n",
+  " \n",
+  " Sets the text for this label to the specified text.\n",
+  " \n",
+  "  \n",
+  " \n",
+  " \n",
+  "  \n",
+  "  Parameters:   text  - the text that this label displays. If \n",
+  "              text  is  null , it is \n",
+  "             treated for display purposes like an empty \n",
+  "             string  \"\" .  See Also:    =\"../../java/awt/Label.html#getText()\"> getText()   \n",
+  " \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"paramString()\"> -->  \n",
+  "paramString \n",
+  " \n",
+  "protected   =\"../../java/lang/String.html\" title=\"class in java.lang\">String   paramString () \n",
+  " \n",
+  " Returns a string representing the state of this  Label .\n",
+  " This method is intended to be used only for debugging purposes, and the \n",
+  " content and format of the returned string may vary between \n",
+  " implementations. The returned string may be empty but may not be \n",
+  "  null .\n",
+  " \n",
+  "  \n",
+  "  Overrides:     =\"../../java/awt/Component.html#paramString()\">paramString   in class    =\"../../java/awt/Component.html\" title=\"class in java.awt\">Component   \n",
+  " \n",
+  "  \n",
+  "\n",
+  "  Returns:  the parameter string of this label \n",
+  " \n",
+  " \n",
+  " \n",
+  "\n",
+  " NAME=\"getAccessibleContext()\"> -->  \n",
+  "getAccessibleContext \n",
+  " \n",
+  "public   =\"../../javax/accessibility/AccessibleContext.html\" title=\"class in javax.accessibility\">AccessibleContext   getAccessibleContext () \n",
+  " \n",
+  " Gets the AccessibleContext associated with this Label. \n",
+  " For labels, the AccessibleContext takes the form of an \n",
+  " AccessibleAWTLabel. \n",
+  " A new AccessibleAWTLabel instance is created if necessary.\n",
+  " \n",
+  "  \n",
+  "  Specified by:     =\"../../javax/accessibility/Accessible.html#getAccessibleContext()\">getAccessibleContext   in interface    =\"../../javax/accessibility/Accessible.html\" title=\"interface in javax.accessibility\">Accessible    Overrides:     =\"../../java/awt/Component.html#getAccessibleContext()\">getAccessibleContext   in class    =\"../../java/awt/Component.html\" title=\"class in java.awt\">Component   \n",
+  " \n",
+  "  \n",
+  "\n",
+  "  Returns:  an AccessibleAWTLabel that serves as the \n",
+  "         AccessibleContext of this Label \n",
+  " \n",
+  " \n",
+  " ========= END OF CLASS DATA ========= -->\n",
+  " \n",
+  "\n",
+  "\n",
+  " ======= START OF BOTTOM NAVBAR ====== -->\n",
+  " NAME=\"navbar_bottom\"> --> \n",
+  "  =\"#skip-navbar_bottom\" title=\"Skip navigation links\"> \n",
+  " BORDER=\"0\" WIDTH=\"100%\" CELLPADDING=\"1\" CELLSPACING=\"0\" SUMMARY=\"\">\n",
+  " \n",
+  " COLSPAN=2 BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">\n",
+  " NAME=\"navbar_bottom_firstrow\"> --> \n",
+  " BORDER=\"0\" CELLPADDING=\"0\" CELLSPACING=\"3\" SUMMARY=\"\">\n",
+  "   ALIGN=\"center\" VALIGN=\"top\">\n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"../../overview-summary.html\"> CLASS=\"NavBarFont1\"> Overview     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"package-summary.html\"> CLASS=\"NavBarFont1\"> Package     \n",
+  "   BGCOLOR=\"#FFFFFF\" CLASS=\"NavBarCell1Rev\">   CLASS=\"NavBarFont1Rev\"> Class    \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"class-use/Label.html\"> CLASS=\"NavBarFont1\"> Use     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"package-tree.html\"> CLASS=\"NavBarFont1\"> Tree     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"../../deprecated-list.html\"> CLASS=\"NavBarFont1\"> Deprecated     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"../../index-files/index-1.html\"> CLASS=\"NavBarFont1\"> Index     \n",
+  "   BGCOLOR=\"#EEEEFF\" CLASS=\"NavBarCell1\">      =\"../../help-doc.html\"> CLASS=\"NavBarFont1\"> Help     \n",
+  "   \n",
+  " \n",
+  " \n",
+  " ALIGN=\"right\" VALIGN=\"top\" ROWSPAN=3> \n",
+  " Java  size=-2>TM   2 Platform Standard Ed. 5.0_13  \n",
+  " \n",
+  " \n",
+  "\n",
+  " \n",
+  " BGCOLOR=\"white\" CLASS=\"NavBarCell2\"> SIZE=\"-2\">\n",
+  "   =\"../../java/awt/KeyEventPostProcessor.html\" title=\"interface in java.awt\"> PREV CLASS   \n",
+  "   =\"../../java/awt/Label.AccessibleAWTLabel.html\" title=\"class in java.awt\"> NEXT CLASS    \n",
+  " BGCOLOR=\"white\" CLASS=\"NavBarCell2\"> SIZE=\"-2\">\n",
+  "    =\"../../index.html?java/awt/Label.html\" target=\"_top\"> FRAMES     \n",
+  "   =\"Label.html\" target=\"_top\"> NO FRAMES     \n",
+  "  type=\"text/javascript\">\n",
+  "   ",
+  "  if(window==top) {\n",
+  "    document.writeln('  =\"../../allclasses-noframe.html\"> All Classes  ');\n",
+  "  }\n",
+  "  //-->\n",
+  " \n",
+  " \n",
+  "    =\"../../allclasses-noframe.html\"> All Classes  \n",
+  " \n",
+  "\n",
+  "\n",
+  "  \n",
+  " \n",
+  " \n",
+  " VALIGN=\"top\" CLASS=\"NavBarCell3\"> SIZE=\"-2\">\n",
+  "  SUMMARY:   =\"#nested_class_summary\">NESTED  |   =\"#field_summary\">FIELD  |   =\"#constructor_summary\">CONSTR  |   =\"#method_summary\">METHOD   \n",
+  " VALIGN=\"top\" CLASS=\"NavBarCell3\"> SIZE=\"-2\">\n",
+  "DETAIL:   =\"#field_detail\">FIELD  |   =\"#constructor_detail\">CONSTR  |   =\"#method_detail\">METHOD   \n",
+  " \n",
+  " \n",
+  " NAME=\"skip-navbar_bottom\"> \n",
+  " ======== END OF BOTTOM NAVBAR ======= -->\n",
+  "\n",
+  " \n",
+  " size=\"-1\">  =\"http://java.sun.com/cgi-bin/bugreport.cgi\">Submit a bug or feature  For further API reference and developer documentation, see   =\"../../../relnotes/devdocs-vs-specs.html\">Java 2 SDK SE Developer Documentation . That documentation contains more detailed, developer-targeted descriptions, with conceptual overviews, definitions of terms, workarounds, and working code examples.  Copyright 2004 Sun Microsystems, Inc. All rights reserved. Use is subject to   =\"../../../relnotes/license.html\">license terms . Also see the   =\"http://java.sun.com/docs/redist.html\">documentation redistribution policy . \n",
+  " \n",
+  " \n"
+]

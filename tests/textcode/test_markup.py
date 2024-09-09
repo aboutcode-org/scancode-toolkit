@@ -8,34 +8,49 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import json
 import os
 
-from commoncode.testcase import FileBasedTesting
+from pathlib import Path
 
-from textcode import markup
 import pytest
 
+from textcode import markup
 
-class TestMarkup(FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+from scancode_config import SCANCODE_REGEN_TEST_FIXTURES
 
-    def test_jsp_is_markup(self):
-        test_file = self.get_test_loc(u'markup/java.jsp')
-        assert markup.is_markup(test_file)
 
-    def test_jsp_demarkup(self, regen=True):
-        test_file = self.get_test_loc(u'markup/java.jsp')
-        result = list(markup.demarkup(test_file))
-        expected_loc = self.get_test_loc(u'markup/java.jsp-expected.json')
+test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-        if regen:
-            with open(expected_loc, 'w') as out:
-                out.write(json.dumps(result, indent=2))
+markup_test_dir = Path(test_data_dir) / "markup"
+markup_expected_dir = Path(test_data_dir) / "markup_expected"
 
-        with open(expected_loc) as inp:
-            expected = json.load(inp)
-        assert result == expected
+
+def test_jsp_is_markup():
+    test_file = markup_test_dir / 'java.jsp'
+    assert markup.is_markup(str(test_file))
+
+
+@pytest.mark.parametrize(
+    "test_file",
+    list(markup_test_dir.glob("*")),
+)
+def test_demarkup_files(test_file, regen=SCANCODE_REGEN_TEST_FIXTURES):
+    result = list(markup.demarkup(test_file))
+    expected_loc = markup_expected_dir / test_file.name
+
+
+    import json
+    if regen:
+        expected_loc.write_text(json.dumps(result, indent=2))
+
+    expected = expected_loc.read_text()
+
+    # if regen:
+    #     expected_loc.write_text(result)
+    #
+    # expected = expected_loc.read_text()
+
+    assert json.dumps(result, indent=2) == expected
 
 
 @pytest.mark.parametrize(
@@ -53,6 +68,10 @@ class TestMarkup(FileBasedTesting):
         (
             "<p>SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1</p>",
             " SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1 ",
+        ),
+        (
+            "Copyright (C) 2009 Eric Paris <Red Hat Inc>",
+            "Copyright (C) 2009 Eric Paris <Red Hat Inc>",
         )
     ],
 )

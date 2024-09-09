@@ -1,236 +1,249 @@
-
-
-
-Historical OpenOffice Licenses 
-
-
-
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-30193653-1']);
-    _gaq.push(['_setDomainName', 'openoffice.org']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  
-
- 
-
-/*!
- * Entourage 1.1.2 - Automatic Download Tracking for Asynchronous Google Analytics
- *
- * Copyright (c) 2011 by Tian Valdemar Davis (http://techoctave.com/c7)
- * Licensed under the MIT (http://en.wikipedia.org/wiki/MIT_License) license.
- *
- * Learn More: http://techoctave.com/c7/posts/58-entourage-js-automatic-download-tracking-for-asynchronous-google-analytics
- * 
- * 2012-04-24 Mod by robweir to whitelist additional file extensions as used in AOO project
- * 2012-04-25 Mod by robweir to remove trailing "/download" from SourceForge file names, a hack we can hopefully remove someday
- */
-
-/*jshint strict:false */
-
-(function() {
-var entourage = new (function() {
-	var version = "1.1.2";
-	var whitelist = /\.pdf$|\.zip$|\.gz$|\.gz\/download$|\.bz2$|\.bz2\/download$|\.od*|\.doc*|\.xls*|\.ppt*|\.exe$|\.exe\/download$|\.dmg$|\.dmg\/download$|\.mov$|\.avi$|\.mp3$/i;
-	
-	//Get true FileName from link pathname
-	var getFileName = function(pathname) {
-		//Remove the anchor at the end (if one exists)
-		pathname = pathname.substring(0, (pathname.indexOf("#") === -1) ? pathname.length : pathname.indexOf("#"));
-
-		//Removes the query after the file pathname (if one exists)
-		pathname = pathname.substring(0, (pathname.indexOf("?") === -1) ? pathname.length : pathname.indexOf("?"));
-      
-        //Remove trailing /download
-		if (/\/download$/.test(pathname))
-			pathname = pathname.substring(0, pathname.length-"/download".length);
-
-		//Removes everything before the last slash in the path
-		pathname = pathname.substring(pathname.lastIndexOf("/") + 1, pathname.length);
-
-		return pathname;
-	};
-
-	var autograph = function() {
-		var fileName, associate;
-
-		//Get the file name
-		fileName = getFileName(this.pathname); //The link object is now available in "this"
-
-		//Add file to the Google Analytics Queue
-		associate = '/download/' + fileName;
-		
-		//Track download using Asynchronous Google Analytics
-		_gaq.push(['_trackPageview', associate]);
-    };
-
-	var initialize = function() {
-		var links = document.links;
-		
-		for (var i = 0, l = links.length; i < l; i++) {
-			//Compare the fileType to the whitelist
-			var match = links[i].pathname.match(whitelist);
-			
-			//If the link is for a file download . . .
-			if (typeof match !== "undefined" && match !== null) {
-				//Call Entourage whenever the link is clicked
-				links[i].onclick = autograph;
-			}
-		}
-    };
-
-	return {
-		version: version,
-		initialize: initialize
-	};
-})(); //Entourage.js
-
-//Add entourage to the global namespace
-window.entourage = entourage;
-
-//Execute entourage onload - ensuring links are present in the DOM
-window.onload = entourage.initialize;
-})();
-
-
-
-  
-  
-  	English:
-  	
-  	Asturianu (ast)
-  	Čeština (cs)
-  	Dansk (da)
-  	Deutsch (de)
-  	
-  	English (en)
-  	Español (es)
-  	Euskara (eu)
-  	Suomi (fi)
-  	Français (fr)
-  	Gàidhlig (gd)
-  	Galego (gl)
-  	Italiano (it)
-  	Lietuvių (lt)
-  	Magyar (hu)
-  	Nederlands (nl)
-  	Norsk [Bokmål] (nb)
-  	Norsk [Nynorsk] (no)
-	Polski (pl)
-  	Português [do Brasil] (pt-br)
-  	Português [Europeu] (pt)
-  	slovenčina (sk)
-  	slovenščina (sl)
-  	Svenska (sv)
-  	Türkçe (tr)
-  	Tiếng Việt (vi)
-  	Ελληνικά (el)
-  	български език (bg)
-  	Русский (ru)
-  	Cрпски [ћирилицом] (sr)
- 	
-  	עברית (he)
-  	हिन्दी (hi)
-  	ភាសាខ្មែរ (km)
-  	தமிழ் (ta)
-  	ภาษาไทย (th)
-  	简体中文 (zh-cn)
-  	正體中文 (zh-tw)
-  	日本語 (ja)
-  	한국어 (ko)
-	
-	
-	  var lang = "en";
-	  var dropdown = document.getElementById('selectlanguage');
-	  var options = dropdown.options;
-	  for( var i = 0; i < dropdown.options.length; i++ ) {
-	    if( dropdown.options[ i ].value == lang ) {
-	      dropdown.selectedIndex = i;
-	      break;
-	    }
-	  }
-	
-  
-  
-            
-      
-	
-	  
-	    
-	    
-	  
-	  
-	     
-	    
-	    
-	  
-	
-      
-    
-    The Free and Open Productivity Suite
-  
-  New: Apache OpenOffice 4.1.1 released!
-
-  
-    
-Product
-Download
-Support
-Blog
-Extend
-Develop
-Focus Areas
-Native Language
-
-
-    home » licenses
-  
-  
-  
-  
-  
-    
-    Historical OpenOffice Licenses 
-    The OpenOffice product has been published under various licenses since it was
-first made available as open source in 2000. LGPLv3
-was used for OpenOffice.org 3.0 beta through OpenOffice 3.4 beta.  Currently 
-Apache License 2.0 is used, 
-since Apache OpenOffice 3.4.0.
-A more detailed review of the history and pointers to current and historical 
-licenses for OpenOffice code and documentation can be found here.
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        Copyright & License |
-        Privacy |
-        Website Feedback |
-        Contact Us |
-        Donate |
-        Thanks
-      
-      
-        Apache, the Apache feather logo, and OpenOffice are trademarks of The Apache Software Foundation.
-        OpenOffice.org and the seagull logo are registered trademarks of The Apache Software Foundation.
-        Other names appearing on the site may be trademarks of their respective owners.
-      
-    
-  
-
-
-
+[
+  " html>\n",
+  "\n",
+  " \n",
+  " \n",
+  "  =\"/css/ooo.css\" rel=\"stylesheet\" type=\"text/css\">\n",
+  "\n",
+  " Historical OpenOffice Licenses  \n",
+  " http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n",
+  "\n",
+  "\n",
+  " type=\"text/javascript\">\n",
+  "    var _gaq = _gaq || [];\n",
+  "    _gaq.push(['_setAccount', 'UA-30193653-1']);\n",
+  "    _gaq.push(['_setDomainName', 'openoffice.org']);\n",
+  "    _gaq.push(['_trackPageview']);\n",
+  "\n",
+  "    (function() {\n",
+  "        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\n",
+  "        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n",
+  "        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\n",
+  "    })();\n",
+  " \n",
+  "  \n",
+  "\n",
+  " \n",
+  " type=\"text/javascript\">\n",
+  "/*!\n",
+  " * Entourage 1.1.2 - Automatic Download Tracking for Asynchronous Google Analytics\n",
+  " *\n",
+  " * Copyright (c) 2011 by Tian Valdemar Davis (http://techoctave.com/c7)\n",
+  " * Licensed under the MIT (http://en.wikipedia.org/wiki/MIT_License) license.\n",
+  " *\n",
+  " * Learn More: http://techoctave.com/c7/posts/58-entourage-js-automatic-download-tracking-for-asynchronous-google-analytics\n",
+  " * \n",
+  " * 2012-04-24 Mod by robweir to whitelist additional file extensions as used in AOO project\n",
+  " * 2012-04-25 Mod by robweir to remove trailing \"/download\" from SourceForge file names, a hack we can hopefully remove someday\n",
+  " */\n",
+  "\n",
+  "/*jshint strict:false */\n",
+  "\n",
+  "(function() {\n",
+  "var entourage = new (function() {\n",
+  "\tvar version = \"1.1.2\";\n",
+  "\tvar whitelist = /\\.pdf$|\\.zip$|\\.gz$|\\.gz\\/download$|\\.bz2$|\\.bz2\\/download$|\\.od*|\\.doc*|\\.xls*|\\.ppt*|\\.exe$|\\.exe\\/download$|\\.dmg$|\\.dmg\\/download$|\\.mov$|\\.avi$|\\.mp3$/i;\n",
+  "\t\n",
+  "\t//Get true FileName from link pathname\n",
+  "\tvar getFileName = function(pathname) {\n",
+  "\t\t//Remove the anchor at the end (if one exists)\n",
+  "\t\tpathname = pathname.substring(0, (pathname.indexOf(\"#\") === -1) ? pathname.length : pathname.indexOf(\"#\"));\n",
+  "\n",
+  "\t\t//Removes the query after the file pathname (if one exists)\n",
+  "\t\tpathname = pathname.substring(0, (pathname.indexOf(\"?\") === -1) ? pathname.length : pathname.indexOf(\"?\"));\n",
+  "      \n",
+  "        //Remove trailing /download\n",
+  "\t\tif (/\\/download$/.test(pathname))\n",
+  "\t\t\tpathname = pathname.substring(0, pathname.length-\"/download\".length);\n",
+  "\n",
+  "\t\t//Removes everything before the last slash in the path\n",
+  "\t\tpathname = pathname.substring(pathname.lastIndexOf(\"/\") + 1, pathname.length);\n",
+  "\n",
+  "\t\treturn pathname;\n",
+  "\t};\n",
+  "\n",
+  "\tvar autograph = function() {\n",
+  "\t\tvar fileName, associate;\n",
+  "\n",
+  "\t\t//Get the file name\n",
+  "\t\tfileName = getFileName(this.pathname); //The link object is now available in \"this\"\n",
+  "\n",
+  "\t\t//Add file to the Google Analytics Queue\n",
+  "\t\tassociate = '/download/' + fileName;\n",
+  "\t\t\n",
+  "\t\t//Track download using Asynchronous Google Analytics\n",
+  "\t\t_gaq.push(['_trackPageview', associate]);\n",
+  "    };\n",
+  "\n",
+  "\tvar initialize = function() {\n",
+  "\t\tvar links = document.links;\n",
+  "\t\t\n",
+  "\t\tfor (var i = 0, l = links.length; i < l; i++) {\n",
+  "\t\t\t//Compare the fileType to the whitelist\n",
+  "\t\t\tvar match = links[i].pathname.match(whitelist);\n",
+  "\t\t\t\n",
+  "\t\t\t//If the link is for a file download . . .\n",
+  "\t\t\tif (typeof match !== \"undefined\" && match !== null) {\n",
+  "\t\t\t\t//Call Entourage whenever the link is clicked\n",
+  "\t\t\t\tlinks[i].onclick = autograph;\n",
+  "\t\t\t}\n",
+  "\t\t}\n",
+  "    };\n",
+  "\n",
+  "\treturn {\n",
+  "\t\tversion: version,\n",
+  "\t\tinitialize: initialize\n",
+  "\t};\n",
+  "})(); //Entourage.js\n",
+  "\n",
+  "//Add entourage to the global namespace\n",
+  "window.entourage = entourage;\n",
+  "\n",
+  "//Execute entourage onload - ensuring links are present in the DOM\n",
+  "window.onload = entourage.initialize;\n",
+  "})();\n",
+  " \n",
+  " \n",
+  " \n",
+  "   id=\"bannera\">\n",
+  "   id=\"languagesdiv\">\n",
+  "  \tEnglish:\n",
+  "  \t id=\"selectlanguage\" onchange=\"javascript:location. =location.protocol+'//'+location.host+'/'+this.value;\">\n",
+  "  \t Asturian --> value=\"ast\">Asturianu (ast) \n",
+  "  \t Czech --> value=\"cs\">\u010ce\u0161tina (cs) \n",
+  "  \t Danish --> value=\"da\">Dansk (da) \n",
+  "  \t German --> value=\"de\">Deutsch (de) \n",
+  "  \t English [British] value=\"en-gb\">English [British] (en-gb)  -->\n",
+  "  \t English [US] --> value=\"?redirect=soft\" selected=\"selected\">English (en) \n",
+  "  \t Spanish --> value=\"es\">Espa\u00f1ol (es) \n",
+  "  \t Basque --> value=\"eu\">Euskara (eu) \n",
+  "  \t Finnish --> value=\"fi\">Suomi (fi) \n",
+  "  \t French --> value=\"fr\">Fran\u00e7ais (fr) \n",
+  "  \t Scottish --> value=\"gd\">G\u00e0idhlig (gd) \n",
+  "  \t Galician --> value=\"gl\">Galego (gl) \n",
+  "  \t Italian --> value=\"it\">Italiano (it) \n",
+  "  \t Lithuanian --> value=\"lt\">Lietuvi\u0173 (lt) \n",
+  "  \t Hungarian --> value=\"hu\">Magyar (hu) \n",
+  "  \t Dutch --> value=\"nl\">Nederlands (nl) \n",
+  "  \t Norwegian [Bokm\u00e5l] --> value=\"no\">Norsk [Bokm\u00e5l] (nb) \n",
+  "  \t Norwegian [Nynorsk] --> value=\"no\">Norsk [Nynorsk] (no) \n",
+  "\t Polish --> value=\"pl\">Polski (pl) \n",
+  "  \t Portuguese [Brazilian] --> value=\"pt-br\">Portugu\u00eas [do Brasil] (pt-br) \n",
+  "  \t Portuguese [European] --> value=\"pt\">Portugu\u00eas [Europeu] (pt) \n",
+  "  \t Slovak --> value=\"sk\">sloven\u010dina (sk) \n",
+  "  \t Slovenian --> value=\"sl\">sloven\u0161\u010dina (sl) \n",
+  "  \t Swidish --> value=\"sv\">Svenska (sv) \n",
+  "  \t Turkish  --> value=\"tr\">T\u00fcrk\u00e7e (tr) \n",
+  "  \t Vietnamese --> value=\"vi\">Ti\u1ebfng Vi\u1ec7t (vi) \n",
+  "  \t Greek --> value=\"el\">\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac (el) \n",
+  "  \t Bulgarian --> value=\"bg\">\u0431\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438 \u0435\u0437\u0438\u043a (bg) \n",
+  "  \t Russian --> value=\"ru\">\u0420\u0443\u0441\u0441\u043a\u0438\u0439 (ru) \n",
+  "  \t Serbian [Cyrillic] --> value=\"sr\">C\u0440\u043f\u0441\u043a\u0438 [\u045b\u0438\u0440\u0438\u043b\u0438\u0446\u043e\u043c] (sr) \n",
+  " \t Arabic  value=\"ar\">\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (ar)  -->\n",
+  "  \t Hebrew --> value=\"he\">\u05e2\u05d1\u05e8\u05d9\u05ea (he) \n",
+  "  \t Hindi --> value=\"hi\">\u0939\u093f\u0928\u094d\u0926\u0940 (hi) \n",
+  "  \t Khmer --> value=\"km\">\u1797\u17b6\u179f\u17b6\u1781\u17d2\u1798\u17c2\u179a (km) \n",
+  "  \t Tamil --> value=\"ta\">\u0ba4\u0bae\u0bbf\u0bb4\u0bcd (ta) \n",
+  "  \t Thai --> value=\"th\">\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22 (th) \n",
+  "  \t Chinese [simplified] --> value=\"zh-cn\">\u7b80\u4f53\u4e2d\u6587 (zh-cn) \n",
+  "  \t Chinese [traditional] --> value=\"zh-tw\">\u6b63\u9ad4\u4e2d\u6587 (zh-tw) \n",
+  "  \t Japanese --> value=\"ja\">\u65e5\u672c\u8a9e (ja) \n",
+  "  \t Korean --> value=\"ko\">\ud55c\uad6d\uc5b4 (ko) \n",
+  "\t \n",
+  "\t \n",
+  "\t  var lang = \"en\";\n",
+  "\t  var dropdown = document.getElementById('selectlanguage');\n",
+  "\t  var options = dropdown.options;\n",
+  "\t  for( var i = 0; i < dropdown.options.length; i++ ) {\n",
+  "\t    if( dropdown.options[ i ].value == lang ) {\n",
+  "\t      dropdown.selectedIndex = i;\n",
+  "\t      break;\n",
+  "\t    }\n",
+  "\t  }\n",
+  "\t \n",
+  "   \n",
+  "   id=\"bannerleft\"> title=\"Apache OpenOffice\"  =\"/\"> id=\"ooo-logo\" alt=\"Apache OpenOffice\" src=\"/images/AOO_logos/100MillAOO100px.png   \n",
+  "     id=\"bannerright\">        \n",
+  "       id=\"searchdiv\">\n",
+  "\t id=\"cse-search-box-header\" action=\"http://www.google.com/search\" method=\"get\">\n",
+  "\t   \n",
+  "\t     type=\"hidden\" name=\"domains\" value=\"www.openoffice.org \n",
+  "\t     type=\"hidden\" name=\"sitesearch\" value=\"www.openoffice.org \n",
+  "\t   \n",
+  "\t   class=\"topsrchbox\">\n",
+  "\t     name=\"resultsPerPage\" value=\"40\" type=\"hidden  \n",
+  "\t     name=\"q\" id=\"query\" type=\"text\" title=\"search query \n",
+  "\t     name=\"Button\" value=\"search\" type=\"submit\" class=\"topsrchbutton \n",
+  "\t   \n",
+  "\t \n",
+  "       \n",
+  "     \n",
+  "     id=\"bannercenter\">  The Free and Open Productivity Suite \n",
+  "   \n",
+  "   id=\"announce\">  =\"https://cwiki.apache.org/confluence/display/OOOUSERS/AOO+4.1.1+Release+Notes\" title=\"New: Apache OpenOffice 4.1.1 released!\">New: Apache OpenOffice 4.1.1 released!  \n",
+  "\n",
+  "   id=\"topbara\">\n",
+  "     id=\"topnava\"> \n",
+  "   =\"/product/index.html\" title=\"Apache OpenOffice product description\">Product  \n",
+  "   =\"/download/index.html\" title=\"Download OpenOffice\">Download  \n",
+  "   =\"/support/index.html\" title=\"Find Support for OpenOffice\">Support  \n",
+  "   =\"http://blogs.apache.org/ooo/\" title=\"Apache OpenOffice Blog\">Blog  \n",
+  "   =\"/extensions/index.html\" title=\"Extensions and Templates for OpenOffice\">Extend  \n",
+  "   =\"http://openoffice.apache.org/get-involved.html\" title=\"Get involved in Apache OpenOffice\">Develop  \n",
+  "   =\"/projects/accepted.html\" title=\"Apache OpenOffice development focus areas\">Focus Areas  \n",
+  "   =\"/projects/native-lang.html\" title=\"Apache OpenOffice in your Native Language\">Native Language  \n",
+  "  \n",
+  "\n",
+  "     id=\"breadcrumbsa\">  =\"/\">home      =\"/licenses/\">licenses  \n",
+  "   \n",
+  "   id=\"clear\"> \n",
+  "  \n",
+  "  \n",
+  "   id=\"content\">\n",
+  "    \n",
+  "     class=\"title\">Historical OpenOffice Licenses  \n",
+  "     The OpenOffice product has been published under various licenses since it was\n",
+  "first made available as open source in 2000.   =\"http://www.gnu.org/licenses/lgpl.html\">LGPLv3 \n",
+  "was used for OpenOffice.org 3.0 beta through OpenOffice 3.4 beta.  Currently \n",
+  "  =\"http://www.apache.org/licenses/LICENSE-2.0.html\">Apache License 2.0  is used, \n",
+  "since Apache OpenOffice 3.4.0. \n",
+  " A more detailed review of the history and pointers to current and historical \n",
+  "licenses for OpenOffice code and documentation can be found   =\"http://www.openoffice.org/license.html\">here . \n",
+  "   \n",
+  "   id=\"footera\">\n",
+  "     Add a banner logo and link to announce an event and to show it in the footer on the left.\n",
+  "     id=\"asfbanner\">\n",
+  "       \n",
+  "          =\"http://apachecon.com/\">\n",
+  "           src=\"http://www.openoffice.org/images/2014-eu-234x60.png\" alt=\"Logo ApacheCon Europe 2014\"  \n",
+  "         \n",
+  "       \n",
+  "     \n",
+  "    -->\n",
+  "     id=\"poweredbya\">\n",
+  "       \n",
+  "          =\"http://www.apache.org/\">\n",
+  "           src=\"/images/feather-small.gif\" alt=\"Apache Feather\"  \n",
+  "         \n",
+  "       \n",
+  "     \n",
+  "     id=\"copyrighta\">\n",
+  "       style=\"text-align:center;\">\n",
+  "          =\"/license.html\">Copyright   License  |\n",
+  "          =\"/privacy.html\">Privacy  |\n",
+  "          =\"http://survey.openoffice.org/index.php/833861/lang-en\">Website Feedback  |\n",
+  "          =\"/contact_us.html\">Contact Us  |\n",
+  "          =\"/donations.html\">Donate  |\n",
+  "          =\"http://www.apache.org/foundation/thanks.html\">Thanks \n",
+  "       \n",
+  "       \n",
+  "        Apache, the Apache feather logo, and OpenOffice are trademarks of The Apache Software Foundation.\n",
+  "        OpenOffice.org and the seagull logo are registered trademarks of The Apache Software Foundation.\n",
+  "        Other names appearing on the site may be trademarks of their respective owners.\n",
+  "       \n",
+  "     \n",
+  "   \n",
+  "\n",
+  " \n",
+  " \n"
+]

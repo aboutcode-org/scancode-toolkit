@@ -1,516 +1,529 @@
-
-
-
-
-Public Documentation License
-
-
-
-
-
-body, p, h1, h2, h3, h4, h5, div, li, td, th, dd, input, select, span, font	{
-	font-family:	Times, Times New Roman; 11pt; color: #000;
-	}
-	h1 {text-align: center;
-	}
-	h2 {text-align: center;
-	}
-	h3 {text-align: left; text-indent: 1em;
-	}
-	h4 {text-align:left; text-indent: 2em;
-	}
-	h5 {text-align:left; text-indent: 4em;
-	}
-	p {text-indent:  3em;
-	}
-	.subp {text-indent: 4em;
-	}
-	
-
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-30193653-1']);
-    _gaq.push(['_setDomainName', 'openoffice.org']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  
-
- 
-
-/*!
- * Entourage 1.1.2 - Automatic Download Tracking for Asynchronous Google Analytics
- *
- * Copyright (c) 2011 by Tian Valdemar Davis (http://techoctave.com/c7)
- * Licensed under the MIT (http://en.wikipedia.org/wiki/MIT_License) license.
- *
- * Learn More: http://techoctave.com/c7/posts/58-entourage-js-automatic-download-tracking-for-asynchronous-google-analytics
- * 
- * 2012-04-24 Mod by robweir to whitelist additional file extensions as used in AOO project
- * 2012-04-25 Mod by robweir to remove trailing "/download" from SourceForge file names, a hack we can hopefully remove someday
- */
-
-/*jshint strict:false */
-
-(function() {
-var entourage = new (function() {
-	var version = "1.1.2";
-	var whitelist = /\.pdf$|\.zip$|\.gz$|\.gz\/download$|\.bz2$|\.bz2\/download$|\.od*|\.doc*|\.xls*|\.ppt*|\.exe$|\.exe\/download$|\.dmg$|\.dmg\/download$|\.mov$|\.avi$|\.mp3$/i;
-	
-	//Get true FileName from link pathname
-	var getFileName = function(pathname) {
-		//Remove the anchor at the end (if one exists)
-		pathname = pathname.substring(0, (pathname.indexOf("#") === -1) ? pathname.length : pathname.indexOf("#"));
-
-		//Removes the query after the file pathname (if one exists)
-		pathname = pathname.substring(0, (pathname.indexOf("?") === -1) ? pathname.length : pathname.indexOf("?"));
-      
-        //Remove trailing /download
-		if (/\/download$/.test(pathname))
-			pathname = pathname.substring(0, pathname.length-"/download".length);
-
-		//Removes everything before the last slash in the path
-		pathname = pathname.substring(pathname.lastIndexOf("/") + 1, pathname.length);
-
-		return pathname;
-	};
-
-	var autograph = function() {
-		var fileName, associate;
-
-		//Get the file name
-		fileName = getFileName(this.pathname); //The link object is now available in "this"
-
-		//Add file to the Google Analytics Queue
-		associate = '/download/' + fileName;
-		
-		//Track download using Asynchronous Google Analytics
-		_gaq.push(['_trackPageview', associate]);
-    };
-
-	var initialize = function() {
-		var links = document.links;
-		
-		for (var i = 0, l = links.length; i < l; i++) {
-			//Compare the fileType to the whitelist
-			var match = links[i].pathname.match(whitelist);
-			
-			//If the link is for a file download . . .
-			if (typeof match !== "undefined" && match !== null) {
-				//Call Entourage whenever the link is clicked
-				links[i].onclick = autograph;
-			}
-		}
-    };
-
-	return {
-		version: version,
-		initialize: initialize
-	};
-})(); //Entourage.js
-
-//Add entourage to the global namespace
-window.entourage = entourage;
-
-//Execute entourage onload - ensuring links are present in the DOM
-window.onload = entourage.initialize;
-})();
-
-
-
-  
-  
-  	English:
-  	
-  	Asturianu (ast)
-  	ÄŒeÅ¡tina (cs)
-  	Dansk (da)
-  	Deutsch (de)
-  	
-  	English (en)
-  	EspaÃ±ol (es)
-  	Euskara (eu)
-  	Suomi (fi)
-  	FranÃ§ais (fr)
-  	GÃ idhlig (gd)
-  	Galego (gl)
-  	Italiano (it)
-  	LietuviÅ³ (lt)
-  	Magyar (hu)
-  	Nederlands (nl)
-  	Norsk [BokmÃ¥l] (nb)
-  	Norsk [Nynorsk] (no)
-	Polski (pl)
-  	PortuguÃªs [do Brasil] (pt-br)
-  	PortuguÃªs [Europeu] (pt)
-  	slovenÄ�ina (sk)
-  	slovenÅ¡Ä�ina (sl)
-  	Svenska (sv)
-  	TÃ¼rkÃ§e (tr)
-  	Tiáº¿ng Viá»‡t (vi)
-  	Î•Î»Î»Î·Î½Î¹ÎºÎ¬ (el)
-  	Ð±ÑŠÐ»Ð³Ð°Ñ€Ñ�ÐºÐ¸ ÐµÐ·Ð¸Ðº (bg)
-  	Ð ÑƒÑ�Ñ�ÐºÐ¸Ð¹ (ru)
-  	CÑ€Ð¿Ñ�ÐºÐ¸ [Ñ›Ð¸Ñ€Ð¸Ð»Ð¸Ñ†Ð¾Ð¼] (sr)
- 	
-  	×¢×‘×¨×™×ª (he)
-  	à¤¹à¤¿à¤¨à¥�à¤¦à¥€ (hi)
-  	áž—áž¶ážŸáž¶áž�áŸ’áž˜áŸ‚ážš (km)
-  	à®¤à®®à®¿à®´à¯� (ta)
-  	à¸ à¸²à¸©à¸²à¹„à¸—à¸¢ (th)
-  	ç®€ä½“ä¸­æ–‡ (zh-cn)
-  	æ­£é«”ä¸­æ–‡ (zh-tw)
-  	æ—¥æœ¬èªž (ja)
-  	í•œêµ­ì–´ (ko)
-	
-	
-	  var lang = "en";
-	  var dropdown = document.getElementById('selectlanguage');
-	  var options = dropdown.options;
-	  for( var i = 0; i < dropdown.options.length; i++ ) {
-	    if( dropdown.options[ i ].value == lang ) {
-	      dropdown.selectedIndex = i;
-	      break;
-	    }
-	  }
-	
-  
-  
-            
-      
-	
-	  
-	    
-	    
-	  
-	  
-	     
-	    
-	    
-	  
-	
-      
-    
-    The Free and Open Productivity Suite
-  
-  New: Apache OpenOffice 4.1.1 released!
-
-  
-    
-Product
-Download
-Support
-Blog
-Extend
-Develop
-Focus Areas
-Native Language
-
-
-    home » licenses
-  
-  
-  
-  
-  
-    
-    
-    
-PUBLIC DOCUMENTATION LICENSE
-Version 1.0 
-
-1.0 DEFINITIONS.
-
-1.1. "Commercial Use" means distribution or otherwise 
-  making the Documentation available to a third party. 
-
-1.2. "Contributor" means a person or entity who 
-  creates or contributes to the creation of Modifications. 
-
-1.3. "Documentation" means the Original Documentation 
-  or Modifications or the combination of the Original Documentation and Modifications, 
-  in each case including portions thereof.
-
-1.4. "Electronic Distribution Mechanism" means a 
-  mechanism generally accepted for the electronic transfer of data. 
-
-1.5. "Initial Writer" means the individual or entity 
-  identified as the Initial Writer in the notice required by the Appendix. 
-
-
-1.6. "Larger Work" means a work which combines Documentation 
-  or portions thereof with documentation or other writings not governed by the 
-  terms of this License. 
-
-1.7. "License" means this document. 
-
-1.8. "Modifications" means any addition to or deletion 
-  from the substance or structure of either the Original Documentation or any 
-  previous Modifications, such as a translation, abridgment, condensation, or 
-  any other form in which the Original Documentation or previous Modifications 
-  may be recast, transformed or adapted. A work consisting of editorial revisions, 
-  annotations, elaborations, and other modifications which, as a whole represent 
-  an original work of authorship, is a Modification. For example, when Documentation 
-  is released as a series of documents, a Modification is: 
-
-A. Any addition to or deletion from the contents 
-  of the Original Documentation or previous Modifications. 
-
-B. Any new documentation that contains any part 
-  of the Original Documentation or previous Modifications. 
-
-1.9. "Original Documentation" means documentation 
-  described as Original Documentation in the notice required by the Appendix, 
-  and which, at the time of its release under this License is not already Documentation 
-  governed by this License. 
-
-1.10. "Editable Form" means the preferred form of 
-  the Documentation for making Modifications to it. The Documentation can be in 
-  an electronic, compressed or archival form, provided the appropriate decompression 
-  or de-archiving software is widely available for no charge. 
-
-1.11. "You" (or "Your") means an individual 
-  or a legal entity exercising rights under, and complying with all of the terms 
-  of this License or a future version of this License issued under Section 5.0 
-  ("Versions of the License"). For legal entities, "You" includes 
-  any entity which controls, is controlled by, or is under common control with 
-  You. For purposes of this definition, "control" means (a) the power, 
-  direct or indirect, to cause the direction or management of such entity, whether 
-  by contract or otherwise, or (b) ownership of more than fifty percent (50%) 
-  of the outstanding shares or beneficial ownership of such entity.
-
-2.0 LICENSE GRANTS.
-
-2.1 Initial Writer Grant.
-
- The Initial Writer hereby grants You a world-wide, royalty-free, non-exclusive 
-  license to use, reproduce, prepare Modifications of, compile, publicly perform, 
-  publicly display, demonstrate, market, disclose and distribute the Documentation 
-  in any form, on any media or via any Electronic Distribution Mechanism or other 
-  method now known or later discovered, and to sublicense the foregoing rights 
-  to third parties through multiple tiers of sublicensees in accordance with the 
-  terms of this License. 
- The license rights granted in this Section 2.1 ("Initial Writer Grant") 
-  are effective on the date Initial Writer first distributes Original Documentation 
-  under the terms of this License. 
- 
-2.2. Contributor Grant.
-
- Each Contributor hereby grants You a world-wide, royalty-free, non-exclusive 
-  license to use, reproduce, prepare Modifications of, compile, publicly perform, 
-  publicly display, demonstrate, market, disclose and distribute the Documentation 
-  in any form, on any media or via any Electronic Distribution Mechanism or other 
-  method now known or later discovered, and to sublicense the foregoing rights 
-  to third parties through multiple tiers of sublicensees in accordance with the 
-  terms of this License. 
- The license rights granted in this Section 2.2 ("Contributor Grant") 
-  are effective on the date Contributor first makes Commercial Use of the Documentation. 
-
-
-3.0 DISTRIBUTION OBLIGATIONS
-
- 3.1. Application of License
-
- The Modifications which You create or to which You contribute are governed 
-  by the terms of this License, including without limitation Section 2.2 ("Contributor 
-  Grant"). The Documentation may be distributed only under the terms of this 
-  License or a future version of this License released in accordance with Section 
-  5.0 ("Versions of the License"), and You must include a copy of this 
-  License with every copy of the Documentation You distribute. You may not offer 
-  or impose any terms that alter or restrict the applicable version of this License 
-  or the recipients' rights hereunder. However, You may include an additional 
-  document offering the additional rights described in Section 3.5 ("Required 
-  Notices"). 
-
-3.2. Availability of Documentation.
-
- Any Modification which You create or to which You contribute must be made 
-  available publicly in Editable Form under the terms of this License via a fixed 
-  medium or an accepted Electronic Distribution Mechanism. 
-
-3.3. Description of Modifications.
-
- All Documentation to which You contribute must identify the changes You made 
-  to create that Documentation and the date of any change. You must include a 
-  prominent statement that the Modification is derived, directly or indirectly, 
-  from Original Documentation provided by the Initial Writer and include the name 
-  of the Initial Writer in the Documentation or via an electronic link that describes 
-  the origin or ownership of the Documentation. The foregoing change documentation 
-  may be created by using an electronic program that automatically tracks changes 
-  to the Documentation, and such changes must be available publicly for at least 
-  five years following release of the changed Documentation. 
-
-3.4. Intellectual Property Matters.
-
- Contributor represents that Contributor believes that Contributor's Modifications 
-  are Contributor's original creation(s) and/or Contributor has sufficient rights 
-  to grant the rights conveyed by this License.
-
- 3.5. Required Notices.
-
- You must duplicate the notice in the Appendix in each file 
-  of the Documentation. If it is not possible to put such notice in a particular 
-  Documentation file due to its structure, then You must include such notice in 
-  a location (such as a relevant directory) where a reader would be likely to 
-  look for such a notice, for example, via a hyperlink in each file of the Documentation 
-  that takes the reader to a page that describes the origin and ownership of the 
-  Documentation. If You created one or more Modification(s) You may add your name 
-  as a Contributor to the notice described in the  Appendix. 
-
- You must also duplicate this License in any Documentation file (or with a 
-  hyperlink in each file of the Documentation) where You describe recipients' 
-  rights or ownership rights. 
- You may choose to offer, and to charge a fee for, warranty, support, indemnity 
-  or liability obligations to one or more recipients of Documentation. However, 
-  You may do so only on Your own behalf, and not on behalf of the Initial Writer 
-  or any Contributor. You must make it absolutely clear than any such warranty, 
-  support, indemnity or liability obligation is offered by You alone, and You 
-  hereby agree to indemnify the Initial Writer and every Contributor for any liability 
-  incurred by the Initial Writer or such Contributor as a result of warranty, 
-  support, indemnity or liability terms You offer. 
-
- 3.6. Larger Works.
-
- You may create a Larger Work by combining Documentation with other documents 
-  not governed by the terms of this License and distribute the Larger Work as 
-  a single product. In such a case, You must make sure the requirements of this 
-  License are fulfilled for the Documentation.
-
-4.0 APPLICATION OF THIS LICENSE. 
-
- This License applies to Documentation to which the Initial Writer has attached 
-  this License and the notice in the Appendix.
-
-5.0 VERSIONS OF THE LICENSE. 
-
- 5.1. New Versions.
-
- Initial Writer may publish revised and/or new versions of the License from 
-  time to time. Each version will be given a distinguishing version number. 
-
- 5.2. Effect of New Versions.
-
- Once Documentation has been published under a particular version of the License, 
-  You may always continue to use it under the terms of that version. You may also 
-  choose to use such Documentation under the terms of any subsequent version of 
-  the License published by __________________[Insert name of the foundation, 
-  company, Initial Writer, or whoever may modify this License]. No one other 
-  than _________________ [Insert name of the foundation, company, Initial Writer, 
-  or whoever may modify this License] has the right to modify the terms of 
-  this License. Filling in the name of the Initial Writer, Original Documentation 
-  or Contributor in the notice described in the 
-  Appendix shall not be deemed to be Modifications of this License.
-
- 6.0 DISCLAIMER OF WARRANTY. 
-
- DOCUMENTATION IS PROVIDED UNDER THIS LICENSE ON AN "AS IS'' BASIS, WITHOUT 
-  WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, 
-  WARRANTIES THAT THE DOCUMENTATION IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR 
-  A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, 
-  AND PERFORMANCE OF THE DOCUMENTATION IS WITH YOU. SHOULD ANY DOCUMENTATION PROVE 
-  DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER OR ANY OTHER CONTRIBUTOR) 
-  ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER 
-  OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENTATION 
-  IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER.
-
- 7.0 TERMINATION. 
-
- This License and the rights granted hereunder will terminate automatically 
-  if You fail to comply with terms herein and fail to cure such breach within 
-  30 days of becoming aware of the breach. All sublicenses to the Documentation 
-  which are properly granted shall survive any termination of this License. Provisions 
-  which, by their nature, must remain in effect beyond the termination of this 
-  License shall survive. 
- 
-
- 8.0 LIMITATION OF LIABILITY.
-
- UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING 
-  NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE INITIAL WRITER, ANY OTHER CONTRIBUTOR, 
-  OR ANY DISTRIBUTOR OF DOCUMENTATION, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, 
-  BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL 
-  DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF 
-  GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER 
-  DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO THE USE OF THE DOCUMENTATION, 
-  EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES. 
-
-
- 9.0 U.S. GOVERNMENT END USERS.
-
- If Documentation is being acquired by or on behalf of the U.S. Government 
-  or by a U.S. Government prime contractor or subcontractor (at any tier), then 
-  the Government's rights in Documentation will be only as set forth in this Agreement; 
-  this is in accordance with 48 CFR 227.7201 through 227.7202-4 (for Department 
-  of Defense (DOD) acquisitions) and with 48 CFR 2.101 and 12.212 (for non-DOD 
-  acquisitions).
- 
-10.0 MISCELLANEOUS. 
-
- This License represents the complete agreement concerning the subject matter 
-  hereof. If any provision of this License is held to be unenforceable, such provision 
-  shall be reformed only to the extent necessary to make it enforceable. This 
-  License shall be governed by California law, excluding its conflict-of-law provisions. 
-  With respect to disputes or any litigation relating to this License, the losing 
-  party is responsible for costs, including without limitation, court costs and 
-  reasonable attorneys' fees and expenses. The application of the United Nations 
-  Convention on Contracts for the International Sale of Goods is expressly excluded. 
-  Any law or regulation which provides that the language of a contract shall be 
-  construed against the drafter shall not apply to this License.
-
-
-Appendix
-Public Documentation License Notice 
-
- The contents of this Documentation are subject to the Public Documentation 
-  License Version 1.0 (the "License"); you may only use this Documentation 
-  if you comply with the terms of this License. A copy of the License is available 
-  at __________________[Insert hyperlink]. 
-
- The Original Documentation is _________________. The Initial Writer of the 
-  Original Documentation is ___________ Copyright (C)_________[Insert year(s)]. 
-  All Rights Reserved. (Initial Writer contact(s):________________[Insert hyperlink/alias]).
- 
- Contributor(s): ______________________________________. 
-Portions created by ______ are Copyright (C)_________[Insert year(s)]. 
-  All Rights Reserved. (Contributor contact(s):________________[Insert hyperlink/alias]).
-
-
- NOTE: The text of this Appendix may differ 
-  slightly from the text of the notices in the files of the Original Documentation. 
-  You should use the text of this Appendix rather than the text 
-  found in the Original Documentation for Your Modifications.
-
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        Copyright & License |
-        Privacy |
-        Website Feedback |
-        Contact Us |
-        Donate |
-        Thanks
-      
-      
-        Apache, the Apache feather logo, and OpenOffice are trademarks of The Apache Software Foundation.
-        OpenOffice.org and the seagull logo are registered trademarks of The Apache Software Foundation.
-        Other names appearing on the site may be trademarks of their respective owners.
-      
-    
-  
-
-
-
+[
+  " html>\n",
+  "\n",
+  " \n",
+  " \n",
+  "  =\"/css/ooo.css\" rel=\"stylesheet\" type=\"text/css\">\n",
+  "\n",
+  " http-equiv=\"CONTENT-TYPE\" content=\"text/html; charset=windows-1252\">\n",
+  " Public Documentation License \n",
+  " name=\"GENERATOR\" content=\"OpenOffice.org 641  Rules! (Win32)\">\n",
+  " name=\"AUTHOR\" content=\" \">\n",
+  " name=\"CREATED\" content=\"20000412;15361600\">\n",
+  " name=\"CHANGEDBY\" content=\" \">\n",
+  " name=\"CHANGED\" content=\"20020730;21590800\">\n",
+  " type=\"text/css\">body, p, h1, h2, h3, h4, h5, div, li, td, th, dd, input, select, span, font\t{\n",
+  "\tfont-family:\tTimes, Times New Roman; 11pt; color: #000;\n",
+  "\t}\n",
+  "\th1 {text-align: center;\n",
+  "\t}\n",
+  "\th2 {text-align: center;\n",
+  "\t}\n",
+  "\th3 {text-align: left; text-indent: 1em;\n",
+  "\t}\n",
+  "\th4 {text-align:left; text-indent: 2em;\n",
+  "\t}\n",
+  "\th5 {text-align:left; text-indent: 4em;\n",
+  "\t}\n",
+  "\tp {text-indent:  3em;\n",
+  "\t}\n",
+  "\t.subp {text-indent: 4em;\n",
+  "\t}\n",
+  "\t \n",
+  "\n",
+  " type=\"text/javascript\">\n",
+  "    var _gaq = _gaq || [];\n",
+  "    _gaq.push(['_setAccount', 'UA-30193653-1']);\n",
+  "    _gaq.push(['_setDomainName', 'openoffice.org']);\n",
+  "    _gaq.push(['_trackPageview']);\n",
+  "\n",
+  "    (function() {\n",
+  "        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\n",
+  "        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n",
+  "        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\n",
+  "    })();\n",
+  " \n",
+  "  \n",
+  "\n",
+  " \n",
+  " type=\"text/javascript\">\n",
+  "/*!\n",
+  " * Entourage 1.1.2 - Automatic Download Tracking for Asynchronous Google Analytics\n",
+  " *\n",
+  " * Copyright (c) 2011 by Tian Valdemar Davis (http://techoctave.com/c7)\n",
+  " * Licensed under the MIT (http://en.wikipedia.org/wiki/MIT_License) license.\n",
+  " *\n",
+  " * Learn More: http://techoctave.com/c7/posts/58-entourage-js-automatic-download-tracking-for-asynchronous-google-analytics\n",
+  " * \n",
+  " * 2012-04-24 Mod by robweir to whitelist additional file extensions as used in AOO project\n",
+  " * 2012-04-25 Mod by robweir to remove trailing \"/download\" from SourceForge file names, a hack we can hopefully remove someday\n",
+  " */\n",
+  "\n",
+  "/*jshint strict:false */\n",
+  "\n",
+  "(function() {\n",
+  "var entourage = new (function() {\n",
+  "\tvar version = \"1.1.2\";\n",
+  "\tvar whitelist = /\\.pdf$|\\.zip$|\\.gz$|\\.gz\\/download$|\\.bz2$|\\.bz2\\/download$|\\.od*|\\.doc*|\\.xls*|\\.ppt*|\\.exe$|\\.exe\\/download$|\\.dmg$|\\.dmg\\/download$|\\.mov$|\\.avi$|\\.mp3$/i;\n",
+  "\t\n",
+  "\t//Get true FileName from link pathname\n",
+  "\tvar getFileName = function(pathname) {\n",
+  "\t\t//Remove the anchor at the end (if one exists)\n",
+  "\t\tpathname = pathname.substring(0, (pathname.indexOf(\"#\") === -1) ? pathname.length : pathname.indexOf(\"#\"));\n",
+  "\n",
+  "\t\t//Removes the query after the file pathname (if one exists)\n",
+  "\t\tpathname = pathname.substring(0, (pathname.indexOf(\"?\") === -1) ? pathname.length : pathname.indexOf(\"?\"));\n",
+  "      \n",
+  "        //Remove trailing /download\n",
+  "\t\tif (/\\/download$/.test(pathname))\n",
+  "\t\t\tpathname = pathname.substring(0, pathname.length-\"/download\".length);\n",
+  "\n",
+  "\t\t//Removes everything before the last slash in the path\n",
+  "\t\tpathname = pathname.substring(pathname.lastIndexOf(\"/\") + 1, pathname.length);\n",
+  "\n",
+  "\t\treturn pathname;\n",
+  "\t};\n",
+  "\n",
+  "\tvar autograph = function() {\n",
+  "\t\tvar fileName, associate;\n",
+  "\n",
+  "\t\t//Get the file name\n",
+  "\t\tfileName = getFileName(this.pathname); //The link object is now available in \"this\"\n",
+  "\n",
+  "\t\t//Add file to the Google Analytics Queue\n",
+  "\t\tassociate = '/download/' + fileName;\n",
+  "\t\t\n",
+  "\t\t//Track download using Asynchronous Google Analytics\n",
+  "\t\t_gaq.push(['_trackPageview', associate]);\n",
+  "    };\n",
+  "\n",
+  "\tvar initialize = function() {\n",
+  "\t\tvar links = document.links;\n",
+  "\t\t\n",
+  "\t\tfor (var i = 0, l = links.length; i < l; i++) {\n",
+  "\t\t\t//Compare the fileType to the whitelist\n",
+  "\t\t\tvar match = links[i].pathname.match(whitelist);\n",
+  "\t\t\t\n",
+  "\t\t\t//If the link is for a file download . . .\n",
+  "\t\t\tif (typeof match !== \"undefined\" && match !== null) {\n",
+  "\t\t\t\t//Call Entourage whenever the link is clicked\n",
+  "\t\t\t\tlinks[i].onclick = autograph;\n",
+  "\t\t\t}\n",
+  "\t\t}\n",
+  "    };\n",
+  "\n",
+  "\treturn {\n",
+  "\t\tversion: version,\n",
+  "\t\tinitialize: initialize\n",
+  "\t};\n",
+  "})(); //Entourage.js\n",
+  "\n",
+  "//Add entourage to the global namespace\n",
+  "window.entourage = entourage;\n",
+  "\n",
+  "//Execute entourage onload - ensuring links are present in the DOM\n",
+  "window.onload = entourage.initialize;\n",
+  "})();\n",
+  " \n",
+  " \n",
+  "  lang=\"en-US\">\n",
+  "   id=\"bannera\">\n",
+  "   id=\"languagesdiv\">\n",
+  "  \tEnglish:\n",
+  "  \t id=\"selectlanguage\" onchange=\"javascript:location. =location.protocol+'//'+location.host+'/'+this.value;\">\n",
+  "  \t Asturian --> value=\"ast\">Asturianu (ast) \n",
+  "  \t Czech --> value=\"cs\">\u010ce\u0161tina (cs) \n",
+  "  \t Danish --> value=\"da\">Dansk (da) \n",
+  "  \t German --> value=\"de\">Deutsch (de) \n",
+  "  \t English [British] value=\"en-gb\">English [British] (en-gb)  -->\n",
+  "  \t English [US] --> value=\"?redirect=soft\" selected=\"selected\">English (en) \n",
+  "  \t Spanish --> value=\"es\">Espa\u00f1ol (es) \n",
+  "  \t Basque --> value=\"eu\">Euskara (eu) \n",
+  "  \t Finnish --> value=\"fi\">Suomi (fi) \n",
+  "  \t French --> value=\"fr\">Fran\u00e7ais (fr) \n",
+  "  \t Scottish --> value=\"gd\">G\u00e0idhlig (gd) \n",
+  "  \t Galician --> value=\"gl\">Galego (gl) \n",
+  "  \t Italian --> value=\"it\">Italiano (it) \n",
+  "  \t Lithuanian --> value=\"lt\">Lietuvi\u0173 (lt) \n",
+  "  \t Hungarian --> value=\"hu\">Magyar (hu) \n",
+  "  \t Dutch --> value=\"nl\">Nederlands (nl) \n",
+  "  \t Norwegian [Bokm\u00e5l] --> value=\"no\">Norsk [Bokm\u00e5l] (nb) \n",
+  "  \t Norwegian [Nynorsk] --> value=\"no\">Norsk [Nynorsk] (no) \n",
+  "\t Polish --> value=\"pl\">Polski (pl) \n",
+  "  \t Portuguese [Brazilian] --> value=\"pt-br\">Portugu\u00eas [do Brasil] (pt-br) \n",
+  "  \t Portuguese [European] --> value=\"pt\">Portugu\u00eas [Europeu] (pt) \n",
+  "  \t Slovak --> value=\"sk\">sloven\u010dina (sk) \n",
+  "  \t Slovenian --> value=\"sl\">sloven\u0161\u010dina (sl) \n",
+  "  \t Swidish --> value=\"sv\">Svenska (sv) \n",
+  "  \t Turkish  --> value=\"tr\">T\u00fcrk\u00e7e (tr) \n",
+  "  \t Vietnamese --> value=\"vi\">Ti\u1ebfng Vi\u1ec7t (vi) \n",
+  "  \t Greek --> value=\"el\">\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac (el) \n",
+  "  \t Bulgarian --> value=\"bg\">\u0431\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438 \u0435\u0437\u0438\u043a (bg) \n",
+  "  \t Russian --> value=\"ru\">\u0420\u0443\u0441\u0441\u043a\u0438\u0439 (ru) \n",
+  "  \t Serbian [Cyrillic] --> value=\"sr\">C\u0440\u043f\u0441\u043a\u0438 [\u045b\u0438\u0440\u0438\u043b\u0438\u0446\u043e\u043c] (sr) \n",
+  " \t Arabic  value=\"ar\">\u0627\u0644\u0639\u0631\u0628\u064a\u0629 (ar)  -->\n",
+  "  \t Hebrew --> value=\"he\">\u05e2\u05d1\u05e8\u05d9\u05ea (he) \n",
+  "  \t Hindi --> value=\"hi\">\u0939\u093f\u0928\u094d\u0926\u0940 (hi) \n",
+  "  \t Khmer --> value=\"km\">\u1797\u17b6\u179f\u17b6\u1781\u17d2\u1798\u17c2\u179a (km) \n",
+  "  \t Tamil --> value=\"ta\">\u0ba4\u0bae\u0bbf\u0bb4\u0bcd (ta) \n",
+  "  \t Thai --> value=\"th\">\u0e20\u0e32\u0e29\u0e32\u0e44\u0e17\u0e22 (th) \n",
+  "  \t Chinese [simplified] --> value=\"zh-cn\">\u7b80\u4f53\u4e2d\u6587 (zh-cn) \n",
+  "  \t Chinese [traditional] --> value=\"zh-tw\">\u6b63\u9ad4\u4e2d\u6587 (zh-tw) \n",
+  "  \t Japanese --> value=\"ja\">\u65e5\u672c\u8a9e (ja) \n",
+  "  \t Korean --> value=\"ko\">\ud55c\uad6d\uc5b4 (ko) \n",
+  "\t \n",
+  "\t \n",
+  "\t  var lang = \"en\";\n",
+  "\t  var dropdown = document.getElementById('selectlanguage');\n",
+  "\t  var options = dropdown.options;\n",
+  "\t  for( var i = 0; i < dropdown.options.length; i++ ) {\n",
+  "\t    if( dropdown.options[ i ].value == lang ) {\n",
+  "\t      dropdown.selectedIndex = i;\n",
+  "\t      break;\n",
+  "\t    }\n",
+  "\t  }\n",
+  "\t \n",
+  "   \n",
+  "   id=\"bannerleft\"> title=\"Apache OpenOffice\"  =\"/\"> id=\"ooo-logo\" alt=\"Apache OpenOffice\" src=\"/images/AOO_logos/100MillAOO100px.png   \n",
+  "     id=\"bannerright\">        \n",
+  "       id=\"searchdiv\">\n",
+  "\t id=\"cse-search-box-header\" action=\"http://www.google.com/search\" method=\"get\">\n",
+  "\t   \n",
+  "\t     type=\"hidden\" name=\"domains\" value=\"www.openoffice.org \n",
+  "\t     type=\"hidden\" name=\"sitesearch\" value=\"www.openoffice.org \n",
+  "\t   \n",
+  "\t   class=\"topsrchbox\">\n",
+  "\t     name=\"resultsPerPage\" value=\"40\" type=\"hidden  \n",
+  "\t     name=\"q\" id=\"query\" type=\"text\" title=\"search query \n",
+  "\t     name=\"Button\" value=\"search\" type=\"submit\" class=\"topsrchbutton \n",
+  "\t   \n",
+  "\t \n",
+  "       \n",
+  "     \n",
+  "     id=\"bannercenter\">  The Free and Open Productivity Suite \n",
+  "   \n",
+  "   id=\"announce\">  =\"https://cwiki.apache.org/confluence/display/OOOUSERS/AOO+4.1.1+Release+Notes\" title=\"New: Apache OpenOffice 4.1.1 released!\">New: Apache OpenOffice 4.1.1 released!  \n",
+  "\n",
+  "   id=\"topbara\">\n",
+  "     id=\"topnava\"> \n",
+  "   =\"/product/index.html\" title=\"Apache OpenOffice product description\">Product  \n",
+  "   =\"/download/index.html\" title=\"Download OpenOffice\">Download  \n",
+  "   =\"/support/index.html\" title=\"Find Support for OpenOffice\">Support  \n",
+  "   =\"http://blogs.apache.org/ooo/\" title=\"Apache OpenOffice Blog\">Blog  \n",
+  "   =\"/extensions/index.html\" title=\"Extensions and Templates for OpenOffice\">Extend  \n",
+  "   =\"http://openoffice.apache.org/get-involved.html\" title=\"Get involved in Apache OpenOffice\">Develop  \n",
+  "   =\"/projects/accepted.html\" title=\"Apache OpenOffice development focus areas\">Focus Areas  \n",
+  "   =\"/projects/native-lang.html\" title=\"Apache OpenOffice in your Native Language\">Native Language  \n",
+  "  \n",
+  "\n",
+  "     id=\"breadcrumbsa\">  =\"/\">home      =\"/licenses/\">licenses  \n",
+  "   \n",
+  "   id=\"clear\"> \n",
+  "  \n",
+  "  \n",
+  "   id=\"content\">\n",
+  "    \n",
+  "    \n",
+  "    \n",
+  " PUBLIC DOCUMENTATION LICENSE \n",
+  " Version 1.0  \n",
+  "  \n",
+  " 1.0 DEFINITIONS. \n",
+  "  \n",
+  "  1.1.  Commercial Use   means distribution or otherwise \n",
+  "  making the Documentation available to a third party.  \n",
+  "  \n",
+  "  1.2.  Contributor   means a person or entity who \n",
+  "  creates or contributes to the creation of Modifications.  \n",
+  "  \n",
+  "  1.3.  Documentation   means the Original Documentation \n",
+  "  or Modifications or the combination of the Original Documentation and Modifications, \n",
+  "  in each case including portions thereof. \n",
+  "  \n",
+  "  1.4.  Electronic Distribution Mechanism   means a \n",
+  "  mechanism generally accepted for the electronic transfer of data.  \n",
+  "  \n",
+  "  1.5.  Initial Writer   means the individual or entity \n",
+  "  identified as the Initial Writer in the notice required by the  Appendix . \n",
+  " \n",
+  "  \n",
+  "  1.6.  Larger Work   means a work which combines Documentation \n",
+  "  or portions thereof with documentation or other writings not governed by the \n",
+  "  terms of this License.  \n",
+  "  \n",
+  "  1.7.  License   means this document.  \n",
+  "  \n",
+  "  1.8.  Modifications   means any addition to or deletion \n",
+  "  from the substance or structure of either the Original Documentation or any \n",
+  "  previous Modifications, such as a translation, abridgment, condensation, or \n",
+  "  any other form in which the Original Documentation or previous Modifications \n",
+  "  may be recast, transformed or adapted. A work consisting of editorial revisions, \n",
+  "  annotations, elaborations, and other modifications which, as a whole represent \n",
+  "  an original work of authorship, is a Modification. For example, when Documentation \n",
+  "  is released as a series of documents, a Modification is:  \n",
+  "  \n",
+  " class =\"subp\"> A . Any addition to or deletion from the contents \n",
+  "  of the Original Documentation or previous Modifications.  \n",
+  "  \n",
+  " class =\"subp\"> B.  Any new documentation that contains any part \n",
+  "  of the Original Documentation or previous Modifications.  \n",
+  "  \n",
+  "  1.9.  Original Documentation   means documentation \n",
+  "  described as Original Documentation in the notice required by the  Appendix , \n",
+  "  and which, at the time of its release under this License is not already Documentation \n",
+  "  governed by this License.  \n",
+  "  \n",
+  "  1.10.  Editable Form   means the preferred form of \n",
+  "  the Documentation for making Modifications to it. The Documentation can be in \n",
+  "  an electronic, compressed or archival form, provided the appropriate decompression \n",
+  "  or de-archiving software is widely available for no charge.  \n",
+  "  \n",
+  "  1.11.  You  (or  Your )  means an individual \n",
+  "  or a legal entity exercising rights under, and complying with all of the terms \n",
+  "  of this License or a future version of this License issued under Section 5.0 \n",
+  "  ( Versions of the License ). For legal entities,  You  includes \n",
+  "  any entity which controls, is controlled by, or is under common control with \n",
+  "  You. For purposes of this definition,  control  means (a) the power, \n",
+  "  direct or indirect, to cause the direction or management of such entity, whether \n",
+  "  by contract or otherwise, or (b) ownership of more than fifty percent (50%) \n",
+  "  of the outstanding shares or beneficial ownership of such entity. \n",
+  "  \n",
+  " 2.0 LICENSE GRANTS. \n",
+  "  \n",
+  " 2.1 Initial Writer Grant. \n",
+  "  \n",
+  "  The Initial Writer hereby grants You a world-wide, royalty-free, non-exclusive \n",
+  "  license to use, reproduce, prepare Modifications of, compile, publicly perform, \n",
+  "  publicly display, demonstrate, market, disclose and distribute the Documentation \n",
+  "  in any form, on any media or via any Electronic Distribution Mechanism or other \n",
+  "  method now known or later discovered, and to sublicense the foregoing rights \n",
+  "  to third parties through multiple tiers of sublicensees in accordance with the \n",
+  "  terms of this License.  \n",
+  "  The license rights granted in this Section 2.1 ( Initial Writer Grant ) \n",
+  "  are effective on the date Initial Writer first distributes Original Documentation \n",
+  "  under the terms of this License.  \n",
+  "   \n",
+  " 2.2. Contributor Grant. \n",
+  "  \n",
+  "  Each Contributor hereby grants You a world-wide, royalty-free, non-exclusive \n",
+  "  license to use, reproduce, prepare Modifications of, compile, publicly perform, \n",
+  "  publicly display, demonstrate, market, disclose and distribute the Documentation \n",
+  "  in any form, on any media or via any Electronic Distribution Mechanism or other \n",
+  "  method now known or later discovered, and to sublicense the foregoing rights \n",
+  "  to third parties through multiple tiers of sublicensees in accordance with the \n",
+  "  terms of this License.  \n",
+  "  The license rights granted in this Section 2.2 ( Contributor Grant ) \n",
+  "  are effective on the date Contributor first makes Commercial Use of the Documentation. \n",
+  " \n",
+  "  \n",
+  " 3.0 DISTRIBUTION OBLIGATIONS \n",
+  "  \n",
+  "  3.1. Application of License \n",
+  "  \n",
+  "  The Modifications which You create or to which You contribute are governed \n",
+  "  by the terms of this License, including without limitation Section 2.2 ( Contributor \n",
+  "  Grant ). The Documentation may be distributed only under the terms of this \n",
+  "  License or a future version of this License released in accordance with Section \n",
+  "  5.0 ( Versions of the License ), and You must include a copy of this \n",
+  "  License with every copy of the Documentation You distribute. You may not offer \n",
+  "  or impose any terms that alter or restrict the applicable version of this License \n",
+  "  or the recipients' rights hereunder. However, You may include an additional \n",
+  "  document offering the additional rights described in Section 3.5 ( Required \n",
+  "  Notices ).  \n",
+  "  \n",
+  " 3.2. Availability of Documentation. \n",
+  "  \n",
+  "  Any Modification which You create or to which You contribute must be made \n",
+  "  available publicly in Editable Form under the terms of this License via a fixed \n",
+  "  medium or an accepted Electronic Distribution Mechanism.  \n",
+  "  \n",
+  " 3.3. Description of Modifications. \n",
+  "  \n",
+  "  All Documentation to which You contribute must identify the changes You made \n",
+  "  to create that Documentation and the date of any change. You must include a \n",
+  "  prominent statement that the Modification is derived, directly or indirectly, \n",
+  "  from Original Documentation provided by the Initial Writer and include the name \n",
+  "  of the Initial Writer in the Documentation or via an electronic link that describes \n",
+  "  the origin or ownership of the Documentation. The foregoing change documentation \n",
+  "  may be created by using an electronic program that automatically tracks changes \n",
+  "  to the Documentation, and such changes must be available publicly for at least \n",
+  "  five years following release of the changed Documentation.  \n",
+  "  \n",
+  " 3.4. Intellectual Property Matters. \n",
+  "  \n",
+  "  Contributor represents that Contributor believes that Contributor's Modifications \n",
+  "  are Contributor's original creation(s) and/or Contributor has sufficient rights \n",
+  "  to grant the rights conveyed by this License. \n",
+  "  \n",
+  "  3.5. Required Notices. \n",
+  "  \n",
+  "  You must duplicate the notice in the  Appendix  in each file \n",
+  "  of the Documentation. If it is not possible to put such notice in a particular \n",
+  "  Documentation file due to its structure, then You must include such notice in \n",
+  "  a location (such as a relevant directory) where a reader would be likely to \n",
+  "  look for such a notice, for example, via a hyperlink in each file of the Documentation \n",
+  "  that takes the reader to a page that describes the origin and ownership of the \n",
+  "  Documentation. If You created one or more Modification(s) You may add your name \n",
+  "  as a Contributor to the notice described in the   Appendix . \n",
+  " \n",
+  "  You must also duplicate this License in any Documentation file (or with a \n",
+  "  hyperlink in each file of the Documentation) where You describe recipients' \n",
+  "  rights or ownership rights.  \n",
+  "  You may choose to offer, and to charge a fee for, warranty, support, indemnity \n",
+  "  or liability obligations to one or more recipients of Documentation. However, \n",
+  "  You may do so only on Your own behalf, and not on behalf of the Initial Writer \n",
+  "  or any Contributor. You must make it absolutely clear than any such warranty, \n",
+  "  support, indemnity or liability obligation is offered by You alone, and You \n",
+  "  hereby agree to indemnify the Initial Writer and every Contributor for any liability \n",
+  "  incurred by the Initial Writer or such Contributor as a result of warranty, \n",
+  "  support, indemnity or liability terms You offer.  \n",
+  "  \n",
+  "  3.6. Larger Works. \n",
+  "  \n",
+  "  You may create a Larger Work by combining Documentation with other documents \n",
+  "  not governed by the terms of this License and distribute the Larger Work as \n",
+  "  a single product. In such a case, You must make sure the requirements of this \n",
+  "  License are fulfilled for the Documentation. \n",
+  "  \n",
+  " 4.0 APPLICATION OF THIS LICENSE.  \n",
+  "  \n",
+  "  This License applies to Documentation to which the Initial Writer has attached \n",
+  "  this License and the notice in  style=\"font-weight: medium\">the   Appendix . \n",
+  "  \n",
+  " 5.0 VERSIONS OF THE LICENSE.  \n",
+  "  \n",
+  "  5.1. New Versions. \n",
+  "  \n",
+  "  Initial Writer may publish revised and/or new versions of the License from \n",
+  "  time to time. Each version will be given a distinguishing version number.  \n",
+  "  \n",
+  "  5.2. Effect of New Versions. \n",
+  "  \n",
+  "  Once Documentation has been published under a particular version of the License, \n",
+  "  You may always continue to use it under the terms of that version. You may also \n",
+  "  choose to use such Documentation under the terms of any subsequent version of \n",
+  "  the License published by __________________ [Insert name of the foundation, \n",
+  "  company, Initial Writer, or whoever may modify this License] . No one other \n",
+  "  than _________________  [Insert name of the foundation, company, Initial Writer, \n",
+  "  or whoever may modify this License]  has the right to modify the terms of \n",
+  "  this License. Filling in the name of the Initial Writer, Original Documentation \n",
+  "  or Contributor in the notice described in  style=\"font-weight: medium\">the   \n",
+  "  Appendix  shall not be deemed to be Modifications of this License. \n",
+  "  \n",
+  "  6.0 DISCLAIMER OF WARRANTY.  \n",
+  "  \n",
+  "  DOCUMENTATION IS PROVIDED UNDER THIS LICENSE ON AN  AS IS'' BASIS, WITHOUT \n",
+  "  WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, \n",
+  "  WARRANTIES THAT THE DOCUMENTATION IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR \n",
+  "  A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, \n",
+  "  AND PERFORMANCE OF THE DOCUMENTATION IS WITH YOU. SHOULD ANY DOCUMENTATION PROVE \n",
+  "  DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER OR ANY OTHER CONTRIBUTOR) \n",
+  "  ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER \n",
+  "  OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENTATION \n",
+  "  IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER. \n",
+  "  \n",
+  "  7.0 TERMINATION.  \n",
+  "  \n",
+  "  This License and the rights granted hereunder will terminate automatically \n",
+  "  if You fail to comply with terms herein and fail to cure such breach within \n",
+  "  30 days of becoming aware of the breach. All sublicenses to the Documentation \n",
+  "  which are properly granted shall survive any termination of this License. Provisions \n",
+  "  which, by their nature, must remain in effect beyond the termination of this \n",
+  "  License shall survive.  \n",
+  "   \n",
+  "  \n",
+  "  8.0 LIMITATION OF LIABILITY. \n",
+  "  \n",
+  "  UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING \n",
+  "  NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE INITIAL WRITER, ANY OTHER CONTRIBUTOR, \n",
+  "  OR ANY DISTRIBUTOR OF DOCUMENTATION, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, \n",
+  "  BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL \n",
+  "  DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF \n",
+  "  GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER \n",
+  "  DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO THE USE OF THE DOCUMENTATION, \n",
+  "  EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES. \n",
+  " \n",
+  "  \n",
+  "  9.0 U.S. GOVERNMENT END USERS. \n",
+  "  \n",
+  "  If Documentation is being acquired by or on behalf of the U.S. Government \n",
+  "  or by a U.S. Government prime contractor or subcontractor (at any tier), then \n",
+  "  the Government's rights in Documentation will be only as set forth in this Agreement; \n",
+  "  this is in accordance with 48 CFR 227.7201 through 227.7202-4 (for Department \n",
+  "  of Defense (DOD) acquisitions) and with 48 CFR 2.101 and 12.212 (for non-DOD \n",
+  "  acquisitions). \n",
+  " align=left style=\"margin-bottom: 0cm; line-height: 0.46cm\">  \n",
+  " 10.0 MISCELLANEOUS.  \n",
+  "  \n",
+  "  This License represents the complete agreement concerning the subject matter \n",
+  "  hereof. If any provision of this License is held to be unenforceable, such provision \n",
+  "  shall be reformed only to the extent necessary to make it enforceable. This \n",
+  "  License shall be governed by California law, excluding its conflict-of-law provisions. \n",
+  "  With respect to disputes or any litigation relating to this License, the losing \n",
+  "  party is responsible for costs, including without limitation, court costs and \n",
+  "  reasonable attorneys' fees and expenses. The application of the United Nations \n",
+  "  Convention on Contracts for the International Sale of Goods is expressly excluded. \n",
+  "  Any law or regulation which provides that the language of a contract shall be \n",
+  "  construed against the drafter shall not apply to this License. \n",
+  "  \n",
+  " width=\"100%\">\n",
+  " Appendix  \n",
+  " Public Documentation License Notice  \n",
+  "  \n",
+  "  The contents of this Documentation are subject to the Public Documentation \n",
+  "  License Version 1.0 (the  License  you may only use this Documentation \n",
+  "  if you comply with the terms of this License. A copy of the License is available \n",
+  "  at __________________ [Insert hyperlink] .  \n",
+  "  \n",
+  "  The Original Documentation is _________________. The Initial Writer of the \n",
+  "  Original Documentation is ___________ Copyright (C)_________ [Insert year(s)].  \n",
+  "  All Rights Reserved. (Initial Writer contact(s):________________ [Insert hyperlink/alias] ). \n",
+  "   \n",
+  "  Contributor(s): ______________________________________.  \n",
+  " Portions created by ______ are Copyright (C)_________ [Insert year(s)]  . \n",
+  "  All Rights Reserved. (Contributor contact(s):________________ [Insert hyperlink/alias] ). \n",
+  "  \n",
+  "  \n",
+  "   NOTE : The text of this  Appendix  may differ \n",
+  "  slightly from the text of the notices in the files of the Original Documentation. \n",
+  "  You should use the text of this  Appendix  rather than the text \n",
+  "  found in the Original Documentation for Your Modifications. \n",
+  "\n",
+  "   \n",
+  "   id=\"footera\">\n",
+  "     Add a banner logo and link to announce an event and to show it in the footer on the left.\n",
+  "     id=\"asfbanner\">\n",
+  "       \n",
+  "          =\"http://apachecon.com/\">\n",
+  "           src=\"http://www.openoffice.org/images/2014-eu-234x60.png\" alt=\"Logo ApacheCon Europe 2014\"  \n",
+  "         \n",
+  "       \n",
+  "     \n",
+  "    -->\n",
+  "     id=\"poweredbya\">\n",
+  "       \n",
+  "          =\"http://www.apache.org/\">\n",
+  "           src=\"/images/feather-small.gif\" alt=\"Apache Feather\"  \n",
+  "         \n",
+  "       \n",
+  "     \n",
+  "     id=\"copyrighta\">\n",
+  "       style=\"text-align:center;\">\n",
+  "          =\"/license.html\">Copyright   License  |\n",
+  "          =\"/privacy.html\">Privacy  |\n",
+  "          =\"http://survey.openoffice.org/index.php/833861/lang-en\">Website Feedback  |\n",
+  "          =\"/contact_us.html\">Contact Us  |\n",
+  "          =\"/donations.html\">Donate  |\n",
+  "          =\"http://www.apache.org/foundation/thanks.html\">Thanks \n",
+  "       \n",
+  "       \n",
+  "        Apache, the Apache feather logo, and OpenOffice are trademarks of The Apache Software Foundation.\n",
+  "        OpenOffice.org and the seagull logo are registered trademarks of The Apache Software Foundation.\n",
+  "        Other names appearing on the site may be trademarks of their respective owners.\n",
+  "       \n",
+  "     \n",
+  "   \n",
+  "\n",
+  " \n",
+  " \n"
+]
