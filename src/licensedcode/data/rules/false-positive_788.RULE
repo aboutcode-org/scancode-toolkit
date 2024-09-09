@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: haha
+---
+
+license[sizeof(license) - 1] = 0;
