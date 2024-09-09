@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: found in linux/Documentation/process/maintainer-pgp-guide.rst
+---
+
+the more general "`Protecting Code Integrity`_" guide published by the
+Linux Foundation. Please read that document for more in-depth discussion
