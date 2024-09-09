@@ -13,6 +13,8 @@ import os.path
 import cluecode_test_utils  # NOQA
 from commoncode.testcase import FileBasedTesting
 from cluecode import copyrights
+from textcode import markup
+from cluecode.copyrights import prepare_text_line
 
 
 class TestTextPreparation(FileBasedTesting):
@@ -28,56 +30,56 @@ class TestTextPreparation(FileBasedTesting):
 
     def test_prepare_text_line(self):
         cp = 'test (C) all rights reserved'
-        result = copyrights.prepare_text_line(cp)
+        result = prepare_text_line(cp)
         assert result == 'test (c) all rights reserved'
 
     def test_prepare_text_line_debian(self):
         cp = 'Parts Copyright (c) 1992 <s>Uri Blumentha<s>l, I</s>BM</s>'
-        result = copyrights.prepare_text_line(cp)
+        result = prepare_text_line(cp)
         assert result == 'Parts Copyright (c) 1992 Uri Blumenthal, IBM'
 
     def test_prepare_text_line_does_not_truncate_transliterable_unicode(self):
         cp = 'Muła'
-        result = copyrights.prepare_text_line(cp)
+        result = prepare_text_line(cp)
         assert result == 'Mula'
 
-    def test_strip_markup(self):
+    def test_strip_markup_removes_debian_legacy_s_tags(self):
         cp = 'Parts Copyright (c) 1992 <s>Uri Blumentha<s>l, I</s>BM</s>'
-        result = copyrights.strip_markup(cp)
+        result = markup.strip_markup_text(cp)
         assert result == 'Parts Copyright (c) 1992 Uri Blumenthal, IBM'
 
     def test_prepare_text_line_removes_C_comments(self):
         cp = '/*  Copyright 1996-2005, 2008-2011 by   */'
-        result = copyrights.prepare_text_line(cp)
+        result = prepare_text_line(cp)
         assert result == 'Copyright 1996-2005, 2008-2011 by'
 
     def test_prepare_text_line_removes_C_comments2(self):
         cp = '/*  David Turner, Robert Wilhelm, and Werner Lemberg. */'
-        result = copyrights.prepare_text_line(cp)
+        result = prepare_text_line(cp)
         assert result == 'David Turner, Robert Wilhelm, and Werner Lemberg.'
 
     def test_prepare_text_line_removes_Cpp_comments(self):
         cp = '//  David Turner, Robert Wilhelm, and Werner Lemberg. */'
-        result = copyrights.prepare_text_line(cp)
+        result = prepare_text_line(cp)
         assert result == 'David Turner, Robert Wilhelm, and Werner Lemberg.'
 
     def test_prepare_text_line_does_not_damage_urls(self):
         cp = 'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'
-        result = copyrights.prepare_text_line(cp)
+        result = prepare_text_line(cp)
         assert result == 'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'
 
     def test_is_end_of_statement(self):
         line = '''          "All rights reserved\\n"'''
-        _line, char_only_line = copyrights.prep_line(line)
+        _line, char_only_line = prepare_text_line(line)
         assert copyrights.is_end_of_statement(char_only_line)
 
-    def test_candidate_lines_simple(self):
+    def test_collect_candidate_lines_simple(self):
         lines = [(1, ' test (C) all rights reserved')]
-        result = list(copyrights.candidate_lines(lines))
+        result = list(copyrights.collect_candidate_lines(lines))
         expected = [[(1, ' test (C) all rights reserved')]]
         assert result == expected
 
-    def test_candidate_lines_complex(self):
+    def test_collect_candidate_lines_complex(self):
         lines = '''
            Apache Xalan (Xalan XSLT processor)
            Copyright 1999-2006 The Apache Software Foundation
@@ -118,57 +120,57 @@ class TestTextPreparation(FileBasedTesting):
             [(22, '           this product includes software developed by the following:')]
         ]
 
-        result = list(copyrights.candidate_lines(enumerate(lines, 1)))
+        result = list(copyrights.collect_candidate_lines(enumerate(lines, 1)))
         assert result == expected
 
     def test_is_candidates_should_not_select_line_with_bare_full_year(self):
         line = '2012'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
     def test_is_candidates_should_not_select_line_with_full_year_before_160_and_after_2018(self):
         line = '1959 2019'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
     def test_is_candidate_should_not_select_line_with_only_two_digit_numbers(self):
         line = 'template<class V> struct v_iter<V, mpl::int_<10> > { typedef typename V::item10 type; typedef v_iter<V, mpl::int_<10 + 1> > next; };'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_sign(self):
         line = 'template<class V> struct v_iter<V, mpl::int_<10> (c) { typedef typename V::item10 type; typedef v_iter<V, mpl::int_<10 + 1> > next; };'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_not_select_line_with_junk_hex(self):
         line = '01061C3F5280CD4AC504152B81E452BD82015442014'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_a_trailing_years(self):
         line = '01061C3F5280CD4AC504152B81E452BD820154 2014\n'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_proper_years(self):
         line = '01061C3F5280CD4AC504152B81E452BD820154 2014-'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_proper_years2(self):
         line = '01061C3F5280CD4,2016 152B81E452BD820154'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_dashed_year(self):
         line = 'pub   1024D/CCD6F801 2006-11-15'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_iso_date_year(self):
         line = 'sig 3 ccd6f801 2006-11-15 nathan mittler <nathan.mittler@gmail.com>'
-        line, _char_only = copyrights.prep_line(line)
+        line, _char_only = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_not_select_lines_made_only_of_punct_and_digits(self):
@@ -189,7 +191,7 @@ class TestTextPreparation(FileBasedTesting):
             '''.splitlines()
 
         for line in lines:
-            line, _ = copyrights.prep_line(line)
+            line, _ = prepare_text_line(line)
             assert not copyrights.is_candidate(line)
 
 

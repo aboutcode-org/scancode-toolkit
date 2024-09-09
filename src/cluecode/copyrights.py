@@ -12,7 +12,6 @@ import os
 import re
 import string
 import sys
-from collections import deque
 from time import time
 
 import attr
@@ -25,6 +24,8 @@ from commoncode.text import toascii
 from commoncode.text import unixlinesep
 
 from cluecode import copyrights_hint
+from textcode.markup import strip_debian_markup
+from textcode.markup import strip_markup_text
 
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
@@ -88,7 +89,6 @@ def detect_copyrights(
     include_authors=True,
     include_copyright_years=True,
     include_copyright_allrights=False,
-    demarkup=True,
     deadline=sys.maxsize,
 ):
     """
@@ -107,8 +107,7 @@ def detect_copyrights(
     """
     from textcode.analysis import numbered_text_lines
 
-    numbered_lines = numbered_text_lines(location, demarkup=demarkup)
-    numbered_lines = list(numbered_lines)
+    numbered_lines = list(numbered_text_lines(location, demarkup=True))
 
     if TRACE or TRACE_TOK:
         logger_debug('detect_copyrights: numbered_lines')
@@ -168,7 +167,7 @@ def detect_copyrights_from_lines(
     else:
         detector = DETECTOR
 
-    candidate_lines_groups = candidate_lines(numbered_lines)
+    candidate_lines_groups = collect_candidate_lines(numbered_lines)
 
     if TRACE or TRACE_TOK:
         candidate_lines_groups = list(candidate_lines_groups)
@@ -177,15 +176,15 @@ def detect_copyrights_from_lines(
             f'lines collected: {len(candidate_lines_groups)}',
         )
 
-    for candidates in candidate_lines_groups:
+    for candidate_lines in candidate_lines_groups:
         if TRACE or TRACE_DEEP:
             logger_debug(f'\n========================================================================')
-            logger_debug(f'detect_copyrights_from_lines: processing candidates group:')
-            for can in candidates:
+            logger_debug(f'detect_copyrights_from_lines: processing candidate_lines group:')
+            for can in candidate_lines:
                 logger_debug(f'  {can}')
 
         detections = detector.detect(
-            numbered_lines=candidates,
+            numbered_lines=candidate_lines,
             include_copyrights=include_copyrights,
             include_holders=include_holders,
             include_authors=include_authors,
@@ -250,7 +249,6 @@ class CopyrightDetector(object):
         include_copyright_years = include_copyrights and include_copyright_years
         include_copyright_allrights = include_copyrights and include_copyright_allrights
 
-        numbered_lines = list(numbered_lines)
         if not numbered_lines:
             return
 
@@ -392,7 +390,7 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
             stripped = last_line.lower().strip(string.punctuation)
             if (
                 stripped.startswith("copyright")
-                or stripped.endswith(("by", "copyright","0", "1", "2", "3", "4", "5", "6", "7", "8", "9"))
+                or stripped.endswith(("by", "copyright", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"))
             ):
                 continue
             else:
@@ -400,8 +398,10 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
                 pos += 1
                 last_line = ""
                 continue
+        if TRACE_TOK:
+            logger_debug('  get_tokens: before preped line: ' + repr(line))
 
-        line = prepare_text_line(line)
+        # line = prepare_text_line(line)
 
         last_line = line
 
@@ -1443,7 +1443,7 @@ PATTERNS = [
     (r'^IDEA$', 'NN'),
     (r'^Id$', 'NN'),
 
-    # micapitalized last name 
+    # miscapitalized last name
     (r'^king$', 'NNP'),
 
     (r'^IDENTIFICATION?\.?$', 'NN'),
@@ -1825,8 +1825,8 @@ PATTERNS = [
     # company suffix name with  suffix Tech.,ltd
     (r'^[A-Z][a-z]+[\.,]+(LTD|LTd|LtD|Ltd|ltd|lTD|lTd|ltD).?,?$', 'COMP'),
 
-    # company suffix
-    (r'^[Ii]nc[\.]?[,\.]?\)?$', 'COMP'),
+    # company suffix, including rarer Inc>
+    (r'^[Ii]nc[\.]?[,\.>]?\)?$', 'COMP'),
     (r'^Incorporated[,\.]?\)?$', 'COMP'),
 
     # ,Inc. suffix without spaces is directly a company name
@@ -1886,8 +1886,10 @@ PATTERNS = [
     # Iceland
     (r'^(ehf|hf|svf|ohf)\.,?$', 'COMP'),
 
-    # company abbreviations
+    # Move company abbreviations
     (r'^(SPRL|srl)[\.,]?$', 'COMP'),
+    # Poland
+    (r'^(sp\.|o\.o\.)$', 'COMP'),
 
     # company suffix : AS: this is frequent beyond Norway.
     (r'^AS', 'CAPS'),
@@ -1945,7 +1947,6 @@ PATTERNS = [
     # Various rare company names/suffix
     (r'^FedICT$', 'COMPANY'),
     (r'^10gen$', 'COMPANY'),
-
 
     # Division, District
     (r'^(District|Division)\)?[,\.]?$', 'COMP'),
@@ -4123,19 +4124,6 @@ def strip_balanced_edge_parens(s):
 ################################################################################
 
 
-remove_non_chars = re.compile(r'[^a-z0-9]').sub
-
-
-def prep_line(line):
-    """
-    Return a tuple of (line, line with only chars) from a line of text prepared
-    for candidate and other checks or None.
-    """
-    line = prepare_text_line(line.lower(), dedeb=False)
-    chars_only = remove_non_chars('', line)
-    return line, chars_only.strip()
-
-
 is_only_digit_and_punct = re.compile('^[^A-Za-z]+$').match
 
 
@@ -4143,13 +4131,15 @@ def is_candidate(prepared_line):
     """
     Return True if a prepared line is a candidate line for copyright detection
     """
+    if TRACE:
+        logger_debug(f'is_candidate: prepared_line: {prepared_line!r}')
+
     if not prepared_line:
         return False
 
     if is_only_digit_and_punct(prepared_line):
         if TRACE:
-            logger_debug(
-                f'is_candidate: is_only_digit_and_punct:\n{prepared_line!r}')
+            logger_debug(f'is_candidate: is_only_digit_and_punct:\n{prepared_line!r}')
 
         return False
 
@@ -4157,7 +4147,7 @@ def is_candidate(prepared_line):
         return True
     else:
         pass
-
+    prepared_line = prepared_line.lower()
     for marker in copyrights_hint.statement_markers:
         if marker in prepared_line:
             return True
@@ -4185,81 +4175,63 @@ def is_end_of_statement(chars_only_line):
     )
 
 
+remove_non_chars = re.compile(r'[^a-z0-9]').sub
+
 has_trailing_year = re.compile(r'(?:19\d\d|20[0-4]\d)+$').findall
 
 
-def candidate_lines(numbered_lines):
+def collect_candidate_lines(numbered_lines):
     """
-    Yield groups of candidate line lists where each list element is a tuple of
+    Yield groups of prepared candidate line lists where each list element is a tuple of
     (line number,  line text) given an iterable of ``numbered_lines`` as tuples
     of (line number,  line text) .
 
     A candidate line is a line of text that may contain copyright statements.
     A few lines before and after a candidate line are also included.
     """
-    candidates = deque()
+    candidates = []
     candidates_append = candidates.append
-    candidates_clear = candidates.clear
 
     # used as a state and line counter
     in_copyright = 0
 
     if TRACE_TOK:
         numbered_lines = list(numbered_lines)
-        logger_debug(f'candidate_lines: numbered_lines: {numbered_lines!r}')
+        logger_debug(f'collect_candidate_lines: numbered_lines: {numbered_lines!r}')
 
     # the previous line (chars only)
     previous_chars = None
-    for numbered_line in numbered_lines:
+    for (ln, line) in numbered_lines:
         if TRACE:
-            logger_debug(f'# candidate_lines: evaluating line: {numbered_line!r}')
+            logger_debug(f'## collect_candidate_lines: evaluating line: {(ln, line)!r}')
 
-        _line_number, line = numbered_line
+        is_debian = 's>' in line
+        prepared = prepare_text_line(line)
+        if TRACE:
+            logger_debug(f'## collect_candidate_lines: prepared: {prepared!r}, candidate: {is_candidate(prepared)}')
 
-        # FIXME: we should get the prepared text from here and return
-        # effectively pre-preped lines... but the prep taking place here is
-        # different?
-        prepped, chars_only = prep_line(line)
+        chars_only = remove_non_chars('', line.lower()).strip()
 
         if is_end_of_statement(chars_only):
-            candidates_append(numbered_line)
+            candidates_append((ln, prepared,))
 
             if TRACE:
-                cands = list(candidates)
-                logger_debug(f'   candidate_lines: is EOS: yielding candidates\n    {cands!r}\n')
+                logger_debug(f'   collect_candidate_lines: is EOS: yielding candidates\n    {candidates!r}\n')
 
-            yield list(candidates)
-            candidates_clear()
+            yield candidates
+            candidates = []
             in_copyright = 0
             previous_chars = None
 
-        elif is_candidate(prepped):
+        # <s> and </s> are legacy debian-style copyright name tags in copyright files
+        # http are for copyrights listing many URLs
+        elif is_candidate(prepared) or 'http' in chars_only or is_debian:
             # the state is now "in copyright"
             in_copyright = 2
-            candidates_append(numbered_line)
-
+            candidates_append((ln, prepared,))
             previous_chars = chars_only
             if TRACE:
-                logger_debug('   candidate_lines: line is candidate')
-
-        elif 's>' in line:
-            # this is for debian-style <s></s> copyright name tags
-            # the state is now "in copyright"
-            in_copyright = 2
-            candidates_append(numbered_line)
-
-            previous_chars = chars_only
-            if TRACE:
-                logger_debug('   candidate_lines: line is <s></s> candidate')
-
-        elif 'http' in line:
-            # this is for copyright listing many URLs
-            in_copyright = 2
-            candidates_append(numbered_line)
-
-            previous_chars = chars_only
-            if TRACE:
-                logger_debug('   candidate_lines: line is HTTP candidate')
+                logger_debug('   collect_candidate_lines: line is candidate')
 
         elif in_copyright > 0:
             # these are a sign that the copyrights continue after
@@ -4267,7 +4239,7 @@ def candidate_lines(numbered_lines):
             # see https://github.com/nexB/scancode-toolkit/issues/1565
             # if these are no present we treat empty lines... as empty!
             if (
-                (not chars_only)
+                not chars_only
                 and (
                     not previous_chars.endswith((
                         'copyright',
@@ -4280,70 +4252,40 @@ def candidate_lines(numbered_lines):
                 and not has_trailing_year(previous_chars)
             ):
 
-                # completely empty or only made of punctuations
                 if TRACE:
-                    cands = list(candidates)
-                    logger_debug(f'   candidate_lines: empty: yielding candidates\n    {cands!r}\n')
+                    logger_debug(f'   collect_candidate_lines: empty: yielding candidates\n    {candidates!r}\n')
 
-                yield list(candidates)
-                candidates_clear()
+                yield candidates
+                candidates = []
                 in_copyright = 0
                 previous_chars = None
 
             else:
-                candidates_append(numbered_line)
+                candidates_append((ln, line,))
                 # and decrement our state
                 in_copyright -= 1
                 if TRACE:
-                    logger_debug('   candidate_lines: line is in copyright')
+                    logger_debug('   collect_candidate_lines: line is in copyright')
 
         elif candidates:
             if TRACE:
-                cands = list(candidates)
-                logger_debug(f'    candidate_lines: not in COP: yielding candidates\n    {cands!r}\n')
+                logger_debug(f'    collect_candidate_lines: not in COP: yielding candidates\n    {candidates!r}\n')
 
-            yield list(candidates)
-            candidates_clear()
+            yield candidates
+            candidates = []
             in_copyright = 0
             previous_chars = None
 
     # finally
     if candidates:
         if TRACE:
-            cands = list(candidates)
-            logger_debug(f'candidate_lines: finally yielding candidates\n    {cands!r}\n')
+            logger_debug(f'collect_candidate_lines: finally yielding candidates\n    {candidates!r}\n')
 
-        yield list(candidates)
+        yield candidates
 
 ################################################################################
 # TEXT PRE PROCESSING
 ################################################################################
-
-
-# this catches tags but not does not remove the text inside tags
-remove_tags = re.compile(
-    r'<'
-     r'[(-\-)\?\!\%\/]?'
-     r'[a-gi-vx-zA-GI-VX-Z][a-zA-Z#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]*'
-     r'[a-zA-Z0-9#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]+'
-    r'\/?>',
-    re.MULTILINE | re.UNICODE
-).sub
-
-
-def strip_markup(text, dedeb=True):
-    """
-    Strip markup tags from ``text``.
-
-    If ``dedeb`` is True, remove "Debian" <s> </s> markup tags seen in
-    older copyright files.
-    """
-    text = remove_tags(' ', text)
-    # Debian copyright file markup
-    if dedeb:
-        return text.replace('</s>', '').replace('<s>', '').replace('<s/>', '')
-    else:
-        return text
 
 
 # this catches the common C-style percent string formatting codes
@@ -4363,17 +4305,13 @@ remove_comment_markers = re.compile(r'^(rem|\@rem|dnl)\s+').sub
 remove_man_comment_markers = re.compile(r'\."').sub
 
 
-def prepare_text_line(line, dedeb=True, to_ascii=True):
+def prepare_text_line(line):
     """
     Prepare a text ``line`` for copyright detection.
-
-    If ``dedeb`` is True, remove "Debian" <s> </s> markup tags seen in
-    older copyright files.
-
-    If ``to_ascii`` convert the text to ASCII characters.
+    Always convert line to ASCII.
     """
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: initial: ' + repr(line))
+        logger_debug('    prepare_text_line: initial: ' + repr(line))
 
     # remove some junk in man pages: \(co
     line = (line
@@ -4383,17 +4321,17 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     )
     line = remove_printf_format_codes(' ', line)
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: after remove_printf_format_codes: ' + repr(line))
+        logger_debug('    prepare_text_line: after remove_printf_format_codes: ' + repr(line))
 
     # less common comment line prefixes
     line = remove_comment_markers(' ', line)
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: after remove_comment_markers: ' + repr(line))
+        logger_debug('    prepare_text_line: after remove_comment_markers: ' + repr(line))
 
     line = remove_man_comment_markers(' ', line)
 
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: after remove_man_comment_markers: ' + repr(line))
+        logger_debug('    prepare_text_line: after remove_man_comment_markers: ' + repr(line))
 
     line = (line
         # C and C++ style comment markers
@@ -4404,7 +4342,7 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         # un common pipe chars in some ascii art
         .replace('|', ' ')
 
-        # normalize copyright signs and spacing around them
+        # normalize copyright signs, quotes and spacing around them
         .replace('"Copyright', '" Copyright')
         .replace('( C)', ' (c) ')
         .replace('(C)', ' (c) ')
@@ -4470,10 +4408,10 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     )
 
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: after replacements: ' + repr(line))
+        logger_debug('    prepare_text_line: after replacements1: ' + repr(line))
 
     # keep only one quote
-    line = fold_consecutive_quotes(u"'", line)
+    line = fold_consecutive_quotes("'", line)
 
     # treat some escaped literal CR, LF, tabs, \00 as new lines
     # such as in code literals: a="\\n some text"
@@ -4492,8 +4430,15 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace(u"')", ' ')
         .replace(u"],", ' ')
     )
+    if TRACE_TOK:
+        logger_debug('    prepare_text_line: after replacements2: ' + repr(line))
+
+    line = strip_markup_text(line)
     # note that we do not replace the debian tag by a space:  we remove it
-    line = strip_markup(line, dedeb=dedeb)
+    line = strip_debian_markup(line)
+
+    if TRACE_TOK:
+        logger_debug('    prepare_text_line: after strip_markup: ' + repr(line))
 
     line = remove_punctuation(' ', line)
 
@@ -4508,8 +4453,7 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     line = line.replace('>', '> ').replace('<', ' <')
 
     # normalize to ascii text
-    if to_ascii:
-        line = toascii(line, translit=True)
+    line = toascii(line, translit=True)
 
     # normalize to use only LF as line endings so we can split correctly
     # and keep line endings

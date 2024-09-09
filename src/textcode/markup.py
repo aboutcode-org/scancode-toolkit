@@ -94,20 +94,10 @@ def is_markup_text(text):
     return has_tags and balanced
 
 
-def demarkup(location):
-    """
-    Return an iterator of unicode text lines for the file at `location` lightly
-    stripping markup if the file is some kind of markup, such as HTML, XML, PHP,
-    etc. The whitespaces are collapsed to one space.
-    """
-    from textcode.analysis import unicode_text_lines
-
-    for line in unicode_text_lines(location, decrlf=True):
-        if TRACE:
-            logger_debug(f'demarkup: {line} : demarked: {demarkup_text(line)}')
-        yield demarkup_text(line)
-
-
+"""
+Find start and closing tags or the first white space whichever comes first or entities.
+This regex is such that ' '.join(tags.split(a))==a
+"""
 get_tags_and_entities = re.compile(
     r'('
     r'</?[^\s></]+(?:>'
@@ -126,24 +116,35 @@ get_tags_and_entities = re.compile(
 ).split
 
 
+def is_kept_tags(t):
+    """
+    Return True if a tag should be kepts, base on its opening tag name or content
+
+    """
+    return t and any(kp in t for kp in (
+        'lic', 'copy',
+        'auth', 'contr',
+        # URLs
+        'www', 'http',
+        # legal
+        'leg',
+        # <s> are from legacy Debian copyright files.
+        '<s>', '</s>',
+        # encoded copyright signs
+        '@',
+        '169', 'a9',
+        # in <red hat inc>
+        'red',
+        'inc',
+        # also keep dates as in <2003-2009>
+        )) or t[1].isdigit() or t[-1].isdigit()
+
+
 def demarkup_text(text):
     """
     Return text lightly stripped from markup. The whitespaces are collapsed to
     one space.
     """
-
-    # keep the opening tag name of certain tags that contains these strings
-    # note: <s> are from debian copyright files
-    kept_tags = (
-        'lic', 'copy', 'www', 'http', 'auth', 'contr', 'leg', 'inc', '@',
-        '<s>', '</s>', '169', 'a9',
-        # in <red hat
-        'red'
-    )
-
-    # find start and closing tags or the first white space whichever comes first
-    # or entities. This regex is such that ' '.join(tags.split(a))==a
-
     tags_and_ents = get_tags_and_entities(text)
     if TRACE:
         logger_debug(f'demarkup_text: {text!r}')
@@ -153,8 +154,54 @@ def demarkup_text(text):
     cleaned_append = cleaned.append
     for token in tags_and_ents:
         tlow = token.lower()
-        if tlow.startswith(('<', '/>', '"/>', "'/>", '&', 'href',)) and not any(k in tlow for k in kept_tags):
+        if tlow.startswith(('<', '/>', '"/>', "'/>", '&', 'href',)) and not is_kept_tags(tlow):
             cleaned_append(' ')
         else:
             cleaned_append(token)
     return ''.join(cleaned)
+
+
+# this catches tags but not does not remove the text inside tags
+_remove_tags = re.compile(
+    r'<'
+     r'[(-\-)\?\!\%\/]?'
+     r'[a-gi-vx-zA-GI-VX-Z][a-zA-Z#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]*'
+     r'[a-zA-Z0-9#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]+'
+    r'\/?>',
+    re.MULTILINE | re.UNICODE
+)
+
+remove_tags = _remove_tags.sub
+split_tags = _remove_tags.sub
+
+
+def strip_markup_text(text):
+    """
+    Strip markup tags from ``text``.
+    """
+    return remove_tags(' ', text)
+
+
+def strip_debian_markup(text):
+    """
+    Remove "Debian" legacy copyright file <s> </s> markup tags seen in
+    older copyright files.
+    """
+    return text.replace('</s>', '').replace('<s>', '').replace('<s/>', '')
+
+
+def demarkup(location, stripper=demarkup_text):
+    """
+    Return an iterator of unicode text lines for the file at `location` lightly
+    stripping markup if the file is some kind of markup, such as HTML, XML, PHP,
+    etc. The whitespaces are collapsed to one space.
+
+    Use the ``stripper`` callable, one of demarkup_text or strip_markup_text.
+    """
+    from textcode.analysis import unicode_text_lines
+
+    for line in unicode_text_lines(location):
+        if TRACE:
+            logger_debug(f'demarkup: {line} : demarked: {demarkup(line)}')
+        yield stripper(line)
+
