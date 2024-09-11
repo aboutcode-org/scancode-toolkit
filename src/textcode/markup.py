@@ -8,13 +8,14 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-from collections import Counter
 import os
 import re
 
+from collections import Counter
+from functools import partial
+
 from commoncode.text import as_unicode
 from typecode import get_type
-from functools import partial
 
 """
 Extract plain text from HTML, XML and related angular markup-like files and texts.
@@ -39,9 +40,6 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(" ".join(isinstance(a, str) and a or repr(a) for a in args))
-
-
-bin_dir = os.path.join(os.path.dirname(__file__), "bin")
 
 extensions = (
     ".html",
@@ -249,53 +247,20 @@ def demarkup_text(text):
     return get_demarkuped_text(text, splitter=split_on_tags_and_entities, keeper=KEEPER)
 
 
-"""
-Split text on tags start and end
-"""
-split_on_tags = re.compile(r"(< */? *[a-z]+[a-z0-9]* */?>?|>)", re.IGNORECASE).split
-
-KEPT_MARKUP2 = (
-    "lic",
-    "copy",
-    "auth",
-    "contr",
-    # legal
-    "leg",
-    # encoded copyright signs
-    "@",
-    "169",
-    "a9",
-    # in <red hat inc>
-    "red",
-    "inc",
-    ">",
-)
-
-MARKUP_MARKERS2 = (
-    "<",
-    ">",
-    "/>",
-    '"/>',
-    "'/>",
-    "&",
-    "href",
-)
-
-KEEPER2 = partial(is_kept_tag, markup_markers=MARKUP_MARKERS2, kept_markup=KEPT_MARKUP2)
-
-
-def strip_markup_text(text):
+def demarkup(location, stripper=demarkup_text):
     """
-    Strip markup tags from ``text``.
-    """
-    return get_demarkuped_text(text, splitter=split_on_tags, keeper=KEEPER2)
+    Return an iterator of unicode text lines for the file at `location` lightly
+    stripping markup if the file is some kind of markup, such as HTML, XML, PHP,
+    etc. The whitespaces are collapsed to one space.
 
+    Use the ``stripper`` callable, one of demarkup_text or strip_markup_text.
+    """
+    from textcode.analysis import unicode_text_lines
 
-def strip_known_markup_from_text(text):
-    """
-    Strip markup tags from ``text`` using a list of tags
-    """
-    return get_demarkuped_text(text, splitter=split_on_tags, keeper=tag_keeper)
+    for line in unicode_text_lines(location):
+        if TRACE:
+            logger_debug(f"demarkup: {line} : demarked: {demarkup(line)}")
+        yield stripper(line)
 
 
 # ## Old style stripper
@@ -317,28 +282,30 @@ def strip_markup_text_legacy(text):
     return remove_tags_legacy(" ", text).strip()
 
 
-def strip_debian_markup(text):
-    """
-    Remove "Debian" legacy copyright file <s> </s> markup tags seen in
-    older copyright files. Note we replace by nothing.
-    """
-    return text.replace("</s>", "").replace("<s>", "").replace("<s/>", "")
+"""
+Split text on tags start and end
+"""
+split_on_tags = re.compile(
+    r"("
+        # a tag
+        # URL
+        r"<https?://[^<>\"\']+>"
+        r"|<www[^<>\"\']+>"
+        r"|< */? *[a-z]+[a-z0-9@\-\._\+]* */? *>?"
+        # emails
+        r"|mailto:"
+        r"|>"
+        r"| "
+    r")",
+    re.IGNORECASE,
+).split
 
 
-def demarkup(location, stripper=demarkup_text):
+def strip_known_markup_from_text(text):
     """
-    Return an iterator of unicode text lines for the file at `location` lightly
-    stripping markup if the file is some kind of markup, such as HTML, XML, PHP,
-    etc. The whitespaces are collapsed to one space.
-
-    Use the ``stripper`` callable, one of demarkup_text or strip_markup_text.
+    Str_ip markup tags from ``text`` using a list of tags
     """
-    from textcode.analysis import unicode_text_lines
-
-    for line in unicode_text_lines(location):
-        if TRACE:
-            logger_debug(f"demarkup: {line} : demarked: {demarkup(line)}")
-        yield stripper(line)
+    return get_demarkuped_text(text, splitter=split_on_tags, keeper=keep_tag)
 
 
 ALL_TAGS = frozenset(
@@ -1512,8 +1479,9 @@ ALL_TAGS = frozenset(
         "/ruby>",
         "ruby>",
         " ruby>",
-        # special "debian" legacy tag for copyright holders
-        # "s",
+        "<s>",
+        "<s/>",
+        "</s>",
         "<samp",
         "<samp ",
         "<samp>",
@@ -1943,6 +1911,9 @@ ALL_TAGS = frozenset(
         "/xmp>",
         "xmp>",
         " xmp>",
+        # not XML/HTML
+        "<year>",
+        "<name>",
         # common XML namespaces
         "http://www.w3.org/1998/math/mathml",
         "http://www.w3.org/1999/xhtml",
@@ -1953,17 +1924,37 @@ ALL_TAGS = frozenset(
     ]
 )
 
+
 SKIP_ATTRIBUTES = (
-    "href",
+    "href=",
     "class=",
     "width=",
+    "@end",
+    "@group",
+    "mailto:",
 )
 
 
-def tag_keeper(token, skips_tags=ALL_TAGS, skip_attributes=SKIP_ATTRIBUTES):
+KEEP_MARKERS = (
+    "copyright",
+    "author",
+    "legal",
+)
+
+
+def keep_tag(token, skips_tags=ALL_TAGS, skip_attributes=SKIP_ATTRIBUTES, kept_tags=KEEP_MARKERS):
     """
     Return True if a tag should be kept, base on a list of tag name or content.
-    Always keep debian-style legacy <s> tags and digit-only tags
     """
     tlow = token.lower()
-    return tlow not in skips_tags and not tlow.startswith(skip_attributes)
+
+    if any(k in tlow for k in kept_tags):
+        return True
+
+    if tlow.startswith(skip_attributes):
+        return False
+
+    if tlow in skips_tags or tlow == ">":
+        return False
+
+    return True
