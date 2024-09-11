@@ -226,7 +226,7 @@ class TestPlugins(PackageTester):
         else:
             expected_file = self.get_test_loc('plugin/plugins_list.txt')
         result = run_scan_click(['--list-packages'])
-        if True:
+        if regen:
             with open(expected_file, 'w') as ef:
                 ef.write(result.output)
         assert result.output == open(expected_file).read()
