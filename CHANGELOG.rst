@@ -46,6 +46,10 @@ v33.0.0 (next next, roadmap)
     license/exception texts added, and also 1 license was deprecated.
     For more details see https://github.com/aboutcode-org/scancode-toolkit/pull/3897
 
+- New and improved copyright detection with many false positive removed
+  and refined detection added.
+
+
 v32.2.1 - 2024-07-02
 ---------------------
 
