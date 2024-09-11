@@ -147,7 +147,7 @@ def starts_or_ends_with_digit(s):
     True
     """
     # first and last character (works even if the string is empty)
-    return s and (s[:1].isdigit() or s[-1:].isdigit())
+    return bool(s and (s[:1].isdigit() or s[-1:].isdigit()))
 
 
 def get_demarkuped_text(text, splitter, keeper):
