@@ -3700,6 +3700,7 @@ AUTHORS_PREFIXES = frozenset(set.union(
         "name'",
         "a",
         "moduleauthor",
+        "©",
     ])
 ))
 
@@ -3781,6 +3782,7 @@ HOLDERS_PREFIXES = frozenset(set.union(
         'later',
         '$',
         'current.year',
+        "©",
     ])
 ))
 
@@ -4321,7 +4323,7 @@ def remove_code_comment_markers(s):
     Return ``s`` removing code comments such as C and C++ style comment markers and assimilated
 
     >>> remove_code_comment_markers("\\*#%; /\\/*a*/b/*c\\d#e%f \\*#%; /")
-    'a b c d e f'
+    'a b c\\d e f'
     """
     return (s
         .replace('/*', ' ')
