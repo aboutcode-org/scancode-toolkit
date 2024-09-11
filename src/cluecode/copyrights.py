@@ -12,20 +12,22 @@ import os
 import re
 import string
 import sys
+
+from collections import deque
 from time import time
 
 import attr
+
+from commoncode.text import toascii
+from commoncode.text import unixlinesep
 from pygmars import lex
 from pygmars import parse
 from pygmars import Token
 from pygmars.tree import Tree
 
-from commoncode.text import toascii
-from commoncode.text import unixlinesep
 
 from cluecode import copyrights_hint
-from textcode.markup import strip_debian_markup
-from textcode.markup import strip_markup_text
+from textcode.markup import strip_known_markup_from_text
 
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
@@ -167,10 +169,10 @@ def detect_copyrights_from_lines(
     else:
         detector = DETECTOR
 
-    candidate_lines_groups = collect_candidate_lines(numbered_lines)
+    candidate_lines_groups = list(collect_candidate_lines(numbered_lines))
 
     if TRACE or TRACE_TOK:
-        candidate_lines_groups = list(candidate_lines_groups)
+        candidate_lines_groups = candidate_lines_groups
         logger_debug(
             f'detect_copyrights_from_lines: ALL groups of candidate '
             f'lines collected: {len(candidate_lines_groups)}',
@@ -386,6 +388,7 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
         if TRACE_TOK:
             logger_debug('  get_tokens: bare line: ' + repr(line))
 
+        # keep or skip empty lines
         if not line.strip():
             stripped = last_line.lower().strip(string.punctuation)
             if (
@@ -398,10 +401,9 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
                 pos += 1
                 last_line = ""
                 continue
+
         if TRACE_TOK:
             logger_debug('  get_tokens: before preped line: ' + repr(line))
-
-        # line = prepare_text_line(line)
 
         last_line = line
 
@@ -801,6 +803,9 @@ PATTERNS = [
     (r'^Earth$', 'NN'),
     (r'^Maps/Google$', 'NN'),
 
+    # verbatime star
+    (r'^\*$', 'JUNK'),
+
     (r'^([A-Z][a-z]+){3,}$', 'JUNK'),
 
     ############################################################################
@@ -918,6 +923,8 @@ PATTERNS = [
     (r'^WARRANTIE?S?$', 'JUNK'),
     (r'^WARRANTS?$', 'JUNK'),
     (r'^WARRANTYS?$', 'JUNK'),
+
+    (r'^Row\(', 'JUNK'),
 
     (r'^hispagestyle$', 'JUNK'),
     (r'^Generic$', 'JUNK'),
@@ -1890,6 +1897,8 @@ PATTERNS = [
     (r'^(SPRL|srl)[\.,]?$', 'COMP'),
     # Poland
     (r'^(sp\.|o\.o\.)$', 'COMP'),
+    # Eingetragener Kaufmann
+    (r'^(e\.K\.|e\.Kfm\.|e\.Kfr\.)$', 'COMP'),
 
     # company suffix : AS: this is frequent beyond Norway.
     (r'^AS', 'CAPS'),
@@ -2952,6 +2961,10 @@ GRAMMAR = """
     #  Copyright (C) 1999-2000 VA Linux Systems
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <NN|LINUX>  <NNP>} #2280-1
 
+    # Russ Dill <Russ.Dill@asu.edu> 2001-2003
+    # Rewrited by Vladimir Oleynik <dzo@simtreas.ru> (C) 2003
+    COPYRIGHT: {<NAME-EMAIL>  <YR-RANGE>  <AUTH2>  <BY>  <NAME-EMAIL>  <COPY>  <YR-RANGE>} #22793.5
+
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
     # using #2280 above: Copyright 2018 Developers of the Rand project
@@ -3240,10 +3253,6 @@ GRAMMAR = """
     # Copyright: 2004-2007 by Internet Systems Consortium, Inc. ("ISC")
     #            1995-2003 by Internet Software Consortium
     COPYRIGHT: {<COPYRIGHT> <NN> <YR-RANGE>  <BY>  <COMPANY> } #1615
-
-    # Russ Dill <Russ.Dill@asu.edu> 2001-2003
-    # Rewrited by Vladimir Oleynik <dzo@simtreas.ru> (C) 2003
-    COPYRIGHT: {<NAME-EMAIL>  <YR-RANGE>  <AUTH2>  <BY>  <NAME-EMAIL>  <COPY>  <YR-RANGE>} #22793.5
 
     # portions copyright The Internet Society, Tom Tromey and Red Hat, Inc.
     COPYRIGHT: {<PORTIONS>  <COPY>  <NN>  <NAME>}        #157998
@@ -3647,6 +3656,7 @@ COPYRIGHTS_JUNK = [
     r'Copyright \(c\) 2021 Dot',
     r'^\(c\) \(c\) B$',
     r'^\(c\) group$',
+    r'^\(c\) \(c\) A$',
 ]
 
 # a collection of junk junk matcher callables
@@ -4175,7 +4185,7 @@ def is_end_of_statement(chars_only_line):
     )
 
 
-remove_non_chars = re.compile(r'[^a-z0-9]').sub
+remove_non_chars = re.compile(r'[^a-z0-9]', re.IGNORECASE).sub
 
 has_trailing_year = re.compile(r'(?:19\d\d|20[0-4]\d)+$').findall
 
@@ -4189,8 +4199,9 @@ def collect_candidate_lines(numbered_lines):
     A candidate line is a line of text that may contain copyright statements.
     A few lines before and after a candidate line are also included.
     """
-    candidates = []
+    candidates = deque()
     candidates_append = candidates.append
+    candidates_clear = candidates.clear
 
     # used as a state and line counter
     in_copyright = 0
@@ -4216,10 +4227,10 @@ def collect_candidate_lines(numbered_lines):
             candidates_append((ln, prepared,))
 
             if TRACE:
-                logger_debug(f'   collect_candidate_lines: is EOS: yielding candidates\n    {candidates!r}\n')
+                logger_debug(f'   collect_candidate_lines: is EOS: yielding candidates\n    {list(candidates)!r}\n')
 
-            yield candidates
-            candidates = []
+            yield list(candidates)
+            candidates_clear()
             in_copyright = 0
             previous_chars = None
 
@@ -4253,15 +4264,15 @@ def collect_candidate_lines(numbered_lines):
             ):
 
                 if TRACE:
-                    logger_debug(f'   collect_candidate_lines: empty: yielding candidates\n    {candidates!r}\n')
+                    logger_debug(f'   collect_candidate_lines: empty: yielding candidates\n    {list(candidates)!r}\n')
 
-                yield candidates
-                candidates = []
+                yield list(candidates)
+                candidates_clear()
                 in_copyright = 0
                 previous_chars = None
 
             else:
-                candidates_append((ln, line,))
+                candidates_append((ln, prepared,))
                 # and decrement our state
                 in_copyright -= 1
                 if TRACE:
@@ -4269,19 +4280,19 @@ def collect_candidate_lines(numbered_lines):
 
         elif candidates:
             if TRACE:
-                logger_debug(f'    collect_candidate_lines: not in COP: yielding candidates\n    {candidates!r}\n')
+                logger_debug(f'    collect_candidate_lines: not in COP: yielding candidates\n    {list(candidates)!r}\n')
 
-            yield candidates
-            candidates = []
+            yield list(candidates)
+            candidates_clear()
             in_copyright = 0
             previous_chars = None
 
     # finally
     if candidates:
         if TRACE:
-            logger_debug(f'collect_candidate_lines: finally yielding candidates\n    {candidates!r}\n')
+            logger_debug(f'collect_candidate_lines: finally yielding candidates\n    {list(candidates)!r}\n')
 
-        yield candidates
+        yield list(candidates)
 
 ################################################################################
 # TEXT PRE PROCESSING
@@ -4299,10 +4310,27 @@ fold_consecutive_quotes = re.compile(r"'\"{2,}").sub
 
 # less common rem comment line prefix in dos
 # less common dnl comment line prefix in autotools am/in
-remove_comment_markers = re.compile(r'^(rem|\@rem|dnl)\s+').sub
+remove_weird_comment_markers = re.compile(r'^(rem|\@rem|dnl)\s+').sub
 
 # common comment line prefix in man pages
 remove_man_comment_markers = re.compile(r'\."').sub
+
+
+def remove_code_comment_markers(s):
+    """
+    Return ``s`` removing code comments such as C and C++ style comment markers and assimilated
+
+    >>> remove_code_comment_markers("\\*#%; /\\/*a*/b/*c\\d#e%f \\*#%; /")
+    'a b c d e f'
+    """
+    return (s
+        .replace('/*', ' ')
+        .replace('*/', ' ')
+        .replace('*', ' ')
+        .replace('#', ' ')
+        .replace('%', ' ')
+        .strip(' \\/*#%;')
+    )
 
 
 def prepare_text_line(line):
@@ -4324,19 +4352,20 @@ def prepare_text_line(line):
         logger_debug('    prepare_text_line: after remove_printf_format_codes: ' + repr(line))
 
     # less common comment line prefixes
-    line = remove_comment_markers(' ', line)
+    line = remove_weird_comment_markers(' ', line)
     if TRACE_TOK:
-        logger_debug('    prepare_text_line: after remove_comment_markers: ' + repr(line))
+        logger_debug('    prepare_text_line: after remove_weird_comment_markers: ' + repr(line))
 
     line = remove_man_comment_markers(' ', line)
-
     if TRACE_TOK:
         logger_debug('    prepare_text_line: after remove_man_comment_markers: ' + repr(line))
 
+    line = remove_code_comment_markers(line)
+    if TRACE_TOK:
+        logger_debug('    prepare_text_line: after remove_code_comment_markers: ' + repr(line))
+
     line = (line
         # C and C++ style comment markers
-        .replace('/*', ' ').replace('*/', ' ')
-        .strip().strip('/*#')
         # in rst
         .replace('|copy|', ' (c) ')
         # un common pipe chars in some ascii art
@@ -4368,6 +4397,11 @@ def prepare_text_line(line):
         .replace('\\XA9', ' (c) ')
         .replace('\\A9', ' (c) ')
         .replace('\\a9', ' (c) ')
+        .replace('<A9>', ' (c) ') 
+        .replace('XA9;', ' (c) ')
+        .replace('Xa9;', ' (c) ')
+        .replace('xA9;', ' (c) ')
+        .replace('xa9;', ' (c) ')
         # \xc2 is a Â
         .replace('\xc2', '')
         .replace('\\xc2', '')
@@ -4393,18 +4427,22 @@ def prepare_text_line(line):
         .replace('&amp;', '&')
         .replace('&#38;', '&')
         .replace('&gt;', '>')
+        .replace('&gt', '>')
         .replace('&#62;', '>')
         .replace('&lt;', '<')
+        .replace('&lt', '<')
         .replace('&#60;', '<')
 
         # normalize (possibly repeated) quotes to unique single quote '
         # backticks ` and "
         .replace('`', "'")
         .replace('"', "'")
-        # u nicode prefix in Python strings
+        # u unicode prefix in legacy Python2 strings
         .replace(" u'", " '")
         # see https://github.com/nexB/scancode-toolkit/issues/3667
         .replace('§', " ")
+        # keep http
+        .replace('<http', " http")
     )
 
     if TRACE_TOK:
@@ -4427,15 +4465,18 @@ def prepare_text_line(line):
         # replace ('
         .replace('("', ' ')
         # some trailing garbage ')
-        .replace(u"')", ' ')
-        .replace(u"],", ' ')
+        .replace("')", ' ')
+        .replace("],", ' ')
     )
     if TRACE_TOK:
         logger_debug('    prepare_text_line: after replacements2: ' + repr(line))
 
-    line = strip_markup_text(line)
     # note that we do not replace the debian tag by a space:  we remove it
-    line = strip_debian_markup(line)
+    # This "Debian" legacy copyright file <s> </s> markup tags seen in
+    # older copyright files. Note we replace by nothing.
+    line = line.replace("</s>", "").replace("<s>", "").replace("<s/>", "")
+
+    line = strip_known_markup_from_text(line)
 
     if TRACE_TOK:
         logger_debug('    prepare_text_line: after strip_markup: ' + repr(line))
@@ -4455,13 +4496,12 @@ def prepare_text_line(line):
     # normalize to ascii text
     line = toascii(line, translit=True)
 
+    # remove stars
+    line = line.strip(' *')
+
     # normalize to use only LF as line endings so we can split correctly
     # and keep line endings
     line = unixlinesep(line)
-
-    # strip verbatim back slash and comment signs again at both ends of a line
-    # FIXME: this is done at the start of this function already
-    line = line.strip('\\/*#%;')
 
     # normalize spaces
     line = ' '.join(line.split())

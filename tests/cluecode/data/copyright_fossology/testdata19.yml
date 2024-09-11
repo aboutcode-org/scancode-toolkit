@@ -3,9 +3,20 @@ what:
   - holders
   - authors
 copyrights:
-  - Copyright (c) 2001
-  - AMOR Program Copyright (c) 1999-2001
-  - Documentation Copyright (c) 2001
+  - Copyright (c) 2001 Karl Garrison
+  - Copyright (c) 1999-2001 Martin R.
+  - Copyright (c) 2001 Karl Garrison (karl AT indy.rr.com)
 holders:
-  - AMOR Program
-  - Documentation
+  - Karl Garrison
+  - Martin R.
+  - Karl Garrison karl AT
+authors:
+  - firstname Karl Garrison
+  - Martin R. Jones
+  - Martin R. Jones xmlns:doc http://nwalsh.com/xsl/documentation/1.0
+  - Jean-Claude Dumas xmlns:doc http://nwalsh.com/xsl/documentation/1.0
+  - Jean-Claude surname Dumas xmlns:doc http://nwalsh.com/xsl/documentation/1.0
+  - Masayuki Koba
+  - Frank Pieczynski xmlns:doc http://nwalsh.com/xsl/documentation/1.0
+  - Bartosz Trudnowski for his wife. xmlns:doc http://nwalsh.com/xsl/documentation/1.0
+  - Daniel Pfeiffer

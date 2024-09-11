@@ -15,6 +15,7 @@ from commoncode.testcase import FileBasedTesting
 from cluecode import copyrights
 from textcode import markup
 from cluecode.copyrights import prepare_text_line
+from cluecode.copyrights import remove_non_chars
 
 
 class TestTextPreparation(FileBasedTesting):
@@ -45,7 +46,7 @@ class TestTextPreparation(FileBasedTesting):
 
     def test_strip_markup_removes_debian_legacy_s_tags(self):
         cp = 'Parts Copyright (c) 1992 <s>Uri Blumentha<s>l, I</s>BM</s>'
-        result = markup.strip_markup_text(cp)
+        result = prepare_text_line(cp)
         assert result == 'Parts Copyright (c) 1992 Uri Blumenthal, IBM'
 
     def test_prepare_text_line_removes_C_comments(self):
@@ -68,15 +69,22 @@ class TestTextPreparation(FileBasedTesting):
         result = prepare_text_line(cp)
         assert result == 'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'
 
+    def test_prepare_text_line_does_replace_copyright_signs(self):
+        cp = 'Copyright \A9 1991, 1999 Free Software Foundation, Inc.'
+        result = prepare_text_line(cp)
+        assert result == 'Copyright (c) 1991, 1999 Free Software Foundation, Inc.'
+
     def test_is_end_of_statement(self):
         line = '''          "All rights reserved\\n"'''
-        _line, char_only_line = prepare_text_line(line)
+        prepped_line = prepare_text_line(line)
+        char_only_line = remove_non_chars('', prepped_line.lower()).strip()
+        assert char_only_line == 'allrightsreserved'
         assert copyrights.is_end_of_statement(char_only_line)
 
     def test_collect_candidate_lines_simple(self):
         lines = [(1, ' test (C) all rights reserved')]
         result = list(copyrights.collect_candidate_lines(lines))
-        expected = [[(1, ' test (C) all rights reserved')]]
+        expected = [[(1, 'test (c) all rights reserved')]]
         assert result == expected
 
     def test_collect_candidate_lines_complex(self):
@@ -105,19 +113,95 @@ class TestTextPreparation(FileBasedTesting):
         '''.splitlines(False)
 
         expected = [
-            [(3, '           Copyright 1999-2006 The Apache Software Foundation')],
+            [(3,
+              'Copyright 1999-2006 The Apache Software Foundation')],
+            [(7,
+              'This product includes software developed at'),
+             (8,
+              'The Apache Software Foundation (http://www.apache.org/).')],
+            [(13,
+              '- software copyright (c) 1999-2002, Lotus Development Corporation.,'),
+             (14,
+              'http://www.lotus.com.'),
+             (15,
+              '- software copyright (c) 2001-2002, Sun Microsystems.,'),
+             (16,
+              'http://www.sun.com.'),
+             (17,
+              '- software copyright (c) 2003, IBM Corporation.,'),
+             (18,
+              'http://www.ibm.com.')],
+            [(22,
+              'this product includes software developed by the following:')],
+        ]
 
-            [(7, '           This product includes software developed at'),
-             (8, '           The Apache Software Foundation (http://www.apache.org/).')],
+        result = list(copyrights.collect_candidate_lines(enumerate(lines, 1)))
+        assert result == expected
 
-            [(13, '             - software copyright (c) 1999-2002, Lotus Development Corporation.,'),
-             (14, '               http://www.lotus.com.'),
-             (15, '             - software copyright (c) 2001-2002, Sun Microsystems.,'),
-             (16, '               http://www.sun.com.'),
-             (17, '             - software copyright (c) 2003, IBM Corporation.,'),
-             (18, '               http://www.ibm.com.')],
+    def test_collect_candidate_lines_complex2(self):
+        lines = '''
+            Copyright:
 
-            [(22, '           this product includes software developed by the following:')]
+            Copyright 1998 - 2008 Double Precision, Inc.
+
+            This software is released under the GPL, version 3.
+            Additionally, compiling, linking, and/or using the OpenSSL toolkit in
+            conjunction with this software is allowed.
+
+            A copy of the GNU General Public License is available as
+            /usr/share/common-licenses/GPL-3 in the Debian GNU/Linux distribution or on the
+            World Wide Web at http://www.gnu.org/copyleft/gpl.html.  You can also
+        '''.splitlines(False)
+
+        expected = [
+            [(2,
+              'Copyright:'),
+             (3,
+              ''),
+             (4,
+              'Copyright 1998 - 2008 Double Precision, Inc.')],
+            [(12,
+              'World Wide Web at http://www.gnu.org/copyleft/gpl.html. You can also')],
+        ]
+
+        result = list(copyrights.collect_candidate_lines(enumerate(lines, 1)))
+        assert result == expected
+
+    def test_collect_candidate_lines_complex3(self):
+        lines = '''
+            COPYRIGHT
+                 Copyright (c) 1999-2003 <s>Joshua Chamas</s>.
+                 Copyright (c) 1998 <s>Gisle Aas</s>.
+
+                This program is free software; you can redistribute it and/or modify it
+                under the same terms as Perl itself.
+
+            Perl is distributed under either the Artistic licence or the GPL.
+
+            The full text of the GPL is available on Debian systems in
+            /usr/share/common-licenses/GPL
+
+            The full text of the Artistic Licence is available on Debian systems in
+            /usr/share/common-licenses/Artistic.
+
+            This package has been through multiple maintainers (for a list see
+            /usr/share/doc/libcrypt-ssleay-perl/changelog.Debian.gz).
+
+            Current Debian specific changes are copyright (c) 2003
+            <s>Stephen Zander <gibreel@debian.org></s>
+        '''.splitlines(False)
+
+        expected = [
+            [(2,
+              'COPYRIGHT'),
+             (3,
+              'Copyright (c) 1999-2003 Joshua Chamas.'),
+             (4,
+              'Copyright (c) 1998 Gisle Aas.')],
+            [(20,
+              'Current Debian specific changes are copyright (c) 2003'),
+             (21,
+              'Stephen Zander <gibreel@debian.org>')],
         ]
 
         result = list(copyrights.collect_candidate_lines(enumerate(lines, 1)))
@@ -125,52 +209,52 @@ class TestTextPreparation(FileBasedTesting):
 
     def test_is_candidates_should_not_select_line_with_bare_full_year(self):
         line = '2012'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
     def test_is_candidates_should_not_select_line_with_full_year_before_160_and_after_2018(self):
         line = '1959 2019'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
     def test_is_candidate_should_not_select_line_with_only_two_digit_numbers(self):
         line = 'template<class V> struct v_iter<V, mpl::int_<10> > { typedef typename V::item10 type; typedef v_iter<V, mpl::int_<10 + 1> > next; };'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_sign(self):
         line = 'template<class V> struct v_iter<V, mpl::int_<10> (c) { typedef typename V::item10 type; typedef v_iter<V, mpl::int_<10 + 1> > next; };'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_not_select_line_with_junk_hex(self):
         line = '01061C3F5280CD4AC504152B81E452BD82015442014'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert not copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_a_trailing_years(self):
         line = '01061C3F5280CD4AC504152B81E452BD820154 2014\n'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_proper_years(self):
         line = '01061C3F5280CD4AC504152B81E452BD820154 2014-'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_proper_years2(self):
         line = '01061C3F5280CD4,2016 152B81E452BD820154'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_dashed_year(self):
         line = 'pub   1024D/CCD6F801 2006-11-15'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_iso_date_year(self):
         line = 'sig 3 ccd6f801 2006-11-15 nathan mittler <nathan.mittler@gmail.com>'
-        line, _char_only = prepare_text_line(line)
+        line = prepare_text_line(line)
         assert copyrights.is_candidate(line)
 
     def test_is_candidate_should_not_select_lines_made_only_of_punct_and_digits(self):
@@ -191,7 +275,7 @@ class TestTextPreparation(FileBasedTesting):
             '''.splitlines()
 
         for line in lines:
-            line, _ = prepare_text_line(line)
+            line = prepare_text_line(line)
             assert not copyrights.is_candidate(line)
 
 
