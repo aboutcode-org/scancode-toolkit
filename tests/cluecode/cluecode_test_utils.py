@@ -19,8 +19,6 @@ from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
 
-from cluecode.copyrights import detect_copyrights
-from cluecode.copyrights import Detection
 from scancode_config import REGEN_TEST_FIXTURES
 
 
@@ -172,11 +170,6 @@ def as_sorted_mapping(counter):
     return summarized
 
 
-def get_detections(test_file):
-    detections = detect_copyrights(test_file)
-    return Detection.split_values(detections)
-
-
 def make_copyright_test_functions(
     test,
     index,
@@ -188,6 +181,9 @@ def make_copyright_test_functions(
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
+    from cluecode.copyrights import detect_copyrights
+    from cluecode.copyrights import Detection
+
     from summarycode.copyright_tallies import tally_copyrights
     from summarycode.copyright_tallies import tally_persons
 
