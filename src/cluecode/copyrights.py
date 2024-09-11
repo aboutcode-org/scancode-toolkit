@@ -2335,6 +2335,9 @@ GRAMMAR = """
     # created by Jason Hunter <jhunter AT jdom DOT org>
     EMAIL: {<EMAIL_START>  <AT>  <NN|NNP>  <DOT>  <NN|NNP> } # email_start
 
+    # Copyright (c) 2001 Karl Garrison (karl AT indy.rr.com)
+    EMAIL: {<NN|NNP>  <AT>  <URL> } # email_at
+
     EMAIL: { <NN>  <CC>  <NN>  <DOT>  <NN> } # foo at bat dot com
 
     # foo@bar.com or baz@bar.com

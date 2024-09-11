@@ -1918,7 +1918,6 @@ ALL_TAGS = frozenset(
         "<url>",
         "</url>",
         "<date-of-document>",
-
         # common XML namespaces
         "http://www.w3.org/1998/math/mathml",
         "http://www.w3.org/1999/xhtml",
@@ -1937,7 +1936,11 @@ SKIP_ATTRIBUTES = (
     "@end",
     "@group",
     "mailto:",
-    "xmlns",
+    "xmlns=",
+    "xmlns:",
+    "xml:",
+    "lang=",
+    "<windows"
 )
 
 
