@@ -13,7 +13,6 @@ import os.path
 import cluecode_test_utils  # NOQA
 from commoncode.testcase import FileBasedTesting
 from cluecode import copyrights
-from textcode import markup
 from cluecode.copyrights import prepare_text_line
 from cluecode.copyrights import remove_non_chars
 
@@ -70,9 +69,14 @@ class TestTextPreparation(FileBasedTesting):
         assert result == 'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'
 
     def test_prepare_text_line_does_replace_copyright_signs(self):
-        cp = 'Copyright \A9 1991, 1999 Free Software Foundation, Inc.'
+        cp = 'Copyright \\A9 1991, 1999 Free Software Foundation, Inc.'
         result = prepare_text_line(cp)
         assert result == 'Copyright (c) 1991, 1999 Free Software Foundation, Inc.'
+
+    def test_prepare_text_line_does_not_munge_markup_like_emails(self):
+        cp = 'Jason Hunter <jhunter AT jdom DOT org>'
+        result = prepare_text_line(cp)
+        assert result == 'Jason Hunter <jhunter AT jdom DOT org'
 
     def test_is_end_of_statement(self):
         line = '''          "All rights reserved\\n"'''
@@ -86,6 +90,19 @@ class TestTextPreparation(FileBasedTesting):
         result = list(copyrights.collect_candidate_lines(lines))
         expected = [[(1, 'test (c) all rights reserved')]]
         assert result == expected
+
+    def test_collect_candidate_lines_does_not_munge_markup_like_emails(self):
+        cp1 = 'created by Jason Hunter <jhunter AT jdom DOT org> and'
+        cp2 = 'Brett McLaughlin <brett AT jdom DOT org>.'
+        lines = [(1, cp1), (2, cp2),]
+        result = list(copyrights.collect_candidate_lines(lines))
+        assert result == [
+            [
+                (1, 'created by Jason Hunter <jhunter AT jdom DOT org and'),
+                (2, 'Brett McLaughlin <brett AT jdom DOT org .')
+             ],
+        ]
+
 
     def test_collect_candidate_lines_complex(self):
         lines = '''

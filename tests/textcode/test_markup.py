@@ -236,6 +236,10 @@ new_stripmarkup_tests = [
         "SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1",
     ),
     (
+        "Jason Hunter <jhunter AT jdom DOT org>",
+        "Jason Hunter <jhunter AT jdom DOT org",
+    ),
+    (
         "<s>Foo Bar</s>",
         "Foo Bar",
     ),

@@ -15,7 +15,7 @@
   "<%--!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.1//EN\"",
   "\"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd\"--%",
   "",
-  "xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\"",
+  "xml:lang=\"en\"",
   "<% IServerInfo serverInfos = (IServerInfo) request.getAttribute(\"serverInfos\");",
   "String webFilesRoot = (String) request.getAttribute(\"WebFilesRoot\"); %",
   "<%--c:url value=\"${pageContext.request.servletPath}\" var=\"submitUrl\" scope=\"page\"/--% <%-- can use value=\"${pageContext.request.servletPath}\" because this JSP is include()'ed --%",

@@ -4,7 +4,7 @@ is_license_text: yes
 relevance: 100
 minimum_coverage: 80
 ignorable_copyrights:
-    - Copyright (c) , Inc.
+    - Copyright (c), Inc.
 ignorable_holders:
     - Inc.
 ---

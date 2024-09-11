@@ -2177,6 +2177,10 @@ PATTERNS = [
     # exceptions to all CAPS words
     (r'^[A-Z]{3,4}[0-9]{4},?$', 'NN'),
 
+    # exceptions to CAPS used in obfuscated emails like in joe AT foo DOT com
+    (r'^AT$', 'AT'),
+    (r'^DOT$', 'DOT'),
+
     # all CAPS word, at least 1 char long such as MIT, including an optional trailing comma or dot
     (r'^[A-Z0-9]+,?$', 'CAPS'),
 
@@ -2244,6 +2248,12 @@ PATTERNS = [
     (r'National_de_Recherche_en_Informatique_et_en_Automatique,?$', 'NAME'),
     (r'Keio_University\)?,?$', 'NAME'),
     (r'__MyCompanyName__[\.,]?$', 'NAME'),
+
+    # email in brackets <brett_AT_jdom_DOT_org>
+    #(karl AT indy.rr.com)
+    #<fdlibm-comments AT sun.com>
+    (r'(?i:^[<\(][\w\.\-\+]+at[\w\.\-\+]+(dot)?[\w\.\-\+]+[/)>]$)', 'EMAIL'),
+    
 
     # Code variable names including snake case
     (r'^.*(_.*)+$', 'JUNK'),
@@ -2321,6 +2331,9 @@ GRAMMAR = """
 #######################################
 
     EMAIL: {<EMAIL_START> <CC> <NN>* <EMAIL_END>} # composite_email
+
+    # created by Jason Hunter <jhunter AT jdom DOT org>
+    EMAIL: {<EMAIL_START>  <AT>  <NN|NNP>  <DOT>  <NN|NNP> } # email_start
 
     EMAIL: { <NN>  <CC>  <NN>  <DOT>  <NN> } # foo at bat dot com
 
@@ -2470,6 +2483,9 @@ GRAMMAR = """
     # Copyright (C) 1995-06 ICP vortex, Achim Leubner
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <NN>  <NNP> <NNP> } #350.2
 
+    # Jason Hunter <jhunter AT jdom DOT org>
+    EMAIL: {<NAME|NNP|NN>  <AT>  <NN|NNP>  <DOT>  <NN|NNP>} #350.3
+
     # Academy of Motion Picture Arts
     NAME: {<NNP|PN>+ <NNP>+}        #351
 
@@ -2563,7 +2579,8 @@ GRAMMAR = """
     URL: {<PARENS> <URL> <PARENS>}        #5700
 
     #also accept trailing email and URLs
-    NAME-YEAR: {<NAME-YEAR> <EMAIL>?<URL>?}        #5701
+    # and "VAN" e.g. Du: Copyright (c) 2008 Alek Du <alek.du@intel.com>
+    NAME-YEAR: {<NAME-YEAR> <VAN>? <EMAIL>?<URL>?}        #5701
     NAME-YEAR: {<NAME-YEAR>+}        #5702
 
     NAME: {<NNP> <OF> <NNP>}        #580
@@ -4322,7 +4339,7 @@ def remove_code_comment_markers(s):
     """
     Return ``s`` removing code comments such as C and C++ style comment markers and assimilated
 
-    >>> remove_code_comment_markers("\\*#%; /\\/*a*/b/*c\\d#e%f \\*#%; /")
+    >>> remove_code_comment_markers(r"\\*#%; /\\/*a*/b/*c\\d#e%f \\*#%; /")
     'a b c\\d e f'
     """
     return (s
@@ -4445,6 +4462,12 @@ def prepare_text_line(line):
         .replace('§', " ")
         # keep http
         .replace('<http', " http")
+        # placeholders
+        .replace('<insert ', " ")
+        .replace('year>', " ")
+        .replace('<year>', " ")
+        .replace('<name>', " ")
+        
     )
 
     if TRACE_TOK:

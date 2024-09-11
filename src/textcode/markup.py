@@ -147,7 +147,7 @@ def starts_or_ends_with_digit(s):
     True
     """
     # first and last character (works even if the string is empty)
-    return s[:1].isdigit() or s[-1:].isdigit()
+    return s and (s[:1].isdigit() or s[-1:].isdigit())
 
 
 def get_demarkuped_text(text, splitter, keeper):
@@ -1914,6 +1914,11 @@ ALL_TAGS = frozenset(
         # not XML/HTML
         "<year>",
         "<name>",
+        "</name>",
+        "<url>",
+        "</url>",
+        "<date-of-document>",
+
         # common XML namespaces
         "http://www.w3.org/1998/math/mathml",
         "http://www.w3.org/1999/xhtml",
@@ -1932,6 +1937,7 @@ SKIP_ATTRIBUTES = (
     "@end",
     "@group",
     "mailto:",
+    "xmlns",
 )
 
 
