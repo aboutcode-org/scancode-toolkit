@@ -72,13 +72,7 @@
       "percentage_of_license_text": 100.0,
       "copyrights": [],
       "holders": [],
-      "authors": [
-        {
-          "author": "Philip Hazel <ph10@cam.ac.uk> University of Cambridge Computing Service, Cambridge, England",
-          "start_line": 8,
-          "end_line": 9
-        }
-      ],
+      "authors": [],
       "emails": [],
       "urls": [],
       "files_count": 0,
