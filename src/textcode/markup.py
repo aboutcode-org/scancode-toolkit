@@ -1931,7 +1931,9 @@ ALL_TAGS = frozenset(
 
 SKIP_ATTRIBUTES = (
     "href=",
+    "HREF=",
     "class=",
+    "CLASS=",
     "width=",
     "@end",
     "@group",
@@ -1940,7 +1942,8 @@ SKIP_ATTRIBUTES = (
     "xmlns:",
     "xml:",
     "lang=",
-    "<windows"
+    "<Windows",
+    "<windows",
 )
 
 
@@ -1960,7 +1963,7 @@ def keep_tag(token, skips_tags=ALL_TAGS, skip_attributes=SKIP_ATTRIBUTES, kept_t
     if any(k in tlow for k in kept_tags):
         return True
 
-    if tlow.startswith(skip_attributes):
+    if token.startswith(skip_attributes):
         return False
 
     if tlow in skips_tags or tlow == ">":
