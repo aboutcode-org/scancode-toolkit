@@ -3,7 +3,7 @@ license_expression: bsd-new
 is_license_text: yes
 ---
 
-This header is BSD licensed so anyone can use the definitions to implement
+This header is {{BSD licensed}} so anyone can use the definitions to implement
 compatible drivers/servers.
 
 Redistribution and use in source and binary forms, with or without

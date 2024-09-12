@@ -3,7 +3,7 @@ license_expression: bsd-new
 is_license_text: yes
 ---
 
-BSD 3-clause:
+{{BSD 3-clause}}:
 
 Redistribution and use in source and binary forms of libcap/cap, with
 or without modification, are permitted provided that the following

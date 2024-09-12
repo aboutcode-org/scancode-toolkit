@@ -6,4 +6,4 @@ ignorable_urls:
     - https://asm.ow2.io/license.html
 ---
 
-BSD-3-Clause   (https://asm.ow2.io/license.html)
+{{BSD-3-Clause}}   (https://asm.ow2.io/license.html)

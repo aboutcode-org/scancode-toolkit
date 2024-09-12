@@ -366,6 +366,9 @@ class ListOfRequiredPhrases:
             for skip_word in skip_words_present:
                 required_phrase_without_skip_word = required_phrase.required_phrase_text.replace(skip_word, "")
                 matched_rule = self.match_required_phrase_present(required_phrase_without_skip_word)
+                if matched_rule and matched_rule.skip_collecting_required_phrases:
+                    continue
+
                 if not matched_rule:
                     required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
                         license_expression=required_phrase.license_expression,
@@ -418,6 +421,9 @@ def collect_required_phrases_in_rules(
                 required_phrase_rule = required_phrases_list.match_required_phrase_present(
                     required_phrase_text=required_phrase_text,
                 )
+                if required_phrase_rule and required_phrase_rule.skip_collecting_required_phrases:
+                    continue
+
                 if not required_phrase_rule:
                     if not is_text_license_reference(required_phrase_text):
                         required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
@@ -427,7 +433,7 @@ def collect_required_phrases_in_rules(
                             length=len(required_phrase_text),
                         )
                         required_phrases_list.required_phrases.append(required_phrase_detail)
-                else:
+                elif required_phrase_rule.license_expression == license_expression:
                     required_phrases_list.update_required_phrase_sources(required_phrase_rule)
 
                 if rule.identifier in TRACE_REQUIRED_PHRASE_FOR_RULES:
@@ -452,7 +458,9 @@ def collect_required_phrases_in_rules(
                 for required_phrase in required_phrases_list.required_phrases
             }
             click.echo(f'Collected {count} required phrases for license_expression: {license_expression}')
-            click.echo(f'Collected required phrases texts: \n {texts_with_source}')
+            click.echo('Collected required phrases texts: ')
+            for text, sources in texts_with_source.items():
+                click.echo(f'{text}: {sources}')
 
     return required_phrases_by_expression
 

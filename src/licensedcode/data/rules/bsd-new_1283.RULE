@@ -1,6 +1,7 @@
 ---
 license_expression: bsd-new
 is_license_reference: yes
+skip_collecting_required_phrases: yes
 is_continuous: yes
 ignorable_urls:
     - https://golang.org/LICENSE

@@ -1,8 +1,11 @@
 ---
 license_expression: bsd-new
 is_license_reference: yes
+is_required_phrase: yes
 is_continuous: yes
 relevance: 90
+sources:
+    - bsd-new_292.RULE
 ---
 
 a BSD-style license

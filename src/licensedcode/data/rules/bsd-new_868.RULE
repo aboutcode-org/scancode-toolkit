@@ -6,8 +6,8 @@ ignorable_urls:
     - http://www.opensource.org/licenses/BSD-3-Clause
 ---
 
-Celery is licensed under The BSD License (3 Clause, also known as
-the new BSD license).  The license is an OSI approved Open Source
+Celery is licensed under {{The BSD License (3 Clause}}, also known as
+the {{new BSD license}}).  The license is an OSI approved Open Source
 license and is GPL-compatible(1).
 
 The license text can also be found here:

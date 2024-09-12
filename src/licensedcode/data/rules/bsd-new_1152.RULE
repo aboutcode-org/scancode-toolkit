@@ -7,4 +7,4 @@ ignorable_urls:
     - http://opensource.org/licenses/bsd-license.php
 ---
 
-<license uri="http://opensource.org/licenses/bsd-license.php">New BSD License</license>
+<license uri="http://opensource.org/licenses/bsd-license.php">{{New BSD License}}</license>

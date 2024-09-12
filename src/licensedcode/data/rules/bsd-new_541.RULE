@@ -4,5 +4,5 @@ is_license_tag: yes
 relevance: 100
 ---
 
-License
- BSD 3-clause license
+{{License
+ BSD 3-clause}} license

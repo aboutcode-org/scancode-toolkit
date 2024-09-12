@@ -9,5 +9,5 @@ ignorable_urls:
     - https://cs.chromium.org/chromium/src/LICENSE
 ---
 
-Use of this source code is governed by a BSD-style license that may
+Use of this source code is {{governed by a BSD-style license}} that may
 be found in the LICENSE file https://cs.chromium.org/chromium/src/LICENSE

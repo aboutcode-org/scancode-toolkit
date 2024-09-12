@@ -1,7 +1,11 @@
 ---
 license_expression: bsd-new
 is_license_reference: yes
+is_required_phrase: yes
+is_continuous: yes
 relevance: 100
+sources:
+    - bsd-new_573.RULE
 ---
 
-opensource.org/licenses/BSD-3-Clause
+{{opensource.org/licenses/BSD-3-Clause}}

@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.txt
 ---
 
-distributed under a BSD license; see LICENSE.txt for more information.
+distributed under a {{BSD license}}; see LICENSE.txt for more information.

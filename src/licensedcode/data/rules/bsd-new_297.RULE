@@ -4,7 +4,7 @@ is_license_text: yes
 minimum_coverage: 85
 ---
 
-This program is licensed under the BSD license (the one with
+This program is licensed under {{the BSD license}} (the one with
 advertisement clause removed).
 
 If you are submitting changes to the project, please see CONTRIBUTIONS
@@ -16,7 +16,7 @@ License
 -------
 
 This software may be distributed, used, and modified under the terms of
-BSD license:
+{{BSD license}}:
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are

@@ -4,7 +4,7 @@ is_license_text: yes
 ---
 
 is available for use under the following license, commonly known
-as the 3-clause (or "modified") BSD license:
+as the 3-clause (or "{{modified") BSD license}}:
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions

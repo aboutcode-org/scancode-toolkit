@@ -5,5 +5,5 @@ relevance: 95
 notes: sometimes a bsd-new, sometimes a bsd-simplified. bsd-new is safer
 ---
 
-Use of this source code is governed by a BSD-style
-license that can be found in the Go distribution.
+Use of this source code is {{governed by a BSD-style
+license}} that can be found in the Go distribution.

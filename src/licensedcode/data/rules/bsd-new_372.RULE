@@ -3,7 +3,7 @@ license_expression: bsd-new
 is_license_text: yes
 ---
 
-The "New" BSD License (bsd):
+The "{{New" BSD License (bsd}}):
 ----------------------
 
 Redistribution and use in source and binary forms, with or without

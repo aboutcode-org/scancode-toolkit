@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-([3-clause BSD license](/legal/BSD-3-clause))
+([{{3-clause BSD license}}](/legal/{{BSD-3-clause}}))

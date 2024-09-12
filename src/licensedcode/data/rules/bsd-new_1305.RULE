@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.rst
 ---
 
-BSD-3-Clause license_files: LICENSE.rst
+{{BSD-3-Clause license}}_files: LICENSE.rst

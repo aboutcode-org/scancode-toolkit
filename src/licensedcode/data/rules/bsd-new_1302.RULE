@@ -6,5 +6,5 @@ referenced_filenames:
     - LICENSE.rst
 ---
 
-license = BSD-3-Clause
+{{license = BSD-3-Clause}}
 license_files = LICENSE.rst
