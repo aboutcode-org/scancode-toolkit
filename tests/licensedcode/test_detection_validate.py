@@ -42,12 +42,10 @@ def make_validation_test(rule, test_name, regen=REGEN_TEST_FIXTURES):
 
         def closure_test_function(*args, **kwargs):
             check_special_rule_cannot_be_detected(rule)
-
     else:
 
         def closure_test_function(*args, **kwargs):
             check_rule_or_license_can_be_self_detected_exactly(rule)
-            check_ignorable_clues(rule, regen=regen)
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name
@@ -107,6 +105,25 @@ def check_rule_or_license_can_be_self_detected_exactly(rule):
         assert '\n'.join(failure_trace) == '\n'.join(expected)
 
 
+def make_ignorable_clues_test(rule, test_name, regen=REGEN_TEST_FIXTURES):
+    """
+    Build and return a test function closing on tests arguments.
+    """
+    if isinstance(test_name, bytes):
+        test_name = test_name.decode('utf-8')
+
+    if rule.is_false_positive:
+        return
+
+    def closure_test_function(*args, **kwargs):
+        check_ignorable_clues(rule, regen=regen)
+
+    closure_test_function.__name__ = test_name
+    closure_test_function.funcname = test_name
+
+    return closure_test_function
+
+
 def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
     """
     Validate that all expected ignorable clues declared in a `licensish` License
@@ -152,7 +169,13 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
         assert saneyaml.dump(result) == saneyaml.dump(expected)
 
 
-def build_validation_tests(rules, test_classes, regen=REGEN_TEST_FIXTURES):
+def build_validation_tests(
+    rules,
+    test_classes,
+    test_func_creator=make_validation_test,
+    test_name_prefix="test_validate_detect_",
+    regen=REGEN_TEST_FIXTURES,
+):
     """
     Dynamically build an individual test method for each rule texts in a
     ``rules`` iterable of Rule objects then attach the test methods to the
@@ -178,16 +201,14 @@ def build_validation_tests(rules, test_classes, regen=REGEN_TEST_FIXTURES):
             # as they are not included in the standard indexing
             if rule.language != 'en':
                 continue
-            test_name = (
-                'test_validate_detect_' +
-                text.python_safe_name(rule.identifier)
-            )
-            test_method = make_validation_test(
+            test_name = f"{test_name_prefix }{text.python_safe_name(rule.identifier)}"
+            test_method = test_func_creator(
                 rule=rule,
                 test_name=test_name,
                 regen=regen,
             )
-            setattr(cls, test_name, test_method)
+            if test_method:
+                setattr(cls, test_name, test_method)
 
 
 class TestValidateLicenseBasic(unittest.TestCase):
@@ -232,6 +253,54 @@ build_validation_tests(
         TestValidateLicenseExtended4,
         TestValidateLicenseExtended5,
      ],
+    test_func_creator=make_validation_test,
+    test_name_prefix="test_validate_detect_",
+    regen=REGEN_TEST_FIXTURES,
+)
+
+
+class TestValidateLicenseIgnorableCluesBasic(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanslow
+
+
+class TestValidateLicenseIgnorableClues1(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanvalidate
+
+
+class TestValidateLicenseIgnorableClues2(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanvalidate
+
+
+class TestValidateLicenseIgnorableClues3(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanvalidate
+
+
+class TestValidateLicenseIgnorableClues4(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanvalidate
+
+
+class TestValidateLicenseIgnorableClues5(unittest.TestCase):
+    # Test functions are attached to this class at import time
+    pytestmark = pytest.mark.scanvalidate
+
+
+build_validation_tests(
+    _rules,
+    test_classes=[
+        TestValidateLicenseIgnorableCluesBasic,
+        TestValidateLicenseIgnorableClues1,
+        TestValidateLicenseIgnorableClues2,
+        TestValidateLicenseIgnorableClues3,
+        TestValidateLicenseIgnorableClues4,
+        TestValidateLicenseIgnorableClues5,
+     ],
+    test_func_creator=make_ignorable_clues_test,
+    test_name_prefix="test_ignorables_in_license_",
     regen=REGEN_TEST_FIXTURES,
 )
 
