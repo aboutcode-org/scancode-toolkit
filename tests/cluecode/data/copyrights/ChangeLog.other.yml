@@ -2,3 +2,10 @@ what:
   - copyrights
   - holders
   - holders_summary
+copyrights:
+  - copyright 2008-01-26 11:46 vruppert
+holders:
+  - vruppert
+holders_summary:
+  - value: vruppert
+    count: 1

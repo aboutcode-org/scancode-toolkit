@@ -12,19 +12,22 @@ import os
 import re
 import string
 import sys
+
 from collections import deque
 from time import time
 
 import attr
+
+from commoncode.text import toascii
+from commoncode.text import unixlinesep
 from pygmars import lex
 from pygmars import parse
 from pygmars import Token
 from pygmars.tree import Tree
 
-from commoncode.text import toascii
-from commoncode.text import unixlinesep
 
 from cluecode import copyrights_hint
+from textcode.markup import strip_known_markup_from_text
 
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
@@ -88,7 +91,6 @@ def detect_copyrights(
     include_authors=True,
     include_copyright_years=True,
     include_copyright_allrights=False,
-    demarkup=True,
     deadline=sys.maxsize,
 ):
     """
@@ -107,8 +109,7 @@ def detect_copyrights(
     """
     from textcode.analysis import numbered_text_lines
 
-    numbered_lines = numbered_text_lines(location, demarkup=demarkup)
-    numbered_lines = list(numbered_lines)
+    numbered_lines = list(numbered_text_lines(location, demarkup=True))
 
     if TRACE or TRACE_TOK:
         logger_debug('detect_copyrights: numbered_lines')
@@ -168,24 +169,24 @@ def detect_copyrights_from_lines(
     else:
         detector = DETECTOR
 
-    candidate_lines_groups = candidate_lines(numbered_lines)
+    candidate_lines_groups = list(collect_candidate_lines(numbered_lines))
 
     if TRACE or TRACE_TOK:
-        candidate_lines_groups = list(candidate_lines_groups)
+        candidate_lines_groups = candidate_lines_groups
         logger_debug(
             f'detect_copyrights_from_lines: ALL groups of candidate '
             f'lines collected: {len(candidate_lines_groups)}',
         )
 
-    for candidates in candidate_lines_groups:
+    for candidate_lines in candidate_lines_groups:
         if TRACE or TRACE_DEEP:
             logger_debug(f'\n========================================================================')
-            logger_debug(f'detect_copyrights_from_lines: processing candidates group:')
-            for can in candidates:
+            logger_debug(f'detect_copyrights_from_lines: processing candidate_lines group:')
+            for can in candidate_lines:
                 logger_debug(f'  {can}')
 
         detections = detector.detect(
-            numbered_lines=candidates,
+            numbered_lines=candidate_lines,
             include_copyrights=include_copyrights,
             include_holders=include_holders,
             include_authors=include_authors,
@@ -250,7 +251,6 @@ class CopyrightDetector(object):
         include_copyright_years = include_copyrights and include_copyright_years
         include_copyright_allrights = include_copyrights and include_copyright_allrights
 
-        numbered_lines = list(numbered_lines)
         if not numbered_lines:
             return
 
@@ -298,14 +298,13 @@ class CopyrightDetector(object):
         non_holder_labels_mini = frozenset([
             'COPY',
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
-            'HOLDER', 'AUTHOR',
             'IS', 'HELD',
         ])
 
         non_authors_labels = frozenset([
             'COPY',
             'YR-RANGE', 'YR-AND', 'YR', 'YR-PLUS', 'BARE-YR',
-            'HOLDER', 'AUTHOR',
+            'AUTH', 'AUTH2', 'HOLDER',
             'IS', 'HELD',
         ])
 
@@ -322,10 +321,9 @@ class CopyrightDetector(object):
                 copyrght = build_detection_from_node(
                     node=tree_node,
                     cls=CopyrightDetection,
-                    ignores=non_copyright_labels,
+                    ignored_labels=non_copyright_labels,
                     include_copyright_allrights=include_copyright_allrights,
                     refiner=refine_copyright,
-                    junk=COPYRIGHTS_JUNK,
                 )
 
                 if TRACE or TRACE_DEEP:
@@ -340,7 +338,7 @@ class CopyrightDetector(object):
                         holder = build_detection_from_node(
                             node=tree_node,
                             cls=HolderDetection,
-                            ignores=non_holder_labels,
+                            ignored_labels=non_holder_labels,
                             refiner=refine_holder,
                         )
 
@@ -351,7 +349,7 @@ class CopyrightDetector(object):
                             holder = build_detection_from_node(
                                 node=tree_node,
                                 cls=HolderDetection,
-                                ignores=non_holder_labels_mini,
+                                ignored_labels=non_holder_labels_mini,
                                 refiner=refine_holder,
                             )
 
@@ -365,9 +363,8 @@ class CopyrightDetector(object):
                 author = build_detection_from_node(
                     node=tree_node,
                     cls=AuthorDetection,
-                    ignores=non_authors_labels,
+                    ignored_labels=non_authors_labels,
                     refiner=refine_author,
-                    junk=AUTHORS_JUNK,
                 )
 
                 if author:
@@ -384,16 +381,35 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
 
     We perform a simple tokenization on spaces, tabs and some punctuation: =;
     """
+    last_line = ""
     for start_line, line in numbered_lines:
+        pos = 0
+
         if TRACE_TOK:
             logger_debug('  get_tokens: bare line: ' + repr(line))
 
-        line = prepare_text_line(line)
+        # keep or skip empty lines
+        if not line.strip():
+            stripped = last_line.lower().strip(string.punctuation)
+            if (
+                stripped.startswith("copyright")
+                or stripped.endswith(("by", "copyright", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"))
+            ):
+                continue
+            else:
+                yield Token(value="\n", label="EMPTY_LINE", start_line=start_line, pos=pos)
+                pos += 1
+                last_line = ""
+                continue
+
+        if TRACE_TOK:
+            logger_debug('  get_tokens: before preped line: ' + repr(line))
+
+        last_line = line
 
         if TRACE_TOK:
             logger_debug('  get_tokens: preped line: ' + repr(line))
 
-        pos = 0
         for tok in splitter(line):
             # strip trailing quotes+comma
             if tok.endswith("',"):
@@ -406,7 +422,7 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
                 .strip()
             )
 
-            # the tokenizer allows a sinble colon or dot to be atoken and we discard these
+            # the tokenizer allows a single colon or dot to be a token and we discard these
             if tok and tok not in ':.':
                 yield Token(value=tok, start_line=start_line, pos=pos)
                 pos += 1
@@ -475,42 +491,45 @@ class AuthorDetection(Detection):
     end_line = attr.ib()
 
 
+def filter_tokens(node, ignored_labels=frozenset()):
+    """
+    Yield tokens for this parse tree Tree, ignoring nodes with a label in the ``ignored_labels`` set.
+    The order reflects the order of the leaves in the tree's hierarchical structure, breadth-first.
+    """
+    for token in node:
+        if token.label in ignored_labels:
+            continue
+        if isinstance(token, Tree):
+            yield from filter_tokens(token, ignored_labels=ignored_labels)
+        else:
+            yield token
+
+
 def build_detection_from_node(
     node,
     cls,
-    ignores=frozenset(),
+    ignored_labels=frozenset(),
     include_copyright_allrights=False,
     refiner=None,
-    junk=frozenset(),
-    junk_patterns=frozenset(),
 ):
     """
     Return a ``cls`` Detection object from a pygmars.tree.Tree ``node`` with a
     space-normalized string value or None.
 
-    Filter ``node`` Tokens with a type found in the ``ignores`` set of ignorable
+    Filter ``node`` Tokens with a type found in the ``ignored_labels`` set of ignorable
     token types.
 
     For copyright detection, include trailing "All rights reserved" if
     ``include_copyright_allrights`` is True.
 
     Apply the ``refiner`` callable function to the detection string.
-
-    Return None if the value exists in the ``junk`` strings set or is matched by
-    any of the regex in the ``junk_patterns`` set.
     """
     include_copyright_allrights = (
         cls == CopyrightDetection
         and include_copyright_allrights
     )
 
-    if ignores:
-        leaves = [
-            token for token in node.leaves()
-            if token.label not in ignores
-        ]
-    else:
-        leaves = node.leaves()
+    leaves = list(filter_tokens(node, ignored_labels=ignored_labels))
 
     if include_copyright_allrights:
         filtered = leaves
@@ -545,7 +564,7 @@ def build_detection_from_node(
     if refiner:
         node_string = refiner(node_string)
 
-    if node_string and not is_junk_copyryright(node_string):
+    if node_string and not is_junk_copyright(node_string):
         start_line = filtered[0].start_line
         end_line = filtered[-1].start_line
 
@@ -579,6 +598,10 @@ _YEAR_YEAR = (r'('
     '(20[0-3][0-9][\\.,\\-])+[0-9]'  # 2001-4 not 2012
     '|'
     '(20[0-3][0-9][\\.,\\-])+20[0-3][0-9]'  # 2001-2012
+    '|'
+    '(20[0-3][0-9][\\.,\\-])+20[0-3]x'  # 2001-201x
+    '|'
+    '(20[0-3][0-9][\\.,\\-])+20[0-3][0-9]a'  # 2001-2012a
 ')')
 
 _PUNCT = (
@@ -770,6 +793,7 @@ PATTERNS = [
     (r'^A11yance', 'NNP'),
     (r'^Fu$', 'NNP'),
     (r'^W3C\(r\)$', 'COMP'),
+    (r'^TeX$', 'NNP'),
 
     # Three or more AsCamelCase GetQueueReference, with some exceptions
     (r'^(?:OpenStreetMap|AliasDotCom|AllThingsTalk).?$', 'NAME'),
@@ -778,6 +802,9 @@ PATTERNS = [
     (r'^[Nn]o$', 'JUNK'),
     (r'^Earth$', 'NN'),
     (r'^Maps/Google$', 'NN'),
+
+    # verbatime star
+    (r'^\*$', 'JUNK'),
 
     (r'^([A-Z][a-z]+){3,}$', 'JUNK'),
 
@@ -810,6 +837,9 @@ PATTERNS = [
     # @link in javadoc is not a NN
     (r'^@?link:?$', 'JUNK'),
     (r'@license:?$', 'JUNK'),
+
+    # hex is JUNK 0x3fc3/0x7cff
+    (r'^0x[a-fA-F0-9]+', 'JUNK'),
 
     # found in crypto certificates and LDAP
     (r'^O=$', 'JUNK'),
@@ -869,6 +899,9 @@ PATTERNS = [
     (r'^Implementation-Vendor$', 'JUNK'),
     (r'^dnl$', 'JUNK'),
 
+    (r'^as$', 'NN'),
+    (r'^[Vv]isit$', 'JUNK'),
+
     (r'^rem$', 'JUNK'),
     (r'^REM$', 'JUNK'),
     (r'^Supports$', 'JUNK'),
@@ -891,6 +924,8 @@ PATTERNS = [
     (r'^WARRANTS?$', 'JUNK'),
     (r'^WARRANTYS?$', 'JUNK'),
 
+    (r'^Row\(', 'JUNK'),
+
     (r'^hispagestyle$', 'JUNK'),
     (r'^Generic$', 'JUNK'),
     (r'^generate-', 'JUNK'),
@@ -906,6 +941,7 @@ PATTERNS = [
     (r'DeclareUnicodeCharacter$', 'JUNK'),
     (r'^Language-Team$', 'JUNK'),
     (r'^Last-Translator$', 'JUNK'),
+    (r'^Translated$', 'JUNK'),
     (r'^OMAP730$', 'JUNK'),
     (r'^Law\.$', 'JUNK'),
     (r'^dylid$', 'JUNK'),
@@ -995,6 +1031,11 @@ PATTERNS = [
     (r'^Privacy$', 'JUNK'),
     (r'^within$', 'JUNK'),
 
+    (r'^official$', 'JUNK'),
+    (r'^duties$', 'JUNK'),
+    (r'^civil$', 'JUNK'),
+    (r'^servants?$', 'JUNK'),
+
     # various trailing words that are junk
     (r'^Copyleft$', 'JUNK'),
     (r'^LegalCopyright$', 'JUNK'),
@@ -1033,7 +1074,7 @@ PATTERNS = [
     (r'^Owner$', 'JUNK'),
     (r'^behalf$', 'JUNK'),
     (r'^know-how$', 'JUNK'),
-    (r'^interfaces?,?$', 'JUNK'),
+    (r'^[Ii]nterfaces?,?$', 'JUNK'),
     (r'^than$', 'JUNK'),
     (r'^whom$', 'JUNK'),
     (r'^However,?$', 'JUNK'),
@@ -1060,6 +1101,7 @@ PATTERNS = [
     # FIXME: may be lowercase instead?
     (r'^Title:?$', 'JUNK'),
     (r'^Debianized-By:?$', 'JUNK'),
+    (r'^[Dd]ebianized$', 'JUNK'),
     (r'^Upstream-Maintainer:?$', 'JUNK'),
     (r'^Content', 'JUNK'),
     (r'^Upstream-Author:?$', 'JUNK'),
@@ -1193,6 +1235,10 @@ PATTERNS = [
     (r'^False.?$', 'JUNK'),
     (r'^True.?$', 'JUNK'),
 
+    (r'^high$', 'JUNK'),
+    (r'^low$', 'JUNK'),
+    (r'^on$', 'JUNK'),
+
     (r'^imports?$', 'JUNK'),
     (r'^[Ww]arnings?$', 'JUNK'),
     (r'^[Ww]hether$', 'JUNK'),
@@ -1213,6 +1259,7 @@ PATTERNS = [
     # NN often used in conjunction with copyright
     (r'^[Ss]tatements?.?$', 'JUNK'),
     (r'^issues?.?$', 'JUNK'),
+    (r'^retain?.?$', 'JUNK'),
 
     ############################################################################
     # Nouns and proper Nouns
@@ -1245,6 +1292,7 @@ PATTERNS = [
     (r'^Activation\.?$', 'NN'),
     (r'^Act[\.,]?$', 'NN'),
     (r'^Added$', 'NN'),
+    (r'^added$', 'JUNK'),
     (r'^As$', 'NN'),
     (r'^I$', 'NN'),
     (r'^Additional$', 'NN'),
@@ -1288,7 +1336,7 @@ PATTERNS = [
     (r'^Code$', 'NN'),
     (r'^Collators?$', 'NN'),
     (r'^Commercial', 'NN'),
-    (r'^Commons$', 'NN'),
+    (r'^Commons?$', 'NN'),
     # TODO: Compilation could be JUNK?
     (r'^Compilation', 'NN'),
     (r'^Contact', 'NN'),
@@ -1306,7 +1354,7 @@ PATTERNS = [
     (r'^DISCLAIMED', 'NN'),
     (r'^Docs?$', 'NN'),
     (r'^DOCUMENTATION', 'NN'),
-    (r'^Download', 'NN'),
+    (r'^Download', 'JUNK'),
     (r'^DOM$', 'NN'),
     (r'^Do$', 'NN'),
     (r'^DoubleClick$', 'NN'),
@@ -1317,11 +1365,18 @@ PATTERNS = [
     (r'^EXHIBIT$', 'JUNK'),
     (r'^Exhibit$', 'JUNK'),
     (r'^Digitized', 'NN'),
+    (r'^OPENING', 'JUNK'),
     (r'^[Ds]istributed?.?$', 'NN'),
     (r'^Distributions?', 'NN'),
     (r'^Multiply$', 'NN'),
     (r'^Convert$', 'NN'),
     (r'^Compute$', 'NN'),
+
+    (r'^\(Computer$', 'JUNK'),
+    (r'^Programs\)', 'JUNK'),
+    (r'^Regulations', 'JUNK'),
+    (r'^message\.', 'JUNK'),
+
     (r'^Case$', 'NN'),
     (r'^Hessian$', 'NN'),
     (r'^Include', 'NN'),
@@ -1338,8 +1393,27 @@ PATTERNS = [
     (r'^Entity$', 'NN'),
     (r'^Example', 'NN'),
     (r'^Except', 'NN'),
+    (r'^Fragments$', 'NN'),
+    (r'^With$', 'NN'),
+    (r'^Tick$', 'NN'),
+    (r'^Dynamic$', 'NN'),
+    (r'^Battery$', 'NN'),
+    (r'^Charger$', 'NN'),
+    (r'^Dynamic$', 'NN'),
+    (r'^Bugfixes?$', 'NN'),
+    (r'^Likes?$', 'NN'),
+    (r'^STA$', 'NN'),
+    (r'^Page$', 'NN'),
+    (r'^Todo/Under$', 'JUNK'),
+
+    (r'^Interrupt$', 'NN'),
+    (r'^cleanups?$', 'JUNK'),
+    (r'^Tape$', 'NN'),
+
     (r'^When$', 'NN'),
     # (r'^Owner$', 'NN'),
+    (r'^Specifications?$', 'NN'),
+    (r'^Final$', 'NN'),
     (r'^Holds$', 'NN'),
     (r'^Image', 'NN'),
     (r'^Supplier', 'NN'),
@@ -1362,19 +1436,23 @@ PATTERNS = [
     (r'^Gaim$', 'NN'),
     (r'^Generated', 'NN'),
     (r'^Glib$', 'NN'),
-    (r'^GPLd', 'NN'),
-    (r'^GPL\'d', 'NN'),
+    (r'^GPLd?\.?$', 'NN'),
+    (r'^GPL\'d$', 'NN'),
     (r'^Gnome$', 'NN'),
     (r'^GnuPG$', 'NN'),
     (r'^Government.', 'NNP'),
     (r'^OProfile$', 'NNP'),
-    (r'^Government', 'NN'),
+    (r'^Government$', 'COMP'),
     (r'^Grants?\.?,?$', 'NN'),
     (r'^Header', 'NN'),
     (r'^HylaFAX$', 'NN'),
     (r'^IA64$', 'NN'),
     (r'^IDEA$', 'NN'),
     (r'^Id$', 'NN'),
+
+    # miscapitalized last name
+    (r'^king$', 'NNP'),
+
     (r'^IDENTIFICATION?\.?$', 'NN'),
     (r'^IEEE$', 'NN'),
     (r'^If$', 'NN'),
@@ -1385,6 +1463,8 @@ PATTERNS = [
     (r'^INCLUDING', 'NN'),
     (r'^Indemnification', 'NN'),
     (r'^Indemnified', 'NN'),
+    (r'^Unified$', 'NN'),
+    (r'^Cleaned$', 'JUNK'),
     (r'^Information', 'NN'),
     (r'^In$', 'NN'),
     (r'^Intellij$', 'NN'),
@@ -1411,7 +1491,7 @@ PATTERNS = [
     (r'^Initials$', 'NN'),
     (r'^Licen[cs]e', 'NN'),
     (r'^License-Alias\:?$', 'NN'),
-    (r'^Linux$', 'NN'),
+    (r'^Linux$', 'LINUX'),
     (r'^Locker$', 'NN'),
     (r'^Log$', 'NN'),
     (r'^Logos?$', 'NN'),
@@ -1455,7 +1535,7 @@ PATTERNS = [
     (r'^POSIX$', 'NN'),
     (r'^Possible', 'NN'),
     (r'^Powered$', 'NN'),
-    (r'^defined$', 'NN'),
+    (r'^defined?$', 'JUNK'),
     (r'^Predefined$', 'NN'),
     (r'^Promise$', 'NN'),
     (r'^Products?\.?$', 'NN'),
@@ -1481,7 +1561,7 @@ PATTERNS = [
     (r'^[Rr]espective', 'NN'),
     (r'^SAX$', 'NN'),
     (r'^Sections?$', 'NN'),
-    (r'^Send$', 'NN'),
+    (r'^Send$', 'JUNK'),
     (r'^Separa', 'NN'),
     (r'^Service$', 'NN'),
     (r'^Several$', 'NN'),
@@ -1512,7 +1592,7 @@ PATTERNS = [
     (r'^Those$', 'NN'),
     (r'^Timer', 'NN'),
     (r'^TODO$', 'NN'),
-    (r'^Tool.?$', 'NN'),
+    (r'^Tools?.?$', 'NN'),
     (r'^Trademarks?$', 'NN'),
     (r'^True$', 'NN'),
     (r'^TRUE$', 'NN'),
@@ -1553,6 +1633,17 @@ PATTERNS = [
     (r'^They$', 'JUNK'),
     (r'^Branched$', 'NN'),
 
+    (r'^Improved$', 'NN'),
+    (r'^Designed$', 'NN'),
+    (r'^Organised$', 'NN'),
+    (r'^Re-organised$', 'NN'),
+    (r'^Swap$', 'NN'),
+    (r'^Adapted$', 'JUNK'),
+    (r'^Thumb$', 'NN'),
+
+    # SEEN IN  Copyright (c) 1997 Dan error_act (dmalek@jlc.net)
+    (r'^error_act$', 'NN'),
+
     # alone this is not enough for an NNP
     (r'^Free$', 'NN'),
 
@@ -1562,19 +1653,6 @@ PATTERNS = [
     (r'^AM$', 'NN'),
     (r'^PM$', 'NN'),
 
-    (r'^January$', 'NN'),
-    (r'^February$', 'NN'),
-    (r'^March$', 'NN'),
-    (r'^April$', 'NN'),
-    (r'^May$', 'NN'),
-    (r'^June$', 'NN'),
-    (r'^July$', 'NN'),
-    (r'^August$', 'NN'),
-    (r'^September$', 'NN'),
-    (r'^October$', 'NN'),
-    (r'^November$', 'NN'),
-    (r'^December$', 'NN'),
-
     (r'^Name[\.,]?$', 'NN'),
     (r'^Co-Author[\.,]?$', 'NN'),
     (r'^Author\'s$', 'NN'),
@@ -1583,10 +1661,12 @@ PATTERNS = [
     (r'^Convention[\.,]?$', 'NN'),
     (r'^Paris[\.,]?$', 'NN'),
 
-    # we do not include Jan and Jun that are common enough first names
-    (r'^(Feb|Mar|Apr|May|Jul|Aug|Sep|Oct|Nov|Dec)$', 'NN'),
-    (r'^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$', 'NN'),
-    (r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)$', 'NN'),
+    (r'^([Jj]anuary|[Ff]ebruary|[Mm]arch|[Aa]pril|[Jj]uly|[Aa]ugust|[Ss]eptember|[Oo]ctober|[Nn]ovember|[Dd]ecember)$', 'NN'),
+    # we do not include May, Jan and Jun that are common enough first names
+    (r'^(Feb|Mar|Apr|Jul|Aug|Sep|Oct|Nov|Dec),?$', 'MONTH'),
+
+    (r'^([Mm]onday|[Tt]uesday|[Ww]ednesday|[Tt]hursday|[Ff]riday|[Ss]aturday|[Ss]unday),?$', 'DAY'),
+    (r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun|May),?$', 'NN'),
 
     # misc words that are not NNs
     # lowercase verbs ending in "ing"
@@ -1617,6 +1697,8 @@ PATTERNS = [
     (r'^Unlike$', 'NN'),
     (r'^Compression$', 'NN'),
     (r'^Letter$', 'NN'),
+    (r'^Moved$', 'NN'),
+    (r'^Phone$', 'NN'),
 
     # dual caps that are not NNP
     (r'^Make[A-Z]', 'JUNK'),
@@ -1718,6 +1800,13 @@ PATTERNS = [
     (r'werkstaetten\.?$', 'NNP'),
     (r'werken$', 'NNP'),
     (r'various\.?$', 'NNP'),
+    (r'SuSE$', 'COMPANY'),
+    (r'Suse$', 'COMPANY'),
+    (r'\(Winbond\),?$', 'COMP'),
+
+    #     copyright           : (C) 2002 by karsten wiese
+    (r'karsten$', 'NNP'),
+    (r'wiese$', 'NNP'),
 
     # treat Attributable as proper noun as it is seen in Author tags such as in:
     # @author not attributable
@@ -1743,16 +1832,18 @@ PATTERNS = [
     # company suffix name with  suffix Tech.,ltd
     (r'^[A-Z][a-z]+[\.,]+(LTD|LTd|LtD|Ltd|ltd|lTD|lTd|ltD).?,?$', 'COMP'),
 
-    # company suffix
-    (r'^[Ii]nc[\.]?[,\.]?\)?$', 'COMP'),
+    # company suffix, including rarer Inc>
+    (r'^[Ii]nc[\.]?[,\.>]?\)?$', 'COMP'),
     (r'^Incorporated[,\.]?\)?$', 'COMP'),
 
     # ,Inc. suffix without spaces is directly a company name
     (r'^.+,Inc\.$', 'COMPANY'),
 
     (r'^[Cc]ompany[,\.]?\)?$', 'COMP'),
-    (r'^Limited[,\.]??$', 'COMP'),
-    (r'^LIMITED[,\.]??$', 'COMP'),
+    (r'^Limited[,\.]?$', 'COMP'),
+    (r'^LIMITED[,\.]?$', 'COMP'),
+
+    (r'^COMPANY,LTD$', 'COMP'),
 
     # Caps company suffixes
     (r'^INC[\.,\)]*$', 'COMP'),
@@ -1796,6 +1887,18 @@ PATTERNS = [
     (r'^(S\.?A\.?S?|Sas|sas|A\/S|AG,?|AB|Labs?|[Cc][Oo]|Research|Center|INRIA|Societe|KG)[,\.]?$', 'COMP'),
     # French SARL
     (r'^(SARL|S\.A\.R\.L\.)[\.,\)]*$', 'COMP'),
+    # More company suffix : a.s. in Czechia and otehrs
+    (r'^(a\.s\.|S\.r\.l\.?)$', 'COMP'),
+    (r'^Vertriebsges\.m\.b\.H\.?,?$', 'COMP'),
+    # Iceland
+    (r'^(ehf|hf|svf|ohf)\.,?$', 'COMP'),
+
+    # Move company abbreviations
+    (r'^(SPRL|srl)[\.,]?$', 'COMP'),
+    # Poland
+    (r'^(sp\.|o\.o\.)$', 'COMP'),
+    # Eingetragener Kaufmann
+    (r'^(e\.K\.|e\.Kfm\.|e\.Kfr\.)$', 'COMP'),
 
     # company suffix : AS: this is frequent beyond Norway.
     (r'^AS', 'CAPS'),
@@ -1852,6 +1955,7 @@ PATTERNS = [
 
     # Various rare company names/suffix
     (r'^FedICT$', 'COMPANY'),
+    (r'^10gen$', 'COMPANY'),
 
     # Division, District
     (r'^(District|Division)\)?[,\.]?$', 'COMP'),
@@ -1861,10 +1965,11 @@ PATTERNS = [
     ############################################################################
 
     # "authors" or "contributors" is interesting, and so a tag of its own
+    (r'^[Aa]uthors,$', 'AUTHDOT'),
     (r'^[Aa]uthor$', 'AUTH'),
     (r'^[Aa]uthor\.$', 'AUTHDOT'),
     (r'^[Aa]uthors?\.$', 'AUTHDOT'),
-    (r'^[Aa]uthors|author\'$', 'AUTHS'),
+    (r'^([Aa]uthors|author\')$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)$', 'AUTHS'),
     (r'^[Aa]uthor\(s\)\.?$', 'AUTHDOT'),
     # as javadoc
@@ -1872,6 +1977,9 @@ PATTERNS = [
 
     # et al.
     (r'^al\.$', 'AUTHDOT'),
+
+    # in Linux LKMs
+    (r'^MODULEAUTHOR$', 'AUTH'),
 
     # Contributor(s)
     (r'^[Cc]ontributors[,\.]?$', 'CONTRIBUTORS'),
@@ -1900,6 +2008,7 @@ PATTERNS = [
     (r'^[Aa]dmins?$', 'MAINT'),
     (r'^[Dd]evelopers?\.?$', 'MAINT'),
     (r'^[Mm]aintainers?\.?$', 'MAINT'),
+    (r'^[Cc]o-maintainers?\.?$', 'MAINT'),
 
     ############################################################################
     # Conjunctions and related
@@ -1976,7 +2085,7 @@ PATTERNS = [
     ############################################################################
 
     # rare cases of trailing + signon years
-    (r'^20[0-2][0-9]\+$', 'YR-PLUS'),
+    (r'^20[0-3][0-9]\+$', 'YR-PLUS'),
 
     # year or year ranges
     # plain year with various leading and trailing punct
@@ -2005,6 +2114,9 @@ PATTERNS = [
 
     (r'^(' + _YEAR_DASH_PRESENT + ')+$', 'YR'),
 
+    # ISO dates as in 2024-12-09
+    (r'^' + _YEAR + '-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])$', 'YR'),
+
     # 88, 93, 94, 95, 96: this is a pattern mostly used in FSF copyrights
     (r'^[8-9][0-9],$', 'YR'),
 
@@ -2023,7 +2135,7 @@ PATTERNS = [
     (r'^\$?date-of-document$', 'YR'),
 
     # cardinal numbers
-    (r'^-?[0-9]+(.[0-9]+)?\.?$', 'CD'),
+    (r'^-?[0-9]+(.[0-9]+)?[\.,]?$', 'CD'),
 
     ############################################################################
     # All caps and proper nouns
@@ -2062,6 +2174,13 @@ PATTERNS = [
     # proper noun with apostrophe ': d'Itri
     (r"^[a-z]'[A-Z]?[a-z]+[,\.]?$", 'NNP'),
 
+    # exceptions to all CAPS words
+    (r'^[A-Z]{3,4}[0-9]{4},?$', 'NN'),
+
+    # exceptions to CAPS used in obfuscated emails like in joe AT foo DOT com
+    (r'^AT$', 'AT'),
+    (r'^DOT$', 'DOT'),
+
     # all CAPS word, at least 1 char long such as MIT, including an optional trailing comma or dot
     (r'^[A-Z0-9]+,?$', 'CAPS'),
 
@@ -2087,7 +2206,8 @@ PATTERNS = [
     # a .sh shell scripts is NOT an email.
     (r'^.*\.sh\.?$', 'JUNK'),
     # email eventually in parens or brackets with some trailing punct. Note the @ or "at "
-    (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,3}[\>\)\.\,]*$', 'EMAIL'),
+    (r'^(?:[A-Za-z])*[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,3}[\>\)\.\,]*$', 'EMAIL'),
+
     # mailto URLs
     (r'^mailto:.{2,}@.{2,}\.[a-z]{2,3}', 'EMAIL'),
 
@@ -2128,6 +2248,12 @@ PATTERNS = [
     (r'National_de_Recherche_en_Informatique_et_en_Automatique,?$', 'NAME'),
     (r'Keio_University\)?,?$', 'NAME'),
     (r'__MyCompanyName__[\.,]?$', 'NAME'),
+
+    # email in brackets <brett_AT_jdom_DOT_org>
+    #(karl AT indy.rr.com)
+    #<fdlibm-comments AT sun.com>
+    (r'(?i:^[<\(][\w\.\-\+]+at[\w\.\-\+]+(dot)?[\w\.\-\+]+[/)>]$)', 'EMAIL'),
+    
 
     # Code variable names including snake case
     (r'^.*(_.*)+$', 'JUNK'),
@@ -2173,6 +2299,7 @@ PATTERNS = [
 # Comments in the Grammar are lines that start with #
 # End of line commenst are rules descriptions.
 # One rule per line.
+
 GRAMMAR = """
 
 #######################################
@@ -2184,9 +2311,11 @@ GRAMMAR = """
     YR-RANGE: {<CD|BARE-YR>? <YR> <BARE-YR>?}        #40
     YR-RANGE: {<YR>+ <BARE-YR>? }        #50
     YR-AND: {<CC>? <YR>+ <CC>+ <YR>}        #60
-    YR-RANGE: {<YR-AND>+}        #70|
+    YR-RANGE: {<YR-AND>+}        #70
     YR-RANGE: {<YR-RANGE>+ <DASH|TO> <YR-RANGE>+}        #71
     YR-RANGE: {<YR-RANGE>+ <DASH>?}        #72
+    # Copyright (c) 1999, 2000, 01, 03, 06 Ralf Baechle
+    YR-RANGE: {<YR-RANGE> <CD>+}        #72.2
 
     CD: {<BARE-YR>} #bareyear
 
@@ -2202,6 +2331,12 @@ GRAMMAR = """
 #######################################
 
     EMAIL: {<EMAIL_START> <CC> <NN>* <EMAIL_END>} # composite_email
+
+    # created by Jason Hunter <jhunter AT jdom DOT org>
+    EMAIL: {<EMAIL_START>  <AT>  <NN|NNP>  <DOT>  <NN|NNP> } # email_start
+
+    # Copyright (c) 2001 Karl Garrison (karl AT indy.rr.com)
+    EMAIL: {<NN|NNP>  <AT>  <URL> } # email_at
 
     EMAIL: { <NN>  <CC>  <NN>  <DOT>  <NN> } # foo at bat dot com
 
@@ -2318,7 +2453,10 @@ GRAMMAR = """
     # Project contributors
     COMPANY: {<COMP> <CONTRIBUTORS>}   #256
 
-    COMPANY: {<COMP>+}        #260
+    # Copyright (C) 2013 Ideas on board SPRL
+    COMPANY: {<NNP>  <JUNK>  <NN>  <COMP>} #259
+
+    COMPANY: {<LINUX>? <COMP>+}        #260
 
     # Nokia Corporation and/or its subsidiary(-ies)
     COMPANY: {<COMPANY> <CC> <NN> <COMPANY>}   #265
@@ -2343,11 +2481,24 @@ GRAMMAR = """
     # NAME-YEAR starts or ends with a YEAR range
     NAME-YEAR: {<YR-RANGE> <NNP> <NNP>+} #350
 
+    COPYRIGHT: {<COPY>  <YR-RANGE>  <NNP>  <NN>  <NNP>  <NNP>  <NNP>  <EMAIL>} #350.1
+
+    # Copyright (C) 1995-06 ICP vortex, Achim Leubner
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <NN>  <NNP> <NNP> } #350.2
+
+    # Jason Hunter <jhunter AT jdom DOT org>
+    EMAIL: {<NAME|NNP|NN>  <AT>  <NN|NNP>  <DOT>  <NN|NNP>} #350.3
+
     # Academy of Motion Picture Arts
     NAME: {<NNP|PN>+ <NNP>+}        #351
 
     # Distributed Management Task Force
     NAME: {<NN> <NNP>{3}} #881111
+
+    # Rudolf Marek <r.marek@assembler.cz>
+    # David Hubbard <david.c.hubbard@gmail.com>
+    # Daniel J Blueman <daniel.blueman@gmail.com>
+    # NAME: { <NAME> <EMAIL> } #351.0
 
     # @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
     NAME: { <NN>? <NN>? <EMAIL> <NAME> } #351.1
@@ -2415,13 +2566,13 @@ GRAMMAR = """
     # Copyright 2018, OpenCensus Authors
     COPYRIGHT: {<COPY>+ <YR-RANGE> <NNP> <AUTHS>}     #1579991
 
-    NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>?} #5612
+    NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>? <LINUX>?} #5612
 
     #Academy of Motion Picture Arts and Sciences
     NAME: {<NAME> <CC> <NNP>} #561
 
     # Adam Weinberger and the GNOME Foundation
-    NAME: {<CC> <NN> <COMPANY>} #565
+    ANDCO: {<CC> <NN> <COMPANY>} #565
 
     # (c) 1991-1992, Thomas G. Lane , Part of the Independent JPEG Group's
     NAME: {<PORTIONS> <OF> <NN> <NAME>+} #566
@@ -2431,7 +2582,8 @@ GRAMMAR = """
     URL: {<PARENS> <URL> <PARENS>}        #5700
 
     #also accept trailing email and URLs
-    NAME-YEAR: {<NAME-YEAR> <EMAIL>?<URL>?}        #5701
+    # and "VAN" e.g. Du: Copyright (c) 2008 Alek Du <alek.du@intel.com>
+    NAME-YEAR: {<NAME-YEAR> <VAN>? <EMAIL>?<URL>?}        #5701
     NAME-YEAR: {<NAME-YEAR>+}        #5702
 
     NAME: {<NNP> <OF> <NNP>}        #580
@@ -2511,7 +2663,7 @@ GRAMMAR = """
     COMPANY: {<COMPANY|NAME|NAME-EMAIL|NAME-YEAR> <ANDCO>+}     #970
 
     # Copyright © 1998-2009 Bill Spitzak (spitzak@users.sourceforge.net ) and others,
-    COMPANY: {<COMPANY|NAME|NAME-EMAIL|NAME-YEAR> <PARENS>? <ANDCO>+}     #970.11
+    COMPANY: {<COMPANY|NAME|NAME-EMAIL|NAME-YEAR> <PARENS>? <ANDCO>+}     #970
 
     # de Nemours and Company
     NAME: {<VAN>? <NNP> <ANDCO>+}                             #980
@@ -2664,8 +2816,15 @@ GRAMMAR = """
     # Bart Hanssens from FedICT
     COPYRIGHT: {<COPY>+ <NAME-YEAR> <NN> <CAPS> <NN> <OF> <COMPANY> <NAME>}  #83005
 
+    # Gracenote, Inc., copyright © 2000-2008 Gracenote.
+    # Gracenote Software, copyright © 2000-2008 Gracenote.
+    # COPYRIGHT: {<COMPANY> <COPY>{1,2} <NAME-YEAR>}        #157999.12
+
     # Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
     COPYRIGHT: {<COPY>+ <NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}        #157999
+
+    # Copyright (c) 2014 Czech Technical University in Prague
+    COPYRIGHT: {<COPYRIGHT>  <NN>  <UNI>  <NAME>}                     #157999-name
 
     COPYRIGHT: {<COPY>+ <CAPS|NNP>+ <CC> <NN> <COPY> <YR-RANGE>?}        #1590
 
@@ -2792,7 +2951,7 @@ GRAMMAR = """
     COPYRIGHT: {<COPY>+  <YR-RANGE>  <CONTRIBUTORS> <ALLRIGHTRESERVED>?} #22791
 
     # Copyright 1996, 1997 Linux International.
-    COPYRIGHT: {<COPY>+  <YR-RANGE>  <NN>  <NNP>} #22792
+    COPYRIGHT: {<COPY>+  <YR-RANGE>  <LINUX|NN>  <NNP>} #22792
 
     # Copyright (C) 2001-2008 the LGPL VGABios developers Team
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <COMPANY>}  #22793.1
@@ -2818,6 +2977,13 @@ GRAMMAR = """
 
     # Copyright 2018 (c) DistributedLock
     COPYRIGHT: {<COPY> <YR-RANGE> <COPY>  <NNP>}        #230020
+
+    #  Copyright (C) 1999-2000 VA Linux Systems
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <NN|LINUX>  <NNP>} #2280-1
+
+    # Russ Dill <Russ.Dill@asu.edu> 2001-2003
+    # Rewrited by Vladimir Oleynik <dzo@simtreas.ru> (C) 2003
+    COPYRIGHT: {<NAME-EMAIL>  <YR-RANGE>  <AUTH2>  <BY>  <NAME-EMAIL>  <COPY>  <YR-RANGE>} #22793.5
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
@@ -2895,6 +3061,9 @@ GRAMMAR = """
     # maintainer Norbert Tretkowski <nobse@debian.org> 2005-04-16
     AUTHOR: {<BY|MAINT> <NAME-EMAIL> <YR-RANGE>?}  #26382
 
+    # Russ Dill <Russ.Dill@asu.edu> 2001-2003
+    # COPYRIGHT: {<NAME-EMAIL> <YR-RANGE>}       #2638
+
     # (C) 2001-2009, <s>Takuo KITAME, Bart Martens, and  Canonical, LTD</s>
     COPYRIGHT: {<COPYRIGHT> <NNP> <COMPANY>}       #26381
 
@@ -2934,7 +3103,7 @@ GRAMMAR = """
     COPYRIGHT: {<COPY> <PN>?  <YR-RANGE> <BY> <NN> <NAME>}   #2007
 
     # Copyright (C) 2005 SUSE Linux Products GmbH.
-    COPYRIGHT: {<COPYRIGHT2> <CAPS> <NN> <COMPANY>} #2008
+    COPYRIGHT: {<COPYRIGHT2> <CAPS|COMPANY> <NN|LINUX> <COMPANY>} #2008
 
     # Copyright (c) 2016-2018 JSR 371 expert group and contributors
     COPYRIGHT: {<COPYRIGHT2>  <CAPS>  <CD>  <COMPANY>  <NAME>} #2009.1
@@ -2956,6 +3125,9 @@ GRAMMAR = """
     # NAME-CAPS is made of all caps words
     #Copyright or Copr. CNRS
     NAME-CAPS: {<CAPS>+}        #2530
+
+    # (C) SGI 2006, Christoph Lameter
+    COPYRIGHT: {<COPY>  <NAME-CAPS>  <NAME-YEAR> } #25501
 
     #Copyright or Copr. CNRS
     COPYRIGHT: {<COPY> <NN> <COPY> <COPYRIGHT|NAME-CAPS>}        #2560
@@ -3096,7 +3268,7 @@ GRAMMAR = """
     COPYRIGHT: {<COPYRIGHT>  <MAINT> }       #83020
 
     # copyright its authors
-    COPYRIGHT: {<COPY> <NN> <AUTHS>}       #83030
+    COPYRIGHT: {<COPY> <NN> <AUTHDOT>}       #83030
 
     # Copyright: 2004-2007 by Internet Systems Consortium, Inc. ("ISC")
     #            1995-2003 by Internet Software Consortium
@@ -3112,7 +3284,7 @@ GRAMMAR = """
     # the Initial Developer. All Rights Reserved.
     COPYRIGHT: {<PORTIONS>  <AUTH2>  <INITIALDEV>  <IS>  <COPY|COPYRIGHT2>+  <YR-RANGE>? <INITIALDEV>} #2609.1
 
-    # Portions created by the Initial Developer are Copyright (C) 
+    # Portions created by the Initial Developer are Copyright (C)
     # the Initial Developer. All Rights Reserved.
     # and
     # Portions created by the Initial Developer are Copyright (C) 2002
@@ -3154,6 +3326,9 @@ GRAMMAR = """
     # @author anatol@google.com (Anatol Pomazau)
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+ <NAME>?}        #2650
 
+    # developed by the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+ <NN>? <COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}       #2660
+
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME-EMAIL|NAME-YEAR>+ <YR-RANGE>*}       #2660
 
     # developed by the Center for Information
@@ -3179,7 +3354,7 @@ GRAMMAR = """
     AUTHOR: {<AUTH|AUTHS|AUTH2> <BY>? <NNP> <CC> <PN>} #2761
 
     # developed by the National Center for Supercomputing Applications at the University of Illinois at Urbana-Champaign
-    AUTHOR: {<AUTHOR> <NN> <NAME> <NAME>} #2762
+    AUTHOR: {<AUTHOR> <NN> <NAME|COMPANY>+ } #2762
 
     # created by Axel Metzger and Till Jaeger, Institut fur Rechtsfragen der Freien und Open Source Software
     AUTHOR: {<AUTH2> <CC> <AUTHOR> <NN> <NAME> <NN> <NN> <NNP>} #2645-4
@@ -3212,7 +3387,7 @@ GRAMMAR = """
     COPYRIGHT: {<COPY> <BY>? <AUTHOR>+  <YR-RANGE>*}        #2800-1
 
     COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}        #2820
-    COPYRIGHT: {<AUTHOR> <YR-RANGE>}        #2830
+
     # copyrighted by MIT
     COPYRIGHT: {<COPY> <BY> <MIT>} #2840
 
@@ -3499,14 +3674,16 @@ COPYRIGHTS_JUNK = [
     r'^\(c\) Object c$',
     r'^copyright headers?',
     r'Copyright \(c\) 2021 Dot',
-    r'^\(c\) \(c\) B$'
+    r'^\(c\) \(c\) B$',
+    r'^\(c\) group$',
+    r'^\(c\) \(c\) A$',
 ]
 
 # a collection of junk junk matcher callables
 COPYRIGHTS_JUNK_PATTERN_MATCHERS = [re.compile(p, re.IGNORECASE).match for p in COPYRIGHTS_JUNK]
 
 
-def is_junk_copyryright(s, patterns=COPYRIGHTS_JUNK_PATTERN_MATCHERS):
+def is_junk_copyright(s, patterns=COPYRIGHTS_JUNK_PATTERN_MATCHERS):
     """
     Return True if the string ``s`` matches any junk patterns.
     """
@@ -3534,11 +3711,16 @@ AUTHORS_PREFIXES = frozenset(set.union(
         'author\'',
         'authors,',
         'authorship',
+        'maintainer',
+        'co-maintainer',
         'or',
         'spdx-filecontributor',
         '</b>',
         'mailto:',
         "name'",
+        "a",
+        "moduleauthor",
+        "©",
     ])
 ))
 
@@ -3620,6 +3802,7 @@ HOLDERS_PREFIXES = frozenset(set.union(
         'later',
         '$',
         'current.year',
+        "©",
     ])
 ))
 
@@ -3973,19 +4156,6 @@ def strip_balanced_edge_parens(s):
 ################################################################################
 
 
-remove_non_chars = re.compile(r'[^a-z0-9]').sub
-
-
-def prep_line(line):
-    """
-    Return a tuple of (line, line with only chars) from a line of text prepared
-    for candidate and other checks or None.
-    """
-    line = prepare_text_line(line.lower(), dedeb=False)
-    chars_only = remove_non_chars('', line)
-    return line, chars_only.strip()
-
-
 is_only_digit_and_punct = re.compile('^[^A-Za-z]+$').match
 
 
@@ -3993,13 +4163,15 @@ def is_candidate(prepared_line):
     """
     Return True if a prepared line is a candidate line for copyright detection
     """
+    if TRACE:
+        logger_debug(f'is_candidate: prepared_line: {prepared_line!r}')
+
     if not prepared_line:
         return False
 
     if is_only_digit_and_punct(prepared_line):
         if TRACE:
-            logger_debug(
-                f'is_candidate: is_only_digit_and_punct:\n{prepared_line!r}')
+            logger_debug(f'is_candidate: is_only_digit_and_punct:\n{prepared_line!r}')
 
         return False
 
@@ -4007,7 +4179,7 @@ def is_candidate(prepared_line):
         return True
     else:
         pass
-
+    prepared_line = prepared_line.lower()
     for marker in copyrights_hint.statement_markers:
         if marker in prepared_line:
             return True
@@ -4035,12 +4207,14 @@ def is_end_of_statement(chars_only_line):
     )
 
 
+remove_non_chars = re.compile(r'[^a-z0-9]', re.IGNORECASE).sub
+
 has_trailing_year = re.compile(r'(?:19\d\d|20[0-4]\d)+$').findall
 
 
-def candidate_lines(numbered_lines):
+def collect_candidate_lines(numbered_lines):
     """
-    Yield groups of candidate line lists where each list element is a tuple of
+    Yield groups of prepared candidate line lists where each list element is a tuple of
     (line number,  line text) given an iterable of ``numbered_lines`` as tuples
     of (line number,  line text) .
 
@@ -4056,60 +4230,41 @@ def candidate_lines(numbered_lines):
 
     if TRACE_TOK:
         numbered_lines = list(numbered_lines)
-        logger_debug(f'candidate_lines: numbered_lines: {numbered_lines!r}')
+        logger_debug(f'collect_candidate_lines: numbered_lines: {numbered_lines!r}')
 
     # the previous line (chars only)
     previous_chars = None
-    for numbered_line in numbered_lines:
+    for (ln, line) in numbered_lines:
         if TRACE:
-            logger_debug(f'# candidate_lines: evaluating line: {numbered_line!r}')
+            logger_debug(f'## collect_candidate_lines: evaluating line: {(ln, line)!r}')
 
-        _line_number, line = numbered_line
+        is_debian = 's>' in line
+        prepared = prepare_text_line(line)
+        if TRACE:
+            logger_debug(f'## collect_candidate_lines: prepared: {prepared!r}, candidate: {is_candidate(prepared)}')
 
-        # FIXME: we should get the prepared text from here and return
-        # effectively pre-preped lines... but the prep taking place here is
-        # different?
-        prepped, chars_only = prep_line(line)
+        chars_only = remove_non_chars('', line.lower()).strip()
 
         if is_end_of_statement(chars_only):
-            candidates_append(numbered_line)
+            candidates_append((ln, prepared,))
 
             if TRACE:
-                cands = list(candidates)
-                logger_debug(f'   candidate_lines: is EOS: yielding candidates\n    {cands!r}\n')
+                logger_debug(f'   collect_candidate_lines: is EOS: yielding candidates\n    {list(candidates)!r}\n')
 
             yield list(candidates)
             candidates_clear()
             in_copyright = 0
             previous_chars = None
 
-        elif is_candidate(prepped):
+        # <s> and </s> are legacy debian-style copyright name tags in copyright files
+        # http are for copyrights listing many URLs
+        elif is_candidate(prepared) or 'http' in chars_only or is_debian:
             # the state is now "in copyright"
             in_copyright = 2
-            candidates_append(numbered_line)
-
+            candidates_append((ln, prepared,))
             previous_chars = chars_only
             if TRACE:
-                logger_debug('   candidate_lines: line is candidate')
-
-        elif 's>' in line:
-            # this is for debian-style <s></s> copyright name tags
-            # the state is now "in copyright"
-            in_copyright = 2
-            candidates_append(numbered_line)
-
-            previous_chars = chars_only
-            if TRACE:
-                logger_debug('   candidate_lines: line is <s></s> candidate')
-
-        elif 'http' in line:
-            # this is for copyright listing many URLs
-            in_copyright = 2
-            candidates_append(numbered_line)
-
-            previous_chars = chars_only
-            if TRACE:
-                logger_debug('   candidate_lines: line is HTTP candidate')
+                logger_debug('   collect_candidate_lines: line is candidate')
 
         elif in_copyright > 0:
             # these are a sign that the copyrights continue after
@@ -4117,7 +4272,7 @@ def candidate_lines(numbered_lines):
             # see https://github.com/nexB/scancode-toolkit/issues/1565
             # if these are no present we treat empty lines... as empty!
             if (
-                (not chars_only)
+                not chars_only
                 and (
                     not previous_chars.endswith((
                         'copyright',
@@ -4130,10 +4285,8 @@ def candidate_lines(numbered_lines):
                 and not has_trailing_year(previous_chars)
             ):
 
-                # completely empty or only made of punctuations
                 if TRACE:
-                    cands = list(candidates)
-                    logger_debug(f'   candidate_lines: empty: yielding candidates\n    {cands!r}\n')
+                    logger_debug(f'   collect_candidate_lines: empty: yielding candidates\n    {list(candidates)!r}\n')
 
                 yield list(candidates)
                 candidates_clear()
@@ -4141,16 +4294,15 @@ def candidate_lines(numbered_lines):
                 previous_chars = None
 
             else:
-                candidates_append(numbered_line)
+                candidates_append((ln, prepared,))
                 # and decrement our state
                 in_copyright -= 1
                 if TRACE:
-                    logger_debug('   candidate_lines: line is in copyright')
+                    logger_debug('   collect_candidate_lines: line is in copyright')
 
         elif candidates:
             if TRACE:
-                cands = list(candidates)
-                logger_debug(f'    candidate_lines: not in COP: yielding candidates\n    {cands!r}\n')
+                logger_debug(f'    collect_candidate_lines: not in COP: yielding candidates\n    {list(candidates)!r}\n')
 
             yield list(candidates)
             candidates_clear()
@@ -4160,40 +4312,13 @@ def candidate_lines(numbered_lines):
     # finally
     if candidates:
         if TRACE:
-            cands = list(candidates)
-            logger_debug(f'candidate_lines: finally yielding candidates\n    {cands!r}\n')
+            logger_debug(f'collect_candidate_lines: finally yielding candidates\n    {list(candidates)!r}\n')
 
         yield list(candidates)
 
 ################################################################################
 # TEXT PRE PROCESSING
 ################################################################################
-
-
-# this catches tags but not does not remove the text inside tags
-remove_tags = re.compile(
-    r'<'
-     r'[(-\-)\?\!\%\/]?'
-     r'[a-gi-vx-zA-GI-VX-Z][a-zA-Z#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]*'
-     r'[a-zA-Z0-9#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]+'
-    r'\/?>',
-    re.MULTILINE | re.UNICODE
-).sub
-
-
-def strip_markup(text, dedeb=True):
-    """
-    Strip markup tags from ``text``.
-
-    If ``dedeb`` is True, remove "Debian" <s> </s> markup tags seen in
-    older copyright files.
-    """
-    text = remove_tags(' ', text)
-    # Debian copyright file markup
-    if dedeb:
-        return text.replace('</s>', '').replace('<s>', '').replace('<s/>', '')
-    else:
-        return text
 
 
 # this catches the common C-style percent string formatting codes
@@ -4207,23 +4332,36 @@ fold_consecutive_quotes = re.compile(r"'\"{2,}").sub
 
 # less common rem comment line prefix in dos
 # less common dnl comment line prefix in autotools am/in
-remove_comment_markers = re.compile(r'^(rem|\@rem|dnl)\s+').sub
+remove_weird_comment_markers = re.compile(r'^(rem|\@rem|dnl)\s+').sub
 
 # common comment line prefix in man pages
 remove_man_comment_markers = re.compile(r'\."').sub
 
 
-def prepare_text_line(line, dedeb=True, to_ascii=True):
+def remove_code_comment_markers(s):
+    """
+    Return ``s`` removing code comments such as C and C++ style comment markers and assimilated
+
+    >>> remove_code_comment_markers(r"\\*#%; /\\/*a*/b/*c\\d#e%f \\*#%; /")
+    'a b c\\\d e f'
+    """
+    return (s
+        .replace('/*', ' ')
+        .replace('*/', ' ')
+        .replace('*', ' ')
+        .replace('#', ' ')
+        .replace('%', ' ')
+        .strip(' \\/*#%;')
+    )
+
+
+def prepare_text_line(line):
     """
     Prepare a text ``line`` for copyright detection.
-
-    If ``dedeb`` is True, remove "Debian" <s> </s> markup tags seen in
-    older copyright files.
-
-    If ``to_ascii`` convert the text to ASCII characters.
+    Always convert line to ASCII.
     """
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: initial: ' + repr(line))
+        logger_debug('    prepare_text_line: initial: ' + repr(line))
 
     # remove some junk in man pages: \(co
     line = (line
@@ -4233,26 +4371,29 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     )
     line = remove_printf_format_codes(' ', line)
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: after remove_printf_format_codes: ' + repr(line))
+        logger_debug('    prepare_text_line: after remove_printf_format_codes: ' + repr(line))
 
     # less common comment line prefixes
-    line = remove_comment_markers(' ', line)
+    line = remove_weird_comment_markers(' ', line)
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: after remove_comment_markers: ' + repr(line))
+        logger_debug('    prepare_text_line: after remove_weird_comment_markers: ' + repr(line))
 
     line = remove_man_comment_markers(' ', line)
-
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: after remove_man_comment_markers: ' + repr(line))
+        logger_debug('    prepare_text_line: after remove_man_comment_markers: ' + repr(line))
+
+    line = remove_code_comment_markers(line)
+    if TRACE_TOK:
+        logger_debug('    prepare_text_line: after remove_code_comment_markers: ' + repr(line))
 
     line = (line
         # C and C++ style comment markers
-        .replace('/*', ' ').replace('*/', ' ')
-        .strip().strip('/*#')
+        # in rst
+        .replace('|copy|', ' (c) ')
         # un common pipe chars in some ascii art
         .replace('|', ' ')
 
-        # normalize copyright signs and spacing around them
+        # normalize copyright signs, quotes and spacing around them
         .replace('"Copyright', '" Copyright')
         .replace('( C)', ' (c) ')
         .replace('(C)', ' (c) ')
@@ -4278,6 +4419,11 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('\\XA9', ' (c) ')
         .replace('\\A9', ' (c) ')
         .replace('\\a9', ' (c) ')
+        .replace('<A9>', ' (c) ') 
+        .replace('XA9;', ' (c) ')
+        .replace('Xa9;', ' (c) ')
+        .replace('xA9;', ' (c) ')
+        .replace('xa9;', ' (c) ')
         # \xc2 is a Â
         .replace('\xc2', '')
         .replace('\\xc2', '')
@@ -4303,25 +4449,35 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         .replace('&amp;', '&')
         .replace('&#38;', '&')
         .replace('&gt;', '>')
+        .replace('&gt', '>')
         .replace('&#62;', '>')
         .replace('&lt;', '<')
+        .replace('&lt', '<')
         .replace('&#60;', '<')
 
         # normalize (possibly repeated) quotes to unique single quote '
         # backticks ` and "
         .replace('`', "'")
         .replace('"', "'")
-        # u nicode prefix in Python strings
+        # u unicode prefix in legacy Python2 strings
         .replace(" u'", " '")
         # see https://github.com/nexB/scancode-toolkit/issues/3667
         .replace('§', " ")
+        # keep http
+        .replace('<http', " http")
+        # placeholders
+        .replace('<insert ', " ")
+        .replace('year>', " ")
+        .replace('<year>', " ")
+        .replace('<name>', " ")
+        
     )
 
     if TRACE_TOK:
-        logger_debug('  prepare_text_line: after replacements: ' + repr(line))
+        logger_debug('    prepare_text_line: after replacements1: ' + repr(line))
 
     # keep only one quote
-    line = fold_consecutive_quotes(u"'", line)
+    line = fold_consecutive_quotes("'", line)
 
     # treat some escaped literal CR, LF, tabs, \00 as new lines
     # such as in code literals: a="\\n some text"
@@ -4337,11 +4493,21 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
         # replace ('
         .replace('("', ' ')
         # some trailing garbage ')
-        .replace(u"')", ' ')
-        .replace(u"],", ' ')
+        .replace("')", ' ')
+        .replace("],", ' ')
     )
+    if TRACE_TOK:
+        logger_debug('    prepare_text_line: after replacements2: ' + repr(line))
+
     # note that we do not replace the debian tag by a space:  we remove it
-    line = strip_markup(line, dedeb=dedeb)
+    # This "Debian" legacy copyright file <s> </s> markup tags seen in
+    # older copyright files. Note we replace by nothing.
+    line = line.replace("</s>", "").replace("<s>", "").replace("<s/>", "")
+
+    line = strip_known_markup_from_text(line)
+
+    if TRACE_TOK:
+        logger_debug('    prepare_text_line: after strip_markup: ' + repr(line))
 
     line = remove_punctuation(' ', line)
 
@@ -4356,16 +4522,14 @@ def prepare_text_line(line, dedeb=True, to_ascii=True):
     line = line.replace('>', '> ').replace('<', ' <')
 
     # normalize to ascii text
-    if to_ascii:
-        line = toascii(line, translit=True)
+    line = toascii(line, translit=True)
+
+    # remove stars
+    line = line.strip(' *')
 
     # normalize to use only LF as line endings so we can split correctly
     # and keep line endings
     line = unixlinesep(line)
-
-    # strip verbatim back slash and comment signs again at both ends of a line
-    # FIXME: this is done at the start of this function already
-    line = line.strip('\\/*#%;')
 
     # normalize spaces
     line = ' '.join(line.split())

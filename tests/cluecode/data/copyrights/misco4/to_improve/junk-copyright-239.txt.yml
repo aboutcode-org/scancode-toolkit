@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) NIST.800.53.R4-RDSMultiAZSupport (https://docs.aws.amazon.com/config/latest/developerguide/rds-multi-az-support.html)
+holders:
+  - NIST.800.53.R4-RDSMultiAZSupport

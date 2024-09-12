@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2002 SnapGear
+  - Copyright (c) 2000, 2001 Lineo
+holders:
+  - SnapGear
+  - Lineo
+authors:
+  - Paul Dale <pauli@snapgear.com>
+  - David McCullough <davidm@lineo.com>
