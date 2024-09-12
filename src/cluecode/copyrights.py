@@ -2179,6 +2179,7 @@ PATTERNS = [
 
     # exceptions to CAPS used in obfuscated emails like in joe AT foo DOT com
     (r'^AT$', 'AT'),
+    (r'^AT$', '<at>'),
     (r'^DOT$', 'DOT'),
 
     # all CAPS word, at least 1 char long such as MIT, including an optional trailing comma or dot
