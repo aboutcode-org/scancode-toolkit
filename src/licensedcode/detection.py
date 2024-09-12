@@ -70,6 +70,7 @@ if TRACE:
             return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 MATCHER_UNDETECTED = '5-undetected'
+MATCHER_UNDETECTED_ORDER = 4
 
 # All values of match_coverage less than this value then they are not considered
 # as perfect detections
@@ -1603,6 +1604,7 @@ def get_undetected_matches(query_string):
         hispan=hispan,
         query_run_start=match_start,
         matcher=MATCHER_UNDETECTED,
+        matcher_order=MATCHER_UNDETECTED_ORDER,
         query=query_run.query,
     )
 
