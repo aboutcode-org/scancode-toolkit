@@ -68,7 +68,7 @@ copyrights:
   - Copyright (c) 1998-2003 Daniel Veillard
   - Copyright (c) 2001-2002 Daniel Veillard
   - Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard
-  - Copyright (c) 1991 Free Software Foundation, Inc. 675 Mass Ave, Cambridge, MA
+  - Copyright (c) 1991 Free Software Foundation, Inc.
   - copyrighted by the Free Software Foundation
   - Copyright (c) 2005, 2006 Nick Galbreath - nickg at modp dot com
   - Copyright 2008 MolokoCacao
@@ -173,7 +173,7 @@ holders:
   - Daniel Veillard
   - Daniel Veillard
   - Thomas Broyer, Charlie Bozeman and Daniel Veillard
-  - Free Software Foundation, Inc. 675 Mass Ave, Cambridge, MA
+  - Free Software Foundation, Inc.
   - the Free Software Foundation
   - Nick Galbreath
   - MolokoCacao
@@ -219,7 +219,7 @@ holders_summary:
   - value: Google
     count: 11
   - value: Free Software Foundation
-    count: 7
+    count: 8
   - value: the Initial Developer
     count: 6
   - value: Glenn Randers-Pehrson
@@ -277,8 +277,6 @@ holders_summary:
   - value: Eric Young
     count: 1
   - value: Expat maintainers
-    count: 1
-  - value: Free Software Foundation, Inc. 675 Mass Ave, Cambridge, MA
     count: 1
   - value: Giampaolo Rodola
     count: 1

@@ -2152,7 +2152,10 @@ PATTERNS = [
     (r'^\$?date-of-software$', 'YR'),
     (r'^\$?date-of-document$', 'YR'),
 
-    # cardinal numbers
+    # small-cardinal numbers, under 30
+    (r'^[0-3]?[0-9]?[\.,]?$', 'CDS'),
+
+    # all other cardinal numbers
     (r'^-?[0-9]+(.[0-9]+)?[\.,]?$', 'CD'),
 
     ############################################################################
@@ -2330,19 +2333,19 @@ GRAMMAR = """
 
     YR-RANGE: {<YR>+ <CC>+ <YR>}        #20
     YR-RANGE: {<YR> <DASH|TO>* <YR|BARE-YR>+}        #30
-    YR-RANGE: {<CD|BARE-YR>? <YR> <BARE-YR>?}        #40
+    YR-RANGE: {<CD|CDS|BARE-YR>? <YR> <BARE-YR>?}        #40
     YR-RANGE: {<YR>+ <BARE-YR>? }        #50
     YR-AND: {<CC>? <YR>+ <CC>+ <YR>}        #60
     YR-RANGE: {<YR-AND>+}        #70
     YR-RANGE: {<YR-RANGE>+ <DASH|TO> <YR-RANGE>+}        #71
     YR-RANGE: {<YR-RANGE>+ <DASH>?}        #72
     # Copyright (c) 1999, 2000, 01, 03, 06 Ralf Baechle
-    YR-RANGE: {<YR-RANGE> <CD>+}        #72.2
+    YR-RANGE: {<YR-RANGE> <CD|CDS>+}        #72.2
 
     CD: {<BARE-YR>} #bareyear
 
     # 5 Jan 2003
-    YR-RANGE: {<CD>  <NNP>  <YR-RANGE>} #72.3
+    YR-RANGE: {<CDS>  <NNP>  <YR-RANGE>} #72.3
 
 
 #######################################
@@ -2437,8 +2440,9 @@ GRAMMAR = """
     # AT&T Laboratories, Cambridge
     COMPANY: {<COMP> <COMP> <NNP>}       #145
 
+    COMPANY: {<COMP> <CD|CDS> <COMP>}        #170
+
     # rare "Software in the public interest, Inc."
-    COMPANY: {<COMP> <CD> <COMP>}        #170
     COMPANY: {<NNP> <IN><NN> <NNP> <NNP>+<COMP>?}        #180
 
     # Commonwealth Scientific and Industrial Research Organisation (CSIRO)
@@ -2613,7 +2617,7 @@ GRAMMAR = """
 
     URL: {<PARENS> <URL> <PARENS>}        #5700
 
-    NAME-YEAR:  {<NAME-YEAR>  <CD>  <NNP>} #5700.1
+    NAME-YEAR:  {<NAME-YEAR>  <CDS>  <NNP>} #5700.1
 
     #also accept trailing email and URLs
     # and "VAN" e.g. Du: Copyright (c) 2008 Alek Du <alek.du@intel.com>
@@ -2625,7 +2629,7 @@ GRAMMAR = """
     NAME: {<NN|NNP|CAPS>+ <CC> <OTH>}        #600
     NAME: {<NNP> <CAPS>}        #610
     NAME: {<CAPS> <DASH>? <NNP|NAME>}        #620
-    NAME: {<NNP> <CD> <NNP>}        #630
+    NAME: {<NNP> <CD|CDS> <NNP>}        #630
     NAME: {<COMP> <NAME>+}        #640
 
     # Copyright 2018-2019 @paritytech/substrate-light-ui authors & contributors
@@ -3144,7 +3148,7 @@ GRAMMAR = """
     COPYRIGHT: {<COPYRIGHT2> <CAPS|COMPANY> <NN|LINUX> <COMPANY>} #2008
 
     # Copyright (c) 2016-2018 JSR 371 expert group and contributors
-    COPYRIGHT: {<COPYRIGHT2>  <CAPS>  <CD>  <COMPANY>  <NAME>} #2009.1
+    COPYRIGHT: {<COPYRIGHT2>  <CAPS>  <CD|CDS>  <COMPANY>  <NAME>} #2009.1
 
     # COPYRIGHT (c) 2006 - 2009 DIONYSOS
     COPYRIGHT: {<COPYRIGHT2> <CAPS>} #2009
@@ -3273,7 +3277,7 @@ GRAMMAR = """
     COPYRIGHT: {<COPY>  <NNP>  <NAME-YEAR> <COMPANY>?} #15720
 
     # Copyright (c) 2008-1010 Intel Corporation
-    COPYRIGHT: {<COPY>  <COPY>  <CD>  <COMPANY>} #rare-cd-not-year
+    COPYRIGHT: {<COPY>  <COPY>  <CD|CDS>  <COMPANY>} #rare-cd-not-year
 
     # Copyright (C) 2005-2006  dann frazier <dannf@dannf.org>
     COPYRIGHT: {<COPYRIGHT2>  <NN>  <NN>  <EMAIL>} #999991
@@ -3461,11 +3465,11 @@ GRAMMAR = """
 
     COPYRIGHT: {<COMPANY><COPY>+<ALLRIGHTRESERVED>}        #99900
 
-    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY|NAME-COPY> <COPY|NNP|AUTHDOT|CAPS|CD|YR-RANGE|NAME|NAME-EMAIL|NAME-YEAR|NAME-COPY|NAME-CAPS|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
+    COPYRIGHT: {<COPYRIGHT|COPYRIGHT2|COPY|NAME-COPY> <COPY|NNP|AUTHDOT|CAPS|CD|CDS|YR-RANGE|NAME|NAME-EMAIL|NAME-YEAR|NAME-COPY|NAME-CAPS|AUTHORANDCO|COMPANY|YEAR|PN|COMP|UNI|CC|OF|IN|BY|OTH|VAN|URL|EMAIL|URL2|MIXEDCAP|NN>+ <ALLRIGHTRESERVED>}        #99999
 
     # * Copyright (C) 2004  Red Hat, Inc.
     # * Copyright (C) 200  Matthias Clasen <mclasen@redhat.com>
-    COPYRIGHT: {<COPY>  <COPY> <CD>  <NAME-EMAIL>}        #9999970
+    COPYRIGHT: {<COPY>  <COPY> <CD|CDS>  <NAME-EMAIL>}        #9999970
 
     # <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice-20000612#Copyright">Copyright</a>
     COPYRIGHT: {<COPYRIGHT> <COPY>}        #9999980
