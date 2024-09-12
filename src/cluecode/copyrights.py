@@ -806,6 +806,12 @@ PATTERNS = [
     # verbatime star
     (r'^\*$', 'JUNK'),
 
+    # misc company names exception to next rule
+    (r'^TinCanTools$', 'NNP'),
+    (r'^SoftwareBitMaker$', 'NNP'),
+    (r'^NetCommWireless$', 'NNP'),
+
+    # Repeated CamelCasedWords
     (r'^([A-Z][a-z]+){3,}$', 'JUNK'),
 
     ############################################################################
@@ -1079,7 +1085,7 @@ PATTERNS = [
     (r'^whom$', 'JUNK'),
     (r'^However,?$', 'JUNK'),
     (r'^[Cc]ollectively$', 'JUNK'),
-    (r'^following$', 'JUNK'),
+    (r'^following$', 'FOLLOWING'),
     (r'^[Cc]onfig$', 'JUNK'),
     (r'^file\.$', 'JUNK'),
 
@@ -1184,7 +1190,7 @@ PATTERNS = [
     (r'^[a-z]{3,10}[A-Z][a-z]{3,10}$', 'JUNK'),
 
     (r'^\$?Guid$', 'JUNK'),
-    (r'^Small$', 'NN'),
+    #(r'^Small$', 'NN'),
     (r'^implementing$', 'JUNK'),
     (r'^Unlike$', 'JUNK'),
     (r'^using$', 'JUNK'),
@@ -1205,6 +1211,11 @@ PATTERNS = [
 
     # single period
     (r"^\.$", 'JUNK'),
+
+    # exception to the next rule
+
+    # by PaX Team
+    (r"PaX$", 'NN'),
 
     # short mixed caps with trailing cap: ZoY
     (r"[A-Z][a-z][A-Z]$", 'JUNK'),
@@ -1405,6 +1416,7 @@ PATTERNS = [
     (r'^STA$', 'NN'),
     (r'^Page$', 'NN'),
     (r'^Todo/Under$', 'JUNK'),
+    (r'^Under$', 'NN'),
 
     (r'^Interrupt$', 'NN'),
     (r'^cleanups?$', 'JUNK'),
@@ -1668,6 +1680,8 @@ PATTERNS = [
     (r'^([Mm]onday|[Tt]uesday|[Ww]ednesday|[Tt]hursday|[Ff]riday|[Ss]aturday|[Ss]unday),?$', 'DAY'),
     (r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun|May),?$', 'NN'),
 
+    (r'^[Dd]ebugging$', 'JUNK'),
+
     # misc words that are not NNs
     # lowercase verbs ending in "ing"
     (r'^[a-z]+ing$', 'NN'),
@@ -1699,6 +1713,9 @@ PATTERNS = [
     (r'^Letter$', 'NN'),
     (r'^Moved$', 'NN'),
     (r'^Phone$', 'NN'),
+
+    (r'^Inputs?$', 'NN'),
+
 
     # dual caps that are not NNP
     (r'^Make[A-Z]', 'JUNK'),
@@ -2069,6 +2086,7 @@ PATTERNS = [
     # and Spanish/French Da Siva and De Gaulle
         (r'^(([Vv][ao]n)|[Dd][aeu])$', 'VAN'),
 
+    (r'^aan$', 'OF'),
     (r'^van$', 'VAN'),
     (r'^Van$', 'VAN'),
     (r'^von$', 'VAN'),
@@ -2289,6 +2307,9 @@ PATTERNS = [
     # some punctuation combos
     (r'^(?:=>|->|<-|<=)$', 'JUNK'),
 
+    (r'^semiconductors?[\.,]?$', 'NNP'),
+    
+
     ############################################################################
     # catch all other as Nouns
     ############################################################################
@@ -2320,6 +2341,10 @@ GRAMMAR = """
 
     CD: {<BARE-YR>} #bareyear
 
+    # 5 Jan 2003
+    YR-RANGE: {<CD>  <NNP>  <YR-RANGE>} #72.3
+
+
 #######################################
 # All/No/Some Rights Reserved
 #######################################
@@ -2343,6 +2368,9 @@ GRAMMAR = """
 
     # foo@bar.com or baz@bar.com
     EMAIL: {<EMAIL>  <NN>  <EMAIL>} # email or email
+
+    # <srinivasa.deevi at conexant dot com>
+    EMAIL: {<EMAIL_START>  <CC>  <NN>  <DOT>  <NN> } #email with brackets
 
 #######################################
 # NAMES and COMPANIES
@@ -2559,18 +2587,21 @@ GRAMMAR = """
     NAME: {<NAME|NAME-EMAIL>+ <OF> <NNP> <OF> <NN>? <COMPANY>}        #550
     NAME: {<NAME|NAME-EMAIL>+ <CC|OF>? <NAME|NAME-EMAIL|COMPANY>}        #560
 
-    NAME: {<NNP><NNP>}        #5611
+    NAME: {<NNP><NNP>}        #561
 
     # strip Software from Copyright (c) Ian Darwin 1995. Software
-    NAME-YEAR: {<NAME>+ <YR-RANGE>}        #5611
+    NAME-YEAR: {<NAME>+ <YR-RANGE>}        #561.1
 
     # Copyright 2018, OpenCensus Authors
-    COPYRIGHT: {<COPY>+ <YR-RANGE> <NNP> <AUTHS>}     #1579991
+    COPYRIGHT: {<COPY>+ <YR-RANGE> <NNP> <AUTHS>}     #561.2
 
-    NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>? <LINUX>?} #5612
+    # Tom aan de Wiel
+    NAME: {<NNP>  <OF>  <VAN>  <NNP> } # 561.3
+
+    NAME-YEAR: {<YR-RANGE> <NNP>+ <CAPS>? <LINUX>?} #562
 
     #Academy of Motion Picture Arts and Sciences
-    NAME: {<NAME> <CC> <NNP>} #561
+    NAME: {<NAME> <CC> <NNP>} #563
 
     # Adam Weinberger and the GNOME Foundation
     ANDCO: {<CC> <NN> <COMPANY>} #565
@@ -2581,6 +2612,8 @@ GRAMMAR = """
     NAME-YEAR: {<YR-RANGE> <NAME>+ <CONTRIBUTORS>?}        #570
 
     URL: {<PARENS> <URL> <PARENS>}        #5700
+
+    NAME-YEAR:  {<NAME-YEAR>  <CD>  <NNP>} #5700.1
 
     #also accept trailing email and URLs
     # and "VAN" e.g. Du: Copyright (c) 2008 Alek Du <alek.du@intel.com>
@@ -2984,7 +3017,11 @@ GRAMMAR = """
 
     # Russ Dill <Russ.Dill@asu.edu> 2001-2003
     # Rewrited by Vladimir Oleynik <dzo@simtreas.ru> (C) 2003
-    COPYRIGHT: {<NAME-EMAIL>  <YR-RANGE>  <AUTH2>  <BY>  <NAME-EMAIL>  <COPY>  <YR-RANGE>} #22793.5
+    COPYRIGHT: {<NAME-EMAIL>  <YR-RANGE>  <AUTH2>  <BY>  <NAME-EMAIL>  <COPY>  <YR-RANGE>} #2280-2
+
+    # Copyright (C) 2018
+    # Author: Jeff LaBundy <jeff@labundy.com>
+    COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <AUTH>  <NAME-EMAIL>} #2280-3
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
@@ -3259,6 +3296,9 @@ GRAMMAR = """
     # copyrighted by the Open Source Vulnerability Database (http://osvdb.org)
     COPYRIGHT: {<COPY> <BY> <NN|NNP>{3} <NAME>}        #83002.1
 
+    # (C) by the respective authors,
+    <COPYRIGHT>: { <COPY>  <BY>  <NN>  <NN>  <AUTHDOT>} #83002.2
+
     # weird //opylefted by <-Harvie 2oo7
     COPYRIGHT: {<COPY> <BY> <NN> <NN> <MAINT>?}        #83003
 
@@ -3301,6 +3341,14 @@ GRAMMAR = """
     # Gracenote, Inc., copyright © 2000-2008 Gracenote.
     # Gracenote Software, copyright © 2000-2008 Gracenote.
     COPYRIGHT: {<COMPANY> <COPY>{1,2} <NAME-YEAR>}        #157999.12
+
+    #Copyright (C) 2012-2016 by the following authors:
+    #- Wladimir J. van der Laan <laanwj@gmail.com>
+
+    NAME-EMAIL: {<NNP> <NAME-EMAIL> } #157999.13 
+    NAME-EMAIL: {<DASH>  <NAME-EMAIL> <NN>?} #157999.14
+    COPYRIGHT: {<COPYRIGHT2> <FOLLOWING> <AUTHS> <NAME-EMAIL>+ } #157999.14
+
 
 #######################################
 # Copyright is held by ....
@@ -3804,6 +3852,8 @@ HOLDERS_PREFIXES = frozenset(set.union(
         '$',
         'current.year',
         "©",
+        'author',
+        'authors',
     ])
 ))
 
