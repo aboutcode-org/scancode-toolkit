@@ -2,6 +2,7 @@
 license_expression: gpl-2.0-plus
 is_license_notice: yes
 relevance: 100
+skip_collecting_required_phrases: yes
 ---
 
 licensed under the {{TYPO3 GPL}}.

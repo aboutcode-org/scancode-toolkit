@@ -3,9 +3,9 @@ license_expression: gpl-2.0-plus
 is_license_notice: yes
 ---
 
-License: GPL-2+
+{{License: GPL-2+}}
     # This is free software; you may copy, modify and/or distribute this work
-    # under the terms of the GNU General Public License, version 2 or later.
+    # under the terms of the {{GNU General Public License, version 2 or later}}.
     # No warranty expressed or implied. See the file LICENSE for details.
     .
     On Debian systems, the complete text of the GNU General Public License

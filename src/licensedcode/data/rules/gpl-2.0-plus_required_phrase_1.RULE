@@ -2,9 +2,8 @@
 license_expression: gpl-2.0-plus
 is_license_tag: yes
 is_required_phrase: yes
-relevance: 100
 sources:
-    - gpl-2.0-plus_496.RULE
+    - gpl-2.0-plus_115.RULE
 ---
 
-gnu gpl 2.0+
+gnu public license v2 or later
