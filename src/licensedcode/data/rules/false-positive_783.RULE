@@ -3,4 +3,4 @@ is_false_positive: yes
 notes: found in linux/drivers/pinctrl/samsung/pinctrl-exynos-arm.c
 ---
 
-EXYNOS_PIN_BANK_EINTG("gpl1")
+EINTG("gpl1")

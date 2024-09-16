@@ -3,4 +3,4 @@ is_false_positive: yes
 notes: seen in kernel /Documentation/process/license-rules.rst
 ---
 
-The SPDX license identifier is added in form of a comment.
+The SPDX license identifier is added

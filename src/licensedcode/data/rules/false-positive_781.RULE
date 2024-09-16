@@ -3,4 +3,4 @@ is_false_positive: yes
 notes: found in linux/drivers/gpu/drm/amd/include/asic_reg/nbio/
 ---
 
-#define PCIE_RX_AD__RX_RC_UR_SSPL_MSG
+UR_SSPL_MSG
