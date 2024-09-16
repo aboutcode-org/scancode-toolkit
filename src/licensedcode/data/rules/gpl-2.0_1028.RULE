@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-License: [GNU GPLv2](LICENSE)
+License: [{{GNU GPLv2}}](LICENSE)

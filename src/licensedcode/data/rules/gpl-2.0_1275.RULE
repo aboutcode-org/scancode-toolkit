@@ -6,5 +6,5 @@ ignorable_urls:
     - https://www.gnu.org/licenses/
 ---
 
-distributed under the terms of the GNU General Public License version 2
+{{distributed under the terms of the GNU General Public License version 2}}
 (`GPLv2 <https://www.gnu.org/licenses/>`_)

@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-GPL-2.0            - GNU General Public License version 2
+{{GPL-2.0}}            - {{GNU General Public License version 2}}

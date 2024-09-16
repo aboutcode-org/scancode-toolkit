@@ -6,6 +6,6 @@ referenced_filenames:
     - COPYING
 ---
 
-This driver is released to the public under the terms of the
- GNU GENERAL PUBLIC LICENSE version 2
+This driver is released to the public {{under the terms of the
+ GNU GENERAL PUBLIC LICENSE version 2}}
 See the file COPYING for details.

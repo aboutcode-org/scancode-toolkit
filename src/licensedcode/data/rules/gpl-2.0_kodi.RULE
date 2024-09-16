@@ -9,13 +9,13 @@ ignorable_holders:
     - the Free Software Foundation
 ---
 
-You may use, distribute and copy Kodi under the terms of GNU General
- Public License version 2, which is displayed below.
+You may use, distribute and copy Kodi under the terms of {{GNU General
+ Public License version 2}}, which is displayed below.
 
 -------------------------------------------------------------------------
 
-            GNU GENERAL PUBLIC LICENSE
-               Version 2, June 1991
+            {{GNU GENERAL PUBLIC LICENSE
+               Version 2}}, June 1991
 
  Copyright (C) 1989, 1991 Free Software Foundation, Inc.
                        59 Temple Place, Suite 330, Boston, MA  02111-1307  USA

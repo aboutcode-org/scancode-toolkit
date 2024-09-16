@@ -8,6 +8,6 @@ ignorable_urls:
     - http://www.gnu.org/licenses/gpl-2.0.html
 ---
 
-licensed under the terms of the GNU General Public License, version 2 (GPLv2). 
+licensed {{under the terms of the GNU General Public License, version 2}} (GPLv2). 
 The full text of this license may be found in the COPYING file at the top of
 the source tree and online at http://www.gnu.org/licenses/gpl-2.0.html.

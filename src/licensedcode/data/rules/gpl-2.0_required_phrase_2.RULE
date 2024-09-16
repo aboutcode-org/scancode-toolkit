@@ -1,0 +1,9 @@
+---
+license_expression: gpl-2.0
+is_license_tag: yes
+is_required_phrase: yes
+sources:
+    - gpl-2.0_1123.RULE
+---
+
+copy of the gnu general public license is also available at

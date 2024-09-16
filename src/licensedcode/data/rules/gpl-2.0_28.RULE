@@ -14,6 +14,6 @@ License: GPL-2
  for more details.
  .
  You should have received a copy of the GNU General Public License with
- the Debian operating system, in /usr/share/common-licenses/GPL-2;  if
+ the Debian operating system, in /{{usr/share/common-licenses/GPL-2}};  if
  not, write to the Free Software Foundation, Inc., 51 Franklin Street,
  Fifth Floor, Boston, MA 02110-1301 USA.

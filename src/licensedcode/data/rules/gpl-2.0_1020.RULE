@@ -13,9 +13,9 @@ ignorable_urls:
     - https://www.gnu.org/licenses/lgpl.html
 ---
 
-<h3><a id="SEC1">GNU GENERAL PUBLIC LICENSE</a></h3>
+<h3><a id="SEC1">{{GNU GENERAL PUBLIC LICENSE</a></h3>
 <p>
-Version 2, June 1991
+Version 2}}, June 1991
 </p>
 
 <pre>Copyright (C) 1989, 1991 Free Software Foundation, Inc.  
