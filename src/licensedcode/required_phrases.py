@@ -243,6 +243,14 @@ class RequiredPhraseDetails:
         )
     )
 
+    # Generic licenses should not be dumped as required phrase rules
+    has_generic_license = attr.ib(
+        default=0,
+        metadata=dict(
+            help='Has a generic license key in its license expression'
+        )
+    )
+
     @classmethod
     def create_required_phrase_details(
         cls,
@@ -250,6 +258,7 @@ class RequiredPhraseDetails:
         required_phrase_text,
         sources,
         length,
+        has_generic_license=False,
     ):
 
         base_name = f"{license_expression}_required_phrase"
@@ -269,7 +278,9 @@ class RequiredPhraseDetails:
             rule.is_license_reference = True
         else:
             rule.is_license_tag = True
-        rule.dump(rules_data_dir)
+
+        if not has_generic_license:
+            rule.dump(rules_data_dir)
 
         return cls(
             license_expression=license_expression,
@@ -277,6 +288,7 @@ class RequiredPhraseDetails:
             required_phrase_text=normalized_text,
             sources=sources,
             length=length,
+            has_generic_license=has_generic_license,
         )
 
     def update_sources(self, source_identifier):
@@ -313,7 +325,7 @@ class ListOfRequiredPhrases:
         if rule:
             return rule
 
-    def update_required_phrase_sources(self, rule):
+    def update_required_phrase_sources(self, rule, has_generic_license=False):
         """
         Given a rule update the required phrases list with this rule
 
@@ -333,7 +345,7 @@ class ListOfRequiredPhrases:
 
         # if rule is present as a rule in the index, set the is_required_phrase flag
         # and add to the list of required phrase rules
-        if not rule.is_required_phrase:
+        if not rule.is_required_phrase and not has_generic_license:
             rule.is_required_phrase = True
             rule.dump(rules_data_dir)
 
@@ -344,6 +356,7 @@ class ListOfRequiredPhrases:
             required_phrase_text=normalized_text,
             sources=[rule.identifier],
             length=len(normalized_text),
+            has_generic_license=has_generic_license,
         )
         self.required_phrases.append(required_phrase_detail)
 
@@ -369,16 +382,35 @@ class ListOfRequiredPhrases:
                 if matched_rule and matched_rule.skip_collecting_required_phrases:
                     continue
 
+                has_generic_license = does_have_generic_licenses(required_phrase.license_expression)
                 if not matched_rule:
                     required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
                         license_expression=required_phrase.license_expression,
                         required_phrase_text=required_phrase_without_skip_word,
                         sources=[required_phrase.rule.identifier],
                         length=len(required_phrase_without_skip_word),
+                        has_generic_license=has_generic_license,
                     )
                     self.required_phrases.append(required_phrase_detail)
                 else:
-                    self.update_required_phrase_sources(matched_rule)
+                    self.update_required_phrase_sources(
+                        rule=matched_rule,
+                        has_generic_license=has_generic_license,
+                    )
+
+
+def does_have_generic_licenses(license_expression):
+    licensing = Licensing()
+    license_keys = licensing.license_keys(license_expression)
+    licenses_by_keys = load_licenses()
+    has_generic_license = False
+    for lic_key in license_keys:
+        lic = licenses_by_keys.get(lic_key)
+        if lic and lic.is_generic:
+            has_generic_license = True
+            break
+
+    return has_generic_license
 
 
 def collect_required_phrases_in_rules(
@@ -424,6 +456,7 @@ def collect_required_phrases_in_rules(
                 if required_phrase_rule and required_phrase_rule.skip_collecting_required_phrases:
                     continue
 
+                has_generic_license = does_have_generic_licenses(license_expression)
                 if not required_phrase_rule:
                     if not is_text_license_reference(required_phrase_text):
                         required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
@@ -431,10 +464,14 @@ def collect_required_phrases_in_rules(
                             required_phrase_text=required_phrase_text,
                             sources=[rule.identifier],
                             length=len(required_phrase_text),
+                            has_generic_license=has_generic_license,
                         )
                         required_phrases_list.required_phrases.append(required_phrase_detail)
                 elif required_phrase_rule.license_expression == license_expression:
-                    required_phrases_list.update_required_phrase_sources(required_phrase_rule)
+                    required_phrases_list.update_required_phrase_sources(
+                        rule=required_phrase_rule,
+                        has_generic_license=has_generic_license,
+                    )
 
                 if rule.identifier in TRACE_REQUIRED_PHRASE_FOR_RULES:
                     click.echo(
@@ -493,7 +530,7 @@ def update_required_phrases_from_other_rules(
                 click.echo(f'Writing required phrases sources for license_expression: {license_expression}')
 
             for required_phrase_detail in required_phrases_list.required_phrases:
-                if required_phrase_detail.sources:
+                if required_phrase_detail.sources and not required_phrase_detail.has_generic_license:
                     required_phrase_detail.rule.dump(
                         rules_data_dir=rules_data_dir,
                         sources=required_phrase_detail.sources
