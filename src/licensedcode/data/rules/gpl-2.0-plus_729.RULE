@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-free software, distributed under the terms of the GNU
-General Public License GPLv2 or higher.
+free software, distributed under the terms of the {{GNU
+General Public License}} {{GPLv2 or higher}}.

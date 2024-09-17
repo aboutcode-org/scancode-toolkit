@@ -3,8 +3,6 @@ license_expression: gpl-2.0
 is_license_reference: yes
 is_required_phrase: yes
 relevance: 98
-sources:
-    - gpl-2.0_238.RULE
 ---
 
 GPL v2

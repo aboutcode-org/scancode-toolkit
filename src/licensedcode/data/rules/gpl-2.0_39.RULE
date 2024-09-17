@@ -4,8 +4,6 @@ is_license_reference: yes
 is_required_phrase: yes
 relevance: 100
 minimum_coverage: 100
-sources:
-    - gpl-2.0_39.RULE
 ---
 
 GNU General Public License version 2

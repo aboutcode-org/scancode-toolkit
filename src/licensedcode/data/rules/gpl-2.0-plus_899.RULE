@@ -9,5 +9,5 @@ relevance: 100
     # under the terms of the {{GNU General Public License, version 2 or later}}.
     # No warranty expressed or implied. See the file LICENSE for details.
     .
-    On Debian GNU/Linux systems, the complete text of the GNU General Public License
-    can be found in file "/usr/share/common-licenses/GPL-2".
+    On Debian GNU/Linux systems, the complete text of the {{GNU General Public License}}
+    can be found in file "/{{usr/share/common-licenses/GPL}}-2".

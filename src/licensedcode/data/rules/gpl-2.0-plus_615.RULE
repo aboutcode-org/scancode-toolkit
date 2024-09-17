@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-License-Grant: This code is subject to the GNU General Public License {{License: GPL-2+}}
+License-Grant: This code is subject to the {{GNU General Public License}} {{License: GPL-2+}}

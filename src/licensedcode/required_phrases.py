@@ -27,6 +27,7 @@ from licensedcode.models import find_rule_base_location
 
 from licensedcode.spans import Span
 from licensedcode.tokenize import required_phrase_tokenizer
+from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import return_spans_for_required_phrase_in_text
 from licensedcode.tokenize import get_ignorable_spans
 from licensedcode.tokenize import get_non_overlapping_spans
@@ -197,11 +198,12 @@ def get_num_tokens(text):
 
 def is_text_license_reference(text):
 
+    tokens = list(index_tokenizer(text=text))
     words_license_reference = ['http', 'https', 'io', 'com', 'txt', 'md', 'file']
     if any(
         True
         for word in words_license_reference
-        if word in text
+        if word in tokens
     ):
         return True
 
@@ -367,22 +369,27 @@ class ListOfRequiredPhrases:
             reverse=True,
         )
 
-    def add_variations_of_required_phrases(self):
+    def add_variations_of_required_phrases(self, licenses_by_key):
 
-        words_to_skip = [" the", "the "]
+        words_to_skip = ["the"]
         for required_phrase in self.required_phrases:
+            required_phrase_tokens = list(index_tokenizer(text=required_phrase.required_phrase_text))
             skip_words_present = [
                 skip_word
                 for skip_word in words_to_skip
-                if skip_word in required_phrase.required_phrase_text
+                if skip_word in required_phrase_tokens
             ]
             for skip_word in skip_words_present:
-                required_phrase_without_skip_word = required_phrase.required_phrase_text.replace(skip_word, "")
+                required_phrase_tokens.remove(skip_word)
+                required_phrase_without_skip_word = " ".join(required_phrase_tokens)
                 matched_rule = self.match_required_phrase_present(required_phrase_without_skip_word)
                 if matched_rule and matched_rule.skip_collecting_required_phrases:
                     continue
 
-                has_generic_license = does_have_generic_licenses(required_phrase.license_expression)
+                has_generic_license = does_have_generic_licenses(
+                    license_expression=required_phrase.license_expression,
+                    licenses_by_key=licenses_by_key,
+                )
                 if not matched_rule:
                     required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
                         license_expression=required_phrase.license_expression,
@@ -399,13 +406,12 @@ class ListOfRequiredPhrases:
                     )
 
 
-def does_have_generic_licenses(license_expression):
+def does_have_generic_licenses(license_expression, licenses_by_key):
     licensing = Licensing()
     license_keys = licensing.license_keys(license_expression)
-    licenses_by_keys = load_licenses()
     has_generic_license = False
     for lic_key in license_keys:
-        lic = licenses_by_keys.get(lic_key)
+        lic = licenses_by_key.get(lic_key)
         if lic and (
             lic.is_generic or lic.is_unknown
         ):
@@ -417,6 +423,7 @@ def does_have_generic_licenses(license_expression):
 
 def collect_required_phrases_in_rules(
     rules_by_expression,
+    licenses_by_key,
     license_expression=None,
     verbose=False,
 ):
@@ -455,35 +462,48 @@ def collect_required_phrases_in_rules(
                 required_phrase_rule = required_phrases_list.match_required_phrase_present(
                     required_phrase_text=required_phrase_text,
                 )
-                if required_phrase_rule and required_phrase_rule.skip_collecting_required_phrases:
-                    continue
 
-                has_generic_license = does_have_generic_licenses(license_expression)
-                if not required_phrase_rule:
-                    if not is_text_license_reference(required_phrase_text):
-                        required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
-                            license_expression=license_expression,
-                            required_phrase_text=required_phrase_text,
-                            sources=[rule.identifier],
-                            length=len(required_phrase_text),
-                            has_generic_license=has_generic_license,
-                        )
-                        required_phrases_list.required_phrases.append(required_phrase_detail)
-                elif required_phrase_rule.license_expression == license_expression:
-                    required_phrases_list.update_required_phrase_sources(
-                        rule=required_phrase_rule,
-                        has_generic_license=has_generic_license,
-                    )
-
+                debug = False
                 if rule.identifier in TRACE_REQUIRED_PHRASE_FOR_RULES:
+                    debug = True
                     click.echo(
                         f"Collecting from rule: {rule.identifier} "
                         f"Required phrase: '{required_phrase_text}' "
                         f"Matched rule: {required_phrase_rule}"
                     )
 
+                if required_phrase_rule and required_phrase_rule.skip_collecting_required_phrases:
+                    continue
+
+                has_generic_license = does_have_generic_licenses(
+                    license_expression=license_expression,
+                    licenses_by_key=licenses_by_key,
+                )
+                if required_phrase_rule and required_phrase_rule.license_expression == license_expression:
+                    required_phrases_list.update_required_phrase_sources(
+                        rule=required_phrase_rule,
+                        has_generic_license=has_generic_license,
+                    )
+                    if debug:
+                        click.echo(f"Old required phrase updated, same license expression")
+
+                elif not is_text_license_reference(required_phrase_text):
+                    required_phrase_detail = RequiredPhraseDetails.create_required_phrase_details(
+                        license_expression=license_expression,
+                        required_phrase_text=required_phrase_text,
+                        sources=[rule.identifier],
+                        length=len(required_phrase_text),
+                        has_generic_license=has_generic_license,
+                    )
+                    required_phrases_list.required_phrases.append(required_phrase_detail)
+                    if debug:
+                        click.echo(f"New required phrase : {required_phrase_detail} ")
+                elif debug:
+                    is_reference = is_text_license_reference(required_phrase_text)
+                    click.echo(f"is_text_license_reference: {is_reference} ")
+
         # Add add new variations of the required phrases already present in the list
-        required_phrases_list.add_variations_of_required_phrases()
+        required_phrases_list.add_variations_of_required_phrases(licenses_by_key)
 
         # We need to sort required phrases by length so we look for and mark the longest possible
         # required phrases before the shorter ones contained in the same (substrings)
@@ -540,6 +560,7 @@ def update_required_phrases_from_other_rules(
 
 
 def add_required_phrases_from_other_rules(
+    licenses_by_key,
     license_expression=None,
     write_required_phrases=False,
     verbose=False,
@@ -556,6 +577,7 @@ def add_required_phrases_from_other_rules(
         license_expression=license_expression,
         rules_by_expression=rules_by_expression,
         verbose=verbose,
+        licenses_by_key=licenses_by_key,
     )
 
     update_required_phrases_from_other_rules(
@@ -663,6 +685,7 @@ def add_required_phrase_to_rule(rule, required_phrase, debug_data=None, debug=Fa
 
 
 def add_required_phrases_from_license_fields(
+    licenses_by_key,
     license_expression=None,
     verbose=False,
     can_mark_required_phrase_test=False,
@@ -678,7 +701,6 @@ def add_required_phrases_from_license_fields(
     else:
         rules_by_expression_to_update = rules_by_expression
 
-    licenses = load_licenses()
     licensing = Licensing()
 
     for license_expression, rules in rules_by_expression_to_update.items():
@@ -688,7 +710,7 @@ def add_required_phrases_from_license_fields(
             continue
 
         license_key = license_keys.pop()    
-        licence_object = licenses[license_key]
+        licence_object = licenses_by_key[license_key]
 
         if verbose:
             click.echo(f'Updating rules with required phrases for license_expression: {license_key}')
@@ -779,6 +801,8 @@ def add_required_phrases(
     For all rules with the `license_expression`, add required phrases from the
     license fields.
     """
+    licenses_by_key = load_licenses()
+
     if delete_required_phrase_origins:
         delete_required_phrase_rules_debug(rules_data_dir)
         return
@@ -790,6 +814,7 @@ def add_required_phrases(
             license_expression=license_expression,
             write_required_phrases=write_required_phrase_origins,
             verbose=verbose,
+            licenses_by_key=licenses_by_key,
         )
 
     # marks required phrases in existing rules from license attributes like name,
@@ -798,6 +823,7 @@ def add_required_phrases(
         add_required_phrases_from_license_fields(
             license_expression=license_expression,
             verbose=verbose,
+            licenses_by_key=licenses_by_key,
         )
 
     if reindex:

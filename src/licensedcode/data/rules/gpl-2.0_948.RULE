@@ -3,8 +3,6 @@ license_expression: gpl-2.0
 is_license_notice: yes
 is_required_phrase: yes
 relevance: 100
-sources:
-    - gpl-2.0_948.RULE
 ---
 
 Distributed under the terms of the GNU General Public License (version 2)

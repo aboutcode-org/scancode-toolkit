@@ -6,8 +6,6 @@ is_continuous: yes
 relevance: 50
 minimum_coverage: 100
 notes: Used to detect a bare SPDX license id
-sources:
-    - spdx_license_id_gpl-2.0+_for_gpl-2.0-plus.RULE
 ---
 
 gpl-2.0+

@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-gnu.org/licenses/gpl-2.0.html
+gnu.org/licenses/{{gpl-2.0}}.html

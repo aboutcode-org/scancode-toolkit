@@ -2,9 +2,6 @@
 license_expression: bsd-new
 is_license_tag: yes
 is_required_phrase: yes
-sources:
-    - bsd-new_25.RULE
-    - bsd-new_required_phrase_1.RULE
 ---
 
 governed by bsd style license

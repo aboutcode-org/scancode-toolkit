@@ -3,8 +3,6 @@ license_expression: bsd-new
 is_license_reference: yes
 is_required_phrase: yes
 relevance: 99
-sources:
-    - bsd-new_898.RULE
 ---
 
 THE "BSD" LICENCE

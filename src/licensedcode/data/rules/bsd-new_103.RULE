@@ -4,8 +4,6 @@ is_license_reference: yes
 is_required_phrase: yes
 is_continuous: yes
 relevance: 100
-sources:
-    - bsd-new_103.RULE
 ---
 
 {{New BSD License (BSD)}}

@@ -33,8 +33,8 @@ this guidance suggests that the developer attach certain notices to the
 program. Of particular importance is the following notice:
 
 "This program is free software; you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation; either version 2 of the License, or (at your option) any later
+the terms of the {{GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License}}, or (at your option) any later
 version."
 
 Thus if a developer follows strictly the guidance provided by the Free
@@ -47,7 +47,7 @@ and any third party desiring to use, modify or distribute SNORT must do so by
 strictly following the terms and conditions of {{GPL V2}}. Anyone using, modifying
 or distributing SNORT does not have the option to chose to use, modify or
 distribute SNORT under any revised or new version of the GPL, including
-without limitation, the GNU General Public License Version 3.
+without limitation, the {{GNU General Public License}} Version 3.
 
 For ease of reference, the comparable notice that is used with SNORT
 (contained in the 'README' file) is as follows:
@@ -55,7 +55,7 @@ For ease of reference, the comparable notice that is used with SNORT
 "This program is free software; you can redistribute it and/or modify it {{under
 the terms of the GNU General Public License Version 2}} as published by the Free
 Software Foundation. You may not use, modify or distribute this program under
-any other version of the GNU General Public License."
+any other version of the {{GNU General Public License}}."
 
 If you have any questions about this statement, please feel free to email
 snort-info@snort.org.

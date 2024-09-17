@@ -5,8 +5,6 @@ is_required_phrase: yes
 relevance: 100
 referenced_filenames:
     - /usr/share/common-licenses/GPL
-sources:
-    - gpl-1.0-plus_424.RULE
 ---
 
 /usr/share/common-licenses/GPL.

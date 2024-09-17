@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-gnu gpl 2 plus
+gnu {{gpl 2 plus}}

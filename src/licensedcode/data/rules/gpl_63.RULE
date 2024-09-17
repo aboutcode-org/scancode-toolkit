@@ -5,8 +5,6 @@ is_required_phrase: yes
 relevance: 100
 minimum_coverage: 100
 notes: No version gpl declaration
-sources:
-    - gpl_63.RULE
 ---
 
 GNU General Public License

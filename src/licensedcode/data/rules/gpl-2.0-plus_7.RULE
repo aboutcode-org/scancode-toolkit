@@ -8,5 +8,5 @@ notes: GPL 2.0 +  debian version
 ---
 
 License: {{GNU General Public License, version 2 or later}} (GPL-2+)
-  On Debian systems, the complete text of the GNU General Public License
-  version 2 can be found in /usr/share/common-licenses/GPL-2.
+  On Debian systems, the complete text of the {{GNU General Public License
+  version 2}} can be found in /usr/share/common-licenses/GPL-2.

@@ -5,4 +5,4 @@ is_license_notice: yes
 
 Released {{under the terms of the GNU General Public License version 2}}.
 
-See /usr/share/common-licenses/GPL for the full license.
+See /{{usr/share/common-licenses/GPL}} for the full license.

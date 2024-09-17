@@ -5,8 +5,6 @@ is_required_phrase: yes
 relevance: 100
 referenced_filenames:
     - /usr/share/common-licenses/GPL-2
-sources:
-    - gpl-2.0_621.RULE
 ---
 
 /usr/share/common-licenses/GPL-2

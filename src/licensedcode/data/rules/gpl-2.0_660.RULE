@@ -3,8 +3,6 @@ license_expression: gpl-2.0
 is_license_reference: yes
 is_required_phrase: yes
 relevance: 100
-sources:
-    - gpl-2.0_660.RULE
 ---
 
 The GNU General Public License, Version 2

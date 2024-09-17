@@ -31,8 +31,8 @@ of this license document, but changing it is not allowed.
 
 <p>
   The licenses for most software are designed to take away your
-freedom to share and change it.  By contrast, the GNU General Public
-License is intended to guarantee your freedom to share and change free
+freedom to share and change it.  By contrast, the {{GNU General Public
+License}} is intended to guarantee your freedom to share and change free
 software--to make sure the software is free for all its users.  This
 General Public License applies to most of the Free Software
 Foundation's software and to any other program whose authors commit to
@@ -413,16 +413,16 @@ the "copyright" line and a pointer to where the full notice is found.
 Copyright (C) <var>yyyy</var>  <var>name of author</var>
 
 This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
+modify it under the terms of the {{GNU General Public License
 as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
+of the License}}, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+{{GNU General Public License}} for more details.
 
-You should have received a copy of the GNU General Public License
+You should have received a copy of the {{GNU General Public License}}
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 </pre>

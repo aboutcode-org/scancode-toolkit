@@ -7,6 +7,6 @@ referenced_filenames:
 ---
 
 {{License: GPL-2+}}
-  On Debian GNU/Linux systems the full text of the GNU General Public
-  License can be found in the `/usr/share/common-licenses/GPL-2'
+  On Debian GNU/Linux systems the full text of the {{GNU General Public
+  License}} can be found in the `/usr/share/common-licenses/GPL-2'
   file.
