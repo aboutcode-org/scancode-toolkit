@@ -1,7 +1,10 @@
 ---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
+is_required_phrase: yes
 relevance: 100
+sources:
+    - gpl_212.RULE
 ---
 
 GNU General Public License (GPL)

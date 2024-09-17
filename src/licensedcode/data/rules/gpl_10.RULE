@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-All code released under the GPL, see /usr/share/common-licenses/GPL
+All code released {{under the GPL}}, see /{{usr/share/common-licenses/GPL}}

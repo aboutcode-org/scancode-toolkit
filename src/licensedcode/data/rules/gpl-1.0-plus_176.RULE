@@ -6,5 +6,5 @@ referenced_filenames:
     - COPYING
 ---
 
-distributed under the terms of the GNU General Public
-License.  See the file COPYING for details.
+distributed under the terms of the {{GNU General Public
+License}}.  See the file COPYING for details.

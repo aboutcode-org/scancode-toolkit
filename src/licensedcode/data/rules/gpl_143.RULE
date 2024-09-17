@@ -3,6 +3,6 @@ license_expression: gpl-1.0-plus
 is_license_notice: yes
 ---
 
-This driver is provided under the GNU General Public License,
+This driver is provided under the {{GNU General Public License}},
  incorporated herein by reference. The driver is provided without
  warranty or support.

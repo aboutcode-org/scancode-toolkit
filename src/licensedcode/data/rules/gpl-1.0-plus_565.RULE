@@ -4,6 +4,7 @@ is_license_reference: yes
 is_continuous: yes
 relevance: 100
 notes: Seen in ebpf in github.com/cilium/ebpf/ and may be accessing GPL-only kernel symbols
+skip_collecting_required_phrases: yes
 ---
 
 {{ License:      internal.NewStringPointer("GPL")}}

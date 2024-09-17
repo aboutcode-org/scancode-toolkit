@@ -6,5 +6,5 @@ notes: Debian GPL
 ---
 
 The binary utilities in this package are distributed under the terms 
-of the GNU General Public License. The text of the license is available
-on Debian systems in the /usr/share/common-licenses/GPL file.
+of the {{GNU General Public License}}. The text of the license is available
+on Debian systems in the /{{usr/share/common-licenses/GPL}} file.

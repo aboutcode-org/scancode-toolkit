@@ -5,5 +5,5 @@ is_license_notice: yes
 
 LICENSE_START(GPL_NOVERSION_ONELINE)
 Do not restrict distribution.
-May be distributed under the GNU General Public License
+May be distributed under the {{GNU General Public License}}
 LICENSE_END

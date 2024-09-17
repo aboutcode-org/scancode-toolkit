@@ -4,7 +4,7 @@ is_license_notice: yes
 minimum_coverage: 98
 ---
 
-This code is released under the GNU General Public License (GPL)
+This code is released under the {{GNU General Public License (GPL}})
 
 THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
 WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES

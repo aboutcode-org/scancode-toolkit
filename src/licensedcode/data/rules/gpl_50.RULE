@@ -5,4 +5,4 @@ relevance: 100
 ---
 
 The Debian packaging is (C)  and
-is licensed under the GPL, see `/usr/share/common-licenses/GPL'.
+is licensed {{under the GPL}}, see `/{{usr/share/common-licenses/GPL}}'.

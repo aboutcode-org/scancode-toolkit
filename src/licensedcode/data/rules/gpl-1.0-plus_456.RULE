@@ -6,4 +6,4 @@ referenced_filenames:
     - COPYING.GPL
 ---
 
-distributed under the GPL (see COPYING.GPL)
+distributed {{under the GPL}} (see COPYING.GPL)
