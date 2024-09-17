@@ -245,7 +245,7 @@ class RequiredPhraseDetails:
 
     # Generic licenses should not be dumped as required phrase rules
     has_generic_license = attr.ib(
-        default=0,
+        default=False,
         metadata=dict(
             help='Has a generic license key in its license expression'
         )
@@ -369,7 +369,7 @@ class ListOfRequiredPhrases:
 
     def add_variations_of_required_phrases(self):
 
-        words_to_skip = ["the"]
+        words_to_skip = [" the", "the "]
         for required_phrase in self.required_phrases:
             skip_words_present = [
                 skip_word
@@ -406,7 +406,9 @@ def does_have_generic_licenses(license_expression):
     has_generic_license = False
     for lic_key in license_keys:
         lic = licenses_by_keys.get(lic_key)
-        if lic and lic.is_generic:
+        if lic and (
+            lic.is_generic or lic.is_unknown
+        ):
             has_generic_license = True
             break
 

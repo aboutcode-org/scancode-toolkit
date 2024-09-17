@@ -4,4 +4,4 @@ is_license_text: yes
 relevance: 100
 ---
 
-provided "as-is" and without warranty of any kind, express, implied or otherwise, including without limitation, any warranty of merchantability or fitness for a particular purpose.
+{{provided "as-is" and without warranty of any kind}}, express, implied or otherwise, including without limitation, any warranty of merchantability or fitness for a particular purpose.

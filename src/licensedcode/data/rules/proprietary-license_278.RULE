@@ -11,6 +11,6 @@ ADDITIONAL TERMS. In general:
 - Personal, non-commercial use is generally permitted.
 - Commercialization is permitted with certain limitations; for example, to ensure that every iLBC decoder can decode
 every iLBC-encoded payload, commercial “Deployment” must comply with the applicable IETF Standard/draft, and the
-format of the bitstream may not be modified.
+format of the bitstream {{may not be}} modified.
 - You are provided no warranty or support, and all liability is disclaimed.
 - You must register this license with GIPS prior to any commercial Deployment.

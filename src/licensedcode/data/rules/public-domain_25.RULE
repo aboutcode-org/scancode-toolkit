@@ -5,6 +5,6 @@ relevance: 100
 minimum_coverage: 90
 ---
 
-PUBLIC DOMAIN
+{{PUBLIC DOMAIN}}
 
-This source code is public domain
+This source code is {{public domain}}

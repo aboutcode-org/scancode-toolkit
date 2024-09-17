@@ -6,5 +6,5 @@ ignorable_urls:
     - http://www.codesynthesis.com/products/xsd/license.xhtml
 ---
 
-The C++ bindings need to be generated using an XSD Commercial Proprietary License.
+The C++ bindings need to be generated using an XSD Commercial {{Proprietary License}}.
 See http://www.codesynthesis.com/products/xsd/license.xhtml for more information.

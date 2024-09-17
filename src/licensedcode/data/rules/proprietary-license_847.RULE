@@ -5,7 +5,7 @@ notes: https://github.com/quiqueck/libPLEX-iOS/blob/master/LICENSE
 ---
 
 Redistribution and use of the libPLEX-OSS.a code or any derivative works are permitted provided that the following conditions are met:
-- Redistributions may not be sold, nor may they be used in a commercial product or activity.
+- Redistributions {{may not be}} sold, nor may they be used in a commercial product or activity.
 - Redistributions must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
 - It is not allowed to redistribute a modified version of the libPLEX-OSS.a
 - It is not allowed to use libPLEX-OSS.a in any product submitted to any App Store.

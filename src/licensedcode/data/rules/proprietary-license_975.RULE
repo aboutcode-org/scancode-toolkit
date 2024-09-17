@@ -8,6 +8,7 @@ ignorable_copyrights:
     - Copyright (c) by P.J. Plauger
 ignorable_holders:
     - P.J. Plauger
+skip_collecting_required_phrases: yes
 ---
 
 Copyright (c) by {{P.J. Plauger}}, {{licensed by Dinkumware}}, Ltd. ALL RIGHTS RESERVED.
