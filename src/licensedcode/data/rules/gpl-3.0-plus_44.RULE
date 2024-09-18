@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-licensed as "GPLv3 or higher".
+licensed as "{{GPLv3 or higher}}".

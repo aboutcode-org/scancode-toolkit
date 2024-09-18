@@ -4,9 +4,9 @@ is_license_notice: yes
 notes: German Pychess
 ---
 
-PyChess   ist freie Software. Sie können es unter den Bedingungen der GNU 
+PyChess   ist freie Software. Sie können es unter den Bedingungen der {{GNU 
 General 
-Public License, wie von der Free Software Foundation veröffentlicht, 
+Public License}}, wie von der Free Software Foundation veröffentlicht, 
 weitergeben und/oder 
 modifizieren, entweder gemass Version 3 der Lizenz oder (nach Ihrer Option) 
 jeder späteren 
@@ -17,9 +17,9 @@ Nutzen
 sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie 
 der MARKTREIFE 
 oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Details finden Sie in 
-der GNU General 
-Public License.
+der {{GNU General 
+Public License}}.
 
-Sie sollten ein Exemplar der GNU General Public License zusammen mit  PyChess  
+Sie sollten ein Exemplar der {{GNU General Public License}} zusammen mit  PyChess  
 
 erhalten haben. Falls nicht, schreiben Sie an die Free Software Foundation,

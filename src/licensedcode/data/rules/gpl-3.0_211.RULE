@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.gnu.org/licenses/gpl-3.0.txt
 ---
 
-www.gnu.org/licenses/gpl-3.0.txt
+www.{{gnu.org/licenses/gpl-3.0}}.txt

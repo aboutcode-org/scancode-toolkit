@@ -597,8 +597,8 @@ def add_required_phrases_from_other_rules(
 def add_required_phrases_for_required_phrases(required_phrases, rules, verbose=False):
 
     for rule in rules:
-        # skip small rules
-        if len(rule.text) < TINY_RULE:
+        # skip small or required phrase rules
+        if len(rule.text) < TINY_RULE or rule.is_required_phrase:
             continue
 
         for required_phrase in required_phrases:
