@@ -1,7 +1,7 @@
 ---
-license_expression: bsd-simplified
+license_expression: lgpl-3.0
 is_license_tag: yes
 is_required_phrase: yes
 ---
 
-name bsd license
+{{lgpl 3 0}} license

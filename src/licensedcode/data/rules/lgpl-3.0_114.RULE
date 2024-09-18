@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.gnu.org/licenses/lgpl-3.0.html
 ---
 
-www.gnu.org/licenses/lgpl-3.0.html
+www.gnu.org/licenses/{{lgpl-3.0}}.html

@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-licenses: LGPL-3.0-or-later
+licenses: {{LGPL-3.0-or-later}}

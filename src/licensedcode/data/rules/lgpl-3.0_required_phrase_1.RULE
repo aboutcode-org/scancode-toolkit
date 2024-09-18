@@ -1,7 +1,7 @@
 ---
-license_expression: bsd-simplified
+license_expression: lgpl-3.0
 is_license_tag: yes
 is_required_phrase: yes
 ---
 
-bsd 2
+version 3 of the lgpl

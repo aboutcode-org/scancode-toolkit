@@ -5,6 +5,7 @@ is_continuous: yes
 relevance: 100
 ignorable_urls:
     - http://jasperreports.sourceforge.net/license.html
+skip_collecting_required_phrases: yes
 ---
 
 {{http://jasperreports.sourceforge.net/license.html}}

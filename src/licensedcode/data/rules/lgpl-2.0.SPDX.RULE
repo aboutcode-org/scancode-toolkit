@@ -11,9 +11,9 @@ ignorable_holders:
     - the Free Software Foundation
 ---
 
-GNU LIBRARY GENERAL PUBLIC LICENSE
+{{GNU LIBRARY GENERAL PUBLIC LICENSE
 
-Version 2, June 1991
+Version 2}}, June 1991
 
 Copyright (C) 1991 Free Software Foundation, Inc.
 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA
@@ -40,7 +40,7 @@ Also, for each distributor's protection, we want to make certain that everyone u
 
 Finally, any free program is threatened constantly by software patents. We wish to avoid the danger that companies distributing free software will individually obtain patent licenses, thus in effect transforming the program into proprietary software. To prevent this, we have made it clear that any patent must be licensed for everyone's free use or not licensed at all.
 
-Most GNU software, including some libraries, is covered by the ordinary GNU General Public License, which was designed for utility programs. This license, the GNU Library General Public License, applies to certain designated libraries. This license is quite different from the ordinary one; be sure to read it in full, and don't assume that anything in it is the same as in the ordinary license.
+Most GNU software, including some libraries, is covered by the ordinary GNU General Public License, which was designed for utility programs. This license, the {{GNU Library General Public License}}, applies to certain designated libraries. This license is quite different from the ordinary one; be sure to read it in full, and don't assume that anything in it is the same as in the ordinary license.
 
 The reason we have a separate public license for some libraries is that they blur the distinction we usually make between modifying or adding to a program and simply using it. Linking a program with a library, without changing the library, is in some sense simply using the library, and is analogous to running a utility program or application program. However, in a textual and legal sense, the linked executable is a combined work, a derivative of the original library, and the ordinary General Public License treats it as such.
 
@@ -158,17 +158,17 @@ one line to give the library's name and an idea of what it does.
 Copyright (C) year  name of author
 
 This library is free software; you can redistribute it and/or
-modify it under the terms of the GNU Library General Public
-License as published by the Free Software Foundation; either
+modify it under the terms of the {{GNU Library General Public
+License}} as published by the Free Software Foundation; either
 version 2 of the License, or (at your option) any later version.
 
 This library is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-Library General Public License for more details.
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the {{GNU
+Library General Public License}} for more details.
 
-You should have received a copy of the GNU Library General Public
-License along with this library; if not, write to the
+You should have received a copy of the {{GNU Library General Public
+License}} along with this library; if not, write to the
 Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
 Boston, MA  02110-1301, USA.
 Also add information on how to contact you by electronic and paper mail.

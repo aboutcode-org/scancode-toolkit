@@ -1,7 +1,8 @@
 ---
 license_expression: lgpl-2.0
 is_license_notice: yes
+is_required_phrase: yes
 relevance: 100
 ---
 
-licensed UNDER THE TERMS OF THE LGPL 2.0
+licensed UNDER THE TERMS OF THE {{LGPL 2.0}}

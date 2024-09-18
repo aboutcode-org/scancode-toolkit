@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-- LicenseRef-LGPL-2.0
+- LicenseRef-{{LGPL-2.0}}

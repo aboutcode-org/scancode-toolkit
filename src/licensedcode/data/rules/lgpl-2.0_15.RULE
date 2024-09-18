@@ -9,8 +9,8 @@ ignorable_holders:
     - the Free Software Foundation
 ---
 
-GNU LIBRARY GENERAL PUBLIC LICENSE
-               Version 2, June 1991
+{{GNU LIBRARY GENERAL PUBLIC LICENSE
+               Version 2}}, June 1991
 
  Copyright (C) 1991 Free Software Foundation, Inc.
                 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
@@ -72,7 +72,7 @@ free use or not licensed at all.
 
   Most GNU software, including some libraries, is covered by the ordinary
 GNU General Public License, which was designed for utility programs.  This
-license, the GNU Library General Public License, applies to certain
+license, the {{GNU Library General Public License}}, applies to certain
 designated libraries.  This license is quite different from the ordinary
 one; be sure to read it in full, and don't assume that anything in it is
 the same as in the ordinary license.
@@ -110,7 +110,7 @@ works together with the library.
   Note that it is possible for a library to be covered by the ordinary
 General Public License rather than by this special one.
 
-          GNU LIBRARY GENERAL PUBLIC LICENSE
+          {{GNU LIBRARY GENERAL PUBLIC LICENSE}}
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
   0. This License Agreement applies to any software library which
@@ -464,17 +464,17 @@ convey the exclusion of warranty; and each file should have at least the
     Copyright (C) <year>  <name of author>
 
     This library is free software; you can redistribute it and/or
-    modify it under the terms of the GNU Library General Public
-    License as published by the Free Software Foundation; either
+    modify it under the terms of the {{GNU Library General Public
+    License}} as published by the Free Software Foundation; either
     version 2 of the License, or (at your option) any later version.
 
     This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    Library General Public License for more details.
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the {{GNU
+    Library General Public License}} for more details.
 
-    You should have received a copy of the GNU Library General Public
-    License along with this library; if not, write to the Free Software
+    You should have received a copy of the {{GNU Library General Public
+    License}} along with this library; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 Also add information on how to contact you by electronic and paper mail.
