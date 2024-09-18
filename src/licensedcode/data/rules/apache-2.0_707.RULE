@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
 ---
 
-published under the Apache License 2.0, see http://www.apache.org/licenses/LICENSE-2.0 for details.
+published under the {{Apache License 2.0}}, see http://www.apache.org/licenses/LICENSE-2.0 for details.

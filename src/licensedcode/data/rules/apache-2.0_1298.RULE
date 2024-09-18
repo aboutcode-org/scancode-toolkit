@@ -5,11 +5,11 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
 ---
 
-Apache License Version 2.0, January 2004
+{{Apache License Version 2.0}}, January 2004
 
-The following applies to all products licensed under the Apache 2.0
-License: You may not use the identified files except in compliance
-with the Apache License, Version 2.0 (the "License.") You may obtain a
+The following applies to all products {{licensed under the Apache 2.0
+License}}: You may not use the identified files except in compliance
+with the {{Apache License, Version 2.0}} (the "License.") You may obtain a
 copy of the License at http://www.apache.org/licenses/LICENSE-2.0. A
 copy of the license is also reproduced below. Unless required by
 applicable law or agreed to in writing, software distributed under the

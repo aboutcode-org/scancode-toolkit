@@ -6,6 +6,6 @@ ignorable_urls:
 ---
 
 <license>
-<name>The Apache Software License, Version 2.0</name>
+<name>{{The Apache Software License, Version 2.0}}</name>
 <url>http://www.apache.org/license/LICENSE-2.0.txt</url>
 </license>

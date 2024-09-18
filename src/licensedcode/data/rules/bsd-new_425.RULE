@@ -2,6 +2,7 @@
 license_expression: bsd-new
 is_license_text: yes
 minimum_coverage: 95
+skip_collecting_required_phrases: yes
 ---
 
 # This file contains code that was {{originally under the following license}}:

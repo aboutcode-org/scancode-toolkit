@@ -15,8 +15,8 @@ ignorable_urls:
     - https://blokur.com/legal
 ---
 
-Apache License
-                           Version 2.0, January 2004
+{{Apache License
+                           Version 2.0}}, January 2004
                         http://www.apache.org/licenses/
 
    TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
@@ -194,7 +194,7 @@ Apache License
 
    Copyright 2021 Blòkur Limited (https://blokur.com/legal/)
 
-   Licensed under the Apache License, Version 2.0 (the "License");
+   Licensed under the {{Apache License, Version 2.0}} (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 

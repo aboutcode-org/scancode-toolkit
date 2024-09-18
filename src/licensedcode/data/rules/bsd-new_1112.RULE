@@ -1,6 +1,7 @@
 ---
 license_expression: bsd-new
 is_license_text: yes
+skip_collecting_required_phrases: yes
 ---
 
 Software {{License

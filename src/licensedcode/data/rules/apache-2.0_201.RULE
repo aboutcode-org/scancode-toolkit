@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.txt
 ---
 
-License: Apache License Version 2.0  (LICENSE.txt
+License: {{Apache License Version 2.0}}  (LICENSE.txt

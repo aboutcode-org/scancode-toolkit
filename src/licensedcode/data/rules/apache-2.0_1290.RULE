@@ -6,5 +6,5 @@ referenced_filenames:
     - LICENSE
 ---
 
-licensed under the terms of the Apache
-license. See [LICENSE](LICENSE) for more information.
+licensed under the terms of the {{Apache
+license}}. See [LICENSE](LICENSE) for more information.

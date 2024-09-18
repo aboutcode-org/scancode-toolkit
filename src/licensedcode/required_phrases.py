@@ -327,7 +327,7 @@ class ListOfRequiredPhrases:
         if rule:
             return rule
 
-    def update_required_phrase_sources(self, rule, has_generic_license=False):
+    def update_required_phrase_sources(self, rule, has_generic_license=False, different_license=False):
         """
         Given a rule update the required phrases list with this rule
 
@@ -346,8 +346,9 @@ class ListOfRequiredPhrases:
             return 
 
         # if rule is present as a rule in the index, set the is_required_phrase flag
-        # and add to the list of required phrase rules
-        if not rule.is_required_phrase and not has_generic_license:
+        # and add to the list of required phrase rules, if it is a non-generic license of
+        # the same license expression
+        if not rule.is_required_phrase and not has_generic_license and not different_license:
             rule.is_required_phrase = True
             rule.dump(rules_data_dir)
 
@@ -479,10 +480,12 @@ def collect_required_phrases_in_rules(
                     license_expression=license_expression,
                     licenses_by_key=licenses_by_key,
                 )
-                if required_phrase_rule and required_phrase_rule.license_expression == license_expression:
+                if required_phrase_rule:
+                    different_license = required_phrase_rule.license_expression != license_expression
                     required_phrases_list.update_required_phrase_sources(
                         rule=required_phrase_rule,
                         has_generic_license=has_generic_license,
+                        different_license=different_license,
                     )
                     if debug:
                         click.echo(f"Old required phrase updated, same license expression")
@@ -552,7 +555,10 @@ def update_required_phrases_from_other_rules(
                 click.echo(f'Writing required phrases sources for license_expression: {license_expression}')
 
             for required_phrase_detail in required_phrases_list.required_phrases:
-                if required_phrase_detail.sources and not required_phrase_detail.has_generic_license:
+                if (
+                    required_phrase_detail.sources and required_phrase_detail.rule.is_required_phrase
+                    and not required_phrase_detail.has_generic_license
+                ):    
                     required_phrase_detail.rule.dump(
                         rules_data_dir=rules_data_dir,
                         sources=required_phrase_detail.sources

@@ -5,6 +5,6 @@ relevance: 100
 notes: Debian copyright file paragraph footer
 ---
 
-License: Apache-2
- On Debian systems the full text of the Apache License version 2
- can be found in the `/usr/share/common-licenses/Apache-2.0' file.
+{{License: Apache-2}}
+ On Debian systems the full text of the {{Apache License version 2}}
+ can be found in the `/{{usr/share/common-licenses/Apache-2.0}}' file.

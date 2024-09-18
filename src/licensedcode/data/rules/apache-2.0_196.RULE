@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.txt
 ---
 
-License: Apache License  (../LICENSE.txt
+License: {{Apache License}}  (../LICENSE.txt

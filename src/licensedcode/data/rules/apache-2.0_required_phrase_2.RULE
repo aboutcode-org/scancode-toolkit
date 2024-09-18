@@ -1,0 +1,7 @@
+---
+license_expression: apache-2.0
+is_license_tag: yes
+is_required_phrase: yes
+---
+
+license {{apache 2 0}} licensed under the apache license version 2 0

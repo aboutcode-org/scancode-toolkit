@@ -1,10 +1,11 @@
 ---
 license_expression: apache-2.0
 is_license_notice: yes
+is_required_phrase: yes
 referenced_filenames:
     - /usr/share/common-licenses/Apache-2.0
 ---
 
-License: Apache-2.0
+License: {{Apache-2.0}}
  On Debian systems the complete text of the license can be found in
  /usr/share/common-licenses/Apache-2.0

@@ -6,4 +6,4 @@ relevance: 100
 minimum_coverage: 100
 ---
 
-'APACHE20': 'Apache-2.0',
+'APACHE20': '{{Apache-2.0}}',

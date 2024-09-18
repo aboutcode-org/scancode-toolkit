@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-redistributed under the Apache Software
- License v2.0
+redistributed under the {{Apache Software
+ License v2.0}}
