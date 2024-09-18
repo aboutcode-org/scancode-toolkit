@@ -5,6 +5,6 @@ ignorable_urls:
     - https://creativecommons.org/publicdomain/zero/1.0/
 ---
 
-For all those files, unless they have an explicit license notice, the license
-is the Creative Commons CC0 1.0. The text can be found at
-https://creativecommons.org/publicdomain/zero/1.0/ .
+For all those files, unless they have an explicit license notice, the {{license
+is the Creative Commons CC0 1.0}}. The text can be found at
+{{https://creativecommons.org/publicdomain/zero/1.0/ }}.

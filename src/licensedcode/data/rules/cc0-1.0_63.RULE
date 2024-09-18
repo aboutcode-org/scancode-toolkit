@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-License: CC0 1.0 Universal
+License: {{CC0 1.0 Universal}}
