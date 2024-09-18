@@ -8,7 +8,7 @@ ignorable_urls:
 
 <licenses>
     <license>
-      <name>GNU Library General Public License v2.1 or later</name>
+      <name>{{GNU Library General Public License v2.1 or later}}</name>
       <url>http://www.opensource.org/licenses/LGPL-2.1</url>
       <distribution>repo</distribution>
       <comments>See discussion at http://hibernate.org/community/license/ for more details.</comments>

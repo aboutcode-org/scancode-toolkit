@@ -3,4 +3,4 @@ license_expression: lgpl-2.1-plus
 is_license_notice: yes
 ---
 
-The library is released under the GNU Lesser General Public License (LGPL), version 2.1 or (at your option) any later version,
+The library is released under the {{GNU Lesser General Public License (LGPL), version 2.1 or (at your option) any later version}},

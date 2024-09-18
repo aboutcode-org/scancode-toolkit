@@ -6,7 +6,7 @@ ignorable_urls:
     - https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
 ---
 
-open-source software and is released under the <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">GNU
-Lesser General Public License (LGPL) v2.1</a>.
+open-source software and is released under the <a href="https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html">{{GNU
+Lesser General Public License}} (LGPL) v2.1</a>.
 The library can be further distributed and used in other
 applications subject to the LGPL license terms

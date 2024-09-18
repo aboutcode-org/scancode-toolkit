@@ -5,12 +5,12 @@ ignorable_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.html
 ---
 
-GNU Lesser General Public License Version 2.1, February 1999
+{{GNU Lesser General Public License Version 2.1}}, February 1999
 
 The following applies to all products licensed under the
-GNU Lesser General Public License, Version 2.1: You may
+{{GNU Lesser General Public License, Version 2.1}}: You may
 not use the identified files except in compliance with
-the GNU Lesser General Public License, Version 2.1 (the
+the {{GNU Lesser General Public License, Version 2.1}} (the
 "License"). You may obtain a copy of the License at
 http://www.gnu.org/licenses/lgpl-2.1.html. A copy of the
 license is also reproduced below. Unless required by

@@ -11,8 +11,8 @@ ignorable_holders:
     - the Free Software Foundation
 ---
 
-GNU LESSER GENERAL PUBLIC LICENSE
-Version 2.1, February 1999
+{{GNU LESSER GENERAL PUBLIC LICENSE
+Version 2.1}}, February 1999
 
 Copyright (C) 1991, 1999 Free Software Foundation, Inc.
 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
@@ -40,7 +40,7 @@ To protect each distributor, we want to make it very clear that there is no warr
 
 Finally, software patents pose a constant threat to the existence of any free program. We wish to make sure that a company cannot effectively restrict the users of a free program by obtaining a restrictive license from a patent holder. Therefore, we insist that any patent license obtained for a version of the library must be consistent with the full freedom of use specified in this license.
 
-Most GNU software, including some libraries, is covered by the ordinary GNU General Public License. This license, the GNU Lesser General Public License, applies to certain designated libraries, and is quite different from the ordinary General Public License. We use this license for certain libraries in order to permit linking those libraries into non-free programs.
+Most GNU software, including some libraries, is covered by the ordinary GNU General Public License. This license, the {{GNU Lesser General Public License}}, applies to certain designated libraries, and is quite different from the ordinary General Public License. We use this license for certain libraries in order to permit linking those libraries into non-free programs.
 
 When a program is linked with a library, whether statically or using a shared library, the combination of the two is legally speaking a combined work, a derivative of the original library. The ordinary General Public License therefore permits such linking only if the entire combination fits its criteria of freedom. The Lesser General Public License permits more lax criteria for linking other code with the library.
 

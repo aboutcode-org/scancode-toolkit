@@ -9,8 +9,8 @@ ignorable_holders:
     - the Free Software Foundation
 ---
 
-GNU LESSER GENERAL PUBLIC LICENSE
-Version 2.1, February 1999
+{{GNU LESSER GENERAL PUBLIC LICENSE
+Version 2.1}}, February 1999
 
 Copyright (C) 1991, 1999 Free Software Foundation, Inc. 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA  
 
@@ -36,7 +36,7 @@ To protect each distributor, we want to make it very clear that there is no warr
 
 Finally, software patents pose a constant threat to the existence of any free program.  We wish to make sure that a company cannot effectively restrict the users of a free program by obtaining a restrictive license from a patent holder.  Therefore, we insist that any patent license obtained for a version of the library must be consistent with the full freedom of use specified in this license.
 
-Most GNU software, including some libraries, is covered by the ordinary GNU General Public License.  This license, the GNU Lesser General Public License, applies to certain designated libraries, and is quite different from the ordinary General Public License.  We use this license for certain libraries in order to permit linking those libraries into non-free programs.
+Most GNU software, including some libraries, is covered by the ordinary GNU General Public License.  This license, the {{GNU Lesser General Public License}}, applies to certain designated libraries, and is quite different from the ordinary General Public License.  We use this license for certain libraries in order to permit linking those libraries into non-free programs.
 
 When a program is linked with a library, whether statically or using a shared library, the combination of the two is legally speaking a combined work, a derivative of the original library.  The ordinary General Public License therefore permits such linking only if the entire combination fits its criteria of freedom.  The Lesser General Public License permits more lax criteria for linking other code with the library.
 
@@ -50,7 +50,7 @@ Although the Lesser General Public License is Less protective of the users' free
 
 The precise terms and conditions for copying, distribution and modification follow.  Pay close attention to the difference between a "work based on the library" and a "work that uses the library".  The former contains code derived from the library, whereas the latter must be combined with the library in order to run.
 
-		  GNU LESSER GENERAL PUBLIC LICENSE    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+		  {{GNU LESSER GENERAL PUBLIC LICENSE}}    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
 0. This License Agreement applies to any software library or other program which contains a notice placed by the copyright holder or other authorized party saying it may be distributed under the terms of this Lesser General Public License (also called "this License"). Each licensee is addressed as "you".
 
@@ -168,13 +168,13 @@ To apply these terms, attach the following notices to the library.  It is safest
      Copyright (C) <year>  <name of author>
 
   This library is free software; you can redistribute it and/or
-     modify it under the terms of the GNU Lesser General Public
+     modify it under the terms of the {{GNU Lesser General Public
      License as published by the Free Software Foundation; either
-     version 2.1 of the License, or (at your option) any later version.
+     version 2.1 of the License}}, or (at your option) any later version.
 
-  This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
+  This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the {{GNU Lesser General Public License}} for more details.
 
-  You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+  You should have received a copy of the {{GNU Lesser General Public License}} along with this library; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 Also add information on how to contact you by electronic and paper mail.
 
