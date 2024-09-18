@@ -4,7 +4,7 @@ is_license_text: yes
 minimum_coverage: 95
 ---
 
-is now licensed under the New BSD License.
+is now licensed under the New {{BSD License}}.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are

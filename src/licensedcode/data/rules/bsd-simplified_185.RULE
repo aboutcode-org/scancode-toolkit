@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-Change last file with Apache license to BSD-2-Clause
+Change last file with Apache license to {{BSD-2-Clause}}

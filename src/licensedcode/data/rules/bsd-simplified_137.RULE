@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-opensource.org/licenses/BSD-2-Clause
+opensource.org/{{licenses/BSD-2-Clause}}

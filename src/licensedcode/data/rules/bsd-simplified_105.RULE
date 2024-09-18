@@ -6,5 +6,5 @@ ignorable_urls:
     - http://avalondock.codeplex.com/license
 ---
 
-This program is provided to you under the terms of the New BSD
-   License (BSD) as published at http://avalondock.codeplex.com/license
+This program is provided to you under the terms of the New {{BSD
+   License}} (BSD) as published at http://avalondock.codeplex.com/license
