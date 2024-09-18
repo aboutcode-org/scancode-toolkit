@@ -6,4 +6,4 @@ relevance: 100
 minimum_coverage: 100
 ---
 
-['AFFERO', 'AGPL-3.0-or-later'],
+['AFFERO', '{{AGPL-3.0-or-later}}'],

@@ -8,7 +8,7 @@ ignorable_urls:
 
 <licenses>
     <license>
-        <name>GNU Affero General Public License v3</name>
+        <name>{{GNU Affero General Public License v3}}</name>
         <url>http://www.fsf.org/licensing/licenses/agpl-3.0.html</url>
     </license>
 </licenses>

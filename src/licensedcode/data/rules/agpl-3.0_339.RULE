@@ -7,7 +7,7 @@ ignorable_urls:
 ---
 
 License: AGPLv3
- The GNU Affero General Public License is a free, copyleft license for
+ The {{GNU Affero General Public License}} is a free, copyleft license for
  software and other kinds of works, specifically designed to ensure
  cooperation with the community in the case of network server software.
  .
@@ -39,7 +39,7 @@ License: AGPLv3
  letting the public access it on a server without ever releasing its
  source code to the public.
  .
- The GNU Affero General Public License is designed specifically to
+ The {{GNU Affero General Public License}} is designed specifically to
  ensure that, in such cases, the modified source code becomes available
  to the community.  It requires the operator of a network server to
  provide the source code of the modified version running there to the
@@ -60,7 +60,7 @@ License: AGPLv3
  .
  0. Definitions.
  .
- "This License" refers to version 3 of the GNU Affero General Public License.
+ "This License" refers to version 3 of the {{GNU Affero General Public License}}.
  .
  "Copyright" also means copyright-like laws that apply to other kinds of
  works, such as semiconductor masks.
@@ -561,21 +561,21 @@ License: AGPLv3
  14. Revised Versions of this License.
  .
  The Free Software Foundation may publish revised and/or new versions of
- the GNU Affero General Public License from time to time.  Such new versions
+ the {{GNU Affero General Public License}} from time to time.  Such new versions
  will be similar in spirit to the present version, but may differ in detail to
  address new problems or concerns.
  .
  Each version is given a distinguishing version number.  If the
- Program specifies that a certain numbered version of the GNU Affero General
- Public License "or any later version" applies to it, you have the
+ Program specifies that a certain numbered version of the {{GNU Affero General
+ Public License}} "or any later version" applies to it, you have the
  option of following the terms and conditions either of that numbered
  version or of any later version published by the Free Software
  Foundation.  If the Program does not specify a version number of the
- GNU Affero General Public License, you may choose any version ever published
+ {{GNU Affero General Public License}}, you may choose any version ever published
  by the Free Software Foundation.
  .
  If the Program specifies that a proxy can decide which future
- versions of the GNU Affero General Public License can be used, that proxy's
+ versions of the {{GNU Affero General Public License}} can be used, that proxy's
  public statement of acceptance of a version permanently authorizes you
  to choose that version for the Program.
  .
@@ -633,16 +633,16 @@ License: AGPLv3
  Copyright (C) <year>  <name of author>
  .
  This program is free software: you can redistribute it and/or modify
- it under the terms of the GNU Affero General Public License as published by
+ it under the terms of the {{GNU Affero General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
- (at your option) any later version.
+ (at your option) any later version}}.
  .
  This program is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU Affero General Public License for more details.
+ {{GNU Affero General Public License}} for more details.
  .
- You should have received a copy of the GNU Affero General Public License
+ You should have received a copy of the {{GNU Affero General Public License}}
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  .
  Also add information on how to contact you by electronic and paper mail.

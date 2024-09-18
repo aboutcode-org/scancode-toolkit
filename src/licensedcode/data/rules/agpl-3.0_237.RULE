@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.txt
 ---
 
-code is released under the [GNU AGPL v3](LICENSE.txt).
+code is {{released under the [GNU AGPL v3}}](LICENSE.txt).

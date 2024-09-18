@@ -4,10 +4,10 @@ is_license_notice: yes
 ---
 
 The JavaScript code in this page is free software: you can
-    redistribute it and/or modify it under the terms of the GNU Affero
+    redistribute it and/or modify it under the terms of the {{GNU Affero
     General Public License as published by the Free Software
     Foundation, either version 3 of the License, or (at your option)
-    any later version.  The code is distributed WITHOUT ANY WARRANTY;
+    any later version}}.  The code is distributed WITHOUT ANY WARRANTY;
     without even the implied warranty of MERCHANTABILITY or FITNESS
     FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
 

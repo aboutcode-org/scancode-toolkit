@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-This repository is licensed under [AGPL-3.0](LICENSE).
+This repository is {{licensed under [AGPL-3.0}}](LICENSE).
