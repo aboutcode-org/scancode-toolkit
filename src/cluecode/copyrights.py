@@ -25,7 +25,6 @@ from pygmars import parse
 from pygmars import Token
 from pygmars.tree import Tree
 
-
 from cluecode import copyrights_hint
 from textcode.markup import strip_known_markup_from_text
 
@@ -107,7 +106,23 @@ def detect_copyrights(
     Strip markup from text if ``demarkup`` is True.
     Run for up to ``deadline`` seconds and return results found so far.
     """
+    from cluecode.linux_credits import detect_credits_authors
+
     from textcode.analysis import numbered_text_lines
+
+    if include_authors:
+        author_detections = list(detect_credits_authors(location))
+
+        if TRACE:
+            logger_debug('detect_copyrights: detect_credits_authors')
+            for detecta in author_detections:
+                logger_debug(f'  {detecta}')
+
+        # bail out if we have a credits file with credits
+        if author_detections:
+            for a in author_detections:
+                yield a
+            return
 
     numbered_lines = list(numbered_text_lines(location, demarkup=True))
 
@@ -661,8 +676,9 @@ PATTERNS = [
     #   Slovenian: avtorske pravice
     #   Ukrainian: авторське право
 
-    # rare typo copyrighy
+    # rare typos incopyright
     (r'^Copyrighy$', 'COPY'),
+    (r'^Copyirght$', 'COPY'),
 
     # OSGI
     (r'^Bundle-Copyright', 'COPY'),
@@ -904,6 +920,7 @@ PATTERNS = [
     (r'^[Ss]tring$', 'JUNK'),
     (r'^Implementation-Vendor$', 'JUNK'),
     (r'^dnl$', 'JUNK'),
+    (r'^ifndef$', 'JUNK'),
 
     (r'^as$', 'NN'),
     (r'^[Vv]isit$', 'JUNK'),
@@ -939,7 +956,6 @@ PATTERNS = [
     (r'^Add$', 'JUNK'),
     (r'^Average$', 'JUNK'),
     (r'^Taken$', 'JUNK'),
-    (r'^LAWS\.?$', 'JUNK'),
     (r'^design$', 'JUNK'),
     (r'^Driver$', 'JUNK'),
     (r'^[Cc]ontribution\.?', 'JUNK'),
@@ -949,7 +965,7 @@ PATTERNS = [
     (r'^Last-Translator$', 'JUNK'),
     (r'^Translated$', 'JUNK'),
     (r'^OMAP730$', 'JUNK'),
-    (r'^Law\.$', 'JUNK'),
+
     (r'^dylid$', 'JUNK'),
     (r'^BeOS$', 'JUNK'),
     (r'^Generates?$', 'JUNK'),
@@ -991,7 +1007,6 @@ PATTERNS = [
     (r'^Disclaimer$', 'JUNK'),
     (r'^Directive.?$', 'JUNK'),
     (r'^LAWS\,?$', 'JUNK'),
-    (r'^[Ll]aws?,?$', 'JUNK'),
     (r'^me$', 'JUNK'),
     (r'^Derived$', 'JUNK'),
     (r'^Limitations?$', 'JUNK'),
@@ -1062,7 +1077,15 @@ PATTERNS = [
     (r'^Much$', 'JUNK'),
     (r'^remains?,?$', 'JUNK'),
     (r'^earlier$', 'JUNK'),
-    (r'^[lL]aws?$', 'JUNK'),
+
+    # there is a  Mr. Law
+    (r'^Law[\.,]?$', 'NN'),
+    (r'^laws?[\.,]?$', 'JUNK'),
+    (r'^Laws[\.,]?$', 'JUNK'),
+    (r'^LAWS?[\.,]?$', 'JUNK'),
+    (r'^LAWS?$', 'NN'),
+
+    (r'^taken$', 'NN'),
     (r'^Insert$', 'JUNK'),
     (r'^url$', 'JUNK'),
     (r'^[Ss]ee$', 'JUNK'),
@@ -1083,6 +1106,7 @@ PATTERNS = [
     (r'^[Ii]nterfaces?,?$', 'JUNK'),
     (r'^than$', 'JUNK'),
     (r'^whom$', 'JUNK'),
+    (r'^Definitions?$', 'JUNK'),
     (r'^However,?$', 'JUNK'),
     (r'^[Cc]ollectively$', 'JUNK'),
     (r'^following$', 'FOLLOWING'),
@@ -1190,7 +1214,8 @@ PATTERNS = [
     (r'^[a-z]{3,10}[A-Z][a-z]{3,10}$', 'JUNK'),
 
     (r'^\$?Guid$', 'JUNK'),
-    #(r'^Small$', 'NN'),
+    # there is a Mr Small
+    # (r'^Small$', 'NN'),
     (r'^implementing$', 'JUNK'),
     (r'^Unlike$', 'JUNK'),
     (r'^using$', 'JUNK'),
@@ -1271,6 +1296,7 @@ PATTERNS = [
     (r'^[Ss]tatements?.?$', 'JUNK'),
     (r'^issues?.?$', 'JUNK'),
     (r'^retain?.?$', 'JUNK'),
+    (r'^Sun3x$', 'JUNK'),
 
     ############################################################################
     # Nouns and proper Nouns
@@ -1281,7 +1307,7 @@ PATTERNS = [
     (r'^This_file_is_part_of_KDE$', 'NAME'),
 
     # K.K. (a company suffix), needs special handling
-    (r'^K.K.,?$', 'NAME'),
+    (r'^K.K.,?$', 'COMP'),
 
     # MIT is problematic
     # With a comma, always CAPS (MIT alone is too error prone to be always tagged as CAPS
@@ -1362,6 +1388,7 @@ PATTERNS = [
     (r'^DATED$', 'NN'),
     (r'^Delay', 'NN'),
     (r'^Derivative', 'NN'),
+    (r'^Direct$', 'NN'),
     (r'^DISCLAIMED', 'NN'),
     (r'^Docs?$', 'NN'),
     (r'^DOCUMENTATION', 'NN'),
@@ -1451,10 +1478,13 @@ PATTERNS = [
     (r'^GPLd?\.?$', 'NN'),
     (r'^GPL\'d$', 'NN'),
     (r'^Gnome$', 'NN'),
+    (r'^Port$', 'NN'),
     (r'^GnuPG$', 'NN'),
     (r'^Government.', 'NNP'),
     (r'^OProfile$', 'NNP'),
     (r'^Government$', 'COMP'),
+    # there is a Ms. Grant
+    (r'^Grant$', 'NNP'),
     (r'^Grants?\.?,?$', 'NN'),
     (r'^Header', 'NN'),
     (r'^HylaFAX$', 'NN'),
@@ -1491,7 +1521,6 @@ PATTERNS = [
     (r'^List$', 'NN'),
     (r'^Set$', 'NN'),
     (r'^Last$', 'NN'),
-    (r'^LAW', 'NN'),
     (r'^Legal$', 'NN'),
     (r'^LegalTrademarks$', 'NN'),
     (r'^Library$', 'NN'),
@@ -1644,6 +1673,11 @@ PATTERNS = [
     (r'^CodeMirror$', 'NN'),
     (r'^They$', 'JUNK'),
     (r'^Branched$', 'NN'),
+    (r'^Partial$', 'NN'),
+    (r'^Fixed$', 'NN'),
+    (r'^Later$', 'NN'),
+    (r'^Rear$', 'NN'),
+    (r'^Left$', 'NN'),
 
     (r'^Improved$', 'NN'),
     (r'^Designed$', 'NN'),
@@ -1712,10 +1746,11 @@ PATTERNS = [
     (r'^Compression$', 'NN'),
     (r'^Letter$', 'NN'),
     (r'^Moved$', 'NN'),
+    (r'^More$', 'NN'),
     (r'^Phone$', 'NN'),
+    (r'^[Tt]ests?$', 'JUNK'),
 
     (r'^Inputs?$', 'NN'),
-
 
     # dual caps that are not NNP
     (r'^Make[A-Z]', 'JUNK'),
@@ -1904,12 +1939,11 @@ PATTERNS = [
     (r'^(S\.?A\.?S?|Sas|sas|A\/S|AG,?|AB|Labs?|[Cc][Oo]|Research|Center|INRIA|Societe|KG)[,\.]?$', 'COMP'),
     # French SARL
     (r'^(SARL|S\.A\.R\.L\.)[\.,\)]*$', 'COMP'),
-    # More company suffix : a.s. in Czechia and otehrs
+    # More company suffix : a.s. in Czechia and others
     (r'^(a\.s\.|S\.r\.l\.?)$', 'COMP'),
     (r'^Vertriebsges\.m\.b\.H\.?,?$', 'COMP'),
     # Iceland
     (r'^(ehf|hf|svf|ohf)\.,?$', 'COMP'),
-
     # Move company abbreviations
     (r'^(SPRL|srl)[\.,]?$', 'COMP'),
     # Poland
@@ -2176,6 +2210,7 @@ PATTERNS = [
     (r'^Meridian\'93$', 'NNP'),
     (r'^Xiph.Org$', 'NNP'),
     (r'^iClick,?$', 'NNP'),
+    (r'^electronics?$', 'NNP'),
 
     # proper nouns with digits
     (r'^([A-Z][a-z0-9]+){1,2}[\.,]?$', 'NNP'),
@@ -2202,6 +2237,9 @@ PATTERNS = [
     (r'^AT$', 'AT'),
     (r'^AT$', '<at>'),
     (r'^DOT$', 'DOT'),
+
+    # exceptions to CAPS
+    (r'^MMC$', 'JUNK'),
 
     # all CAPS word, at least 1 char long such as MIT, including an optional trailing comma or dot
     (r'^[A-Z0-9]+,?$', 'CAPS'),
@@ -2272,10 +2310,9 @@ PATTERNS = [
     (r'__MyCompanyName__[\.,]?$', 'NAME'),
 
     # email in brackets <brett_AT_jdom_DOT_org>
-    #(karl AT indy.rr.com)
-    #<fdlibm-comments AT sun.com>
+    # (karl AT indy.rr.com)
+    # <fdlibm-comments AT sun.com>
     (r'(?i:^[<\(][\w\.\-\+]+at[\w\.\-\+]+(dot)?[\w\.\-\+]+[/)>]$)', 'EMAIL'),
-    
 
     # Code variable names including snake case
     (r'^.*(_.*)+$', 'JUNK'),
@@ -2311,7 +2348,6 @@ PATTERNS = [
     (r'^(?:=>|->|<-|<=)$', 'JUNK'),
 
     (r'^semiconductors?[\.,]?$', 'NNP'),
-    
 
     ############################################################################
     # catch all other as Nouns
@@ -2589,6 +2625,7 @@ GRAMMAR = """
     NAME-YEAR: {<YR-RANGE> <NAME-EMAIL|COMPANY>+ <CC> <YR-RANGE>}        #540
 
     NAME: {<NAME|NAME-EMAIL>+ <OF> <NNP> <OF> <NN>? <COMPANY>}        #550
+
     NAME: {<NAME|NAME-EMAIL>+ <CC|OF>? <NAME|NAME-EMAIL|COMPANY>}        #560
 
     NAME: {<NNP><NNP>}        #561
@@ -2622,7 +2659,12 @@ GRAMMAR = """
     #also accept trailing email and URLs
     # and "VAN" e.g. Du: Copyright (c) 2008 Alek Du <alek.du@intel.com>
     NAME-YEAR: {<NAME-YEAR> <VAN>? <EMAIL>?<URL>?}        #5701
+
+    # Copyright (C) 2008 Jim Law - Iris LP  All rights reserved.
+    NAME-YEAR: {<NAME-YEAR>  <NN>  <DASH>  <NAME>} # 5701.1
+
     NAME-YEAR: {<NAME-YEAR>+}        #5702
+
 
     NAME: {<NNP> <OF> <NNP>}        #580
     NAME: {<NAME> <NNP>}        #590
@@ -2843,6 +2885,10 @@ GRAMMAR = """
     # Copyright (c) 2013-2015 Streams Standard Reference Implementation Authors
     COPYRIGHT: {<COPY>+ <NAME-YEAR> <NN|NNP>+ <AUTHS>}    #1566
 
+    # Nicolas Pitre, (c) 2002 Monta Vista Software Inc
+    # Cliff Brake, (c) 2001
+    #COPYRIGHT: {<NAME>  <COPY>  <NAME-YEAR> <NAME>  <COPY>  <YR-RANGE>}    #1566.1
+    
     # copyright: Copyright (c) Joe Joyce and contributors, 2016-2019.
     COPYRIGHT: {<COPY>+ <NAME>  <CC>  <NN>  <YR-RANGE>} #1579992
 
@@ -3027,7 +3073,10 @@ GRAMMAR = """
     # Author: Jeff LaBundy <jeff@labundy.com>
     COPYRIGHT: {<COPY>  <COPY>  <YR-RANGE>  <AUTH>  <NAME-EMAIL>} #2280-3
 
+
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
+
+    COPYRIGHT: {<COPYRIGHT2>  <BY>  <NAME-YEAR|NAME-EMAIL> <BY>?  <NAME-YEAR|NAME-EMAIL>? } #2280-4
 
     # using #2280 above: Copyright 2018 Developers of the Rand project
     COPYRIGHT: {<COPYRIGHT2>  <MAINT>  <OF>  <COMPANY>}        #2280.123
@@ -3151,7 +3200,8 @@ GRAMMAR = """
     COPYRIGHT: {<COPYRIGHT2>  <CAPS>  <CD|CDS>  <COMPANY>  <NAME>} #2009.1
 
     # COPYRIGHT (c) 2006 - 2009 DIONYSOS
-    COPYRIGHT: {<COPYRIGHT2> <CAPS>} #2009
+    # Copyright 2003 ICT CAS
+    COPYRIGHT: {<COPYRIGHT2> <CAPS>+} #2009
 
     # Copyright (C) 2000 See Beyond Communications Corporation
     COPYRIGHT2: {<COPYRIGHT2> <JUNK> <COMPANY>} # 2010
@@ -3349,7 +3399,7 @@ GRAMMAR = """
     #Copyright (C) 2012-2016 by the following authors:
     #- Wladimir J. van der Laan <laanwj@gmail.com>
 
-    NAME-EMAIL: {<NNP> <NAME-EMAIL> } #157999.13 
+    NAME-EMAIL: {<NNP> <NAME-EMAIL> } #157999.13
     NAME-EMAIL: {<DASH>  <NAME-EMAIL> <NN>?} #157999.14
     COPYRIGHT: {<COPYRIGHT2> <FOLLOWING> <AUTHS> <NAME-EMAIL>+ } #157999.14
 
@@ -3888,6 +3938,8 @@ HOLDERS_SUFFIXES = frozenset([
     'a',
     '</p>',
     'or',
+    'taken',
+    'from',
 ])
 
 # these final holders are ignored.
@@ -4474,7 +4526,7 @@ def prepare_text_line(line):
         .replace('\\XA9', ' (c) ')
         .replace('\\A9', ' (c) ')
         .replace('\\a9', ' (c) ')
-        .replace('<A9>', ' (c) ') 
+        .replace('<A9>', ' (c) ')
         .replace('XA9;', ' (c) ')
         .replace('Xa9;', ' (c) ')
         .replace('xA9;', ' (c) ')
@@ -4525,7 +4577,7 @@ def prepare_text_line(line):
         .replace('year>', " ")
         .replace('<year>', " ")
         .replace('<name>', " ")
-        
+
     )
 
     if TRACE_TOK:

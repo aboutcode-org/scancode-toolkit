@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2010-2011, Tobias Klauser <tklauser@distanz.ch>
+  - Copyright (c) 2009, Wind River Systems Inc Implemented
+holders:
+  - Tobias Klauser
+  - Wind River Systems Inc Implemented
+authors:
+  - fredrik.markstrom@gmail.com

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2003-2008 Alan Stern Copyeight
+  - (c) 2009 Samsung Electronics
+holders:
+  - Alan Stern Copyeight
+  - Samsung Electronics
+authors:
+  - Michal Nazarewicz (mina86@mina86.com)
