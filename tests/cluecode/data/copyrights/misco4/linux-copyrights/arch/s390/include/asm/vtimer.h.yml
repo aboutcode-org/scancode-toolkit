@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright IBM Corp. 2003, 2012 Virtual CPU
+holders:
+  - IBM Corp. Virtual CPU
+authors:
+  - Jan Glauber <jan.glauber@de.ibm.com>

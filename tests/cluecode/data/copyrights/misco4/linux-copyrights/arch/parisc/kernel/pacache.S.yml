@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2000-2001 Hewlett-Packard (John Marvin)
+  - Copyright (c) 2001 Matthew Wilcox (willy at parisc-linux.org)
+  - Copyright (c) 2002 Richard Hirst (rhirst with parisc-linux.org)
+holders:
+  - Hewlett-Packard (John Marvin)
+  - Matthew Wilcox willy at
+  - Richard Hirst rhirst with

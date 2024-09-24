@@ -5,6 +5,10 @@ relevance: 95
 minimum_coverage: 95
 notes: Seen in  https://sourceforge.net/p/opencore-amr/code/ci/master/tree/opencore/NOTICE The
     site for this code at https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=1421
+ignorable_copyrights:
+  - (c), 3GPP Organizational Partners
+ignorable_holders:
+  - 3GPP Organizational Partners
 ignorable_urls:
     - http://www.3gpp.org/
 ---

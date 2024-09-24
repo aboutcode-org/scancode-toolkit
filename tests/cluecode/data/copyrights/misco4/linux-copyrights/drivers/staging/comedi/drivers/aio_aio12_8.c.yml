@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2006 C&C Technologies, Inc.
+holders:
+  - C&C Technologies, Inc.
+authors:
+  - Pablo Mejia <pablo.mejia@cctechnol.com> Devices Access
