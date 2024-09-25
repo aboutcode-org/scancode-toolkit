@@ -207,7 +207,7 @@ class BaseNpmHandler(models.DatafileHandler):
 
     @classmethod
     def yield_npm_dependencies_and_resources(cls, package_resource, package_data, package_uid, codebase, package_adder):
- 
+
         # in all cases yield possible dependencies
         yield from yield_dependencies_from_package_data(package_data, package_resource.path, package_uid)
 
@@ -424,7 +424,7 @@ class BaseNpmHandler(models.DatafileHandler):
                         workspace_members.append(resource)
 
             # Case 3: This is a complex glob pattern, we are doing a full codebase walk
-            # and glob matching each resource 
+            # and glob matching each resource
             else:
                 for resource in workspace_root_path:
                     if NpmPackageJsonHandler.is_datafile(resource.location) and fnmatch.fnmatch(
@@ -469,7 +469,7 @@ class BaseNpmHandler(models.DatafileHandler):
                 workspace_package_versions_by_base_purl[base_purl] = version
 
         # Update workspace member package information from
-        # workspace level data 
+        # workspace level data
         for base_purl, dependency in workspace_dependencies_by_base_purl.items():
             extracted_requirement = dependency.get('extracted_requirement')
             if 'workspace' in extracted_requirement:
@@ -1011,6 +1011,14 @@ class YarnLockV1Handler(BaseNpmHandler):
                     if '"' in ns_name:
                         ns_name = ns_name.replace('"', '')
                     ns, _ , name = ns_name.rpartition('/')
+
+                    # sometimes constraints appear in the form of
+                    # wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
+                    if '@' in constraint:
+                        # "npm:wrap-ansi" should be appended to `name`, joined
+                        # with an "@"
+                        constraint_package, _, constraint = constraint.partition('@')
+                        name = f'{name}@{constraint_package}'
                     sub_dependencies.append((ns, name, constraint,))
 
                 elif line.startswith(' ' * 2):
@@ -1112,7 +1120,7 @@ class YarnLockV1Handler(BaseNpmHandler):
                 resolved_package=resolved_package_data.to_dict(),
             )
 
-            if not dep_purl in dependencies_by_purl: 
+            if not dep_purl in dependencies_by_purl:
                 dependencies_by_purl[dep_purl] = dep.to_dict()
             else:
                 # FIXME: We have duplicate dependencies because of aliases
@@ -1176,7 +1184,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                     _, name_version = sections
                 elif len(sections) == 3:
                     _, namespace, name_version = sections
-                
+
                 name, version = name_version.split("@")
             elif major_v == "5" or is_shrinkwrap:
                 if len(sections) == 3:
@@ -1264,7 +1272,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
             for key in extra_data_fields:
                 value = data.get(key, None)
                 if value is not None:
-                    extra_data_deps[key] = value 
+                    extra_data_deps[key] = value
 
             dependency_data = models.DependentPackage(
                 purl=purl,
@@ -1762,7 +1770,7 @@ def deps_mapper(deps, package, field_name, is_direct=True):
             deps_by_name[npm_name] = d
 
     for fqname, requirement in deps.items():
-        # Handle cases in ``resolutions`` with ``**`` 
+        # Handle cases in ``resolutions`` with ``**``
         # "resolutions": {
         #   "**/@typescript-eslint/eslint-plugin": "^4.1.1",
         if fqname.startswith('**'):

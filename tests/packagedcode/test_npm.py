@@ -360,6 +360,13 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_npm_yarn_lock_v1_parse_with_other_version_constraint(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-other-constraint/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-other-constraint/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_is_datafile_pnpm_shrinkwrap_yaml(self):
         test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
         assert npm.PnpmShrinkwrapYamlHandler.is_datafile(test_file)
