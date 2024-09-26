@@ -276,7 +276,9 @@ class BaseNpmHandler(models.DatafileHandler):
             if npm_res.for_packages:
                 continue
 
-            npm_res.for_packages = workspace_package_uids
+            for package_uid in workspace_package_uids:
+                package_adder(package_uid, npm_res, codebase)
+
             npm_res.save(codebase)
 
     @classmethod
