@@ -1,0 +1,15 @@
+---
+license_expression: gpl-2.0 OR bsd-new
+is_license_notice: yes
+notes: Seen in Linux
+---
+
+This code is released under both the GPL version 2 and BSD licenses.
+Either license may be used.  The respective licenses are found at
+the end of this file.
+
+This code was developed by 
+including portions of which come from the
+Developer's Reference Manual and used with permission.  
+Permission to use
+code in the Developer's manual was granted for this driver

@@ -70,6 +70,7 @@ if TRACE:
             return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 MATCHER_UNDETECTED = '5-undetected'
+MATCHER_UNDETECTED_ORDER = 4
 
 # All values of match_coverage less than this value then they are not considered
 # as perfect detections
@@ -641,7 +642,6 @@ class LicenseMatchFromResult(LicenseMatch):
     def coverage(self):
         return self.match_coverage
 
-    @property
     def matched_text(self, whole_lines=False, highlight=True):
         return self.text
 
@@ -713,8 +713,8 @@ class LicenseMatchFromResult(LicenseMatch):
         if rule_details:
             result["rule_notes"] = self.rule.notes
             result["referenced_filenames"] = self.rule.referenced_filenames
-        if include_text and self.matched_text:
-            result['matched_text'] = self.matched_text
+        if include_text and self.text:
+            result['matched_text'] = self.text
         if license_text_diagnostics and self.matched_text_diagnostics:
             result['matched_text_diagnostics'] = self.matched_text_diagnostics
         if rule_details:
@@ -1163,6 +1163,31 @@ def is_false_positive(license_matches, package_license=False):
     if package_license:
         return False
 
+    # FIXME: actually run copyright detection here?
+    copyright_words = ["copyright", "(c)"]
+    has_copyrights = all(
+        True
+        for license_match in license_matches
+        if any(
+            True
+            for word in copyright_words
+            if word in license_match.matched_text().lower()
+        ) 
+    )
+    has_full_relevance = all(
+        True
+        for license_match in license_matches
+        if license_match.rule.relevance == 100
+    )
+    if has_copyrights or has_full_relevance:
+        return False
+
+    has_low_relevance = all(
+        True
+        for license_match in license_matches
+        if license_match.rule.relevance < 60
+    )
+
     start_line_region = min(
         license_match.start_line for license_match in license_matches
     )
@@ -1194,13 +1219,13 @@ def is_false_positive(license_matches, package_license=False):
 
     is_single_match = len(license_matches) == 1
 
-    if is_single_match and is_bare_rule:
+    if is_single_match and is_bare_rule and has_low_relevance:
         return True
 
     if is_gpl and all_match_rule_length_one:
         return True
 
-    if start_line_region > FALSE_POSITIVE_START_LINE_THRESHOLD and any(
+    if has_low_relevance and start_line_region > FALSE_POSITIVE_START_LINE_THRESHOLD and any(
         match_rule_length_value <= FALSE_POSITIVE_RULE_LENGTH_THRESHOLD
         for match_rule_length_value in match_rule_length_values
     ):
@@ -1603,6 +1628,7 @@ def get_undetected_matches(query_string):
         hispan=hispan,
         query_run_start=match_start,
         matcher=MATCHER_UNDETECTED,
+        matcher_order=MATCHER_UNDETECTED_ORDER,
         query=query_run.query,
     )
 
