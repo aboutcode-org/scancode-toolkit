@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "sqsh",
   "version": "2.5.16.1-r4",
@@ -92,5 +92,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/sqsh@2.5.16.1-r4"
+  "purl": "pkg:apk/sqsh@2.5.16.1-r4"
 }

@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "py3-cssselect2",
   "version": "0.4.1-r1",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/py3-cssselect2@0.4.1-r1"
+  "purl": "pkg:apk/py3-cssselect2@0.4.1-r1"
 }

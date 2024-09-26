@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "audacious-plugins",
   "version": "4.0.5-r0",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/audacious-plugins@4.0.5-r0"
+  "purl": "pkg:apk/audacious-plugins@4.0.5-r0"
 }

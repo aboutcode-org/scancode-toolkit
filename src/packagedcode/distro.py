@@ -27,24 +27,34 @@ class EtcOsReleaseHandler(models.NonAssemblableDatafileHandler):
     @classmethod
     def parse(cls, location, package_only=False):
         distro = Distro.from_os_release_file(location)
-        distro_identifier = distro.identifier
+        distro_identifier = None
+        if distro:
+            distro_identifier = distro.identifier
+
+        if not distro_identifier:
+            return
+
         pretty_name = distro.pretty_name and distro.pretty_name.lower() or ''
 
+        # TODO: It is misleading to use package data fields
+        # name and namespace to store distro/os infomration,
+        # we should consider using extra_data fields instead.
+
         if distro_identifier == 'debian':
-            namespace = 'debian'
+            name = 'debian'
 
             if 'distroless' in pretty_name:
-                name = 'distroless'
-            elif pretty_name.startswith('debian'):
-                name = 'distroless'
+                namespace = 'distroless'
+            else:
+                namespace = 'debian'
 
         elif distro_identifier == 'ubuntu' and distro.id_like == 'debian':
-            namespace = 'debian'
-            name = 'ubuntu'
+            namespace = 'ubuntu'
+            name = 'debian'
 
-        elif distro_identifier.startswith('fedora') or  distro.id_like == 'fedora':
-            namespace = distro_identifier
-            name = distro.id_like or distro_identifier
+        elif distro_identifier.startswith('fedora') or distro.id_like == 'fedora':
+            name = distro_identifier or distro.id_like
+            namespace = distro.id_like
 
         else:
             # FIXME: this needs to be seriously updated

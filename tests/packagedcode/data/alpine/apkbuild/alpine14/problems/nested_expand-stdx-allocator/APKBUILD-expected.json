@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "stdx-allocator",
   "version": "3.1.0_beta2-r1",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/stdx-allocator@3.1.0_beta2-r1"
+  "purl": "pkg:apk/stdx-allocator@3.1.0_beta2-r1"
 }

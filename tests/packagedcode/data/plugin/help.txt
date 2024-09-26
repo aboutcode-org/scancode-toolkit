@@ -6,27 +6,6 @@ Package type:  about
   description:       AboutCode ABOUT file
   path_patterns:    '*.ABOUT'
 --------------------------------------------
-Package type:  alpine
-  datasource_id:     alpine_apk_archive
-  documentation URL: https://wiki.alpinelinux.org/wiki/Alpine_package_format
-  primary language:  None
-  description:       Alpine Linux .apk package archive
-  path_patterns:    '*.apk'
---------------------------------------------
-Package type:  alpine
-  datasource_id:     alpine_apkbuild
-  documentation URL: https://wiki.alpinelinux.org/wiki/APKBUILD_Reference
-  primary language:  None
-  description:       Alpine Linux APKBUILD package script
-  path_patterns:    '*APKBUILD'
---------------------------------------------
-Package type:  alpine
-  datasource_id:     alpine_installed_db
-  documentation URL: None
-  primary language:  None
-  description:       Alpine Linux installed package database
-  path_patterns:    '*lib/apk/db/installed'
---------------------------------------------
 Package type:  android
   datasource_id:     android_apk
   documentation URL: https://en.wikipedia.org/wiki/Apk_(file_format)
@@ -40,6 +19,27 @@ Package type:  android_lib
   primary language:  Java
   description:       Android library archive
   path_patterns:    '*.aar'
+--------------------------------------------
+Package type:  apk
+  datasource_id:     alpine_apk_archive
+  documentation URL: https://wiki.alpinelinux.org/wiki/Alpine_package_format
+  primary language:  None
+  description:       Alpine Linux .apk package archive
+  path_patterns:    '*.apk'
+--------------------------------------------
+Package type:  apk
+  datasource_id:     alpine_apkbuild
+  documentation URL: https://wiki.alpinelinux.org/wiki/APKBUILD_Reference
+  primary language:  None
+  description:       Alpine Linux APKBUILD package script
+  path_patterns:    '*APKBUILD'
+--------------------------------------------
+Package type:  apk
+  datasource_id:     alpine_installed_db
+  documentation URL: None
+  primary language:  None
+  description:       Alpine Linux installed package database
+  path_patterns:    '*lib/apk/db/installed'
 --------------------------------------------
 Package type:  autotools
   datasource_id:     autotools_configure

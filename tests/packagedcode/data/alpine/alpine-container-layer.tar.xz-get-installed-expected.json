@@ -1,7 +1,7 @@
 [
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "alpine-baselayout-data",
     "version": "3.2.0-r22",
     "qualifiers": {
@@ -85,7 +85,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -98,7 +98,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -107,7 +107,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -116,7 +116,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -125,7 +125,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -134,7 +134,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -143,7 +143,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -152,7 +152,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -161,7 +161,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -170,7 +170,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -179,7 +179,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -188,7 +188,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -197,7 +197,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -206,16 +206,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64"
+    "purl": "pkg:apk/alpine/alpine-baselayout-data@3.2.0-r22?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "musl",
     "version": "1.2.3-r0",
     "qualifiers": {
@@ -299,7 +299,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/musl@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/musl@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -312,16 +312,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/musl@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/musl@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/musl@1.2.3-r0?arch=x86_64"
+    "purl": "pkg:apk/alpine/musl@1.2.3-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "busybox",
     "version": "1.35.0-r15",
     "qualifiers": {
@@ -405,7 +405,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -418,7 +418,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -427,7 +427,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -436,7 +436,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -445,7 +445,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -454,7 +454,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -463,16 +463,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/busybox@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/busybox@1.35.0-r15?arch=x86_64"
+    "purl": "pkg:apk/alpine/busybox@1.35.0-r15?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "alpine-baselayout",
     "version": "3.2.0-r22",
     "qualifiers": {
@@ -574,7 +574,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -587,7 +587,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -596,7 +596,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -605,7 +605,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -614,7 +614,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -623,7 +623,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -632,7 +632,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -641,7 +641,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -650,7 +650,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -659,7 +659,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -668,7 +668,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -677,16 +677,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/alpine-baselayout@3.2.0-r22?arch=x86_64"
+    "purl": "pkg:apk/alpine/alpine-baselayout@3.2.0-r22?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "alpine-keys",
     "version": "2.4-r1",
     "qualifiers": {
@@ -932,7 +932,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -945,7 +945,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -954,7 +954,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -963,7 +963,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -972,7 +972,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -981,7 +981,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -990,7 +990,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -999,7 +999,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1008,7 +1008,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1017,7 +1017,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1026,7 +1026,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1035,7 +1035,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1044,7 +1044,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1053,7 +1053,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1062,7 +1062,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1071,7 +1071,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1080,7 +1080,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1089,7 +1089,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1098,7 +1098,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1107,7 +1107,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1116,7 +1116,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1125,7 +1125,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1134,16 +1134,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/alpine-keys@2.4-r1?arch=x86_64"
+    "purl": "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "ca-certificates-bundle",
     "version": "20211220-r0",
     "qualifiers": {
@@ -1227,7 +1227,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/ca-certificates-bundle@20211220-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/ca-certificates-bundle@20211220-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -1240,16 +1240,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/ca-certificates-bundle@20211220-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/ca-certificates-bundle@20211220-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/ca-certificates-bundle@20211220-r0?arch=x86_64"
+    "purl": "pkg:apk/alpine/ca-certificates-bundle@20211220-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "libcrypto1.1",
     "version": "1.1.1q-r0",
     "qualifiers": {
@@ -1342,7 +1342,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -1355,7 +1355,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1364,7 +1364,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1373,7 +1373,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1382,7 +1382,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1391,7 +1391,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1400,7 +1400,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1409,7 +1409,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1418,7 +1418,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1427,7 +1427,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1436,16 +1436,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64"
+    "purl": "pkg:apk/alpine/libcrypto1.1@1.1.1q-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "libssl1.1",
     "version": "1.1.1q-r0",
     "qualifiers": {
@@ -1529,7 +1529,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/libssl1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/libssl1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -1542,16 +1542,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/libssl1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/libssl1.1@1.1.1q-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/libssl1.1@1.1.1q-r0?arch=x86_64"
+    "purl": "pkg:apk/alpine/libssl1.1@1.1.1q-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "ssl_client",
     "version": "1.35.0-r15",
     "qualifiers": {
@@ -1623,7 +1623,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/ssl_client@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/ssl_client@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -1636,16 +1636,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/ssl_client@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/ssl_client@1.35.0-r15?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/ssl_client@1.35.0-r15?arch=x86_64"
+    "purl": "pkg:apk/alpine/ssl_client@1.35.0-r15?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "zlib",
     "version": "1.2.12-r1",
     "qualifiers": {
@@ -1729,7 +1729,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/zlib@1.2.12-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/zlib@1.2.12-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -1742,16 +1742,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/zlib@1.2.12-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/zlib@1.2.12-r1?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/zlib@1.2.12-r1?arch=x86_64"
+    "purl": "pkg:apk/alpine/zlib@1.2.12-r1?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "apk-tools",
     "version": "2.12.9-r3",
     "qualifiers": {
@@ -1823,7 +1823,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/apk-tools@2.12.9-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/apk-tools@2.12.9-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -1836,7 +1836,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/apk-tools@2.12.9-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/apk-tools@2.12.9-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -1845,16 +1845,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/apk-tools@2.12.9-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/apk-tools@2.12.9-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/apk-tools@2.12.9-r3?arch=x86_64"
+    "purl": "pkg:apk/alpine/apk-tools@2.12.9-r3?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "scanelf",
     "version": "1.3.4-r0",
     "qualifiers": {
@@ -1926,7 +1926,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/scanelf@1.3.4-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/scanelf@1.3.4-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -1939,16 +1939,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/scanelf@1.3.4-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/scanelf@1.3.4-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/scanelf@1.3.4-r0?arch=x86_64"
+    "purl": "pkg:apk/alpine/scanelf@1.3.4-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "musl-utils",
     "version": "1.2.3-r0",
     "qualifiers": {
@@ -2020,7 +2020,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -2033,7 +2033,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -2042,7 +2042,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -2051,7 +2051,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -2060,7 +2060,7 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -2069,16 +2069,16 @@
         "type": "file",
         "package_data": [],
         "for_packages": [
-          "pkg:alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:apk/alpine/musl-utils@1.2.3-r0?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:alpine/musl-utils@1.2.3-r0?arch=x86_64"
+    "purl": "pkg:apk/alpine/musl-utils@1.2.3-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
-    "namespace": null,
+    "type": "apk",
+    "namespace": "alpine",
     "name": "libc-utils",
     "version": "0.7.2-r3",
     "qualifiers": {
@@ -2150,7 +2150,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:apk/alpine/libc-utils@0.7.2-r3?arch=x86_64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "alpine-container-layer.tar.xz/lib/apk/db/installed"
     ],
@@ -2158,6 +2158,6 @@
       "alpine_installed_db"
     ],
     "resources": [],
-    "purl": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64"
+    "purl": "pkg:apk/alpine/libc-utils@0.7.2-r3?arch=x86_64"
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "ruby",
   "version": "2.7.3-r1",
@@ -108,5 +108,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/ruby@2.7.3-r1"
+  "purl": "pkg:apk/ruby@2.7.3-r1"
 }

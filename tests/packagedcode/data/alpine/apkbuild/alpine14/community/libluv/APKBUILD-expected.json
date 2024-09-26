@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "libluv",
   "version": "1.36.0.0-r2",
@@ -92,5 +92,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/libluv@1.36.0.0-r2"
+  "purl": "pkg:apk/libluv@1.36.0.0-r2"
 }

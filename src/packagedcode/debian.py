@@ -247,37 +247,33 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
-        # get the root resource of the rootfs
-        levels_up = len('var/lib/dpkg/status'.split('/'))
-        root_resource = get_ancestor(
-            levels_up=levels_up,
-            resource=resource,
-            codebase=codebase,
-        )
+        root_resource = cls.get_root_resource_for_rootfs(resource, codebase)
 
         package_name = package_data.name
-
         package = models.Package.from_package_data(
             package_data=package_data,
             datafile_path=resource.path,
         )
+        namespace = cls.get_distro_identifier_rootfs(root_resource, codebase)
+        if namespace:
+            package.namespace = namespace
+
+        package_uid = package.refresh_and_get_package_uid()
 
         package_file_references = []
         package_file_references.extend(package_data.file_references)
-        package_uid = package.package_uid
 
         dependencies = []
         dependent_packages = package_data.dependencies
         if dependent_packages:
-            deps = list(
-                models.Dependency.from_dependent_packages(
-                    dependent_packages=dependent_packages,
-                    datafile_path=resource.path,
-                    datasource_id=package_data.datasource_id,
-                    package_uid=package_uid,
-                )
-            )
-            dependencies.extend(deps)
+            for dep in models.Dependency.from_dependent_packages(
+                dependent_packages=dependent_packages,
+                datafile_path=resource.path,
+                datasource_id=package_data.datasource_id,
+                package_uid=package_uid,
+            ):
+                dep.update_namespace(namespace)
+                dependencies.append(dep)
 
         # Multi-Arch can be: "foreign", "same", "allowed", "all", "optional" or
         # empty/non-present. See https://wiki.debian.org/Multiarch/HOWTO
@@ -342,15 +338,15 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
             # yield possible dependencies
             dependent_packages = package_data.dependencies
             if dependent_packages:
-                deps = list(
-                    models.Dependency.from_dependent_packages(
-                        dependent_packages=dependent_packages,
-                        datafile_path=res.path,
-                        datasource_id=package_data.datasource_id,
-                        package_uid=package_uid,
-                    )
-                )
-                dependencies.extend(deps)
+                for dep in models.Dependency.from_dependent_packages(
+                    dependent_packages=dependent_packages,
+                    datafile_path=res.path,
+                    datasource_id=package_data.datasource_id,
+                    package_uid=package_uid,
+                ):
+                    if namespace and not dep.namespace:
+                        dep.namespace = namespace
+                    dependencies.append(dep)
 
             resources.append(res)
 
