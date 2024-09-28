@@ -393,6 +393,12 @@ class TestNpm(PackageTester):
         packages = npm.PnpmLockYamlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_package_json_special_dep_requirements(self):
+        test_file = self.get_test_loc('npm/special_extracted_requirements/package.json')
+        expected_loc = self.get_test_loc('npm/special_extracted_requirements/package.json.expected')
+        packages = npm.NpmPackageJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_pnpm_scan_with_workspace_package_json(self):
         test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/')
         expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe-scan.expected.json')

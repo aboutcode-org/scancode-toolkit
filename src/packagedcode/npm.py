@@ -1780,6 +1780,9 @@ def deps_mapper(deps, package, field_name, is_direct=True):
         ns, name = split_scoped_package_name(fqname)
         if not name:
             continue
+        if '@' in requirement:
+            requirement_package, _, requirement = requirement.partition('@')
+            name = f'{name}@{requirement_package}'
         purl = PackageURL(type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name
