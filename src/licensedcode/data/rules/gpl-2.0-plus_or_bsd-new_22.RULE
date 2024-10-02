@@ -1,0 +1,9 @@
+---
+license_expression: gpl-2.0-plus OR bsd-new
+is_license_tag: yes
+relevance: 99
+minimum_coverage: 100
+notes: seen at linux/include/dt-bindings/reset/amlogic,meson-axg-reset.h
+---
+
+* SPDX-License-Identifier: (GPL-2.0+ OR BSD)

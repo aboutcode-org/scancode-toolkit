@@ -70,16 +70,16 @@
             "start_line": 1,
             "end_line": 1,
             "matcher": "1-hash",
-            "score": 75.0,
+            "score": 60.0,
             "matched_length": 1,
             "match_coverage": 100.0,
-            "rule_relevance": 75,
+            "rule_relevance": 60,
             "rule_identifier": "lgpl_bare_single_word.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
             "matched_text": "LGPL"
           }
         ],
-        "identifier": "lgpl_2_0_plus-64f6d457-252f-6fe3-26b9-ae66d29ef973"
+        "identifier": "lgpl_2_0_plus-e66c5b24-33ce-ea1b-0e3b-28952361ec32"
       },
       {
         "license_expression": "lgpl-2.0-plus",
