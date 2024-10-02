@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - (c) OpenStreetMap contributors
+holders:
+  - OpenStreetMap contributors
+holders_summary:
+  - value: OpenStreetMap contributors
+    count: 1

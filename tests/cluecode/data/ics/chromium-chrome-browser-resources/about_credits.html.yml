@@ -5,14 +5,14 @@ what:
 copyrights:
   - Copyright (c) 1991, 2000, 2001 by Lucent Technologies
   - Copyright (c) 2008-2009, Google Inc.
-  - Copyright (c) 1998-2000 the Initial Developer
-  - Copyright (c) 1994-2000 the Initial Developer
+  - Portions created by the Initial Developer are Copyright (c) 1998-2000 the Initial Developer
+  - Portions created by the Initial Developer are Copyright (c) 1994-2000 the Initial Developer
   - (c) Copyright IBM Corporation. 2006, 2006
   - Copyright (c) 2006, Google Inc.
   - Copyright (c) 2000-2008 Julian Seward
   - Copyright (c) 2007 Red Hat, inc
   - Copyright 2003-2005 Colin Percival
-  - Copyright (c) 2000 the Initial Developer
+  - Portions created by the Initial Developer are Copyright (c) 2000 the Initial Developer
   - Copyright 1993 by OpenVision Technologies, Inc.
   - Copyright 2007 Google Inc.
   - Copyright (c) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Alexander
@@ -45,7 +45,7 @@ copyrights:
   - Copyright 1996 Chih-Hao Tsai @ Beckman Institute, University of Illinois c-tsai4@uiuc.edu
     http://casper.beckman.uiuc.edu/~c-tsai4
   - Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology
-  - Copyright (c) 2002 the Initial Developer
+  - Portions created by the Initial Developer are Copyright (c) 2002 the Initial Developer
   - Copyright (c) 2006-2008 Jason Evans jasone@FreeBSD.org
   - Copyright (c) International Business Machines Corp., 2002,2007
   - Copyright 2000-2007 Niels Provos provos@citi.umich.edu
@@ -60,7 +60,7 @@ copyrights:
   - Copyright (c) 2004, 2006-2009 Glenn Randers-Pehrson
   - Copyright (c) 2000-2002 Glenn Randers-Pehrson
   - Copyright (c) 1998, 1999 Glenn Randers-Pehrson
-  - Copyright (c) 1996, 1997 Andreas Dilger Distributed
+  - Copyright (c) 1996, 1997 Andreas Dilger
   - Copyright (c) 1995, 1996 Guy Eric Schalnat, Group 42, Inc.
   - Copyright (c) 2001-2006 Cisco Systems, Inc.
   - Copyright (c) 2010, Google Inc.
@@ -74,8 +74,8 @@ copyrights:
   - Copyright 2008 MolokoCacao
   - Copyright (c) 2004-2009 Sergey Lyubka
   - Portions Copyright (c) 2009 Gilbert Wellisch
-  - Copyright (c) 2002 the Initial Developer
-  - Copyright (c) 1998 the Initial Developer
+  - Portions created by the Initial Developer are Copyright (c) 2002 the Initial Developer
+  - Portions created by the Initial Developer are Copyright (c) 1998 the Initial Developer
   - Copyright (c) 2004-2009 by Mulle Kybernetik
   - Copyright (c) 2008 The Khronos Group Inc.
   - Copyright (c) 1998-2008 The OpenSSL Project
@@ -165,7 +165,7 @@ holders:
   - Glenn Randers-Pehrson
   - Glenn Randers-Pehrson
   - Glenn Randers-Pehrson
-  - Andreas Dilger Distributed
+  - Andreas Dilger
   - Guy Eric Schalnat, Group 42, Inc.
   - Cisco Systems, Inc.
   - Google Inc.
@@ -175,7 +175,7 @@ holders:
   - Thomas Broyer, Charlie Bozeman and Daniel Veillard
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-  - Nick Galbreath - nickg at modp dot com
+  - Nick Galbreath
   - MolokoCacao
   - Sergey Lyubka
   - Gilbert Wellisch
@@ -247,7 +247,7 @@ holders_summary:
     count: 1
   - value: Analog Devices Inc.
     count: 1
-  - value: Andreas Dilger Distributed
+  - value: Andreas Dilger
     count: 1
   - value: Andrew Tridgell
     count: 1
@@ -318,7 +318,7 @@ holders_summary:
     count: 1
   - value: Nara Institute of Science and Technology
     count: 1
-  - value: Nick Galbreath - nickg at modp dot com
+  - value: Nick Galbreath
     count: 1
   - value: Niels Provos
     count: 1

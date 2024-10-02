@@ -4,8 +4,6 @@ is_license_notice: yes
 minimum_coverage: 95
 notes: this is no longer mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus since there is this addition
     "For xxx purposes, GPLv2 is the winning license."
-ignorable_authors:
-    - the Initial Developer
 ignorable_urls:
     - http://www.mozilla.org/MPL/
 ---

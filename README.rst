@@ -89,7 +89,7 @@ Why use ScanCode?
   InstallShield installers, iOS apps, ISO images, Apache IVY, JBoss Sar,
   R CRAN, Apache Maven, Meteor, Mozilla extensions, MSI installers,
   JavaScript npm packages, package-lock.json, yarn.lock, NSIS Installers,
-  NugGet, OPam, Cocoapods, Python PyPI setup.py, setup.cfg, and 
+  NuGet, OPam, Cocoapods, Python PyPI setup.py, setup.cfg, and 
   several related lockfile formats, semi structured README
   files such as README.android, README.chromium, README.facebook, README.google,
   README.thirdparty, RPMs, Shell Archives, Squashfs images, Java WAR, Windows
@@ -160,6 +160,8 @@ There are a few common ways to `install ScanCode <https://scancode-toolkit.readt
 
 - `Run in a Docker container with a git clone and "docker run"
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-via-docker>`_
+
+- In Fedora 40+ you can `dnf install scancode-toolkit`
 
 
 Quick Start

@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1999-2005 Daniel Burrows <dburrows@debian.org>
+holders:
+  - Daniel Burrows

@@ -1,0 +1,82 @@
+{
+  "name": "ruru",
+  "version": "2.0.0-beta.13",
+  "description": "Grafast-flavoured GraphiQL distribution",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": "./dist/cli-run.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "node": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "node": "./dist/server.js",
+      "default": "./dist/server.js"
+    },
+    "./cli": {
+      "types": "./dist/cli.d.ts",
+      "node": "./dist/cli.js"
+    }
+  },
+  "scripts": {
+    "webpack": "node --loader ts-node/esm \"$(yarn bin webpack-cli)\"",
+    "watch": "yarn webpack --watch --mode=development",
+    "prepack": "rm -Rf dist bundle tsconfig.tsbuildinfo tsconfig.build.tsbuildinfo && tsc -b tsconfig.build.json && cp src/.npmignore dist/ && yarn webpack --mode=production && chmod +x dist/cli-run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphile/crystal.git"
+  },
+  "keywords": [
+    "graphile",
+    "graphql",
+    "graphiql",
+    "graphite"
+  ],
+  "author": "Benjie Gillam <code@benjiegillam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphile/crystal/issues"
+  },
+  "homepage": "https://grafast.org/ruru/",
+  "dependencies": {
+    "@emotion/is-prop-valid": "^1.2.1",
+    "graphile-config": "workspace:^",
+    "graphql": "^16.1.0-experimental-stream-defer.6",
+    "http-proxy": "^1.18.1",
+    "tslib": "^2.6.2",
+    "yargs": "^17.7.2"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "peerDependencies": {
+    "graphile-config": "workspace:^",
+    "graphql": "^16.1.0-experimental-stream-defer.6"
+  },
+  "files": [
+    "dist",
+    "bundle",
+    "index.js"
+  ],
+  "devDependencies": {
+    "@types/http-proxy": "^1.17.11",
+    "@types/webpack-bundle-analyzer": "^4.6.0",
+    "@types/yargs": "^17.0.24",
+    "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
+    "graphql": "16.1.0-experimental-stream-defer.6",
+    "ruru-components": "workspace:^",
+    "style-loader": "^3.3.3",
+    "svg-inline-loader": "^0.8.2",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-bundle-analyzer": "^4.9.1",
+    "webpack-cli": "^5.1.4"
+  }
+}

@@ -1,0 +1,9 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2006 Yuan Mu (Winbond), Rudolf Marek <r.marek@assembler.cz> David Hubbard
+    <david.c.hubbard@gmail.com> Daniel J Blueman <daniel.blueman@gmail.com>
+holders:
+  - Yuan Mu (Winbond), Rudolf Marek David Hubbard Daniel J Blueman

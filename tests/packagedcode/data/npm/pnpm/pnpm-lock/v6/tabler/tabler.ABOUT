@@ -1,0 +1,7 @@
+type: npm
+namespace: '@tabler'
+name: core
+version: 1.0.0-beta20
+homepage_url: https://github.com/tabler/tabler/
+vcs_url: https://github.com/tabler/tabler.git
+download_url: https://github.com/tabler/tabler/releases/tag/v1.0.0-beta20

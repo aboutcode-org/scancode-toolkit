@@ -1,0 +1,7 @@
+// Copyright (c) 2007 TinCanTools
+//      David Anders <danders@amltd.com>
+//
+// @History:
+// derived from linux/arch/arm/mach-s3c2410/mach-bast.c, written by
+// Ben Dooks <ben@simtec.co.uk>
+

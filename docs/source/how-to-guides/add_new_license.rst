@@ -33,7 +33,7 @@ You need to create a file with:
 - the data attributes for the license in YAML format as
   `YAML frontmatter <https://python-frontmatter.readthedocs.io/en/latest/>`_.
 
-See an example license: `apache-2.0.LICENSE <https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE>`_
+See an example license: `apache-2.0.LICENSE <https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE>`_
 
 There are a couple of mandatory attributes:
 

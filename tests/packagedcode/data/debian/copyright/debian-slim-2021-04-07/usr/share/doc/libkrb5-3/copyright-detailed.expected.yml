@@ -3,19 +3,18 @@ declared_license_expression: bsd-simplified AND generic-export-compliance AND cc
   proprietary-license AND openvision AND mit-no-advert-export-control AND brian-gladman-3-clause
   AND bsd-new AND mit AND bsd-simplified AND mit AND bsd-new AND bsd-new AND michigan-disclaimer
   AND fsf-unlimited-no-warranty AND mit-no-advert-export-control AND openldap-2.8 AND bsd-new
-  AND bsd-new AND bsd-new AND freebsd-doc AND cmu-uc AND nrl-permission AND ietf-trust AND mit-old-style
-  AND mit AND bsd-simplified AND (mit-no-advert-export-control AND proprietary-license) AND
-  bsd-original-uc AND mit-no-advert-export-control AND bsd-original AND mit AND isc AND isc
-  AND other-permissive AND bsd-new AND rsa-md4 AND rsa-md5 AND rsa-1990 AND mit-with-modification-obligations
-  AND bsd-new AND (bsd-simplified OR gpl-2.0-plus) AND bsd-new AND bsd-simplified
+  AND bsd-new AND bsd-new AND bsd-2-clause-first-lines AND cmu-uc AND nrl-permission AND ietf-trust
+  AND mit-old-style AND mit AND bsd-simplified AND hpnd-export-us-acknowledgement AND bsd-original-uc
+  AND mit-no-advert-export-control AND bsd-original AND mit AND isc AND isc AND other-permissive
+  AND bsd-new AND rsa-md4 AND rsa-md5 AND rsa-1990 AND mit-with-modification-obligations AND
+  bsd-new AND (bsd-simplified OR gpl-2.0-plus) AND bsd-new AND bsd-simplified
 declared_license_expression_spdx: BSD-2-Clause AND LicenseRef-scancode-generic-export-compliance
-  AND CC-BY-SA-3.0 AND LicenseRef-scancode-proprietary-license AND OpenVision AND LicenseRef-scancode-mit-no-advert-export-control
+  AND CC-BY-SA-3.0 AND LicenseRef-scancode-proprietary-license AND OpenVision AND HPND-export2-US
   AND LicenseRef-scancode-brian-gladman-3-clause AND BSD-3-Clause AND MIT AND BSD-2-Clause AND
   MIT AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-michigan-disclaimer AND FSFULLRWD
-  AND LicenseRef-scancode-mit-no-advert-export-control AND OLDAP-2.8 AND BSD-3-Clause AND BSD-3-Clause
-  AND BSD-3-Clause AND FreeBSD-DOC AND MIT-CMU AND CMU-Mach-nodoc AND LicenseRef-scancode-ietf-trust
-  AND LicenseRef-scancode-mit-old-style AND MIT AND BSD-2-Clause AND (LicenseRef-scancode-mit-no-advert-export-control
-  AND LicenseRef-scancode-proprietary-license) AND BSD-4-Clause-UC AND LicenseRef-scancode-mit-no-advert-export-control
+  AND HPND-export2-US AND OLDAP-2.8 AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-2-Clause-first-lines
+  AND MIT-CMU AND CMU-Mach-nodoc AND LicenseRef-scancode-ietf-trust AND LicenseRef-scancode-mit-old-style
+  AND MIT AND BSD-2-Clause AND HPND-export-US-acknowledgement AND BSD-4-Clause-UC AND HPND-export2-US
   AND BSD-4-Clause AND MIT AND ISC AND ISC AND LicenseRef-scancode-other-permissive AND BSD-3-Clause
   AND LicenseRef-scancode-rsa-md4 AND RSA-MD AND LicenseRef-scancode-rsa-1990 AND HPND-export-US-modify
   AND BSD-3-Clause AND (BSD-2-Clause OR GPL-2.0-or-later) AND BSD-3-Clause AND BSD-2-Clause
@@ -178,10 +177,10 @@ license_detections:
              community.
     identifier: openvision-b949c9b9-c46a-bdde-9343-730f91a4f4a8
   - license_expression: mit-no-advert-export-control
-    license_expression_spdx: LicenseRef-scancode-mit-no-advert-export-control
+    license_expression_spdx: HPND-export2-US
     matches:
       - license_expression: mit-no-advert-export-control
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
+        spdx_license_expression: HPND-export2-US
         from_file:
         start_line: 128
         end_line: 146
@@ -562,10 +561,10 @@ license_detections:
              PURPOSE.
     identifier: fsf_unlimited_no_warranty-005cbd82-97e0-5c6c-e111-cd46d95d2c5a
   - license_expression: mit-no-advert-export-control
-    license_expression_spdx: LicenseRef-scancode-mit-no-advert-export-control
+    license_expression_spdx: HPND-export2-US
     matches:
       - license_expression: mit-no-advert-export-control
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
+        spdx_license_expression: HPND-export2-US
         from_file:
         start_line: 485
         end_line: 503
@@ -799,11 +798,11 @@ license_detections:
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-bcd7c498-0b2c-5abe-4ee7-1e4d56c69bcc
-  - license_expression: freebsd-doc
-    license_expression_spdx: FreeBSD-DOC
+  - license_expression: bsd-2-clause-first-lines
+    license_expression_spdx: BSD-2-Clause-first-lines
     matches:
-      - license_expression: freebsd-doc
-        spdx_license_expression: FreeBSD-DOC
+      - license_expression: bsd-2-clause-first-lines
+        spdx_license_expression: BSD-2-Clause-first-lines
         from_file:
         start_line: 682
         end_line: 705
@@ -812,8 +811,8 @@ license_detections:
         matched_length: 185
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: freebsd-doc_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/freebsd-doc_5.RULE
+        rule_identifier: bsd-2-clause-first-lines.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-2-clause-first-lines.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -839,7 +838,7 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-    identifier: freebsd_doc-9db33af1-af77-1b9f-27f4-0ae766439a3a
+    identifier: bsd_2_clause_first_lines-6f015fc4-b8cd-90a5-10f6-9b14c7ee7bfd
   - license_expression: cmu-uc
     license_expression_spdx: MIT-CMU
     matches:
@@ -990,9 +989,8 @@ license_detections:
              CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
              SOFTWARE.
     identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
-  - license_expression: bsd-simplified AND (mit-no-advert-export-control AND proprietary-license)
-    license_expression_spdx: BSD-2-Clause AND (LicenseRef-scancode-mit-no-advert-export-control
-      AND LicenseRef-scancode-proprietary-license)
+  - license_expression: bsd-simplified AND hpnd-export-us-acknowledgement
+    license_expression_spdx: BSD-2-Clause AND HPND-export-US-acknowledgement
     matches:
       - license_expression: bsd-simplified
         spdx_license_expression: BSD-2-Clause
@@ -1031,8 +1029,8 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-      - license_expression: mit-no-advert-export-control AND proprietary-license
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-proprietary-license
+      - license_expression: hpnd-export-us-acknowledgement
+        spdx_license_expression: HPND-export-US-acknowledgement
         from_file:
         start_line: 837
         end_line: 856
@@ -1041,8 +1039,8 @@ license_detections:
         matched_length: 165
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit-no-advert-export-control_and_proprietary-license_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_and_proprietary-license_1.RULE
+        rule_identifier: hpnd-export-us-acknowledgement.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hpnd-export-us-acknowledgement.LICENSE
         matched_text: |
           EXPORT OF THIS SOFTWARE from the United States of America may
                 require a specific license from the United States Government. It
@@ -1064,7 +1062,7 @@ license_detections:
              be held liable for any liability nor for any direct, indirect, or
              consequential damages with respect to any claim by the user or
              distributor of the ksu software.
-    identifier: bsd_simplified_and__mit_no_advert_export_control_and_proprietary_license-345b28a9-f29e-4bc5-6160-59a84fd1aadf
+    identifier: bsd_simplified_and_hpnd_export_us_acknowledgement-44301bcd-fd8f-70e4-66c1-5897d73ac6aa
   - license_expression: bsd-original-uc
     license_expression_spdx: BSD-4-Clause-UC
     matches:
@@ -1117,10 +1115,10 @@ license_detections:
              SUCH DAMAGE.
     identifier: bsd_original_uc-f28cb4d4-6336-ee60-f186-4c1929d3a4b0
   - license_expression: mit-no-advert-export-control
-    license_expression_spdx: LicenseRef-scancode-mit-no-advert-export-control
+    license_expression_spdx: HPND-export2-US
     matches:
       - license_expression: mit-no-advert-export-control
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
+        spdx_license_expression: HPND-export2-US
         from_file:
         start_line: 907
         end_line: 922

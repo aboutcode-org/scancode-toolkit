@@ -35,6 +35,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -83,6 +85,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -131,6 +135,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -179,6 +185,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -227,6 +235,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -275,6 +285,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -323,6 +335,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -371,6 +385,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -419,6 +435,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -467,6 +485,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -515,6 +535,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -563,6 +585,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -611,6 +635,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -659,6 +685,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -707,6 +735,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -755,6 +785,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -803,6 +835,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -851,6 +885,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -899,6 +935,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -947,6 +985,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -995,6 +1035,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1043,6 +1085,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1091,6 +1135,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1139,6 +1185,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1187,6 +1235,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1235,6 +1285,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1283,6 +1335,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1331,6 +1385,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1379,6 +1435,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1427,6 +1485,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1475,6 +1535,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1523,6 +1585,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1571,6 +1635,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1619,6 +1685,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1667,6 +1735,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1715,6 +1785,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1763,6 +1835,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1811,6 +1885,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1859,6 +1935,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1907,6 +1985,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1955,6 +2035,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2003,6 +2085,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2051,6 +2135,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2099,6 +2185,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2147,6 +2235,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2195,6 +2285,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2243,6 +2335,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2291,6 +2385,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2339,6 +2435,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2387,6 +2485,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2435,6 +2535,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2483,6 +2585,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2531,6 +2635,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2579,6 +2685,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2627,6 +2735,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2675,6 +2785,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2723,6 +2835,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2771,6 +2885,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2819,6 +2935,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2867,6 +2985,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2915,6 +3035,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -2963,6 +3085,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3011,6 +3135,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3059,6 +3185,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3107,6 +3235,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3155,6 +3285,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3203,6 +3335,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3251,6 +3385,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3299,6 +3435,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3347,6 +3485,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3395,6 +3535,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3443,6 +3585,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3491,6 +3635,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3539,6 +3685,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3587,6 +3735,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3635,6 +3785,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3683,6 +3835,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3731,6 +3885,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3779,6 +3935,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3827,6 +3985,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3875,6 +4035,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3923,6 +4085,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -3971,6 +4135,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4019,6 +4185,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4067,6 +4235,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4115,6 +4285,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4163,6 +4335,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4211,6 +4385,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4259,6 +4435,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4307,6 +4485,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4355,6 +4535,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4403,6 +4585,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4451,6 +4635,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4499,6 +4685,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4547,6 +4735,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4595,6 +4785,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4643,6 +4835,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4691,6 +4885,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4739,6 +4935,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -4958,12 +5156,9 @@
     {
       "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a",
       "license_expression": "gpl-2.0-plus",
-      "license_expression_spdx": null,
+      "license_expression_spdx": "GPL-2.0-or-later",
       "detection_count": 2,
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ],
+      "detection_log": [],
       "reference_matches": [
         {
           "license_expression": "gpl-2.0-plus",
@@ -5345,6 +5540,31 @@
       ]
     },
     {
+      "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5",
+      "license_expression": "lgpl-3.0",
+      "license_expression_spdx": "LGPL-3.0-only",
+      "detection_count": 2,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "lgpl-3.0",
+          "license_expression_spdx": "LGPL-3.0-only",
+          "from_file": "fusiondirectory/debian/copyright.in",
+          "start_line": 2925,
+          "end_line": 2925,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "lgpl-3.0_37.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_37.RULE",
+          "matched_text": "License: LGPL (v3 or later)",
+          "matched_text_diagnostics": "License: LGPL (v3"
+        }
+      ]
+    },
+    {
       "identifier": "lgpl_3_0_plus-4c8d95b2-1acf-7a81-473c-d8e70962288c",
       "license_expression": "lgpl-3.0-plus",
       "license_expression_spdx": "LGPL-3.0-or-later",
@@ -5372,12 +5592,9 @@
     {
       "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4",
       "license_expression": "mit",
-      "license_expression_spdx": null,
+      "license_expression_spdx": "MIT",
       "detection_count": 6,
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ],
+      "detection_log": [],
       "reference_matches": [
         {
           "license_expression": "mit",
@@ -5398,14 +5615,52 @@
       ]
     },
     {
+      "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a",
+      "license_expression": "mit AND other-permissive",
+      "license_expression_spdx": "MIT AND LicenseRef-scancode-other-permissive",
+      "detection_count": 2,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "fusiondirectory/debian/copyright.in",
+          "start_line": 3010,
+          "end_line": 3010,
+          "matcher": "2-aho",
+          "score": 90.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 90,
+          "rule_identifier": "mit_221.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
+          "matched_text": "License: MIT/X11 (BSD like)",
+          "matched_text_diagnostics": "License: MIT/X11 ("
+        },
+        {
+          "license_expression": "other-permissive",
+          "license_expression_spdx": "LicenseRef-scancode-other-permissive",
+          "from_file": "fusiondirectory/debian/copyright.in",
+          "start_line": 3010,
+          "end_line": 3010,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "other-permissive_16.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
+          "matched_text": "License: MIT/X11 (BSD like)",
+          "matched_text_diagnostics": "BSD like)"
+        }
+      ]
+    },
+    {
       "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6",
       "license_expression": "public-domain",
-      "license_expression_spdx": null,
+      "license_expression_spdx": "LicenseRef-scancode-public-domain",
       "detection_count": 2,
-      "detection_log": [
-        "possible-false-positive",
-        "not-license-clues-as-more-detections-present"
-      ],
+      "detection_log": [],
       "reference_matches": [
         {
           "license_expression": "public-domain",
@@ -5422,6 +5677,63 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE",
           "matched_text": "License: public-domain",
           "matched_text_diagnostics": "License: public-domain"
+        }
+      ]
+    },
+    {
+      "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c",
+      "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
+      "license_expression_spdx": "LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later",
+      "detection_count": 2,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "public-domain",
+          "license_expression_spdx": "LicenseRef-scancode-public-domain",
+          "from_file": "fusiondirectory/debian/copyright.in",
+          "start_line": 3016,
+          "end_line": 3016,
+          "matcher": "2-aho",
+          "score": 99.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 99,
+          "rule_identifier": "pypi_public_domain.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE",
+          "matched_text": "License: Public domain BSD (4 clause) GPL",
+          "matched_text_diagnostics": "License: Public domain"
+        },
+        {
+          "license_expression": "bsd-original",
+          "license_expression_spdx": "BSD-4-Clause",
+          "from_file": "fusiondirectory/debian/copyright.in",
+          "start_line": 3016,
+          "end_line": 3016,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
+          "matched_text": "License: Public domain BSD (4 clause) GPL",
+          "matched_text_diagnostics": "BSD (4 clause)"
+        },
+        {
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
+          "from_file": "fusiondirectory/debian/copyright.in",
+          "start_line": 3016,
+          "end_line": 3016,
+          "matcher": "2-aho",
+          "score": 50.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 50,
+          "rule_identifier": "gpl_bare_word_only.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+          "matched_text": "License: Public domain BSD (4 clause) GPL",
+          "matched_text_diagnostics": "GPL"
         }
       ]
     }
@@ -5937,8 +6249,8 @@
           "vcs_url": "https://salsa.debian.org/debian/fusiondirectory.git",
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "gpl-2.0-plus AND free-unknown AND bsd-new AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive) AND bsd-simplified",
-          "declared_license_expression_spdx": "GPL-2.0-or-later AND LicenseRef-scancode-free-unknown AND BSD-3-Clause AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive) AND BSD-2-Clause",
+          "declared_license_expression": "gpl-2.0-plus AND free-unknown AND bsd-new AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive) AND bsd-simplified AND lgpl-3.0 AND (mit AND other-permissive) AND (public-domain AND bsd-original AND gpl-1.0-plus)",
+          "declared_license_expression_spdx": "GPL-2.0-or-later AND LicenseRef-scancode-free-unknown AND BSD-3-Clause AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive) AND BSD-2-Clause AND LGPL-3.0-only AND (MIT AND LicenseRef-scancode-other-permissive) AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
           "license_detections": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -6302,7 +6614,7 @@
             },
             {
               "license_expression": "public-domain",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "matches": [
                 {
                   "license_expression": "public-domain",
@@ -6321,15 +6633,12 @@
                   "matched_text_diagnostics": "License: public-domain"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6348,15 +6657,12 @@
                   "matched_text_diagnostics": "GPL-2+)."
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6375,15 +6681,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6402,15 +6705,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "mit",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
                   "license_expression": "mit",
@@ -6429,15 +6729,12 @@
                   "matched_text_diagnostics": "License: Expat"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6456,15 +6753,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6483,15 +6777,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6510,15 +6801,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6537,15 +6825,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6564,15 +6849,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6591,15 +6873,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6618,15 +6897,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6645,15 +6921,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6672,15 +6945,12 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -6699,10 +6969,7 @@
                   "matched_text_diagnostics": "License: GPL-2+"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
             },
             {
@@ -6731,7 +6998,7 @@
             },
             {
               "license_expression": "mit",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
                   "license_expression": "mit",
@@ -6750,15 +7017,12 @@
                   "matched_text_diagnostics": "License: Expat"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
             },
             {
               "license_expression": "mit",
-              "license_expression_spdx": null,
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
                   "license_expression": "mit",
@@ -6777,10 +7041,7 @@
                   "matched_text_diagnostics": "License: Expat"
                 }
               ],
-              "detection_log": [
-                "possible-false-positive",
-                "not-license-clues-as-more-detections-present"
-              ],
+              "detection_log": [],
               "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
             },
             {
@@ -7408,6 +7669,30 @@
               "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
+              "license_expression": "lgpl-3.0",
+              "license_expression_spdx": "LGPL-3.0-only",
+              "matches": [
+                {
+                  "license_expression": "lgpl-3.0",
+                  "spdx_license_expression": "LGPL-3.0-only",
+                  "from_file": "fusiondirectory/debian/copyright.in",
+                  "start_line": 2925,
+                  "end_line": 2925,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "lgpl-3.0_37.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_37.RULE",
+                  "matched_text": "License: LGPL (v3 or later)",
+                  "matched_text_diagnostics": "License: LGPL (v3"
+                }
+              ],
+              "detection_log": [],
+              "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5"
+            },
+            {
               "license_expression": "gpl-2.0-plus",
               "license_expression_spdx": "GPL-2.0-or-later",
               "matches": [
@@ -7694,6 +7979,102 @@
               ],
               "detection_log": [],
               "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
+            },
+            {
+              "license_expression": "mit AND other-permissive",
+              "license_expression_spdx": "MIT AND LicenseRef-scancode-other-permissive",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "fusiondirectory/debian/copyright.in",
+                  "start_line": 3010,
+                  "end_line": 3010,
+                  "matcher": "2-aho",
+                  "score": 90.0,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 90,
+                  "rule_identifier": "mit_221.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
+                  "matched_text": "License: MIT/X11 (BSD like)",
+                  "matched_text_diagnostics": "License: MIT/X11 ("
+                },
+                {
+                  "license_expression": "other-permissive",
+                  "spdx_license_expression": "LicenseRef-scancode-other-permissive",
+                  "from_file": "fusiondirectory/debian/copyright.in",
+                  "start_line": 3010,
+                  "end_line": 3010,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "other-permissive_16.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
+                  "matched_text": "License: MIT/X11 (BSD like)",
+                  "matched_text_diagnostics": "BSD like)"
+                }
+              ],
+              "detection_log": [],
+              "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a"
+            },
+            {
+              "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later",
+              "matches": [
+                {
+                  "license_expression": "public-domain",
+                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "from_file": "fusiondirectory/debian/copyright.in",
+                  "start_line": 3016,
+                  "end_line": 3016,
+                  "matcher": "2-aho",
+                  "score": 99.0,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 99,
+                  "rule_identifier": "pypi_public_domain.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE",
+                  "matched_text": "License: Public domain BSD (4 clause) GPL",
+                  "matched_text_diagnostics": "License: Public domain"
+                },
+                {
+                  "license_expression": "bsd-original",
+                  "spdx_license_expression": "BSD-4-Clause",
+                  "from_file": "fusiondirectory/debian/copyright.in",
+                  "start_line": 3016,
+                  "end_line": 3016,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
+                  "matched_text": "License: Public domain BSD (4 clause) GPL",
+                  "matched_text_diagnostics": "BSD (4 clause)"
+                },
+                {
+                  "license_expression": "gpl-1.0-plus",
+                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "from_file": "fusiondirectory/debian/copyright.in",
+                  "start_line": 3016,
+                  "end_line": 3016,
+                  "matcher": "2-aho",
+                  "score": 50.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 50,
+                  "rule_identifier": "gpl_bare_word_only.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+                  "matched_text": "License: Public domain BSD (4 clause) GPL",
+                  "matched_text_diagnostics": "GPL"
+                }
+              ],
+              "detection_log": [],
+              "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c"
             }
           ],
           "other_license_expression": null,
@@ -7705,6 +8086,8 @@
             "pkg:deb/fusiondirectory"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -7749,6 +8132,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -7793,6 +8178,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -7837,6 +8224,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -7881,6 +8270,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -7925,6 +8316,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -7969,6 +8362,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8013,6 +8408,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8057,6 +8454,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8101,6 +8500,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8145,6 +8546,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8189,6 +8592,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8233,6 +8638,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8277,6 +8684,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8321,6 +8730,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8365,6 +8776,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8409,6 +8822,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8453,6 +8868,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8497,6 +8914,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8541,6 +8960,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8585,6 +9006,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8629,6 +9052,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8673,6 +9098,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8717,6 +9144,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8761,6 +9190,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8805,6 +9236,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8849,6 +9282,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8893,6 +9328,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8937,6 +9374,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -8981,6 +9420,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9025,6 +9466,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9069,6 +9512,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9113,6 +9558,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9157,6 +9604,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9201,6 +9650,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9245,6 +9696,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9289,6 +9742,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9333,6 +9788,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9377,6 +9834,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9421,6 +9880,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9465,6 +9926,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9509,6 +9972,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9553,6 +10018,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9597,6 +10064,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9641,6 +10110,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9685,6 +10156,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9729,6 +10202,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9773,6 +10248,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9817,6 +10294,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9861,6 +10340,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9905,6 +10386,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9949,6 +10432,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -9993,6 +10478,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10037,6 +10524,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10081,6 +10570,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10125,6 +10616,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10169,6 +10662,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10213,6 +10708,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10257,6 +10754,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10301,6 +10800,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10345,6 +10846,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10389,6 +10892,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10433,6 +10938,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10477,6 +10984,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10521,6 +11030,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10565,6 +11076,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10609,6 +11122,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10653,6 +11168,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10697,6 +11214,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10741,6 +11260,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10785,6 +11306,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10829,6 +11352,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10873,6 +11398,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10917,6 +11444,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -10961,6 +11490,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11005,6 +11536,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11049,6 +11582,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11093,6 +11628,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11137,6 +11674,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11181,6 +11720,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11225,6 +11766,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11269,6 +11812,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11313,6 +11858,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11357,6 +11904,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11401,6 +11950,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11445,6 +11996,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11489,6 +12042,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11533,6 +12088,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11577,6 +12134,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11621,6 +12180,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11665,6 +12226,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11709,6 +12272,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11753,6 +12318,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11797,6 +12364,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11841,6 +12410,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11885,6 +12456,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11929,6 +12502,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -11973,6 +12548,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -12017,6 +12594,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -12061,6 +12640,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -12648,7 +13229,7 @@
         },
         {
           "license_expression": "public-domain",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "LicenseRef-scancode-public-domain",
           "matches": [
             {
               "license_expression": "public-domain",
@@ -12667,15 +13248,12 @@
               "matched_text_diagnostics": "License: public-domain"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "public_domain-1a6a4f2c-bd92-9942-920f-be3d0c2bbda6"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12694,15 +13272,12 @@
               "matched_text_diagnostics": "GPL-2+)."
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-fed2dc38-09ac-103e-1b86-4a4f5c00614a"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12721,15 +13296,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12748,15 +13320,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "mit",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "MIT",
           "matches": [
             {
               "license_expression": "mit",
@@ -12775,15 +13344,12 @@
               "matched_text_diagnostics": "License: Expat"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12802,15 +13368,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12829,15 +13392,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12856,15 +13416,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12883,15 +13440,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12910,15 +13464,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12937,15 +13488,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12964,15 +13512,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -12991,15 +13536,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -13018,15 +13560,12 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
           "license_expression": "gpl-2.0-plus",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "GPL-2.0-or-later",
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -13045,10 +13584,7 @@
               "matched_text_diagnostics": "License: GPL-2+"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "gpl_2_0_plus-53a26be2-1f88-01ec-d294-921768a513c9"
         },
         {
@@ -13077,7 +13613,7 @@
         },
         {
           "license_expression": "mit",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "MIT",
           "matches": [
             {
               "license_expression": "mit",
@@ -13096,15 +13632,12 @@
               "matched_text_diagnostics": "License: Expat"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
         },
         {
           "license_expression": "mit",
-          "license_expression_spdx": null,
+          "license_expression_spdx": "MIT",
           "matches": [
             {
               "license_expression": "mit",
@@ -13123,10 +13656,7 @@
               "matched_text_diagnostics": "License: Expat"
             }
           ],
-          "detection_log": [
-            "possible-false-positive",
-            "not-license-clues-as-more-detections-present"
-          ],
+          "detection_log": [],
           "identifier": "mit-1f9f2ae8-7020-0a13-7934-461c752929a4"
         },
         {
@@ -13599,8 +14129,8 @@
         "pkg:deb/debian/fusiondirectory-theme-oxygen?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:deb/debian/fusiondirectory-webservice-shell?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "detected_license_expression": "gpl-2.0-plus AND bsd-simplified",
-      "detected_license_expression_spdx": "GPL-2.0-or-later AND BSD-2-Clause",
+      "detected_license_expression": "gpl-2.0-plus AND bsd-simplified AND lgpl-3.0 AND (mit AND other-permissive) AND (public-domain AND bsd-original AND gpl-1.0-plus)",
+      "detected_license_expression_spdx": "GPL-2.0-or-later AND BSD-2-Clause AND LGPL-3.0-only AND (MIT AND LicenseRef-scancode-other-permissive) AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus",
@@ -13865,6 +14395,30 @@
           ],
           "detection_log": [],
           "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
+        },
+        {
+          "license_expression": "lgpl-3.0",
+          "license_expression_spdx": "LGPL-3.0-only",
+          "matches": [
+            {
+              "license_expression": "lgpl-3.0",
+              "spdx_license_expression": "LGPL-3.0-only",
+              "from_file": "fusiondirectory/debian/copyright.in",
+              "start_line": 2925,
+              "end_line": 2925,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-3.0_37.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_37.RULE",
+              "matched_text": "License: LGPL (v3 or later)",
+              "matched_text_diagnostics": "License: LGPL (v3"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "lgpl_3_0-6b4a45da-85cc-8eb0-5613-be81d4efd6a5"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -14153,106 +14707,105 @@
           ],
           "detection_log": [],
           "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
+        },
+        {
+          "license_expression": "mit AND other-permissive",
+          "license_expression_spdx": "MIT AND LicenseRef-scancode-other-permissive",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "fusiondirectory/debian/copyright.in",
+              "start_line": 3010,
+              "end_line": 3010,
+              "matcher": "2-aho",
+              "score": 90.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 90,
+              "rule_identifier": "mit_221.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
+              "matched_text": "License: MIT/X11 (BSD like)",
+              "matched_text_diagnostics": "License: MIT/X11 ("
+            },
+            {
+              "license_expression": "other-permissive",
+              "spdx_license_expression": "LicenseRef-scancode-other-permissive",
+              "from_file": "fusiondirectory/debian/copyright.in",
+              "start_line": 3010,
+              "end_line": 3010,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "other-permissive_16.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
+              "matched_text": "License: MIT/X11 (BSD like)",
+              "matched_text_diagnostics": "BSD like)"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mit_and_other_permissive-907b56d6-95b9-e85c-83c0-efd967c7e30a"
+        },
+        {
+          "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
+          "license_expression_spdx": "LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later",
+          "matches": [
+            {
+              "license_expression": "public-domain",
+              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "from_file": "fusiondirectory/debian/copyright.in",
+              "start_line": 3016,
+              "end_line": 3016,
+              "matcher": "2-aho",
+              "score": 99.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 99,
+              "rule_identifier": "pypi_public_domain.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE",
+              "matched_text": "License: Public domain BSD (4 clause) GPL",
+              "matched_text_diagnostics": "License: Public domain"
+            },
+            {
+              "license_expression": "bsd-original",
+              "spdx_license_expression": "BSD-4-Clause",
+              "from_file": "fusiondirectory/debian/copyright.in",
+              "start_line": 3016,
+              "end_line": 3016,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
+              "matched_text": "License: Public domain BSD (4 clause) GPL",
+              "matched_text_diagnostics": "BSD (4 clause)"
+            },
+            {
+              "license_expression": "gpl-1.0-plus",
+              "spdx_license_expression": "GPL-1.0-or-later",
+              "from_file": "fusiondirectory/debian/copyright.in",
+              "start_line": 3016,
+              "end_line": 3016,
+              "matcher": "2-aho",
+              "score": 50.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 50,
+              "rule_identifier": "gpl_bare_word_only.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
+              "matched_text": "License: Public domain BSD (4 clause) GPL",
+              "matched_text_diagnostics": "GPL"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "public_domain_and_bsd_original_and_gpl_1_0_plus-ccb73883-974d-42eb-d572-39fa7bf22f4c"
         }
       ],
-      "license_clues": [
-        {
-          "license_expression": "lgpl-3.0",
-          "spdx_license_expression": "LGPL-3.0-only",
-          "from_file": "fusiondirectory/debian/copyright.in",
-          "start_line": 2925,
-          "end_line": 2925,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "lgpl-3.0_37.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_37.RULE",
-          "matched_text": "License: LGPL (v3 or later)",
-          "matched_text_diagnostics": "License: LGPL (v3"
-        },
-        {
-          "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "from_file": "fusiondirectory/debian/copyright.in",
-          "start_line": 3010,
-          "end_line": 3010,
-          "matcher": "2-aho",
-          "score": 90.0,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "rule_relevance": 90,
-          "rule_identifier": "mit_221.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
-          "matched_text": "License: MIT/X11 (BSD like)",
-          "matched_text_diagnostics": "License: MIT/X11 ("
-        },
-        {
-          "license_expression": "other-permissive",
-          "spdx_license_expression": "LicenseRef-scancode-other-permissive",
-          "from_file": "fusiondirectory/debian/copyright.in",
-          "start_line": 3010,
-          "end_line": 3010,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "other-permissive_16.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
-          "matched_text": "License: MIT/X11 (BSD like)",
-          "matched_text_diagnostics": "BSD like)"
-        },
-        {
-          "license_expression": "public-domain",
-          "spdx_license_expression": "LicenseRef-scancode-public-domain",
-          "from_file": "fusiondirectory/debian/copyright.in",
-          "start_line": 3016,
-          "end_line": 3016,
-          "matcher": "2-aho",
-          "score": 99.0,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "rule_relevance": 99,
-          "rule_identifier": "pypi_public_domain.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_public_domain.RULE",
-          "matched_text": "License: Public domain BSD (4 clause) GPL",
-          "matched_text_diagnostics": "License: Public domain"
-        },
-        {
-          "license_expression": "bsd-original",
-          "spdx_license_expression": "BSD-4-Clause",
-          "from_file": "fusiondirectory/debian/copyright.in",
-          "start_line": 3016,
-          "end_line": 3016,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-          "matched_text": "License: Public domain BSD (4 clause) GPL",
-          "matched_text_diagnostics": "BSD (4 clause)"
-        },
-        {
-          "license_expression": "gpl-1.0-plus",
-          "spdx_license_expression": "GPL-1.0-or-later",
-          "from_file": "fusiondirectory/debian/copyright.in",
-          "start_line": 3016,
-          "end_line": 3016,
-          "matcher": "2-aho",
-          "score": 50.0,
-          "matched_length": 1,
-          "match_coverage": 100.0,
-          "rule_relevance": 50,
-          "rule_identifier": "gpl_bare_word_only.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
-          "matched_text": "License: Public domain BSD (4 clause) GPL",
-          "matched_text_diagnostics": "GPL"
-        }
-      ],
+      "license_clues": [],
       "percentage_of_license_text": 0.66,
       "scan_errors": []
     },

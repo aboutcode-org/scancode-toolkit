@@ -3,9 +3,9 @@ License Detection Updates
 
 References:
 
-* `Issue <https://github.com/nexB/scancode-toolkit/issues/2878>`_
-* `Pull Request <https://github.com/nexB/scancode-toolkit/pull/2961>`_
-* `A presentation on this <https://github.com/nexB/scancode-toolkit/issues/2878#issuecomment-1079639973>`_
+* `Issue <https://github.com/aboutcode-org/scancode-toolkit/issues/2878>`_
+* `Pull Request <https://github.com/aboutcode-org/scancode-toolkit/pull/2961>`_
+* `A presentation on this <https://github.com/aboutcode-org/scancode-toolkit/issues/2878#issuecomment-1079639973>`_
 
 
 The Problem:
@@ -17,18 +17,18 @@ license_expressions. To tackle this the following solution elements were discuss
 implemented:
 
 1. Reporting the primary, declared license in a scan summary record
-2. tagging mandatory portions in rules `#2773 <https://github.com/nexB/scancode-toolkit/pull/2773>`_
-3. Adding license detections by combine multiple license matches `#2961 <https://github.com/nexB/scancode-toolkit/pull/2961>`_
+2. tagging mandatory portions in rules `#2773 <https://github.com/aboutcode-org/scancode-toolkit/pull/2773>`_
+3. Adding license detections by combine multiple license matches `#2961 <https://github.com/aboutcode-org/scancode-toolkit/pull/2961>`_
 4. Integrating the existing scancode-analyzer tool into SCTK to combine multiple matches
-   based on statistics and heuristics `#2961 <https://github.com/nexB/scancode-toolkit/pull/2961>`_
+   based on statistics and heuristics `#2961 <https://github.com/aboutcode-org/scancode-toolkit/pull/2961>`_
 5. Reporting license clues when the matched license rule data is not sufficient to
-   create a LicenseDetection `#2961 <https://github.com/nexB/scancode-toolkit/pull/2961>`_
+   create a LicenseDetection `#2961 <https://github.com/aboutcode-org/scancode-toolkit/pull/2961>`_
 6. web app for efficient scan and review of a single license to ease
-   reporting license detection issues `nexB/scancode.io#450 <https://github.com/nexB/scancode.io/pull/450>`_
-7. also apply LicenseDetection to package license detections `#2961 <https://github.com/nexB/scancode-toolkit/pull/2961>`_
-8. rename resource and package license fields `#2961 <https://github.com/nexB/scancode-toolkit/pull/2961>`_
+   reporting license detection issues `nexB/scancode.io#450 <https://github.com/aboutcode-org/scancode.io/pull/450>`_
+7. also apply LicenseDetection to package license detections `#2961 <https://github.com/aboutcode-org/scancode-toolkit/pull/2961>`_
+8. rename resource and package license fields `#2961 <https://github.com/aboutcode-org/scancode-toolkit/pull/2961>`_
 
-Some other elements are still WIP, see `issue #3300 <https://github.com/nexB/scancode-toolkit/issues/3300>`_ for more details on this.
+Some other elements are still WIP, see `issue #3300 <https://github.com/aboutcode-org/scancode-toolkit/issues/3300>`_ for more details on this.
 
 .. _what-is-a-licensedetection:
 
@@ -180,8 +180,8 @@ Before::
         "homepage_url": "http://www.apache.org/licenses/",
         "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
         "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-        "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
-        "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
+        "scancode_text_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+        "scancode_data_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.yml",
         "spdx_license_key": "Apache-2.0",
         "spdx_url": "https://spdx.org/licenses/Apache-2.0",
         "start_line": 1,
@@ -233,7 +233,7 @@ After::
           "license_expression": "apache-2.0",
           "rule_identifier": "apache-2.0_65.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
           "matched_text": "license: apache 2.0"
         }
       ],
@@ -279,7 +279,7 @@ After::
           "license_expression": "mit",
           "rule_identifier": "mit_in_manifest.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_in_manifest.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_in_manifest.RULE",
           "matched_text": ":type = MIT, :file = LICENSE"
         }
       ],
@@ -337,7 +337,7 @@ For the corresponding resource level license detection::
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0_3.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_3.RULE",
         },
         {
           "score": 100.0,
@@ -349,7 +349,7 @@ For the corresponding resource level license detection::
           "license_expression": "epl-1.0",
           "rule_identifier": "epl-1.0_7.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE",
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/epl-1.0_7.RULE",
         }
       ],
       "detection_log": [],
@@ -399,8 +399,8 @@ Before::
       "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
       "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
       "reference_url": "https://scancode-licensedb.aboutcode.org/gpl-2.0",
-      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
-      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
+      "scancode_text_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.LICENSE",
+      "scancode_data_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/gpl-2.0.yml",
       "spdx_license_key": "GPL-2.0-only",
       "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
       "start_line": 4,
@@ -438,10 +438,10 @@ Before::
       "homepage_url": null,
       "text_url": "",
       "reference_url": "https://scancode-licensedb.aboutcode.org/patent-disclaimer",
-      "scancode_text_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/patent-disclaimer.LICENSE",
-      "scancode_data_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/patent-disclaimer.yml",
+      "scancode_text_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/patent-disclaimer.LICENSE",
+      "scancode_data_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/patent-disclaimer.yml",
       "spdx_license_key": "LicenseRef-scancode-patent-disclaimer",
-      "spdx_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/patent-disclaimer.LICENSE",
+      "spdx_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/patent-disclaimer.LICENSE",
       "start_line": 4,
       "end_line": 30,
       "matched_rule": {
@@ -489,7 +489,7 @@ After::
           "license_expression": "gpl-2.0 AND patent-disclaimer",
           "rule_identifier": "gpl-2.0_and_patent-disclaimer_3.RULE",
           "rule_relevance": 100,
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
+          "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
         }
       ],
       "identifier": "gpl_2_0_and_patent_disclaimer-3bb2602f-86f5-b9da-9bf5-b52e6920c8d1"
@@ -566,7 +566,7 @@ Before::
                 "matcher": "1-hash",
                 "license_expression": "apache-2.0",
                 "rule_identifier": "apache-2.0_65.RULE",
-                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
+                "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
                 "referenced_filenames": [],
                 "is_license_text": false,
                 "is_license_notice": false,
@@ -588,7 +588,7 @@ Before::
                     "homepage_url": "http://www.apache.org/licenses/",
                     "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
                     "reference_url": "https://scancode-licensedb.aboutcode.org/apache-2.0",
-                    "scancode_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
+                    "scancode_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/apache-2.0.LICENSE",
                     "spdx_license_key": "Apache-2.0",
                     "spdx_url": "https://spdx.org/licenses/Apache-2.0"
                   }
@@ -638,7 +638,7 @@ After::
       {
         "license_expression": "apache-2.0",
         "rule_identifier": "apache-2.0_65.RULE",
-        "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
+        "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
         "referenced_filenames": [],
         "is_license_text": false,
         "is_license_notice": false,
@@ -671,7 +671,7 @@ After::
                 "license_expression": "apache-2.0",
                 "rule_identifier": "apache-2.0_65.RULE",
                 "matched_text": "License: Apache-2.0",
-                "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
+                "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE"
               }
             ]
           }
@@ -692,4 +692,4 @@ detections. See the :ref:`license_detections_unique` above for more
 details on this.
 
 There could be a list of ambiguous detections as a summary to review.
-This is WIP, see `scancode-toolkit#3122 <https://github.com/nexB/scancode-toolkit/issues/3122>`_.
+This is WIP, see `scancode-toolkit#3122 <https://github.com/aboutcode-org/scancode-toolkit/issues/3122>`_.

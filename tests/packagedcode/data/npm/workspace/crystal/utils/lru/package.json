@@ -1,0 +1,42 @@
+{
+  "name": "@graphile/lru",
+  "version": "5.0.0-beta.3",
+  "description": "Extremely simple zero-dependencies ES6 LRU (you probably want lru-cache instead)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest -i",
+    "prepack": "tsc -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphile/crystal.git"
+  },
+  "keywords": [
+    "lru",
+    "graphile",
+    "graphite"
+  ],
+  "author": "Benjie Gillam <code@benjiegillam.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graphile/crystal/issues"
+  },
+  "homepage": "https://github.com/graphile/crystal/tree/main/utils/lru",
+  "engines": {
+    "node": ">=14.17"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "@types/node": "^20.5.7",
+    "jest": "^29.6.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}

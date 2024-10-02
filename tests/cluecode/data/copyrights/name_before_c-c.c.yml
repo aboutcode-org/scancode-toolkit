@@ -3,13 +3,10 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Russ Dill <Russ.Dill@asu.edu> 2001-2003
-  - Vladimir Oleynik <dzo@simtreas.ru> (c) 2003
+  - Russ Dill <Russ.Dill@asu.edu> 2001-2003 Rewrited by Vladimir Oleynik <dzo@simtreas.ru> (c)
+    2003
 holders:
-  - Russ Dill
-  - Vladimir Oleynik
+  - Russ Dill Rewrited by Vladimir Oleynik
 holders_summary:
-  - value: Russ Dill
-    count: 1
-  - value: Vladimir Oleynik
+  - value: Russ Dill Rewrited by Vladimir Oleynik
     count: 1

@@ -19,8 +19,6 @@ from commoncode.testcase import FileDrivenTesting
 from commoncode.testcase import get_test_file_pairs
 from commoncode.text import python_safe_name
 
-from cluecode.copyrights import detect_copyrights
-from cluecode.copyrights import Detection
 from scancode_config import REGEN_TEST_FIXTURES
 
 
@@ -126,15 +124,28 @@ class CopyrightTest(object):
             df.write(self.dumps())
 
 
-def load_copyright_tests(test_dir=test_env.test_data_dir):
+COPYRIGHT_TEST_TEMPLATE ="""what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - 
+holders:
+  - 
+"""
+
+def load_copyright_tests(test_dir=test_env.test_data_dir, generate_missing=False):
     """
     Yield an iterable of CopyrightTest loaded from test data files in `test_dir`.
     """
     test_dirs = (path.join(test_dir, td) for td in
-        ('copyrights', 'ics', 'holders', 'authors', 'years', 'generated'))
+        ('copyrights', 'ics', 'holders', 'authors', 'years', 'generated', 'copyright_fossology'))
 
+    gen_missing_temp = generate_missing and COPYRIGHT_TEST_TEMPLATE or None
     all_test_files = chain.from_iterable(
-        get_test_file_pairs(td) for td in test_dirs)
+        get_test_file_pairs(td, template_to_generate_missing_yaml=gen_missing_temp)
+        for td in test_dirs
+    )
 
     for data_file, test_file in all_test_files:
         yield CopyrightTest(data_file, test_file)
@@ -159,11 +170,6 @@ def as_sorted_mapping(counter):
     return summarized
 
 
-def get_detections(test_file):
-    detections = detect_copyrights(test_file)
-    return Detection.split_values(detections)
-
-
 def make_copyright_test_functions(
     test,
     index,
@@ -175,6 +181,9 @@ def make_copyright_test_functions(
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
+    from cluecode.copyrights import detect_copyrights
+    from cluecode.copyrights import Detection
+
     from summarycode.copyright_tallies import tally_copyrights
     from summarycode.copyright_tallies import tally_persons
 

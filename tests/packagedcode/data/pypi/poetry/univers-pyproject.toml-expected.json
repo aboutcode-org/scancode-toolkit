@@ -1,0 +1,122 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "univers",
+    "version": "0.1.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "A mostly universal library to parse and compare software package versions and version ranges. A companion to Package URLs.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "nexB. Inc.",
+        "email": "info@aboutcode.org",
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "apache-2.0",
+    "declared_license_expression_spdx": "Apache-2.0",
+    "license_detections": [
+      {
+        "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
+        "matches": [
+          {
+            "license_expression": "apache-2.0",
+            "spdx_license_expression": "Apache-2.0",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "matched_text": "apache-2.0"
+          }
+        ],
+        "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "license: apache-2.0\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/attrs",
+        "extracted_requirement": "^21.2.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/packaging",
+        "extracted_requirement": "21.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/semantic-version",
+        "extracted_requirement": "^2.8.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/semver",
+        "extracted_requirement": "^2.13.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_resolved": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/univers",
+    "repository_download_url": "https://pypi.org/packages/source/u/univers/univers-0.1.0.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/univers/0.1.0/json",
+    "datasource_id": "pypi_poetry_pyproject_toml",
+    "purl": "pkg:pypi/univers@0.1.0"
+  }
+]

@@ -10,7 +10,7 @@ chardet==5.0.0
 charset-normalizer==2.1.0
 click==8.1.7
 colorama==0.4.5
-commoncode==31.0.3
+commoncode==32.0.0
 construct==2.10.68
 container-inspector==31.1.0
 cryptography==42.0.5
@@ -54,7 +54,7 @@ ply==3.11
 publicsuffix2==2.20191221
 pyahocorasick==2.1.0
 pycparser==2.21
-pygmars==0.7.0
+pygmars==0.9.0
 Pygments==2.13.0
 pymaven-patch==0.3.2
 pyparsing==3.0.9

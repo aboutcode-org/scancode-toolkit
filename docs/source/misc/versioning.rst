@@ -54,4 +54,4 @@ adapted for data this way:
 
 - For any format version changes, we will provide a documentation on the format
   and its updates using JSON examples and a comprehensive and updated data
-  dictionary. See https://github.com/nexB/scancode-toolkit/issues/2008 for details.
+  dictionary. See https://github.com/aboutcode-org/scancode-toolkit/issues/2008 for details.

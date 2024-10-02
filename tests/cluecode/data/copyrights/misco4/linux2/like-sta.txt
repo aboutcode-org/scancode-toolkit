@@ -1,0 +1,1 @@
+ *      Ad-HoC(C): Like STA

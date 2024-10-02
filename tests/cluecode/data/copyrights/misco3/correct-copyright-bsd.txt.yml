@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - copyright of UC Berkeley's Berkeley Software
+holders:
+  - UC Berkeley's Berkeley Software
+holders_summary:
+  - value: UC Berkeley's Berkeley Software
+    count: 1

@@ -36,12 +36,11 @@ declared_license_expression_spdx: GPL-3.0-or-later WITH GCC-exception-3.1 AND GP
   AND BSD-4-Clause-UC AND BSD-3-Clause AND BSD-4-Clause-UC AND BSD-3-Clause-flex AND BSD-4-Clause-UC
   AND (GPL-3.0-only AND GPL-2.0-only AND LGPL-3.0-or-later WITH LicenseRef-scancode-cygwin-exception-lgpl-3.0-plus
   AND LicenseRef-scancode-other-copyleft AND LicenseRef-scancode-other-permissive) AND dtoa
-  AND LicenseRef-scancode-amd-historical AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical
-  AND LicenseRef-scancode-newlib-historical AND BSD-3-Clause AND LicenseRef-scancode-amd-historical
-  AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson
-  AND BSD-2-Clause AND BSD-3-Clause AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND LGPL-2.0-or-later
-  AND LGPL-2.0-or-later AND LicenseRef-scancode-intel-osl-1993 AND HP-1986 AND Spencer-94 AND
-  BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause
+  AND AMD-newlib AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical
+  AND BSD-3-Clause AND AMD-newlib AND BSD-3-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause
+  AND LicenseRef-scancode-x11-hanson AND BSD-2-Clause AND BSD-3-Clause AND LGPL-2.0-or-later
+  AND LGPL-2.1-or-later AND LGPL-2.0-or-later AND LGPL-2.0-or-later AND HPND-Intel AND HP-1986
+  AND Spencer-94 AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND BSD-3-Clause
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -1650,10 +1649,10 @@ license_detections:
           OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
     identifier: x11_lucent-0e33f797-24ab-9665-2d4b-10a0ff4d546d
   - license_expression: amd-historical
-    license_expression_spdx: LicenseRef-scancode-amd-historical
+    license_expression_spdx: AMD-newlib
     matches:
       - license_expression: amd-historical
-        spdx_license_expression: LicenseRef-scancode-amd-historical
+        spdx_license_expression: AMD-newlib
         from_file:
         start_line: 1152
         end_line: 1163
@@ -1814,10 +1813,10 @@ license_detections:
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-ddbdf2af-d93f-9912-6c83-1167bb9d3f80
   - license_expression: amd-historical
-    license_expression_spdx: LicenseRef-scancode-amd-historical
+    license_expression_spdx: AMD-newlib
     matches:
       - license_expression: amd-historical
-        spdx_license_expression: LicenseRef-scancode-amd-historical
+        spdx_license_expression: AMD-newlib
         from_file:
         start_line: 1269
         end_line: 1280
@@ -2174,10 +2173,10 @@ license_detections:
           \ PURPOSE.  See the\nGNU Library General Public License for more details."
     identifier: lgpl_2_1_plus_and_lgpl_2_0_plus-ce146db9-f01c-90ae-37cc-692163db9888
   - license_expression: intel-osl-1993
-    license_expression_spdx: LicenseRef-scancode-intel-osl-1993
+    license_expression_spdx: HPND-Intel
     matches:
       - license_expression: intel-osl-1993
-        spdx_license_expression: LicenseRef-scancode-intel-osl-1993
+        spdx_license_expression: HPND-Intel
         from_file:
         start_line: 1522
         end_line: 1544
@@ -2426,13 +2425,13 @@ copyright: |
   Copyright (c) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019
   Copyright (c) 2009-2014 by the LLVM contributors
   Copyright (c) 1996-2003 Red Hat, Inc.
-  Copyright (c) 2009 Free Software Foundation, Inc. <http://fsf.org/>
+  Copyright (c) 2009 Free Software Foundation, Inc. http://fsf.org
   Copyright (c) 2010 Free Software Foundation, Inc.
   Copyright 2001 by Stephen L. Moshier <moshier@na-net.ornl.gov>
   Copyright (c) 2001 Stephen L. Moshier <moshier@na-net.ornl.gov>
   Copyright (c) 1997, 1999 Free Software Foundation, Inc.
   Copyright (c) 1997, 1999, 2002, 2004 Free Software Foundation, Inc.
-  Copyright 1984, 1991 by Stephen L. Moshier Adapted
+  Copyright 1984, 1991 by Stephen L. Moshier
   Copyright (c) 1993 by Sun Microsystems, Inc.
   Copyright (c) 2009 The Go Authors
   Copyright (c) 2004-2007 David Friedman

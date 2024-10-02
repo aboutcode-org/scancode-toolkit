@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1990,2007 Oracle
+  - Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
+  - Copyright (c) 1995, 1996 The President and Fellows of Harvard University
+holders:
+  - Oracle
+  - The Regents of the University of California
+  - The President and Fellows of Harvard University
+authors:
+  - Clint Adams <schizo@debian.org>

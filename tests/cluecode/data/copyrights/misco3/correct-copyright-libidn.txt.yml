@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - copyright Simon Josefsson
+  - portions copyright The Internet Society, Tom Tromey and Red Hat, Inc.
+holders:
+  - Simon Josefsson
+  - The Internet Society, Tom Tromey and Red Hat, Inc.
+holders_summary:
+  - value: Simon Josefsson
+    count: 1
+  - value: The Internet Society, Tom Tromey and Red Hat, Inc.
+    count: 1

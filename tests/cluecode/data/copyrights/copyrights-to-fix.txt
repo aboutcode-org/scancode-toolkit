@@ -1,0 +1,68 @@
+copyright u'2017-2018, NumPy Developers
+
+
+
+Copyright (c) 2017
+(c) Convert Chebyshev
+(c) Multiply a Hermite
+(c) Multiply a Laguerre
+(c) Multiply a Legendre
+(c) Multiply a Chebyshev
+
+(c), True, True, False, False
+
+(c), False, False, False, True
+(c), False, False, True, False
+
+(c), (c)
+(c) . B' Both
+(c) B Whether
+
+
+
+Copyright 2001
+
+Copyright 2003
+
+Copyright 2008
+
+
+
+(c) 2003, C. Bond
+
+(c) Case 2 Caller
+
+(c) Compute Hessian H
+
+# Author: Jake Vanderplas  -- <vanderplas@astro.washington.edu>
+# License: BSD 3 clause (C) 2011
+import warnings
+
+
+# Copyright (c) 2011, 2012
+# Authors: Pietro Berkes,
+
+
+
+# Author: Jake Vanderplas  -- <vanderplas@astro.washington.edu>
+# License: BSD 3 clause (C) 2011
+
+import numpy as np
+
+
+
+# extra quote
+
+copyright = u"2010-2020, Benjamin Peterson"
+
+
+(c) KOKOKOKOKKuKyKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKxKyK KyKxKzKzKzKzKzKzKzKzKzKzKzKzKyKxKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzKzK K K KzK K
+
+
+
+# junk in Pyparsing
+Don't get excited!
+I said "Don't get excited!"
+Copyright © 2021
+Dot ⟶ ˙
+

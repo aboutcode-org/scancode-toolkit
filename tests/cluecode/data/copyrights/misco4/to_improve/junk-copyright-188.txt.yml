@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright DateTime.now .year Google, Inc.
+holders:
+  - DateTime.now .year Google, Inc.

@@ -5,8 +5,8 @@ what:
 copyrights:
   - Copyright (c) 2003-2004 John Gruber
   - Copyright (c) 2004-2005 Michel Fortin
-  - Copyright (c) 2003 John Gruber <http //daringfireball.net />
-  - Copyright (c) 2004-2005 Michel Fortin <http //www.michelf.com>
+  - Copyright (c) 2003 John Gruber http://daringfireball.net
+  - Copyright (c) 2004-2005 Michel Fortin http://www.michelf.com
 holders:
   - John Gruber
   - Michel Fortin
@@ -17,5 +17,3 @@ holders_summary:
     count: 2
   - value: Michel Fortin
     count: 2
-expected_failures:
-  - copyrights

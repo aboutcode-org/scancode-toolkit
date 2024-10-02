@@ -119,6 +119,8 @@
     "pkg:maven/commons-logging/commons-logging@1.1.1?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -128,6 +130,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -138,6 +141,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -148,6 +152,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -158,6 +163,7 @@
       "is_runtime": false,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -168,6 +174,7 @@
       "is_runtime": true,
       "is_optional": true,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

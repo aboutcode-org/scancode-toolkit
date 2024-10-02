@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright YEAR United States Government
+  - Copyright YEAR United States Government
+holders:
+  - United States Government
+  - United States Government
+holders_summary:
+  - value: United States Government
+    count: 2

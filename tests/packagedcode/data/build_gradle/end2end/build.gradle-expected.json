@@ -8,6 +8,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/com.google/guava@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -22,6 +23,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache/commons@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -36,6 +38,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jacoco.ant@0.7.4.201502262128?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -50,6 +53,7 @@
       "is_runtime": true,
       "is_optional": false,
       "is_resolved": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jacoco.agent@0.7.4.201502262128?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -97,6 +101,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -106,6 +112,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -116,6 +123,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -126,6 +134,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -136,6 +145,7 @@
               "is_runtime": true,
               "is_optional": false,
               "is_resolved": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

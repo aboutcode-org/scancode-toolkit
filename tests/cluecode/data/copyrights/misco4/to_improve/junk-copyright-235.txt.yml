@@ -1,0 +1,9 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) NIST.800.53.R4-AutoScalingGroupELBHealthCheckRequired (https://docs.aws.amazon.com/config/latest/developerguide/autoscaling-group-elb-healthcheck-required.html)
+    The Auto Scaling group
+holders:
+  - NIST.800.53.R4-AutoScalingGroupELBHealthCheckRequired The Auto Scaling group

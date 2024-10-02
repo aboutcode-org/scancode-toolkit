@@ -1,0 +1,192 @@
+dependencies:
+  '@babel/core': 7.0.0-beta.46
+  '@babel/preset-env': 7.0.0-beta.46
+  '@babel/preset-stage-0': 7.0.0-beta.46
+  '@vue/component-compiler': 3.3.1
+  '@vue/component-compiler-utils': 1.2.1
+  '@znck/promised': 1.0.0
+  babel-core: 7.0.0-bridge.0
+  consola: 1.3.0
+  glob: 7.1.2
+  nopt: 4.0.1
+  postcss: 6.0.22
+  postcss-less: 1.1.5
+  postcss-sass: 0.3.1
+  postcss-scss: 1.0.5
+  prettier: 1.12.1
+  resolve: github.com/zkochan/node-resolve/75108bc1d196f0cf770c3c7777f349cc4c3373b2
+  sugarss: 1.0.1
+  vue-template-compiler: 2.5.16
+devDependencies:
+  '@types/babel-core': 6.25.3
+  '@types/glob': 5.0.35
+  '@types/jest': 22.2.3
+  '@types/node': 10.0.8
+  '@types/nopt': 3.0.29
+  '@types/prettier': 1.12.2
+  babel-plugin-transform-es2015-modules-commonjs: 6.26.2
+  conventional-changelog: 1.1.24
+  coveralls: 3.0.1
+  jest: 22.4.3
+  ts-jest: 22.4.6
+  typescript: 2.8.3
+  vue: 2.5.16
+optionalDependencies:
+  less: 3.0.4
+  node-sass: 4.9.0
+packages:
+  /@babel/code-frame/7.0.0-beta.46:
+    dependencies:
+      '@babel/highlight': 7.0.0-beta.46
+    resolution:
+      integrity: sha512-7BKRkmYaPZm3Yff5HGZJKCz7RqZ5jUjknsXT6Gz5YKG23J3uq9hAj0epncCB0rlqmnZ8Q+UUpQB2tCR5mT37vw==
+  /@babel/core/7.0.0-beta.46:
+    dependencies:
+      '@babel/code-frame': 7.0.0-beta.46
+      '@babel/generator': 7.0.0-beta.46
+      '@babel/helpers': 7.0.0-beta.46
+      '@babel/template': 7.0.0-beta.46
+      '@babel/traverse': 7.0.0-beta.46
+      '@babel/types': 7.0.0-beta.46
+      babel-plugin-transform-es2015-modules-commonjs: 6.26.2
+      babylon: 7.0.0-beta.46
+      convert-source-map: 1.5.1
+      debug: 3.1.0
+      json5: 0.5.1
+      lodash: 4.17.10
+      micromatch: 2.3.11
+      resolve: github.com/zkochan/node-resolve/75108bc1d196f0cf770c3c7777f349cc4c3373b2
+      semver: 5.5.0
+      source-map: 0.5.7
+    dev: false
+    resolution:
+      integrity: sha512-lCDbBSAhNAt+nL98xbgWmuhgrIxKvbvFHf73zlNCuXCHJkdlo7qzTofYK0ZWb+OVce8fQ17fC7DwTIhAwowzMw==
+  /@babel/preset-env/7.0.0-beta.46:
+    dependencies:
+      '@babel/helper-module-imports': 7.0.0-beta.46
+      '@babel/helper-plugin-utils': 7.0.0-beta.46
+      '@babel/plugin-proposal-async-generator-functions': 7.0.0-beta.46
+      '@babel/plugin-proposal-object-rest-spread': 7.0.0-beta.46
+      '@babel/plugin-proposal-optional-catch-binding': 7.0.0-beta.46
+      '@babel/plugin-proposal-unicode-property-regex': 7.0.0-beta.46
+      '@babel/plugin-syntax-async-generators': 7.0.0-beta.46
+      '@babel/plugin-syntax-object-rest-spread': 7.0.0-beta.46
+      '@babel/plugin-syntax-optional-catch-binding': 7.0.0-beta.46
+      '@babel/plugin-transform-arrow-functions': 7.0.0-beta.46
+      '@babel/plugin-transform-async-to-generator': 7.0.0-beta.46
+      '@babel/plugin-transform-block-scoped-functions': 7.0.0-beta.46
+      '@babel/plugin-transform-block-scoping': 7.0.0-beta.46
+      '@babel/plugin-transform-classes': 7.0.0-beta.46
+      '@babel/plugin-transform-computed-properties': 7.0.0-beta.46
+      '@babel/plugin-transform-destructuring': 7.0.0-beta.46
+      '@babel/plugin-transform-dotall-regex': 7.0.0-beta.46
+      '@babel/plugin-transform-duplicate-keys': 7.0.0-beta.46
+      '@babel/plugin-transform-exponentiation-operator': 7.0.0-beta.46
+      '@babel/plugin-transform-for-of': 7.0.0-beta.46
+      '@babel/plugin-transform-function-name': 7.0.0-beta.46
+      '@babel/plugin-transform-literals': 7.0.0-beta.46
+      '@babel/plugin-transform-modules-amd': 7.0.0-beta.46
+      '@babel/plugin-transform-modules-commonjs': 7.0.0-beta.46
+      '@babel/plugin-transform-modules-systemjs': 7.0.0-beta.46
+      '@babel/plugin-transform-modules-umd': 7.0.0-beta.46
+      '@babel/plugin-transform-new-target': 7.0.0-beta.46
+      '@babel/plugin-transform-object-super': 7.0.0-beta.46
+      '@babel/plugin-transform-parameters': 7.0.0-beta.46
+      '@babel/plugin-transform-regenerator': 7.0.0-beta.46
+      '@babel/plugin-transform-shorthand-properties': 7.0.0-beta.46
+      '@babel/plugin-transform-spread': 7.0.0-beta.46
+      '@babel/plugin-transform-sticky-regex': 7.0.0-beta.46
+      '@babel/plugin-transform-template-literals': 7.0.0-beta.46
+      '@babel/plugin-transform-typeof-symbol': 7.0.0-beta.46
+      '@babel/plugin-transform-unicode-regex': 7.0.0-beta.46
+      browserslist: 3.2.7
+      invariant: 2.2.4
+      semver: 5.5.0
+    dev: false
+    peerDependencies:
+      '@babel/core': 7.0.0-beta.46
+    resolution:
+      integrity: sha512-zC+QsTmteh2c1CtjeskvUKsqvRpgwBZxOxTk6p+F3gL6uJszP4OWzffgPrsV2wo9vccppTaCzYMFeiJscnne6g==
+
+  /babel-template/6.26.0:
+    dependencies:
+      babel-runtime: 6.26.0
+      babel-traverse: 6.26.0
+      babel-types: 6.26.0
+      babylon: 6.18.0
+      lodash: 4.17.10
+    resolution:
+      integrity: sha1-3gPi0WOWsGn0bdn/+FIfsaDjXgI=
+  /split2/2.2.0:
+    dependencies:
+      through2: 2.0.3
+    dev: true
+    resolution:
+      integrity: sha512-RAb22TG39LhI31MbreBgIuKiIKhVsawfTgEGqKHTK87aG+ul/PB8Sqoi3I7kVdRWiCfrKxK3uo4/YUkpNvhPbw==
+  /sprintf-js/1.0.3:
+    dev: true
+    resolution:
+      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+  /yargs/7.1.0:
+    dependencies:
+      camelcase: 3.0.0
+      cliui: 3.2.0
+      decamelize: 1.2.0
+      get-caller-file: 1.0.2
+      os-locale: 1.4.0
+      read-pkg-up: 1.0.1
+      require-directory: 2.1.1
+      require-main-filename: 1.0.1
+      set-blocking: 2.0.0
+      string-width: 1.0.2
+      which-module: 1.0.0
+      y18n: 3.2.1
+      yargs-parser: 5.0.0
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha1-a6MY6xaWFyf10oT46gA+jWFU0Mg=
+  github.com/zkochan/node-resolve/75108bc1d196f0cf770c3c7777f349cc4c3373b2:
+    dependencies:
+      path-parse: 1.0.5
+    name: resolve
+    resolution:
+      tarball: 'https://codeload.github.com/zkochan/node-resolve/tar.gz/75108bc1d196f0cf770c3c7777f349cc4c3373b2'
+    version: 1.7.0
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 5
+shrinkwrapVersion: 3
+specifiers:
+  '@babel/core': ^7.0.0-beta.46
+  '@babel/preset-env': ^7.0.0-beta.46
+  '@babel/preset-stage-0': ^7.0.0-beta.46
+  '@types/babel-core': ^6.25.3
+  '@types/glob': ^5.0.35
+  '@types/jest': ^22.2.3
+  '@types/node': ^10.0.3
+  '@types/nopt': ^3.0.29
+  '@types/prettier': ^1.12.1
+  '@vue/component-compiler': ^3.1.1
+  '@vue/component-compiler-utils': ^1.2.1
+  '@znck/promised': ^1.0.0
+  babel-core: ^7.0.0-bridge.0
+  babel-plugin-transform-es2015-modules-commonjs: ^6.26.2
+  consola: ^1.3.0
+  conventional-changelog: ^1.1.24
+  coveralls: ^3.0.1
+  glob: ^7.1.2
+  jest: ^22.4.3
+  less: ^3.0.2
+  node-sass: ^4.9.0
+  nopt: ^4.0.1
+  postcss: ^6.0.22
+  postcss-less: ^1.1.5
+  postcss-sass: ^0.3.1
+  postcss-scss: ^1.0.5
+  prettier: ^1.12.1
+  resolve: zkochan/node-resolve
+  sugarss: ^1.0.1
+  ts-jest: ^22.4.4
+  typescript: ^2.8.3
+  vue: ^2.5.16
+  vue-template-compiler: ^2.5.16

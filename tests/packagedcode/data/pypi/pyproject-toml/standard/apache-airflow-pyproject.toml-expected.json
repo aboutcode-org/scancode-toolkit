@@ -1,0 +1,111 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "apache-airflow",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Programmatically author, schedule and monitor data pipelines",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Apache Software Foundation",
+        "email": "dev@airflow.apache.org",
+        "url": null
+      },
+      {
+        "type": "person",
+        "role": "maintainer",
+        "name": "Apache Software Foundation",
+        "email": "dev@airflow.apache.org",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "airflow",
+      "orchestration",
+      "workflow",
+      "dag",
+      "pipelines",
+      "automation",
+      "data",
+      "Development Status :: 5 - Production/Stable",
+      "Environment :: Console",
+      "Environment :: Web Environment",
+      "Framework :: Apache Airflow",
+      "Intended Audience :: Developers",
+      "Intended Audience :: System Administrators",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Topic :: System :: Monitoring"
+    ],
+    "homepage_url": "https://airflow.apache.org/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": "https://github.com/apache/airflow/issues",
+    "code_view_url": "https://github.com/apache/airflow",
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "apache-2.0",
+    "declared_license_expression_spdx": "Apache-2.0",
+    "license_detections": [
+      {
+        "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
+        "matches": [
+          {
+            "license_expression": "apache-2.0",
+            "spdx_license_expression": "Apache-2.0",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 95.0,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "rule_relevance": 95,
+            "rule_identifier": "pypi_apache_no-version.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
+            "matched_text": "- 'License :: OSI Approved :: Apache Software License'"
+          }
+        ],
+        "identifier": "apache_2_0-e267f9d9-ae62-e9c9-9cc2-8cd0a1e4928f"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "classifiers:\n  - 'License :: OSI Approved :: Apache Software License'\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "Documentation": "https://airflow.apache.org/docs/",
+      "Downloads": "https://archive.apache.org/dist/airflow/",
+      "Release Notes": "https://airflow.apache.org/docs/apache-airflow/stable/release_notes.html",
+      "Slack Chat": "https://s.apache.org/airflow-slack",
+      "Twitter": "https://twitter.com/ApacheAirflow",
+      "YouTube": "https://www.youtube.com/channel/UCSXwxpWZQ7XZ1WL3wqevChA/"
+    },
+    "dependencies": [],
+    "repository_homepage_url": "https://pypi.org/project/apache-airflow",
+    "repository_download_url": null,
+    "api_data_url": "https://pypi.org/pypi/apache-airflow/json",
+    "datasource_id": "pypi_pyproject_toml",
+    "purl": "pkg:pypi/apache-airflow"
+  }
+]

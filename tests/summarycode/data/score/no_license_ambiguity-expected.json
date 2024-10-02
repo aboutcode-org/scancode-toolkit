@@ -38,7 +38,12 @@
           "url": null
         }
       ],
-      "keywords": [],
+      "keywords": [
+        "random",
+        "rng",
+        "algorithms",
+        "no-std"
+      ],
       "homepage_url": "https://rust-random.github.io/book",
       "download_url": null,
       "size": null,
@@ -83,6 +88,8 @@
       "extracted_license_statement": "MIT OR Apache-2.0",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "workspace": {
           "members": [
@@ -91,7 +98,9 @@
             "rand_chacha",
             "rand_pcg"
           ]
-        }
+        },
+        "documentation_url": "https://docs.rs/rand",
+        "rust_edition": "2018"
       },
       "repository_homepage_url": "https://crates.io/crates/rand",
       "repository_download_url": "https://crates.io/api/v1/crates/rand/0.8.5/download",
@@ -106,7 +115,136 @@
       "purl": "pkg:cargo/rand@0.8.5"
     }
   ],
-  "dependencies": [],
+  "dependencies": [
+    {
+      "purl": "pkg:cargo/rand_core",
+      "extracted_requirement": "0.6.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "rand_core",
+        "version": "0.6.0"
+      },
+      "dependency_uid": "pkg:cargo/rand_core?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/rand@0.8.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "no_license_ambiguity/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/log",
+      "extracted_requirement": "0.4.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "0.4.4"
+      },
+      "dependency_uid": "pkg:cargo/log?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/rand@0.8.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "no_license_ambiguity/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/serde",
+      "extracted_requirement": "1.0.103",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "1.0.103",
+        "features": [
+          "derive"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/serde?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/rand@0.8.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "no_license_ambiguity/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/rand_chacha",
+      "extracted_requirement": "0.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "rand_chacha",
+        "version": "0.3.0",
+        "default-features": false
+      },
+      "dependency_uid": "pkg:cargo/rand_chacha?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/rand@0.8.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "no_license_ambiguity/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/packed_simd",
+      "extracted_requirement": "0.3.7",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "package": "packed_simd_2",
+        "version": "0.3.7",
+        "features": [
+          "into_bits"
+        ]
+      },
+      "dependency_uid": "pkg:cargo/packed_simd?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/rand@0.8.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "no_license_ambiguity/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/rand_pcg",
+      "extracted_requirement": "0.3.0",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "rand_pcg",
+        "version": "0.3.0"
+      },
+      "dependency_uid": "pkg:cargo/rand_pcg?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/rand@0.8.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "no_license_ambiguity/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/bincode",
+      "extracted_requirement": "1.2.1",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/bincode?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/rand@0.8.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "no_license_ambiguity/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    }
+  ],
   "license_detections": [
     {
       "identifier": "apache_2_0-e3938c59-cc73-037c-3372-e20c26c25f48",
@@ -427,7 +565,12 @@
               "url": null
             }
           ],
-          "keywords": [],
+          "keywords": [
+            "random",
+            "rng",
+            "algorithms",
+            "no-std"
+          ],
           "homepage_url": "https://rust-random.github.io/book",
           "download_url": null,
           "size": null,
@@ -473,6 +616,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "workspace": {
               "members": [
@@ -481,9 +626,112 @@
                 "rand_chacha",
                 "rand_pcg"
               ]
-            }
+            },
+            "documentation_url": "https://docs.rs/rand",
+            "rust_edition": "2018"
           },
-          "dependencies": [],
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/rand_core",
+              "extracted_requirement": "0.6.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "path": "rand_core",
+                "version": "0.6.0"
+              }
+            },
+            {
+              "purl": "pkg:cargo/log",
+              "extracted_requirement": "0.4.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "0.4.4"
+              }
+            },
+            {
+              "purl": "pkg:cargo/serde",
+              "extracted_requirement": "1.0.103",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "1.0.103",
+                "features": [
+                  "derive"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/rand_chacha",
+              "extracted_requirement": "0.3.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "path": "rand_chacha",
+                "version": "0.3.0",
+                "default-features": false
+              }
+            },
+            {
+              "purl": "pkg:cargo/packed_simd",
+              "extracted_requirement": "0.3.7",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "package": "packed_simd_2",
+                "version": "0.3.7",
+                "features": [
+                  "into_bits"
+                ]
+              }
+            },
+            {
+              "purl": "pkg:cargo/rand_pcg",
+              "extracted_requirement": "0.3.0",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "path": "rand_pcg",
+                "version": "0.3.0"
+              }
+            },
+            {
+              "purl": "pkg:cargo/bincode",
+              "extracted_requirement": "1.2.1",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
           "repository_homepage_url": "https://crates.io/crates/rand",
           "repository_download_url": "https://crates.io/api/v1/crates/rand/0.8.5/download",
           "api_data_url": "https://crates.io/api/v1/crates/rand",
@@ -668,19 +916,24 @@
       "percentage_of_license_text": 92.0,
       "copyrights": [
         {
-          "copyright": "Copyright 2018",
+          "copyright": "Copyright 2018 Developers of the Rand project",
           "start_line": 1,
           "end_line": 1
         },
         {
-          "copyright": "Copyright (c) 2014 The Rust Project",
+          "copyright": "Copyright (c) 2014 The Rust Project Developers",
           "start_line": 2,
           "end_line": 2
         }
       ],
       "holders": [
         {
-          "holder": "The Rust Project",
+          "holder": "Developers of the Rand project",
+          "start_line": 1,
+          "end_line": 1
+        },
+        {
+          "holder": "The Rust Project Developers",
           "start_line": 2,
           "end_line": 2
         }
