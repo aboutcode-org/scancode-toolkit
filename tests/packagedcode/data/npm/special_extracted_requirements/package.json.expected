@@ -68,7 +68,7 @@
     },
     "dependencies": [
       {
-        "purl": "pkg:npm/strip-ansi-cjs%40npm:strip-ansi",
+        "purl": "pkg:npm/strip-ansi",
         "extracted_requirement": "^6.0.1",
         "scope": "devDependencies",
         "is_runtime": false,

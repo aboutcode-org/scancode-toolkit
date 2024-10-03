@@ -95,7 +95,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/string-width-cjs%40%22npm:string-width",
+              "purl": "pkg:npm/string-width",
               "extracted_requirement": "^4.2.0",
               "scope": "dependencies",
               "is_runtime": true,
@@ -117,7 +117,7 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/strip-ansi-cjs%40%22npm:strip-ansi",
+              "purl": "pkg:npm/strip-ansi",
               "extracted_requirement": "^6.0.1",
               "scope": "dependencies",
               "is_runtime": true,

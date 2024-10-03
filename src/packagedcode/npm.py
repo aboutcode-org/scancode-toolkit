@@ -376,6 +376,18 @@ class BaseNpmHandler(models.DatafileHandler):
                     if '_' in metadata:
                         requirement, _extra = metadata.split('_')
 
+                if ':' in requirement and '@' in requirement:
+                    # dependencies with requirements like this are aliases and should be reported
+                    aliased_package, _, constraint = requirement.rpartition('@')
+                    _, _, aliased_package_name = aliased_package.rpartition(':')
+                    sdns, _ , sdname = aliased_package_name.rpartition('/')
+                    dep_purl = PackageURL(
+                        type=cls.default_package_type,
+                        namespace=sdns,
+                        name=sdname
+                    ).to_string()
+                    requirement = constraint
+
                 dep_package = models.DependentPackage(
                     purl=dep_purl,
                     scope=scope,
@@ -1014,13 +1026,12 @@ class YarnLockV1Handler(BaseNpmHandler):
                         ns_name = ns_name.replace('"', '')
                     ns, _ , name = ns_name.rpartition('/')
 
-                    # sometimes constraints appear in the form of
-                    # wrap-ansi-cjs "npm:wrap-ansi@^7.0.0"
-                    if '@' in constraint:
-                        # "npm:wrap-ansi" should be appended to `name`, joined
-                        # with an "@"
-                        constraint_package, _, constraint = constraint.partition('@')
-                        name = f'{name}@{constraint_package}'
+                    if ':' in constraint and '@' in constraint:
+                        # dependencies with requirements like this are aliases and should be reported
+                        aliased_package, _, constraint = constraint.rpartition('@')
+                        _, _, aliased_package_name = aliased_package.rpartition(':')
+                        ns, _ , name = aliased_package_name.rpartition('/')
+
                     sub_dependencies.append((ns, name, constraint,))
 
                 elif line.startswith(' ' * 2):
@@ -1780,9 +1791,13 @@ def deps_mapper(deps, package, field_name, is_direct=True):
         ns, name = split_scoped_package_name(fqname)
         if not name:
             continue
-        if '@' in requirement:
-            requirement_package, _, requirement = requirement.partition('@')
-            name = f'{name}@{requirement_package}'
+
+        if ':' in requirement and '@' in requirement:
+            # dependencies with requirements like this are aliases and should be reported
+            aliased_package, _, requirement = requirement.rpartition('@')
+            _, _, aliased_package_name = aliased_package.rpartition(':')
+            ns, _ , name = aliased_package_name.rpartition('/')
+
         purl = PackageURL(type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name
