@@ -49,6 +49,7 @@ v33.0.0 (next next, roadmap)
 - New and improved copyright detection with many false positive removed
   and refined detection added.
 
+- Fix Python ``SyntaxWarning`` in textcode module.
 
 v32.2.1 - 2024-07-02
 ---------------------
