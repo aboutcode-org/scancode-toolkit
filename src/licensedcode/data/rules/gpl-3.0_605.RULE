@@ -1,0 +1,9 @@
+---
+license_expression: gpl-3.0
+is_license_notice: yes
+referenced_filenames:
+    - docs/COPYING
+---
+
+distributed under the Terms and Conditions of the GPLv3, which can be
+found in full-text in docs/COPYING.

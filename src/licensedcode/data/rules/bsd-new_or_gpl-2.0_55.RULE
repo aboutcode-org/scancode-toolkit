@@ -1,0 +1,9 @@
+---
+license_expression: bsd-new OR gpl-2.0
+is_license_notice: yes
+is_continuous: yes
+relevance: 100
+notes: Seen in libcap in Go
+---
+
+{{BSD three clause, or GPL2.}}

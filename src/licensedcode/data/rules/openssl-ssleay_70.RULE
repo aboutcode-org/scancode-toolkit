@@ -1,0 +1,7 @@
+---
+license_expression: openssl-ssleay
+is_license_notice: yes
+relevance: 100
+---
+
+released under the openSSL license as a part of the Golang Standard Libary

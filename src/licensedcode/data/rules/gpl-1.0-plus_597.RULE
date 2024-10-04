@@ -1,0 +1,9 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - docs/license.txt
+---
+
+Distributed under the terms and conditions of the GPL as stated in docs/license.txt
