@@ -14,6 +14,29 @@ import re
 # A regex to match a string that may contain a copyright year.
 # This is a year between 1960 and today prefixed and suffixed with
 # either a white-space or some punctuation.
+from cluecode.normalizer import normalize_copyright_symbols
+
+def detect_copyrights(file_path):
+    # Read the content of the file
+    with open(file_path, 'r', encoding='utf-8') as file:
+        text = file.read()
+
+    # Normalize the text before processing it
+    normalized_text = normalize_copyright_symbols(text)
+
+    # Save the normalized content back to the file (optional)
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(normalized_text)
+
+    return normalized_text
+
+# Specify the path to your document directly here
+file_path = "./copyright.py"
+
+# Call the function and print the result
+normalized_content = detect_copyrights(file_path)
+print(normalized_content)
+
 
 all_years = tuple(str(year) for year in range(1960, datetime.today().year))
 years = r'[\(\.,\-\)\s]+(' + '|'.join(all_years) + r')([\(\.,\-\)\s]+|$)'

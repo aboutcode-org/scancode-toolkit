@@ -26,6 +26,29 @@ from commoncode.text import unixlinesep
 
 from cluecode import copyrights_hint
 
+from cluecode.normalizer import normalize_copyright_symbols
+
+def detect_copyrights(file_path):
+    # Read the content of the file
+    with open(file_path, 'r', encoding='utf-8') as file:
+        text = file.read()
+
+    # Normalize the text before processing it
+    normalized_text = normalize_copyright_symbols(text)
+
+    # Save the normalized content back to the file (optional)
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(normalized_text)
+
+    return normalized_text
+
+# Specify the path to your document directly here
+file_path = "./copyright.py"
+
+# Call the function and print the result
+normalized_content = detect_copyrights(file_path)
+print(normalized_content)
+
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
 
