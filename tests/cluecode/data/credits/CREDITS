@@ -1,0 +1,115 @@
+	This is at least a partial credits-file of people that have
+	contributed to the Linux project.  It is sorted by name and
+	formatted to allow easy grepping and beautification by
+	scripts.  The fields are: name (N), email (E), web-address
+	(W), PGP key ID and fingerprint (P), description (D), and
+	snail-mail address (S).
+	Thanks,
+
+			Linus
+----------
+
+N: Matt Mackal
+E: mpm@selenic.com
+D: SLOB slab allocator
+
+N: Werner Almesberger
+E: werner@almesberger.net
+W: http://www.almesberger.net/
+D: dosfs, LILO, some fd features, ATM, various other hacks here and there
+S: Buenos Aires
+S: Argentina
+
+N: Tim Alpaerts
+E: tim_alpaerts@toyota-motor-europe.com
+D: 802.2 class II logical link control layer,
+D: the humble start of an opening towards the IBM SNA protocols
+S: Klaproosstraat 72 c 10
+S: B-2610 Wilrijk-Antwerpen
+S: Belgium
+
+N: Anton Altaparmakov
+E: aia21@cantab.net
+W: http://www-stu.christs.cam.ac.uk/~aia21/
+D: Author of new NTFS driver, various other kernel hacks.
+S: Christ's College
+S: Cambridge CB2 3BU
+S: United Kingdom
+
+N: C. Scott Ananian
+E: cananian@alumni.princeton.edu
+W: http://www.pdos.lcs.mit.edu/~cananian
+P: 1024/85AD9EED AD C0 49 08 91 67 DF D7  FA 04 1A EE 09 E8 44 B0
+D: Unix98 pty support.
+D: APM update to 1.2 spec.
+D: /devfs hacking.
+S: 7 Kiwi Loop
+S: Howell, NJ 07731
+S: USA
+
+N: Erik Andersen
+E: andersen@codepoet.org
+W: http://www.codepoet.org/
+P: 1024D/30D39057 1BC4 2742 E885 E4DE 9301  0C82 5F9B 643E 30D3 9057
+D: Maintainer of ide-cd and Uniform CD-ROM driver, 
+D: ATAPI CD-Changer support, Major 2.1.x CD-ROM update.
+S: 352 North 525 East
+S: Springville, Utah 84663
+S: USA
+
+N: Michel Aubry
+E: giovanni <giovanni@sudfr.com>
+D: Aladdin 1533/1543(C) chipset IDE
+D: VIA MVP-3/TX Pro III chipset IDE
+
+N: Ralf Baechle
+E: ralf@gnu.org
+P: 1024/AF7B30C1 CF 97 C2 CC 6D AE A7 FE  C8 BA 9C FC 88 DE 32 C3
+D: Linux/MIPS port
+D: Linux/68k hacker
+S: Hauptstrasse 19
+S: 79837 St. Blasien
+S: Germany
+
+N: Krishna Balasubramanian
+E: balasub@cis.ohio-state.edu
+D: Wrote SYS V IPC (part of standard kernel since 0.99.10)
+
+N: Chris Ball
+E: chris@printf.net
+D: Former maintainer of the MMC/SD/SDIO subsystem.
+
+N: Dario Ballabio
+E: ballabio_dario@emc.com
+E: dario.ballabio@tiscalinet.it
+E: dario.ballabio@inwind.it
+D: Author and maintainer of the Ultrastor 14F/34F SCSI driver
+D: Author and maintainer of the EATA ISA/EISA/PCI SCSI driver
+S: EMC Corporation
+S: Milano
+S: Italy
+
+N: Paul Bame
+E: bame@debian.org
+E: bame@puffin.external.hp.com
+E: paul_bame@hp.com
+W: http://www.parisc-linux.org
+D: PA-RISC 32 and 64-bit early boot, firmware interface, interrupts, misc
+S: MS42
+S: Hewlett-Packard
+S: 3404 E Harmony Rd
+S: Fort Collins, CO 80525
+S: USA
+
+N: Juan Jose Ciarlante
+W: http://juanjox.kernelnotes.org/
+E: jjciarla@raiz.uncu.edu.ar
+E: jjo@mendoza.gov.ar
+D: Network driver alias support
+D: IP masq hashing and app modules
+D: IP masq 2.1 features and bugs
+S: Las Cuevas 2385 - Bo Guemes
+S: Las Heras, Mendoza CP 5539
+S: Argentina
+W: http://juanjox.raiz.uncu.edu.ar/
+

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) 2003-2004 by Harald Welte <laforge@netfilter.org>
+  - (c) 2006-2012 Patrick McHardy <kaber@trash.net>
+  - Copyright (c) CC Computer Consultants GmbH, 2007 - 2008 Development
+holders:
+  - Harald Welte
+  - Patrick McHardy
+  - CC Computer Consultants GmbH, Development

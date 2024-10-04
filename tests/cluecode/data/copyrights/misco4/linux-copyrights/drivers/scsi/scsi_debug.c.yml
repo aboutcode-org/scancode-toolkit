@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1992 Eric Youngdale Simulate
+  - Copyright (c) 2001 - 2018 Douglas Gilbert
+holders:
+  - Eric Youngdale Simulate
+  - Douglas Gilbert

@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - copyright by the original
+  - Copyright (c) 2001-2002, SSH Communications Security Corp and Jouni Malinen <j@w1.fi>
+  - Copyright (c) 2002-2003, Jouni Malinen <j@w1.fi>
+  - Copyright (c) 2004-2005, Intel Corporation
+holders:
+  - the original
+  - SSH Communications Security Corp and Jouni Malinen
+  - Jouni Malinen
+  - Intel Corporation
+authors:
+  - James Ketrenos <jketreno@linux.intel.com>
