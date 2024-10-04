@@ -1563,15 +1563,20 @@ class Package(PackageData):
         label='datasource ids',
         help='List of the datasource ids used to create this package.'
     )
-
+    
+    license_clarity_score = attr.ib(default=attr.Factory(dict))
+    
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.purl:
             self.purl = self.set_purl()
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
 
-    def to_dict(self):
-        return super().to_dict(with_details=False)
+    def to_dict(self, package_summary=False):
+        data = super().to_dict(with_details=False)
+        if not package_summary:
+            data.pop("license_clarity_score")
+        return data
 
     def to_package_data(self):
         mapping = super().to_dict(with_details=True)

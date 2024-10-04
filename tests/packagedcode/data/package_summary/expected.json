@@ -1,0 +1,1329 @@
+{
+  "packages": [
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "change-case",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Blake Embrey",
+          "email": "hello@blakeembrey.com",
+          "url": "http://blakeembrey.me"
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
+      "holder": "Blake Embrey",
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/change-case/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": "gpl-3.0-plus",
+      "other_license_expression_spdx": "GPL-3.0-or-later",
+      "other_license_detections": [],
+      "extracted_license_statement": "- MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/change-case",
+      "repository_download_url": null,
+      "api_data_url": "https://registry.npmjs.org/change-case",
+      "package_uid": "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "change-case-change-case-5.4.4/packages/change-case/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "license_clarity_score": {
+        "score": 70,
+        "declared_license": true,
+        "identification_precision": true,
+        "has_license_text": false,
+        "declared_copyrights": true,
+        "conflicting_license_categories": true,
+        "ambiguous_compound_licensing": false
+      },
+      "purl": "pkg:npm/change-case"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "sponge-case",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Nate Rabins",
+          "email": "nrabins@gmail.com",
+          "url": "http://rabins.dev"
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
+      "holder": "Blake Embrey",
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/sponge-case/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/sponge-case",
+      "repository_download_url": null,
+      "api_data_url": "https://registry.npmjs.org/sponge-case",
+      "package_uid": "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "change-case-change-case-5.4.4/packages/sponge-case/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "license_clarity_score": {
+        "score": 90,
+        "declared_license": true,
+        "identification_precision": true,
+        "has_license_text": false,
+        "declared_copyrights": true,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": false
+      },
+      "purl": "pkg:npm/sponge-case"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "swap-case",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Blake Embrey",
+          "email": "hello@blakeembrey.com",
+          "url": "http://blakeembrey.me"
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
+      "holder": "Blake Embrey",
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/swap-case/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/swap-case",
+      "repository_download_url": null,
+      "api_data_url": "https://registry.npmjs.org/swap-case",
+      "package_uid": "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "change-case-change-case-5.4.4/packages/swap-case/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "license_clarity_score": {
+        "score": 90,
+        "declared_license": true,
+        "identification_precision": true,
+        "has_license_text": false,
+        "declared_copyrights": true,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": false
+      },
+      "purl": "pkg:npm/swap-case"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
+      "name": "title-case",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Blake Embrey",
+          "email": "hello@blakeembrey.com",
+          "url": "http://blakeembrey.me"
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
+      "holder": "Blake Embrey",
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/title-case/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/title-case",
+      "repository_download_url": null,
+      "api_data_url": "https://registry.npmjs.org/title-case",
+      "package_uid": "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "change-case-change-case-5.4.4/packages/title-case/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "license_clarity_score": {
+        "score": 90,
+        "declared_license": true,
+        "identification_precision": true,
+        "has_license_text": false,
+        "declared_copyrights": true,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": false
+      },
+      "purl": "pkg:npm/title-case"
+    }
+  ],
+  "dependencies": [],
+  "license_detections": [
+    {
+      "identifier": "gpl_3_0_plus-c07595af-3cea-8c65-c6fc-d8a3300f35b5",
+      "license_expression": "gpl-3.0-plus",
+      "license_expression_spdx": "GPL-3.0-or-later",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "gpl-3.0-plus",
+          "license_expression_spdx": "GPL-3.0-or-later",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/change-case/src/index.js",
+          "start_line": 1,
+          "end_line": 12,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 102,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl-3.0-plus_60.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_60.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 4,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/change-case/package.json",
+          "start_line": 3,
+          "end_line": 3,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 4,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/change-case/package.json",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+          "rule_url": null
+        }
+      ]
+    },
+    {
+      "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/LICENSE",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_26.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "change-case-change-case-5.4.4",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_26.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+            }
+          ],
+          "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 33.33,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2014 Blake Embrey (hello@blakeembrey.com)",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Blake Embrey",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/LICENSE",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit_26.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+                }
+              ],
+              "identifier": "mit-d5ea549d-8e03-2a31-f0cc-bdb0a5b86996"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "workspaces": [
+              "packages/*"
+            ]
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "npm_package_json",
+          "purl": null
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/change-case",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/change-case/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "change-case",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Blake Embrey",
+              "email": "hello@blakeembrey.com",
+              "url": "http://blakeembrey.me"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/change-case/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://www.npmjs.com/package/change-case",
+          "repository_download_url": null,
+          "api_data_url": "https://registry.npmjs.org/change-case",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/change-case"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/change-case/package.json",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 11.76,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Blake Embrey",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/change-case/src",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/change-case/src/index.js",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/change-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "gpl-3.0-plus",
+      "detected_license_expression_spdx": "GPL-3.0-or-later",
+      "license_detections": [
+        {
+          "license_expression": "gpl-3.0-plus",
+          "license_expression_spdx": "GPL-3.0-or-later",
+          "matches": [
+            {
+              "license_expression": "gpl-3.0-plus",
+              "spdx_license_expression": "GPL-3.0-or-later",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/change-case/src/index.js",
+              "start_line": 1,
+              "end_line": 12,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 102,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "gpl-3.0-plus_60.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_60.RULE"
+            }
+          ],
+          "identifier": "gpl_3_0_plus-c07595af-3cea-8c65-c6fc-d8a3300f35b5"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 100.0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/sponge-case",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/sponge-case/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "sponge-case",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Nate Rabins",
+              "email": "nrabins@gmail.com",
+              "url": "http://rabins.dev"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/sponge-case/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://www.npmjs.com/package/sponge-case",
+          "repository_download_url": null,
+          "api_data_url": "https://registry.npmjs.org/sponge-case",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/sponge-case"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/sponge-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/sponge-case/package.json",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 11.76,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Nate Rabins",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/swap-case",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/swap-case/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "swap-case",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Blake Embrey",
+              "email": "hello@blakeembrey.com",
+              "url": "http://blakeembrey.me"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/swap-case/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://www.npmjs.com/package/swap-case",
+          "repository_download_url": null,
+          "api_data_url": "https://registry.npmjs.org/swap-case",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/swap-case"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/swap-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/swap-case/package.json",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 11.76,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Blake Embrey",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/title-case",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/title-case/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "title-case",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Blake Embrey",
+              "email": "hello@blakeembrey.com",
+              "url": "http://blakeembrey.me"
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/title-case/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://www.npmjs.com/package/title-case",
+          "repository_download_url": null,
+          "api_data_url": "https://registry.npmjs.org/title-case",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/title-case"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "change-case-change-case-5.4.4.zip-extract/change-case-change-case-5.4.4/packages/title-case/package.json",
+              "start_line": 3,
+              "end_line": 3,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 11.76,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Blake Embrey",
+          "start_line": 4,
+          "end_line": 5
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "change-case-change-case-5.4.4/packages/title-case/tsconfig.json",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/title-case?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    }
+  ]
+}

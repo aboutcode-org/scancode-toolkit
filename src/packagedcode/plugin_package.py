@@ -13,14 +13,18 @@ import os
 
 import attr
 import click
+import copy
 
 from commoncode.cliutils import PluggableCommandLineOption
 from commoncode.cliutils import DOC_GROUP
 from commoncode.cliutils import SCAN_GROUP
+from commoncode.cliutils import POST_SCAN_GROUP
 from commoncode.resource import Resource
 from commoncode.resource import strip_first_path_segment
 from plugincode.scan import scan_impl
+from plugincode.post_scan import post_scan_impl
 from plugincode.scan import ScanPlugin
+from plugincode.post_scan import PostScanPlugin
 
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
@@ -36,6 +40,8 @@ from packagedcode.models import Dependency
 from packagedcode.models import Package
 from packagedcode.models import PackageData
 from packagedcode.models import PackageWithResources
+from packagedcode.models import get_files_for_packages
+from summarycode.score import  compute_license_score
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 TRACE_ASSEMBLY = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
@@ -200,7 +206,7 @@ class PackageScanner(ScanPlugin):
             package_only=package_only,
         )
 
-    def process_codebase(self, codebase, strip_root=False, package_only=False, **kwargs):
+    def process_codebase(self, codebase, strip_root=False, package_only=False, package_summary=False, **kwargs):
         """
         Populate the ``codebase`` top level ``packages`` and ``dependencies``
         with package and dependency instances, assembling parsed package data
@@ -260,7 +266,7 @@ class PackageScanner(ScanPlugin):
                 logger_debug(f'packagedcode: process_codebase: add_license_from_sibling_file: modified: {modified}')
 
         # Create codebase-level packages and dependencies
-        create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
+        create_package_and_deps(codebase, package_summary, strip_root=strip_root, **kwargs)
         #raise Exception()
 
         if has_licenses:
@@ -272,7 +278,80 @@ class PackageScanner(ScanPlugin):
                 if TRACE_LICENSE and modified:
                     logger_debug(f'packagedcode: process_codebase: add_referenced_license_matches_from_package: modified: {modified}')
 
+def get_package_resources(codebase):
+    """
+    Get resources for each package in the codebase.
+    """
+    resource_for_packages = list(get_files_for_packages(codebase))
+    package_resources = {}
 
+    for resource, package_uid in resource_for_packages:
+        if package_uid not in package_resources:
+            package_resources[package_uid] = []
+        package_resources[package_uid].append(resource)
+
+    return package_resources
+    
+@post_scan_impl
+class PackageSummary(PostScanPlugin):
+    """
+    Summary at the Package Level.
+    """
+    run_order = 11
+    sort_order = 11
+
+    options = [
+        PluggableCommandLineOption(('--package-summary',),
+        is_flag=True,
+        default=False,
+        help='Summarize scans by providing License Clarity Score ' 
+        'and populating other license/copyright attributes '
+        'for package instances from their key files and other files.',
+        required_options=['classify', 'package'],
+        help_group=POST_SCAN_GROUP)
+    ]
+
+    def is_enabled(self, package_summary, **kwargs):
+        return package_summary
+
+    def process_codebase(self, codebase, package_summary, **kwargs):
+        """
+        Process the codebase.
+        """
+        
+        packages = codebase.attributes.packages
+        package_resources = get_package_resources(codebase)
+        package_attributes_map = {}
+        attributes_to_update = [
+            'license_clarity_score', 
+            'copyright', 
+            'holder', 
+            'notice_text', 
+            'other_license_expression', 
+            'other_license_expression_spdx'
+            ]
+            
+        for package in packages:
+            package_uid = package['package_uid']
+            if package_uid in package_resources:
+                package_resource = [resource for resource in package_resources[package_uid]]
+                
+            scoring_elements, package_attrs, _= compute_license_score(resources=package_resource)
+            license_clarity_score= scoring_elements.to_dict()
+            package_attributes_map[package_uid] = {
+                'license_clarity_score': license_clarity_score,
+                'copyright': package_attrs.copyright,
+                'holder': package_attrs.holder,
+                'notice_text': package_attrs.notice_text,
+                'other_license_expression': package_attrs.other_license_expression,
+                'other_license_expression_spdx': package_attrs.other_license_expression_spdx
+            }
+            if package_uid in package_attributes_map:
+                package_attrs = package_attributes_map[package_uid]
+                for attribute in attributes_to_update:
+                    package[attribute] = package_attrs[attribute]
+                
+        
 def add_license_from_file(resource, codebase):
     """
     Given a Resource, check if the detected package_data doesn't have license detections
@@ -352,7 +431,7 @@ def get_installed_packages(root_dir, processes=2, **kwargs):
     yield from packages_by_uid.values()
 
 
-def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=False, **kwargs):
+def create_package_and_deps(codebase, package_summary=False , package_adder=add_to_package, strip_root=False, **kwargs):
     """
     Create and save top-level Package and Dependency from the parsed
     package data present in the codebase.
@@ -363,8 +442,10 @@ def create_package_and_deps(codebase, package_adder=add_to_package, strip_root=F
         strip_root=strip_root,
         **kwargs
     )
-
-    codebase.attributes.packages.extend(package.to_dict() for package in packages)
+    codebase.attributes.packages.extend(
+        package.to_dict(package_summary= package_summary)
+        for package in packages
+    )
     codebase.attributes.dependencies.extend(dep.to_dict() for dep in dependencies)
 
 

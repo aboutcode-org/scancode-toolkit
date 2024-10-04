@@ -126,7 +126,7 @@ class TestPlugins(PackageTester):
         expected_file = self.get_test_loc('plugin/phpcomposer-package-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
-
+    
     @skipIf(on_windows, 'somehow this fails on Windows')
     def test_package_command_scan_python(self):
         test_dir = self.get_test_loc('recon/pypi')
