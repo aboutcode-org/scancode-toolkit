@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999 The Puffin Group David Kennedy and Alex
+  - Copyright (c) 2001 Matthew Wilcox
+holders:
+  - The Puffin Group David Kennedy and Alex
+  - Matthew Wilcox

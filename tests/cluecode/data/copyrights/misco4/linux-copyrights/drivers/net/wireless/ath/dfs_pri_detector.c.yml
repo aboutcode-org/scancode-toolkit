@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2012 Neratec Solutions AG
+  - (c) (global_dfs_pool_stats.c++)
+  - (c) (global_dfs_pool_stats.c-)
+holders:
+  - Neratec Solutions AG
+  - global_dfs_pool_stats.c
+  - global_dfs_pool_stats.c

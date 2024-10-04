@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2011 Weinmann Medical GmbH
+  - Copyright (c) 2004 Rick Bronson Converted
+  - Copyright (c) 2000 Philip Edelbrock <phil@stimpy.netroedge.com>
+holders:
+  - Weinmann Medical GmbH
+  - Rick Bronson Converted
+  - Philip Edelbrock
+authors:
+  - Nikolaus Voss <n.voss@weinmann.de>
+  - Andrew Victor <andrew@sanpeople.com>
