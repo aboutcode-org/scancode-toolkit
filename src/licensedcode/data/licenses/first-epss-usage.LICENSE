@@ -7,7 +7,7 @@ owner: FIRST
 homepage_url: https://www.first.org/epss/#Usage-Agreement
 spdx_license_key: LicenseRef-scancode-first-epss-usage
 ignorable_authors:
-    - a volunteer group of researchers
+    - volunteer group of researchers
 ignorable_urls:
     - https://www.first.org/epss
 ---

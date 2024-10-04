@@ -1,0 +1,20 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) 2005 Red Hat Inc
+  - Copyright (c) 1998-2000 Michel Aubry, Maintainer
+  - Copyright (c) 1998-2000 Andrzej Krzysztofowicz, Maintainer
+  - (c) 1999-2000 CJ, cjtsai@ali.com.tw
+  - Copyright (c) 1998-2000 Andre Hedrick (andre@linux-ide.org)
+  - Copyright (c) 2002 Alan Cox <alan@redhat.com>
+holders:
+  - Red Hat Inc
+  - Michel Aubry, Maintainer
+  - Andrzej Krzysztofowicz, Maintainer
+  - CJ
+  - Andre Hedrick
+  - Alan Cox
+authors:
+  - Clear Zhang <Clear.Zhang@ali.com.tw>

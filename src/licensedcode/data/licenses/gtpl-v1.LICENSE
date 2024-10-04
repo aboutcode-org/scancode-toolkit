@@ -10,9 +10,6 @@ ignorable_copyrights:
     - Copyright (c) 1999 University of Chicago and The University of Southern California
 ignorable_holders:
     - University of Chicago and The University of Southern California
-ignorable_authors:
-    - and/or derived from the Globus Project (http://www.globus.org/)
-    - and/or derived from the Globus project (http://www.globus.org/)
 ignorable_urls:
     - http://www.globus.org/
 ---

@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2016 Microsemi
+holders:
+  - Microsemi
+authors:
+  - Logan Gunthorpe <logang@deltatee.com>

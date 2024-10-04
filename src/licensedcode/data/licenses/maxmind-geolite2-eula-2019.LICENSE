@@ -10,7 +10,7 @@ ignorable_authors:
     - the USA Department of Commerce
     - the USA Department of State. Specifically
     - the USA Treasury Department's Office of Foreign Assets Control, and the International
-        Traffic in Arms Regulations
+        Traffic in Arms
 ignorable_urls:
     - http://www.maxmind.com/
     - https://www.maxmind.com/

@@ -1,0 +1,3 @@
+ *  Windows95/Windows NT compatible extended MSDOS filesystem
+ *    by Gordon Chaffee Copyright (C) 1995.  Send bug reports for the
+ *    VFAT filesystem to <chaffee@cs.berkeley.edu>.

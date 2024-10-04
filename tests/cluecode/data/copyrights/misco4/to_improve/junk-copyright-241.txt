@@ -1,0 +1,1 @@
+(c) NIST.800.53.R4-WAFv2LoggingEnabled (https://docs.aws.amazon.com/config/latest/developerguide/wafv2-logging-enabled.html)

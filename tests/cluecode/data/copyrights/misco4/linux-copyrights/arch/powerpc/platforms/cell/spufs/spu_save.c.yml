@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) Copyright IBM Corp. 2005 SPU-side
+holders:
+  - IBM Corp. SPU-side
+authors:
+  - Mark Nutter <mnutter@us.ibm.com>

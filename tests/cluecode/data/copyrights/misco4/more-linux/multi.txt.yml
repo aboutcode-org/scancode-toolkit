@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2007 TinCanTools David Anders <danders@amltd.com>
+holders:
+  - TinCanTools David Anders
+authors:
+  - Ben Dooks <ben@simtec.co.uk>

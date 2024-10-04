@@ -1,0 +1,9 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1998 by Frank van de Pol <fvdpol@coil.demon.nl> Jaroslav Kysela <perex@perex.cz>
+    2000 by Takashi Iwai <tiwai@suse.de>
+holders:
+  - Frank van de Pol Jaroslav Kysela by Takashi Iwai

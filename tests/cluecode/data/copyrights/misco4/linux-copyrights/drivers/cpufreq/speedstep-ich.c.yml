@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) 2001 Dave Jones, Arjan van
+  - (c) 2002 - 2003 Dominik Brodowski <linux@brodo.de>
+holders:
+  - Dave Jones, Arjan van
+  - Dominik Brodowski

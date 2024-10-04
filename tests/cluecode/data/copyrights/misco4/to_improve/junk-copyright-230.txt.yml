@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) HIPAA.Security-ELBLoggingEnabled (https://docs.aws.amazon.com/config/latest/developerguide/elb-logging-enabled.html)
+holders:
+  - HIPAA.Security-ELBLoggingEnabled

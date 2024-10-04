@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1998 David A. Schleef <ds@schleef.org>
+holders:
+  - David A. Schleef
+authors:
+  - ds Status complete Devices Data Translation DT2814
