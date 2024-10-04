@@ -17,6 +17,7 @@ from packages_test_utils import PackageTester
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode_config import REGEN_TEST_FIXTURES
+from commoncode.system import on_linux
 
 
 class TestPlugins(PackageTester):
@@ -220,7 +221,10 @@ class TestPlugins(PackageTester):
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_package_list_command(self, regen=REGEN_TEST_FIXTURES):
-        expected_file = self.get_test_loc('plugin/help.txt')
+        if on_linux:
+            expected_file = self.get_test_loc('plugin/plugins_list_linux.txt')
+        else:
+            expected_file = self.get_test_loc('plugin/plugins_list.txt')
         result = run_scan_click(['--list-packages'])
         if regen:
             with open(expected_file, 'w') as ef:

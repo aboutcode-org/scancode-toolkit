@@ -247,6 +247,12 @@ if on_linux:
         win_reg.InstalledProgramFromDockerUtilityvmSoftwareHandler,
     ]
 
+try:
+    from go_inspector.binary import get_go_binary_handler
+    APPLICATION_PACKAGE_DATAFILE_HANDLERS.append(get_go_binary_handler())
+except ImportError:
+    pass
+
 ALL_DATAFILE_HANDLERS = (
     APPLICATION_PACKAGE_DATAFILE_HANDLERS + [
         p for p in SYSTEM_PACKAGE_DATAFILE_HANDLERS

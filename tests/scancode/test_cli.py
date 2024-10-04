@@ -679,7 +679,10 @@ def test_scan_does_scan_rpm():
 
 
 def test_scan_cli_help(regen=REGEN_TEST_FIXTURES):
-    expected_file = test_env.get_test_loc('help/help.txt')
+    if on_linux:
+        expected_file = test_env.get_test_loc('help/help_linux.txt')
+    else:
+        expected_file = test_env.get_test_loc('help/help.txt')
     result = run_scan_click(['--help'])
     result = result.output
     if regen:
