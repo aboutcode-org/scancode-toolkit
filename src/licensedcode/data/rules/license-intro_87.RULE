@@ -1,0 +1,10 @@
+---
+license_expression: bsd-new
+is_license_intro: yes
+relevance: 100
+referenced_filenames:
+    - go.LICENSE
+---
+
+as such the {{Go license}} can be found in the go.LICENSE file and
+ is reproduced below:

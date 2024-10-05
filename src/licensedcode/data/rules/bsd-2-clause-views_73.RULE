@@ -6,4 +6,4 @@ ignorable_urls:
     - http://github.com/garycourt/uri-js
 ---
 
-License: http://github.com/garycourt/uri-js
+License: {{ http://github.com/garycourt/uri-js }}

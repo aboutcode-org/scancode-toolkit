@@ -2,10 +2,6 @@
 license_expression: proprietary-license
 is_license_text: yes
 relevance: 100
-ignorable_copyrights:
-    - copyright laws
-ignorable_holders:
-    - laws
 ---
 
 Software License Agreement

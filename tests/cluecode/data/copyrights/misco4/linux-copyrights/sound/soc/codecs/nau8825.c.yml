@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2015 Google Chromium project
+  - Copyright 2015 Nuvoton Technology Corp. Co-author Meng-Huang Kuo <mhkuo@nuvoton.com>
+holders:
+  - Google Chromium project
+  - Nuvoton Technology Corp. Co-author Meng-Huang Kuo
+authors:
+  - Anatol Pomozov <anatol@chromium.org>

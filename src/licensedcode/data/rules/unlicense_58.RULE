@@ -1,0 +1,10 @@
+---
+license_expression: unlicense
+is_license_notice: yes
+is_continuous: yes
+relevance: 100
+ignorable_urls:
+    - https://unlicense.org/
+---
+
+{{Public domain - https://unlicense.org}}

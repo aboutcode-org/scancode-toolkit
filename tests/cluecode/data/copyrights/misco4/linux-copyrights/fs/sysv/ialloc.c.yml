@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1991, 1992 Linus Torvalds
+  - Copyright (c) 1992 Remy Card (card@masi.ibp.fr)
+  - Copyright (c) 1992 Doug Evans
+  - Copyright (c) 1993 Pascal Haible, Bruno Haible
+  - Copyright (c) 1993 Bruno Haible
+holders:
+  - Linus Torvalds
+  - Remy Card
+  - Doug Evans
+  - Pascal Haible, Bruno Haible
+  - Bruno Haible
