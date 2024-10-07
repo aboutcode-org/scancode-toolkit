@@ -34,6 +34,7 @@ from commoncode.text import python_safe_name
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import SMALL_RULE
+from licensedcode import TINY_RULE
 from licensedcode.frontmatter import dumps_frontmatter
 from licensedcode.frontmatter import load_frontmatter
 from licensedcode.languages import LANG_INFO as known_languages
@@ -1647,6 +1648,16 @@ class BasicRule:
         )
     )
 
+    source = attr.ib(
+        default=None,
+        repr=False,
+        metadata=dict(
+            help='An indication of a source for this rule, like the identifier of other rules used '
+            'as a base.'
+        )
+    )
+
+
     # These thresholds attributes are computed upon text loading or calling the
     # thresholds function explicitly
     ###########################################################################
@@ -1715,6 +1726,13 @@ class BasicRule:
             help='Internal computed field representing the minimum matched '
             'length in unique higher relevance tokens (from the "legalese" list) '
             'for a match to this rule to be considered as valid.')
+    )
+
+    is_tiny = attr.ib(
+        default=False,
+        repr=TRACE_REPR,
+        metadata=dict(
+            help='Internal computed flag set to True if this rule is "tiny"')
     )
 
     is_small = attr.ib(
@@ -1815,6 +1833,31 @@ class BasicRule:
         return self.license_expression and 'unknown' in self.license_expression
 
     @property
+    def is_approx_matchable(self):
+        """
+        Return True if this self can be matched approximately
+        """
+        return not (
+            self.is_false_positive
+            or self.is_required_phrase
+            or self.is_tiny
+            or self.is_continuous
+            or (self.is_small and (self.is_license_reference or self.is_license_tag))
+        )
+
+    def is_generic(self, licenses_by_key):
+        """
+        Return True if the license_expression of this rule contains a generic or unknown
+        license key.
+        """
+        license_keys = self.licensing.license_keys(self.license_expression)
+        for lic_key in license_keys:
+            lic = licenses_by_key.get(lic_key)
+            if lic and (lic.is_generic or lic.is_unknown):
+                return True
+        return False
+
+    @property
     def license_flag_names(self):
         return (
             'is_license_text',
@@ -1874,6 +1917,9 @@ class BasicRule:
             if any(ignorables):
                 yield 'is_false_positive rule cannot have ignorable_* attributes.'
 
+            if self.is_required_phrase:
+                yield 'is_false_positive rule cannot be is_required_phase.'
+
         if self.language not in known_languages:
             yield f'Unknown language: {self.language}'
 
@@ -1901,6 +1947,18 @@ class BasicRule:
 
             if not all(check_is_list_of_strings(i) for i in ignorables):
                 yield 'ignorables must be a list of strings'
+
+            if self.is_required_phrase:
+                if self.is_license_intro:
+                    yield 'is_required_phrase rule cannot be is_license_intro.'
+
+                if self.is_license_clue:
+                    yield 'is_required_phrase rule cannot be is_license_clue.'
+
+                if thorough:
+                    from licensedcode.cache import get_licenses_db
+                    if self.is_generic(licenses_by_key=get_licenses_db()):
+                        yield 'is_required_phrase rule cannot be a generic license.'
 
             if not license_expression:
                 yield 'Missing license_expression.'
@@ -1931,7 +1989,7 @@ class BasicRule:
             # without failing (i.e. whether the text is yaml safe)
             try:
                 yaml_string = saneyaml_dump(data)
-                loaded_yaml = saneyaml_load(yaml_string)
+                _loaded_yaml = saneyaml_load(yaml_string)
             except Exception:
                 yield (f'Error invalid YAML text at: {self.identifier}, failed during saneyaml.load()')
 
@@ -2079,6 +2137,9 @@ class BasicRule:
         if self.notes:
             data['notes'] = self.notes
 
+        if self.source:
+            data['source'] = self.source
+
         if include_text and self.text:
             data['text'] = self.text
 
@@ -2218,9 +2279,8 @@ class Rule(BasicRule):
 
     def _set_continuous(self):
         """
-        Set the "is_continuous" flag if this rule must be matched exactly
-        without gaps, stopwords or unknown words. Must run after
-        required_phrase_spans computation.
+        Set the "is_continuous" flag if this rule must be matched exactly without gaps, stopwords or
+        unknown words. Must run after required_phrase_spans computation.
         """
         if (
             not self.is_continuous
@@ -2235,15 +2295,15 @@ class Rule(BasicRule):
         Return a list of Spans marking required phrases token positions of that must
         be present for this rule to be matched.
         """
-        from licensedcode.required_phrases import get_required_phrase_spans
+        from licensedcode.required_phrases import get_existing_required_phrase_spans
         if self.is_from_license:
             return []
         try:
-            return get_required_phrase_spans(self.text)
+            return get_existing_required_phrase_spans(self.text)
         except Exception as e:
             raise InvalidRule(f'Invalid rule: {self}') from e
 
-    def compute_thresholds(self, small_rule=SMALL_RULE):
+    def compute_thresholds(self, small_rule=SMALL_RULE, tiny_rule=TINY_RULE):
         """
         Compute and set thresholds either considering the occurrence of all
         tokens or the occurence of unique tokens.
@@ -2269,17 +2329,20 @@ class Rule(BasicRule):
         )
 
         self.is_small = self.length < small_rule
+        self.is_tiny = self.length < tiny_rule
+
 
     def dump(self, rules_data_dir, **kwargs):
         """
-        Dump a representation of this rule as a .RULE file stored in
-        ``rules_data_dir`` as a UTF-8 file having:
+        Dump a representation of this rule as a .RULE file stored in ``rules_data_dir`` as a UTF-8
+        file having:
          - the rule data as YAML frontmatter
          - the rule text
-        and this is a `rule_file`.
+        And this is a ``rule_file``.
 
-        Does nothing if this rule was created from a License (e.g.,
-        `is_from_license` is True)
+        Also writes any kwargs as extra data in the rule metadata.
+
+        Does nothing if this rule was created from a License (e.g., `is_from_license` is True)
         """
         if self.is_from_license or self.is_synthetic:
             return
@@ -2322,9 +2385,6 @@ class Rule(BasicRule):
             raise e
 
         known_attributes = set(attr.fields_dict(self.__class__))
-        # This is an attribute used to debug marking required phrases, and is not needed
-        if "sources" in data:
-            data.pop("sources")
         data_file_attributes = set(data)
         if with_checks:
             unknown_attributes = data_file_attributes.difference(known_attributes)
@@ -2336,8 +2396,10 @@ class Rule(BasicRule):
         self.license_expression = data.get('license_expression')
 
         self.is_false_positive = data.get('is_false_positive', False)
+
         self.is_required_phrase = data.get('is_required_phrase', False)
         self.skip_collecting_required_phrases = data.get('skip_collecting_required_phrases', False)
+        self.source = data.get('source')
 
         relevance = as_int(float(data.get('relevance') or 0))
         # Keep track if we have a stored relevance of not.
@@ -2781,8 +2843,7 @@ def set_ignorables(licensish, ignorables, verbose=False):
 def get_ignorables(text, verbose=False):
     """
     Return a mapping of ignorable clues lists found in a ``text`` for
-    copyrights, holders, authors, urls, emails. Do not include items with empty
-    values.
+    copyrights, holders, authors, urls, emails. Do not include items with empty values.
 
     Display progress messages if ``verbose`` is True.
     """
