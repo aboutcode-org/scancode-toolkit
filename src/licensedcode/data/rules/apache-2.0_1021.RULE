@@ -1,9 +1,10 @@
 ---
 license_expression: apache-2.0
 is_license_notice: yes
+relevance: 99
 ---
 
-This software was submitted by Cisco Systems to the {{Apache Software Foundation}} in July
+This software was submitted by Cisco Systems to the Apache Software Foundation in July
  1997.  Future revisions and derivatives of this source code must
  acknowledge Cisco Systems as the original contributor of this module.
- All other licensing and usage conditions are those of the {{Apache Software Foundation}}.
+ All other {{licensing and usage conditions are those of the Apache Software Foundation}}.
