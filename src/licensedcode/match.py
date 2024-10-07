@@ -2779,6 +2779,7 @@ def refine_matches(
     return matches, all_discarded
 
 
+# variant using slots and attrs
 @attr.s(slots=True, frozen=True)
 class Token1:
     """
@@ -2799,6 +2800,7 @@ class Token1:
     is_known = attr.ib(default=False)
 
 
+# variant using slots
 class Token2:
     """
     Used to represent a token in collected query-side matched texts and SPDX
@@ -2836,6 +2838,7 @@ class Token2:
         self.is_known = is_known
 
 
+# variant using namedtuple
 class Token3(NamedTuple):
     """
     Used to represent a token in collected query-side matched texts and SPDX
