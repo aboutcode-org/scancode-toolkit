@@ -9,6 +9,7 @@
 
 import os
 import pickle
+
 from shutil import rmtree
 
 from commoncode.fileutils import create_dir
@@ -185,10 +186,7 @@ class LicenseCache:
                     additional_license_plugins=plugin_directories,
                 )
 
-                # save the cache as pickle new tree checksum
-                with open(cache_file, 'wb') as fn:
-                    pickle.dump(license_cache, fn, protocol=PICKLE_PROTOCOL)
-
+                license_cache.dump(cache_file)
                 return license_cache
 
         except lockfile.LockTimeout:
@@ -200,6 +198,13 @@ class LicenseCache:
         cache = get_cache()
         if cache.additional_license_directory or cache.additional_license_plugins:
             return True
+
+    def dump(self, cache_file):
+        """
+        Dump this license cache on disk at ``cache_file``.
+        """
+        with open(cache_file, 'wb') as fn:
+            pickle.dump(self, fn, protocol=PICKLE_PROTOCOL)
 
 
 def build_index(
@@ -393,7 +398,7 @@ def get_cache(
     Return a LicenseCache either rebuilt, cached or loaded from disk.
 
     If ``index_all_languages`` is True, include texts in all languages when
-    building the license index. Otherwise, only include the English license \
+    building the license index. Otherwise, only include the English license
     texts and rules (the default)
     """
     return populate_cache(
@@ -531,7 +536,7 @@ def validate_spdx_license_keys(license_expression, licensing):
         if not type(key) == str:
             msg = f"Invalid license key: {key} of type {type(key)}, license key should be a string"
             messages.append(msg)
-    
+
         lic = license_db.get(key, None)
         if not lic:
             licenses = load_licenses(with_deprecated=True)
