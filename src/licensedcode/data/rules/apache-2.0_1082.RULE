@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 95
 ---
 
-wikipedia.org/wiki/{{Apache_License}}
+{{ wikipedia.org/wiki/Apache_License}}

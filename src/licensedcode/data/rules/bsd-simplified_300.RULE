@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-licenses.nuget.org/{{BSD-2-Clause}}
+{{licenses.nuget.org/BSD-2-Clause}}

@@ -19,4 +19,4 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 Licenses:
 The complete text of the {{GNU General Public License version 2}} can be found
-in /common-licenses/{{GPL-2}}.
+in {{ /common-licenses/GPL-2}}.

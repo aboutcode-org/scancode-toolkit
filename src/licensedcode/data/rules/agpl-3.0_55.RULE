@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-gnu.org/licenses/{{agpl-3.0}}
+{{ gnu.org/licenses/agpl-3.0}}

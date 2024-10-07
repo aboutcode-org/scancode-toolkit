@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-licenses.nuget.org/{{AGPL-3.0-or-later}}
+{{licenses.nuget.org/AGPL-3.0-or-later}}

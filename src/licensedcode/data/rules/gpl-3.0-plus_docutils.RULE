@@ -6,4 +6,4 @@ is_license_reference: yes
 released under the `{{GNU General Public License`_ version 3 or
   later}} (`local copy`__).
 
-  __ licenses/{{gpl-3-0}}.txt
+  __ {{licenses/gpl-3-0.txt }}

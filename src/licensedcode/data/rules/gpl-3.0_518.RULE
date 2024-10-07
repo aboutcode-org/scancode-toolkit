@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-opensource.org/licenses/{{GPL-3.0}}
+{{ opensource.org/licenses/GPL-3.0}}

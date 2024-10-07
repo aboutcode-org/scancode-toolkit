@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.gnu.org/lisenses/gpl.txt
 ---
 
-License: GNU/{{GPLv2 or higher}} (http://www.gnu.org/lisenses/gpl.txt)
+License: {{ GNU/GPLv2 or higher}} (http://www.gnu.org/lisenses/gpl.txt)

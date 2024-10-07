@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-licenses.nuget.org/{{GPL-2.0-or-later}}
+{{licenses.nuget.org/GPL-2.0-or-later}}

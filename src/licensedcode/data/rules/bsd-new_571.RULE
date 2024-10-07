@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-debian.org/misc/{{bsd.license}}
+{{ debian.org/misc/bsd.license}}

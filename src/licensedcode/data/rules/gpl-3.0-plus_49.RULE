@@ -18,4 +18,4 @@ ignorable_urls:
 * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * {{GNU General Public License}} for more details.
 *
-* @license {{GPL-3.0+}} <http://spdx.org/licenses/{{GPL-3.0+}}>
+* @license {{GPL-3.0+}} <{{ http://spdx.org/licenses/GPL-3.0+}}>
