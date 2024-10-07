@@ -9,11 +9,11 @@
 #
 
 import re
+
 from collections import defaultdict
 from binascii import crc32
 from itertools import islice
 
-from licensedcode.spans import Span
 from licensedcode.stopwords import STOPWORDS
 from textcode.analysis import numbered_text_lines
 
@@ -116,136 +116,6 @@ def required_phrase_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
     for token in required_phrase_splitter(text):
         if token and token not in stopwords:
             yield token
-
-
-def get_normalized_tokens(text, skip_required_phrase_markers=True, preserve_case=False):
-
-    required_phrase_markers = [REQUIRED_PHRASE_CLOSE, REQUIRED_PHRASE_OPEN]
-    tokens = list(required_phrase_tokenizer(text=text, preserve_case=preserve_case))
-    if skip_required_phrase_markers:
-        tokens = [
-            token
-            for token in tokens
-            if token not in required_phrase_markers
-        ]
-
-    return tokens
-
-
-def return_spans_for_required_phrase_in_text(text, required_phrase, preserve_case=False):
-    """
-    Returns a list of Spans where in `text`, the `required_phrase` exists,
-    and if it doesn't exist anywhere, returns an empty list.
-    """
-    spans_with_required_phrase = []
-
-    text_tokens = list(get_normalized_tokens(
-        text=text,
-        preserve_case=preserve_case,
-        skip_required_phrase_markers=True,
-    ))
-    required_phrase_tokens = list(get_normalized_tokens(
-        text=required_phrase,
-        preserve_case=preserve_case,
-        skip_required_phrase_markers=True,
-    ))
-    required_phrase_first_token = required_phrase_tokens[0]
-
-    # Initial check to see if all tokens in the required phrase are present
-    if all([
-        required_phrase_token in text_tokens
-        for required_phrase_token in required_phrase_tokens
-    ]):
-        start_positions = [
-            i
-            for i, x in enumerate(text_tokens)
-            if x == required_phrase_first_token
-        ]
-
-        for start_pos in start_positions:
-            end_pos = start_pos + len(required_phrase_tokens)
-
-            if end_pos <= len(text_tokens) and text_tokens[start_pos:end_pos] == required_phrase_tokens:
-                spans_with_required_phrase.append(
-                    Span(start_pos, end_pos-1)
-                )
-
-    return spans_with_required_phrase
-
-
-def get_ignorable_spans(rule):
-    """
-    Return a list of Spans which are the positions in the rule text there
-    are ignorable URLs or referenced filenames.
-    """
-    ignorable_spans = []
-    ignorables = rule.referenced_filenames + rule.ignorable_urls
-    for ignorable in ignorables:
-        ignorable_spans.extend(
-            return_spans_for_required_phrase_in_text(
-                text=rule.text,
-                required_phrase=ignorable,
-                preserve_case=True,
-            )
-        )
-
-    return ignorable_spans
-
-
-def get_non_overlapping_spans(old_required_phrase_spans, new_required_phrase_spans):
-    """
-    Given two list of spans `old_required_phrase_spans` and `new_required_phrase_spans`,
-    return all the spans in `new_required_phrase_spans` that do not overlap with any
-    of the spans in `old_required_phrase_spans`.
-
-    The list of spans `old_required_phrase_spans` contains all the spans of required
-    phrases or ignorables already present in a rule text, and the other list of spans
-    `new_required_phrase_spans` contains the proposed new required phrases.
-    """
-    for new_span in new_required_phrase_spans:
-        if old_required_phrase_spans and any(
-            old_span.overlap(new_span) != 0
-            for old_span in old_required_phrase_spans
-        ):
-            continue
-
-        yield new_span
-
-
-def combine_tokens(token_tuples):
-    """
-    Returns a string `combined_text` combining token tuples from the list `token_tuples`,
-    which are token tuples created by the tokenizer functions.
-    """ 
-    return ''.join(token for _, token in token_tuples)
-
-
-def add_required_phrase_markers(text, required_phrase_span):
-    """
-    Given a string `text` and a Span object `required_phrase_span`, add required phrase
-    markers to the `text` around the tokens which the span represents, while
-    being mindful of whitespace and stopwords.
-    """
-    tokens_tuples_with_markers = []
-    token_index = 0
-
-    for token_tuple in matched_query_text_tokenizer(text):
-
-        is_word, token = token_tuple
-
-        if is_word and token.lower() not in STOPWORDS:
-            if token_index == required_phrase_span.start:
-                tokens_tuples_with_markers.append((False, REQUIRED_PHRASE_OPEN))
-
-            token_index += 1
-
-        tokens_tuples_with_markers.append(token_tuple)
-
-        if is_word and token.lower() not in STOPWORDS: 
-            if token_index == required_phrase_span.end + 1:
-                tokens_tuples_with_markers.append((False, REQUIRED_PHRASE_CLOSE))
-            
-    return combine_tokens(tokens_tuples_with_markers)
 
 
 def index_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
