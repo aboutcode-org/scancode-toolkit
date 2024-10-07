@@ -6,4 +6,5 @@ ignorable_urls:
     - https://spdx.org/licenses/GPL2.0orlater.html
 ---
 
-This code is subject to the {{GNU General Public License}}. {{License: GPL‑2+}} https://spdx.org/licenses/{{GPL‑2.0‑or‑later}}.html.
+This code is subject to the {{GNU General Public License}}.
+{{License: GPL‑2+}}  {{ https://spdx.org/licenses/GPL‑2.0‑or‑later.html }}.

@@ -6,4 +6,4 @@ ignorable_urls:
     - http://spdx.org/licenses/GPL-3.0
 ---
 
-The {{GPL-3.0+}} license http://spdx.org/licenses/{{GPL-3.0+}}
+The {{GPL-3.0+}} license {{ http://spdx.org/licenses/GPL-3.0+ }}

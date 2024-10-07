@@ -1832,33 +1832,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
             'GNU General Public License for more details.\n'
             'You should have received a copy of the GNU General Public License\n'
-            'along with %s.  If not, see <http://www.gnu.org/licenses/>.\n'
-
-            'File formats:\n'
-            'D. = Demuxing supported\n'
-            '.E = Muxing supported\n'
-            '%s%s %-15s %s\n'
-            'Devices:\n'
-            'Codecs:\n'
-            'D..... = Decoding supported\n'
-            '.E.... = Encoding supported\n'
-            '..V... = Video codec\n'
-            "No option name near '%s'\n"
-            "Unable to parse '%s': %s\n"
-            "Setting '%s' to value '%s'\n"
-            "Option '%s' not found\n"
-            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
-            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
-            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
-            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
-            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
-            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
-            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
-            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
-            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
-            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
-            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
-            '--enable-lzma --enable-decklink --enable-zlib',
+            'along with %s.  If not, see <http://www.gnu.org/licenses/>.',
 
             '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
             '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
@@ -1987,23 +1961,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
             'GNU General Public License for more details.\n'
             'You should have received a copy of the GNU General Public License\n'
-
-            'along with %s.  If not, see <http://www.gnu.org/licenses/>.\n'
-
-            'File formats:\n'
-            'D. = Demuxing supported\n'
-            '.E = Muxing supported\n'
-            '%s%s %-15s %s\n'
-            'Devices:\n'
-            'Codecs:\n'
-            'D..... = Decoding supported\n'
-            '.E.... = Encoding supported\n'
-            '..V... = Video codec\n'
-            "No option name near '%s'\n"
-            "Unable to parse '%s': %s\n"
-            "Setting '%s' to value '%s'\n"
-            "Option '%s' not found\n"
-            '--enable-gpl --',
+            'along with %s.  If not, see <http://www.gnu.org/licenses/>.',
 
             'enable-gpl --enable-version3 --',
             'license: GPL version 3 or later',
