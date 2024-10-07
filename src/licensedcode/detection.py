@@ -259,8 +259,6 @@ class LicenseDetection:
         return detection
 
     def spdx_license_expression(self):
-        from licensedcode.cache import build_spdx_license_expression
-        from licensedcode.cache import get_cache
         return str(build_spdx_license_expression(
             license_expression=self.license_expression,
             licensing=get_cache().licensing,
