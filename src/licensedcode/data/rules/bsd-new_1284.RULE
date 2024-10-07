@@ -5,8 +5,6 @@ skip_collecting_required_phrases: yes
 is_continuous: yes
 ignorable_urls:
     - https://go.dev/LICENSE
-sources:
-    - bsd-new_1284.RULE
 ---
 
-{{https://go.dev/LICENSE}}
+{{ https://go.dev/LICENSE }}
