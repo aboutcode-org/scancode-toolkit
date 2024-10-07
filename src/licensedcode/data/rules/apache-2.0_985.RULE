@@ -22,4 +22,4 @@ ignorable_urls:
  .
  On Debian GNU/Linux systems, the full text of the {{Apache License, Version 2.0}} can be
  found in the file
- `/{{usr/share/common-licenses/Apache-2.0}}'.
+ `{{/usr/share/common-licenses/Apache-2.0}}'.

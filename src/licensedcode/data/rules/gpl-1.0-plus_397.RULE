@@ -6,4 +6,4 @@ relevance: 100
 
 License: GPL-1+
  On Debian GNU/Linux systems, the complete text of the {{GNU General
- Public License}} can be found in `/{{usr/share/common-licenses/GPL}}-1'.
+ Public License}} can be found in `{{/usr/share/common-licenses/GPL}}-1'.

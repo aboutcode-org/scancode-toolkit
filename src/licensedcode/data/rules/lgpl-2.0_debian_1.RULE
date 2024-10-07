@@ -4,4 +4,4 @@ is_license_notice: yes
 ---
 
 You can find multiple versions of the LGPL in /usr/share/common-licenses;
-in particular, /{{usr/share/common-licenses/LGPL-2}} contains version 2.
+in particular, {{/usr/share/common-licenses/LGPL-2}} contains version 2.

@@ -17,5 +17,5 @@ is_license_notice: yes
     | Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
   The full text of {{the GNU General Public License version 2}} is available on
-  Debian systems in /{{usr/share/common-licenses/GPL-2}} and version 3 in:
-  /{{usr/share/common-licenses/GPL}}
+  Debian systems in {{/usr/share/common-licenses/GPL-2}} and version 3 in:
+  {{/usr/share/common-licenses/GPL}}

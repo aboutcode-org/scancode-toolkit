@@ -27,4 +27,4 @@ minimum_coverage: 90
  .
  On Debian GNU/Linux systems, the full text of the {{GNU General Public
  License version 2}} can be found in the file
- `/{{usr/share/common-licenses/GPL}}-2'.
+ `{{/usr/share/common-licenses/GPL}}-2'.

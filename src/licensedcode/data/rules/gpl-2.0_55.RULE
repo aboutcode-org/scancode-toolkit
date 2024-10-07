@@ -19,4 +19,4 @@ This package is free software; you can redistribute it and/or modify
 
 On Debian GNU/Linux systems, the complete text of {{the GNU General
 Public License version 2}} can be found in
-`/{{usr/share/common-licenses/GPL-2}}'.
+`{{/usr/share/common-licenses/GPL-2}}'.

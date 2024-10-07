@@ -12,5 +12,5 @@ the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version}}.
 
 On Debian GNU/Linux systems, the complete text of the {{GNU General
-Public License}} is in `/{{usr/share/common-licenses/GPL}}', version 2 of this
+Public License}} is in `{{/usr/share/common-licenses/GPL}}', version 2 of this
 license in `/usr/share/common-licenses/GPL-2'.

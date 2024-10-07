@@ -19,4 +19,4 @@ You should have received a copy of the {{GNU General Public License}}
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 On Debian systems the full text of the {{GNU General Public
-License}} can be found in the `/{{usr/share/common-licenses/GPL}}-2' file.
+License}} can be found in the `{{/usr/share/common-licenses/GPL}}-2' file.

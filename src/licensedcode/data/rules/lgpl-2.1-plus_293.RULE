@@ -19,4 +19,4 @@ This package is free software; you can redistribute it and/or modify it
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
  02110-1301 USA.
  On Debian systems, the complete text of the {{GNU Lesser General Public
- License}} v2.1 can be found in `/{{usr/share/common-licenses/LGPL-2}}.1'.
+ License}} v2.1 can be found in `{{/usr/share/common-licenses/LGPL-2}}.1'.

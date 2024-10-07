@@ -16,4 +16,4 @@ Permission to use, copy, modify, and distribute this software and its
  .
  On Debian systems, the text of the version of the {{GNU General
  Public License}} distributed with Doxygen can be found in
- ‘/{{usr/share/common-licenses/GPL-2}}’.
+ ‘{{/usr/share/common-licenses/GPL-2}}’.

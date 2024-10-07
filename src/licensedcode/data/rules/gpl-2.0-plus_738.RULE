@@ -22,4 +22,4 @@ This program is free software; you can redistribute it and/or modify
  Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  .
  On Debian systems, the complete text of the {{GNU General Public License
- version 3}} can be found in ‘/{{usr/share/common-licenses/GPL-3}}’.
+ version 3}} can be found in ‘{{/usr/share/common-licenses/GPL-3}}’.

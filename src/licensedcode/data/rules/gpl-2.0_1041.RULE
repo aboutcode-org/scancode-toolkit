@@ -7,4 +7,4 @@ relevance: 100
 License: GPL-2
  On Debian GNU/Linux systems, the complete text of {{version 2 of
  the GNU General Public License}} can be found in
- `/{{usr/share/common-licenses/GPL-2}}'.
+ `{{/usr/share/common-licenses/GPL-2}}'.

@@ -5,4 +5,4 @@ relevance: 100
 notes: GPL  Debian notice
 ---
 
-License: GPL (/{{usr/share/common-licenses/GPL}})
+License: GPL ({{/usr/share/common-licenses/GPL}})
