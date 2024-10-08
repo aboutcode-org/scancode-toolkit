@@ -38,6 +38,7 @@ from licensedcode import TINY_RULE
 from licensedcode.frontmatter import dumps_frontmatter
 from licensedcode.frontmatter import load_frontmatter
 from licensedcode.languages import LANG_INFO as known_languages
+from licensedcode.tokenize import get_existing_required_phrase_spans
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import index_tokenizer_with_stopwords
 from licensedcode.tokenize import query_lines
@@ -890,6 +891,7 @@ def get_license_dirs(additional_dirs):
     Return a list of all subdirectories containing license files within the
     input list of additional directories. These directories do not have to be absolute paths.
     """
+    additional_dirs = additional_dirs or []
     return [f"{str(Path(path).absolute())}/licenses" for path in additional_dirs]
 
 
@@ -898,6 +900,7 @@ def get_rule_dirs(additional_dirs):
     Return a list of all subdirectories containing rule files within the
     input list of additional directories. These directories do not have to be absolute paths.
     """
+    additional_dirs = additional_dirs or []
     return [f"{str(Path(path).absolute())}/rules" for path in additional_dirs]
 
 
@@ -2295,7 +2298,6 @@ class Rule(BasicRule):
         Return a list of Spans marking required phrases token positions of that must
         be present for this rule to be matched.
         """
-        from licensedcode.required_phrases import get_existing_required_phrase_spans
         if self.is_from_license:
             return []
         try:

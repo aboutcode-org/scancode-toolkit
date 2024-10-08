@@ -240,9 +240,12 @@ def build_index(
     if not licenses_db:
         # combine the licenses in these additional directories with the licenses in the original DB
         additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
-        combined_license_directories = [licenses_data_dir] + additional_license_dirs
         # generate a single combined license db with all licenses
-        licenses_db = load_licenses_from_multiple_dirs(license_dirs=combined_license_directories)
+        licenses_db = load_licenses_from_multiple_dirs(
+            builtin_license_data_dir=licenses_data_dir,
+            additional_license_data_dirs=additional_license_dirs,
+            with_deprecated=False,
+        )
 
     # if we have additional directories, extract the rules from them
     additional_rule_dirs = get_rule_dirs(additional_dirs=additional_directories)
