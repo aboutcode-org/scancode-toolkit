@@ -2,8 +2,9 @@
 license_expression: bsd-new
 is_license_notice: yes
 relevance: 100
+skip_for_required_phrase_generation: yes
 ---
 
-{{New BSD License:
+{{New BSD License}}
 
-BSD}} License
+{{ BSD License }}
