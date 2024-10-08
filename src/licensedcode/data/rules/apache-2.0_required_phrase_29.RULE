@@ -3,6 +3,8 @@ license_expression: apache-2.0
 is_license_reference: yes
 is_required_phrase: yes
 relevance: 90
+ignorable_authors:
+    - the Apache Software Foundation
 ---
 
-ASL Version 2.0
+developed by the Apache Software Foundation

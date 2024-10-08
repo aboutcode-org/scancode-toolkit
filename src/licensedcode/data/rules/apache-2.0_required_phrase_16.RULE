@@ -4,4 +4,4 @@ is_license_notice: yes
 is_required_phrase: yes
 ---
 
-license apache 2 0 licensed under apache license version 2 0
+License: Apache-2.0 Licensed under Apache License, Version 2.0

@@ -2,7 +2,6 @@
 license_expression: apache-2.0
 is_license_reference: yes
 is_required_phrase: yes
-relevance: 99
 ---
 
-a copy of Apache license
+licensing and usage conditions are those of Apache Software Foundation

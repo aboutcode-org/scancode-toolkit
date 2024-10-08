@@ -6,4 +6,4 @@ referenced_filenames:
     - INHERIT_LICENSE_FROM_PACKAGE
 ---
 
-This file is distributed under the same license as the {{Puppet}} {{automation}} framework package.
+This file is {{distributed under the same license as the Puppet automation}} framework package.
