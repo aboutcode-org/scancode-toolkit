@@ -17,7 +17,10 @@ from time import time
 
 from commoncode.testcase import FileBasedTesting
 
+from licensedcode.spans import Span
+from licensedcode.tokenize import get_existing_required_phrase_spans
 from licensedcode.tokenize import index_tokenizer
+from licensedcode.tokenize import InvalidRuleRequiredPhrase
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import ngrams
 from licensedcode.tokenize import query_lines
@@ -406,6 +409,10 @@ class TestTokenizers(FileBasedTesting):
         result = [list(index_tokenizer(line)) for _ln, line in lines]
         check_results(result, expected_file, regen=regen)
 
+
+class TestRequirePhraseTokenizer(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
     def test_required_phrase_tokenizer_on_html_like_texts(self, regen=REGEN_TEST_FIXTURES):
         test_file = self.get_test_loc('tokenize/htmlish.txt')
         expected_file = test_file + '.expected.required_phrase_tokenizer.json'
@@ -520,6 +527,62 @@ class TestTokenizers(FileBasedTesting):
             'redistribution', '{{', 'is', 'not', 'really', '}}', 'permitted',
             'i', 'am', 'afraid'
         ]
+
+    def test_get_existing_required_phrase_spans_returns_spans(self):
+        text = (
+            'This released software is {{released}} by under {{the MIT license}}. '
+            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
+        )
+
+        spans = get_existing_required_phrase_spans(text)
+        assert spans == [Span(4), Span(7, 9)]
+
+    def test_get_existing_required_phrase_spans_raises_exception_if_markup_is_not_closed(self):
+        text = 'This software is {{released by under the MIT license.'
+        try:
+            list(get_existing_required_phrase_spans(text))
+            raise Exception('Exception should be raised')
+        except InvalidRuleRequiredPhrase:
+            pass
+
+    def test_get_existing_required_phrase_spans_ignores_stopwords_in_positions(self):
+        text = 'The word comma is a stop word so comma does not increase the span position {{MIT license}}.'
+        spans = get_existing_required_phrase_spans(text)
+        assert spans == [Span(11, 12)]
+
+    def test_get_existing_required_phrase_spans_yields_spans_without_stop_words(self):
+        text = 'This released software is {{released span}} by under {{the MIT quot license}}.'
+        spans = get_existing_required_phrase_spans(text)
+        assert spans == [Span(4), Span(7, 9)]
+
+    def test_get_existing_required_phrase_spans_does_not_yield_empty_spans(self):
+        text = 'This released software {{comma}} is {{}} by under {{the MIT license}}.'
+        try:
+            list(get_existing_required_phrase_spans(text))
+            raise Exception('Exception should be raised')
+        except InvalidRuleRequiredPhrase:
+            pass
+
+    def test_get_existing_required_phrase_spans_only_considers_outer_required_phrase_markup(self):
+        text = 'This released {{{software under the MIT}}} license.'
+        required_phrase_spans = get_existing_required_phrase_spans(text)
+        assert required_phrase_spans == [Span(2, 5)]
+
+    def test_get_existing_required_phrase_spans_ignores_nested_required_phrase_markup(self):
+        text = 'This released {{software {{under the}} MIT}} license.'
+        try:
+            list(get_existing_required_phrase_spans(text))
+            raise Exception('Exception should be raised')
+        except InvalidRuleRequiredPhrase:
+            pass
+
+    def test_get_existing_required_phrase_spans_with_markup(self):
+        text = (
+            "Lua is free software distributed under the terms of the"
+            "<A HREF='http://www.opensource.org/licenses/mit-license.html'>{{MIT license}}</A>"
+            "reproduced below;"
+        )
+        assert get_existing_required_phrase_spans(text=text) == [Span(18, 19)]
 
 
 class TestNgrams(FileBasedTesting):

@@ -10,10 +10,11 @@
 
 import re
 
-from collections import defaultdict
 from binascii import crc32
+from collections import defaultdict
 from itertools import islice
 
+from licensedcode.spans import Span
 from licensedcode.stopwords import STOPWORDS
 from textcode.analysis import numbered_text_lines
 
@@ -116,6 +117,101 @@ def required_phrase_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
     for token in required_phrase_splitter(text):
         if token and token not in stopwords:
             yield token
+
+
+def get_existing_required_phrase_spans(text):
+    """
+    Return a list of token position Spans, one for each {{tagged}} required phrase found in  ``text``.
+
+    For example:
+
+    >>> text = 'This is enclosed in {{double curly braces}}'
+    >>> #       0    1  2        3    4      5     6
+    >>> x = get_existing_required_phrase_spans(text)
+    >>> assert x == [Span(4, 6)], x
+
+    >>> text = 'This is {{enclosed}} a  {{double curly braces}} or not'
+    >>> #       0    1    2          SW   3      4     5        6  7
+    >>> x = get_existing_required_phrase_spans(text)
+    >>> assert x == [Span(2), Span(3, 5)], x
+
+    >>> text = 'This {{is}} enclosed a  {{double curly braces}} or not'
+    >>> #       0    1      2        SW   3      4     5        6  7
+    >>> x = get_existing_required_phrase_spans(text)
+    >>> assert x == [Span([1]), Span([3, 4, 5])], x
+
+    >>> text = '{{AGPL-3.0  GNU Affero General Public License v3.0}}'
+    >>> #         0    1 2  3   4      5       6      7       8  9
+    >>> x = get_existing_required_phrase_spans(text)
+    >>> assert x == [Span(0, 9)], x
+
+    >>> assert get_existing_required_phrase_spans('{This}') == []
+
+    >>> def check_exception(text):
+    ...     try:
+    ...         return get_existing_required_phrase_spans(text)
+    ...     except InvalidRuleRequiredPhrase:
+    ...         pass
+
+    >>> check_exception('This {{is')
+    >>> check_exception('This }}is')
+    >>> check_exception('{{This }}is{{')
+    >>> check_exception('This }}is{{')
+    >>> check_exception('{{}}')
+    >>> check_exception('{{This is')
+    >>> check_exception('{{This is{{')
+    >>> check_exception('{{This is{{ }}')
+    >>> check_exception('{{{{This}}}}')
+    >>> check_exception('}}This {{is}}')
+    >>> check_exception('This }} {{is}}')
+    >>> check_exception('{{This}}')
+    [Span(0)]
+    >>> check_exception('{This}')
+    []
+    >>> check_exception('{{{This}}}')
+    [Span(0)]
+    """
+    return list(get_phrase_spans(text))
+
+
+class InvalidRuleRequiredPhrase(Exception):
+    pass
+
+
+
+def get_phrase_spans(text):
+    """
+    Yield position Spans for each tagged required phrase found in ``text``.
+    """
+    ipos = 0
+    in_required_phrase = False
+    current_phrase_positions = []
+    for token in required_phrase_tokenizer(text):
+        if token == REQUIRED_PHRASE_OPEN:
+            if in_required_phrase:
+                raise InvalidRuleRequiredPhrase('Invalid rule with nested required phrase {{ {{ braces', text)
+            in_required_phrase = True
+
+        elif token == REQUIRED_PHRASE_CLOSE:
+            if in_required_phrase:
+                if current_phrase_positions:
+                    yield Span(current_phrase_positions)
+                    current_phrase_positions = []
+                else:
+                    raise InvalidRuleRequiredPhrase('Invalid rule with empty required phrase {{}} braces', text)
+                in_required_phrase = False
+            else:
+                raise InvalidRuleRequiredPhrase(f'Invalid rule with dangling required phrase missing closing braces', text)
+            continue
+        else:
+            if in_required_phrase:
+                current_phrase_positions.append(ipos)
+            ipos += 1
+
+    if current_phrase_positions or in_required_phrase:
+        raise InvalidRuleRequiredPhrase(f'Invalid rule with dangling required phrase missing final closing braces', text)
+
+
 
 
 def index_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
