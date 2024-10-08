@@ -886,6 +886,8 @@ Package detection:
 
 - For Pypi packages, python_requires is treated as a package dependency.
 
+- Update JavaScript package handlers to handle aliases in npm and yarn manifests.
+
 
 License Clarity Scoring Update:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
