@@ -4,4 +4,5 @@ is_license_tag: yes
 is_required_phrase: yes
 ---
 
-license name lgpl 2 1 or later
+license>
+<name> LGPL-2.1-or-later

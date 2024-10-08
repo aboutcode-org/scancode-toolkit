@@ -2,7 +2,6 @@
 license_expression: lgpl-2.0-plus
 is_license_reference: yes
 is_required_phrase: yes
-is_continuous: yes
 ---
 
-gnu lesser general public license as published by the free software foundation either version 2 of the license or at your option any later version
+GNU Lesser General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version
