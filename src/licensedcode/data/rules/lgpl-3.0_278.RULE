@@ -8,4 +8,4 @@ minimum_coverage: 100
 notes: Rule based on an SPDX license name and/or ID
 ---
 
-GNU Lesser General Public License v3.0 only {{LGPL-3.0}}
+GNU Lesser General Public License v3.0 only LGPL-3.0

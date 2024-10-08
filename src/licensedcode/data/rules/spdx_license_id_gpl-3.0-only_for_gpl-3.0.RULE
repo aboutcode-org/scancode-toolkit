@@ -8,4 +8,4 @@ minimum_coverage: 100
 notes: Used to detect a bare SPDX license id
 ---
 
-{{gpl-3.0-only}}
+gpl-3.0-only

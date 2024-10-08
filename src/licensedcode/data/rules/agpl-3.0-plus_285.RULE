@@ -7,4 +7,4 @@ ignorable_urls:
     - https://spdx.org/licenses/AGPL-3.0-or-later
 ---
 
-{{AGPL-3.0-or-later}} https://spdx.org/licenses/AGPL-3.0-or-later
+AGPL-3.0-or-later https://spdx.org/licenses/AGPL-3.0-or-later

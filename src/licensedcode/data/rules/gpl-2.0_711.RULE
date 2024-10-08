@@ -5,4 +5,4 @@ is_required_phrase: yes
 relevance: 100
 ---
 
-gnu {{gpl 20}}
+gnu gpl 20

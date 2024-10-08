@@ -1,8 +1,8 @@
 ---
 license_expression: gpl-2.0
-is_license_tag: yes
+is_license_reference: yes
 is_required_phrase: yes
 relevance: 100
 ---
 
-gnu gplv2
+GNU GPLv2

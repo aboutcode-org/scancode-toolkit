@@ -1,7 +1,9 @@
 ---
 license_expression: gpl-2.0
-is_license_tag: yes
+is_license_reference: yes
 is_required_phrase: yes
+referenced_filenames:
+  - /usr/share/common-licenses/GPL-2
 ---
 
-text of the gnu general public license can be found in usr share common licenses gpl 2
+text of the gnu general public license can be found in /usr/share/common-licenses/GPL-2

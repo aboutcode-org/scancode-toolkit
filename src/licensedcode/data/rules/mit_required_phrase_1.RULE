@@ -1,7 +1,7 @@
 ---
 license_expression: mit
-is_license_tag: yes
+is_license_reference: yes
 is_required_phrase: yes
 ---
 
-mit style license the {{mit license}}
+mit style license the mit license

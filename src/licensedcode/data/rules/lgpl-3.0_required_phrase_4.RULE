@@ -1,7 +1,7 @@
 ---
 license_expression: lgpl-3.0
-is_license_tag: yes
+is_license_reference: yes
 is_required_phrase: yes
 ---
 
-{{lgpl 3 0}} license
+lgpl 3 0 license

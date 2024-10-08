@@ -1,9 +1,9 @@
 ---
 license_expression: gpl-1.0-plus
-is_license_reference: yes
+is_license_notice: yes
 is_required_phrase: yes
 is_continuous: yes
 relevance: 100
 ---
 
-{{licensed under the terms of the GNU General Public License.}}
+licensed under the terms of the GNU General Public License.

@@ -1,8 +1,8 @@
 ---
 license_expression: bsd-simplified
-is_license_reference: yes
+is_license_notice: yes
 is_required_phrase: yes
 relevance: 100
 ---
 
-Licensed under the {{BSD 2-clause}} license
+Licensed under the BSD 2-clause license

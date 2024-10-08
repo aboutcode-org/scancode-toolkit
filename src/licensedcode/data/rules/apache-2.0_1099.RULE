@@ -3,7 +3,8 @@ license_expression: apache-2.0
 is_license_reference: yes
 is_required_phrase: yes
 is_continuous: yes
-relevance: 100
+relevance: 99
+notes: the + seems to imply "or later"
 ---
 
-{{Apache-2.0+}}
+Apache-2.0+

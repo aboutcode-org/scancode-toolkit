@@ -6,5 +6,5 @@ is_continuous: yes
 relevance: 100
 ---
 
-{{licenses
-    name: MIT}}
+licenses
+    name: MIT

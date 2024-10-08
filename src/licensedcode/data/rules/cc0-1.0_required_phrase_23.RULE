@@ -1,7 +1,7 @@
 ---
 license_expression: cc0-1.0
-is_license_tag: yes
+is_license_notice: yes
 is_required_phrase: yes
 ---
 
-license is creative commons {{cc0 1 0}}
+license is creative commons cc0 1 0

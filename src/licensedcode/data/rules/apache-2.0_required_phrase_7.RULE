@@ -4,4 +4,4 @@ is_license_tag: yes
 is_required_phrase: yes
 ---
 
-licenses type {{apache 2 0}}
+licenses type apache 2 0
