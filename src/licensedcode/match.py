@@ -2129,12 +2129,14 @@ def filter_matches_missing_required_phrases(
     A required phrase must be matched exactly without gaps or unknown words.
 
     A rule with "is_continuous" set to True is the same as if its whole text
-    was defined as a keyphrase and is processed here too.
+    was defined as a required phrase and is processed here too.
+    Same for a rule with "is_required_phrase" set to True.
+
     """
-    # never discard a solo match, unless matched to "is_continuous" rule
+    # never discard a solo match, unless matched to "is_continuous" or "is_required_phrase" rule
     if len(matches) == 1:
         rule = matches[0]
-        if not rule.is_continuous:
+        if not (rule.is_continuous or rule.is_required_phrase):
             return matches, []
 
     kept = []
@@ -2149,7 +2151,7 @@ def filter_matches_missing_required_phrases(
         if trace:
             logger_debug('  CHECKING KEY PHRASES for:', match)
 
-        is_continuous = match.rule.is_continuous
+        is_continuous = match.rule.is_continuous or match.rule.is_required_phrase
         ikey_spans = match.rule.required_phrase_spans
 
         if not (ikey_spans or is_continuous):
