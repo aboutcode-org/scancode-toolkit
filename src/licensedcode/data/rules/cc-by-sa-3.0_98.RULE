@@ -1,9 +1,9 @@
 ---
 license_expression: cc-by-sa-3.0
 is_license_notice: yes
-is_continuous: yes
+is_required_phrase: yes
 relevance: 30
 minimum_coverage: 100
 ---
 
-{{This code is released under the Creative Commons license. See Creative Commons License}}
+This code is released under the Creative Commons license. See Creative Commons License

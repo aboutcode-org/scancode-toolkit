@@ -1,0 +1,9 @@
+---
+license_expression: mpl-2.0
+is_license_reference: yes
+is_required_phrase: yes
+ignorable_urls:
+    - https://raw.github.com/zeromq/libzmq/master/LICENSE
+---
+
+https://raw.github.com/zeromq/libzmq/master/LICENSE
