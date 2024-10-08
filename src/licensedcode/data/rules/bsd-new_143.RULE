@@ -7,4 +7,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-license: BSD, see LICENSE for details.
+:license: BSD, see LICENSE for details.

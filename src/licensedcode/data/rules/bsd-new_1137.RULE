@@ -2,8 +2,7 @@
 license_expression: bsd-new
 is_license_tag: yes
 is_required_phrase: yes
-is_continuous: yes
 relevance: 99
 ---
 
-licenses: bsd
+licenses/BSD

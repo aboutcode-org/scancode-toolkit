@@ -4,4 +4,5 @@ is_license_tag: yes
 is_required_phrase: yes
 ---
 
-governed by bsd style license
+governed by a BSD-style
+license
