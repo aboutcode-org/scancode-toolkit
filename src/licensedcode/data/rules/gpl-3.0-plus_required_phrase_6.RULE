@@ -4,4 +4,5 @@ is_license_reference: yes
 is_required_phrase: yes
 ---
 
-gnu general public license version 3 can be found in /usr/share/common-licenses/GPL-3
+GNU General Public License version 3 can be found
+in `/usr/share/common-licenses/GPL-3

@@ -4,4 +4,4 @@ is_license_reference: yes
 is_required_phrase: yes
 ---
 
-gnu gpl 3 0 license
+GNU [GPL-3.0]+ license
