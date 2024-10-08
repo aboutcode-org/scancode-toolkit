@@ -1,7 +1,7 @@
 ---
 license_expression: bsd-new
 is_license_notice: yes
-skip_collecting_required_phrases: yes
+skip_for_required_phrase_generation: yes
 relevance: 100
 referenced_filenames:
     - COPYING

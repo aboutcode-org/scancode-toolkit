@@ -8,7 +8,7 @@ ignorable_authors:
     - Giuseppe Scrivano
 ignorable_urls:
     - https://github.com/opencontainers/runc/issues/2144#issuecomment-543116397
-skip_collecting_required_phrases: yes
+skip_for_required_phrase_generation: yes
 ---
 
 // Although ebpf.c is {{originally licensed under LGPL-3.0-or-later}}, the author (Giuseppe Scrivano)

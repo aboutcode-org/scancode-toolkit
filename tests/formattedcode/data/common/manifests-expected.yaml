@@ -1602,7 +1602,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1629,7 +1629,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1656,7 +1656,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1684,7 +1684,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1712,7 +1712,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1739,7 +1739,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1778,7 +1778,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1805,7 +1805,7 @@ license_rule_references:
     is_license_intro: yes
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1835,7 +1835,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: yes
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1862,7 +1862,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1889,7 +1889,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -1916,7 +1916,7 @@ license_rule_references:
     is_license_intro: no
     is_license_clue: no
     is_required_phrase: no
-    skip_collecting_required_phrases: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no

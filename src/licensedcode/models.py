@@ -1439,7 +1439,7 @@ class BasicRule:
             'will be a false positive and misleading.')
     )
 
-    skip_collecting_required_phrases = attr.ib(
+    skip_for_required_phrase_generation = attr.ib(
         default=False,
         repr=False,
         metadata=dict(
@@ -1945,7 +1945,7 @@ class BasicRule:
             if (self.is_license_clue or self.is_license_intro) and self.is_required_phrase:
                 yield 'License intro/clue rules cannot be required phrase rules'
 
-            if self.is_required_phrase and self.skip_collecting_required_phrases:
+            if self.is_required_phrase and self.skip_for_required_phrase_generation:
                 yield 'We can skip collecting required phrases only in non required phrase rules'
 
             if not all(check_is_list_of_strings(i) for i in ignorables):
@@ -2080,7 +2080,7 @@ class BasicRule:
         data['is_license_intro'] = self.is_license_intro
         data['is_license_clue'] = self.is_license_clue
         data['is_required_phrase'] = self.is_required_phrase
-        data['skip_collecting_required_phrases'] = self.skip_collecting_required_phrases
+        data['skip_for_required_phrase_generation'] = self.skip_for_required_phrase_generation
         data['is_continuous'] = self.is_continuous
         data['is_builtin'] = self.is_builtin
         data['is_from_license'] = self.is_from_license
@@ -2114,7 +2114,7 @@ class BasicRule:
         flags = self.license_flag_names + (
             'is_false_positive',
             'is_required_phrase',
-            'skip_collecting_required_phrases',
+            'skip_for_required_phrase_generation',
             'is_continuous',
             'is_deprecated'
         )
@@ -2400,7 +2400,7 @@ class Rule(BasicRule):
         self.is_false_positive = data.get('is_false_positive', False)
 
         self.is_required_phrase = data.get('is_required_phrase', False)
-        self.skip_collecting_required_phrases = data.get('skip_collecting_required_phrases', False)
+        self.skip_for_required_phrase_generation = data.get('skip_for_required_phrase_generation', False)
         self.source = data.get('source')
 
         relevance = as_int(float(data.get('relevance') or 0))
