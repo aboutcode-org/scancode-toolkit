@@ -1,8 +1,7 @@
 ---
 license_expression: bsd-new
 is_license_reference: yes
-skip_collecting_required_phrases: yes
-is_continuous: yes
+is_required_phrases: yes
 ignorable_urls:
     - https://go.dev/LICENSE
 ---

@@ -7,7 +7,6 @@ referenced_filenames:
 ignorable_urls:
     - http://subversion.tigris.org/
     - http://subversion.tigris.org/license-1.html
-skip_collecting_required_phrases: yes
 ---
 
 This software is licensed as described in the file COPYING, which
@@ -18,4 +17,4 @@ newer version instead, at your option.
 
 This software consists of voluntary contributions made by many
 individuals.  For exact contribution history, see the revision
-history and logs, available at {{http://subversion.tigris.org/}}.
+history and logs, available at http://subversion.tigris.org/.
