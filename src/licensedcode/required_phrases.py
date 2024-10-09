@@ -916,6 +916,7 @@ class RequiredPhraseRuleCandidate:
             text=self.raw_text,
             is_required_phrase=True,
             is_license_reference=True,
+            relevance=100,
         )
         update_ignorables(licensish=rule)
         rule.dump(rules_data_dir)
