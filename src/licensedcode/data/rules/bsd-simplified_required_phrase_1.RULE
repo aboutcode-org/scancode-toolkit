@@ -2,6 +2,7 @@
 license_expression: bsd-simplified
 is_license_clue: yes
 relevance: 60
+is_continuous: yes
 ---
 
 BSD-2
