@@ -4,7 +4,7 @@ is_license_reference: yes
 is_required_phrase: yes
 relevance: 95
 ignorable_urls:
-    - https://spdx.org/licenses/gpl-2.0-or-later.html
+    - https://spdx.org/licenses/GPL-2.0-or-later.html
 ---
 
-https://spdx.org/licenses/GPL‑2.0‑or‑later.html
+https://spdx.org/licenses/GPL-2.0-or-later.html

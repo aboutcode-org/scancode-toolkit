@@ -4,7 +4,6 @@ is_license_notice: yes
 minimum_coverage: 60
 ignorable_urls:
     - http://creativecommons.org/licenses/LGPL/2.1/
-    - http://i.creativecommons.org/l/LGPL/2.1/88x62.png
 ---
 
 {{ http://creativecommons.org/licenses/LGPL/2.1/ }}
