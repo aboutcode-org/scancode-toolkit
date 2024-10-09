@@ -2,6 +2,7 @@
 license_expression: apache-2.0
 is_license_tag: yes
 relevance: 100
+skip_for_required_phrase_generation: yes
 ---
 
 Bundle-License: "{{Apache License, Version 2.0}}";link="{{https://www.apache

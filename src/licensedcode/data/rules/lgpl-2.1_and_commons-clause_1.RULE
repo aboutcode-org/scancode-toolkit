@@ -5,4 +5,4 @@ relevance: 100
 notes: this is a likely license conflict, seen in semgrep
 ---
 
-license: Commons Clause License Condition v1.0[LGPL-2.1-only]
+license: {{Commons Clause License Condition v1.0[LGPL-2.1-only]}}
