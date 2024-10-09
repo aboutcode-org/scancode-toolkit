@@ -347,6 +347,13 @@ def get_updatable_rules_by_expression(license_expression=None, simple_expression
 
         updatable_rules = []
         for rule in rules:
+            if rule.is_from_license:
+                continue
+
+            # long texts are best left alone
+            if rule.is_license_text and len(rule.text) > 300:
+                continue
+
             # skip required phrase, false positive, tiny and and more
             if rule.is_required_phrase or not rule.is_approx_matchable:
                 continue
@@ -802,6 +809,7 @@ def generate_new_required_phrase_rules(license_expression=None, verbose=False):
             or rule.is_license_intro
             or rule.is_license_clue
             or rule.is_false_positive
+            or rule.is_from_license
             or rule.is_generic(licenses_by_key)
         ):
             continue

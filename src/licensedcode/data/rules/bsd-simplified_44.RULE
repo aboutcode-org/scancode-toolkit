@@ -5,7 +5,7 @@ minimum_coverage: 95
 notes: openib
 ---
 
-OpenIB.org {{BSD license}} (FreeBSD Variant)
+OpenIB.org BSD license (FreeBSD Variant)
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:

@@ -1,7 +1,6 @@
 ---
 license_expression: gpl-2.0
 is_license_text: yes
-relevance: 100
 notes: Seen in vmware tools. Truncated texts
 ignorable_copyrights:
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
@@ -11,8 +10,8 @@ ignorable_holders:
     - the Free Software Foundation
 ---
 
-{{GNU GENERAL PUBLIC LICENSE
-Version 2}}, June 1991
+GNU GENERAL PUBLIC LICENSE
+Version 2, June 1991
 
 Copyright (C) 1989, 1991 Free Software Foundation, Inc.
 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA

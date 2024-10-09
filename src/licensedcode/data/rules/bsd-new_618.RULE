@@ -1,11 +1,10 @@
 ---
 license_expression: bsd-new
 is_license_text: yes
-relevance: 100
 ---
 
 This software may be distributed, used, and modified under the terms of
-{{BSD license}}:
+BSD license:
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are

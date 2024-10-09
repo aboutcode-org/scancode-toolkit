@@ -1,11 +1,10 @@
 ---
 license_expression: bsd-simplified
 is_license_text: yes
-relevance: 100
 minimum_coverage: 100
 ---
 
-Software License Agreement ({{BSD License}})
+Software License Agreement (BSD License)
 
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions

@@ -1,13 +1,12 @@
 ---
 license_expression: bsd-new
 is_license_text: yes
-relevance: 100
-minimum_coverage: 80
 skip_for_required_phrase_generation: yes
+minimum_coverage: 80
 ---
 
-{{license
-Redistribution and use in source and binary forms}}, with or
+license
+Redistribution and use in source and binary forms, with or
 without modification, are permitted provided that the
 following conditions are met:
 .

@@ -4,7 +4,7 @@ is_license_text: yes
 ---
 
 BSD:
-  {{The BSD license}} applies to all files in the directory 
+  The BSD license applies to all files in the directory 
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted provided that the following conditions
