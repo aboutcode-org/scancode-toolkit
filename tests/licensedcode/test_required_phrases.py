@@ -175,8 +175,8 @@ class TestKeyPhrasesCanBeMarked(TestCaseClass):
 
     @pytest.mark.scanslow
     def test_update_rules_using_is_required_phrases_rules(self):
-        update_rules_using_is_required_phrases_rules(verbose=True, _dry_run=True)
+        update_rules_using_is_required_phrases_rules(verbose=True, dry_run=True)
 
     @pytest.mark.scanslow
     def test_update_rules_using_license_attributes(self):
-        update_rules_using_license_attributes(verbose=True, _dry_run=True)
+        update_rules_using_license_attributes(verbose=True, dry_run=True)
