@@ -2157,7 +2157,7 @@ def filter_matches_missing_required_phrases(
 
     for match in matches:
         if trace:
-            logger_debug('  CHECKING KEY PHRASES for:', match)
+            logger_debug('  CHECKING REQUIRED PHRASES for:', match)
 
         is_continuous = match.rule.is_continuous or match.rule.is_required_phrase
         ikey_spans = match.rule.required_phrase_spans
@@ -2165,7 +2165,7 @@ def filter_matches_missing_required_phrases(
         if not (ikey_spans or is_continuous):
             kept_append(match)
             if trace:
-                logger_debug('    ==> KEEPING, NO KEY PHRASES OR IS_CONTINUOUS DEFINED')
+                logger_debug('    ==> KEEPING, NO REQUIRED PHRASES OR IS_CONTINUOUS DEFINED')
             continue
 
         if is_continuous and not match.is_continuous():
@@ -2179,7 +2179,7 @@ def filter_matches_missing_required_phrases(
             if any(ikey_span not in ispan for ikey_span in ikey_spans):
                 if trace:
                     logger_debug(
-                        '    ==> DISCARDING, KEY PHRASES MISSING',
+                        '    ==> DISCARDING, REQUIRED PHRASES MISSING',
                         'ikey_spans:', ikey_spans,
                         'ispan:', ispan,
                     )
@@ -2228,7 +2228,7 @@ def filter_matches_missing_required_phrases(
                 if len(qkey_span) != qkey_span.magnitude():
 
                     logger_debug(
-                        '    ==> DISCARDING, KEY PHRASES PRESENT, BUT NOT CONTINUOUS:',
+                        '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT NOT CONTINUOUS:',
                         'qkey_span:', qkey_span, 'qpan:', qspan
                     )
 
@@ -2251,7 +2251,7 @@ def filter_matches_missing_required_phrases(
 
             if contains_unknown:
                 logger_debug(
-                    '    ==> DISCARDING, KEY PHRASES PRESENT, BUT UNKNOWNS:',
+                    '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT UNKNOWNS:',
                     'qkey_span:', qkey_span, 'qpan:', qspan,
                     'unknown_by_pos:', unknown_by_pos
                 )
@@ -2270,7 +2270,7 @@ def filter_matches_missing_required_phrases(
 
             if not has_same_stopwords_pos:
                 logger_debug(
-                    '    ==> DISCARDING, KEY PHRASES PRESENT, BUT STOPWORDS NOT SAME:',
+                    '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT STOPWORDS NOT SAME:',
                     'qkey_span:', qkey_span, 'qpan:', qspan,
                     'istopwords_by_pos:', istopwords_by_pos,
                     'qstopwords_by_pos:', qstopwords_by_pos
@@ -2280,7 +2280,7 @@ def filter_matches_missing_required_phrases(
                 break
 
         if is_valid:
-            logger_debug('    ==> KEEPING, KEY PHRASES PRESENT, CONTINUOUS AND NO UNKNOWNS')
+            logger_debug('    ==> KEEPING, REQUIRED PHRASES PRESENT, CONTINUOUS AND NO UNKNOWNS')
             kept_append(match)
         else:
             match.discard_reason = reason
@@ -2713,7 +2713,7 @@ def refine_matches(
 
     matches, discarded = filter_matches_missing_required_phrases(matches)
     all_discarded_extend(discarded)
-    _log(matches, discarded, 'HAS KEY PHRASES')
+    _log(matches, discarded, 'HAS REQUIRED PHRASES')
 
     matches, discarded = filter_spurious_matches(matches)
     all_discarded_extend(discarded)
