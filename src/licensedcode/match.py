@@ -1837,11 +1837,12 @@ def filter_invalid_matches_to_single_word_gibberish(
 
     for match in matches:
         rule = match.rule
-        if rule.length == 1 and rule.is_license_reference and match.query.is_binary:
-            matched_text = match.matched_text(
-                whole_lines=False,
-                highlight=False,
-            ).strip()
+        if (
+            rule.length == 1
+            and (rule.is_license_reference or rule.is_license_clue)
+            and match.query.is_binary
+        ):
+            matched_text = match.matched_text(whole_lines=False, highlight=False,).strip()
 
             rule_text = rule.text
 
@@ -1965,11 +1966,15 @@ def is_valid_short_match(
     False
     >>> is_valid_short_match("GPL[", "GPL")
     False
+    >>> is_valid_short_match("GPL\\\\ ", "GPL")
+    False
     >>> is_valid_short_match("~gpl", "GPL")
     False
     >>> is_valid_short_match("GPL", "gpl")
     True
     >>> is_valid_short_match("Gpl+", "gpl+")
+    True
+    >>> is_valid_short_match("  GPL      foo  ", "  GPL   foo ")
     True
     >>> is_valid_short_match("~gpl", "GPL", max_diff=0)
     False
@@ -2024,21 +2029,24 @@ def is_valid_short_match(
     if matched_text == rule_text:
         return True
 
-    # For long enough rules (length in characters), we consider all matches to
-    # be correct
-    len_rule_text = len(rule_text)
+    normalized_matched_text = " ".join(matched_text.split())
+    normalized_rule_text = " ".join(rule_text.split())
+
+    if normalized_matched_text == normalized_rule_text:
+        return True
+
+    # For long enough rules (length in characters), we consider all matches to be correct
+    len_rule_text = len(normalized_rule_text)
     if len_rule_text >= 5:
         return True
 
     # Length differences help decide that this is invalid as the extra chars
     # will be punctuation by construction
-    diff = len(matched_text) - len_rule_text
+    diff = len(normalized_matched_text) - len_rule_text
 
     if diff and diff != max_diff:
         if trace:
-            logger_debug(
-                '    ==> is_valid_short_match:', 'diff:', diff,
-                'max_diff:', max_diff)
+            logger_debug('    ==> is_valid_short_match:', 'diff:', diff, 'max_diff:', max_diff)
 
         return False
 
