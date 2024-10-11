@@ -1821,7 +1821,7 @@ def filter_invalid_matches_to_single_word_gibberish(
 
     - the scanned file is a binary file (we could relax this in the future
     - the matched rule has a single word (length 1)
-    - the matched rule "is_license_reference: yes"
+    - the matched rule "is_license_reference" or "is_license_clue"
     - the matched rule has a low relevance, e.g., under 75
     - the matched text has either:
       - one or more leading or trailing punctuations (except for +)
@@ -2628,8 +2628,13 @@ def is_candidate_false_positive(
     license list match.
     """
     is_candidate = (
-        # only tags or refs,
-        (match.rule.is_license_reference or match.rule.is_license_tag or match.rule.is_license_intro)
+        # only tags, refs, or clues
+        (
+            match.rule.is_license_reference
+            or match.rule.is_license_tag
+            or match.rule.is_license_intro
+            or match.rule.is_license_clue
+        )
         # but not tags that are SPDX license identifiers
         and not match.matcher == '1-spdx-id'
         # exact matches only
@@ -2644,6 +2649,8 @@ def is_candidate_false_positive(
         print('  is_candidate_false_positive:', is_candidate,
               'is_license_reference:', match.rule.is_license_reference,
               'is_license_tag:', match.rule.is_license_tag,
+              'is_license_intro:', match.rule.is_license_intro,
+              'is_license_clue:', match.rule.is_license_clue,
               'coverage:', match.coverage(),
               'match.len():', match.len(), '<=', 'max_length:', max_length,
               ':', match.len() <= max_length
