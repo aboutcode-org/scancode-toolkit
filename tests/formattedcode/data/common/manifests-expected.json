@@ -783,21 +783,43 @@
       "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
-      "detection_count": 3,
+      "detection_count": 2,
       "reference_matches": [
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
           "from_file": "manifests/npm-license-mapping/package.json",
-          "start_line": 20,
-          "end_line": 20,
-          "matcher": "2-aho",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
           "score": 100.0,
           "matched_length": 3,
           "match_coverage": 100.0,
           "rule_relevance": 100,
           "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "apache_2_0-0d7a2023-aae9-2989-7f00-27b713b809bb",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "manifests/npm-license-mapping/package.json",
+          "start_line": 18,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_required_phrase_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE"
         }
       ]
     },
@@ -1560,22 +1582,22 @@
               "license_expression": "apache-2.0",
               "spdx_license_expression": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
-              "start_line": 20,
+              "start_line": 18,
               "end_line": 20,
               "matcher": "2-aho",
               "score": 100.0,
-              "matched_length": 3,
+              "matched_length": 5,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+              "rule_identifier": "apache-2.0_required_phrase_7.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_required_phrase_7.RULE"
             }
           ],
-          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+          "identifier": "apache_2_0-0d7a2023-aae9-2989-7f00-27b713b809bb"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 5.51,
+      "percentage_of_license_text": 7.09,
       "copyrights": [],
       "holders": [],
       "authors": [
