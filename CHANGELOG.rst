@@ -46,6 +46,11 @@ v33.0.0 (next next, roadmap)
     license/exception texts added, and also 1 license was deprecated.
     For more details see https://github.com/aboutcode-org/scancode-toolkit/pull/3897
 
+- New and improved copyright detection with many false positive removed
+  and refined detection added.
+
+- Fix Python ``SyntaxWarning`` in textcode module.
+
 v32.2.1 - 2024-07-02
 ---------------------
 
@@ -880,6 +885,8 @@ Package detection:
     There is a new `extra_data` to collect extra data as needed.
 
 - For Pypi packages, python_requires is treated as a package dependency.
+
+- Update JavaScript package handlers to handle aliases in npm and yarn manifests.
 
 
 License Clarity Scoring Update:

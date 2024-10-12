@@ -76,10 +76,19 @@ def add_sequence(automaton, tids, rid, start=0, with_duplicates=False):
 
 
 MATCH_AHO_EXACT = '2-aho'
+MATCH_AHO_EXACT_ORDER = 2
 MATCH_AHO_FRAG = '5-aho-frag'
+MATCH_AHO_FRAG_ORDER = 5
 
 
-def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT, **kwargs):
+def exact_match(
+    idx,
+    query_run,
+    automaton,
+    matcher=MATCH_AHO_EXACT,
+    matcher_order=MATCH_AHO_EXACT_ORDER,
+    **kwargs,
+):
     """
     Return a list of exact LicenseMatch by matching the `query_run` against
     the `automaton` and `idx` index.
@@ -111,7 +120,15 @@ def exact_match(idx, query_run, automaton, matcher=MATCH_AHO_EXACT, **kwargs):
 
         rule = rules_by_rid[rid]
         match = LicenseMatch(
-            rule, qspan, ispan, hispan, qbegin, matcher=matcher, query=query)
+            rule=rule,
+            qspan=qspan,
+            ispan=ispan,
+            hispan=hispan,
+            query_run_start=qbegin,
+            matcher=matcher,
+            matcher_order=matcher_order,
+            query=query,
+        )
         matches_append(match)
     if TRACE and matches:
         logger_debug(' ##exact_AHO: matches found#')
@@ -234,8 +251,16 @@ def match_fragments(idx, query_run):
             qspan = Span(range(qpos, qpos + mlen))
             ispan = Span(range(ipos, ipos + mlen))
             hispan = Span(p for p in ispan if itokens[p] < len_legalese)
-            match = LicenseMatch(rule, qspan, ispan, hispan, qbegin,
-                matcher=MATCH_AHO_FRAG, query=query)
+            match = LicenseMatch(
+                rule=rule,
+                qspan=qspan,
+                ispan=ispan,
+                hispan=hispan,
+                qbegin=qbegin,
+                matcher=MATCH_AHO_FRAG,
+                matcher_order=MATCH_AHO_FRAG_ORDER,
+                query=query,
+            )
             frag_matches.append(match)
 
     # Merge matches as usual

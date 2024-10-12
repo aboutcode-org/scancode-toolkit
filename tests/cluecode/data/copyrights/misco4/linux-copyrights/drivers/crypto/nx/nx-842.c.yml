@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) IBM Corporation, 2011-2015 Designer of the Power
+holders:
+  - IBM Corporation, Designer of the Power
+authors:
+  - Robert Jennings <rcj@linux.vnet.ibm.com> Seth Jennings <sjenning@linux.vnet.ibm.com>

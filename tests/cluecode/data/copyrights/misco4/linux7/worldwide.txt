@@ -1,0 +1,12 @@
+Copyright:
+
+Copyright 1998 - 2008 Double Precision, Inc.
+
+This software is released under the GPL, version 3.
+Additionally, compiling, linking, and/or using the OpenSSL toolkit in
+conjunction with this software is allowed.
+
+A copy of the GNU General Public License is available as
+/usr/share/common-licenses/GPL-3 in the Debian GNU/Linux distribution or on the
+World Wide Web at http://www.gnu.org/copyleft/gpl.html.  You can also
+

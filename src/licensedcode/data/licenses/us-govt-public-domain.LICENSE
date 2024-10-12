@@ -13,6 +13,10 @@ other_urls:
     - https://www.law.cornell.edu/uscode/text/17/105
     - https://en.wikipedia.org/wiki/Copyright_status_of_works_by_the_federal_government_of_the_United_States
     - https://en.wikipedia.org/wiki/Wikipedia:Public_domain#U.S._government_works
+ignorable_copyrights:
+  - copyright United States Government
+ignorable_holders:
+  - United States Government
 ---
 
 17 U.S. Code $ 105. Subject matter of copyright: United States Government works

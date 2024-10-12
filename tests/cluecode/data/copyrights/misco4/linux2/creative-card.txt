@@ -1,0 +1,2 @@
+* Creative Card 5.1 (c) 2003                    [0x3fc3/0x7cff]
+* Creative Card all ins and outs                [0x3fff/0x7fff]

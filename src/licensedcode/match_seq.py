@@ -10,10 +10,8 @@
 from time import time
 import sys
 
-
 from licensedcode.match import LicenseMatch
 from licensedcode.spans import Span
-
 
 TRACE = False
 TRACE2 = False
@@ -38,17 +36,24 @@ if TRACE or TRACE2 or TRACE3:
     def logger_debug(*args):
         return prn(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
-
 """
 Matching strategy using pair-wise multiple local sequences alignment and diff-
 like approaches.
 """
 
 MATCH_SEQ = '3-seq'
+MATCH_SEQ_ORDER = 3
 
 
-def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
-                   match_blocks=None, deadline=sys.maxsize):
+def match_sequence(
+    idx,
+    rule,
+    query_run,
+    high_postings,
+    start_offset=0,
+    match_blocks=None,
+    deadline=sys.maxsize,
+):
     """
     Return a list of LicenseMatch by matching the `query_run` tokens sequence
     starting at `start_offset` against the `idx` index for the candidate `rule`.
@@ -107,8 +112,15 @@ def match_sequence(idx, rule, query_run, high_postings, start_offset=0,
                 ispan = Span(range(ipos, ipos + mlen))
                 hispan = Span(p for p in ispan if itokens[p] < len_legalese)
                 match = LicenseMatch(
-                    rule, qspan, ispan, hispan, qbegin,
-                    matcher=MATCH_SEQ, query=query)
+                    rule=rule,
+                    qspan=qspan,
+                    ispan=ispan,
+                    hispan=hispan,
+                    query_run_start=qbegin,
+                    matcher=MATCH_SEQ,
+                    matcher_order=MATCH_SEQ_ORDER,
+                    query=query,
+                )
                 matches.append(match)
 
                 if TRACE2:

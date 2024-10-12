@@ -1,0 +1,11 @@
+---
+license_expression: gpl-2.0 OR cddl-1.1
+is_license_tag: yes
+ignorable_urls:
+    - http://glassfish.java.net/public/CDDL+GPL_1_1.html
+---
+
+<license>
+    <name>
+    Dual license consisting of the CDDL v1.1 and GPL v2
+    <url>http://glassfish.java.net/public/CDDL+GPL_1_1.html

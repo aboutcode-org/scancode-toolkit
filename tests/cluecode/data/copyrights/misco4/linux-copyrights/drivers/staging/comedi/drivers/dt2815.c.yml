@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999 Anders Blomdell <anders.blomdell@control.lth.se>
+holders:
+  - Anders Blomdell
+authors:
+  - ds Status

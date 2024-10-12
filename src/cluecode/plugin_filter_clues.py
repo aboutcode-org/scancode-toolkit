@@ -164,7 +164,12 @@ class Detections(object):
             for a in detected_authors
         )
 
-        license_matches = list(chain.from_iterable(d['matches'] for d in data['license_detections']))
+        license_matches = list(
+            chain.from_iterable(
+                d.get('matches', [])
+                for d in data.get('license_detections', {})
+            )
+        )
 
         detections = Detections(
             copyrights=detected_copyrights,

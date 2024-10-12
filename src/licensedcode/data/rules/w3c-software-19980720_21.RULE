@@ -2,8 +2,8 @@
 license_expression: w3c-software-19980720
 is_license_text: yes
 ignorable_copyrights:
-    - Copyright (c) 1994-2002 http://www.w3.org/> World Wide Web Consortium
-    - Copyright (c) 2002 http://www.w3.org/> World Wide Web Consortium
+    - Copyright (c) 1994-2002 World Wide Web Consortium
+    - Copyright (c) 2002 World Wide Web Consortium
 ignorable_holders:
     - World Wide Web Consortium
 ignorable_urls:

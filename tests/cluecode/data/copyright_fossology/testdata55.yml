@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2003-2005 Scott James Remnant <scott@netsplit.com>
+  - Copyright (c) 2003 Colin Walters <walters@debian.org>
+  - Copyright (c) 1999-2002 Antti-Juhani Kaijanaho <ajk@debian.org>
+holders:
+  - Scott James Remnant
+  - Colin Walters
+  - Antti-Juhani Kaijanaho

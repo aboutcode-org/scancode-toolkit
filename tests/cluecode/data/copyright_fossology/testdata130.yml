@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2004-2005 Graham Wilson <graham@debian.org>
+  - Copyright (c) 1997 Bernd Eckenfels
+  - Copyright (c) 1997 Peter Tobias <tobias@et-inf.fho-emden.de>
+  - Copyright (c) 1996 Free Software Foundation, Inc.
+holders:
+  - Graham Wilson
+  - Bernd Eckenfels
+  - Peter Tobias
+  - Free Software Foundation, Inc.
+authors:
+  - Peter Tobias <tobias@et-inf.fho-emden.de>

@@ -1,0 +1,8 @@
+---
+is_false_positive: yes
+notes: Seen in Azure SDK. Not much of a license at all.
+---
+
+Notwithstanding any other terms, you may reverse engineer this software to the
+extent required to debug changes to any libraries licensed under the GNU Lesser
+General Public License.

@@ -175,7 +175,7 @@ holders:
   - Thomas Broyer, Charlie Bozeman and Daniel Veillard
   - Free Software Foundation, Inc.
   - the Free Software Foundation
-  - Nick Galbreath - nickg at modp dot com
+  - Nick Galbreath
   - MolokoCacao
   - Sergey Lyubka
   - Gilbert Wellisch
@@ -318,7 +318,7 @@ holders_summary:
     count: 1
   - value: Nara Institute of Science and Technology
     count: 1
-  - value: Nick Galbreath - nickg at modp dot com
+  - value: Nick Galbreath
     count: 1
   - value: Niels Provos
     count: 1

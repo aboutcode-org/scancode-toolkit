@@ -1,0 +1,22 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2000 Roland Bauerschmidt <rb@debian.org>
+  - Copyright (c) 1997, 1998, 1999 Guy Maor <maor@debian.org>
+  - Copyright (c) 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu>
+  - portions Copyright (c) 1994 Debian Association, Inc.
+holders:
+  - Roland Bauerschmidt
+  - Guy Maor
+  - Ted Hajek
+  - Debian Association, Inc.
+authors:
+  - Ian Murdock <imurdock@debian.org>
+  - Steve Phillips <sjp@cvfn.org>
+  - the Debian Project
+  - Guy Maor <maor@debian.org>
+  - Roland Bauerschmidt <rb@debian.org>
+  - Roland Bauerschmidt <rb@debian.org>
+  - Marc Haber <mh+debian-packages@zugschlus.de>

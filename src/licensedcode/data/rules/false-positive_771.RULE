@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in kernel /Documentation/process/license-rules.rst
+---
+
+The SPDX license identifier in kernel files

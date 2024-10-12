@@ -1,0 +1,11 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.GPL
+ignorable_urls:
+    - http://www.gnu.org/copyleft/gpl.html
+---
+
+See the file LICENSE.GPL that came with this software distribution or
+visit http://www.gnu.org/copyleft/gpl.html for GPL licensing information.

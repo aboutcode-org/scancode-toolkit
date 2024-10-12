@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: A comment about access permissions, not a license
+---
+
+permission is granted to the anonymous user

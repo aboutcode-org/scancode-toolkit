@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2000 David A. Schleef <ds@schleef.org>
+  - Copyright (c) 2001,2002,2003 Frank Mori Hess <fmhess@users.sourceforge.net>
+  - Copyright (c) 2004 Salvador E. Tropea <set@users.sf.net> <set@ieee.org>
+holders:
+  - David A. Schleef
+  - Frank Mori Hess
+  - Salvador E. Tropea
+authors:
+  - Warren Jasper, ds, Frank Hess

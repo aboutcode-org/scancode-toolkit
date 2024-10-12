@@ -1,0 +1,6 @@
+ 0.0.16
+   Modified Copyright message.
+ 0.0.17
+   Implement Mic and Line in Capture.
+ 0.0.18
+

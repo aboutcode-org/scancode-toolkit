@@ -2,7 +2,7 @@
 license_expression: jdom
 is_license_text: yes
 ignorable_authors:
-    - Jason Hunter
+    - Jason Hunter jhunter AT jdom DOT org and Brett McLaughlin brett AT jdom DOT org
     - the JDOM Project (http://www.jdom.org/)
 ignorable_urls:
     - http://www.jdom.org/
