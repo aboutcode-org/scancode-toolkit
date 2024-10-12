@@ -24,7 +24,7 @@ license_expressions:
   - mpich
   - freetts
   - other-permissive
-  - warranty-disclaimer
+  - other-permissive
   - mozilla-gc
   - adobe-glyph
   - mit-xfig
