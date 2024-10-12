@@ -42,8 +42,8 @@ Filtering discards matches based on various heuristics and rules such as:
 The filter functions are executed in a specific sequence over the list of matches.
 """
 
-TRACE = True
-TRACE_MERGE = True
+TRACE = False
+TRACE_MERGE = False
 TRACE_REFINE = False
 TRACE_FILTER_FALSE_POSITIVE = False
 TRACE_FILTER_CONTAINED = False
