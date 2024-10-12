@@ -29,10 +29,10 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-119-generic-x86_64-with-glibc2.35
-        platform_version: '#129-Ubuntu SMP Fri Aug 2 19:25:20 UTC 2024'
-        python_version: 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
-      spdx_license_list_version: '3.24'
+        platform: Linux-6.8.0-45-generic-x86_64-with-glibc2.35
+        platform_version: '#45~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep 11 15:25:05 UTC 2'
+        python_version: 3.11.8 (main, Feb 12 2024, 14:25:06) [GCC 11.4.0]
+      spdx_license_list_version: '3.25'
       files_count: 4
 summary:
   declared_license_expression: apache-2.0
@@ -856,7 +856,7 @@ license_rule_references:
     is_license_tag: yes
     is_license_intro: no
     is_license_clue: no
-    is_required_phrase: no
+    is_required_phrase: yes
     skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
@@ -872,7 +872,7 @@ license_rule_references:
     ignorable_authors: []
     ignorable_urls: []
     ignorable_emails: []
-    text: 'license: Apache-2.0'
+    text: license="Apache-2.0
   - license_expression: apache-2.0
     identifier: apache-2.0_73.RULE
     language: en
@@ -982,7 +982,7 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
-    is_required_phrase: no
+    is_required_phrase: yes
     skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
@@ -998,7 +998,7 @@ license_rule_references:
     ignorable_authors: []
     ignorable_urls: []
     ignorable_emails: []
-    text: apache-2.0
+    text: Apache-2.0
 files:
   - path: package-and-licenses
     type: directory
