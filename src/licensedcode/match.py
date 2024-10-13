@@ -2272,25 +2272,26 @@ def filter_matches_missing_required_phrases(
                 is_valid = False
                 break
 
-            has_same_stopwords_pos = True
-            for qpos, ipos in zip(qspan, ispan):
-                if qpos not in qkey_span or qpos == qkey_span_end:
-                    continue
-
-                if istopwords_by_pos_get(ipos) != qstopwords_by_pos_get(qpos):
-                    has_same_stopwords_pos = False
+            if is_continuous:
+                has_same_stopwords_pos = True
+                for qpos, ipos in zip(qspan, ispan):
+                    if qpos not in qkey_span or qpos == qkey_span_end:
+                        continue
+    
+                    if istopwords_by_pos_get(ipos) != qstopwords_by_pos_get(qpos):
+                        has_same_stopwords_pos = False
+                        break
+    
+                if not has_same_stopwords_pos:
+                    logger_debug(
+                        '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT STOPWORDS NOT SAME:',
+                        'qkey_span:', qkey_span, 'qpan:', qspan,
+                        'istopwords_by_pos:', istopwords_by_pos,
+                        'qstopwords_by_pos:', qstopwords_by_pos
+                    )
+    
+                    is_valid = False
                     break
-
-            if not has_same_stopwords_pos:
-                logger_debug(
-                    '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT STOPWORDS NOT SAME:',
-                    'qkey_span:', qkey_span, 'qpan:', qspan,
-                    'istopwords_by_pos:', istopwords_by_pos,
-                    'qstopwords_by_pos:', qstopwords_by_pos
-                )
-
-                is_valid = False
-                break
 
         if is_valid:
             logger_debug('    ==> KEEPING, REQUIRED PHRASES PRESENT, CONTINUOUS AND NO UNKNOWNS')
@@ -2298,6 +2299,9 @@ def filter_matches_missing_required_phrases(
         else:
             match.discard_reason = reason
             discarded_append(match)
+
+        if discarded and not kept:
+            logger_debug('    ==> REINSTATING DISCARDED MISSING REQUIRED PHRASES')
 
         if trace:
             print()
