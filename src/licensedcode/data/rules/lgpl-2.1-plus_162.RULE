@@ -2,6 +2,8 @@
 license_expression: lgpl-2.1-plus
 is_license_reference: yes
 relevance: 100
+notes: lesser implies 2.1 or later
+skip_for_required_phrase_generation: yes
 ---
 
 lesser General Public License
