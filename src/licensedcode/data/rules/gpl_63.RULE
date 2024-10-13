@@ -1,10 +1,9 @@
 ---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
-is_required_phrase: yes
 relevance: 100
-minimum_coverage: 100
 notes: No version gpl declaration
+skip_for_required_phrase_generation: yes
 ---
 
-GNU General Public License
+{{GNU General Public License}}

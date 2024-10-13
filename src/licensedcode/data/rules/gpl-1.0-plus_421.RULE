@@ -2,6 +2,7 @@
 license_expression: gpl-1.0-plus
 is_license_notice: yes
 relevance: 100
+skip_for_required_phrase_generation: yes
 ---
 
 is distributed in the hope that it will be useful,
