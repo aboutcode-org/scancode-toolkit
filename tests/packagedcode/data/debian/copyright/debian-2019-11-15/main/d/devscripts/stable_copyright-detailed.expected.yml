@@ -75,87 +75,66 @@ declared_license:
   - GPL-3+
   - ISC
   - Public-Domain
-declared_license_expression: gpl-2.0-plus AND gpl-2.0
-declared_license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
-other_license_expression: (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0 AND gpl-1.0-plus
-  AND gpl-3.0 AND gpl-3.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND isc
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND ((artistic-perl-1.0 AND artistic-perl-1.0)
-  OR (gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0)) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND artistic-2.0 AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0
-  AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus
-  AND gpl-3.0 AND gpl-3.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0 AND gpl-3.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0)
-  AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND ((artistic-perl-1.0 AND artistic-perl-1.0)
-  OR (gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0)) AND (gpl-2.0
-  AND gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus
-  AND gpl-2.0-plus AND gpl-2.0) AND public-domain-disclaimer AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0)
-other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND
-  (GPL-3.0-only AND GPL-1.0-or-later AND GPL-3.0-only AND GPL-3.0-only) AND (GPL-3.0-or-later
-  AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-3.0-only) AND ISC AND (GPL-2.0-or-later AND
-  GPL-2.0-or-later AND GPL-2.0-only) AND ((Artistic-1.0-Perl AND Artistic-1.0-Perl) OR (GPL-1.0-or-later
-  AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-only)) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only
-  AND GPL-2.0-only) AND (GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-3.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND Artistic-2.0 AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-3.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-3.0-or-later AND GPL-3.0-or-later
-  AND GPL-3.0-only AND GPL-3.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-3.0-or-later
-  AND GPL-3.0-or-later AND GPL-3.0-only AND GPL-3.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND ((Artistic-1.0-Perl AND Artistic-1.0-Perl) OR (GPL-1.0-or-later AND GPL-1.0-or-later AND
-  GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-only)) AND (GPL-2.0-only AND GPL-2.0-only
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-only) AND LicenseRef-scancode-public-domain-disclaimer AND
-  (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only)
+declared_license_expression: gpl-2.0-plus
+declared_license_expression_spdx: GPL-2.0-or-later
+other_license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-3.0 AND gpl-3.0) AND (gpl-3.0-plus
+  AND gpl-3.0-plus) AND isc AND (gpl-2.0-plus AND gpl-2.0-plus) AND ((artistic-perl-1.0 AND
+  artistic-perl-1.0) OR (gpl-1.0-plus AND gpl-1.0-plus)) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0 AND gpl-2.0) AND (gpl-3.0-plus
+  AND gpl-3.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND artistic-2.0 AND (gpl-2.0-plus AND
+  gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND
+  (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND
+  gpl-2.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND
+  gpl-2.0-plus) AND (gpl-3.0-plus AND gpl-3.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND
+  gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND
+  (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND
+  gpl-2.0-plus) AND ((artistic-perl-1.0 AND artistic-perl-1.0) OR (gpl-1.0-plus AND gpl-1.0-plus))
+  AND (gpl-2.0 AND gpl-2.0) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND public-domain-disclaimer AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
+  AND (gpl-2.0-plus AND gpl-2.0-plus)
+other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-3.0-only AND
+  GPL-3.0-only) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND ISC AND (GPL-2.0-or-later AND
+  GPL-2.0-or-later) AND ((Artistic-1.0-Perl AND Artistic-1.0-Perl) OR (GPL-1.0-or-later AND
+  GPL-1.0-or-later)) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
+  (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-only
+  AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
+  (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND
+  GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND Artistic-2.0 AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-2.0-or-later AND
+  GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
+  (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (GPL-2.0-or-later AND
+  GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
+  (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND ((Artistic-1.0-Perl
+  AND Artistic-1.0-Perl) OR (GPL-1.0-or-later AND GPL-1.0-or-later)) AND (GPL-2.0-only AND GPL-2.0-only)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
+  (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND
+  GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
+  (GPL-2.0-or-later AND GPL-2.0-or-later) AND LicenseRef-scancode-public-domain-disclaimer AND
+  (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
+  AND GPL-2.0-or-later)
 license_detections: []
 other_license_detections:
   - license_expression: artistic-perl-1.0
@@ -399,8 +378,8 @@ other_license_detections:
                DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN
                IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: artistic_2_0-da505167-7963-b6e8-5f04-2ffe855ea5e9
-  - license_expression: gpl-1.0-plus AND gpl-1.0
-    license_expression_spdx: GPL-1.0-or-later AND GPL-1.0-only
+  - license_expression: gpl-1.0-plus
+    license_expression_spdx: GPL-1.0-or-later
     matches:
       - license_expression: gpl-1.0-plus
         spdx_license_expression: GPL-1.0-or-later
@@ -419,61 +398,23 @@ other_license_detections:
         spdx_license_expression: GPL-1.0-or-later
         from_file:
         start_line: 554
-        end_line: 557
-        matcher: 2-aho
+        end_line: 560
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 39
+        matched_length: 64
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-1.0-plus_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_2.RULE
+        rule_identifier: gpl-1.0-plus_600.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_600.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
           the Free Software Foundation; either version 1, or (at your option)
           any later version.
-      - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
-        from_file:
-        start_line: 559
-        end_line: 560
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 5
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: gpl-1.0-plus_33.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_33.RULE
-        matched_text: |
-          the GNU General
-          Public License
-      - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
-        from_file:
-        start_line: 560
-        end_line: 560
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 5
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: gpl-1.0-plus_424.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_424.RULE
-        matched_text: usr/share/common-licenses/GPL-
-      - license_expression: gpl-1.0
-        spdx_license_expression: GPL-1.0-only
-        from_file:
-        start_line: 560
-        end_line: 560
-        matcher: 2-aho
-        score: '60.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 60
-        rule_identifier: gpl-1.0_15.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0_15.RULE
-        matched_text: GPL-1'
-    identifier: gpl_1_0_plus_and_gpl_1_0-40cd1f34-7ef5-dd7b-2ab9-7f0a899d139c
+
+          On Debian systems, the complete text of version 1 of the GNU General
+          Public License can be found in `/usr/share/common-licenses/GPL-1'
+    identifier: gpl_1_0_plus-7fb9c875-428b-be17-3c9d-10d24f6fdce2
   - license_expression: gpl-2.0
     license_expression_spdx: GPL-2.0-only
     matches:
@@ -494,36 +435,24 @@ other_license_detections:
         spdx_license_expression: GPL-2.0-only
         from_file:
         start_line: 563
-        end_line: 565
-        matcher: 2-aho
+        end_line: 568
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 31
+        matched_length: 56
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-2.0_396.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_396.RULE
+        rule_identifier: gpl-2.0_1469.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1469.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
           the Free Software Foundation; version 2.
-      - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
-        from_file:
-        start_line: 567
-        end_line: 568
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 25
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: gpl-2.0_1295.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1295.RULE
-        matched_text: |
+
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'
-    identifier: gpl_2_0-558b8bf3-eeb8-2a7a-6f28-55f4c2aa111f
-  - license_expression: gpl-2.0-plus AND gpl-2.0
-    license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
+    identifier: gpl_2_0-9da9ca88-e4fe-5b90-99c2-60217eb58258
+  - license_expression: gpl-2.0-plus
+    license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
         spdx_license_expression: GPL-2.0-or-later
@@ -542,37 +471,25 @@ other_license_detections:
         spdx_license_expression: GPL-2.0-or-later
         from_file:
         start_line: 571
-        end_line: 574
-        matcher: 2-aho
+        end_line: 577
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 39
+        matched_length: 64
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-2.0-plus_165.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_165.RULE
+        rule_identifier: gpl-2.0-plus_1144.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_1144.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
           the Free Software Foundation; either version 2, or (at your option)
           any later version.
-      - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
-        from_file:
-        start_line: 576
-        end_line: 577
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 25
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: gpl-2.0_1295.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_1295.RULE
-        matched_text: |
+
           On Debian systems, the complete text of version 2 of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-2'
-    identifier: gpl_2_0_plus_and_gpl_2_0-b73d5e9f-2938-57e1-de18-818469af1109
-  - license_expression: gpl-3.0 AND gpl-1.0-plus
-    license_expression_spdx: GPL-3.0-only AND GPL-1.0-or-later
+    identifier: gpl_2_0_plus-31fe9146-096d-857e-b744-14c89f527b93
+  - license_expression: gpl-3.0
+    license_expression_spdx: GPL-3.0-only
     matches:
       - license_expression: gpl-3.0
         spdx_license_expression: GPL-3.0-only
@@ -587,53 +504,28 @@ other_license_detections:
         rule_identifier: gpl-3.0_rdesc_1.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_rdesc_1.RULE
         matched_text: 'License: gpl-3'
-      - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+      - license_expression: gpl-3.0
+        spdx_license_expression: GPL-3.0-only
         from_file:
         start_line: 580
-        end_line: 582
-        matcher: 2-aho
+        end_line: 585
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 29
+        matched_length: 56
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl_91.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_91.RULE
+        rule_identifier: gpl-3.0_611.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_611.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
-          the Free Software Foundation;
-      - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
-        from_file:
-        start_line: 584
-        end_line: 585
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 8
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: gpl-3.0_237.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_237.RULE
-        matched_text: |
-          version 3 of the GNU General
-          Public License
-      - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
-        from_file:
-        start_line: 585
-        end_line: 585
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 6
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: gpl-3.0_93.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_93.RULE
-        matched_text: usr/share/common-licenses/GPL-3'
-    identifier: gpl_3_0_and_gpl_1_0_plus-9c11f207-d3a8-a6a3-d2a6-46552a959726
-  - license_expression: gpl-3.0-plus AND gpl-3.0
-    license_expression_spdx: GPL-3.0-or-later AND GPL-3.0-only
+          the Free Software Foundation; version 3.
+
+          On Debian systems, the complete text of version 3 of the GNU General
+          Public License can be found in `/usr/share/common-licenses/GPL-3'
+    identifier: gpl_3_0-ca3deef1-4116-da6c-5934-e8d444e8ba19
+  - license_expression: gpl-3.0-plus
+    license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
         spdx_license_expression: GPL-3.0-or-later
@@ -652,48 +544,23 @@ other_license_detections:
         spdx_license_expression: GPL-3.0-or-later
         from_file:
         start_line: 588
-        end_line: 591
-        matcher: 2-aho
+        end_line: 594
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 39
+        matched_length: 64
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_284.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_284.RULE
+        rule_identifier: gpl-3.0-plus_607.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_607.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
           the Free Software Foundation; either version 3, or (at your option)
           any later version.
-      - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
-        from_file:
-        start_line: 593
-        end_line: 594
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 8
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: gpl-3.0_237.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_237.RULE
-        matched_text: |
-          version 3 of the GNU General
-          Public License
-      - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
-        from_file:
-        start_line: 594
-        end_line: 594
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 6
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: gpl-3.0_93.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_93.RULE
-        matched_text: usr/share/common-licenses/GPL-3'
-    identifier: gpl_3_0_plus_and_gpl_3_0-3e5fdf20-1437-7ca2-c0cd-475f7307fbbb
+
+          On Debian systems, the complete text of version 3 of the GNU General
+          Public License can be found in `/usr/share/common-licenses/GPL-3'
+    identifier: gpl_3_0_plus-283ad538-b529-e278-bc29-e5df40e55a0a
   - license_expression: isc
     license_expression_spdx: ISC
     matches:
