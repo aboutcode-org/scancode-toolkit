@@ -1063,7 +1063,7 @@ def c_git_commit_handler(value, **kwargs):
     """
     Return a git VCS URL from a package commit.
     """
-    return {f'vcs_url': f'git+http://git.alpinelinux.org/aports/commit/?id={value}'}
+    return {f'vcs_url': f'git+https://git.alpinelinux.org/aports/commit/?id={value}'}
 
 
 def A_arch_handler(value, **kwargs):
