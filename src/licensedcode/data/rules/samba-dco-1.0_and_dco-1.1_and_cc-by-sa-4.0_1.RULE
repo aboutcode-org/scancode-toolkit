@@ -1,5 +1,5 @@
 ---
-license_expression: samba-dco-1.0 AND dco-1.0 AND cc-by-sa-4.0
+license_expression: samba-dco-1.0 AND dco-1.1 AND cc-by-sa-4.0
 is_license_notice: yes
 notes: this is a license of license, hence we treat it as a mere clue
 ignorable_copyrights:
