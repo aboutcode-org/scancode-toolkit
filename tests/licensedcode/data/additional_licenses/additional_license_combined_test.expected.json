@@ -270,7 +270,7 @@
       "is_license_tag": true,
       "is_license_intro": false,
       "is_license_clue": false,
-      "is_required_phrase": false,
+      "is_required_phrase": true,
       "skip_for_required_phrase_generation": false,
       "is_continuous": false,
       "is_builtin": true,
@@ -286,7 +286,7 @@
       "ignorable_authors": [],
       "ignorable_urls": [],
       "ignorable_emails": [],
-      "text": "license: Apache-2.0"
+      "text": "license=\"Apache-2.0"
     },
     {
       "license_expression": "example-installed-1",
