@@ -6,4 +6,4 @@ ignorable_urls:
     - https://opensource.org/license/mit
 ---
 
-governed by [The MIT License](https://opensource.org/license/mit/)
+governed by [{{The MIT License}}](https://opensource.org/license/mit/)

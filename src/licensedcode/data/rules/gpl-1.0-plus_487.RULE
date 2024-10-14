@@ -6,4 +6,4 @@ ignorable_urls:
     - https://www.gnu.org/copyleft/gpl
 ---
 
-copyright: GNU GENERAL PUBLIC LICENSE | | <a href="https://www.gnu.org/copyleft/gpl.
+{{copyright: GNU GENERAL PUBLIC LICENSE}} | | <a href="https://www.gnu.org/copyleft/gpl.

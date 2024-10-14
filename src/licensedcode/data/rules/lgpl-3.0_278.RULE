@@ -1,7 +1,7 @@
 ---
 license_expression: lgpl-3.0
 is_license_reference: yes
-is_continuous: yes
+is_required_phrase: yes
 relevance: 100
 minimum_coverage: 100
 notes: Rule based on an SPDX license name and/or ID

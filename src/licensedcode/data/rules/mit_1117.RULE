@@ -6,4 +6,4 @@ relevance: 100
 minimum_coverage: 100
 ---
 
-'Http://opensource.org/licenses/MIT': 'MIT',
+'{{Http://opensource.org/licenses/MIT}}': 'MIT',

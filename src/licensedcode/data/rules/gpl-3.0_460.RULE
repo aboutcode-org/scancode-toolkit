@@ -8,6 +8,6 @@ ignorable_urls:
     - https://www.gnu.org/licenses/
 ---
 
-is distributed under the GNU General Public 
-License (v3).  A copy of this can be found in the COPYING.txt file or
+is distributed under the {{GNU General Public 
+License (v3}}).  A copy of this can be found in the COPYING.txt file or
 at https://www.gnu.org/licenses/

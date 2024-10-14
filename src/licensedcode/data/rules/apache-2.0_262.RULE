@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-<license name="The Apache Software License, Version 2.0" url="${license}"/>
+<license name="{{The Apache Software License, Version 2.0}}" url="${license}"/>

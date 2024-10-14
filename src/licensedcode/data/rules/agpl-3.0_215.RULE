@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-license='GNU AGPL v3.0'
+license='{{GNU AGPL v3.0}}'

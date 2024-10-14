@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.txt
 ---
 
-[MIT License]: LICENSE.txt
+[{{MIT License}}]: LICENSE.txt

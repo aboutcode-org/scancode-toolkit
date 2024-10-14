@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.gnu.org/licenses/gpl.html
 ---
 
-License: GPL v2 (http://www.gnu.org/licenses/gpl.html)
+License: {{GPL v2}} (http://www.gnu.org/licenses/gpl.html)

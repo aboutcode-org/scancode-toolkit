@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-license = 'GNU GPLv2'
+license = '{{GNU GPLv2}}'

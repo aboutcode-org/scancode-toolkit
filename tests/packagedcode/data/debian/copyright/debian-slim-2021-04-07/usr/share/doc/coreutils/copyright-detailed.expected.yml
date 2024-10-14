@@ -14,25 +14,17 @@ license_detections:
       - license_expression: gpl-3.0-plus
         spdx_license_expression: GPL-3.0-or-later
         from_file:
-        start_line: 22
+        start_line: 30
         end_line: 41
-        matcher: 3-seq
-        score: '81.1'
-        matched_length: 103
-        match_coverage: '81.1'
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 102
+        match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_487.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_487.RULE
+        rule_identifier: gpl-3.0-plus_290.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
         matched_text: |
-          License
-          =============================
-
-          lib/fts.c
-          ---------
-
-             Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
-
-             This program is free software: you can redistribute it and/or modify
+          This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
              the Free Software Foundation; either version 3 of the License, or
              (at your option) any later version.
@@ -44,7 +36,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-    identifier: gpl_3_0_plus-58ef5a2f-7e40-62ff-7783-d9d46c47ccfd
+    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:

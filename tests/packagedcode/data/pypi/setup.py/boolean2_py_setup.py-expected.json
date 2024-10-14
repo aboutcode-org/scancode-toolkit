@@ -60,16 +60,16 @@
             "start_line": 1,
             "end_line": 1,
             "matcher": "1-hash",
-            "score": 90.0,
+            "score": 100.0,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 90,
+            "rule_relevance": 100,
             "rule_identifier": "bsd-new_708.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_708.RULE",
             "matched_text": "revised BSD license"
           }
         ],
-        "identifier": "bsd_new-9d4149ba-60ed-9e49-34a8-20576feb3295"
+        "identifier": "bsd_new-98c737b4-e505-9919-75a7-94b39533f450"
       },
       {
         "license_expression": "bsd-new",

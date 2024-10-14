@@ -7,7 +7,7 @@ ignorable_urls:
 
 <licenses>
     <license>
-      <name>BSD</name>
+      <{{name>BSD</name}}>
 {{      <url>https://github.com/googleapis/api-common-java/blob/master/LICENSE</url> }}
     </license>
   </licenses>

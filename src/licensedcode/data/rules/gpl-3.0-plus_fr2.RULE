@@ -6,7 +6,7 @@ ignorable_urls:
 ---
 
 "Ce programme est un logiciel libre ; vous pouvez le redistribuer ou le"
-     "modifier suivant les termes de la GNU General Public License telle que"
+     "modifier suivant les termes de la {{GNU General Public License}} telle que"
      "publiée par la Free Software Foundation : soit la version 3 de cette"
      "licence, soit (à votre gré) toute version ultérieure."
      ""

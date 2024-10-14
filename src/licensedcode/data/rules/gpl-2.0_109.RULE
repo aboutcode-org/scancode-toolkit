@@ -8,4 +8,4 @@ referenced_filenames:
 notes: cpufrequtils is gpl-2.0 only
 ---
 
-This file is distributed under the same license as the {{cpufrequtils}} package.
+This file is {{distributed under the same license as the cpufrequtils package}}.

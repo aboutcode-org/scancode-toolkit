@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-"License": "BSD 3-clause \"New\" or \"Revised\" License",
+"{{License": "BSD 3-clause}} \"New\" or \"Revised\" License",

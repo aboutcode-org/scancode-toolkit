@@ -7,6 +7,6 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0.html
 ---
 
-This library is Licensed under the Apache License, Version 2.0. A copy me be
+This library is {{Licensed under the Apache License, Version 2.0}}. A copy me be
 found in the file 'LICENSE' and at
 http://www.apache.org/licenses/LICENSE-2.0.html

@@ -5,4 +5,4 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0.txt
 ---
 
-This project bundles the following dependencies under the Apache Software License 2.0. (http://www.apache.org/licenses/LICENSE-2.0.txt)
+This project bundles the following dependencies under the {{Apache Software License 2.0}}. (http://www.apache.org/licenses/LICENSE-2.0.txt)

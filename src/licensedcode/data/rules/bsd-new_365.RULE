@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-default stopword list that is BSD-licensed
+default stopword list that is {{BSD-licensed}}

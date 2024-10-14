@@ -6,7 +6,7 @@ referenced_filenames:
 ---
 
 This file may be redistributed under the terms of the
- GNU Lesser General Public License.
+ {{GNU Lesser General Public License}}.
  .
- On Debian systems, the complete text of the GNU Lesser General Public
- License can be found in ‘/usr/share/common-licenses/LGPL’.
+ On Debian systems, the complete text of the {{GNU Lesser General Public
+ License}} can be found in ‘/usr/share/common-licenses/LGPL’.

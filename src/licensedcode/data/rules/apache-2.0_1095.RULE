@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-licensed under Apache License 2.0("{{ALv2}}"),
+licensed under {{Apache License 2.0}}("{{ALv2}}"),

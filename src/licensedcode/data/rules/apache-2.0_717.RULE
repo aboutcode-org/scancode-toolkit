@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-licenced under the Apache License, 2.0: http:opensource.org/licenses/apache2.0.php
+licenced under the {{Apache License, 2.0}}: http:opensource.org/licenses/apache2.0.php

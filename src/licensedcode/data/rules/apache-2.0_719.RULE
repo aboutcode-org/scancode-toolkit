@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 99
 ---
 
-License:    Apache License
+License:    {{Apache License}}

@@ -6,5 +6,5 @@ referenced_filenames:
     - /usr/share/common-licenses/GPL-2
 ---
 
-licensed under the GNU General Public License version 2
+licensed under {{the GNU General Public License version 2}}
 See `/usr/share/common-licenses/GPL-2'.

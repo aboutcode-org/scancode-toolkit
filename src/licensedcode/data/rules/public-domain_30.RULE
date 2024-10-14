@@ -3,9 +3,9 @@ license_expression: public-domain
 is_license_text: yes
 ---
 
-PD (Public domain):
+PD ({{Public domain}}):
 
 The file or package contains a statement equivalent to 
 
-"This file is in the public domain. You may freely use, modify and
+"This file is {{in the public domain}}. You may freely use, modify and
 distribute it".

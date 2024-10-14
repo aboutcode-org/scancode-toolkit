@@ -3,8 +3,8 @@ license_expression: cc0-1.0
 is_license_notice: yes
 ---
 
-"License": "Creative Commons Zero v1.0 Universal",
-"LicenseId": "CC0-1.0",
+"{{License": "Creative Commons Zero v1.0 Universal}}",
+"{{LicenseId": "CC0-1.0}}",
 "LicenseFile": "CC0_LICENSE",
 
 To the extent possible under law, the implementers have waived all copyright

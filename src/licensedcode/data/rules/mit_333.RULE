@@ -6,5 +6,5 @@ ignorable_urls:
     - http://appsattic.mit-license.org/2012/
 ---
 
-This software is published under the MIT license as published here:
+This software is published {{under the MIT license}} as published here:
 * http://appsattic.mit-license.org/2012/

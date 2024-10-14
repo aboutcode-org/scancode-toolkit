@@ -106,7 +106,7 @@ PARTY FROM THE SOFTWARE; (III) AS TO THE LIFE OF ANY URL USED BY THE SOFTWARE;
 OR (IV) THAT ALL USES THAT CAN BE MADE OF THE SOFTWARE COMPLY WITH APPLICABLE
 LAW; RATHER, IT IS LICENSEE’S RESPONSIBILITY TO CONFORM ITS USE OF THE SOFTWARE
 WITH THE LAW.  LICENSEE ACKNOWLEDGES THAT CERTAIN SOFTWARE AND EQUIPMENT USED BY
-IT MAY NOT BE CAPABLE OF SUPPORTING CERTAIN FEATURES OF THE SOFTWARE. EACH PARTY
+IT {{MAY NOT BE}} CAPABLE OF SUPPORTING CERTAIN FEATURES OF THE SOFTWARE. EACH PARTY
 HERETO HEREBY ACKNOWLEDGES THAT IT HAS NOT RELIED UPON ANY REPRESENTATIONS OR
 WARRANTIES MADE BY THE OTHER EXCEPT AS SPECIFICALLY SET FORTH IN THIS AGREEMENT.
 
@@ -155,7 +155,7 @@ CLAIMS (INCLUDING NEGLIGENCE).
    D. Entire Agreement; Modifications; No Waiver.  This Agreement constitutes
    the entire Agreement of the parties with respect to the subject matter
    hereof, supersedes any and all existing agreements relating to the subject
-   matter hereof, and may not be modified or amended except by a written
+   matter hereof, and {{may not be}} modified or amended except by a written
    instrument signed by both parties.  No failure or delay in exercising any
    right, power or remedy under the Agreement shall operate as a waiver thereof,
    nor shall any single or partial exercise of any right under this Agreement

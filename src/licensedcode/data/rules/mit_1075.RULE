@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-license: MIT, see LICENSE for more details.
+{{license: MIT}}, see LICENSE for more details.

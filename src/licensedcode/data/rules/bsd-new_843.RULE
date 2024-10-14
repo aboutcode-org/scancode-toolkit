@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 99
 ---
 
-licenced under the BSD license.
-The rest of the project is also released under the BSD licence.
+licenced under {{the BSD license}}.
+The rest of the project is also released under {{the BSD licence}}.

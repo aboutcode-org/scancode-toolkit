@@ -6,5 +6,5 @@ ignorable_urls:
     - https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ---
 
-License:      GPL-2.0+
+{{License:      GPL-2.0+}}
 License URI:  https://www.gnu.org/licenses/old-licenses/gpl-2.0.html

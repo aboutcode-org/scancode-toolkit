@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 99
 ---
 
-Code licensed under the BSD License
+Code licensed under {{the BSD License}}

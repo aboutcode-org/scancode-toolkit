@@ -7,4 +7,4 @@ referenced_filenames:
     - license/third_party/gradle_license.txt
 ---
 
-License: Apache 2 ([license/third_party/gradle_license.txt][gradle])
+{{License: Apache 2}} ([license/third_party/gradle_license.txt][gradle])

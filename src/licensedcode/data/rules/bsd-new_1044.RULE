@@ -6,5 +6,5 @@ referenced_filenames:
     - INHERIT_LICENSE_FROM_PACKAGE
 ---
 
-License: {{same-as-rest-of-p11kit}}
- This file is distributed under the same license as the {{p11-kit}} package.
+{{License: same-as-rest-of-p11kit}}
+ This file is {{distributed under the same license as the p11-kit}} package.

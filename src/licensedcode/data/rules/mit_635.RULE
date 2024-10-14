@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.TXT
 ---
 
-repo is licensed under the [MIT license](LICENSE.TXT).
+repo is {{licensed under the [MIT}} license](LICENSE.TXT).

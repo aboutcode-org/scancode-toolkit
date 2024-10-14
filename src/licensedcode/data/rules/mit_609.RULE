@@ -7,4 +7,4 @@ referenced_filenames:
     - license/third_party/pcollections_LICENSE.txt
 ---
 
-License: MIT ([license/third_party/pcollections_LICENSE.txt][pcollections])
+{{License: MIT}} ([license/third_party/pcollections_LICENSE.txt][pcollections])

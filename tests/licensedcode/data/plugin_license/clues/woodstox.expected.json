@@ -143,6 +143,8 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "is_license_clue": false,
+      "is_required_phrase": false,
+      "skip_for_required_phrase_generation": false,
       "is_continuous": false,
       "is_builtin": true,
       "is_from_license": false,
@@ -159,7 +161,7 @@
         "http://www.apache.org/licenses/"
       ],
       "ignorable_emails": [],
-      "text": "Apache License\nVersion 2.0, January 2004\nhttp://www.apache.org/licenses/"
+      "text": "{{Apache License\nVersion 2.0}}, January 2004\nhttp://www.apache.org/licenses/"
     },
     {
       "license_expression": "apache-2.0",
@@ -172,6 +174,8 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "is_license_clue": false,
+      "is_required_phrase": false,
+      "skip_for_required_phrase_generation": false,
       "is_continuous": false,
       "is_builtin": true,
       "is_from_license": false,
@@ -190,7 +194,7 @@
         "http://www.apache.org/licenses/"
       ],
       "ignorable_emails": [],
-      "text": "This copy of is licensed under the\nApache (Software) License, version 2.0 (\"the License\").\nSee the License for details about distribution rights, and the\nspecific rights regarding derivate works.\n\nYou may obtain a copy of the License at:\n\nhttp://www.apache.org/licenses/\n\nA copy is also included in the downloadable source code package\ncontaining , in file \"AL2.0\", under the same directory\nas this file."
+      "text": "This copy of is licensed under {{the\nApache (Software) License, version 2.0}} (\"the License\").\nSee the License for details about distribution rights, and the\nspecific rights regarding derivate works.\n\nYou may obtain a copy of the License at:\n\nhttp://www.apache.org/licenses/\n\nA copy is also included in the downloadable source code package\ncontaining , in file \"AL2.0\", under the same directory\nas this file."
     },
     {
       "license_expression": "unknown-license-reference",
@@ -203,6 +207,8 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "is_license_clue": true,
+      "is_required_phrase": false,
+      "skip_for_required_phrase_generation": false,
       "is_continuous": false,
       "is_builtin": true,
       "is_from_license": false,

@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-is freely distributable under the terms of an MIT-style
- license.
+is freely distributable under the terms of an {{MIT-style
+ license}}.

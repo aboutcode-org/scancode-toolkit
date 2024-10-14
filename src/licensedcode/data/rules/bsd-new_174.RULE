@@ -4,7 +4,7 @@ is_license_notice: yes
 ---
 
 is available for use under the following license, commonly known
-as the 3-clause (or "modified") BSD license:
+as the 3-clause (or "{{modified") BSD license}}:
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -30,5 +30,5 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ==============================
 
 Portions of  are based on works by others, also made available by
-them under the three-clause BSD license above.  The copyright notices are
+them under the {{three-clause BSD license}} above.  The copyright notices are
 available in the corresponding source files; the license is as above.

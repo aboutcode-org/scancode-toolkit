@@ -6,4 +6,4 @@ referenced_filenames:
     - COPYING.TXT
 ---
 
-License GPLv3 or higher, see the file COPYING.TXT for details.
+License {{GPLv3 or higher}}, see the file COPYING.TXT for details.

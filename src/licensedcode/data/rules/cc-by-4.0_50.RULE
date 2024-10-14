@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-<metadata_license>CC-BY-4.0</metadata_license>
+<metadata_{{license>CC-BY-4.0}}</metadata_license>

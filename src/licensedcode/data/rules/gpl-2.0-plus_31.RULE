@@ -1,6 +1,6 @@
 ---
 license_expression: gpl-2.0-plus
-is_license_reference: yes
+is_license_notice: yes
 relevance: 80
 minimum_coverage: 100
 referenced_filenames:
@@ -8,4 +8,4 @@ referenced_filenames:
 notes: In 2006 Pychess used the GPL 2.0. It became GPL 3.0 in 2011
 ---
 
-This file is distributed under the same license as the {{Pychess}} package.
+This file is {{distributed under the same license as the Pychess}} package.

@@ -6,5 +6,5 @@ referenced_filenames:
     - LICENSE.chromium
 ---
 
-Chromium is licensed under a BSD-style license.  See LICENSE.chromium for
+Chromium is licensed under a {{BSD-style license}}.  See LICENSE.chromium for
 details.

@@ -6,5 +6,5 @@ referenced_filenames:
     - LICENSE.md
 ---
 
-The software in this package is published under the terms of the Apache License, Version 2.0 (the "License"),
+The software in this package is published under the terms of the {{Apache License, Version 2.0}} (the "License"),
 a copy of which has been included with this distribution in the LICENSE.md file.

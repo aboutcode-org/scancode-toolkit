@@ -16,7 +16,7 @@ from licensedcode import models
 from licensedcode.index import LicenseIndex
 from licensedcode.legalese import build_dictionary_from_iterable
 from licensedcode.match import filter_contained_matches
-from licensedcode.match import filter_matches_missing_key_phrases
+from licensedcode.match import filter_matches_missing_required_phrases
 from licensedcode.match import filter_overlapping_matches
 from licensedcode.match import get_full_matched_text
 from licensedcode.match import get_matching_regions
@@ -265,7 +265,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         match = idx.match(query_string=querys)[0]
         assert match.score() < 100
 
-    def test_LicenseMatch_matches_only_when_all_key_phrases_are_present(self):
+    def test_LicenseMatch_matches_only_when_all_required_phrases_are_present(self):
         text_r1 = (
             'License '
             'Distributed under the {{MIT License}}. See LICENSE for {{more information}}.'
@@ -288,7 +288,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         matches = idx.match(query_string=querys)
         assert not matches
 
-    def test_LicenseMatch_matches_only_when_all_key_phrases_are_present_in_order(self):
+    def test_LicenseMatch_matches_only_when_all_required_phrases_are_present_in_order(self):
         text_r1 = (
             'License '
             'Distributed under the {{MIT License}}. See LICENSE for more information. '
@@ -313,7 +313,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert len(matches) == 1
         assert matches[0].rule == r2
 
-    def test_LicenseMatch_matches_only_when_key_phrases_are_uninterrupted_by_unknown(self):
+    def test_LicenseMatch_matches_only_when_required_phrases_are_uninterrupted_by_unknown(self):
         text_r1 = (
             'License '
             'Distributed under the {{MIT License}}. See LICENSE for more information.'
@@ -339,7 +339,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert len(matches) == 1
         assert matches[0].rule == r2
 
-    def test_LicenseMatch_matches_only_when_key_phrases_are_uninterrupted_by_stopword(self):
+    def test_LicenseMatch_matches_only_when_required_phrases_are_uninterrupted_by_stopword(self):
         text_r1 = (
             'License '
             'Distributed under the {{MIT License}}. See LICENSE for more information.'
@@ -366,7 +366,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert len(matches) == 1
         assert matches[0].rule == r2
 
-    def test_LicenseMatch_matches_key_phrases_aho_with_exact_match_selects_key_phrase_match(self):
+    def test_LicenseMatch_matches_required_phrases_aho_with_exact_match_selects_required_phrase_match(self):
         text_r1 = (
             'License '
             'Distributed under the {{MIT License}}. See LICENSE for more information.'
@@ -390,7 +390,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert len(matches) == 1
         assert matches[0].rule == r1
 
-    def test_LicenseMatch_matches_only_when_key_phrase_is_uninterrupted(self):
+    def test_LicenseMatch_matches_only_when_required_phrase_is_uninterrupted(self):
         text_r1 = (
             'licensed under the '
             '{{Creative Commons Attribution 4.0  License}} '
@@ -410,12 +410,12 @@ class TestLicenseMatchBasic(FileBasedTesting):
         legalese = build_dictionary_from_iterable(['licensed', 'license', 'attribution', ])
         idx = index.LicenseIndex([r1, r2], _legalese=legalese)
 
-        assert r1.key_phrase_spans == [Span(3, 8)]
-        assert r2.key_phrase_spans == []
+        assert r1.required_phrase_spans == [Span(3, 8)]
+        assert r2.required_phrase_spans == []
 
         # NonCommercial and ShareAlike are "unknown" words here
         # therefore we should match r2 as as a sequence and not r1 because the
-        # key phrase are interrupted
+        # required phrase are interrupted
         querys = (
             'This work is '
             # 0   UW   1
@@ -1007,65 +1007,65 @@ class TestLicenseMatchFilter(FileBasedTesting):
         assert result == [m1]
         assert discarded == [m2]
 
-    def test_filter_key_phrases_keeps_matches_where_key_phrase_spans_is_fully_container_in_ispan(self):
+    def test_filter_required_phrases_keeps_matches_where_required_phrase_spans_is_fully_container_in_ispan(self):
         idx = index.LicenseIndex()
         query = Query(query_string="Lorum ipsum", idx=idx)
 
-        r1 = create_rule_from_text_and_expression(license_expression='apache-1.1', key_phrase_spans=[Span(2, 4)])
+        r1 = create_rule_from_text_and_expression(license_expression='apache-1.1', required_phrase_spans=[Span(2, 4)])
 
-        match_key_phrase_fully_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 5), ispan=Span(0, 5))
-        match_key_phrase_fully_outside = LicenseMatch(rule=r1, query=query, qspan=Span(5, 8), ispan=Span(5, 8))
-        match_key_phrase_partially_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 3), ispan=Span(0, 2))
-        match_key_phrase_fully_containing = LicenseMatch(rule=r1, query=query, qspan=Span(3), ispan=Span(3))
+        match_required_phrase_fully_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 5), ispan=Span(0, 5))
+        match_required_phrase_fully_outside = LicenseMatch(rule=r1, query=query, qspan=Span(5, 8), ispan=Span(5, 8))
+        match_required_phrase_partially_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 3), ispan=Span(0, 2))
+        match_required_phrase_fully_containing = LicenseMatch(rule=r1, query=query, qspan=Span(3), ispan=Span(3))
 
-        kept, discarded = filter_matches_missing_key_phrases([
-            match_key_phrase_fully_contained,
-            match_key_phrase_fully_outside,
-            match_key_phrase_partially_contained,
-            match_key_phrase_fully_containing
+        kept, discarded = filter_matches_missing_required_phrases([
+            match_required_phrase_fully_contained,
+            match_required_phrase_fully_outside,
+            match_required_phrase_partially_contained,
+            match_required_phrase_fully_containing
         ])
         assert kept == [
-            match_key_phrase_fully_contained
+            match_required_phrase_fully_contained
         ]
         assert discarded == [
-            match_key_phrase_fully_outside,
-            match_key_phrase_partially_contained,
-            match_key_phrase_fully_containing
+            match_required_phrase_fully_outside,
+            match_required_phrase_partially_contained,
+            match_required_phrase_fully_containing
         ]
 
-    def test_filter_key_phrases_discards_matches_where_qspan_intersects_with_unknown_or_stopwords(self):
+    def test_filter_required_phrases_discards_matches_where_qspan_intersects_with_unknown_or_stopwords(self):
         idx = index.LicenseIndex()
         query = Query(query_string="Lorum ipsum", idx=idx)
         query.unknowns_by_pos = {12: 1}
         query.stopwords_by_pos = {23: 1}
 
-        r1 = create_rule_from_text_and_expression(license_expression='apache-1.1', key_phrase_spans=[Span(2, 4)])
+        r1 = create_rule_from_text_and_expression(license_expression='apache-1.1', required_phrase_spans=[Span(2, 4)])
 
-        match_key_phrase_fully_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 5), ispan=Span(0, 5))
+        match_required_phrase_fully_contained = LicenseMatch(rule=r1, query=query, qspan=Span(0, 5), ispan=Span(0, 5))
         match_qspan_intersects_with_unknowns = LicenseMatch(rule=r1, query=query, qspan=Span(10, 15), ispan=Span(0, 5))
         match_qspan_intersects_with_stopwords = LicenseMatch(rule=r1, query=query, qspan=Span(20, 25), ispan=Span(0, 5))
 
-        kept, discarded = filter_matches_missing_key_phrases([
-            match_key_phrase_fully_contained,
+        kept, discarded = filter_matches_missing_required_phrases([
+            match_required_phrase_fully_contained,
             match_qspan_intersects_with_unknowns,
             match_qspan_intersects_with_stopwords,
         ])
         assert kept == [
-            match_key_phrase_fully_contained
+            match_required_phrase_fully_contained
         ]
         assert discarded == [
             match_qspan_intersects_with_unknowns,
             match_qspan_intersects_with_stopwords
         ]
 
-    def test_filter_key_phrases_discards_matches_where_key_phrase_is_interruped_in_qspan(self):
+    def test_filter_required_phrases_discards_matches_where_required_phrase_is_interruped_in_qspan(self):
         idx = index.LicenseIndex()
         query = Query(query_string="Lorum ipsum", idx=idx)
         query.unknowns_by_pos = {}
 
         r1 = Rule(
             license_expression='apache-1.1',
-            key_phrase_spans=[Span(12, 14)],
+            required_phrase_spans=[Span(12, 14)],
         )
 
         qspan_ispan_same_pos = LicenseMatch(
@@ -1081,7 +1081,7 @@ class TestLicenseMatchFilter(FileBasedTesting):
             qspan=Span([20, 21, 22, 23, 25]), ispan=Span(10, 15)
         )
 
-        kept, discarded = filter_matches_missing_key_phrases([
+        kept, discarded = filter_matches_missing_required_phrases([
             qspan_ispan_same_pos,
             qspan_with_offset,
             qspan_non_contiguous
@@ -1832,33 +1832,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
             'GNU General Public License for more details.\n'
             'You should have received a copy of the GNU General Public License\n'
-            'along with %s.  If not, see <http://www.gnu.org/licenses/>.\n'
-
-            'File formats:\n'
-            'D. = Demuxing supported\n'
-            '.E = Muxing supported\n'
-            '%s%s %-15s %s\n'
-            'Devices:\n'
-            'Codecs:\n'
-            'D..... = Decoding supported\n'
-            '.E.... = Encoding supported\n'
-            '..V... = Video codec\n'
-            "No option name near '%s'\n"
-            "Unable to parse '%s': %s\n"
-            "Setting '%s' to value '%s'\n"
-            "Option '%s' not found\n"
-            '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
-            '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
-            '--enable-gnutls --enable-iconv --enable-libass --enable-libbluray '
-            '--enable-libbs2b --enable-libcaca --enable-libfreetype --enable-libgme '
-            '--enable-libgsm --enable-libilbc --enable-libmodplug --enable-libmp3lame '
-            '--enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 '
-            '--enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libsnappy '
-            '--enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame '
-            '--enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis '
-            '--enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 '
-            '--enable-libx265 --enable-libxavs --enable-libxvid --enable-libzimg '
-            '--enable-lzma --enable-decklink --enable-zlib',
+            'along with %s.  If not, see <http://www.gnu.org/licenses/>.',
 
             '--enable-gpl --enable-version3 --enable-dxva2 --enable-libmfx --enable-nvenc '
             '--enable-avisynth --enable-bzlib --enable-fontconfig --enable-frei0r '
@@ -1987,23 +1961,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n'
             'GNU General Public License for more details.\n'
             'You should have received a copy of the GNU General Public License\n'
-
-            'along with %s.  If not, see <http://www.gnu.org/licenses/>.\n'
-
-            'File formats:\n'
-            'D. = Demuxing supported\n'
-            '.E = Muxing supported\n'
-            '%s%s %-15s %s\n'
-            'Devices:\n'
-            'Codecs:\n'
-            'D..... = Decoding supported\n'
-            '.E.... = Encoding supported\n'
-            '..V... = Video codec\n'
-            "No option name near '%s'\n"
-            "Unable to parse '%s': %s\n"
-            "Setting '%s' to value '%s'\n"
-            "Option '%s' not found\n"
-            '--enable-gpl --',
+            'along with %s.  If not, see <http://www.gnu.org/licenses/>.',
 
             'enable-gpl --enable-version3 --',
             'license: GPL version 3 or later',

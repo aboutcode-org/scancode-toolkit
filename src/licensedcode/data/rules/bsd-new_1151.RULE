@@ -7,4 +7,4 @@ ignorable_urls:
     - http://www.opensource.org/licenses/bsd-license.php
 ---
 
-<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD Style</license>
+<license uri="http://www.opensource.org/licenses/bsd-license.php">{{BSD Style</license}}>

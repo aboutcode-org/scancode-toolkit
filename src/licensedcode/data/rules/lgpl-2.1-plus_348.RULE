@@ -8,4 +8,4 @@ ignorable_urls:
     - https://www.gnu.org/copyleft/lesser.html
 ---
 
-License:: GNU Lesser General Public License (COPYING, https://www.gnu.org/copyleft/lesser.html)
+License:: {{GNU Lesser General Public License}} (COPYING, https://www.gnu.org/copyleft/lesser.html)

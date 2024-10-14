@@ -21,32 +21,61 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_and_patent-disclaimer_3.RULE"
         }
       ]
+    },
+    {
+      "identifier": "lgpl_2_0_plus-ad844342-08bd-13b3-957e-f7440d82d6ed",
+      "license_expression": "lgpl-2.0-plus",
+      "license_expression_spdx": "LGPL-2.0-or-later",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "from_file": "e2fsprogs/e2fsprogs-copyright",
+          "start_line": 19,
+          "end_line": 19,
+          "matcher": "2-aho",
+          "score": 99.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 99,
+          "rule_identifier": "lgpl_33.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_33.RULE"
+        }
+      ]
     }
   ],
   "files": [
     {
       "path": "e2fsprogs-copyright",
       "type": "file",
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
-      "license_clues": [
+      "detected_license_expression": "lgpl-2.0-plus",
+      "detected_license_expression_spdx": "LGPL-2.0-or-later",
+      "license_detections": [
         {
           "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
-          "from_file": "e2fsprogs/e2fsprogs-copyright",
-          "start_line": 19,
-          "end_line": 20,
-          "matcher": "3-seq",
-          "score": 14.39,
-          "matched_length": 20,
-          "match_coverage": 14.39,
-          "rule_relevance": 100,
-          "rule_identifier": "lgpl-2.0-plus_65.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_65.RULE"
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.0-plus",
+              "spdx_license_expression": "LGPL-2.0-or-later",
+              "from_file": "e2fsprogs/e2fsprogs-copyright",
+              "start_line": 19,
+              "end_line": 19,
+              "matcher": "2-aho",
+              "score": 99.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 99,
+              "rule_identifier": "lgpl_33.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_33.RULE"
+            }
+          ],
+          "identifier": "lgpl_2_0_plus-ad844342-08bd-13b3-957e-f7440d82d6ed"
         }
       ],
-      "percentage_of_license_text": 22.73,
+      "license_clues": [],
+      "percentage_of_license_text": 2.27,
       "scan_errors": []
     },
     {

@@ -6,4 +6,4 @@ relevance: 100
 minimum_coverage: 100
 ---
 
-GNU GPL: GPL-3.0-or-later
+GNU GPL: {{GPL-3.0-or-later}}

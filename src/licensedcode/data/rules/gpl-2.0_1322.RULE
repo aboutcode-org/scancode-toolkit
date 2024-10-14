@@ -12,12 +12,12 @@ ignorable_emails:
 
 License for all components is:
 --
-  GNU General Public License, version 2 (GPL-2)
+  {{GNU General Public License, version 2}} (GPL-2)
 
   |   This file is part of the Qt Script Generator project on Trolltech Labs.
   |
-  |   This file may be used under the terms of the GNU General Public
-  |   License version 2.0 as published by the Free Software Foundation
+  |   This file may be used {{under the terms of the GNU General Public
+  |   License version 2}}.0 as published by the Free Software Foundation
   |   and appearing in the file LICENSE.GPL included in the packaging of
   |   this file.  Please review the following information to ensure GNU
   |   General Public Licensing requirements will be met:
@@ -31,6 +31,6 @@ License for all components is:
   |   This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
   |   WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
-  On Debian systems, the text of the
-  GNU General Public License version 2 can be found in
-  /usr/share/common-licenses/GPL-2
+  On Debian systems, the text of {{the
+  GNU General Public License version 2}} can be found in
+  {{/usr/share/common-licenses/GPL-2}}

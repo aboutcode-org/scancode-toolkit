@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-open source software and licensed under the MIT licence.
+open source software and {{licensed under the MIT}} licence.

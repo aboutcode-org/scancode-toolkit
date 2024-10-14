@@ -6,4 +6,4 @@ ignorable_urls:
     - http://codemirror.net/LICENSE
 ---
 
-Distributed under an MIT license: http://codemirror.net/LICENSE
+Distributed under an {{MIT license}}: http://codemirror.net/LICENSE

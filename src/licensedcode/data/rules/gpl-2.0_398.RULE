@@ -4,6 +4,6 @@ is_license_notice: yes
 minimum_coverage: 50
 ---
 
-This file is licensed under the terms of the GNU General Public License
-version 2. This program as licensed "as is" without any warranty of any
+This file is licensed {{under the terms of the GNU General Public License
+version 2}}. This program as licensed "as is" without any warranty of any
 kind, whether express or implied.

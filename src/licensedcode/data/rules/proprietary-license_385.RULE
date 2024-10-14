@@ -11,7 +11,7 @@ By installing and using vBulletin on your server, you agree to the following ter
     A vBulletin license grants you the right to run one instance (a single installation) of vBulletin on one web server and one web site for each license purchased. Each license may power one instance of vBulletin on one domain.
     After the expiry of a leased license, vBulletin must either be removed from the server, or another license purchased.
     All customers must submit the URL where they are using (or plan to use) each license. The URL can be submitted via the vBulletin members area.
-    vBulletin source code may be altered (at the owners risk), but the software (altered or otherwise) may not be distributed to entities beyond the license holder without the explicit written permission of Jelsoft Enterprises Limited.
+    vBulletin source code may be altered (at the owners risk), but the software (altered or otherwise) {{may not be}} distributed to entities beyond the license holder without the explicit written permission of Jelsoft Enterprises Limited.
     All vBulletin copyright notices within design templates must remain unchanged (and visible).
     Registered users may modify the vBulletin code for their personal use (at their own risk), but any altered code must not be redistributed or resold in any form.
     If any terms are violated, Jelsoft Enterprises Limited reserves the right to revoke the license at any time. No license refunds will be granted for revoked licenses.

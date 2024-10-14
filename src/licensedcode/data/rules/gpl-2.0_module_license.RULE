@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-MODULE_LICENSE("GPL v2")
+MODULE_LICENSE("{{GPL v2}}")

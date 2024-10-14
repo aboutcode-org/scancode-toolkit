@@ -73,7 +73,7 @@ More (advanced) rules options:
   be present in the result license detections. These just have the license text and a
   `is_false_positive` flag set to True.
 
-- you can specify key phrases by surrounding one or more words between the `{{`
+- you can specify required phrases by surrounding one or more words between the `{{`
   and `}}` tags. Key phrases are words that **must** be matched/present in order
   for a RULE to be considered a match.
 

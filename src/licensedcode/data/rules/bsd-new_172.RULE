@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 99
 ---
 
-__license__ = 'BSD license'
+__license__ = '{{BSD license}}'

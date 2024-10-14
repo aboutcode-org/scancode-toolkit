@@ -9,16 +9,19 @@
 #
 
 import re
-from collections import defaultdict
+
 from binascii import crc32
+from collections import defaultdict
 from itertools import islice
 
+from licensedcode.spans import Span
 from licensedcode.stopwords import STOPWORDS
 from textcode.analysis import numbered_text_lines
 
 """
-Utilities to break texts in lines and tokens (aka. words) with specialized
-version for queries and rules texts.
+Utilities to break texts in lines and tokens (aka. words),
+and handle required phrases in texts through these tokens,
+with specialized version for queries and rules texts.
 """
 
 
@@ -75,26 +78,26 @@ def query_lines(
 query_pattern = '[^_\\W]+\\+?[^_\\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
-key_phrase_pattern = '(?:' + query_pattern + '|\\{\\{|\\}\\})'
-key_phrase_splitter = re.compile(key_phrase_pattern, re.UNICODE).findall
+required_phrase_pattern = '(?:' + query_pattern + '|\\{\\{|\\}\\})'
+required_phrase_splitter = re.compile(required_phrase_pattern, re.UNICODE).findall
 
-KEY_PHRASE_OPEN = '{{'
-KEY_PHRASE_CLOSE = '}}'
+REQUIRED_PHRASE_OPEN = '{{'
+REQUIRED_PHRASE_CLOSE = '}}'
 
 # FIXME: this should be folded in a single pass tokenization with the index_tokenizer
 
 
-def key_phrase_tokenizer(text, stopwords=STOPWORDS):
+def required_phrase_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
     """
-    Yield tokens from a rule ``text`` including key phrases {{brace}} markers.
+    Yield tokens from a rule ``text`` including required phrases {{brace}} markers.
     This tokenizer behaves the same as as the ``index_tokenizer`` returning also
-    KEY_PHRASE_OPEN and KEY_PHRASE_CLOSE as separate tokens so that they can be
-    used to parse key phrases.
+    REQUIRED_PHRASE_OPEN and REQUIRED_PHRASE_CLOSE as separate tokens so that they can be
+    used to parse required phrases.
 
-    >>> x = list(key_phrase_splitter('{{AGPL-3.0  GNU Affero License v3.0}}'))
+    >>> x = list(required_phrase_splitter('{{AGPL-3.0  GNU Affero License v3.0}}'))
     >>> assert x == ['{{', 'AGPL', '3', '0', 'GNU', 'Affero', 'License', 'v3', '0', '}}'], x
 
-    >>> x = list(key_phrase_splitter('{{{AGPL{{{{Affero }}License}}0}}'))
+    >>> x = list(required_phrase_splitter('{{{AGPL{{{{Affero }}License}}0}}'))
     >>> assert x == ['{{', 'AGPL', '{{', '{{', 'Affero', '}}', 'License', '}}', '0', '}}'], x
 
     >>> list(index_tokenizer('')) == []
@@ -103,17 +106,115 @@ def key_phrase_tokenizer(text, stopwords=STOPWORDS):
     >>> x = list(index_tokenizer('{{AGPL-3.0  GNU Affero License v3.0}}'))
     >>> assert x == ['agpl', '3', '0', 'gnu', 'affero', 'license', 'v3', '0']
 
-    >>> x = list(key_phrase_tokenizer('{{AGPL-3.0  GNU Affero License v3.0}}'))
+    >>> x = list(required_phrase_tokenizer('{{AGPL-3.0  GNU Affero License v3.0}}'))
     >>> assert x == ['{{', 'agpl', '3', '0', 'gnu', 'affero', 'license', 'v3', '0', '}}']
     """
     if not text:
         return
-    for token in key_phrase_splitter(text.lower()):
+    if not preserve_case:
+        text = text.lower()
+
+    for token in required_phrase_splitter(text):
         if token and token not in stopwords:
             yield token
 
 
-def index_tokenizer(text, stopwords=STOPWORDS):
+def get_existing_required_phrase_spans(text):
+    """
+    Return a list of token position Spans, one for each {{tagged}} required phrase found in  ``text``.
+
+    For example:
+
+    >>> text = 'This is enclosed in {{double curly braces}}'
+    >>> #       0    1  2        3    4      5     6
+    >>> x = get_existing_required_phrase_spans(text)
+    >>> assert x == [Span(4, 6)], x
+
+    >>> text = 'This is {{enclosed}} a  {{double curly braces}} or not'
+    >>> #       0    1    2          SW   3      4     5        6  7
+    >>> x = get_existing_required_phrase_spans(text)
+    >>> assert x == [Span(2), Span(3, 5)], x
+
+    >>> text = 'This {{is}} enclosed a  {{double curly braces}} or not'
+    >>> #       0    1      2        SW   3      4     5        6  7
+    >>> x = get_existing_required_phrase_spans(text)
+    >>> assert x == [Span([1]), Span([3, 4, 5])], x
+
+    >>> text = '{{AGPL-3.0  GNU Affero General Public License v3.0}}'
+    >>> #         0    1 2  3   4      5       6      7       8  9
+    >>> x = get_existing_required_phrase_spans(text)
+    >>> assert x == [Span(0, 9)], x
+
+    >>> assert get_existing_required_phrase_spans('{This}') == []
+
+    >>> def check_exception(text):
+    ...     try:
+    ...         return get_existing_required_phrase_spans(text)
+    ...     except InvalidRuleRequiredPhrase:
+    ...         pass
+
+    >>> check_exception('This {{is')
+    >>> check_exception('This }}is')
+    >>> check_exception('{{This }}is{{')
+    >>> check_exception('This }}is{{')
+    >>> check_exception('{{}}')
+    >>> check_exception('{{This is')
+    >>> check_exception('{{This is{{')
+    >>> check_exception('{{This is{{ }}')
+    >>> check_exception('{{{{This}}}}')
+    >>> check_exception('}}This {{is}}')
+    >>> check_exception('This }} {{is}}')
+    >>> check_exception('{{This}}')
+    [Span(0)]
+    >>> check_exception('{This}')
+    []
+    >>> check_exception('{{{This}}}')
+    [Span(0)]
+    """
+    return list(get_phrase_spans(text))
+
+
+class InvalidRuleRequiredPhrase(Exception):
+    pass
+
+
+
+def get_phrase_spans(text):
+    """
+    Yield position Spans for each tagged required phrase found in ``text``.
+    """
+    ipos = 0
+    in_required_phrase = False
+    current_phrase_positions = []
+    for token in required_phrase_tokenizer(text):
+        if token == REQUIRED_PHRASE_OPEN:
+            if in_required_phrase:
+                raise InvalidRuleRequiredPhrase('Invalid rule with nested required phrase {{ {{ braces', text)
+            in_required_phrase = True
+
+        elif token == REQUIRED_PHRASE_CLOSE:
+            if in_required_phrase:
+                if current_phrase_positions:
+                    yield Span(current_phrase_positions)
+                    current_phrase_positions = []
+                else:
+                    raise InvalidRuleRequiredPhrase('Invalid rule with empty required phrase {{}} braces', text)
+                in_required_phrase = False
+            else:
+                raise InvalidRuleRequiredPhrase(f'Invalid rule with dangling required phrase missing closing braces', text)
+            continue
+        else:
+            if in_required_phrase:
+                current_phrase_positions.append(ipos)
+            ipos += 1
+
+    if current_phrase_positions or in_required_phrase:
+        raise InvalidRuleRequiredPhrase(f'Invalid rule with dangling required phrase missing final closing braces', text)
+
+
+
+
+def index_tokenizer(text, stopwords=STOPWORDS, preserve_case=False):
     """
     Return an iterable of tokens from a rule or query ``text`` using index
     tokenizing rules. Ignore words that exist as lowercase in the ``stopwords``
@@ -137,7 +238,9 @@ def index_tokenizer(text, stopwords=STOPWORDS):
     """
     if not text:
         return []
-    words = word_splitter(text.lower())
+    if not preserve_case:
+        text = text.lower()
+    words = word_splitter(text)
     return (token for token in words if token and token not in stopwords)
 
 

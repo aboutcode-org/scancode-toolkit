@@ -6,6 +6,6 @@ ignorable_urls:
     - https://opensource.org/licenses/MIT
 ---
 
-"license": {
-   "name": "MIT",
+"{{license": {
+   "name": "MIT}}",
    "url": "https://opensource.org/licenses/MIT"

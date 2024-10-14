@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-public domain SHA-1 implementation */
-this file is in the public domain */
+{{public domain}} SHA-1 implementation */
+this file is {{in the public domain}} */

@@ -6,5 +6,5 @@ referenced_filenames:
     - LICENSE
 ---
 
-library is licensed under the terms of the Apache
-license. See [LICENSE](LICENSE) for more information.
+library is licensed under the terms of the {{Apache
+license}}. See [LICENSE](LICENSE) for more information.

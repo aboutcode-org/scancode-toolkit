@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-License: BSD 2-Clause "Simplified" License
+License: {{BSD 2-Clause "Simplified" License}}

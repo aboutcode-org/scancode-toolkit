@@ -1,7 +1,6 @@
 ---
 license_expression: gpl-3.0
 is_license_text: yes
-relevance: 100
 notes: a damaged gpl 3 text
 ignorable_copyrights:
     - Copyright 2007 Free Software Foundation, Inc. http://fsf.org/ http://fsf.org

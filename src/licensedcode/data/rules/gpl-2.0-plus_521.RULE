@@ -6,5 +6,5 @@ referenced_filenames:
     - license.txt
 ---
 
-WordPress is free software, and is released under the terms of the <abbr title="GNU General Public License">GPL</abbr> version 2 or (at your option) any later
+WordPress is free software, and is released under the terms of the <abbr title="{{GNU General Public License">GPL</abbr> version 2}} or (at your option) any later
  version. See ="license.txt">license.txt

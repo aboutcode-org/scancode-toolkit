@@ -6,6 +6,6 @@ referenced_filenames:
     - /usr/share/common-licenses/GPL-2
 ---
 
-License: GPL-2+
- On Debian systems, the text of the GPL-2 can be found in
+{{License: GPL-2+}}
+ On Debian systems, the text of the {{GPL-2}} can be found in
   /usr/share/common-licenses/GPL-2.

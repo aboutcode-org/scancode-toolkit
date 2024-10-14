@@ -4,5 +4,5 @@ is_license_reference: yes
 relevance: 100
 ---
 
-Reiserfs is hereby licensed under the GNU General
-Public License version 2.
+Reiserfs is hereby licensed under {{the GNU General
+Public License version 2}}.

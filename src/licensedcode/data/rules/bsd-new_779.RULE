@@ -7,4 +7,4 @@ ignorable_urls:
     - http://golang.org/
 ---
 
-Subject to the BSD-style license found at http://golang.org
+Subject to the {{BSD-style license}} found at http://golang.org

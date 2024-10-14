@@ -6,6 +6,6 @@ ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0.html
 ---
 
-license:
-    name: Apache 2.0
+{{license:
+    name: Apache 2}}.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html

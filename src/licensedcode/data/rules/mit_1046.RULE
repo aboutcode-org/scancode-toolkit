@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-manual pages are released under the MIT License.
+manual pages are released {{under the MIT License}}.

@@ -6,4 +6,4 @@ ignorable_urls:
     - https://www.gnu.org/licenses/gpl.txt
 ---
 
-is subject to the ?GNU General Public License Version 2?, which may be obtained at the following web site: https://www.gnu.org/licenses/gpl.txt
+is subject to {{the ?GNU General Public License Version 2}}?, which may be obtained at the following web site: https://www.gnu.org/licenses/gpl.txt
