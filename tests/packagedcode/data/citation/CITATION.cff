@@ -1,0 +1,89 @@
+# This CITATION.cff file was created by ruby-cff (v 1.1.0).
+# Added few changes to help with testing.
+# Gem: https://rubygems.org/gems/cff
+# CFF: https://citation-file-format.github.io/
+# Link: https://github.com/citation-file-format/ruby-cff/blob/main/CITATION.cff
+
+cff-version: 1.2.0
+message: If you use ruby-cff in your work, please cite it using the following metadata
+title: Ruby CFF Library
+type: software
+abstract: This library provides a Ruby interface to manipulate Citation File Format files
+authors:
+- family-names: Haines
+  given-names: Robert
+  orcid: https://orcid.org/0000-0002-9538-7919
+  affiliation: The University of Manchester, UK
+- name: The Ruby Citation File Format Developers
+  email: abc@developer.com
+keywords:
+- ruby
+- credit
+- software citation
+- research software
+- software sustainability
+- metadata
+- citation file format
+- CFF
+version: 1.1.0
+doi: 10.5281/zenodo.1184077
+date-released: 2023-04-10
+license: Apache-2.0
+url: https://rubygems.org/
+repository: https://github.com/citation-file-format/
+repository-artifact: https://rubygems.org/gems/cff
+repository-code: https://github.com/citation-file-format/ruby-cff
+references:
+- type: software
+  title: Citation File Format
+  authors:
+  - family-names: Druskat
+    given-names: Stephan
+    orcid: https://orcid.org/0000-0003-4925-7248
+  - family-names: Spaaks
+    given-names: Jurriaan H.
+    orcid: https://orcid.org/0000-0002-7064-4069
+  - family-names: Chue Hong
+    given-names: Neil
+    orcid: https://orcid.org/0000-0002-8876-7606
+  - family-names: Haines
+    given-names: Robert
+    orcid: https://orcid.org/0000-0002-9538-7919
+  - family-names: Baker
+    given-names: James
+    orcid: https://orcid.org/0000-0002-2682-6922
+  - family-names: Bliven
+    given-names: Spencer
+    orcid: https://orcid.org/0000-0002-1200-1698
+    email: spencer.bliven@gmail.com
+  - family-names: Willighagen
+    given-names: Egon
+    orcid: https://orcid.org/0000-0001-7542-0286
+  - family-names: Pérez-Suárez
+    given-names: David
+    orcid: https://orcid.org/0000-0003-0784-6909
+    website: https://dpshelio.github.io
+  - family-names: Konovalov
+    given-names: Alexander
+    orcid: https://orcid.org/0000-0001-5299-3292
+  identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003149
+    description: The concept DOI for the collection containing all versions of the Citation File Format.
+  - type: doi
+    value: 10.5281/zenodo.5171937
+    description: The versioned DOI for the version 1.2.0 of the Citation File Format.
+  keywords:
+  - citation file format
+  - CFF
+  - citation files
+  - software citation
+  - file format
+  - YAML
+  - software sustainability
+  - research software
+  - credit
+  abstract: CITATION.cff files are plain text files with human- and machine-readable citation information for software. Code developers can include them in their repositories to let others know how to correctly cite their software. This is the specification for the Citation File Format.
+  date-released: 2021-08-09
+  license: CC-BY-4.0
+  version: 1.2.0
