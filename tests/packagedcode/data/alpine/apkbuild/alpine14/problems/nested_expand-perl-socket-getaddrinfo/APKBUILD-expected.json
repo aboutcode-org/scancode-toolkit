@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "perl-socket-getaddrinfo",
   "version": "0.22-r3",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/perl-socket-getaddrinfo@0.22-r3"
+  "purl": "pkg:apk/perl-socket-getaddrinfo@0.22-r3"
 }

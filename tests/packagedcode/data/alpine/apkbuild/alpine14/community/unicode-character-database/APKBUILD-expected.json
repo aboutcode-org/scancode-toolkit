@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "unicode-character-database",
   "version": "13.0.0-r1",
@@ -108,5 +108,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/unicode-character-database@13.0.0-r1"
+  "purl": "pkg:apk/unicode-character-database@13.0.0-r1"
 }

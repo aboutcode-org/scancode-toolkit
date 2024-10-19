@@ -42,6 +42,7 @@ except ImportError:
     licensing = None
 
 from packagedcode.licensing import get_declared_license_expression_spdx
+from packagedcode.utils import get_ancestor
 
 """
 This module contain data models for package and dependencies, abstracting and
@@ -427,6 +428,24 @@ class Dependency(DependentPackage):
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.dependency_uid:
             self.dependency_uid = build_package_uid(self.purl)
+
+    def refresh_dependency_uid(self):
+        self.dependency_uid = build_package_uid(self.purl)
+
+    def update_namespace(self, namespace):
+        if not namespace:
+            return
+        
+        purl = PackageURL.from_string(self.purl)
+        new_purl = PackageURL(
+            type=purl.type,
+            namespace=namespace,
+            name=purl.name,
+            version=purl.version,
+            qualifiers=purl.qualifiers,
+        )
+        self.purl = new_purl.to_string()
+        self.refresh_dependency_uid()
 
     @classmethod
     def from_dependent_package(
@@ -1494,6 +1513,42 @@ class DatafileHandler:
         """
         pass
 
+    @classmethod
+    def get_root_resource_for_rootfs(cls, resource, codebase):
+
+        # get the root resource of the rootfs
+        # take the 1st pattern as a reference
+        # for instance: '*usr/lib/sysimage/rpm/Packages.db'
+        base_path_patterns = cls.path_patterns[0]
+
+        # how many levels up are there to the root of the rootfs?
+        levels_up = len(base_path_patterns.split('/'))
+
+        return get_ancestor(
+            levels_up=levels_up,
+            resource=resource,
+            codebase=codebase,
+        )
+
+    @classmethod
+    def get_distro_identifier_rootfs(cls, root_resource, codebase):
+        identifier = None
+        root_path = root_resource.path
+        os_release_rootfs_paths = ('etc/os-release', 'usr/lib/os-release',)
+        for os_release_rootfs_path in os_release_rootfs_paths:
+            os_release_path = '/'.join([root_path, os_release_rootfs_path])
+            os_release_res = codebase.get_resource(os_release_path)
+            if not os_release_res:
+                continue
+
+            # there can be only one distro
+            distro = os_release_res.package_data and os_release_res.package_data[0]
+            if distro:
+                identifier = distro.get("namespace")
+                break
+
+        return identifier
+
 
 class NonAssemblableDatafileHandler(DatafileHandler):
     """
@@ -1569,6 +1624,10 @@ class Package(PackageData):
             self.purl = self.set_purl()
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
+
+    def refresh_and_get_package_uid(self):
+        self.package_uid = build_package_uid(self.purl)
+        return self.package_uid
 
     def to_dict(self):
         return super().to_dict(with_details=False)

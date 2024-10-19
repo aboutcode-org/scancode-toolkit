@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "parole",
   "version": "1.0.5-r0",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/parole@1.0.5-r0"
+  "purl": "pkg:apk/parole@1.0.5-r0"
 }

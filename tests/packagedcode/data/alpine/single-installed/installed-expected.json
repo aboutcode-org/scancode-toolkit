@@ -1,6 +1,6 @@
 [
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "busybox",
     "version": "1.31.1-r9",
@@ -140,6 +140,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/busybox@1.31.1-r9?arch=x86_64"
+    "purl": "pkg:apk/busybox@1.31.1-r9?arch=x86_64"
   }
 ]

@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "imagemagick6",
   "version": "6.9.11.55-r0",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/imagemagick6@6.9.11.55-r0"
+  "purl": "pkg:apk/imagemagick6@6.9.11.55-r0"
 }

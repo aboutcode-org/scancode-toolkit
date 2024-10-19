@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "zsnes",
   "version": "1.51-r11",
@@ -132,5 +132,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/zsnes@1.51-r11"
+  "purl": "pkg:apk/zsnes@1.51-r11"
 }

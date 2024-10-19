@@ -22,7 +22,7 @@ from packagedcode.pyrpm import RPM
 from packagedcode.rpm_installed import collect_installed_rpmdb_xmlish_from_rpmdb_loc
 from packagedcode.rpm_installed import parse_rpm_xmlish
 from packagedcode.utils import build_description
-from packagedcode.utils import get_ancestor
+
 from scancode.api import get_licenses
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
@@ -143,54 +143,29 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
             package_type=cls.default_package_type,
             package_only=package_only,
         )
-        # TODO: package_data.namespace = cls.default_package_namespace
         return package_data
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
-        # get the root resource of the rootfs
-        # take the 1st pattern as a reference
-        # for instance: '*usr/lib/sysimage/rpm/Packages.db'
-        base_path_patterns = cls.path_patterns[0]
-
-        # how many levels up are there to the root of the rootfs?
-        levels_up = len(base_path_patterns.split('/'))
-
-        root_resource = get_ancestor(
-            levels_up=levels_up,
-            resource=resource,
-            codebase=codebase,
-        )
+        
+        root_resource = cls.get_root_resource_for_rootfs(resource, codebase)
 
         package = models.Package.from_package_data(
             package_data=package_data,
             datafile_path=resource.path,
         )
-        package_uid = package.package_uid
+        namespace = cls.get_distro_identifier_rootfs(root_resource, codebase)
+        if namespace:
+            package.namespace = namespace
 
-        root_path = root_resource.path
-        # get etc/os-release for namespace
-        namespace = None
-        os_release_rootfs_paths = ('etc/os-release', 'usr/lib/os-release',)
-        for os_release_rootfs_path in os_release_rootfs_paths:
-            os_release_path = '/'.join([root_path, os_release_rootfs_path])
-            os_release_res = codebase.get_resource(os_release_path)
-            if not os_release_res:
-                continue
-            # there can be only one distro
-            distro = os_release_res.package_data and os_release_res.package_data[0]
-            if distro:
-                namespace = distro.namespace
-                break
-
-        package.namespace = namespace
+        package_uid = package.refresh_and_get_package_uid()
 
         # tag files from refs
         resources = []
         missing_file_references = []
         # a file ref extends from the root of the filesystem
         for ref in package.file_references:
-            ref_path = '/'.join([root_path, ref.path])
+            ref_path = '/'.join([root_resource.path, ref.path])
             res = codebase.get_resource(ref_path)
             if not res:
                 missing_file_references.append(ref)
@@ -216,8 +191,7 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
                 datasource_id=package_data.datasource_id,
                 package_uid=package_uid,
             ):
-                if not dep.namespace:
-                    dep.namespace = namespace
+                dep.update_namespace(namespace)
                 yield dep
 
         for resource in resources:
@@ -424,19 +398,18 @@ class RpmMarinerContainerManifestHandler(models.DatafileHandler):
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
 
-        levels_up = len('var/lib/rpmmanifest/container-manifest-2'.split('/'))
-        root_resource = get_ancestor(
-            levels_up=levels_up,
-            resource=resource,
-            codebase=codebase,
-        )
+        root_resource = cls.get_root_resource_for_rootfs(resource, codebase)
         package_name = package_data.name
 
         package = models.Package.from_package_data(
             package_data=package_data,
             datafile_path=resource.path,
         )
-        package_uid = package.package_uid
+        namespace = cls.get_distro_identifier_rootfs(root_resource, codebase)
+        if namespace:
+            package.namespace = namespace
+
+        package_uid = package.refresh_and_get_package_uid()
 
         assemblable_paths = tuple(set([
             f'*usr/share/licenses/{package_name}/COPYING*',

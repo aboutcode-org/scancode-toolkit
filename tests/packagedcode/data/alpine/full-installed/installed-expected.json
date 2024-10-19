@@ -1,6 +1,6 @@
 [
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "musl",
     "version": "1.1.24-r8",
@@ -95,10 +95,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/musl@1.1.24-r8?arch=x86_64"
+    "purl": "pkg:apk/musl@1.1.24-r8?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "busybox",
     "version": "1.31.1-r16",
@@ -238,10 +238,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/busybox@1.31.1-r16?arch=x86_64"
+    "purl": "pkg:apk/busybox@1.31.1-r16?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "alpine-baselayout",
     "version": "3.2.0-r6",
@@ -561,10 +561,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/alpine-baselayout@3.2.0-r6?arch=x86_64"
+    "purl": "pkg:apk/alpine-baselayout@3.2.0-r6?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "alpine-keys",
     "version": "2.2-r0",
@@ -821,10 +821,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/alpine-keys@2.2-r0?arch=x86_64"
+    "purl": "pkg:apk/alpine-keys@2.2-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "libcrypto1.1",
     "version": "1.1.1g-r0",
@@ -1009,10 +1009,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/libcrypto1.1@1.1.1g-r0?arch=x86_64"
+    "purl": "pkg:apk/libcrypto1.1@1.1.1g-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "libssl1.1",
     "version": "1.1.1g-r0",
@@ -1107,10 +1107,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/libssl1.1@1.1.1g-r0?arch=x86_64"
+    "purl": "pkg:apk/libssl1.1@1.1.1g-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "ca-certificates-bundle",
     "version": "20191127-r2",
@@ -1205,10 +1205,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/ca-certificates-bundle@20191127-r2?arch=x86_64"
+    "purl": "pkg:apk/ca-certificates-bundle@20191127-r2?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "libtls-standalone",
     "version": "2.9.1-r1",
@@ -1307,10 +1307,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/libtls-standalone@2.9.1-r1?arch=x86_64"
+    "purl": "pkg:apk/libtls-standalone@2.9.1-r1?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "ssl_client",
     "version": "1.31.1-r16",
@@ -1396,10 +1396,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/ssl_client@1.31.1-r16?arch=x86_64"
+    "purl": "pkg:apk/ssl_client@1.31.1-r16?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "zlib",
     "version": "1.2.11-r3",
@@ -1494,10 +1494,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/zlib@1.2.11-r3?arch=x86_64"
+    "purl": "pkg:apk/zlib@1.2.11-r3?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "apk-tools",
     "version": "2.10.5-r1",
@@ -1583,10 +1583,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/apk-tools@2.10.5-r1?arch=x86_64"
+    "purl": "pkg:apk/apk-tools@2.10.5-r1?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "scanelf",
     "version": "1.2.6-r0",
@@ -1672,10 +1672,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/scanelf@1.2.6-r0?arch=x86_64"
+    "purl": "pkg:apk/scanelf@1.2.6-r0?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "musl-utils",
     "version": "1.1.24-r8",
@@ -1809,10 +1809,10 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/musl-utils@1.1.24-r8?arch=x86_64"
+    "purl": "pkg:apk/musl-utils@1.1.24-r8?arch=x86_64"
   },
   {
-    "type": "alpine",
+    "type": "apk",
     "namespace": null,
     "name": "libc-utils",
     "version": "0.7.2-r3",
@@ -1900,6 +1900,6 @@
     "repository_download_url": null,
     "api_data_url": null,
     "datasource_id": "alpine_installed_db",
-    "purl": "pkg:alpine/libc-utils@0.7.2-r3?arch=x86_64"
+    "purl": "pkg:apk/libc-utils@0.7.2-r3?arch=x86_64"
   }
 ]

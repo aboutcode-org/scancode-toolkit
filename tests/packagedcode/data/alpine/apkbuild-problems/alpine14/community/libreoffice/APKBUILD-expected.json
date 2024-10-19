@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "libreoffice",
   "version": "6.4.6.2-r11",
@@ -308,5 +308,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/libreoffice@6.4.6.2-r11"
+  "purl": "pkg:apk/libreoffice@6.4.6.2-r11"
 }

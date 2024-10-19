@@ -1,5 +1,5 @@
 {
-  "type": "alpine",
+  "type": "apk",
   "namespace": null,
   "name": "feedbackd-device-themes",
   "version": "0_git20210126-r0",
@@ -76,5 +76,5 @@
   "repository_download_url": null,
   "api_data_url": null,
   "datasource_id": "alpine_apkbuild",
-  "purl": "pkg:alpine/feedbackd-device-themes@0_git20210126-r0"
+  "purl": "pkg:apk/feedbackd-device-themes@0_git20210126-r0"
 }
