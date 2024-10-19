@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) Copyright 2004 Texas Instruments, <www.ti.com> Richard Woodruff <r-woodruff2@ti.com>
+  - (c) Copyright 2006 Nokia Corporation
+holders:
+  - Texas Instruments, Richard Woodruff
+  - Nokia Corporation

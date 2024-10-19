@@ -36,10 +36,10 @@
           "start_line": 1,
           "end_line": 1,
           "matcher": "2-aho",
-          "score": 75.0,
+          "score": 60.0,
           "matched_length": 1,
           "match_coverage": 100.0,
-          "rule_relevance": 75,
+          "rule_relevance": 60,
           "rule_identifier": "lgpl_bare_single_word.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "- name: lgpl"
@@ -51,16 +51,16 @@
           "start_line": 2,
           "end_line": 2,
           "matcher": "2-aho",
-          "score": 75.0,
+          "score": 60.0,
           "matched_length": 1,
           "match_coverage": 100.0,
-          "rule_relevance": 75,
+          "rule_relevance": 60,
           "rule_identifier": "lgpl_bare_single_word.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "  url: http://repository.jboss.com/licenses/lgpl.txt"
         }
       ],
-      "identifier": "lgpl_2_0_plus-10aa305b-de20-e6cc-d2a0-3f4e76b8a2f9"
+      "identifier": "lgpl_2_0_plus-352c9c42-1459-8dfe-3910-c459079c06b9"
     }
   ],
   "other_license_expression": null,

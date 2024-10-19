@@ -3,6 +3,10 @@ license_expression: apache-2.0
 is_license_notice: yes
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
+ignorable_copyrights:
+  - Copyright (c), Oracle and/or its affiliates
+ignorable_holders:
+  - Oracle and/or its affiliates
 ---
 
 The Apache Software License, Version 2.0

@@ -13,7 +13,7 @@ Overview
 
 **Problem:** Since Python 2.7 will retire in few months and will not be maintained any longer.
 
-**Solution:** `Scancode <https://github.com/nexB/scancode-toolkit/>`__ needs to be ported to
+**Solution:** `Scancode <https://github.com/aboutcode-org/scancode-toolkit/>`__ needs to be ported to
 python 3 and all test suites must pass on both version of Python. The main difference that
 makes Python 3 better than Python 2.x is that the support for unicode is greatly improved in
 Python 3. This will also be useful for scancode as scancode has users in more than 100 languages
@@ -77,7 +77,7 @@ We came with various Solution:
 
 We choose the third solution because it is most fundamental and simple and easy to use.
 
-Project was tracked in this ticket `nexB/scancode-toolkit#295 <https://github.com/nexB/scancode-toolkit/issues/295>`__
+Project was tracked in this ticket `nexB/scancode-toolkit#295 <https://github.com/aboutcode-org/scancode-toolkit/issues/295>`__
 
 **Project link :** `Port Scancode to Python 3 <https://summerofcode.withgoogle.com/organizations/6118953540124672/>`__
 
@@ -85,9 +85,9 @@ Project was tracked in this ticket `nexB/scancode-toolkit#295 <https://github.co
     [Org Link] https://summerofcode.withgoogle.com/organizations/6118953540124672/
     [Project Link] https://summerofcode.withgoogle.com/projects/#5969926387400704
 
-**My contribution :** `List of Commits <https://github.com/nexB/scancode-toolkit/commits?author=Abhishek-Dev09>`__
+**My contribution :** `List of Commits <https://github.com/aboutcode-org/scancode-toolkit/commits?author=Abhishek-Dev09>`__
 
-**Note :** Please give your feedback `here <https://github.com/nexB/scancode-toolkit/issues/295>`_
+**Note :** Please give your feedback `here <https://github.com/aboutcode-org/scancode-toolkit/issues/295>`_
 
 Outcome
 -------

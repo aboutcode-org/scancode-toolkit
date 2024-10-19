@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2008 Option International
+  - Copyright (c) 2008 Filip Aben <f.aben@option.com> Denis Joseph Barrow <d.barow@option.com>
+    Jan Dumon <j.dumon@option.com>
+  - Copyright (c) 2009, 2010 Intel Corp Russ Gorby <russ.gorby@intel.com>
+holders:
+  - Option International
+  - Filip Aben Denis Joseph Barrow Jan Dumon
+  - Intel Corp Russ Gorby
+authors:
+  - Intel from Option

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999, 2001, 2002, 2006, 2007 Free Software Foundation, Inc.
+  - Copyright (c) 1992-1993 Jean-loup Gailly
+holders:
+  - Free Software Foundation, Inc.
+  - Jean-loup Gailly
+authors:
+  - Bdale Garbee <bdale@gag.com>

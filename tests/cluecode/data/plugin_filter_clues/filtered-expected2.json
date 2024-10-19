@@ -94,17 +94,18 @@
           "end_line": 24
         }
       ],
-      "authors": [],
+      "authors": [
+        {
+          "author": "Pascal Andre, andre@chimay.via.ecp.fr",
+          "start_line": 3,
+          "end_line": 4
+        }
+      ],
       "emails": [
         {
           "email": "darcy@druid.net",
           "start_line": 3,
           "end_line": 3
-        },
-        {
-          "email": "andre@chimay.via.ecp.fr",
-          "start_line": 4,
-          "end_line": 4
         }
       ],
       "urls": [],

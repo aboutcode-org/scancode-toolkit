@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2014-$ date.year pkg.author
+holders:
+  - date.year pkg.author

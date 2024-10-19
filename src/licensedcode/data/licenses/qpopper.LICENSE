@@ -15,7 +15,7 @@ ignorable_holders:
     - QUALCOMM Incorporated
     - The Regents of the University of California
 ignorable_authors:
-    - Austin Shelton
+    - Austin Shelton, Information Systems and Technology, University of California, Berkeley
 ---
 
 Qpopper(tm) is licensed by QUALCOMM Incorporated under the following

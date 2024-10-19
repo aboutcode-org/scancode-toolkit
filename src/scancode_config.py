@@ -143,8 +143,9 @@ __release_date__ = datetime.datetime(2024, 7, 2)
 # on the data format version
 __output_format_version__ = '3.2.0'
 
-#
-spdx_license_list_version = '3.24'
+# see https://github.com/spdx/tools-python/issues/820
+# this is actually `3.25.0`
+spdx_license_list_version = '3.25'
 
 ################################################################################
 # USAGE MODE-, INSTALLATION- and IMPORT- and RUN-SPECIFIC DIRECTORIES
@@ -210,4 +211,4 @@ _prefix = 'scancode-tk-' + __version__ + '-'
 scancode_temp_dir = tempfile.mkdtemp(prefix=_prefix, dir=__scancode_temp_base_dir)
 
 # Used for tests to regenerate fixtures with regen=True
-REGEN_TEST_FIXTURES = os.getenv('SCANCODE_REGEN_TEST_FIXTURES', False)
+REGEN_TEST_FIXTURES = SCANCODE_REGEN_TEST_FIXTURES = os.getenv('SCANCODE_REGEN_TEST_FIXTURES', False)

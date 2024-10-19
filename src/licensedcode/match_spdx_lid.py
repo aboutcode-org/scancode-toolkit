@@ -59,6 +59,7 @@ if TRACE or os.environ.get('SCANCODE_DEBUG_LICENSE'):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 MATCH_SPDX_ID = '1-spdx-id'
+MATCH_SPDX_ID_ORDER = 2
 
 
 def spdx_id_match(idx, query_run, text, expression_symbols=None):
@@ -112,6 +113,7 @@ def spdx_id_match(idx, query_run, text, expression_symbols=None):
         hispan=hispan,
         query_run_start=match_start,
         matcher=MATCH_SPDX_ID,
+        matcher_order=MATCH_SPDX_ID_ORDER,
         query=query_run.query,
     )
     return match
@@ -136,7 +138,7 @@ def get_spdx_expression(text, expression_symbols=None):
         expression_symbols = get_spdx_symbols()
 
     unknown_symbol = get_unknown_spdx_symbol()
-    #_prefix, exp_text = prepare_text(text)
+    # _prefix, exp_text = prepare_text(text)
 
     expression = get_expression(
         text=text,
@@ -361,7 +363,7 @@ def clean_text(text):
     if is_markup_text(text):
         text = demarkup_text(text)
 
-    dangling_markup = ['</a>','</p>','</div>', '</licenseUrl>']
+    dangling_markup = ['</a>', '</p>', '</div>', '</licenseUrl>']
     for markup in dangling_markup:
         if markup in text:
             text = text.replace(markup, '')
@@ -384,7 +386,7 @@ def clean_text(text):
     if '">' in text:
         text_fragments = text.split('">')
         if text_fragments[1] in text_fragments[0]:
-            text =  text_fragments[0]
+            text = text_fragments[0]
 
     return ' '.join(text.split())
 
@@ -392,7 +394,6 @@ def clean_text(text):
 _split_spdx_lid = re.compile(
     '(spdx(?:\\-|\\s)+licen(?:s|c)e(?:\\-|\\s)+identifier\\s*:?\\s*)',
     re.IGNORECASE).split
-
 
 _nuget_split_spdx_lid = re.compile(
     '(licenses(?:\\.|\\s)+nuget(?:\\.|\\s)+org\\s*:?\\s*)',

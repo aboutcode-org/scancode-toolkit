@@ -61,6 +61,85 @@
     {
       "type": "npm",
       "namespace": null,
+      "name": "cobe-site",
+      "version": "1.0.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "JavaScript",
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Shu Ding",
+          "email": "g@shud.in",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": "https://registry.npmjs.org/cobe-site/-/cobe-site-1.0.0.tgz",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "cobe/website/package.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "- MIT\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://www.npmjs.com/package/cobe-site",
+      "repository_download_url": "https://registry.npmjs.org/cobe-site/-/cobe-site-1.0.0.tgz",
+      "api_data_url": "https://registry.npmjs.org/cobe-site/1.0.0",
+      "package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "cobe/website/package.json"
+      ],
+      "datasource_ids": [
+        "npm_package_json"
+      ],
+      "purl": "pkg:npm/cobe-site@1.0.0"
+    },
+    {
+      "type": "npm",
+      "namespace": null,
       "name": "cobe",
       "version": "0.6.3",
       "qualifiers": {},
@@ -131,6 +210,258 @@
     }
   ],
   "dependencies": [
+    {
+      "purl": "pkg:npm/cobe",
+      "extracted_requirement": "workspace:*",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/cobe?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/leva",
+      "extracted_requirement": "^0.9.34",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/leva?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/next",
+      "extracted_requirement": "^12.1.6-canary.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/next?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/nextra",
+      "extracted_requirement": "2.0.0-alpha.56",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/nextra?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/nextra-theme-docs",
+      "extracted_requirement": "2.0.0-alpha.59",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/nextra-theme-docs?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/react",
+      "extracted_requirement": "^18.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/react?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/react-dom",
+      "extracted_requirement": "^18.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/react-dom?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/react-spring",
+      "extracted_requirement": "^9.4.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/react-spring?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/package.json",
+      "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:npm/nextra@2.0.0-alpha.56",
+      "extracted_requirement": null,
+      "scope": null,
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true,
+      "is_direct": true,
+      "resolved_package": {
+        "type": "npm",
+        "namespace": null,
+        "name": "nextra",
+        "version": "2.0.0-alpha.56",
+        "qualifiers": {},
+        "subpath": null,
+        "primary_language": "JavaScript",
+        "description": null,
+        "release_date": null,
+        "parties": [],
+        "keywords": [],
+        "homepage_url": null,
+        "download_url": null,
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": "53abc5a148f839cf8fc7d5b234e50959db5aea3f01f9d2ad8db5af1358c2a33f70740011b56c486649c810c2badb2b7de3365e523260e4a0b38f51c165ce94a5",
+        "bug_tracking_url": null,
+        "code_view_url": null,
+        "vcs_url": null,
+        "copyright": null,
+        "holder": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "other_license_expression": null,
+        "other_license_expression_spdx": null,
+        "other_license_detections": [],
+        "extracted_license_statement": null,
+        "notice_text": null,
+        "source_packages": [],
+        "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
+        "extra_data": {},
+        "dependencies": [
+          {
+            "purl": "pkg:npm/react",
+            "extracted_requirement": ">=16.13.1",
+            "scope": "peerDependencies",
+            "is_runtime": false,
+            "is_optional": true,
+            "is_resolved": true,
+            "is_direct": false,
+            "resolved_package": {},
+            "extra_data": {}
+          }
+        ],
+        "repository_homepage_url": null,
+        "repository_download_url": null,
+        "api_data_url": null,
+        "datasource_id": "pnpm_lock_yaml",
+        "purl": "pkg:npm/nextra@2.0.0-alpha.56"
+      },
+      "extra_data": {},
+      "dependency_uid": "pkg:npm/nextra@2.0.0-alpha.56?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/pnpm-lock.yaml",
+      "datasource_id": "pnpm_lock_yaml"
+    },
+    {
+      "purl": "pkg:npm/react@18.0.0",
+      "extracted_requirement": null,
+      "scope": null,
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": true,
+      "is_direct": true,
+      "resolved_package": {
+        "type": "npm",
+        "namespace": null,
+        "name": "react",
+        "version": "18.0.0",
+        "qualifiers": {},
+        "subpath": null,
+        "primary_language": "JavaScript",
+        "description": null,
+        "release_date": null,
+        "parties": [],
+        "keywords": [],
+        "homepage_url": null,
+        "download_url": null,
+        "size": null,
+        "sha1": null,
+        "md5": null,
+        "sha256": null,
+        "sha512": "c7e54beb06d3e094553e6ec41b15e167cc3c2d344e6b13d73aa8651b2552aefd2c0758e4c851a05f127c2d5a0f44bbcf47afc221918599fcea51ad8d61e32bd8",
+        "bug_tracking_url": null,
+        "code_view_url": null,
+        "vcs_url": null,
+        "copyright": null,
+        "holder": null,
+        "declared_license_expression": null,
+        "declared_license_expression_spdx": null,
+        "license_detections": [],
+        "other_license_expression": null,
+        "other_license_expression_spdx": null,
+        "other_license_detections": [],
+        "extracted_license_statement": null,
+        "notice_text": null,
+        "source_packages": [],
+        "file_references": [],
+        "is_private": false,
+        "is_virtual": true,
+        "extra_data": {},
+        "dependencies": [],
+        "repository_homepage_url": null,
+        "repository_download_url": null,
+        "api_data_url": null,
+        "datasource_id": "pnpm_lock_yaml",
+        "purl": "pkg:npm/react@18.0.0"
+      },
+      "extra_data": {
+        "engines": {
+          "node": ">=0.10.0"
+        }
+      },
+      "dependency_uid": "pkg:npm/react@18.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "cobe/website/pnpm-lock.yaml",
+      "datasource_id": "pnpm_lock_yaml"
+    },
     {
       "purl": "pkg:npm/phenomenon",
       "extracted_requirement": "^1.6.0",
@@ -1047,7 +1378,7 @@
       "datasource_id": "pnpm_lock_yaml"
     },
     {
-      "purl": "pkg:npm/%40napi-rs/nextra@2.0.0-alpha.56",
+      "purl": "pkg:npm/nextra@2.0.0-alpha.56",
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
@@ -1056,7 +1387,7 @@
       "is_direct": true,
       "resolved_package": {
         "type": "npm",
-        "namespace": "@napi-rs",
+        "namespace": null,
         "name": "nextra",
         "version": "2.0.0-alpha.56",
         "qualifiers": {},
@@ -1229,16 +1560,16 @@
         "repository_download_url": null,
         "api_data_url": null,
         "datasource_id": "pnpm_lock_yaml",
-        "purl": "pkg:npm/%40napi-rs/nextra@2.0.0-alpha.56"
+        "purl": "pkg:npm/nextra@2.0.0-alpha.56"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40napi-rs/nextra@2.0.0-alpha.56?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:npm/nextra@2.0.0-alpha.56?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "cobe/pnpm-lock.yaml",
       "datasource_id": "pnpm_lock_yaml"
     },
     {
-      "purl": "pkg:npm/%40napi-rs/react-is@16.13.1",
+      "purl": "pkg:npm/react-is@16.13.1",
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
@@ -1247,7 +1578,7 @@
       "is_direct": true,
       "resolved_package": {
         "type": "npm",
-        "namespace": "@napi-rs",
+        "namespace": null,
         "name": "react-is",
         "version": "16.13.1",
         "qualifiers": {},
@@ -1287,16 +1618,16 @@
         "repository_download_url": null,
         "api_data_url": null,
         "datasource_id": "pnpm_lock_yaml",
-        "purl": "pkg:npm/%40napi-rs/react-is@16.13.1"
+        "purl": "pkg:npm/react-is@16.13.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40napi-rs/react-is@16.13.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:npm/react-is@16.13.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "cobe/pnpm-lock.yaml",
       "datasource_id": "pnpm_lock_yaml"
     },
     {
-      "purl": "pkg:npm/%40napi-rs/react-spring@9.5.5",
+      "purl": "pkg:npm/react-spring@9.5.5",
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
@@ -1305,7 +1636,7 @@
       "is_direct": true,
       "resolved_package": {
         "type": "npm",
-        "namespace": "@napi-rs",
+        "namespace": null,
         "name": "react-spring",
         "version": "9.5.5",
         "qualifiers": {},
@@ -1511,16 +1842,16 @@
         "repository_download_url": null,
         "api_data_url": null,
         "datasource_id": "pnpm_lock_yaml",
-        "purl": "pkg:npm/%40napi-rs/react-spring@9.5.5"
+        "purl": "pkg:npm/react-spring@9.5.5"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40napi-rs/react-spring@9.5.5?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:npm/react-spring@9.5.5?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "cobe/pnpm-lock.yaml",
       "datasource_id": "pnpm_lock_yaml"
     },
     {
-      "purl": "pkg:npm/%40napi-rs/remark-gfm@3.0.1",
+      "purl": "pkg:npm/remark-gfm@3.0.1",
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
@@ -1529,7 +1860,7 @@
       "is_direct": true,
       "resolved_package": {
         "type": "npm",
-        "namespace": "@napi-rs",
+        "namespace": null,
         "name": "remark-gfm",
         "version": "3.0.1",
         "qualifiers": {},
@@ -1625,16 +1956,16 @@
         "repository_download_url": null,
         "api_data_url": null,
         "datasource_id": "pnpm_lock_yaml",
-        "purl": "pkg:npm/%40napi-rs/remark-gfm@3.0.1"
+        "purl": "pkg:npm/remark-gfm@3.0.1"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40napi-rs/remark-gfm@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:npm/remark-gfm@3.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "cobe/pnpm-lock.yaml",
       "datasource_id": "pnpm_lock_yaml"
     },
     {
-      "purl": "pkg:npm/%40napi-rs/styled-jsx@5.0.2",
+      "purl": "pkg:npm/styled-jsx@5.0.2",
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
@@ -1643,7 +1974,7 @@
       "is_direct": true,
       "resolved_package": {
         "type": "npm",
-        "namespace": "@napi-rs",
+        "namespace": null,
         "name": "styled-jsx",
         "version": "5.0.2",
         "qualifiers": {},
@@ -1717,20 +2048,20 @@
         "repository_download_url": null,
         "api_data_url": null,
         "datasource_id": "pnpm_lock_yaml",
-        "purl": "pkg:npm/%40napi-rs/styled-jsx@5.0.2"
+        "purl": "pkg:npm/styled-jsx@5.0.2"
       },
       "extra_data": {
         "engines": {
           "node": ">= 12.0.0"
         }
       },
-      "dependency_uid": "pkg:npm/%40napi-rs/styled-jsx@5.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:npm/styled-jsx@5.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "cobe/pnpm-lock.yaml",
       "datasource_id": "pnpm_lock_yaml"
     },
     {
-      "purl": "pkg:npm/%40napi-rs/zustand@3.7.2",
+      "purl": "pkg:npm/zustand@3.7.2",
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
@@ -1739,7 +2070,7 @@
       "is_direct": true,
       "resolved_package": {
         "type": "npm",
-        "namespace": "@napi-rs",
+        "namespace": null,
         "name": "zustand",
         "version": "3.7.2",
         "qualifiers": {},
@@ -1791,20 +2122,20 @@
         "repository_download_url": null,
         "api_data_url": null,
         "datasource_id": "pnpm_lock_yaml",
-        "purl": "pkg:npm/%40napi-rs/zustand@3.7.2"
+        "purl": "pkg:npm/zustand@3.7.2"
       },
       "extra_data": {
         "engines": {
           "node": ">=12.7.0"
         }
       },
-      "dependency_uid": "pkg:npm/%40napi-rs/zustand@3.7.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:npm/zustand@3.7.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "cobe/pnpm-lock.yaml",
       "datasource_id": "pnpm_lock_yaml"
     },
     {
-      "purl": "pkg:npm/%40napi-rs/zwitch@2.0.2",
+      "purl": "pkg:npm/zwitch@2.0.2",
       "extracted_requirement": null,
       "scope": null,
       "is_runtime": true,
@@ -1813,7 +2144,7 @@
       "is_direct": true,
       "resolved_package": {
         "type": "npm",
-        "namespace": "@napi-rs",
+        "namespace": null,
         "name": "zwitch",
         "version": "2.0.2",
         "qualifiers": {},
@@ -1853,10 +2184,10 @@
         "repository_download_url": null,
         "api_data_url": null,
         "datasource_id": "pnpm_lock_yaml",
-        "purl": "pkg:npm/%40napi-rs/zwitch@2.0.2"
+        "purl": "pkg:npm/zwitch@2.0.2"
       },
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40napi-rs/zwitch@2.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:npm/zwitch@2.0.2?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "cobe/pnpm-lock.yaml",
       "datasource_id": "pnpm_lock_yaml"
@@ -1928,7 +2259,6 @@
         }
       ],
       "for_packages": [
-        "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
@@ -2903,7 +3233,7 @@
               }
             },
             {
-              "purl": "pkg:npm/%40napi-rs/nextra@2.0.0-alpha.56",
+              "purl": "pkg:npm/nextra@2.0.0-alpha.56",
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
@@ -2912,7 +3242,7 @@
               "is_direct": true,
               "resolved_package": {
                 "type": "npm",
-                "namespace": "@napi-rs",
+                "namespace": null,
                 "name": "nextra",
                 "version": "2.0.0-alpha.56",
                 "qualifiers": {},
@@ -3085,12 +3415,12 @@
                 "repository_download_url": null,
                 "api_data_url": null,
                 "datasource_id": "pnpm_lock_yaml",
-                "purl": "pkg:npm/%40napi-rs/nextra@2.0.0-alpha.56"
+                "purl": "pkg:npm/nextra@2.0.0-alpha.56"
               },
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%40napi-rs/react-is@16.13.1",
+              "purl": "pkg:npm/react-is@16.13.1",
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
@@ -3099,7 +3429,7 @@
               "is_direct": true,
               "resolved_package": {
                 "type": "npm",
-                "namespace": "@napi-rs",
+                "namespace": null,
                 "name": "react-is",
                 "version": "16.13.1",
                 "qualifiers": {},
@@ -3139,12 +3469,12 @@
                 "repository_download_url": null,
                 "api_data_url": null,
                 "datasource_id": "pnpm_lock_yaml",
-                "purl": "pkg:npm/%40napi-rs/react-is@16.13.1"
+                "purl": "pkg:npm/react-is@16.13.1"
               },
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%40napi-rs/react-spring@9.5.5",
+              "purl": "pkg:npm/react-spring@9.5.5",
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
@@ -3153,7 +3483,7 @@
               "is_direct": true,
               "resolved_package": {
                 "type": "npm",
-                "namespace": "@napi-rs",
+                "namespace": null,
                 "name": "react-spring",
                 "version": "9.5.5",
                 "qualifiers": {},
@@ -3359,12 +3689,12 @@
                 "repository_download_url": null,
                 "api_data_url": null,
                 "datasource_id": "pnpm_lock_yaml",
-                "purl": "pkg:npm/%40napi-rs/react-spring@9.5.5"
+                "purl": "pkg:npm/react-spring@9.5.5"
               },
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%40napi-rs/remark-gfm@3.0.1",
+              "purl": "pkg:npm/remark-gfm@3.0.1",
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
@@ -3373,7 +3703,7 @@
               "is_direct": true,
               "resolved_package": {
                 "type": "npm",
-                "namespace": "@napi-rs",
+                "namespace": null,
                 "name": "remark-gfm",
                 "version": "3.0.1",
                 "qualifiers": {},
@@ -3469,12 +3799,12 @@
                 "repository_download_url": null,
                 "api_data_url": null,
                 "datasource_id": "pnpm_lock_yaml",
-                "purl": "pkg:npm/%40napi-rs/remark-gfm@3.0.1"
+                "purl": "pkg:npm/remark-gfm@3.0.1"
               },
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%40napi-rs/styled-jsx@5.0.2",
+              "purl": "pkg:npm/styled-jsx@5.0.2",
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
@@ -3483,7 +3813,7 @@
               "is_direct": true,
               "resolved_package": {
                 "type": "npm",
-                "namespace": "@napi-rs",
+                "namespace": null,
                 "name": "styled-jsx",
                 "version": "5.0.2",
                 "qualifiers": {},
@@ -3557,7 +3887,7 @@
                 "repository_download_url": null,
                 "api_data_url": null,
                 "datasource_id": "pnpm_lock_yaml",
-                "purl": "pkg:npm/%40napi-rs/styled-jsx@5.0.2"
+                "purl": "pkg:npm/styled-jsx@5.0.2"
               },
               "extra_data": {
                 "engines": {
@@ -3566,7 +3896,7 @@
               }
             },
             {
-              "purl": "pkg:npm/%40napi-rs/zustand@3.7.2",
+              "purl": "pkg:npm/zustand@3.7.2",
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
@@ -3575,7 +3905,7 @@
               "is_direct": true,
               "resolved_package": {
                 "type": "npm",
-                "namespace": "@napi-rs",
+                "namespace": null,
                 "name": "zustand",
                 "version": "3.7.2",
                 "qualifiers": {},
@@ -3627,7 +3957,7 @@
                 "repository_download_url": null,
                 "api_data_url": null,
                 "datasource_id": "pnpm_lock_yaml",
-                "purl": "pkg:npm/%40napi-rs/zustand@3.7.2"
+                "purl": "pkg:npm/zustand@3.7.2"
               },
               "extra_data": {
                 "engines": {
@@ -3636,7 +3966,7 @@
               }
             },
             {
-              "purl": "pkg:npm/%40napi-rs/zwitch@2.0.2",
+              "purl": "pkg:npm/zwitch@2.0.2",
               "extracted_requirement": null,
               "scope": null,
               "is_runtime": true,
@@ -3645,7 +3975,7 @@
               "is_direct": true,
               "resolved_package": {
                 "type": "npm",
-                "namespace": "@napi-rs",
+                "namespace": null,
                 "name": "zwitch",
                 "version": "2.0.2",
                 "qualifiers": {},
@@ -3685,7 +4015,7 @@
                 "repository_download_url": null,
                 "api_data_url": null,
                 "datasource_id": "pnpm_lock_yaml",
-                "purl": "pkg:npm/%40napi-rs/zwitch@2.0.2"
+                "purl": "pkg:npm/zwitch@2.0.2"
               },
               "extra_data": {}
             }
@@ -3757,6 +4087,370 @@
       ],
       "for_packages": [
         "pkg:npm/cobe@0.6.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cobe/website",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cobe/website/package.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": "cobe-site",
+          "version": "1.0.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Shu Ding",
+              "email": "g@shud.in",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://registry.npmjs.org/cobe-site/-/cobe-site-1.0.0.tgz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "cobe/website/package.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "- MIT\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:npm/cobe",
+              "extracted_requirement": "workspace:*",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/leva",
+              "extracted_requirement": "^0.9.34",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/next",
+              "extracted_requirement": "^12.1.6-canary.6",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/nextra",
+              "extracted_requirement": "2.0.0-alpha.56",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/nextra-theme-docs",
+              "extracted_requirement": "2.0.0-alpha.59",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/react",
+              "extracted_requirement": "^18.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/react-dom",
+              "extracted_requirement": "^18.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/react-spring",
+              "extracted_requirement": "^9.4.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://www.npmjs.com/package/cobe-site",
+          "repository_download_url": "https://registry.npmjs.org/cobe-site/-/cobe-site-1.0.0.tgz",
+          "api_data_url": "https://registry.npmjs.org/cobe-site/1.0.0",
+          "datasource_id": "npm_package_json",
+          "purl": "pkg:npm/cobe-site@1.0.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cobe/website/pnpm-lock.yaml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "npm",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "JavaScript",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "lockfileVersion": "5.4"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:npm/nextra@2.0.0-alpha.56",
+              "extracted_requirement": null,
+              "scope": null,
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true,
+              "is_direct": true,
+              "resolved_package": {
+                "type": "npm",
+                "namespace": null,
+                "name": "nextra",
+                "version": "2.0.0-alpha.56",
+                "qualifiers": {},
+                "subpath": null,
+                "primary_language": "JavaScript",
+                "description": null,
+                "release_date": null,
+                "parties": [],
+                "keywords": [],
+                "homepage_url": null,
+                "download_url": null,
+                "size": null,
+                "sha1": null,
+                "md5": null,
+                "sha256": null,
+                "sha512": "53abc5a148f839cf8fc7d5b234e50959db5aea3f01f9d2ad8db5af1358c2a33f70740011b56c486649c810c2badb2b7de3365e523260e4a0b38f51c165ce94a5",
+                "bug_tracking_url": null,
+                "code_view_url": null,
+                "vcs_url": null,
+                "copyright": null,
+                "holder": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "other_license_expression": null,
+                "other_license_expression_spdx": null,
+                "other_license_detections": [],
+                "extracted_license_statement": null,
+                "notice_text": null,
+                "source_packages": [],
+                "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
+                "extra_data": {},
+                "dependencies": [
+                  {
+                    "purl": "pkg:npm/react",
+                    "extracted_requirement": ">=16.13.1",
+                    "scope": "peerDependencies",
+                    "is_runtime": false,
+                    "is_optional": true,
+                    "is_resolved": true,
+                    "is_direct": false,
+                    "resolved_package": {},
+                    "extra_data": {}
+                  }
+                ],
+                "repository_homepage_url": null,
+                "repository_download_url": null,
+                "api_data_url": null,
+                "datasource_id": "pnpm_lock_yaml",
+                "purl": "pkg:npm/nextra@2.0.0-alpha.56"
+              },
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:npm/react@18.0.0",
+              "extracted_requirement": null,
+              "scope": null,
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": true,
+              "is_direct": true,
+              "resolved_package": {
+                "type": "npm",
+                "namespace": null,
+                "name": "react",
+                "version": "18.0.0",
+                "qualifiers": {},
+                "subpath": null,
+                "primary_language": "JavaScript",
+                "description": null,
+                "release_date": null,
+                "parties": [],
+                "keywords": [],
+                "homepage_url": null,
+                "download_url": null,
+                "size": null,
+                "sha1": null,
+                "md5": null,
+                "sha256": null,
+                "sha512": "c7e54beb06d3e094553e6ec41b15e167cc3c2d344e6b13d73aa8651b2552aefd2c0758e4c851a05f127c2d5a0f44bbcf47afc221918599fcea51ad8d61e32bd8",
+                "bug_tracking_url": null,
+                "code_view_url": null,
+                "vcs_url": null,
+                "copyright": null,
+                "holder": null,
+                "declared_license_expression": null,
+                "declared_license_expression_spdx": null,
+                "license_detections": [],
+                "other_license_expression": null,
+                "other_license_expression_spdx": null,
+                "other_license_detections": [],
+                "extracted_license_statement": null,
+                "notice_text": null,
+                "source_packages": [],
+                "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
+                "extra_data": {},
+                "dependencies": [],
+                "repository_homepage_url": null,
+                "repository_download_url": null,
+                "api_data_url": null,
+                "datasource_id": "pnpm_lock_yaml",
+                "purl": "pkg:npm/react@18.0.0"
+              },
+              "extra_data": {
+                "engines": {
+                  "node": ">=0.10.0"
+                }
+              }
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "pnpm_lock_yaml",
+          "purl": null
+        }
+      ],
+      "for_packages": [
+        "pkg:npm/cobe-site@1.0.0?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
       "scan_errors": []
     }

@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1994-1999 by Fritz Elfert (fritz@isdn4linux.de)
+  - (c) 1996 by Christian Mock (cm@kukuruz.ping.at) Silence
+  - (c) 1998 by Armin Schindler (mac@gismo.telekom.de)
+  - (c) by Gert Doering and Klaus Weidner
+holders:
+  - Fritz Elfert
+  - Christian Mock Silence
+  - Armin Schindler
+  - Gert Doering and Klaus Weidner

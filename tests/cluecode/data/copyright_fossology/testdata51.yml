@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2008, Arnaud Cornet <arnaud.cornet@gmail.com> and loic Gomez <debian-bip@kyoshiro.org>
+holders:
+  - Arnaud Cornet and loic Gomez
+authors:
+  - Arnaud Cornet <arnaud.cornet@gmail.com>
+  - Arnaud Cornet <arnaud.cornet@gmail.com> and loic Gomez <debian-bip@kyoshiro.org>

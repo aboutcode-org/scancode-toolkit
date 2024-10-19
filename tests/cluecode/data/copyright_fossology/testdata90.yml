@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2002 Leon Bottou and Yann Le Cun
+  - Copyright (c) 2001 AT&T
+  - Copyright (c) 1999-2001 LizardTech, Inc.
+holders:
+  - Leon Bottou and Yann Le Cun
+  - AT&T
+  - LizardTech, Inc.
+authors:
+  - Barak Pearlmutter <bap@debian.org>
+  - David Kreil <kreil@ebi.ac.uk>

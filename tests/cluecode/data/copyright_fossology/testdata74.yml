@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1996 - 2002, Daniel Stenberg, <daniel@haxx.se>
+holders:
+  - Daniel Stenberg
+authors:
+  - Domenico Andreoli <cavok@debian.org>
+  - Daniel Stenberg <daniel@haxx.se>

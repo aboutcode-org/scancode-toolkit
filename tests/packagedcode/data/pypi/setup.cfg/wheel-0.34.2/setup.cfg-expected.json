@@ -80,17 +80,6 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:generic/python",
-        "extracted_requirement": "python_requires>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*",
-        "scope": "python",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false,
-        "is_direct": true,
-        "resolved_package": {},
-        "extra_data": {}
-      },
-      {
         "purl": "pkg:pypi/pytest",
         "extracted_requirement": "pytest>=3.0.0",
         "scope": "test",

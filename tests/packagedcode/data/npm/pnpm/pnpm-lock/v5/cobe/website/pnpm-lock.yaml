@@ -1,0 +1,26 @@
+lockfileVersion: 5.4
+
+specifiers:
+  cobe: ^0.6.1
+  nextra: 2.0.0-alpha.56
+  react: ^18.0.0
+
+dependencies:
+  cobe: 0.6.1
+  nextra: 2.0.0-alpha.56_react@18.0.0
+  react: 18.0.0
+
+packages:
+
+  /nextra/2.0.0-alpha.56_react@18.0.0:
+    resolution: {integrity: sha512-U6vFoUj4Oc+Px9WyNOUJWdta6j8B+dKtjbWvE1jCoz9wdAARtWxIZknIEMK62yt94zZeUjJg5KCzj1HBZc6UpQ==}
+    peerDependencies:
+      react: '>=16.13.1'
+    dependencies:
+      react: 18.0.0
+    dev: false
+
+  /react/18.0.0:
+    resolution: {integrity: sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A==}
+    engines: {node: '>=0.10.0'}
+    dev: false

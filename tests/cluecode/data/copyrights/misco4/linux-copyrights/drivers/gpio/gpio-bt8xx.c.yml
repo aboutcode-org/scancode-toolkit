@@ -1,0 +1,20 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2008 Michael Buesch <m@bues.ch>
+  - Copyright (c) 1996,97,98 Ralph Metzler & Marcus Metzler
+  - (c) 1999-2002 Gerd Knorr
+  - (c) 2000 Justin Schoeman
+  - (c) 2005-2006 Nickolay V. Shmyrev
+  - (c) 2006 Mauro Carvalho Chehab
+  - Copyright (c) 2005, 2006 Michael H. Schimek Sponsored
+holders:
+  - Michael Buesch
+  - Ralph Metzler & Marcus Metzler
+  - Gerd Knorr
+  - Justin Schoeman
+  - Nickolay V. Shmyrev
+  - Mauro Carvalho Chehab
+  - Michael H. Schimek Sponsored

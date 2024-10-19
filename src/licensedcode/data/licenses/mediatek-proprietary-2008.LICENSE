@@ -7,9 +7,9 @@ owner: MediaTek
 homepage_url: https://github.com/LIFECorp/mediatek/blob/master/external/mp3dec/mp3dec_exp.h
 spdx_license_key: LicenseRef-scancode-mediatek-proprietary-2008
 ignorable_copyrights:
-    - MediaTek Inc. (c) 2008 BY OPENING
+    - MediaTek Inc. (c) 2008
 ignorable_holders:
-    - MediaTek Inc. BY OPENING
+    - MediaTek Inc.
 ---
 
 This software is protected by Copyright and the information contained

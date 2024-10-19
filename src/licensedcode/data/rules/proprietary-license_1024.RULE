@@ -1,0 +1,54 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+ignorable_urls:
+    - http://www.azulsystems.com/license/zulu_third_party_licenses.html
+---
+
+The copyrights in this software and any visual or audio work distributed with
+the software belong to Azul Systems, Inc. and those included in all other notice
+files either listed in the readme file or contained in any other included notice
+files with this distribution. All rights are reserved. Installation of this
+software and any Azul software bundled with or derived from this software is
+licensed only in accordance with these terms.
+
+Provided you have not received the software directly from Azul and have already
+agreed to the terms of a separate license agreement, by installing, using or
+distributing this software you, on your own behalf and on behalf of your
+employer or principal, agree to be bound by these terms. If you do not agree to
+any of these terms, you may not use, copy, transmit, distribute nor install this
+software.
+
+The software is developed and owned by Azul and/or any of its affiliates,
+subsidiaries or respective suppliers and licensors. The software also includes
+certain software components and materials ("Open Source Materials") of third
+parties ("Third Party Licensors") licensed under certain licenses ("Open Source
+Licenses").
+
+Nothing in this Agreement limits your rights under, or grants you rights that
+supersede the terms and conditions of any applicable Open Source Licenses.
+You must review the Open Source Licenses located at
+http://www.azulsystems.com/license/zulu_third_party_licenses.html
+to understand your rights under them. In the event that no such third party
+license agreements exist, the restrictions contained in this Agreement shall
+apply.
+
+With respect to the Open Source Licenses the following shall apply:
+
+  1) You hereby acknowledge and agree that you will be licensing any Open Source
+  Materials directly from the applicable Third Party Licensors including the
+  right to use such Third Party Materials in connection with the software
+
+  2) In the event of any inconsistencies or conflicting provisions of the Open
+  Source Licenses and the provisions of this Agreement, the provisions of the
+  Open Source Licenses shall prevail.
+
+THIS SOFTWARE IS PROVIDED BY AZUL "AS-IS" AND WITHOUT EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL AZUL
+BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY OR
+CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+GOODS OR SERVICE, LOSS OF USE, DATA OR PROFITS; OR BUSINESS INTERRUPTION,
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY WHETHER IN CONTRACT, STRICT
+LIABILITY OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
+THE USE OF THIS SOFTWARE EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

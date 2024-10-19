@@ -69,6 +69,15 @@ if TRACE or TRACE_NPM:
 
 class BaseNpmHandler(models.DatafileHandler):
 
+    lockfile_names = {
+        'package-lock.json',
+        '.package-lock.json',
+        'npm-shrinkwrap.json',
+        'yarn.lock',
+        'shrinkwrap.yaml',
+        'pnpm-lock.yaml'
+    }
+
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         """
@@ -85,19 +94,11 @@ class BaseNpmHandler(models.DatafileHandler):
         If there is no package.json, we do not have a package instance. In this
         case, we yield each of the dependencies in each lock file.
         """
-        lockfile_names = {
-            'package-lock.json',
-            '.package-lock.json',
-            'npm-shrinkwrap.json',
-            'yarn.lock',
-            'shrinkwrap.yaml',
-            'pnpm-lock.yaml'
-        }
 
         package_resource = None
         if resource.name == 'package.json':
             package_resource = resource
-        elif resource.name in lockfile_names:
+        elif resource.name in cls.lockfile_names:
             if resource.has_parent():
                 siblings = resource.siblings(codebase)
                 package_resource = [r for r in siblings if r.name == 'package.json']
@@ -117,10 +118,15 @@ class BaseNpmHandler(models.DatafileHandler):
         pkg_data = package_resource.package_data[0]
         pkg_data = models.PackageData.from_dict(pkg_data)
 
-        workspace_root_path = package_resource.parent(codebase).path
+        workspace_root = package_resource.parent(codebase)
+        workspace_root_path = None
+        if workspace_root:
+            workspace_root_path = package_resource.parent(codebase).path
         workspaces = pkg_data.extra_data.get('workspaces') or []
+
         # Also look for pnpm workspaces
-        if not workspaces:
+        pnpm_workspace = None
+        if not workspaces and workspace_root:
             pnpm_workspace_path = os.path.join(workspace_root_path, 'pnpm-workspace.yaml')
             pnpm_workspace = codebase.get_resource(path=pnpm_workspace_path)
             if pnpm_workspace:
@@ -139,7 +145,7 @@ class BaseNpmHandler(models.DatafileHandler):
         cls.update_workspace_members(workspace_members, codebase)
 
         # do we have enough to create a package?
-        if pkg_data.purl:
+        if pkg_data.purl and not workspaces:
             package = models.Package.from_package_data(
                 package_data=pkg_data,
                 datafile_path=package_resource.path,
@@ -151,34 +157,129 @@ class BaseNpmHandler(models.DatafileHandler):
             # Always yield the package resource in all cases and first!
             yield package
 
-            root = package_resource.parent(codebase)
-            if root:
-                for npm_res in cls.walk_npm(resource=root, codebase=codebase):
+            if workspace_root:
+                for npm_res in cls.walk_npm(resource=workspace_root, codebase=codebase):
                     if package_uid and package_uid not in npm_res.for_packages:
                         package_adder(package_uid, npm_res, codebase)
                     yield npm_res
-            elif codebase.has_single_resource:
-                if package_uid and package_uid not in package_resource.for_packages:
-                    package_adder(package_uid, package_resource, codebase)
             yield package_resource
+
+        elif workspaces:
+            yield from cls.create_packages_from_workspaces(
+                workspace_members=workspace_members,
+                workspace_root=workspace_root,
+                codebase=codebase,
+                package_adder=package_adder,
+                pnpm=pnpm_workspace and pkg_data.purl,
+            )
+
+            package_uid = None
+            if pnpm_workspace and pkg_data.purl:
+                package = models.Package.from_package_data(
+                    package_data=pkg_data,
+                    datafile_path=package_resource.path,
+                )
+                package_uid = package.package_uid
+
+                package.populate_license_fields()
+
+                # Always yield the package resource in all cases and first!
+                yield package
+
+                if workspace_root:
+                    for npm_res in cls.walk_npm(resource=workspace_root, codebase=codebase):
+                        if package_uid and not npm_res.for_packages:
+                            package_adder(package_uid, npm_res, codebase)
+                        yield npm_res
+                yield package_resource
 
         else:
             # we have no package, so deps are not for a specific package uid
             package_uid = None
 
+        yield from cls.yield_npm_dependencies_and_resources(
+            package_resource=package_resource,
+            package_data=pkg_data,
+            package_uid=package_uid,
+            codebase=codebase,
+            package_adder=package_adder,
+        )
+
+    @classmethod
+    def yield_npm_dependencies_and_resources(cls, package_resource, package_data, package_uid, codebase, package_adder):
+
         # in all cases yield possible dependencies
-        yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
+        yield from yield_dependencies_from_package_data(package_data, package_resource.path, package_uid)
 
         # we yield this as we do not want this further processed
         yield package_resource
 
         for lock_file in package_resource.siblings(codebase):
-            if lock_file.name in lockfile_names:
+            if lock_file.name in cls.lockfile_names:
                 yield from yield_dependencies_from_package_resource(lock_file, package_uid)
 
                 if package_uid and package_uid not in lock_file.for_packages:
                     package_adder(package_uid, lock_file, codebase)
                 yield lock_file
+
+    @classmethod
+    def create_packages_from_workspaces(
+        cls,
+        workspace_members,
+        workspace_root,
+        codebase,
+        package_adder,
+        pnpm=False,
+    ):
+
+        workspace_package_uids = []
+        for workspace_member in workspace_members:
+            if not workspace_member.package_data:
+                continue
+
+            pkg_data = workspace_member.package_data[0]
+            pkg_data = models.PackageData.from_dict(pkg_data)
+
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=workspace_member.path,
+            )
+            package_uid = package.package_uid
+            workspace_package_uids.append(package_uid)
+
+            package.populate_license_fields()
+
+            # Always yield the package resource in all cases and first!
+            yield package
+
+            member_root = workspace_member.parent(codebase)
+            package_adder(package_uid, member_root, codebase)
+            for npm_res in cls.walk_npm(resource=member_root, codebase=codebase):
+                if package_uid and package_uid not in npm_res.for_packages:
+                    package_adder(package_uid, npm_res, codebase)
+                yield npm_res
+
+            yield from cls.yield_npm_dependencies_and_resources(
+                package_resource=workspace_member,
+                package_data=pkg_data,
+                package_uid=package_uid,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+
+        # All resources which are not part of a workspace package exclusively
+        # are a part of all packages (this is skipped if we have a root pnpm
+        # package)
+        if pnpm:
+            return
+        for npm_res in cls.walk_npm(resource=workspace_root, codebase=codebase):
+            if npm_res.for_packages:
+                continue
+
+            for package_uid in workspace_package_uids:
+                package_adder(package_uid, npm_res, codebase)
+
+            npm_res.save(codebase)
 
     @classmethod
     def walk_npm(cls, resource, codebase, depth=0):
@@ -275,6 +376,18 @@ class BaseNpmHandler(models.DatafileHandler):
                     if '_' in metadata:
                         requirement, _extra = metadata.split('_')
 
+                if ':' in requirement and '@' in requirement:
+                    # dependencies with requirements like this are aliases and should be reported
+                    aliased_package, _, constraint = requirement.rpartition('@')
+                    _, _, aliased_package_name = aliased_package.rpartition(':')
+                    sdns, _ , sdname = aliased_package_name.rpartition('/')
+                    dep_purl = PackageURL(
+                        type=cls.default_package_type,
+                        namespace=sdns,
+                        name=sdname
+                    ).to_string()
+                    requirement = constraint
+
                 dep_package = models.DependentPackage(
                     purl=dep_purl,
                     scope=scope,
@@ -325,7 +438,7 @@ class BaseNpmHandler(models.DatafileHandler):
                         workspace_members.append(resource)
 
             # Case 3: This is a complex glob pattern, we are doing a full codebase walk
-            # and glob matching each resource 
+            # and glob matching each resource
             else:
                 for resource in workspace_root_path:
                     if NpmPackageJsonHandler.is_datafile(resource.location) and fnmatch.fnmatch(
@@ -370,7 +483,7 @@ class BaseNpmHandler(models.DatafileHandler):
                 workspace_package_versions_by_base_purl[base_purl] = version
 
         # Update workspace member package information from
-        # workspace level data 
+        # workspace level data
         for base_purl, dependency in workspace_dependencies_by_base_purl.items():
             extracted_requirement = dependency.get('extracted_requirement')
             if 'workspace' in extracted_requirement:
@@ -912,6 +1025,13 @@ class YarnLockV1Handler(BaseNpmHandler):
                     if '"' in ns_name:
                         ns_name = ns_name.replace('"', '')
                     ns, _ , name = ns_name.rpartition('/')
+
+                    if ':' in constraint and '@' in constraint:
+                        # dependencies with requirements like this are aliases and should be reported
+                        aliased_package, _, constraint = constraint.rpartition('@')
+                        _, _, aliased_package_name = aliased_package.rpartition(':')
+                        ns, _ , name = aliased_package_name.rpartition('/')
+
                     sub_dependencies.append((ns, name, constraint,))
 
                 elif line.startswith(' ' * 2):
@@ -1013,7 +1133,7 @@ class YarnLockV1Handler(BaseNpmHandler):
                 resolved_package=resolved_package_data.to_dict(),
             )
 
-            if not dep_purl in dependencies_by_purl: 
+            if not dep_purl in dependencies_by_purl:
                 dependencies_by_purl[dep_purl] = dep.to_dict()
             else:
                 # FIXME: We have duplicate dependencies because of aliases
@@ -1077,10 +1197,11 @@ class BasePnpmLockHandler(BaseNpmHandler):
                     _, name_version = sections
                 elif len(sections) == 3:
                     _, namespace, name_version = sections
-                
+
                 name, version = name_version.split("@")
             elif major_v == "5" or is_shrinkwrap:
                 if len(sections) == 3:
+                    namespace = None
                     _, name, version = sections
                 elif len(sections) == 4:
                     _, namespace, name, version = sections
@@ -1164,7 +1285,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
             for key in extra_data_fields:
                 value = data.get(key, None)
                 if value is not None:
-                    extra_data_deps[key] = value 
+                    extra_data_deps[key] = value
 
             dependency_data = models.DependentPackage(
                 purl=purl,
@@ -1662,7 +1783,7 @@ def deps_mapper(deps, package, field_name, is_direct=True):
             deps_by_name[npm_name] = d
 
     for fqname, requirement in deps.items():
-        # Handle cases in ``resolutions`` with ``**`` 
+        # Handle cases in ``resolutions`` with ``**``
         # "resolutions": {
         #   "**/@typescript-eslint/eslint-plugin": "^4.1.1",
         if fqname.startswith('**'):
@@ -1670,6 +1791,13 @@ def deps_mapper(deps, package, field_name, is_direct=True):
         ns, name = split_scoped_package_name(fqname)
         if not name:
             continue
+
+        if ':' in requirement and '@' in requirement:
+            # dependencies with requirements like this are aliases and should be reported
+            aliased_package, _, requirement = requirement.rpartition('@')
+            _, _, aliased_package_name = aliased_package.rpartition(':')
+            ns, _ , name = aliased_package_name.rpartition('/')
+
         purl = PackageURL(type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name

@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) HIPAA.Security-ELBDeletionProtectionEnabled (https://docs.aws.amazon.com/config/latest/developerguide/elb-deletion-protection-enabled.html)
+holders:
+  - HIPAA.Security-ELBDeletionProtectionEnabled

@@ -4,8 +4,10 @@ is_license_text: yes
 notes: https://dartcanada.tripod.com/Objets/Old/index.html and https://web.archive.org/web/20000816230254/http://www.dsl.org/copyleft/dsl.txt
 ignorable_copyrights:
     - Copyright 1999-2000 Michael Stutz <stutz@dsl.org>
+    - copyright the Author
 ignorable_holders:
     - Michael Stutz
+    - the Author
 ignorable_emails:
     - stutz@dsl.org
 ---

@@ -1,0 +1,1 @@
+(c) NIST.800.53.R5-CloudTrailEncryptionEnabled (https://docs.aws.amazon.com/config/latest/developerguide/cloud-trail-encryption-enabled.html)
