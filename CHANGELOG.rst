@@ -9,9 +9,12 @@ v33.0.0 (next next, roadmap)
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
+
 - Fallback packages for non-native dependencies of SCTK.
 - Dependencies for
 - Support for copyright detection objects.
+
+- We can now collect packages from a Go binary using go-inspector (Linux-only)
 
 - A new field in packages with the license category for the
   detected license expression and also an API function to
