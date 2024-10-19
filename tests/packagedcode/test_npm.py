@@ -275,6 +275,13 @@ class TestNpm(PackageTester):
         packages = npm.NpmPackageLockJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_package_lock_v2_alias(self):
+        test_file = self.get_test_loc('npm/alias/package-lock.json')
+        expected_loc = self.get_test_loc(
+            'npm/alias/package-lock.json.expected')
+        packages = npm.NpmPackageLockJsonHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_is_datafile_npm_shrinkwrap_json(self):
         test_file = self.get_test_loc('npm/npm-shrinkwrap/npm-shrinkwrap.json')
         assert npm.NpmShrinkwrapJsonHandler.is_datafile(test_file)
@@ -360,6 +367,13 @@ class TestNpm(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_npm_yarn_lock_v1_parse_alias(self):
+        test_file = self.get_test_loc('npm/yarn-lock/v1-alias/yarn.lock')
+        expected_loc = self.get_test_loc(
+            'npm/yarn-lock/v1-alias/yarn.lock-expected')
+        packages = npm.YarnLockV1Handler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_is_datafile_pnpm_shrinkwrap_yaml(self):
         test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
         assert npm.PnpmShrinkwrapYamlHandler.is_datafile(test_file)
@@ -384,6 +398,12 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
         expected_loc = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack-shrinkwrap.yaml-expected')
         packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_package_json_alias_requirements(self):
+        test_file = self.get_test_loc('npm/alias/package.json')
+        expected_loc = self.get_test_loc('npm/alias/package.json.expected')
+        packages = npm.NpmPackageJsonHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_pnpm_scan_with_workspace_package_json(self):

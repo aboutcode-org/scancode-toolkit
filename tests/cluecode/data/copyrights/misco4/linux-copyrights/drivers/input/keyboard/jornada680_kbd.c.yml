@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2007 Kristoffer Ericson <Kristoffer.Ericson@gmail.com>
+  - Copyright (c) 2006 Paul Mundt
+  - Copyright (c) 2005 Andriy Skulysh Split
+  - Copyright (c) 2000 Yaegashi Takeshi
+  - Copyright (c) 2000 Niibe Yutaka
+holders:
+  - Kristoffer Ericson
+  - Paul Mundt
+  - Andriy Skulysh Split
+  - Yaegashi Takeshi
+  - Niibe Yutaka

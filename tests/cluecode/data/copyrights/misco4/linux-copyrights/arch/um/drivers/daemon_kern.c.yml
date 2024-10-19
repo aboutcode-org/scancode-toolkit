@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2001 Lennert Buytenhek (buytenh@gnu.org) and James Leu (jleu@mindspring.net)
+  - Copyright (c) 2001 - 2007 Jeff Dike
+  - Copyright (c) 2001 by various
+holders:
+  - Lennert Buytenhek and James Leu
+  - Jeff Dike
+  - various

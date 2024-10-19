@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2010-2013 Johan Hovold (jhovold@gmail.com)
+  - Copyright (c) 2006 Linxb (xubin.lin@worldplus.com.cn)
+  - Copyright (c) 2006 S1 Corp.
+holders:
+  - Johan Hovold
+  - Linxb
+  - S1 Corp.
+authors:
+  - Harald Klein <hari@vt100.at>

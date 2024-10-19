@@ -207,7 +207,7 @@ class BaseNpmHandler(models.DatafileHandler):
 
     @classmethod
     def yield_npm_dependencies_and_resources(cls, package_resource, package_data, package_uid, codebase, package_adder):
- 
+
         # in all cases yield possible dependencies
         yield from yield_dependencies_from_package_data(package_data, package_resource.path, package_uid)
 
@@ -276,7 +276,9 @@ class BaseNpmHandler(models.DatafileHandler):
             if npm_res.for_packages:
                 continue
 
-            npm_res.for_packages = workspace_package_uids
+            for package_uid in workspace_package_uids:
+                package_adder(package_uid, npm_res, codebase)
+
             npm_res.save(codebase)
 
     @classmethod
@@ -374,6 +376,18 @@ class BaseNpmHandler(models.DatafileHandler):
                     if '_' in metadata:
                         requirement, _extra = metadata.split('_')
 
+                if ':' in requirement and '@' in requirement:
+                    # dependencies with requirements like this are aliases and should be reported
+                    aliased_package, _, constraint = requirement.rpartition('@')
+                    _, _, aliased_package_name = aliased_package.rpartition(':')
+                    sdns, _ , sdname = aliased_package_name.rpartition('/')
+                    dep_purl = PackageURL(
+                        type=cls.default_package_type,
+                        namespace=sdns,
+                        name=sdname
+                    ).to_string()
+                    requirement = constraint
+
                 dep_package = models.DependentPackage(
                     purl=dep_purl,
                     scope=scope,
@@ -424,7 +438,7 @@ class BaseNpmHandler(models.DatafileHandler):
                         workspace_members.append(resource)
 
             # Case 3: This is a complex glob pattern, we are doing a full codebase walk
-            # and glob matching each resource 
+            # and glob matching each resource
             else:
                 for resource in workspace_root_path:
                     if NpmPackageJsonHandler.is_datafile(resource.location) and fnmatch.fnmatch(
@@ -469,7 +483,7 @@ class BaseNpmHandler(models.DatafileHandler):
                 workspace_package_versions_by_base_purl[base_purl] = version
 
         # Update workspace member package information from
-        # workspace level data 
+        # workspace level data
         for base_purl, dependency in workspace_dependencies_by_base_purl.items():
             extracted_requirement = dependency.get('extracted_requirement')
             if 'workspace' in extracted_requirement:
@@ -1011,6 +1025,13 @@ class YarnLockV1Handler(BaseNpmHandler):
                     if '"' in ns_name:
                         ns_name = ns_name.replace('"', '')
                     ns, _ , name = ns_name.rpartition('/')
+
+                    if ':' in constraint and '@' in constraint:
+                        # dependencies with requirements like this are aliases and should be reported
+                        aliased_package, _, constraint = constraint.rpartition('@')
+                        _, _, aliased_package_name = aliased_package.rpartition(':')
+                        ns, _ , name = aliased_package_name.rpartition('/')
+
                     sub_dependencies.append((ns, name, constraint,))
 
                 elif line.startswith(' ' * 2):
@@ -1112,7 +1133,7 @@ class YarnLockV1Handler(BaseNpmHandler):
                 resolved_package=resolved_package_data.to_dict(),
             )
 
-            if not dep_purl in dependencies_by_purl: 
+            if not dep_purl in dependencies_by_purl:
                 dependencies_by_purl[dep_purl] = dep.to_dict()
             else:
                 # FIXME: We have duplicate dependencies because of aliases
@@ -1176,7 +1197,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                     _, name_version = sections
                 elif len(sections) == 3:
                     _, namespace, name_version = sections
-                
+
                 name, version = name_version.split("@")
             elif major_v == "5" or is_shrinkwrap:
                 if len(sections) == 3:
@@ -1264,7 +1285,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
             for key in extra_data_fields:
                 value = data.get(key, None)
                 if value is not None:
-                    extra_data_deps[key] = value 
+                    extra_data_deps[key] = value
 
             dependency_data = models.DependentPackage(
                 purl=purl,
@@ -1762,7 +1783,7 @@ def deps_mapper(deps, package, field_name, is_direct=True):
             deps_by_name[npm_name] = d
 
     for fqname, requirement in deps.items():
-        # Handle cases in ``resolutions`` with ``**`` 
+        # Handle cases in ``resolutions`` with ``**``
         # "resolutions": {
         #   "**/@typescript-eslint/eslint-plugin": "^4.1.1",
         if fqname.startswith('**'):
@@ -1770,6 +1791,13 @@ def deps_mapper(deps, package, field_name, is_direct=True):
         ns, name = split_scoped_package_name(fqname)
         if not name:
             continue
+
+        if ':' in requirement and '@' in requirement:
+            # dependencies with requirements like this are aliases and should be reported
+            aliased_package, _, requirement = requirement.rpartition('@')
+            _, _, aliased_package_name = aliased_package.rpartition(':')
+            ns, _ , name = aliased_package_name.rpartition('/')
+
         purl = PackageURL(type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name

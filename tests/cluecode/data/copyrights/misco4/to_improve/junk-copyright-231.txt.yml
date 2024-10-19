@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) HIPAA.Security-RDSInstancePublicAccess (https://docs.aws.amazon.com/config/latest/developerguide/rds-instance-public-access-check.html)
+holders:
+  - HIPAA.Security-RDSInstancePublicAccess

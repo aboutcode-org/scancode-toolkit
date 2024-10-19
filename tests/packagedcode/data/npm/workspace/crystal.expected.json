@@ -9960,8 +9960,8 @@
       "datasource_id": "npm_package_json"
     },
     {
-      "purl": "pkg:npm/%40localrepo/prettier2-for-jest",
-      "extracted_requirement": "npm:prettier@^2",
+      "purl": "pkg:npm/prettier",
+      "extracted_requirement": "^2",
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
@@ -9969,7 +9969,7 @@
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
-      "dependency_uid": "pkg:npm/%40localrepo/prettier2-for-jest?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "dependency_uid": "pkg:npm/prettier?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": null,
       "datafile_path": "crystal/package.json",
       "datasource_id": "npm_package_json"
@@ -18249,8 +18249,8 @@
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%40localrepo/prettier2-for-jest",
-              "extracted_requirement": "npm:prettier@^2",
+              "purl": "pkg:npm/prettier",
+              "extracted_requirement": "^2",
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,

@@ -1,0 +1,5 @@
+    "This product includes software developed by NASA Ames Research Center,
+    Lawrence Livermore National Laboratory, and Veridian Information Solutions,
+    Inc.  Visit www.OpenPBS.org for OpenPBS software support,
+    products, and information."
+

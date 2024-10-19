@@ -76,8 +76,7 @@ def numbered_text_lines(
         return iter([])
 
     if not isinstance(location, str):
-        # not a path: wrap an iterator on location which should be a sequence
-        # of lines
+        # not a path: wrap an iterator on location which should be a sequence of lines
         if TRACE:
             logger_debug('numbered_text_lines:', 'location is not a file')
         return enumerate(iter(location), start_line)

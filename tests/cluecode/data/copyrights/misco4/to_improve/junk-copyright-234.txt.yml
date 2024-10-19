@@ -1,0 +1,9 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) NIST.800.53.R4-APIGWCacheEnabledAndEncrypted (https://docs.aws.amazon.com/config/latest/developerguide/api-gw-cache-enabled-and-encrypted.html)
+    The API Gateway
+holders:
+  - NIST.800.53.R4-APIGWCacheEnabledAndEncrypted The API Gateway

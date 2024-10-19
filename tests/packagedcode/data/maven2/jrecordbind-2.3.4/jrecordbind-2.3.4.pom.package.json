@@ -44,10 +44,10 @@
           "start_line": 1,
           "end_line": 1,
           "matcher": "2-aho",
-          "score": 75.0,
+          "score": 60.0,
           "matched_length": 1,
           "match_coverage": 100.0,
-          "rule_relevance": 75,
+          "rule_relevance": 60,
           "rule_identifier": "lgpl_bare_single_word.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "- name: LGPL"
@@ -68,7 +68,7 @@
           "matched_text": "  url: http://www.gnu.org/copyleft/lesser.html"
         }
       ],
-      "identifier": "lgpl_2_0_plus_and_lgpl_2_1_plus-b52b959e-48c6-d927-c4d0-cf7842fb12fa"
+      "identifier": "lgpl_2_0_plus_and_lgpl_2_1_plus-99bbf99a-48ea-24c4-e2df-f242abe6446f"
     }
   ],
   "other_license_expression": null,

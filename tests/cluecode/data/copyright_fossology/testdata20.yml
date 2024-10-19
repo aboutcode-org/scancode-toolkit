@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2002 Walter Harms (walter.harms@informatik.uni-oldenburg.de)
+  - Copyright (c) 2003 Akihiro MOTOKI
+holders:
+  - Walter Harms
+  - Akihiro MOTOKI
+authors:
+  - Akihiro MOTOKI <amotoki@dd.iij4u.or.jp>

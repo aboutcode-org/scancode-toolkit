@@ -93,7 +93,7 @@ def create_copyright_tests(
                 content = url
 
             if end_line != 0:
-                content = "".join(content.strip().splitlines()[start_line:end_line])
+                content = "\n".join(content.strip().splitlines()[start_line:end_line])
 
             with open(name, "w") as out:
                 out.write(content)

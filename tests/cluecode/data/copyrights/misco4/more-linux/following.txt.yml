@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2012-2016 by the following authors - Wladimir J. van der Laan <laanwj@gmail.com>
+    - Christian Gmeiner <christian.gmeiner@gmail.com> - Lucas Stach <l.stach@pengutronix.de>
+    - Russell King <rmk@arm.linux.org.uk>
+holders:
+  - the following authors - Wladimir J. van der Laan - Christian Gmeiner - Lucas Stach - Russell
+    King

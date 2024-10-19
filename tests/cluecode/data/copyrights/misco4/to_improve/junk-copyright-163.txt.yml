@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) 2017 year .format YYYY-MM-DD
+holders:
+  - format YYYY-MM-DD

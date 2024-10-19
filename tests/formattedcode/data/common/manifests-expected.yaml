@@ -29,10 +29,10 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-116-generic-x86_64-with-glibc2.35
-        platform_version: '#126-Ubuntu SMP Mon Jul 1 10:14:24 UTC 2024'
-        python_version: 3.10.12 (main, Mar 22 2024, 16:50:05) [GCC 11.4.0]
-      spdx_license_list_version: '3.24'
+        platform: Linux-6.5.0-1025-oem-x86_64-with-glibc2.35
+        platform_version: '#26-Ubuntu SMP PREEMPT_DYNAMIC Tue Jun 18 12:35:22 UTC 2024'
+        python_version: 3.11.8 (main, Feb 12 2024, 14:25:06) [GCC 11.4.0]
+      spdx_license_list_version: '3.25'
       files_count: 4
 summary:
   declared_license_expression: apache-2.0 AND cddl-1.0 AND lgpl-3.0 AND mit
@@ -1399,7 +1399,7 @@ license_references:
     minimum_coverage: '0'
     standard_notice:
     ignorable_copyrights:
-      - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+      - Copyright (c) 2007 Free Software Foundation, Inc. https://fsf.org
     ignorable_holders:
       - Free Software Foundation, Inc.
     ignorable_authors: []

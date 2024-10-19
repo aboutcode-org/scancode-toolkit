@@ -75,6 +75,33 @@ jobs:
                   tests/licensedcode/test_detection_validate.py \
                   -k TestValidateLicenseExtended5
 
+
+              license_validate_ignorables_1: |
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseIgnorableClues1
+
+              license_validate_ignorables_2: |
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseIgnorableClues2
+
+              license_validate_ignorables_3: |
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseIgnorableClues3
+
+              license_validate_ignorables_4: |
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseIgnorableClues4
+
+              license_validate_ignorables_5: |
+                venv/bin/pytest -n 3 -vvs --test-suite=validate \
+                  tests/licensedcode/test_detection_validate.py \
+                  -k TestValidateLicenseIgnorableClues5
+
+
               license_cache: |
                 venv/bin/pytest -n 3 -vvs --test-suite=all \
                   tests/licensedcode/test_zzzz_cache.py --reruns 2

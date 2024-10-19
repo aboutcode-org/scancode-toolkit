@@ -1,0 +1,1 @@
+Copyright (c) < grunt.template.today 'yyyy > The < pkg.title pkg.name > team

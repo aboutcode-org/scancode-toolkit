@@ -48,6 +48,22 @@ Changes in Output Data Structure:
   so we have a major version bump ``3.2.0`` to ``4.2.0``:
 
   - Dependency attribute ``is_resolved`` renamed to ``is_pinned``
+- Update link references of ownership from nexB to aboutcode-org
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/3885
+
+- New and updated licenses, including support for newly released
+  SPDX license list versions:
+  - SPDX License List 3.25.0:
+    This release of the SPDX license list had 9 new licenses
+    and exceptions, and out of them 5 were present as licenses
+    and 2 were present as rules already. There were 2 new
+    license/exception texts added, and also 1 license was deprecated.
+    For more details see https://github.com/aboutcode-org/scancode-toolkit/pull/3897
+
+- New and improved copyright detection with many false positive removed
+  and refined detection added.
+
+- Fix Python ``SyntaxWarning`` in textcode module.
 
 v32.2.1 - 2024-07-02
 ---------------------
@@ -169,7 +185,7 @@ Changes in Output Data Structure:
       file-level ``package_data``
     * ``license_detections`` and  ``other_license_detections`` in
       codebase level ``packages``
-  
+
   - On using the CLI option ``--license-text-diagnostics`` there is
     now a new license match attribute ``matched_text_diagnostics``
     with the matched text and highlighted diagnostics, instead of
@@ -178,7 +194,7 @@ Changes in Output Data Structure:
   - A new ``reference_matches`` attribute is added to codebase-level
     ``license_detections`` which is same as the ``matches`` attribute
     in other license detections.
-  
+
   - We now have SPDX license expressions everywhere we have
     ScanCode license expressions for ease of use and adopting
     SPDX everywhere. A new attribute ``license_expression_spdx``
@@ -226,7 +242,7 @@ Changes in Output Data Structure:
   and https://github.com/nexB/scancode-toolkit/issues/3443
   Also improve debian manifests parsing and purl parsing from
   filenames. Support for https://github.com/nexB/purldb/issues/245
-  Bumps debian-inspector to v31.1.0 
+  Bumps debian-inspector to v31.1.0
 
 - Bump commoncode to v31.0.3
 
@@ -883,6 +899,8 @@ Package detection:
     There is a new `extra_data` to collect extra data as needed.
 
 - For Pypi packages, python_requires is treated as a package dependency.
+
+- Update JavaScript package handlers to handle aliases in npm and yarn manifests.
 
 
 License Clarity Scoring Update:

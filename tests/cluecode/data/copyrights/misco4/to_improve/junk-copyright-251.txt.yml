@@ -1,0 +1,9 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) securityhub-enabled (https://docs.aws.amazon.com/config/latest/developerguide/securityhub-enabled.html)
+    The AWS Account
+holders:
+  - securityhub-enabled The AWS Account

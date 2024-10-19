@@ -1,0 +1,9 @@
+---
+license_expression: gpl-2.0
+is_license_clue: yes
+relevance: 80
+minimum_coverage: 90
+notes: found in linux/net/core/filter.c
+---
+
+EXPORT_PER_CPU_SYMBOL_GPL

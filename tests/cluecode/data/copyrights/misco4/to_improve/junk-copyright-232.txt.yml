@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) HIPAA.Security-RDSMultiAZSupport (https://docs.aws.amazon.com/config/latest/developerguide/rds-multi-az-support.html)
+holders:
+  - HIPAA.Security-RDSMultiAZSupport

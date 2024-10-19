@@ -4,4 +4,9 @@ what:
   - holders_summary
   - authors
 copyrights:
-  - Copyright (c) 2003-2022, a
+  - Copyright (c) 2003-2022, CKSource Holding sp. z o.o.
+holders:
+  - CKSource Holding sp. z o.o.
+holders_summary:
+  - value: CKSource Holding sp. z o.o.
+    count: 1

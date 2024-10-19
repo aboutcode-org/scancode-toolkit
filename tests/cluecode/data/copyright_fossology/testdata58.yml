@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2001-2003 Fumitoshi UKAI
+  - Copyright (c) 1994-2000 Netscape Communications Corporation
+holders:
+  - Fumitoshi UKAI
+  - Netscape Communications Corporation
+authors:
+  - Fumitoshi UKAI <ukai@debian.or.jp>

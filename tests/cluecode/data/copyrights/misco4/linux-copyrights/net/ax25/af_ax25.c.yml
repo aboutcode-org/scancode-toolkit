@@ -1,0 +1,22 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) Alan Cox GW4PTS (alan@lxorguk.ukuu.org.uk)
+  - Copyright (c) Jonathan Naylor G4KLX (g4klx@g4klx.demon.co.uk)
+  - Copyright (c) Darryl Miles G7LED (dlm@g7led.demon.co.uk)
+  - Copyright (c) Steven Whitehouse GW7RRM (stevew@acm.org)
+  - Copyright (c) Joerg Reuter DL1BKE (jreuter@yaina.de)
+  - Copyright (c) Hans-Joachim Hetscher DD8NE (dd8ne@bnv-bamberg.de)
+  - Copyright (c) Hans Alblas PE1AYX (hans@esrac.ele.tue.nl)
+  - Copyright (c) Frederic Rible F1OAT (frible@teaser.fr)
+holders:
+  - Alan Cox GW4PTS
+  - Jonathan Naylor G4KLX
+  - Darryl Miles G7LED
+  - Steven Whitehouse GW7RRM
+  - Joerg Reuter DL1BKE
+  - Hans-Joachim Hetscher DD8NE
+  - Hans Alblas PE1AYX
+  - Frederic Rible F1OAT
