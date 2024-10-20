@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "mit AND x11 AND unicode-tou",
-          "spdx_license_expression": "MIT AND ICU AND Unicode-TOU",
+          "license_expression_spdx": "MIT AND ICU AND Unicode-TOU",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,

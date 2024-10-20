@@ -38,7 +38,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -116,7 +116,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -194,7 +194,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -272,7 +272,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "manifest/conanfile.py",
               "start_line": 1,
               "end_line": 1,
@@ -515,7 +515,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.1-plus",
-                  "spdx_license_expression": "LGPL-2.1-or-later",
+                  "license_expression_spdx": "LGPL-2.1-or-later",
                   "from_file": "manifest/conanfile.py",
                   "start_line": 1,
                   "end_line": 1,

@@ -51,7 +51,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -192,7 +192,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/LICENSE",
               "start_line": 3,
               "end_line": 19,
@@ -281,7 +281,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pypi-with-test-manifests/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -330,7 +330,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/PKG-INFO",
               "start_line": 14,
               "end_line": 14,
@@ -351,7 +351,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "pypi-with-test-manifests/PKG-INFO",
               "start_line": 26,
               "end_line": 26,
@@ -365,7 +365,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/LICENSE",
               "start_line": 3,
               "end_line": 19,
@@ -523,7 +523,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pypi-with-test-manifests/setup.cfg",
                   "start_line": 12,
                   "end_line": 12,
@@ -856,7 +856,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/setup.cfg",
               "start_line": 12,
               "end_line": 12,
@@ -913,7 +913,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pypi-with-test-manifests/LICENSE",
                   "start_line": 3,
                   "end_line": 19,

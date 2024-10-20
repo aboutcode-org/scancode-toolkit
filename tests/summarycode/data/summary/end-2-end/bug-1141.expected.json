@@ -274,7 +274,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "bug-1141.tar.gz/bug/sub/sub2/COPYING",
               "start_line": 1,
               "end_line": 12,
@@ -491,7 +491,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "bug-1141.tar.gz/bug/sub/sub2/src/benchmark.c",
               "start_line": 8,
               "end_line": 19,

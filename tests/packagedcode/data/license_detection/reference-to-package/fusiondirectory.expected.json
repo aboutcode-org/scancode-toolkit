@@ -6074,7 +6074,7 @@
       "license_clues": [
         {
           "license_expression": "borceux",
-          "spdx_license_expression": "Borceux",
+          "license_expression_spdx": "Borceux",
           "from_file": "fusiondirectory/debian/README.multi-orig-tarball-package",
           "start_line": 1,
           "end_line": 3,
@@ -6258,7 +6258,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 297,
                   "end_line": 297,
@@ -6282,7 +6282,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 411,
                   "end_line": 411,
@@ -6306,7 +6306,7 @@
               "matches": [
                 {
                   "license_expression": "free-unknown",
-                  "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+                  "license_expression_spdx": "LicenseRef-scancode-free-unknown",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 413,
                   "end_line": 413,
@@ -6330,7 +6330,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 427,
                   "end_line": 427,
@@ -6354,7 +6354,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 433,
                   "end_line": 433,
@@ -6378,7 +6378,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 441,
                   "end_line": 441,
@@ -6402,7 +6402,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 452,
                   "end_line": 452,
@@ -6426,7 +6426,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 461,
                   "end_line": 461,
@@ -6450,7 +6450,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 475,
                   "end_line": 475,
@@ -6474,7 +6474,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 488,
                   "end_line": 488,
@@ -6498,7 +6498,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 495,
                   "end_line": 495,
@@ -6522,7 +6522,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 503,
                   "end_line": 503,
@@ -6546,7 +6546,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 560,
                   "end_line": 560,
@@ -6570,7 +6570,7 @@
               "matches": [
                 {
                   "license_expression": "free-unknown",
-                  "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+                  "license_expression_spdx": "LicenseRef-scancode-free-unknown",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 562,
                   "end_line": 562,
@@ -6594,7 +6594,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 968,
                   "end_line": 968,
@@ -6618,7 +6618,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1094,
                   "end_line": 1094,
@@ -6642,7 +6642,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1099,
                   "end_line": 1099,
@@ -6666,7 +6666,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1413,
                   "end_line": 1413,
@@ -6690,7 +6690,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1423,
                   "end_line": 1423,
@@ -6714,7 +6714,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1429,
                   "end_line": 1429,
@@ -6738,7 +6738,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1437,
                   "end_line": 1437,
@@ -6762,7 +6762,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1443,
                   "end_line": 1443,
@@ -6786,7 +6786,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1449,
                   "end_line": 1449,
@@ -6810,7 +6810,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1457,
                   "end_line": 1457,
@@ -6834,7 +6834,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1463,
                   "end_line": 1463,
@@ -6858,7 +6858,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1469,
                   "end_line": 1469,
@@ -6882,7 +6882,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1475,
                   "end_line": 1475,
@@ -6906,7 +6906,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1481,
                   "end_line": 1481,
@@ -6930,7 +6930,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1487,
                   "end_line": 1487,
@@ -6954,7 +6954,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1493,
                   "end_line": 1493,
@@ -6978,7 +6978,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-original",
-                  "spdx_license_expression": "BSD-4-Clause",
+                  "license_expression_spdx": "BSD-4-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1501,
                   "end_line": 1501,
@@ -7002,7 +7002,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1507,
                   "end_line": 1507,
@@ -7026,7 +7026,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1513,
                   "end_line": 1513,
@@ -7050,7 +7050,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1521,
                   "end_line": 1521,
@@ -7066,7 +7066,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1521,
                   "end_line": 1521,
@@ -7082,7 +7082,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.1-plus",
-                  "spdx_license_expression": "LGPL-2.1-or-later",
+                  "license_expression_spdx": "LGPL-2.1-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1521,
                   "end_line": 1521,
@@ -7098,7 +7098,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1521,
                   "end_line": 1521,
@@ -7114,7 +7114,7 @@
                 },
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1521,
                   "end_line": 1521,
@@ -7130,7 +7130,7 @@
                 },
                 {
                   "license_expression": "bsd-original",
-                  "spdx_license_expression": "BSD-4-Clause",
+                  "license_expression_spdx": "BSD-4-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1521,
                   "end_line": 1521,
@@ -7146,7 +7146,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1523,
                   "end_line": 1523,
@@ -7162,7 +7162,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1524,
                   "end_line": 1539,
@@ -7178,7 +7178,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1541,
                   "end_line": 1541,
@@ -7194,7 +7194,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1542,
                   "end_line": 1557,
@@ -7210,7 +7210,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.1-plus",
-                  "spdx_license_expression": "LGPL-2.1-or-later",
+                  "license_expression_spdx": "LGPL-2.1-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1559,
                   "end_line": 1559,
@@ -7226,7 +7226,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.1-plus",
-                  "spdx_license_expression": "LGPL-2.1-or-later",
+                  "license_expression_spdx": "LGPL-2.1-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1560,
                   "end_line": 1577,
@@ -7242,7 +7242,7 @@
                 },
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1579,
                   "end_line": 1579,
@@ -7258,7 +7258,7 @@
                 },
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1580,
                   "end_line": 1596,
@@ -7274,7 +7274,7 @@
                 },
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1598,
                   "end_line": 1598,
@@ -7290,7 +7290,7 @@
                 },
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1599,
                   "end_line": 1621,
@@ -7306,7 +7306,7 @@
                 },
                 {
                   "license_expression": "bsd-original",
-                  "spdx_license_expression": "BSD-4-Clause",
+                  "license_expression_spdx": "BSD-4-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1623,
                   "end_line": 1623,
@@ -7322,7 +7322,7 @@
                 },
                 {
                   "license_expression": "bsd-original",
-                  "spdx_license_expression": "BSD-4-Clause",
+                  "license_expression_spdx": "BSD-4-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1624,
                   "end_line": 1649,
@@ -7338,7 +7338,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1651,
                   "end_line": 1651,
@@ -7354,7 +7354,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1652,
                   "end_line": 1663,
@@ -7370,7 +7370,7 @@
                 },
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1665,
                   "end_line": 1665,
@@ -7386,7 +7386,7 @@
                 },
                 {
                   "license_expression": "other-permissive",
-                  "spdx_license_expression": "LicenseRef-scancode-other-permissive",
+                  "license_expression_spdx": "LicenseRef-scancode-other-permissive",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1666,
                   "end_line": 1669,
@@ -7410,7 +7410,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2692,
                   "end_line": 2692,
@@ -7434,7 +7434,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2804,
                   "end_line": 2804,
@@ -7458,7 +7458,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2818,
                   "end_line": 2818,
@@ -7482,7 +7482,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2844,
                   "end_line": 2844,
@@ -7506,7 +7506,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2863,
                   "end_line": 2863,
@@ -7530,7 +7530,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2873,
                   "end_line": 2873,
@@ -7554,7 +7554,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-simplified",
-                  "spdx_license_expression": "BSD-2-Clause",
+                  "license_expression_spdx": "BSD-2-Clause",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2880,
                   "end_line": 2880,
@@ -7578,7 +7578,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2889,
                   "end_line": 2889,
@@ -7602,7 +7602,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2903,
                   "end_line": 2903,
@@ -7626,7 +7626,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2911,
                   "end_line": 2911,
@@ -7650,7 +7650,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2919,
                   "end_line": 2919,
@@ -7674,7 +7674,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2925,
                   "end_line": 2925,
@@ -7698,7 +7698,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2939,
                   "end_line": 2939,
@@ -7722,7 +7722,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2945,
                   "end_line": 2945,
@@ -7746,7 +7746,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2951,
                   "end_line": 2951,
@@ -7770,7 +7770,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2959,
                   "end_line": 2959,
@@ -7794,7 +7794,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2964,
                   "end_line": 2964,
@@ -7818,7 +7818,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2970,
                   "end_line": 2970,
@@ -7842,7 +7842,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2976,
                   "end_line": 2976,
@@ -7866,7 +7866,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2982,
                   "end_line": 2982,
@@ -7890,7 +7890,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2988,
                   "end_line": 2988,
@@ -7914,7 +7914,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2993,
                   "end_line": 2993,
@@ -7938,7 +7938,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2999,
                   "end_line": 2999,
@@ -7962,7 +7962,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3005,
                   "end_line": 3005,
@@ -7986,7 +7986,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3010,
                   "end_line": 3010,
@@ -8002,7 +8002,7 @@
                 },
                 {
                   "license_expression": "other-permissive",
-                  "spdx_license_expression": "LicenseRef-scancode-other-permissive",
+                  "license_expression_spdx": "LicenseRef-scancode-other-permissive",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3010,
                   "end_line": 3010,
@@ -8026,7 +8026,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3016,
                   "end_line": 3016,
@@ -8042,7 +8042,7 @@
                 },
                 {
                   "license_expression": "bsd-original",
-                  "spdx_license_expression": "BSD-4-Clause",
+                  "license_expression_spdx": "BSD-4-Clause",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3016,
                   "end_line": 3016,
@@ -8058,7 +8058,7 @@
                 },
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3016,
                   "end_line": 3016,
@@ -12873,7 +12873,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 297,
               "end_line": 297,
@@ -12897,7 +12897,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 411,
               "end_line": 411,
@@ -12921,7 +12921,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 413,
               "end_line": 413,
@@ -12945,7 +12945,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 427,
               "end_line": 427,
@@ -12969,7 +12969,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 433,
               "end_line": 433,
@@ -12993,7 +12993,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 441,
               "end_line": 441,
@@ -13017,7 +13017,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 452,
               "end_line": 452,
@@ -13041,7 +13041,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 461,
               "end_line": 461,
@@ -13065,7 +13065,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 475,
               "end_line": 475,
@@ -13089,7 +13089,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 488,
               "end_line": 488,
@@ -13113,7 +13113,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 495,
               "end_line": 495,
@@ -13137,7 +13137,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 503,
               "end_line": 503,
@@ -13161,7 +13161,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 560,
               "end_line": 560,
@@ -13185,7 +13185,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 562,
               "end_line": 562,
@@ -13209,7 +13209,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 968,
               "end_line": 968,
@@ -13233,7 +13233,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1094,
               "end_line": 1094,
@@ -13257,7 +13257,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1099,
               "end_line": 1099,
@@ -13281,7 +13281,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1413,
               "end_line": 1413,
@@ -13305,7 +13305,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1423,
               "end_line": 1423,
@@ -13329,7 +13329,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1429,
               "end_line": 1429,
@@ -13353,7 +13353,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1437,
               "end_line": 1437,
@@ -13377,7 +13377,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1443,
               "end_line": 1443,
@@ -13401,7 +13401,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1449,
               "end_line": 1449,
@@ -13425,7 +13425,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1457,
               "end_line": 1457,
@@ -13449,7 +13449,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1463,
               "end_line": 1463,
@@ -13473,7 +13473,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1469,
               "end_line": 1469,
@@ -13497,7 +13497,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1475,
               "end_line": 1475,
@@ -13521,7 +13521,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1481,
               "end_line": 1481,
@@ -13545,7 +13545,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1487,
               "end_line": 1487,
@@ -13569,7 +13569,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1493,
               "end_line": 1493,
@@ -13593,7 +13593,7 @@
           "matches": [
             {
               "license_expression": "bsd-original",
-              "spdx_license_expression": "BSD-4-Clause",
+              "license_expression_spdx": "BSD-4-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1501,
               "end_line": 1501,
@@ -13617,7 +13617,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1507,
               "end_line": 1507,
@@ -13641,7 +13641,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1513,
               "end_line": 1513,
@@ -13665,7 +13665,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1521,
               "end_line": 1521,
@@ -13681,7 +13681,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1521,
               "end_line": 1521,
@@ -13697,7 +13697,7 @@
             },
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1521,
               "end_line": 1521,
@@ -13713,7 +13713,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1521,
               "end_line": 1521,
@@ -13729,7 +13729,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1521,
               "end_line": 1521,
@@ -13745,7 +13745,7 @@
             },
             {
               "license_expression": "bsd-original",
-              "spdx_license_expression": "BSD-4-Clause",
+              "license_expression_spdx": "BSD-4-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1521,
               "end_line": 1521,
@@ -13761,7 +13761,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1523,
               "end_line": 1523,
@@ -13777,7 +13777,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1524,
               "end_line": 1539,
@@ -13793,7 +13793,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1541,
               "end_line": 1541,
@@ -13809,7 +13809,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1542,
               "end_line": 1557,
@@ -13825,7 +13825,7 @@
             },
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1559,
               "end_line": 1559,
@@ -13841,7 +13841,7 @@
             },
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1560,
               "end_line": 1577,
@@ -13857,7 +13857,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1579,
               "end_line": 1579,
@@ -13873,7 +13873,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1580,
               "end_line": 1596,
@@ -13889,7 +13889,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1598,
               "end_line": 1598,
@@ -13905,7 +13905,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1599,
               "end_line": 1621,
@@ -13921,7 +13921,7 @@
             },
             {
               "license_expression": "bsd-original",
-              "spdx_license_expression": "BSD-4-Clause",
+              "license_expression_spdx": "BSD-4-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1623,
               "end_line": 1623,
@@ -13937,7 +13937,7 @@
             },
             {
               "license_expression": "bsd-original",
-              "spdx_license_expression": "BSD-4-Clause",
+              "license_expression_spdx": "BSD-4-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1624,
               "end_line": 1649,
@@ -13953,7 +13953,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1651,
               "end_line": 1651,
@@ -13969,7 +13969,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1652,
               "end_line": 1663,
@@ -13985,7 +13985,7 @@
             },
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1665,
               "end_line": 1665,
@@ -14001,7 +14001,7 @@
             },
             {
               "license_expression": "other-permissive",
-              "spdx_license_expression": "LicenseRef-scancode-other-permissive",
+              "license_expression_spdx": "LicenseRef-scancode-other-permissive",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1666,
               "end_line": 1669,
@@ -14138,7 +14138,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2692,
               "end_line": 2692,
@@ -14162,7 +14162,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2804,
               "end_line": 2804,
@@ -14186,7 +14186,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2818,
               "end_line": 2818,
@@ -14210,7 +14210,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2844,
               "end_line": 2844,
@@ -14234,7 +14234,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2863,
               "end_line": 2863,
@@ -14258,7 +14258,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2873,
               "end_line": 2873,
@@ -14282,7 +14282,7 @@
           "matches": [
             {
               "license_expression": "bsd-simplified",
-              "spdx_license_expression": "BSD-2-Clause",
+              "license_expression_spdx": "BSD-2-Clause",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2880,
               "end_line": 2880,
@@ -14306,7 +14306,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2889,
               "end_line": 2889,
@@ -14330,7 +14330,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2903,
               "end_line": 2903,
@@ -14354,7 +14354,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2911,
               "end_line": 2911,
@@ -14378,7 +14378,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2919,
               "end_line": 2919,
@@ -14402,7 +14402,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2925,
               "end_line": 2925,
@@ -14426,7 +14426,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2939,
               "end_line": 2939,
@@ -14450,7 +14450,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2945,
               "end_line": 2945,
@@ -14474,7 +14474,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2951,
               "end_line": 2951,
@@ -14498,7 +14498,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2959,
               "end_line": 2959,
@@ -14522,7 +14522,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2964,
               "end_line": 2964,
@@ -14546,7 +14546,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2970,
               "end_line": 2970,
@@ -14570,7 +14570,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2976,
               "end_line": 2976,
@@ -14594,7 +14594,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2982,
               "end_line": 2982,
@@ -14618,7 +14618,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2988,
               "end_line": 2988,
@@ -14642,7 +14642,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2993,
               "end_line": 2993,
@@ -14666,7 +14666,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2999,
               "end_line": 2999,
@@ -14690,7 +14690,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3005,
               "end_line": 3005,
@@ -14714,7 +14714,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3010,
               "end_line": 3010,
@@ -14730,7 +14730,7 @@
             },
             {
               "license_expression": "other-permissive",
-              "spdx_license_expression": "LicenseRef-scancode-other-permissive",
+              "license_expression_spdx": "LicenseRef-scancode-other-permissive",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3010,
               "end_line": 3010,
@@ -14754,7 +14754,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3016,
               "end_line": 3016,
@@ -14770,7 +14770,7 @@
             },
             {
               "license_expression": "bsd-original",
-              "spdx_license_expression": "BSD-4-Clause",
+              "license_expression_spdx": "BSD-4-Clause",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3016,
               "end_line": 3016,
@@ -14786,7 +14786,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3016,
               "end_line": 3016,
@@ -15035,7 +15035,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "fusiondirectory/debian/po/de.po",
               "start_line": 3,
               "end_line": 3,
@@ -15172,7 +15172,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "fusiondirectory/debian/po/fr.po",
               "start_line": 3,
               "end_line": 3,

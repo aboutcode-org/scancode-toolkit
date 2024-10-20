@@ -59,7 +59,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-3com-microcode
     matches:
       - license_expression: 3com-microcode
-        spdx_license_expression: LicenseRef-scancode-3com-microcode
+        license_expression_spdx: LicenseRef-scancode-3com-microcode
         from_file:
         start_line: 11
         end_line: 38
@@ -104,7 +104,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-bsd-simplified-source
     matches:
       - license_expression: bsd-simplified-source
-        spdx_license_expression: LicenseRef-scancode-bsd-simplified-source
+        license_expression_spdx: LicenseRef-scancode-bsd-simplified-source
         from_file:
         start_line: 46
         end_line: 49
@@ -125,7 +125,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-agere-bsd
     matches:
       - license_expression: agere-bsd
-        spdx_license_expression: LicenseRef-scancode-agere-bsd
+        license_expression_spdx: LicenseRef-scancode-agere-bsd
         from_file:
         start_line: 56
         end_line: 92
@@ -179,7 +179,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-x11-acer
     matches:
       - license_expression: x11-acer
-        spdx_license_expression: LicenseRef-scancode-x11-acer
+        license_expression_spdx: LicenseRef-scancode-x11-acer
         from_file:
         start_line: 97
         end_line: 109
@@ -209,7 +209,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-ctl-linux-firmware
     matches:
       - license_expression: ctl-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-ctl-linux-firmware
+        license_expression_spdx: LicenseRef-scancode-ctl-linux-firmware
         from_file:
         start_line: 116
         end_line: 159
@@ -270,7 +270,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 164
         end_line: 166
@@ -290,7 +290,7 @@ license_detections:
     license_expression_spdx: Linux-OpenIB
     matches:
       - license_expression: linux-openib
-        spdx_license_expression: Linux-OpenIB
+        license_expression_spdx: Linux-OpenIB
         from_file:
         start_line: 173
         end_line: '193'
@@ -328,7 +328,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 200
         end_line: 223
@@ -369,7 +369,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-bsd-simplified-source
     matches:
       - license_expression: bsd-simplified-source
-        spdx_license_expression: LicenseRef-scancode-bsd-simplified-source
+        license_expression_spdx: LicenseRef-scancode-bsd-simplified-source
         from_file:
         start_line: 228
         end_line: 231
@@ -390,7 +390,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 236
         end_line: 247
@@ -419,7 +419,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 252
         end_line: 264
@@ -449,7 +449,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 269
         end_line: 281
@@ -479,7 +479,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 286
         end_line: 293
@@ -504,7 +504,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 300
         end_line: 323
@@ -545,7 +545,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 328
         end_line: 339
@@ -574,7 +574,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 344
         end_line: 350
@@ -598,7 +598,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 355
         end_line: 363
@@ -624,7 +624,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
+        license_expression_spdx: LicenseRef-scancode-intel
         from_file:
         start_line: 370
         end_line: 403
@@ -675,7 +675,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-nxp-firmware-patent
     matches:
       - license_expression: nxp-firmware-patent
-        spdx_license_expression: LicenseRef-scancode-nxp-firmware-patent
+        license_expression_spdx: LicenseRef-scancode-nxp-firmware-patent
         from_file:
         start_line: 414
         end_line: 457
@@ -736,7 +736,7 @@ license_detections:
     license_expression_spdx: BSD-4-Clause
     matches:
       - license_expression: bsd-original
-        spdx_license_expression: BSD-4-Clause
+        license_expression_spdx: BSD-4-Clause
         from_file:
         start_line: 462
         end_line: 487
@@ -779,7 +779,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 494
         end_line: 510
@@ -813,7 +813,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-moxa-linux-firmware
     matches:
       - license_expression: moxa-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-moxa-linux-firmware
+        license_expression_spdx: LicenseRef-scancode-moxa-linux-firmware
         from_file:
         start_line: 515
         end_line: 530
@@ -846,7 +846,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-ralink-firmware
     matches:
       - license_expression: ralink-firmware
-        spdx_license_expression: LicenseRef-scancode-ralink-firmware
+        license_expression_spdx: LicenseRef-scancode-ralink-firmware
         from_file:
         start_line: 537
         end_line: 572
@@ -899,7 +899,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 577
         end_line: 577
@@ -916,7 +916,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 582
         end_line: 708
@@ -1060,7 +1060,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 719
         end_line: 756
@@ -1115,7 +1115,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 761
         end_line: 768
@@ -1140,7 +1140,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-ralink-firmware
     matches:
       - license_expression: ralink-firmware
-        spdx_license_expression: LicenseRef-scancode-ralink-firmware
+        license_expression_spdx: LicenseRef-scancode-ralink-firmware
         from_file:
         start_line: 775
         end_line: 810
@@ -1193,7 +1193,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 815
         end_line: 817
@@ -1213,7 +1213,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 822
         end_line: 824
@@ -1233,7 +1233,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: bsd-new AND proprietary-license
-        spdx_license_expression: BSD-3-Clause AND LicenseRef-scancode-proprietary-license
+        license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 829
         end_line: 861
@@ -1283,7 +1283,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 865
         end_line: 871
@@ -1307,7 +1307,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
+        license_expression_spdx: LicenseRef-scancode-intel
         from_file:
         start_line: 876
         end_line: 911

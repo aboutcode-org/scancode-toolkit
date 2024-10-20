@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: '19'
         end_line: 32

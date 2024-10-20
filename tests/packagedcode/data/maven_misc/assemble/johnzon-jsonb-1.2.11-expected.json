@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
               "start_line": 3,
               "end_line": 18,
@@ -430,7 +430,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/DEPENDENCIES",
               "start_line": 9,
               "end_line": 13,
@@ -467,7 +467,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/LICENSE",
               "start_line": 2,
               "end_line": 4,
@@ -530,7 +530,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "johnzon-jsonb-1.2.11/META-INF/MANIFEST.MF",
                   "start_line": 1,
                   "end_line": 1,
@@ -579,7 +579,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/MANIFEST.MF",
               "start_line": 6,
               "end_line": 6,
@@ -616,7 +616,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/NOTICE",
               "start_line": 5,
               "end_line": 6,
@@ -775,7 +775,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
                   "start_line": 3,
                   "end_line": 18,
@@ -948,7 +948,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
               "start_line": 3,
               "end_line": 18,

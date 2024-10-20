@@ -89,7 +89,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "scan-unknown-intro-dual-license/README.md",
               "start_line": 43,
               "end_line": 43,
@@ -105,7 +105,7 @@
             },
             {
               "license_expression": "wtfpl-2.0",
-              "spdx_license_expression": "WTFPL",
+              "license_expression_spdx": "WTFPL",
               "from_file": "scan-unknown-intro-dual-license/README.md",
               "start_line": 43,
               "end_line": 43,
@@ -121,7 +121,7 @@
             },
             {
               "license_expression": "wtfpl-2.0",
-              "spdx_license_expression": "WTFPL",
+              "license_expression_spdx": "WTFPL",
               "from_file": "scan-unknown-intro-dual-license/README.md",
               "start_line": 43,
               "end_line": 43,
@@ -137,7 +137,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan-unknown-intro-dual-license/README.md",
               "start_line": 43,
               "end_line": 43,

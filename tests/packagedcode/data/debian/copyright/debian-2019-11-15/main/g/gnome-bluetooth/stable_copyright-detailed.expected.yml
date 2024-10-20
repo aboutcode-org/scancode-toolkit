@@ -18,7 +18,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 27
         end_line: 27
@@ -31,7 +31,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 28
         end_line: 42
@@ -63,7 +63,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 44
         end_line: 44
@@ -76,7 +76,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 45
         end_line: 59

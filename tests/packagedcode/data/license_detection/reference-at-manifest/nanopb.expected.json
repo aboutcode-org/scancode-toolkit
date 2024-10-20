@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/nanopb.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -56,7 +56,7 @@
             },
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
@@ -185,7 +185,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
@@ -253,7 +253,7 @@
               "matches": [
                 {
                   "license_expression": "zlib",
-                  "spdx_license_expression": "Zlib",
+                  "license_expression_spdx": "Zlib",
                   "from_file": "nanopb/nanopb.podspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -268,7 +268,7 @@
                 },
                 {
                   "license_expression": "zlib",
-                  "spdx_license_expression": "Zlib",
+                  "license_expression_spdx": "Zlib",
                   "from_file": "nanopb/LICENSE.txt",
                   "start_line": 3,
                   "end_line": 20,
@@ -319,7 +319,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/nanopb.podspec",
               "start_line": 14,
               "end_line": 14,
@@ -335,7 +335,7 @@
             },
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,

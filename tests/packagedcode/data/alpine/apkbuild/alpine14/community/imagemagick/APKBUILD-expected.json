@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "imagemagick",
-          "spdx_license_expression": "ImageMagick",
+          "license_expression_spdx": "ImageMagick",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,

@@ -13,7 +13,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 21
         end_line: 45
@@ -55,7 +55,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-broadcom-proprietary
     matches:
       - license_expression: broadcom-proprietary
-        spdx_license_expression: LicenseRef-scancode-broadcom-proprietary
+        license_expression_spdx: LicenseRef-scancode-broadcom-proprietary
         from_file:
         start_line: 51
         end_line: 254
@@ -211,7 +211,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 260
         end_line: 260
@@ -224,7 +224,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 261
         end_line: 275

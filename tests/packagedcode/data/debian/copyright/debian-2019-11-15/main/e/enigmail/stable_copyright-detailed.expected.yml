@@ -21,7 +21,7 @@ other_license_detections:
     license_expression_spdx: MPL-2.0
     matches:
       - license_expression: mpl-2.0
-        spdx_license_expression: MPL-2.0
+        license_expression_spdx: MPL-2.0
         from_file:
         start_line: 38
         end_line: 38
@@ -34,7 +34,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-2.0_75.RULE
         matched_text: 'License: mpl-2.0'
       - license_expression: mpl-2.0
-        spdx_license_expression: MPL-2.0
+        license_expression_spdx: MPL-2.0
         from_file:
         start_line: 39
         end_line: 411
@@ -424,7 +424,7 @@ other_license_detections:
     license_expression_spdx: BSD-2-Clause-Views
     matches:
       - license_expression: bsd-2-clause-views
-        spdx_license_expression: BSD-2-Clause-Views
+        license_expression_spdx: BSD-2-Clause-Views
         from_file:
         start_line: 414
         end_line: 441
@@ -469,7 +469,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 446
         end_line: 470
@@ -511,7 +511,7 @@ other_license_detections:
     license_expression_spdx: CC0-1.0
     matches:
       - license_expression: cc0-1.0
-        spdx_license_expression: CC0-1.0
+        license_expression_spdx: CC0-1.0
         from_file:
         start_line: 472
         end_line: 472
@@ -524,7 +524,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_12.RULE
         matched_text: 'License: cc0-1.0'
       - license_expression: cc0-1.0
-        spdx_license_expression: CC0-1.0
+        license_expression_spdx: CC0-1.0
         from_file:
         start_line: 473
         end_line: 481

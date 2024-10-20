@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "fizzler/Fizzler.nuspec",
               "start_line": 1,
               "end_line": 1,
@@ -56,7 +56,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "fizzler/COPYING.txt",
               "start_line": 1,
               "end_line": 1,
@@ -72,7 +72,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "fizzler/COPYING.txt",
               "start_line": 3,
               "end_line": 3,
@@ -328,7 +328,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "fizzler/COPYING.txt",
               "start_line": 1,
               "end_line": 1,
@@ -344,7 +344,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "fizzler/COPYING.txt",
               "start_line": 3,
               "end_line": 3,
@@ -412,7 +412,7 @@
               "matches": [
                 {
                   "license_expression": "unknown-license-reference",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
                   "from_file": "fizzler/Fizzler.nuspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -427,7 +427,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "fizzler/COPYING.txt",
                   "start_line": 1,
                   "end_line": 1,
@@ -443,7 +443,7 @@
                 },
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "fizzler/COPYING.txt",
                   "start_line": 3,
                   "end_line": 3,
@@ -523,7 +523,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "fizzler/Fizzler.nuspec",
               "start_line": 9,
               "end_line": 9,
@@ -539,7 +539,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "fizzler/COPYING.txt",
               "start_line": 1,
               "end_line": 1,
@@ -555,7 +555,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "fizzler/COPYING.txt",
               "start_line": 3,
               "end_line": 3,

@@ -233,7 +233,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "maven2/aopalliance-1.0/aopalliance-1.0.pom",
               "start_line": 1,
               "end_line": 1,
@@ -248,7 +248,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "maven2/aopalliance-1.0/aopalliance-1.0.pom",
               "start_line": 2,
               "end_line": 2,
@@ -775,7 +775,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "maven2/commons-validator-1.2.0/commons-validator-1.2.0.pom",
               "start_line": 1,
               "end_line": 2,
@@ -1013,7 +1013,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "maven2/findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom",
               "start_line": 1,
               "end_line": 1,
@@ -1194,7 +1194,7 @@
           "matches": [
             {
               "license_expression": "epl-1.0",
-              "spdx_license_expression": "EPL-1.0",
+              "license_expression_spdx": "EPL-1.0",
               "from_file": "maven2/foo-pom/foo-pom.xml",
               "start_line": 1,
               "end_line": 1,
@@ -1209,7 +1209,7 @@
             },
             {
               "license_expression": "epl-1.0",
-              "spdx_license_expression": "EPL-1.0",
+              "license_expression_spdx": "EPL-1.0",
               "from_file": "maven2/foo-pom/foo-pom.xml",
               "start_line": 2,
               "end_line": 2,
@@ -1419,7 +1419,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "maven2/jrecordbind-2.3.4/jrecordbind-2.3.4.pom",
               "start_line": 1,
               "end_line": 1,
@@ -1434,7 +1434,7 @@
             },
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "maven2/jrecordbind-2.3.4/jrecordbind-2.3.4.pom",
               "start_line": 2,
               "end_line": 2,
@@ -1515,7 +1515,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "maven2/log4j/log4j-pom.xml",
               "start_line": 1,
               "end_line": 2,
@@ -1588,7 +1588,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "maven2/logback-access/logback-access.pom",
               "start_line": 1,
               "end_line": 1,
@@ -1603,7 +1603,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "maven2/logback-access/logback-access.pom",
               "start_line": 2,
               "end_line": 2,
@@ -2091,7 +2091,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "maven2/spring-2.5.4/spring-2.5.4.pom",
               "start_line": 1,
               "end_line": 2,
@@ -2172,7 +2172,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "maven2/spring-orm-2.5.3/spring-orm-2.5.3.pom",
               "start_line": 1,
               "end_line": 2,
@@ -2253,7 +2253,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "maven2/spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom",
               "start_line": 1,
               "end_line": 2,
@@ -7012,7 +7012,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "maven2/aopalliance-1.0/aopalliance-1.0.pom",
                   "start_line": 1,
                   "end_line": 1,
@@ -7027,7 +7027,7 @@
                 },
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "maven2/aopalliance-1.0/aopalliance-1.0.pom",
                   "start_line": 2,
                   "end_line": 2,
@@ -7709,7 +7709,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "maven2/commons-validator-1.2.0/commons-validator-1.2.0.pom",
                   "start_line": 1,
                   "end_line": 2,
@@ -8312,7 +8312,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "maven2/findbugs-maven-plugin-1.1.1/findbugs-maven-plugin-1.1.1.pom",
                   "start_line": 1,
                   "end_line": 1,
@@ -8837,7 +8837,7 @@
               "matches": [
                 {
                   "license_expression": "epl-1.0",
-                  "spdx_license_expression": "EPL-1.0",
+                  "license_expression_spdx": "EPL-1.0",
                   "from_file": "maven2/foo-pom/foo-pom.xml",
                   "start_line": 1,
                   "end_line": 1,
@@ -8852,7 +8852,7 @@
                 },
                 {
                   "license_expression": "epl-1.0",
-                  "spdx_license_expression": "EPL-1.0",
+                  "license_expression_spdx": "EPL-1.0",
                   "from_file": "maven2/foo-pom/foo-pom.xml",
                   "start_line": 2,
                   "end_line": 2,
@@ -9307,7 +9307,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "maven2/jrecordbind-2.3.4/jrecordbind-2.3.4.pom",
                   "start_line": 1,
                   "end_line": 1,
@@ -9322,7 +9322,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.1-plus",
-                  "spdx_license_expression": "LGPL-2.1-or-later",
+                  "license_expression_spdx": "LGPL-2.1-or-later",
                   "from_file": "maven2/jrecordbind-2.3.4/jrecordbind-2.3.4.pom",
                   "start_line": 2,
                   "end_line": 2,
@@ -9481,7 +9481,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "maven2/log4j/log4j-pom.xml",
                   "start_line": 1,
                   "end_line": 2,
@@ -9654,7 +9654,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "maven2/logback-access/logback-access.pom",
                   "start_line": 1,
                   "end_line": 1,
@@ -9669,7 +9669,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "maven2/logback-access/logback-access.pom",
                   "start_line": 2,
                   "end_line": 2,
@@ -11021,7 +11021,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "maven2/spring-2.5.4/spring-2.5.4.pom",
                   "start_line": 1,
                   "end_line": 2,
@@ -11851,7 +11851,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "maven2/spring-orm-2.5.3/spring-orm-2.5.3.pom",
                   "start_line": 1,
                   "end_line": 2,
@@ -12142,7 +12142,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "maven2/spring-webmvc-2.5.3/spring-webmvc-2.5.3.pom",
                   "start_line": 1,
                   "end_line": 2,

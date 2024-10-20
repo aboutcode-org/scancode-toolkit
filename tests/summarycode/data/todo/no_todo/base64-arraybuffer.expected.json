@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "base64-arraybuffer-0.1.4/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -63,7 +63,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "base64-arraybuffer-0.1.4/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -415,7 +415,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "base64-arraybuffer-0.1.4/LICENSE-MIT",
               "start_line": 3,
               "end_line": 22,
@@ -486,7 +486,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "base64-arraybuffer-0.1.4/README.md",
               "start_line": 20,
               "end_line": 20,
@@ -594,7 +594,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "base64-arraybuffer-0.1.4/lib/base64-arraybuffer.js",
               "start_line": 6,
               "end_line": 6,
@@ -694,7 +694,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "base64-arraybuffer-0.1.4/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -716,7 +716,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "base64-arraybuffer-0.1.4/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -823,7 +823,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "base64-arraybuffer-0.1.4/package.json",
               "start_line": 18,
               "end_line": 20,
@@ -837,7 +837,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "base64-arraybuffer-0.1.4/package.json",
               "start_line": 21,
               "end_line": 21,

@@ -47,7 +47,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -69,7 +69,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -961,7 +961,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/LICENSE",
               "start_line": 3,
               "end_line": 5,
@@ -1000,7 +1000,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/README.md",
               "start_line": 305,
               "end_line": 307,
@@ -1039,7 +1039,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/README_en.md",
               "start_line": 6,
               "end_line": 8,
@@ -1055,7 +1055,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/README_en.md",
               "start_line": 8,
               "end_line": 8,
@@ -1071,7 +1071,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/LICENSE",
               "start_line": 3,
               "end_line": 5,
@@ -1160,7 +1160,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "paddlenlp/docs/locale/en/LC_MESSAGES/changelog.po",
               "start_line": 3,
               "end_line": 3,
@@ -1176,7 +1176,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -1191,7 +1191,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -1231,7 +1231,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "paddlenlp/docs/locale/en/LC_MESSAGES/data.po",
               "start_line": 3,
               "end_line": 3,
@@ -1247,7 +1247,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -1262,7 +1262,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -1516,7 +1516,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/hubconf.py",
               "start_line": 3,
               "end_line": 13,
@@ -1576,7 +1576,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/LICENSE",
                   "start_line": 3,
                   "end_line": 5,
@@ -1600,7 +1600,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/README.md",
                   "start_line": 305,
                   "end_line": 307,
@@ -1624,7 +1624,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/README_en.md",
                   "start_line": 6,
                   "end_line": 8,
@@ -1640,7 +1640,7 @@
                 },
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/README_en.md",
                   "start_line": 8,
                   "end_line": 8,
@@ -1656,7 +1656,7 @@
                 },
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/LICENSE",
                   "start_line": 3,
                   "end_line": 5,
@@ -1977,7 +1977,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1999,7 +1999,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "paddlenlp/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -2071,7 +2071,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 3,
               "end_line": 13,
@@ -2095,7 +2095,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 75,
               "end_line": 75,
@@ -2111,7 +2111,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "paddlenlp/setup.py",
               "start_line": 78,
               "end_line": 78,

@@ -10,7 +10,7 @@ other_license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 9
         end_line: 9
@@ -23,7 +23,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 10
         end_line: 24

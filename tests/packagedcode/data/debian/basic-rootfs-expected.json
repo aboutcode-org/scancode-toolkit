@@ -45,7 +45,7 @@
           "matches": [
             {
               "license_expression": "x11-fsf",
-              "spdx_license_expression": "X11-distribute-modifications-variant",
+              "license_expression_spdx": "X11-distribute-modifications-variant",
               "from_file": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
               "start_line": 23,
               "end_line": 45,
@@ -67,7 +67,7 @@
           "matches": [
             {
               "license_expression": "x11-xconsortium",
-              "spdx_license_expression": "X11",
+              "license_expression_spdx": "X11",
               "from_file": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
               "start_line": 50,
               "end_line": 70,
@@ -89,7 +89,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
               "start_line": 76,
               "end_line": 98,
@@ -111,7 +111,7 @@
           "matches": [
             {
               "license_expression": "x11-xconsortium",
-              "spdx_license_expression": "X11",
+              "license_expression_spdx": "X11",
               "from_file": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
               "start_line": 105,
               "end_line": 127,
@@ -243,7 +243,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
               "start_line": 13,
               "end_line": 13,
@@ -258,7 +258,7 @@
             },
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
               "start_line": 14,
               "end_line": 26,
@@ -273,7 +273,7 @@
             },
             {
               "license_expression": "lgpl-2.1",
-              "spdx_license_expression": "LGPL-2.1-only",
+              "license_expression_spdx": "LGPL-2.1-only",
               "from_file": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
               "start_line": 24,
               "end_line": 30,
@@ -411,7 +411,7 @@
               "matches": [
                 {
                   "license_expression": "x11-fsf",
-                  "spdx_license_expression": "X11-distribute-modifications-variant",
+                  "license_expression_spdx": "X11-distribute-modifications-variant",
                   "from_file": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
                   "start_line": 23,
                   "end_line": 45,
@@ -433,7 +433,7 @@
               "matches": [
                 {
                   "license_expression": "x11-xconsortium",
-                  "spdx_license_expression": "X11",
+                  "license_expression_spdx": "X11",
                   "from_file": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
                   "start_line": 50,
                   "end_line": 70,
@@ -455,7 +455,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
                   "start_line": 76,
                   "end_line": 98,
@@ -477,7 +477,7 @@
               "matches": [
                 {
                   "license_expression": "x11-xconsortium",
-                  "spdx_license_expression": "X11",
+                  "license_expression_spdx": "X11",
                   "from_file": "basic-rootfs.tar.gz/usr/share/doc/libncurses5/copyright",
                   "start_line": 105,
                   "end_line": 127,
@@ -564,7 +564,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.1-plus",
-                  "spdx_license_expression": "LGPL-2.1-or-later",
+                  "license_expression_spdx": "LGPL-2.1-or-later",
                   "from_file": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
                   "start_line": 13,
                   "end_line": 13,
@@ -579,7 +579,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.1-plus",
-                  "spdx_license_expression": "LGPL-2.1-or-later",
+                  "license_expression_spdx": "LGPL-2.1-or-later",
                   "from_file": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
                   "start_line": 14,
                   "end_line": 26,
@@ -594,7 +594,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.1",
-                  "spdx_license_expression": "LGPL-2.1-only",
+                  "license_expression_spdx": "LGPL-2.1-only",
                   "from_file": "basic-rootfs.tar.gz/usr/share/doc/libndp0/copyright",
                   "start_line": 24,
                   "end_line": 30,

@@ -42,8 +42,8 @@ Filtering discards matches based on various heuristics and rules such as:
 The filter functions are executed in a specific sequence over the list of matches.
 """
 
-TRACE = True
-TRACE_MERGE = True
+TRACE = False
+TRACE_MERGE = False
 TRACE_REFINE = False
 TRACE_FILTER_FALSE_POSITIVE = False
 TRACE_FILTER_CONTAINED = False
@@ -807,7 +807,7 @@ class LicenseMatch(object):
         result = {}
 
         result['license_expression'] = self.rule.license_expression
-        result['spdx_license_expression'] = self.rule.spdx_license_expression()
+        result['license_expression_spdx'] = self.rule.spdx_license_expression()
         result['from_file'] = file_path
         result['start_line'] = self.start_line
         result['end_line'] = self.end_line

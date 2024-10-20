@@ -18,7 +18,7 @@ other_license_detections:
     license_expression_spdx: Unlicense
     matches:
       - license_expression: unlicense
-        spdx_license_expression: Unlicense
+        license_expression_spdx: Unlicense
         from_file:
         start_line: 33
         end_line: 54
@@ -57,7 +57,7 @@ other_license_detections:
     license_expression_spdx: Zlib
     matches:
       - license_expression: zlib
-        spdx_license_expression: Zlib
+        license_expression_spdx: Zlib
         from_file:
         start_line: 63
         end_line: 77
@@ -89,7 +89,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.0-or-later AND LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later
         from_file:
         start_line: 79
         end_line: 79
@@ -102,7 +102,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 80
         end_line: 86

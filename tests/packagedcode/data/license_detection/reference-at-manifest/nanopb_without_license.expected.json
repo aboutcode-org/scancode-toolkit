@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/nanopb.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -134,7 +134,7 @@
               "matches": [
                 {
                   "license_expression": "zlib",
-                  "spdx_license_expression": "Zlib",
+                  "license_expression_spdx": "Zlib",
                   "from_file": "nanopb/nanopb.podspec",
                   "start_line": 1,
                   "end_line": 1,

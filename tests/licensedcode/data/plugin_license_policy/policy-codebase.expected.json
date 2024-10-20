@@ -200,7 +200,7 @@
           "matches": [
             {
               "license_expression": "broadcom-commercial",
-              "spdx_license_expression": "LicenseRef-scancode-broadcom-commercial",
+              "license_expression_spdx": "LicenseRef-scancode-broadcom-commercial",
               "from_file": "policy-codebase.tgz/policy-codebase/broadcom.txt",
               "start_line": 3,
               "end_line": 7,
@@ -259,7 +259,7 @@
           "matches": [
             {
               "license_expression": "bsd-1988",
-              "spdx_license_expression": "LicenseRef-scancode-bsd-1988",
+              "license_expression_spdx": "LicenseRef-scancode-bsd-1988",
               "from_file": "policy-codebase.tgz/policy-codebase/bsd-1988.txt",
               "start_line": 4,
               "end_line": 14,
@@ -318,7 +318,7 @@
           "matches": [
             {
               "license_expression": "esri-devkit",
-              "spdx_license_expression": "LicenseRef-scancode-esri-devkit",
+              "license_expression_spdx": "LicenseRef-scancode-esri-devkit",
               "from_file": "policy-codebase.tgz/policy-codebase/esri-devkit.txt",
               "start_line": 1,
               "end_line": 10,
@@ -377,7 +377,7 @@
           "matches": [
             {
               "license_expression": "oracle-java-ee-sdk-2010",
-              "spdx_license_expression": "LicenseRef-scancode-oracle-java-ee-sdk-2010",
+              "license_expression_spdx": "LicenseRef-scancode-oracle-java-ee-sdk-2010",
               "from_file": "policy-codebase.tgz/policy-codebase/oracle-java-ee-sdk-2010.txt",
               "start_line": 1,
               "end_line": 89,
@@ -436,7 +436,7 @@
           "matches": [
             {
               "license_expression": "rh-eula",
-              "spdx_license_expression": "LicenseRef-scancode-rh-eula",
+              "license_expression_spdx": "LicenseRef-scancode-rh-eula",
               "from_file": "policy-codebase.tgz/policy-codebase/rh-eula.txt",
               "start_line": 1,
               "end_line": 124,

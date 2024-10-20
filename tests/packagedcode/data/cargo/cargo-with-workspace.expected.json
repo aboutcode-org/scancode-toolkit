@@ -44,7 +44,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tauri/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -125,7 +125,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tauri-runtime/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -206,7 +206,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tauri-build/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -287,7 +287,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tests/restart/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -365,7 +365,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -686,7 +686,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -740,7 +740,7 @@
                     "matches": [
                       {
                         "license_expression": "apache-2.0 OR mit",
-                        "spdx_license_expression": "Apache-2.0 OR MIT",
+                        "license_expression_spdx": "Apache-2.0 OR MIT",
                         "from_file": "cargo-with-workspace/Cargo.toml",
                         "start_line": 17,
                         "end_line": 17,
@@ -781,7 +781,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -817,7 +817,7 @@
           "matches": [
             {
               "license_expression": "cc0-1.0",
-              "spdx_license_expression": "CC0-1.0",
+              "license_expression_spdx": "CC0-1.0",
               "from_file": "cargo-with-workspace/LICENSE.spdx",
               "start_line": 2,
               "end_line": 2,
@@ -838,7 +838,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "cargo-with-workspace/LICENSE.spdx",
               "start_line": 7,
               "end_line": 7,
@@ -874,7 +874,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "cargo-with-workspace/LICENSE_APACHE-2.0",
               "start_line": 1,
               "end_line": 1,
@@ -910,7 +910,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "cargo-with-workspace/LICENSE_MIT",
               "start_line": 1,
               "end_line": 1,
@@ -946,7 +946,7 @@
           "matches": [
             {
               "license_expression": "mit OR (mit OR apache-2.0)",
-              "spdx_license_expression": "MIT OR (MIT OR Apache-2.0)",
+              "license_expression_spdx": "MIT OR (MIT OR Apache-2.0)",
               "from_file": "cargo-with-workspace/README.md",
               "start_line": 19,
               "end_line": 19,
@@ -960,7 +960,7 @@
             },
             {
               "license_expression": "cc-by-nc-nd-4.0",
-              "spdx_license_expression": "CC-BY-NC-ND-4.0",
+              "license_expression_spdx": "CC-BY-NC-ND-4.0",
               "from_file": "cargo-with-workspace/README.md",
               "start_line": 21,
               "end_line": 21,
@@ -1070,7 +1070,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -1177,7 +1177,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -1270,7 +1270,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -1391,7 +1391,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -1438,7 +1438,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tests/restart/Cargo.toml",
               "start_line": 5,
               "end_line": 5,
@@ -1789,7 +1789,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/examples/api/src-tauri/Cargo.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -1836,7 +1836,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/examples/api/src-tauri/Cargo.toml",
               "start_line": 7,
               "end_line": 7,
@@ -1901,7 +1901,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1993,7 +1993,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/package.json",
               "start_line": 4,
               "end_line": 4,

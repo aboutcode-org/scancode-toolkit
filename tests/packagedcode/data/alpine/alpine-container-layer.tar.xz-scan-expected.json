@@ -43,7 +43,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -138,7 +138,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -233,7 +233,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -328,7 +328,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -441,7 +441,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -698,7 +698,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0 AND mit",
-              "spdx_license_expression": "MPL-2.0 AND MIT",
+              "license_expression_spdx": "MPL-2.0 AND MIT",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -793,7 +793,7 @@
           "matches": [
             {
               "license_expression": "openssl-ssleay",
-              "spdx_license_expression": "OpenSSL",
+              "license_expression_spdx": "OpenSSL",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -897,7 +897,7 @@
           "matches": [
             {
               "license_expression": "openssl-ssleay",
-              "spdx_license_expression": "OpenSSL",
+              "license_expression_spdx": "OpenSSL",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -992,7 +992,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1075,7 +1075,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1170,7 +1170,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1253,7 +1253,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1336,7 +1336,7 @@
           "matches": [
             {
               "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-              "spdx_license_expression": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
+              "license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1419,7 +1419,7 @@
           "matches": [
             {
               "license_expression": "bsd-simplified AND bsd-new",
-              "spdx_license_expression": "BSD-2-Clause AND BSD-3-Clause",
+              "license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
               "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -2251,7 +2251,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2457,7 +2457,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2555,7 +2555,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2698,7 +2698,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2916,7 +2916,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3365,7 +3365,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0 AND mit",
-                  "spdx_license_expression": "MPL-2.0 AND MIT",
+                  "license_expression_spdx": "MPL-2.0 AND MIT",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3463,7 +3463,7 @@
               "matches": [
                 {
                   "license_expression": "openssl-ssleay",
-                  "spdx_license_expression": "OpenSSL",
+                  "license_expression_spdx": "OpenSSL",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3651,7 +3651,7 @@
               "matches": [
                 {
                   "license_expression": "openssl-ssleay",
-                  "spdx_license_expression": "OpenSSL",
+                  "license_expression_spdx": "OpenSSL",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3749,7 +3749,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3838,7 +3838,7 @@
               "matches": [
                 {
                   "license_expression": "zlib",
-                  "spdx_license_expression": "Zlib",
+                  "license_expression_spdx": "Zlib",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3936,7 +3936,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -4057,7 +4057,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -4146,7 +4146,7 @@
               "matches": [
                 {
                   "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-                  "spdx_license_expression": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
+                  "license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -4283,7 +4283,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-simplified AND bsd-new",
-                  "spdx_license_expression": "BSD-2-Clause AND BSD-3-Clause",
+                  "license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
                   "from_file": "alpine-container-layer.tar.xz/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,

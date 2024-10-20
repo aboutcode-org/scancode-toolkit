@@ -647,7 +647,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/COPYING",
               "start_line": 1,
               "end_line": 674,
@@ -720,7 +720,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 38,
               "end_line": 38,
@@ -736,7 +736,7 @@
             },
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 38,
               "end_line": 38,
@@ -752,7 +752,7 @@
             },
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 39,
               "end_line": 39,
@@ -776,7 +776,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "samba/README.contributing",
               "start_line": 63,
               "end_line": 63,
@@ -800,7 +800,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "samba/README.contributing",
               "start_line": 76,
               "end_line": 76,
@@ -816,7 +816,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "samba/README.contributing",
               "start_line": 79,
               "end_line": 79,
@@ -832,7 +832,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "samba/README.contributing",
               "start_line": 79,
               "end_line": 81,
@@ -848,7 +848,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 84,
               "end_line": 84,
@@ -864,7 +864,7 @@
             },
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 85,
               "end_line": 85,
@@ -888,7 +888,7 @@
           "matches": [
             {
               "license_expression": "cc-by-sa-3.0",
-              "spdx_license_expression": "CC-BY-SA-3.0",
+              "license_expression_spdx": "CC-BY-SA-3.0",
               "from_file": "samba/README.contributing",
               "start_line": 121,
               "end_line": 122,
@@ -904,7 +904,7 @@
             },
             {
               "license_expression": "cc-by-sa-4.0",
-              "spdx_license_expression": "CC-BY-SA-4.0",
+              "license_expression_spdx": "CC-BY-SA-4.0",
               "from_file": "samba/README.contributing",
               "start_line": 122,
               "end_line": 122,
@@ -920,7 +920,7 @@
             },
             {
               "license_expression": "dco-1.1",
-              "spdx_license_expression": "LicenseRef-scancode-dco-1.1",
+              "license_expression_spdx": "LicenseRef-scancode-dco-1.1",
               "from_file": "samba/README.contributing",
               "start_line": 123,
               "end_line": 123,
@@ -942,7 +942,7 @@
       "license_clues": [
         {
           "license_expression": "gpl-2.0-plus",
-          "spdx_license_expression": "GPL-2.0-or-later",
+          "license_expression_spdx": "GPL-2.0-or-later",
           "from_file": "samba/README.contributing",
           "start_line": 57,
           "end_line": 57,
@@ -958,7 +958,7 @@
         },
         {
           "license_expression": "free-unknown",
-          "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "from_file": "samba/README.contributing",
           "start_line": 60,
           "end_line": 61,
@@ -990,7 +990,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "samba/README.md",
               "start_line": 6,
               "end_line": 6,
@@ -1014,7 +1014,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "samba/README.md",
               "start_line": 22,
               "end_line": 24,
@@ -1030,7 +1030,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/COPYING",
               "start_line": 1,
               "end_line": 674,
@@ -1092,7 +1092,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0",
-                  "spdx_license_expression": "GPL-3.0-only",
+                  "license_expression_spdx": "GPL-3.0-only",
                   "from_file": "samba/COPYING",
                   "start_line": 1,
                   "end_line": 674,
@@ -1116,7 +1116,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0",
-                  "spdx_license_expression": "GPL-3.0-only",
+                  "license_expression_spdx": "GPL-3.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 38,
                   "end_line": 38,
@@ -1132,7 +1132,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 38,
                   "end_line": 38,
@@ -1148,7 +1148,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 39,
                   "end_line": 39,
@@ -1172,7 +1172,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "samba/README.contributing",
                   "start_line": 63,
                   "end_line": 63,
@@ -1196,7 +1196,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "samba/README.contributing",
                   "start_line": 76,
                   "end_line": 76,
@@ -1212,7 +1212,7 @@
                 },
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "samba/README.contributing",
                   "start_line": 79,
                   "end_line": 79,
@@ -1228,7 +1228,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "samba/README.contributing",
                   "start_line": 79,
                   "end_line": 81,
@@ -1244,7 +1244,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0",
-                  "spdx_license_expression": "GPL-3.0-only",
+                  "license_expression_spdx": "GPL-3.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 84,
                   "end_line": 84,
@@ -1260,7 +1260,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 85,
                   "end_line": 85,
@@ -1284,7 +1284,7 @@
               "matches": [
                 {
                   "license_expression": "cc-by-sa-3.0",
-                  "spdx_license_expression": "CC-BY-SA-3.0",
+                  "license_expression_spdx": "CC-BY-SA-3.0",
                   "from_file": "samba/README.contributing",
                   "start_line": 121,
                   "end_line": 122,
@@ -1300,7 +1300,7 @@
                 },
                 {
                   "license_expression": "cc-by-sa-4.0",
-                  "spdx_license_expression": "CC-BY-SA-4.0",
+                  "license_expression_spdx": "CC-BY-SA-4.0",
                   "from_file": "samba/README.contributing",
                   "start_line": 122,
                   "end_line": 122,
@@ -1316,7 +1316,7 @@
                 },
                 {
                   "license_expression": "dco-1.1",
-                  "spdx_license_expression": "LicenseRef-scancode-dco-1.1",
+                  "license_expression_spdx": "LicenseRef-scancode-dco-1.1",
                   "from_file": "samba/README.contributing",
                   "start_line": 123,
                   "end_line": 123,
@@ -1340,7 +1340,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "samba/README.md",
                   "start_line": 6,
                   "end_line": 6,
@@ -1364,7 +1364,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "samba/README.md",
                   "start_line": 22,
                   "end_line": 24,
@@ -1380,7 +1380,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0",
-                  "spdx_license_expression": "GPL-3.0-only",
+                  "license_expression_spdx": "GPL-3.0-only",
                   "from_file": "samba/COPYING",
                   "start_line": 1,
                   "end_line": 674,
@@ -1476,7 +1476,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0",
-                  "spdx_license_expression": "GPL-3.0-only",
+                  "license_expression_spdx": "GPL-3.0-only",
                   "from_file": "samba/COPYING",
                   "start_line": 1,
                   "end_line": 674,
@@ -1500,7 +1500,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0",
-                  "spdx_license_expression": "GPL-3.0-only",
+                  "license_expression_spdx": "GPL-3.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 38,
                   "end_line": 38,
@@ -1516,7 +1516,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 38,
                   "end_line": 38,
@@ -1532,7 +1532,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 39,
                   "end_line": 39,
@@ -1556,7 +1556,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "samba/README.contributing",
                   "start_line": 63,
                   "end_line": 63,
@@ -1580,7 +1580,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "samba/README.contributing",
                   "start_line": 76,
                   "end_line": 76,
@@ -1596,7 +1596,7 @@
                 },
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "samba/README.contributing",
                   "start_line": 79,
                   "end_line": 79,
@@ -1612,7 +1612,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "samba/README.contributing",
                   "start_line": 79,
                   "end_line": 81,
@@ -1628,7 +1628,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0",
-                  "spdx_license_expression": "GPL-3.0-only",
+                  "license_expression_spdx": "GPL-3.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 84,
                   "end_line": 84,
@@ -1644,7 +1644,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "samba/README.contributing",
                   "start_line": 85,
                   "end_line": 85,
@@ -1668,7 +1668,7 @@
               "matches": [
                 {
                   "license_expression": "cc-by-sa-3.0",
-                  "spdx_license_expression": "CC-BY-SA-3.0",
+                  "license_expression_spdx": "CC-BY-SA-3.0",
                   "from_file": "samba/README.contributing",
                   "start_line": 121,
                   "end_line": 122,
@@ -1684,7 +1684,7 @@
                 },
                 {
                   "license_expression": "cc-by-sa-4.0",
-                  "spdx_license_expression": "CC-BY-SA-4.0",
+                  "license_expression_spdx": "CC-BY-SA-4.0",
                   "from_file": "samba/README.contributing",
                   "start_line": 122,
                   "end_line": 122,
@@ -1700,7 +1700,7 @@
                 },
                 {
                   "license_expression": "dco-1.1",
-                  "spdx_license_expression": "LicenseRef-scancode-dco-1.1",
+                  "license_expression_spdx": "LicenseRef-scancode-dco-1.1",
                   "from_file": "samba/README.contributing",
                   "start_line": 123,
                   "end_line": 123,
@@ -1724,7 +1724,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "samba/README.md",
                   "start_line": 6,
                   "end_line": 6,
@@ -1748,7 +1748,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "samba/README.md",
                   "start_line": 22,
                   "end_line": 24,
@@ -1764,7 +1764,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0",
-                  "spdx_license_expression": "GPL-3.0-only",
+                  "license_expression_spdx": "GPL-3.0-only",
                   "from_file": "samba/COPYING",
                   "start_line": 1,
                   "end_line": 674,
@@ -1861,7 +1861,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "samba/source3/locale/net/de.po",
               "start_line": 4,
               "end_line": 4,
@@ -1877,7 +1877,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/COPYING",
               "start_line": 1,
               "end_line": 674,
@@ -1893,7 +1893,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 38,
               "end_line": 38,
@@ -1909,7 +1909,7 @@
             },
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 38,
               "end_line": 38,
@@ -1925,7 +1925,7 @@
             },
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 39,
               "end_line": 39,
@@ -1941,7 +1941,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "samba/README.contributing",
               "start_line": 63,
               "end_line": 63,
@@ -1957,7 +1957,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "samba/README.contributing",
               "start_line": 76,
               "end_line": 76,
@@ -1973,7 +1973,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "samba/README.contributing",
               "start_line": 79,
               "end_line": 79,
@@ -1989,7 +1989,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "samba/README.contributing",
               "start_line": 79,
               "end_line": 81,
@@ -2005,7 +2005,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 84,
               "end_line": 84,
@@ -2021,7 +2021,7 @@
             },
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 85,
               "end_line": 85,
@@ -2037,7 +2037,7 @@
             },
             {
               "license_expression": "cc-by-sa-3.0",
-              "spdx_license_expression": "CC-BY-SA-3.0",
+              "license_expression_spdx": "CC-BY-SA-3.0",
               "from_file": "samba/README.contributing",
               "start_line": 121,
               "end_line": 122,
@@ -2053,7 +2053,7 @@
             },
             {
               "license_expression": "cc-by-sa-4.0",
-              "spdx_license_expression": "CC-BY-SA-4.0",
+              "license_expression_spdx": "CC-BY-SA-4.0",
               "from_file": "samba/README.contributing",
               "start_line": 122,
               "end_line": 122,
@@ -2069,7 +2069,7 @@
             },
             {
               "license_expression": "dco-1.1",
-              "spdx_license_expression": "LicenseRef-scancode-dco-1.1",
+              "license_expression_spdx": "LicenseRef-scancode-dco-1.1",
               "from_file": "samba/README.contributing",
               "start_line": 123,
               "end_line": 123,
@@ -2085,7 +2085,7 @@
             },
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "samba/README.md",
               "start_line": 6,
               "end_line": 6,
@@ -2101,7 +2101,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "samba/README.md",
               "start_line": 22,
               "end_line": 24,
@@ -2117,7 +2117,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/COPYING",
               "start_line": 1,
               "end_line": 674,
@@ -2156,7 +2156,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "samba/source3/locale/net/genmsg",
               "start_line": 5,
               "end_line": 16,

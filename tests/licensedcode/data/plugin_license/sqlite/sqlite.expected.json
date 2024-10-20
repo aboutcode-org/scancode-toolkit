@@ -48,7 +48,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 30,
               "end_line": 35,
@@ -71,7 +71,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 54,
               "end_line": 59,
@@ -94,7 +94,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 77,
               "end_line": 82,
@@ -117,7 +117,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 100,
               "end_line": 105,
@@ -140,7 +140,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 123,
               "end_line": 128,
@@ -163,7 +163,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 146,
               "end_line": 151,
@@ -186,7 +186,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 169,
               "end_line": 174,
@@ -209,7 +209,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 192,
               "end_line": 197,
@@ -232,7 +232,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 215,
               "end_line": 220,
@@ -255,7 +255,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 238,
               "end_line": 243,
@@ -278,7 +278,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 261,
               "end_line": 266,
@@ -301,7 +301,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 284,
               "end_line": 289,
@@ -324,7 +324,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 307,
               "end_line": 312,
@@ -347,7 +347,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 330,
               "end_line": 335,
@@ -370,7 +370,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 353,
               "end_line": 358,
@@ -393,7 +393,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 376,
               "end_line": 381,
@@ -416,7 +416,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 399,
               "end_line": 404,
@@ -439,7 +439,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 422,
               "end_line": 427,
@@ -462,7 +462,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 445,
               "end_line": 450,
@@ -485,7 +485,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 468,
               "end_line": 473,
@@ -508,7 +508,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 491,
               "end_line": 496,
@@ -531,7 +531,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 514,
               "end_line": 519,
@@ -554,7 +554,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 537,
               "end_line": 542,
@@ -577,7 +577,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 560,
               "end_line": 565,
@@ -600,7 +600,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 583,
               "end_line": 588,
@@ -623,7 +623,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 606,
               "end_line": 611,
@@ -646,7 +646,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 629,
               "end_line": 634,
@@ -669,7 +669,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 652,
               "end_line": 657,
@@ -692,7 +692,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 675,
               "end_line": 680,
@@ -715,7 +715,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 698,
               "end_line": 703,
@@ -738,7 +738,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 721,
               "end_line": 726,
@@ -761,7 +761,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 744,
               "end_line": 749,
@@ -784,7 +784,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 767,
               "end_line": 772,
@@ -807,7 +807,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 790,
               "end_line": 795,
@@ -830,7 +830,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 813,
               "end_line": 818,
@@ -853,7 +853,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 836,
               "end_line": 841,
@@ -876,7 +876,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 859,
               "end_line": 864,
@@ -899,7 +899,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 882,
               "end_line": 887,
@@ -922,7 +922,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 905,
               "end_line": 910,
@@ -945,7 +945,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 928,
               "end_line": 933,
@@ -968,7 +968,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 951,
               "end_line": 956,
@@ -991,7 +991,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 974,
               "end_line": 979,
@@ -1014,7 +1014,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 997,
               "end_line": 1002,
@@ -1037,7 +1037,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1020,
               "end_line": 1025,
@@ -1060,7 +1060,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1043,
               "end_line": 1048,
@@ -1083,7 +1083,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1066,
               "end_line": 1071,
@@ -1106,7 +1106,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1089,
               "end_line": 1094,
@@ -1129,7 +1129,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1112,
               "end_line": 1117,
@@ -1152,7 +1152,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1135,
               "end_line": 1140,
@@ -1175,7 +1175,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1158,
               "end_line": 1163,
@@ -1198,7 +1198,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1181,
               "end_line": 1186,
@@ -1221,7 +1221,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1204,
               "end_line": 1209,
@@ -1244,7 +1244,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1227,
               "end_line": 1232,
@@ -1267,7 +1267,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1250,
               "end_line": 1255,
@@ -1290,7 +1290,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1273,
               "end_line": 1278,
@@ -1313,7 +1313,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1296,
               "end_line": 1301,
@@ -1336,7 +1336,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1319,
               "end_line": 1324,
@@ -1359,7 +1359,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1342,
               "end_line": 1347,
@@ -1382,7 +1382,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1365,
               "end_line": 1370,
@@ -1405,7 +1405,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1388,
               "end_line": 1393,
@@ -1428,7 +1428,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1411,
               "end_line": 1416,
@@ -1451,7 +1451,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1434,
               "end_line": 1439,
@@ -1474,7 +1474,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1457,
               "end_line": 1462,
@@ -1497,7 +1497,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1480,
               "end_line": 1485,
@@ -1520,7 +1520,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1503,
               "end_line": 1508,
@@ -1543,7 +1543,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1526,
               "end_line": 1531,
@@ -1566,7 +1566,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1549,
               "end_line": 1554,
@@ -1589,7 +1589,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1572,
               "end_line": 1577,
@@ -1612,7 +1612,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1595,
               "end_line": 1600,
@@ -1635,7 +1635,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1618,
               "end_line": 1623,
@@ -1658,7 +1658,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1641,
               "end_line": 1646,
@@ -1681,7 +1681,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1664,
               "end_line": 1669,
@@ -1704,7 +1704,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1687,
               "end_line": 1692,
@@ -1727,7 +1727,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1710,
               "end_line": 1715,
@@ -1750,7 +1750,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1733,
               "end_line": 1738,
@@ -1773,7 +1773,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1756,
               "end_line": 1761,
@@ -1796,7 +1796,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1779,
               "end_line": 1784,
@@ -1819,7 +1819,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1802,
               "end_line": 1807,
@@ -1842,7 +1842,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1825,
               "end_line": 1830,
@@ -1865,7 +1865,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1848,
               "end_line": 1853,
@@ -1888,7 +1888,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1871,
               "end_line": 1876,
@@ -1911,7 +1911,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1894,
               "end_line": 1899,
@@ -1934,7 +1934,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1917,
               "end_line": 1922,
@@ -1957,7 +1957,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1940,
               "end_line": 1945,
@@ -1980,7 +1980,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1963,
               "end_line": 1968,
@@ -2003,7 +2003,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 1986,
               "end_line": 1991,
@@ -2026,7 +2026,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2009,
               "end_line": 2014,
@@ -2049,7 +2049,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2032,
               "end_line": 2037,
@@ -2072,7 +2072,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2055,
               "end_line": 2060,
@@ -2095,7 +2095,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2078,
               "end_line": 2083,
@@ -2118,7 +2118,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2101,
               "end_line": 2106,
@@ -2141,7 +2141,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2124,
               "end_line": 2129,
@@ -2164,7 +2164,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2147,
               "end_line": 2152,
@@ -2187,7 +2187,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2170,
               "end_line": 2175,
@@ -2210,7 +2210,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2193,
               "end_line": 2198,
@@ -2233,7 +2233,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2216,
               "end_line": 2221,
@@ -2256,7 +2256,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2239,
               "end_line": 2244,
@@ -2279,7 +2279,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2262,
               "end_line": 2267,
@@ -2302,7 +2302,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2285,
               "end_line": 2290,
@@ -2325,7 +2325,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2308,
               "end_line": 2313,
@@ -2348,7 +2348,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2331,
               "end_line": 2336,
@@ -2371,7 +2371,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2354,
               "end_line": 2359,
@@ -2394,7 +2394,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2377,
               "end_line": 2382,
@@ -2417,7 +2417,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2400,
               "end_line": 2405,
@@ -2440,7 +2440,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2423,
               "end_line": 2428,
@@ -2463,7 +2463,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2446,
               "end_line": 2451,
@@ -2486,7 +2486,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2469,
               "end_line": 2474,
@@ -2509,7 +2509,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2492,
               "end_line": 2497,
@@ -2532,7 +2532,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2515,
               "end_line": 2520,
@@ -2555,7 +2555,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2538,
               "end_line": 2543,
@@ -2578,7 +2578,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2561,
               "end_line": 2566,
@@ -2601,7 +2601,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2584,
               "end_line": 2589,
@@ -2624,7 +2624,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2607,
               "end_line": 2612,
@@ -2647,7 +2647,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2630,
               "end_line": 2635,
@@ -2670,7 +2670,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2653,
               "end_line": 2658,
@@ -2693,7 +2693,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2676,
               "end_line": 2681,
@@ -2716,7 +2716,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2699,
               "end_line": 2704,
@@ -2739,7 +2739,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2722,
               "end_line": 2727,
@@ -2762,7 +2762,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2745,
               "end_line": 2750,
@@ -2785,7 +2785,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2768,
               "end_line": 2773,
@@ -2808,7 +2808,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2791,
               "end_line": 2796,
@@ -2831,7 +2831,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2814,
               "end_line": 2819,
@@ -2854,7 +2854,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2837,
               "end_line": 2842,
@@ -2877,7 +2877,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2860,
               "end_line": 2865,
@@ -2900,7 +2900,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2883,
               "end_line": 2888,
@@ -2923,7 +2923,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2906,
               "end_line": 2911,
@@ -2946,7 +2946,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2929,
               "end_line": 2934,
@@ -2969,7 +2969,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2952,
               "end_line": 2957,
@@ -2992,7 +2992,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2975,
               "end_line": 2980,
@@ -3015,7 +3015,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 2998,
               "end_line": 3003,
@@ -3038,7 +3038,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 3021,
               "end_line": 3026,
@@ -3061,7 +3061,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 3044,
               "end_line": 3049,
@@ -3084,7 +3084,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 3067,
               "end_line": 3072,
@@ -3107,7 +3107,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 3090,
               "end_line": 3095,
@@ -3130,7 +3130,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 3113,
               "end_line": 3118,
@@ -3153,7 +3153,7 @@
           "matches": [
             {
               "license_expression": "blessing",
-              "spdx_license_expression": "blessing",
+              "license_expression_spdx": "blessing",
               "from_file": "sqlite.tgz/sqlite3-binding2.c",
               "start_line": 3136,
               "end_line": 3141,
