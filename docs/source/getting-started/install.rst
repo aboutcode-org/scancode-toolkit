@@ -44,7 +44,7 @@ For advanced usage and experienced users, you can also use any of these mode:
 Before Installing
 -----------------
 
-- ScanCode requires a Python version between 3.8 to 3.12 and is
+- ScanCode requires a Python version between 3.9 to 3.12 and is
   tested on Linux, macOS, and Windows. It should work fine on FreeBSD.
 
 .. _system_requirements:
@@ -71,8 +71,8 @@ System Requirements
 Prerequisites
 ^^^^^^^^^^^^^
 
-ScanCode needs a Python 3.8+ interpreter; We support all Python versions from
-3.8 to 3.12. The default version for the application archives is Python 3.8
+ScanCode needs a Python 3.9+ interpreter; We support all Python versions from
+3.9 to 3.12. The default version for the application archives is Python 3.9
 
 - **On Linux**:
 
@@ -90,11 +90,11 @@ ScanCode needs a Python 3.8+ interpreter; We support all Python versions from
 
     - On RPM-based distros run::
 
-          sudo yum install python3.8-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel libpopt0
+          sudo yum install python3.9-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel libpopt0
 
     - On Fedora 22 and later run::
 
-          sudo dnf install python3.8-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0
+          sudo dnf install python3.9-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0
 
 
     If these packages are not available from your package manager, you must
@@ -103,13 +103,13 @@ ScanCode needs a Python 3.8+ interpreter; We support all Python versions from
 
 - **On Mac**:
 
-    The default Python 3 provided with macOS is 3.8.
-    Alternatively you can download and install Python 3.8 from https://www.python.org/
+    The default Python 3 provided with macOS is 3.9.
+    Alternatively you can download and install Python 3.9 from https://www.python.org/
 
 
 - **On Windows**:
 
-    Download and install Python 3.8 from https://www.python.org/
+    Download and install Python 3.9 from https://www.python.org/
 
     .. Note::
 
@@ -136,7 +136,7 @@ under assets options.
 
     ScanCode app archives come with packaged with all required dependencies except
     for Python that has to be downloaded and installed separately.
-    On more recent versions of Ubuntu, you will have to install Python 3.8 manually.
+    On more recent versions of Ubuntu, you will have to install Python 3.9 manually.
     One possibility is to use the Deadsnakes PPA (Personal Package Archive) which is
     a project that provides older Python version builds for Debian and Ubuntu and is
     available at https://github.com/deadsnakes/ and https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa
@@ -144,7 +144,7 @@ under assets options.
 
         sudo apt-get update && sudo apt-get upgrade
         sudo add-apt-repository ppa:deadsnakes/ppa --yes
-        sudo apt-get install python3.8 python3.8-distutils
+        sudo apt-get install python3.9 python3.9-distutils
 
 
 Installation on Linux and Mac
