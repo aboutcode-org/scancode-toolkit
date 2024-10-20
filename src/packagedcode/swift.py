@@ -115,7 +115,7 @@ class BaseSwiftDatafileHandler(models.DatafileHandler):
                             scope="dependencies",
                             is_runtime=True,
                             is_optional=False,
-                            is_resolved=True,
+                            is_pinned=True,
                             extracted_requirement=version,
                         )
                     )
