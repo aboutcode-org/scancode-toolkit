@@ -44,7 +44,7 @@ class OpamFileHandler(models.DatafileHandler):
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
             )
 

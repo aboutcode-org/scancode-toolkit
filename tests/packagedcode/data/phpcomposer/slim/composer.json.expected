@@ -102,7 +102,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -113,7 +113,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -124,7 +124,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -135,7 +135,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -146,7 +146,7 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -157,7 +157,7 @@
         "scope": "require-dev",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -168,7 +168,7 @@
         "scope": "require-dev",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -179,7 +179,7 @@
         "scope": "provide",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}

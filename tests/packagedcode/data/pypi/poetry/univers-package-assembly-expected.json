@@ -87,7 +87,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -102,7 +102,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -117,7 +117,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -132,7 +132,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -147,7 +147,7 @@
       "scope": null,
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
         "type": "pypi",
@@ -193,7 +193,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -204,7 +204,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -215,7 +215,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -226,7 +226,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -237,7 +237,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -248,7 +248,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -259,7 +259,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -270,7 +270,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -281,7 +281,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -292,7 +292,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -303,7 +303,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -314,7 +314,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -325,7 +325,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -336,7 +336,7 @@
             "scope": "docs",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -347,7 +347,7 @@
             "scope": "docs",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -358,7 +358,7 @@
             "scope": "docs",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -369,7 +369,7 @@
             "scope": "docs",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -380,7 +380,7 @@
             "scope": "tests",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -391,7 +391,7 @@
             "scope": "tests",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -402,7 +402,7 @@
             "scope": "tests",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -413,7 +413,7 @@
             "scope": "tests",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -424,7 +424,7 @@
             "scope": "tests",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -435,7 +435,7 @@
             "scope": "tests",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -446,7 +446,7 @@
             "scope": "tests",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -457,7 +457,7 @@
             "scope": "tests",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -468,7 +468,7 @@
             "scope": "tests",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -479,7 +479,7 @@
             "scope": "tests-no-zope",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -490,7 +490,7 @@
             "scope": "tests-no-zope",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -501,7 +501,7 @@
             "scope": "tests-no-zope",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -512,7 +512,7 @@
             "scope": "tests-no-zope",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -523,7 +523,7 @@
             "scope": "tests-no-zope",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -534,7 +534,7 @@
             "scope": "tests-no-zope",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -545,7 +545,7 @@
             "scope": "tests-no-zope",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -556,7 +556,7 @@
             "scope": "tests-no-zope",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -580,7 +580,7 @@
       "scope": null,
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
         "type": "pypi",
@@ -626,7 +626,7 @@
             "scope": "dependencies",
             "is_runtime": true,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -650,7 +650,7 @@
       "scope": null,
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
         "type": "pypi",
@@ -696,7 +696,7 @@
             "scope": "diagrams",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -707,7 +707,7 @@
             "scope": "diagrams",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -731,7 +731,7 @@
       "scope": null,
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
         "type": "pypi",
@@ -777,7 +777,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -788,7 +788,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -799,7 +799,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -810,7 +810,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -821,7 +821,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -832,7 +832,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -843,7 +843,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -854,7 +854,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -865,7 +865,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -876,7 +876,7 @@
             "scope": "dev",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -887,7 +887,7 @@
             "scope": "doc",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -898,7 +898,7 @@
             "scope": "doc",
             "is_runtime": false,
             "is_optional": false,
-            "is_resolved": false,
+            "is_pinned": false,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -922,7 +922,7 @@
       "scope": null,
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
         "type": "pypi",
@@ -1034,7 +1034,7 @@
               "scope": null,
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
                 "type": "pypi",
@@ -1080,7 +1080,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1091,7 +1091,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1102,7 +1102,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1113,7 +1113,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1124,7 +1124,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1135,7 +1135,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1146,7 +1146,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1157,7 +1157,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1168,7 +1168,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1179,7 +1179,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1190,7 +1190,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1201,7 +1201,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1212,7 +1212,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1223,7 +1223,7 @@
                     "scope": "docs",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1234,7 +1234,7 @@
                     "scope": "docs",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1245,7 +1245,7 @@
                     "scope": "docs",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1256,7 +1256,7 @@
                     "scope": "docs",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1267,7 +1267,7 @@
                     "scope": "tests",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1278,7 +1278,7 @@
                     "scope": "tests",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1289,7 +1289,7 @@
                     "scope": "tests",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1300,7 +1300,7 @@
                     "scope": "tests",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1311,7 +1311,7 @@
                     "scope": "tests",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1322,7 +1322,7 @@
                     "scope": "tests",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1333,7 +1333,7 @@
                     "scope": "tests",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1344,7 +1344,7 @@
                     "scope": "tests",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1355,7 +1355,7 @@
                     "scope": "tests",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1366,7 +1366,7 @@
                     "scope": "tests-no-zope",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1377,7 +1377,7 @@
                     "scope": "tests-no-zope",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1388,7 +1388,7 @@
                     "scope": "tests-no-zope",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1399,7 +1399,7 @@
                     "scope": "tests-no-zope",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1410,7 +1410,7 @@
                     "scope": "tests-no-zope",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1421,7 +1421,7 @@
                     "scope": "tests-no-zope",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1432,7 +1432,7 @@
                     "scope": "tests-no-zope",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1443,7 +1443,7 @@
                     "scope": "tests-no-zope",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1463,7 +1463,7 @@
               "scope": null,
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
                 "type": "pypi",
@@ -1509,7 +1509,7 @@
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1529,7 +1529,7 @@
               "scope": null,
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
                 "type": "pypi",
@@ -1575,7 +1575,7 @@
                     "scope": "diagrams",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1586,7 +1586,7 @@
                     "scope": "diagrams",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1606,7 +1606,7 @@
               "scope": null,
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
                 "type": "pypi",
@@ -1652,7 +1652,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1663,7 +1663,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1674,7 +1674,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1685,7 +1685,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1696,7 +1696,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1707,7 +1707,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1718,7 +1718,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1729,7 +1729,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1740,7 +1740,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1751,7 +1751,7 @@
                     "scope": "dev",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1762,7 +1762,7 @@
                     "scope": "doc",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1773,7 +1773,7 @@
                     "scope": "doc",
                     "is_runtime": false,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -1793,7 +1793,7 @@
               "scope": null,
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
                 "type": "pypi",
@@ -1933,7 +1933,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1944,7 +1944,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1955,7 +1955,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1966,7 +1966,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}

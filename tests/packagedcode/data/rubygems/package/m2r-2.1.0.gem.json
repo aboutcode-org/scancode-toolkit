@@ -63,7 +63,7 @@
         "scope": "runtime", 
         "is_runtime": true, 
         "is_optional": false, 
-        "is_resolved": false
+        "is_pinned": false
       }, 
       {
         "purl": "pkg:gem/ffi", 
@@ -71,7 +71,7 @@
         "scope": "runtime", 
         "is_runtime": true, 
         "is_optional": false, 
-        "is_resolved": false
+        "is_pinned": false
       }, 
       {
         "purl": "pkg:gem/multi_json", 
@@ -79,7 +79,7 @@
         "scope": "runtime", 
         "is_runtime": true, 
         "is_optional": false, 
-        "is_resolved": false
+        "is_pinned": false
       }, 
       {
         "purl": "pkg:gem/tnetstring", 
@@ -87,7 +87,7 @@
         "scope": "runtime", 
         "is_runtime": true, 
         "is_optional": false, 
-        "is_resolved": false
+        "is_pinned": false
       }, 
       {
         "purl": "pkg:gem/rack", 
@@ -95,7 +95,7 @@
         "scope": "development", 
         "is_runtime": false, 
         "is_optional": true, 
-        "is_resolved": false
+        "is_pinned": false
       }, 
       {
         "purl": "pkg:gem/rake", 
@@ -103,7 +103,7 @@
         "scope": "development", 
         "is_runtime": false, 
         "is_optional": true, 
-        "is_resolved": false
+        "is_pinned": false
       }, 
       {
         "purl": "pkg:gem/minitest", 
@@ -111,7 +111,7 @@
         "scope": "development", 
         "is_runtime": false, 
         "is_optional": true, 
-        "is_resolved": true
+        "is_pinned": true
       }, 
       {
         "purl": "pkg:gem/mocha", 
@@ -119,7 +119,7 @@
         "scope": "development", 
         "is_runtime": false, 
         "is_optional": true, 
-        "is_resolved": false
+        "is_pinned": false
       }, 
       {
         "purl": "pkg:gem/bbq", 
@@ -127,7 +127,7 @@
         "scope": "development", 
         "is_runtime": false, 
         "is_optional": true, 
-        "is_resolved": true
+        "is_pinned": true
       }, 
       {
         "purl": "pkg:gem/capybara-mechanize", 
@@ -135,7 +135,7 @@
         "scope": "development", 
         "is_runtime": false, 
         "is_optional": true, 
-        "is_resolved": true
+        "is_pinned": true
       }, 
       {
         "purl": "pkg:gem/activesupport", 
@@ -143,7 +143,7 @@
         "scope": "development", 
         "is_runtime": false, 
         "is_optional": true, 
-        "is_resolved": false
+        "is_pinned": false
       }, 
       {
         "purl": "pkg:gem/yard", 
@@ -151,7 +151,7 @@
         "scope": "development", 
         "is_runtime": false, 
         "is_optional": true, 
-        "is_resolved": false
+        "is_pinned": false
       }, 
       {
         "purl": "pkg:gem/kramdown", 
@@ -159,7 +159,7 @@
         "scope": "development", 
         "is_runtime": false, 
         "is_optional": true, 
-        "is_resolved": false
+        "is_pinned": false
       }
     ], 
     "source_packages": [], 
