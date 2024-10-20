@@ -31,7 +31,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/feedparser@5.1.1",
@@ -39,7 +39,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/pyasn1@0.4.2",
@@ -47,7 +47,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/pycrypto@2.4",
@@ -55,7 +55,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/pyjwt@0.4.2",
@@ -63,7 +63,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/raven@1.9.4",
@@ -71,7 +71,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/requests@2.2.1",
@@ -79,7 +79,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/rsa@3.4",
@@ -87,7 +87,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     },
     {
       "purl": "pkg:pypi/simplejson@2.4.0",
@@ -95,7 +95,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true
+      "is_pinned": true
     }
   ],
   "source_packages": [],

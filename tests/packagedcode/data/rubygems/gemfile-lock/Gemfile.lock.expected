@@ -43,7 +43,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -54,7 +54,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -65,7 +65,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -76,7 +76,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -87,7 +87,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -98,7 +98,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -109,7 +109,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -120,7 +120,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -131,7 +131,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -142,7 +142,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -153,7 +153,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -164,7 +164,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -175,7 +175,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -186,7 +186,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -197,7 +197,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -208,7 +208,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -219,7 +219,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -230,7 +230,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -241,7 +241,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -252,7 +252,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -263,7 +263,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -274,7 +274,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -285,7 +285,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -296,7 +296,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -307,7 +307,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -318,7 +318,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -329,7 +329,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -340,7 +340,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -351,7 +351,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -362,7 +362,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -373,7 +373,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -384,7 +384,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -395,7 +395,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -406,7 +406,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -417,7 +417,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -428,7 +428,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -439,7 +439,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -450,7 +450,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -461,7 +461,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -472,7 +472,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -483,7 +483,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -494,7 +494,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -505,7 +505,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -516,7 +516,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -527,7 +527,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -538,7 +538,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -549,7 +549,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -560,7 +560,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -571,7 +571,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -582,7 +582,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -593,7 +593,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -604,7 +604,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -615,7 +615,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -626,7 +626,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -637,7 +637,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -648,7 +648,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -659,7 +659,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -670,7 +670,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -681,7 +681,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -692,7 +692,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -703,7 +703,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -714,7 +714,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -725,7 +725,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
@@ -736,7 +736,7 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {},
         "extra_data": {}

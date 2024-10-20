@@ -37,6 +37,20 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+Major API/other changes:
+
+- Output Format Version updated to 4.0.0 (major version bump)
+- Dependency attribute rename: ``is_resolved`` renamed to ``is_pinned``
+  See https://github.com/nexB/scancode-toolkit/pull/3888 for more details.
+
+Changes in Output Data Structure:
+
+- The data structure of the JSON output has changed for
+  dependencies at file level package_data, and at top-level.
+  Note that the change is a modification to the JSON output,
+  so we have a major version bump ``3.2.0`` to ``4.0.0``:
+
+  - Dependency attribute ``is_resolved`` renamed to ``is_pinned``
 - Update link references of ownership from nexB to aboutcode-org
   See https://github.com/aboutcode-org/scancode-toolkit/issues/3885
 

@@ -519,7 +519,7 @@ class CycloneDxDependency(ToDictMixin):
         for dependency in package.get('dependencies', []):
             dpurl = dependency['purl']
 
-            if dependency['is_resolved']:
+            if dependency['is_pinned']:
                 dependencies_by_dependent[purl].add(dpurl)
             else:
                 existing = components_by_purl.get(dpurl)

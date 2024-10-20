@@ -360,7 +360,7 @@ def build_package(cls, dependencies, package_only=False):
                 extracted_requirement=version,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=bool(version),
+                is_pinned=bool(version),
             )
         )
 
