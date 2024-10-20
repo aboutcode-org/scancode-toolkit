@@ -29,9 +29,9 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-6.5.0-1025-oem-x86_64-with-glibc2.35
-        platform_version: '#26-Ubuntu SMP PREEMPT_DYNAMIC Tue Jun 18 12:35:22 UTC 2024'
-        python_version: 3.11.8 (main, Feb 12 2024, 14:25:06) [GCC 11.4.0]
+        platform: Linux-5.15.0-122-generic-x86_64-with-glibc2.35
+        platform_version: '#132-Ubuntu SMP Thu Aug 29 13:45:52 UTC 2024'
+        python_version: 3.10.12 (main, Sep 11 2024, 15:47:36) [GCC 11.4.0]
       spdx_license_list_version: '3.25'
       files_count: 4
 summary:
@@ -340,7 +340,7 @@ packages:
         license_expression_spdx: LGPL-3.0-only
         matches:
           - license_expression: lgpl-3.0
-            spdx_license_expression: LGPL-3.0-only
+            license_expression_spdx: LGPL-3.0-only
             from_file: manifests/pypi/bluepyopt_setup.py
             start_line: 1
             end_line: 1
@@ -357,7 +357,7 @@ packages:
         license_expression_spdx: LGPL-3.0-only
         matches:
           - license_expression: lgpl-3.0
-            spdx_license_expression: LGPL-3.0-only
+            license_expression_spdx: LGPL-3.0-only
             from_file: manifests/pypi/bluepyopt_setup.py
             start_line: 1
             end_line: 1

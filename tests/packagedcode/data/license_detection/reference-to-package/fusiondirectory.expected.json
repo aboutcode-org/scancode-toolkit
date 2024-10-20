@@ -7674,7 +7674,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 2925,
                   "end_line": 2925,
@@ -7986,7 +7986,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3010,
                   "end_line": 3010,
@@ -8002,7 +8002,7 @@
                 },
                 {
                   "license_expression": "other-permissive",
-                  "spdx_license_expression": "LicenseRef-scancode-other-permissive",
+                  "license_expression_spdx": "LicenseRef-scancode-other-permissive",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3010,
                   "end_line": 3010,
@@ -8026,7 +8026,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3016,
                   "end_line": 3016,
@@ -8042,7 +8042,7 @@
                 },
                 {
                   "license_expression": "bsd-original",
-                  "spdx_license_expression": "BSD-4-Clause",
+                  "license_expression_spdx": "BSD-4-Clause",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3016,
                   "end_line": 3016,
@@ -8058,7 +8058,7 @@
                 },
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "fusiondirectory/debian/copyright.in",
                   "start_line": 3016,
                   "end_line": 3016,
@@ -14402,7 +14402,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 2925,
               "end_line": 2925,
@@ -14714,7 +14714,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3010,
               "end_line": 3010,
@@ -14730,7 +14730,7 @@
             },
             {
               "license_expression": "other-permissive",
-              "spdx_license_expression": "LicenseRef-scancode-other-permissive",
+              "license_expression_spdx": "LicenseRef-scancode-other-permissive",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3010,
               "end_line": 3010,
@@ -14754,7 +14754,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3016,
               "end_line": 3016,
@@ -14770,7 +14770,7 @@
             },
             {
               "license_expression": "bsd-original",
-              "spdx_license_expression": "BSD-4-Clause",
+              "license_expression_spdx": "BSD-4-Clause",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3016,
               "end_line": 3016,
@@ -14786,7 +14786,7 @@
             },
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "fusiondirectory/debian/copyright.in",
               "start_line": 3016,
               "end_line": 3016,

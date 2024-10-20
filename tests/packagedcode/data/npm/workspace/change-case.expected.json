@@ -51,7 +51,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "change-case/packages/change-case/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -140,7 +140,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "change-case/packages/sponge-case/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -227,7 +227,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "change-case/packages/swap-case/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -314,7 +314,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "change-case/packages/title-case/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -515,7 +515,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "change-case/LICENSE",
               "start_line": 1,
               "end_line": 1,
@@ -572,7 +572,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "change-case/LICENSE",
                   "start_line": 1,
                   "end_line": 1,
@@ -754,7 +754,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "change-case/packages/change-case/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -801,7 +801,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "change-case/packages/change-case/package.json",
               "start_line": 24,
               "end_line": 24,
@@ -890,7 +890,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "change-case/packages/sponge-case/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -937,7 +937,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "change-case/packages/sponge-case/package.json",
               "start_line": 24,
               "end_line": 24,
@@ -1024,7 +1024,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "change-case/packages/swap-case/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1071,7 +1071,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "change-case/packages/swap-case/package.json",
               "start_line": 22,
               "end_line": 22,
@@ -1158,7 +1158,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "change-case/packages/title-case/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1205,7 +1205,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "change-case/packages/title-case/package.json",
               "start_line": 22,
               "end_line": 22,
