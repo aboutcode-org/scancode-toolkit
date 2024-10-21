@@ -37,6 +37,9 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+v32.3.0 - 2024-10-21
+--------------------
+
 Major API/other changes:
 
 - Output Format Version updated to 4.0.0 (major version bump)
@@ -73,6 +76,15 @@ Changes in Output Data Structure:
   and refined detection added.
 
 - Fix Python ``SyntaxWarning`` in textcode module.
+
+- Improve python, npm, yarn, go package detections:
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3857
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3869
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3943
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3894
+
+- Drop python 3.8 support as this is end of life. Please use older releases if you
+  are using python 3.8 but this is not recommended.
 
 v32.2.1 - 2024-07-02
 ---------------------
