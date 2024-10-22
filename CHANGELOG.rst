@@ -37,6 +37,9 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+- Update Dockerfile and test container build.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/3955
+
 v32.3.0 - 2024-10-21
 --------------------
 
