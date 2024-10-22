@@ -203,11 +203,11 @@ jobs:
           python_architecture: x64
           test_suites:
               click_versions: |
-                for clk_ver in 8.1.3 8.1.2 8.1.1 8.1.0 8.0.4 8.0.3 8.0.2 8.0.1 7.1.2 7.1.1 7.1 6.7; 
+                for clk_ver in 8.1.3 8.1.2 8.1.1 8.1.0 8.0.4 8.0.3 8.0.2 8.0.1 7.1.2 7.1.1 7.1 6.7;
                  do
                   venv/bin/pip install click==$clk_ver;
-                  venv/bin/scancode -i samples/ -n3 --json foo.json; 
-                  venv/bin/scancode -i --verbose samples/ -n3 --json foo.json; 
+                  venv/bin/scancode -i samples/ -n3 --json foo.json;
+                  venv/bin/scancode -i --verbose samples/ -n3 --json foo.json;
                  done
 
 
@@ -230,7 +230,7 @@ jobs:
           python_versions: ['3.9', '3.10', '3.11', '3.12']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py
-  
+
     - template: etc/ci/azure-posix.yml
       parameters:
           job_name: macos12_cpython_latest_from_pip
@@ -263,3 +263,12 @@ jobs:
           test_suites:
               all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
 
+
+################################################################################
+# Test container build
+################################################################################
+
+    - template: etc/ci/azure-posix-docker.yml
+      parameters:
+          job_name: ubuntu22_build_container
+          image_name: ubuntu-22.04
