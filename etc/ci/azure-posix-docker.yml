@@ -1,22 +1,12 @@
 parameters:
     job_name: ''
     image_name: ''
-    python_versions: []
-    test_suites: {}
-    python_architecture: x64
 
 jobs:
     - job: ${{ parameters.job_name }}
 
       pool:
           vmImage: ${{ parameters.image_name }}
-
-      strategy:
-          matrix:
-              ${{ each tsuite in parameters.test_suites }}:
-                 ${{ tsuite.key }}:
-                     test_suite_label: ${{ tsuite.key }}
-                     test_suite: ${{ tsuite.value }}
 
       steps:
           - checkout: self
@@ -26,8 +16,9 @@ jobs:
             inputs:
                 command: 'build'
                 Dockerfile: '**/Dockerfile'
-                arguments: '-t scancode'
+                arguments: '--tag scancode'
             displayName: 'Build scancode-toolkit container'
 
           - script: |
-              docker run scancode --help
+                docker run scancode --help
+            displayName: 'Run scancode --help'
