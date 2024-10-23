@@ -29,7 +29,7 @@ html5lib==1.1
 idna==3.3
 importlib-metadata==4.12.0
 inflection==0.5.1
-intbitset==3.1.0
+intbitset==4.0.0
 isodate==0.6.1
 jaraco.functools==4.1.0
 javaproperties==0.8.1
