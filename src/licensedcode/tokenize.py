@@ -336,6 +336,7 @@ def select_ngrams(ngrams, with_pos=False):
     >>> list(select_ngrams(x for x in [(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]))
     [(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]
     """
+    ngram = None
     last = None
     for pos, ngram in enumerate(ngrams):
         # FIXME: use a proper hash

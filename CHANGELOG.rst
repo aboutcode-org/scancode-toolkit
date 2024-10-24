@@ -37,6 +37,8 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
+- Update intbitset and related dependencies for Python 3.13.0 support.
+
 v32.3.0 - 2024-10-21
 --------------------
 

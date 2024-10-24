@@ -1,6 +1,6 @@
-cffi==1.16.0
+cffi==1.17.1
 intbitset==3.1.0
-lxml==5.1.0
+lxml==5.3.0
 MarkupSafe==2.1.5
 pyahocorasick==2.1.0
 PyYAML==6.0.1
