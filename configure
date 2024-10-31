@@ -141,22 +141,25 @@ CLI_ARGS=$1
 # Defaults. Change these variables to customize this script
 ################################
 
-BASE=".[packages]"
-BASE_DEV=".[packages,testing]"
+BASE=".[packages"
+BASE_DEV=".[packages,testing"
 if [[ $OSTYPE == 'darwin'* ]]; then
-    BASE="."
-    BASE_DEV=".[testing]"
+    BASE=""
+    BASE_DEV=".[testing"
 fi
 
 # If SCANCODE_SYSTEM_PROVIDED is set, then we install system_provided extra_require
 if [[ SCANCODE_SYSTEM_PROVIDED ]]; then
-    BASE=".[packages,system_provided]"
-    BASE_DEV=".[packages,testing,system_provided]"
     if [[ $OSTYPE == 'darwin'* ]]; then
         BASE=".[system_provided]"
-        BASE_DEV=".[testing,system_provided]"
+    else
+        BASE+=",system_provided"
     fi
+    BASE_DEV+=",system_provided"
 fi
+
+BASE="$BASE]"
+BASE_DEV="$BASE_DEV]"
 
 # Requirement arguments passed to pip and used by default or with --dev.
 REQUIREMENTS="--editable . --constraint requirements.txt"
