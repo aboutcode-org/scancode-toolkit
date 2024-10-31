@@ -148,6 +148,16 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     BASE_DEV=".[testing]"
 fi
 
+# If SCANCODE_SYSTEM_PROVIDED is set, then we install system_provided extra_require
+if [[ SCANCODE_SYSTEM_PROVIDED ]]; then
+    BASE=".[packages,system_provided]"
+    BASE_DEV=".[packages,testing,system_provided]"
+    if [[ $OSTYPE == 'darwin'* ]]; then
+        BASE=".[system_provided]"
+        BASE_DEV=".[testing,system_provided]"
+    fi
+fi
+
 # Requirement arguments passed to pip and used by default or with --dev.
 REQUIREMENTS="--editable . --constraint requirements.txt"
 DEV_REQUIREMENTS="--editable .[dev,packages] --constraint requirements.txt --constraint requirements-dev.txt"
