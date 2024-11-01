@@ -30,11 +30,11 @@ RUN apt-get update \
        libgcrypt20 \
        libpopt0 \
        libzstd1 \
-       libarchive-dev \
-       libmagic-dev \
+       libarchive13 \
+       libmagic1 \
+       libmagic-mgc \
        7zip \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+       build-essential
 
 # Create directory for scancode sources
 WORKDIR /scancode-toolkit
@@ -42,10 +42,19 @@ WORKDIR /scancode-toolkit
 # Copy sources into docker container
 COPY . /scancode-toolkit
 
+# Use setup-mini.cfg to avoid installing typecode[full] and extractcode[full]
+COPY setup-mini.cfg setup.cfg
+
 # Initial configuration using ./configure, scancode-reindex-licenses to build
 # the base license index
 RUN ./configure \
  && ./venv/bin/scancode-reindex-licenses
+
+# Remove unnecessary packages
+RUN apt-get purge -y build-essential \
+ && apt-get autoremove --purge -y \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Add scancode to path
 ENV PATH=/scancode-toolkit:$PATH
