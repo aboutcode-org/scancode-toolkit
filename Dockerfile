@@ -7,12 +7,14 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-FROM --platform=linux/amd64 python:3.12-slim-bookworm
+FROM python:3.12-slim-bookworm
 
 # Python settings: Force unbuffered stdout and stderr (i.e. they are flushed to terminal immediately)
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 # Python settings: do not write pyc files
-ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONDONTWRITEBYTECODE=1
+# Install system_provided scancode-toolkit plugins when running ./configure
+ENV SCANCODE_SYSTEM_PROVIDED=1
 
 # OS requirements as per
 # https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html
@@ -28,6 +30,9 @@ RUN apt-get update \
        libgcrypt20 \
        libpopt0 \
        libzstd1 \
+       libarchive-dev \
+       libmagic-dev \
+       7zip \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
