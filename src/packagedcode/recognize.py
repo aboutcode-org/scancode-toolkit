@@ -113,3 +113,11 @@ def _parse(
 
             if TRACE:
                 raise
+
+        except Exception as e:
+            # We should continue when an Exception has occured when trying to
+            # recognize a package
+            if TRACE:
+                logger_debug(f'_parse: Exception: {str(e)}')
+
+            continue
