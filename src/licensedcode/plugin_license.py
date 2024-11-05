@@ -304,6 +304,9 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
                         path=referenced_resource.path
                     )
 
+        if not referenced_detections:
+            continue
+
         referenced_license_expression = combine_expressions(
             expressions=[
                 detection["license_expression"]
@@ -314,7 +317,7 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             referenced_license_expression=referenced_license_expression,
             license_detection=license_detection,
         ):
-            if TRACE_REFERENCE:
+            if TRACE_REFERENCE and referenced_resource:
                 logger_debug(
                     f'use_referenced_license_expression: False for '
                     f'resource: {referenced_resource.path} and '
@@ -322,7 +325,7 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
                 )
             continue
 
-        if TRACE_REFERENCE:
+        if TRACE_REFERENCE and referenced_resource:
             logger_debug(
                 f'use_referenced_license_expression: True for '
                 f'resource: {referenced_resource.path} and '

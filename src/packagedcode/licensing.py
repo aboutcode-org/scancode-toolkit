@@ -140,6 +140,9 @@ def add_referenced_license_matches_for_package(resource, codebase):
             ):
                 continue
 
+            if not (referenced_resource and referenced_resource.license_detections):
+                continue
+
             modified = True
             detections_added.extend(referenced_resource.license_detections)
             matches_to_extend = get_matches_from_detection_mappings(
