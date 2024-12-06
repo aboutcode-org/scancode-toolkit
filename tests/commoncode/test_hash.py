@@ -6,8 +6,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import os
 import hashlib
+import os
 
 from commoncode.hash import b64sha1
 from commoncode.hash import checksum
@@ -180,7 +180,9 @@ class TestHash(FileBasedTesting):
     def test_checksum_from_chunks_can_stream_gigabytes(self):
         chunk_16mb = b"0" * 16000000
         chunks_3dot2gb = (chunk_16mb for _ in range(200))
-        result = checksum_from_chunks(chunks=chunks_3dot2gb, total_length=16000000 * 200, name="sha1_git")
+        result = checksum_from_chunks(
+            chunks=chunks_3dot2gb, total_length=16000000 * 200, name="sha1_git"
+        )
         assert result == "494caf26c43c4473f6e930b0f5c2ecf8121bcf24"
 
     def test_checksum_from_chunks_from_stream_is_same_as_plain(self):
