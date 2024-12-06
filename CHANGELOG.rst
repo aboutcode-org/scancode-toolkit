@@ -1,6 +1,13 @@
 Release notes
 =============
 
+
+Version 32.1.0 - (2024-12-06)
+-----------------------------
+
+- Compute file checksums from streaming the file content in chunks to avoid running out of memory
+
+
 Version 32.0.0 - (2024-09-05)
 -----------------------------
 
