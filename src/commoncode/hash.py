@@ -26,16 +26,51 @@ truncated md5. Other length use SHA hashes.
 Checksums are operating on files.
 """
 
+# This is ~16 MB
+FILE_CHUNK_SIZE = 2**24
+
+
+def _hash_mod(bitsize, hmodule):
+    """
+    Return a hasher class that returns hashes with a ``bitsize`` bit length. The interface of this
+    class is similar to the hash module API.
+    """
+
+    class hasher(Hashable):
+        """A hasher class that behaves like a hashlib module."""
+
+        def __init__(self, msg=None, **kwargs):
+            """
+            Return a hasher, populated with an initial ``msg`` bytes string.
+            Close on the bitsize and hmodule
+            """
+            # length of binary digest for this hash
+            self.digest_size = bitsize // 8
+
+            # binh = binary hasher module
+            self.binh = hmodule()
+
+            # msg_len = length in bytes of the message hashed
+            self.msg_len = 0
+
+            if msg:
+                self.update(msg)
+
+        def update(self, msg=None):
+            """
+            Update this hash with a ``msg`` bytes string.
+            """
+            if msg:
+                self.binh.update(msg)
+                self.msg_len += len(msg)
+
+    return hasher
+
 
 class Hashable:
     """
     A mixin for hashers that provides the base methods.
     """
-
-    # digest_size = length of binary digest for this hash
-    # binh = binary hasher module
-    # msg_len = length in bytes of the messages hashed
-    # total_length = total length in bytes of the messages hashed
 
     def digest(self):
         """
@@ -64,44 +99,11 @@ class Hashable:
         return self.msg_len and int(bin_to_num(self.digest()))
 
 
-def _hash_mod(bitsize, hmodule):
-    """
-    Return a hasher class that returns hashes with a ``bitsize`` bit length. The interface of this
-    class is similar to the hash module API.
-    """
-
-    class hasher(Hashable):
-        """A hasher class that behaves like a hashlib module."""
-
-        def __init__(self, msg=None, **kwargs):
-            """
-            Return a hasher, populated with an initial ``msg`` bytes string.
-            Close on the bitsize and hmodule
-            """
-            self.digest_size = bitsize // 8
-            self.binh = hmodule()
-            self.msg_len = 0
-            if msg:
-                self.update(msg)
-
-        def update(self, msg=None):
-            """
-            Update this hash with a ``msg`` bytes string.
-            """
-            if msg:
-                self.binh.update(msg)
-                self.msg_len += len(msg)
-
-    return hasher
-
-
 # for FIPS support, we declare that "usedforsecurity" is False
 sys_v0 = sys.version_info[0]
 sys_v1 = sys.version_info[1]
-if sys_v0 == 3 and sys_v1 >= 9:
-    md5_hasher = partial(hashlib.md5, usedforsecurity=False)
-else:
-    md5_hasher = hashlib.md5
+md5_hasher = partial(hashlib.md5, usedforsecurity=False)
+
 
 # Base hashers for each bit size
 _hashmodules_by_bitsize = {
@@ -135,6 +137,9 @@ class sha1_git_hasher(Hashable):
         Initialize a sha1_git_hasher with an optional ``msg`` byte string. The ``total_length`` of
         all content that will be hashed, combining the ``msg`` length plus any later call to
         update() with additional messages.
+
+        Here ``total_length`` is total length in bytes of all the messages (chunks) hashed
+        in contrast to  ``msg_len`` which is the length in bytes for the optional message.
         """
         self.digest_size = 160 // 8
         self.msg_len = 0
@@ -235,6 +240,19 @@ def checksum_from_chunks(chunks, name, total_length=0, base64=False):
     return hasher.hexdigest()
 
 
+def binary_chunks(location, size=FILE_CHUNK_SIZE):
+    """
+    Read file at ``location`` as binary and yield bytes of up to ``size`` length in bytes,
+    defaulting to 2**24 bytes, e.g., about 16 MB.
+    """
+    with open(location, "rb") as f:
+        while True:
+            chunk = f.read(size)
+            if not chunk:
+                break
+            yield chunk
+
+
 def md5(location):
     return checksum(location, name="md5", base64=False)
 
@@ -259,26 +277,16 @@ def sha1_git(location):
     return checksum(location, name="sha1_git", base64=False)
 
 
-def binary_chunks(location, size=2**24):
-    """
-    Read file at ``location`` as binary and yield bytes of up to ``size`` length in bytes,
-    defaulting to 2**24 bytes, e.g., about 16 MB.
-    """
-    with open(location, "rb") as f:
-        while True:
-            chunk = f.read(size)
-            if not chunk:
-                break
-            yield chunk
-
-
 def multi_checksums(location, checksum_names=("md5", "sha1", "sha256", "sha512", "sha1_git")):
     """
     Return a mapping of hexdigest checksum strings keyed by checksum algorithm name from hashing the
     content of the file at ``location``. Use the ``checksum_names`` list of checksum names. The
     mapping is guaranted to contains all the requested names as keys. If the location is not a file,
     or if the file is empty, the values are None.
-    The purpose of this function is
+
+    The purpose of this function is to return a set of checksums for a supported set of checksum
+    algorithms for a given location. This is an API function used in ScanCode --info plugin to get
+    checksum values. 
     """
     if not filetype.is_file(location):
         return {name: None for name in checksum_names}
