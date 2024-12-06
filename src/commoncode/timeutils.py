@@ -83,7 +83,7 @@ def tstamp2time(stamp):
     # deal with optional microsec
     try:
         microsec = dt_ms[1]
-    except:
+    except Exception:
         microsec = None
     if microsec:
         microsec = int(microsec)

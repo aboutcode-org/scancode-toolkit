@@ -203,7 +203,7 @@ def close(proc):
         # Ensure process death otherwise proc.wait may hang in some cases
         # NB: this will run only on POSIX OSes supporting signals
         os.kill(proc.pid, signal.SIGKILL)  # NOQA
-    except:
+    except Exception:
         pass
 
     # This may slow things down a tad on non-POSIX Oses but is safe:

@@ -511,7 +511,8 @@ class Codebase:
                     )
                     if not newpar:
                         raise Exception(
-                            f"ERROR: Codebase._create_resources_from_paths: cannot create parent for: {parent_path!r}"
+                            "ERROR: Codebase._create_resources_from_paths:"
+                            f" cannot create parent for: {parent_path!r}"
                         )
                     parent = newpar
 
@@ -1686,7 +1687,7 @@ class VirtualCodebase(Codebase):
         """
         try:
             return json.loads(location)
-        except:
+        except Exception:
             location = abspath(normpath(expanduser(location)))
             with open(location) as f:
                 scan_data = json.load(f)
@@ -1842,7 +1843,7 @@ class VirtualCodebase(Codebase):
         ##########################################################
         for attr_name in self.codebase_attributes:
             value = scan_data.get(attr_name)
-            if value == None:
+            if not value:
                 continue
             setattr(self.attributes, attr_name, value)
 

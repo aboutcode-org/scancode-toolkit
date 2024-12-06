@@ -8,6 +8,7 @@
 
 import binascii
 import hashlib
+import os
 import sys
 from functools import partial
 
@@ -25,40 +26,83 @@ truncated md5. Other length use SHA hashes.
 Checksums are operating on files.
 """
 
+# This is ~16 MB
+FILE_CHUNK_SIZE = 2**24
+
 
 def _hash_mod(bitsize, hmodule):
     """
-    Return a hashing class returning hashes with a `bitsize` bit length. The
-    interface of this class is similar to the hash module API.
+    Return a hasher class that returns hashes with a ``bitsize`` bit length. The interface of this
+    class is similar to the hash module API.
     """
 
-    class hasher(object):
-        def __init__(self, msg=None):
+    class hasher(Hashable):
+        """A hasher class that behaves like a hashlib module."""
+
+        def __init__(self, msg=None, **kwargs):
+            """
+            Return a hasher, populated with an initial ``msg`` bytes string.
+            Close on the bitsize and hmodule
+            """
+            # length of binary digest for this hash
             self.digest_size = bitsize // 8
-            self.h = msg and hmodule(msg).digest()[: self.digest_size] or None
 
-        def digest(self):
-            return bytes(self.h)
+            # binh = binary hasher module
+            self.binh = hmodule()
 
-        def hexdigest(self):
-            return self.h and binascii.hexlify(self.h).decode("utf-8")
+            # msg_len = length in bytes of the message hashed
+            self.msg_len = 0
 
-        def b64digest(self):
-            return self.h and urlsafe_b64encode(self.h).decode("utf-8")
+            if msg:
+                self.update(msg)
 
-        def intdigest(self):
-            return self.h and int(bin_to_num(self.h))
+        def update(self, msg=None):
+            """
+            Update this hash with a ``msg`` bytes string.
+            """
+            if msg:
+                self.binh.update(msg)
+                self.msg_len += len(msg)
 
     return hasher
 
 
-# for FIPS support
+class Hashable:
+    """
+    A mixin for hashers that provides the base methods.
+    """
+
+    def digest(self):
+        """
+        Return a bytes string digest for this hash.
+        """
+        if not self.msg_len:
+            return
+        return self.binh.digest()[: self.digest_size]
+
+    def hexdigest(self):
+        """
+        Return a string hex digest for this hash.
+        """
+        return self.msg_len and binascii.hexlify(self.digest()).decode("utf-8")
+
+    def b64digest(self):
+        """
+        Return a string base64 digest for this hash.
+        """
+        return self.msg_len and urlsafe_b64encode(self.digest()).decode("utf-8")
+
+    def intdigest(self):
+        """
+        Return a int digest for this hash.
+        """
+        return self.msg_len and int(bin_to_num(self.digest()))
+
+
+# for FIPS support, we declare that "usedforsecurity" is False
 sys_v0 = sys.version_info[0]
 sys_v1 = sys.version_info[1]
-if sys_v0 == 3 and sys_v1 >= 9:
-    md5_hasher = partial(hashlib.md5, usedforsecurity=False)
-else:
-    md5_hasher = hashlib.md5
+md5_hasher = partial(hashlib.md5, usedforsecurity=False)
 
 
 # Base hashers for each bit size
@@ -82,31 +126,65 @@ def get_hasher(bitsize):
     return _hashmodules_by_bitsize[bitsize]
 
 
-class sha1_git_hasher(object):
+class sha1_git_hasher(Hashable):
     """
     Hash content using the git blob SHA1 convention.
+    See https://git-scm.com/book/en/v2/Git-Internals-Git-Objects#_object_storage
     """
 
-    def __init__(self, msg=None):
+    def __init__(self, msg=None, total_length=0, **kwargs):
+        """
+        Initialize a sha1_git_hasher with an optional ``msg`` byte string. The ``total_length`` of
+        all content that will be hashed, combining the ``msg`` length plus any later call to
+        update() with additional messages.
+
+        Here ``total_length`` is total length in bytes of all the messages (chunks) hashed
+        in contrast to  ``msg_len`` which is the length in bytes for the optional message.
+        """
         self.digest_size = 160 // 8
-        self.h = msg and self._compute(msg) or None
+        self.msg_len = 0
 
-    def _compute(self, msg):
+        if msg:
+            self.msg_len = msg_len = len(msg)
+
+            if not total_length:
+                total_length = msg_len
+            else:
+                if total_length < msg_len:
+                    raise ValueError(
+                        f"Initial msg length: {msg_len} "
+                        f"cannot be larger than the the total_length: {self.total_length}"
+                    )
+
+        if not total_length:
+            raise ValueError("total_length cannot be zero")
+
+        self.total_length = total_length
+        self.binh = get_hasher(bitsize=160)(total_length=total_length)
+
+        self._hash_header()
+        if msg:
+            self.update(msg)
+
+    def _hash_header(self):
         # note: bytes interpolation is new in Python 3.5
-        git_blob_msg = b"blob %d\0%s" % (len(msg), msg)
-        return hashlib.sha1(git_blob_msg).digest()
+        git_blob_header = b"blob %d\0" % (self.total_length)
+        self.binh.update(msg=git_blob_header)
 
-    def digest(self):
-        return bytes(self.h)
+    def update(self, msg=None):
+        """
+        Update this hash with a ``msg`` bytes string.
+        """
+        if msg:
+            msg_len = len(msg)
+            if (msg_len + self.msg_len) > self.total_length:
+                raise ValueError(
+                    f"Actual combined msg lengths: initial: {self.msg_len} plus added: {msg_len} "
+                    f"cannot be larger than the the total_length: {self.total_length}"
+                )
 
-    def hexdigest(self):
-        return self.h and binascii.hexlify(self.h).decode("utf-8")
-
-    def b64digest(self):
-        return self.h and urlsafe_b64encode(self.h).decode("utf-8")
-
-    def intdigest(self):
-        return self.h and int(bin_to_num(self.h))
+            self.binh.update(msg)
+            self.msg_len += msg_len
 
 
 _hashmodules_by_name = {
@@ -119,25 +197,60 @@ _hashmodules_by_name = {
 }
 
 
+def get_hasher_instance_by_name(name, total_length=0):
+    """
+    Return a hasher instance for a checksum algorithm ``name`` with a planned ``total_length`` of
+    bytes to hash.
+    """
+    try:
+        hm = _hashmodules_by_name[name]
+        return hm(total_length=total_length)
+    except KeyError:
+        raise ValueError(f"Unknown checksum algorithm: {name!r}")
+
+
+def get_file_size(location):
+    return os.path.getsize(location)
+
+
 def checksum(location, name, base64=False):
     """
-    Return a checksum of `bitsize` length from the content of the file at
-    `location`. The checksum is a hexdigest or base64-encoded is `base64` is
-    True.
+    Return a checksum from the content of the file at ``location`` using the ``name`` checksum
+    algorithm. The checksum is a string as a hexdigest or is base64-encoded is ``base64`` is True.
     """
     if not filetype.is_file(location):
         return
-    hasher = _hashmodules_by_name[name]
 
-    # fixme: we should read in chunks?
-    with open(location, "rb") as f:
-        hashable = f.read()
+    total_length = get_file_size(location)
+    chunks = binary_chunks(location)
+    return checksum_from_chunks(chunks=chunks, total_length=total_length, name=name, base64=base64)
 
-    hashed = hasher(hashable)
+
+def checksum_from_chunks(chunks, name, total_length=0, base64=False):
+    """
+    Return a checksum from the content of the iterator of byte strings ``chunks`` with a
+    ``total_length`` combined length using the ``name`` checksum algorithm. The returned checksum is
+    a string as a hexdigest or is base64-encoded is ``base64`` is True.
+    """
+    hasher = get_hasher_instance_by_name(name=name, total_length=total_length)
+    for chunk in chunks:
+        hasher.update(chunk)
     if base64:
-        return hashed.b64digest()
+        return hasher.b64digest()
+    return hasher.hexdigest()
 
-    return hashed.hexdigest()
+
+def binary_chunks(location, size=FILE_CHUNK_SIZE):
+    """
+    Read file at ``location`` as binary and yield bytes of up to ``size`` length in bytes,
+    defaulting to 2**24 bytes, e.g., about 16 MB.
+    """
+    with open(location, "rb") as f:
+        while True:
+            chunk = f.read(size)
+            if not chunk:
+                break
+            yield chunk
 
 
 def md5(location):
@@ -166,19 +279,24 @@ def sha1_git(location):
 
 def multi_checksums(location, checksum_names=("md5", "sha1", "sha256", "sha512", "sha1_git")):
     """
-    Return a mapping of hexdigest checksums keyed by checksum name from the content
-    of the file at `location`. Use the `checksum_names` list of checksum names.
-    The mapping is guaranted to contains all the requested names as keys.
-    If the location is not a file, the values are None.
+    Return a mapping of hexdigest checksum strings keyed by checksum algorithm name from hashing the
+    content of the file at ``location``. Use the ``checksum_names`` list of checksum names. The
+    mapping is guaranted to contains all the requested names as keys. If the location is not a file,
+    or if the file is empty, the values are None.
+
+    The purpose of this function is to avoid read the same file multiple times
+    to compute different checksums.
     """
-    results = dict([(name, None) for name in checksum_names])
     if not filetype.is_file(location):
-        return results
+        return {name: None for name in checksum_names}
+    file_size = get_file_size(location)
+    hashers = {
+        name: get_hasher_instance_by_name(name=name, total_length=file_size)
+        for name in checksum_names
+    }
 
-    # fixme: we should read in chunks?
-    with open(location, "rb") as f:
-        hashable = f.read()
+    for chunk in binary_chunks(location):
+        for hasher in hashers.values():
+            hasher.update(msg=chunk)
 
-    for name in checksum_names:
-        results[name] = _hashmodules_by_name[name](hashable).hexdigest()
-    return results
+    return {name: hasher.hexdigest() for name, hasher in hashers.items()}
