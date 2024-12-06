@@ -557,7 +557,7 @@ def _rm_handler(function, path, excinfo):  # NOQA
     elif function == os.remove:
         try:
             delete(path, _err_handler=None)
-        except:
+        except Exception:
             pass
 
         if os.path.exists(path):

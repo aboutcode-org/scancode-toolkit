@@ -284,9 +284,8 @@ def multi_checksums(location, checksum_names=("md5", "sha1", "sha256", "sha512",
     mapping is guaranted to contains all the requested names as keys. If the location is not a file,
     or if the file is empty, the values are None.
 
-    The purpose of this function is to return a set of checksums for a supported set of checksum
-    algorithms for a given location. This is an API function used in ScanCode --info plugin to get
-    checksum values. 
+    The purpose of this function is to avoid read the same file multiple times
+    to compute different checksums.
     """
     if not filetype.is_file(location):
         return {name: None for name in checksum_names}

@@ -113,12 +113,13 @@ def has_case_sensitive_fs():
     case sensitive by default, newer macOS use APFS which is no longer case
     sensitive by default.
 
-    From https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
-        How does Apple File System handle filenames?
-        APFS accepts only valid UTF-8 encoded filenames for creation, and preserves
-        both case and normalization of the filename on disk in all variants. APFS,
-        like HFS+, is case-sensitive on iOS and is available in case-sensitive and
-        case-insensitive variants on macOS, with case-insensitive being the default.
+    From
+    https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/APFS_Guide/FAQ/FAQ.html
+    How does Apple File System handle filenames?
+    APFS accepts only valid UTF-8 encoded filenames for creation, and preserves
+    both case and normalization of the filename on disk in all variants. APFS,
+    like HFS+, is case-sensitive on iOS and is available in case-sensitive and
+    case-insensitive variants on macOS, with case-insensitive being the default.
     """
     return not os.path.exists(__file__.upper())
 

@@ -228,7 +228,8 @@ def get_nupkg_nv(filename):
     """
     Return a NameVersion tuple parsed from the .nupkg NuGet archive `filename`.
 
-    For example (taken from https://stackoverflow.com/questions/51662737/regex-to-parse-package-name-and-version-number-from-nuget-package-filenames/51662926):
+    For example (taken from
+    https://stackoverflow.com/questions/51662737/regex-to-parse-package-name-and-version-number-from-nuget-package-filenames/51662926):
         >>> get_nupkg_nv('knockoutjs.3.4.2.nupkg')
         NameVersion(name='knockoutjs', version='3.4.2')
         >>> get_nupkg_nv('log4net.2.0.8.nupkg')

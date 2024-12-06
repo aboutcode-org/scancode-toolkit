@@ -38,7 +38,7 @@ def lines(s):
     splitlines.
     """
     # FIXME: leverage new Pythin 3.8 scopeing rules
-    return [l.strip() for l in s.splitlines() if l.strip()]
+    return [line.strip() for line in s.splitlines() if line.strip()]
 
 
 def foldcase(text):

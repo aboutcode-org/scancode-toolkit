@@ -10,9 +10,7 @@ import shutil
 import sys
 
 import click
-
-# FIXME: this is NOT API
-from click._termui_impl import ProgressBar
+from click._termui_impl import ProgressBar  # FIXME: this is NOT API
 from click.termui import style
 from click.types import BoolParamType
 from click.utils import echo

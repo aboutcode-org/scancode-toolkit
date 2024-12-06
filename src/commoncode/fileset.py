@@ -161,7 +161,7 @@ def load(location):
     assert os.path.exists(fn) and os.path.isfile(fn), msg
     mode = "r"
     with open(fn, mode) as f:
-        return [l.strip() for l in f if l and l.strip()]
+        return [line.strip() for line in f if line and line.strip()]
 
 
 def includes_excludes(patterns, message):
