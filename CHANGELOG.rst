@@ -6,7 +6,7 @@ Version 32.1.0 - (2024-12-06)
 -----------------------------
 
 - Compute file checksums from streaming the file content in chunks to avoid running out of memory
-
+- Drop support for python 3.8 and add support for python 3.12
 
 Version 32.0.0 - (2024-09-05)
 -----------------------------
