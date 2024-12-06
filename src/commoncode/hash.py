@@ -10,7 +10,6 @@ import binascii
 import hashlib
 import os
 import sys
-
 from functools import partial
 
 from commoncode import filetype
@@ -32,6 +31,7 @@ class Hashable:
     """
     A mixin for hashers that provides the base methods.
     """
+
     # digest_size = length of binary digest for this hash
     # binh = binary hasher module
     # msg_len = length in bytes of the messages hashed
@@ -259,7 +259,7 @@ def sha1_git(location):
     return checksum(location, name="sha1_git", base64=False)
 
 
-def binary_chunks(location, size=2 ** 24):
+def binary_chunks(location, size=2**24):
     """
     Read file at ``location`` as binary and yield bytes of up to ``size`` length in bytes,
     defaulting to 2**24 bytes, e.g., about 16 MB.
