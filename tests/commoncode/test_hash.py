@@ -7,9 +7,11 @@
 #
 
 import os
+import hashlib
 
 from commoncode.hash import b64sha1
 from commoncode.hash import checksum
+from commoncode.hash import checksum_from_chunks
 from commoncode.hash import get_hasher
 from commoncode.hash import md5
 from commoncode.hash import multi_checksums
@@ -174,3 +176,19 @@ class TestHash(FileBasedTesting):
             test_file = self.get_test_loc(test_file)
             # test that we match the git hash-object
             assert sha1_git(test_file) == expected_sha1_git
+
+    def test_checksum_from_chunks_can_stream_gigabytes(self):
+        chunk_16mb = b"0" * 16000000
+        chunks_3dot2gb = (chunk_16mb for _ in range(200))
+        result = checksum_from_chunks(chunks=chunks_3dot2gb, total_length=16000000 * 200, name="sha1_git")
+        assert result == "494caf26c43c4473f6e930b0f5c2ecf8121bcf24"
+
+    def test_checksum_from_chunks_from_stream_is_same_as_plain(self):
+        chunk = b"0" * 16000
+        chunks = (chunk for _ in range(100))
+        result1 = checksum_from_chunks(chunks=chunks, name="sha256")
+
+        result2 = hashlib.sha256()
+        for _ in range(100):
+            result2.update(chunk)
+        assert result1 == result2.hexdigest()
