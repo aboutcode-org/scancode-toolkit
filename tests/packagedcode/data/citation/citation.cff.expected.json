@@ -1,0 +1,88 @@
+[
+  {
+    "type": "citation",
+    "namespace": null,
+    "name": "Ruby CFF Library",
+    "version": "1.1.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "This library provides a Ruby interface to manipulate Citation File Format files",
+    "release_date": "2023-04-10",
+    "parties": [
+      {
+        "type": null,
+        "role": null,
+        "name": "Haines",
+        "email": null,
+        "url": "https://orcid.org/0000-0002-9538-7919"
+      },
+      {
+        "type": null,
+        "role": null,
+        "name": "The Ruby Citation File Format Developers",
+        "email": "abc@developer.com",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "ruby",
+      "credit",
+      "software citation",
+      "research software",
+      "software sustainability",
+      "metadata",
+      "citation file format",
+      "CFF"
+    ],
+    "homepage_url": "https://rubygems.org/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "apache-2.0",
+    "declared_license_expression_spdx": "Apache-2.0",
+    "license_detections": [
+      {
+        "license_expression": "apache-2.0",
+        "matches": [
+          {
+            "score": 100.0,
+            "start_line": 1,
+            "end_line": 1,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "matcher": "1-hash",
+            "license_expression": "apache-2.0",
+            "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "rule_relevance": 100,
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+            "matched_text": "Apache-2.0"
+          }
+        ],
+        "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "Apache-2.0",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": "https://github.com/citation-file-format/",
+    "repository_download_url": "https://github.com/citation-file-format/ruby-cff",
+    "api_data_url": null,
+    "datasource_id": "citation_cff",
+    "purl": "pkg:citation/Ruby%20CFF%20Library@1.1.0"
+  }
+]

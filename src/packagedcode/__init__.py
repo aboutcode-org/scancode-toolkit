@@ -18,6 +18,7 @@ from packagedcode import chef
 from packagedcode import debian
 from packagedcode import debian_copyright
 from packagedcode import distro
+from packagedcode import citation
 from packagedcode import conda
 from packagedcode import conan
 from packagedcode import cocoapods
@@ -72,6 +73,8 @@ APPLICATION_PACKAGE_DATAFILE_HANDLERS = [
     cocoapods.PodspecJsonHandler,
     cocoapods.PodfileLockHandler,
     cocoapods.PodfileHandler,
+
+    citation.CitationHandler,
 
     conda.CondaYamlHandler,
     conda.CondaMetaYamlHandler,
