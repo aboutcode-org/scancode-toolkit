@@ -16,18 +16,15 @@ other_urls:
     - https://opensource.org/licenses/PostgreSQL
 ignorable_copyrights:
     - Portions Copyright (c) 1994, The Regents of the University of California
-    - Portions Copyright (c) The PostgreSQL Global Development Group
+    - Portions Copyright (c) 1996-2024, PostgreSQL Global Development Group
 ignorable_holders:
-    - The PostgreSQL Global Development Group
+    - PostgreSQL Global Development Group
     - The Regents of the University of California
 ---
 
-PostgreSQL is released under the PostgreSQL License, a liberal Open Source license, similar to the BSD or MIT licenses.
 
-PostgreSQL Database Management System
-(formerly known as Postgres, then as Postgres95)
 
-Portions Copyright (c) The PostgreSQL Global Development Group
+Portions Copyright (c) 1996-2024, PostgreSQL Global Development Group
 
 Portions Copyright (c) 1994, The Regents of the University of California
 
