@@ -1973,7 +1973,8 @@ PATTERNS = [
     (r'^[Bb]\.?[Vv]\.?|BVBA$', 'COMP'),
     # university
     (r'^\(?[Uu]niv(?:[\.]|ersit(?:y|e|at?|ad?))[\.,\)]*$', 'UNI'),
-    (r'^UNIVERSITY$', 'UNI'),
+    # university is often mispelled
+    (r'^(?i:UNIVERSITY|UNIVERISITY|UNIVERSTY|UNIVERSIY|UNIVERSTY|UNIVERISTY)$', 'UNI'),
     (r'^College$', 'UNI'),
     # Academia/ie
     (r'^[Ac]cademi[ae]s?$', 'UNI'),
