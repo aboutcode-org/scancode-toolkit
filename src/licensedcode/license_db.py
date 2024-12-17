@@ -200,6 +200,14 @@ def scancode_license_data(path):
     Dumps data in JSON, YAML and HTML formats and also dumps the .LICENSE file
     with the license text and the data as YAML frontmatter.
     """
+    if not path:
+        click.echo(
+            "Error: The '--path' option is required to specify a directory.\n"
+            "Use '--help' to see usage instructions.",
+            err=True
+        )
+        ctx = click.get_current_context()
+        ctx.exit(1)
     click.secho(f'Dumping license data to: {path}', err=True)
     count = generate(build_location=path)
     click.secho(f'Done dumping #{count} licenses.', err=True)
