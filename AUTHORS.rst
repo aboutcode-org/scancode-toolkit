@@ -1,5 +1,6 @@
 The following organizations or individuals have contributed to ScanCode:
 
+- Aayush Kumar @lyr-ast
 - Abhigyan Kumar Singh @Abhigyankrsingh
 - Abhishek Kumar @Abhishek-Dev09
 - Aditya Viki @adityaviki
