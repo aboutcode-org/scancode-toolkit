@@ -185,6 +185,9 @@ def validate_input_path(ctx, param, value):
     for inp in value:
         if not (is_file(location=inp, follow_symlinks=True) or is_dir(location=inp, follow_symlinks=True)):
             raise click.BadParameter(f"input: {inp!r} is not a regular file or a directory")
+            
+        if is_dir(location=inp, follow_symlinks=True):
+            raise click.BadParameter(f"input: {inp!r} is a directory, expected a file")
 
         if not is_readable(location=inp):
             raise click.BadParameter(f"input: {inp!r} is not readable")
