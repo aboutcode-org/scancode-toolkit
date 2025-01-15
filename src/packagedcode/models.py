@@ -1619,6 +1619,12 @@ class Package(PackageData):
         help='List of the datasource ids used to create this package.'
     )
 
+    documentation_url = String(
+        label='Documentation URL',
+        help='URL that documents this package.'
+
+    )
+
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.purl:
             self.purl = self.set_purl()
