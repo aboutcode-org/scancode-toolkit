@@ -1,0 +1,33 @@
+import subprocess
+import os
+import json
+
+# Function to get the Conda installation base path
+def get_conda_base():
+    result = subprocess.run(['conda', 'info', '--base'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    return result.stdout.decode('utf-8').strip()
+
+# Path to the conda-meta directory
+conda_base = get_conda_base()
+conda_meta_dir = os.path.join(conda_base, 'conda-meta')
+
+# Function to parse .json files and extract file details
+def extract_conda_package_files():
+    package_files = [f for f in os.listdir(conda_meta_dir) if f.endswith('.json')]
+    for package_file in package_files:
+        with open(os.path.join(conda_meta_dir, package_file), 'r') as f:
+            package_data = json.load(f)
+            package_name = package_data['name']
+            package_version = package_data['version']
+            files = package_data.get('files', [])
+            for file in files:
+                # Add each file to the resources list in SCTK output
+                add_to_resources(package_name, package_version, file)
+
+# Example: Add to SCTK's resources (conceptual function)
+def add_to_resources(package_name, package_version, file_path):
+    # SCTK-specific logic to add this file path to the report
+    print(f"Adding {file_path} from {package_name} ({package_version}) to resources")
+
+# Run the extraction function
+extract_conda_package_files()

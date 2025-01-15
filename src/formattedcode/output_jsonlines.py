@@ -6,7 +6,7 @@
 # See https://github.com/nexB/scancode-toolkit for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
-import json
+import 
 
 from formattedcode import FileOptionType
 from commoncode.cliutils import OUTPUT_GROUP
