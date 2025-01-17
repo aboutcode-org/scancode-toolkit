@@ -321,8 +321,6 @@ def walk(location, ignored=None, follow_symlinks=False):
     If `follow_symlinks` is True, then symlinks will not be ignored and be
     collected like regular files and directories
     """
-    # TODO: consider using the new "scandir" module for some speed-up.
-
     is_ignored = ignored(location) if ignored else False
     if is_ignored:
         if TRACE:
@@ -335,15 +333,10 @@ def walk(location, ignored=None, follow_symlinks=False):
     elif filetype.is_dir(location, follow_symlinks=follow_symlinks):
         dirs = []
         files = []
-        # TODO: consider using scandir
-        for name in os.listdir(location):
-            loc = os.path.join(location, name)
+        for entry in os.scandir(location):
+            loc = os.path.join(location, entry.name)
             if filetype.is_special(loc) or (ignored and ignored(loc)):
-                if (
-                    follow_symlinks
-                    and filetype.is_link(loc)
-                    and not filetype.is_broken_link(location)
-                ):
+                if follow_symlinks and entry.is_symlink() and not filetype.is_broken_link(location):
                     pass
                 else:
                     if TRACE:
@@ -351,10 +344,10 @@ def walk(location, ignored=None, follow_symlinks=False):
                         logger_debug("walk: ignored:", loc, ign)
                     continue
             # special files and symlinks are always ignored
-            if filetype.is_dir(loc, follow_symlinks=follow_symlinks):
-                dirs.append(name)
-            elif filetype.is_file(loc, follow_symlinks=follow_symlinks):
-                files.append(name)
+            if entry.is_dir(follow_symlinks=follow_symlinks):
+                dirs.append(entry.name)
+            elif entry.is_file(follow_symlinks=follow_symlinks):
+                files.append(entry.name)
         yield location, dirs, files
 
         for dr in dirs:
