@@ -16,9 +16,11 @@ Check out the code at https://github.com/nexB/scancode-toolkit
 Looking for a **web-based platform** to automate and manage your code scans?  
 Check out **ScanCode.io** 👉 [scancode.io](https://scancode.io)!  
 
-✅ Automate License & Security Scanning<br>
-✅ Web UI for Managing Scan Results<br>
-✅ Built on Top of ScanCode-toolkit<br>
+✅ Automate License & Security Scanning  
+
+✅ Web UI for Managing Scan Results  
+
+✅ Built on Top of ScanCode-toolkit  
 
 🔗 Get Started: [scancode.io](https://scancode.io) | 📖 Docs: [scancodeio.readthedocs.io](https://scancodeio.readthedocs.io)  
 
@@ -194,7 +196,8 @@ There are a few common ways to `install ScanCode <https://scancode-toolkit.readt
 - `Run in a Docker container with a git clone and "docker run"  
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-via-docker>`_  
 
-  **If you are looking for a server-side solution,**<br>
+  **If you are looking for a server-side solution,**  
+  
   you can use [ScanCode.io](https://scancode.io), a web-based platform that facilitates automated software composition analysis and efficient management of scan results.
   
 
