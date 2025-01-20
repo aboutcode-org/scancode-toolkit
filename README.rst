@@ -79,21 +79,21 @@ Why use ScanCode?
 - You can save your scan results as **JSON, YAML, HTML, CycloneDX or SPDX** or
   even create your own format with Jinja templates.
 
-You can also organize and run ScanCode server-side with the  
-companion `ScanCode.io web app <https://github.com/nexB/scancode.io>`_  
-to organize and store multiple scan projects including scripted scanning pipelines.  
+- You can also organize and run ScanCode server-side with the  
+  companion `ScanCode.io web app <https://github.com/nexB/scancode.io>`_  
+  to organize and store multiple scan projects including scripted scanning pipelines.  
 
-🚀 Want to **automate your scans** and manage results more easily?  
+  🚀 Want to **automate your scans** and manage results more easily?  
+  🚀 Try **ScanCode.io** – a powerful web-based platform built on top of ScanCode-toolkit!  
+  With **ScanCode.io**, you can:  
 
-🚀 Try **ScanCode.io** – a powerful web-based platform built on top of ScanCode-toolkit!  
+  ✅ Automate License & Security Scanning  
 
-With **ScanCode.io**, you can:  
+  ✅ Organize & Store Scan Results  
 
-✅ Automate License & Security Scanning  
-✅ Organize & Store Scan Results  
-✅ Run Customizable Pipelines for Code Audits  
+  ✅ Run Customizable Pipelines for Code Audits  
 
-🔗 Learn More: [scancode.io](https://scancode.io) | 📖 [Docs](https://scancodeio.readthedocs.io)
+  🔗 Learn More: [scancode.io](https://scancode.io) | 📖 [Docs](https://scancodeio.readthedocs.io)
 
 
 - ScanCode output data can be easily visualized and analysed using the
