@@ -376,7 +376,9 @@
           "purl": "pkg:conda/pippy@0.1.0"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     }
   ]

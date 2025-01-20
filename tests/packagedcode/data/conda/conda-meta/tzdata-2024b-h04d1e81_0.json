@@ -1,0 +1,36 @@
+{
+    "build": "h04d1e81_0",
+    "build_number": 0,
+    "channel": "https://repo.anaconda.com/pkgs/main/noarch",
+    "constrains": [],
+    "depends": [],
+    "extracted_package_dir": "/opt/conda/pkgs/tzdata-2024b-h04d1e81_0",
+    "files": [
+        "share/zoneinfo/Asia/Kolkata",
+        "share/zoneinfo/tzdata.zi",
+        "share/zoneinfo/zone.tab"
+    ],
+    "fn": "tzdata-2024b-h04d1e81_0.conda",
+    "license": "CC-PDDC OR BSD-3-Clause",
+    "license_family": "BSD",
+    "link": {
+        "source": "/opt/conda/pkgs/tzdata-2024b-h04d1e81_0",
+        "type": 1
+    },
+    "md5": "9be694715c6a65f9631bb1b242125e9d",
+    "name": "tzdata",
+    "noarch": "generic",
+    "package_tarball_full_path": "/opt/conda/pkgs/tzdata-2024b-h04d1e81_0.conda",
+    "package_type": "noarch_generic",
+    "paths_data": {
+        "paths": [],
+        "paths_version": 1
+    },
+    "requested_spec": "defaults/noarch::tzdata==2024b=h04d1e81_0[md5=9be694715c6a65f9631bb1b242125e9d]",
+    "sha256": "9fdd287b55be4c475789a69d3b94cdb73f756583a6d7306da1706e43eee573da",
+    "size": 117432,
+    "subdir": "noarch",
+    "timestamp": 1728062827000,
+    "url": "https://repo.anaconda.com/pkgs/main/noarch/tzdata-2024b-h04d1e81_0.conda",
+    "version": "2024b"
+}

@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import attr
 import os
 
 from commoncode.resource import Codebase
@@ -113,3 +114,59 @@ class TestConda(PackageTester):
         package = conda.CondaYamlHandler.parse(test_file)
         expected_loc = self.get_test_loc('conda/conda-yaml/ringer/environment.yaml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_conda_yaml_does_not_fail_on_test_files_with_port(self):
+        test_file = self.get_test_loc('conda/conda-yaml/test/environment_host_port.yml')
+        package = conda.CondaYamlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('conda/conda-yaml/test/environment_host_port.yml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_conda_get_conda_meta_json(self):
+        meta_yaml_path = 'conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml'
+        conda_meta_json_path = 'conda/conda-meta/requests-2.32.3-py312h06a4308_1.json'
+
+        test_dir = self.get_test_loc('conda/assembly/opt/conda/')
+        resource_attributes = dict(package_data=attr.ib(default=attr.Factory(list), repr=False),)
+        codebase = Codebase(location=test_dir, resource_attributes=resource_attributes)
+
+        package_data = [{'name': 'requests', 'version':'2.32.3'}]
+        meta_yaml_resource = codebase.get_resource(path=meta_yaml_path)
+        setattr(meta_yaml_resource, 'package_data', package_data)
+        codebase.save_resource(meta_yaml_resource)
+        conda_meta_json_resource = codebase.get_resource(path=conda_meta_json_path)
+        setattr(conda_meta_json_resource, 'package_data', package_data)
+        codebase.save_resource(conda_meta_json_resource)
+
+        meta_json = conda.CondaBaseHandler.find_conda_meta_json_resource(meta_yaml_resource, codebase)
+        assert meta_json.path == conda_meta_json_path
+
+        meta_yaml = conda.CondaBaseHandler.find_conda_meta_yaml_resource(conda_meta_json_resource, codebase)
+        assert meta_yaml.path == meta_yaml_path
+
+    def test_conda_pkgs_meta_yaml_root_dir(self):
+        meta_yaml_path = 'conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml'
+        root_path = 'conda/pkgs/requests-2.32.3-py312h06a4308_1'
+        test_dir = self.get_test_loc('conda/assembly/opt/conda/')
+        codebase = Codebase(test_dir)
+        resource = codebase.get_resource(path=meta_yaml_path)
+        proot = conda.CondaMetaYamlHandler.get_conda_root(resource, codebase)
+        assert proot.path == root_path
+
+    def test_parse_is_datafile_conda_meta_package_with_files(self):
+        test_file = self.get_test_loc('conda/conda-meta/tzdata-2024b-h04d1e81_0.json')
+        assert conda.CondaMetaJsonHandler.is_datafile(test_file)
+
+    def test_parse_conda_meta_package_with_files(self):
+        test_file = self.get_test_loc('conda/conda-meta/tzdata-2024b-h04d1e81_0.json')
+        package = conda.CondaMetaJsonHandler.parse(test_file)
+        expected_loc = self.get_test_loc('conda/conda-meta/tzdata-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_conda_meta_yaml_conda_meta_assemble_from_rootfs(self):
+        test_location = self.get_test_loc('conda/assembly/')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_location, '--json', result_file])
+        expected_file = self.get_test_loc('conda/assembly-conda-scan.json')
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
