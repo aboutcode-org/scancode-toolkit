@@ -79,16 +79,22 @@ Why use ScanCode?
 - You can save your scan results as **JSON, YAML, HTML, CycloneDX or SPDX** or
   even create your own format with Jinja templates.
 
-- You can also organize and run ScanCode server-side with the
-  companion `ScanCode.io web app <https://github.com/nexB/scancode.io>`_
-  to organize and store multiple scan projects including scripted scanning pipelines.   
-  🚀Want to **automate your scans** and manage results more easily?  
-  🚀Try **ScanCode.io** – a powerful web-based platform built on top of ScanCode-toolkit!  
-  With **ScanCode.io**, you can:  
-  ✅ Automate License & Security Scanning  
-  ✅ Organize & Store Scan Results  
-  ✅ Run Customizable Pipelines for Code Audits  
-  🔗 Learn More: [scancode.io](https://scancode.io) | 📖 [Docs](https://scancodeio.readthedocs.io)  
+You can also organize and run ScanCode server-side with the  
+companion `ScanCode.io web app <https://github.com/nexB/scancode.io>`_  
+to organize and store multiple scan projects including scripted scanning pipelines.  
+
+🚀 Want to **automate your scans** and manage results more easily?  
+
+🚀 Try **ScanCode.io** – a powerful web-based platform built on top of ScanCode-toolkit!  
+
+With **ScanCode.io**, you can:  
+
+✅ Automate License & Security Scanning  
+✅ Organize & Store Scan Results  
+✅ Run Customizable Pipelines for Code Audits  
+
+🔗 Learn More: [scancode.io](https://scancode.io) | 📖 [Docs](https://scancodeio.readthedocs.io)
+
 
 - ScanCode output data can be easily visualized and analysed using the
   `ScanCode Workbench <https://github.com/nexB/scancode-workbench>`_ desktop app.
@@ -124,10 +130,13 @@ for upcoming features.
 Documentation
 =============
 
-The ScanCode documentation is hosted at
+The ScanCode documentation is hosted at  
 `scancode-toolkit.readthedocs.io <https://scancode-toolkit.readthedocs.io/en/latest/>`_.  
+
 **If you are looking for a web-based solution** for your scans,  
-you can use [ScanCode.io](https://scancode.io) for automation and centralized management of scan results.  
+
+you can use [ScanCode.io](https://scancode.io) for automation and centralized management of scan results.
+  
 
 If you are new to visualization of scancode results data, start with our
 `newcomer <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/newcomer.html>`_ page.
@@ -180,10 +189,13 @@ There are a few common ways to `install ScanCode <https://scancode-toolkit.readt
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#pip-install>`_
   [Note that this is not supported on arm64 machines]
 
-- `Run in a Docker container with a git clone and "docker run"
+- `Run in a Docker container with a git clone and "docker run"  
   <https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html#installation-via-docker>`_  
-  **If you are looking for a server-side solution,**  
-  you can use [ScanCode.io](https://scancode.io), a web-based platform that facilitates automated software composition analysis and efficient management of scan results.  
+
+**If you are looking for a server-side solution,**  
+
+you can use [ScanCode.io](https://scancode.io), a web-based platform that facilitates automated software composition analysis and efficient management of scan results.
+  
 
 - In Fedora 40+ you can `dnf install scancode-toolkit`
 
