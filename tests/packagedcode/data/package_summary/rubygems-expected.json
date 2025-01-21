@@ -1,0 +1,1021 @@
+{
+  "summary": {
+    "declared_license_expression": "proprietary-license AND apache-2.0",
+    "license_clarity_score": {
+      "score": 100,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": true,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    },
+    "declared_holder": "Chef Software Inc.",
+    "primary_language": null,
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 4
+      },
+      {
+        "value": "apache-2.0",
+        "count": 1
+      }
+    ],
+    "other_holders": [
+      {
+        "value": null,
+        "count": 6
+      },
+      {
+        "value": "Dominik Richter",
+        "count": 1
+      }
+    ],
+    "other_languages": []
+  },
+  "packages": [
+    {
+      "type": "gem",
+      "namespace": null,
+      "name": "inspec-bin",
+      "version": "InspecBin::VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Ruby",
+      "description": "Infrastructure and compliance testing.\nInSpec executable for inspec gem. Use of this executable may require accepting a license agreement.\"\n\nPackaged distributions of Progress\u00ae Chef\u00ae products obtained from RubyGems are made available pursuant to the Progress Chef EULA at https://www.chef.io/end-user-license-agreement, unless there is an executed agreement in effect between you and Progress that covers the Progress Chef products (\"Master Agreement\"), in which case the Master Agreement shall govern.\n\nSource code obtained from the Chef GitHub repository is made available under Apache-2.0, a copy of which is included.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Chef InSpec Core Engineering",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": null,
+          "email": "inspec@chef.io",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/inspec/inspec/tree/main/inspec-bin",
+      "download_url": "https://rubygems.org/downloads/inspec-bin-InspecBin::VERSION.gem",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "unknown",
+      "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+      "license_detections": [
+        {
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
+          "matches": [
+            {
+              "license_expression": "unknown",
+              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "from_file": "rubygems/inspec-bin.gemspec",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "5-undetected",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+              "matched_text": "license LicenseRef-Chef-EULA"
+            }
+          ],
+          "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036"
+        }
+      ],
+      "other_license_expression": "proprietary-license AND apache-2.0",
+      "other_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+      "other_license_detections": [],
+      "extracted_license_statement": "LicenseRef-Chef-EULA",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://rubygems.org/gems/inspec-bin/versions/InspecBin::VERSION",
+      "repository_download_url": "https://rubygems.org/downloads/inspec-bin-InspecBin::VERSION.gem",
+      "api_data_url": "https://rubygems.org/api/v2/rubygems/inspec-bin/versions/InspecBin::VERSION.json",
+      "package_uid": "pkg:gem/inspec-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "inspec-bin.gemspec"
+      ],
+      "datasource_ids": [
+        "gemspec"
+      ],
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": true,
+        "ambiguous_compound_licensing": true
+      },
+      "purl": "pkg:gem/inspec-bin@InspecBin::VERSION"
+    },
+    {
+      "type": "gem",
+      "namespace": null,
+      "name": "inspec-core-bin",
+      "version": "InspecBin::VERSION",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Ruby",
+      "description": "Infrastructure and compliance testing.\nInSpec executable for inspec-core gem. Use of this executable may require accepting a license agreement.\n\nPackaged distributions of Progress\u00ae Chef\u00ae products obtained from RubyGems are made available pursuant to the Progress Chef EULA at https://www.chef.io/end-user-license-agreement, unless there is an executed agreement in effect between you and Progress that covers the Progress Chef products (\"Master Agreement\"), in which case the Master Agreement shall govern.\n\nSource code obtained from the Chef GitHub repository is made available under Apache-2.0, a copy of which is included.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Chef InSpec Core Engineering",
+          "email": null,
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": null,
+          "email": "inspec@chef.io",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://github.com/inspec/inspec/tree/main/inspec-bin",
+      "download_url": "https://rubygems.org/downloads/inspec-core-bin-InspecBin::VERSION.gem",
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "unknown",
+      "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+      "license_detections": [
+        {
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
+          "matches": [
+            {
+              "license_expression": "unknown",
+              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "from_file": "rubygems/inspec-core-bin.gemspec",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "5-undetected",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+              "matched_text": "license LicenseRef-Chef-EULA"
+            }
+          ],
+          "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036"
+        }
+      ],
+      "other_license_expression": "proprietary-license AND apache-2.0",
+      "other_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+      "other_license_detections": [],
+      "extracted_license_statement": "LicenseRef-Chef-EULA",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://rubygems.org/gems/inspec-core-bin/versions/InspecBin::VERSION",
+      "repository_download_url": "https://rubygems.org/downloads/inspec-core-bin-InspecBin::VERSION.gem",
+      "api_data_url": "https://rubygems.org/api/v2/rubygems/inspec-core-bin/versions/InspecBin::VERSION.json",
+      "package_uid": "pkg:gem/inspec-core-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "inspec-core-bin.gemspec"
+      ],
+      "datasource_ids": [
+        "gemspec"
+      ],
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": true,
+        "ambiguous_compound_licensing": true
+      },
+      "purl": "pkg:gem/inspec-core-bin@InspecBin::VERSION"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:gem/rake",
+      "extracted_requirement": "",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/rake?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/inspec-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "inspec-bin.gemspec",
+      "datasource_id": "gemspec"
+    },
+    {
+      "purl": "pkg:gem/inspec",
+      "extracted_requirement": "",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/inspec?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/inspec-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "inspec-bin.gemspec",
+      "datasource_id": "gemspec"
+    },
+    {
+      "purl": "pkg:gem/rake",
+      "extracted_requirement": "",
+      "scope": "development",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/rake?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/inspec-core-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "inspec-core-bin.gemspec",
+      "datasource_id": "gemspec"
+    },
+    {
+      "purl": "pkg:gem/inspec-core",
+      "extracted_requirement": "",
+      "scope": "dependency",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:gem/inspec-core?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:gem/inspec-core-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "inspec-core-bin.gemspec",
+      "datasource_id": "gemspec"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "rubygems/LICENSE",
+          "start_line": 3,
+          "end_line": 13,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 85,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_7.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "proprietary_license_and_apache_2_0-38837872-6ecc-3da0-f84f-664e5069146e",
+      "license_expression": "proprietary-license AND apache-2.0",
+      "license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+      "detection_count": 3,
+      "reference_matches": [
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "rubygems/inspec-bin.gemspec",
+          "start_line": 12,
+          "end_line": 12,
+          "matcher": "2-aho",
+          "score": 90.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 90,
+          "rule_identifier": "license-intro_22.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE"
+        },
+        {
+          "license_expression": "proprietary-license",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+          "from_file": "rubygems/inspec-bin.gemspec",
+          "start_line": 14,
+          "end_line": 14,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "proprietary-license_72.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_72.RULE"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "rubygems/inspec-bin.gemspec",
+          "start_line": 16,
+          "end_line": 16,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036",
+      "license_expression": "unknown",
+      "license_expression_spdx": "LicenseRef-scancode-unknown",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
+          "from_file": "rubygems/inspec-bin.gemspec",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "5-undetected",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "Gemfile",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": "apache-2.0",
+      "detected_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "rubygems/LICENSE",
+              "start_line": 3,
+              "end_line": 13,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 85,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_7.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_7.RULE"
+            }
+          ],
+          "identifier": "apache_2_0-c4e30bcd-ccfd-bbc3-d2f1-196ab911e47d"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 93.41,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2019 Chef Software Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Chef Software Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "bin",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "bin/inspec",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [
+        {
+          "copyright": "Copyright 2015 Dominik Richter",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Dominik Richter",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "checksums.yaml",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "inspec-bin.gemspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "gem",
+          "namespace": null,
+          "name": "inspec-bin",
+          "version": "InspecBin::VERSION",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "Infrastructure and compliance testing.\nInSpec executable for inspec gem. Use of this executable may require accepting a license agreement.\"\n\nPackaged distributions of Progress\u00ae Chef\u00ae products obtained from RubyGems are made available pursuant to the Progress Chef EULA at https://www.chef.io/end-user-license-agreement, unless there is an executed agreement in effect between you and Progress that covers the Progress Chef products (\"Master Agreement\"), in which case the Master Agreement shall govern.\n\nSource code obtained from the Chef GitHub repository is made available under Apache-2.0, a copy of which is included.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Chef InSpec Core Engineering",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": null,
+              "email": "inspec@chef.io",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/inspec/inspec/tree/main/inspec-bin",
+          "download_url": "https://rubygems.org/downloads/inspec-bin-InspecBin::VERSION.gem",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "unknown",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+          "license_detections": [
+            {
+              "license_expression": "unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
+              "matches": [
+                {
+                  "license_expression": "unknown",
+                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "from_file": "rubygems/inspec-bin.gemspec",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "5-undetected",
+                  "score": 100.0,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+                  "matched_text": "license LicenseRef-Chef-EULA"
+                }
+              ],
+              "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "LicenseRef-Chef-EULA",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:gem/rake",
+              "extracted_requirement": "",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/inspec",
+              "extracted_requirement": "",
+              "scope": "dependency",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://rubygems.org/gems/inspec-bin/versions/InspecBin::VERSION",
+          "repository_download_url": "https://rubygems.org/downloads/inspec-bin-InspecBin::VERSION.gem",
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/inspec-bin/versions/InspecBin::VERSION.json",
+          "datasource_id": "gemspec",
+          "purl": "pkg:gem/inspec-bin@InspecBin::VERSION"
+        }
+      ],
+      "for_packages": [
+        "pkg:gem/inspec-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "proprietary-license AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "proprietary-license AND apache-2.0",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "rubygems/inspec-bin.gemspec",
+              "start_line": 12,
+              "end_line": 12,
+              "matcher": "2-aho",
+              "score": 90.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 90,
+              "rule_identifier": "license-intro_22.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE"
+            },
+            {
+              "license_expression": "proprietary-license",
+              "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+              "from_file": "rubygems/inspec-bin.gemspec",
+              "start_line": 14,
+              "end_line": 14,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "proprietary-license_72.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_72.RULE"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "rubygems/inspec-bin.gemspec",
+              "start_line": 16,
+              "end_line": 16,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+            }
+          ],
+          "identifier": "proprietary_license_and_apache_2_0-38837872-6ecc-3da0-f84f-664e5069146e"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 4.29,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "inspec-core-bin.gemspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "gem",
+          "namespace": null,
+          "name": "inspec-core-bin",
+          "version": "InspecBin::VERSION",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Ruby",
+          "description": "Infrastructure and compliance testing.\nInSpec executable for inspec-core gem. Use of this executable may require accepting a license agreement.\n\nPackaged distributions of Progress\u00ae Chef\u00ae products obtained from RubyGems are made available pursuant to the Progress Chef EULA at https://www.chef.io/end-user-license-agreement, unless there is an executed agreement in effect between you and Progress that covers the Progress Chef products (\"Master Agreement\"), in which case the Master Agreement shall govern.\n\nSource code obtained from the Chef GitHub repository is made available under Apache-2.0, a copy of which is included.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Chef InSpec Core Engineering",
+              "email": null,
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": null,
+              "email": "inspec@chef.io",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/inspec/inspec/tree/main/inspec-bin",
+          "download_url": "https://rubygems.org/downloads/inspec-core-bin-InspecBin::VERSION.gem",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "unknown",
+          "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+          "license_detections": [
+            {
+              "license_expression": "unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
+              "matches": [
+                {
+                  "license_expression": "unknown",
+                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "from_file": "rubygems/inspec-core-bin.gemspec",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "5-undetected",
+                  "score": 100.0,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-660d5d8517d1473cc8fc58a7230d227e36f2a8d2",
+                  "matched_text": "license LicenseRef-Chef-EULA"
+                }
+              ],
+              "identifier": "unknown-60c1ced0-26e8-d6a3-b44f-e7f28f74e036"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "LicenseRef-Chef-EULA",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:gem/rake",
+              "extracted_requirement": "",
+              "scope": "development",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:gem/inspec-core",
+              "extracted_requirement": "",
+              "scope": "dependency",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://rubygems.org/gems/inspec-core-bin/versions/InspecBin::VERSION",
+          "repository_download_url": "https://rubygems.org/downloads/inspec-core-bin-InspecBin::VERSION.gem",
+          "api_data_url": "https://rubygems.org/api/v2/rubygems/inspec-core-bin/versions/InspecBin::VERSION.json",
+          "datasource_id": "gemspec",
+          "purl": "pkg:gem/inspec-core-bin@InspecBin::VERSION"
+        }
+      ],
+      "for_packages": [
+        "pkg:gem/inspec-core-bin@InspecBin::VERSION?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "proprietary-license AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "proprietary-license AND apache-2.0",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "rubygems/inspec-core-bin.gemspec",
+              "start_line": 15,
+              "end_line": 15,
+              "matcher": "2-aho",
+              "score": 90.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 90,
+              "rule_identifier": "license-intro_22.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE"
+            },
+            {
+              "license_expression": "proprietary-license",
+              "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+              "from_file": "rubygems/inspec-core-bin.gemspec",
+              "start_line": 17,
+              "end_line": 17,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "proprietary-license_72.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_72.RULE"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "rubygems/inspec-core-bin.gemspec",
+              "start_line": 19,
+              "end_line": 19,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+            }
+          ],
+          "identifier": "proprietary_license_and_apache_2_0-38837872-6ecc-3da0-f84f-664e5069146e"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.67,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "lib",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "lib/inspec-bin",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "lib/inspec-bin/version.rb",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "metadata",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": "proprietary-license AND apache-2.0",
+      "detected_license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "proprietary-license AND apache-2.0",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license AND Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "unknown-license-reference",
+              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "rubygems/metadata",
+              "start_line": 42,
+              "end_line": 42,
+              "matcher": "2-aho",
+              "score": 90.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 90,
+              "rule_identifier": "license-intro_22.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_22.RULE"
+            },
+            {
+              "license_expression": "proprietary-license",
+              "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+              "from_file": "rubygems/metadata",
+              "start_line": 44,
+              "end_line": 44,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "proprietary-license_72.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_72.RULE"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "spdx_license_expression": "Apache-2.0",
+              "from_file": "rubygems/metadata",
+              "start_line": 46,
+              "end_line": 46,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+            }
+          ],
+          "identifier": "proprietary_license_and_apache_2_0-38837872-6ecc-3da0-f84f-664e5069146e"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.98,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+// Copyright (C) 2004 XYZ Company

@@ -21,7 +21,8 @@ from packagedcode.utils import combine_expressions
 from packagedcode import models
 from summarycode.copyright_tallies import canonical_holder
 from summarycode.score import compute_license_score
-from summarycode.score import get_field_values_from_codebase_resources
+from summarycode.score import get_field_values_from_resources
+from summarycode.score import get_codebase_resources
 from summarycode.score import unique
 from summarycode.tallies import compute_codebase_tallies
 
@@ -106,19 +107,19 @@ class ScanSummary(PostScanPlugin):
                 top_level_packages=top_level_packages,
                 codebase=codebase,
             )
-
+        codebase_resources= get_codebase_resources(codebase)
         if declared_license_expression:
-            scoring_elements, _ = compute_license_score(codebase)
+            scoring_elements, _, _ = compute_license_score(resources=codebase_resources)
         else:
             # If we did not get a declared license expression from detected
             # package data, then we use the results from `compute_license_score`
-            scoring_elements, declared_license_expression = compute_license_score(codebase)
+            scoring_elements,_, declared_license_expression = compute_license_score(resources=codebase_resources)
         other_license_expressions = remove_from_tallies(
             declared_license_expression, license_expressions_tallies
         )
 
         if not declared_holders:
-            declared_holders = get_declared_holders(codebase, holders_tallies)
+            declared_holders = get_declared_holders(codebase_resources, holders_tallies)
         other_holders = remove_from_tallies(declared_holders, holders_tallies)
         declared_holder = ', '.join(declared_holders)
 
@@ -156,7 +157,7 @@ def remove_from_tallies(entry, tallies):
     return pruned_tallies
 
 
-def get_declared_holders(codebase, holders_tallies):
+def get_declared_holders(codebase_resources, holders_tallies):
     """
     Return a list of declared holders from a codebase using the holders
     detected from key files.
@@ -167,8 +168,8 @@ def get_declared_holders(codebase, holders_tallies):
     entry_by_holders = {
         fingerprints.generate(entry['value']): entry for entry in holders_tallies if entry['value']
     }
-    key_file_holders = get_field_values_from_codebase_resources(
-        codebase, 'holders', key_files_only=True
+    key_file_holders = get_field_values_from_resources(
+        resources=codebase_resources, field_name='holders', key_files_only=True
     )
     entry_by_key_file_holders = {
         fingerprints.generate(canonical_holder(entry['holder'])): entry

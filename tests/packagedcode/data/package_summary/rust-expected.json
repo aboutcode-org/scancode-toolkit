@@ -1,0 +1,2744 @@
+{
+  "summary": {
+    "declared_license_expression": "mit",
+    "license_clarity_score": {
+      "score": 100,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": true,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    },
+    "declared_holder": "Iron Core Team",
+    "primary_language": null,
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 12
+      }
+    ],
+    "other_holders": [
+      {
+        "value": null,
+        "count": 18
+      },
+      {
+        "value": "iron",
+        "count": 1
+      }
+    ],
+    "other_languages": []
+  },
+  "packages": [
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "iron",
+      "version": "0.6.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "Extensible, Concurrency Focused Web Development in Rust.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Jonathan Reem",
+          "email": "jonathan.reem@gmail.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Zach Pomerantz",
+          "email": "zmp@umich.edu",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Michael Sproul",
+          "email": "micsproul@gmail.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Patrick Tran",
+          "email": "patrick.tran06@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/iron/iron",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/iron/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": "mit",
+      "other_license_expression_spdx": "MIT",
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "documentation_url": "https://docs.rs/iron"
+      },
+      "repository_homepage_url": "https://crates.io/crates/iron",
+      "repository_download_url": "https://crates.io/api/v1/crates/iron/0.6.0/download",
+      "api_data_url": "https://crates.io/api/v1/crates/iron",
+      "package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "iron/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": true
+      },
+      "purl": "pkg:cargo/iron@0.6.0"
+    },
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "logger",
+      "version": "0.4.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "Logging middleware for the Iron framework.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Alexander Irbis",
+          "email": "irbis.labs@gmail.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Jonathan Reem",
+          "email": "jonathan.reem@gmail.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Michael Reinhard",
+          "email": "mcreinhard@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "iron",
+        "web",
+        "logger",
+        "log",
+        "timer"
+      ],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/iron/logger",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/logger/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": "mit",
+      "other_license_expression_spdx": "MIT",
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://crates.io/crates/logger",
+      "repository_download_url": "https://crates.io/api/v1/crates/logger/0.4.0/download",
+      "api_data_url": "https://crates.io/api/v1/crates/logger",
+      "package_uid": "pkg:cargo/logger@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "logger/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": true
+      },
+      "purl": "pkg:cargo/logger@0.4.0"
+    },
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "mount",
+      "version": "0.4.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "Mounting middleware for Iron.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Jonathan Reem",
+          "email": "jonathan.reem@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "iron",
+        "web",
+        "handler",
+        "routing"
+      ],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/iron/mount",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/mount/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": "mit",
+      "other_license_expression_spdx": "MIT",
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "documentation_url": "https://docs.rs/mount"
+      },
+      "repository_homepage_url": "https://crates.io/crates/mount",
+      "repository_download_url": "https://crates.io/api/v1/crates/mount/0.4.0/download",
+      "api_data_url": "https://crates.io/api/v1/crates/mount",
+      "package_uid": "pkg:cargo/mount@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "mount/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": true
+      },
+      "purl": "pkg:cargo/mount@0.4.0"
+    },
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "persistent",
+      "version": "0.4.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "A set of middleware for sharing server-global data in Iron.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Jonathan Reem",
+          "email": "jonathan.reem@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "iron",
+        "web",
+        "persistence",
+        "sharing",
+        "global"
+      ],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/iron/persistent",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/persistent/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": "mit",
+      "other_license_expression_spdx": "MIT",
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "documentation_url": "https://docs.rs/persistent"
+      },
+      "repository_homepage_url": "https://crates.io/crates/persistent",
+      "repository_download_url": "https://crates.io/api/v1/crates/persistent/0.4.0/download",
+      "api_data_url": "https://crates.io/api/v1/crates/persistent",
+      "package_uid": "pkg:cargo/persistent@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "persistent/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": true
+      },
+      "purl": "pkg:cargo/persistent@0.4.0"
+    },
+    {
+      "type": "cargo",
+      "namespace": null,
+      "name": "router",
+      "version": "0.6.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Rust",
+      "description": "A router for the Iron framework.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Jonathan Reem",
+          "email": "jonathan.reem@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "iron",
+        "web",
+        "http",
+        "routing",
+        "router"
+      ],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/iron/router",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/router/Cargo.toml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        }
+      ],
+      "other_license_expression": "mit",
+      "other_license_expression_spdx": "MIT",
+      "other_license_detections": [],
+      "extracted_license_statement": "MIT",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "documentation_url": "https://docs.rs/router"
+      },
+      "repository_homepage_url": "https://crates.io/crates/router",
+      "repository_download_url": "https://crates.io/api/v1/crates/router/0.6.0/download",
+      "api_data_url": "https://crates.io/api/v1/crates/router",
+      "package_uid": "pkg:cargo/router@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "router/Cargo.toml"
+      ],
+      "datasource_ids": [
+        "cargo_toml"
+      ],
+      "license_clarity_score": {
+        "score": 0,
+        "declared_license": false,
+        "identification_precision": false,
+        "has_license_text": false,
+        "declared_copyrights": false,
+        "conflicting_license_categories": false,
+        "ambiguous_compound_licensing": true
+      },
+      "purl": "pkg:cargo/router@0.6.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:cargo/futures",
+      "extracted_requirement": "0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/futures?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/futures-cpupool",
+      "extracted_requirement": "0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/futures-cpupool?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/http",
+      "extracted_requirement": "0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/http?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/hyper",
+      "extracted_requirement": "0.12",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/hyper?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/log",
+      "extracted_requirement": "0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/log?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/mime",
+      "extracted_requirement": "0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/mime?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/mime_guess",
+      "extracted_requirement": "2.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/mime_guess?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/modifier",
+      "extracted_requirement": "0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/modifier?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/plugin",
+      "extracted_requirement": "0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/plugin?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/typemap",
+      "extracted_requirement": "0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/typemap?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/url",
+      "extracted_requirement": "1.7",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/url?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/time",
+      "extracted_requirement": "0.1",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/time?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "iron/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/iron",
+      "extracted_requirement": ">=0.4,<0.8.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": ">=0.4,<0.8.0",
+        "default-features": false
+      },
+      "dependency_uid": "pkg:cargo/iron?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/logger@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "logger/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/log",
+      "extracted_requirement": "0.4.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/log?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/logger@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "logger/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/time",
+      "extracted_requirement": "0.1.42",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/time?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/logger@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "logger/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/env_logger",
+      "extracted_requirement": "0.7.1",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/env_logger?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/logger@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "logger/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/iron",
+      "extracted_requirement": "0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "../iron",
+        "version": "0.6"
+      },
+      "dependency_uid": "pkg:cargo/iron?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/mount@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "mount/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/sequence_trie",
+      "extracted_requirement": "0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/sequence_trie?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/mount@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "mount/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/iron",
+      "extracted_requirement": "0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "../iron",
+        "version": "0.6"
+      },
+      "dependency_uid": "pkg:cargo/iron?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/persistent@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "persistent/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/plugin",
+      "extracted_requirement": "0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/plugin?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/persistent@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "persistent/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/route-recognizer",
+      "extracted_requirement": "0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/route-recognizer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/router@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "router/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/iron",
+      "extracted_requirement": "0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "path": "../iron",
+        "version": "0.6"
+      },
+      "dependency_uid": "pkg:cargo/iron?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/router@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "router/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/url",
+      "extracted_requirement": "1.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/url?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/router@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "router/Cargo.toml",
+      "datasource_id": "cargo_toml"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 7,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "rust/README.md",
+          "start_line": 72,
+          "end_line": 74,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 5,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "rust/iron/Cargo.toml",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+          "rule_url": null
+        }
+      ]
+    },
+    {
+      "identifier": "mit-86fcf017-3572-9813-b7e8-0a10ec4a120f",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 3,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "rust/LICENSE",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_26.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "rust/LICENSE",
+          "start_line": 5,
+          "end_line": 21,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-fc87257b-1996-368a-67f3-848e6e865560",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "rust/README.md",
+          "start_line": 5,
+          "end_line": 5,
+          "matcher": "3-seq",
+          "score": 92.86,
+          "matched_length": 13,
+          "match_coverage": 92.86,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_570.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_570.RULE"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "rust/LICENSE",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 4,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit_26.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+                },
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "rust/LICENSE",
+                  "start_line": 5,
+                  "end_line": 21,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 161,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit.LICENSE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+                }
+              ],
+              "identifier": "mit-86fcf017-3572-9813-b7e8-0a10ec4a120f"
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "rust/README.md",
+                  "start_line": 5,
+                  "end_line": 5,
+                  "matcher": "3-seq",
+                  "score": 92.86,
+                  "matched_length": 13,
+                  "match_coverage": 92.86,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit_570.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_570.RULE"
+                }
+              ],
+              "identifier": "mit-fc87257b-1996-368a-67f3-848e6e865560"
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "rust/README.md",
+                  "start_line": 72,
+                  "end_line": 74,
+                  "matcher": "2-aho",
+                  "score": 100.0,
+                  "matched_length": 2,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "mit_30.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+                }
+              ],
+              "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "workspace": {
+              "members": [
+                "iron",
+                "logger",
+                "mount",
+                "persistent",
+                "router"
+              ]
+            }
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "cargo_toml",
+          "purl": null
+        }
+      ],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_26.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+            },
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/LICENSE",
+              "start_line": 5,
+              "end_line": 21,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 161,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+            }
+          ],
+          "identifier": "mit-86fcf017-3572-9813-b7e8-0a10ec4a120f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 96.49,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2014 Iron Core Team",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "Iron Core Team",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": true,
+      "is_key_file": true,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/README.md",
+              "start_line": 5,
+              "end_line": 5,
+              "matcher": "3-seq",
+              "score": 92.86,
+              "matched_length": 13,
+              "match_coverage": 92.86,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_570.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_570.RULE"
+            }
+          ],
+          "identifier": "mit-fc87257b-1996-368a-67f3-848e6e865560"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/README.md",
+              "start_line": 72,
+              "end_line": 74,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.81,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "iron",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "iron/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "iron",
+          "version": "0.6.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "Extensible, Concurrency Focused Web Development in Rust.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Jonathan Reem",
+              "email": "jonathan.reem@gmail.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Zach Pomerantz",
+              "email": "zmp@umich.edu",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Michael Sproul",
+              "email": "micsproul@gmail.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Patrick Tran",
+              "email": "patrick.tran06@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/iron/iron",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "rust/iron/Cargo.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://docs.rs/iron"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/futures",
+              "extracted_requirement": "0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/futures-cpupool",
+              "extracted_requirement": "0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/http",
+              "extracted_requirement": "0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/hyper",
+              "extracted_requirement": "0.12",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/log",
+              "extracted_requirement": "0.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/mime",
+              "extracted_requirement": "0.3",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/mime_guess",
+              "extracted_requirement": "2.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/modifier",
+              "extracted_requirement": "0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/plugin",
+              "extracted_requirement": "0.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/typemap",
+              "extracted_requirement": "0.3",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/url",
+              "extracted_requirement": "1.7",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/time",
+              "extracted_requirement": "0.1",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://crates.io/crates/iron",
+          "repository_download_url": "https://crates.io/api/v1/crates/iron/0.6.0/download",
+          "api_data_url": "https://crates.io/api/v1/crates/iron",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/iron@0.6.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/iron@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/iron/Cargo.toml",
+              "start_line": 10,
+              "end_line": 10,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 1.96,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Jonathan Reem <jonathan.reem@gmail.com> Zach Pomerantz <zmp@umich.edu>",
+          "start_line": 2,
+          "end_line": 4
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "iron/src",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "iron/src/iron.rs",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "logger",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "logger/CONTRIBUTING.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "logger/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "logger",
+          "version": "0.4.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "Logging middleware for the Iron framework.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Alexander Irbis",
+              "email": "irbis.labs@gmail.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Jonathan Reem",
+              "email": "jonathan.reem@gmail.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Michael Reinhard",
+              "email": "mcreinhard@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "iron",
+            "web",
+            "logger",
+            "log",
+            "timer"
+          ],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/iron/logger",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "rust/logger/Cargo.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/iron",
+              "extracted_requirement": ">=0.4,<0.8.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": ">=0.4,<0.8.0",
+                "default-features": false
+              }
+            },
+            {
+              "purl": "pkg:cargo/log",
+              "extracted_requirement": "0.4.8",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/time",
+              "extracted_requirement": "0.1.42",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/env_logger",
+              "extracted_requirement": "0.7.1",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://crates.io/crates/logger",
+          "repository_download_url": "https://crates.io/api/v1/crates/logger/0.4.0/download",
+          "api_data_url": "https://crates.io/api/v1/crates/logger",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/logger@0.4.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/logger@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/logger/Cargo.toml",
+              "start_line": 8,
+              "end_line": 8,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 2.78,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Alexander Irbis <irbis.labs@gmail.com> Jonathan Reem <jonathan.reem@gmail.com> Michael Reinhard <mcreinhard@gmail.com>",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "logger/LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/logger/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 4,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_26.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE"
+            },
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/logger/LICENSE",
+              "start_line": 5,
+              "end_line": 21,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 161,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit.LICENSE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+            }
+          ],
+          "identifier": "mit-86fcf017-3572-9813-b7e8-0a10ec4a120f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 97.63,
+      "copyrights": [
+        {
+          "copyright": "Copyright (c) 2014 iron",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "holders": [
+        {
+          "holder": "iron",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "logger/README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "logger/src",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "logger/src/format.rs",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "logger/src/lib.rs",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "mount",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "mount/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "mount",
+          "version": "0.4.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "Mounting middleware for Iron.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Jonathan Reem",
+              "email": "jonathan.reem@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "iron",
+            "web",
+            "handler",
+            "routing"
+          ],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/iron/mount",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "rust/mount/Cargo.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://docs.rs/mount"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/iron",
+              "extracted_requirement": "0.6",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "path": "../iron",
+                "version": "0.6"
+              }
+            },
+            {
+              "purl": "pkg:cargo/sequence_trie",
+              "extracted_requirement": "0.3",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://crates.io/crates/mount",
+          "repository_download_url": "https://crates.io/api/v1/crates/mount/0.4.0/download",
+          "api_data_url": "https://crates.io/api/v1/crates/mount",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/mount@0.4.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/mount@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/mount/Cargo.toml",
+              "start_line": 9,
+              "end_line": 9,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 4.17,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Jonathan Reem <jonathan.reem@gmail.com>",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "mount/README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "mount/src",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "mount/src/mount.rs",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "persistent",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "persistent/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "persistent",
+          "version": "0.4.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "A set of middleware for sharing server-global data in Iron.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Jonathan Reem",
+              "email": "jonathan.reem@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "iron",
+            "web",
+            "persistence",
+            "sharing",
+            "global"
+          ],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/iron/persistent",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "rust/persistent/Cargo.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://docs.rs/persistent"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/iron",
+              "extracted_requirement": "0.6",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "path": "../iron",
+                "version": "0.6"
+              }
+            },
+            {
+              "purl": "pkg:cargo/plugin",
+              "extracted_requirement": "0.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://crates.io/crates/persistent",
+          "repository_download_url": "https://crates.io/api/v1/crates/persistent/0.4.0/download",
+          "api_data_url": "https://crates.io/api/v1/crates/persistent",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/persistent@0.4.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/persistent@0.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/persistent/Cargo.toml",
+              "start_line": 9,
+              "end_line": 9,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.7,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Jonathan Reem <jonathan.reem@gmail.com>",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "persistent/README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "persistent/src",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "persistent/src/lib.rs",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "router",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "router/Cargo.toml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cargo",
+          "namespace": null,
+          "name": "router",
+          "version": "0.6.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Rust",
+          "description": "A router for the Iron framework.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Jonathan Reem",
+              "email": "jonathan.reem@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "iron",
+            "web",
+            "http",
+            "routing",
+            "router"
+          ],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/iron/router",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "spdx_license_expression": "MIT",
+                  "from_file": "rust/router/Cargo.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://docs.rs/router"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/route-recognizer",
+              "extracted_requirement": "0.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/iron",
+              "extracted_requirement": "0.6",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "path": "../iron",
+                "version": "0.6"
+              }
+            },
+            {
+              "purl": "pkg:cargo/url",
+              "extracted_requirement": "1.1",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_resolved": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://crates.io/crates/router",
+          "repository_download_url": "https://crates.io/api/v1/crates/router/0.6.0/download",
+          "api_data_url": "https://crates.io/api/v1/crates/router",
+          "datasource_id": "cargo_toml",
+          "purl": "pkg:cargo/router@0.6.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:cargo/router@0.6.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "spdx_license_expression": "MIT",
+              "from_file": "rust/router/Cargo.toml",
+              "start_line": 5,
+              "end_line": 5,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
+            }
+          ],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 3.77,
+      "copyrights": [],
+      "holders": [],
+      "authors": [
+        {
+          "author": "Jonathan Reem <jonathan.reem@gmail.com>",
+          "start_line": 4,
+          "end_line": 4
+        }
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "router/README.md",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "router/src",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "router/src/router.rs",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "scan_errors": []
+    }
+  ]
+}

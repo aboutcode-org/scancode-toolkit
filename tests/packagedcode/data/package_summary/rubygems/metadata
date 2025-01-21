@@ -1,0 +1,85 @@
+--- !ruby/object:Gem::Specification
+name: inspec-bin
+version: !ruby/object:Gem::Version
+  version: 6.8.1
+platform: ruby
+authors:
+- 'Chef InSpec Core Engineering '
+autorequire: 
+bindir: bin
+cert_chain: []
+date: 2024-07-25 00:00:00.000000000 Z
+dependencies:
+- !ruby/object:Gem::Dependency
+  name: inspec
+  requirement: !ruby/object:Gem::Requirement
+    requirements:
+    - - '='
+      - !ruby/object:Gem::Version
+        version: 6.8.1
+  type: :runtime
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    requirements:
+    - - '='
+      - !ruby/object:Gem::Version
+        version: 6.8.1
+- !ruby/object:Gem::Dependency
+  name: rake
+  requirement: !ruby/object:Gem::Requirement
+    requirements:
+    - - ">="
+      - !ruby/object:Gem::Version
+        version: '0'
+  type: :development
+  prerelease: false
+  version_requirements: !ruby/object:Gem::Requirement
+    requirements:
+    - - ">="
+      - !ruby/object:Gem::Version
+        version: '0'
+description: |+
+  InSpec executable for inspec gem. Use of this executable may require accepting a license agreement."
+
+  Packaged distributions of Progress® Chef® products obtained from RubyGems are made available pursuant to the Progress Chef EULA at https://www.chef.io/end-user-license-agreement, unless there is an executed agreement in effect between you and Progress that covers the Progress Chef products ("Master Agreement"), in which case the Master Agreement shall govern.
+
+  Source code obtained from the Chef GitHub repository is made available under Apache-2.0, a copy of which is included.
+
+email:
+- inspec@chef.io
+executables:
+- inspec
+extensions: []
+extra_rdoc_files: []
+files:
+- Gemfile
+- LICENSE
+- README.md
+- bin/inspec
+- inspec-bin.gemspec
+- inspec-core-bin.gemspec
+- lib/inspec-bin/version.rb
+homepage: https://github.com/inspec/inspec/tree/main/inspec-bin
+licenses:
+- LicenseRef-Chef-EULA
+metadata: {}
+post_install_message: 
+rdoc_options: []
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  requirements:
+  - - ">="
+    - !ruby/object:Gem::Version
+      version: 3.1.0
+required_rubygems_version: !ruby/object:Gem::Requirement
+  requirements:
+  - - ">="
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubygems_version: 3.2.3
+signing_key: 
+specification_version: 4
+summary: Infrastructure and compliance testing.
+test_files: []

@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: beautifulsoup4
+Version: 4.12.3
+Summary: Screen-scraping library
+Project-URL: Download, https://www.crummy.com/software/BeautifulSoup/bs4/download/
+Project-URL: Homepage, https://www.crummy.com/software/BeautifulSoup/bs4/
+Author-email: Leonard Richardson <leonardr@segfault.org>
+License: MIT License
+License-File: AUTHORS
+License-File: LICENSE
+Keywords: HTML,XML,parse,soup
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Topic :: Text Processing :: Markup :: SGML
+Classifier: Topic :: Text Processing :: Markup :: XML
+Requires-Python: >=3.6.0
+Requires-Dist: soupsieve>1.2
+Provides-Extra: cchardet
+Requires-Dist: cchardet; extra == 'cchardet'
+Provides-Extra: chardet
+Requires-Dist: chardet; extra == 'chardet'
+Provides-Extra: charset-normalizer
+Requires-Dist: charset-normalizer; extra == 'charset-normalizer'
+Provides-Extra: html5lib
+Requires-Dist: html5lib; extra == 'html5lib'
+Provides-Extra: lxml
+Requires-Dist: lxml; extra == 'lxml'
+Description-Content-Type: text/markdown
+
+Beautiful Soup is a library that makes it easy to scrape information
+from web pages. It sits atop an HTML or XML parser, providing Pythonic
+idioms for iterating, searching, and modifying the parse tree.
