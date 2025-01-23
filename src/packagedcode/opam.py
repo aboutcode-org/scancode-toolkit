@@ -150,16 +150,28 @@ parse_dep = re.compile(
 """
 Example:
 >>> p = parse_file_line('authors: "BAP Team"')
->>> assert p.group('key') == ('authors')
->>> assert p.group('value') == ('"BAP Team"')
+>>> if p.group('key') != 'authors':
+    raise ValueError(f"Expected 'key' to be 'authors', but got {p.group('key')}")
+
+>>> if p.group('value') != '"BAP Team"':
+    raise ValueError(f"Expected 'value' to be '\"BAP Team\"', but got {p.group('value')}")
+
 
 >>> p = parse_file_line('md5=b7a7b7cce64eabf224d05ed9f2b9d471')
->>> assert p.group('key') == ('md5')
->>> assert p.group('value') == ('b7a7b7cce64eabf224d05ed9f2b9d471')
+>>> if p.group('key') != 'md5':
+    raise ValueError(f"Expected 'key' to be 'md5', but got {p.group('key')}")
+
+>>> if p.group('value') != 'b7a7b7cce64eabf224d05ed9f2b9d471':
+    raise ValueError(f"Expected 'value' to be 'b7a7b7cce64eabf224d05ed9f2b9d471', but got {p.group('value')}")
+
 
 >>> p = parse_dep('"bap-std" {= "1.0.0"}')
->>> assert p.group('name') == ('bap-std')
->>> assert p.group('version') == ('{= "1.0.0"}')
+>>> if p.group('name') != 'bap-std':
+    raise ValueError(f"Expected 'name' to be 'bap-std', but got {p.group('name')}")
+
+>>> if p.group('version') != '{= "1.0.0"}':
+    raise ValueError(f"Expected 'version' to be '{{= \"1.0.0\"}}', but got {p.group('version')}")
+
 """
 
 
