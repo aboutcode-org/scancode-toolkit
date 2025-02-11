@@ -705,6 +705,7 @@
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_notice": false,
       "detected_license_expression": "mit OR gpl-2.0",
       "detected_license_expression_spdx": "MIT OR GPL-2.0-only",
       "license_detections": [
@@ -832,6 +833,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -969,6 +971,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "(mit OR gpl-2.0-plus) AND gpl-2.0",
       "detected_license_expression_spdx": "(MIT OR GPL-2.0-or-later) AND GPL-2.0-only",
       "license_detections": [
@@ -1242,6 +1245,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "mit OR gpl-2.0",
       "detected_license_expression_spdx": "MIT OR GPL-2.0-only",
       "license_detections": [

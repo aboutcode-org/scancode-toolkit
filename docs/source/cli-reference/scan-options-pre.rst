@@ -62,6 +62,7 @@ Pre-Scan Options
     - readme
     - top-level
     - manifest
+    - notice
 
         A manifest file in computing is a file containing metadata for a group of accompanying
         files that are part of a set or coherent unit.
@@ -80,6 +81,7 @@ Pre-Scan Options
         "is_readme": true,
         "is_top_level": true,
         "is_key_file": true
+        "is_notice": false,
       }
 
 ----

@@ -1018,6 +1018,7 @@ To see all plugins available via command line help, use ``--plugins``.
         - "is_readme"
         - "is_top_level"
         - "is_key_file"
+        - "is_notice"
 
     A key-file is a top-level file, that is either a legal (LICENSE/COPYING etc), manifest or a
     readme file.
@@ -1087,6 +1088,7 @@ To see all plugins available via command line help, use ``--plugins``.
             "is_readme": false,
             "is_top_level": true,
             "is_key_file": false,
+            "is_notice": false,
             "tallies": {
               "detected_license_expression": [
                 {

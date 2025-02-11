@@ -483,6 +483,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -520,6 +521,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -557,6 +559,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -594,6 +597,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "lgpl-2.1-plus",
       "detected_license_expression_spdx": "LGPL-2.1-or-later",
       "license_detections": [
@@ -665,6 +669,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "cc-by-2.5",
       "detected_license_expression_spdx": "CC-BY-2.5",
       "license_detections": [
@@ -742,6 +747,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "lgpl-2.1-plus",
       "detected_license_expression_spdx": "LGPL-2.1-or-later",
       "license_detections": [
@@ -813,6 +819,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -856,6 +863,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -899,6 +907,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "lgpl-2.1-plus",
       "detected_license_expression_spdx": "LGPL-2.1-or-later",
       "license_detections": [
@@ -970,6 +979,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1013,6 +1023,7 @@
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1050,6 +1061,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1087,6 +1099,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -1175,6 +1188,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -1246,6 +1260,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -1334,6 +1349,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_notice": false,
       "detected_license_expression": "cc0-1.0",
       "detected_license_expression_spdx": "CC0-1.0",
       "license_detections": [
@@ -1393,6 +1409,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_notice": false,
       "detected_license_expression": "artistic-2.0",
       "detected_license_expression_spdx": "Artistic-2.0",
       "license_detections": [
@@ -1458,6 +1475,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1495,6 +1513,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1532,6 +1551,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "gpl-2.0-plus WITH ada-linking-exception",
       "detected_license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
       "license_detections": [
@@ -1603,6 +1623,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -1691,6 +1712,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -1779,6 +1801,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -1867,6 +1890,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1904,6 +1928,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1953,6 +1978,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "boost-1.0",
       "detected_license_expression_spdx": "BSL-1.0",
       "license_detections": [
@@ -2024,6 +2050,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -2061,6 +2088,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -2138,6 +2166,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -2175,6 +2204,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -2246,6 +2276,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -2317,6 +2348,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -2354,6 +2386,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "mit-old-style",
       "detected_license_expression_spdx": "LicenseRef-scancode-mit-old-style",
       "license_detections": [
@@ -2425,6 +2458,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -2496,6 +2530,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [
@@ -2584,6 +2619,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "zlib",
       "detected_license_expression_spdx": "Zlib",
       "license_detections": [

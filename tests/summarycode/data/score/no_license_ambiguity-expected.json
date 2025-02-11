@@ -406,6 +406,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -445,6 +446,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -484,6 +486,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_notice": false,
       "detected_license_expression": "mit OR apache-2.0",
       "detected_license_expression_spdx": "MIT OR Apache-2.0",
       "license_detections": [
@@ -747,6 +750,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": "mit OR apache-2.0",
       "detected_license_expression_spdx": "MIT OR Apache-2.0",
       "license_detections": [
@@ -826,6 +830,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_notice": false,
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -887,6 +892,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_notice": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -970,6 +976,7 @@
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_notice": false,
       "detected_license_expression": "mit OR apache-2.0",
       "detected_license_expression_spdx": "MIT OR Apache-2.0",
       "license_detections": [
@@ -1031,6 +1038,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1070,6 +1078,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],

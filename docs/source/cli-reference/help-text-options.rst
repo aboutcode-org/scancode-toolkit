@@ -154,8 +154,8 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
                                scans for key, top-level files. Key files are top-
                                level codebase files such as COPYING, README and
                                package manifests as reported by the --classify
-                               option "is_legal", "is_readme", "is_manifest" and
-                               "is_top_level" flags.
+                               option "is_legal", "is_readme", "is_manifest",
+                               "is_notice" and "is_top_level" flags.
       --tallies-with-details   Compute tallies of license, copyright and other scans
                                at the codebase level, keeping intermediate details
                                at the file and directory level.
@@ -639,7 +639,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
     required_plugins:
     options:
       help_group: post-scan, name: tallies_key_files: --tallies-key-files
-        help: Compute tallies for license, copyright and other scans for key, top-level files. Key files are top-level codebase files such as COPYING, README and package manifests as reported by the --classify option "is_legal", "is_readme", "is_manifest" and "is_top_level" flags.
+        help: Compute tallies for license, copyright and other scans for key, top-level files. Key files are top-level codebase files such as COPYING, README and package manifests as reported by the --classify option "is_legal", "is_readme", "is_manifest", "is_notice" and "is_top_level" flags.
     doc:
       Compute tallies of a scan at the codebase level for only key files.
 
@@ -669,7 +669,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
   --------------------------------------------
   Plugin: scancode_pre_scan:classify  class: summarycode.classify_plugin:FileClassifier
     codebase_attributes:
-    resource_attributes: is_legal, is_manifest, is_readme, is_top_level, is_key_file
+    resource_attributes: is_legal, is_manifest, is_readme, is_top_level, is_key_file, is_notice
     sort_order: 30
     required_plugins:
     options:
