@@ -1,6 +1,13 @@
 Release notes
 =============
 
+Version 32.2.0 - (2025-02-15)
+-----------------------------
+
+- Adjust as_unicode for breaking bs4 4.13 changes
+  See https://github.com/aboutcode-org/commoncode/issues/79
+- Add support for python 3.13
+- Drop deprecated CI runners and update CI runners to latest
 
 Version 32.1.0 - (2024-12-06)
 -----------------------------
