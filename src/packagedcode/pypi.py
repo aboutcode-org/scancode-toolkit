@@ -546,7 +546,8 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
             dependencies=dependencies,
             is_private=is_private,
             extra_data=extra_data,
-            **urls,
+            homepage_url=urls.get('homepage'),
+            download_url=urls.get('download'),
         )
         yield models.PackageData.from_data(package_data, package_only)
 

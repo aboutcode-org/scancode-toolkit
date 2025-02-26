@@ -339,11 +339,11 @@ class TestPyprojectTomlFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/lc0-pyproject.toml-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_parse_pyproject_toml_private_package(self): 
+    def test_parse_pyproject_toml_private_package(self):
         test_file = self.get_test_loc('pypi/pyproject-toml/standard/python-private-classifier/pyproject.toml') 
         packages = pypi.PyprojectTomlHandler.parse(test_file)
         expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/private-classifier-pyproject.toml-expected.json') 
-        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES) 
+        self.check_packages_data(packages, expected_loc)
         
 
 class TestPoetryHandler(PackageTester):
