@@ -390,7 +390,11 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
         Assign files to package for an installed wheel. This requires a bit
         of navigation around as the files can be in multiple places.
         """
-        site_packages = resource.parent(codebase).parent(codebase)
+        dist_info_dir = resource.parent(codebase)
+        if not dist_info_dir:
+            return
+
+        site_packages = dist_info_dir.parent(codebase)
         if not site_packages:
             return
         package_data = resource.package_data
@@ -400,9 +404,7 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
         )
 
         package_data = models.PackageData.from_dict(package_data[0])
-
         package_uid = package.package_uid
-
         if package_uid:
             # save thyself!
             package_adder(package_uid, resource, codebase)
@@ -414,74 +416,30 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
                 # relative paths need special treatment
                 # most of thense are references to bin ../../../bin/wheel
                 cannot_resolve = False
-                ref_resource = None
+                ref_resource = site_packages
                 while path_ref.startswith('..'):
                     _, _, path_ref = path_ref.partition('../')
-                    ref_resource = site_packages.parent(codebase)
+                    ref_resource = ref_resource.parent(codebase)
                     if not ref_resource:
                         cannot_resolve = True
                         break
+
                 if cannot_resolve or not ref_resource:
                     # TODO:w e should log these kind of things
                     continue
                 else:
-                    if package_uid:
+                    ref_resource = codebase.get_resource(
+                        path=os.path.join(ref_resource.path, path_ref)
+                    )
+                    if ref_resource and package_uid:
                         package_adder(package_uid, ref_resource, codebase)
             else:
-                ref_resource = get_resource_for_path(
-                    path=path_ref,
-                    root=site_packages,
-                    codebase=codebase,
+                # These are absolute paths from the site-packages directory
+                ref_resource = codebase.get_resource(
+                    path=os.path.join(site_packages.path, path_ref)
                 )
                 if ref_resource and package_uid:
                     package_adder(package_uid, ref_resource, codebase)
-
-
-def get_resource_for_path(path, root, codebase):
-    """
-    Return a resource in ``codebase`` that has a ``path`` relative to the
-    ``root` Resource
-
-    For example, say we start from this:
-        path: this/is/that therefore segments [this, is, that]
-        root: /usr/foo
-
-    We would have these iterations:
-    iteration1
-        root = /usr/foo
-        segments = [this, is, that]
-        seg  this
-        segments = [is, that]
-        children = [/usr/foo/this]
-        root = /usr/foo/this
-
-    iteration2
-        root = /usr/foo/this
-        segments = [is, that]
-        seg  is
-        segments = [that]
-        children = [/usr/foo/this/is]
-        root = /usr/foo/this/is
-
-    iteration3
-        root = /usr/foo/this/is
-        segments = [that]
-        seg  that
-        segments = []
-        children = [/usr/foo/this/is/that]
-        root = /usr/foo/this/is/that
-
-    finally return root as /usr/foo/this/is/that
-    """
-    segments = path.strip('/').split('/')
-    while segments:
-        seg = segments.pop(0)
-        children = [c for c in root.children(codebase) if c.name == seg]
-        if len(children) != 1:
-            return
-        else:
-            root = children[0]
-    return root
 
 
 class PyprojectTomlHandler(BaseExtractedPythonLayout):
