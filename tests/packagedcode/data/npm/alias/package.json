@@ -1,0 +1,68 @@
+{
+  "name": "@tapjs/tapjs",
+  "private": true,
+  "workspaces": [
+    "src/*"
+  ],
+  "type": "module",
+  "prettier": {
+    "experimentalTernaries": true,
+    "semi": false,
+    "printWidth": 70,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "bracketSameLine": true,
+    "arrowParens": "avoid",
+    "endOfLine": "lf"
+  },
+  "devDependencies": {
+    "strip-ansi-cjs": "npm:strip-ansi@^6.0.1"
+  },
+  "scripts": {
+    "start": "npm run start -w src/docs",
+    "predocsbuild": "npm run bootstrap",
+    "docsbuild": "npm run build -w src/docs",
+    "pretest": "rimraf src/test/test-built/dist/node_modules",
+    "presnap": "rimraf src/test/test-built/dist/node_modules",
+    "test": "nx run-many -t test",
+    "test:bootstrap": "bash ./scripts/test-bootstrap.sh",
+    "snap": "TAP_TYPECHECK=0 TAP_TIMEOUT=240 nx run-many -t snap",
+    "format": "nx run-many -t format",
+    "typedoc": "typedoc",
+    "bootstrap": "bash ./scripts/bootstrap.sh",
+    "build": "node ./scripts/default-build.mjs",
+    "pindeps": "node ./scripts/version.mjs pindeps",
+    "v": "node ./scripts/version.mjs",
+    "p": "bash ./scripts/bump-changed.sh",
+    "pub": "npm run v -- pub",
+    "deploy:docs": "npm run deploy:prod -w src/docs",
+    "postv": "npm run deploy:docs",
+    "pj": "node scripts/normalize-package-json.js src/*/package.json"
+  },
+  "repository": "https://github.com/tapjs/tapjs",
+  "license": "BlueOak-1.0.0",
+  "engines": {
+    "node": "20 || >=22"
+  },
+  "overrides": {
+    "braces@3": "^3.0.3",
+    "axios@1.0.0 - 1.5.1": "^1.7.2",
+    "netlify-cli": {
+      "braces": "^3.0.3",
+      "micromatch": "^4.0.7",
+      "chokidar": {
+        "braces": "^3.0.3"
+      },
+      "http-proxy-middleware": {
+        "micromatch": {
+          ".": "^4.0.7",
+          "braces": "^3.0.3"
+        }
+      }
+    },
+    "micromatch@4.0.5": "^4.0.7",
+    "tar@6.1.11": "6.2"
+  }
+}

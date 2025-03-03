@@ -79,6 +79,13 @@ class TestPyPiEndtoEnd(PackageTester):
         run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_package_scan_poetry_end_to_end(self):
+        test_dir = self.get_test_loc('pypi/poetry/univers/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('pypi/poetry/univers-package-assembly-expected.json')
+        run_scan_click(['--package', '--processes', '-1', test_dir, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
 
 class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -289,10 +296,109 @@ class TestPypiUnpackedSdist(PackageTester):
         # `celery/celery.egg-info/PKG-INFO`
         vc = VirtualCodebase(location=result_file)
         for dep in vc.attributes.dependencies:
-            assert dep['datafile_path'] == 'celery/celery.egg-info/PKG-INFO'
+            assert dep['datafile_path'] == 'celery/celery.egg-info/requires.txt'
         for pkg in vc.attributes.packages:
             for path in pkg['datafile_paths']:
                 assert path == 'celery/celery.egg-info/PKG-INFO'
+
+
+class TestPyprojectTomlFileHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pyproject_toml_standard(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/attrs/pyproject.toml')
+        assert pypi.PyprojectTomlHandler.is_datafile(test_file)
+
+    def test_parse_pyproject_toml_standard_attrs(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/attrs/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/attrs-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_apache_airflow(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_apache_airflow_client(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow-pyclient/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/apache-airflow-pyclient-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_flask(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/flask/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/flask-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_standard_lc0(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/standard/lc0/pyproject.toml')
+        package = pypi.PyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/lc0-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
+class TestPoetryHandler(PackageTester):
+
+    def test_is_pyproject_toml_poetry(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy/pyproject.toml')
+        assert pypi.PoetryPyprojectTomlHandler.is_datafile(test_file)
+
+    def test_parse_pyproject_toml_poetry_gerapy(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/gerapy-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_poetry_gino(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/gino/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/gino-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_poetry_connexion(self):
+        test_file = self.get_test_loc('pypi/pyproject-toml/poetry/connexion/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/pyproject-toml/poetry/connexion-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_is_poetry_lock(self):
+        test_file = self.get_test_loc('pypi/poetry/univers/poetry.lock')
+        assert pypi.PoetryLockHandler.is_datafile(test_file)
+
+    def test_parse_poetry_lock_univers(self):
+        test_file = self.get_test_loc('pypi/poetry/univers/poetry.lock')
+        package = pypi.PoetryLockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/poetry/univers-poetry.lock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pyproject_toml_poetry_univers(self):
+        test_file = self.get_test_loc('pypi/poetry/univers/pyproject.toml')
+        package = pypi.PoetryPyprojectTomlHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/poetry/univers-pyproject.toml-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+
+class TestPipInspectDeplockHandler(PackageTester):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_is_pip_inspect_deplock(self):
+        test_file = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock')
+        assert pypi.PipInspectDeplockHandler.is_datafile(test_file)
+
+    def test_parse_pip_inspect_deplock_simple(self):
+        test_file = self.get_test_loc('pypi/deplock/simple/pip-inspect.deplock')
+        package = pypi.PipInspectDeplockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/deplock/simple/pip-inspect.deplock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_pip_inspect_deplock_univers(self):
+        test_file = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock')
+        package = pypi.PipInspectDeplockHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/deplock/univers/pip-inspect.deplock-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
 
 class TestPipRequirementsFileHandler(PackageTester):

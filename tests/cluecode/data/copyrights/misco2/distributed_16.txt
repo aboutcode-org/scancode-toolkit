@@ -1,0 +1,11 @@
+Colours Icon (c) distributed under GPL (http://www.gnu.org/copyleft/gpl.html)
+Designed by Lothar Grimme http://www.grafixport.org/
+Sourced from https://www.iconfinder.com/icons/11/colors_icon#size=32
+
+mustache.js
+-------------
+The MIT License
+
+Copyright (c) 2009 Chris Wanstrath (Ruby)
+Copyright (c) 2010-2014 Jan Lehnardt (JavaScript)
+Copyright (c) 2010-2015 The mustache.js community

@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2013 Intel Corporation
+holders:
+  - Intel Corporation
+authors:
+  - the Guest. @config Start

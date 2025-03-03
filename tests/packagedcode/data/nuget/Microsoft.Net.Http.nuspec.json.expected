@@ -46,17 +46,17 @@
         "license_expression_spdx": "LicenseRef-scancode-ms-net-library-2018-11",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "ms-net-library-2018-11",
+            "license_expression_spdx": "LicenseRef-scancode-ms-net-library-2018-11",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 7,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "ms-net-library-2018-11",
-            "spdx_license_expression": "LicenseRef-scancode-ms-net-library-2018-11",
-            "rule_identifier": "ms-net-library-2018-11_3.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "ms-net-library-2018-11_3.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ms-net-library-2018-11_3.RULE",
             "matched_text": "http://go.microsoft.com/fwlink/?LinkId=329770"
           }
@@ -71,6 +71,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -79,7 +81,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -89,7 +92,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

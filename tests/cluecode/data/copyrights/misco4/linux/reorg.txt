@@ -1,0 +1,2 @@
+ *  Copyright (C) 1991-1998  Linus Torvalds
+ *  Re-organised Feb 1998 Russell King

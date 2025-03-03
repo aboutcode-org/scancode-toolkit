@@ -6,10 +6,6 @@ category: Permissive
 owner: Korean Manpage Project
 homepage_url: https://git.centos.org/rpms/man-pages-ko/blob/c7/f/SOURCES/Man_Page_Copyright
 spdx_license_key: LicenseRef-scancode-ko-man-page
-ignorable_copyrights:
-    - Copyright Man Page
-ignorable_holders:
-    - Man Page
 ---
 
 Translated Copyright Man Page 

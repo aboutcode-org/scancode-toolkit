@@ -1,0 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - mit.LICENSE
+---
+
+released under the MIT license located in the root of the repo at /mit.LICENSE

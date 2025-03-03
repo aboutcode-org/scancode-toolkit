@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - IsLower (c) IsDigit (c)
+holders:
+  - IsLower IsDigit

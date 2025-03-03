@@ -66,10 +66,10 @@ Built-In
 ^^^^^^^^
 
 Some post-scan plugins are installed when ScanCode itself is installed, and they are specified at
-``[options.entry_points]`` in the `setup.cfg <https://github.com/nexB/scancode-toolkit/blob/develop/setup.cfg>`_ file.
+``[options.entry_points]`` in the `setup.cfg <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/setup.cfg>`_ file.
 For example, the :ref:`license_policy_plugin` is a built-in plugin, whose code is located here::
 
-    https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py
+    https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py
 
 These plugins do not require any additional installation steps and can be used as soon as ScanCode
 is up and running.
@@ -80,7 +80,7 @@ Optional
 ScanCode is also designed to use post-scan plugins that must be installed separately from the
 installation of ScanCode. The code for this sort of plugin is located here::
 
-    https://github.com/nexB/scancode-plugins
+    https://github.com/aboutcode-org/scancode-plugins
 
 This wiki page will focus on optional post-scan plugins.
 
@@ -112,7 +112,7 @@ We'll start by creating three folders:
 The 7 Files are:
 
 1. ``.gitignore`` -- See, e.g.,
-   `/scancode-ignore-binaries/.gitignore <https://github.com/nexB/scancode-plugins/blob/main/misc/scancode-ignore-binaries/.gitignore>`_
+   `/scancode-ignore-binaries/.gitignore <https://github.com/aboutcode-org/scancode-plugins/blob/main/misc/scancode-ignore-binaries/.gitignore>`_
 
 ::
 
@@ -120,7 +120,7 @@ The 7 Files are:
     /dist/
 
 2. ``apache-2.0.LICENSE`` -- See, e.g.,
-   `/scancode-ignore-binaries/apache-2.0.LICENSE <https://github.com/nexB/scancode-plugins/blob/main/misc/scancode-ignore-binaries/apache-2.0.LICENSE>`_
+   `/scancode-ignore-binaries/apache-2.0.LICENSE <https://github.com/aboutcode-org/scancode-plugins/blob/main/misc/scancode-ignore-binaries/apache-2.0.LICENSE>`_
 
 3. ``MANIFEST.in``
 
@@ -139,7 +139,7 @@ The 7 Files are:
     global-exclude *.py[co] __pycache__ *.*~
 
 4. ``NOTICE`` -- See, e.g.,
-   `/scancode-ignore-binaries/NOTICE <https://github.com/nexB/scancode-plugins/blob/main/misc/scancode-ignore-binaries/NOTICE>`__
+   `/scancode-ignore-binaries/NOTICE <https://github.com/aboutcode-org/scancode-plugins/blob/main/misc/scancode-ignore-binaries/NOTICE>`__
 
 5. ``README.md``
 
@@ -185,7 +185,7 @@ The 7 Files are:
         long_description=desc,
         author='nexB',
         author_email='info@aboutcode.org',
-        url='https://github.com/nexB/scancode-plugins/blob/main/misc/scancode-hello/',
+        url='https://github.com/aboutcode-org/scancode-plugins/blob/main/misc/scancode-hello/',
         packages=find_packages('src'),
         package_dir={'': 'src'},
         py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
@@ -311,6 +311,6 @@ One good example is the License Policy post-scan plugin. This plugin is installe
 is installed and consequently is not located in the ``/plugins/`` directory used for
 manually-installed post-scan plugins. The code for the License Policy plugin can be found at
 `/scancode-toolkit/src/licensedcode/plugin_license_policy.py
-<https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py>`_
+<https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py>`_
 and illustrates how a plugin can be used to analyze the results of a ScanCode scan using external
 data files and add the results of that analysis as a new field in the ScanCode JSON output file.

@@ -1,14 +1,14 @@
 declared_license:
-declared_license_expression: gpl-1.0-plus AND other-permissive AND public-domain AND fsf-unlimited-no-warranty
-  AND (lgpl-2.1-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus AND gpl-2.0-plus) AND lgpl-2.0-plus
-  AND lgpl-2.1-plus AND gpl-1.0-plus AND gpl-2.0-plus AND (other-permissive AND other-copyleft)
-  AND bsd-new AND bsd-new AND (bsd-new OR gpl-1.0-plus) AND x11-xconsortium AND public-domain
-  AND public-domain AND ocb-open-source-2013 AND ocb-open-source-2013 AND ocb-open-source-2013
-  AND ocb-open-source-2013 AND gpl-2.0
-declared_license_expression_spdx: GPL-1.0-or-later AND LicenseRef-scancode-other-permissive
+declared_license_expression: gpl-2.0-plus AND other-permissive AND public-domain AND fsf-unlimited-no-warranty
+  AND (lgpl-2.1-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus AND gpl-2.0-plus) AND lgpl-2.1-plus
+  AND gpl-1.0-plus AND gpl-2.0-plus AND (other-permissive AND other-copyleft) AND bsd-new AND
+  bsd-new AND (bsd-new OR gpl-1.0-plus) AND x11-xconsortium AND public-domain AND public-domain
+  AND ocb-open-source-2013 AND ocb-open-source-2013 AND ocb-open-source-2013 AND ocb-open-source-2013
+  AND gpl-2.0
+declared_license_expression_spdx: GPL-2.0-or-later AND LicenseRef-scancode-other-permissive
   AND LicenseRef-scancode-public-domain AND FSFULLRWD AND (LGPL-2.1-or-later AND GPL-2.0-or-later)
-  AND (LGPL-2.0-or-later AND GPL-2.0-or-later) AND LGPL-2.0-or-later AND LGPL-2.1-or-later AND
-  GPL-1.0-or-later AND GPL-2.0-or-later AND (LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft)
+  AND (LGPL-2.0-or-later AND GPL-2.0-or-later) AND LGPL-2.1-or-later AND GPL-1.0-or-later AND
+  GPL-2.0-or-later AND (LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft)
   AND BSD-3-Clause AND BSD-3-Clause AND (BSD-3-Clause OR GPL-1.0-or-later) AND X11 AND LicenseRef-scancode-public-domain
   AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-ocb-open-source-2013 AND LicenseRef-scancode-ocb-open-source-2013
   AND LicenseRef-scancode-ocb-open-source-2013 AND LicenseRef-scancode-ocb-open-source-2013
@@ -16,14 +16,14 @@ declared_license_expression_spdx: GPL-1.0-or-later AND LicenseRef-scancode-other
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
-  - license_expression: gpl-1.0-plus AND other-permissive AND public-domain AND fsf-unlimited-no-warranty
-      AND (lgpl-2.1-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus AND gpl-2.0-plus) AND lgpl-2.0-plus
-    license_expression_spdx: GPL-1.0-or-later AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-public-domain
+  - license_expression: gpl-2.0-plus AND other-permissive AND public-domain AND fsf-unlimited-no-warranty
+      AND (lgpl-2.1-plus AND gpl-2.0-plus) AND (lgpl-2.0-plus AND gpl-2.0-plus)
+    license_expression_spdx: GPL-2.0-or-later AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-public-domain
       AND FSFULLRWD AND (LGPL-2.1-or-later AND GPL-2.0-or-later) AND (LGPL-2.0-or-later AND
-      GPL-2.0-or-later) AND LGPL-2.0-or-later
+      GPL-2.0-or-later)
     matches:
-      - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+      - license_expression: gpl-2.0-plus
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 210
         end_line: 211
@@ -32,13 +32,13 @@ license_detections:
         matched_length: 8
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-1.0-plus_477.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_477.RULE
+        rule_identifier: gpl-2.0-plus_11301.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_11301.RULE
         matched_text: |
           taken from the
           original NTT provided GPL source.
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 215
         end_line: 215
@@ -51,7 +51,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_319.RULE
         matched_text: It has a permissive license
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 218
         end_line: 218
@@ -64,7 +64,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_311.RULE
         matched_text: public domain code
       - license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
+        license_expression_spdx: FSFULLRWD
         from_file:
         start_line: 222
         end_line: 228
@@ -84,7 +84,7 @@ license_detections:
            WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
            implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
       - license_expression: lgpl-2.1-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-2.1-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-2.1-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 231
         end_line: 236
@@ -103,7 +103,7 @@ license_detections:
           binaries. See below for details. The documentation is licensed under
           the GPLv2 (or later), see below.
       - license_expression: lgpl-2.0-plus AND gpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later AND GPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later AND GPL-2.0-or-later
         from_file:
         start_line: 240
         end_line: 260
@@ -136,25 +136,12 @@ license_detections:
               less to protect the freedom of the users of the code that it
               covers.  See http://www.gnu.org/philosophy/why-not-lgpl.html for
               more explanation.
-      - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
-        from_file:
-        start_line: 262
-        end_line: 262
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 6
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: lgpl-2.0-plus_467.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_467.RULE
-        matched_text: the license headers of the LGPL
-    identifier: gpl_1_0_plus_and_other_permissive_and_public_domain_and_fsf_unlimited_no_warranty_and__lgpl_2_1_plus_and_gpl_2_0_plus__and__lgpl_2_0_plus_and_gpl_2_0_plus__and_lgpl_2_0_plus-71da280b-c092-be79-7ec6-e3cc205ddfd8
+    identifier: gpl_2_0_plus_and_other_permissive_and_public_domain_and_fsf_unlimited_no_warranty_and__lgpl_2_1_plus_and_gpl_2_0_plus__and__lgpl_2_0_plus_and_gpl_2_0_plus-be7f4a34-02e4-4203-9dd6-a581178f6ca1
   - license_expression: lgpl-2.1-plus AND gpl-1.0-plus
     license_expression_spdx: LGPL-2.1-or-later AND GPL-1.0-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 270
         end_line: 286
@@ -184,7 +171,7 @@ license_detections:
           General Public License can be found in
           `/usr/share/common-licenses/LGPL';
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 288
         end_line: 288
@@ -201,7 +188,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 294
         end_line: 298
@@ -223,7 +210,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
     matches:
       - license_expression: other-permissive AND other-copyleft
-        spdx_license_expression: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
+        license_expression_spdx: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
         from_file:
         start_line: 307
         end_line: 308
@@ -242,7 +229,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 315
         end_line: 315
@@ -259,7 +246,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 330
         end_line: 357
@@ -304,7 +291,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause OR GPL-1.0-or-later
     matches:
       - license_expression: bsd-new OR gpl-1.0-plus
-        spdx_license_expression: BSD-3-Clause OR GPL-1.0-or-later
+        license_expression_spdx: BSD-3-Clause OR GPL-1.0-or-later
         from_file:
         start_line: 372
         end_line: 402
@@ -348,11 +335,11 @@ license_detections:
            * USE OF THIS SOFTWARE, EVEN IF NOT ADVISED OF THE POSSIBILITY OF SUCH
            * DAMAGE.
     identifier: bsd_new_or_gpl_1_0_plus-f8085429-0058-17f2-8a37-27a1965c9f8a
-  - license_expression: x11-xconsortium AND public-domain
-    license_expression_spdx: X11 AND LicenseRef-scancode-public-domain
+  - license_expression: x11-xconsortium
+    license_expression_spdx: X11
     matches:
       - license_expression: x11-xconsortium
-        spdx_license_expression: X11
+        license_expression_spdx: X11
         from_file:
         start_line: 413
         end_line: 433
@@ -385,8 +372,12 @@ license_detections:
             be used in advertising or otherwise to promote the sale, use or other deal-
             ings in this Software without prior written authorization from the X Consor-
             tium.
+    identifier: x11_xconsortium-8bc3e205-5f29-ecad-90bc-2f492c65be46
+  - license_expression: public-domain
+    license_expression_spdx: LicenseRef-scancode-public-domain
+    matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 436
         end_line: 436
@@ -398,12 +389,12 @@ license_detections:
         rule_identifier: public-domain_bare_words.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: Public domain
-    identifier: x11_xconsortium_and_public_domain-3a4b5640-3d0e-289d-2ed6-5568ba1f72cd
+    identifier: public_domain-3dd945ae-65df-7d90-6467-60f8ecf2eb77
   - license_expression: public-domain AND ocb-open-source-2013
     license_expression_spdx: LicenseRef-scancode-public-domain AND LicenseRef-scancode-ocb-open-source-2013
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 443
         end_line: 444
@@ -418,7 +409,7 @@ license_detections:
           Licence: I hereby disclaim the copyright on this code and place it
            in the public domain.
       - license_expression: ocb-open-source-2013
-        spdx_license_expression: LicenseRef-scancode-ocb-open-source-2013
+        license_expression_spdx: LicenseRef-scancode-ocb-open-source-2013
         from_file:
         start_line: 447
         end_line: 447
@@ -435,7 +426,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-ocb-open-source-2013
     matches:
       - license_expression: ocb-open-source-2013
-        spdx_license_expression: LicenseRef-scancode-ocb-open-source-2013
+        license_expression_spdx: LicenseRef-scancode-ocb-open-source-2013
         from_file:
         start_line: 453
         end_line: 457
@@ -453,7 +444,7 @@ license_detections:
             http://web.cs.ucdavis.edu/~rogaway/ocb/license1.pdf for the full
             license document;
       - license_expression: ocb-open-source-2013
-        spdx_license_expression: LicenseRef-scancode-ocb-open-source-2013
+        license_expression_spdx: LicenseRef-scancode-ocb-open-source-2013
         from_file:
         start_line: 459
         end_line: 466
@@ -474,7 +465,7 @@ license_detections:
               open-source software implementation of OCB claiming that you have
               a patent covering their implementation.
       - license_expression: ocb-open-source-2013
-        spdx_license_expression: LicenseRef-scancode-ocb-open-source-2013
+        license_expression_spdx: LicenseRef-scancode-ocb-open-source-2013
         from_file:
         start_line: 470
         end_line: 540
@@ -562,7 +553,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 545
         end_line: 546

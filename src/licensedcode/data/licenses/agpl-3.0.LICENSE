@@ -24,7 +24,7 @@ other_urls:
     - https://opensource.org/licenses/AGPL-3.0
     - https://www.gnu.org/licenses/agpl.txt
 ignorable_copyrights:
-    - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+    - Copyright (c) 2007 Free Software Foundation, Inc. https://fsf.org
 ignorable_holders:
     - Free Software Foundation, Inc.
 ignorable_urls:

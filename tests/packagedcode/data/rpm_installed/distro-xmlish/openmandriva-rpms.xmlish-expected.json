@@ -33,17 +33,17 @@
         "license_expression_spdx": "GPL-1.0-or-later",
         "matches": [
           {
-            "score": 50.0,
+            "license_expression": "gpl-1.0-plus",
+            "license_expression_spdx": "GPL-1.0-or-later",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 50.0,
             "matched_length": 1,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "gpl-1.0-plus",
-            "spdx_license_expression": "GPL-1.0-or-later",
-            "rule_identifier": "gpl_bare_word_only.RULE",
             "rule_relevance": 50,
+            "rule_identifier": "gpl_bare_word_only.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
             "matched_text": "GPL"
           }
@@ -923,6 +923,8 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -965,17 +967,17 @@
         "license_expression_spdx": "MIT",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
             "matched_length": 1,
             "match_coverage": 100.0,
-            "matcher": "1-spdx-id",
-            "license_expression": "mit",
-            "spdx_license_expression": "MIT",
-            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_url": null,
             "matched_text": "MIT"
           }
@@ -1018,6 +1020,8 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,

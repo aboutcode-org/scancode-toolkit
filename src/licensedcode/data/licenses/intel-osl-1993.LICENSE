@@ -4,7 +4,11 @@ short_name: Intel OSL 1993
 name: Intel Open Source License 1993
 category: Permissive
 owner: Intel Corporation
-spdx_license_key: LicenseRef-scancode-intel-osl-1993
+spdx_license_key: HPND-Intel
+other_spdx_license_keys:
+    - LicenseRef-scancode-intel-osl-1993
+other_urls:
+    - https://sourceware.org/git/?p=newlib-cygwin.git;a=blob;f=newlib/libc/machine/i960/memcpy.S;hb=HEAD
 ---
 
 Intel hereby grants you permission to copy, modify, and distribute this

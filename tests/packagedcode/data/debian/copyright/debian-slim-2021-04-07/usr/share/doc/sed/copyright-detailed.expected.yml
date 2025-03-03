@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later AND GFDL-1.3-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 11
         end_line: 17
@@ -28,7 +28,7 @@ license_detections:
           On Debian GNU/Linux systems you can find a copy of the GPL in
           /usr/share/common-licenses/GPL-3
       - license_expression: gfdl-1.3-plus
-        spdx_license_expression: GFDL-1.3-or-later
+        license_expression_spdx: GFDL-1.3-or-later
         from_file:
         start_line: '19'
         end_line: 21

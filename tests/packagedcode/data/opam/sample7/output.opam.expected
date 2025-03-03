@@ -54,7 +54,7 @@
         "matches": [
           {
             "license_expression": "lgpl-3.0 WITH ocaml-lgpl-linking-exception",
-            "spdx_license_expression": "LGPL-3.0-only WITH OCaml-LGPL-linking-exception",
+            "license_expression_spdx": "LGPL-3.0-only WITH OCaml-LGPL-linking-exception",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -78,6 +78,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -86,7 +88,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -96,7 +99,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -106,7 +110,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -116,7 +121,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

@@ -1,0 +1,11 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+    - LICENSE.txt
+ignorable_copyrights:
+    - Copyrighted (c)
+---
+
+Copyrighted (c) {{distributed under the MIT}} license (see LICENSE.txt)

@@ -60,17 +60,17 @@
         "license_expression_spdx": "Apache-2.0",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "apache-2.0",
+            "license_expression_spdx": "Apache-2.0",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "apache-2.0",
-            "spdx_license_expression": "Apache-2.0",
-            "rule_identifier": "apache-2.0_48.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "apache-2.0_48.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
             "matched_text": "Apache License, Version 2.0"
           }
@@ -82,17 +82,17 @@
         "license_expression_spdx": "Apache-2.0",
         "matches": [
           {
-            "score": 95.0,
+            "license_expression": "apache-2.0",
+            "license_expression_spdx": "Apache-2.0",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 95.0,
             "matched_length": 6,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "apache-2.0",
-            "spdx_license_expression": "Apache-2.0",
-            "rule_identifier": "pypi_apache_no-version.RULE",
             "rule_relevance": 95,
+            "rule_identifier": "pypi_apache_no-version.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
             "matched_text": "- 'License :: OSI Approved :: Apache Software License'"
           }
@@ -107,35 +107,40 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:pypi/pykerberos",
-        "extracted_requirement": "pykerberos; extra == \"gssapi\"",
+        "extracted_requirement": null,
         "scope": "gssapi",
         "is_runtime": true,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
       {
         "purl": "pkg:pypi/dnspython",
-        "extracted_requirement": "dnspython<2.0.0,>=1.8.0; extra == \"srv\"",
+        "extracted_requirement": "<2.0.0,>=1.8.0",
         "scope": "srv",
         "is_runtime": true,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
       {
         "purl": "pkg:pypi/ipaddress",
-        "extracted_requirement": "ipaddress; extra == \"tls\"",
+        "extracted_requirement": null,
         "scope": "tls",
         "is_runtime": true,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

@@ -1,0 +1,3 @@
+additions, Copyright (C) 2003-2004, Paul Clements, SteelEye Technology, Inc.:
+ * - added disk storage for bitmap
+

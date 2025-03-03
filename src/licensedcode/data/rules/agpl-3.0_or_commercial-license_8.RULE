@@ -1,0 +1,14 @@
+---
+license_expression: agpl-3.0 OR commercial-license
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.AGPL3
+ignorable_urls:
+    - http://www.gnu.org/licenses
+---
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+Commercial License Usage Licensees holding valid commercial  project licenses may use this file in accordance with the commercial license agreement provided with the Software or, alternatively, in accordance with the terms contained in a written agreement between you and  Inc. For licensing terms and conditions and further information contact us at .
+
+GNU Affero General Public License Usage Alternatively, this file may be used under the terms of the GNU Affero General Public License version 3 as published by the Free Software Foundation and appearing in the file LICENSE.AGPL3 included in the packaging of this file, or alternatively found in http://www.gnu.org/licenses/.

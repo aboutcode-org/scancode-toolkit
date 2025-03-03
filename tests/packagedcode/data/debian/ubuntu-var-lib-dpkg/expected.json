@@ -45,6 +45,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign",
         "missing_file_references": [
@@ -118,6 +120,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign",
         "missing_file_references": [
@@ -335,6 +339,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign",
         "missing_file_references": [
@@ -608,6 +614,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign"
       },
@@ -668,6 +676,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "foreign"
       },
@@ -1676,6 +1686,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1882,6 +1894,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2322,6 +2336,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2573,6 +2589,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2637,6 +2655,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2693,6 +2713,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2749,6 +2771,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2805,6 +2829,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },
@@ -2861,6 +2887,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "foreign"
           },

@@ -1,0 +1,32 @@
+---
+key: docbook-schema
+short_name: DocBook Schema License
+name: DocBook Schema License
+category: Permissive
+owner: OASIS
+spdx_license_key: DocBook-Schema
+other_urls:
+    - https://github.com/docbook/xslt10-stylesheets/blob/efd62655c11cc8773708df7a843613fa1e932bf8/xsl/assembly/schema/docbook51b7.rnc
+ignorable_urls:
+    - http://docbook.org/tdg5/en/html/ch05.html#s-notdocbook
+    - http://www.oasis-open.org/docbook
+ignorable_emails:
+    - docbook@lists.oasis-open.org
+---
+
+Permission to use, copy, modify and distribute the DocBook schema
+and its accompanying documentation for any purpose and without fee
+is hereby granted in perpetuity, provided that the above copyright
+notice and this paragraph appear in all copies. The copyright
+holders make no representation about the suitability of the schema
+for any purpose. It is provided "as is" without expressed or implied
+warranty.
+ 
+If you modify the DocBook schema in any way, label your schema as a
+variant of DocBook. See the reference documentation
+(http://docbook.org/tdg5/en/html/ch05.html#s-notdocbook)
+for more information.
+ 
+Please direct all questions, bug reports, or suggestions for changes
+to the docbook@lists.oasis-open.org mailing list. For more
+information, see http://www.oasis-open.org/docbook/.

@@ -44,7 +44,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tauri/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -66,6 +66,8 @@
       "extracted_license_statement": "Apache-2.0 OR MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://crates.io/crates/tauri",
       "repository_download_url": "https://crates.io/api/v1/crates/tauri/2.0.0-alpha.17/download",
@@ -123,7 +125,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tauri-runtime/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -145,6 +147,8 @@
       "extracted_license_statement": "Apache-2.0 OR MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://crates.io/crates/tauri-runtime",
       "repository_download_url": "https://crates.io/api/v1/crates/tauri-runtime/1.0.0-alpha.4/download",
@@ -202,7 +206,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tauri-build/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -224,6 +228,8 @@
       "extracted_license_statement": "Apache-2.0 OR MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://crates.io/crates/tauri-build",
       "repository_download_url": "https://crates.io/api/v1/crates/tauri-build/2.0.0-alpha.11/download",
@@ -281,7 +287,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tests/restart/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -303,6 +309,8 @@
       "extracted_license_statement": "Apache-2.0 OR MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://crates.io/crates/restart",
       "repository_download_url": "https://crates.io/api/v1/crates/restart/0.1.0/download",
@@ -357,7 +365,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -380,10 +388,12 @@
       "extracted_license_statement": "- Apache-2.0 OR MIT\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": true,
+      "is_virtual": false,
       "extra_data": {},
-      "repository_homepage_url": "https://www.npmjs.com/package/tauri-workspace",
-      "repository_download_url": "https://registry.npmjs.org/tauri-workspace/-/tauri-workspace-0.0.0.tgz",
-      "api_data_url": "https://registry.npmjs.org/tauri-workspace/0.0.0",
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
       "package_uid": "pkg:npm/tauri-workspace@0.0.0?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "cargo-with-workspace/package.json"
@@ -401,7 +411,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/typescript?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -415,7 +426,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/covector?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -429,7 +441,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/husky?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -443,7 +456,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/prettier?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -672,7 +686,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -695,6 +709,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "workspace": {
               "resolver": "2",
@@ -724,7 +740,7 @@
                     "matches": [
                       {
                         "license_expression": "apache-2.0 OR mit",
-                        "spdx_license_expression": "Apache-2.0 OR MIT",
+                        "license_expression_spdx": "Apache-2.0 OR MIT",
                         "from_file": "cargo-with-workspace/Cargo.toml",
                         "start_line": 17,
                         "end_line": 17,
@@ -765,7 +781,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/Cargo.toml",
               "start_line": 17,
               "end_line": 17,
@@ -801,7 +817,7 @@
           "matches": [
             {
               "license_expression": "cc0-1.0",
-              "spdx_license_expression": "CC0-1.0",
+              "license_expression_spdx": "CC0-1.0",
               "from_file": "cargo-with-workspace/LICENSE.spdx",
               "start_line": 2,
               "end_line": 2,
@@ -822,7 +838,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "cargo-with-workspace/LICENSE.spdx",
               "start_line": 7,
               "end_line": 7,
@@ -858,7 +874,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "cargo-with-workspace/LICENSE_APACHE-2.0",
               "start_line": 1,
               "end_line": 1,
@@ -894,7 +910,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "cargo-with-workspace/LICENSE_MIT",
               "start_line": 1,
               "end_line": 1,
@@ -930,7 +946,7 @@
           "matches": [
             {
               "license_expression": "mit OR (mit OR apache-2.0)",
-              "spdx_license_expression": "MIT OR (MIT OR Apache-2.0)",
+              "license_expression_spdx": "MIT OR (MIT OR Apache-2.0)",
               "from_file": "cargo-with-workspace/README.md",
               "start_line": 19,
               "end_line": 19,
@@ -944,7 +960,7 @@
             },
             {
               "license_expression": "cc-by-nc-nd-4.0",
-              "spdx_license_expression": "CC-BY-NC-ND-4.0",
+              "license_expression_spdx": "CC-BY-NC-ND-4.0",
               "from_file": "cargo-with-workspace/README.md",
               "start_line": 21,
               "end_line": 21,
@@ -1054,7 +1070,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -1077,6 +1093,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/tauri-build",
@@ -1159,7 +1177,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -1182,6 +1200,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/tauri-runtime",
@@ -1250,7 +1270,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -1273,6 +1293,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/tauri",
@@ -1369,7 +1391,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/Cargo.toml",
                   "start_line": 17,
                   "end_line": 17,
@@ -1392,6 +1414,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/restart",
@@ -1414,7 +1438,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/core/tests/restart/Cargo.toml",
               "start_line": 5,
               "end_line": 5,
@@ -1500,6 +1524,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": true,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1508,7 +1534,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1518,7 +1545,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1528,7 +1556,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1538,7 +1567,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1548,7 +1578,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1558,7 +1589,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1568,7 +1600,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1578,7 +1611,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1588,14 +1622,15 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
           ],
-          "repository_homepage_url": "https://www.npmjs.com/package/api",
-          "repository_download_url": "https://registry.npmjs.org/api/-/api-1.0.0.tgz",
-          "api_data_url": "https://registry.npmjs.org/api/1.0.0",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
           "datasource_id": "npm_package_json",
           "purl": "pkg:npm/api@1.0.0"
         }
@@ -1662,6 +1697,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1670,7 +1707,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1680,7 +1718,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1690,7 +1729,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1749,7 +1789,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/examples/api/src-tauri/Cargo.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -1773,6 +1813,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/api",
@@ -1794,7 +1836,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/examples/api/src-tauri/Cargo.toml",
               "start_line": 7,
               "end_line": 7,
@@ -1859,7 +1901,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 OR mit",
-                  "spdx_license_expression": "Apache-2.0 OR MIT",
+                  "license_expression_spdx": "Apache-2.0 OR MIT",
                   "from_file": "cargo-with-workspace/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1883,6 +1925,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": true,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1891,7 +1935,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1901,7 +1946,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1911,7 +1957,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1921,14 +1968,15 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
           ],
-          "repository_homepage_url": "https://www.npmjs.com/package/tauri-workspace",
-          "repository_download_url": "https://registry.npmjs.org/tauri-workspace/-/tauri-workspace-0.0.0.tgz",
-          "api_data_url": "https://registry.npmjs.org/tauri-workspace/0.0.0",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
           "datasource_id": "npm_package_json",
           "purl": "pkg:npm/tauri-workspace@0.0.0"
         }
@@ -1945,7 +1993,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "cargo-with-workspace/package.json",
               "start_line": 4,
               "end_line": 4,

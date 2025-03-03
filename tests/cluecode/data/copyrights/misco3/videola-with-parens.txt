@@ -1,0 +1,2 @@
+  Copyright (C) 1998-2001 <s>VideoLAN </s>(<s>Johan Bilien <jobi@via.ecp.fr></s> and <s>Gildas Bazin <gbazin@netcourrier.com></s>)
+

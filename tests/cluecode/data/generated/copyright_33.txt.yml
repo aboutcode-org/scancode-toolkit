@@ -5,9 +5,4 @@ what:
 copyrights:
   - Copyright 2019
 authors:
-  - Author Pine <cdtsgsz@gmail.com>
-expected_failures:
-  - holders
-  - copyrights
-  - authors
-
+  - Pine <cdtsgsz@gmail.com>

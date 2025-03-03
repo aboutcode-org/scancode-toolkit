@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2000-2003 Free Software Foundation
+  - Copyright (c) 2000, 2001 Eazel, Inc
+holders:
+  - Free Software Foundation
+  - Eazel, Inc

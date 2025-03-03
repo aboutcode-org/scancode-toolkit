@@ -2,6 +2,7 @@ what:
   - copyrights
   - holders
   - holders_summary
+  - authors
 copyrights:
   - Copyright (c) 2002-2008 Jean-Marc Valin
   - Copyright (c) 2002 Jean-Marc Valin & David Rowe
@@ -33,6 +34,8 @@ holders:
   - Jean-Marc Valin
   - Jyri Sarha, Texas Instruments
   - Jutta Degener and Carsten Bormann, Technische Universitaet Berlin
+authors:
+  - Jean-Marc Valin
 holders_summary:
   - value: Epic Games
     count: 3

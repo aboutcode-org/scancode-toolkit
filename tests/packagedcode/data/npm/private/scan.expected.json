@@ -7,7 +7,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/lerna?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -55,7 +56,15 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "is_private": true,
+          "is_virtual": false,
+          "extra_data": {
+            "workspaces": [
+              "ballerina-extension",
+              "browser-app",
+              "electron-app"
+            ]
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/lerna",
@@ -63,7 +72,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 1998-2009 Bill Spitzak (spitzak@users.sourceforge.net ) and others
+holders:
+  - Bill Spitzak and others
+holders_summary:
+  - value: Bill Spitzak and others
+    count: 1

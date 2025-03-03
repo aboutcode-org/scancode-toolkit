@@ -64,39 +64,39 @@
         "license_expression_spdx": "LGPL-2.0-or-later",
         "matches": [
           {
-            "score": 75.0,
+            "license_expression": "lgpl-2.0-plus",
+            "license_expression_spdx": "LGPL-2.0-or-later",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 60.0,
             "matched_length": 1,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "lgpl-2.0-plus",
-            "spdx_license_expression": "LGPL-2.0-or-later",
+            "rule_relevance": 60,
             "rule_identifier": "lgpl_bare_single_word.RULE",
-            "rule_relevance": 75,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
             "matched_text": "LGPL"
           }
         ],
-        "identifier": "lgpl_2_0_plus-64f6d457-252f-6fe3-26b9-ae66d29ef973"
+        "identifier": "lgpl_2_0_plus-e66c5b24-33ce-ea1b-0e3b-28952361ec32"
       },
       {
         "license_expression": "lgpl-2.0-plus",
         "license_expression_spdx": "LGPL-2.0-or-later",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "lgpl-2.0-plus",
+            "license_expression_spdx": "LGPL-2.0-or-later",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 11,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "lgpl-2.0-plus",
-            "spdx_license_expression": "LGPL-2.0-or-later",
-            "rule_identifier": "pypi_gnu_library_or_lesser_general_public_license.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "pypi_gnu_library_or_lesser_general_public_license.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_library_or_lesser_general_public_license.RULE",
             "matched_text": "- 'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)'"
           }
@@ -111,6 +111,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": "https://pypi.org/project/chardet",

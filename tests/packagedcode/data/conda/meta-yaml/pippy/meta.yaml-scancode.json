@@ -1,0 +1,385 @@
+{
+  "packages": [
+    {
+      "type": "conda",
+      "namespace": null,
+      "name": "pippy",
+      "version": "0.1.0",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "host": [
+          "conda-forge::python=3.7"
+        ],
+        "run": [
+          "conda-forge::python=3.7"
+        ]
+      },
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "meta.yaml"
+      ],
+      "datasource_ids": [
+        "conda_meta_yaml"
+      ],
+      "purl": "pkg:conda/pippy@0.1.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:conda/auto-mech/autoio-base",
+      "extracted_requirement": "",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/auto-mech/autoio-base?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/conda-forge/numpy@1.15.4",
+      "extracted_requirement": "=1.15.4",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/conda-forge/numpy@1.15.4?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/conda-forge/scipy@1.5.0",
+      "extracted_requirement": "=1.5.0",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/conda-forge/scipy@1.5.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/conda-forge/pyyaml",
+      "extracted_requirement": "",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/conda-forge/pyyaml?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/conda-forge/mako",
+      "extracted_requirement": "",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/conda-forge/mako?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/conda-forge/pytest",
+      "extracted_requirement": "",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/conda-forge/pytest?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/conda-forge/pytest-cov",
+      "extracted_requirement": "",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/conda-forge/pytest-cov?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/conda-forge/future",
+      "extracted_requirement": "",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/conda-forge/future?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/conda-forge/flake8",
+      "extracted_requirement": "",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/conda-forge/flake8?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/conda-forge/pylint",
+      "extracted_requirement": "",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/conda-forge/pylint?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    }
+  ],
+  "files": [
+    {
+      "path": "meta.yaml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "conda",
+          "namespace": null,
+          "name": "pippy",
+          "version": "0.1.0",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "host": [
+              "conda-forge::python=3.7"
+            ],
+            "run": [
+              "conda-forge::python=3.7"
+            ]
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:conda/auto-mech/autoio-base",
+              "extracted_requirement": "",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/conda-forge/numpy@1.15.4",
+              "extracted_requirement": "=1.15.4",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": true,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/conda-forge/scipy@1.5.0",
+              "extracted_requirement": "=1.5.0",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": true,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/conda-forge/pyyaml",
+              "extracted_requirement": "",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/conda-forge/mako",
+              "extracted_requirement": "",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/conda-forge/pytest",
+              "extracted_requirement": "",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/conda-forge/pytest-cov",
+              "extracted_requirement": "",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/conda-forge/future",
+              "extracted_requirement": "",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/conda-forge/flake8",
+              "extracted_requirement": "",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/conda-forge/pylint",
+              "extracted_requirement": "",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "conda_meta_yaml",
+          "purl": "pkg:conda/pippy@0.1.0"
+        }
+      ],
+      "for_packages": [
+        "pkg:conda/pippy@0.1.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

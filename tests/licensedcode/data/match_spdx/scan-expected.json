@@ -39,7 +39,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "license",
               "start_line": 240,
               "end_line": 240,

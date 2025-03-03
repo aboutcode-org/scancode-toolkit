@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/nanopb.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -56,7 +56,7 @@
             },
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
@@ -83,6 +83,8 @@
       "extracted_license_statement": ":type = zlib, :file = LICENSE.txt",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://cocoapods.org/pods/nanopb",
       "repository_download_url": "https://github.com/nanopb/nanopb/archive/refs/tags/1.30905.0.zip",
@@ -183,7 +185,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
@@ -251,7 +253,7 @@
               "matches": [
                 {
                   "license_expression": "zlib",
-                  "spdx_license_expression": "Zlib",
+                  "license_expression_spdx": "Zlib",
                   "from_file": "nanopb/nanopb.podspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -266,7 +268,7 @@
                 },
                 {
                   "license_expression": "zlib",
-                  "spdx_license_expression": "Zlib",
+                  "license_expression_spdx": "Zlib",
                   "from_file": "nanopb/LICENSE.txt",
                   "start_line": 3,
                   "end_line": 20,
@@ -294,6 +296,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://cocoapods.org/pods/nanopb",
@@ -315,7 +319,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/nanopb.podspec",
               "start_line": 14,
               "end_line": 14,
@@ -331,7 +335,7 @@
             },
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "nanopb/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,

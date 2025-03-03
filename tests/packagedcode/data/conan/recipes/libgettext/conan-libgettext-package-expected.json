@@ -38,7 +38,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -61,6 +61,8 @@
       "extracted_license_statement": "- LGPL-2.1-or-later\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -114,7 +116,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -137,6 +139,8 @@
       "extracted_license_statement": "- LGPL-2.1-or-later\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -190,7 +194,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "manifest/conandata.yml",
               "start_line": 1,
               "end_line": 1,
@@ -213,6 +217,8 @@
       "extracted_license_statement": "- LGPL-2.1-or-later\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -266,7 +272,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later",
               "from_file": "manifest/conanfile.py",
               "start_line": 1,
               "end_line": 1,
@@ -289,6 +295,8 @@
       "extracted_license_statement": "- LGPL-2.1-or-later\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -310,7 +318,8 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:conan/libiconv@1.17?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -358,6 +367,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -400,6 +411,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -442,6 +455,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -500,7 +515,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.1-plus",
-                  "spdx_license_expression": "LGPL-2.1-or-later",
+                  "license_expression_spdx": "LGPL-2.1-or-later",
                   "from_file": "manifest/conanfile.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -524,6 +539,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -532,7 +549,8 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

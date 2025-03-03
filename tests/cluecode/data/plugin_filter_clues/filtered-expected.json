@@ -52,7 +52,7 @@
           "matches": [
             {
               "license_expression": "apache-1.1",
-              "spdx_license_expression": "Apache-1.1",
+              "license_expression_spdx": "Apache-1.1",
               "from_file": "LICENSE",
               "start_line": 7,
               "end_line": 70,
@@ -77,19 +77,9 @@
           "end_line": 3
         },
         {
-          "copyright": "Copyright (c) The Apache Software Foundation",
-          "start_line": 14,
-          "end_line": 14
-        },
-        {
           "copyright": "Copyright (c) The Eclipse Foundation https://eclipse.org",
           "start_line": 41,
           "end_line": 42
-        },
-        {
-          "copyright": "copyright (c) 1999, International Business Machines, Inc., http://www.ibm.com",
-          "start_line": 67,
-          "end_line": 68
         }
       ],
       "holders": [
@@ -99,19 +89,9 @@
           "end_line": 2
         },
         {
-          "holder": "The Apache Software Foundation",
-          "start_line": 14,
-          "end_line": 14
-        },
-        {
           "holder": "The Eclipse Foundation",
           "start_line": 41,
           "end_line": 41
-        },
-        {
-          "holder": "International Business Machines, Inc.",
-          "start_line": 67,
-          "end_line": 68
         }
       ],
       "authors": [
@@ -119,11 +99,6 @@
           "author": "John Doe",
           "start_line": 5,
           "end_line": 5
-        },
-        {
-          "author": "the Apache Software Foundation (http://www.apache.org/)",
-          "start_line": 31,
-          "end_line": 32
         },
         {
           "author": "John Doe",
@@ -136,11 +111,6 @@
           "email": "foo@eclipse.org",
           "start_line": 4,
           "end_line": 4
-        },
-        {
-          "email": "apache@apache.org",
-          "start_line": 39,
-          "end_line": 39
         }
       ],
       "urls": [],

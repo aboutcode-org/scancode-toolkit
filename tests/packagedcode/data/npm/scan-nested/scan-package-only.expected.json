@@ -61,6 +61,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "lockfile_version": 1
           },
@@ -71,7 +73,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -118,6 +121,8 @@
                     }
                   ]
                 ],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/ansi-regex",
@@ -134,7 +139,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -181,6 +187,8 @@
                     }
                   ]
                 ],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
@@ -282,7 +290,13 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "engines": {
+              "node": ">=0.6.21"
+            }
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/bluebird",
@@ -290,7 +304,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -300,7 +315,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -310,7 +326,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -320,7 +337,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -330,7 +348,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -383,6 +402,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -391,7 +412,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -426,6 +448,8 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/abbrev",
@@ -442,7 +466,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -477,6 +502,8 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [
                   {
@@ -485,7 +512,8 @@
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
                   }
@@ -504,7 +532,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -539,6 +568,8 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/xtend",
@@ -555,7 +586,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -590,6 +622,8 @@
                 "notice_text": null,
                 "source_packages": [],
                 "file_references": [],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/yallist",
@@ -649,6 +683,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "lockfile_version": 1
           },
@@ -659,7 +695,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -706,6 +743,8 @@
                     }
                   ]
                 ],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/ms",
@@ -722,7 +761,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -769,6 +809,8 @@
                     }
                   ]
                 ],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/regenerator-runtime",
@@ -785,7 +827,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": false,
               "resolved_package": {
                 "type": "npm",
                 "namespace": "",
@@ -832,6 +875,8 @@
                     }
                   ]
                 ],
+                "is_private": false,
+                "is_virtual": true,
                 "extra_data": {},
                 "dependencies": [],
                 "repository_homepage_url": "https://www.npmjs.com/package/to-fast-properties",
@@ -925,6 +970,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -933,7 +980,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

@@ -47,6 +47,8 @@
       "source_packages": [
         "pkg:deb/ubuntu/ncurses"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "multi_arch": "same"
       },
@@ -264,6 +266,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -330,6 +334,8 @@
             "pkg:deb/ubuntu/ncurses"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "multi_arch": "same"
           },

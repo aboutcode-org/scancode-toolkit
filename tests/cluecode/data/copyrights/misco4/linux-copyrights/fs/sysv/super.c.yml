@@ -1,0 +1,18 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1991, 1992 Linus Torvalds
+  - Copyright (c) 1992 Doug Evans
+  - Copyright (c) 1993 Pascal Haible, Bruno Haible
+  - Copyright (c) 1993 Paul B.
+  - Copyright (c) 1993 Bruno Haible
+  - Copyright (c) 1997, 1998 Krzysztof G. Baranowski
+holders:
+  - Linus Torvalds
+  - Doug Evans
+  - Pascal Haible, Bruno Haible
+  - Paul B.
+  - Bruno Haible
+  - Krzysztof G. Baranowski

@@ -11,7 +11,7 @@ text_urls:
 ignorable_copyrights:
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - Copyright (c) 2001 Silver Egg Technology
-    - Copyright c 2007 Free Software Foundation, Inc. <http://fsf.org/>
+    - Copyright c 2007 Free Software Foundation, Inc. http://fsf.org
     - copyrighted by the Free Software Foundation
 ignorable_holders:
     - Free Software Foundation, Inc.

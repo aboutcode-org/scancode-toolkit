@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2011-2013 Eric Dumazet (eric.dumazet@gmail.com) Internal BPF
+  - Copyright (c) 2011-2014 PLUMgrid, http://plumgrid.com
+holders:
+  - Eric Dumazet Internal BPF
+  - PLUMgrid

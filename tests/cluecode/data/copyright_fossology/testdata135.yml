@@ -1,0 +1,9 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1997-2005 Miquel van Smoorenburg <miquels@cistron.nl> and the members pkg-sysvinit
+    project
+holders:
+  - Miquel van Smoorenburg and the members pkg-sysvinit project

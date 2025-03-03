@@ -1,0 +1,1 @@
+(c) .GT. ZERO .AND. ABS

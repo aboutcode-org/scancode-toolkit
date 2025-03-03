@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1998-2001 by Leonard N. Zubkoff <lnz@dandelion.com>
+  - Portions Copyright 2002 by Mylex (An IBM Business Unit)
+  - Copyright 1998-2001 by Leonard N. Zubkoff <lnz@dandelion.com> Controller
+holders:
+  - Leonard N. Zubkoff
+  - Mylex (An IBM Business Unit)
+  - Leonard N. Zubkoff Controller

@@ -39,17 +39,17 @@
         "license_expression_spdx": "Zlib",
         "matches": [
           {
-            "score": 66.67,
+            "license_expression": "zlib",
+            "license_expression_spdx": "Zlib",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 66.67,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "zlib",
-            "spdx_license_expression": "Zlib",
-            "rule_identifier": "zlib_24.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "zlib_24.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_24.RULE",
             "matched_text": "license GnuWin32\u00ae, Zlib\u00ae, zlib1\u00ae"
           }
@@ -61,17 +61,17 @@
         "license_expression_spdx": "Zlib",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "zlib",
+            "license_expression_spdx": "Zlib",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "2-aho",
+            "score": 100.0,
             "matched_length": 144,
             "match_coverage": 100.0,
-            "matcher": "2-aho",
-            "license_expression": "zlib",
-            "spdx_license_expression": "Zlib",
-            "rule_identifier": "zlib_17.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "zlib_17.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE",
             "matched_text": "(C) 1995-2002 Jean-loup Gailly and Mark Adler This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software. Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions: 1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required. 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software. 3. This notice may not be removed or altered from any source distribution. Jean-loup Gailly Mark Adler jloup@gzip.org madler@alumni.caltech.edu"
           }
@@ -86,6 +86,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,

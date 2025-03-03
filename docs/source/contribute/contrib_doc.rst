@@ -12,7 +12,7 @@ To get started, create or identify a working directory on your local machine.
 
 Open that directory and execute the following command in a terminal session::
 
-    git clone https://github.com/nexB/scancode-toolkit.git
+    git clone https://github.com/aboutcode-org/scancode-toolkit.git
 
 That will create an ``/scancode-toolkit`` directory in your working directory.
 Now you can install the dependencies in a virtualenv::
@@ -324,9 +324,9 @@ Automatic Docs Generation
 
 It's possible to generate docs automatically from data by using a combination of:
 
-- `shell scripts: example <https://github.com/nexB/scancode-toolkit/blob/develop/docs/scripts/regen_package_docs.sh>`_
-- `python scripts: example <https://github.com/nexB/scancode-toolkit/blob/develop/src/packagedcode/regen_package_docs.py>`_
-- `jinja templates: example <https://github.com/nexB/scancode-toolkit/blob/develop/src/packagedcode/templates/available_package_parsers.rst>`_
+- `shell scripts: example <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/docs/scripts/regen_package_docs.sh>`_
+- `python scripts: example <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/packagedcode/regen_package_docs.py>`_
+- `jinja templates: example <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/packagedcode/templates/available_package_parsers.rst>`_
 
 And we do this currently to keep a documentation page for all the supported package formats.
 See :ref:`supported_packages` for details.

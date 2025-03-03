@@ -1,0 +1,8 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+---
+
+// This file contains code taken from the "go" source tree, governed
+// by the {{go license}}

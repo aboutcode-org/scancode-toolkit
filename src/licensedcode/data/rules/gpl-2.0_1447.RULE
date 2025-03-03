@@ -1,0 +1,10 @@
+---
+license_expression: gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+---
+
+This file is part of the {{S-Lang}} Library and may be distributed under the
+terms of the {{GNU General Public License}}.  See the file COPYING for
+more information.

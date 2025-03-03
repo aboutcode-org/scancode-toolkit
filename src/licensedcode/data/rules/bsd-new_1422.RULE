@@ -1,0 +1,10 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - NOTICE.md
+---
+
+Use of this source code is governed by a BSD-style
+license that can be found in the NOTICE.md file.

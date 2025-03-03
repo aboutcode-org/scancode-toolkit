@@ -1,0 +1,22 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2005-2008, Linus Torvalds and others
+  - Copyright (c) 1995-1999, Cryptography Research, Inc.
+  - Copyright (c) 2003-2006, Davide Libenzi, Johannes E. Schindelin
+  - Copyright (c) 2005, Sebastian Kuzminsky <seb@highlab.com>
+  - (c) 2005-2006, Andres Salomon <dilinger@debian.org>
+  - (c) 2005-2008, Gerrit Pape <pape@smarden.org>
+holders:
+  - Linus Torvalds and others
+  - Cryptography Research, Inc.
+  - Davide Libenzi, Johannes E. Schindelin
+  - Sebastian Kuzminsky
+  - Andres Salomon
+  - Gerrit Pape
+authors:
+  - Sebastian Kuzminsky <seb@highlab.com>
+  - Gerrit Pape <pape@smarden.org>
+  - Andres Salomon <dilinger@debian.org>

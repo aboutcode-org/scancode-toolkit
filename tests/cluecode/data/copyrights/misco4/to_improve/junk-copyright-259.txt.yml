@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Return SyntaxFacts.IsIdentifierPartCharacter (c) End
+holders:
+  - Return SyntaxFacts.IsIdentifierPartCharacter End

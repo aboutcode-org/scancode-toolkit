@@ -10,7 +10,6 @@
 from array import array
 from hashlib import sha1
 
-
 from licensedcode.match import LicenseMatch
 from licensedcode.spans import Span
 
@@ -39,6 +38,7 @@ else:
         pass
 
 MATCH_HASH = '1-hash'
+MATCH_HASH_ORDER = 0
 
 
 def tokens_hash(tokens):
@@ -73,6 +73,15 @@ def hash_match(idx, query_run, **kwargs):
         qspan = Span(range(query_run.start, query_run.end + 1))
         ispan = Span(range(0, rule.length))
         hispan = Span(p for p in ispan if itokens[p] < len_legalese)
-        match = LicenseMatch(rule, qspan, ispan, hispan, query_run.start, matcher=MATCH_HASH, query=query_run.query)
+        match = LicenseMatch(
+            rule=rule,
+            qspan=qspan,
+            ispan=ispan,
+            hispan=hispan,
+            query_run_start=query_run.start,
+            matcher=MATCH_HASH,
+            matcher_order=MATCH_HASH_ORDER,
+            query=query_run.query,
+        )
         matches.append(match)
     return matches

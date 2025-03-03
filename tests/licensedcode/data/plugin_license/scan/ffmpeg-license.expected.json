@@ -83,6 +83,47 @@
       ]
     },
     {
+      "identifier": "gpl_2_0_and_lgpl_2_0_plus-e597690d-3d55-0948-8697-914f460389e8",
+      "license_expression": "gpl-2.0 AND lgpl-2.0-plus",
+      "license_expression_spdx": "GPL-2.0-only AND LGPL-2.0-or-later",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "gpl-2.0",
+          "license_expression_spdx": "GPL-2.0-only",
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 100,
+          "end_line": 100,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl-2.0_bare_single_word.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+          "matched_text": "are incompatible with the GPLv2 and v3. We do not know for certain if their",
+          "matched_text_diagnostics": "GPLv2"
+        },
+        {
+          "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 101,
+          "end_line": 101,
+          "matcher": "2-aho",
+          "score": 60.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 60,
+          "rule_identifier": "lgpl_bare_single_word.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
+          "matched_text": "licenses are compatible with the LGPL.",
+          "matched_text_diagnostics": "LGPL."
+        }
+      ]
+    },
+    {
       "identifier": "ijg_and_mit-e50613dc-8a09-65cc-c498-5d9527795382",
       "license_expression": "ijg AND mit",
       "license_expression_spdx": "IJG AND MIT",
@@ -138,6 +179,31 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_576.RULE",
           "matched_text": "  tests/reference.pnm is under the expat license",
           "matched_text_diagnostics": "is under the expat license"
+        }
+      ]
+    },
+    {
+      "identifier": "lgpl_2_0_plus-e66c5b24-33ce-ea1b-0e3b-28952361ec32",
+      "license_expression": "lgpl-2.0-plus",
+      "license_expression_spdx": "LGPL-2.0-or-later",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "from_file": "ffmpeg-LICENSE.md",
+          "start_line": 104,
+          "end_line": 104,
+          "matcher": "2-aho",
+          "score": 60.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 60,
+          "rule_identifier": "lgpl_bare_single_word.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
+          "matched_text": "be under a complex license mix that is more restrictive than the LGPL and that",
+          "matched_text_diagnostics": "LGPL"
         }
       ]
     },
@@ -228,8 +294,8 @@
     {
       "path": "ffmpeg-LICENSE.md",
       "type": "file",
-      "detected_license_expression": "(lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus) AND (lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)) AND (ijg AND mit) AND gpl-1.0-plus AND (gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus)",
-      "detected_license_expression_spdx": "(LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later) AND (LGPL-3.0-only AND LGPL-3.0-or-later AND (LGPL-3.0-only AND GPL-3.0-only)) AND (IJG AND MIT) AND GPL-1.0-or-later AND (GPL-2.0-only AND Apache-2.0 AND LGPL-3.0-or-later)",
+      "detected_license_expression": "(lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus) AND (lgpl-3.0 AND lgpl-3.0-plus AND (lgpl-3.0 AND gpl-3.0)) AND (ijg AND mit) AND gpl-1.0-plus AND (gpl-2.0 AND apache-2.0 AND lgpl-3.0-plus) AND (gpl-2.0 AND lgpl-2.0-plus) AND lgpl-2.0-plus",
+      "detected_license_expression_spdx": "(LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later) AND (LGPL-3.0-only AND LGPL-3.0-or-later AND (LGPL-3.0-only AND GPL-3.0-only)) AND (IJG AND MIT) AND GPL-1.0-or-later AND (GPL-2.0-only AND Apache-2.0 AND LGPL-3.0-or-later) AND (GPL-2.0-only AND LGPL-2.0-or-later) AND LGPL-2.0-or-later",
       "license_detections": [
         {
           "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
@@ -237,7 +303,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1-plus AND other-permissive AND gpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.1-or-later AND LicenseRef-scancode-other-permissive AND GPL-2.0-or-later",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 3,
               "end_line": 13,
@@ -261,7 +327,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 54,
               "end_line": 54,
@@ -277,7 +343,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 55,
               "end_line": 55,
@@ -293,7 +359,7 @@
             },
             {
               "license_expression": "lgpl-3.0 AND gpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only AND GPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only AND GPL-3.0-only",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 56,
               "end_line": 57,
@@ -317,7 +383,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 59,
               "end_line": 59,
@@ -333,7 +399,7 @@
             },
             {
               "license_expression": "ijg",
-              "spdx_license_expression": "IJG",
+              "license_expression_spdx": "IJG",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 62,
               "end_line": 63,
@@ -349,7 +415,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 67,
               "end_line": 67,
@@ -375,7 +441,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 79,
               "end_line": 79,
@@ -399,7 +465,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 88,
               "end_line": 89,
@@ -415,7 +481,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 91,
               "end_line": 91,
@@ -431,7 +497,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "ffmpeg-LICENSE.md",
               "start_line": 94,
               "end_line": 94,
@@ -448,44 +514,76 @@
           ],
           "detection_log": [],
           "identifier": "gpl_2_0_and_apache_2_0_and_lgpl_3_0_plus-c2393e5a-e531-304f-58a9-a6431d46d214"
+        },
+        {
+          "license_expression": "gpl-2.0 AND lgpl-2.0-plus",
+          "license_expression_spdx": "GPL-2.0-only AND LGPL-2.0-or-later",
+          "matches": [
+            {
+              "license_expression": "gpl-2.0",
+              "license_expression_spdx": "GPL-2.0-only",
+              "from_file": "ffmpeg-LICENSE.md",
+              "start_line": 100,
+              "end_line": 100,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "gpl-2.0_bare_single_word.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
+              "matched_text": "are incompatible with the GPLv2 and v3. We do not know for certain if their",
+              "matched_text_diagnostics": "GPLv2"
+            },
+            {
+              "license_expression": "lgpl-2.0-plus",
+              "license_expression_spdx": "LGPL-2.0-or-later",
+              "from_file": "ffmpeg-LICENSE.md",
+              "start_line": 101,
+              "end_line": 101,
+              "matcher": "2-aho",
+              "score": 60.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 60,
+              "rule_identifier": "lgpl_bare_single_word.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
+              "matched_text": "licenses are compatible with the LGPL.",
+              "matched_text_diagnostics": "LGPL."
+            }
+          ],
+          "detection_log": [],
+          "identifier": "gpl_2_0_and_lgpl_2_0_plus-e597690d-3d55-0948-8697-914f460389e8"
+        },
+        {
+          "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "matches": [
+            {
+              "license_expression": "lgpl-2.0-plus",
+              "license_expression_spdx": "LGPL-2.0-or-later",
+              "from_file": "ffmpeg-LICENSE.md",
+              "start_line": 104,
+              "end_line": 104,
+              "matcher": "2-aho",
+              "score": 60.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 60,
+              "rule_identifier": "lgpl_bare_single_word.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
+              "matched_text": "be under a complex license mix that is more restrictive than the LGPL and that",
+              "matched_text_diagnostics": "LGPL"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "lgpl_2_0_plus-e66c5b24-33ce-ea1b-0e3b-28952361ec32"
         }
       ],
       "license_clues": [
         {
-          "license_expression": "gpl-2.0",
-          "spdx_license_expression": "GPL-2.0-only",
-          "from_file": "ffmpeg-LICENSE.md",
-          "start_line": 100,
-          "end_line": 100,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 1,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "gpl-2.0_bare_single_word.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_bare_single_word.RULE",
-          "matched_text": "are incompatible with the GPLv2 and v3. We do not know for certain if their",
-          "matched_text_diagnostics": "GPLv2"
-        },
-        {
-          "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
-          "from_file": "ffmpeg-LICENSE.md",
-          "start_line": 101,
-          "end_line": 101,
-          "matcher": "2-aho",
-          "score": 75.0,
-          "matched_length": 1,
-          "match_coverage": 100.0,
-          "rule_relevance": 75,
-          "rule_identifier": "lgpl_bare_single_word.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
-          "matched_text": "licenses are compatible with the LGPL.",
-          "matched_text_diagnostics": "LGPL."
-        },
-        {
           "license_expression": "proprietary-license",
-          "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
+          "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
           "from_file": "ffmpeg-LICENSE.md",
           "start_line": 102,
           "end_line": 102,
@@ -498,22 +596,6 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_490.RULE",
           "matched_text": "If you wish to enable these libraries, pass --enable-nonfree to configure.",
           "matched_text_diagnostics": "enable-nonfree"
-        },
-        {
-          "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
-          "from_file": "ffmpeg-LICENSE.md",
-          "start_line": 104,
-          "end_line": 104,
-          "matcher": "2-aho",
-          "score": 75.0,
-          "matched_length": 1,
-          "match_coverage": 100.0,
-          "rule_relevance": 75,
-          "rule_identifier": "lgpl_bare_single_word.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
-          "matched_text": "be under a complex license mix that is more restrictive than the LGPL and that",
-          "matched_text_diagnostics": "LGPL"
         }
       ],
       "percentage_of_license_text": 34.78,

@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - copyright (c) 2005 sean finney
+  - copyright (c) 2000-2004 Ola Lundqvist
+holders:
+  - sean finney
+  - Ola Lundqvist
+authors:
+  - sean finney <seanius@debian.org>
+  - sean finney <seanius@debian.org>

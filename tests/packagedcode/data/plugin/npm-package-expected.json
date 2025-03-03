@@ -45,6 +45,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/cookie-signature",
       "repository_download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
@@ -66,7 +68,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/mocha?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -80,7 +83,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/should?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -140,6 +144,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -148,7 +154,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -158,7 +165,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

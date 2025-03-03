@@ -29,8 +29,10 @@ class BowerJsonHandler(models.DatafileHandler):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
 
-        # note: having no name is not a problem for private packages. See #1514
         name = package_data.get('name')
+        is_private = False
+        if not name:
+            is_private = True
 
         description = package_data.get('description')
         version = package_data.get('version')
@@ -99,5 +101,6 @@ class BowerJsonHandler(models.DatafileHandler):
             homepage_url=homepage_url,
             vcs_url=vcs_url,
             dependencies=dependencies,
+            is_private=is_private,
         )
         yield models.PackageData.from_data(package_data, package_only)

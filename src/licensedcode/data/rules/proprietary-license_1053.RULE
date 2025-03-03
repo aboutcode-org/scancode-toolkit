@@ -1,0 +1,13 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+---
+
+Linguistic
+Data Consortium (LDC) grants permission to copy and use this
+software for the purpose of reading "shorten"-compressed speech
+data provided by the LDC or others using the NIST SPHERE file
+format.
+
+No portion of this code may be copied or adapted for other uses
+without permission

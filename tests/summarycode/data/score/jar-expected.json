@@ -45,7 +45,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
               "start_line": 1,
               "end_line": 1,
@@ -60,7 +60,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
               "start_line": 2,
               "end_line": 2,
@@ -85,6 +85,8 @@
       "source_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?classifier=sources"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.4.2.Final/jboss-logging-3.4.2.Final.jar",
@@ -106,7 +108,8 @@
       "scope": "import",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.junit/junit-bom@5.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -120,7 +123,8 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.jboss.logmanager/jboss-logmanager@2.1.9.Final?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -134,7 +138,8 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/log4j/log4j@1.2.16?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -148,7 +153,8 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.logging.log4j/log4j-api@2.11.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -162,7 +168,8 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.slf4j/slf4j-api@1.7.25?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -176,7 +183,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.junit.jupiter/junit-jupiter?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -190,7 +198,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/ch.qos.logback/logback-classic@1.2.3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -204,7 +213,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.logging.log4j/log4j-core@2.11.2?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -218,7 +228,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.junit/junit-bom@5.7.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -492,7 +503,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/META-INF/LICENSE.txt",
               "start_line": 2,
               "end_line": 202,
@@ -576,7 +587,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "jar/META-INF/LICENSE.txt",
                   "start_line": 2,
                   "end_line": 202,
@@ -599,6 +610,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -806,6 +819,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -889,7 +904,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
                   "start_line": 1,
                   "end_line": 1,
@@ -904,7 +919,7 @@
                 },
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
                   "start_line": 2,
                   "end_line": 2,
@@ -930,6 +945,8 @@
             "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -938,7 +955,8 @@
               "scope": "import",
               "is_runtime": false,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -948,7 +966,8 @@
               "scope": "provided",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -958,7 +977,8 @@
               "scope": "provided",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -968,7 +988,8 @@
               "scope": "provided",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -978,7 +999,8 @@
               "scope": "provided",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -988,7 +1010,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -998,7 +1021,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1008,7 +1032,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1018,7 +1043,8 @@
               "scope": "dependencymanagement",
               "is_runtime": false,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1047,7 +1073,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
               "start_line": 24,
               "end_line": 30,
@@ -1233,7 +1259,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/org/jboss/logging/AbstractLoggerProvider.java",
               "start_line": 6,
               "end_line": 16,
@@ -1308,7 +1334,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/org/jboss/logging/AbstractMdcLoggerProvider.java",
               "start_line": 6,
               "end_line": 16,

@@ -1,0 +1,3 @@
+ * Copyright (C) 2012 AK signal Brno a.s.
+ *               2012 Jiri Prchal <jiri.prchal@aksignal.cz>
+

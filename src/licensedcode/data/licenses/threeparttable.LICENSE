@@ -1,0 +1,17 @@
+---
+key: threeparttable
+short_name: threeparttable License
+name: threeparttable License
+owner: Fedora
+category: Permissive
+notes: |
+    Added in SPDX license list 3.24
+    This was previously the license rule: other-permissive_322.RULE
+spdx_license_key: threeparttable
+other_urls:
+    - https://fedoraproject.org/wiki/Licensing/Threeparttable
+---
+
+This file may be distributed, modified, and used in other works with just
+one restriction: modified versions must clearly indicate the modification
+(a name change, or a displayed message, or ?).

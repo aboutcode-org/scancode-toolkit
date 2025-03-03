@@ -52,7 +52,7 @@
           "matches": [
             {
               "license_expression": "pcre",
-              "spdx_license_expression": "LicenseRef-scancode-pcre",
+              "license_expression_spdx": "LicenseRef-scancode-pcre",
               "from_file": "LICENSE3",
               "start_line": 1,
               "end_line": 47,
@@ -70,51 +70,11 @@
       ],
       "license_clues": [],
       "percentage_of_license_text": 100.0,
-      "copyrights": [
-        {
-          "copyright": "Copyright (c) 1997-2001 University of Cambridge",
-          "start_line": 11,
-          "end_line": 11
-        },
-        {
-          "copyright": "copyright by the University of Cambridge, England",
-          "start_line": 26,
-          "end_line": 27
-        }
-      ],
-      "holders": [
-        {
-          "holder": "University of Cambridge",
-          "start_line": 11,
-          "end_line": 11
-        },
-        {
-          "holder": "the University of Cambridge, England",
-          "start_line": 26,
-          "end_line": 27
-        }
-      ],
-      "authors": [
-        {
-          "author": "Philip Hazel",
-          "start_line": 26,
-          "end_line": 26
-        }
-      ],
-      "emails": [
-        {
-          "email": "ph10@cam.ac.uk",
-          "start_line": 8,
-          "end_line": 8
-        }
-      ],
-      "urls": [
-        {
-          "url": "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/",
-          "start_line": 33,
-          "end_line": 33
-        }
-      ],
+      "copyrights": [],
+      "holders": [],
+      "authors": [],
+      "emails": [],
+      "urls": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

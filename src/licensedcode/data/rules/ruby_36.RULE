@@ -1,0 +1,8 @@
+---
+license_expression: ruby
+is_license_tag: yes
+is_continuous: yes
+relevance: 100
+---
+
+{{spec.license      = "Ruby" }}

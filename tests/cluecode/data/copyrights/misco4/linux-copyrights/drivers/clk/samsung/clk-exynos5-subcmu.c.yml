@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2018 Samsung Electronics Co., Ltd.
+holders:
+  - Samsung Electronics Co., Ltd.
+authors:
+  - Marek Szyprowski <m.szyprowski@samsung.com> Common Clock Framework

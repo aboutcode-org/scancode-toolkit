@@ -39,17 +39,17 @@
         "license_expression_spdx": "Zlib",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "zlib",
+            "license_expression_spdx": "Zlib",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "zlib",
-            "spdx_license_expression": "Zlib",
-            "rule_identifier": "zlib_in_manifest.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "zlib_in_manifest.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_in_manifest.RULE",
             "matched_text": ":type = zlib, :file = LICENSE.txt"
           }
@@ -64,6 +64,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": "https://cocoapods.org/pods/nanopb",

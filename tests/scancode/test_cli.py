@@ -121,8 +121,14 @@ def test_run_scan_includes_outdated_in_extra():
     assert results['headers'][0]['extra_data']['OUTDATED'] == 'out of date'
 
 
+def test_no_version_check_run_is_successful():
+    test_file = test_env.get_test_loc('single/iproute.c')
+    result_file = test_env.get_temp_file('json')
+    run_scan_click(['--no-check-version', test_file, '--json', result_file], expected_rc=0)
+
+
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
-    result = run_scan_click(['--help'])
+    result = run_scan_click(options=['--help'], test_mode=False, retry=False)
     assert 'Usage: scancode [OPTIONS]' in result.output
     # this was showing up on Windows
     assert 'scancode-script.py' not in result.output
@@ -679,7 +685,10 @@ def test_scan_does_scan_rpm():
 
 
 def test_scan_cli_help(regen=REGEN_TEST_FIXTURES):
-    expected_file = test_env.get_test_loc('help/help.txt')
+    if on_linux:
+        expected_file = test_env.get_test_loc('help/help_linux.txt')
+    else:
+        expected_file = test_env.get_test_loc('help/help.txt')
     result = run_scan_click(['--help'])
     result = result.output
     if regen:

@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) HIPAA.Security-RDSStorageEncrypted (https://docs.aws.amazon.com/config/latest/developerguide/rds-storage-encrypted.html)
+holders:
+  - HIPAA.Security-RDSStorageEncrypted

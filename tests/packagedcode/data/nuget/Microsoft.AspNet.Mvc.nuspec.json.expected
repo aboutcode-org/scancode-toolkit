@@ -46,17 +46,17 @@
         "license_expression_spdx": "LicenseRef-scancode-ms-net-library",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "ms-net-library",
+            "license_expression_spdx": "LicenseRef-scancode-ms-net-library",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "ms-net-library",
-            "spdx_license_expression": "LicenseRef-scancode-ms-net-library",
-            "rule_identifier": "ms-net-library_1.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "ms-net-library_1.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ms-net-library_1.RULE",
             "matched_text": "http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm"
           }
@@ -71,6 +71,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -79,7 +81,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -91,7 +94,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -103,7 +107,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -115,7 +120,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -127,7 +133,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -139,7 +146,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -151,7 +159,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -163,7 +172,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -175,7 +185,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNX4.5.1"
@@ -187,7 +198,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -199,7 +211,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -211,7 +224,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -223,7 +237,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -235,7 +250,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -247,7 +263,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -259,7 +276,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -271,7 +289,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"
@@ -283,7 +302,8 @@
         "scope": "dependency",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {
           "framework": "DNXCore5.0"

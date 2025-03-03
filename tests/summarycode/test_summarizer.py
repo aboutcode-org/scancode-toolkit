@@ -124,6 +124,18 @@ class TestScanSummary(FileDrivenTesting):
         ])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_summary_root_package_with_embedded_packages(self):
+        test_dir = self.get_test_loc('summary/embedded_packages/bunkerweb')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('summary/embedded_packages/bunkerweb.expected.json')
+        run_scan_click([
+            '-clip',
+            '--summary',
+            '--classify',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
     def test_summary_use_holder_from_package_resource(self):
         test_dir = self.get_test_loc('summary/use_holder_from_package_resource/codebase')
         result_file = self.get_temp_file('json')

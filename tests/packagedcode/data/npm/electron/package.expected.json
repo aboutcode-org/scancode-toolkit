@@ -43,7 +43,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "package/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -66,7 +66,13 @@
       "extracted_license_statement": "- MIT\n",
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {},
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "engines": {
+          "node": ">= 4.0"
+        }
+      },
       "repository_homepage_url": "https://www.npmjs.com/package/electron",
       "repository_download_url": "https://registry.npmjs.org/electron/-/electron-3.1.11.tgz",
       "api_data_url": "https://registry.npmjs.org/electron/3.1.11",
@@ -87,7 +93,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/%40types/node?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -101,7 +108,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/electron-download?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -115,7 +123,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/extract-zip?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -129,7 +138,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/home-path?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -143,7 +153,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/path-exists?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -157,7 +168,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/standard?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -230,7 +242,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "package/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -254,7 +266,13 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "engines": {
+              "node": ">= 4.0"
+            }
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/%40types/node",
@@ -262,7 +280,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -272,7 +291,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -282,7 +302,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -292,7 +313,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -302,7 +324,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -312,7 +335,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

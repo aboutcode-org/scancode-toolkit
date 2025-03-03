@@ -47,6 +47,8 @@
       "pkg:deb/ubuntu/ncurses"
     ],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },
@@ -105,6 +107,8 @@
       "pkg:deb/ubuntu/e2fsprogs"
     ],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },
@@ -163,6 +167,8 @@
       "pkg:deb/ubuntu/apt"
     ],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },
@@ -221,6 +227,8 @@
       "pkg:deb/ubuntu/audit"
     ],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },
@@ -279,6 +287,8 @@
       "pkg:deb/ubuntu/perl"
     ],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -335,6 +345,8 @@
       "pkg:deb/ubuntu/systemd"
     ],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same"
     },

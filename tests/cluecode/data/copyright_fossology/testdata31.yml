@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) YEAR This_file_is_part_of_KDE
+holders:
+  - This_file_is_part_of_KDE

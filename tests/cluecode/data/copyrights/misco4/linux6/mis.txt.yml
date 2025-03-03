@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2005-2012 Jean Delvare <jdelvare@suse.de>
+  - Copyright (c) 2006 Yuan Mu (Winbond), Rudolf Marek <r.marek@assembler.cz> David Hubbard
+    <david.c.hubbard@gmail.com> Daniel J Blueman <daniel.blueman@gmail.com>
+  - Copyright (c) 2010 Sheng-Yuan Huang
+  - Copyright (c) 2003 Mark Studebaker
+holders:
+  - Jean Delvare
+  - Yuan Mu (Winbond), Rudolf Marek David Hubbard Daniel J Blueman
+  - Sheng-Yuan Huang
+  - Mark Studebaker

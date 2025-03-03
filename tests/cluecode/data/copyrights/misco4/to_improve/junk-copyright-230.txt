@@ -1,0 +1,1 @@
+(c) HIPAA.Security-ELBLoggingEnabled (https://docs.aws.amazon.com/config/latest/developerguide/elb-logging-enabled.html)

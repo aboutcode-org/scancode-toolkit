@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1990, 1991, 1992, 2001, 2003, 2004, 2005, 2006, 2007 Free Software Foundation,
+    Inc.
+holders:
+  - Free Software Foundation, Inc.
+authors:
+  - Clint Adams <schizo@debian.org>

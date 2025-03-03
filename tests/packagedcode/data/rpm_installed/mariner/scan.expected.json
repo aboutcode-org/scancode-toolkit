@@ -43,6 +43,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "filesystem-1.1-20.cm2.src.rpm"
       },
@@ -101,6 +103,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "mariner-release-2.0-61.cm2.src.rpm"
       },
@@ -159,7 +163,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "scan/usr/share/licenses/glibc/COPYING",
               "start_line": 1,
               "end_line": 2,
@@ -183,7 +187,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.1",
-              "spdx_license_expression": "LGPL-2.1-only",
+              "license_expression_spdx": "LGPL-2.1-only",
               "from_file": "scan/usr/share/licenses/glibc/COPYING.LIB",
               "start_line": 1,
               "end_line": 2,
@@ -211,7 +215,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan/usr/share/licenses/glibc/LICENSES",
               "start_line": 1,
               "end_line": 1,
@@ -235,7 +239,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "scan/usr/share/licenses/glibc/LICENSES",
               "start_line": 6,
               "end_line": 6,
@@ -257,6 +261,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "glibc-2.35-6.cm2.src.rpm"
       },
@@ -321,6 +327,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "openssl-1.1.1k-29.cm2.src.rpm"
       },
@@ -379,7 +387,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "scan/usr/share/licenses/tzdata/LICENSE",
               "start_line": 2,
               "end_line": 2,
@@ -395,7 +403,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "scan/usr/share/licenses/tzdata/LICENSE",
               "start_line": 5,
               "end_line": 5,
@@ -420,6 +428,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "tzdata-2024a-1.cm2.src.rpm"
       },
@@ -480,6 +490,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "gcc-11.2.0-8.cm2.src.rpm"
       },
@@ -538,7 +550,7 @@
           "matches": [
             {
               "license_expression": "openssl-ssleay",
-              "spdx_license_expression": "OpenSSL",
+              "license_expression_spdx": "OpenSSL",
               "from_file": "scan/usr/share/licenses/openssl/LICENSE",
               "start_line": 1,
               "end_line": 2,
@@ -563,6 +575,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "openssl-1.1.1k-29.cm2.src.rpm"
       },
@@ -623,6 +637,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "glibc-2.35-6.cm2.src.rpm"
       },
@@ -681,7 +697,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan/usr/share/licenses/iana-etc/LICENSE",
               "start_line": 1,
               "end_line": 1,
@@ -706,6 +722,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "iana-etc-20211115-2.cm2.src.rpm"
       },
@@ -766,6 +784,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "prebuilt-ca-certificates-2.0.0-16.cm2.src.rpm"
       },
@@ -824,6 +844,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "distroless-packages-0.1-3.cm2.src.rpm"
       },
@@ -882,6 +904,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "filename": "distroless-packages-0.1-3.cm2.src.rpm"
       },
@@ -972,7 +996,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "scan/usr/share/licenses/glibc/COPYING",
                   "start_line": 1,
                   "end_line": 2,
@@ -998,6 +1022,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1049,7 +1075,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.1",
-                  "spdx_license_expression": "LGPL-2.1-only",
+                  "license_expression_spdx": "LGPL-2.1-only",
                   "from_file": "scan/usr/share/licenses/glibc/COPYING.LIB",
                   "start_line": 1,
                   "end_line": 2,
@@ -1075,6 +1101,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1126,7 +1154,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "scan/usr/share/licenses/glibc/LICENSES",
                   "start_line": 1,
                   "end_line": 1,
@@ -1150,7 +1178,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "scan/usr/share/licenses/glibc/LICENSES",
                   "start_line": 6,
                   "end_line": 6,
@@ -1176,6 +1204,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1234,7 +1264,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "scan/usr/share/licenses/iana-etc/LICENSE",
                   "start_line": 1,
                   "end_line": 1,
@@ -1260,6 +1290,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1318,7 +1350,7 @@
               "matches": [
                 {
                   "license_expression": "openssl-ssleay",
-                  "spdx_license_expression": "OpenSSL",
+                  "license_expression_spdx": "OpenSSL",
                   "from_file": "scan/usr/share/licenses/openssl/LICENSE",
                   "start_line": 1,
                   "end_line": 2,
@@ -1344,6 +1376,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1402,7 +1436,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "scan/usr/share/licenses/tzdata/LICENSE",
                   "start_line": 2,
                   "end_line": 2,
@@ -1418,7 +1452,7 @@
                 },
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "scan/usr/share/licenses/tzdata/LICENSE",
                   "start_line": 5,
                   "end_line": 5,
@@ -1444,6 +1478,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1527,6 +1563,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "filesystem-1.1-20.cm2.src.rpm"
           },
@@ -1581,6 +1619,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "mariner-release-2.0-61.cm2.src.rpm"
           },
@@ -1635,6 +1675,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "glibc-2.35-6.cm2.src.rpm"
           },
@@ -1689,6 +1731,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "openssl-1.1.1k-29.cm2.src.rpm"
           },
@@ -1743,6 +1787,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "tzdata-2024a-1.cm2.src.rpm"
           },
@@ -1797,6 +1843,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "gcc-11.2.0-8.cm2.src.rpm"
           },
@@ -1851,6 +1899,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "openssl-1.1.1k-29.cm2.src.rpm"
           },
@@ -1905,6 +1955,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "glibc-2.35-6.cm2.src.rpm"
           },
@@ -1959,6 +2011,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "iana-etc-20211115-2.cm2.src.rpm"
           },
@@ -2013,6 +2067,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "prebuilt-ca-certificates-2.0.0-16.cm2.src.rpm"
           },
@@ -2067,6 +2123,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "distroless-packages-0.1-3.cm2.src.rpm"
           },
@@ -2121,6 +2179,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "filename": "distroless-packages-0.1-3.cm2.src.rpm"
           },

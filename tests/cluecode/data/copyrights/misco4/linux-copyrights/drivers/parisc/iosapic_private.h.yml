@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2000 Hewlett Packard (Grant Grundler)
+  - Copyright (c) 2000,2003 Grant Grundler (grundler at parisc-linux.org)
+  - Copyright (c) 2002 Matthew Wilcox (willy at parisc-linux.org)
+holders:
+  - Hewlett Packard (Grant Grundler)
+  - Grant Grundler grundler at
+  - Matthew Wilcox willy at

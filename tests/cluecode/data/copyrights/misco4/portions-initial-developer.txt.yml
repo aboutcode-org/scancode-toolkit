@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Portions created by the Initial Developer are Copyright (c) the Initial Developer
+holders:
+  - the Initial Developer
+holders_summary:
+  - value: the Initial Developer
+    count: 1

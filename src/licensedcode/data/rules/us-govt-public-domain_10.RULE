@@ -3,7 +3,7 @@ license_expression: us-govt-public-domain
 is_license_text: yes
 relevance: 100
 ignorable_authors:
-    - United States
+    - United States Government
 ---
 
 The software provided here is released by the Naval Postgraduate School, an agency of the U.S. Department of Navy. The software bears no warranty, either expressed or implied. NPS does not assume legal liability nor responsibility for a User's use of the software or the results of such use.

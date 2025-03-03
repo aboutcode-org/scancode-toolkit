@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) 2007 Mauro Carvalho Chehab, <mchehab@kernel.org>
+  - (c) 2001,02 Gerd Knorr <kraxel@bytesex.org>
+  - (c) 2006 Mauro Carvalho Chehab, <mchehab@kernel.org>
+  - (c) 2006 Ted Walther and John Sokol
+holders:
+  - Mauro Carvalho Chehab
+  - Gerd Knorr
+  - Mauro Carvalho Chehab
+  - Ted Walther and John Sokol

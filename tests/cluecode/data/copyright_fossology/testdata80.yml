@@ -1,0 +1,28 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1997-2008 Joey Hess <joeyh@debian.org>
+  - Copyright 1997-2008 Joey Hess <joeyh@debian.org>
+  - Copyright Brendan O'Dea <bod@debian.org>
+  - Copyright Josselin Mouette <josselin.mouette@ens-lyon.org>
+  - Copyright Adam Di Carlo <aph@debian.org>
+  - Copyright Ross Burton <ross@burtonini.com>
+  - Copyright Andrew Stribblehill <ads@debian.org>
+  - Copyright Jon Middleton <jjm@debian.org>
+  - Copyright Marco d'Itri <md@Linux.IT>
+  - Copyright Steve Robbins <smr@debian.org>
+  - Copyright Charles Briscoe-Smith <cpb4@ukc.ac.uk>
+holders:
+  - Joey Hess
+  - Joey Hess
+  - Brendan O'Dea
+  - Josselin Mouette
+  - Adam Di Carlo
+  - Ross Burton
+  - Andrew Stribblehill
+  - Jon Middleton
+  - Marco d'Itri
+  - Steve Robbins
+  - Charles Briscoe-Smith

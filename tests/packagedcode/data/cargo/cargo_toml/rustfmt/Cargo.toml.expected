@@ -25,7 +25,9 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "development-tools"
+    ],
     "homepage_url": null,
     "download_url": null,
     "size": null,
@@ -46,17 +48,17 @@
         "license_expression_spdx": "Apache-2.0 OR MIT",
         "matches": [
           {
-            "score": 99.0,
+            "license_expression": "apache-2.0 OR mit",
+            "license_expression_spdx": "Apache-2.0 OR MIT",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 99.0,
             "matched_length": 4,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "apache-2.0 OR mit",
-            "spdx_license_expression": "Apache-2.0 OR MIT",
-            "rule_identifier": "apache-2.0_or_mit_48.RULE",
             "rule_relevance": 99,
+            "rule_identifier": "apache-2.0_or_mit_48.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_48.RULE",
             "matched_text": "Apache-2.0/MIT"
           }
@@ -71,8 +73,288 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
-    "dependencies": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "rust_edition": "2018"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:cargo/atty",
+        "extracted_requirement": "0.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/itertools",
+        "extracted_requirement": "0.8",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/toml",
+        "extracted_requirement": "0.4",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/serde",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/serde_derive",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/serde_json",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/unicode-segmentation",
+        "extracted_requirement": "1.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/regex",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/term",
+        "extracted_requirement": "0.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/diff",
+        "extracted_requirement": "0.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/log",
+        "extracted_requirement": "0.4",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/env_logger",
+        "extracted_requirement": "0.6",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/getopts",
+        "extracted_requirement": "0.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/derive-new",
+        "extracted_requirement": "0.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/cargo_metadata",
+        "extracted_requirement": "0.7",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/rustc-ap-rustc_target",
+        "extracted_requirement": "373.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/rustc-ap-syntax",
+        "extracted_requirement": "373.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/rustc-ap-syntax_pos",
+        "extracted_requirement": "373.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/failure",
+        "extracted_requirement": "0.1.3",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/bytecount",
+        "extracted_requirement": "0.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/unicode-width",
+        "extracted_requirement": "0.1.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/unicode_categories",
+        "extracted_requirement": "0.1.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/dirs",
+        "extracted_requirement": "1.0.4",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/rustc-workspace-hack",
+        "extracted_requirement": "1.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/lazy_static",
+        "extracted_requirement": "1.0.0",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": "https://crates.io/crates/rustfmt-nightly",
     "repository_download_url": "https://crates.io/api/v1/crates/rustfmt-nightly/1.0.3/download",
     "api_data_url": "https://crates.io/api/v1/crates/rustfmt-nightly",

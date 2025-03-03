@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1998 - 2002 Frodo Looijaard <frodol@dds.nl> , Kyosti Malkki <kmalkki@cc.hut.fi>
+    , Mark Studebaker <mdsxyz123@yahoo.com> , and Bob Dougherty <bobd@stanford.edu>
+  - Copyright 1998-2000 Jonathan Teh Soon
+  - Copyright 1998-2000 Jonathan Teh Soon
+holders:
+  - Frodo Looijaard , Kyosti Malkki , Mark Studebaker , and Bob Dougherty
+  - Jonathan Teh Soon
+  - Jonathan Teh Soon
+authors:
+  - Jonathan Teh Soon Yew <j.teh@iname.com>
+  - Alex van Kaam <darkside@chello.nl>

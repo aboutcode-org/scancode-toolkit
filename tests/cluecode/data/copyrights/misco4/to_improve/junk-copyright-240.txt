@@ -1,0 +1,1 @@
+(c) NIST.800.53.R4-S3BucketPublicReadProhibited (https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-public-read-prohibited.html) The S3 Bucket

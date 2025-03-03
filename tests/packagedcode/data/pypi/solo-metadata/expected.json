@@ -68,7 +68,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
-              "spdx_license_expression": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
+              "license_expression_spdx": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
               "from_file": "PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -91,6 +91,8 @@
       "extracted_license_statement": "license: Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://pypi.org/project/scancode-toolkit",
       "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-31.0.0b1.tar.gz",
@@ -179,7 +181,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
-                  "spdx_license_expression": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
+                  "license_expression_spdx": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
                   "from_file": "PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -203,6 +205,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/scancode-toolkit",

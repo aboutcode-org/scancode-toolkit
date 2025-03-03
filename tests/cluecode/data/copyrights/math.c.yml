@@ -12,16 +12,16 @@ holders:
   - The Regents of the University of California
   - Herbert Xu
   - Aaron Lehmann
-  - Paul Mundt
-  - Vladimir Oleynik
+  - Paul Mundt <lethal@linux-sh.org>
+  - Vladimir Oleynik <dzo@simtreas.ru>
 holders_summary:
   - value: Aaron Lehmann
     count: 1
   - value: Herbert Xu
     count: 1
-  - value: Paul Mundt
+  - value: Paul Mundt <lethal@linux-sh.org>
     count: 1
   - value: The Regents of the University of California
     count: 1
-  - value: Vladimir Oleynik
+  - value: Vladimir Oleynik <dzo@simtreas.ru>
     count: 1

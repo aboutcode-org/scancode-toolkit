@@ -64,17 +64,17 @@
         "license_expression_spdx": "MIT",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
             "matched_length": 1,
             "match_coverage": 100.0,
-            "matcher": "1-spdx-id",
-            "license_expression": "mit",
-            "spdx_license_expression": "MIT",
-            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_url": null,
             "matched_text": "MIT"
           }
@@ -86,17 +86,17 @@
         "license_expression_spdx": "MIT",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "mit",
-            "spdx_license_expression": "MIT",
-            "rule_identifier": "pypi_mit_license.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "pypi_mit_license.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
             "matched_text": "- 'License :: OSI Approved :: MIT License'"
           }
@@ -111,6 +111,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "Documentation": "https://urllib3.readthedocs.io/",
       "python_requires": ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
@@ -118,71 +120,80 @@
     "dependencies": [
       {
         "purl": "pkg:pypi/brotlipy",
-        "extracted_requirement": "brotlipy>=0.6.0",
+        "extracted_requirement": ">=0.6.0",
         "scope": "brotli",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
       {
         "purl": "pkg:pypi/pyopenssl",
-        "extracted_requirement": "pyOpenSSL>=0.14",
+        "extracted_requirement": ">=0.14",
         "scope": "secure",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
       {
         "purl": "pkg:pypi/cryptography",
-        "extracted_requirement": "cryptography>=1.3.4",
+        "extracted_requirement": ">=1.3.4",
         "scope": "secure",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
       {
         "purl": "pkg:pypi/idna",
-        "extracted_requirement": "idna>=2.0.0",
+        "extracted_requirement": ">=2.0.0",
         "scope": "secure",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
       {
         "purl": "pkg:pypi/certifi",
-        "extracted_requirement": "certifi",
+        "extracted_requirement": null,
         "scope": "secure",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
       {
         "purl": "pkg:pypi/ipaddress",
-        "extracted_requirement": "ipaddress; python_version == \"2.7\"",
+        "extracted_requirement": null,
         "scope": "secure",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
-        "extra_data": {}
+        "extra_data": {
+          "python_version": "== 2.7"
+        }
       },
       {
         "purl": "pkg:pypi/pysocks",
-        "extracted_requirement": "PySocks!=1.5.7,<2.0,>=1.5.6",
+        "extracted_requirement": "!=1.5.7,<2.0,>=1.5.6",
         "scope": "socks",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

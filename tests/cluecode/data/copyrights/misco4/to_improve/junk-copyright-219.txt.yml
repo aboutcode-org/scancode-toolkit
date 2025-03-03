@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) year lib.author and contributors
+holders:
+  - lib.author and contributors

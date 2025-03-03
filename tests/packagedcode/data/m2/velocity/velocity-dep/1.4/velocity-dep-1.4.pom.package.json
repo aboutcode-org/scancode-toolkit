@@ -42,6 +42,8 @@
     "pkg:maven/velocity/velocity-dep@1.4?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/velocity/velocity-dep/1.4/",

@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2006-2010 United States Government as represented by the Administrator of
+    the National Aeronautics and Space Administration
+holders:
+  - United States Government as represented by the Administrator of the National Aeronautics
+    and Space Administration
+holders_summary:
+  - value: United States Government as represented by the Administrator of the National Aeronautics
+      and Space Administration
+    count: 1

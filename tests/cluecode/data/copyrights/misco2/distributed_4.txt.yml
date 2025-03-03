@@ -1,0 +1,19 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - (c) 2019-2023 Gregory Popovitch
+  - (c) Distributed Ledger Technology Collaboration and contributors
+  - (c) 2017-2023 Bartosz Taudul
+holders:
+  - Gregory Popovitch
+  - Distributed Ledger Technology Collaboration and contributors
+  - Bartosz Taudul
+holders_summary:
+  - value: Bartosz Taudul
+    count: 1
+  - value: Distributed Ledger Technology Collaboration and contributors
+    count: 1
+  - value: Gregory Popovitch
+    count: 1

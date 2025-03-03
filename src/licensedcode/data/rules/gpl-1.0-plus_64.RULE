@@ -2,6 +2,8 @@
 license_expression: gpl-1.0-plus
 is_license_reference: yes
 relevance: 100
+is_deprecated: yes
+notes: replaced by gpl-1.0-plus_bare_gpled.RULE
 ---
 
 gpled

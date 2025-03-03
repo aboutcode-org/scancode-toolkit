@@ -17,7 +17,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 10
         end_line: 26
@@ -51,7 +51,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later AND BSD-3-Clause
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 33
         end_line: 48
@@ -80,7 +80,7 @@ license_detections:
             On Debian systems, the complete text of the GNU Library
             General Public License can be found in `/usr/share/common-licenses/GPL-2'.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 50
         end_line: 51
@@ -99,7 +99,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 56
         end_line: 80
@@ -141,7 +141,7 @@ license_detections:
     license_expression_spdx: HPND
     matches:
       - license_expression: historical
-        spdx_license_expression: HPND
+        license_expression_spdx: HPND
         from_file:
         start_line: 88
         end_line: 102
@@ -173,7 +173,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 108
         end_line: 119
@@ -202,7 +202,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause AND CMU-Mach
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 126
         end_line: 151
@@ -241,7 +241,7 @@ license_detections:
                 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
                 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: carnegie-mellon-contributors
-        spdx_license_expression: CMU-Mach
+        license_expression_spdx: CMU-Mach
         from_file:
         start_line: 153
         end_line: 179
@@ -281,7 +281,7 @@ license_detections:
               extensions that they make and grant Carnegie Mellon the rights to
               redistribute these changes.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 181
         end_line: 206
@@ -320,7 +320,7 @@ license_detections:
                OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
                IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 208
         end_line: 211
@@ -341,7 +341,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause AND Inner-Net-2.0
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 217
         end_line: 242
@@ -380,7 +380,7 @@ license_detections:
               NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
               SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: inner-net-2.0
-        spdx_license_expression: Inner-Net-2.0
+        license_expression_spdx: Inner-Net-2.0
         from_file:
         start_line: 245
         end_line: 280
@@ -433,7 +433,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 286
         end_line: 289
@@ -454,7 +454,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.0-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 298
         end_line: 309
@@ -479,7 +479,7 @@ license_detections:
               You should have received a copy of the GNU Lesser General Public
               License along with GNU Libidn; if not, see <http://www.gnu.org/licenses/>.
       - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later
         from_file:
         start_line: 313
         end_line: 314
@@ -498,7 +498,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-punycode AND LicenseRef-scancode-ietf
     matches:
       - license_expression: punycode
-        spdx_license_expression: LicenseRef-scancode-punycode
+        license_expression_spdx: LicenseRef-scancode-punycode
         from_file:
         start_line: 324
         end_line: 332
@@ -520,7 +520,7 @@ license_detections:
               misleading author or version information.  Derivative works need
               not be licensed under similar terms.
       - license_expression: ietf
-        spdx_license_expression: LicenseRef-scancode-ietf
+        license_expression_spdx: LicenseRef-scancode-ietf
         from_file:
         start_line: 336
         end_line: 358
@@ -560,7 +560,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 365
         end_line: 387
@@ -600,7 +600,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 395
         end_line: 409
@@ -632,7 +632,7 @@ license_detections:
     license_expression_spdx: Spencer-94
     matches:
       - license_expression: hs-regexp
-        spdx_license_expression: Spencer-94
+        license_expression_spdx: Spencer-94
         from_file:
         start_line: 414
         end_line: 432
@@ -668,7 +668,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-pcre
     matches:
       - license_expression: pcre
-        spdx_license_expression: LicenseRef-scancode-pcre
+        license_expression_spdx: LicenseRef-scancode-pcre
         from_file:
         start_line: 438
         end_line: 473
@@ -721,7 +721,7 @@ license_detections:
     license_expression_spdx: SunPro
     matches:
       - license_expression: sunpro
-        spdx_license_expression: SunPro
+        license_expression_spdx: SunPro
         from_file:
         start_line: 479
         end_line: 482
@@ -742,7 +742,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 488
         end_line: 491
@@ -763,7 +763,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 497
         end_line: 509
@@ -803,6 +803,7 @@ copyright: |
   copyright Eric Young
   Copyright (c) 1992 Eric Young Collected
   copyright Simon Josefsson
+  portions copyright The Internet Society, Tom Tromey and Red Hat, Inc.
   Copyright (c) 2002, 2003, 2004, 2011 Simon Josefsson
   Copyright (c) 1999, 2000 Tom Tromey
   Copyright 2000 Red Hat, Inc.

@@ -1,7 +1,11 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
+is_deprecated: yes
 relevance: 100
+notes: |
+    Added in SPDX license list 3.26
+    Replaced by license: mips.LICENSE
 ---
 
 grants reproduction and use   |

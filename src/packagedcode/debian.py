@@ -21,6 +21,7 @@ from packageurl import PackageURL
 
 from packagedcode import models
 from packagedcode.utils import get_ancestor
+from packagedcode.utils import parse_maintainer_name_email
 
 """
 Handle Debian package archives, control files and installed databases.
@@ -222,6 +223,7 @@ class DebianDscFileHandler(models.DatafileHandler):
 
 class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
     datasource_id = 'debian_installed_status_db'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = ('*var/lib/dpkg/status',)
     description = 'Debian installed packages database'
@@ -390,6 +392,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
 
 class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
     datasource_id = 'debian_distroless_installed_db'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = ('*var/lib/dpkg/status.d/*',)
     description = 'Debian distroless installed database'
@@ -473,6 +476,7 @@ class DebianInstalledFilelistHandler(models.DatafileHandler):
     # seen in installed rootfs in:
     #  - /var/lib/dpkg/info/<package name>.list
     datasource_id = 'debian_installed_files_list'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = (
         '*var/lib/dpkg/info/*.list',
@@ -498,6 +502,7 @@ class DebianInstalledMd5sumFilelistHandler(models.DatafileHandler):
     #  - /var/lib/dpkg/info/<package name>.md5sums
     #  - /var/lib/dpkg/info/<package name:arch>.md5sums
     datasource_id = 'debian_installed_md5sums'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = (
         '*var/lib/dpkg/info/*.md5sums',
@@ -653,20 +658,20 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
 
     maintainer = debian_data.get('maintainer')
     if maintainer:
-        maintainer_name, maintainer_email = parse_debian_maintainers(maintainer)
+        maintainer_name, maintainer_email = parse_maintainer_name_email(maintainer)
         party = models.Party(role='maintainer', name=maintainer_name, email=maintainer_email)
         parties.append(party)
 
     orig_maintainer = debian_data.get('original_maintainer')
     if orig_maintainer:
-        maintainer_name, maintainer_email = parse_debian_maintainers(orig_maintainer)
+        maintainer_name, maintainer_email = parse_maintainer_name_email(orig_maintainer)
         party = models.Party(role='maintainer', name=maintainer_name, email=maintainer_email)
         parties.append(party)
 
     uploaders = debian_data.get('uploaders')
     if uploaders:
         for uploader in uploaders.split(", "):
-            uploader_name, uploader_email = parse_debian_maintainers(uploader)
+            uploader_name, uploader_email = parse_maintainer_name_email(uploader)
             party = models.Party(role='uploader', name=uploader_name, email=uploader_email)
             parties.append(party)
 
@@ -734,26 +739,6 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         extra_data=extra_data,
     )
     return models.PackageData.from_data(package_data, package_only)
-
-
-def parse_debian_maintainers(maintainer):
-    """
-    Get name and email values from a debian maintainer string.
-
-    Example string:
-    Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>
-    """
-    email_wrappers = ["<", ">"]
-    has_email = "@" in maintainer and all([
-        True 
-        for char in email_wrappers
-        if char in maintainer
-    ])
-    if not has_email:
-        return maintainer, None
-
-    name, _, email = maintainer.rpartition("<")
-    return name.rstrip(" "), email.rstrip(">")
 
 
 def populate_debian_namespace(packages):

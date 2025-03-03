@@ -1,0 +1,8 @@
+---
+is_false_positive: yes
+notes: seen in kernel /Documentation/process/license-rules.rst
+---
+
+Aside from that, individual files can be provided under a dual license,
+e.g. one of the compatible GPL variants and alternatively under a
+permissive license like BSD, MIT etc.

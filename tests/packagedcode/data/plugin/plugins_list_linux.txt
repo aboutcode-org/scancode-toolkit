@@ -1,0 +1,945 @@
+--------------------------------------------
+Package type:  about
+  datasource_id:     about_file
+  documentation URL: https://aboutcode-toolkit.readthedocs.io/en/latest/specification.html
+  primary language:  None
+  description:       AboutCode ABOUT file
+  path_patterns:    '*.ABOUT'
+--------------------------------------------
+Package type:  alpine
+  datasource_id:     alpine_apk_archive
+  documentation URL: https://wiki.alpinelinux.org/wiki/Alpine_package_format
+  primary language:  None
+  description:       Alpine Linux .apk package archive
+  path_patterns:    '*.apk'
+--------------------------------------------
+Package type:  alpine
+  datasource_id:     alpine_apkbuild
+  documentation URL: https://wiki.alpinelinux.org/wiki/APKBUILD_Reference
+  primary language:  None
+  description:       Alpine Linux APKBUILD package script
+  path_patterns:    '*APKBUILD'
+--------------------------------------------
+Package type:  alpine
+  datasource_id:     alpine_installed_db
+  documentation URL: None
+  primary language:  None
+  description:       Alpine Linux installed package database
+  path_patterns:    '*lib/apk/db/installed'
+--------------------------------------------
+Package type:  android
+  datasource_id:     android_apk
+  documentation URL: https://en.wikipedia.org/wiki/Apk_(file_format)
+  primary language:  Java
+  description:       Android application package
+  path_patterns:    '*.apk'
+--------------------------------------------
+Package type:  android_lib
+  datasource_id:     android_aar_library
+  documentation URL: https://developer.android.com/studio/projects/android-library
+  primary language:  Java
+  description:       Android library archive
+  path_patterns:    '*.aar'
+--------------------------------------------
+Package type:  autotools
+  datasource_id:     autotools_configure
+  documentation URL: https://www.gnu.org/software/automake/
+  primary language:  None
+  description:       Autotools configure script
+  path_patterns:    '*/configure', '*/configure.ac'
+--------------------------------------------
+Package type:  axis2
+  datasource_id:     axis2_mar
+  documentation URL: https://axis.apache.org/axis2/java/core/docs/modules.html
+  primary language:  Java
+  description:       Apache Axis2 module archive
+  path_patterns:    '*.mar'
+--------------------------------------------
+Package type:  axis2
+  datasource_id:     axis2_module_xml
+  documentation URL: https://axis.apache.org/axis2/java/core/docs/modules.html
+  primary language:  Java
+  description:       Apache Axis2 module.xml
+  path_patterns:    '*/meta-inf/module.xml'
+--------------------------------------------
+Package type:  bazel
+  datasource_id:     bazel_build
+  documentation URL: https://bazel.build/
+  primary language:  None
+  description:       Bazel BUILD
+  path_patterns:    '*/BUILD'
+--------------------------------------------
+Package type:  bower
+  datasource_id:     bower_json
+  documentation URL: https://bower.io
+  primary language:  JavaScript
+  description:       Bower package
+  path_patterns:    '*/bower.json', '*/.bower.json'
+--------------------------------------------
+Package type:  buck
+  datasource_id:     buck_file
+  documentation URL: https://buck.build/
+  primary language:  None
+  description:       Buck file
+  path_patterns:    '*/BUCK'
+--------------------------------------------
+Package type:  buck
+  datasource_id:     buck_metadata
+  documentation URL: https://buck.build/
+  primary language:  None
+  description:       Buck metadata file
+  path_patterns:    '*/METADATA.bzl'
+--------------------------------------------
+Package type:  cab
+  datasource_id:     microsoft_cabinet
+  documentation URL: https://docs.microsoft.com/en-us/windows/win32/msi/cabinet-files
+  primary language:  C
+  description:       Microsoft cabinet archive
+  path_patterns:    '*.cab'
+--------------------------------------------
+Package type:  cargo
+  datasource_id:     cargo_lock
+  documentation URL: https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html
+  primary language:  Rust
+  description:       Rust Cargo.lock dependencies lockfile
+  path_patterns:    '*/Cargo.lock', '*/cargo.lock'
+--------------------------------------------
+Package type:  cargo
+  datasource_id:     cargo_toml
+  documentation URL: https://doc.rust-lang.org/cargo/reference/manifest.html
+  primary language:  Rust
+  description:       Rust Cargo.toml package manifest
+  path_patterns:    '*/Cargo.toml', '*/cargo.toml'
+--------------------------------------------
+Package type:  cargo
+  datasource_id:     rust_binary
+  documentation URL: https://github.com/rust-secure-code/cargo-auditable/blob/master/PARSING.md
+  primary language:  Rust
+  description:       Rust binary
+  path_patterns:    
+--------------------------------------------
+Package type:  chef
+  datasource_id:     chef_cookbook_metadata_json
+  documentation URL: https://docs.chef.io/config_rb_metadata/
+  primary language:  Ruby
+  description:       Chef cookbook metadata.json
+  path_patterns:    '*/metadata.json'
+--------------------------------------------
+Package type:  chef
+  datasource_id:     chef_cookbook_metadata_rb
+  documentation URL: https://docs.chef.io/config_rb_metadata/
+  primary language:  Ruby
+  description:       Chef cookbook metadata.rb
+  path_patterns:    '*/metadata.rb'
+--------------------------------------------
+Package type:  chrome
+  datasource_id:     chrome_crx
+  documentation URL: https://chrome.google.com/extensions
+  primary language:  JavaScript
+  description:       Chrome extension
+  path_patterns:    '*.crx'
+--------------------------------------------
+Package type:  cocoapods
+  datasource_id:     cocoapods_podfile
+  documentation URL: https://guides.cocoapods.org/using/the-podfile.html
+  primary language:  Objective-C
+  description:       Cocoapods Podfile
+  path_patterns:    '*Podfile'
+--------------------------------------------
+Package type:  cocoapods
+  datasource_id:     cocoapods_podfile_lock
+  documentation URL: https://guides.cocoapods.org/using/the-podfile.html
+  primary language:  Objective-C
+  description:       Cocoapods Podfile.lock
+  path_patterns:    '*Podfile.lock'
+--------------------------------------------
+Package type:  cocoapods
+  datasource_id:     cocoapods_podspec
+  documentation URL: https://guides.cocoapods.org/syntax/podspec.html
+  primary language:  Objective-C
+  description:       Cocoapods .podspec
+  path_patterns:    '*.podspec'
+--------------------------------------------
+Package type:  cocoapods
+  datasource_id:     cocoapods_podspec_json
+  documentation URL: https://guides.cocoapods.org/syntax/podspec.html
+  primary language:  Objective-C
+  description:       Cocoapods .podspec.json
+  path_patterns:    '*.podspec.json'
+--------------------------------------------
+Package type:  composer
+  datasource_id:     php_composer_json
+  documentation URL: https://getcomposer.org/doc/04-schema.md
+  primary language:  PHP
+  description:       PHP composer manifest
+  path_patterns:    '*composer.json'
+--------------------------------------------
+Package type:  composer
+  datasource_id:     php_composer_lock
+  documentation URL: https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+  primary language:  PHP
+  description:       PHP composer lockfile
+  path_patterns:    '*composer.lock'
+--------------------------------------------
+Package type:  conan
+  datasource_id:     conan_conandata_yml
+  documentation URL: https://docs.conan.io/2/tutorial/creating_packages/handle_sources_in_packages.html#using-the-conandata-yml-file
+  primary language:  C++
+  description:       conan external source
+  path_patterns:    '*/conandata.yml'
+--------------------------------------------
+Package type:  conan
+  datasource_id:     conan_conanfile_py
+  documentation URL: https://docs.conan.io/2.0/reference/conanfile.html
+  primary language:  C++
+  description:       conan recipe
+  path_patterns:    '*/conanfile.py'
+--------------------------------------------
+Package type:  conda
+  datasource_id:     conda_meta_json
+  documentation URL: https://docs.conda.io/
+  primary language:  Python
+  description:       Conda metadata JSON in rootfs
+  path_patterns:    '*conda-meta/*.json'
+--------------------------------------------
+Package type:  conda
+  datasource_id:     conda_meta_yaml
+  documentation URL: https://docs.conda.io/
+  primary language:  None
+  description:       Conda meta.yml manifest
+  path_patterns:    '*/meta.yaml'
+--------------------------------------------
+Package type:  conda
+  datasource_id:     conda_yaml
+  documentation URL: https://docs.conda.io/
+  primary language:  Python
+  description:       Conda yaml manifest
+  path_patterns:    '*conda*.yaml', '*env*.yaml', '*environment*.yaml'
+--------------------------------------------
+Package type:  cpan
+  datasource_id:     cpan_dist_ini
+  documentation URL: https://metacpan.org/pod/Dist::Zilla::Tutorial
+  primary language:  Perl
+  description:       CPAN Perl dist.ini
+  path_patterns:    '*/dist.ini'
+--------------------------------------------
+Package type:  cpan
+  datasource_id:     cpan_makefile
+  documentation URL: https://www.perlmonks.org/?node_id=128077
+  primary language:  Perl
+  description:       CPAN Perl Makefile.PL
+  path_patterns:    '*/Makefile.PL'
+--------------------------------------------
+Package type:  cpan
+  datasource_id:     cpan_manifest
+  documentation URL: https://metacpan.org/pod/Module::Manifest
+  primary language:  Perl
+  description:       CPAN Perl module MANIFEST
+  path_patterns:    '*/MANIFEST'
+--------------------------------------------
+Package type:  cpan
+  datasource_id:     cpan_meta_json
+  documentation URL: https://metacpan.org/pod/Parse::CPAN::Meta
+  primary language:  Perl
+  description:       CPAN Perl META.json
+  path_patterns:    '*/META.json'
+--------------------------------------------
+Package type:  cpan
+  datasource_id:     cpan_meta_yml
+  documentation URL: https://metacpan.org/pod/CPAN::Meta::YAML
+  primary language:  Perl
+  description:       CPAN Perl META.yml
+  path_patterns:    '*/META.yml'
+--------------------------------------------
+Package type:  cran
+  datasource_id:     cran_description
+  documentation URL: https://r-pkgs.org/description.html
+  primary language:  R
+  description:       CRAN package DESCRIPTION
+  path_patterns:    '*/DESCRIPTION'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_control_extracted_deb
+  documentation URL: https://www.debian.org/doc/debian-policy/ch-controlfields.html
+  primary language:  None
+  description:       Debian control file - extracted layout
+  path_patterns:    '*/control.tar.gz-extract/control', '*/control.tar.xz-extract/control'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_control_in_source
+  documentation URL: https://www.debian.org/doc/debian-policy/ch-controlfields.html
+  primary language:  None
+  description:       Debian control file - source layout
+  path_patterns:    '*/debian/control'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_copyright_in_package
+  documentation URL: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+  primary language:  None
+  description:       Debian machine readable file in source
+  path_patterns:    '*usr/share/doc/*/copyright'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_copyright_in_source
+  documentation URL: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+  primary language:  None
+  description:       Debian machine readable file in source
+  path_patterns:    '*/debian/copyright'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_copyright_standalone
+  documentation URL: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+  primary language:  None
+  description:       Debian machine readable file standalone
+  path_patterns:    '*/copyright', '*_copyright'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_deb
+  documentation URL: https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html
+  primary language:  None
+  description:       Debian binary package archive
+  path_patterns:    '*.deb'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_distroless_installed_db
+  documentation URL: https://www.debian.org/doc/debian-policy/ch-controlfields.html
+  primary language:  None
+  description:       Debian distroless installed database
+  path_patterns:    '*var/lib/dpkg/status.d/*'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_installed_files_list
+  documentation URL: None
+  primary language:  None
+  description:       Debian installed file paths list
+  path_patterns:    '*var/lib/dpkg/info/*.list'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_installed_md5sums
+  documentation URL: https://www.debian.org/doc/manuals/debian-handbook/sect.package-meta-information.en.html#sect.configuration-scripts
+  primary language:  None
+  description:       Debian installed file MD5 and paths list
+  path_patterns:    '*var/lib/dpkg/info/*.md5sums'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_installed_status_db
+  documentation URL: https://www.debian.org/doc/debian-policy/ch-controlfields.html
+  primary language:  None
+  description:       Debian installed packages database
+  path_patterns:    '*var/lib/dpkg/status'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_md5sums_in_extracted_deb
+  documentation URL: https://www.debian.org/doc/manuals/debian-handbook/sect.package-meta-information.en.html#sect.configuration-scripts
+  primary language:  None
+  description:       Debian file MD5 and paths list in .deb archive
+  path_patterns:    '*/control.tar.gz-extract/md5sums', '*/control.tar.xz-extract/md5sums'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_original_source_tarball
+  documentation URL: https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html
+  primary language:  None
+  description:       Debian package original source archive
+  path_patterns:    '*.orig.tar.xz', '*.orig.tar.gz'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_source_control_dsc
+  documentation URL: https://wiki.debian.org/dsc
+  primary language:  None
+  description:       Debian source control file
+  path_patterns:    '*.dsc'
+--------------------------------------------
+Package type:  deb
+  datasource_id:     debian_source_metadata_tarball
+  documentation URL: https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html
+  primary language:  None
+  description:       Debian source package metadata archive
+  path_patterns:    '*.debian.tar.xz', '*.debian.tar.gz'
+--------------------------------------------
+Package type:  dmg
+  datasource_id:     apple_dmg
+  documentation URL: https://en.wikipedia.org/wiki/Apple_Disk_Image
+  primary language:  None
+  description:       macOS disk image file
+  path_patterns:    '*.dmg', '*.sparseimage'
+--------------------------------------------
+Package type:  ear
+  datasource_id:     java_ear_application_xml
+  documentation URL: https://en.wikipedia.org/wiki/EAR_(file_format)
+  primary language:  Java
+  description:       Java EAR application.xml
+  path_patterns:    '*/META-INF/application.xml'
+--------------------------------------------
+Package type:  ear
+  datasource_id:     java_ear_archive
+  documentation URL: https://en.wikipedia.org/wiki/EAR_(file_format)
+  primary language:  Java
+  description:       Java EAR Enterprise application archive
+  path_patterns:    '*.ear'
+--------------------------------------------
+Package type:  freebsd
+  datasource_id:     freebsd_compact_manifest
+  documentation URL: https://www.freebsd.org/cgi/man.cgi?pkg-create(8)#MANIFEST_FILE_DETAILS
+  primary language:  None
+  description:       FreeBSD compact package manifest
+  path_patterns:    '*/+COMPACT_MANIFEST'
+--------------------------------------------
+Package type:  gem
+  datasource_id:     gem_archive
+  documentation URL: https://web.archive.org/web/20220326093616/https://piotrmurach.com/articles/looking-inside-a-ruby-gem/
+  primary language:  Ruby
+  description:       RubyGems gem package archive
+  path_patterns:    '*.gem'
+--------------------------------------------
+Package type:  gem
+  datasource_id:     gem_archive_extracted
+  documentation URL: https://web.archive.org/web/20220326093616/https://piotrmurach.com/articles/looking-inside-a-ruby-gem/
+  primary language:  Ruby
+  description:       RubyGems gem package extracted archive
+  path_patterns:    '*/metadata.gz-extract'
+--------------------------------------------
+Package type:  gem
+  datasource_id:     gem_gemspec_installed_specifications
+  documentation URL: https://guides.rubygems.org/specification-reference/
+  primary language:  Ruby
+  description:       RubyGems gemspec manifest - installed vendor/bundle/specifications layout
+  path_patterns:    '*/specifications/*.gemspec'
+--------------------------------------------
+Package type:  gem
+  datasource_id:     gemfile
+  documentation URL: https://bundler.io/man/gemfile.5.html
+  primary language:  Ruby
+  description:       RubyGems Bundler Gemfile
+  path_patterns:    '*/Gemfile', '*/*.gemfile', '*/Gemfile-*'
+--------------------------------------------
+Package type:  gem
+  datasource_id:     gemfile_extracted
+  documentation URL: https://bundler.io/man/gemfile.5.html
+  primary language:  Ruby
+  description:       RubyGems Bundler Gemfile - extracted layout
+  path_patterns:    '*/data.gz-extract/Gemfile'
+--------------------------------------------
+Package type:  gem
+  datasource_id:     gemfile_lock
+  documentation URL: https://bundler.io/man/gemfile.5.html
+  primary language:  Ruby
+  description:       RubyGems Bundler Gemfile.lock
+  path_patterns:    '*/Gemfile.lock'
+--------------------------------------------
+Package type:  gem
+  datasource_id:     gemfile_lock_extracted
+  documentation URL: https://bundler.io/man/gemfile.5.html
+  primary language:  Ruby
+  description:       RubyGems Bundler Gemfile.lock - extracted layout
+  path_patterns:    '*/data.gz-extract/Gemfile.lock'
+--------------------------------------------
+Package type:  gem
+  datasource_id:     gemspec
+  documentation URL: https://guides.rubygems.org/specification-reference/
+  primary language:  Ruby
+  description:       RubyGems gemspec manifest
+  path_patterns:    '*.gemspec'
+--------------------------------------------
+Package type:  gem
+  datasource_id:     gemspec_extracted
+  documentation URL: https://guides.rubygems.org/specification-reference/
+  primary language:  Ruby
+  description:       RubyGems gemspec manifest - extracted data layout
+  path_patterns:    '*/data.gz-extract/*.gemspec'
+--------------------------------------------
+Package type:  golang
+  datasource_id:     go_mod
+  documentation URL: https://go.dev/ref/mod
+  primary language:  Go
+  description:       Go modules file
+  path_patterns:    '*/go.mod'
+--------------------------------------------
+Package type:  golang
+  datasource_id:     go_sum
+  documentation URL: https://go.dev/ref/mod#go-sum-files
+  primary language:  Go
+  description:       Go module cheksums file
+  path_patterns:    '*/go.sum'
+--------------------------------------------
+Package type:  golang
+  datasource_id:     godeps
+  documentation URL: https://github.com/tools/godep
+  primary language:  Go
+  description:       Go Godeps
+  path_patterns:    '*/Godeps.json'
+--------------------------------------------
+Package type:  golang
+  datasource_id:     golang_binary
+  documentation URL: https://github.com/nexB/go-inspector/
+  primary language:  Go
+  description:       Go binary
+  path_patterns:    
+--------------------------------------------
+Package type:  haxe
+  datasource_id:     haxelib_json
+  documentation URL: https://lib.haxe.org/documentation/creating-a-haxelib-package/
+  primary language:  Haxe
+  description:       Haxe haxelib.json metadata file
+  path_patterns:    '*/haxelib.json'
+--------------------------------------------
+Package type:  installshield
+  datasource_id:     installshield_installer
+  documentation URL: https://www.revenera.com/install/products/installshield
+  primary language:  None
+  description:       InstallShield installer
+  path_patterns:    '*.exe'
+--------------------------------------------
+Package type:  ios
+  datasource_id:     ios_ipa
+  documentation URL: https://en.wikipedia.org/wiki/.ipa
+  primary language:  Objective-C
+  description:       iOS package archive
+  path_patterns:    '*.ipa'
+--------------------------------------------
+Package type:  iso
+  datasource_id:     iso_disk_image
+  documentation URL: https://en.wikipedia.org/wiki/ISO_9660
+  primary language:  None
+  description:       ISO disk image
+  path_patterns:    '*.iso', '*.udf', '*.img'
+--------------------------------------------
+Package type:  ivy
+  datasource_id:     ant_ivy_xml
+  documentation URL: https://ant.apache.org/ivy/history/latest-milestone/ivyfile.html
+  primary language:  Java
+  description:       Ant IVY dependency file
+  path_patterns:    '*/ivy.xml'
+--------------------------------------------
+Package type:  jar
+  datasource_id:     java_jar
+  documentation URL: https://en.wikipedia.org/wiki/JAR_(file_format)
+  primary language:  None
+  description:       JAR Java Archive
+  path_patterns:    '*.jar'
+--------------------------------------------
+Package type:  jar
+  datasource_id:     java_jar_manifest
+  documentation URL: https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html
+  primary language:  Java
+  description:       Java JAR MANIFEST.MF
+  path_patterns:    '*/META-INF/MANIFEST.MF'
+--------------------------------------------
+Package type:  jboss-service
+  datasource_id:     jboss_sar
+  documentation URL: https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/ch02s01.html
+  primary language:  Java
+  description:       JBOSS service archive
+  path_patterns:    '*.sar'
+--------------------------------------------
+Package type:  jboss-service
+  datasource_id:     jboss_service_xml
+  documentation URL: https://docs.jboss.org/jbossas/docs/Server_Configuration_Guide/4/html/ch02s01.html
+  primary language:  Java
+  description:       JBOSS service.xml
+  path_patterns:    '*/meta-inf/jboss-service.xml'
+--------------------------------------------
+Package type:  linux-distro
+  datasource_id:     etc_os_release
+  documentation URL: https://www.freedesktop.org/software/systemd/man/os-release.html
+  primary language:  None
+  description:       Linux OS release metadata file
+  path_patterns:    '*etc/os-release', '*usr/lib/os-release'
+--------------------------------------------
+Package type:  maven
+  datasource_id:     build_gradle
+  documentation URL: None
+  primary language:  None
+  description:       Gradle build script
+  path_patterns:    '*/build.gradle', '*/build.gradle.kts'
+--------------------------------------------
+Package type:  maven
+  datasource_id:     maven_pom
+  documentation URL: https://maven.apache.org/pom.html
+  primary language:  Java
+  description:       Apache Maven pom
+  path_patterns:    '*.pom', '*pom.xml'
+--------------------------------------------
+Package type:  maven
+  datasource_id:     maven_pom_properties
+  documentation URL: https://maven.apache.org/pom.html
+  primary language:  Java
+  description:       Apache Maven pom properties file
+  path_patterns:    '*/pom.properties'
+--------------------------------------------
+Package type:  meteor
+  datasource_id:     meteor_package
+  documentation URL: https://docs.meteor.com/api/packagejs.html
+  primary language:  JavaScript
+  description:       Meteor package.js
+  path_patterns:    '*/package.js'
+--------------------------------------------
+Package type:  mozilla
+  datasource_id:     mozilla_xpi
+  documentation URL: https://en.wikipedia.org/wiki/XPInstall
+  primary language:  JavaScript
+  description:       Mozilla XPI extension
+  path_patterns:    '*.xpi'
+--------------------------------------------
+Package type:  msi
+  datasource_id:     msi_installer
+  documentation URL: https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal
+  primary language:  None
+  description:       Microsoft MSI installer
+  path_patterns:    '*.msi'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     npm_package_json
+  documentation URL: https://docs.npmjs.com/cli/v8/configuring-npm/package-json
+  primary language:  JavaScript
+  description:       npm package.json
+  path_patterns:    '*/package.json'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     npm_package_lock_json
+  documentation URL: https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json
+  primary language:  JavaScript
+  description:       npm package-lock.json lockfile
+  path_patterns:    '*/package-lock.json', '*/.package-lock.json'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     npm_shrinkwrap_json
+  documentation URL: https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json
+  primary language:  JavaScript
+  description:       npm shrinkwrap.json lockfile
+  path_patterns:    '*/npm-shrinkwrap.json'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     pnpm_lock_yaml
+  documentation URL: https://github.com/pnpm/spec/blob/master/lockfile/6.0.md
+  primary language:  JavaScript
+  description:       pnpm pnpm-lock.yaml lockfile
+  path_patterns:    '*/pnpm-lock.yaml'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     pnpm_shrinkwrap_yaml
+  documentation URL: https://github.com/pnpm/spec/blob/master/lockfile/4.md
+  primary language:  JavaScript
+  description:       pnpm shrinkwrap.yaml lockfile
+  path_patterns:    '*/shrinkwrap.yaml'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     pnpm_workspace_yaml
+  documentation URL: https://pnpm.io/pnpm-workspace_yaml
+  primary language:  JavaScript
+  description:       pnpm workspace yaml file
+  path_patterns:    '*/pnpm-workspace.yaml'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     yarn_lock_v1
+  documentation URL: https://classic.yarnpkg.com/lang/en/docs/yarn-lock/
+  primary language:  JavaScript
+  description:       yarn.lock lockfile v1 format
+  path_patterns:    '*/yarn.lock'
+--------------------------------------------
+Package type:  npm
+  datasource_id:     yarn_lock_v2
+  documentation URL: https://classic.yarnpkg.com/lang/en/docs/yarn-lock/
+  primary language:  JavaScript
+  description:       yarn.lock lockfile v2 format
+  path_patterns:    '*/yarn.lock'
+--------------------------------------------
+Package type:  nsis
+  datasource_id:     nsis_installer
+  documentation URL: https://nsis.sourceforge.io/Main_Page
+  primary language:  None
+  description:       NSIS installer
+  path_patterns:    '*.exe'
+--------------------------------------------
+Package type:  nuget
+  datasource_id:     nuget_nupkg
+  documentation URL: https://en.wikipedia.org/wiki/Open_Packaging_Conventions
+  primary language:  None
+  description:       NuGet nupkg package archive
+  path_patterns:    '*.nupkg'
+--------------------------------------------
+Package type:  nuget
+  datasource_id:     nuget_nupsec
+  documentation URL: https://docs.microsoft.com/en-us/nuget/reference/nuspec
+  primary language:  None
+  description:       NuGet nuspec package manifest
+  path_patterns:    '*.nuspec'
+--------------------------------------------
+Package type:  nuget
+  datasource_id:     nuget_packages_lock
+  documentation URL: https://learn.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-restore
+  primary language:  None
+  description:       NuGet packages.lock.json file
+  path_patterns:    '*packages.lock.json'
+--------------------------------------------
+Package type:  opam
+  datasource_id:     opam_file
+  documentation URL: https://opam.ocaml.org/doc/Manual.html#Common-file-format
+  primary language:  Ocaml
+  description:       Ocaml Opam file
+  path_patterns:    '*opam'
+--------------------------------------------
+Package type:  osgi
+  datasource_id:     java_osgi_manifest
+  documentation URL: https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html
+  primary language:  Java
+  description:       Java OSGi MANIFEST.MF
+  path_patterns:    
+--------------------------------------------
+Package type:  pubspec
+  datasource_id:     pubspec_lock
+  documentation URL: https://web.archive.org/web/20220330081004/https://gpalma.pt/blog/what-is-the-pubspec-lock/
+  primary language:  dart
+  description:       Dart pubspec lockfile
+  path_patterns:    '*pubspec.lock'
+--------------------------------------------
+Package type:  pubspec
+  datasource_id:     pubspec_yaml
+  documentation URL: https://dart.dev/tools/pub/pubspec
+  primary language:  dart
+  description:       Dart pubspec manifest
+  path_patterns:    '*pubspec.yaml'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pip_requirements
+  documentation URL: https://pip.pypa.io/en/latest/reference/requirements-file-format/
+  primary language:  Python
+  description:       pip requirements file
+  path_patterns:    '*requirement*.txt', '*requirement*.pip', '*requirement*.in', '*requires.txt', '*requirements/*.txt', '*requirements/*.pip', '*requirements/*.in', '*reqs.txt'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pipfile
+  documentation URL: https://github.com/pypa/pipfile
+  primary language:  Python
+  description:       Pipfile
+  path_patterns:    '*Pipfile'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pipfile_lock
+  documentation URL: https://github.com/pypa/pipfile
+  primary language:  Python
+  description:       Pipfile.lock
+  path_patterns:    '*Pipfile.lock'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_editable_egg_pkginfo
+  documentation URL: https://peps.python.org/pep-0376/
+  primary language:  Python
+  description:       PyPI editable local installation PKG-INFO
+  path_patterns:    '*.egg-info/PKG-INFO'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_egg
+  documentation URL: https://web.archive.org/web/20210604075235/http://peak.telecommunity.com/DevCenter/PythonEggs
+  primary language:  Python
+  description:       PyPI egg
+  path_patterns:    '*.egg'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_egg_pkginfo
+  documentation URL: https://peps.python.org/pep-0376/
+  primary language:  Python
+  description:       PyPI extracted egg PKG-INFO
+  path_patterns:    '*/EGG-INFO/PKG-INFO'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_inspect_deplock
+  documentation URL: https://pip.pypa.io/en/stable/cli/pip_inspect/
+  primary language:  Python
+  description:       Python poetry pyproject.toml
+  path_patterns:    '*pip-inspect.deplock'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_poetry_lock
+  documentation URL: https://python-poetry.org/docs/basic-usage/#installing-with-poetrylock
+  primary language:  Python
+  description:       Python poetry lockfile
+  path_patterns:    '*poetry.lock'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_poetry_pyproject_toml
+  documentation URL: https://packaging.python.org/en/latest/specifications/pyproject-toml/
+  primary language:  Python
+  description:       Python poetry pyproject.toml
+  path_patterns:    '*pyproject.toml'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_pyproject_toml
+  documentation URL: https://packaging.python.org/en/latest/specifications/pyproject-toml/
+  primary language:  Python
+  description:       Python pyproject.toml
+  path_patterns:    '*pyproject.toml'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_sdist_pkginfo
+  documentation URL: https://peps.python.org/pep-0314/
+  primary language:  Python
+  description:       PyPI extracted sdist PKG-INFO
+  path_patterns:    '*/PKG-INFO'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_setup_cfg
+  documentation URL: https://peps.python.org/pep-0390/
+  primary language:  Python
+  description:       Python setup.cfg
+  path_patterns:    '*setup.cfg'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_setup_py
+  documentation URL: https://docs.python.org/3.11/distutils/setupscript.html
+  primary language:  Python
+  description:       Python setup.py
+  path_patterns:    '*setup.py'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_wheel
+  documentation URL: https://peps.python.org/pep-0427/
+  primary language:  Python
+  description:       PyPI wheel
+  path_patterns:    '*.whl'
+--------------------------------------------
+Package type:  pypi
+  datasource_id:     pypi_wheel_metadata
+  documentation URL: https://packaging.python.org/en/latest/specifications/core-metadata/
+  primary language:  Python
+  description:       PyPI installed wheel METADATA
+  path_patterns:    '*.dist-info/METADATA'
+--------------------------------------------
+Package type:  readme
+  datasource_id:     readme
+  documentation URL: 
+  primary language:  None
+  description:       
+  path_patterns:    '*/README.android', '*/README.chromium', '*/README.facebook', '*/README.google', '*/README.thirdparty'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_archive
+  documentation URL: https://en.wikipedia.org/wiki/RPM_Package_Manager
+  primary language:  None
+  description:       RPM package archive
+  path_patterns:    '*.rpm', '*.src.rpm', '*.srpm', '*.mvl', '*.vip'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_installed_database_bdb
+  documentation URL: https://man7.org/linux/man-pages/man8/rpmdb.8.html
+  primary language:  None
+  description:       RPM installed package BDB database
+  path_patterns:    '*var/lib/rpm/Packages'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_installed_database_ndb
+  documentation URL: https://fedoraproject.org/wiki/Changes/NewRpmDBFormat
+  primary language:  None
+  description:       RPM installed package NDB database
+  path_patterns:    '*usr/lib/sysimage/rpm/Packages.db'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_installed_database_sqlite
+  documentation URL: https://fedoraproject.org/wiki/Changes/Sqlite_Rpmdb
+  primary language:  None
+  description:       RPM installed package SQLite database
+  path_patterns:    '*rpm/rpmdb.sqlite'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_mariner_manifest
+  documentation URL: https://github.com/microsoft/marinara/
+  primary language:  None
+  description:       RPM mariner distroless package manifest
+  path_patterns:    '*var/lib/rpmmanifest/container-manifest-2'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_package_licenses
+  documentation URL: https://github.com/microsoft/marinara/
+  primary language:  None
+  description:       RPM mariner distroless package license files
+  path_patterns:    '*usr/share/licenses/*/COPYING*', '*usr/share/licenses/*/LICENSE*'
+--------------------------------------------
+Package type:  rpm
+  datasource_id:     rpm_spefile
+  documentation URL: https://en.wikipedia.org/wiki/RPM_Package_Manager
+  primary language:  None
+  description:       RPM specfile
+  path_patterns:    '*.spec'
+--------------------------------------------
+Package type:  shar
+  datasource_id:     shar_shell_archive
+  documentation URL: https://en.wikipedia.org/wiki/Shar
+  primary language:  None
+  description:       shell archive
+  path_patterns:    '*.shar'
+--------------------------------------------
+Package type:  squashfs
+  datasource_id:     squashfs_disk_image
+  documentation URL: https://en.wikipedia.org/wiki/SquashFS
+  primary language:  None
+  description:       Squashfs disk image
+  path_patterns:    
+--------------------------------------------
+Package type:  swift
+  datasource_id:     swift_package_manifest_json
+  documentation URL: https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html
+  primary language:  Swift
+  description:       JSON dump of Package.swift created by DepLock or with ``swift package dump-package > Package.swift.json``
+  path_patterns:    '*/Package.swift.json', '*/Package.swift.deplock'
+--------------------------------------------
+Package type:  swift
+  datasource_id:     swift_package_resolved
+  documentation URL: https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html#package-dependency
+  primary language:  swift
+  description:       Resolved full dependency lockfile for Package.swift created with ``swift package resolve``
+  path_patterns:    '*/Package.resolved', '*/.package.resolved'
+--------------------------------------------
+Package type:  swift
+  datasource_id:     swift_package_show_dependencies
+  documentation URL: https://forums.swift.org/t/swiftpm-show-dependencies-without-fetching-dependencies/51154
+  primary language:  Swift
+  description:       Swift dependency graph created by DepLock
+  path_patterns:    '*/swift-show-dependencies.deplock'
+--------------------------------------------
+Package type:  war
+  datasource_id:     java_war_archive
+  documentation URL: https://en.wikipedia.org/wiki/WAR_(file_format)
+  primary language:  Java
+  description:       Java Web Application Archive
+  path_patterns:    '*.war'
+--------------------------------------------
+Package type:  war
+  datasource_id:     java_war_web_xml
+  documentation URL: https://en.wikipedia.org/wiki/WAR_(file_format)
+  primary language:  Java
+  description:       Java WAR web/xml
+  path_patterns:    '*/WEB-INF/web.xml'
+--------------------------------------------
+Package type:  windows-program
+  datasource_id:     win_reg_installed_programs_docker_file_software
+  documentation URL: https://en.wikipedia.org/wiki/Windows_Registry
+  primary language:  None
+  description:       Windows Registry Installed Program - Docker SOFTWARE
+  path_patterns:    '*/Files/Windows/System32/config/SOFTWARE'
+--------------------------------------------
+Package type:  windows-program
+  datasource_id:     win_reg_installed_programs_docker_software_delta
+  documentation URL: https://en.wikipedia.org/wiki/Windows_Registry
+  primary language:  None
+  description:       Windows Registry Installed Program - Docker Software Delta
+  path_patterns:    '*/Hives/Software_Delta'
+--------------------------------------------
+Package type:  windows-program
+  datasource_id:     win_reg_installed_programs_docker_utility_software
+  documentation URL: https://en.wikipedia.org/wiki/Windows_Registry
+  primary language:  None
+  description:       Windows Registry Installed Program - Docker UtilityVM SOFTWARE
+  path_patterns:    '*/UtilityVM/Files/Windows/System32/config/SOFTWARE'
+--------------------------------------------
+Package type:  windows-update
+  datasource_id:     microsoft_update_manifest_mum
+  documentation URL: None
+  primary language:  None
+  description:       Microsoft Update Manifest .mum file
+  path_patterns:    '*.mum'
+--------------------------------------------
+Package type:  winexe
+  datasource_id:     windows_executable
+  documentation URL: https://en.wikipedia.org/wiki/Portable_Executable
+  primary language:  None
+  description:       Windows Portable Executable metadata
+  path_patterns:    '*.exe', '*.dll', '*.mui', '*.mun', '*.com', '*.winmd', '*.sys', '*.tlb', '*.exe_*', '*.dll_*', '*.mui_*', '*.mun_*', '*.com_*', '*.winmd_*', '*.sys_*', '*.tlb_*', '*.ocx'

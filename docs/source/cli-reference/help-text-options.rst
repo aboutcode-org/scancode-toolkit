@@ -79,7 +79,7 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
       --csv FILE              [DEPRECATED] Write scan output as CSV to FILE. The
                               --csv option is deprecated and will be replaced by new
                               CSV and tabular output formats in the next ScanCode
-                              release. Visit https://github.com/nexB/scancode-
+                              release. Visit https://github.com/aboutcode-org/scancode-
                               toolkit/issues/3043 to provide inputs and feedback.
       --html FILE             Write scan output as HTML to FILE.
       --custom-output FILE    Write scan output to FILE formatted with the custom
@@ -321,7 +321,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
     required_plugins:
     options:
       help_group: output formats, name: csv: --csv
-        help: [DEPRECATED] Write scan output as CSV to FILE. The --csv option is deprecated and will be replaced by new CSV and tabular output formats in the next ScanCode release. Visit https://github.com/nexB/scancode-toolkit/issues/3043 to provide inputs and feedback.
+        help: [DEPRECATED] Write scan output as CSV to FILE. The --csv option is deprecated and will be replaced by new CSV and tabular output formats in the next ScanCode release. Visit https://github.com/aboutcode-org/scancode-toolkit/issues/3043 to provide inputs and feedback.
     doc: None
 
   --------------------------------------------

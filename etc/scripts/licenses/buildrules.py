@@ -72,6 +72,7 @@ class RuleData(object):
             print(rdat)
             print("########################################################")
             raise
+        self.data = {k: v for k, v in self.data.items() if v is not None or (v is None and k == "license_expression")}
 
 
 def load_data(location="00-new-licenses.txt"):

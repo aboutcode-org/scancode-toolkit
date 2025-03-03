@@ -33,7 +33,7 @@
       "license_clues": [
         {
           "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
+          "license_expression_spdx": "LGPL-2.0-or-later",
           "from_file": "e2fsprogs/e2fsprogs-copyright",
           "start_line": 19,
           "end_line": 20,
@@ -61,7 +61,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0 AND patent-disclaimer",
-              "spdx_license_expression": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",
+              "license_expression_spdx": "GPL-2.0-only AND LicenseRef-scancode-patent-disclaimer",
               "from_file": "e2fsprogs/e2fsprogs-fsstress",
               "start_line": 4,
               "end_line": 30,

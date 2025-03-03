@@ -1,0 +1,17 @@
+---
+key: first-epss-usage
+short_name: FIRST EPSS Usage Agreement
+name: FIRST EPSS Usage Agreement
+category: Permissive
+owner: FIRST
+homepage_url: https://www.first.org/epss/#Usage-Agreement
+spdx_license_key: LicenseRef-scancode-first-epss-usage
+ignorable_authors:
+    - volunteer group of researchers
+ignorable_urls:
+    - https://www.first.org/epss
+---
+
+Usage Agreement
+
+EPSS is an emerging standard developed by a volunteer group of researchers, practitioners, academics and government personnel. We grant the use of EPSS scores freely to the public, subject to the conditions below. We reserve the right to update the model and these webpages periodically, as necessary, though we will make every attempt to provide sufficient notice to users in the event of material changes. While membership in the EPSS SIG is not required to use or implement EPSS, however, we ask that if you are using EPSS, that you provide appropriate attribution where possible. EPSS can be cited either from this website (e.g. "See EPSS at https://www.first.org/epss), or as: Jay Jacobs, Sasha Romanosky, Benjamin Edwards, Michael Roytman, Idris Adjerid, (2021), Exploit Prediction Scoring System, Digital Threats Research and Practice, 2(3)

@@ -1,7 +1,11 @@
 ---
 license_expression: other-copyleft
 is_license_text: yes
-notes: seen in https://metadata.ftp-master.debian.org/changelogs//main/x/xzoom/xzoom_0.3-27_copyright
+is_deprecated: yes
+notes: |
+    seen in https://metadata.ftp-master.debian.org/changelogs//main/x/xzoom/xzoom_0.3-27_copyright
+    Added in SPDX license list 3.24
+    Replaced by license: xzoom.LICENSE
 ---
 
 This program is distributed with no warranty.

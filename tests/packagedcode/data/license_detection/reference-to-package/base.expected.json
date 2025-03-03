@@ -53,7 +53,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "base-example/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -76,6 +76,8 @@
       "extracted_license_statement": "classifiers:\n  - 'License :: OSI Approved :: BSD License'\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
       },
@@ -220,7 +222,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "base-example/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -244,6 +246,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Download-URL": "http://media.djangoproject.com/releases/1.2/Django-1.2.5.tar.gz"
           },
@@ -267,7 +271,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "base-example/PKG-INFO",
               "start_line": 16,
               "end_line": 16,
@@ -306,7 +310,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "base-example/django.po",
               "start_line": 1,
               "end_line": 1,
@@ -322,7 +326,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "base-example/PKG-INFO",
               "start_line": 1,
               "end_line": 1,

@@ -33,17 +33,17 @@
         "license_expression_spdx": "LicenseRef-scancode-public-domain",
         "matches": [
           {
-            "score": 70.0,
+            "license_expression": "public-domain",
+            "license_expression_spdx": "LicenseRef-scancode-public-domain",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 70.0,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "public-domain",
-            "spdx_license_expression": "LicenseRef-scancode-public-domain",
-            "rule_identifier": "public-domain_bare_words.RULE",
             "rule_relevance": 70,
+            "rule_identifier": "public-domain_bare_words.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
             "matched_text": "Public Domain"
           }
@@ -392,6 +392,8 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -434,17 +436,17 @@
         "license_expression_spdx": "LicenseRef-scancode-public-domain",
         "matches": [
           {
-            "score": 70.0,
+            "license_expression": "public-domain",
+            "license_expression_spdx": "LicenseRef-scancode-public-domain",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 70.0,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "public-domain",
-            "spdx_license_expression": "LicenseRef-scancode-public-domain",
-            "rule_identifier": "public-domain_bare_words.RULE",
             "rule_relevance": 70,
+            "rule_identifier": "public-domain_bare_words.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
             "matched_text": "Public Domain"
           }
@@ -459,6 +461,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,
@@ -501,17 +505,17 @@
         "license_expression_spdx": "MIT",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
             "matched_length": 1,
             "match_coverage": 100.0,
-            "matcher": "1-spdx-id",
-            "license_expression": "mit",
-            "spdx_license_expression": "MIT",
-            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
             "rule_url": null,
             "matched_text": "MIT"
           }
@@ -2021,6 +2025,8 @@
         "extra_data": {}
       }
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,

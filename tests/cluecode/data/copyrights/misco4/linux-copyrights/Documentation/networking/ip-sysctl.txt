@@ -1,0 +1,3 @@
+(c) PAWS (Protection Against Wrapped Sequence numbers) check failure
+
+	This can help mitigate simple "ack loop" DoS attacks, wherein

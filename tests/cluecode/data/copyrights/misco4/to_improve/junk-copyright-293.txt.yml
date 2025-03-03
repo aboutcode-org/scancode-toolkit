@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2007-present, < pkg.author > < pkg.license >
+holders:
+  - < pkg.author > < pkg.license >

@@ -1,0 +1,1 @@
+(c) NIST.800.53.R5-RDSMultiAZSupport (https://docs.aws.amazon.com/config/latest/developerguide/rds-multi-az-support.html)

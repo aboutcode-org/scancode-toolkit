@@ -9,11 +9,11 @@ Yash D. Saraf  `yashdsaraf@gmail.com <mailto:yashdsaraf@gmail.com>`_
 ----
 
 This project’s purpose was to create a decoupled plugin architecture for
-`ScanCode <https://github.com/nexB/scancode-toolkit>`_ such that it can handle plugins at different
+`ScanCode <https://github.com/aboutcode-org/scancode-toolkit>`_ such that it can handle plugins at different
 stages of a scan and can be coupled at runtime. These stages were,
 
-1. `Format <https://github.com/nexB/scancode-toolkit/issues/639>`_ :
----------------------------------------------------------------------
+1. `Format <https://github.com/aboutcode-org/scancode-toolkit/issues/639>`_ :
+-----------------------------------------------------------------------------
 
 In this stage, the plugins are supposed to run **after** the scanning is done and ``post-scan``
 plugins are called. These plugins could be used for:
@@ -35,8 +35,8 @@ format : ``'<format> = <module>:<function>'``.
 The ``<format>`` name will be automatically added to the ``--format`` command line option and
 (if called) the scanned data will be passed to the plugin.
 
-2. `Post-scan <https://github.com/nexB/scancode-toolkit/issues/704>`_ :
-------------------------------------------------------------------------
+2. `Post-scan <https://github.com/aboutcode-org/scancode-toolkit/issues/704>`_ :
+--------------------------------------------------------------------------------
 
 In this stage, the plugins are supposed to run **after** the scanning is done. Some uses for these
 plugins were:
@@ -67,8 +67,8 @@ format ``'<name> = <module>:<function>'``
 The command line option for this plugin will be automatically created using the ``<function>`` 's
 doctring as its help text and (if called) the scanned files will be passed to the plugin.
 
-3. `Pre-scan <https://github.com/nexB/scancode-toolkit/issues/719>`_ :
------------------------------------------------------------------------
+3. `Pre-scan <https://github.com/aboutcode-org/scancode-toolkit/issues/719>`_ :
+-------------------------------------------------------------------------------
 
 In this stage, the plugins are supposed to run **before** the scan starts. So the potential uses
 for these types of plugins were to:
@@ -110,14 +110,14 @@ No development has been done for this stage, but it will be quite similar to ``p
 5. Other work:
 --------------
 
-`Group cli options in cli help <https://github.com/nexB/scancode-toolkit/issues/709>`_
+`Group cli options in cli help <https://github.com/aboutcode-org/scancode-toolkit/issues/709>`_
 
 Here, the goal was to add command line options to pre-defined groups such that they are displayed
 in their respective groups when ``scancode -h`` or ``scancode --help`` is called. This helped to
 better visually represent the command line options and determine more easily what context they
 belong to.
 
-`Add a Resource class to hold all scanned info <https://github.com/nexB/scancode-toolkit/issues/738>`_
+`Add a Resource class to hold all scanned info <https://github.com/aboutcode-org/scancode-toolkit/issues/738>`_
 * ``Ongoing`` *
 
 Here, the goal was to create a ``Resource`` class, such that it holds all the scanned data for a
@@ -132,4 +132,4 @@ logic entirely. For now, it just holds the ``info`` and ``path`` of a resource.
 - More complex post-scan plugins
 - Support plugins written in languages other than python
 
-**Additionally, all my commits can be found** `here <https://github.com/nexB/scancode-toolkit/commits/develop?author=yashdsaraf>`_.
+**Additionally, all my commits can be found** `here <https://github.com/aboutcode-org/scancode-toolkit/commits/develop?author=yashdsaraf>`_.

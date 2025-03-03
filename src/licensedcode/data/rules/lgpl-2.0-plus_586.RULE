@@ -1,0 +1,9 @@
+---
+license_expression: lgpl-2.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
+This file is distributed under the terms and conditions of the LGPL - please
+see the file LICENSE in the package root directory.

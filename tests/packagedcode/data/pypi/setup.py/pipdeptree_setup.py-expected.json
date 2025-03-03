@@ -49,17 +49,17 @@
         "license_expression_spdx": "MIT",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "mit",
-            "spdx_license_expression": "MIT",
-            "rule_identifier": "mit_14.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "mit_14.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
             "matched_text": "MIT License"
           }
@@ -71,17 +71,17 @@
         "license_expression_spdx": "MIT",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "mit",
-            "spdx_license_expression": "MIT",
-            "rule_identifier": "pypi_mit_license.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "pypi_mit_license.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
             "matched_text": "- 'License :: OSI Approved :: MIT License'"
           }
@@ -96,27 +96,31 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "python_requires": ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*"
     },
     "dependencies": [
       {
         "purl": "pkg:pypi/pip",
-        "extracted_requirement": "pip>=6.0.0",
+        "extracted_requirement": ">=6.0.0",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
       {
         "purl": "pkg:pypi/graphviz",
-        "extracted_requirement": "graphviz",
+        "extracted_requirement": null,
         "scope": "graphviz",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

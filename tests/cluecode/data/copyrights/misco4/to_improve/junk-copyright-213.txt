@@ -1,0 +1,1 @@
+Copyright 2002-${year} the original author or authors

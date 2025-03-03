@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2002, 2003, 2004 SuSE Linux AG, Germany
+  - Copyright 2005, 2008, 2009 2011 SUSE LINUX Products GmbH, Germany
+  - Copyright 2015 Bjorn Esser
+holders:
+  - SuSE Linux AG, Germany
+  - SUSE LINUX Products GmbH, Germany
+  - Bjorn Esser

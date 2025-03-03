@@ -39,17 +39,17 @@
         "license_expression_spdx": "LicenseRef-scancode-unknown",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "unknown",
+            "license_expression_spdx": "LicenseRef-scancode-unknown",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "5-undetected",
+            "score": 100.0,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "matcher": "5-undetected",
-            "license_expression": "unknown",
-            "spdx_license_expression": "LicenseRef-scancode-unknown",
-            "rule_identifier": "package-manifest-unknown-d2754fbb513aa8b758a4d140049dd6bef0aedd05",
             "rule_relevance": 100,
+            "rule_identifier": "package-manifest-unknown-d2754fbb513aa8b758a4d140049dd6bef0aedd05",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-d2754fbb513aa8b758a4d140049dd6bef0aedd05",
             "matched_text": "license Copyright 2021 Google Copyright"
           }
@@ -64,6 +64,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": "https://cocoapods.org/pods/FirebaseAnalytics",

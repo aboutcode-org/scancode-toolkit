@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - (c) Distributed Radio Limited 2016 - steve@distributedradio.com
+holders:
+  - Distributed Radio Limited
+holders_summary:
+  - value: Distributed Radio Limited
+    count: 1

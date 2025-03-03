@@ -45,7 +45,7 @@
         "matches": [
           {
             "license_expression": "mit OR wtfpl-2.0",
-            "spdx_license_expression": "MIT OR WTFPL",
+            "license_expression_spdx": "MIT OR WTFPL",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -67,7 +67,7 @@
         "matches": [
           {
             "license_expression": "wtfpl-2.0",
-            "spdx_license_expression": "WTFPL",
+            "license_expression_spdx": "WTFPL",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -89,7 +89,7 @@
         "matches": [
           {
             "license_expression": "wtfpl-2.0",
-            "spdx_license_expression": "WTFPL",
+            "license_expression_spdx": "WTFPL",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -111,7 +111,7 @@
         "matches": [
           {
             "license_expression": "mit",
-            "spdx_license_expression": "MIT",
+            "license_expression_spdx": "MIT",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -133,7 +133,7 @@
         "matches": [
           {
             "license_expression": "mit",
-            "spdx_license_expression": "MIT",
+            "license_expression_spdx": "MIT",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -157,7 +157,13 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "engines": {
+        "node": ">=4.6.0"
+      }
+    },
     "dependencies": [
       {
         "purl": "pkg:npm/assemble-dox",
@@ -165,7 +171,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -175,7 +182,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -185,7 +193,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -195,7 +204,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -205,7 +215,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -215,7 +226,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -225,7 +237,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -235,7 +248,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -245,7 +259,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -255,7 +270,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -265,7 +281,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -275,7 +292,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -285,7 +303,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -295,7 +314,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -305,7 +325,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -315,7 +336,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -325,7 +347,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -335,7 +358,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -345,7 +369,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -355,7 +380,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -365,7 +391,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -375,7 +402,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -385,7 +413,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -395,7 +424,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -405,7 +435,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -415,7 +446,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -425,7 +457,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -435,7 +468,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -445,7 +479,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -455,7 +490,8 @@
         "scope": "devDependencies",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

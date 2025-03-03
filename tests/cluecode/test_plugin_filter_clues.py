@@ -18,7 +18,6 @@ from scancode.cli_test_utils import run_scan_click
 
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -34,7 +33,7 @@ def test_is_empty_():
 
 
 def test_scan_plugin_filter_clues_for_rule():
-    # this test fies is a copy of apache-1.1_63.RULE that contains
+    # this test file is a copy of apache-1.1_63.RULE that contains
     # several emails, authors, urls and copyrights
     # it has been modified to include more unrelated clues
     test_dir = test_env.get_test_loc('plugin_filter_clues/files/LICENSE')
@@ -59,7 +58,7 @@ def test_scan_plugin_filter_clues_does_not_filter_incorrectly():
 
 # Regression on types tracked in https://github.com/nexB/typecode/issues/21
 def test_scan_plugin_filter_clues_for_license():
-    # this test fies is a copy of pcre.LICENSE that contains
+    # this test file is a copy of pcre.LICENSE that contains
     # several emails, authors, urls
     test_dir = test_env.get_test_loc('plugin_filter_clues/files/LICENSE3')
     result_file = test_env.get_temp_file('json')
@@ -67,3 +66,16 @@ def test_scan_plugin_filter_clues_for_license():
     run_scan_click(args)
     expected = test_env.get_test_loc('plugin_filter_clues/filtered-expected3.json')
     check_json_scan(expected, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+
+# Regression on data structure tracked in https://github.com/nexB/scancode-toolkit/issues/3797
+def test_scan_plugin_filter_copyrights_for_license():
+    # this test fies is a copy of pcre.LICENSE that contains
+    # several emails, authors, urls
+    test_dir = test_env.get_test_loc('plugin_filter_clues/files/LICENSE4')
+    result_file = test_env.get_temp_file('json')
+    args = ['-clieu', '--filter-clues', test_dir, '--json', result_file]
+    run_scan_click(args)
+    expected = test_env.get_test_loc('plugin_filter_clues/filtered-expected4.json', must_exist=False)
+    check_json_scan(expected, result_file, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+

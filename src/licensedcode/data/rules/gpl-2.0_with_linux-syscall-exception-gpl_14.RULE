@@ -1,0 +1,10 @@
+---
+license_expression: gpl-2.0 WITH linux-syscall-exception-gpl
+is_license_notice: yes
+notes: seen in kernel /Documentation/process/license-rules.rst
+---
+
+The Linux Kernel is provided under the terms of the {{GNU General Public
+License version 2 only}} (GPL-2.0), as provided in LICENSES/preferred/GPL-2.0,
+with an explicit syscall exception described in
+{{LICENSES/exceptions/Linux-syscall-note}}, as described in the COPYING file.

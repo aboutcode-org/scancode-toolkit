@@ -38,17 +38,17 @@
       "license_expression_spdx": "HTMLTIDY",
       "matches": [
         {
-          "score": 100.0,
+          "license_expression": "tidy",
+          "license_expression_spdx": "HTMLTIDY",
+          "from_file": null,
           "start_line": 1,
           "end_line": 1,
-          "from_file": null,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 3,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "tidy",
-          "spdx_license_expression": "HTMLTIDY",
-          "rule_identifier": "tidy_2.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "tidy_2.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/tidy_2.RULE",
           "matched_text": "- name: Java HTML Tidy License"
         }
@@ -65,6 +65,8 @@
     "pkg:maven/jtidy/jtidy@4aug2000r7-dev?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/jtidy/jtidy/4aug2000r7-dev/",

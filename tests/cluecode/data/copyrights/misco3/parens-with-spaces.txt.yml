@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (1997 3Dfx Interactive, Inc.)
+holders:
+  - 3Dfx Interactive, Inc.
+holders_summary:
+  - value: 3Dfx Interactive, Inc.
+    count: 1

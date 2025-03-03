@@ -1,0 +1,15 @@
+Copyright (C) 2000-2001 IBM Deutschland Entwicklung GmbH, IBM Corporation
+			Best viewed with fixed width fonts
+
+Overview of Document:
+
+
+ *    Author(s): Denis Joseph Barrow (djbarrow@de.ibm.com,barrow_dj@yahoo.com)
+ *    (C) 2000 IBM Deutschland Entwicklung GmbH, IBM Corporation.
+ */   
+#include <stdio.h>
+
+
+Copyright 1998 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.

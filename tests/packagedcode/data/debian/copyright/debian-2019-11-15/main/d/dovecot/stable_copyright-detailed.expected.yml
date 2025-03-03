@@ -48,7 +48,7 @@ other_license_detections:
     license_expression_spdx: Beerware
     matches:
       - license_expression: beerware
-        spdx_license_expression: Beerware
+        license_expression_spdx: Beerware
         from_file:
         start_line: 32
         end_line: 35
@@ -69,7 +69,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 46
         end_line: 47
@@ -88,7 +88,7 @@ other_license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 121
         end_line: 137
@@ -122,7 +122,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-only AND LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 139
         end_line: 139
@@ -135,7 +135,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 140
         end_line: 152
@@ -161,7 +161,7 @@ other_license_detections:
           License along with this library; if not, write to the Free Software
           Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 154
         end_line: 154
@@ -174,7 +174,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_83_1.RULE
         matched_text: the GNU Lesser General Public License
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 155
         end_line: 155
@@ -191,7 +191,7 @@ other_license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 157
         end_line: 157
@@ -204,7 +204,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 158
         end_line: 171
@@ -235,7 +235,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 176
         end_line: '198'
@@ -275,7 +275,7 @@ other_license_detections:
     license_expression_spdx: BSD-2-Clause
     matches:
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 201
         end_line: 220
@@ -312,7 +312,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 222
         end_line: 222
@@ -325,7 +325,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 223
         end_line: 235
@@ -351,7 +351,7 @@ other_license_detections:
           with this program; if not, write to the Free Software Foundation, Inc.,
           51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 237
         end_line: 237
@@ -364,7 +364,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_660.RULE
         matched_text: the GNU General Public License version 2
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 238
         end_line: 238
@@ -381,7 +381,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-unicode
     matches:
       - license_expression: unicode
-        spdx_license_expression: LicenseRef-scancode-unicode
+        license_expression_spdx: LicenseRef-scancode-unicode
         from_file:
         start_line: 241
         end_line: 273

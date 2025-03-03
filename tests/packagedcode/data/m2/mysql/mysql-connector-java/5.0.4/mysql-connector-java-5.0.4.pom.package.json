@@ -30,17 +30,17 @@
       "license_expression_spdx": "GPL-2.0-only WITH LicenseRef-scancode-mysql-linking-exception-2018",
       "matches": [
         {
-          "score": 90.2,
+          "license_expression": "gpl-2.0 WITH mysql-linking-exception-2018",
+          "license_expression_spdx": "GPL-2.0-only WITH LicenseRef-scancode-mysql-linking-exception-2018",
+          "from_file": null,
           "start_line": 1,
           "end_line": 5,
-          "from_file": null,
+          "matcher": "3-seq",
+          "score": 90.2,
           "matched_length": 46,
           "match_coverage": 90.2,
-          "matcher": "3-seq",
-          "license_expression": "gpl-2.0 WITH mysql-linking-exception-2018",
-          "spdx_license_expression": "GPL-2.0-only WITH LicenseRef-scancode-mysql-linking-exception-2018",
-          "rule_identifier": "gpl-2.0_with_mysql-linking-exception-2018_3.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "gpl-2.0_with_mysql-linking-exception-2018_3.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_with_mysql-linking-exception-2018_3.RULE",
           "matched_text": "- name: The GNU General Public License, Version 2\n  url: http://www.gnu.org/licenses/gpl.txt\n  comments: \"MySQL Connector/J contains exceptions to GPL requirements when linking with other\\\n    \\ components\\n      \\t\\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\\n\\\n    \\      \\t\\tin this distribution for more details.\""
         }
@@ -52,17 +52,17 @@
       "license_expression_spdx": "LicenseRef-scancode-unknown",
       "matches": [
         {
-          "score": 96.3,
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
+          "from_file": null,
           "start_line": 1,
           "end_line": 5,
-          "from_file": null,
+          "matcher": "5-undetected",
+          "score": 96.3,
           "matched_length": 52,
           "match_coverage": 100.0,
-          "matcher": "5-undetected",
-          "license_expression": "unknown",
-          "spdx_license_expression": "LicenseRef-scancode-unknown",
-          "rule_identifier": "package-manifest-unknown-91b1be345430234b155decbb3e945d9349c09ea1",
           "rule_relevance": 100,
+          "rule_identifier": "package-manifest-unknown-91b1be345430234b155decbb3e945d9349c09ea1",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-91b1be345430234b155decbb3e945d9349c09ea1",
           "matched_text": "license - name: The GNU General Public License, Version 2\n  url: http://www.gnu.org/licenses/gpl.txt\n  comments: \"MySQL Connector/J contains exceptions to GPL requirements when linking with other\\\n    \\ components\\n      \\t\\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\\n\\\n    \\      \\t\\tin this distribution for more details.\""
         }
@@ -79,6 +79,8 @@
     "pkg:maven/mysql/mysql-connector-java@5.0.4?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.0.4/",

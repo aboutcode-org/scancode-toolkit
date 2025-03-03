@@ -1,71 +1,57 @@
+[project]
+dynamic = ["version"]
+
+name = "pip"
+description = "The PyPA recommended tool for installing Python packages."
+readme = "README.rst"
+license = {text = "MIT"}
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Software Development :: Build Tools",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+authors = [
+  {name = "The pip developers", email = "distutils-sig@python.org"},
+]
+
+# NOTE: requires-python is duplicated in __pip-runner__.py.
+# When changing this value, please change the other copy as well.
+requires-python = ">=3.8"
+
+[project.scripts]
+pip = "pip._internal.cli.main:main"
+pip3 = "pip._internal.cli.main:main"
+
+[project.urls]
+Homepage = "https://pip.pypa.io/"
+Documentation = "https://pip.pypa.io"
+Source = "https://github.com/pypa/pip"
+Changelog = "https://pip.pypa.io/en/stable/news/"
+
 [build-system]
-requires = ["setuptools", "wheel"]
+# The lower bound is for <https://github.com/pypa/setuptools/issues/3865>.
+requires = ["setuptools>=67.6.1", "wheel"]
 build-backend = "setuptools.build_meta"
 
-[tool.towncrier]
-# For finding the __version__
-package = "pip"
-package_dir = "src"
-# For writing into the correct file
-filename = "NEWS.rst"
-# For finding the news fragments
-directory = "news/"
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = false
 
-# For rendering properly for this project
-issue_format = "`#{issue} <https://github.com/pypa/pip/issues/{issue}>`_"
-template = "tools/news/template.rst"
+[tool.setuptools.dynamic]
+version = {attr = "pip.__version__"}
 
-# Grouping of entries, within our changelog
-type = [
-  { name = "Process",                   directory = "process", showcontent = true },
-  { name = "Deprecations and Removals", directory = "removal", showcontent = true },
-  { name = "Features",                  directory = "feature", showcontent = true },
-  { name = "Bug Fixes",                 directory = "bugfix",  showcontent = true },
-  { name = "Vendored Libraries",        directory = "vendor",  showcontent = true },
-  { name = "Improved Documentation",    directory = "doc",     showcontent = true },
-  { name = "Trivial Changes",           directory = "trivial", showcontent = false },
-]
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["contrib", "docs", "tests*", "tasks"]
 
-[tool.vendoring]
-destination = "src/pip/_vendor/"
-requirements = "src/pip/_vendor/vendor.txt"
-namespace = "pip._vendor"
-
-protected-files = ["__init__.py", "README.rst", "vendor.txt"]
-patches-dir = "tools/vendoring/patches"
-
-[tool.vendoring.transformations]
-substitute = [
-  # pkg_resource's vendored packages are directly vendored in pip.
-  { match='pkg_resources\.extern', replace="pip._vendor" },
-  { match='from \.extern', replace="from pip._vendor" },
-  { match='''\('pygments\.lexers\.''', replace="('pip._vendor.pygments.lexers." },
-]
-drop = [
-  # contains unnecessary scripts
-  "bin/",
-  # interpreter and OS specific msgpack libs
-  "msgpack/*.so",
-  # unneeded parts of setuptools
-  "easy_install.py",
-  "setuptools",
-  "pkg_resources/_vendor/",
-  "pkg_resources/extern/",
-  # trim vendored pygments styles and lexers
-  "pygments/styles/[!_]*.py",
-  '^pygments/lexers/(?!python|__init__|_mapping).*\.py$',
-  # trim rich's markdown support
-  "rich/markdown.py",
-]
-
-[tool.vendoring.typing-stubs]
-six = ["six.__init__", "six.moves.__init__", "six.moves.configparser"]
-distro = []
-
-[tool.vendoring.license.directories]
-setuptools = "pkg_resources"
-
-[tool.vendoring.license.fallback-urls]
-CacheControl = "https://raw.githubusercontent.com/ionrock/cachecontrol/v0.12.6/LICENSE.txt"
-distlib = "https://bitbucket.org/pypa/distlib/raw/master/LICENSE.txt"
-webencodings = "https://github.com/SimonSapin/python-webencodings/raw/master/LICENSE"

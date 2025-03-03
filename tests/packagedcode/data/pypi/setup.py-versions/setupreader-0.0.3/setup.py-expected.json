@@ -39,17 +39,17 @@
         "license_expression_spdx": "GPL-1.0-or-later",
         "matches": [
           {
-            "score": 50.0,
+            "license_expression": "gpl-1.0-plus",
+            "license_expression_spdx": "GPL-1.0-or-later",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 50.0,
             "matched_length": 1,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "gpl-1.0-plus",
-            "spdx_license_expression": "GPL-1.0-or-later",
-            "rule_identifier": "gpl_bare_word_only.RULE",
             "rule_relevance": 50,
+            "rule_identifier": "gpl_bare_word_only.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_bare_word_only.RULE",
             "matched_text": "GPL"
           }
@@ -64,25 +64,29 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:pypi/setuptools",
-        "extracted_requirement": "setuptools",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
       {
         "purl": "pkg:pypi/mock",
-        "extracted_requirement": "mock",
+        "extracted_requirement": null,
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

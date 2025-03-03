@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2000 Eric Sandeen <eric_sandeen@bigfoot.com>
+  - Copyright (c) 2006 Mauro Carvalho Chehab <mchehab@kernel.org>
+  - Greg Alexander (c) 1998 OPTIONS
+holders:
+  - Eric Sandeen
+  - Mauro Carvalho Chehab
+  - Greg Alexander OPTIONS
+authors:
+  - Jonathan Isom <jisom@ematic.com>

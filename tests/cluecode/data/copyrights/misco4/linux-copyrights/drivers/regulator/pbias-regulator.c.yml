@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2014 Texas Instruments Incorporated - http://www.ti.com
+holders:
+  - Texas Instruments Incorporated
+authors:
+  - Balaji T

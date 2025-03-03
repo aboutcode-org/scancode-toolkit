@@ -1,0 +1,8 @@
+---
+license_expression: bsd-new
+is_license_notice: yes
+relevance: 100
+---
+
+License
+This driver is released under the {{go license}}

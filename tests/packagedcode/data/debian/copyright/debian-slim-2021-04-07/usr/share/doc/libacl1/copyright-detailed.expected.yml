@@ -13,7 +13,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 8
         end_line: 8
@@ -26,7 +26,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 9
         end_line: 20
@@ -51,7 +51,7 @@ other_license_detections:
           You should have received a copy of the GNU General Public License
           along with this program.  If not, see <https://www.gnu.org/licenses/>.
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 22
         end_line: 23
@@ -70,7 +70,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.0-or-later AND LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.0-plus
-        spdx_license_expression: LGPL-2.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later
         from_file:
         start_line: 39
         end_line: 39
@@ -83,7 +83,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_61.RULE
         matched_text: 'License: lgpl-2+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 40
         end_line: 51
@@ -112,7 +112,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 22
         end_line: 23
@@ -131,7 +131,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 53
         end_line: 54

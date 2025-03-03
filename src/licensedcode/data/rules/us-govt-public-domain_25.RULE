@@ -2,7 +2,11 @@
 license_expression: us-govt-public-domain
 is_license_text: yes
 relevance: 100
-notes: Seen in BLAST
+is_deprecated: yes
+notes: |
+    Added in SPDX license list 3.24
+    This is now ncbi-pd.LICENSE
+    Seen in BLAST
 ---
 
 This software/database is a "United States Government Work" under the

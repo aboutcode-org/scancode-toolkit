@@ -3,7 +3,7 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright (c) 2004 the Initial Developer
+  - Portions created by the Initial Developer are Copyright (c) 2004 the Initial Developer
   - (c) 2003-2007, the Debian GNOME team <pkg-gnome-maintainers@lists.alioth.debian.org>
 holders:
   - the Initial Developer

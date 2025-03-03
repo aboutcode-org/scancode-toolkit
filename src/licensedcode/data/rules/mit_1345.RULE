@@ -1,0 +1,9 @@
+---
+license_expression: mit
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - http://underscorejs.org/LICENSE
+---
+
+{{Based on Underscore.js}} {{ <http://underscorejs.org/LICENSE>}}

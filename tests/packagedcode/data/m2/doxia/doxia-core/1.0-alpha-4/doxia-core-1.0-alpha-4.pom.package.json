@@ -49,6 +49,8 @@
     "pkg:maven/doxia/doxia-core@1.0-alpha-4?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -57,7 +59,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -67,7 +70,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -77,7 +81,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -87,7 +92,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

@@ -21,7 +21,7 @@ headers:
       for any legal advice.
       ScanCode is a free software code scanning tool from nexB Inc. and others.
       Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-    output_format_version: 3.0.0
+    output_format_version: 3.2.0
     message:
     errors: []
     warnings: []
@@ -29,10 +29,10 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-89-generic-x86_64-with-glibc2.29
-        platform_version: '#99~20.04.1-Ubuntu SMP Thu Nov 2 15:16:47 UTC 2023'
-        python_version: "3.8.10 (default, Nov 22 2023, 10:22:35) \n[GCC 9.4.0]"
-      spdx_license_list_version: '3.22'
+        platform: Linux-5.15.0-113-generic-x86_64-with-glibc2.35
+        platform_version: '#123-Ubuntu SMP Mon Jun 10 08:16:17 UTC 2024'
+        python_version: 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]
+      spdx_license_list_version: '3.24'
       files_count: 4
 summary:
   declared_license_expression: apache-2.0
@@ -91,7 +91,7 @@ packages:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: package-and-licenses/setup.cfg
             start_line: 1
             end_line: 1
@@ -110,6 +110,8 @@ packages:
     extracted_license_statement: Apache-2.0
     notice_text:
     source_packages: []
+    is_private: no
+    is_virtual: no
     extra_data: {}
     repository_homepage_url:
     repository_download_url:
@@ -1058,7 +1060,7 @@ files:
         license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: package-and-licenses/README.txt
             start_line: 3
             end_line: 3
@@ -1071,7 +1073,7 @@ files:
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE
             matched_text: This is licensed under Apache-2.0 or MIT
           - license_expression: apache-2.0 OR mit
-            spdx_license_expression: Apache-2.0 OR MIT
+            license_expression_spdx: Apache-2.0 OR MIT
             from_file: package-and-licenses/README.txt
             start_line: 3
             end_line: 3
@@ -1134,7 +1136,7 @@ files:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: package-and-licenses/apache-2.0.LICENSE
             start_line: 2
             end_line: 202
@@ -1343,7 +1345,7 @@ files:
         license_expression_spdx: MIT
         matches:
           - license_expression: mit
-            spdx_license_expression: MIT
+            license_expression_spdx: MIT
             from_file: package-and-licenses/mit.LICENSE
             start_line: 2
             end_line: '19'
@@ -1439,7 +1441,7 @@ files:
             license_expression_spdx: Apache-2.0
             matches:
               - license_expression: apache-2.0
-                spdx_license_expression: Apache-2.0
+                license_expression_spdx: Apache-2.0
                 from_file: package-and-licenses/setup.cfg
                 start_line: 1
                 end_line: 1
@@ -1459,6 +1461,8 @@ files:
         notice_text:
         source_packages: []
         file_references: []
+        is_private: no
+        is_virtual: no
         extra_data: {}
         dependencies: []
         repository_homepage_url:
@@ -1480,7 +1484,7 @@ files:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: package-and-licenses/setup.cfg
             start_line: 4
             end_line: 4

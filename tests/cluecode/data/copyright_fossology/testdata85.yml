@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - copyright (c) 1997 Klee Dienes <klee@mit.edu>
+holders:
+  - Klee Dienes
+authors:
+  - Christoph Lameter <clameter@debian.org>
+  - Julian Gilbey <jdg@debian.org>

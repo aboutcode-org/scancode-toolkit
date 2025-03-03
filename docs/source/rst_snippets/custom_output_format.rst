@@ -53,7 +53,7 @@ Now the results are saved in ``output.txt`` and we can easily view them with ``h
      copyright:"copyrighted by the Free Software Foundation",
    ]
 
-For a more elaborate template, refer this `default template <https://github.com/nexB/scancode-toolkit/blob/develop/src/formattedcode/templates/html/template.html>`_
+For a more elaborate template, refer this `default template <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/formattedcode/templates/html/template.html>`_
 given with Scancode, to generate HTML output with the ``--html`` output format option.
 
 Documentation on `Jinja templates <https://jinja.palletsprojects.com/en/2.10.x/>`_.

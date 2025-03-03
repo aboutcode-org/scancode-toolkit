@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-manifest/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -56,6 +56,8 @@
       "extracted_license_statement": "- apache-2.0\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/test-package",
       "repository_download_url": "https://registry.npmjs.org/test-package/-/test-package-0.0.1.tgz",
@@ -208,7 +210,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "package-manifest/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -232,6 +234,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://www.npmjs.com/package/test-package",
@@ -253,7 +257,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package-manifest/package.json",
               "start_line": 4,
               "end_line": 4,

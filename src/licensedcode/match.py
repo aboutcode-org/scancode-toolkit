@@ -213,6 +213,15 @@ class LicenseMatch(object):
         )
     )
 
+    matcher_order = attr.ib(
+        default=0,
+        metadata=dict(
+            help='An integer indicating the precedence of a matcher when compared to other matchers '
+                 'where the lowest value has the highest precedence. Used to select which of two '
+                 'equal matches to keep.'
+        )
+    )
+
     start_line = attr.ib(
         default=0,
         metadata=dict(help='match start line, 1-based')
@@ -624,8 +633,10 @@ class LicenseMatch(object):
 
         if other.matcher not in self.matcher:
             newmatcher = ' '.join([self.matcher, other.matcher])
+            newmatcher_order = max([self.matcher_order, other.matcher_order])
         else:
             newmatcher = self.matcher
+            newmatcher_order = self.matcher_order
 
         if (
             self.discard_reason == DiscardReason.NOT_DISCARDED
@@ -655,6 +666,7 @@ class LicenseMatch(object):
             hispan=Span(self.hispan | other.hispan),
             query_run_start=min(self.query_run_start, other.query_run_start),
             matcher=newmatcher,
+            matcher_order=newmatcher_order,
             query=self.query,
             discard_reason=discard_reason,
         )
@@ -671,6 +683,7 @@ class LicenseMatch(object):
         self.matcher = combined.matcher
         self.query_run_start = min(self.query_run_start, other.query_run_start)
         self.matcher = combined.matcher
+        self.matcher_order = combined.matcher_order
         self.discard_reason = combined.discard_reason
         return self
 
@@ -794,7 +807,7 @@ class LicenseMatch(object):
         result = {}
 
         result['license_expression'] = self.rule.license_expression
-        result['spdx_license_expression'] = self.rule.spdx_license_expression()
+        result['license_expression_spdx'] = self.rule.spdx_license_expression()
         result['from_file'] = file_path
         result['start_line'] = self.start_line
         result['end_line'] = self.end_line
@@ -852,7 +865,7 @@ def merge_matches(matches, max_dist=None, trace=TRACE_MERGE):
 
     # only merge matches with the same rule: sort then group by rule for the
     # same rule, sort on start, longer high, longer match, matcher type
-    sorter = lambda m: (m.rule.identifier, m.qspan.start, -m.hilen(), -m.len(), m.matcher)
+    sorter = lambda m: (m.rule.identifier, m.qspan.start, -m.hilen(), -m.len(), m.matcher_order)
     matches.sort(key=sorter)
     matches_by_rule = [
         (rid, list(rule_matches))
@@ -1069,7 +1082,7 @@ def filter_contained_matches(
 
     # NOTE: we do not filter matches in place: sorted creates a copy
     # sort on start, longer high, longer match, matcher type
-    sorter = lambda m: (m.qspan.start, -m.hilen(), -m.len(), m.matcher)
+    sorter = lambda m: (m.qspan.start, -m.hilen(), -m.len(), m.matcher_order)
     matches = sorted(matches, key=sorter)
     matches_pop = matches.pop
 
@@ -1190,7 +1203,7 @@ def filter_overlapping_matches(
 
     # NOTE: we do not filter matches in place: sorted creates a copy
     # sort on start, longer high, longer match, matcher type
-    sorter = lambda m: (m.qspan.start, -m.hilen(), -m.len(), m.matcher)
+    sorter = lambda m: (m.qspan.start, -m.hilen(), -m.len(), m.matcher_order)
     matches = sorted(matches, key=sorter)
     matches_pop = matches.pop
 
@@ -2733,6 +2746,12 @@ def refine_matches(
 
     matches, discarded_contained = filter_contained_matches(matches)
     _log(matches, discarded_contained, 'NON CONTAINED')
+
+    if trace_basic:
+        logger_debug(' #####refine_matches: after FILTER matches#', len(matches))
+    if trace:
+        for m in matches:
+            logger_debug(m)
 
     matches, discarded_overlapping = filter_overlapping_matches(matches)
     _log(matches, discarded_overlapping, 'NON OVERLAPPING')

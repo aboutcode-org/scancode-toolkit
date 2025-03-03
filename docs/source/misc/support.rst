@@ -11,13 +11,13 @@ The ScanCode toolkit documentation lives at https://scancode-toolkit.readthedocs
 Issue Tracker
 -------------
 
-Post issues you are having and bugs as `GitHub tickets <https://github.com/nexB/scancode-toolkit/issues>`_
+Post issues you are having and bugs as `GitHub tickets <https://github.com/aboutcode-org/scancode-toolkit/issues>`_
 
 Discussions
 -----------
 
 If you want to ask questions or anything else that you think are not bugs/new
-features, open a `discussion <https://github.com/nexB/scancode-toolkit/discussions>`_
+features, open a `discussion <https://github.com/aboutcode-org/scancode-toolkit/discussions>`_
 
 Join the conversation
 ----------------------

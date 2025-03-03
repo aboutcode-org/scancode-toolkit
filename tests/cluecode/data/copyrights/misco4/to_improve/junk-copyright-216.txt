@@ -1,0 +1,1 @@
+Copyright 2011- < grunt.template.today 'yyyy > < pkg.author >

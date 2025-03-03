@@ -1,11 +1,11 @@
 what:
   - copyrights
   - holders
-  - holders_summary
 copyrights:
-  - COPYRIGHT 2006 ABC
+  - COPYRIGHT 2006 ABC ABC CONFIDENTIAL PROPRIETARY
+  - Copyright 2006 (c), Motorola, Inc. - Motorola Confidential Proprietary
+  - Metalink L.T.D. (c) Copyright 2006
 holders:
-  - ABC
-holders_summary:
-  - value: ABC
-    count: 1
+  - ABC ABC CONFIDENTIAL PROPRIETARY
+  - Motorola, Inc. - Motorola Confidential Proprietary
+  - Metalink L.T.D.

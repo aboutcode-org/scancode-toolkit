@@ -5,8 +5,10 @@ name: Net SNMP License
 category: Permissive
 owner: Net-SNMP
 homepage_url: http://net-snmp.sourceforge.net/about/license.html
-notes: composite
-spdx_license_key: Net-SNMP
+notes: composite, this was deprecated in SPDX License List 3.25
+spdx_license_key: LicenseRef-scancode-net-snmp
+other_spdx_license_keys:
+    - Net-SNMP
 minimum_coverage: 70
 ignorable_copyrights:
     - Copyright (c) 2001-2003, Networks Associates Technology, Inc

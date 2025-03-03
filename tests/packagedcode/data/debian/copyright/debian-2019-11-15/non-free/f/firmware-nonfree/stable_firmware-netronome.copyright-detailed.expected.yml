@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-netronome-firmware
     matches:
       - license_expression: netronome-firmware
-        spdx_license_expression: LicenseRef-scancode-netronome-firmware
+        license_expression_spdx: LicenseRef-scancode-netronome-firmware
         from_file:
         start_line: 6
         end_line: 68

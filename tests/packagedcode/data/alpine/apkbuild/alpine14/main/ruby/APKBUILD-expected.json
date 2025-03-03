@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "ruby AND bsd-simplified AND mit",
-          "spdx_license_expression": "Ruby AND BSD-2-Clause AND MIT",
+          "license_expression_spdx": "Ruby AND BSD-2-Clause AND MIT",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,
@@ -55,6 +55,8 @@
   "notice_text": null,
   "source_packages": [],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {
     "sources": [
       {

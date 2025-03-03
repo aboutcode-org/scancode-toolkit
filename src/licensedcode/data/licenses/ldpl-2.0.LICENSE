@@ -8,12 +8,8 @@ homepage_url: http://tldp.org/COPYRIGHT.html
 spdx_license_key: LicenseRef-scancode-ldpl-2.0
 text_urls:
     - http://linuxmafia.com/faq/Licensing_and_Law/ldp-license-2.0.html
-ignorable_copyrights:
-  - copyright to each Linux Documentation Project
 ignorable_emails:
   - guylhem@metalab.unc.edu
-ignorable_holders:
-  - each Linux Documentation Project
 ignorable_urls:
   - http://sunsite.unc.edu/LDP
 ---

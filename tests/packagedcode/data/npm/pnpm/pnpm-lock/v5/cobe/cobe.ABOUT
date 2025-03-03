@@ -1,0 +1,6 @@
+type: npm
+name: cobe
+version: 0.6.3
+homepage_url: https://cobe.vercel.app/
+vcs_url: https://github.com/shuding/cobe/
+download_url: https://github.com/shuding/cobe/releases/tag/0.6.3

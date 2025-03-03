@@ -148,9 +148,15 @@ class TestCocoaPodfileLock(PackageTester):
         test_file = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock')
         assert PodfileLockHandler.is_datafile(test_file)
 
-    def test_cocoapods_can_parse_braintree_ios(self):
+    def test_cocoapods_can_parse_simple_podfile_lock(self):
         test_file = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock')
         expected_loc = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock.expected.json')
+        packages = PodfileLockHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_complex_podfile_lock(self):
+        test_file = self.get_test_loc('cocoapods/podfile.lock/artsy_eigen_Podfile.lock')
+        expected_loc = self.get_test_loc('cocoapods/podfile.lock/artsy_eigen_Podfile.lock.expected.json')
         packages = PodfileLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 

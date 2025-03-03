@@ -54,7 +54,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -76,7 +76,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -99,6 +99,8 @@
       "extracted_license_statement": "license: MIT\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "Documentation": "https://pip.pypa.io",
         "Changelog": "https://pip.pypa.io/en/stable/news/"
@@ -122,7 +124,7 @@
       "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8",
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
-      "detection_count": 5,
+      "detection_count": 7,
       "reference_matches": [
         {
           "license_expression": "mit",
@@ -144,7 +146,7 @@
       "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
-      "detection_count": 3,
+      "detection_count": 4,
       "reference_matches": [
         {
           "license_expression": "mit",
@@ -271,28 +273,6 @@
       ]
     },
     {
-      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
-      "license_expression": "mit",
-      "license_expression_spdx": "MIT",
-      "detection_count": 2,
-      "reference_matches": [
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "pip-22.0.4/LICENSE.txt",
-          "start_line": 3,
-          "end_line": 20,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 161,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "mit.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
-        }
-      ]
-    },
-    {
       "identifier": "mit-6e6256c5-00ca-dcb6-8033-2fc4b6ff86be",
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
@@ -325,6 +305,28 @@
           "rule_relevance": 100,
           "rule_identifier": "pypi_mit_license.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "pip-22.0.4/LICENSE.txt",
+          "start_line": 3,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 161,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit.LICENSE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
         }
       ]
     }
@@ -360,7 +362,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
@@ -466,7 +468,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -488,7 +490,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -512,6 +514,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/"
@@ -536,7 +540,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 8,
               "end_line": 8,
@@ -557,7 +561,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 15,
               "end_line": 15,
@@ -578,7 +582,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "pip-22.0.4/PKG-INFO",
               "start_line": 27,
               "end_line": 27,
@@ -592,7 +596,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
@@ -679,6 +683,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -687,7 +693,8 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -708,7 +715,8 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -729,7 +737,8 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -750,7 +759,8 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -771,7 +781,8 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -792,7 +803,8 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -813,7 +825,8 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -834,7 +847,8 @@
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "is_editable": false,
@@ -874,16 +888,38 @@
         {
           "type": "pypi",
           "namespace": null,
-          "name": null,
+          "name": "pip",
           "version": null,
           "qualifiers": {},
           "subpath": null,
           "primary_language": "Python",
-          "description": null,
+          "description": "The PyPA recommended tool for installing Python packages.",
           "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "The pip developers",
+              "email": "distutils-sig@python.org",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers",
+            "Topic :: Software Development :: Build Tools",
+            "Programming Language :: Python",
+            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3 :: Only",
+            "Programming Language :: Python :: 3.8",
+            "Programming Language :: Python :: 3.9",
+            "Programming Language :: Python :: 3.10",
+            "Programming Language :: Python :: 3.11",
+            "Programming Language :: Python :: 3.12",
+            "Programming Language :: Python :: Implementation :: CPython",
+            "Programming Language :: Python :: Implementation :: PyPy"
+          ],
+          "homepage_url": "https://pip.pypa.io/",
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -891,7 +927,7 @@
           "sha256": null,
           "sha512": null,
           "bug_tracking_url": null,
-          "code_view_url": null,
+          "code_view_url": "https://github.com/pypa/pip",
           "vcs_url": null,
           "copyright": null,
           "holder": null,
@@ -904,46 +940,96 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
-                  "from_file": "pip-22.0.4/LICENSE.txt",
-                  "start_line": 3,
-                  "end_line": 20,
-                  "matcher": "2-aho",
+                  "license_expression_spdx": "MIT",
+                  "from_file": "pip-22.0.4/pyproject.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
                   "score": 100.0,
-                  "matched_length": 161,
+                  "matched_length": 1,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "mit.LICENSE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
                 }
               ],
-              "identifier": "mit-cacd5c0c-204a-85c2-affc-e4c125b2492a"
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "license_expression_spdx": "MIT",
+                  "from_file": "pip-22.0.4/pyproject.toml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "matched_text": "- 'License :: OSI Approved :: MIT License'"
+                }
+              ],
+              "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
             }
           ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": null,
+          "extracted_license_statement": "license: MIT\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "Documentation": "https://pip.pypa.io",
+            "Changelog": "https://pip.pypa.io/en/stable/news/"
+          },
           "dependencies": [],
-          "repository_homepage_url": null,
+          "repository_homepage_url": "https://pypi.org/project/pip",
           "repository_download_url": null,
-          "api_data_url": null,
+          "api_data_url": "https://pypi.org/pypi/pip/json",
           "datasource_id": "pypi_pyproject_toml",
-          "purl": null
+          "purl": "pkg:pypi/pip"
         }
       ],
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "detected_license_expression": null,
-      "detected_license_expression_spdx": null,
-      "license_detections": [],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "pip-22.0.4/pyproject.toml",
+              "start_line": 11,
+              "end_line": 11,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "pypi_mit_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE"
+            }
+          ],
+          "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
+        }
+      ],
       "license_clues": [],
-      "percentage_of_license_text": 0,
+      "percentage_of_license_text": 2.38,
       "scan_errors": []
     },
     {
@@ -983,7 +1069,7 @@
               "matches": [
                 {
                   "license_expression": "unknown-license-reference",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
                   "from_file": "pip-22.0.4/setup.cfg",
                   "start_line": 87,
                   "end_line": 87,
@@ -997,7 +1083,7 @@
                 },
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/LICENSE.txt",
                   "start_line": 3,
                   "end_line": 20,
@@ -1011,7 +1097,7 @@
                 },
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/LICENSE.txt",
                   "start_line": 3,
                   "end_line": 20,
@@ -1037,6 +1123,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -1058,7 +1146,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "pip-22.0.4/setup.cfg",
               "start_line": 87,
               "end_line": 87,
@@ -1072,7 +1160,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
@@ -1086,7 +1174,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,
@@ -1167,7 +1255,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1189,7 +1277,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1213,6 +1301,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/",
@@ -1238,7 +1328,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/setup.py",
               "start_line": 31,
               "end_line": 31,
@@ -1252,7 +1342,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/setup.py",
               "start_line": 35,
               "end_line": 35,
@@ -1366,7 +1456,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/src/pip.egg-info/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -1388,7 +1478,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pip-22.0.4/src/pip.egg-info/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -1566,6 +1656,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/"
@@ -1590,7 +1682,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/src/pip.egg-info/PKG-INFO",
               "start_line": 8,
               "end_line": 8,
@@ -1611,7 +1703,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/src/pip.egg-info/PKG-INFO",
               "start_line": 15,
               "end_line": 15,
@@ -1632,7 +1724,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "pip-22.0.4/src/pip.egg-info/PKG-INFO",
               "start_line": 27,
               "end_line": 27,
@@ -1646,7 +1738,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pip-22.0.4/LICENSE.txt",
               "start_line": 3,
               "end_line": 20,

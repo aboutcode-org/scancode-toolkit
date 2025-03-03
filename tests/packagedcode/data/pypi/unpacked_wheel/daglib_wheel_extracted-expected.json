@@ -45,7 +45,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
               "start_line": 1,
               "end_line": 1,
@@ -67,7 +67,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
               "start_line": 1,
               "end_line": 1,
@@ -90,6 +90,8 @@
       "extracted_license_statement": "license: MIT\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "Documentation": "https://mharrisb1.github.io/daglib/"
       },
@@ -109,11 +111,12 @@
   "dependencies": [
     {
       "purl": "pkg:pypi/dask",
-      "extracted_requirement": "dask[delayed]<2023.0.0,>=2022.7.1",
+      "extracted_requirement": "<2023.0.0,>=2022.7.1",
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/dask?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -123,11 +126,12 @@
     },
     {
       "purl": "pkg:pypi/graphviz",
-      "extracted_requirement": "graphviz<0.21,>=0.20; extra == \"graphviz\"",
+      "extracted_requirement": "<0.21,>=0.20",
       "scope": "graphviz",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/graphviz?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -137,11 +141,12 @@
     },
     {
       "purl": "pkg:pypi/ipycytoscape",
-      "extracted_requirement": "ipycytoscape<2.0.0,>=1.3.3; extra == \"ipycytoscape\"",
+      "extracted_requirement": "<2.0.0,>=1.3.3",
       "scope": "ipycytoscape",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/ipycytoscape?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -151,11 +156,12 @@
     },
     {
       "purl": "pkg:pypi/networkx",
-      "extracted_requirement": "networkx<3.0.0,>=2.8.5",
+      "extracted_requirement": "<3.0.0,>=2.8.5",
       "scope": "install",
       "is_runtime": true,
-      "is_optional": false,
-      "is_resolved": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pypi/networkx?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -244,7 +250,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
                   "start_line": 1,
                   "end_line": 1,
@@ -266,7 +272,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "daglib_wheel_extracted/daglib-0.6.0.dist-info/METADATA",
                   "start_line": 1,
                   "end_line": 1,
@@ -354,47 +360,53 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://mharrisb1.github.io/daglib/"
           },
           "dependencies": [
             {
               "purl": "pkg:pypi/dask",
-              "extracted_requirement": "dask[delayed]<2023.0.0,>=2022.7.1",
+              "extracted_requirement": "<2023.0.0,>=2022.7.1",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/graphviz",
-              "extracted_requirement": "graphviz<0.21,>=0.20; extra == \"graphviz\"",
+              "extracted_requirement": "<0.21,>=0.20",
               "scope": "graphviz",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/ipycytoscape",
-              "extracted_requirement": "ipycytoscape<2.0.0,>=1.3.3; extra == \"ipycytoscape\"",
+              "extracted_requirement": "<2.0.0,>=1.3.3",
               "scope": "ipycytoscape",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/networkx",
-              "extracted_requirement": "networkx<3.0.0,>=2.8.5",
+              "extracted_requirement": "<3.0.0,>=2.8.5",
               "scope": "install",
               "is_runtime": true,
-              "is_optional": false,
-              "is_resolved": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

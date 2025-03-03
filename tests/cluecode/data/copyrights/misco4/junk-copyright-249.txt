@@ -1,0 +1,1 @@
+(c) guardduty-non-archived-findings (https://docs.aws.amazon.com/config/latest/developerguide/guardduty-non-archived-findings.html) Amazon GuardDuty

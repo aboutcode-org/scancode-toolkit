@@ -47,7 +47,7 @@
         "matches": [
           {
             "license_expression": "lgpl-2.1 OR gpl-3.0-plus",
-            "spdx_license_expression": "LGPL-2.1-only OR GPL-3.0-or-later",
+            "license_expression_spdx": "LGPL-2.1-only OR GPL-3.0-or-later",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
@@ -71,6 +71,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -79,7 +81,8 @@
         "scope": "require",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -89,7 +92,8 @@
         "scope": "require-dev",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -99,7 +103,8 @@
         "scope": "require-dev",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

@@ -30,32 +30,32 @@
       "license_expression_spdx": "LGPL-2.0-or-later",
       "matches": [
         {
-          "score": 100.0,
+          "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "from_file": null,
           "start_line": 1,
           "end_line": 1,
-          "from_file": null,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 5,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
-          "rule_identifier": "lgpl-2.0-plus_87.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.0-plus_87.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
           "matched_text": "- name: GNU Lesser General Public License"
         },
         {
-          "score": 100.0,
+          "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "from_file": null,
           "start_line": 2,
           "end_line": 2,
-          "from_file": null,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 7,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
-          "rule_identifier": "lgpl_3.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "lgpl_3.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
           "matched_text": "  url: http://www.gnu.org/licenses/lgpl.html"
         }
@@ -72,6 +72,8 @@
     "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -80,7 +82,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -90,7 +93,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -100,7 +104,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -110,7 +115,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -120,7 +126,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

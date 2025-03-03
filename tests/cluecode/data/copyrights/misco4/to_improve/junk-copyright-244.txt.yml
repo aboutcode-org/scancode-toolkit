@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) NIST.800.53.R5-S3BucketPublicReadProhibited (https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-public-read-prohibited.html)
+holders:
+  - NIST.800.53.R5-S3BucketPublicReadProhibited

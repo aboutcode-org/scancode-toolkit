@@ -19,7 +19,14 @@
           "url": null
         }
       ],
-      "keywords": [],
+      "keywords": [
+        "argument",
+        "cli",
+        "arg",
+        "parser",
+        "parse",
+        "command-line-interface"
+      ],
       "homepage_url": "https://clap.rs/",
       "download_url": null,
       "size": null,
@@ -41,7 +48,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "package/Cargo.toml",
               "start_line": 1,
               "end_line": 1,
@@ -64,7 +71,11 @@
       "extracted_license_statement": "MIT",
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {},
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "documentation_url": "https://docs.rs/clap/"
+      },
       "repository_homepage_url": "https://crates.io/crates/clap",
       "repository_download_url": "https://crates.io/api/v1/crates/clap/2.32.0/download",
       "api_data_url": "https://crates.io/api/v1/crates/clap",
@@ -78,7 +89,200 @@
       "purl": "pkg:cargo/clap@2.32.0"
     }
   ],
-  "dependencies": [],
+  "dependencies": [
+    {
+      "purl": "pkg:cargo/bitflags",
+      "extracted_requirement": "1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/bitflags?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/unicode-width",
+      "extracted_requirement": "0.1.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/unicode-width?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/textwrap",
+      "extracted_requirement": "0.10.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/textwrap?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/strsim",
+      "extracted_requirement": "0.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "0.8"
+      },
+      "dependency_uid": "pkg:cargo/strsim?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/yaml-rust",
+      "extracted_requirement": "0.3.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "0.3.5"
+      },
+      "dependency_uid": "pkg:cargo/yaml-rust?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/clippy",
+      "extracted_requirement": "~0.0.166",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "~0.0.166"
+      },
+      "dependency_uid": "pkg:cargo/clippy?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/atty",
+      "extracted_requirement": "0.2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "0.2.2"
+      },
+      "dependency_uid": "pkg:cargo/atty?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/vec_map",
+      "extracted_requirement": "0.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "0.8"
+      },
+      "dependency_uid": "pkg:cargo/vec_map?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/term_size",
+      "extracted_requirement": "0.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {
+        "version": "0.3.0"
+      },
+      "dependency_uid": "pkg:cargo/term_size?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/regex",
+      "extracted_requirement": "1",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/regex?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/lazy_static",
+      "extracted_requirement": "~1.1",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/lazy_static?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    },
+    {
+      "purl": "pkg:cargo/version-sync",
+      "extracted_requirement": "0.5",
+      "scope": "dev-dependencies",
+      "is_runtime": false,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:cargo/version-sync?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:cargo/clap@2.32.0?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Cargo.toml",
+      "datasource_id": "cargo_toml"
+    }
+  ],
   "files": [
     {
       "path": "Cargo.toml",
@@ -103,7 +307,14 @@
               "url": null
             }
           ],
-          "keywords": [],
+          "keywords": [
+            "argument",
+            "cli",
+            "arg",
+            "parser",
+            "parse",
+            "command-line-interface"
+          ],
           "homepage_url": "https://clap.rs/",
           "download_url": null,
           "size": null,
@@ -125,7 +336,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "package/Cargo.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -149,8 +360,157 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
-          "dependencies": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "documentation_url": "https://docs.rs/clap/"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:cargo/bitflags",
+              "extracted_requirement": "1.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/unicode-width",
+              "extracted_requirement": "0.1.4",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/textwrap",
+              "extracted_requirement": "0.10.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/strsim",
+              "extracted_requirement": "0.8",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "0.8"
+              }
+            },
+            {
+              "purl": "pkg:cargo/yaml-rust",
+              "extracted_requirement": "0.3.5",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "0.3.5"
+              }
+            },
+            {
+              "purl": "pkg:cargo/clippy",
+              "extracted_requirement": "~0.0.166",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "~0.0.166"
+              }
+            },
+            {
+              "purl": "pkg:cargo/atty",
+              "extracted_requirement": "0.2.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "0.2.2"
+              }
+            },
+            {
+              "purl": "pkg:cargo/vec_map",
+              "extracted_requirement": "0.8",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "0.8"
+              }
+            },
+            {
+              "purl": "pkg:cargo/term_size",
+              "extracted_requirement": "0.3.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {
+                "version": "0.3.0"
+              }
+            },
+            {
+              "purl": "pkg:cargo/regex",
+              "extracted_requirement": "1",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/lazy_static",
+              "extracted_requirement": "~1.1",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:cargo/version-sync",
+              "extracted_requirement": "0.5",
+              "scope": "dev-dependencies",
+              "is_runtime": false,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
           "repository_homepage_url": "https://crates.io/crates/clap",
           "repository_download_url": "https://crates.io/api/v1/crates/clap/2.32.0/download",
           "api_data_url": "https://crates.io/api/v1/crates/clap",

@@ -1,0 +1,2 @@
+ *      Copyright (C) 2002 SnapGear, by Paul Dale <pauli@snapgear.com>
+ *      Copyright (C) 2000, 2001 Lineo, by David McCullough <davidm@lineo.com>

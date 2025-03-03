@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "cddl-1.0",
-              "spdx_license_expression": "CDDL-1.0",
+              "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 1,
               "end_line": 1,
@@ -48,7 +48,7 @@
             },
             {
               "license_expression": "cddl-1.0",
-              "spdx_license_expression": "CDDL-1.0",
+              "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 2,
               "end_line": 2,
@@ -73,6 +73,8 @@
       "source_packages": [
         "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
       "repository_download_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/persistence-api-1.0.jar",
@@ -129,7 +131,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -151,7 +153,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -174,7 +176,13 @@
       "extracted_license_statement": "- Apache-2.0\n- type: Apache 2.0\n  url: https://github.com/spenceralger/grunt-esvm/blob/master/LICENSE.md\n",
       "notice_text": null,
       "source_packages": [],
-      "extra_data": {},
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "engines": {
+          "node": ">= 0.8.0"
+        }
+      },
       "repository_homepage_url": "https://www.npmjs.com/package/grunt-esvm",
       "repository_download_url": "https://registry.npmjs.org/grunt-esvm/-/grunt-esvm-3.2.8.tgz",
       "api_data_url": "https://registry.npmjs.org/grunt-esvm/3.2.8",
@@ -228,7 +236,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "manifests/npm-license-string/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -251,6 +259,8 @@
       "extracted_license_statement": "- MIT\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.npmjs.com/package/angular-compare-validator",
       "repository_download_url": "https://registry.npmjs.org/angular-compare-validator/-/angular-compare-validator-0.1.1.tgz",
@@ -263,6 +273,117 @@
         "npm_package_json"
       ],
       "purl": "pkg:npm/angular-compare-validator@0.1.1"
+    },
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "bluepyopt",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Bluebrain Python Optimisation Library (bluepyopt)",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "BlueBrain Project, EPFL",
+          "email": "werner.vangeit@epfl.ch",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "optimisation",
+        "neuroscience",
+        "BlueBrainProject",
+        "Development Status :: 5 - Production/Stable",
+        "Environment :: Console",
+        "Programming Language :: Python :: 3 :: Only",
+        "Operating System :: POSIX",
+        "Topic :: Scientific/Engineering",
+        "Topic :: Utilities"
+      ],
+      "homepage_url": "https://github.com/BlueBrain/BluePyOpt",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "lgpl-3.0",
+      "declared_license_expression_spdx": "LGPL-3.0-only",
+      "license_detections": [
+        {
+          "license_expression": "lgpl-3.0",
+          "license_expression_spdx": "LGPL-3.0-only",
+          "matches": [
+            {
+              "license_expression": "lgpl-3.0",
+              "license_expression_spdx": "LGPL-3.0-only",
+              "from_file": "manifests/pypi/bluepyopt_setup.py",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "lgpl-3.0_29.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0_29.RULE",
+              "matched_text": "LGPLv3"
+            }
+          ],
+          "identifier": "lgpl_3_0-38174920-e8ed-7bda-41ec-94df7380b7d5"
+        },
+        {
+          "license_expression": "lgpl-3.0",
+          "license_expression_spdx": "LGPL-3.0-only",
+          "matches": [
+            {
+              "license_expression": "lgpl-3.0",
+              "license_expression_spdx": "LGPL-3.0-only",
+              "from_file": "manifests/pypi/bluepyopt_setup.py",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 10,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "pypi_gnu_lesser_general_public_license_v3.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_gnu_lesser_general_public_license_v3.RULE",
+              "matched_text": "- 'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'"
+            }
+          ],
+          "identifier": "lgpl_3_0-272571eb-5e68-95b6-ddb0-71de2d8df321"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "license: LGPLv3\nclassifiers:\n  - 'License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)'\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": "https://pypi.org/project/bluepyopt",
+      "repository_download_url": null,
+      "api_data_url": "https://pypi.org/pypi/bluepyopt/json",
+      "package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "manifests/pypi/bluepyopt_setup.py"
+      ],
+      "datasource_ids": [
+        "pypi_setup_py"
+      ],
+      "purl": "pkg:pypi/bluepyopt"
     }
   ],
   "dependencies": [
@@ -272,7 +393,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/bluebird?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -286,7 +408,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/cli-color?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -300,7 +423,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/cli-table?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -314,7 +438,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/libesvm?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -328,7 +453,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/lodash?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -342,7 +468,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/moment?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -356,7 +483,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/wreck?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -370,7 +498,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -384,7 +513,8 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/load-grunt-config?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -398,7 +528,8 @@
       "scope": "peerDependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/grunt?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -412,7 +543,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/%40angular/core?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -426,7 +558,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/%40angular/forms?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -440,7 +573,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/%40angular/common?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -454,7 +588,8 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/rxjs?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -468,13 +603,179 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:npm/zone.js?uuid=fixed-uid-done-for-testing-5642512d1758",
       "for_package_uid": "pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_path": "manifests/npm-license-string/package.json",
       "datasource_id": "npm_package_json"
+    },
+    {
+      "purl": "pkg:pypi/numpy",
+      "extracted_requirement": ">=1.6",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/numpy?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/pandas",
+      "extracted_requirement": ">=0.18",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/pandas?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/deap",
+      "extracted_requirement": null,
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/deap?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/efel",
+      "extracted_requirement": ">=2.13",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/efel?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/ipyparallel",
+      "extracted_requirement": null,
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/ipyparallel?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/pickleshare",
+      "extracted_requirement": ">=0.7.3",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/pickleshare?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/jinja2",
+      "extracted_requirement": ">=2.8",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/jinja2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/future",
+      "extracted_requirement": null,
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/future?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/pebble",
+      "extracted_requirement": ">=4.3.10",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/pebble?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/scoop",
+      "extracted_requirement": ">=0.7",
+      "scope": "all",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/scoop?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
+    },
+    {
+      "purl": "pkg:pypi/scoop",
+      "extracted_requirement": ">=0.7",
+      "scope": "scoop",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/scoop?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "manifests/pypi/bluepyopt_setup.py",
+      "datasource_id": "pypi_setup_py"
     }
   ],
   "license_detections": [
@@ -851,7 +1152,7 @@
               "matches": [
                 {
                   "license_expression": "cddl-1.0",
-                  "spdx_license_expression": "CDDL-1.0",
+                  "license_expression_spdx": "CDDL-1.0",
                   "from_file": "manifests/maven/persistence-api-1.0.pom",
                   "start_line": 1,
                   "end_line": 1,
@@ -866,7 +1167,7 @@
                 },
                 {
                   "license_expression": "cddl-1.0",
-                  "spdx_license_expression": "CDDL-1.0",
+                  "license_expression_spdx": "CDDL-1.0",
                   "from_file": "manifests/maven/persistence-api-1.0.pom",
                   "start_line": 2,
                   "end_line": 2,
@@ -892,6 +1193,8 @@
             "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://repo1.maven.org/maven2/javax/persistence/persistence-api/1.0/",
@@ -913,7 +1216,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 17,
               "end_line": 19,
@@ -927,7 +1230,7 @@
             },
             {
               "license_expression": "cddl-1.0",
-              "spdx_license_expression": "CDDL-1.0",
+              "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 18,
               "end_line": 20,
@@ -1050,7 +1353,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "manifests/npm-license-mapping/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1072,7 +1375,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "manifests/npm-license-mapping/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1096,7 +1399,13 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
-          "extra_data": {},
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "engines": {
+              "node": ">= 0.8.0"
+            }
+          },
           "dependencies": [
             {
               "purl": "pkg:npm/bluebird",
@@ -1104,7 +1413,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1114,7 +1424,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1124,7 +1435,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1134,7 +1446,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1144,7 +1457,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1154,7 +1468,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1164,7 +1479,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1174,7 +1490,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1184,7 +1501,8 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1194,7 +1512,8 @@
               "scope": "peerDependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1218,7 +1537,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 6,
               "end_line": 6,
@@ -1239,7 +1558,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "manifests/npm-license-mapping/package.json",
               "start_line": 20,
               "end_line": 20,
@@ -1366,7 +1685,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "manifests/npm-license-string/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1390,6 +1709,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -1398,7 +1719,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1408,7 +1730,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1418,7 +1741,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1428,7 +1752,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -1438,7 +1763,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1462,7 +1788,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "manifests/npm-license-string/package.json",
               "start_line": 4,
               "end_line": 4,
@@ -1593,7 +1919,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "manifests/pypi/bluepyopt_setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1615,7 +1941,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0",
-                  "spdx_license_expression": "LGPL-3.0-only",
+                  "license_expression_spdx": "LGPL-3.0-only",
                   "from_file": "manifests/pypi/bluepyopt_setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -1639,115 +1965,128 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
               "purl": "pkg:pypi/numpy",
-              "extracted_requirement": "numpy>=1.6",
+              "extracted_requirement": ">=1.6",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pandas",
-              "extracted_requirement": "pandas>=0.18",
+              "extracted_requirement": ">=0.18",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/deap",
-              "extracted_requirement": "deap",
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/efel",
-              "extracted_requirement": "efel>=2.13",
+              "extracted_requirement": ">=2.13",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/ipyparallel",
-              "extracted_requirement": "ipyparallel",
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pickleshare",
-              "extracted_requirement": "pickleshare>=0.7.3",
+              "extracted_requirement": ">=0.7.3",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/jinja2",
-              "extracted_requirement": "Jinja2>=2.8",
+              "extracted_requirement": ">=2.8",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/future",
-              "extracted_requirement": "future",
+              "extracted_requirement": null,
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/pebble",
-              "extracted_requirement": "Pebble>=4.3.10",
+              "extracted_requirement": ">=4.3.10",
               "scope": "install",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/scoop",
-              "extracted_requirement": "scoop>=0.7",
+              "extracted_requirement": ">=0.7",
               "scope": "all",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
               "purl": "pkg:pypi/scoop",
-              "extracted_requirement": "scoop>=0.7",
+              "extracted_requirement": ">=0.7",
               "scope": "scoop",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -1759,7 +2098,9 @@
           "purl": "pkg:pypi/bluepyopt"
         }
       ],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "lgpl-3.0",
       "detected_license_expression_spdx": "LGPL-3.0-only",
       "license_detections": [
@@ -1769,7 +2110,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 9,
               "end_line": 20,
@@ -1790,7 +2131,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 65,
               "end_line": 65,
@@ -1811,7 +2152,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "manifests/pypi/bluepyopt_setup.py",
               "start_line": 74,
               "end_line": 75,

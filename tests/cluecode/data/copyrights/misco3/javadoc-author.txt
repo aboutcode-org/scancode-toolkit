@@ -1,0 +1,8 @@
+ * This interface represents the objects which provide support for
+ * shorthand properties.
+ *
+ * @author <a href="mailto:stephane@hillion.org">Stephane Hillion</a>
+ * @version $Id: ShorthandManager.java 1733416 2016-03-03 07:07:13Z gadams $
+ */
+public interface ShorthandManager {
+

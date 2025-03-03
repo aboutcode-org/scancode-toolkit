@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999-2006 Joey Hess <joeyh@debian.org>
+  - Copyright by Randolph Chung <tausq@debian.org>
+holders:
+  - Joey Hess
+  - Randolph Chung

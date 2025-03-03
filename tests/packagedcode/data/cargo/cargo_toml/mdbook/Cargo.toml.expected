@@ -32,7 +32,12 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "book",
+      "gitbook",
+      "rustbook",
+      "markdown"
+    ],
     "homepage_url": null,
     "download_url": null,
     "size": null,
@@ -53,17 +58,17 @@
         "license_expression_spdx": "MPL-2.0",
         "matches": [
           {
-            "score": 50.0,
+            "license_expression": "mpl-2.0",
+            "license_expression_spdx": "MPL-2.0",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 50.0,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "mpl-2.0",
-            "spdx_license_expression": "MPL-2.0",
-            "rule_identifier": "spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
             "rule_relevance": 50,
+            "rule_identifier": "spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-2.0_for_mpl-2.0.RULE",
             "matched_text": "MPL-2.0"
           }
@@ -78,8 +83,345 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
-    "dependencies": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "documentation_url": "http://rust-lang-nursery.github.io/mdBook/index.html"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:cargo/clap",
+        "extracted_requirement": "2.24",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/chrono",
+        "extracted_requirement": "0.4",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/handlebars",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/serde",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/serde_derive",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/error-chain",
+        "extracted_requirement": "0.12",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/serde_json",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/pulldown-cmark",
+        "extracted_requirement": "0.1.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/lazy_static",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/log",
+        "extracted_requirement": "0.4",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/env_logger",
+        "extracted_requirement": "0.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/toml",
+        "extracted_requirement": "0.4.8",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/memchr",
+        "extracted_requirement": "2.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/open",
+        "extracted_requirement": "1.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/regex",
+        "extracted_requirement": "1.0.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/tempfile",
+        "extracted_requirement": "3.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/itertools",
+        "extracted_requirement": "0.7",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/shlex",
+        "extracted_requirement": "0.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/toml-query",
+        "extracted_requirement": "0.7",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/notify",
+        "extracted_requirement": "4.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "4.0"
+        }
+      },
+      {
+        "purl": "pkg:cargo/iron",
+        "extracted_requirement": "0.6",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "0.6"
+        }
+      },
+      {
+        "purl": "pkg:cargo/staticfile",
+        "extracted_requirement": "0.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "0.5"
+        }
+      },
+      {
+        "purl": "pkg:cargo/ws",
+        "extracted_requirement": "0.7",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "0.7"
+        }
+      },
+      {
+        "purl": "pkg:cargo/elasticlunr-rs",
+        "extracted_requirement": "2.3",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "2.3",
+          "default-features": false
+        }
+      },
+      {
+        "purl": "pkg:cargo/ammonia",
+        "extracted_requirement": "1.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "1.1"
+        }
+      },
+      {
+        "purl": "pkg:cargo/select",
+        "extracted_requirement": "0.4",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/pretty_assertions",
+        "extracted_requirement": "0.5",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/walkdir",
+        "extracted_requirement": "2.0",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/pulldown-cmark-to-cmark",
+        "extracted_requirement": "1.1.0",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": "https://crates.io/crates/mdbook",
     "repository_download_url": "https://crates.io/api/v1/crates/mdbook/0.2.4-alpha.0/download",
     "api_data_url": "https://crates.io/api/v1/crates/mdbook",

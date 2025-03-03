@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999-2000 Harri Porten (porten@kde.org)
+  - Copyright (c) 2003, 2006, 2007, 2008, 2009 Apple Inc.
+  - Copyright (c) 2007 Cameron Zwarich (cwzwarich@uwaterloo.ca)
+  - Copyright (c) 2007 Maks Orlovich
+holders:
+  - Harri Porten
+  - Apple Inc.
+  - Cameron Zwarich
+  - Maks Orlovich

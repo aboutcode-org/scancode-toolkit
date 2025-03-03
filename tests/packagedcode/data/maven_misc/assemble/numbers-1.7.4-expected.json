@@ -48,7 +48,7 @@
           "matches": [
             {
               "license_expression": "cc0-1.0",
-              "spdx_license_expression": "CC0-1.0",
+              "license_expression_spdx": "CC0-1.0",
               "from_file": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
               "start_line": 1,
               "end_line": 2,
@@ -73,6 +73,8 @@
       "source_packages": [
         "pkg:maven/com.github.peteroupc/numbers@1.7.4?classifier=sources"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/",
       "repository_download_url": "https://repo1.maven.org/maven2/com/github/peteroupc/numbers/1.7.4/numbers-1.7.4.jar",
@@ -94,7 +96,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/junit/junit@4.13-beta-3?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -218,6 +221,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -317,6 +322,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -388,7 +395,7 @@
               "matches": [
                 {
                   "license_expression": "cc0-1.0",
-                  "spdx_license_expression": "CC0-1.0",
+                  "license_expression_spdx": "CC0-1.0",
                   "from_file": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
                   "start_line": 1,
                   "end_line": 2,
@@ -414,6 +421,8 @@
             "pkg:maven/com.github.peteroupc/numbers@1.7.4?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -422,7 +431,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -446,7 +456,7 @@
           "matches": [
             {
               "license_expression": "cc0-1.0",
-              "spdx_license_expression": "CC0-1.0",
+              "license_expression_spdx": "CC0-1.0",
               "from_file": "numbers-1.7.4/META-INF/maven/com.github.peteroupc/numbers/pom.xml",
               "start_line": 86,
               "end_line": 91,

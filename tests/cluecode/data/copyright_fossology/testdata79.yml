@@ -1,0 +1,28 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999-2006 Joey Hess <joeyh@debian.org>
+  - Copyright by Randolph Chung <tausq@debian.org>
+  - Copyright Eric Gillespie <epg@debian.org>
+  - Copyright Peter Rockai <mornfall@logisys.dyndns.org>
+  - Copyright Matthew Palmer <mjp16@ieee.uow.edu.au>
+  - Copyright Moshe Zadka <m@moshez.org>
+  - Copyright Sylvain Ferriol <sylvain.ferriol@imag.fr>
+  - Copyright Tomohiro KUBOTA <kubota@debian.org>
+  - Copyright Petter Reinholdtsen <pere@hungry.com>
+  - Copyright Sylvain Ferriol <Sylvain.Ferriol@imag.fr>
+  - Copyright Colin Watson <cjwatson@debian.org>
+holders:
+  - Joey Hess
+  - Randolph Chung
+  - Eric Gillespie
+  - Peter Rockai
+  - Matthew Palmer
+  - Moshe Zadka
+  - Sylvain Ferriol
+  - Tomohiro KUBOTA
+  - Petter Reinholdtsen
+  - Sylvain Ferriol
+  - Colin Watson

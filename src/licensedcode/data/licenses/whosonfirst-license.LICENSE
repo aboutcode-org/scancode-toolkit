@@ -1,0 +1,11 @@
+---
+key: whosonfirst-license
+short_name: whosonfirst license
+name: whosonfirst license
+category: Proprietary Free
+owner: whosonfirst
+homepage_url: https://whosonfirst.org/docs/licenses/
+spdx_license_key: LicenseRef-scancode-whosonfirst-license
+---
+
+Crediting Who's On First is recommended and linking back to the License is required.

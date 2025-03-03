@@ -1,0 +1,7 @@
+what:
+  - copyrights
+  - holders
+  - authors
+authors:
+  - Petter Reinholdtsen <pere@debian.org>
+  - Alan Cox <alan@redhat.com> and Jean Delvare <khali@linux-fr.org>

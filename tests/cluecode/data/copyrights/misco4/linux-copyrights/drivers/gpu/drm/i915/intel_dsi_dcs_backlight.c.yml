@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2016 Intel Corporation
+holders:
+  - Intel Corporation
+authors:
+  - Deepak M

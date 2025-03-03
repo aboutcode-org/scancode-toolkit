@@ -43,7 +43,7 @@ ignorable_holders:
     - Simon Tatham
     - The OpenSSL Project
 ignorable_authors:
-    - Coding Technologies
+    - Coding Technologies 'CT www.codingtechnologies.com
     - the OpenSSL Project
 ignorable_urls:
     - http://ffmpeg.mplayerhq.hu/

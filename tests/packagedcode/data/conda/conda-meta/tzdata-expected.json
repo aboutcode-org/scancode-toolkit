@@ -1,0 +1,79 @@
+[
+  {
+    "type": "conda",
+    "namespace": null,
+    "name": "tzdata",
+    "version": "2024b",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": null,
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": "https://repo.anaconda.com/pkgs/main/noarch/tzdata-2024b-h04d1e81_0.conda",
+    "size": 117432,
+    "sha1": null,
+    "md5": "9be694715c6a65f9631bb1b242125e9d",
+    "sha256": "9fdd287b55be4c475789a69d3b94cdb73f756583a6d7306da1706e43eee573da",
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "cc-pd OR bsd-new",
+    "declared_license_expression_spdx": "CC-PDDC OR BSD-3-Clause",
+    "license_detections": [
+      {
+        "license_expression": "cc-pd OR bsd-new",
+        "license_expression_spdx": "CC-PDDC OR BSD-3-Clause",
+        "matches": [
+          {
+            "license_expression": "cc-pd OR bsd-new",
+            "license_expression_spdx": "CC-PDDC OR BSD-3-Clause",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 6,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-cc_pd_or_bsd_new-7ed06e8faddcea41dbd5ba6b6a1103da7451d4c1",
+            "rule_url": null,
+            "matched_text": "CC-PDDC OR BSD-3-Clause"
+          }
+        ],
+        "identifier": "cc_pd_or_bsd_new-59c31305-cd29-a988-bea8-38f97ce1950f"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "CC-PDDC OR BSD-3-Clause",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "requested_spec": "defaults/noarch::tzdata==2024b=h04d1e81_0[md5=9be694715c6a65f9631bb1b242125e9d]",
+      "channel": "https://repo.anaconda.com/pkgs/main/noarch",
+      "extracted_package_dir": "/opt/conda/pkgs/tzdata-2024b-h04d1e81_0",
+      "files": [
+        "share/zoneinfo/Asia/Kolkata",
+        "share/zoneinfo/tzdata.zi",
+        "share/zoneinfo/zone.tab"
+      ],
+      "package_tarball_full_path": "/opt/conda/pkgs/tzdata-2024b-h04d1e81_0.conda"
+    },
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "conda_meta_json",
+    "purl": "pkg:conda/tzdata@2024b"
+  }
+]

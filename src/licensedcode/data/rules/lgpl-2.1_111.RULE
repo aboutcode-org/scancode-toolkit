@@ -3,7 +3,7 @@ license_expression: lgpl-2.1
 is_license_notice: yes
 relevance: 100
 ignorable_authors:
-    - the U.S.
+    - the U.S. Government
 ---
 
 Portions of this product were created by the U.S. Government and not subject to

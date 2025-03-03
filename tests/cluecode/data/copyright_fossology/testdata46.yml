@@ -1,0 +1,53 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1989-2006 Free Software Foundation, Inc.
+  - Copyright FSF
+  - Copyright 1995-2005 by Chester Ramey
+  - Copyright (c) 1988-2005 Free Software Foundation, Inc.
+  - Copyright (c) 1993-1994 O'Reilly and Associates, Inc.
+  - Copyright (c) 1998, 1999, 2001 Gary V. Vaughan <gvv@techie.com>
+  - Copyright (c) 1991 Simon J. Gerraty
+  - Kaz Kylheku Copyright 1999
+  - Copyright (c) Chris Robertson
+  - copyright chris ulrich
+  - Copyright (c) 1994 Winning Strategies, Inc.
+  - Copyright (c) 1989, 1993 The Regents of the University of California
+  - Copyright (c) 1988-2004 Free Software Foundation, Inc.
+  - Copyright (c) 1988-2005 Free Software Foundation, Inc.
+  - Copyright (c) 1988-2005 Free Software Foundation, Inc.
+  - Copyright (c) 1988-2002 Free Software Foundation, Inc.
+  - Copyright (c) 1983, 1990, 1993 The Regents of the University of California
+  - Portions Copyright (c) 1993 by Digital Equipment Corporation
+  - Copyright (c) 1988 Free Software Foundation, Inc.
+  - Copyright (c) 1999, 2002 Aladdin Enterprises
+holders:
+  - Free Software Foundation, Inc.
+  - FSF
+  - Chester Ramey
+  - Free Software Foundation, Inc.
+  - O'Reilly and Associates, Inc.
+  - Gary V. Vaughan
+  - Simon J. Gerraty
+  - Kaz Kylheku
+  - Chris Robertson
+  - chris ulrich
+  - Winning Strategies, Inc.
+  - The Regents of the University of California
+  - Free Software Foundation, Inc.
+  - Free Software Foundation, Inc.
+  - Free Software Foundation, Inc.
+  - Free Software Foundation, Inc.
+  - The Regents of the University of California
+  - Digital Equipment Corporation
+  - Free Software Foundation, Inc.
+  - Aladdin Enterprises
+authors:
+  - Matthias Klose <doko@debian.org>
+  - Winning Strategies, Inc.
+  - the University of California, Berkeley and its contributors
+  - the University of California, Berkeley and its contributors
+  - Richard Verhoeven
+  - chet@po.cwru.edu

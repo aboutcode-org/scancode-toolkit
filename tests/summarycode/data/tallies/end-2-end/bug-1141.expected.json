@@ -68,11 +68,11 @@
         "count": 2
       },
       {
-        "value": "Copyright (c) - Members of the Gmerlin project",
+        "value": "Copyright (c) Members of the Gmerlin project",
         "count": 1
       },
       {
-        "value": "Copyright (c) - Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
+        "value": "Copyright (c) Members of the Gmerlin project gmerlin-general@lists.sourceforge.net http://gmerlin.sourceforge.net",
         "count": 1
       }
     ],
@@ -307,7 +307,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "bug-1141.tar.gz/bug/sub/sub2/COPYING",
               "start_line": 1,
               "end_line": 12,
@@ -533,7 +533,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "bug-1141.tar.gz/bug/sub/sub2/src/benchmark.c",
               "start_line": 8,
               "end_line": 19,

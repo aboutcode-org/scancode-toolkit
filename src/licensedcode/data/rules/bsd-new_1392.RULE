@@ -1,0 +1,10 @@
+---
+license_expression: bsd-new
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://golang.org/LICENSE
+---
+
+The {{Go license}} can be found here:
+// https://golang.org/LICENSE.

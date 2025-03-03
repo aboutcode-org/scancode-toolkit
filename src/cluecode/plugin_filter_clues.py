@@ -7,6 +7,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+"""
+Filter out or ignore, as in "remove" redundant or irrelevant detected clues such as copyrights,
+authors, emails, and urls that are already contained in a matched license text or license rule and
+treated as ignorable.
+"""
+
 from itertools import chain
 
 import attr
@@ -63,22 +69,24 @@ class RedundantCluesFilter(PostScanPlugin):
         if TRACE: logger_debug('RedundantFilter:process_codebase')
 
         from licensedcode.cache import get_index
+        rules_by_id = get_index().rules_by_id
 
         for resource in codebase.walk():
-            filtered = filter_ignorable_resource_clues(resource, get_index().rules_by_id)
+            filtered = filter_ignorable_resource_clues(resource=resource, rules_by_id=rules_by_id)
             if filtered:
                 filtered.save(codebase)
 
 
 def filter_ignorable_resource_clues(resource, rules_by_id):
     """
-    Filter ignorable clues from the `resource` Resource objects using all the
-    scan details attached to that `resource` and the `rules_by_id` mapping of
-    {identifier: license Rule object}. Return the `resource` object modified in-
-    place if it was modified.
+    Filter ignorable clues from the ``resource`` Resource object using all the
+    scan details attached to that ``resource`` and the ``rules_by_id`` mapping of
+    {identifier: license Rule object}. Return the ``resource`` object modified in-
+    place if it was modified, or None otherwise.
     """
     detections = Detections.from_resource(resource)
-    filtered = filter_ignorable_clues(detections, rules_by_id)
+    filtered = filter_ignorable_clues(detections=detections, rules_by_id=rules_by_id)
+    logger_debug(f'filter_ignorable_resource_clues: {filtered}')
     if filtered:
         if hasattr(resource, 'emails'):
             resource.emails = filtered.emails
@@ -97,8 +105,7 @@ def filter_ignorable_resource_clues(resource, rules_by_id):
 class Ignorable(object):
     # a frozenset of matched line numbers
     lines_range = attr.ib()
-    # either a string or a frozenset of strings, such that we can test for `x in
-    # value`
+    # either a string or a frozenset of strings, such that we can test for `x in value`
     value = attr.ib()
 
 
@@ -119,20 +126,22 @@ class Detections(object):
     urls = attr.ib(default=attr.Factory(list))
     emails = attr.ib(default=attr.Factory(list))
 
-    licenses = attr.ib(default=attr.Factory(list))
+    license_matches = attr.ib(default=attr.Factory(list))
 
     # this is the same as author and copyrights, but restructured to be in the
     # same format as ignorables and is used to filter emails and urls in authors
     # and copyright
-    copyrights_as_ignorable = attr.ib(default=attr.Factory(list), repr=False)
-    holders_as_ignorable = attr.ib(default=attr.Factory(list), repr=False)
-    authors_as_ignorable = attr.ib(default=attr.Factory(list), repr=False)
+    copyrights_as_ignorable = attr.ib(default=attr.Factory(list))
+    holders_as_ignorable = attr.ib(default=attr.Factory(list))
+    authors_as_ignorable = attr.ib(default=attr.Factory(list))
 
     @staticmethod
     def from_scan_data(data):
         detected_copyrights = data.get('copyrights', [])
         detected_authors = data.get('authors', [])
         detected_holders = data.get('holders', [])
+        detected_emails = data.get('emails', [])
+        detected_urls = data.get('urls', [])
 
         copyrights_as_ignorable = frozenset(
             Ignorable(
@@ -155,19 +164,28 @@ class Detections(object):
             for a in detected_authors
         )
 
-        return Detections(
+        license_matches = list(
+            chain.from_iterable(
+                d.get('matches', [])
+                for d in data.get('license_detections', {})
+            )
+        )
+
+        detections = Detections(
             copyrights=detected_copyrights,
-            emails=data.get('emails', []),
-            urls=data.get('urls', []),
+            emails=detected_emails,
+            urls=detected_urls,
             holders=detected_holders,
             authors=detected_authors,
 
-            authors_as_ignorable=authors_as_ignorable,
             copyrights_as_ignorable=copyrights_as_ignorable,
             holders_as_ignorable=holders_as_ignorable,
+            authors_as_ignorable=authors_as_ignorable,
 
-            licenses=data.get('licenses', []),
+            license_matches=license_matches,
         )
+        detections.debug()
+        return detections
 
     @staticmethod
     def from_resource(resource):
@@ -185,11 +203,21 @@ class Detections(object):
             (('url', c) for c in self.urls),
         )
 
+    def debug(self):
+        if TRACE:
+            logger_debug('Detections')
+            for nv in self.as_iterable():
+                logger_debug('    ', nv),
+
+            logger_debug('     copyrights_as_ignorable:', self.copyrights_as_ignorable)
+            logger_debug('     holders_as_ignorable:   ', self.holders_as_ignorable)
+            logger_debug('     authors_as_ignorable:   ', self.authors_as_ignorable)
+            logger_debug('     license_matches:        ', self.license_matches)
+
 
 def is_empty(clues):
     if clues:
-        return not any([
-            clues.copyrights, clues.holders, clues.authors, clues.urls, clues.emails])
+        return not any([clues.copyrights, clues.holders, clues.authors, clues.urls, clues.emails])
     else:
         # The logic is reversed, so a false or None "clues" object returns None, which
         # is interpreted as False (i.e., the object is *not* empty).
@@ -204,18 +232,22 @@ def filter_ignorable_clues(detections, rules_by_id):
     """
     if is_empty(detections):
         return
+    if TRACE:
+        logger_debug('filter_ignorable_clues: detections')
+        detections.debug()
 
     no_detected_ignorables = not detections.copyrights and not detections.authors
 
-    ignorables = collect_ignorables(detections.licenses, rules_by_id)
-
-    no_ignorables = not detections.licenses or is_empty(ignorables)
+    ignorables = collect_ignorables(license_matches=detections.license_matches, rules_by_id=rules_by_id)
+    no_ignorables = not detections.license_matches or is_empty(ignorables)
 
     if TRACE:
         logger_debug('ignorables', ignorables)
         # logger_debug('detections', detections)
 
     if no_ignorables and no_detected_ignorables:
+        if TRACE:
+            logger_debug('filter_ignorable_clues: NO IGNORABLES')
         return
 
     # discard redundant emails if ignorable or in a detections copyright or author
@@ -307,9 +339,9 @@ def filter_values(attributes, ignorables, value_key='copyright', strip=''):
 
 def collect_ignorables(license_matches, rules_by_id):
     """
-    Collect and return an Ignorables object built from ``license_matches``
-    matched licenses list of "licenses" objects returned in ScanCode JSON
-    results and the ``rules_by_id`` mapping of Rule objects by identifier.
+    Collect and return an Ignorables object built from ``license_matches`` list of license matches
+    as returned in ScanCode results license_detection and the ``rules_by_id`` mapping of Rule
+    objects by rule identifier.
 
     The value of each ignorable list of clues is a set of (set of lines number,
     set of ignorable values).
@@ -321,6 +353,8 @@ def collect_ignorables(license_matches, rules_by_id):
     copyrights = set()
 
     if not license_matches:
+        if TRACE:
+            logger_debug('collect_ignorables: No ignorables!!!!')
         return Ignorables(
             copyrights=frozenset(copyrights),
             holders=frozenset(holders),
@@ -328,31 +362,30 @@ def collect_ignorables(license_matches, rules_by_id):
             urls=frozenset(urls),
             emails=frozenset(emails),
         )
-    # build tuple of (set of lines number, set of ignorbale values)
-    for lic in license_matches:
+
+    # build tuple of (set of lines number, set of ignorable values)
+    for licmat in license_matches:
 
         if TRACE:
-            logger_debug('collect_ignorables: license:', lic['key'], lic['score'])
+            logger_debug('collect_ignorables: license_match:', licmat['license_expression'], licmat['score'])
 
-        matched_rule = lic.get('matched_rule', {})
-        rid = matched_rule.get('identifier')
-        match_coverage = matched_rule.get('match_coverage', 0)
-
-        # ignore poor partial matches
-        # TODO: there must be a better way using coverage
-        if match_coverage < 90:
-            if TRACE:
-                logger_debug('  collect_ignorables: skipping, match_coverage under 90%')
-            continue
-
+        rid = licmat['rule_identifier']
         if not rid:
             # we are missing the license match details, we can only skip
             if TRACE: logger_debug('  collect_ignorables: skipping, no RID')
             continue
 
+        # ignore poor partial matches
+        # TODO: there must be a better way using coverage
+        match_coverage = float(licmat['match_coverage'])
+        if match_coverage < 90:
+            if TRACE:
+                logger_debug('  collect_ignorables: skipping, match_coverage under 90%')
+            continue
+
         rule = rules_by_id[rid]
 
-        lines_range = frozenset(range(lic['start_line'], lic['end_line'] + 1))
+        lines_range = frozenset(range(licmat['start_line'], licmat['end_line'] + 1))
 
         ign_copyrights = frozenset(rule.ignorable_copyrights or [])
         if ign_copyrights:

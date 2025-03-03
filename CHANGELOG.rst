@@ -9,6 +9,7 @@ v33.0.0 (next next, roadmap)
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
+
 - Fallback packages for non-native dependencies of SCTK.
 - Dependencies for
 - Support for copyright detection objects.
@@ -34,8 +35,210 @@ v33.0.0 (next next, roadmap)
   of these in other summary plugins.
   See https://github.com/nexB/scancode-toolkit/issues/1745
 
-v32.1.0 (next, roadmap)
-----------------------------
+- Update Dockerfile and test container build.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/3955
+
+v32.3.2 - 2024-01-20
+--------------------
+
+This is a patch release with license and package detection
+improvements, bugfixes and with new and updated license detection rules
+and new licenses added.
+
+Bugfixes:
+
+- Fix package resource assignment for JAVA jars in scancode.io
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3983
+
+- Fix missing spdx license expression in license detections
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4015
+
+- Enforce --path as a required parameter for scancode-license-data
+  console script.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4024
+
+- Fix conda environment.yaml parsing errors.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4078
+
+- Fix npm package parsing bug for packages with workspaces.
+  https://github.com/aboutcode-org/scancode.io/issues/1521
+
+New features/licenses:
+
+- Adds support for pnpm lock YAML v9
+  https://github.com/pnpm/spec/blob/master/lockfile/9.0.md
+
+- Add licenses from SPDX License List 3.26
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4045
+
+- Add assembly and identification of conda package files in
+  root filesystem installations
+  https://github.com/aboutcode-org/scancode-toolkit/issues/4083
+
+v32.3.1 - 2024-01-06
+--------------------
+
+This is a patch release with license and package detection
+improvements, bugfixes and with new and updated license detection rules
+and new licenses added.
+
+- We can now collect packages from a Rust binary using rust-inspector
+  for rust binaries built with `cargo-auditable`(Linux-only)
+  Also adds a plugin for colelcting rust symbols with the option
+  ``--rust-symbol``. See the initial release for more info:
+  https://github.com/aboutcode-org/rust-inspector/releases/tag/v0.1.0
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4043
+
+- Improves and adds bugfixes for package detection in the following ecosystems:
+  conda, npm, rust, go.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4073
+
+- Updates go-inspector to v0.5.0 . GoReSym is now built from source and has
+  been updated to v3.0.1. https://github.com/aboutcode-org/scancode-toolkit/pull/3972
+
+- Adds new and updated licenses, license detection rules.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3963
+
+- Adds the latest license-expression with an updated licenseDB.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3960
+
+v32.3.0 - 2024-10-21
+--------------------
+
+Major API/other changes:
+
+- Output Format Version updated to 4.0.0 (major version bump)
+- Dependency attribute rename: ``is_resolved`` renamed to ``is_pinned``
+  See https://github.com/nexB/scancode-toolkit/pull/3888 for more details.
+- License Match attribute rename: ``spdx_license_expression`` is renamed to
+  ``license_expression_spdx``.
+
+Changes in Output Data Structure:
+
+- The data structure of the JSON output has changed for:
+  - dependencies at file level package_data, and at top-level.
+  - license matches at file level or unique codebase level license detections
+  Note that the change is a modification to the JSON output,
+  so we have a major version bump ``3.2.0`` to ``4.0.0``:
+
+  - Dependency attribute ``is_resolved`` renamed to ``is_pinned``
+  - LicenseMatch attribute ``spdx_license_expression`` renamed to
+    ``license_expression_spdx``
+
+- Update link references of ownership from nexB to aboutcode-org
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/3885
+
+- New and updated licenses, including support for newly released
+  SPDX license list versions:
+  - SPDX License List 3.25.0:
+    This release of the SPDX license list had 9 new licenses
+    and exceptions, and out of them 5 were present as licenses
+    and 2 were present as rules already. There were 2 new
+    license/exception texts added, and also 1 license was deprecated.
+    For more details see https://github.com/aboutcode-org/scancode-toolkit/pull/3897
+
+- New and improved copyright detection with many false positive removed
+  and refined detection added.
+
+- Fix Python ``SyntaxWarning`` in textcode module.
+
+- Improve python, npm, yarn, go package detections:
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3857
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3869
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3943
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3894
+
+- Drop python 3.8 support as this is end of life. Please use older releases if you
+  are using python 3.8 but this is not recommended.
+
+- We can now collect packages from a Go binary using go-inspector (Linux-only)
+  See https://github.com/aboutcode-org/scancode-toolkit/pull/3894
+
+v32.2.1 - 2024-07-02
+---------------------
+
+- Add support for parsing resolved packages and dependency relationships
+  from nuget lockfile `packages.lock.json`.
+  See https://github.com/nexB/scancode-toolkit/pull/3825
+
+- Add support for parsing resolved packages and dependency relationships
+  from cocoapods lockfile `Podfile.lock`.
+  See https://github.com/nexB/scancode-toolkit/pull/3827
+
+- Add support for parsing packages and dependency relationships
+  from swift `swift-show-dependencies.deplock` generated by DepLock.
+  See https://github.com/nexB/scancode-toolkit/pull/3829
+
+- Add support for `pip-inspect.deplock` files to parse and store
+  resolved packages and dependency relationships, to statically
+  resolve a python dependency graph.
+  See https://github.com/nexB/scancode.io/issues/1262
+
+- Add support for poetry packages, with poetry specific pyproject.toml
+  support, poetry.lock and package assembly support. Also add support
+  for parsing and storing resolved packages and dependency relationships
+  required to statically resolve poetry dependecy graphs.
+  See https://github.com/nexB/scancode-toolkit/issues/2109
+
+- Add support for pyproject.toml files in python projects.
+  See https://github.com/nexB/scancode-toolkit/issues/3753
+
+- More improved copyright detection, see
+  https://github.com/nexB/scancode-toolkit/pull/3752
+
+- ``scancode-toolkit`` is now installable from the fedora repo.
+  See https://github.com/nexB/scancode-toolkit/pull/3824
+
+v32.2.0 - 2024-06-19
+----------------------
+
+- New and improved package/dependency data:
+  - Added new attribute in DependentPackage `is_direct` to aid
+    package resolution and dependency graph creation.
+  - Added new attributes in PackageData: `is_private` and
+    `is_virtual`. #3102 #3811
+  https://github.com/nexB/scancode-toolkit/pull/3779
+
+- Improved javascript package detection:
+  - Add support for pnpm manifests and lockfiles #3766
+  - Add support for npm, pnpm and yarn workspaces #3746
+  - Improve resolved package and dependencies support in lockfiles for
+    yarn.lock, package-lock.json, and pnpm. #3780
+  - Add support for private packages. #3120
+  - Add support for new dependency scopes across javascript
+  - Lots of misc bugfixes in yarn and npm parsers.
+  https://github.com/nexB/scancode-toolkit/pull/3779
+
+- Improve cargo package detection support with various improvements
+  and bugfixes:
+  - Fix for parser crashing on cargo workspaces
+  - Fix a bug in dependency parsing (we were not returning any dependencies)
+  - Also support getting dependency versions from workspace
+  - Support more attributes from cargo
+  - Better handle workspace data thorugh extra_data attribute
+  See https://github.com/nexB/scancode-toolkit/pull/3783
+
+- We now support parsing the Swift manifest JSON dump and the
+  ``Package.resolved`` file https://github.com/nexB/scancode-toolkit/issues/2657.
+  Run the command below on your local Swift project before running the scan:
+    `swift package dump-package > Package.swift.json && swift package resolve``
+
+- New and updated licenses, including support for newly released
+  SPDX license list versions:
+  - SPDX License List 3.24:
+    This release of the SPDX license list had 25 new licenses
+    and exceptions, and out of them 12 were present as licenses
+    and 5 were present as rules already. There were 3 new
+    license/exception texts added, and the rest 5 were either
+    texts with small variations, additions to texts or several
+    rule texts together. And the rest have been added as new licenses.
+    For more details see https://github.com/nexB/scancode-toolkit/pull/3795
+
+  - More new licenses and rules:
+    - 23 new licenses in https://github.com/nexB/scancode-toolkit/pull/3778
+
+v32.1.0 - 2024-03-23
+---------------------
 
 New CLI options:
 
@@ -71,7 +274,7 @@ Changes in Output Data Structure:
       file-level ``package_data``
     * ``license_detections`` and  ``other_license_detections`` in
       codebase level ``packages``
-  
+
   - On using the CLI option ``--license-text-diagnostics`` there is
     now a new license match attribute ``matched_text_diagnostics``
     with the matched text and highlighted diagnostics, instead of
@@ -80,7 +283,7 @@ Changes in Output Data Structure:
   - A new ``reference_matches`` attribute is added to codebase-level
     ``license_detections`` which is same as the ``matches`` attribute
     in other license detections.
-  
+
   - We now have SPDX license expressions everywhere we have
     ScanCode license expressions for ease of use and adopting
     SPDX everywhere. A new attribute ``license_expression_spdx``
@@ -128,7 +331,7 @@ Changes in Output Data Structure:
   and https://github.com/nexB/scancode-toolkit/issues/3443
   Also improve debian manifests parsing and purl parsing from
   filenames. Support for https://github.com/nexB/purldb/issues/245
-  Bumps debian-inspector to v31.1.0 
+  Bumps debian-inspector to v31.1.0
 
 - Bump commoncode to v31.0.3
 
@@ -785,6 +988,8 @@ Package detection:
     There is a new `extra_data` to collect extra data as needed.
 
 - For Pypi packages, python_requires is treated as a package dependency.
+
+- Update JavaScript package handlers to handle aliases in npm and yarn manifests.
 
 
 License Clarity Scoring Update:

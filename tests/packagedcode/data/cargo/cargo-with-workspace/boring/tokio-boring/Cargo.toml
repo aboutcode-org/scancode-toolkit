@@ -1,0 +1,23 @@
+[package]
+name = "tokio-boring"
+version = { workspace = true }
+authors = ["Alex Crichton <alex@alexcrichton.com>", "Ivan Nikulin <ifaaan@gmail.com>"]
+license = "MIT/Apache-2.0"
+edition = { workspace = true }
+repository = { workspace = true }
+homepage = "https://github.com/cloudflare/boring"
+documentation = "https://docs.rs/tokio-boring"
+description = """
+An implementation of SSL streams for Tokio backed by BoringSSL
+"""
+
+[dependencies]
+boring = { workspace = true }
+boring-sys = { workspace = true }
+once_cell = { workspace = true }
+tokio = { workspace = true }
+
+[dev-dependencies]
+futures = { workspace = true }
+tokio = { workspace = true, features = [ "full" ] }
+anyhow = { workspace = true }

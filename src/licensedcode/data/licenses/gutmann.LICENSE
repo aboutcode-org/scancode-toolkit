@@ -1,0 +1,16 @@
+---
+key: gutmann
+short_name: Gutmann License
+name: Gutmann License
+owner: Peter Gutmann
+category: Permissive
+notes: |
+    Added in SPDX license list 3.24
+    This was previously the license rule: other-permissive_bsdish_1.RULE
+spdx_license_key: Gutmann
+other_urls:
+    - https://www.cs.auckland.ac.nz/~pgut001/dumpasn1.c
+---
+
+You can use this code in whatever way you want, as long as you don't try
+to claim you wrote it.

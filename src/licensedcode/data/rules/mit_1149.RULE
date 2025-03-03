@@ -1,6 +1,10 @@
 ---
 license_expression: mit
 is_license_notice: yes
+ignorable_copyrights:
+  - Copyright, Government of Canada
+ignorable_holders:
+  - Government of Canada
 notes: https://bitbucket.org/cse-assemblyline/alsvc_unpacker/src/master/LICENCE.md
 ---
 

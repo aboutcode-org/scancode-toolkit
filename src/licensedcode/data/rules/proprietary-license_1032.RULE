@@ -1,0 +1,15 @@
+---
+license_expression: proprietary-license
+is_license_notice: yes
+---
+
+Appendix:
+In case of a conflict, the terms of this appendix supersede the general apache license.
+
+-   Unless provided with a written agreement, the paid features of  (as a service) cannot be modified.
+-   Unless provided with a written agreement, no persons are permitted to redistribute another paid version of .
+-   Furthermore, any modifications of free features of  should be distributed as free & opensource software.
+
+If you have any questions, please feel free to reach out to us.
+
+For terms and conditions of the software and the service, please see TERMS_AND_CONDITIONS.md

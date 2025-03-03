@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1998 - 2008 Double Precision, Inc.
+holders:
+  - Double Precision, Inc.
+authors:
+  - Dennis Schoen <dennis@debian.org>

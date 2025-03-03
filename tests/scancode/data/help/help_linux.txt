@@ -1,0 +1,183 @@
+Usage: scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <input>...
+
+  scan the <input> file or directory for license, origin and packages and save
+  results to FILE(s) using one or more output format option.
+
+  Error and progress are printed to stderr.
+
+Options:
+
+  primary scans:
+    -l, --license     Scan <input> for licenses.
+    -p, --package     Scan <input> for application package and dependency
+                      manifests, lockfiles and related data.
+    --system-package  Scan <input> for installed system package databases.
+    --package-only    Scan for system and application package data and skip
+                      license/copyright detection and top-level package creation.
+    -c, --copyright   Scan <input> for copyrights.
+    --go-symbol       Collect Go symbols.
+    --rust-symbol     Collect Rust symbols from rust binaries.
+
+  other scans:
+    -i, --info   Scan <input> for file information (size, checksums, etc).
+    --generated  Classify automatically generated code files with a flag.
+    -e, --email  Scan <input> for emails.
+    -u, --url    Scan <input> for urls.
+
+  scan options:
+    --license-diagnostics        In license detections, include diagnostic details
+                                 to figure out the license detection post
+                                 processing steps applied.
+    --license-score INTEGER      Do not return license matches with a score lower
+                                 than this score. A number between 0 and 100.
+                                 [default: 0]
+    --license-text               Include the detected licenses matched text.
+    --license-text-diagnostics   In the matched license text, include diagnostic
+                                 highlights surrounding with square brackets []
+                                 words that are not matched.
+    --license-url-template TEXT  Set the template URL used for the license
+                                 reference URLs. Curly braces ({}) are replaced by
+                                 the license key.  [default: https://scancode-
+                                 licensedb.aboutcode.org/{}]
+    --max-email INT              Report only up to INT emails found in a file. Use
+                                 0 for no limit.  [default: 50]
+    --max-url INT                Report only up to INT urls found in a file. Use 0
+                                 for no limit.  [default: 50]
+    --unknown-licenses           [EXPERIMENTAL] Detect unknown licenses.
+
+  output formats:
+    --json FILE             Write scan output as compact JSON to FILE.
+    --json-pp FILE          Write scan output as pretty-printed JSON to FILE.
+    --json-lines FILE       Write scan output as JSON Lines to FILE.
+    --yaml FILE             Write scan output as YAML to FILE.
+    --csv FILE              [DEPRECATED] Write scan output as CSV to FILE. The
+                            --csv option is deprecated and will be replaced by new
+                            CSV and tabular output formats in the next ScanCode
+                            release. Visit https://github.com/nexB/scancode-
+                            toolkit/issues/3043 to provide inputs and feedback.
+    --html FILE             Write scan output as HTML to FILE.
+    --custom-output FILE    Write scan output to FILE formatted with the custom
+                            Jinja template file.
+    --debian FILE           Write scan output in machine-readable Debian copyright
+                            format to FILE.
+    --custom-template FILE  Use this Jinja template FILE as a custom template.
+    --cyclonedx FILE        Write scan output in CycloneDX JSON format to FILE.
+    --cyclonedx-xml FILE    Write scan output in CycloneDX XML format to FILE.
+    --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
+    --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
+
+  output filters:
+    --ignore-author <pattern>       Ignore a file (and all its findings) if an
+                                    author contains a match to the <pattern>
+                                    regular expression. Note that this will ignore
+                                    a file even if it has other findings such as a
+                                    license or errors.
+    --ignore-copyright-holder <pattern>
+                                    Ignore a file (and all its findings) if a
+                                    copyright holder contains a match to the
+                                    <pattern> regular expression. Note that this
+                                    will ignore a file even if it has other
+                                    scanned data such as a license or errors.
+    --only-findings                 Only return files or directories with findings
+                                    for the requested scans. Files and directories
+                                    without findings are omitted (file information
+                                    is not treated as findings).
+
+  output control:
+    --full-root   Report full, absolute paths.
+    --strip-root  Strip the root directory segment of all paths. The default is to
+                  always include the last directory segment of the scanned path
+                  such that all paths have a common root directory.
+
+  pre-scan:
+    --ignore <pattern>         Ignore files matching <pattern>.
+    --include <pattern>        Include files matching <pattern>.
+    --facet <facet>=<pattern>  Add the <facet> to files with a path matching
+                               <pattern>.
+
+  post-scan:
+    --classify               Classify files with flags telling if the file is a
+                             legal, or readme or test file, etc.
+    --consolidate            Group resources by Packages or license and copyright
+                             holder and return those groupings as a list of
+                             consolidated packages and a list of consolidated
+                             components. This requires the scan to have/be run
+                             with the copyright, license, and package options
+                             active
+    --filter-clues           Filter redundant duplicated clues already contained
+                             in detected license and copyright texts and notices.
+    --license-clarity-score  Compute a summary license clarity score at the
+                             codebase level.
+    --license-policy FILE    Load a License Policy file and apply it to the scan
+                             at the Resource level.
+    --license-references     Return reference data for all licenses and license
+                             rules present in detections.
+    --mark-source            Set the "is_source" to true for directories that
+                             contain over 90% of source files as children and
+                             descendants. Count the number of source files in a
+                             directory as a new source_file_counts attribute
+    --summary                Summarize scans by providing declared origin
+                             information and other detected origin info at the
+                             codebase attribute level.
+    --tallies                Compute tallies for license, copyright and other
+                             scans at the codebase level.
+    --tallies-by-facet       Compute tallies for license, copyright and other
+                             scans and group the results by facet.
+    --tallies-key-files      Compute tallies for license, copyright and other
+                             scans for key, top-level files. Key files are top-
+                             level codebase files such as COPYING, README and
+                             package manifests as reported by the --classify
+                             option "is_legal", "is_readme", "is_manifest" and
+                             "is_top_level" flags.
+    --tallies-with-details   Compute tallies of license, copyright and other scans
+                             at the codebase level, keeping intermediate details
+                             at the file and directory level.
+    --todo                   Summarize scans by providing all ambiguous detections
+                             which are todo items and needs manual review.
+
+  core:
+    --timeout <seconds>      Stop an unfinished file scan after a timeout in
+                             seconds. [default: 120 seconds]
+    -n, --processes INT      Set the number of parallel processes to use. Disable
+                             parallel processing if 0. Also disable threading if
+                             -1. [default: 1]
+    -q, --quiet              Do not print summary or progress.
+    -v, --verbose            Print progress as file-by-file path instead of a
+                             progress bar. Print verbose scan counters.
+    --from-json              Load codebase from one or more <input> JSON scan
+                             file(s).
+    --max-in-memory INTEGER  Maximum number of files and directories scan details
+                             kept in memory during a scan. Additional files and
+                             directories scan details above this number are cached
+                             on-disk rather than in memory. Use 0 to use unlimited
+                             memory and disable on-disk caching. Use -1 to use
+                             only on-disk caching.  [default: 10000]
+    --max-depth INTEGER      Maximum nesting depth of subdirectories to scan.
+                             Descend at most INTEGER levels of directories below
+                             and including the starting directory. Use 0 for no
+                             scan depth limit.
+
+  documentation:
+    -h, --help       Show this message and exit.
+    -A, --about      Show information about ScanCode and licensing and exit.
+    -V, --version    Show the version and exit.
+    --examples       Show command examples and exit.
+    --list-packages  Show the list of supported package manifest parsers and exit.
+    --plugins        Show the list of available ScanCode plugins and exit.
+    --print-options  Show the list of selected options and exit.
+
+  Examples (use --examples for more):
+
+  Scan the 'samples' directory for licenses and copyrights.
+  Save scan results to the 'scancode_result.json' JSON file:
+
+      scancode --license --copyright --json-pp scancode_result.json samples
+
+  Scan the 'samples' directory for licenses and package manifests. Print scan
+  results on screen as pretty-formatted JSON (using the special '-' FILE to print
+  to on screen/to stdout):
+
+      scancode --json-pp - --license --package  samples
+
+  Note: when you run scancode, a progress bar is displayed with a counter of the
+  number of files processed. Use --verbose to display file-by-file progress.
