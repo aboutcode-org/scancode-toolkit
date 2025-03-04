@@ -13,6 +13,7 @@ import copy
 import json
 import logging
 import os
+import posixpath
 import re
 import sys
 import tempfile
@@ -394,9 +395,11 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
         if not dist_info_dir:
             return
 
+        # This could be a regular directory too which is not `site-packages`
         site_packages = dist_info_dir.parent(codebase)
         if not site_packages:
             return
+
         package_data = resource.package_data
         assert len(resource.package_data) == 1, (
             f'Unsupported Pypi METADATA wheel structure: {resource.path!r} '
@@ -417,6 +420,7 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
                 # most of thense are references to bin ../../../bin/wheel
                 cannot_resolve = False
                 ref_resource = site_packages
+                # note that resolving leading ".." always stays in the codebase 
                 while path_ref.startswith('..'):
                     _, _, path_ref = path_ref.partition('../')
                     ref_resource = ref_resource.parent(codebase)
@@ -429,14 +433,14 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
                     continue
                 else:
                     ref_resource = codebase.get_resource(
-                        path=os.path.join(ref_resource.path, path_ref)
+                        path=posixpath.join(ref_resource.path, path_ref)
                     )
                     if ref_resource and package_uid:
                         package_adder(package_uid, ref_resource, codebase)
             else:
                 # These are absolute paths from the site-packages directory
                 ref_resource = codebase.get_resource(
-                    path=os.path.join(site_packages.path, path_ref)
+                    path=posixpath.join(site_packages.path, path_ref)
                 )
                 if ref_resource and package_uid:
                     package_adder(package_uid, ref_resource, codebase)

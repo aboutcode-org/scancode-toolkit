@@ -221,9 +221,9 @@ class TestPypiInstalledWheel(PackageTester):
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_with_unpacked_wheel_meta_v21_2(self):
-        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/pip-20.2.2.dist-info/METADATA')
+        test_file = self.get_test_loc('pypi/site-packages/codebase/lib/python3.9/site-packages/pip-20.2.2.dist-info/METADATA')
         package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/pip-20.2.2.dist-info-expected.json')
+        expected_loc = self.get_test_loc('pypi/site-packages/pip-20.2.2.dist-info-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_parse_with_unpacked_wheel_meta_v21_3(self):
