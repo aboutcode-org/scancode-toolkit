@@ -103,7 +103,8 @@
       "is_virtual": false,
       "extra_data": {
         "Documentation": "https://pip.pypa.io",
-        "Changelog": "https://pip.pypa.io/en/stable/news/"
+        "Changelog": "https://pip.pypa.io/en/stable/news/",
+        "license_file": "LICENSE.txt"
       },
       "repository_homepage_url": "https://pypi.org/project/pip",
       "repository_download_url": "https://pypi.org/packages/source/p/pip/pip-22.0.4.tar.gz",
@@ -518,7 +519,8 @@
           "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
-            "Changelog": "https://pip.pypa.io/en/stable/news/"
+            "Changelog": "https://pip.pypa.io/en/stable/news/",
+            "license_file": "LICENSE.txt"
           },
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/pip",
@@ -1660,7 +1662,8 @@
           "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
-            "Changelog": "https://pip.pypa.io/en/stable/news/"
+            "Changelog": "https://pip.pypa.io/en/stable/news/",
+            "license_file": "LICENSE.txt"
           },
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/pip",
