@@ -1642,10 +1642,10 @@ def get_declared_license(metainfo):
     # TODO: We should make the declared license as it is, this should be
     # updated in scancode to parse a pure string
     lic = get_attribute(metainfo, 'License')
-
-    license_file = None
-    if lic and 'file' in lic:
-        license_file = lic.pop('file')
+    license_file = get_attribute(metainfo, 'License-File')
+    if not license_file and lic:
+        if isinstance(lic, dict) and 'file' in lic.keys():
+            license_file = lic.pop('file')
 
     if lic and not lic == 'UNKNOWN':
         if 'text' in lic:

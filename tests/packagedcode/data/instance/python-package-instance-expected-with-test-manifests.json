@@ -77,7 +77,8 @@
       "is_private": false,
       "is_virtual": false,
       "extra_data": {
-        "Documentation": "https://setuptools.readthedocs.io/"
+        "Documentation": "https://setuptools.readthedocs.io/",
+        "license_file": "LICENSE"
       },
       "repository_homepage_url": "https://pypi.org/project/setuptools",
       "repository_download_url": "https://pypi.org/packages/source/s/setuptools/setuptools-58.2.0.tar.gz",
@@ -194,7 +195,8 @@
           "is_private": false,
           "is_virtual": false,
           "extra_data": {
-            "Documentation": "https://setuptools.readthedocs.io/"
+            "Documentation": "https://setuptools.readthedocs.io/",
+            "license_file": "LICENSE"
           },
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/setuptools",

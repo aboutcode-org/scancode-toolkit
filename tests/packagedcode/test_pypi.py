@@ -238,6 +238,12 @@ class TestPypiInstalledWheel(PackageTester):
         expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/with_sources/anonapi-0.0.19.dist-info-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_with_unpacked_wheel_meta_v23_1(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.3/beartype-0.19.0.dist-info/METADATA')
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.3/beartype-0.19.0.dist-info-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
 
 class TestPypiUnpackedSdist(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
