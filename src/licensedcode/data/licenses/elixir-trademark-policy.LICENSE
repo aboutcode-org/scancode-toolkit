@@ -6,6 +6,8 @@ category: Proprietary Free
 owner: Elixir
 homepage_url: https://github.com/elixir-lang/elixir/blob/main/LICENSES/LicenseRef-elixir-trademark-policy.txt
 spdx_license_key: LicenseRef-scancode-elixir-trademark-policy
+other_spdx_license_keys:
+    - LicenseRef-elixir-trademark-policy
 other_urls:
     - https://elixir-lang.org/images/logo/logo.png
 ignorable_emails:
