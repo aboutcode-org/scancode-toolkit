@@ -1,6 +1,12 @@
 Release notes
 =============
 
+Version 32.2.1 - (2025-03-06)
+-----------------------------
+
+- migrate ``os.listdir()`` to ``os.scandir()`` to increase performance
+- Fix checksums for empty files
+
 Version 32.2.0 - (2025-02-15)
 -----------------------------
 
