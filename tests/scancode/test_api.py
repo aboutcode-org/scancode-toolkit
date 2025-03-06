@@ -53,9 +53,9 @@ class TestAPI(FileBasedTesting):
         info = api.get_file_info(test_dir)
         expected = [
             ('size', 0),
-            ('sha1', 0),
-            ('md5', 0),
-            ('sha256', 0),
+            ('sha1', None),
+            ('md5', None),
+            ('sha256', None),
             ('mime_type', 'inode/x-empty'),
             ('file_type', 'empty'),
             ('programming_language', None),
