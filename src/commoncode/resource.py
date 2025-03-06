@@ -292,7 +292,7 @@ class Codebase:
         self.is_file = filetype_is_file(location)
 
         # True if this codebase root is a file or an empty directory.
-        self.has_single_resource = bool(self.is_file or not os.listdir(location))
+        self.has_single_resource = bool(self.is_file or not os.scandir(location))
 
         ########################################################################
         # Set up caching, summary, timing, and error info

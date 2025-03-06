@@ -233,7 +233,7 @@ def counter(location, counting_function):
         return count_fun(location)
     elif is_dir(location):
         count += sum(
-            counter(os.path.join(location, p), counting_function) for p in os.listdir(location)
+            counter(os.path.join(location, p.name), counting_function) for p in os.scandir(location)
         )
     return count
 

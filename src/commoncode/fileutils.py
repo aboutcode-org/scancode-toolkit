@@ -333,10 +333,14 @@ def walk(location, ignored=None, follow_symlinks=False):
     elif filetype.is_dir(location, follow_symlinks=follow_symlinks):
         dirs = []
         files = []
-        for entry in os.scandir(location):
-            loc = os.path.join(location, entry.name)
+        for resource in os.scandir(location):
+            loc = os.path.join(location, resource.name)
             if filetype.is_special(loc) or (ignored and ignored(loc)):
-                if follow_symlinks and entry.is_symlink() and not filetype.is_broken_link(location):
+                if (
+                    follow_symlinks
+                    and resource.is_symlink()
+                    and not filetype.is_broken_link(location)
+                ):
                     pass
                 else:
                     if TRACE:
@@ -344,10 +348,10 @@ def walk(location, ignored=None, follow_symlinks=False):
                         logger_debug("walk: ignored:", loc, ign)
                     continue
             # special files and symlinks are always ignored
-            if entry.is_dir(follow_symlinks=follow_symlinks):
-                dirs.append(entry.name)
-            elif entry.is_file(follow_symlinks=follow_symlinks):
-                files.append(entry.name)
+            if resource.is_dir(follow_symlinks=follow_symlinks):
+                dirs.append(resource.name)
+            elif resource.is_file(follow_symlinks=follow_symlinks):
+                files.append(resource.name)
         yield location, dirs, files
 
         for dr in dirs:
@@ -396,7 +400,7 @@ def copytree(src, dst):
     if not filetype.is_readable(src):
         chmod(src, R, recurse=False)
 
-    names = os.listdir(src)
+    names = [resource.name for resource in os.scandir(src)]
 
     if not os.path.exists(dst):
         os.makedirs(dst)
@@ -537,7 +541,7 @@ def _rm_handler(function, path, excinfo):  # NOQA
     """
     if TRACE:
         logger_debug("_rm_handler:", "path:", path, "excinfo:", excinfo)
-    if function in (os.rmdir, os.listdir):
+    if function in (os.rmdir, os.listdir, os.scandir):
         try:
             chmod(path, RW, recurse=True)
             shutil.rmtree(path, True)
