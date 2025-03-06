@@ -168,7 +168,7 @@ class TestPermissions(FileBasedTesting):
                 assert not filetype.is_readable(src_file)
 
             fileutils.copyfile(src_file, dest)
-            dest_file = join(dest, os.listdir(dest)[0])
+            dest_file = join(dest, list(os.scandir(dest))[0].name)
             assert filetype.is_readable(dest_file)
         finally:
             fileutils.chmod(src_file, fileutils.RW, recurse=True)
