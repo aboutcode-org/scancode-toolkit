@@ -194,3 +194,8 @@ class TestHash(FileBasedTesting):
         for _ in range(100):
             result2.update(chunk)
         assert result1 == result2.hexdigest()
+
+    def test_checksum_empty_file(self):
+        test_file = self.get_test_loc("hash/empty")
+        checksums = multi_checksums(location=test_file, checksum_names=("sha1",))
+        assert checksums == {"sha1": None}
