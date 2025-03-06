@@ -38,7 +38,28 @@ v33.0.0 (next next, roadmap)
 - Update Dockerfile and test container build.
   See https://github.com/aboutcode-org/scancode-toolkit/issues/3955
 
-v32.3.2 - 2024-01-20
+
+v32.3.3 - 2025-03-06
+--------------------
+
+This is a patch release with license and package detection
+improvements, bugfixes and with new and updated license detection rules
+and new licenses added.
+
+- Add new and updated licenses and license rules
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4165
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3819
+
+- Bump commoncode to v32.2.1 and pin bs4 to fix copyright scan issues
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4149
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4176
+
+- Refactor and fix package assembly for pypi installed wheels
+  and fix pypi manifest parsing
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4171
+
+
+v32.3.2 - 2025-01-20
 --------------------
 
 This is a patch release with license and package detection
