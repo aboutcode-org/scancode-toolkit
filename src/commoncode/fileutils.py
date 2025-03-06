@@ -321,8 +321,6 @@ def walk(location, ignored=None, follow_symlinks=False):
     If `follow_symlinks` is True, then symlinks will not be ignored and be
     collected like regular files and directories
     """
-    # TODO: consider using the new "scandir" module for some speed-up.
-
     is_ignored = ignored(location) if ignored else False
     if is_ignored:
         if TRACE:
@@ -335,13 +333,12 @@ def walk(location, ignored=None, follow_symlinks=False):
     elif filetype.is_dir(location, follow_symlinks=follow_symlinks):
         dirs = []
         files = []
-        # TODO: consider using scandir
-        for name in os.listdir(location):
-            loc = os.path.join(location, name)
+        for resource in os.scandir(location):
+            loc = os.path.join(location, resource.name)
             if filetype.is_special(loc) or (ignored and ignored(loc)):
                 if (
                     follow_symlinks
-                    and filetype.is_link(loc)
+                    and resource.is_symlink()
                     and not filetype.is_broken_link(location)
                 ):
                     pass
@@ -351,10 +348,10 @@ def walk(location, ignored=None, follow_symlinks=False):
                         logger_debug("walk: ignored:", loc, ign)
                     continue
             # special files and symlinks are always ignored
-            if filetype.is_dir(loc, follow_symlinks=follow_symlinks):
-                dirs.append(name)
-            elif filetype.is_file(loc, follow_symlinks=follow_symlinks):
-                files.append(name)
+            if resource.is_dir(follow_symlinks=follow_symlinks):
+                dirs.append(resource.name)
+            elif resource.is_file(follow_symlinks=follow_symlinks):
+                files.append(resource.name)
         yield location, dirs, files
 
         for dr in dirs:
@@ -403,7 +400,7 @@ def copytree(src, dst):
     if not filetype.is_readable(src):
         chmod(src, R, recurse=False)
 
-    names = os.listdir(src)
+    names = [resource.name for resource in os.scandir(src)]
 
     if not os.path.exists(dst):
         os.makedirs(dst)
@@ -544,7 +541,7 @@ def _rm_handler(function, path, excinfo):  # NOQA
     """
     if TRACE:
         logger_debug("_rm_handler:", "path:", path, "excinfo:", excinfo)
-    if function in (os.rmdir, os.listdir):
+    if function in (os.rmdir, os.listdir, os.scandir):
         try:
             chmod(path, RW, recurse=True)
             shutil.rmtree(path, True)
