@@ -217,6 +217,8 @@ def checksum(location, name, base64=False):
     """
     Return a checksum from the content of the file at ``location`` using the ``name`` checksum
     algorithm. The checksum is a string as a hexdigest or is base64-encoded is ``base64`` is True.
+
+    Return None if ``location`` is not a file or an empty file.
     """
     if not filetype.is_file(location):
         return
@@ -290,6 +292,9 @@ def multi_checksums(location, checksum_names=("md5", "sha1", "sha256", "sha512",
     if not filetype.is_file(location):
         return {name: None for name in checksum_names}
     file_size = get_file_size(location)
+    if file_size == 0:
+        return {name: None for name in checksum_names}
+
     hashers = {
         name: get_hasher_instance_by_name(name=name, total_length=file_size)
         for name in checksum_names
