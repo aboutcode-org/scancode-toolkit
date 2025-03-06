@@ -25,7 +25,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build PyPI wheels
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     defaults:
       run:
@@ -37,10 +37,10 @@ jobs:
        pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -48,7 +48,7 @@ jobs:
         run: etc/release/scancode-create-pypi-wheel.sh
 
       - name: Collect built wheels for ${{ matrix.pyver }} 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: wheels-${{ matrix.pyver }}
           path: dist/*.whl
@@ -59,7 +59,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build PyPI sdist archives
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     defaults:
       run:
@@ -69,18 +69,18 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.12"
 
       - name: Install requirements then build main and mini sdist
         run: etc/release/scancode-create-pypi-sdist.sh
 
       - name: Collect built sdist
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sdists
           path: dist/*.tar.gz
@@ -91,7 +91,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build app Release for linux
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     defaults:
       run:
@@ -103,11 +103,11 @@ jobs:
        pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: git fetch --prune --unshallow
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -115,7 +115,7 @@ jobs:
         run: etc/release/scancode-create-release-app-linux.sh ${{ matrix.pyver }}
 
       - name: Collect built linux app for python ${{ matrix.pyver }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: linux_app_py_${{ matrix.pyver }}
           path: release/*
@@ -126,7 +126,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build app Release for mac
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     defaults:
       run:
@@ -138,11 +138,11 @@ jobs:
        pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: git fetch --prune --unshallow
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -150,7 +150,7 @@ jobs:
         run: etc/release/scancode-create-release-app-macos.sh ${{ matrix.pyver }}
 
       - name: Collect built mac app for python ${{ matrix.pyver }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: macos_app_py_${{ matrix.pyver }}
           path: release/*
@@ -161,7 +161,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build app Release for windows
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     defaults:
       run:
@@ -173,11 +173,11 @@ jobs:
        pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: git fetch --prune --unshallow
 
       - name: Set up Python on ${{ matrix.pyver }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.pyver }} 
 
@@ -185,7 +185,7 @@ jobs:
         run: etc/release/scancode-create-release-app-windows.sh ${{ matrix.pyver }}
 
       - name: Collect built windows app for python ${{ matrix.pyver }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: windows_app_py_${{ matrix.pyver }}
           path: release/*
@@ -196,7 +196,7 @@ jobs:
       contents: read # to fetch code (actions/checkout)
 
     name: Build app source
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     defaults:
       run:
@@ -205,19 +205,19 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: git fetch --prune --unshallow
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.12"
 
       - name: Build source archive with deps
         run: etc/release/scancode-create-release-app-sources.sh
 
       - name: Collect built source app tarball
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: source_app
           path: release/*
@@ -239,19 +239,19 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14]
+        os: [ubuntu-24.04, ubuntu-24.04, macos-13, macos-14]
         pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download wheels artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: wheels-${{ matrix.pyver }}
           path: dist
@@ -289,15 +289,15 @@ jobs:
        pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download wheels artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: wheels-${{ matrix.pyver }}
           path: dist
@@ -330,19 +330,19 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-22.04, ubuntu-24.04]
+        os: [ubuntu-24.04, ubuntu-24.04]
         pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download a single artifact linux_app_py_${{ matrix.pyver }}
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: linux_app_py_${{ matrix.pyver }}
           path: dist
@@ -375,15 +375,15 @@ jobs:
         pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download a single artifact macos_app_py_${{ matrix.pyver }}
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: macos_app_py_${{ matrix.pyver }}
           path: dist
@@ -416,15 +416,15 @@ jobs:
         pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python ${{ matrix.pyver }} on ${{ matrix.os }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.pyver }}
 
       - name: Download a single artifact windows_app_py_${{ matrix.pyver }}
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: windows_app_py_${{ matrix.pyver }}
           path: dist
@@ -447,7 +447,7 @@ jobs:
       - build_scancode_for_release_linux
       - build_scancode_for_release_macos
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     defaults:
       run:
         shell: bash
@@ -456,79 +456,79 @@ jobs:
 
     steps:
       - name: Download a single artifact source_app
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: source_app
           path: dist
 
       - name: Download a single artifact macos_app for python 3.9
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: macos_app_py_3.9
           path: dist
 
       - name: Download a single artifact macos_app for python 3.10
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: macos_app_py_3.10
           path: dist
 
       - name: Download a single artifact macos_app for python 3.11
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: macos_app_py_3.11
           path: dist
 
       - name: Download a single artifact macos_app for python 3.12
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: macos_app_py_3.12
           path: dist
 
       - name: Download a single artifact linux_app for python 3.9
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: linux_app_py_3.9
           path: dist
 
       - name: Download a single artifact linux_app for python 3.10
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: linux_app_py_3.10
           path: dist
 
       - name: Download a single artifact linux_app for python 3.11
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: linux_app_py_3.11
           path: dist
 
       - name: Download a single artifact linux_app for python 3.12
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: linux_app_py_3.12
           path: dist
 
       - name: Download a single artifact windows_app for python 3.9
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: windows_app_py_3.9
           path: dist
 
       - name: Download a single artifact windows_app for python 3.10
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: windows_app_py_3.10
           path: dist
 
       - name: Download a single artifact windows_app for python 3.11
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: windows_app_py_3.11
           path: dist
 
       - name: Download a single artifact windows_app for python 3.12
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: windows_app_py_3.12
           path: dist
@@ -538,7 +538,7 @@ jobs:
           ls -al dist
 
       - name: Create release and publish archives
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           draft: true
           files: dist/*
@@ -552,7 +552,7 @@ jobs:
       - smoke_test_install_and_run_pypi_wheels_on_windows
       - smoke_test_install_and_run_pypi_wheels_on_posix
       - publish_to_gh_release
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     defaults:
       run:
         shell: bash
@@ -563,12 +563,12 @@ jobs:
 
     steps:
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: 3.9
 
       - name: Download a single artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ matrix.dist_names }}
           path: dist
