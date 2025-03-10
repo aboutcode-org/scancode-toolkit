@@ -38,6 +38,8 @@ v33.0.0 (next next, roadmap)
 - Update Dockerfile and test container build.
   See https://github.com/aboutcode-org/scancode-toolkit/issues/3955
 
+- Update ABOUT files to adapt the ABOUT File Specification.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/4181
 
 v32.3.3 - 2025-03-06
 --------------------
