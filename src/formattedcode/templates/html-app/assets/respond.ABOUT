@@ -14,3 +14,5 @@ licenses:
     file: respond.LICENSE
     url: https://raw.githubusercontent.com/scottjehl/Respond/1.4.2/LICENSE-MIT
     spdx_license_key: MIT
+
+package_url: pkg:github/scottjehl/Respond@1.4.2

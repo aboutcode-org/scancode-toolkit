@@ -15,3 +15,5 @@ licenses:
     url: https://raw.githubusercontent.com/vakata/jstree/3.1.1/LICENSE-MIT
     spdx_license_key: MIT
 notes: the files throbber.gif, style.min.css and 32px.png are also from jstree.
+
+package_url: pkg:github/vakata/jstree@3.1.1

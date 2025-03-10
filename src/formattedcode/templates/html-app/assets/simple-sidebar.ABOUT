@@ -14,3 +14,5 @@ licenses:
     file: simple-sidebar.LICENSE
     url: https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-simple-sidebar/v1.0.5/LICENSE
     spdx_license_key: Apache-2.0
+
+package_url: pkg:github/BlackrockDigital/startbootstrap-simple-sidebar@1.0.5

@@ -14,3 +14,4 @@ licenses:
     file: html5shiv.LICENSE
     url: https://raw.githubusercontent.com/aFarkas/html5shiv/master/MIT%20and%20GPL2%20licenses.md
     spdx_license_key: MIT
+package_url: pkg:github/aFarkas/html5shiv@3.7.0

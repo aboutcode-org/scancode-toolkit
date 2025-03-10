@@ -14,3 +14,5 @@ licenses:
     file: jquery.LICENSE
     url: https://raw.githubusercontent.com/jquery/jquery/2.1.3/MIT-LICENSE.txt
     spdx_license_key: MIT
+
+package_url: pkg:github/jquery/jquery@2.1.3

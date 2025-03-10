@@ -15,3 +15,5 @@ licenses:
     url: https://github.com/DataTables/DataTables/blob/1.10.9/license.txt
     spdx_license_key: MIT
 notes: DataTables images are also included in /images directory.
+
+package_url: pkg:github/DataTables/DataTables@1.10.9
