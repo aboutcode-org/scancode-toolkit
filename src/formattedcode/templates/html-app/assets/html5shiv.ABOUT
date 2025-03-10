@@ -7,11 +7,10 @@ home_url: https://github.com/aFarkas/html5shiv/tree/3.7.0
 owner: Alexander Farkas
 copyright: Copyright (c) 2014 Alexander Farkas (aFarkas).
 
-license_url: https://raw.githubusercontent.com/aFarkas/html5shiv/master/MIT%20and%20GPL2%20licenses.md
 license_expression: mit
 licenses:
   - key: mit
     name: MIT License
     file: html5shiv.LICENSE
-    url: https://scancode-licensedb.aboutcode.org/mit.LICENSE
+    url: https://raw.githubusercontent.com/aFarkas/html5shiv/master/MIT%20and%20GPL2%20licenses.md
     spdx_license_key: MIT

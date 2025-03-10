@@ -7,12 +7,11 @@ home_url: http://www.jstree.com/
 owner: Ivan Bozhanov
 copyright: Copyright (c) 2014 Ivan Bozhanov
 
-license_url: https://raw.githubusercontent.com/vakata/jstree/3.1.1/LICENSE-MIT
 license_expression: mit
 licenses:
   - key: mit
     name: MIT License
     file: jstree.LICENSE
-    url: https://scancode-licensedb.aboutcode.org/mit.LICENSE
+    url: https://raw.githubusercontent.com/vakata/jstree/3.1.1/LICENSE-MIT
     spdx_license_key: MIT
 notes: the files throbber.gif, style.min.css and 32px.png are also from jstree.
