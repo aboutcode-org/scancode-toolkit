@@ -6,7 +6,12 @@ name: Bootstrap
 home_url: http://twitter.github.com/bootstrap/
 owner: Twitter, Inc.
 contact: https://twitter.com/about/contact
-dje_license: mit
-license_text_file: bootstrap.LICENSE
+license_expression: mit
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE
+    url: https://scancode-licensedb.aboutcode.org/mit.LICENSE
+    spdx_license_key: MIT
 copyright: Copyright (c) 2011-2015 Twitter, Inc
 notes: Bootstrap files are also included in /fonts directory.

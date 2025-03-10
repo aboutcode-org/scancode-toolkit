@@ -5,9 +5,14 @@ download_url: https://pypi.python.org/packages/3e/79/d8b9a7ea833cf4f33d51c0d5f24
 name: robotframework
 home_url: http://robotframework.org/
 owner: Robot Framework Foundation
-dje_license: apache-2.0
 notice_file: interrupt-robotframework.NOTICE
-license_text_file: apache-2.0.LICENSE
+license_expression: apache-2.0
+licenses:
+  - key: apache-2.0
+    name: Apache 2.0
+    file: apache-2.0.LICENSE
+    url: https://scancode-licensedb.aboutcode.org/apache-2.0.LICENSE
+    spdx_license_key: Apache-2.0
 
 copyright: Copyright 2008-2015 Nokia Networks
  Copyright 2016-     Robot Framework Foundation

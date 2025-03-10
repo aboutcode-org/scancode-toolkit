@@ -8,5 +8,10 @@ owner: Scott Jehl
 copyright: Copyright (c) 2012 Scott Jehl
 
 license_url: https://raw.githubusercontent.com/scottjehl/Respond/1.4.2/LICENSE-MIT
-dje_license: mit
-license_text_file: respond.LICENSE
+license_expression: mit
+licenses:
+  - key: mit
+    name: MIT License
+    file: respond.LICENSE
+    url: https://scancode-licensedb.aboutcode.org/mit.LICENSE
+    spdx_license_key: MIT

@@ -8,6 +8,11 @@ owner: SpryMedia Limited
 copyright: Copyright (c) 2008-2013 SpryMedia Limited
 
 license_url: https://github.com/DataTables/DataTables/blob/1.10.9/license.txt
-dje_license: mit
-license_text_file: DataTables.LICENSE
+license_expression: mit
+licenses:
+  - key: mit
+    name: MIT License
+    file: DataTables.LICENSE
+    url: https://scancode-licensedb.aboutcode.org/mit.LICENSE
+    spdx_license_key: MIT
 notes: DataTables images are also included in /images directory.
