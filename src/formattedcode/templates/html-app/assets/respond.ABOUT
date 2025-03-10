@@ -3,7 +3,7 @@ download_url: https://github.com/scottjehl/Respond/archive/1.4.2.tar.gz
 
 version: 1.4.2
 name: Respond.js
-home_url: https://github.com/scottjehl/Respond/tree/1.4.2
+homepage_url: https://github.com/scottjehl/Respond/tree/1.4.2
 owner: Scott Jehl
 copyright: Copyright (c) 2012 Scott Jehl
 
