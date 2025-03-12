@@ -16,3 +16,5 @@ license_expression: apache-2.0
 licenses:
 -   file: dmp.py.LICENSE
     key: apache-2.0
+
+package_url: pkg:github/google/diff-match-patch@a6367d7

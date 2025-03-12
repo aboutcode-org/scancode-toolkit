@@ -6,3 +6,4 @@ homepage_url: https://www.aboutcode.org/
 vcs_url: git+https://github.com/nexB/scancode-toolkit
 bug_tracking_url: https://github.com/nexB/scancode-toolkit/issues
 notice_file: NOTICE
+package_url: pkg:pypi/scancode-toolkit
