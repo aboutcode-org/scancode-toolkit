@@ -375,12 +375,11 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
             )
 
         if (
-            'upstream_type'
-            and 'name'
-            and 'version'
-            and 'licenses'
-            and 'upstream_address'
-            in metadata_fields
+            'upstream_type' in metadata_fields
+            and 'name' in metadata_fields
+            and 'version' in metadata_fields
+            and 'licenses' in metadata_fields
+            and 'upstream_address' in metadata_fields
         ):
             # TODO: Create function that determines package type from download URL,
             # then create a package of that package type from the metadata info
@@ -397,16 +396,15 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
             yield models.PackageData.from_data(package_data, package_only=True)
 
         if (
-            'package_type'
-            and 'name'
-            and 'version'
-            and 'license_expression'
-            and 'homepage_url'
-            and 'download_url'
-            and 'vcs_url'
-            and 'download_archive_sha1'
-            and 'vcs_commit_hash'
-            in metadata_fields
+            'package_type' in metadata_fields
+            and 'name' in metadata_fields
+            and 'version' in metadata_fields
+            and 'license_expression' in metadata_fields
+            and 'homepage_url' in metadata_fields
+            and 'download_url' in metadata_fields
+            and 'vcs_url' in metadata_fields
+            and 'download_archive_sha1' in metadata_fields
+            and 'vcs_commit_hash' in metadata_fields
         ):
             package_data = dict(
                 datasource_id=cls.datasource_id,
