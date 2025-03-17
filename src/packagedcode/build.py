@@ -13,6 +13,7 @@ import ast
 from collections import defaultdict
 
 from commoncode import fileutils
+from packageurl import PackageURL
 
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
@@ -374,52 +375,27 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
                 )
             )
 
-        if (
-            'upstream_type' in metadata_fields
-            and 'name' in metadata_fields
-            and 'version' in metadata_fields
-            and 'licenses' in metadata_fields
-            and 'upstream_address' in metadata_fields
-        ):
-            # TODO: Create function that determines package type from download URL,
-            # then create a package of that package type from the metadata info
-            package_data = dict(
-                datasource_id=cls.datasource_id,
-                type=metadata_fields.get('upstream_type', cls.default_package_type),
-                name=metadata_fields.get('name'),
-                version=metadata_fields.get('version'),
-                extracted_license_statement=metadata_fields.get('licenses', []),
-                parties=parties,
-                homepage_url=metadata_fields.get('upstream_address', ''),
-                # TODO: Store 'upstream_hash` somewhere
-            )
-            yield models.PackageData.from_data(package_data, package_only=True)
+        # TODO: Create function that determines package type from download URL,
+        # then create a package of that package type from the metadata info
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=metadata_fields.get('upstream_type', metadata_fields.get('package_type', cls.default_package_type)),
+            name=metadata_fields.get('name'),
+            version=metadata_fields.get('version'),
+            extracted_license_statement=metadata_fields.get('licenses', metadata_fields.get('license_expression')),
+            parties=parties,
+            homepage_url=metadata_fields.get('upstream_address', metadata_fields.get('homepage_url')),
+            download_url=metadata_fields.get('download_url'),
+            vcs_url=metadata_fields.get('vcs_url'),
+            sha1=metadata_fields.get('download_archive_sha1'),
+            # TODO: Store 'upstream_hash` somewhere
+        )
+        if 'vcs_commit_hash' in metadata_fields:
+            package_data["extra_data"] = dict(vcs_commit_hash=metadata_fields['vcs_commit_hash'])
+        if 'package_url' in metadata_fields:
+            package_data.update(PackageURL.from_string(metadata_fields['package_url']).to_dict())
+        yield models.PackageData.from_data(package_data, package_only=True)
 
-        if (
-            'package_type' in metadata_fields
-            and 'name' in metadata_fields
-            and 'version' in metadata_fields
-            and 'license_expression' in metadata_fields
-            and 'homepage_url' in metadata_fields
-            and 'download_url' in metadata_fields
-            and 'vcs_url' in metadata_fields
-            and 'download_archive_sha1' in metadata_fields
-            and 'vcs_commit_hash' in metadata_fields
-        ):
-            package_data = dict(
-                datasource_id=cls.datasource_id,
-                type=metadata_fields.get('package_type', cls.default_package_type),
-                name=metadata_fields.get('name'),
-                version=metadata_fields.get('version'),
-                extracted_license_statement=metadata_fields.get('license_expression', ''),
-                parties=parties,
-                homepage_url=metadata_fields.get('homepage_url', ''),
-                download_url=metadata_fields.get('download_url', ''),
-                vcs_url=metadata_fields.get('vcs_url', ''),
-                sha1=metadata_fields.get('download_archive_sha1', ''),
-                extra_data=dict(vcs_commit_hash=metadata_fields.get('vcs_commit_hash', ''))
-            )
-            yield models.PackageData.from_data(package_data, package_only=True)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
