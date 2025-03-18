@@ -147,20 +147,22 @@ parse_dep = re.compile(
     r'(?P<version>(.*))'
 ).match
 
-"""
-Example:
->>> p = parse_file_line('authors: "BAP Team"')
->>> assert p.group('key') == ('authors')
->>> assert p.group('value') == ('"BAP Team"')
+def _test_parse():
+    """
+    Example::
 
->>> p = parse_file_line('md5=b7a7b7cce64eabf224d05ed9f2b9d471')
->>> assert p.group('key') == ('md5')
->>> assert p.group('value') == ('b7a7b7cce64eabf224d05ed9f2b9d471')
+    >>> p = parse_file_line('authors: "BAP Team"')
+    >>> assert p.group('key') == ('authors')
+    >>> assert p.group('value') == ('"BAP Team"')
 
->>> p = parse_dep('"bap-std" {= "1.0.0"}')
->>> assert p.group('name') == ('bap-std')
->>> assert p.group('version') == ('{= "1.0.0"}')
-"""
+    >>> p = parse_checksum('md5=b7a7b7cce64eabf224d05ed9f2b9d471')
+    >>> assert p.group('key') == ('md5')
+    >>> assert p.group('value') == ('b7a7b7cce64eabf224d05ed9f2b9d471')
+
+    >>> p = parse_dep('"bap-std" {= "1.0.0"}')
+    >>> assert p.group('name') == ('bap-std')
+    >>> assert p.group('version') == ('{= "1.0.0"}')
+    """
 
 
 def parse_opam(location):
