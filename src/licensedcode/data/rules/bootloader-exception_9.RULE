@@ -1,7 +1,10 @@
 ---
 license_expression: bootloader-exception
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bootloader-exception
 ---
 
 licenses.nuget.org/Bootloader-exception

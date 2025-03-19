@@ -8,12 +8,12 @@ ignorable_urls:
 ---
 
 <license>
-      <name>Apache-2.0</name>
+{{      <name>Apache-2.0</name>
       <url>https://opensource.org/licenses/Apache-2.0</url>
       <comments>Apache License, Version 2.0</comments>
-    </license>
+}}    </license>
     <license>
-      <name>EPL-2.0</name>
+{{      <name>EPL-2.0</name>
       <url>https://opensource.org/licenses/EPL-2.0</url>
-      <comments>Eclipse Public License, Version 2.0</comments>
+      <comments>Eclipse Public License, Version 2.0</comments>}}
     </license>

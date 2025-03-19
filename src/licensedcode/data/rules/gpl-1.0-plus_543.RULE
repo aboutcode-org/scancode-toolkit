@@ -1,7 +1,10 @@
 ---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
+is_deprecated: yes
 relevance: 99
+replaced_by:
+    - gpl-1.0-plus
 ---
 
 GNU General Purpose license (GPL)

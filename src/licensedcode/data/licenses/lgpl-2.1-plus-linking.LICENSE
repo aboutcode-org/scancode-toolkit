@@ -1,6 +1,8 @@
 ---
 key: lgpl-2.1-plus-linking
 is_deprecated: yes
+replaced_by:
+    - linking-exception-2.1-plus
 short_name: LGPL 2.1 or later with Linking exception
 name: LGPL 2.1 or later with Linking exception
 category: Copyleft Limited

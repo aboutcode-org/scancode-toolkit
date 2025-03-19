@@ -1,6 +1,8 @@
 ---
 key: bzip2-libbzip-1.0.5
 is_deprecated: yes
+replaced_by:
+    - bzip2-libbzip-2010
 short_name: bzip2 License
 name: bzip2 License
 category: Permissive

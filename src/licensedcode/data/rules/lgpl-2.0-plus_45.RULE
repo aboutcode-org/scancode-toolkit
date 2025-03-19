@@ -1,8 +1,11 @@
 ---
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
+is_deprecated: yes
 referenced_filenames:
     - COPYING.LIB
+replaced_by:
+    - lgpl-2.0-plus
 ---
 
 This library is free software; you can redistribute it and/or modify it

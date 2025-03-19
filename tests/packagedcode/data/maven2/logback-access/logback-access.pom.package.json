@@ -22,45 +22,30 @@
   "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/",
   "copyright": null,
   "holder": null,
-  "declared_license_expression": "lgpl-2.0-plus",
-  "declared_license_expression_spdx": "LGPL-2.0-or-later",
+  "declared_license_expression": "lgpl-2.1-plus",
+  "declared_license_expression_spdx": "LGPL-2.1-or-later",
   "license_detections": [
     {
-      "license_expression": "lgpl-2.0-plus",
-      "license_expression_spdx": "LGPL-2.0-or-later",
+      "license_expression": "lgpl-2.1-plus",
+      "license_expression_spdx": "LGPL-2.1-or-later",
       "matches": [
         {
-          "license_expression": "lgpl-2.0-plus",
-          "license_expression_spdx": "LGPL-2.0-or-later",
+          "license_expression": "lgpl-2.1-plus",
+          "license_expression_spdx": "LGPL-2.1-or-later",
           "from_file": null,
           "start_line": 1,
-          "end_line": 1,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "lgpl-2.0-plus_87.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_87.RULE",
-          "matched_text": "- name: GNU Lesser General Public License"
-        },
-        {
-          "license_expression": "lgpl-2.0-plus",
-          "license_expression_spdx": "LGPL-2.0-or-later",
-          "from_file": null,
-          "start_line": 2,
           "end_line": 2,
-          "matcher": "2-aho",
+          "matcher": "1-hash",
           "score": 100.0,
-          "matched_length": 7,
+          "matched_length": 14,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "lgpl_3.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
-          "matched_text": "  url: http://www.gnu.org/licenses/lgpl.html"
+          "rule_identifier": "lgpl-2.1-plus_516.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_516.RULE",
+          "matched_text": "- name: GNU Lesser General Public License\n  url: http://www.gnu.org/licenses/lgpl.html"
         }
       ],
-      "identifier": "lgpl_2_0_plus-f1d029dc-2445-1282-73fe-2a12a25be427"
+      "identifier": "lgpl_2_1_plus-9369f890-91fd-5ab9-8ca6-c212a4144ff3"
     }
   ],
   "other_license_expression": null,

@@ -149,7 +149,7 @@ def rule_exists(text):
 
 def all_rule_by_tokens():
     """
-    Return a mapping of {tuples of tokens: rule id}, with one item for each
+    Return a mapping of {(tuple of token id): rule id}, with one item for each
     existing and added rules. Used to avoid duplicates.
     """
     rule_tokens = {}
@@ -159,7 +159,7 @@ def all_rule_by_tokens():
         except Exception as e:
             rf = f"  file://{rule.rule_file()}"
             raise Exception(
-                f"Failed to to get tokens from rule:: {rule.identifier}\n" f"{rf}"
+                f"Failed to get tokens from rule:: {rule.identifier}\n" f"{rf}"
             ) from e
     return rule_tokens
 

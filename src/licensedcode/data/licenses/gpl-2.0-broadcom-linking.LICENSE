@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-broadcom-linking
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0 WITH broadcom-linking-exception-2.0 OR commercial-license
 short_name: GPL 2.0 with Broadcom Linking Exception
 name: GPL 2.0 with Broadcom Linking Exception
 category: Copyleft Limited

@@ -1,7 +1,10 @@
 ---
 license_expression: gfdl-1.1-invariants-or-later
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - gfdl-1.1-invariants-or-later
 ---
 
 licenses.nuget.org/GFDL-1.1-invariants-or-later

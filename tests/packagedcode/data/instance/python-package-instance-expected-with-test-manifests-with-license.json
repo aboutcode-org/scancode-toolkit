@@ -386,8 +386,23 @@
           ]
         }
       ],
-      "license_clues": [],
-      "percentage_of_license_text": 1.8,
+      "license_clues": [
+        {
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
+          "from_file": "pypi-with-test-manifests/PKG-INFO",
+          "start_line": 8,
+          "end_line": 8,
+          "matcher": "2-aho",
+          "score": 60.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 60,
+          "rule_identifier": "unknown_kernel4.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_kernel4.RULE"
+        }
+      ],
+      "percentage_of_license_text": 2.25,
       "scan_errors": []
     },
     {

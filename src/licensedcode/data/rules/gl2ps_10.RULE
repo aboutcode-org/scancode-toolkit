@@ -1,7 +1,10 @@
 ---
 license_expression: gl2ps
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - gl2ps
 ---
 
 licenses.nuget.org/GL2PS

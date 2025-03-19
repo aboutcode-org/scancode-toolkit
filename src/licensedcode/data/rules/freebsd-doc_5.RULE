@@ -5,6 +5,8 @@ is_deprecated: yes
 notes: |
     Added in SPDX license list 3.24
     Replaced by license: bsd-2-clause-first-lines
+replaced_by:
+    - bsd-2-clause-first-lines
 ---
 
 Redistribution and use in source and binary forms, with or without

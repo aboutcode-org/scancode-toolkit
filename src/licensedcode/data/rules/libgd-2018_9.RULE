@@ -1,7 +1,10 @@
 ---
 license_expression: libgd-2018
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - libgd-2018
 ---
 
 licenses.nuget.org/GD

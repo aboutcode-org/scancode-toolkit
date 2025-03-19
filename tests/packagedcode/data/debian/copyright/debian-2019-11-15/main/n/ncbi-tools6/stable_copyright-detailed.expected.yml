@@ -21,24 +21,22 @@ declared_license:
   - NCSA
   - BSD-3-Clause
   - GPL-2+
-declared_license_expression: public-domain AND us-govt-public-domain
-declared_license_expression_spdx: LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain
-other_license_expression: (public-domain AND us-govt-public-domain) AND boost-1.0 AND (mit-with-modification-obligations
+declared_license_expression: public-domain AND ncbi
+declared_license_expression_spdx: LicenseRef-scancode-public-domain AND NCBI-PD
+other_license_expression: (public-domain AND ncbi) AND boost-1.0 AND (mit-with-modification-obligations
   AND proprietary-license) AND public-domain AND flex-2.5 AND flex-2.5 AND flex-2.5 AND flex-2.5
   AND flex-2.5 AND mit AND (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
-  AND (public-domain AND us-govt-public-domain) AND (public-domain AND us-govt-public-domain)
-  AND (public-domain AND us-govt-public-domain)
-other_license_expression_spdx: (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain)
-  AND BSL-1.0 AND (HPND-export-US-modify AND LicenseRef-scancode-proprietary-license) AND LicenseRef-scancode-public-domain
+  AND (public-domain AND ncbi) AND (public-domain AND ncbi) AND (public-domain AND ncbi)
+other_license_expression_spdx: (LicenseRef-scancode-public-domain AND NCBI-PD) AND BSL-1.0 AND
+  (HPND-export-US-modify AND LicenseRef-scancode-proprietary-license) AND LicenseRef-scancode-public-domain
   AND BSD-3-Clause-flex AND BSD-3-Clause-flex AND BSD-3-Clause-flex AND BSD-3-Clause-flex AND
   BSD-3-Clause-flex AND MIT AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later) AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain)
-  AND (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain) AND
-  (LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain)
+  AND GPL-2.0-or-later) AND (LicenseRef-scancode-public-domain AND NCBI-PD) AND (LicenseRef-scancode-public-domain
+  AND NCBI-PD) AND (LicenseRef-scancode-public-domain AND NCBI-PD)
 license_detections: []
 other_license_detections:
-  - license_expression: public-domain AND us-govt-public-domain
-    license_expression_spdx: LicenseRef-scancode-public-domain AND LicenseRef-scancode-us-govt-public-domain
+  - license_expression: public-domain AND ncbi
+    license_expression_spdx: LicenseRef-scancode-public-domain AND NCBI-PD
     matches:
       - license_expression: public-domain
         license_expression_spdx: LicenseRef-scancode-public-domain
@@ -53,8 +51,8 @@ other_license_detections:
         rule_identifier: public-domain_128.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_128.RULE
         matched_text: put into the public domain,
-      - license_expression: us-govt-public-domain
-        license_expression_spdx: LicenseRef-scancode-us-govt-public-domain
+      - license_expression: ncbi
+        license_expression_spdx: NCBI-PD
         from_file:
         start_line: 94
         end_line: 112
@@ -63,8 +61,8 @@ other_license_detections:
         matched_length: 158
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: us-govt-public-domain_24.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/us-govt-public-domain_24.RULE
+        rule_identifier: ncbi_2.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/ncbi_2.RULE
         matched_text: |
           PUBLIC DOMAIN NOTICE
                        National Center for Biotechnology Information
@@ -85,7 +83,7 @@ other_license_detections:
           purpose.
 
           Please cite the author in any work or product based on this material.
-    identifier: public_domain_and_us_govt_public_domain-895fe8b3-9bbf-2d1f-e72e-0f0fa3e85ebc
+    identifier: public_domain_and_ncbi-1d7a967e-d46b-20a3-7cdb-cb2219acb56f
   - license_expression: boost-1.0
     license_expression_spdx: BSL-1.0
     matches:

@@ -1,8 +1,8 @@
 ---
 license_expression: gpl-2.0
-is_license_notice: yes
+is_license_tag: yes
 relevance: 99
-notes: typo in Lincense
+notes: typo in Lincense and in identifier
 ---
 
-SPDX-Lincense-Identifier: GPL 2.0
+SPDX-License-Identifier: GPL 2.0

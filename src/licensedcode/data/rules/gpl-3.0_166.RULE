@@ -1,7 +1,10 @@
 ---
 license_expression: gpl-3.0
 is_license_tag: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - gpl-3.0
 ---
 
 COPYRIGHT = """ GNU GENERAL PUBLIC LICENCE Version 3, 29 June 2007

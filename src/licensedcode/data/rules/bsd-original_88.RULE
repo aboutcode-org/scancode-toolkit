@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-original
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bsd-original
 ---
 
 licenses.nuget.org/BSD-4-Clause

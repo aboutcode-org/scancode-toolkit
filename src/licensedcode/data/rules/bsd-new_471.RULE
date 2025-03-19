@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-new
 is_license_notice: yes
+is_deprecated: yes
 relevance: 99
+replaced_by:
+    - bsd-new
 ---
 
 distributed under the terms of the BSD License

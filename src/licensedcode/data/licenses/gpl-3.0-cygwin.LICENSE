@@ -1,6 +1,8 @@
 ---
 key: gpl-3.0-cygwin
 is_deprecated: yes
+replaced_by:
+    - (gpl-3.0-plus AND cygwin-exception-3.0) OR commercial-license
 short_name: GPL 3.0 or later with Cygwin exception
 name: GPL 3.0 or later with Cygwin exception
 category: Copyleft Limited

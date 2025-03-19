@@ -1,7 +1,10 @@
 ---
 license_expression: info-zip
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - info-zip
 ---
 
 licenses.nuget.org/Info-ZIP

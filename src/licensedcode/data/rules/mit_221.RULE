@@ -1,7 +1,7 @@
 ---
 license_expression: mit
 is_license_reference: yes
-relevance: 90
+relevance: 100
 ---
 
-license MIT/X11
+license {{MIT/X11}}

@@ -2,8 +2,11 @@
 license_expression: attribution
 is_license_tag: yes
 is_continuous: yes
+is_deprecated: yes
 relevance: 100
 minimum_coverage: 100
+replaced_by:
+    - attribution
 ---
 
 License Attribution Assurance License

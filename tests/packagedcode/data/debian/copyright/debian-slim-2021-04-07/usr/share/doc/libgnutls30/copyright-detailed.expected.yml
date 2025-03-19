@@ -3,33 +3,33 @@ declared_license_expression: (lgpl-2.1-plus AND gpl-3.0-plus AND (lgpl-3.0-plus 
   AND lgpl-2.1-plus AND gpl-3.0-plus AND gfdl-1.1-plus AND gfdl-1.3-plus AND (lgpl-2.0-plus
   AND lgpl-3.0 AND gpl-1.0-plus AND gpl-3.0 AND gfdl-1.3) AND lgpl-2.1-plus AND (lgpl-3.0-plus
   OR gpl-2.0-plus) AND lgpl-2.0-plus AND gpl-3.0 AND (bsd-new OR gpl-1.0-plus) AND bsd-simplified
-  AND public-domain AND isc AND cc0-1.0 AND mit AND mit AND apache-2.0 AND apache-2.0 AND (lgpl-3.0-plus
+  AND public-domain AND isc AND cc0-1.0 AND mit AND apache-2.0 AND apache-2.0 AND (lgpl-3.0-plus
   AND gpl-2.0-plus) AND apache-2.0 AND apache-2.0 AND apache-2.0 AND apache-2.0 AND apache-2.0
-  AND mit AND mit AND mit AND mit AND mit AND mit AND lgpl-2.1-plus AND (lgpl-3.0-plus AND gpl-2.0-plus)
-  AND (lgpl-3.0-plus AND gpl-2.0-plus) AND mit AND mit AND (lgpl-3.0-plus AND gpl-2.0-plus)
+  AND mit AND mit AND mit AND lgpl-2.1-plus AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus
+  AND gpl-2.0-plus) AND mit AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus)
   AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus
   AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus)
   AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus
   AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus)
   AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus
   AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus)
-  AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus) AND mit AND mit
-  AND lgpl-2.1-plus AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus)
-  AND (lgpl-3.0-plus OR gpl-2.0-plus) AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND
-  gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND gpl-3.0-plus AND gpl-3.0-plus
-  AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus
+  AND (lgpl-3.0-plus AND gpl-2.0-plus) AND mit AND mit AND lgpl-2.1-plus AND (lgpl-3.0-plus
+  AND gpl-2.0-plus) AND (lgpl-3.0-plus AND gpl-2.0-plus) AND (lgpl-3.0-plus OR gpl-2.0-plus)
   AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus
   AND lgpl-2.1-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND
-  gpl-3.0-plus AND gpl-3.0-plus AND bsd-new AND bsd-new
+  gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus
+  AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND
+  gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-3.0-plus
+  AND bsd-new AND bsd-new
 declared_license_expression_spdx: (LGPL-2.1-or-later AND GPL-3.0-or-later AND (LGPL-3.0-or-later
   AND GPL-2.0-or-later)) AND LGPL-2.1-or-later AND GPL-3.0-or-later AND GFDL-1.1-or-later AND
   GFDL-1.3-or-later AND (LGPL-2.0-or-later AND LGPL-3.0-only AND GPL-1.0-or-later AND GPL-3.0-only
   AND GFDL-1.3-only) AND LGPL-2.1-or-later AND (LGPL-3.0-or-later OR GPL-2.0-or-later) AND LGPL-2.0-or-later
   AND GPL-3.0-only AND (BSD-3-Clause OR GPL-1.0-or-later) AND BSD-2-Clause AND LicenseRef-scancode-public-domain
-  AND ISC AND CC0-1.0 AND MIT AND MIT AND Apache-2.0 AND Apache-2.0 AND (LGPL-3.0-or-later AND
-  GPL-2.0-or-later) AND Apache-2.0 AND Apache-2.0 AND Apache-2.0 AND Apache-2.0 AND Apache-2.0
-  AND MIT AND MIT AND MIT AND MIT AND MIT AND MIT AND LGPL-2.1-or-later AND (LGPL-3.0-or-later
-  AND GPL-2.0-or-later) AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND MIT AND MIT AND (LGPL-3.0-or-later
+  AND ISC AND CC0-1.0 AND MIT AND Apache-2.0 AND Apache-2.0 AND (LGPL-3.0-or-later AND GPL-2.0-or-later)
+  AND Apache-2.0 AND Apache-2.0 AND Apache-2.0 AND Apache-2.0 AND Apache-2.0 AND MIT AND MIT
+  AND MIT AND LGPL-2.1-or-later AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later
+  AND GPL-2.0-or-later) AND MIT AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later
   AND GPL-2.0-or-later) AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later
   AND GPL-2.0-or-later) AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later
   AND GPL-2.0-or-later) AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later
@@ -38,15 +38,14 @@ declared_license_expression_spdx: (LGPL-2.1-or-later AND GPL-3.0-or-later AND (L
   AND GPL-2.0-or-later) AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later
   AND GPL-2.0-or-later) AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later
   AND GPL-2.0-or-later) AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later
-  AND GPL-2.0-or-later) AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND MIT AND MIT AND LGPL-2.1-or-later
-  AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later AND GPL-2.0-or-later)
-  AND (LGPL-3.0-or-later OR GPL-2.0-or-later) AND GPL-3.0-or-later AND GPL-3.0-or-later AND
-  GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later
+  AND GPL-2.0-or-later) AND MIT AND MIT AND LGPL-2.1-or-later AND (LGPL-3.0-or-later AND GPL-2.0-or-later)
+  AND (LGPL-3.0-or-later AND GPL-2.0-or-later) AND (LGPL-3.0-or-later OR GPL-2.0-or-later) AND
+  GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
+  AND GPL-3.0-or-later AND LGPL-2.1-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
   AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
   AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
-  AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later
-  AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
-  AND GPL-3.0-or-later AND BSD-3-Clause AND BSD-3-Clause
+  AND GPL-3.0-or-later AND LGPL-2.1-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later
+  AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-3.0-or-later AND BSD-3-Clause AND BSD-3-Clause
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -458,29 +457,17 @@ license_detections:
         license_expression_spdx: MIT
         from_file:
         start_line: 510
-        end_line: 510
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: mit_437.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
-        matched_text: 'License: Expat'
-      - license_expression: mit
-        license_expression_spdx: MIT
-        from_file:
-        start_line: 511
         end_line: 527
         matcher: 2-aho
         score: '100.0'
-        matched_length: 161
+        matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        rule_identifier: mit_1356.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
         matched_text: |
-          Permission is hereby granted, free of charge, to any person obtaining a
+          License: Expat
+           Permission is hereby granted, free of charge, to any person obtaining a
            copy of this software and associated documentation files (the "Software"),
            to deal in the Software without restriction, including without limitation
            the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -497,7 +484,7 @@ license_detections:
            OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
            ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
            OTHER DEALINGS IN THE SOFTWARE.
-    identifier: mit-ce632f87-3a7d-7ead-5164-8fd75ef60032
+    identifier: mit-ebcd17e0-25e4-491a-88e2-568bcfdca823
   - license_expression: apache-2.0
     license_expression_spdx: Apache-2.0
     matches:
@@ -683,29 +670,17 @@ license_detections:
         license_expression_spdx: MIT
         from_file:
         start_line: 619
-        end_line: 619
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: mit_437.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
-        matched_text: 'License: Expat'
-      - license_expression: mit
-        license_expression_spdx: MIT
-        from_file:
-        start_line: 620
         end_line: 636
         matcher: 2-aho
         score: '100.0'
-        matched_length: 161
+        matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        rule_identifier: mit_1356.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
         matched_text: |
-          Permission is hereby granted, free of charge, to any person obtaining a
+          License: Expat
+           * Permission is hereby granted, free of charge, to any person obtaining a
            * copy of this software and associated documentation files (the "Software"),
            * to deal in the Software without restriction, including without limitation
            * the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -722,7 +697,7 @@ license_detections:
            * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
            * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
            * DEALINGS IN THE SOFTWARE.
-    identifier: mit-ce632f87-3a7d-7ead-5164-8fd75ef60032
+    identifier: mit-ebcd17e0-25e4-491a-88e2-568bcfdca823
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
@@ -730,29 +705,17 @@ license_detections:
         license_expression_spdx: MIT
         from_file:
         start_line: 645
-        end_line: 645
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: mit_437.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
-        matched_text: 'License: Expat'
-      - license_expression: mit
-        license_expression_spdx: MIT
-        from_file:
-        start_line: 646
         end_line: 662
         matcher: 2-aho
         score: '100.0'
-        matched_length: 161
+        matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        rule_identifier: mit_1356.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
         matched_text: |
-          Permission is hereby granted, free of charge, to any person obtaining a
+          License: Expat
+           * Permission is hereby granted, free of charge, to any person obtaining a
            * copy of this software and associated documentation files (the "Software"),
            * to deal in the Software without restriction, including without limitation
            * the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -769,7 +732,7 @@ license_detections:
            * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
            * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
            * DEALINGS IN THE SOFTWARE.
-    identifier: mit-ce632f87-3a7d-7ead-5164-8fd75ef60032
+    identifier: mit-ebcd17e0-25e4-491a-88e2-568bcfdca823
   - license_expression: mit AND lgpl-2.1-plus
     license_expression_spdx: MIT AND LGPL-2.1-or-later
     matches:
@@ -777,29 +740,17 @@ license_detections:
         license_expression_spdx: MIT
         from_file:
         start_line: 667
-        end_line: 667
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: mit_437.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
-        matched_text: 'License: Expat'
-      - license_expression: mit
-        license_expression_spdx: MIT
-        from_file:
-        start_line: 668
         end_line: 684
         matcher: 2-aho
         score: '100.0'
-        matched_length: 161
+        matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        rule_identifier: mit_1356.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
         matched_text: |
-          Permission is hereby granted, free of charge, to any person obtaining a
+          License: Expat
+           * Permission is hereby granted, free of charge, to any person obtaining a
            * copy of this software and associated documentation files (the "Software"),
            * to deal in the Software without restriction, including without limitation
            * the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -829,7 +780,7 @@ license_detections:
         rule_identifier: lgpl-2.1-plus_299.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_299.RULE
         matched_text: 'License: LGPLv2.1+'
-    identifier: mit_and_lgpl_2_1_plus-ac329c30-2f5d-a40f-905d-d126eef3c5d1
+    identifier: mit_and_lgpl_2_1_plus-994c9ee6-fbb1-6703-d994-cc4f723a2e03
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
@@ -867,29 +818,17 @@ license_detections:
         license_expression_spdx: MIT
         from_file:
         start_line: 705
-        end_line: 705
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: mit_437.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_437.RULE
-        matched_text: 'License: Expat'
-      - license_expression: mit
-        license_expression_spdx: MIT
-        from_file:
-        start_line: 706
         end_line: 723
         matcher: 2-aho
         score: '100.0'
-        matched_length: 161
+        matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE
+        rule_identifier: mit_1356.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
         matched_text: |
-          Permission is hereby granted, free of charge, to any person obtaining a
+          License: Expat
+           Permission is hereby granted, free of charge, to any person obtaining a
            copy of this software and associated documentation files (the
            "Software"), to deal in the Software without restriction, including
            without limitation the rights to use, copy, modify, merge, publish,
@@ -907,7 +846,7 @@ license_detections:
            CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
            TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
            SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    identifier: mit-ce632f87-3a7d-7ead-5164-8fd75ef60032
+    identifier: mit-ebcd17e0-25e4-491a-88e2-568bcfdca823
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:

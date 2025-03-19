@@ -152,6 +152,7 @@ def match_unknowns(
     qspan = Span().union(*qspans)
 
     if TRACE:
+        query_tokens = query_run.query.tokens
         tokens_by_tid = idx.tokens_by_tid
 
         def get_tokens(_toks):

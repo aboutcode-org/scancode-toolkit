@@ -1660,6 +1660,9 @@ def get_declared_license(metainfo):
     if not declared_license:
         declared_license = None
 
+    if TRACE:
+        logger_debug(f'declared_license: {declared_license!r}, license_file: {license_file} metainfo: {metainfo!r}')
+        
     return declared_license, license_file
 
 

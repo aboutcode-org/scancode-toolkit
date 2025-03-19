@@ -1,5 +1,8 @@
 ---
 key: apache-2.0-runtime-library-exception
+is_deprecated: yes
+replaced_by:
+    - apple-runtime-library-exception
 short_name: Apache 2.0 with Runtime Library Exception
 name: Apache 2.0 with Runtime Library Exception
 category: Permissive
@@ -8,7 +11,6 @@ homepage_url: https://github.com/apple/swift/blob/master/LICENSE.txt#L205
 is_exception: yes
 other_urls:
     - https://swift.org/
-is_deprecated: yes
 ---
 
 ## Runtime Library Exception to the Apache 2.0 License: ##

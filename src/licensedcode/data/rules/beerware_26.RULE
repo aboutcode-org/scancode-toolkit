@@ -1,7 +1,10 @@
 ---
 license_expression: beerware
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - beerware
 ---
 
 licenses.nuget.org/Beerware

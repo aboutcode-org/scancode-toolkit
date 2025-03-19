@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-simplified
 is_license_tag: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bsd-simplified
 ---
 
 license               = 'BSD 2-Clause'

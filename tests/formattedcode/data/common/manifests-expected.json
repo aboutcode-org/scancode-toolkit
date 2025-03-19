@@ -36,33 +36,18 @@
               "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
               "start_line": 1,
-              "end_line": 1,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 8,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "cddl-1.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE",
-              "matched_text": "- name: Common Development and Distribution License (CDDL) v1.0"
-            },
-            {
-              "license_expression": "cddl-1.0",
-              "license_expression_spdx": "CDDL-1.0",
-              "from_file": "manifests/maven/persistence-api-1.0.pom",
-              "start_line": 2,
               "end_line": 2,
-              "matcher": "2-aho",
+              "matcher": "1-hash",
               "score": 100.0,
-              "matched_length": 7,
+              "matched_length": 17,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "cddl-1.0_4.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE",
-              "matched_text": "  url: http://www.sun.com/cddl/cddl.html"
+              "rule_identifier": "cddl-1.0_98.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_98.RULE",
+              "matched_text": "- name: Common Development and Distribution License (CDDL) v1.0\n  url: http://www.sun.com/cddl/cddl.html"
             }
           ],
-          "identifier": "cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880"
+          "identifier": "cddl_1_0-b17acf03-1e4f-20e6-cbb8-1b6945ee4c4c"
         }
       ],
       "other_license_expression": null,
@@ -824,43 +809,29 @@
       ]
     },
     {
-      "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6",
+      "identifier": "cddl_1_0-0507fc0c-7fd5-3ecd-8c7b-5ea542059d4f",
       "license_expression": "cddl-1.0",
       "license_expression_spdx": "CDDL-1.0",
       "detection_count": 1,
       "reference_matches": [
         {
-          "license_expression": "unknown-license-reference",
-          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-          "from_file": "manifests/maven/persistence-api-1.0.pom",
-          "start_line": 17,
-          "end_line": 19,
-          "matcher": "2-aho",
-          "score": 16.0,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "rule_relevance": 16,
-          "rule_identifier": "license-intro_72.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE"
-        },
-        {
           "license_expression": "cddl-1.0",
           "license_expression_spdx": "CDDL-1.0",
           "from_file": "manifests/maven/persistence-api-1.0.pom",
-          "start_line": 18,
+          "start_line": 17,
           "end_line": 20,
-          "matcher": "3-seq",
-          "score": 82.35,
-          "matched_length": 14,
-          "match_coverage": 82.35,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 21,
+          "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "cddl-1.0_32.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE"
+          "rule_identifier": "cddl-1.0_95.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_95.RULE"
         }
       ]
     },
     {
-      "identifier": "cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880",
+      "identifier": "cddl_1_0-b17acf03-1e4f-20e6-cbb8-1b6945ee4c4c",
       "license_expression": "cddl-1.0",
       "license_expression_spdx": "CDDL-1.0",
       "detection_count": 1,
@@ -870,28 +841,14 @@
           "license_expression_spdx": "CDDL-1.0",
           "from_file": "manifests/maven/persistence-api-1.0.pom",
           "start_line": 1,
-          "end_line": 1,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 8,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "cddl-1.0.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE"
-        },
-        {
-          "license_expression": "cddl-1.0",
-          "license_expression_spdx": "CDDL-1.0",
-          "from_file": "manifests/maven/persistence-api-1.0.pom",
-          "start_line": 2,
           "end_line": 2,
-          "matcher": "2-aho",
+          "matcher": "1-hash",
           "score": 100.0,
-          "matched_length": 7,
+          "matched_length": 17,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "cddl-1.0_4.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE"
+          "rule_identifier": "cddl-1.0_98.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_98.RULE"
         }
       ]
     },
@@ -1155,33 +1112,18 @@
                   "license_expression_spdx": "CDDL-1.0",
                   "from_file": "manifests/maven/persistence-api-1.0.pom",
                   "start_line": 1,
-                  "end_line": 1,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 8,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "cddl-1.0.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0.RULE",
-                  "matched_text": "- name: Common Development and Distribution License (CDDL) v1.0"
-                },
-                {
-                  "license_expression": "cddl-1.0",
-                  "license_expression_spdx": "CDDL-1.0",
-                  "from_file": "manifests/maven/persistence-api-1.0.pom",
-                  "start_line": 2,
                   "end_line": 2,
-                  "matcher": "2-aho",
+                  "matcher": "1-hash",
                   "score": 100.0,
-                  "matched_length": 7,
+                  "matched_length": 17,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "cddl-1.0_4.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_4.RULE",
-                  "matched_text": "  url: http://www.sun.com/cddl/cddl.html"
+                  "rule_identifier": "cddl-1.0_98.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_98.RULE",
+                  "matched_text": "- name: Common Development and Distribution License (CDDL) v1.0\n  url: http://www.sun.com/cddl/cddl.html"
                 }
               ],
-              "identifier": "cddl_1_0-dd3dd7df-afca-6a5e-492c-f7b279fdd880"
+              "identifier": "cddl_1_0-b17acf03-1e4f-20e6-cbb8-1b6945ee4c4c"
             }
           ],
           "other_license_expression": null,
@@ -1215,39 +1157,25 @@
           "license_expression_spdx": "CDDL-1.0",
           "matches": [
             {
-              "license_expression": "unknown-license-reference",
-              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-              "from_file": "manifests/maven/persistence-api-1.0.pom",
-              "start_line": 17,
-              "end_line": 19,
-              "matcher": "2-aho",
-              "score": 16.0,
-              "matched_length": 3,
-              "match_coverage": 100.0,
-              "rule_relevance": 16,
-              "rule_identifier": "license-intro_72.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_72.RULE"
-            },
-            {
               "license_expression": "cddl-1.0",
               "license_expression_spdx": "CDDL-1.0",
               "from_file": "manifests/maven/persistence-api-1.0.pom",
-              "start_line": 18,
+              "start_line": 17,
               "end_line": 20,
-              "matcher": "3-seq",
-              "score": 82.35,
-              "matched_length": 14,
-              "match_coverage": 82.35,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 21,
+              "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "cddl-1.0_32.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_32.RULE"
+              "rule_identifier": "cddl-1.0_95.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cddl-1.0_95.RULE"
             }
           ],
-          "identifier": "cddl_1_0-c6dbef4d-659c-289f-5ee9-1ca0278edad6"
+          "identifier": "cddl_1_0-0507fc0c-7fd5-3ecd-8c7b-5ea542059d4f"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 9.25,
+      "percentage_of_license_text": 12.14,
       "copyrights": [],
       "holders": [],
       "authors": [],

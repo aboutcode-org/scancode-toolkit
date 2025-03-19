@@ -2,6 +2,9 @@
 license_expression: mit
 is_license_tag: yes
 is_continuous: yes
+is_deprecated: yes
+replaced_by:
+    - mit
 ---
 
 {{"license": "type": "MIT",}}

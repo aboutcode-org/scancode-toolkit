@@ -5,8 +5,7 @@ license_expressions:
   - unknown-license-reference
   - warranty-disclaimer
   - warranty-disclaimer
-  - unknown-license-reference
   - warranty-disclaimer
   - unknown-license-reference
-  - unknown-license-reference
-notes: this is using unknwown license detection
+  - unknown
+notes: this designed to use unknwown license detection

@@ -1,7 +1,10 @@
 ---
 license_expression: libpng-v2
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - libpng-v2
 ---
 
 licenses.nuget.org/libpng-2.0

@@ -1,7 +1,10 @@
 ---
 license_expression: polyform-noncommercial-1.0.0
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - polyform-noncommercial-1.0.0
 ---
 
 licenses.nuget.org/PolyForm-Noncommercial-1.0.0

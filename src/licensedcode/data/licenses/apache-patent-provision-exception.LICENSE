@@ -1,6 +1,8 @@
 ---
 key: apache-patent-provision-exception
 is_deprecated: yes
+replaced_by:
+    - apache-patent-exception
 short_name: Apache Patent Provision Exception Deprecated
 name: Apache Patent Provision Exception Deprecated
 category: Permissive

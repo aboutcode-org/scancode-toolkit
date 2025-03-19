@@ -71,7 +71,7 @@
       ]
     },
     {
-      "identifier": "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus-ebd5f076-5cba-e641-e071-0028c4ee0ddb",
+      "identifier": "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus-ae8722eb-b33f-621e-719a-c88718b3d1e2",
       "license_expression": "gpl-3.0 AND unknown-license-reference AND gpl-3.0-plus",
       "license_expression_spdx": "GPL-3.0-only AND LicenseRef-scancode-unknown-license-reference AND GPL-3.0-or-later",
       "detection_count": 1,
@@ -88,8 +88,8 @@
           "matched_length": 2,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "gpl-3.0_203.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_203.RULE",
+          "rule_identifier": "gpl-3.0_122.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_122.RULE",
           "matched_text": "License:  GPLv3 | See LICENSE for the full text",
           "matched_text_diagnostics": "License:  GPLv3 |"
         },
@@ -120,15 +120,15 @@
           "matched_length": 102,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "gpl-3.0-plus_290.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
+          "rule_identifier": "gpl-3.0-plus_29.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
           "matched_text": "This program is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <http://www.gnu.org/licenses/>.",
           "matched_text_diagnostics": "This program is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <http://www.gnu.org/licenses/>."
         }
       ]
     },
     {
-      "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f",
+      "identifier": "gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d",
       "license_expression": "gpl-3.0-plus",
       "license_expression_spdx": "GPL-3.0-or-later",
       "detection_count": 1,
@@ -145,8 +145,8 @@
           "matched_length": 102,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "gpl-3.0-plus_290.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
+          "rule_identifier": "gpl-3.0-plus_29.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
           "matched_text": "#  This program is free software: you can redistribute it and/or modify\n# it under the terms of the GNU General Public License as published by\n# the Free Software Foundation, either version 3 of the License, or\n# (at your option) any later version.\n\n# This program is distributed in the hope that it will be useful,\n# but WITHOUT ANY WARRANTY; without even the implied warranty of\n# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n# GNU General Public License for more details.\n\n# You should have received a copy of the GNU General Public License\n# along with this program.  If not, see <http://www.gnu.org/licenses/>.",
           "matched_text_diagnostics": "This program is free software: you can redistribute it and/or modify\n# it under the terms of the GNU General Public License as published by\n# the Free Software Foundation, either version 3 of the License, or\n# (at your option) any later version.\n\n# This program is distributed in the hope that it will be useful,\n# but WITHOUT ANY WARRANTY; without even the implied warranty of\n# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n# GNU General Public License for more details.\n\n# You should have received a copy of the GNU General Public License\n# along with this program.  If not, see <http://www.gnu.org/licenses/>."
         }
@@ -238,8 +238,8 @@
               "matched_length": 2,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "gpl-3.0_203.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_203.RULE",
+              "rule_identifier": "gpl-3.0_122.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0_122.RULE",
               "matched_text": "License:  GPLv3 | See LICENSE for the full text",
               "matched_text_diagnostics": "License:  GPLv3 |"
             },
@@ -270,14 +270,14 @@
               "matched_length": 102,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "gpl-3.0-plus_290.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
+              "rule_identifier": "gpl-3.0-plus_29.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
               "matched_text": "This program is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <http://www.gnu.org/licenses/>.",
               "matched_text_diagnostics": "This program is free software: you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program.  If not, see <http://www.gnu.org/licenses/>."
             }
           ],
           "detection_log": [],
-          "identifier": "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus-ebd5f076-5cba-e641-e071-0028c4ee0ddb"
+          "identifier": "gpl_3_0_and_unknown_license_reference_and_gpl_3_0_plus-ae8722eb-b33f-621e-719a-c88718b3d1e2"
         }
       ],
       "license_clues": [],
@@ -307,14 +307,14 @@
               "matched_length": 102,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "gpl-3.0-plus_290.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE",
+              "rule_identifier": "gpl-3.0-plus_29.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE",
               "matched_text": "#  This program is free software: you can redistribute it and/or modify\n# it under the terms of the GNU General Public License as published by\n# the Free Software Foundation, either version 3 of the License, or\n# (at your option) any later version.\n\n# This program is distributed in the hope that it will be useful,\n# but WITHOUT ANY WARRANTY; without even the implied warranty of\n# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n# GNU General Public License for more details.\n\n# You should have received a copy of the GNU General Public License\n# along with this program.  If not, see <http://www.gnu.org/licenses/>.",
               "matched_text_diagnostics": "This program is free software: you can redistribute it and/or modify\n# it under the terms of the GNU General Public License as published by\n# the Free Software Foundation, either version 3 of the License, or\n# (at your option) any later version.\n\n# This program is distributed in the hope that it will be useful,\n# but WITHOUT ANY WARRANTY; without even the implied warranty of\n# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n# GNU General Public License for more details.\n\n# You should have received a copy of the GNU General Public License\n# along with this program.  If not, see <http://www.gnu.org/licenses/>."
             }
           ],
           "detection_log": [],
-          "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f"
+          "identifier": "gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d"
         }
       ],
       "license_clues": [],

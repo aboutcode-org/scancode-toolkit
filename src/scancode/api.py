@@ -17,7 +17,6 @@ from commoncode.hash import multi_checksums
 from scancode import ScancodeError
 from typecode.contenttype import get_type
 
-
 TRACE = os.environ.get('SCANCODE_DEBUG_API', False)
 
 
@@ -147,6 +146,7 @@ SCANCODE_DATA_BASE_URL = 'https://github.com/nexB/scancode-toolkit/tree/develop/
 SCANCODE_LICENSE_URL = f'{SCANCODE_DATA_BASE_URL}/licenses/{{}}.LICENSE'
 SCANCODE_RULE_URL = f'{SCANCODE_DATA_BASE_URL}/rules/{{}}'
 
+
 def get_licenses(
     location,
     min_score=0,
@@ -170,7 +170,7 @@ def get_licenses(
     score lower than `minimum_score` are not returned.
 
     If `include_text` is True, matched text is included in the returned
-    `licenses` data as well as a file-level `percentage_of_license_text` 
+    `licenses` data as well as a file-level `percentage_of_license_text`
     as the percentage of file words detected as license text or notice.
     This is used to determine if a file contains mostly licensing.
 
@@ -222,15 +222,23 @@ def get_licenses(
         logger_debug(f"api: get_licenses: license_clues: {license_clues}")
 
     if detected_expressions:
+        licensing = get_cache().licensing
         detected_license_expression = combine_expressions(
             expressions=detected_expressions,
             relation='AND',
             unique=True,
+            licensing=licensing
         )
-        detected_license_expression_spdx = str(build_spdx_license_expression(
+        detected_license_expression_spdx = build_spdx_license_expression(
             detected_license_expression,
-            licensing=get_cache().licensing
-        ))
+            licensing=licensing
+        )
+
+    if detected_license_expression is not None:
+        detected_license_expression = str(detected_license_expression)
+
+    if detected_license_expression_spdx is not None:
+        detected_license_expression_spdx = str(detected_license_expression_spdx)
 
     percentage_of_license_text = 0
     if detection:

@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_notice: yes
+is_deprecated: yes
 notes: found in older OpenSSL versions in openssl-1.1.0h/ms/tlhelp32.h
+replaced_by:
+    - warranty-disclaimer
 ---
 
 This file is part of a free library for the Win32 API.

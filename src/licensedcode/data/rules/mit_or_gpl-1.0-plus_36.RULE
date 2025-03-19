@@ -1,0 +1,10 @@
+---
+license_expression: mit OR gpl-1.0-plus
+is_license_notice: yes
+is_deprecated: yes
+relevance: 100
+replaced_by:
+    - mit OR gpl-1.0-plus
+---
+
+* The script is dual licensed under the MIT and GPL licenses

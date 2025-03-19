@@ -1,7 +1,10 @@
 ---
 license_expression: lgpl-2.0-plus
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - lgpl-2.0-plus
 ---
 
 The GNU Library General Public License v2+

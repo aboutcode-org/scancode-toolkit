@@ -11,23 +11,20 @@ declared_license:
   - LGPL-2.1+
   - GPL-2+
   - LGPL-2.1+
-declared_license_expression: gpl-2.0-plus AND (lgpl-2.1-plus AND lgpl-2.1)
-declared_license_expression_spdx: GPL-2.0-or-later AND (LGPL-2.1-or-later AND LGPL-2.1-only)
-other_license_expression: ((gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1)) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1) AND (gpl-2.0-plus AND gpl-2.0-plus) AND ((gpl-2.0-plus AND gpl-2.0-plus) AND
-  (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)
-  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND
-  lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1) AND (lgpl-2.1-plus AND lgpl-2.1-plus
-  AND lgpl-2.1)
+declared_license_expression: gpl-2.0-plus AND lgpl-2.1-plus
+declared_license_expression_spdx: GPL-2.0-or-later AND LGPL-2.1-or-later
+other_license_expression: ((gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus))
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND (gpl-2.0-plus
+  AND gpl-2.0-plus) AND ((gpl-2.0-plus AND gpl-2.0-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus))
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND (lgpl-2.1-plus
+  AND lgpl-2.1-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus) AND (lgpl-2.1-plus AND lgpl-2.1-plus)
 other_license_expression_spdx: ((GPL-2.0-or-later AND GPL-2.0-or-later) AND (LGPL-2.1-or-later
-  AND LGPL-2.1-or-later AND LGPL-2.1-only)) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-only) AND (GPL-2.0-or-later
-  AND GPL-2.0-or-later) AND ((GPL-2.0-or-later AND GPL-2.0-or-later) AND (LGPL-2.1-or-later
-  AND LGPL-2.1-or-later AND LGPL-2.1-only)) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-only) AND (LGPL-2.1-or-later
-  AND LGPL-2.1-or-later AND LGPL-2.1-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND
-  LGPL-2.1-only) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later AND LGPL-2.1-only)
+  AND LGPL-2.1-or-later)) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LGPL-2.1-or-later
+  AND LGPL-2.1-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND ((GPL-2.0-or-later
+  AND GPL-2.0-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later)) AND (LGPL-2.1-or-later
+  AND LGPL-2.1-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LGPL-2.1-or-later
+  AND LGPL-2.1-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (LGPL-2.1-or-later
+  AND LGPL-2.1-or-later)
 license_detections: []
 other_license_detections:
   - license_expression: gpl-2.0-plus
@@ -75,8 +72,8 @@ other_license_detections:
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
     identifier: gpl_2_0_plus-00217b75-1a81-9ffa-8aed-0d1bd2f9756b
-  - license_expression: lgpl-2.1-plus AND lgpl-2.1
-    license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-only
+  - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
         license_expression_spdx: LGPL-2.1-or-later
@@ -95,14 +92,14 @@ other_license_detections:
         license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 85
-        end_line: 96
-        matcher: 2-aho
+        end_line: 99
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 106
+        matched_length: 133
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: lgpl-2.1-plus_36.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_36.RULE
+        rule_identifier: lgpl-2.1-plus_517.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_517.RULE
         matched_text: |
           This library is free software: you can redistribute it and/or modify
           it under the terms of the GNU Lesser General Public License as published by
@@ -116,22 +113,10 @@ other_license_detections:
 
           You should have received a copy of the GNU Lesser General Public License
           along with this library.  If not, see <http://www.gnu.org/licenses/>.
-      - license_expression: lgpl-2.1
-        license_expression_spdx: LGPL-2.1-only
-        from_file:
-        start_line: 98
-        end_line: 99
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 27
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: lgpl-2.1_293.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_293.RULE
-        matched_text: |
+
           On Debian systems, the complete text of the GNU Lesser General
           Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
-    identifier: lgpl_2_1_plus_and_lgpl_2_1-204b36b2-a9f6-ee19-a401-520ccd0f3862
+    identifier: lgpl_2_1_plus-5f0c85ab-aa49-accc-a25f-f11b4e8bc6da
 copyright: |
   2012-2018, Matthias Klumpp <matthias@tenstral.net>
   Richard Hughes <richard@hughsie.com>

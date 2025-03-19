@@ -1,0 +1,9 @@
+---
+license_expression: agpl-3.0 WITH agpl-generic-additional-terms
+is_license_tag: yes
+is_continuous: yes
+relevance: 100
+notes: https://github.com/Teuns/Chiaki-4-iOS/blob/19620cbafa1fe2e0ec75dd6c1684abe2388c4fb4/discoverymanager.cpp
+---
+
+{{ SPDX-License-Identifier: LicenseRef-AGPL-3.0-only-OpenSSL }}

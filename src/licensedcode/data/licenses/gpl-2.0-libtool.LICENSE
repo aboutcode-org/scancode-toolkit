@@ -1,12 +1,14 @@
 ---
 key: gpl-2.0-libtool
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH libtool-exception-2.0
 short_name: GPL 2.0 with GNU Libtool exception
 name: GPL 2.0 with GNU Libtool exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
-is_exception: yes
 notes: replaced by libtool-exception-2.0
+is_exception: yes
 ---
 
 This library is free software; you can redistribute it and/or modify it under 

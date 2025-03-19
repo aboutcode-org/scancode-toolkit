@@ -1,7 +1,10 @@
 ---
 license_expression: mit
 is_license_reference: yes
+is_deprecated: yes
 relevance: 99
+replaced_by:
+    - mit
 ---
 
 MIT Lisence :

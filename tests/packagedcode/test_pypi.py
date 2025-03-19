@@ -684,7 +684,6 @@ def get_setup_py_test_files(test_dir):
     """
     Yield setup.py file from a `test_dir` test data directory.
     """
-    print(test_dir)
     for top, _, files in os.walk(test_dir):
         for tfile in files:
             if tfile.endswith('setup.py'):

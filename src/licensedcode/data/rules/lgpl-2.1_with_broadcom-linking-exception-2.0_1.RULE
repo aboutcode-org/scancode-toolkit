@@ -1,13 +1,15 @@
 ---
 license_expression: lgpl-2.1 WITH broadcom-linking-exception-2.0
 is_license_notice: yes
+is_deprecated: yes
 referenced_filenames:
     - COPYING
 notes: |
     found in the freepascal compiler
     Added in SPDX license list 3.26
     Replaced by license: independent-modules-exception.LICENSE
-is_deprecated: yes
+replaced_by:
+    - lgpl-2.0-plus WITH independent-module-linking-exception
 ---
 
 The source code of the Free Pascal Runtime Libraries and packages are 
