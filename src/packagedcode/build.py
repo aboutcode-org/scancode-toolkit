@@ -377,23 +377,47 @@ class BuckMetadataBzlHandler(BaseStarlarkManifestHandler):
 
         # TODO: Create function that determines package type from download URL,
         # then create a package of that package type from the metadata info
+        
+        if 'upstream_type' in metadata_fields:
+            package_type = metadata_fields['upstream_type']
+        elif 'package_type' in metadata_fields:
+            package_type = metadata_fields['package_type']
+        else:
+            package_type = cls.default_package_type
+
+        if 'licenses' in metadata_fields:
+            extracted_license_statement = metadata_fields['licenses']
+        else:
+            extracted_license_statement = metadata_fields.get('license_expression')
+
+        if 'upstream_address' in metadata_fields:
+            homepage_url = metadata_fields['upstream_address']
+        else:
+            homepage_url = metadata_fields.get('homepage_url')
+        
+
+        extra_data = {}
+        if 'vcs_commit_hash' in metadata_fields:
+            extra_data['vcs_commit_hash'] = metadata_fields['vcs_commit_hash']
+        if 'upstream_hash' in metadata_fields:
+            extra_data['upstream_hash'] = metadata_fields['upstream_hash']
+
         package_data = dict(
             datasource_id=cls.datasource_id,
-            type=metadata_fields.get('upstream_type', metadata_fields.get('package_type', cls.default_package_type)),
+            type=package_type,
             name=metadata_fields.get('name'),
             version=metadata_fields.get('version'),
-            extracted_license_statement=metadata_fields.get('licenses', metadata_fields.get('license_expression')),
+            extracted_license_statement=extracted_license_statement,
             parties=parties,
-            homepage_url=metadata_fields.get('upstream_address', metadata_fields.get('homepage_url')),
+            homepage_url=homepage_url,
             download_url=metadata_fields.get('download_url'),
             vcs_url=metadata_fields.get('vcs_url'),
             sha1=metadata_fields.get('download_archive_sha1'),
-            # TODO: Store 'upstream_hash` somewhere
+            extra_data=extra_data
         )
-        if 'vcs_commit_hash' in metadata_fields:
-            package_data["extra_data"] = dict(vcs_commit_hash=metadata_fields['vcs_commit_hash'])
         if 'package_url' in metadata_fields:
             package_data.update(PackageURL.from_string(metadata_fields['package_url']).to_dict())
+        
         yield models.PackageData.from_data(package_data, package_only=True)
 
 
