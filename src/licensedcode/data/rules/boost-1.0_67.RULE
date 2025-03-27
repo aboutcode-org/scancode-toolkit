@@ -8,9 +8,9 @@ ignorable_urls:
     - http://www.boost.org/LICENSE_1_0.txt
 ---
 
-is subject to the Boost Software License, Version 1.0. (See accompanying file 
+is subject to the {{Boost Software License, Version 1.0}}. (See accompanying file 
 LICENSE_1_0.txt or copy at <a href=\"http://www.boost.org/LICENSE_1_0.txt >
 http://www.boost.org/LICENSE_1_0.txt)
 
 
-distributed under the Boost Software License Version 1.0
+distributed under the {{Boost Software License Version 1.0}}

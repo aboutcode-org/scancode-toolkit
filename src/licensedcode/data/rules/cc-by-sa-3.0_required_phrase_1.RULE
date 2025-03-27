@@ -1,8 +1,7 @@
 ---
 license_expression: cc-by-sa-3.0
-is_license_reference: yes
+is_license_tag: yes
 is_required_phrase: yes
-relevance: 100
 ---
 
-This code is released under Creative Commons license. See Creative Commons License
+licensed under {{cc by sa 3 0}}

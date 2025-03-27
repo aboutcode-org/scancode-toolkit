@@ -7,4 +7,4 @@ referenced_filenames:
     - license/third_party/boost_LICENSE.txt
 ---
 
-License: Boost Software License 1.0 ([license/third_party/boost_LICENSE.txt][boost])
+License: {{Boost Software License 1.0}} ([license/third_party/boost_LICENSE.txt][boost])
