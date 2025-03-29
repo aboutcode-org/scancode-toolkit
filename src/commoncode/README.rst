@@ -1,5 +1,6 @@
 A Simple Python Project Skeleton
 ================================
+
 This repo attempts to standardize the structure of the Python-based project's
 repositories using modern Python packaging and configuration techniques.
 Using this `blog post`_ as inspiration, this repository serves as the base for
@@ -47,16 +48,19 @@ Release Notes
 - 2022-03-04:
     - Synchronize configure and configure.bat scripts for sanity
     - Update CI operating system support with latest Azure OS images
-    - Streamline utility scripts in etc/scripts/ to create, fetch and manage third-party dependencies
-      There are now fewer scripts. See etc/scripts/README.rst for details
+    - Streamline utility scripts in etc/scripts/ to create, fetch and manage third-party
+      dependencies. There are now fewer scripts. See etc/scripts/README.rst for details
 
 - 2021-09-03:
-    - ``configure`` now requires pinned dependencies via the use of ``requirements.txt`` and ``requirements-dev.txt``
+    - ``configure`` now requires pinned dependencies via the use of ``requirements.txt``
+      and ``requirements-dev.txt``
     - ``configure`` can now accept multiple options at once
     - Add utility scripts from scancode-toolkit/etc/release/ for use in generating project files
     - Rename virtual environment directory from ``tmp`` to ``venv``
-    - Update README.rst with instructions for generating ``requirements.txt`` and ``requirements-dev.txt``,
-      as well as collecting dependencies as wheels and generating ABOUT files for them.
+    - Update README.rst with instructions for generating ``requirements.txt``
+      and ``requirements-dev.txt``, as well as collecting dependencies as wheels and generating
+      ABOUT files for them.
 
 - 2021-05-11:
-    - Adopt new configure scripts from ScanCode TK that allows correct configuration of which Python version is used.
+    - Adopt new configure scripts from ScanCode TK that allows correct configuration of which
+      Python version is used.
