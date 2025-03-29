@@ -11,6 +11,7 @@ import configparser
 import subprocess
 import unittest
 
+
 class BaseTests(unittest.TestCase):
     def test_skeleton_codestyle(self):
         # This test shouldn't run in proliferated repositories.
