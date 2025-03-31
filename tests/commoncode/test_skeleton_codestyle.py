@@ -23,7 +23,7 @@ class BaseTests(unittest.TestCase):
             return
 
         commands = [
-            ["venv/bin/ruff", "--check"],
+            ["venv/bin/ruff", "check"],
             ["venv/bin/ruff", "format", "--check"],
         ]
         command = None
