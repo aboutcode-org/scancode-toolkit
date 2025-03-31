@@ -44,6 +44,10 @@ More usage instructions can be found in ``docs/skeleton-usage.rst``.
 Release Notes
 =============
 
+- 2025-03-31:
+
+    - Use ruff as the main code formatting tool, add ruff rules to pyproject.toml
+
 - 2025-03-29:
 
     - Add support for beta macOS-15
