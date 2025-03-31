@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "package/metadata.rb",
               "start_line": 1,
               "end_line": 1,
@@ -63,7 +63,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "package/metadata.json",
               "start_line": 1,
               "end_line": 1,
@@ -111,7 +111,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -126,7 +126,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -182,7 +182,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "package/metadata.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -216,7 +216,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -279,7 +279,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "package/metadata.rb",
                   "start_line": 1,
                   "end_line": 1,
@@ -313,7 +313,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}

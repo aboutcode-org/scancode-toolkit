@@ -114,6 +114,10 @@ class BaseNpmHandler(models.DatafileHandler):
             yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
             return
 
+        # We do not have any package data detected here
+        if not package_resource.package_data:
+            return
+
         assert len(package_resource.package_data) == 1, f'Invalid package.json for {package_resource.path}'
         pkg_data = package_resource.package_data[0]
         pkg_data = models.PackageData.from_dict(pkg_data)
@@ -310,7 +314,7 @@ class BaseNpmHandler(models.DatafileHandler):
         dependencies_by_purl,
         is_runtime=False,
         is_optional=False,
-        is_resolved=False,
+        is_pinned=False,
         is_direct=True,
     ):
         """
@@ -337,7 +341,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     scope=scope,
                     is_runtime=is_runtime,
                     is_optional=is_optional,
-                    is_resolved=is_resolved,
+                    is_pinned=is_pinned,
                     is_direct=is_direct,
                 )
                 dependencies_by_purl[dep_purl] = dep_package
@@ -361,7 +365,7 @@ class BaseNpmHandler(models.DatafileHandler):
                             scope=scope,
                             is_runtime=is_runtime,
                             is_optional=metadata.get("optional"),
-                            is_resolved=is_resolved,
+                            is_pinned=is_pinned,
                             is_direct=is_direct,
                         )
                         dependencies_by_purl[dep_purl] = dep_package
@@ -394,7 +398,7 @@ class BaseNpmHandler(models.DatafileHandler):
                     extracted_requirement=requirement,
                     is_runtime=is_runtime,
                     is_optional=is_optional,
-                    is_resolved=is_resolved,
+                    is_pinned=is_pinned,
                     is_direct=is_direct,
                 )
                 dependencies_by_purl[dep_purl] = dep_package
@@ -440,7 +444,8 @@ class BaseNpmHandler(models.DatafileHandler):
             # Case 3: This is a complex glob pattern, we are doing a full codebase walk
             # and glob matching each resource
             else:
-                for resource in workspace_root_path:
+                workspace_root = codebase.get_resource(path=workspace_root_path)
+                for resource in workspace_root.walk(codebase):
                     if NpmPackageJsonHandler.is_datafile(resource.location) and fnmatch.fnmatch(
                         name=resource.location, pat=workspace_path,
                     ):
@@ -723,7 +728,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=True,
+                is_pinned=True,
                 is_direct=False,
             )
 
@@ -773,7 +778,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 dependencies_by_purl=sub_deps_by_purl,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=False,
+                is_pinned=False,
                 is_direct=True,
             )
 
@@ -949,7 +954,7 @@ class YarnLockV2Handler(BaseNpmHandler):
             dependency = models.DependentPackage(
                 purl=str(purl),
                 extracted_requirement=version,
-                is_resolved=True,
+                is_pinned=True,
                 resolved_package=resolved_package.to_dict(),
                 scope='dependencies',
                 is_optional=False,
@@ -1124,7 +1129,7 @@ class YarnLockV1Handler(BaseNpmHandler):
             dep = models.DependentPackage(
                 purl=dep_purl,
                 extracted_requirement=extracted_requirement,
-                is_resolved=True,
+                is_pinned=True,
                 # FIXME: these are NOT correct
                 scope='dependencies',
                 is_optional=False,
@@ -1149,6 +1154,10 @@ class YarnLockV1Handler(BaseNpmHandler):
             dependencies=dependencies,
         )
         yield models.PackageData.from_data(package_data, package_only)
+
+
+class UnknownPnpmLockFormat(Exception):
+    pass
 
 
 class BasePnpmLockHandler(BaseNpmHandler):
@@ -1177,7 +1186,28 @@ class BasePnpmLockHandler(BaseNpmHandler):
         }
         major_v, minor_v = lockfile_version.split(".")
 
-        resolved_packages = lock_data.get("packages", [])
+        resolved_packages = lock_data.get("packages", {})
+        dependency_relations = lock_data.get("snapshots", {})
+        dependency_relations_by_purl = {}
+        if dependency_relations:
+            for purl_fields, relations in dependency_relations.items():
+                clean_purl_fields = purl_fields.split("(")[0]
+                sections = clean_purl_fields.split("/")
+                namespace = None
+                if len(sections) == 2:
+                    namespace, name_version = sections
+                elif len(sections) == 1:
+                    name_version, = sections
+                name, version = name_version.split("@")
+
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=name,
+                    namespace=namespace,
+                    version=version,
+                ).to_string()
+                dependency_relations_by_purl[purl] = relations
+
         dependencies_by_purl = {}
 
         for purl_fields, data in resolved_packages.items():
@@ -1185,23 +1215,33 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 clean_purl_fields = purl_fields.split("(")[0]
             elif major_v == "5" or is_shrinkwrap:
                 clean_purl_fields = purl_fields.split("_")[0]
-            else:
+            elif major_v == "9":
                 clean_purl_fields = purl_fields
-                raise Exception(lockfile_version, purl_fields)
+            else:
+                message = f"Unknown pnpm lockfile format: {lockfile_version}"
+                raise UnknownPnpmLockFormat(message, purl_fields)
 
             sections = clean_purl_fields.split("/")
-            name_version= None
+            name_version = None
+            namespace = None
             if major_v == "6":
                 if len(sections) == 2:
-                    namespace = None
                     _, name_version = sections
                 elif len(sections) == 3:
                     _, namespace, name_version = sections
+                elif len(sections) == 1:
+                    name_version, = sections
+
+                name, version = name_version.split("@")
+            elif major_v == "9":
+                if len(sections) == 2:
+                    namespace, name_version = sections
+                elif len(sections) == 1:
+                    name_version, = sections
 
                 name, version = name_version.split("@")
             elif major_v == "5" or is_shrinkwrap:
                 if len(sections) == 3:
-                    namespace = None
                     _, name, version = sections
                 elif len(sections) == 4:
                     _, namespace, name, version = sections
@@ -1219,7 +1259,21 @@ class BasePnpmLockHandler(BaseNpmHandler):
 
             dependencies = data.get('dependencies') or {}
             optional_dependencies = data.get('optionalDependencies') or {}
-            transitive_peer_dependencies = data.get('transitivePeerDependencies') or {}
+            transitive_peer_dependencies = data.get('transitivePeerDependencies') or []
+
+            if purl in dependency_relations_by_purl:
+                dependency_relations = dependency_relations_by_purl.get(purl)
+                if dependency_relations:
+                    deps = dependency_relations.get('dependencies')
+                    if deps:
+                        dependencies.update(deps)
+                    optional_deps = dependency_relations.get('optionalDependencies')
+                    if optional_deps:
+                        optional_dependencies.update(optional_deps)
+                    transitive_peer_deps = dependency_relations.get('transitivePeerDependencies')
+                    if transitive_peer_deps:
+                        transitive_peer_dependencies.extend(transitive_peer_deps)
+
             peer_dependencies = data.get('peerDependencies') or {}
             peer_dependencies_meta = data.get('peerDependenciesMeta') or {}
 
@@ -1228,7 +1282,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 dependencies=dependencies,
                 scope='dependencies',
                 dependencies_by_purl=deps_for_resolved_by_purl,
-                is_resolved=True,
+                is_pinned=True,
                 is_direct=False,
             )
             cls.update_dependencies_by_purl(
@@ -1242,7 +1296,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 dependencies=optional_dependencies,
                 scope='optionalDependencies',
                 dependencies_by_purl=deps_for_resolved_by_purl,
-                is_resolved=True,
+                is_pinned=True,
                 is_optional=True,
                 is_direct=False,
             )
@@ -1291,7 +1345,7 @@ class BasePnpmLockHandler(BaseNpmHandler):
                 purl=purl,
                 is_optional=is_optional,
                 is_runtime=is_runtime,
-                is_resolved=True,
+                is_pinned=True,
                 is_direct=True,
                 resolved_package=resolved_package.to_dict(),
                 extra_data=extra_data_deps,
@@ -1765,7 +1819,7 @@ def deps_mapper(deps, package, field_name, is_direct=True):
         'devDependencies': dict(is_runtime=False, is_optional=True),
         'peerDependencies': dict(is_runtime=True, is_optional=False),
         'optionalDependencies': dict(is_runtime=True, is_optional=True),
-        'resolutions': dict(is_runtime=True, is_optional=False, is_resolved=True),
+        'resolutions': dict(is_runtime=True, is_optional=False, is_pinned=True),
     }
     dependencies = package.dependencies
 

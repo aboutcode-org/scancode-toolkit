@@ -223,6 +223,7 @@ class DebianDscFileHandler(models.DatafileHandler):
 
 class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
     datasource_id = 'debian_installed_status_db'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = ('*var/lib/dpkg/status',)
     description = 'Debian installed packages database'
@@ -391,6 +392,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
 
 class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
     datasource_id = 'debian_distroless_installed_db'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = ('*var/lib/dpkg/status.d/*',)
     description = 'Debian distroless installed database'
@@ -474,6 +476,7 @@ class DebianInstalledFilelistHandler(models.DatafileHandler):
     # seen in installed rootfs in:
     #  - /var/lib/dpkg/info/<package name>.list
     datasource_id = 'debian_installed_files_list'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = (
         '*var/lib/dpkg/info/*.list',
@@ -499,6 +502,7 @@ class DebianInstalledMd5sumFilelistHandler(models.DatafileHandler):
     #  - /var/lib/dpkg/info/<package name>.md5sums
     #  - /var/lib/dpkg/info/<package name:arch>.md5sums
     datasource_id = 'debian_installed_md5sums'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = (
         '*var/lib/dpkg/info/*.md5sums',

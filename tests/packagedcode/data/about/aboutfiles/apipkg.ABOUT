@@ -3,7 +3,7 @@ download_url: https://pypi.python.org/packages/94/72/fd4f2e46ce7b0d388191c819ef6
 version: 1.4
 
 name: apipkg
-home_url: https://bitbucket.org/hpk42/apipkg
+homepage_url: https://bitbucket.org/hpk42/apipkg
 owner: Holger Krekel
 license_expression: mit
 license_file: apipkg.LICENSE

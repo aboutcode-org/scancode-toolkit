@@ -62,7 +62,7 @@ class GoModHandler(BaseGoModuleHandler):
                     scope='require',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
             )
 
@@ -75,7 +75,7 @@ class GoModHandler(BaseGoModuleHandler):
                     scope='exclude',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
             )
 
@@ -123,7 +123,7 @@ class GoSumHandler(BaseGoModuleHandler):
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=True,
+                    is_pinned=True,
                 )
             )
 

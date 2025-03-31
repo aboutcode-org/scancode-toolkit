@@ -3,47 +3,6 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "cc_by_sa_4_0_and_dco_1_1-7313ed47-145b-67f8-b0e1-ac3c3f68fa48",
-      "license_expression": "cc-by-sa-4.0 AND dco-1.1",
-      "license_expression_spdx": "CC-BY-SA-4.0 AND LicenseRef-scancode-dco-1.1",
-      "detection_count": 1,
-      "detection_log": [],
-      "reference_matches": [
-        {
-          "license_expression": "cc-by-sa-4.0",
-          "license_expression_spdx": "CC-BY-SA-4.0",
-          "from_file": "samba/README.contributing",
-          "start_line": 121,
-          "end_line": 122,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 21,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "cc-by-sa-4.0_106.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-4.0_106.RULE",
-          "matched_text": "licensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on",
-          "matched_text_diagnostics": "licensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode"
-        },
-        {
-          "license_expression": "dco-1.1",
-          "license_expression_spdx": "LicenseRef-scancode-dco-1.1",
-          "from_file": "samba/README.contributing",
-          "start_line": 123,
-          "end_line": 123,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 7,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "dco-1.1_2.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/dco-1.1_2.RULE",
-          "matched_text": "\"Developer's Certificate of Origin 1.1\" as found at",
-          "matched_text_diagnostics": "Developer's Certificate of Origin 1.1\""
-        }
-      ]
-    },
-    {
       "identifier": "gpl_3_0-55d9e83b-e359-63ed-4624-adbae121fa12",
       "license_expression": "gpl-3.0",
       "license_expression_spdx": "GPL-3.0-only",
@@ -242,6 +201,31 @@
           "matched_text_diagnostics": "Samba Developer's Declaration, Version 1.0\n\nBy making a contribution to this project, I certify that:\n\n(a) The contribution was created in whole or in part by me and I\n    have the right to submit it under the appropriate\n    version of the GNU General Public License; or\n\n(b) The contribution is based upon previous work that, to the best\n    of my knowledge, is covered under an appropriate open source\n    license and I have the right under that license to submit that\n    work with modifications, whether created in whole or in part\n    by me, under the GNU General Public License, in the\n    appropriate version; or\n\n(c) The contribution was provided directly to me by some other\n    person who certified (a) or (b) and I have not modified\n    it.\n\n(d) I understand and agree that this project and the\n    contribution are public and that a record of the\n    contribution (including all metadata and personal\n    information I submit with it, including my sign-off) is\n    maintained indefinitely and may be redistributed\n    consistent with the Samba Team's policies and the\n    requirements of the GNU GPL where they are relevant.\n\n(e) I am granting this work to this project under the terms of both\n    the GNU General Public License and the GNU Lesser General Public\n    License as published by the Free Software Foundation; either version\n    3 of these Licenses, or (at the option of the project) any later\n    version.\n\n    http://www.gnu.org/licenses/gpl-3.0.html\n    http://www.gnu.org/licenses/lgpl-3.0.html"
         }
       ]
+    },
+    {
+      "identifier": "samba_dco_1_0_and_dco_1_1_and_cc_by_sa_4_0-707bf046-bcf5-b1b0-c76f-8a8277819284",
+      "license_expression": "samba-dco-1.0 AND dco-1.1 AND cc-by-sa-4.0",
+      "license_expression_spdx": "LicenseRef-scancode-samba-dco-1.0 AND LicenseRef-scancode-dco-1.1 AND CC-BY-SA-4.0",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "samba-dco-1.0 AND dco-1.1 AND cc-by-sa-4.0",
+          "license_expression_spdx": "LicenseRef-scancode-samba-dco-1.0 AND LicenseRef-scancode-dco-1.1 AND CC-BY-SA-4.0",
+          "from_file": "samba/README.contributing",
+          "start_line": 117,
+          "end_line": 124,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 74,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "samba-dco-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/samba-dco-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
+          "matched_text": "The \"Samba Developer's Declaration, Version 1.0\" is:\n  (C) 2011 Software Freedom Conservancy, Inc.\n  (C) 2005 Open Source Development Labs, Inc.\n\nlicensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on\n\"Developer's Certificate of Origin 1.1\" as found at\nhttp://web.archive.org/web/20070306195036/http://osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html",
+          "matched_text_diagnostics": "The \"Samba Developer's Declaration, Version 1.0\" is:\n  (C) 2011 Software Freedom Conservancy, Inc.\n  (C) 2005 Open Source Development Labs, Inc.\n\nlicensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on\n\"Developer's Certificate of Origin 1.1\" as found at\nhttp://web.archive.org/web/20070306195036/http://osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html"
+        }
+      ]
     }
   ],
   "files": [
@@ -259,7 +243,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "samba/COPYING",
               "start_line": 1,
               "end_line": 12,
@@ -287,8 +271,8 @@
       "type": "file",
       "package_data": [],
       "for_packages": [],
-      "detected_license_expression": "(gpl-3.0 AND lgpl-3.0 AND gpl-2.0) AND samba-dco-1.0 AND (cc-by-sa-4.0 AND dco-1.1)",
-      "detected_license_expression_spdx": "(GPL-3.0-only AND LGPL-3.0-only AND GPL-2.0-only) AND LicenseRef-scancode-samba-dco-1.0 AND (CC-BY-SA-4.0 AND LicenseRef-scancode-dco-1.1)",
+      "detected_license_expression": "(gpl-3.0 AND lgpl-3.0 AND gpl-2.0) AND samba-dco-1.0 AND (samba-dco-1.0 AND dco-1.1 AND cc-by-sa-4.0)",
+      "detected_license_expression_spdx": "(GPL-3.0-only AND LGPL-3.0-only AND GPL-2.0-only) AND LicenseRef-scancode-samba-dco-1.0 AND (LicenseRef-scancode-samba-dco-1.0 AND LicenseRef-scancode-dco-1.1 AND CC-BY-SA-4.0)",
       "license_detections": [
         {
           "license_expression": "gpl-3.0 AND lgpl-3.0 AND gpl-2.0",
@@ -296,7 +280,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 38,
               "end_line": 38,
@@ -312,7 +296,7 @@
             },
             {
               "license_expression": "lgpl-3.0",
-              "spdx_license_expression": "LGPL-3.0-only",
+              "license_expression_spdx": "LGPL-3.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 38,
               "end_line": 38,
@@ -328,7 +312,7 @@
             },
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "samba/README.contributing",
               "start_line": 39,
               "end_line": 39,
@@ -352,7 +336,7 @@
           "matches": [
             {
               "license_expression": "samba-dco-1.0",
-              "spdx_license_expression": "LicenseRef-scancode-samba-dco-1.0",
+              "license_expression_spdx": "LicenseRef-scancode-samba-dco-1.0",
               "from_file": "samba/README.contributing",
               "start_line": 51,
               "end_line": 85,
@@ -371,48 +355,32 @@
           "identifier": "samba_dco_1_0-3c39efe1-d34a-ae12-ea1a-aba6857f6f3a"
         },
         {
-          "license_expression": "cc-by-sa-4.0 AND dco-1.1",
-          "license_expression_spdx": "CC-BY-SA-4.0 AND LicenseRef-scancode-dco-1.1",
+          "license_expression": "samba-dco-1.0 AND dco-1.1 AND cc-by-sa-4.0",
+          "license_expression_spdx": "LicenseRef-scancode-samba-dco-1.0 AND LicenseRef-scancode-dco-1.1 AND CC-BY-SA-4.0",
           "matches": [
             {
-              "license_expression": "cc-by-sa-4.0",
-              "spdx_license_expression": "CC-BY-SA-4.0",
+              "license_expression": "samba-dco-1.0 AND dco-1.1 AND cc-by-sa-4.0",
+              "license_expression_spdx": "LicenseRef-scancode-samba-dco-1.0 AND LicenseRef-scancode-dco-1.1 AND CC-BY-SA-4.0",
               "from_file": "samba/README.contributing",
-              "start_line": 121,
-              "end_line": 122,
+              "start_line": 117,
+              "end_line": 124,
               "matcher": "2-aho",
               "score": 100.0,
-              "matched_length": 21,
+              "matched_length": 74,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "cc-by-sa-4.0_106.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-4.0_106.RULE",
-              "matched_text": "licensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on",
-              "matched_text_diagnostics": "licensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode"
-            },
-            {
-              "license_expression": "dco-1.1",
-              "spdx_license_expression": "LicenseRef-scancode-dco-1.1",
-              "from_file": "samba/README.contributing",
-              "start_line": 123,
-              "end_line": 123,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 7,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "dco-1.1_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/dco-1.1_2.RULE",
-              "matched_text": "\"Developer's Certificate of Origin 1.1\" as found at",
-              "matched_text_diagnostics": "Developer's Certificate of Origin 1.1\""
+              "rule_identifier": "samba-dco-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/samba-dco-1.0_and_dco-1.1_and_cc-by-sa-4.0_1.RULE",
+              "matched_text": "The \"Samba Developer's Declaration, Version 1.0\" is:\n  (C) 2011 Software Freedom Conservancy, Inc.\n  (C) 2005 Open Source Development Labs, Inc.\n\nlicensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on\n\"Developer's Certificate of Origin 1.1\" as found at\nhttp://web.archive.org/web/20070306195036/http://osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html",
+              "matched_text_diagnostics": "The \"Samba Developer's Declaration, Version 1.0\" is:\n  (C) 2011 Software Freedom Conservancy, Inc.\n  (C) 2005 Open Source Development Labs, Inc.\n\nlicensed under Creative Commons Attribution-ShareAlike 4.0 License as found\nat https://creativecommons.org/licenses/by-sa/4.0/legalcode and based on\n\"Developer's Certificate of Origin 1.1\" as found at\nhttp://web.archive.org/web/20070306195036/http://osdlab.org/newsroom/press_releases/2004/2004_05_24_dco.html"
             }
           ],
           "detection_log": [],
-          "identifier": "cc_by_sa_4_0_and_dco_1_1-7313ed47-145b-67f8-b0e1-ac3c3f68fa48"
+          "identifier": "samba_dco_1_0_and_dco_1_1_and_cc_by_sa_4_0-707bf046-bcf5-b1b0-c76f-8a8277819284"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 33.73,
+      "percentage_of_license_text": 39.26,
       "scan_errors": []
     },
     {
@@ -429,7 +397,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/README.md",
               "start_line": 6,
               "end_line": 6,
@@ -453,7 +421,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "samba/README.md",
               "start_line": 22,
               "end_line": 24,
@@ -469,7 +437,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "samba/COPYING",
               "start_line": 1,
               "end_line": 12,
@@ -544,7 +512,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "samba/source3/locale/net/de.po",
               "start_line": 4,
               "end_line": 4,
@@ -581,7 +549,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "samba/source3/locale/net/genmsg",
               "start_line": 5,
               "end_line": 16,

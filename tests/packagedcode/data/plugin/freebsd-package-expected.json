@@ -46,7 +46,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "package/+COMPACT_MANIFEST",
               "start_line": 1,
               "end_line": 1,
@@ -137,7 +137,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "package/+COMPACT_MANIFEST",
                   "start_line": 1,
                   "end_line": 1,

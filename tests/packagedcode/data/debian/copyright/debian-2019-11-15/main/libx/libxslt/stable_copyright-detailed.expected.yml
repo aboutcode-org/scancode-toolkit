@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-x11-xconsortium-veillard
     matches:
       - license_expression: x11-xconsortium-veillard
-        spdx_license_expression: LicenseRef-scancode-x11-xconsortium-veillard
+        license_expression_spdx: LicenseRef-scancode-x11-xconsortium-veillard
         from_file:
         start_line: 15
         end_line: 34
@@ -45,7 +45,7 @@ license_detections:
     license_expression_spdx: X11
     matches:
       - license_expression: x11-xconsortium
-        spdx_license_expression: X11
+        license_expression_spdx: X11
         from_file:
         start_line: 43
         end_line: 62

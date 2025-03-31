@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "mpl-2.0",
-          "spdx_license_expression": "MPL-2.0",
+          "license_expression_spdx": "MPL-2.0",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,

@@ -68,7 +68,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
-              "spdx_license_expression": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
+              "license_expression_spdx": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
               "from_file": "PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -93,7 +93,9 @@
       "source_packages": [],
       "is_private": false,
       "is_virtual": false,
-      "extra_data": {},
+      "extra_data": {
+        "license_file": "apache-2.0.LICENSE"
+      },
       "repository_homepage_url": "https://pypi.org/project/scancode-toolkit",
       "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-31.0.0b1.tar.gz",
       "api_data_url": "https://pypi.org/pypi/scancode-toolkit/31.0.0b1/json",
@@ -181,7 +183,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0 AND cc-by-4.0 AND other-permissive AND other-copyleft",
-                  "spdx_license_expression": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
+                  "license_expression_spdx": "Apache-2.0 AND CC-BY-4.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft",
                   "from_file": "PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -207,7 +209,9 @@
           "file_references": [],
           "is_private": false,
           "is_virtual": false,
-          "extra_data": {},
+          "extra_data": {
+            "license_file": "apache-2.0.LICENSE"
+          },
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/scancode-toolkit",
           "repository_download_url": "https://pypi.org/packages/source/s/scancode-toolkit/scancode-toolkit-31.0.0b1.tar.gz",

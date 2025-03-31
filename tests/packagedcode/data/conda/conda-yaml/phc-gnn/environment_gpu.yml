@@ -1,0 +1,40 @@
+# from https://raw.githubusercontent.com/bayer-science-for-a-better-life/phc-gnn/refs/heads/master/environment_gpu.yml
+
+name: phc-gnn
+
+channels:
+  - anaconda
+  - pytorch
+  - conda-forge
+  - defaults
+
+dependencies:
+  - pip=20.2.4
+  - anaconda::python=3.8.5
+  - anaconda::python-dateutil=2.8.1
+  - cudatoolkit=10.1
+  - magma-cuda101
+  - cudnn=7.6.5
+  - pytorch=1.7.1
+  - torchvision=0.8.2
+  - torchaudio=0.7.2
+  - conda-forge::numpy=1.19.2
+  - anaconda::scipy=1.5.2
+  - conda-forge::matplotlib=3.3.2
+  - anaconda::networkx=2.5
+  - anaconda::scikit-learn=0.23.2
+  - anaconda::notebook=6.1.4
+  - anaconda::jupyter_client=6.1.7
+  - anaconda::jupyter_core=4.6.3
+  - anaconda::h5py=2.10.0
+  - conda-forge::tqdm=4.50.0
+  - conda-forge::tensorboard=2.4.0
+  - pip:
+    - ogb==1.2.4
+    - pytest==6.2.1
+    - bottleneck==1.3.2
+   # - torch-cluster==1.5.8
+   # - torch-scatter==2.0.5
+   # - torch-sparse==0.6.8
+   # - torch-spline-conv==1.2.0
+   # - torch-geometric==1.6.1

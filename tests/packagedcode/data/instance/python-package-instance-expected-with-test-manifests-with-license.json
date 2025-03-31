@@ -51,7 +51,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/PKG-INFO",
               "start_line": 1,
               "end_line": 1,
@@ -77,7 +77,8 @@
       "is_private": false,
       "is_virtual": false,
       "extra_data": {
-        "Documentation": "https://setuptools.readthedocs.io/"
+        "Documentation": "https://setuptools.readthedocs.io/",
+        "license_file": "LICENSE"
       },
       "repository_homepage_url": "https://pypi.org/project/setuptools",
       "repository_download_url": "https://pypi.org/packages/source/s/setuptools/setuptools-58.2.0.tar.gz",
@@ -192,7 +193,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/LICENSE",
               "start_line": 3,
               "end_line": 19,
@@ -281,7 +282,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pypi-with-test-manifests/PKG-INFO",
                   "start_line": 1,
                   "end_line": 1,
@@ -308,7 +309,8 @@
           "is_private": false,
           "is_virtual": false,
           "extra_data": {
-            "Documentation": "https://setuptools.readthedocs.io/"
+            "Documentation": "https://setuptools.readthedocs.io/",
+            "license_file": "LICENSE"
           },
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/setuptools",
@@ -330,7 +332,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/PKG-INFO",
               "start_line": 14,
               "end_line": 14,
@@ -351,7 +353,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "pypi-with-test-manifests/PKG-INFO",
               "start_line": 26,
               "end_line": 26,
@@ -365,7 +367,7 @@
             },
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/LICENSE",
               "start_line": 3,
               "end_line": 19,
@@ -523,7 +525,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pypi-with-test-manifests/setup.cfg",
                   "start_line": 12,
                   "end_line": 12,
@@ -556,7 +558,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -567,7 +569,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -578,7 +580,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -589,7 +591,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -600,7 +602,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -611,7 +613,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -622,7 +624,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -633,7 +635,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -644,7 +646,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -655,7 +657,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -666,7 +668,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -677,7 +679,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -688,7 +690,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -699,7 +701,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -710,7 +712,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -721,7 +723,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -732,7 +734,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -743,7 +745,7 @@
               "scope": "testing",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -754,7 +756,7 @@
               "scope": "docs",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -765,7 +767,7 @@
               "scope": "docs",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -776,7 +778,7 @@
               "scope": "docs",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -787,7 +789,7 @@
               "scope": "docs",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -798,7 +800,7 @@
               "scope": "docs",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -809,7 +811,7 @@
               "scope": "docs",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -820,7 +822,7 @@
               "scope": "docs",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -831,7 +833,7 @@
               "scope": "docs",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -856,7 +858,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "pypi-with-test-manifests/setup.cfg",
               "start_line": 12,
               "end_line": 12,
@@ -913,7 +915,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "pypi-with-test-manifests/LICENSE",
                   "start_line": 3,
                   "end_line": 19,

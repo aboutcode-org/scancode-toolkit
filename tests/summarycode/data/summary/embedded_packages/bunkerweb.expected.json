@@ -72,7 +72,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "bunkerweb/LICENSE.md",
               "start_line": 4,
               "end_line": 21,
@@ -334,7 +334,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "bunkerweb/LICENSE.md",
               "start_line": 4,
               "end_line": 21,
@@ -487,7 +487,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
               "start_line": 4,
               "end_line": 29,
@@ -501,7 +501,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
               "start_line": 32,
               "end_line": 32,
@@ -608,7 +608,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "bunkerweb/deps/libinjection/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -660,7 +660,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "bunkerweb/deps/libinjection/setup.py",
               "start_line": 6,
               "end_line": 6,
@@ -674,7 +674,7 @@
             },
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "bunkerweb/deps/libinjection/setup.py",
               "start_line": 6,
               "end_line": 6,
@@ -688,7 +688,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
               "start_line": 4,
               "end_line": 29,
@@ -702,7 +702,7 @@
             },
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "bunkerweb/deps/libinjection/COPYING.txt",
               "start_line": 32,
               "end_line": 32,
@@ -726,7 +726,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "bunkerweb/deps/libinjection/setup.py",
               "start_line": 41,
               "end_line": 41,
@@ -831,7 +831,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "bunkerweb/LICENSE.md",
                   "start_line": 4,
                   "end_line": 21,

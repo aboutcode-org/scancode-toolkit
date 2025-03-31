@@ -270,9 +270,9 @@ class ConanDataHandler(models.DatafileHandler):
         yield resource
 
 
-def is_constraint_resolved(constraint):
+def is_constraint_pinned(constraint):
     """
-    Checks if a constraint is resolved and it specifies an exact version.
+    Checks if a constraint is pinned and it specifies an exact version.
     """
     range_characters = {">", "<", "[", "]", ">=", "<="}
     return not any(char in range_characters for char in constraint)
@@ -282,9 +282,9 @@ def get_dependencies(requires):
     dependent_packages = []
     for req in requires:
         name, constraint = req.split("/", 1)
-        is_resolved = is_constraint_resolved(constraint)
+        is_pinned = is_constraint_pinned(constraint)
         version = None
-        if is_resolved:
+        if is_pinned:
             version = constraint
         purl = PackageURL(type="conan", name=name, version=version)
         dependent_packages.append(
@@ -293,7 +293,7 @@ def get_dependencies(requires):
                 scope="install",
                 is_runtime=True,
                 is_optional=False,
-                is_resolved=is_resolved,
+                is_pinned=is_pinned,
                 extracted_requirement=constraint,
             )
         )

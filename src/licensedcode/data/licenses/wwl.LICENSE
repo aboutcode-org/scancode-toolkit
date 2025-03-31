@@ -1,0 +1,19 @@
+---
+key: wwl
+short_name: WWL License
+name: WWL License
+category: Permissive
+owner: Diane Bruce
+spdx_license_key: wwl
+other_urls:
+    - http://www.db.net/downloads/wwl+db-1.3.tgz
+    - https://tracker.debian.org/media/packages/w/wwl/copyright-1.3%2Bdb-2
+ignorable_emails:
+    - db@FreeBSD.ORG
+---
+
+db@FreeBSD.ORG wrote this file.  As long as you retain this notice you
+can do whatever you want with this code, except you may not
+license it under any form of the GPL.
+A postcard or QSL card showing me you appreciate
+this code would be nice. Diane Bruce va3db

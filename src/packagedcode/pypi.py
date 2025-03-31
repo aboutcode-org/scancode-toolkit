@@ -13,6 +13,7 @@ import copy
 import json
 import logging
 import os
+import posixpath
 import re
 import sys
 import tempfile
@@ -390,9 +391,15 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
         Assign files to package for an installed wheel. This requires a bit
         of navigation around as the files can be in multiple places.
         """
-        site_packages = resource.parent(codebase).parent(codebase)
+        dist_info_dir = resource.parent(codebase)
+        if not dist_info_dir:
+            return
+
+        # This could be a regular directory too which is not `site-packages`
+        site_packages = dist_info_dir.parent(codebase)
         if not site_packages:
             return
+
         package_data = resource.package_data
         assert len(resource.package_data) == 1, (
             f'Unsupported Pypi METADATA wheel structure: {resource.path!r} '
@@ -400,9 +407,7 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
         )
 
         package_data = models.PackageData.from_dict(package_data[0])
-
         package_uid = package.package_uid
-
         if package_uid:
             # save thyself!
             package_adder(package_uid, resource, codebase)
@@ -414,74 +419,31 @@ class PythonInstalledWheelMetadataFile(models.DatafileHandler):
                 # relative paths need special treatment
                 # most of thense are references to bin ../../../bin/wheel
                 cannot_resolve = False
-                ref_resource = None
+                ref_resource = site_packages
+                # note that resolving leading ".." always stays in the codebase 
                 while path_ref.startswith('..'):
                     _, _, path_ref = path_ref.partition('../')
-                    ref_resource = site_packages.parent(codebase)
+                    ref_resource = ref_resource.parent(codebase)
                     if not ref_resource:
                         cannot_resolve = True
                         break
+
                 if cannot_resolve or not ref_resource:
                     # TODO:w e should log these kind of things
                     continue
                 else:
-                    if package_uid:
+                    ref_resource = codebase.get_resource(
+                        path=posixpath.join(ref_resource.path, path_ref)
+                    )
+                    if ref_resource and package_uid:
                         package_adder(package_uid, ref_resource, codebase)
             else:
-                ref_resource = get_resource_for_path(
-                    path=path_ref,
-                    root=site_packages,
-                    codebase=codebase,
+                # These are absolute paths from the site-packages directory
+                ref_resource = codebase.get_resource(
+                    path=posixpath.join(site_packages.path, path_ref)
                 )
                 if ref_resource and package_uid:
                     package_adder(package_uid, ref_resource, codebase)
-
-
-def get_resource_for_path(path, root, codebase):
-    """
-    Return a resource in ``codebase`` that has a ``path`` relative to the
-    ``root` Resource
-
-    For example, say we start from this:
-        path: this/is/that therefore segments [this, is, that]
-        root: /usr/foo
-
-    We would have these iterations:
-    iteration1
-        root = /usr/foo
-        segments = [this, is, that]
-        seg  this
-        segments = [is, that]
-        children = [/usr/foo/this]
-        root = /usr/foo/this
-
-    iteration2
-        root = /usr/foo/this
-        segments = [is, that]
-        seg  is
-        segments = [that]
-        children = [/usr/foo/this/is]
-        root = /usr/foo/this/is
-
-    iteration3
-        root = /usr/foo/this/is
-        segments = [that]
-        seg  that
-        segments = []
-        children = [/usr/foo/this/is/that]
-        root = /usr/foo/this/is/that
-
-    finally return root as /usr/foo/this/is/that
-    """
-    segments = path.strip('/').split('/')
-    while segments:
-        seg = segments.pop(0)
-        children = [c for c in root.children(codebase) if c.name == seg]
-        if len(children) != 1:
-            return
-        else:
-            root = children[0]
-    return root
 
 
 class PyprojectTomlHandler(BaseExtractedPythonLayout):
@@ -676,7 +638,7 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
                 is_runtime=is_runtime,
                 is_optional=is_optional,
                 is_direct=True,
-                is_resolved=False,
+                is_pinned=False,
                 extra_data=extra_data,
             )
             dependency_mappings.append(dependency.to_dict())
@@ -732,7 +694,7 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
                     is_runtime=False,
                     is_optional=False,
                     is_direct=True,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
                 dependencies.append(dependency.to_dict())
 
@@ -788,7 +750,7 @@ class PoetryLockHandler(BasePoetryPythonLayout):
                     is_runtime=True,
                     is_optional=False,
                     is_direct=True,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
                 dependencies_for_resolved.append(dependency.to_dict())
 
@@ -812,7 +774,7 @@ class PoetryLockHandler(BasePoetryPythonLayout):
                         is_runtime=False,
                         is_optional=False,
                         is_direct=True,
-                        is_resolved=False,
+                        is_pinned=False,
                     )
                     dependencies_for_resolved.append(dependency.to_dict())
 
@@ -840,7 +802,7 @@ class PoetryLockHandler(BasePoetryPythonLayout):
                 is_runtime=True,
                 is_optional=is_optional,
                 is_direct=False,
-                is_resolved=True,
+                is_pinned=True,
                 resolved_package=resolved_package.to_dict()
             )
             dependencies.append(dependency.to_dict())
@@ -938,7 +900,7 @@ class PipInspectDeplockHandler(models.DatafileHandler):
                 is_runtime=True,
                 is_optional=False,
                 is_direct=False,
-                is_resolved=True,
+                is_pinned=True,
                 resolved_package=package_data_dep.to_dict()
             )
             if is_requested:
@@ -1130,7 +1092,7 @@ class PypiEggHandler(models.DatafileHandler):
                         package_only=package_only,
                     )
 
-
+# FIXME: this is NOT used
 class PypiSdistArchiveHandler(models.DatafileHandler):
     datasource_id = 'pypi_sdist'
     path_patterns = ('*.tar.gz', '*.tar.bz2', '*.zip',)
@@ -1231,7 +1193,7 @@ class ResolvedPurl(NamedTuple):
     A resolved PURL
     """
     purl: PackageURL
-    is_resolved: bool
+    is_pinned: bool
 
 
 class BaseDependencyFileHandler(models.DatafileHandler):
@@ -1369,7 +1331,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
                         scope=scope,
                         is_runtime=True,
                         is_optional=False,
-                        is_resolved=resolved_purl.is_resolved,
+                        is_pinned=resolved_purl.is_pinned,
                         extracted_requirement=req
                     )
                 )
@@ -1381,15 +1343,15 @@ def get_resolved_purl(purl: PackageURL, specifiers: SpecifierSet):
     Check if the purl is resolved and return a ResolvedPurl.
     If the purl is resolved, update its version to the pinned version
     """
-    is_resolved = False
+    is_pinned = False
     if len(specifiers) == 1:
         specifier = list(specifiers)[0]
         if specifier.operator in ('==', '==='):
-            is_resolved = True
+            is_pinned = True
             purl = purl._replace(version=specifier.version)
     return ResolvedPurl(
         purl=purl,
-        is_resolved=is_resolved,
+        is_pinned=is_pinned,
     )
 
 
@@ -1532,7 +1494,7 @@ def get_requirements_txt_dependencies(location, include_nested=False):
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=req.is_pinned or False,
+                is_pinned=req.is_pinned or False,
                 extracted_requirement=requirement,
                 extra_data=dict(
                     is_editable=req.is_editable,
@@ -1680,10 +1642,10 @@ def get_declared_license(metainfo):
     # TODO: We should make the declared license as it is, this should be
     # updated in scancode to parse a pure string
     lic = get_attribute(metainfo, 'License')
-
-    license_file = None
-    if lic and 'file' in lic:
-        license_file = lic.pop('file')
+    license_file = get_attribute(metainfo, 'License-File')
+    if not license_file and lic:
+        if isinstance(lic, dict) and 'file' in lic.keys():
+            license_file = lic.pop('file')
 
     if lic and not lic == 'UNKNOWN':
         if 'text' in lic:
@@ -1922,7 +1884,7 @@ def get_requires_dependencies(
     for req in (requires or []):
         req = Requirement(req)
         name = canonicalize_name(req.name)
-        is_resolved = False
+        is_pinned = False
         purl = PackageURL(type='pypi', name=name)
         # note: packaging.requirements.Requirement.specifier is a
         # packaging.specifiers.SpecifierSet object and a SpecifierSet._specs is
@@ -1941,7 +1903,7 @@ def get_requires_dependencies(
             if len(specifiers) == 1:
                 specifier = list(specifiers)[0]
                 if specifier.operator in ('==', '==='):
-                    is_resolved = True
+                    is_pinned = True
                     purl = purl._replace(version=specifier.version)
 
         # we use the extra as scope if available
@@ -1967,7 +1929,7 @@ def get_requires_dependencies(
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=is_resolved,
+                is_pinned=is_pinned,
                 is_direct=is_direct,
                 extracted_requirement=extracted_requirement,
                 extra_data=extra_data,
@@ -2077,7 +2039,7 @@ def parse_with_dparse2(location, file_name=None):
 
     for dependency in dep_file.dependencies:
         requirement = dependency.name
-        is_resolved = False
+        is_pinned = False
         purl = PackageURL(type='pypi', name=dependency.name)
 
         # note: dparse2.dependencies.Dependency.specs comes from
@@ -2099,7 +2061,7 @@ def parse_with_dparse2(location, file_name=None):
             if len(specifiers) == 1:
                 specifier = list(specifiers)[0]
                 if specifier.operator in ('==', '==='):
-                    is_resolved = True
+                    is_pinned = True
                     purl = purl._replace(version=specifier.version)
 
         dependent_packages.append(
@@ -2109,7 +2071,7 @@ def parse_with_dparse2(location, file_name=None):
                 scope='install',
                 is_runtime=True,
                 is_optional=False,
-                is_resolved=is_resolved,
+                is_pinned=is_pinned,
                 extracted_requirement=requirement
             )
         )

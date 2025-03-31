@@ -52,7 +52,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "scan/bower.json",
               "start_line": 1,
               "end_line": 1,
@@ -74,7 +74,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "scan/bower.json",
               "start_line": 1,
               "end_line": 1,
@@ -96,7 +96,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "scan/bower.json",
               "start_line": 1,
               "end_line": 1,
@@ -142,7 +142,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -157,7 +157,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -172,7 +172,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -246,7 +246,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "scan/bower.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -268,7 +268,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "scan/bower.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -290,7 +290,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "scan/bower.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -324,7 +324,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -335,7 +335,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -346,7 +346,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}

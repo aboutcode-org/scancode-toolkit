@@ -35,7 +35,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -309,7 +309,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -421,7 +421,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -494,7 +494,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -17220,7 +17220,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -17235,7 +17235,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -17250,7 +17250,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -17323,7 +17323,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -17338,7 +17338,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -17353,7 +17353,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -17843,7 +17843,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -18864,7 +18864,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -18985,7 +18985,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -19097,7 +19097,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0",
-              "spdx_license_expression": "MPL-2.0",
+              "license_expression_spdx": "MPL-2.0",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -19170,7 +19170,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -19471,7 +19471,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -19556,7 +19556,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -19695,7 +19695,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -19780,7 +19780,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -20171,7 +20171,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -20186,7 +20186,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -20298,7 +20298,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -21166,7 +21166,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -21181,7 +21181,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -21302,7 +21302,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -21317,7 +21317,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -21465,7 +21465,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -21559,7 +21559,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22067,7 +22067,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22170,7 +22170,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22255,7 +22255,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22412,7 +22412,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22427,7 +22427,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22575,7 +22575,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22669,7 +22669,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22772,7 +22772,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22884,7 +22884,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -22957,7 +22957,7 @@
           "matches": [
             {
               "license_expression": "openssl-ssleay",
-              "spdx_license_expression": "OpenSSL",
+              "license_expression_spdx": "OpenSSL",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -23069,7 +23069,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -23172,7 +23172,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -23187,7 +23187,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -23272,7 +23272,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -23357,7 +23357,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -23865,7 +23865,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -24436,7 +24436,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -24451,7 +24451,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -24599,7 +24599,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -24614,7 +24614,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -24879,7 +24879,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -24894,7 +24894,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -24909,7 +24909,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -25057,7 +25057,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0",
-              "spdx_license_expression": "MPL-2.0",
+              "license_expression_spdx": "MPL-2.0",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -25187,7 +25187,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0",
-              "spdx_license_expression": "MPL-2.0",
+              "license_expression_spdx": "MPL-2.0",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -25326,7 +25326,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0",
-              "spdx_license_expression": "MPL-2.0",
+              "license_expression_spdx": "MPL-2.0",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -25627,7 +25627,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -25712,7 +25712,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -25833,7 +25833,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -28789,7 +28789,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -28910,7 +28910,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -28925,7 +28925,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -29019,7 +29019,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -29149,7 +29149,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -29369,7 +29369,7 @@
           "matches": [
             {
               "license_expression": "unknown",
-              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -29535,7 +29535,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -29620,7 +29620,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -29705,7 +29705,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -30564,7 +30564,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -30579,7 +30579,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -30594,7 +30594,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -30609,7 +30609,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -30694,7 +30694,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -30851,7 +30851,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -30963,7 +30963,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -31127,7 +31127,7 @@
           "matches": [
             {
               "license_expression": "unknown",
-              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -31200,7 +31200,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -31215,7 +31215,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -31230,7 +31230,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -31245,7 +31245,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -31339,7 +31339,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -31514,7 +31514,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -185364,7 +185364,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0",
-              "spdx_license_expression": "MPL-2.0",
+              "license_expression_spdx": "MPL-2.0",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -185437,7 +185437,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -185531,7 +185531,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -185546,7 +185546,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -185561,7 +185561,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -185682,7 +185682,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -185938,7 +185938,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186011,7 +186011,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186096,7 +186096,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186217,7 +186217,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0",
-              "spdx_license_expression": "MPL-2.0",
+              "license_expression_spdx": "MPL-2.0",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186290,7 +186290,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186384,7 +186384,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0",
-              "spdx_license_expression": "LGPL-2.0-only",
+              "license_expression_spdx": "LGPL-2.0-only",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186487,7 +186487,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186502,7 +186502,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186517,7 +186517,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186629,7 +186629,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186714,7 +186714,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186817,7 +186817,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -186983,7 +186983,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -187563,7 +187563,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -187578,7 +187578,7 @@
             },
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -187593,7 +187593,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -187732,7 +187732,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -187817,7 +187817,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -187902,7 +187902,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -188068,7 +188068,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -188153,7 +188153,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -189255,7 +189255,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -189376,7 +189376,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -189533,7 +189533,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -189654,7 +189654,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -189757,7 +189757,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -189772,7 +189772,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -189902,7 +189902,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -190050,7 +190050,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -190171,7 +190171,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -190265,7 +190265,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -191025,7 +191025,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -191272,7 +191272,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -193967,7 +193967,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194052,7 +194052,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194067,7 +194067,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194215,7 +194215,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0",
-              "spdx_license_expression": "LGPL-2.0-only",
+              "license_expression_spdx": "LGPL-2.0-only",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194426,7 +194426,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0",
-              "spdx_license_expression": "MPL-2.0",
+              "license_expression_spdx": "MPL-2.0",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194499,7 +194499,7 @@
           "matches": [
             {
               "license_expression": "unknown",
-              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194572,7 +194572,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0",
-              "spdx_license_expression": "MPL-2.0",
+              "license_expression_spdx": "MPL-2.0",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194666,7 +194666,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194751,7 +194751,7 @@
           "matches": [
             {
               "license_expression": "lgpl-3.0-plus",
-              "spdx_license_expression": "LGPL-3.0-or-later",
+              "license_expression_spdx": "LGPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194836,7 +194836,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -194921,7 +194921,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -195024,7 +195024,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -195154,7 +195154,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -195284,7 +195284,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -195299,7 +195299,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -195314,7 +195314,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -195741,7 +195741,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -196033,7 +196033,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -196118,7 +196118,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -196293,7 +196293,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -196308,7 +196308,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -196429,7 +196429,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -196523,7 +196523,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -197535,7 +197535,7 @@
           "matches": [
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -197629,7 +197629,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -197723,7 +197723,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -197738,7 +197738,7 @@
             },
             {
               "license_expression": "gpl-2.0-plus",
-              "spdx_license_expression": "GPL-2.0-or-later",
+              "license_expression_spdx": "GPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -197753,7 +197753,7 @@
             },
             {
               "license_expression": "lgpl-2.0-plus",
-              "spdx_license_expression": "LGPL-2.0-or-later",
+              "license_expression_spdx": "LGPL-2.0-or-later",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -197775,7 +197775,7 @@
           "matches": [
             {
               "license_expression": "public-domain",
-              "spdx_license_expression": "LicenseRef-scancode-public-domain",
+              "license_expression_spdx": "LicenseRef-scancode-public-domain",
               "from_file": "rootfs/var/lib/rpm/Packages",
               "start_line": 1,
               "end_line": 1,
@@ -222936,7 +222936,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -223303,7 +223303,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -223661,7 +223661,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -223730,7 +223730,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -240468,7 +240468,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -240483,7 +240483,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -240498,7 +240498,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -240567,7 +240567,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -240582,7 +240582,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -240597,7 +240597,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -243547,7 +243547,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -244760,7 +244760,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -244920,7 +244920,7 @@
               "matches": [
                 {
                   "license_expression": "zlib",
-                  "spdx_license_expression": "Zlib",
+                  "license_expression_spdx": "Zlib",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -245053,7 +245053,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0",
-                  "spdx_license_expression": "MPL-2.0",
+                  "license_expression_spdx": "MPL-2.0",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -245168,7 +245168,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -245508,7 +245508,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -245614,7 +245614,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -245819,7 +245819,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -245934,7 +245934,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -246355,7 +246355,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -246370,7 +246370,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -246530,7 +246530,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -247527,7 +247527,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -247542,7 +247542,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -247693,7 +247693,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -247708,7 +247708,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -247886,7 +247886,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -247974,7 +247974,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -248503,7 +248503,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -248609,7 +248609,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -248724,7 +248724,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -248920,7 +248920,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -248935,7 +248935,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -249113,7 +249113,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -249219,7 +249219,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -249325,7 +249325,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -249467,7 +249467,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -249582,7 +249582,7 @@
               "matches": [
                 {
                   "license_expression": "openssl-ssleay",
-                  "spdx_license_expression": "OpenSSL",
+                  "license_expression_spdx": "OpenSSL",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -249823,7 +249823,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -249947,7 +249947,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -249962,7 +249962,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -250230,7 +250230,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -250345,7 +250345,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -250937,7 +250937,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -251574,7 +251574,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -251589,7 +251589,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -251767,7 +251767,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -251782,7 +251782,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -252086,7 +252086,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -252101,7 +252101,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -252116,7 +252116,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -252312,7 +252312,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0",
-                  "spdx_license_expression": "MPL-2.0",
+                  "license_expression_spdx": "MPL-2.0",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -252490,7 +252490,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0",
-                  "spdx_license_expression": "MPL-2.0",
+                  "license_expression_spdx": "MPL-2.0",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -252740,7 +252740,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0",
-                  "spdx_license_expression": "MPL-2.0",
+                  "license_expression_spdx": "MPL-2.0",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -253107,7 +253107,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -253222,7 +253222,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -253391,7 +253391,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -256593,7 +256593,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -256735,7 +256735,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -256750,7 +256750,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -256865,7 +256865,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -257007,7 +257007,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -257446,7 +257446,7 @@
               "matches": [
                 {
                   "license_expression": "unknown",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -257705,7 +257705,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -257811,7 +257811,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -257890,7 +257890,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -260210,7 +260210,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -260225,7 +260225,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -260240,7 +260240,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -260255,7 +260255,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -260370,7 +260370,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -260557,7 +260557,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -260699,7 +260699,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -260974,7 +260974,7 @@
               "matches": [
                 {
                   "license_expression": "unknown",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -261043,7 +261043,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -261058,7 +261058,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -261073,7 +261073,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -261088,7 +261088,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -261230,7 +261230,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -261480,7 +261480,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -416818,7 +416818,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0",
-                  "spdx_license_expression": "MPL-2.0",
+                  "license_expression_spdx": "MPL-2.0",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -416924,7 +416924,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -418470,7 +418470,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -418485,7 +418485,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -418500,7 +418500,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -418939,7 +418939,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -419189,7 +419189,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -419286,7 +419286,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -419410,7 +419410,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -419570,7 +419570,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0",
-                  "spdx_license_expression": "MPL-2.0",
+                  "license_expression_spdx": "MPL-2.0",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -419667,7 +419667,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -419764,7 +419764,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0",
-                  "spdx_license_expression": "LGPL-2.0-only",
+                  "license_expression_spdx": "LGPL-2.0-only",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -419897,7 +419897,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -419912,7 +419912,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -419927,7 +419927,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -420033,7 +420033,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -420139,7 +420139,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -420263,7 +420263,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -420513,7 +420513,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -421141,7 +421141,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -421156,7 +421156,7 @@
                 },
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -421171,7 +421171,7 @@
                 },
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -421367,7 +421367,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -421464,7 +421464,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -422506,7 +422506,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -423044,7 +423044,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -423123,7 +423123,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -424417,7 +424417,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -424577,7 +424577,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -424764,7 +424764,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -424906,7 +424906,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -425012,7 +425012,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -425027,7 +425027,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -425187,7 +425187,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -425644,7 +425644,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -425786,7 +425786,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -425937,7 +425937,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -426754,7 +426754,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -427157,7 +427157,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -430656,7 +430656,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -430762,7 +430762,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -430777,7 +430777,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -431009,7 +431009,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0",
-                  "spdx_license_expression": "LGPL-2.0-only",
+                  "license_expression_spdx": "LGPL-2.0-only",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -431349,7 +431349,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0",
-                  "spdx_license_expression": "MPL-2.0",
+                  "license_expression_spdx": "MPL-2.0",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -431518,7 +431518,7 @@
               "matches": [
                 {
                   "license_expression": "unknown",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -431615,7 +431615,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0",
-                  "spdx_license_expression": "MPL-2.0",
+                  "license_expression_spdx": "MPL-2.0",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -431721,7 +431721,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -431836,7 +431836,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-3.0-plus",
-                  "spdx_license_expression": "LGPL-3.0-or-later",
+                  "license_expression_spdx": "LGPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -431951,7 +431951,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -432102,7 +432102,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -432244,7 +432244,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -432395,7 +432395,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -432546,7 +432546,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -432561,7 +432561,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -432576,7 +432576,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -433429,7 +433429,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -433796,7 +433796,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -433902,7 +433902,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -434098,7 +434098,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -434113,7 +434113,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -434228,7 +434228,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -434352,7 +434352,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -435592,7 +435592,7 @@
               "matches": [
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -435707,7 +435707,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0-plus",
-                  "spdx_license_expression": "GPL-3.0-or-later",
+                  "license_expression_spdx": "GPL-3.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -435822,7 +435822,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -435837,7 +435837,7 @@
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
-                  "spdx_license_expression": "GPL-2.0-or-later",
+                  "license_expression_spdx": "GPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -435852,7 +435852,7 @@
                 },
                 {
                   "license_expression": "lgpl-2.0-plus",
-                  "spdx_license_expression": "LGPL-2.0-or-later",
+                  "license_expression_spdx": "LGPL-2.0-or-later",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,
@@ -435874,7 +435874,7 @@
               "matches": [
                 {
                   "license_expression": "public-domain",
-                  "spdx_license_expression": "LicenseRef-scancode-public-domain",
+                  "license_expression_spdx": "LicenseRef-scancode-public-domain",
                   "from_file": "rootfs/var/lib/rpm/Packages",
                   "start_line": 1,
                   "end_line": 1,

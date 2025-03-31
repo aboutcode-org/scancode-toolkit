@@ -48,7 +48,7 @@ other_license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 71
         end_line: 71
@@ -61,7 +61,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 72
         end_line: 88
@@ -95,7 +95,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-zeusbench
     matches:
       - license_expression: zeusbench
-        spdx_license_expression: LicenseRef-scancode-zeusbench
+        license_expression_spdx: LicenseRef-scancode-zeusbench
         from_file:
         start_line: 94
         end_line: 103
@@ -122,7 +122,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 118
         end_line: 142
@@ -164,7 +164,7 @@ other_license_detections:
     license_expression_spdx: HPND-sell-variant AND metamail
     matches:
       - license_expression: x11-keith-packard
-        spdx_license_expression: HPND-sell-variant
+        license_expression_spdx: HPND-sell-variant
         from_file:
         start_line: 172
         end_line: '191'
@@ -197,7 +197,7 @@ other_license_detections:
           OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
           SOFTWARE.
       - license_expression: metamail
-        spdx_license_expression: metamail
+        license_expression_spdx: metamail
         from_file:
         start_line: '197'
         end_line: 206
@@ -224,7 +224,7 @@ other_license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 209
         end_line: 209
@@ -237,7 +237,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 210
         end_line: 222
@@ -267,7 +267,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 224
         end_line: 224
@@ -280,7 +280,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 225
         end_line: 237
@@ -310,7 +310,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 240
         end_line: 272
@@ -360,7 +360,7 @@ other_license_detections:
     license_expression_spdx: BSD-2-Clause-Darwin
     matches:
       - license_expression: bsd-simplified-darwin
-        spdx_license_expression: BSD-2-Clause-Darwin
+        license_expression_spdx: BSD-2-Clause-Darwin
         from_file:
         start_line: 279
         end_line: 302
@@ -401,7 +401,7 @@ other_license_detections:
     license_expression_spdx: Apache-2.0 AND Spencer-94
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 306
         end_line: 309
@@ -418,7 +418,7 @@ other_license_detections:
           acknowledge Cisco Systems as the original contributor of this module.
           All other licensing and usage conditions are those of the Apache Software Foundation.
       - license_expression: hs-regexp
-        spdx_license_expression: Spencer-94
+        license_expression_spdx: Spencer-94
         from_file:
         start_line: 317
         end_line: 335
@@ -454,7 +454,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-bsd-unchanged
     matches:
       - license_expression: bsd-unchanged
-        spdx_license_expression: LicenseRef-scancode-bsd-unchanged
+        license_expression_spdx: LicenseRef-scancode-bsd-unchanged
         from_file:
         start_line: 370
         end_line: 391
@@ -493,7 +493,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 395
         end_line: 419
@@ -535,7 +535,7 @@ other_license_detections:
     license_expression_spdx: Bison-exception-2.2
     matches:
       - license_expression: bison-exception-2.2
-        spdx_license_expression: Bison-exception-2.2
+        license_expression_spdx: Bison-exception-2.2
         from_file:
         start_line: 422
         end_line: 433
@@ -564,7 +564,7 @@ other_license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 439
         end_line: 454

@@ -39,7 +39,7 @@
       "matches": [
         {
           "license_expression": "bsd-new",
-          "spdx_license_expression": "BSD-3-Clause",
+          "license_expression_spdx": "BSD-3-Clause",
           "from_file": null,
           "start_line": 1,
           "end_line": 2,
@@ -75,7 +75,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -86,7 +86,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -97,7 +97,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -108,7 +108,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -119,7 +119,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}

@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "mit",
-          "spdx_license_expression": "MIT",
+          "license_expression_spdx": "MIT",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,
@@ -67,7 +67,7 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}

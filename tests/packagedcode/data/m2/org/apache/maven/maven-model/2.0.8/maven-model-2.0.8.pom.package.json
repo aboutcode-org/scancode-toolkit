@@ -44,7 +44,7 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}

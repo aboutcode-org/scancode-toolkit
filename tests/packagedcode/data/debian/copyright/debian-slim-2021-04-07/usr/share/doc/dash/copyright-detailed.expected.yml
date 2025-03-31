@@ -50,7 +50,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 155
         end_line: 177
@@ -90,7 +90,7 @@ other_license_detections:
     license_expression_spdx: FSFUL
     matches:
       - license_expression: fsf-free
-        spdx_license_expression: FSFUL
+        license_expression_spdx: FSFUL
         from_file:
         start_line: 180
         end_line: 181
@@ -109,7 +109,7 @@ other_license_detections:
     license_expression_spdx: FSFULLRWD
     matches:
       - license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
+        license_expression_spdx: FSFULLRWD
         from_file:
         start_line: 184
         end_line: '191'
@@ -134,7 +134,7 @@ other_license_detections:
     license_expression_spdx: X11 AND LicenseRef-scancode-public-domain
     matches:
       - license_expression: x11-xconsortium
-        spdx_license_expression: X11
+        license_expression_spdx: X11
         from_file:
         start_line: '194'
         end_line: 214
@@ -168,7 +168,7 @@ other_license_detections:
           ings in this Software without prior written authorization from the X Consor-
           tium.
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 216
         end_line: 216
@@ -185,7 +185,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 218
         end_line: 218
@@ -198,7 +198,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 219
         end_line: 234
@@ -231,7 +231,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 138
         end_line: 138

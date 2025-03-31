@@ -36,7 +36,7 @@
           "matches": [
             {
               "license_expression": "unknown",
-              "spdx_license_expression": "LicenseRef-scancode-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-unknown",
               "from_file": "unknown.txt",
               "start_line": 1,
               "end_line": 10,

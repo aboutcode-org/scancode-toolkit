@@ -480,6 +480,8 @@ def scancode(
         if check_version:
             from scancode.outdated import check_scancode_version
             outdated = check_scancode_version()
+        else:
+            outdated = None
 
         # run proper
         success, _results = run_scan(

@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
+        license_expression_spdx: LicenseRef-scancode-intel
         from_file:
         start_line: 7
         end_line: 42

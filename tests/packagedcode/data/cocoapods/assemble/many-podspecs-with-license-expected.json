@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/CoreMLPredictionsPlugin.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -120,7 +120,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/Amplify.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -199,7 +199,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/AmplifyPlugins.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -278,7 +278,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/AmplifyTestCommon.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -357,7 +357,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/AWSPluginsCore.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -436,7 +436,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/AWSPredictionsPlugin.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -482,7 +482,7 @@
       "scope": "requires",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {
         "type": "cocoapods",
@@ -541,7 +541,7 @@
       "scope": "requires",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
         "type": "cocoapods",
@@ -589,7 +589,7 @@
             "scope": "requires",
             "is_runtime": false,
             "is_optional": true,
-            "is_resolved": true,
+            "is_pinned": true,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -612,7 +612,7 @@
       "scope": "requires",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
         "type": "cocoapods",
@@ -671,7 +671,7 @@
       "scope": "requires",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
         "type": "cocoapods",
@@ -730,7 +730,7 @@
       "scope": "requires",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": false,
       "resolved_package": {
         "type": "cocoapods",
@@ -789,7 +789,7 @@
       "scope": "requires",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {
         "type": "cocoapods",
@@ -837,7 +837,7 @@
             "scope": "requires",
             "is_runtime": false,
             "is_optional": true,
-            "is_resolved": true,
+            "is_pinned": true,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -848,7 +848,7 @@
             "scope": "requires",
             "is_runtime": false,
             "is_optional": true,
-            "is_resolved": true,
+            "is_pinned": true,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -859,7 +859,7 @@
             "scope": "requires",
             "is_runtime": false,
             "is_optional": true,
-            "is_resolved": true,
+            "is_pinned": true,
             "is_direct": true,
             "resolved_package": {},
             "extra_data": {}
@@ -882,7 +882,7 @@
       "scope": "requires",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {
         "type": "cocoapods",
@@ -939,7 +939,7 @@
       "scope": "requires",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {
         "type": "cocoapods",
@@ -1119,7 +1119,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "many-podspecs/AWSPluginsCore.podspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -1166,7 +1166,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/AWSPluginsCore.podspec",
               "start_line": 25,
               "end_line": 25,
@@ -1231,7 +1231,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "many-podspecs/AWSPredictionsPlugin.podspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -1278,7 +1278,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/AWSPredictionsPlugin.podspec",
               "start_line": 17,
               "end_line": 17,
@@ -1343,7 +1343,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "many-podspecs/Amplify.podspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -1390,7 +1390,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/Amplify.podspec",
               "start_line": 21,
               "end_line": 21,
@@ -1455,7 +1455,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "many-podspecs/AmplifyPlugins.podspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -1502,7 +1502,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/AmplifyPlugins.podspec",
               "start_line": 24,
               "end_line": 24,
@@ -1567,7 +1567,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "many-podspecs/AmplifyTestCommon.podspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -1614,7 +1614,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/AmplifyTestCommon.podspec",
               "start_line": 24,
               "end_line": 24,
@@ -1679,7 +1679,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "many-podspecs/CoreMLPredictionsPlugin.podspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -1726,7 +1726,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/CoreMLPredictionsPlugin.podspec",
               "start_line": 14,
               "end_line": 14,
@@ -1783,7 +1783,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "many-podspecs/amplify-ios.LICENSE",
                   "start_line": 2,
                   "end_line": 175,
@@ -1864,7 +1864,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "many-podspecs/amplify-ios.LICENSE",
                   "start_line": 2,
                   "end_line": 175,
@@ -1900,7 +1900,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {
                 "type": "cocoapods",
@@ -1955,7 +1955,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
                 "type": "cocoapods",
@@ -2003,7 +2003,7 @@
                     "scope": "requires",
                     "is_runtime": false,
                     "is_optional": true,
-                    "is_resolved": true,
+                    "is_pinned": true,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -2022,7 +2022,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
                 "type": "cocoapods",
@@ -2077,7 +2077,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
                 "type": "cocoapods",
@@ -2132,7 +2132,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": false,
               "resolved_package": {
                 "type": "cocoapods",
@@ -2187,7 +2187,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {
                 "type": "cocoapods",
@@ -2235,7 +2235,7 @@
                     "scope": "requires",
                     "is_runtime": false,
                     "is_optional": true,
-                    "is_resolved": true,
+                    "is_pinned": true,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -2246,7 +2246,7 @@
                     "scope": "requires",
                     "is_runtime": false,
                     "is_optional": true,
-                    "is_resolved": true,
+                    "is_pinned": true,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -2257,7 +2257,7 @@
                     "scope": "requires",
                     "is_runtime": false,
                     "is_optional": true,
-                    "is_resolved": true,
+                    "is_pinned": true,
                     "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {}
@@ -2276,7 +2276,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {
                 "type": "cocoapods",
@@ -2329,7 +2329,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {
                 "type": "cocoapods",
@@ -2410,7 +2410,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "many-podspecs/amplify-ios.LICENSE",
               "start_line": 2,
               "end_line": 175,

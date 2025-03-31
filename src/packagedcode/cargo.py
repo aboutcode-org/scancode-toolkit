@@ -299,7 +299,7 @@ class CargoLockHandler(CargoBaseHandler):
                     scope='dependencies',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=True,
+                    is_pinned=True,
                 )
             )
 
@@ -346,7 +346,7 @@ def dependency_mapper(dependencies, scope='dependencies'):
             scope=scope,
             is_runtime=is_runtime,
             is_optional=is_optional,
-            is_resolved=False,
+            is_pinned=False,
             extra_data=extra_data,
         )
 

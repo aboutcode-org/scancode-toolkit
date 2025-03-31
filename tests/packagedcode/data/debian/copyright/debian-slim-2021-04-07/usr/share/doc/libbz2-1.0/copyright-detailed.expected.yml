@@ -11,7 +11,7 @@ other_license_detections:
     license_expression_spdx: bzip2-1.0.6
     matches:
       - license_expression: bzip2-libbzip-2010
-        spdx_license_expression: bzip2-1.0.6
+        license_expression_spdx: bzip2-1.0.6
         from_file:
         start_line: 8
         end_line: 37
@@ -58,7 +58,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 46
         end_line: 46
@@ -71,7 +71,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 47
         end_line: 48

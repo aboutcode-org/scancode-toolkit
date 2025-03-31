@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 20
         end_line: 42
@@ -48,7 +48,7 @@ license_detections:
     license_expression_spdx: TCP-wrappers
     matches:
       - license_expression: tcp-wrappers
-        spdx_license_expression: TCP-wrappers
+        license_expression_spdx: TCP-wrappers
         from_file:
         start_line: 72
         end_line: 85
@@ -72,7 +72,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 92
         end_line: 103

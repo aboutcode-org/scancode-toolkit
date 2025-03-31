@@ -95,7 +95,7 @@
       "matches": [
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,
@@ -110,7 +110,7 @@
         },
         {
           "license_expression": "apache-2.0",
-          "spdx_license_expression": "Apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
           "from_file": null,
           "start_line": 2,
           "end_line": 2,
@@ -146,7 +146,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -157,7 +157,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -168,7 +168,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -179,7 +179,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -190,7 +190,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -201,7 +201,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -212,7 +212,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -223,7 +223,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -234,7 +234,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -245,7 +245,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
@@ -256,7 +256,7 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {}

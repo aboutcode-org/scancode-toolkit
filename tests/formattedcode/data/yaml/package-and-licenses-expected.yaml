@@ -91,7 +91,7 @@ packages:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: package-and-licenses/setup.cfg
             start_line: 1
             end_line: 1
@@ -1072,7 +1072,7 @@ files:
         license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: package-and-licenses/README.txt
             start_line: 3
             end_line: 3
@@ -1085,7 +1085,7 @@ files:
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE
             matched_text: This is licensed under Apache-2.0 or MIT
           - license_expression: apache-2.0 OR mit
-            spdx_license_expression: Apache-2.0 OR MIT
+            license_expression_spdx: Apache-2.0 OR MIT
             from_file: package-and-licenses/README.txt
             start_line: 3
             end_line: 3
@@ -1148,7 +1148,7 @@ files:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: package-and-licenses/apache-2.0.LICENSE
             start_line: 2
             end_line: 202
@@ -1357,7 +1357,7 @@ files:
         license_expression_spdx: MIT
         matches:
           - license_expression: mit
-            spdx_license_expression: MIT
+            license_expression_spdx: MIT
             from_file: package-and-licenses/mit.LICENSE
             start_line: 2
             end_line: '19'
@@ -1453,7 +1453,7 @@ files:
             license_expression_spdx: Apache-2.0
             matches:
               - license_expression: apache-2.0
-                spdx_license_expression: Apache-2.0
+                license_expression_spdx: Apache-2.0
                 from_file: package-and-licenses/setup.cfg
                 start_line: 1
                 end_line: 1
@@ -1496,7 +1496,7 @@ files:
         license_expression_spdx: Apache-2.0
         matches:
           - license_expression: apache-2.0
-            spdx_license_expression: Apache-2.0
+            license_expression_spdx: Apache-2.0
             from_file: package-and-licenses/setup.cfg
             start_line: 4
             end_line: 4

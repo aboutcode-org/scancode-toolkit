@@ -1,0 +1,58 @@
+---
+key: mdl-2021
+short_name: MDL 2021
+name: Montreal Data License (MDL) 2021
+category: Proprietary Free
+owner: LaboBioInfoUQÀM
+homepage_url: https://github.com/bioinfoUQAM/Canadian-cropland-dataset-github/blob/ec09b091b69423a87febc56309c1e86d3b61e8cb/DATA_LICENSE
+spdx_license_key: LicenseRef-scancode-mdl-2021
+other_urls:
+    - https://arxiv.org/abs/1903.12262
+---
+
+Montreal Data License (MDL)
+
+The following licensing language is made available under CC-BY4.  Attribution should be made to Montreal Data License (MDL), or License language based on Montreal Data License.
+The authors are not legal advisors to the individuals and entities making use of these licensing terms. The licensing terms can be combined as needed to match the rights conferred by the licensor.
+The language below assumes that all rights are granted, however each right should be conferred or not based on the users intent.
+Data License for use in AI and ML:
+
+This license covers the Data made available by Licensor to you (Licensee) under the following terms. Licensees use of the data consists acceptance of the terms of this license agreement (License).
+
+1.  Definitions
+  a.	Data means the informational content (individually or as a whole) made available by Licensor.
+  b.	Model means machine-learning or artificial-intelligence based algorithms, or assemblies thereof that,  in combination with different techniques,  may be used to obtain certain results.  Without limitation, such results can be insights on past data patterns, predictions on future trends or more abstract results.
+  c.	Output means the results of operating a Trained Model as embodied in informational content resulting therefrom.
+  d.	Representation is  a  transformation  of  a  piece  of  data  into  a  different  form.   Good representations can be used as input to perform useful tasks.
+  e.	Labelled Data means the associated metadata and informational content derived from Data which identify, comment or otherwise derive information from Data, such as tags and labels.
+  f.	Licensor means the individual or entity making the Data available to you.
+  g.	Third Parties means individuals or entities that are not under common control with Licensee.
+  h.	Train means to expose an Untrained Model to the Data in order to adjust the weights, hyperparameters and/or structure thereof.
+  i.	Trained Model means a Model that is exposed to Data such that its weights, parameters and architecture embody insights from the Data.
+  j.	Untrained  Model means  Model  that  is  conceived  and  reduced  to  practice  as  to  its structure, components and architecture but that has not been trained on Data such that its weights, parameters and architecture do not embody insights from the Data.
+
+2.  General Clauses
+  a.	Unless otherwise agreed in writing by the parties,  the data is licensed as is and as available.  Licensor excludes all representations, warranties, obligations, and liabilities, whether express or implied, to the maximum extent permitted by law.
+  b.	Nothing in this License permits Licensee to make use of Licensors trademarks, tradenames,  logos or to otherwise suggest endorsement or misrepresent the relationship between the parties.
+  c.	The  rights  granted  under  this  license  are  deemed  to  be  non-exclusive,  worldwide, perpetual and irrevocable, unless otherwise specified in writing by Licensor.
+  d.	Without limiting Licensees rights available under applicable law,  all rights not expressly granted hereunder are hereby reserved by Licensor. The Data and the database under which it is made available remain the property of Licensor (and/or its affiliates or licensors).
+  e.	This  license  shall  be  terminated  upon  any  breach  by  Licensee  of  the  terms  of  this License.
+
+3.  Licensed Rights to the Data
+  a.	Licensor hereby grants the following rights to Licensee with respect to making use of the Data itself.
+    i. Access the Data, where access means to access, view and/or download the Data to  view  it  and  evaluate  it  (evaluation  algorithms  may  be  exposed  to  it,  but  no Untrained Models).
+    ii. Creation of Tagged Data.
+    iii. Distribute the Data, i.e.  to make all or part of the Data available to Third Parties under the same terms as those of this License.
+    iv.	Creation of a Representation of the Data.
+
+4.  Licensed Rights in Conjunction with Models.
+  a.	Licensor hereby grants the following rights to Licensee with respect to making use of the Data in conjunction with Models.
+    i. Benchmark:  To access the Data, use the Data as training data to evaluate the efficiency of different Untrained Models,  algorithms and structures,  but excludes reuse of the Trained Model, except to show the results of the Training.  This includes the right to use the dataset to measure performance of a Trained or Un-trained Model, without however having the right to carry-over weights, code or architecture or implement any modifications resulting from the Evaluation.
+    ii. Research: To access the Data, use the Data to create or improve Models, but with-out the right to use the Output or resulting Trained Model for any purpose other than evaluating the Model Research under the same terms.
+    iii. Publish:  To make available to Third Parties the Models resulting from Research, provided however that third parties accessing such Trained Models have the right to use them for Research or Publication only.
+    iv.	Internal Use:  To access the Data, use the Data to create or improve Models and resulting  Output,  but  without  the  right  to  Output  Commercialization  or  Model Commercialization.  The Output can be used internally for any purpose, but not made available to Third Parties or for their benefit.
+  b.	The rights granted in (a) above exclude the following rights with respect to making use of the Data in conjunction with Models:
+    i. Output Commercialization: To access the Data, use the Data to create or improve Models and resulting Output, with the right to make the Output available to Third Parties or to use it for their benefit, without the right to Model Commercialization.
+    ii. Model Commercialization: Make a Trained Model itself available to a Third Party, or embodying the Trained Model in a product or service, with or without direct access to the Output for such Third Party.
+
+5.  Attribution and Notice Attribution and Notice. The origin of the Data and notices included with the Data shall be made available to Third Parties to whom the Data, Output and/Model have been made available. Any distribution of all or part of the Data shall be done under the same terms as those of this License. Licensee shall make commercially reasonable efforts to link to the source of the Data.  If so indicated by the Licensor in writing alongside the Data that the use shall be deemed confidential, then Licensee shall not publicly refer to Licensor and/or the source of the Data.

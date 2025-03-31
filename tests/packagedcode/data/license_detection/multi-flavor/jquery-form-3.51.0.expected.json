@@ -59,7 +59,7 @@
           "matches": [
             {
               "license_expression": "mit OR gpl-2.0",
-              "spdx_license_expression": "MIT OR GPL-2.0-only",
+              "license_expression_spdx": "MIT OR GPL-2.0-only",
               "from_file": "jquery-form-3.51.0/README.md",
               "start_line": 12,
               "end_line": 21,
@@ -147,7 +147,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "jquery-form-3.51.0/composer.json",
               "start_line": 1,
               "end_line": 1,
@@ -169,7 +169,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "jquery-form-3.51.0/composer.json",
               "start_line": 1,
               "end_line": 1,
@@ -252,7 +252,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "jquery-form-3.51.0/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -274,7 +274,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "jquery-form-3.51.0/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -296,7 +296,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "jquery-form-3.51.0/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -318,7 +318,7 @@
           "matches": [
             {
               "license_expression": "gpl-1.0-plus",
-              "spdx_license_expression": "GPL-1.0-or-later",
+              "license_expression_spdx": "GPL-1.0-or-later",
               "from_file": "jquery-form-3.51.0/package.json",
               "start_line": 1,
               "end_line": 1,
@@ -364,7 +364,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -379,7 +379,7 @@
       "scope": "require",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -394,7 +394,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -409,7 +409,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -424,7 +424,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -439,7 +439,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -454,7 +454,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -469,7 +469,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
       "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
@@ -714,7 +714,7 @@
           "matches": [
             {
               "license_expression": "mit OR gpl-2.0",
-              "spdx_license_expression": "MIT OR GPL-2.0-only",
+              "license_expression_spdx": "MIT OR GPL-2.0-only",
               "from_file": "jquery-form-3.51.0/README.md",
               "start_line": 12,
               "end_line": 21,
@@ -774,7 +774,7 @@
               "matches": [
                 {
                   "license_expression": "mit OR gpl-2.0",
-                  "spdx_license_expression": "MIT OR GPL-2.0-only",
+                  "license_expression_spdx": "MIT OR GPL-2.0-only",
                   "from_file": "jquery-form-3.51.0/README.md",
                   "start_line": 12,
                   "end_line": 21,
@@ -810,7 +810,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -891,7 +891,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "jquery-form-3.51.0/composer.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -913,7 +913,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "jquery-form-3.51.0/composer.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -947,7 +947,7 @@
               "scope": "require",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -978,7 +978,7 @@
           "matches": [
             {
               "license_expression": "mit OR gpl-2.0-plus",
-              "spdx_license_expression": "MIT OR GPL-2.0-or-later",
+              "license_expression_spdx": "MIT OR GPL-2.0-or-later",
               "from_file": "jquery-form-3.51.0/composer.json",
               "start_line": 21,
               "end_line": 23,
@@ -994,7 +994,7 @@
             },
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "jquery-form-3.51.0/composer.json",
               "start_line": 23,
               "end_line": 23,
@@ -1066,7 +1066,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "jquery-form-3.51.0/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1088,7 +1088,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "jquery-form-3.51.0/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1110,7 +1110,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "jquery-form-3.51.0/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1132,7 +1132,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-1.0-plus",
-                  "spdx_license_expression": "GPL-1.0-or-later",
+                  "license_expression_spdx": "GPL-1.0-or-later",
                   "from_file": "jquery-form-3.51.0/package.json",
                   "start_line": 1,
                   "end_line": 1,
@@ -1166,7 +1166,7 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1177,7 +1177,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1188,7 +1188,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1199,7 +1199,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1210,7 +1210,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1221,7 +1221,7 @@
               "scope": "devDependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1251,7 +1251,7 @@
           "matches": [
             {
               "license_expression": "mit OR gpl-2.0",
-              "spdx_license_expression": "MIT OR GPL-2.0-only",
+              "license_expression_spdx": "MIT OR GPL-2.0-only",
               "from_file": "jquery-form-3.51.0/package.json",
               "start_line": 17,
               "end_line": 22,

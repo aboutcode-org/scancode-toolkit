@@ -46,7 +46,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {
           "type": "cocoapods",
@@ -94,7 +94,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -113,7 +113,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {
           "type": "cocoapods",
@@ -161,7 +161,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -172,7 +172,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -191,7 +191,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {
           "type": "cocoapods",
@@ -237,7 +237,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -248,7 +248,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -259,7 +259,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -278,7 +278,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {
           "type": "cocoapods",
@@ -324,7 +324,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -335,7 +335,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -346,7 +346,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -365,7 +365,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -418,7 +418,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -471,7 +471,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -524,7 +524,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -579,7 +579,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -627,7 +627,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -638,7 +638,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -657,7 +657,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -710,7 +710,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -756,7 +756,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -775,7 +775,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -823,7 +823,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -842,7 +842,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -888,7 +888,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -907,7 +907,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -960,7 +960,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -1006,7 +1006,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1025,7 +1025,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -1071,7 +1071,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1090,7 +1090,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -1136,7 +1136,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1147,7 +1147,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1158,7 +1158,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1169,7 +1169,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1188,7 +1188,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {
           "type": "cocoapods",
@@ -1236,7 +1236,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1255,7 +1255,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -1308,7 +1308,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -1356,7 +1356,7 @@
               "scope": "requires",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
               "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
@@ -1375,7 +1375,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -1428,7 +1428,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {
           "type": "cocoapods",
@@ -1483,7 +1483,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": false,
         "resolved_package": {
           "type": "cocoapods",
@@ -1538,7 +1538,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {
           "type": "cocoapods",
@@ -1593,7 +1593,7 @@
         "scope": "requires",
         "is_runtime": false,
         "is_optional": true,
-        "is_resolved": true,
+        "is_pinned": true,
         "is_direct": true,
         "resolved_package": {
           "type": "cocoapods",

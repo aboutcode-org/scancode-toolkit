@@ -68,7 +68,7 @@ other_license_detections:
       AND (LGPL-2.1-only AND GPL-2.0-only AND GPL-3.0-only)
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 23
         end_line: 23
@@ -81,7 +81,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_285.RULE
         matched_text: is in the public domain.
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 25
         end_line: 26
@@ -96,7 +96,7 @@ other_license_detections:
           command line tools are in the public
               domain
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 27
         end_line: 28
@@ -111,7 +111,7 @@ other_license_detections:
           The getopt_long code is under
               GNU LGPLv2.1+.
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 31
         end_line: 32
@@ -126,7 +126,7 @@ other_license_detections:
           These scripts and their documentation are
               under GNU GPLv2+.
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 35
         end_line: 36
@@ -141,7 +141,7 @@ other_license_detections:
           documentation files in other directories
               are in the public domain.
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 38
         end_line: 38
@@ -154,7 +154,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_429.RULE
         matched_text: Translated messages are in the public domain.
       - license_expression: public-domain AND gpl-2.0-plus AND gpl-3.0-plus
-        spdx_license_expression: LicenseRef-scancode-public-domain AND GPL-2.0-or-later AND
+        license_expression_spdx: LicenseRef-scancode-public-domain AND GPL-2.0-or-later AND
           GPL-3.0-or-later
         from_file:
         start_line: 40
@@ -170,7 +170,7 @@ other_license_detections:
           The build system contains public domain files, and files that
               are under GNU GPLv2+ or GNU GPLv3+.
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 45
         end_line: 45
@@ -183,7 +183,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_305.RULE
         matched_text: are in the public domain.
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 47
         end_line: 47
@@ -196,7 +196,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE
         matched_text: public domain
       - license_expression: other-permissive AND other-copyleft
-        spdx_license_expression: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
+        license_expression_spdx: LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
         from_file:
         start_line: 47
         end_line: 48
@@ -211,7 +211,7 @@ other_license_detections:
           files
               that are under various free software licenses.
       - license_expression: public-domain-disclaimer
-        spdx_license_expression: LicenseRef-scancode-public-domain-disclaimer
+        license_expression_spdx: LicenseRef-scancode-public-domain-disclaimer
         from_file:
         start_line: 50
         end_line: 64
@@ -239,7 +239,7 @@ other_license_detections:
 
               This software includes code from XZ Utils <http://tukaani.org/xz/>.
       - license_expression: lgpl-2.1 AND gpl-2.0 AND gpl-3.0
-        spdx_license_expression: LGPL-2.1-only AND GPL-2.0-only AND GPL-3.0-only
+        license_expression_spdx: LGPL-2.1-only AND GPL-2.0-only AND GPL-3.0-only
         from_file:
         start_line: 66
         end_line: 69
@@ -256,7 +256,7 @@ other_license_detections:
             - COPYING.GPLv2: GNU General Public License version 2
             - COPYING.GPLv3: GNU General Public License version 3
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 73
         end_line: 73
@@ -269,7 +269,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_427.RULE
         matched_text: binary wouldn't actually be in the public domain in its entirety
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 12
         end_line: 12
@@ -286,7 +286,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 90
         end_line: 91
@@ -305,7 +305,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 120
         end_line: 120
@@ -322,7 +322,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 136
         end_line: 137
@@ -341,7 +341,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 142
         end_line: 142
@@ -358,7 +358,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 180
         end_line: 180
@@ -375,7 +375,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 185
         end_line: 185
@@ -392,7 +392,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: '191'
         end_line: '192'
@@ -411,7 +411,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 209
         end_line: 209
@@ -428,7 +428,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 217
         end_line: 217
@@ -446,7 +446,7 @@ other_license_detections:
       AND GPL-2.0-only
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 238
         end_line: 239
@@ -461,7 +461,7 @@ other_license_detections:
           This file has been put into the public domain.
            # You can do whatever you want with this file.
       - license_expression: fsf-unlimited
-        spdx_license_expression: FSFULLR
+        license_expression_spdx: FSFULLR
         from_file:
         start_line: 244
         end_line: 246
@@ -477,7 +477,7 @@ other_license_detections:
            dnl gives unlimited permission to copy and/or distribute it,
            dnl with or without modifications, as long as this notice is preserved.
       - license_expression: autoconf-exception-2.0
-        spdx_license_expression: Autoconf-exception-2.0
+        license_expression_spdx: Autoconf-exception-2.0
         from_file:
         start_line: 257
         end_line: 263
@@ -497,7 +497,7 @@ other_license_detections:
            # General Public License (GPL) does govern all other use of the material
            # that constitutes the Autoconf program.
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 265
         end_line: 266
@@ -516,7 +516,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-or-later AND (LGPL-2.0-only AND LGPL-2.1-only)
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 274
         end_line: 274
@@ -529,7 +529,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.0 AND lgpl-2.1
-        spdx_license_expression: LGPL-2.0-only AND LGPL-2.1-only
+        license_expression_spdx: LGPL-2.0-only AND LGPL-2.1-only
         from_file:
         start_line: 275
         end_line: 281
@@ -553,7 +553,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-other-copyleft
     matches:
       - license_expression: other-copyleft
-        spdx_license_expression: LicenseRef-scancode-other-copyleft
+        license_expression_spdx: LicenseRef-scancode-other-copyleft
         from_file:
         start_line: 289
         end_line: 290
@@ -572,7 +572,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 295
         end_line: 296
@@ -591,7 +591,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 298
         end_line: 298
@@ -604,7 +604,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 299
         end_line: 314
@@ -637,7 +637,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 316
         end_line: 316
@@ -650,7 +650,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 317
         end_line: 329
@@ -680,7 +680,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 331
         end_line: 331
@@ -693,7 +693,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 332
         end_line: 347
@@ -726,7 +726,7 @@ other_license_detections:
     license_expression_spdx: GPL-3.0-or-later WITH Autoconf-exception-macro
     matches:
       - license_expression: gpl-3.0-plus WITH autoconf-macro-exception
-        spdx_license_expression: GPL-3.0-or-later WITH Autoconf-exception-macro
+        license_expression_spdx: GPL-3.0-or-later WITH Autoconf-exception-macro
         from_file:
         start_line: 350
         end_line: 377
@@ -771,7 +771,7 @@ other_license_detections:
     license_expression_spdx: FSFULLR
     matches:
       - license_expression: fsf-unlimited
-        spdx_license_expression: FSFULLR
+        license_expression_spdx: FSFULLR
         from_file:
         start_line: 380
         end_line: 382
@@ -791,7 +791,7 @@ other_license_detections:
     license_expression_spdx: FSFAP
     matches:
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 385
         end_line: 388
@@ -812,7 +812,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 12
         end_line: 12
@@ -829,7 +829,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 104
         end_line: 104
@@ -842,7 +842,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_473.RULE
         matched_text: docs are in the public domain.
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 108
         end_line: 109

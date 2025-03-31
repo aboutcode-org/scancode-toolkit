@@ -7,7 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-FROM --platform=linux/amd64 python:3.8-slim-buster
+FROM --platform=linux/amd64 python:3.12-slim-bookworm
 
 # Python settings: Force unbuffered stdout and stderr (i.e. they are flushed to terminal immediately)
 ENV PYTHONUNBUFFERED 1
