@@ -1221,6 +1221,11 @@ class DatafileHandler:
         # NOTE: we do not attach files to the Package level. Instead we
         # update `for_packages` of a codebase resource.
         package_uid = package.package_uid
+        if resource.path.endswith("-extract"):
+            archive_resource = resource.extracted_from(codebase)
+            if archive_resource:
+                package_adder(package_uid, archive_resource, codebase)
+
         if resource and package_uid:
             package_adder(package_uid, resource, codebase)
             for res in resource.walk(codebase):

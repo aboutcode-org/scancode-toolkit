@@ -196,6 +196,13 @@ Package type:  conan
   path_patterns:    '*/conanfile.py'
 --------------------------------------------
 Package type:  conda
+  datasource_id:     conda_meta_json
+  documentation URL: https://docs.conda.io/
+  primary language:  Python
+  description:       Conda metadata JSON in rootfs
+  path_patterns:    '*conda-meta/*.json'
+--------------------------------------------
+Package type:  conda
   datasource_id:     conda_meta_yaml
   documentation URL: https://docs.conda.io/
   primary language:  None

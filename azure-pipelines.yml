@@ -120,8 +120,8 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: ubuntu20_cpython
-          image_name: ubuntu-20.04
+          job_name: ubuntu24_cpython
+          image_name: ubuntu-24.04
           python_architecture: x64
           python_versions: ['3.9', '3.10', '3.11', '3.12']
           test_suites:
@@ -233,8 +233,8 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos12_cpython_latest_from_pip
-          image_name: macos-12
+          job_name: macos14_cpython_latest_from_pip
+          image_name: macos-14
           python_versions: ['3.9', '3.10', '3.11', '3.12']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py

@@ -8,6 +8,7 @@
 #
 
 import io
+import json
 
 import saneyaml
 from packageurl import PackageURL
@@ -23,7 +24,333 @@ https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.h
 See https://repo.continuum.io/pkgs/free for examples.
 """
 
-# TODO: there are likely other package data files for Conda
+
+class CondaBaseHandler(models.DatafileHandler):
+    """
+    Assemble package data and files present in conda manifests present in the
+    usual structure of a conda installation. Here the manifests which are
+    assembled together are:
+    - Conda metadata JSON     (CondaMetaJsonHandler)
+    - Conda meta.yaml recipe  (CondaMetaYamlHandler)
+
+    Example paths for these manifests:
+    /opt/conda/conda-meta/requests-2.32.3-py312h06a4308_1.json
+    /opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml
+    """
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder=models.add_to_package):
+
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
+            return
+
+        # We do not have any package data detected here
+        if not resource.package_data:
+            return
+
+        # If this is a Conda meta.yaml, try to find the corresponding metadata JSON
+        # and if present, run assembly on the metadata resource
+        if CondaMetaYamlHandler.is_datafile(resource.location):
+            conda_meta_json = cls.find_conda_meta_json_resource(resource, codebase)
+            if conda_meta_json:
+                package_data_meta_json, = conda_meta_json.package_data
+                yield from cls.assemble(
+                    package_data=package_data_meta_json,
+                    resource=conda_meta_json,
+                    codebase=codebase,
+                    package_adder=package_adder,
+                )
+
+            # corresponding metadata JSON does not exist, so handle this meta.yaml
+            else:
+                yield from cls.assemble_from_meta_yaml_only(
+                    package_data=package_data,
+                    resource=resource,
+                    codebase=codebase,
+                    package_adder=package_adder,
+                )
+
+            return
+
+        if not package_data.purl:
+            yield resource
+            return
+
+        package = models.Package.from_package_data(
+            package_data=package_data,
+            datafile_path=resource.path,
+        )
+        yield from cls.get_and_assmeble_from_meta_yaml(
+            package=package,
+            resource=resource,
+            codebase=codebase,
+            package_adder=package_adder,
+        )
+
+        package.populate_license_fields()
+        yield package
+
+        cls.assign_package_to_resources(
+            package=package,
+            resource=resource,
+            codebase=codebase,
+            package_adder=package_adder,
+        )
+
+        # we yield this as we do not want this further processed
+        yield resource
+
+        cls.assign_packages_to_resources_from_metadata_json(
+            package=package,
+            package_data=package_data,
+            resource=resource,
+            codebase=codebase,
+            package_adder=package_adder,
+        )
+
+    @classmethod
+    def assign_packages_to_resources_from_metadata_json(
+        cls,
+        package,
+        package_data,
+        resource,
+        codebase,
+        package_adder=models.add_to_package,
+    ):
+        """
+        Get the file paths present in the `package_data` of a metadata JSON `resource`
+        and assign them to the `package` created from the manifest.
+        """
+        extracted_package_dir = package_data.extra_data.get('extracted_package_dir')
+        files = package_data.extra_data.get('files')
+
+        if not extracted_package_dir or not files:
+            return
+
+        conda_metadata_dir = resource.parent(codebase)
+        if not conda_metadata_dir:
+            return
+
+        conda_root_dir = conda_metadata_dir.parent(codebase)
+        if not conda_root_dir:
+            return
+    
+        root_path_segment, _, package_dir = extracted_package_dir.rpartition("/pkgs/")
+        if not conda_root_dir.path.endswith(root_path_segment):
+            return
+
+        package_dir_path = f"{conda_root_dir.path}/pkgs/{package_dir}"
+        package_dir_resource = codebase.get_resource(path=package_dir_path)
+        if package_dir_resource:
+            cls.assign_package_to_resources(
+                package=package,
+                resource=package_dir_resource,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+
+        conda_package_path = f"{conda_root_dir.path}/pkgs/{package_dir}.conda"
+        conda_package_resource = codebase.get_resource(path=conda_package_path)
+        if conda_package_resource:
+            cls.assign_package_to_resources(
+                package=package,
+                resource=conda_package_resource,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+
+        for file_path in files:
+            full_file_path = f"{conda_root_dir.path}/{file_path}"
+            file_resource = codebase.get_resource(path=full_file_path)
+            if file_resource:
+                cls.assign_package_to_resources(
+                    package=package,
+                    resource=file_resource,
+                    codebase=codebase,
+                    package_adder=package_adder,
+                )
+
+    @classmethod
+    def get_and_assmeble_from_meta_yaml(cls, package, resource, codebase, package_adder=models.add_to_package):
+        """
+        For a conda metadata JSON `resource`, try to find the corresponding meta.yaml and
+        update the `package` from it. Also yield dependencies present in the meta.yaml,
+        and the `resource` to complete assembling from this manifest.
+        """
+        conda_meta_yaml = cls.find_conda_meta_yaml_resource(resource, codebase)
+
+        if conda_meta_yaml:
+            conda_meta_yaml_package_data, = conda_meta_yaml.package_data
+            package.update(
+                package_data=conda_meta_yaml_package_data,
+                datafile_path=conda_meta_yaml.path,
+            )
+            cls.assign_package_to_resources(
+                package=package,
+                resource=conda_meta_yaml,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+            meta_yaml_package_data = models.PackageData.from_dict(conda_meta_yaml_package_data)
+            if meta_yaml_package_data.dependencies:
+                yield from models.Dependency.from_dependent_packages(
+                    dependent_packages=meta_yaml_package_data.dependencies,
+                    datafile_path=conda_meta_yaml.path,
+                    datasource_id=meta_yaml_package_data.datasource_id,
+                    package_uid=package.package_uid,
+                )
+
+            yield conda_meta_yaml
+
+    @classmethod
+    def assemble_from_meta_yaml_only(cls, package_data, resource, codebase, package_adder=models.add_to_package):
+        """
+        Assemble and yeild package, dependencies and the meta YAML `resource` from
+        it's `package_data`, and also assign resources to the package.
+        """
+        if not package_data.purl:
+            return
+
+        package = models.Package.from_package_data(
+            package_data=package_data,
+            datafile_path=resource.path,
+        )
+        package.populate_license_fields()
+        yield package
+
+        dependent_packages = package_data.dependencies
+        if dependent_packages:
+            yield from models.Dependency.from_dependent_packages(
+                dependent_packages=dependent_packages,
+                datafile_path=resource.path,
+                datasource_id=package_data.datasource_id,
+                package_uid=package.package_uid,
+            )
+
+        CondaMetaYamlHandler.assign_package_to_resources(
+            package=package,
+            resource=resource,
+            codebase=codebase,
+            package_adder=package_adder,
+        )
+        yield resource
+
+    @classmethod
+    def check_valid_packages_dir_name(cls, package_dir_resource, resource, codebase):
+        """
+        Return the name of the `package_dir_resource`, if it is valid, i.e.
+        the package (name, version) data present in `resource` matches the
+        directory name, and the package directory is present in it's usual
+        location in a conda installation.
+        """
+        package_dir_parent = package_dir_resource.parent(codebase)
+
+        meta_yaml_package_data, = resource.package_data
+        name = meta_yaml_package_data.get("name")
+        version = meta_yaml_package_data.get("version")
+        if f"{name}-{version}" in package_dir_resource.name and (
+            package_dir_parent and "pkgs" in package_dir_parent.name
+        ):
+            return package_dir_resource.name
+
+    @classmethod
+    def find_conda_meta_json_resource(cls, resource, codebase):
+        """
+        Given a resource for a conda meta.yaml resource, find if it has any
+        corresponding metadata JSON located inside the conda-meta/ directory,
+        and return the resource if they exist, else return None.
+        """
+        package_dir_resource = CondaMetaYamlHandler.get_conda_root(resource, codebase)
+        if not package_dir_resource or not resource.package_data:
+            return
+
+        package_dir_name = cls.check_valid_packages_dir_name(
+            package_dir_resource=package_dir_resource,
+            resource=resource,
+            codebase=codebase,
+        )
+        if not package_dir_name:
+            return
+
+        root_resource = package_dir_resource.parent(codebase).parent(codebase)
+        if not root_resource:
+            return
+
+        root_resource_path = root_resource.path
+        conda_meta_path = f"{root_resource_path}/conda-meta/{package_dir_name}.json"
+        conda_meta_resource = codebase.get_resource(path=conda_meta_path)
+
+        if conda_meta_resource and conda_meta_resource.package_data:
+            return conda_meta_resource
+
+    @classmethod
+    def find_conda_meta_yaml_resource(cls, resource, codebase):
+        """
+        Given a resource for a metadata JSON located inside the conda-meta/
+        directory, find if it has any corresponding conda meta.yaml, and return
+        the resource if they exist, else return None.
+        """
+        package_dir_name, _json, _ = resource.name.rpartition(".json")
+        parent_resource = resource.parent(codebase)
+        if not parent_resource and not parent_resource.name == "conda-meta":
+            return
+
+        root_resource = parent_resource.parent(codebase)
+        if not root_resource:
+            return
+
+        root_resource_path = root_resource.path
+        package_dir_path = f"{root_resource_path}/pkgs/{package_dir_name}/"
+        package_dir_resource = codebase.get_resource(path=package_dir_path)
+        if not package_dir_resource:
+            return
+
+        meta_yaml_path = f"{package_dir_path}info/recipe/meta.yaml"
+        meta_yaml_resource = codebase.get_resource(path=meta_yaml_path)
+        if meta_yaml_resource and meta_yaml_resource.package_data:
+            return meta_yaml_resource
+
+
+class CondaMetaJsonHandler(CondaBaseHandler):
+    datasource_id = 'conda_meta_json'
+    path_patterns = ('*conda-meta/*.json',)
+    default_package_type = 'conda'
+    default_primary_language = 'Python'
+    description = 'Conda metadata JSON in rootfs'
+    documentation_url = 'https://docs.conda.io/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with io.open(location, encoding='utf-8') as loc:
+            conda_metadata = json.load(loc)
+
+        name = conda_metadata.get('name')
+        version = conda_metadata.get('version')
+        extracted_license_statement = conda_metadata.get('license')
+        download_url = conda_metadata.get('url')
+
+        extra_data_fields = ['requested_spec', 'channel']
+        package_file_fields = ['extracted_package_dir', 'files', 'package_tarball_full_path']
+        other_package_fields = ['size', 'md5', 'sha256']
+
+        extra_data = {}
+        for metadata_field in extra_data_fields + package_file_fields:
+            extra_data[metadata_field] = conda_metadata.get(metadata_field)
+
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            name=name,
+            version=version,
+            extracted_license_statement=extracted_license_statement,
+            download_url=download_url,
+            extra_data=extra_data,
+        )
+        for package_field in other_package_fields:
+            package_data[package_field] = conda_metadata.get(package_field)
+        yield models.PackageData.from_data(package_data, package_only)
+
 
 class CondaYamlHandler(BaseDependencyFileHandler):
     datasource_id = 'conda_yaml'
@@ -51,11 +378,12 @@ class CondaYamlHandler(BaseDependencyFileHandler):
                 primary_language=cls.default_primary_language,
                 dependencies=dependencies,
                 extra_data=extra_data,
+                is_private=True,
             )
             yield models.PackageData.from_data(package_data, package_only)
 
 
-class CondaMetaYamlHandler(models.DatafileHandler):
+class CondaMetaYamlHandler(CondaBaseHandler):
     datasource_id = 'conda_meta_yaml'
     default_package_type = 'conda'
     path_patterns = ('*/meta.yaml',)
@@ -67,6 +395,9 @@ class CondaMetaYamlHandler(models.DatafileHandler):
         """
         Return a root Resource given a meta.yaml ``resource``.
         """
+        if not resource:
+            return
+
         # the root is either the parent or further up for yaml stored under
         # an "info" dir. We support extractcode extraction.
         # in a source repo it would be in <repo>/conda.recipe/meta.yaml
@@ -74,6 +405,7 @@ class CondaMetaYamlHandler(models.DatafileHandler):
             'info/recipe.tar-extract/recipe/meta.yaml',
             'info/recipe/recipe/meta.yaml',
             'conda.recipe/meta.yaml',
+            'info/recipe/meta.yaml',
         )
         res = resource
         for pth in paths:
@@ -205,6 +537,8 @@ def get_conda_yaml_dependencies(conda_data):
 
             if "::" in dep:
                 namespace, dep = dep.split("::")
+                if "/" in namespace or ":" in namespace:
+                    namespace = None
 
             req = parse_requirement_line(dep)
             if req:

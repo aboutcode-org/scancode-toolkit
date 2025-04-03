@@ -1907,6 +1907,7 @@ def process_detections(detections, licensing=Licensing()):
                     for key in license_keys
                 ):
                     detection.license_expression = license_expression
+                    detection.license_expression_spdx = detection.spdx_license_expression()
                     detection.detection_log.append(DetectionRule.NOT_LICENSE_CLUES.value)
                     detection.identifier = detection.identifier_with_expression
 

@@ -2,7 +2,14 @@ about_resource: outdated.py
 name: pip
 version: 9974f2
 download_url: https://raw.githubusercontent.com/pypa/pip/9974f274e1c86fb556b5d51dcfd2d4dc637b7b67/pip/utils/outdated.py
-license: mit
+
+copyright: Copyright (c) 2008-2014 The pip developers
 notice_file: outdated.NOTICE
-license_text_file: outdated.LICENSE
+
+license_expression: mit
+licenses:
+  - key: mit
+    name: MIT License
+    file: outdated.LICENSE
+
 notes: this code was derived and heavily modified from pip/utils/outdated.py.

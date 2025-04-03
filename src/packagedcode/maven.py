@@ -69,6 +69,9 @@ class MavenBasePackageHandler(models.DatafileHandler):
             yield from models.DatafileHandler.assemble(package_data, resource, codebase)
             return
 
+        if not package_data.purl:
+            return
+
         datafile_path = resource.path
 
         # This order is important as we want pom.xml to be used for package
@@ -117,11 +120,11 @@ class MavenBasePackageHandler(models.DatafileHandler):
                     parent_resource=parent_resource,
                 )
         elif manifests and not pom_xmls:
-            yield from JavaJarManifestHandlerMixin.assemble(package_data, resource, codebase)
+            yield from JavaJarManifestHandlerMixin.assemble(package_data, resource, codebase, package_adder)
         elif pom_xmls and not manifests:
-            yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase)
+            yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase, package_adder)
         else:
-            yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
 
 
 class JavaJarManifestHandler(MavenBasePackageHandler):
@@ -150,7 +153,7 @@ class JavaJarManifestHandlerMixin(models.DatafileHandler):
         # we want to root of the jar, two levels up
         parent = resource.parent(codebase)
         if parent:
-            parent = resource.parent(codebase)
+            parent = parent.parent(codebase)
         if parent:
             models.DatafileHandler.assign_package_to_resources(
                 package,
