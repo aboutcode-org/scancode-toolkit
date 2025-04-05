@@ -511,14 +511,15 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
         description = project_data.get('description') or ''
         description = description.strip()
 
+        classifiers = project_data.get('classifiers', [])
+        is_private = any('Private ::' in classifier for classifier in classifiers)
+
         urls, extra_data = get_urls(metainfo=project_data, name=name, version=version)
 
         extracted_license_statement, license_file = get_declared_license(project_data)
         if license_file:
             extra_data['license_file'] = license_file
 
-        classifiers = project_data.get('classifiers', [])
-        is_private = any('Private ::' in classifier for classifier in classifiers)
         dependencies = []
         parsed_dependencies = get_requires_dependencies(
             requires=project_data.get("dependencies", []),
@@ -546,7 +547,7 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
             dependencies=dependencies,
             is_private=is_private,
             extra_data=extra_data,
-            homepage_url=urls.get('homepage'),
+            **urls,
             download_url=urls.get('download'),
         )
         yield models.PackageData.from_data(package_data, package_only)
@@ -2285,7 +2286,7 @@ def get_pypi_urls(name, version, **kwargs):
     )
 
 
-def get_urls(metainfo, name, version, poetry=False):
+def get_urls(metainfo, name, version,is_private, poetry=False):
     """
     Return a mapping of standard URLs and a mapping of extra-data URls for URLs
     of this package:
@@ -2327,7 +2328,10 @@ def get_urls(metainfo, name, version, poetry=False):
     # Project-URL: Say Thanks!
 
     extra_data = {}
-    urls = get_pypi_urls(name, version)
+    if not is_private:
+       urls = get_pypi_urls(name, version)
+    else:
+        urls = {}
 
     def add_url(_url, _utype=None, _attribute=None):
         """
