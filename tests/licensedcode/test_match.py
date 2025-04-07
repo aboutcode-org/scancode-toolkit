@@ -40,8 +40,8 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
     def test_LicenseMatch_equality(self):
         r1 = create_rule_from_text_and_expression(
-            text='r1', 
-            identifier='apache-2.0.RULE', 
+            text='r1',
+            identifier='apache-2.0.RULE',
             license_expression='apache-2.0 OR gpl',
         )
         m1_r1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
@@ -51,8 +51,8 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert not (m1_r1 != m2_r1)
 
         r2 = create_rule_from_text_and_expression(
-            text='r1', 
-            identifier='apache-2.0.RULE', 
+            text='r1',
+            identifier='apache-2.0.RULE',
             license_expression='apache-2.0 OR gpl',
         )
         m3_r2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
@@ -365,6 +365,34 @@ class TestLicenseMatchBasic(FileBasedTesting):
         matches = idx.match(query_string=querys)
         assert len(matches) == 1
         assert matches[0].rule == r2
+
+    def test_LicenseMatch_matches_also_when_required_phrases_stopwords_match_rule_stopwords(self):
+        text_r1 = (
+            'License '
+            'Distributed under the {{MIT a License}}. See LICENSE for more information.'
+        #                                ^ stopword
+            'You can redistribute this file under this or any other license.')
+        r1 = create_rule_from_text_and_expression(license_expression='mit', text=text_r1)
+
+        text_r2 = (
+            'License '
+            'Distributed under the BSD License. See LICENSE for more information.'
+            'You can redistribute this file under this or any other license.')
+        r2 = create_rule_from_text_and_expression(license_expression='gpl', text=text_r2)
+
+        idx = index.LicenseIndex([r1, r2])
+
+        querys = (
+            'See LICENSE for more information, and also you can redistribute this file under this or any other license.'
+            'License '
+            'Distributed under the MIT,       a         License. See LICENSE or website for more information.'
+            #                           ^ stopword ^
+            'You can redistribute this file under this or any other license.'
+        )
+
+        matches = idx.match(query_string=querys)
+        assert len(matches) == 1
+        assert matches[0].rule == r1
 
     def test_LicenseMatch_matches_required_phrases_aho_with_exact_match_selects_required_phrase_match(self):
         text_r1 = (

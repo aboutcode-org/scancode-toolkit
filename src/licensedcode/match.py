@@ -756,7 +756,7 @@ class LicenseMatch(object):
         side effects as the caching depends on which index instance is being
         used and this index can change during testing.
         """
-        if TRACE_MATCHED_TEXT:
+        if TRACE_MATCHED_TEXT and not TRACE_REPR_ALL_MATCHED_TEXTS:
             logger_debug(f'LicenseMatch.matched_text: self.query: {self.query}')
 
         query = self.query
@@ -2205,7 +2205,7 @@ def filter_matches_missing_required_phrases(
 
         # keep matches as candidate if they contain all required phrase positions in the ispan
         if trace:
-            print('    CANDIDATE TO KEEP: all ikey_span in match.ispan:', ikey_spans, ispan)
+            print('    CANDIDATE TO KEEP: all ikey_span in match.ispan: ikey_spans:', ikey_spans, 'ispan:', ispan)
 
         # discard matches that contain required phrases, but interrupted by
         # unknown or stop words.
@@ -2219,7 +2219,7 @@ def filter_matches_missing_required_phrases(
         istopwords_by_pos_get = istopwords_by_pos.get
 
         # iterate on each required phrase span to ensure that they are continuous
-        # and contain no unknown words on the query side
+        # and contain no unknown words or stop words on the query side
 
         is_valid = True
 
@@ -2239,18 +2239,15 @@ def filter_matches_missing_required_phrases(
 
                 qkey_span = Span(qkey_poss)
                 if len(qkey_span) != qkey_span.magnitude():
-
-                    logger_debug(
-                        '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT NOT CONTINUOUS:',
-                        'qkey_span:', qkey_span, 'qpan:', qspan
-                    )
-
+                    if trace:
+                        logger_debug(
+                            '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT NOT CONTINUOUS:',
+                            'qkey_span:', qkey_span, 'qspan:', qspan
+                        )
                     is_valid = False
                     break
 
-            # check that required phrase spans does not contain stop words and does
-            # not contain unknown words
-
+            # Check that required phrase spans does not contain unknown words. 
             # NOTE: we do not check the last qkey_span position of a required phrase
             # since unknown is a number of words after a given span position:
             # these are pinned to the last position and we would not care for
@@ -2265,33 +2262,35 @@ def filter_matches_missing_required_phrases(
             if contains_unknown:
                 logger_debug(
                     '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT UNKNOWNS:',
-                    'qkey_span:', qkey_span, 'qpan:', qspan,
+                    'qkey_span:', qkey_span, 'qspan:', qspan,
                     'unknown_by_pos:', unknown_by_pos
                 )
 
                 is_valid = False
                 break
 
-            if is_continuous:
-                has_same_stopwords_pos = True
-                for qpos, ipos in zip(qspan, ispan):
-                    if qpos not in qkey_span or qpos == qkey_span_end:
-                        continue
-    
-                    if istopwords_by_pos_get(ipos) != qstopwords_by_pos_get(qpos):
-                        has_same_stopwords_pos = False
-                        break
-    
-                if not has_same_stopwords_pos:
-                    logger_debug(
-                        '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT STOPWORDS NOT SAME:',
-                        'qkey_span:', qkey_span, 'qpan:', qspan,
-                        'istopwords_by_pos:', istopwords_by_pos,
-                        'qstopwords_by_pos:', qstopwords_by_pos
-                    )
-    
-                    is_valid = False
+            # Check that required phrase spans does not contain stop words. This must be true for
+            # continuous rules or not, as long as we have a key span: it cannot be interrupted
+
+            has_same_stopwords_pos = True
+            for qpos, ipos in zip(qspan, ispan):
+                if qpos not in qkey_span or qpos == qkey_span_end:
+                    continue
+
+                if istopwords_by_pos_get(ipos) != qstopwords_by_pos_get(qpos):
+                    has_same_stopwords_pos = False
                     break
+
+            if not has_same_stopwords_pos:
+                logger_debug(
+                    '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT STOPWORDS NOT SAME:',
+                    'qkey_span:', qkey_span, 'qspan:', qspan,
+                    'istopwords_by_pos:', istopwords_by_pos,
+                    'qstopwords_by_pos:', qstopwords_by_pos
+                )
+
+                is_valid = False
+                break
 
         if is_valid:
             logger_debug('    ==> KEEPING, REQUIRED PHRASES PRESENT, CONTINUOUS AND NO UNKNOWNS')
