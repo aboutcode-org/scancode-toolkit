@@ -6,4 +6,4 @@ notes: lesser implies 2.1 or later
 skip_for_required_phrase_generation: yes
 ---
 
-lesser General Public License
+{{lesser General Public License}}
