@@ -7,6 +7,31 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+from packagedcode import APPLICATION_PACKAGE_DATAFILE_HANDLERS
+
+def get_dynamic_manifestends():
+
+    """
+    This function builds a dynamic list of manifest file extensions that are known
+    from all data file handlers in APPLICATION_PACKAGE_DATAFILE_HANDLERS
+    """
+
+    manifest_ends = set()
+    for handler_class in APPLICATION_PACKAGE_DATAFILE_HANDLERS:
+        patterns = getattr(handler_class, 'path_patterns',[])
+        for pattern in patterns :
+            if pattern.startswith('*'):
+                # Extract extension, e.g., '*.json' -> '.json'
+                ext = pattern[1:]
+                if ext:
+                    manifest_ends.add(ext.lower())
+            elif pattern.startswith('**/*.'):
+                # Handles glob patterns like '**/*.csproj'
+                ext = pattern[5:]
+                if ext:
+                    manifest_ends.add('.' + ext.lower())
+    
+    return manifest_ends
 
 def get_relative_path(root_path, path):
     """
@@ -39,51 +64,7 @@ LEGAL_STARTS_ENDS = (
     'patents',
 )
 
-_MANIFEST_ENDS = {
-    '.about': 'ABOUT file',
-    '/bower.json': 'bower',
-    '/project.clj': 'clojure',
-    '.podspec': 'cocoapod',
-    '/composer.json': 'composer',
-    '/description': 'cran',
-    '/elm-package.json': 'elm',
-    '/+compact_manifest': 'freebsd',
-    '+manifest': 'freebsd',
-    '.gemspec': 'gem',
-    '/metadata': 'gem',
-    # the extracted metadata of a gem archive
-    '/metadata.gz-extract': 'gem',
-    '/build.gradle': 'gradle',
-    '/project.clj': 'clojure',
-    '.pom': 'maven',
-    '/pom.xml': 'maven',
-
-    '.cabal': 'haskell',
-    '/haxelib.json': 'haxe',
-    '/package.json': 'npm',
-    '.nuspec': 'nuget',
-    '.pod': 'perl',
-    '/meta.yml': 'perl',
-    '/dist.ini': 'perl',
-
-    '/pipfile': 'pypi',
-    '/setup.cfg': 'pypi',
-    '/setup.py': 'pypi',
-    '/PKG-INFO': 'pypi',
-    '/pyproject.toml': 'pypi',
-    '.spec': 'rpm',
-    '/cargo.toml': 'rust',
-    '.spdx': 'spdx',
-    '/dependencies': 'generic',
-
-    # note that these two cannot be top-level for now
-    'debian/copyright': 'deb',
-    'meta-inf/manifest.mf': 'maven',
-
-    # TODO: Maven also has sometimes a pom under META-INF/
-    # 'META-INF/manifest.mf': 'JAR and OSGI',
-
-}
+_MANIFEST_ENDS = get_dynamic_manifestends()
 
 MANIFEST_ENDS = tuple(_MANIFEST_ENDS)
 
