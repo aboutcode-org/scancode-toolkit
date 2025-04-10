@@ -6,4 +6,4 @@ ignorable_urls:
     - http://jwordnet.svn.sourceforge.net/svnroot/jwordnet/trunk/jwnl/license.txt
 ---
 
-License: BSD 3-Clause License  (http://jwordnet.svn.sourceforge.net/svnroot/jwordnet/trunk/jwnl/license.txt)
+{{License: BSD 3-Clause}} License  (http://jwordnet.svn.sourceforge.net/svnroot/jwordnet/trunk/jwnl/license.txt)

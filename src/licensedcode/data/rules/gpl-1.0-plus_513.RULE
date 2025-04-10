@@ -13,4 +13,4 @@ ignorable_urls:
     - https://www.gnu.org/licenses/gpl.html
 ---
 
-@copyright GNU General Public License, https://www.gnu.org/licenses/gpl.html
+@copyright {{GNU General Public License}}, https://www.gnu.org/licenses/gpl.html

@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-LICENSE INFORMATION: LGPL 3.0
+LICENSE INFORMATION: {{LGPL 3.0}}

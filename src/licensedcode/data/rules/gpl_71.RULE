@@ -6,4 +6,4 @@ referenced_filenames:
     - /usr/share/common-licenses/GPL
 ---
 
-is licensed under the GPL, see `/usr/share/common-licenses/GPL'
+is licensed {{under the GPL}}, see `/usr/share/common-licenses/GPL'

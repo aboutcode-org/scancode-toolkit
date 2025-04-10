@@ -11,4 +11,4 @@ ignorable_holders:
     - GNU General
 ---
 
-Copyright: GNU General Public Licence / copyleft ('GNU GPL copyright').
+Copyright: GNU General Public Licence / {{copyleft ('GNU GPL}} copyright').

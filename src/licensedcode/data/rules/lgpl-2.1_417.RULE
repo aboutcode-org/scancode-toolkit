@@ -3,4 +3,4 @@ license_expression: lgpl-2.1
 is_license_notice: yes
 ---
 
-images provided with this release are statically linked with the following [GNU LGPL-2.1][lgpl-2.1] licensed  library.
+images provided with this release are statically linked with the following [GNU {{LGPL-2.1}}][{{lgpl-2.1}}] licensed  library.

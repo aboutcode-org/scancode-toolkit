@@ -5,5 +5,5 @@ ignorable_urls:
     - https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT
 ---
 
-Ported from musl, which is licensed under the MIT license:
+Ported from musl, which is {{licensed under the MIT}} license:
  https://git.musl-libc.org/cgit/musl/tree/COPYRIGHT

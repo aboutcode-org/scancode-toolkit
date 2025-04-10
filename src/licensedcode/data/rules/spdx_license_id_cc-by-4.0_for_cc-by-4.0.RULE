@@ -1,10 +1,10 @@
 ---
 license_expression: cc-by-4.0
 is_license_reference: yes
-is_continuous: yes
-relevance: 50
+is_required_phrase: yes
+relevance: 100
 minimum_coverage: 100
 notes: Used to detect a bare SPDX license id
 ---
 
-cc-by-4.0
+CC-BY-4.0

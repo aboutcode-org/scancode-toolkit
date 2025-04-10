@@ -7,4 +7,4 @@ replaced_by:
     - ofl-1.1
 ---
 
-licenses.nuget.org/OFL-1.1
+licenses.nuget.org/{{OFL-1.1}}

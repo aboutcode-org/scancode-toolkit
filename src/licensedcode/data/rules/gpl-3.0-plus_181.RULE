@@ -8,4 +8,4 @@ ignorable_holders:
     - GNU General
 ---
 
-COPYRIGHT # GNU General Public License v3.0+ (see COPYING
+COPYRIGHT # {{GNU General Public License v3.0+}} (see COPYING

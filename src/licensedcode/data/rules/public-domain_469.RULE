@@ -4,7 +4,7 @@ is_license_text: yes
 notes: See in https://github.com/solgenomics/Barcode-Code128/blob/6bf6b3e0ff4e6e75f1226ad19249716e1897c57d/README#L50
 ---
 
-TERMS: This module is placed into the public domain.  You are free to
+TERMS: This module is placed into the {{public domain}}.  You are free to
     use, modify, or redistribute this module in any way for commercial
     or other uses.  My only request is that if you change it, please
     submit copies of your changed code (or diffs) so that I can

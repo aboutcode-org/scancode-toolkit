@@ -5,7 +5,7 @@ relevance: 100
 minimum_coverage: 99
 ---
 
-The README, CHANGES, FAQ and TODO files are licensed under the ISC license. All
+The README, CHANGES, FAQ and TODO files are licensed under the {{ISC license}}. All
 other files have a license and copyright notice at their start, typically:
 
 Permission to use, copy, modify, and distribute this software for any

@@ -1,0 +1,9 @@
+---
+license_expression: cc-by-sa-3.0
+is_license_notice: yes
+ignorable_urls:
+    - https://creativecommons.org/licenses/by-sa/3.0/legalcode
+---
+
+licensed under {{Creative Commons Attribution-ShareAlike 3.0}} License as found
+at https://creativecommons.org/licenses/by-sa/3.0/legalcode

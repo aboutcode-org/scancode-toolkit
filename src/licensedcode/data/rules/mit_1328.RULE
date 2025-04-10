@@ -4,6 +4,6 @@ is_license_notice: yes
 notes: mit choice
 ---
 
-This file may be licensed under MIT License or GPL-2.0. In this context MIT has
+This file may be {{licensed under MIT}} License or GPL-2.0. In this context MIT has
 been chosen. This shall not restrict the freedom of future contributors to
 choose GPL-2.0

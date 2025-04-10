@@ -7,4 +7,4 @@ replaced_by:
     - gpl-3.0-plus
 ---
 
-licenses: GPL-3.0-or-later
+licenses: {{GPL-3.0-or-later}}

@@ -6,5 +6,5 @@ ignorable_urls:
     - http://javolution.org/LICENSE.txt
 ---
 
-<name>BSD License</name>
+<{{name>BSD License}}</name>
 <url>http://javolution.org/LICENSE.txt</url>

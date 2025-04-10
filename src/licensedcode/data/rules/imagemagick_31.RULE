@@ -7,4 +7,4 @@ replaced_by:
     - imagemagick
 ---
 
-licenses.nuget.org/ImageMagick
+{{ licenses.nuget.org/ImageMagick }}

@@ -9,5 +9,5 @@ replaced_by:
     - gpl-2.0
 ---
 
-LicenseText "GNU GENERAL PUBLIC LICENSE, v2"
+LicenseText "{{GNU GENERAL PUBLIC LICENSE, v2}}"
    LicenseData COPYING

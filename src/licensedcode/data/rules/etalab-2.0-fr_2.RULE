@@ -7,4 +7,4 @@ replaced_by:
     - etalab-2.0
 ---
 
-licenses.nuget.org/{{etalab-2.0}}
+{{licenses.nuget.org/etalab-2.0}}

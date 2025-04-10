@@ -10,5 +10,5 @@ replaced_by:
 ---
 
 license
-   LicenseText "GNU GENERAL PUBLIC LICENSE, v2"
+   LicenseText "{{GNU GENERAL PUBLIC LICENSE, v2}}"
    LicenseData COPYING

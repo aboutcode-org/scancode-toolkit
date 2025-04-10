@@ -6,4 +6,4 @@ ignorable_urls:
     - http://opensource.org/licenses/MIT
 ---
 
-library is licensed under the MIT "expat" license (http://opensource.org/licenses/MIT)
+library is {{licensed under the MIT}} "expat" license (http://opensource.org/licenses/MIT)

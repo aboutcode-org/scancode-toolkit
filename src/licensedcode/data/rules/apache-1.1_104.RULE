@@ -7,4 +7,4 @@ replaced_by:
     - apache-1.1
 ---
 
-licenses.nuget.org/Apache-1.1
+licenses.nuget.org/{{Apache-1.1}}

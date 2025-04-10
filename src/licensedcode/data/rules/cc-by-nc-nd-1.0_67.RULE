@@ -7,4 +7,4 @@ replaced_by:
     - cc-by-nc-nd-1.0
 ---
 
-licenses.nuget.org/CC-BY-NC-ND-1.0
+licenses.nuget.org/{{CC-BY-NC-ND-1.0}}

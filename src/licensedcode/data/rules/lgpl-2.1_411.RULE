@@ -7,4 +7,4 @@ replaced_by:
     - lgpl-2.1
 ---
 
-licenses: lGPL-2.1-only
+licenses: {{lGPL-2.1-only}}

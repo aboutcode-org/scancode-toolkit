@@ -7,4 +7,4 @@ replaced_by:
     - agpl-1.0-plus
 ---
 
-licenses.nuget.org/AGPL-1.0-or-later
+licenses.nuget.org/{{AGPL-1.0-or-later}}

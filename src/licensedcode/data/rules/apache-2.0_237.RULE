@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-is licensed under the Apache
-2.0 license.
+is {{licensed under the Apache
+2.0 license}}.

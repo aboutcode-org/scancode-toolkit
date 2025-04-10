@@ -5,4 +5,4 @@ relevance: 100
 notes: from https://raw.githubusercontent.com/pombredanne/gpl-history/v1.0/allvers/linux.LICENSES.GPL-2.0.3
 ---
 
-Valid-License-Identifier: GPL-2.0+
+Valid-License-Identifier: {{GPL-2.0+}}

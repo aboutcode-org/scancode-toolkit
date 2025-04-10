@@ -1,12 +1,8 @@
 ---
 license_expression: apache-2.0
 is_license_notice: yes
-relevance: 100
 ignorable_urls:
-    - https://licenses.nuget.org/Apache-2.0
+    - http://www.apache.org/licenses/LICENSE-2.0.html
 ---
 
-Licensed under the Apache License, Version 2.0.
-
-Available at
-https://licenses.nuget.org/Apache-2.0
+source code is licensed under the Apache Licence, Version 2.0 [http://www.apache.org/licenses/LICENSE-2.0.html](http://www.apache.org/licenses/LICENSE-2.0.html)

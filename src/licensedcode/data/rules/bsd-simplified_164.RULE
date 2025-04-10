@@ -1,10 +1,11 @@
 ---
 license_expression: bsd-simplified
 is_license_reference: yes
+is_required_phrase: yes
 is_deprecated: yes
 relevance: 100
 replaced_by:
     - bsd-simplified
 ---
 
-BSD 2-Clause Licence
+BSD 2-clause licence

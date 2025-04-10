@@ -7,4 +7,4 @@ replaced_by:
     - bsd-simplified
 ---
 
-license               = 'BSD 2-Clause'
+{{license               = 'BSD 2}}-Clause'

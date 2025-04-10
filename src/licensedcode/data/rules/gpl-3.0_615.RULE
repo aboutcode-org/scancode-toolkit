@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-released under GNU/GPL v3 Licence,
+This file is {{distributed under the same license as samba}}.

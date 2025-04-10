@@ -71,16 +71,16 @@
             "start_line": 1,
             "end_line": 1,
             "matcher": "2-aho",
-            "score": 95.0,
+            "score": 100.0,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 95,
+            "rule_relevance": 100,
             "rule_identifier": "spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_cc0-1.0_for_cc0-1.0.RULE",
             "matched_text": "Apache-2.0 with ScanCode acknowledgment and CC0-1.0 and others"
           }
         ],
-        "identifier": "apache_2_0_and_scancode_acknowledgment__and_cc0_1_0-d8559b0f-151a-7966-fe46-c91dd29c027e"
+        "identifier": "apache_2_0_and_scancode_acknowledgment__and_cc0_1_0-15c44782-c134-8767-6ef8-10e8ab046877"
       },
       {
         "license_expression": "apache-2.0",

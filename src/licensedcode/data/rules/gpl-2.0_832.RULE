@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-distributed under GNU GPL v2 license. See LICENSE file for details.
+distributed under {{GNU GPL v2}} license. See LICENSE file for details.

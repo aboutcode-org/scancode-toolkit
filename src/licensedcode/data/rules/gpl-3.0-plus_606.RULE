@@ -1,10 +1,15 @@
 ---
 license_expression: gpl-3.0-plus
 is_license_notice: yes
-ignorable_urls:
-    - http://www.gnu.org/copyleft/gpl.html
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-3
 ---
 
-# This script is distributed under the terms and conditions of the GNU General
-# Public License, Version 3 or later. See http://www.gnu.org/copyleft/gpl.html
-# for details.
+License: GPL-3+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 3, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of version 3 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-3'

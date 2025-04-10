@@ -29,10 +29,17 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
+<<<<<<< HEAD
         platform: Linux-6.8.0-52-generic-x86_64-with-glibc2.35
         platform_version: '#53~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jan 15 19:18:46 UTC 2'
         python_version: 3.11.8 (main, Feb 12 2024, 14:25:06) [GCC 11.4.0]
       spdx_license_list_version: '3.26'
+=======
+        platform: Linux-6.8.0-45-generic-x86_64-with-glibc2.35
+        platform_version: '#45~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep 11 15:25:05 UTC 2'
+        python_version: 3.11.8 (main, Feb 12 2024, 14:25:06) [GCC 11.4.0]
+      spdx_license_list_version: '3.25'
+>>>>>>> refs/remotes/upstream/develop
       files_count: 4
 summary:
   declared_license_expression: apache-2.0
@@ -626,6 +633,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: yes
@@ -879,6 +888,8 @@ license_rule_references:
     is_license_tag: yes
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: yes
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -893,7 +904,38 @@ license_rule_references:
     ignorable_authors: []
     ignorable_urls: []
     ignorable_emails: []
+<<<<<<< HEAD
     text: 'license: Apache-2.0'
+=======
+    text: license="Apache-2.0
+  - license_expression: apache-2.0
+    identifier: apache-2.0_73.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    is_license_clue: no
+    is_required_phrase: no
+    skip_for_required_phrase_generation: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 4
+    relevance: 80
+    minimum_coverage: 80
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: is licensed under [Apache]
+>>>>>>> refs/remotes/upstream/develop
   - license_expression: apache-2.0 OR mit
     identifier: apache-2.0_or_mit_36.RULE
     language: en
@@ -904,6 +946,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_for_required_phrase_generation: no
     is_continuous: yes
     is_builtin: yes
     is_from_license: no
@@ -929,6 +973,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: yes
@@ -972,6 +1018,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: yes
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -986,7 +1034,7 @@ license_rule_references:
     ignorable_authors: []
     ignorable_urls: []
     ignorable_emails: []
-    text: apache-2.0
+    text: Apache-2.0
 files:
   - path: package-and-licenses
     type: directory

@@ -5,5 +5,5 @@ ignorable_urls:
     - http://www.gnu.org/licenses/gpl.txt
 ---
 
-<name>GENERAL PUBLIC LICENSE, version 3 (GPL-3.0)</name>
+<name>{{GENERAL PUBLIC LICENSE, version 3}} ({{GPL-3.0}})</name>
  <url>http://www.gnu.org/licenses/gpl.txt</url>

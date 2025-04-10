@@ -1,10 +1,7 @@
 ---
 license_expression: apache-2.0
-is_license_tag: yes
+is_license_notice: yes
 relevance: 100
-ignorable_urls:
-    - http://www.apache.org/licenses/LICENSE-2.0.txt
 ---
 
-<name>{{Apache License, version 2.0}}
-    <url>{{http://www.apache.org/licenses/LICENSE-2.0.txt}}
+licensed under the Apache Licence, Version 2.0

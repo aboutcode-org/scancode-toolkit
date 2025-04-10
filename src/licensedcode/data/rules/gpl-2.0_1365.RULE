@@ -3,4 +3,4 @@ license_expression: gpl-2.0
 is_license_notice: yes
 ---
 
-The C library at the core of this Perl module can additionally be used, modified and redistributed under the terms of the GNU General Public License version 2 .
+The C library at the core of this Perl module can additionally be used, modified and redistributed {{under the terms of the GNU General Public License version 2}} .

@@ -7,4 +7,4 @@ replaced_by:
     - bsd-original
 ---
 
-licenses.nuget.org/BSD-4-Clause
+licenses.nuget.org/{{BSD-4-Clause}}

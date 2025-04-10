@@ -1,0 +1,11 @@
+---
+license_expression: gpl-2.0
+is_license_reference: yes
+is_required_phrase: yes
+relevance: 100
+referenced_filenames:
+    - /usr/share/common-licenses/GPL
+---
+
+text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'

@@ -7,4 +7,4 @@ replaced_by:
     - bsd-2-clause-views
 ---
 
-licenses.nuget.org/BSD-2-Clause-Views
+licenses.nuget.org/{{BSD-2-Clause-Views}}

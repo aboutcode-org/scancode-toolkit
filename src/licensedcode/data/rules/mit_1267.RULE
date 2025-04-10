@@ -4,5 +4,5 @@ is_license_tag: yes
 relevance: 100
 ---
 
-<license>
-<name> MIT License </name>
+<{{license>
+<name> MIT}} License </name>
