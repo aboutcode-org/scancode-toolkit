@@ -1,6 +1,5 @@
 ---
 license_expression: apache-2.0
-<<<<<<< HEAD
 is_license_tag: yes
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0.txt
@@ -10,10 +9,4 @@ ignorable_urls:
     <license>
         <name>{{Apache License, version 2.0}}</name>
         <url>{{ http://www.apache.org/licenses/LICENSE-2.0.txt }}</url>
-=======
-is_license_notice: yes
-relevance: 100
----
 
-library under The Apache Licence, version 2.0
->>>>>>> refs/remotes/upstream/develop

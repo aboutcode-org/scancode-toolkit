@@ -2339,8 +2339,8 @@ class Rule(BasicRule):
         ):
             self.is_continuous = True
 
-    def build_key_phrase_spans(self):
-        """rules_data_dir
+    def build_required_phrase_spans(self):
+        """
         Return a list of Spans marking key phrases token positions of that must
         be present for this rule to be matched.
         """

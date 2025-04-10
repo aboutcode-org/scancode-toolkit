@@ -1,11 +1,8 @@
 ---
 license_expression: gpl-2.0
 is_license_reference: yes
-<<<<<<< HEAD
 is_deprecated: yes
-=======
 is_required_phrase: yes
->>>>>>> refs/remotes/upstream/develop
 relevance: 100
 replaced_by:
     - gpl-2.0
