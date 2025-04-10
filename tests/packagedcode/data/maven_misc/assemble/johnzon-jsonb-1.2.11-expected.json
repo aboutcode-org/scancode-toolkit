@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
               "start_line": 3,
               "end_line": 18,
@@ -60,6 +60,8 @@
       "source_packages": [
         "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?classifier=sources"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/",
       "repository_download_url": "https://repo1.maven.org/maven2/org/apache/johnzon/johnzon-jsonb/1.2.11/johnzon-jsonb-1.2.11.jar",
@@ -81,7 +83,8 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-annotation_1.3_spec@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -95,7 +98,8 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-jaxrs_2.1_spec@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -109,7 +113,8 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-jcdi_2.0_spec@1.1?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -123,7 +128,8 @@
       "scope": "provided",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-jsonb_1.0_spec?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -137,7 +143,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.johnzon/johnzon-mapper@1.2.11?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -151,7 +158,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.cxf/cxf-rt-rs-client?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -165,7 +173,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.cxf/cxf-rt-frontend-jaxrs?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -179,7 +188,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.cxf/cxf-rt-transports-local?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -193,7 +203,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-interceptor_1.2_spec@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -207,7 +218,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.geronimo.specs/geronimo-atinject_1.0_spec@1.0?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -221,7 +233,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:maven/org.apache.openwebbeans/openwebbeans-impl?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -276,6 +289,43 @@
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_42.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "apache_2_0-333e4ff7-60ea-9956-75b7-a79609cce140",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "johnzon-jsonb-1.2.11/META-INF/DEPENDENCIES",
+          "start_line": 11,
+          "end_line": 11,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 17,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_212.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "johnzon-jsonb-1.2.11/META-INF/DEPENDENCIES",
+          "start_line": 13,
+          "end_line": 13,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 17,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_212.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE"
         }
       ]
     },
@@ -347,29 +397,6 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_791.RULE"
         }
       ]
-    },
-    {
-      "identifier": "apache_2_0-f089be2e-5d2c-9289-8733-3880be15665c",
-      "license_expression": "apache-2.0",
-      "license_expression_spdx": "Apache-2.0",
-      "detection_count": 1,
-      "detection_log": [],
-      "reference_matches": [
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "from_file": "johnzon-jsonb-1.2.11/META-INF/DEPENDENCIES",
-          "start_line": 9,
-          "end_line": 13,
-          "matcher": "3-seq",
-          "score": 64.18,
-          "matched_length": 43,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_1247.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1247.RULE"
-        }
-      ]
     }
   ],
   "files": [
@@ -417,25 +444,39 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/DEPENDENCIES",
-              "start_line": 9,
-              "end_line": 13,
-              "matcher": "3-seq",
-              "score": 64.18,
-              "matched_length": 43,
+              "start_line": 11,
+              "end_line": 11,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 17,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_1247.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1247.RULE"
+              "rule_identifier": "apache-2.0_212.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE"
+            },
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "johnzon-jsonb-1.2.11/META-INF/DEPENDENCIES",
+              "start_line": 13,
+              "end_line": 13,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 17,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_212.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_212.RULE"
             }
           ],
           "detection_log": [],
-          "identifier": "apache_2_0-f089be2e-5d2c-9289-8733-3880be15665c"
+          "identifier": "apache_2_0-333e4ff7-60ea-9956-75b7-a79609cce140"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 45.74,
+      "percentage_of_license_text": 36.17,
       "scan_errors": []
     },
     {
@@ -454,7 +495,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/LICENSE",
               "start_line": 2,
               "end_line": 4,
@@ -517,7 +558,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "johnzon-jsonb-1.2.11/META-INF/MANIFEST.MF",
                   "start_line": 1,
                   "end_line": 1,
@@ -541,6 +582,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "documentation_url": "http://johnzon.apache.org/"
           },
@@ -564,7 +607,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/MANIFEST.MF",
               "start_line": 6,
               "end_line": 6,
@@ -601,7 +644,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/NOTICE",
               "start_line": 5,
               "end_line": 6,
@@ -702,6 +745,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -758,7 +803,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
                   "start_line": 3,
                   "end_line": 18,
@@ -786,6 +831,8 @@
             "pkg:maven/org.apache.johnzon/johnzon-jsonb@1.2.11?classifier=sources"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -794,7 +841,8 @@
               "scope": "provided",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -804,7 +852,8 @@
               "scope": "provided",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -814,7 +863,8 @@
               "scope": "provided",
               "is_runtime": true,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -824,7 +874,8 @@
               "scope": "provided",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -834,7 +885,8 @@
               "scope": "compile",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -844,7 +896,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -854,7 +907,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -864,7 +918,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -874,7 +929,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -884,7 +940,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": true,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -894,7 +951,8 @@
               "scope": "test",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -918,7 +976,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "johnzon-jsonb-1.2.11/META-INF/maven/org.apache.johnzon/johnzon-jsonb/pom.xml",
               "start_line": 3,
               "end_line": 18,

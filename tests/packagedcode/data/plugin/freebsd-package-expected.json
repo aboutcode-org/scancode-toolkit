@@ -46,7 +46,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "package/+COMPACT_MANIFEST",
               "start_line": 1,
               "end_line": 1,
@@ -69,6 +69,8 @@
       "extracted_license_statement": "{'licenses': ['GPLv2'], 'licenselogic': 'single'}",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -135,7 +137,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "package/+COMPACT_MANIFEST",
                   "start_line": 1,
                   "end_line": 1,
@@ -159,6 +161,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,

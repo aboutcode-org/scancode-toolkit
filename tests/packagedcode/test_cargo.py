@@ -65,6 +65,30 @@ class TestCargo(PackageTester):
         packages_data = cargo.CargoTomlHandler.parse(test_file)
         self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_cargo_toml_tauri_workspace(self):
+        test_file = self.get_test_loc('cargo/cargo_toml/tauri/Cargo.toml')
+        expected_loc = self.get_test_loc('cargo/cargo_toml/tauri/Cargo.toml.expected')
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_cargo_toml_workspace_with_dependencies(self):
+        test_file = self.get_test_loc('cargo/cargo_toml/boring-main/Cargo.toml')
+        expected_loc = self.get_test_loc('cargo/cargo_toml/boring-main/Cargo.toml.expected')
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+    
+    def test_parse_cargo_toml_workspace_with_dependencies_child(self):
+        test_file = self.get_test_loc('cargo/cargo_toml/boring-child/Cargo.toml')
+        expected_loc = self.get_test_loc('cargo/cargo_toml/boring-child/Cargo.toml.expected')
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_cargo_toml_tauri_workspace_in_version(self):
+        test_file = self.get_test_loc('cargo/cargo_toml/tauri-examples/Cargo.toml')
+        expected_loc = self.get_test_loc('cargo/cargo_toml/tauri-examples/Cargo.toml.expected')
+        packages_data = cargo.CargoTomlHandler.parse(test_file)
+        self.check_packages_data(packages_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_cargo_lock_sample1(self):
         test_file = self.get_test_loc('cargo/cargo_lock/sample1/Cargo.lock')
         expected_loc = self.get_test_loc('cargo/cargo_lock/sample1/output.expected.json')
@@ -97,7 +121,43 @@ class TestCargo(PackageTester):
 
     def test_scan_cli_works(self):
         test_file = self.get_test_loc('cargo/scan')
-        expected_file = self.get_test_loc('cargo/scan.expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cargo/scan.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_scan_cli_works_package_only(self):
+        test_file = self.get_test_loc('cargo/scan')
+        expected_file = self.get_test_loc('cargo/scan-package-only.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package-only', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_scan_works_on_cargo_workspace_tauri(self):
+        test_file = self.get_test_loc('cargo/cargo-with-workspace/tauri/')
+        expected_file = self.get_test_loc('cargo/cargo-with-workspace/tauri.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_scan_works_on_cargo_workspace_boring(self):
+        test_file = self.get_test_loc('cargo/cargo-with-workspace/boring/')
+        expected_file = self.get_test_loc('cargo/cargo-with-workspace/boring.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_scan_works_on_rust_binary_with_inspector(self):
+        test_file = self.get_test_loc('cargo/binary/cargo_dependencies')
+        expected_file = self.get_test_loc('cargo/binary/cargo-binary.expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(

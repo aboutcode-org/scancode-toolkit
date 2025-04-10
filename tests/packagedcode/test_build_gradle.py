@@ -30,6 +30,13 @@ class TestBuildGradle(PackageTester):
         run_scan_click(['--package', test_file, '--json-pp', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_end2end_scan_can_detect_build_gradle_package_only(self):
+        test_file = self.get_test_loc('build_gradle/end2end/build.gradle')
+        expected_file = self.get_test_loc('build_gradle/end2end/build.gradle-package-only-expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package-only', test_file, '--json-pp', result_file])
+        check_json_scan(expected_file, result_file, regen=REGEN_TEST_FIXTURES)
+
 
 def check_gradle_parse(location):
     packages_data = build_gradle.BuildGradleHandler.parse(location)

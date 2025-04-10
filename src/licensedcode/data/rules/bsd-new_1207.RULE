@@ -6,4 +6,4 @@ ignorable_urls:
     - http://opensource.org/licenses/BSD-3-Clause
 ---
 
-This software is licensed under a BSD 3-Clause License (http://opensource.org/licenses/BSD-3-Clause)
+This software is licensed under a {{BSD 3-Clause License}} (http://opensource.org/licenses/BSD-3-Clause)

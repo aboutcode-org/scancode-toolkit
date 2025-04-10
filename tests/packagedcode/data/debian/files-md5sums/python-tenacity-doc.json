@@ -1,0 +1,430 @@
+{
+  "packages": [
+    {
+      "type": "deb",
+      "namespace": "debian",
+      "name": "python-tenacity-doc",
+      "version": "8.2.1-1",
+      "qualifiers": {
+        "arch": "all"
+      },
+      "subpath": null,
+      "primary_language": null,
+      "description": "retry code until it succeeeds - doc\n Tenacity is a general-purpose retrying library to simplify the task of adding\n retry behavior to just about anything. It originates from a fork of Retrying.\n .\n Features:\n  * Generic Decorator API\n  * Specify stop condition (i.e. limit by number of attempts)\n  * Specify wait condition (i.e. exponential backoff sleeping between attempts)\n  * Customize retrying on Exceptions\n  * Customize retrying on expected returned result\n .\n This package contains the documentation.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "maintainer",
+          "name": "Debian Python Team",
+          "email": "team+python@tracker.debian.org",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "doc"
+      ],
+      "homepage_url": "https://github.com/jd/tenacity",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:deb/debian/python-tenacity"
+      ],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "multi_arch": "foreign"
+      },
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:deb/debian/python-tenacity-doc@8.2.1-1?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "python-tenacity-doc/control.tar.xz-extract/control"
+      ],
+      "datasource_ids": [
+        "debian_control_extracted_deb"
+      ],
+      "purl": "pkg:deb/debian/python-tenacity-doc@8.2.1-1?arch=all"
+    }
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "python-tenacity-doc",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:deb/debian/python-tenacity-doc@8.2.1-1?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "python-tenacity-doc/control.tar.xz-extract",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:deb/debian/python-tenacity-doc@8.2.1-1?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "python-tenacity-doc/control.tar.xz-extract/control",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "deb",
+          "namespace": "debian",
+          "name": "python-tenacity-doc",
+          "version": "8.2.1-1",
+          "qualifiers": {
+            "arch": "all"
+          },
+          "subpath": null,
+          "primary_language": null,
+          "description": "retry code until it succeeeds - doc\n Tenacity is a general-purpose retrying library to simplify the task of adding\n retry behavior to just about anything. It originates from a fork of Retrying.\n .\n Features:\n  * Generic Decorator API\n  * Specify stop condition (i.e. limit by number of attempts)\n  * Specify wait condition (i.e. exponential backoff sleeping between attempts)\n  * Customize retrying on Exceptions\n  * Customize retrying on expected returned result\n .\n This package contains the documentation.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "maintainer",
+              "name": "Debian Python Team",
+              "email": "team+python@tracker.debian.org",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "doc"
+          ],
+          "homepage_url": "https://github.com/jd/tenacity",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:deb/debian/python-tenacity"
+          ],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "multi_arch": "foreign"
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_control_extracted_deb",
+          "purl": "pkg:deb/debian/python-tenacity-doc@8.2.1-1?arch=all"
+        }
+      ],
+      "for_packages": [
+        "pkg:deb/debian/python-tenacity-doc@8.2.1-1?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "python-tenacity-doc/control.tar.xz-extract/md5sums",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "deb",
+          "namespace": null,
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [
+            {
+              "path": "usr/share/doc-base/python-tenacity-doc.python-tenacity-doc",
+              "size": 0,
+              "sha1": null,
+              "md5": "94a76e8f536ddd647f1f7964987b32c0",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/changelog.Debian.gz",
+              "size": 0,
+              "sha1": null,
+              "md5": "68f71133503a76e52982b85d513d1136",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/changelog.gz",
+              "size": 0,
+              "sha1": null,
+              "md5": "183520b240797f3a649d98b7bb7be4e3",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/copyright",
+              "size": 0,
+              "sha1": null,
+              "md5": "ea5910f6f4196cc6ae8283511861ef2f",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_sources/api.rst.txt",
+              "size": 0,
+              "sha1": null,
+              "md5": "e8075284b8f70407416a1c1e05a6fdd2",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_sources/changelog.rst.txt",
+              "size": 0,
+              "sha1": null,
+              "md5": "743cea20a6b9c7bfd7a700b9dcbc5929",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_sources/index.rst.txt",
+              "size": 0,
+              "sha1": null,
+              "md5": "e46c2bcdbc79d117d61056a6c675a31c",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_static/alabaster.css",
+              "size": 0,
+              "sha1": null,
+              "md5": "4fc9d553e40384beedf38e21f205d2a7",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_static/basic.css",
+              "size": 0,
+              "sha1": null,
+              "md5": "23ffe661f835b08e157d492a86aae74d",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_static/custom.css",
+              "size": 0,
+              "sha1": null,
+              "md5": "dad0c9b31e59069c83018ce87594ed65",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_static/documentation_options.js",
+              "size": 0,
+              "sha1": null,
+              "md5": "e67b9e9b5788f18ade1fc41136b20c4c",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_static/file.png",
+              "size": 0,
+              "sha1": null,
+              "md5": "ba0c95766a77a6c598a7ca542f1db738",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_static/forkme_right_darkblue_121621.png",
+              "size": 0,
+              "sha1": null,
+              "md5": "5b6b3233153feca50a94aa6c60873a5f",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_static/minus.png",
+              "size": 0,
+              "sha1": null,
+              "md5": "36b1a4b05451c7acde7ced60b2f6bc21",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_static/plus.png",
+              "size": 0,
+              "sha1": null,
+              "md5": "0d7849fd4d4148b7f78cab60a087633a",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/_static/pygments.css",
+              "size": 0,
+              "sha1": null,
+              "md5": "4f81be1c1dd97a6ec76af15b8f926189",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/api.html",
+              "size": 0,
+              "sha1": null,
+              "md5": "9efe10054f499c0ada4c075a5fd7e63e",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/changelog.html.gz",
+              "size": 0,
+              "sha1": null,
+              "md5": "20c0cdca61e878f68105cf4a624ec55a",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/genindex.html",
+              "size": 0,
+              "sha1": null,
+              "md5": "2bbfe92b8b331100854c85a66d7b2992",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/index.html",
+              "size": 0,
+              "sha1": null,
+              "md5": "c6f4c086c870857ac7024f4eb078daa5",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/objects.inv",
+              "size": 0,
+              "sha1": null,
+              "md5": "f9ccc673686dc0ae4a40ca3efe962100",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/py-modindex.html",
+              "size": 0,
+              "sha1": null,
+              "md5": "1336b99369dc413651a3dcd86d689d9d",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/search.html",
+              "size": 0,
+              "sha1": null,
+              "md5": "388beed723ed2d5b32f4022e40e5fe5f",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "usr/share/doc/python-tenacity-doc/html/searchindex.js",
+              "size": 0,
+              "sha1": null,
+              "md5": "f8a5d3d0e517ea312453a9670d66faba",
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            }
+          ],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_md5sums_in_extracted_deb",
+          "purl": null
+        }
+      ],
+      "for_packages": [
+        "pkg:deb/debian/python-tenacity-doc@8.2.1-1?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

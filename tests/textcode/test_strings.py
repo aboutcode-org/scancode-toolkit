@@ -11,10 +11,12 @@ import io
 import json
 import os
 
+import pytest
 from commoncode.testcase import FileBasedTesting
 
 from scancode_config import REGEN_TEST_FIXTURES
 from textcode import strings
+
 
 
 class TestStrings(FileBasedTesting):
@@ -159,14 +161,20 @@ class TestStrings(FileBasedTesting):
             expected_file = os.path.join(expec_dir, tf + '.strings')
             self.check_file_strings(test_file, expected_file)
 
-    def test_is_relative_path(self):
+    def test_is_relative_path_win(self):
         # Win Path
         path = "c:\\usr\\lib\\librt.so.1."
-        self.assertFalse(strings.is_relative_path(path))
+        assert not strings.is_relative_path(path)
 
+    @pytest.mark.xfail(reason="is_relative_path is not implemented on Windows")
+    def test_is_relative_path_win2(self):
+        path = "usr\\lib\\librt.so.1."
+        assert strings.is_relative_path(path) is True
+
+    def test_is_relative_path_posix(self):
         # Relative Posix Path
         path = "usr/lib/librt.so.1"
-        self.assertTrue(strings.is_relative_path(path))
+        assert strings.is_relative_path(path) is True
 
     def test_strings_with_lf(self):
         test_file = 'strings/with-lf/strings.exe'

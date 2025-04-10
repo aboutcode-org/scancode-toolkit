@@ -43,7 +43,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -68,6 +68,8 @@
       "source_packages": [
         "pkg:alpine/musl@1.2.2-r7"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -136,7 +138,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -161,6 +163,8 @@
       "source_packages": [
         "pkg:alpine/busybox@1.34.1-r5"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -229,7 +233,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -254,6 +258,8 @@
       "source_packages": [
         "pkg:alpine/alpine-baselayout@3.2.0-r18"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -349,7 +355,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -374,6 +380,8 @@
       "source_packages": [
         "pkg:alpine/alpine-keys@2.4-r1"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -604,7 +612,7 @@
           "matches": [
             {
               "license_expression": "mpl-2.0 AND mit",
-              "spdx_license_expression": "MPL-2.0 AND MIT",
+              "license_expression_spdx": "MPL-2.0 AND MIT",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -629,6 +637,8 @@
       "source_packages": [
         "pkg:alpine/ca-certificates@20211220-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -697,7 +707,7 @@
           "matches": [
             {
               "license_expression": "openssl-ssleay",
-              "spdx_license_expression": "OpenSSL",
+              "license_expression_spdx": "OpenSSL",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -722,6 +732,8 @@
       "source_packages": [
         "pkg:alpine/openssl@1.1.1n-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -817,7 +829,7 @@
           "matches": [
             {
               "license_expression": "openssl-ssleay",
-              "spdx_license_expression": "OpenSSL",
+              "license_expression_spdx": "OpenSSL",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -842,6 +854,8 @@
       "source_packages": [
         "pkg:alpine/openssl@1.1.1n-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -910,7 +924,7 @@
           "matches": [
             {
               "license_expression": "isc AND (bsd-new OR mit)",
-              "spdx_license_expression": "ISC AND (BSD-3-Clause OR MIT)",
+              "license_expression_spdx": "ISC AND (BSD-3-Clause OR MIT)",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -935,6 +949,8 @@
       "source_packages": [
         "pkg:alpine/libretls@3.3.4-r3"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -1003,7 +1019,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1028,6 +1044,8 @@
       "source_packages": [
         "pkg:alpine/busybox@1.34.1-r5"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1084,7 +1102,7 @@
           "matches": [
             {
               "license_expression": "zlib",
-              "spdx_license_expression": "Zlib",
+              "license_expression_spdx": "Zlib",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1109,6 +1127,8 @@
       "source_packages": [
         "pkg:alpine/zlib@1.2.12-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {
         "missing_file_references": [
           {
@@ -1177,7 +1197,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1202,6 +1222,8 @@
       "source_packages": [
         "pkg:alpine/apk-tools@2.12.7-r3"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1258,7 +1280,7 @@
           "matches": [
             {
               "license_expression": "gpl-2.0",
-              "spdx_license_expression": "GPL-2.0-only",
+              "license_expression_spdx": "GPL-2.0-only",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1283,6 +1305,8 @@
       "source_packages": [
         "pkg:alpine/pax-utils@1.3.3-r0"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1339,7 +1363,7 @@
           "matches": [
             {
               "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-              "spdx_license_expression": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
+              "license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1364,6 +1388,8 @@
       "source_packages": [
         "pkg:alpine/musl@1.2.2-r7"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1420,7 +1446,7 @@
           "matches": [
             {
               "license_expression": "bsd-simplified AND bsd-new",
-              "spdx_license_expression": "BSD-2-Clause AND BSD-3-Clause",
+              "license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
               "from_file": "alpine-rootfs/lib/apk/db/installed",
               "start_line": 1,
               "end_line": 1,
@@ -1445,6 +1471,8 @@
       "source_packages": [
         "pkg:alpine/libc-dev@0.7.2-r3"
       ],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -1466,7 +1494,8 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/ca-certificates-bundle?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -1480,7 +1509,8 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/musl?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -1494,7 +1524,8 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/ca-certificates-bundle?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -1508,7 +1539,8 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/scanelf?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -1522,7 +1554,8 @@
       "scope": "depend",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:alpine/musl-utils?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -2204,7 +2237,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2249,6 +2282,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2300,7 +2335,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2390,6 +2425,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2441,7 +2478,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -2720,6 +2757,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -2771,7 +2810,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3167,6 +3206,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3218,7 +3259,7 @@
               "matches": [
                 {
                   "license_expression": "mpl-2.0 AND mit",
-                  "spdx_license_expression": "MPL-2.0 AND MIT",
+                  "license_expression_spdx": "MPL-2.0 AND MIT",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3263,6 +3304,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3314,7 +3357,7 @@
               "matches": [
                 {
                   "license_expression": "openssl-ssleay",
-                  "spdx_license_expression": "OpenSSL",
+                  "license_expression_spdx": "OpenSSL",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3440,6 +3483,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3491,7 +3536,7 @@
               "matches": [
                 {
                   "license_expression": "openssl-ssleay",
-                  "spdx_license_expression": "OpenSSL",
+                  "license_expression_spdx": "OpenSSL",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3536,6 +3581,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3587,7 +3634,7 @@
               "matches": [
                 {
                   "license_expression": "isc AND (bsd-new OR mit)",
-                  "spdx_license_expression": "ISC AND (BSD-3-Clause OR MIT)",
+                  "license_expression_spdx": "ISC AND (BSD-3-Clause OR MIT)",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3632,6 +3679,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -3640,7 +3689,8 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -3694,7 +3744,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3730,6 +3780,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3781,7 +3833,7 @@
               "matches": [
                 {
                   "license_expression": "zlib",
-                  "spdx_license_expression": "Zlib",
+                  "license_expression_spdx": "Zlib",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3826,6 +3878,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -3877,7 +3931,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -3922,6 +3976,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -3930,7 +3986,8 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -3940,7 +3997,8 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -3994,7 +4052,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-2.0",
-                  "spdx_license_expression": "GPL-2.0-only",
+                  "license_expression_spdx": "GPL-2.0-only",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -4030,6 +4088,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -4081,7 +4141,7 @@
               "matches": [
                 {
                   "license_expression": "mit AND bsd-new AND gpl-2.0-plus",
-                  "spdx_license_expression": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
+                  "license_expression_spdx": "MIT AND BSD-3-Clause AND GPL-2.0-or-later",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -4153,6 +4213,8 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -4161,7 +4223,8 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -4215,7 +4278,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-simplified AND bsd-new",
-                  "spdx_license_expression": "BSD-2-Clause AND BSD-3-Clause",
+                  "license_expression_spdx": "BSD-2-Clause AND BSD-3-Clause",
                   "from_file": "alpine-rootfs/lib/apk/db/installed",
                   "start_line": 1,
                   "end_line": 1,
@@ -4241,6 +4304,8 @@
             "pkg:alpine/libc-dev@0.7.2-r3"
           ],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -4249,7 +4314,8 @@
               "scope": "depend",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

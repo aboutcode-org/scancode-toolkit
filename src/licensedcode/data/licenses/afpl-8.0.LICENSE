@@ -12,7 +12,9 @@ text_urls:
 ignorable_copyrights:
     - Copyright (c) 1994, 1995, 1997, 1998, 1999 Aladdin Enterprises, Menlo Park, California,
         U.S.A.
+    - copyright is held by Aladdin Enterprises
 ignorable_holders:
+    - Aladdin Enterprises
     - Aladdin Enterprises, Menlo Park, California, U.S.A.
 ---
 

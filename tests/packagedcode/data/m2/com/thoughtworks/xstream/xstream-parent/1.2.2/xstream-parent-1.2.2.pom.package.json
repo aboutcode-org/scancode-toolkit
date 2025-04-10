@@ -38,32 +38,32 @@
       "license_expression_spdx": "BSD-3-Clause",
       "matches": [
         {
-          "score": 90.0,
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": null,
           "start_line": 1,
           "end_line": 1,
-          "from_file": null,
+          "matcher": "2-aho",
+          "score": 90.0,
           "matched_length": 2,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "spdx_license_expression": "BSD-3-Clause",
-          "rule_identifier": "bsd-new_878.RULE",
           "rule_relevance": 90,
+          "rule_identifier": "bsd-new_878.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_878.RULE",
           "matched_text": "- name: BSD style"
         },
         {
-          "score": 100.0,
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": null,
           "start_line": 2,
           "end_line": 2,
-          "from_file": null,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 6,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "bsd-new",
-          "spdx_license_expression": "BSD-3-Clause",
-          "rule_identifier": "bsd-new_xstream_maven_4.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "bsd-new_xstream_maven_4.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_xstream_maven_4.RULE",
           "matched_text": "  url: http://xstream.codehaus.com/license.html"
         }
@@ -80,6 +80,8 @@
     "pkg:maven/com.thoughtworks.xstream/xstream-parent@1.2.2?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -88,7 +90,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -98,7 +101,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -108,7 +112,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -118,7 +123,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -128,7 +134,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -138,7 +145,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -148,7 +156,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -158,7 +167,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -168,7 +178,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -178,7 +189,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -188,7 +200,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -198,7 +211,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -208,7 +222,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -218,7 +233,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -228,7 +244,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -238,7 +255,8 @@
       "scope": "dependencymanagement",
       "is_runtime": false,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

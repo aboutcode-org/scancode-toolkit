@@ -1,0 +1,23 @@
+---
+license_expression: lgpl-3.0 AND gpl-3.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.txt
+notes: this is a confusing mix of LGPL and GPL See https://github.com/srazi/Saaghar/blob/a19421ce13769931cf2a53bd690861338905eca8/src/QIrBreadCrumbBar/QIronCommon/qirglobal.h#L23
+ignorable_urls:
+    - http://www.gnu.org/copyleft/gpl.html
+---
+
+you can redistribute
+sources and libraries of this library and/or modify them under the terms of
+the GNU Library General Public License version 3.0 as published by the
+Free Software Foundation and appearing in the file LICENSE.txt included in
+the packaging of this file.
+Please review the following information to ensure the GNU General
+Public License version 3.0 requirements will be met:
+http://www.gnu.org/copyleft/gpl.html.
+
+This SDK is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Library General Public License for more details.

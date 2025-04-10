@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1997 Dan error_act (dmalek@jlc.net)
+  - Copyright (c) 1999-2001 Dan Malek <dan@embeddedalley.com>
+holders:
+  - Dan error_act
+  - Dan Malek

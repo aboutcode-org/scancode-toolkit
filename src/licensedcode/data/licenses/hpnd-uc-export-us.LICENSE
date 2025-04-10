@@ -1,0 +1,20 @@
+---
+key: hpnd-uc-export-us
+short_name: HPND UC US export warning
+name: Historical Permission Notice and Disclaimer - University of California, US export warning
+owner: Regents of the University of California
+category: Free Restricted
+spdx_license_key: HPND-UC-export-US
+notes: Added in SPDX license list 3.24
+other_urls:
+    - https://github.com/RTimothyEdwards/magic/blob/master/LICENSE
+---
+
+Permission to use, copy, modify, and distribute this
+software and its documentation for any purpose and without
+fee is hereby granted, provided that the above copyright
+notice appear in all copies.  The University of California
+makes no representations about the suitability of this
+software for any purpose.  It is provided "as is" without
+express or implied warranty.  Export of this software outside
+of the United States of America may require an export license.

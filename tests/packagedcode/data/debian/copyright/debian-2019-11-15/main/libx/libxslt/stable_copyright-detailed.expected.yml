@@ -8,17 +8,17 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-x11-xconsortium-veillard
     matches:
       - license_expression: x11-xconsortium-veillard
-        spdx_license_expression: LicenseRef-scancode-x11-xconsortium-veillard
+        license_expression_spdx: LicenseRef-scancode-x11-xconsortium-veillard
         from_file:
         start_line: 15
         end_line: 34
         matcher: 2-aho
-        score: '100.0'
+        score: '99.0'
         matched_length: '199'
         match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: x11-xconsortium-veillard.LICENSE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/x11-xconsortium-veillard.LICENSE
+        rule_relevance: 99
+        rule_identifier: x11-xconsortium-veillard_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/x11-xconsortium-veillard_3.RULE
         matched_text: |
           Permission is hereby granted, free of charge, to any person obtaining a copy
           of this software and associated documentation files (the "Software"), to deal
@@ -40,12 +40,12 @@ license_detections:
           Except as contained in this notice, the name of Daniel Veillard shall not
           be used in advertising or otherwise to promote the sale, use or other deal-
           ings in this Software without prior written authorization from him.
-    identifier: x11_xconsortium_veillard-b2601908-f03c-335c-5bbd-e72dc065c901
+    identifier: x11_xconsortium_veillard-c8cd46c3-d1e8-41fb-1343-c8f95ccec0ef
   - license_expression: x11-xconsortium
     license_expression_spdx: X11
     matches:
       - license_expression: x11-xconsortium
-        spdx_license_expression: X11
+        license_expression_spdx: X11
         from_file:
         start_line: 43
         end_line: 62

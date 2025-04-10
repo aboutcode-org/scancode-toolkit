@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2002 2003 by MontaVista Software
+  - Copyright (c) 2004 Boris
+holders:
+  - MontaVista Software
+  - Boris
+authors:
+  - George Anzinger george@mvista.com

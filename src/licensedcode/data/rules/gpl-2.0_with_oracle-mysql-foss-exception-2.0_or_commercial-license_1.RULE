@@ -1,0 +1,20 @@
+---
+license_expression: gpl-2.0 WITH oracle-mysql-foss-exception-2.0 OR commercial-license
+is_license_notice: yes
+relevance: 90
+referenced_filenames:
+    - COPYING
+    - EXCEPTIONS-CLIENT
+notes: https://raw.githubusercontent.com/avast/retdec/master/LICENSE-THIRD-PARTY The licensing
+    is complex and the exception is not exactly the same as Oracle's.
+ignorable_urls:
+    - https://github.com/keystone-engine/keystone/blob/master/EXCEPTIONS-CLIENT
+---
+
+available under a dual license:
+* Version 2 of the GNU General Public License (GPLv2). (I.e. Without the "any later version" clause.). License information can be found in the COPYING file and the EXCEPTIONS-CLIENT file.
+* For commercial usage in production environments, contact the authors of Keystone to buy a royalty-free license.
+This repository does not use Keystone Engine commercially.
+Therefore, we cite the GPLv2 as Keystone Engine license below.
+In order to license this repository under the MIT license, we use the FOSS exception provided by Keystone Engine.
+For more details, see https://github.com/keystone-engine/keystone/blob/master/EXCEPTIONS-CLIENT.

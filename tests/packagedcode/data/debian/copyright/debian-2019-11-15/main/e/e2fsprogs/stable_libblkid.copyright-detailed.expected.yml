@@ -8,7 +8,7 @@ license_detections:
     license_expression_spdx: LGPL-2.0-only
     matches:
       - license_expression: lgpl-2.0
-        spdx_license_expression: LGPL-2.0-only
+        license_expression_spdx: LGPL-2.0-only
         from_file:
         start_line: 15
         end_line: '19'

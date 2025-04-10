@@ -1,0 +1,19 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) 2009 Chris Wanstrath
+  - Copyright (c) 2010-2014 Jan Lehnardt
+  - Copyright (c) 2010-2015 The mustache.js community
+holders:
+  - Chris Wanstrath
+  - Jan Lehnardt
+  - The mustache.js community
+holders_summary:
+  - value: Chris Wanstrath
+    count: 1
+  - value: Jan Lehnardt
+    count: 1
+  - value: The mustache.js community
+    count: 1

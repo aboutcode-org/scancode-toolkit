@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1987, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003,
+    2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+holders:
+  - Free Software Foundation, Inc.
+authors:
+  - Ian Jackson, Erick Branderhorst, Galen Hazelwood, and Josip Rodin. Today
+  - the Debian TeX Task Force <debian-tex-maint@lists.debian.org>
+  - Karl Berry <karl@cs.umb.edu>

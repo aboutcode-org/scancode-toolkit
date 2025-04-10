@@ -1,0 +1,49 @@
+---
+key: nist-nvd-api-tou
+short_name: NIST NVD API TOU
+name: NIST NVD API Terms of Use
+category: Permissive
+owner: NIST
+homepage_url: https://nvd.nist.gov/developers/request-an-api-key
+spdx_license_key: LicenseRef-scancode-nist-nvd-api-tou
+ignorable_authors:
+    - the National Institute of Standards and Technology
+---
+
+Terms of Use
+
+The National Vulnerability Database (NVD) was created by the National Institute of Standards and Technology (NIST) and is being made available as a public service. The NVD offers some of its public data in machine-readable format via an Application Programming Interface ("API"). This service is offered subject to this Terms of Use and NIST Website Policies (collectively, the "Terms of Use" or "TOU").
+
+Use
+
+The NVD API is intended to be used to develop a service or services to search, display, analyze, retrieve, view and otherwise "get" information from NVD data.
+
+Examples of specific use cases are described in the guidance on the NVD’s website. Enterprise scale development that uses the NVD should consult this guidance.
+
+Attribution
+
+Services which utilize or access the NVD API are asked to display the following notice prominently within the application: "This product uses the NVD API but is not endorsed or certified by the NVD."
+
+You may use the NVD name in order to identify the source of API content subject to these rules. You may not use the NVD name, to imply endorsement of any product, service, or entity, not-for-profit, commercial or otherwise.
+
+Modification or False Representation of Content
+
+If you modify the content accessed through the API, you may not attribute the source as the NVD.
+
+Use Limitations
+
+Your use of the API may be subject to certain limitations on access, calls, or use as set forth within these Agreements or otherwise provided by the NVD. If the NVD’s administrators believe that you have attempted to exceed or circumvent these limits, or misuse access to this system, your ability to access the API and/or the NVD may be temporarily or permanently blocked. The NVD may monitor your use of the API to improve the service or to ensure access limitations are not exceeded.
+
+Without an API key, you may make a number of queries equal to the public rate limits posted at nvd.nist.gov/developers. More than the public rate limit requires that you register for an API key. The key will become part of your data request. Keys should not be used by, or shared with, individuals or organizations other than the original requestor.
+
+Queries from a business or organization having multiple requestors might employ a proxy service or firewall. This may make all of the users of that business or organization to appear to have the same IP address. If multiple employees were making queries, the rate limits are for the user’s proxy server/firewall, not the individual user.
+
+A unique API key is suggested for any mobile or web application that makes a number of requests based on dynamically changing information. Rate limits may be reached by the total number of requests from all instances when the application queries the NVD API, even if multiple users access your application through different IP addresses.
+
+Disclaimer of Warranties
+
+The API is provided "as is" and on an "as-available" basis. The NVD hereby disclaim all warranties of any kind, express or implied, including without limitation the warranties of merchantability, fitness for a particular purpose, and non-infringement. The NVD makes no warranty that the API will be error free or that access thereto will be continuous or uninterrupted.
+
+No Waiver
+
+The NVD’s failure to exercise or enforce any right or provision of these Terms of Use shall not constitute waiver of such right or provision.

@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2000, 2001, 2006 Debian
+  - Copyright (c) 1999 The NetBSD Foundation, Inc.
+holders:
+  - Debian
+  - The NetBSD Foundation, Inc.
+authors:
+  - the NetBSD Foundation, Inc. and its contributors

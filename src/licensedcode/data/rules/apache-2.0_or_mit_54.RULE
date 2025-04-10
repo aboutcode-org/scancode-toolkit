@@ -1,0 +1,20 @@
+---
+license_expression: apache-2.0 OR mit
+is_license_notice: yes
+ignorable_urls:
+    - http://opensource.org/licenses/MIT
+    - http://www.apache.org/licenses/LICENSE-2.0
+---
+
+@license
+ is dual licensed under both
+
+  1. The Apache 2.0 License
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  and
+
+  2. The MIT License
+     http://opensource.org/licenses/MIT
+
+ may be distributed under either license.

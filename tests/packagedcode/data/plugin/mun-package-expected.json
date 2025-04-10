@@ -47,21 +47,21 @@
               "matches": [
                 {
                   "license_expression": "unknown",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown",
                   "from_file": "crypt32.dll.mun",
                   "start_line": 1,
-                  "end_line": 3,
+                  "end_line": 1,
                   "matcher": "5-undetected",
-                  "score": 88.89,
-                  "matched_length": 8,
+                  "score": 90.0,
+                  "matched_length": 9,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "package-manifest-unknown-ac5b72bda2754025edd093f0f8161168689d3065",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-ac5b72bda2754025edd093f0f8161168689d3065",
-                  "matched_text": "license LegalCopyright: \u00a9 Microsoft Corporation. All rights reserved.\nLegalTrademarks:\nLicense:"
+                  "rule_identifier": "package-manifest-unknown-33f1f14c9c3aed427a1ebff42fd03640ebc75225",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-33f1f14c9c3aed427a1ebff42fd03640ebc75225",
+                  "matched_text": "license {'LegalCopyright': '\u00a9 Microsoft Corporation. All rights reserved.', 'LegalTrademarks': '', 'License': None}"
                 }
               ],
-              "identifier": "unknown-11be580c-3254-29b5-4813-8b152eefbe71"
+              "identifier": "unknown-7a4e31a4-3c62-cfda-29ff-b00424060fd7"
             }
           ],
           "other_license_expression": null,
@@ -71,6 +71,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,

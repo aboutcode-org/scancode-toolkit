@@ -60,14 +60,14 @@ class TestWinReg(PackageTester):
         test_path = 'C:\\Users\\Test\\Desktop'
         expected_path = 'Users/Test/Desktop'
         result = remove_drive_letter(test_path)
-        self.assertEqual(result, expected_path)
+        assert result == expected_path
 
     def test_win_reg_create_absolute_installed_file_path(self):
         root_dir = '/home/test/c/'
         test_path = 'C:\\Program Files\\Test Program\\'
         result = create_absolute_installed_file_path(root_dir, test_path)
         expected_path = '/home/test/c/Program Files/Test Program'
-        self.assertEqual(result, expected_path)
+        assert result == expected_path
 
     def test_scan_system_package_end_to_end_installed_win_reg(self):
         test_dir = self.get_test_loc('win_reg/get_installed_packages_docker/layer')

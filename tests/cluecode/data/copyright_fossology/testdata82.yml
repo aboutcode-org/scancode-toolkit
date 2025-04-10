@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2006 Michael Vogt <mvo@debian.org>
+holders:
+  - Michael Vogt
+authors:
+  - Michael Vogt <mvo@debian.org>
+  - Alexander Wirt <formorer@debian.org>
+  - James Troup

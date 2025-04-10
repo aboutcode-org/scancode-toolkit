@@ -37,7 +37,7 @@ Licensor offers benchmarking software (“Software”) pursuant to an open sourc
 
 4.3.    No Third-Party Beneficiaries. Except for the rights of Related Persons under Article 3 (Indemnification), there are no third-party beneficiaries to this Agreement.
 
-4.4.    Assignment. Licensee’s rights hereunder are non-assignable, and may not be sublicensed. 
+4.4.    Assignment. Licensee’s rights hereunder are non-assignable, and {{may not be}} sublicensed. 
 
 4.5.    Equitable Relief. Licensee acknowledges that the remedies available at law for any breach of this Agreement will, by their nature, be inadequate.  Accordingly, Licensor may obtain injunctive relief or other equitable relief to restrain a breach or threatened breach of this Agreement or to specifically enforce this Agreement, without proving that any monetary damages have been sustained, and without the requirement of posting of a bond prior to obtaining such equitable relief.
 
@@ -45,7 +45,7 @@ Licensor offers benchmarking software (“Software”) pursuant to an open sourc
 
 4.7.    Attorneys’ Fees.  If any legal action, arbitration or other proceeding is brought for the enforcement of this Agreement, or because of an alleged dispute, breach, default, or misrepresentation in connection with any of the provisions of this Agreement, the successful or prevailing party shall be entitled to recover its reasonable attorneys’ fees and other reasonable costs incurred in that action or proceeding, in addition to any other relief to which it may be entitled.
 
-4.8.    Amendment; Waiver.  This Agreement may not be amended, nor may any rights under it be waived, except in writing by Licensor.
+4.8.    Amendment; Waiver.  This Agreement {{may not be}} amended, nor may any rights under it be waived, except in writing by Licensor.
 
 4.9.    Severability. If any provision of this Agreement is held by a court of competent jurisdiction to be contrary to law, the provision shall be modified by the court and interpreted so as best to accomplish the objectives of the original provision to the fullest extent 
 permitted by law, and the remaining provisions of this Agreement shall remain in effect.

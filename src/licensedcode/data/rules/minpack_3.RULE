@@ -2,7 +2,7 @@
 license_expression: minpack
 is_license_text: yes
 ignorable_authors:
-    - the University of Chicago
+    - the University of Chicago, as Operator of Argonne National Laboratory
 ---
 
 * Redistribution and use in source and binary forms, with or without

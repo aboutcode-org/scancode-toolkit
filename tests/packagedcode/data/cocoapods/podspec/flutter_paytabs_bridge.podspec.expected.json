@@ -39,17 +39,17 @@
         "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "unknown-license-reference",
+            "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "unknown-license-reference",
-            "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
-            "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
             "matched_text": "license :file = ../LICENSE"
           }
@@ -64,6 +64,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": "https://cocoapods.org/pods/flutter_paytabs_bridge",

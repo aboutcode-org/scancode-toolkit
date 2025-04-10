@@ -30,17 +30,17 @@
       "license_expression_spdx": "LGPL-2.1-or-later",
       "matches": [
         {
-          "score": 100.0,
+          "license_expression": "lgpl-2.1-plus",
+          "license_expression_spdx": "LGPL-2.1-or-later",
+          "from_file": null,
           "start_line": 1,
           "end_line": 2,
-          "from_file": null,
+          "matcher": "1-hash",
+          "score": 100.0,
           "matched_length": 14,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "lgpl-2.1-plus",
-          "spdx_license_expression": "LGPL-2.1-or-later",
-          "rule_identifier": "lgpl-2.1-plus_482.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.1-plus_482.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_482.RULE",
           "matched_text": "- name: GNU LESSER GENERAL PUBLIC LICENSE\n  url: http://www.gnu.org/licenses/lgpl.txt"
         }
@@ -57,6 +57,8 @@
     "pkg:maven/org.hibernate/hibernate-commons-annotations@3.0.0.ga?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -65,7 +67,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -75,7 +78,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

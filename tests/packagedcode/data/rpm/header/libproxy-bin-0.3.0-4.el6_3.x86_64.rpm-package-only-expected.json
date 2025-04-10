@@ -1,0 +1,56 @@
+[
+  {
+    "type": "rpm",
+    "namespace": null,
+    "name": "libproxy-bin",
+    "version": "0.3.0-4.el6_3",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "Binary to test libproxy\nThe libproxy-bin package contains the proxy binary for libproxy",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "vendor",
+        "name": "CentOS",
+        "email": null,
+        "url": null
+      }
+    ],
+    "keywords": [],
+    "homepage_url": "http://code.google.com/p/libproxy/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "LGPLv2+",
+    "notice_text": null,
+    "source_packages": [
+      "pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src"
+    ],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "rpm_archive",
+    "purl": "pkg:rpm/libproxy-bin@0.3.0-4.el6_3"
+  }
+]

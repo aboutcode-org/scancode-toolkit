@@ -1,0 +1,155 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: rare, no longer available upstream https://raw.githubusercontent.com/aholinch/orekit-sgp4-xp/53d9d1fba87ce345d11464cbdce29ab4fb8f708c/lib/ussfsgp4/SGP4_Open_License.txt
+ignorable_copyrights:
+    - Copyright 2015 United States Government as represented by the Administrator of Air Force
+        Space Command
+ignorable_holders:
+    - United States Government as represented by the Administrator of Air Force Space Command
+---
+
+AIR FORCE SPACE COMMAND (AFSPC) OPEN SOURCE AGREEMENT for
+SGP4 - (Simplified General Perturbations #4)
+THIS OPEN SOURCE AGREEMENT ("AGREEMENT") DEFINES THE RIGHTS OF USE,
+REPRODUCTION, DISTRIBUTION, MODIFICATION AND REDISTRIBUTION OF CERTAIN
+COMPUTER SOFTWARE ORIGINALLY RELEASED BY THE UNITED STATES GOVERNMENT
+AS REPRESENTED BY THE GOVERNMENT AGENCY LISTED BELOW ("GOVERNMENT
+AGENCY").  THE UNITED STATES GOVERNMENT, AS REPRESENTED BY GOVERNMENT
+AGENCY, IS AN INTENDED THIRD-PARTY BENEFICIARY OF ALL SUBSEQUENT
+DISTRIBUTIONS OR REDISTRIBUTIONS OF THE SUBJECT SOFTWARE.  ANYONE WHO
+USES, REPRODUCES, DISTRIBUTES, MODIFIES OR REDISTRIBUTES THE SUBJECT
+SOFTWARE, AS DEFINED HEREIN, OR ANY PART THEREOF, IS, BY THAT ACTION,
+ACCEPTING IN FULL THE RESPONSIBILITIES AND OBLIGATIONS CONTAINED IN
+THIS AGREEMENT.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+The intended purpose of the SGP4 propagator is to properly propagate an
+object's Two Line Element Set (TLE) supplied by the USSTRATCOM'S Joint
+Functional Component Command for SPACE Joint Space Operations Center (JSpOC)
+such that the positions calculated for that object agree with those
+calculated by the JSpOC.  SGP4 propagator is to be used solely for the
+purpose of propagating JSpOC created TLEs.  TLEs created and supplied by the
+JSpOC are created in such a way as to be compatible with the SGP4
+propagator.  In this way, compatibility/interoperability issues between the
+JSpOC and the user of JSpOC SGP4 TLEs are addressed. Examples of what SGP4
+should not be used for, included but are not limited to, propagating JSpOC
+created state vectors which come from any of the various other messages the
+JSpOC creates, such as Vector Covariance Messages, Orbital Conjunction
+Messages, Conjunction Data Messages, etc.
+Government Agency: Air Force Space Command Government Agency Original
+Software Designation and Software Title: SGP4
+User Registration Requested.  Please Visit: Government Agency Point of
+Contact for Original Software:
+1. DEFINITIONS
+A. "Contributor" means Government Agency, as the developer of the
+Original Software, and any entity that makes a Modification.
+B.  "Covered Patents" mean patent claims licensable by a Contributor
+that are necessarily infringed by the use or sale of its Modification
+alone or when combined with the Subject Software.
+C.  "Display" means the showing of a copy of the Subject Software,
+either directly or by means of an image, or any other device.
+D.  "Distribution" means conveyance or transfer of the Subject
+Software, regardless of means, to another.
+E.  "Larger Work" means computer software that combines Subject
+Software, or portions thereof, with software separate from the Subject
+Software that is not governed by the terms of this Agreement.
+F.  "Original Software" means any or all of the computer software
+first released under this Agreement by Government Agency with
+Government Agency designation SGP4, with title identified
+herein, including object code and accompanying documentation, if any.
+G.  "Recipient" means anyone who acquires the Subject Software under
+this Agreement, including all Contributors.
+H.  "Redistribution" means Distribution of the Subject Software to another party.
+I.  "Reproduction" means the making of a counterpart, image or copy of
+the Subject Software.
+J.  "Sale" means the exchange of the Subject Software for money or
+equivalent value.
+K.  "Subject Software" means the Original Software, or any respective parts thereof.
+L.  "Use" means the application or employment of the Subject Software
+for any purpose.
+2. GRANT OF RIGHTS
+A.  Under Non-Patent Rights: Subject to the terms and conditions of
+this Agreement, each Contributor, with respect to its own contribution
+to the Subject Software, hereby grants to each Recipient a
+non-exclusive, world-wide, royalty-free license to engage in the
+following activities pertaining to the Subject Software:
+1. Use 
+2. Distribution 
+3. Reproduction 
+4. Redistribution 
+5. Display
+B.  Under Patent Rights: Subject to the terms and conditions of this
+Agreement, each Contributor, with respect to its own contribution to
+the Subject Software, hereby grants to each Recipient under Covered
+Patents a non-exclusive, world-wide, royalty-free license to engage in
+the following activities pertaining to the Subject Software:
+1. Use 
+2. Distribution 
+3. Reproduction 
+4. Sale 
+5. Offer for Sale
+C.  Redistribution and use of binary forms,are permitted provided that the following conditions are met:
+1. Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+2. Neither the name of the Air Force Space Command nor the
+names of its contributors may be used to endorse or promote products
+derived from this software without specific prior written permission.
+D.  The rights granted in Paragraphs A. and B. allow the Recipient to
+sublicense those same rights.  Such sublicense must be under the same
+terms and conditions of this Agreement.
+3. OBLIGATIONS OF RECIPIENT
+A.  Distribution or Redistribution of the Subject Software must be
+made under this Agreement except for additions covered under paragraph
+3H.
+1.  Whenever a Recipient distributes or redistributes the Subject
+Software, a copy of this Agreement must be included with each copy of
+the Subject Software; and
+B.  Each Recipient must ensure that the following copyright notice
+appears prominently in the Subject Software:
+Copyright 2015 United States Government as represented by the
+Administrator of Air Force Space Command. All Rights Reserved.
+C.  A Contributor may add its own copyright notice to the Subject
+Software.  Once a copyright notice has been added to the Subject
+Software, a Recipient may not remove it without the express permission
+of the Contributor who added the notice.
+D.  A Recipient may not make any representation in the Subject
+Software or in any promotional, advertising or other material that may
+be construed as an endorsement by Government Agency or by any prior
+Recipient of any product or service provided by Recipient, or that may
+seek to obtain commercial advantage by the fact of Government Agency's
+or a prior Recipient's participation in this Agreement.
+E.  In an effort to track usage and maintain accurate records of the
+Subject Software, each Recipient, upon receipt of the Subject
+Software, is requested but not obligated to register with Government Agency by 
+visiting the following website: astrodynamicStandards.org.  Recipient's name and personal 
+information shall be used for statistical purposes only. 
+F.  A Recipient may choose to offer, and to charge a fee for,
+warranty, support, indemnity and/or liability obligations to one or
+more other Recipients of the Subject Software.  A Recipient may do so,
+however, only on its own behalf and not on behalf of Government Agency
+or any other Recipient.  Such a Recipient must make it absolutely
+clear that any such warranty, support, indemnity and/or liability
+obligation is offered by that Recipient alone.  Further, such
+Recipient agrees to indemnify Government Agency and every other
+Recipient for any liability incurred by them as a result of warranty,
+support, indemnity and/or liability offered by such Recipient.
+G.  A Recipient may create a Larger Work by combining Subject Software
+with separate software not governed by the terms of this agreement and
+distribute the Larger Work as a single product. In such case, the
+Recipient must make sure Subject Software, or portions thereof,
+included in the Larger Work is subject to this Agreement.
+H.  Notwithstanding any provisions contained herein, Recipient is
+hereby put on notice that export of any goods or technical data from
+the United States may require some form of export license from the
+U.S. Government.  Failure to obtain necessary export licenses may
+result in criminal liability under U.S. laws.  Government Agency
+neither represents that a license shall not be required nor that, if
+required, it shall be issued.  Nothing granted herein provides any
+such export license.

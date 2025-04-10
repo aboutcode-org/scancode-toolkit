@@ -1,0 +1,1 @@
+(c), SI-19(4) NIST.800.53.R5-RedshiftClusterMaintenanceSettings (https://docs.aws.amazon.com/config/latest/developerguide/redshift-cluster-maintenancesettings-check.html)

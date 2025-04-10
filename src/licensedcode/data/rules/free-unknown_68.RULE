@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
 is_license_text: yes
+is_deprecated: yes
 minimum_coverage: 99
 notes: |
+    this is now the pixar.LICENSE
     this is a rare modified Apache 2.0 license from PIXAR, reported as
     free-unknown to draw attention on its uncommon terms
     See https://raw.githubusercontent.com/PixarAnimationStudios/ruby-jss/master/LICENSE.txt

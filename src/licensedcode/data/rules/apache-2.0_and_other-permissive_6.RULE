@@ -1,0 +1,9 @@
+---
+license_expression: apache-2.0 AND other-permissive
+is_license_notice: yes
+---
+
+License:
+
+The original Pyrex program was licensed "free of restrictions" (see below).
+Cython itself is licensed under the permissive **Apache License**.

@@ -4,7 +4,7 @@ is_license_text: yes
 relevance: 95
 notes: truncated text
 ignorable_copyrights:
-    - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+    - Copyright (c) 2007 Free Software Foundation, Inc. https://fsf.org
 ignorable_holders:
     - Free Software Foundation, Inc.
 ignorable_urls:

@@ -276,7 +276,7 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
             return True
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         infos = pe_info(location)
 
         version = get_first(
@@ -328,7 +328,7 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
             parties = [Party(type=party_org, role='author', name=cname)]
         homepage_url = get_first(infos, 'URL', 'WWW')
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -340,3 +340,4 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
             parties=parties,
             homepage_url=homepage_url,
         )
+        yield models.PackageData.from_data(package_data, package_only)

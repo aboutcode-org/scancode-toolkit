@@ -1,0 +1,150 @@
+[
+  {
+    "type": "conan",
+    "namespace": null,
+    "name": "boost",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "C++",
+    "description": "Boost provides free peer-reviewed portable C++ source libraries",
+    "release_date": null,
+    "parties": [],
+    "keywords": [
+      "libraries",
+      "cpp"
+    ],
+    "homepage_url": "https://www.boost.org",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "boost-1.0",
+    "declared_license_expression_spdx": "BSL-1.0",
+    "license_detections": [
+      {
+        "license_expression": "boost-1.0",
+        "license_expression_spdx": "BSL-1.0",
+        "matches": [
+          {
+            "license_expression": "boost-1.0",
+            "license_expression_spdx": "BSL-1.0",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 50.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 50,
+            "rule_identifier": "boost-1.0_48.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/boost-1.0_48.RULE",
+            "matched_text": "BSL-1.0"
+          }
+        ],
+        "identifier": "boost_1_0-12dac15d-d5d2-667c-8632-205982e11078"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "- BSL-1.0\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:conan/zlib",
+        "extracted_requirement": "[>=1.2.11 <2]",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/bzip2@1.0.8",
+        "extracted_requirement": "1.0.8",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/xz_utils@5.4.4",
+        "extracted_requirement": "5.4.4",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/zstd@1.5.5",
+        "extracted_requirement": "1.5.5",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/libbacktrace@cci.20210118",
+        "extracted_requirement": "cci.20210118",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/icu@73.2",
+        "extracted_requirement": "73.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/libiconv@1.17",
+        "extracted_requirement": "1.17",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "conan_conanfile_py",
+    "purl": "pkg:conan/boost"
+  }
+]

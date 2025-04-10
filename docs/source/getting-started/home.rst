@@ -80,7 +80,7 @@ How does it work?
 Given a code directory, ScanCode will "scan code":
 
 - Extract files from any archive using a `universal archive extractor
-  <https://github.com/nexB/extractcode>`_
+  <https://github.com/aboutcode-org/extractcode>`_
 
 - Collect an inventory of the code files and classify the code using file types
 - Extract texts from binary files as needed

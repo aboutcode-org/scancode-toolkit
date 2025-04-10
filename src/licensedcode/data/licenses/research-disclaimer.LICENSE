@@ -1,0 +1,28 @@
+---
+key: research-disclaimer
+short_name: Research Software Disclaimer
+name: Research Software Disclaimer
+category: Proprietary Free
+owner: University of Wisconsin-Madison
+homepage_url: https://pages.cs.wisc.edu/~dbbook/openAccess/Minibase/minibase.notice.html
+spdx_license_key: LicenseRef-scancode-research-disclaimer
+text_urls:
+    - https://sources.debian.org/src/yap/5.1.3-6/CHR/CHR.LICENSE/
+    - https://www.bnl.gov/nsrl/stackup/srim-legal-notices.pdf
+---
+
+Research Software Disclaimer
+
+As unestablished, research software, this program is provided free of charge on an "as is" basis without warranty of any kind, either express or implied. Acceptance and use of this program constitutes the user's understanding that (s)he will have no recourse for any actual or consequential damages, including, but not limited to, lost profits or savings, arising out of the use of or inability to use this program.
+
+User Agreement
+
+By acceptance and user of this experimental system, the user agrees to the following:
+
+    This program is provided free of charge for the user's personal, non-commercial, educational or experimental use.
+
+    All title, ownership and rights to this program and any copies remain with the copyright holder, irrespective of the ownership of the media on which the program resides.
+
+    The user is permitted to create derivative works to this program. However, all copies of the program and its derivative works must contain the Minibase copyright notice, the unestablished software disclaimer and this user agreement.
+
+    The user understands and agrees that this program and any derivative works are to be used solely for experimental purposes and are not to be sold or commercially exploited in any manner without express written permission.

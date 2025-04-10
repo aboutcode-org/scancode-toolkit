@@ -1,0 +1,5 @@
+license_policies:
+-   license_key: bsd-1988
+    label: Approved License
+    color_code: '#008000'
+    icon: icon-ok-circle

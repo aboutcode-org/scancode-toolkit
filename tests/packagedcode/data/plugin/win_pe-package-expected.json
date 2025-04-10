@@ -39,15 +39,15 @@
           "copyright": "\u00a9 2009 Ian F. Darwin",
           "holder": "Ian F. Darwin",
           "declared_license_expression": "bsd-simplified-darwin",
-          "declared_license_expression_spdx": "LicenseRef-scancode-bsd-simplified-darwin",
+          "declared_license_expression_spdx": "BSD-2-Clause-Darwin",
           "license_detections": [
             {
               "license_expression": "bsd-simplified-darwin",
-              "license_expression_spdx": "LicenseRef-scancode-bsd-simplified-darwin",
+              "license_expression_spdx": "BSD-2-Clause-Darwin",
               "matches": [
                 {
                   "license_expression": "bsd-simplified-darwin",
-                  "spdx_license_expression": "LicenseRef-scancode-bsd-simplified-darwin",
+                  "license_expression_spdx": "BSD-2-Clause-Darwin",
                   "from_file": "file.exe",
                   "start_line": 1,
                   "end_line": 1,
@@ -71,6 +71,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,

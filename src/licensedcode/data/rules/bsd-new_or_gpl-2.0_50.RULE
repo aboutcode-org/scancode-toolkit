@@ -1,0 +1,8 @@
+---
+license_expression: bsd-new OR gpl-2.0
+is_license_tag: yes
+is_continuous: yes
+relevance: 100
+---
+
+{{ (BSD-3-Clause OR GPL-2.0)}}

@@ -2,6 +2,8 @@
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
+is_deprecated: yes
+notes: This is now the cexcept-2008 LICENSE
 ---
 
 This software may be modified only if its author and version

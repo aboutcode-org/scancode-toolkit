@@ -6,4 +6,4 @@ ignorable_urls:
     - https://raw.githubusercontent.com/janino-compiler/janino/master/LICENSE
 ---
 
-License: New BSD License  (https://raw.githubusercontent.com/janino-compiler/janino/master/LICENSE
+License: {{New BSD License}}  (https://raw.githubusercontent.com/janino-compiler/janino/master/LICENSE

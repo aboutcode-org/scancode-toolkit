@@ -92,7 +92,7 @@ license_detections:
     license_expression_spdx: AGPL-3.0-only WITH PS-or-PDF-font-exception-20170817
     matches:
       - license_expression: agpl-3.0 WITH ps-or-pdf-font-exception-20170817
-        spdx_license_expression: AGPL-3.0-only WITH PS-or-PDF-font-exception-20170817
+        license_expression_spdx: AGPL-3.0-only WITH PS-or-PDF-font-exception-20170817
         from_file:
         start_line: 173
         end_line: 178
@@ -115,7 +115,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-sunsoft
     matches:
       - license_expression: sunsoft
-        spdx_license_expression: LicenseRef-scancode-sunsoft
+        license_expression_spdx: LicenseRef-scancode-sunsoft
         from_file:
         start_line: 294
         end_line: 298
@@ -137,7 +137,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 309
         end_line: 313
@@ -159,7 +159,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 448
         end_line: 451
@@ -180,7 +180,7 @@ license_detections:
     license_expression_spdx: GPL-1.0-or-later
     matches:
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 497
         end_line: 497
@@ -197,7 +197,7 @@ license_detections:
     license_expression_spdx: AGPL-3.0-only
     matches:
       - license_expression: agpl-3.0
-        spdx_license_expression: AGPL-3.0-only
+        license_expression_spdx: AGPL-3.0-only
         from_file:
         start_line: 501
         end_line: 1350
@@ -1064,7 +1064,7 @@ license_detections:
     license_expression_spdx: FSFUL
     matches:
       - license_expression: fsf-free
-        spdx_license_expression: FSFUL
+        license_expression_spdx: FSFUL
         from_file:
         start_line: 1371
         end_line: 1373
@@ -1084,7 +1084,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 1376
         end_line: 1398
@@ -1124,7 +1124,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 1401
         end_line: 1423
@@ -1164,7 +1164,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 1426
         end_line: 1442
@@ -1198,7 +1198,7 @@ license_detections:
     license_expression_spdx: MIT-open-group
     matches:
       - license_expression: x11-opengroup
-        spdx_license_expression: MIT-open-group
+        license_expression_spdx: MIT-open-group
         from_file:
         start_line: 1445
         end_line: 1464
@@ -1235,7 +1235,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-ghostpdl-permissive
     matches:
       - license_expression: ghostpdl-permissive
-        spdx_license_expression: LicenseRef-scancode-ghostpdl-permissive
+        license_expression_spdx: LicenseRef-scancode-ghostpdl-permissive
         from_file:
         start_line: 1467
         end_line: 1471
@@ -1257,7 +1257,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-x11-lucent-variant
     matches:
       - license_expression: x11-lucent-variant
-        spdx_license_expression: LicenseRef-scancode-x11-lucent-variant
+        license_expression_spdx: LicenseRef-scancode-x11-lucent-variant
         from_file:
         start_line: 1474
         end_line: 1485
@@ -1286,7 +1286,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 1488
         end_line: 1519
@@ -1335,7 +1335,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 1522
         end_line: 1558
@@ -1389,7 +1389,7 @@ license_detections:
     license_expression_spdx: FTL
     matches:
       - license_expression: freetype
-        spdx_license_expression: FTL
+        license_expression_spdx: FTL
         from_file:
         start_line: 1561
         end_line: 1740
@@ -1586,7 +1586,7 @@ license_detections:
     license_expression_spdx: Zlib
     matches:
       - license_expression: zlib
-        spdx_license_expression: Zlib
+        license_expression_spdx: Zlib
         from_file:
         start_line: 1743
         end_line: 1762
@@ -1623,7 +1623,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 1765
         end_line: 1779
@@ -1655,7 +1655,7 @@ license_detections:
     license_expression_spdx: AGPL-3.0-only AND AGPL-3.0-or-later
     matches:
       - license_expression: agpl-3.0
-        spdx_license_expression: AGPL-3.0-only
+        license_expression_spdx: AGPL-3.0-only
         from_file:
         start_line: 73
         end_line: 73
@@ -1668,7 +1668,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0_191.RULE
         matched_text: 'License: agpl-'
       - license_expression: agpl-3.0-plus
-        spdx_license_expression: AGPL-3.0-or-later
+        license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 73
         end_line: 73
@@ -1685,7 +1685,7 @@ license_detections:
     license_expression_spdx: AGPL-3.0-or-later
     matches:
       - license_expression: agpl-3.0-plus
-        spdx_license_expression: AGPL-3.0-or-later
+        license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 68
         end_line: 72
@@ -1707,7 +1707,7 @@ license_detections:
     license_expression_spdx: AGPL-3.0-or-later
     matches:
       - license_expression: agpl-3.0-plus
-        spdx_license_expression: AGPL-3.0-or-later
+        license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 76
         end_line: 76
@@ -1724,7 +1724,7 @@ license_detections:
     license_expression_spdx: AGPL-3.0-only AND AGPL-3.0-or-later
     matches:
       - license_expression: agpl-3.0
-        spdx_license_expression: AGPL-3.0-only
+        license_expression_spdx: AGPL-3.0-only
         from_file:
         start_line: 91
         end_line: 91
@@ -1737,7 +1737,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0_191.RULE
         matched_text: 'License: agpl-'
       - license_expression: agpl-3.0-plus
-        spdx_license_expression: AGPL-3.0-or-later
+        license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 91
         end_line: 91
@@ -1754,7 +1754,7 @@ license_detections:
     license_expression_spdx: AGPL-3.0-or-later
     matches:
       - license_expression: agpl-3.0-plus
-        spdx_license_expression: AGPL-3.0-or-later
+        license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 86
         end_line: 90
@@ -1776,7 +1776,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-only
     matches:
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 96
         end_line: 98
@@ -1796,7 +1796,7 @@ license_detections:
     license_expression_spdx: FTL
     matches:
       - license_expression: freetype
-        spdx_license_expression: FTL
+        license_expression_spdx: FTL
         from_file:
         start_line: 121
         end_line: 126
@@ -1819,7 +1819,7 @@ license_detections:
     license_expression_spdx: GPL-1.0-or-later
     matches:
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 135
         end_line: 142
@@ -1844,7 +1844,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-ghostscript-1988
     matches:
       - license_expression: ghostscript-1988
-        spdx_license_expression: LicenseRef-scancode-ghostscript-1988
+        license_expression_spdx: LicenseRef-scancode-ghostscript-1988
         from_file:
         start_line: 151
         end_line: 158
@@ -1869,7 +1869,7 @@ license_detections:
     license_expression_spdx: AGPL-3.0-or-later
     matches:
       - license_expression: agpl-3.0-plus
-        spdx_license_expression: AGPL-3.0-or-later
+        license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 167
         end_line: 171
@@ -1891,7 +1891,7 @@ license_detections:
     license_expression_spdx: GPL-1.0-or-later
     matches:
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 183
         end_line: '190'
@@ -1916,7 +1916,7 @@ license_detections:
     license_expression_spdx: GPL-1.0-or-later
     matches:
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 201
         end_line: 208
@@ -1941,7 +1941,7 @@ license_detections:
     license_expression_spdx: GPL-1.0-or-later
     matches:
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 225
         end_line: 234
@@ -1968,7 +1968,7 @@ license_detections:
     license_expression_spdx: GPL-1.0-or-later
     matches:
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 236
         end_line: 236
@@ -1985,7 +1985,7 @@ license_detections:
     license_expression_spdx: GPL-1.0-or-later OR LicenseRef-scancode-cups
     matches:
       - license_expression: gpl-1.0-plus OR cups
-        spdx_license_expression: GPL-1.0-or-later OR LicenseRef-scancode-cups
+        license_expression_spdx: GPL-1.0-or-later OR LicenseRef-scancode-cups
         from_file:
         start_line: 243
         end_line: 251
@@ -2011,7 +2011,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 262
         end_line: 265
@@ -2032,7 +2032,7 @@ license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 320
         end_line: 329
@@ -2059,7 +2059,7 @@ license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 338
         end_line: 341
@@ -2080,7 +2080,7 @@ license_detections:
     license_expression_spdx: AGPL-3.0-only AND AGPL-3.0-or-later
     matches:
       - license_expression: agpl-3.0
-        spdx_license_expression: AGPL-3.0-only
+        license_expression_spdx: AGPL-3.0-only
         from_file:
         start_line: 352
         end_line: 352
@@ -2093,7 +2093,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0_191.RULE
         matched_text: 'License: agpl-'
       - license_expression: agpl-3.0-plus
-        spdx_license_expression: AGPL-3.0-or-later
+        license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 352
         end_line: 352
@@ -2110,7 +2110,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-afpl-9.0
     matches:
       - license_expression: afpl-9.0
-        spdx_license_expression: LicenseRef-scancode-afpl-9.0
+        license_expression_spdx: LicenseRef-scancode-afpl-9.0
         from_file:
         start_line: 350
         end_line: 350
@@ -2127,7 +2127,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 363
         end_line: 367
@@ -2149,7 +2149,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 375
         end_line: 379
@@ -2171,7 +2171,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 390
         end_line: 394
@@ -2193,7 +2193,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 402
         end_line: 406
@@ -2215,7 +2215,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 412
         end_line: 416
@@ -2237,7 +2237,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 422
         end_line: 426
@@ -2259,7 +2259,7 @@ license_detections:
     license_expression_spdx: GPL-1.0-or-later
     matches:
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 458
         end_line: 465
@@ -2284,7 +2284,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 488
         end_line: 492

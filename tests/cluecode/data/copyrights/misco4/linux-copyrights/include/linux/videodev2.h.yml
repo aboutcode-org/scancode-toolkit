@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1999-2012 the contributors
+holders:
+  - the contributors
+authors:
+  - Bill Dirks <bill@thedirks.org> Justin Schoeman Hans Verkuil <hverkuil@xs4all.nl>

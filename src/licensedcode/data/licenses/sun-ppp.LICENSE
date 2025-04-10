@@ -1,0 +1,24 @@
+---
+key: sun-ppp
+short_name: Sun PPP License
+name: Sun PPP License
+category: Permissive
+owner: Oracle (Sun)
+notes: |
+    Added in SPDX license list 3.23
+    This was previously the license rule: other-permissive_43.RULE
+spdx_license_key: Sun-PPP
+other_urls:
+    - https://github.com/ppp-project/ppp/blob/master/pppd/eap.c#L7-L16
+---
+
+Non-exclusive rights to redistribute, modify, translate, and use
+this software in source and binary forms, in whole or in part, is
+hereby granted, provided that the above copyright notice is
+duplicated in any source form, and that neither the name of the
+copyright holder nor the author is used to endorse or promote
+products derived from this software.
+
+THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.

@@ -272,7 +272,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -281,7 +281,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -290,7 +290,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -299,7 +299,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -308,7 +308,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -317,7 +317,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -326,7 +326,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -335,7 +335,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -344,7 +344,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -353,7 +353,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -362,7 +362,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -371,7 +371,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -380,7 +380,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -389,7 +389,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -398,7 +398,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -407,7 +407,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -416,7 +416,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -425,7 +425,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -434,7 +434,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -443,7 +443,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       },
       {
@@ -452,7 +452,7 @@
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
         "resolved_package": {}
       }
     ],

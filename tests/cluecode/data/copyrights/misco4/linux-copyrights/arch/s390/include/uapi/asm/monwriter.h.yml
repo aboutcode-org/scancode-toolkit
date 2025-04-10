@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright IBM Corp. 2006 Character
+holders:
+  - IBM Corp. Character
+authors:
+  - Melissa Howland <melissah@us.ibm.com>

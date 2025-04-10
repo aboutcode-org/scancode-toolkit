@@ -5,7 +5,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/skeleton for support or download.
+# See https://github.com/aboutcode-org/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 import email
@@ -115,14 +115,14 @@ TRACE_DEEP = False
 TRACE_ULTRA_DEEP = False
 
 # Supported environments
-PYTHON_VERSIONS = "37", "38", "39", "310", "311"
+PYTHON_VERSIONS = "38", "39", "310", "311", "312"
 
 PYTHON_DOT_VERSIONS_BY_VER = {
-    "37": "3.7",
     "38": "3.8",
     "39": "3.9",
     "310": "3.10",
     "311": "3.11",
+    "312": "3.12",
 }
 
 
@@ -134,11 +134,11 @@ def get_python_dot_version(version):
 
 
 ABIS_BY_PYTHON_VERSION = {
-    "37": ["cp37", "cp37m", "abi3"],
     "38": ["cp38", "cp38m", "abi3"],
     "39": ["cp39", "cp39m", "abi3"],
     "310": ["cp310", "cp310m", "abi3"],
     "311": ["cp311", "cp311m", "abi3"],
+    "312": ["cp312", "cp312m", "abi3"],
 }
 
 PLATFORMS_BY_OS = {
@@ -247,9 +247,11 @@ def download_wheel(name, version, environment, dest_dir=THIRDPARTY_DIR, repos=tu
         package = repo.get_package_version(name=name, version=version)
         if not package:
             if TRACE_DEEP:
-                print(f"    download_wheel: No package in {repo.index_url} for {name}=={version}")
+                print(
+                    f"    download_wheel: No package in {repo.index_url} for {name}=={version}")
             continue
-        supported_wheels = list(package.get_supported_wheels(environment=environment))
+        supported_wheels = list(
+            package.get_supported_wheels(environment=environment))
         if not supported_wheels:
             if TRACE_DEEP:
                 print(
@@ -293,7 +295,8 @@ def download_sdist(name, version, dest_dir=THIRDPARTY_DIR, repos=tuple()):
 
         if not package:
             if TRACE_DEEP:
-                print(f"    download_sdist: No package in {repo.index_url} for {name}=={version}")
+                print(
+                    f"    download_sdist: No package in {repo.index_url} for {name}=={version}")
             continue
         sdist = package.sdist
         if not sdist:
@@ -302,7 +305,8 @@ def download_sdist(name, version, dest_dir=THIRDPARTY_DIR, repos=tuple()):
             continue
 
         if TRACE_DEEP:
-            print(f"    download_sdist: Getting sdist from index (or cache): {sdist.download_url}")
+            print(
+                f"    download_sdist: Getting sdist from index (or cache): {sdist.download_url}")
         fetched_sdist_filename = package.sdist.download(dest_dir=dest_dir)
 
         if fetched_sdist_filename:
@@ -535,7 +539,8 @@ class Distribution(NameVer):
             repos = DEFAULT_PYPI_REPOS
 
         for repo in repos:
-            package = repo.get_package_version(name=self.name, version=self.version)
+            package = repo.get_package_version(
+                name=self.name, version=self.version)
             if not package:
                 if TRACE:
                     print(
@@ -774,7 +779,8 @@ class Distribution(NameVer):
                 if notice_text:
                     about_data["notice_text"] = notice_text
             except RemoteNotFetchedException:
-                print(f"Failed to fetch NOTICE file: {self.notice_download_url}")
+                print(
+                    f"Failed to fetch NOTICE file: {self.notice_download_url}")
         return self.load_about_data(about_data)
 
     def get_checksums(self, dest_dir=THIRDPARTY_DIR):
@@ -823,9 +829,11 @@ class Distribution(NameVer):
         Fetch license files if missing in `dest_dir`.
         Return True if license files were fetched.
         """
-        urls = LinksRepository.from_url(use_cached_index=use_cached_index).links
+        urls = LinksRepository.from_url(
+            use_cached_index=use_cached_index).links
         errors = []
-        extra_lic_names = [l.get("file") for l in self.extra_data.get("licenses", {})]
+        extra_lic_names = [l.get("file")
+                           for l in self.extra_data.get("licenses", {})]
         extra_lic_names += [self.extra_data.get("license_file")]
         extra_lic_names = [ln for ln in extra_lic_names if ln]
         lic_names = [f"{key}.LICENSE" for key in self.get_license_keys()]
@@ -836,7 +844,8 @@ class Distribution(NameVer):
 
             try:
                 # try remotely first
-                lic_url = get_license_link_for_filename(filename=filename, urls=urls)
+                lic_url = get_license_link_for_filename(
+                    filename=filename, urls=urls)
 
                 fetch_and_save(
                     path_or_url=lic_url,
@@ -913,7 +922,8 @@ class Distribution(NameVer):
             c for c in classifiers if c.startswith("License")
         ]
         license_expression = get_license_expression(declared_license)
-        other_classifiers = [c for c in classifiers if not c.startswith("License")]
+        other_classifiers = [
+            c for c in classifiers if not c.startswith("License")]
 
         holder = raw_data["Author"]
         holder_contact = raw_data["Author-email"]
@@ -955,7 +965,8 @@ class Distribution(NameVer):
         package_url = data.get("package_url")
         if package_url:
             purl_from_data = packageurl.PackageURL.from_string(package_url)
-            purl_from_self = packageurl.PackageURL.from_string(self.package_url)
+            purl_from_self = packageurl.PackageURL.from_string(
+                self.package_url)
             if purl_from_data != purl_from_self:
                 print(
                     f"Invalid dist update attempt, no same same purl with dist: "
@@ -1005,7 +1016,8 @@ def get_license_link_for_filename(filename, urls):
     if not path_or_url:
         raise Exception(f"Missing link to file: {filename}")
     if not len(path_or_url) == 1:
-        raise Exception(f"Multiple links to file: {filename}: \n" + "\n".join(path_or_url))
+        raise Exception(
+            f"Multiple links to file: {filename}: \n" + "\n".join(path_or_url))
     return path_or_url[0]
 
 
@@ -1399,7 +1411,8 @@ class PypiPackage(NameVer):
         """
         base = os.path.abspath(directory)
 
-        paths = [os.path.join(base, f) for f in os.listdir(base) if f.endswith(EXTENSIONS)]
+        paths = [os.path.join(base, f)
+                 for f in os.listdir(base) if f.endswith(EXTENSIONS)]
 
         if TRACE_ULTRA_DEEP:
             print("packages_from_dir: paths:", paths)
@@ -1460,7 +1473,8 @@ class PypiPackage(NameVer):
         dists = []
         if TRACE_ULTRA_DEEP:
             print("     ###paths_or_urls:", paths_or_urls)
-        installable = [f for f in paths_or_urls if f.endswith(EXTENSIONS_INSTALLABLE)]
+        installable = [f for f in paths_or_urls if f.endswith(
+            EXTENSIONS_INSTALLABLE)]
         for path_or_url in installable:
             try:
                 dist = Distribution.from_path_or_url(path_or_url)
@@ -1478,7 +1492,8 @@ class PypiPackage(NameVer):
                     )
             except InvalidDistributionFilename:
                 if TRACE_DEEP:
-                    print(f"     Skipping invalid distribution from: {path_or_url}")
+                    print(
+                        f"     Skipping invalid distribution from: {path_or_url}")
                 continue
         return dists
 
@@ -1527,7 +1542,8 @@ class Environment:
     implementation = attr.ib(
         type=str,
         default="cp",
-        metadata=dict(help="Python implementation supported by this environment."),
+        metadata=dict(
+            help="Python implementation supported by this environment."),
         repr=False,
     )
 
@@ -1541,7 +1557,8 @@ class Environment:
     platforms = attr.ib(
         type=list,
         default=attr.Factory(list),
-        metadata=dict(help="List of platform tags supported by this environment."),
+        metadata=dict(
+            help="List of platform tags supported by this environment."),
         repr=False,
     )
 
@@ -1625,7 +1642,8 @@ class PypiSimpleRepository:
     fetched_package_normalized_names = attr.ib(
         type=set,
         default=attr.Factory(set),
-        metadata=dict(help="A set of already fetched package normalized names."),
+        metadata=dict(
+            help="A set of already fetched package normalized names."),
     )
 
     use_cached_index = attr.ib(
@@ -1656,10 +1674,12 @@ class PypiSimpleRepository:
                 self.packages[normalized_name] = versions
             except RemoteNotFetchedException as e:
                 if TRACE:
-                    print(f"failed to fetch package name: {name} from: {self.index_url}:\n{e}")
+                    print(
+                        f"failed to fetch package name: {name} from: {self.index_url}:\n{e}")
 
         if not versions and TRACE:
-            print(f"WARNING: package {name} not found in repo: {self.index_url}")
+            print(
+                f"WARNING: package {name} not found in repo: {self.index_url}")
 
         return versions
 
@@ -1844,7 +1864,8 @@ class Cache:
         if force or not os.path.exists(cached):
             if TRACE_DEEP:
                 print(f"        FILE CACHE MISS: {path_or_url}")
-            content = get_file_content(path_or_url=path_or_url, as_text=as_text)
+            content = get_file_content(
+                path_or_url=path_or_url, as_text=as_text)
             wmode = "w" if as_text else "wb"
             with open(cached, wmode) as fo:
                 fo.write(content)
@@ -1866,7 +1887,8 @@ def get_file_content(path_or_url, as_text=True):
     if path_or_url.startswith("https://"):
         if TRACE_DEEP:
             print(f"Fetching: {path_or_url}")
-        _headers, content = get_remote_file_content(url=path_or_url, as_text=as_text)
+        _headers, content = get_remote_file_content(
+            url=path_or_url, as_text=as_text)
         return content
 
     elif path_or_url.startswith("file://") or (
@@ -1932,7 +1954,8 @@ def get_remote_file_content(
                 )
 
             else:
-                raise RemoteNotFetchedException(f"Failed HTTP request from {url} with {status}")
+                raise RemoteNotFetchedException(
+                    f"Failed HTTP request from {url} with {status}")
 
         if headers_only:
             return response.headers, None
@@ -2023,7 +2046,8 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR, use_cached_index=False):
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():
                 local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
+                local_dist.fetch_license_files(
+                    dest_dir=dest_dir, use_cached_index=use_cached_index)
                 continue
 
             # lets try to get from another dist of the same local package
@@ -2035,7 +2059,8 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR, use_cached_index=False):
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():
                 local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
+                local_dist.fetch_license_files(
+                    dest_dir=dest_dir, use_cached_index=use_cached_index)
                 continue
 
             # try to get another version of the same package that is not our version
@@ -2046,7 +2071,8 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR, use_cached_index=False):
             ]
             other_local_version = other_local_packages and other_local_packages[-1]
             if other_local_version:
-                latest_local_dists = list(other_local_version.get_distributions())
+                latest_local_dists = list(
+                    other_local_version.get_distributions())
                 for latest_local_dist in latest_local_dists:
                     latest_local_dist.load_about_data(dest_dir=dest_dir)
                     if not latest_local_dist.has_key_metadata():
@@ -2072,7 +2098,8 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR, use_cached_index=False):
             # if has key data we may look to improve later, but we can move on
             if local_dist.has_key_metadata():
                 local_dist.save_about_and_notice_files(dest_dir=dest_dir)
-                local_dist.fetch_license_files(dest_dir=dest_dir, use_cached_index=use_cached_index)
+                local_dist.fetch_license_files(
+                    dest_dir=dest_dir, use_cached_index=use_cached_index)
                 continue
 
             # try to get a latest version of the same package that is not our version
@@ -2113,7 +2140,8 @@ def fetch_abouts_and_licenses(dest_dir=THIRDPARTY_DIR, use_cached_index=False):
             # if local_dist.has_key_metadata() or not local_dist.has_key_metadata():
             local_dist.save_about_and_notice_files(dest_dir)
 
-            lic_errs = local_dist.fetch_license_files(dest_dir, use_cached_index=use_cached_index)
+            lic_errs = local_dist.fetch_license_files(
+                dest_dir, use_cached_index=use_cached_index)
 
             if not local_dist.has_key_metadata():
                 print(f"Unable to add essential ABOUT data for: {local_dist}")
@@ -2261,7 +2289,8 @@ def find_problems(
 
         for dist in package.get_distributions():
             dist.load_about_data(dest_dir=dest_dir)
-            abpth = os.path.abspath(os.path.join(dest_dir, dist.about_filename))
+            abpth = os.path.abspath(os.path.join(
+                dest_dir, dist.about_filename))
             if not dist.has_key_metadata():
                 print(f"   Missing key ABOUT data in file://{abpth}")
             if "classifiers" in dist.extra_data:

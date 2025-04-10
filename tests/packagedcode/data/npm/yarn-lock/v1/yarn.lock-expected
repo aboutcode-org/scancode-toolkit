@@ -33,6 +33,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -41,7 +43,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "",
@@ -76,6 +79,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://www.npmjs.com/package/abbrev",
@@ -92,7 +97,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "",
@@ -127,6 +133,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
@@ -135,7 +143,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -154,7 +163,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "",
@@ -189,6 +199,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
@@ -197,7 +209,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -207,7 +220,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -226,7 +240,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "",
@@ -261,6 +276,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
@@ -269,7 +286,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -288,7 +306,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "",
@@ -323,6 +342,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
@@ -331,7 +352,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -341,7 +363,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -351,7 +374,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -370,7 +394,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "",
@@ -405,6 +430,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
@@ -413,7 +440,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -432,7 +460,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "",
@@ -467,6 +496,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
@@ -475,7 +506,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -494,7 +526,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "",
@@ -529,6 +562,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://www.npmjs.com/package/semver",

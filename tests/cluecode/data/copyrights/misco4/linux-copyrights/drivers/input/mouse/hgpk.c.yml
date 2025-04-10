@@ -1,0 +1,18 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2006-2008 One Laptop Per Child
+  - Copyright (c) 2003 Neil Brown <neilb@cse.unsw.edu.au>
+  - Copyright (c) 2003-2005 Peter Osterlund <petero2@telia.com>
+  - Copyright (c) 2004 Dmitry Torokhov <dtor@mail.ru>
+  - Copyright (c) 2005 Vojtech Pavlik <vojtech@suse.cz>
+holders:
+  - One Laptop Per Child
+  - Neil Brown
+  - Peter Osterlund
+  - Dmitry Torokhov
+  - Vojtech Pavlik
+authors:
+  - Zephaniah E. Hull Andres Salomon <dilinger@debian.org>

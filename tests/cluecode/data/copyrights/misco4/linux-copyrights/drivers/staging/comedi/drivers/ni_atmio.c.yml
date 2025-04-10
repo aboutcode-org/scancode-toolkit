@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1997-2001 David A. Schleef <ds@schleef.org>
+holders:
+  - David A. Schleef
+authors:
+  - ds Devices National Instruments
+  - Truxton Fulton <trux@truxton.com>

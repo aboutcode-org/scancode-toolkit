@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) distributed processing technology corporation
+holders:
+  - distributed processing technology corporation
+holders_summary:
+  - value: distributed processing technology corporation
+    count: 1

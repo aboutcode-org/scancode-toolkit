@@ -1,0 +1,67 @@
+---
+key: ms-rndis
+short_name: MS-RNDIS
+name: Remote Network Driver Interface Specification (RNDIS) Protocol
+category: Proprietary Free
+owner: Microsoft
+spdx_license_key: LicenseRef-scancode-ms-rndis
+text_urls:
+    - https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://winprotocoldoc.blob.core.windows.net/productionwindowsarchives/WinArchive/%255BMS-RNDIS%255D.pdf&ved=2ahUKEwj7tLeb1K6IAxVLGDQIHT04EPcQFnoECBQQAQ&usg=AOvVaw1MW_JFPyy4nCIfftPqsKC_
+other_urls:
+    - https://en.wikipedia.org/wiki/RNDIS
+    - https://learn.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/1c24c7c8-28b0-4ce1-a47d-95fe1ff504bc
+    - https://learn.microsoft.com/en-us/openspecs/dev_center/ms-devcentlp/8b8d1b7a-a10a-4667-9558-6d9c43adf60d
+    - https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks
+ignorable_urls:
+    - http://www.microsoft.com/trademarks
+ignorable_emails:
+    - iplg@microsoft.com
+---
+
+[MS-RNDIS]:
+Remote Network Driver Interface Specification (RNDIS) Protocol
+
+Intellectual Property Rights Notice for Open Specifications Documentation
+
+ - Technical Documentation. Microsoft publishes Open Specifications documentation for
+protocols, file formats, languages, standards as well as overviews of the interaction among each
+of these technologies.
+
+ - Copyrights. This documentation is covered by Microsoft copyrights. Regardless of any other
+terms that are contained in the terms of use for the Microsoft website that hosts this
+documentation, you may make copies of it in order to develop implementations of the
+technologies described in the Open Specifications and may distribute portions of it in your
+implementations using these technologies or your documentation as necessary to properly
+document the implementation. You may also distribute in your implementation, with or without
+modification, any schema, IDL’s, or code samples that are included in the documentation. This
+permission also applies to any documents that are referenced in the Open Specifications.
+
+ - No Trade Secrets. Microsoft does not claim any trade secret rights in this documentation.
+
+ - Patents. Microsoft has patents that may cover your implementations of the technologies
+described in the Open Specifications. Neither this notice nor Microsoft's delivery of the
+documentation grants any licenses under those or any other Microsoft patents. However, a given
+Open Specification may be covered by Microsoft Open Specification Promise or the Community
+Promise. If you would prefer a written license, or if the technologies described in the Open
+Specifications are not covered by the Open Specifications Promise or Community Promise, as
+applicable, patent licenses are available by contacting iplg@microsoft.com.
+
+ - Trademarks. The names of companies and products contained in this documentation may be
+covered by trademarks or similar intellectual property rights. This notice does not grant any
+licenses under those rights. For a list of Microsoft trademarks, visit
+www.microsoft.com/trademarks.
+
+ - Fictitious Names. The example companies, organizations, products, domain names, email
+addresses, logos, people, places, and events depicted in this documentation are fictitious. No
+association with any real company, organization, product, domain name, email address, logo,
+person, place, or event is intended or should be inferred.
+
+Reservation of Rights. All other rights are reserved, and this notice does not grant any rights
+other than specifically described above, whether by implication, estoppel, or otherwise.
+
+Tools. The Open Specifications do not require the use of Microsoft programming tools or
+programming environments in order for you to develop an implementation. If you have access to
+Microsoft programming tools and environments you are free to take advantage of them. Certain
+Open Specifications are intended for use in conjunction with publicly available standard
+specifications and network programming art, and assumes that the reader either is familiar with the
+aforementioned material or has immediate access to it.

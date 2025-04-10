@@ -1,0 +1,18 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 1999-2002 Wichert Akkerman <wichert@deephackmode.org>
+  - Copyright 2002, 2003, 2004 Colin Watson <cjwatson@debian.org>
+  - Copyright 2001, 2002 Joey Hess
+  - Copyright 2002, 2003, 2004, 2005, 2007 Colin Watson
+  - Copyright 2007 David Mandelberg
+holders:
+  - Wichert Akkerman
+  - Colin Watson
+  - Joey Hess
+  - Colin Watson
+  - David Mandelberg
+authors:
+  - Ian Murdock <imurdock@debian.org> and Bruce Perens <bruce@pixar.com>

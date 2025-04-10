@@ -1,0 +1,47 @@
+---
+key: generic-amiwm
+short_name: Generic-amiwm
+name: Generic-amiwm
+category: Proprietary Free
+owner: Marcus Comstedt
+homepage_url: https://metadata.ftp-master.debian.org/changelogs//non-free/a/amiwm/amiwm_0.22pl2-3_copyright
+spdx_license_key: LicenseRef-scancode-generic-amiwm
+---
+
+License: Generic-amiwm
+ Generic amiwm License
+ =====================
+ .
+ This license applies to whomever receives this file.  It is a generic
+ license to use and distribute amiwm.  If you want to acquire the software
+ under a different license, please contact the author.  This license is
+ in part based on the XV license by John Bradley.
+ .
+ Permission to copy and distribute amiwm in its entirety, for
+ non-commercial purposes, is hereby granted without fee, provided
+ that this license information and copyright notice appear in all copies.
+ .
+ If you redistribute amiwm, the *entire* contents of this distribution
+ must be distributed, including the README, INSTALL and LICENSE files,
+ the sources, and the various scripts and Makefiles.
+ .
+ You may distribute binaries built from the unmodified amiwm sources, for
+ non-commercial purposes, provided that the entire amiwm source distribution
+ is also included, as per the preceding paragraph.
+ .
+ You may distribute amiwm as a component of an aggregate software
+ distribution, provided that no other condition of this license is violated.
+ In particular, the entire amiwm distribution must be included in the
+ aggregate software distribution.
+ .
+ Unrestricted use of the software is also hereby granted without fee.
+ Distribution and modification of source or binaries are not considered use
+ and explicitly covered by other paragraphs of this license.
+ .
+ The software may be modified for your own purposes, but modified versions
+ may not be distributed without prior consent of the author.  You may
+ freely distribute patches against the unmodified source code.
+ .
+ This software is provided 'as-is', without any express or implied
+ warranty.  In no event will the author be held liable for any damages
+ arising from the use of this software.

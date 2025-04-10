@@ -168,7 +168,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -229,7 +229,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/myelements/callbacks.py",
               "start_line": 13,
               "end_line": 13,
@@ -245,7 +245,7 @@
             },
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "physics/myelements/callbacks.py",
               "start_line": 13,
               "end_line": 13,
@@ -261,7 +261,7 @@
             },
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "physics/myelements/callbacks.py",
               "start_line": 14,
               "end_line": 25,
@@ -298,7 +298,7 @@
           "matches": [
             {
               "license_expression": "gpl-3.0-plus",
-              "spdx_license_expression": "GPL-3.0-or-later",
+              "license_expression_spdx": "GPL-3.0-or-later",
               "from_file": "physics/physics.py",
               "start_line": 10,
               "end_line": 21,
@@ -347,7 +347,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/en_US.po",
               "start_line": 3,
               "end_line": 3,
@@ -363,7 +363,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -389,7 +389,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/en_US.po",
               "start_line": 7,
               "end_line": 7,
@@ -405,7 +405,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -431,7 +431,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/en_US.po",
               "start_line": 11,
               "end_line": 11,
@@ -447,7 +447,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -473,7 +473,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/en_US.po",
               "start_line": 15,
               "end_line": 15,
@@ -489,7 +489,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -515,7 +515,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/en_US.po",
               "start_line": 19,
               "end_line": 19,
@@ -531,7 +531,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -557,7 +557,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/en_US.po",
               "start_line": 23,
               "end_line": 23,
@@ -573,7 +573,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -599,7 +599,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/en_US.po",
               "start_line": 27,
               "end_line": 27,
@@ -615,7 +615,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -654,7 +654,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/uk.po",
               "start_line": 3,
               "end_line": 3,
@@ -670,7 +670,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -696,7 +696,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/uk.po",
               "start_line": 7,
               "end_line": 7,
@@ -712,7 +712,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -738,7 +738,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/uk.po",
               "start_line": 11,
               "end_line": 11,
@@ -754,7 +754,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -780,7 +780,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/uk.po",
               "start_line": 15,
               "end_line": 15,
@@ -796,7 +796,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -822,7 +822,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/uk.po",
               "start_line": 19,
               "end_line": 19,
@@ -838,7 +838,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -864,7 +864,7 @@
           "matches": [
             {
               "license_expression": "free-unknown",
-              "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
               "from_file": "physics/po/uk.po",
               "start_line": 23,
               "end_line": 23,
@@ -880,7 +880,7 @@
             },
             {
               "license_expression": "gpl-3.0",
-              "spdx_license_expression": "GPL-3.0-only",
+              "license_expression_spdx": "GPL-3.0-only",
               "from_file": "physics/COPYING",
               "start_line": 2,
               "end_line": 675,
@@ -942,7 +942,7 @@
               "matches": [
                 {
                   "license_expression": "gpl-3.0",
-                  "spdx_license_expression": "GPL-3.0-only",
+                  "license_expression_spdx": "GPL-3.0-only",
                   "from_file": "physics/COPYING",
                   "start_line": 2,
                   "end_line": 675,
@@ -968,6 +968,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,

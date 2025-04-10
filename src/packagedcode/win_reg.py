@@ -77,6 +77,7 @@ def get_installed_dotnet_versions_from_hive(
     datasource_id,
     package_type,
     registry_path='\\Microsoft\\NET Framework Setup\\NDP',
+    package_only=False,
 ):
     """
     Yield PackageData for the installed versions of .NET framework from the
@@ -90,6 +91,7 @@ def get_installed_dotnet_versions_from_hive(
         registry_tree=registry_tree,
         datasource_id=datasource_id,
         package_type=package_type,
+        package_only=package_only,
     )
 
 
@@ -97,6 +99,7 @@ def get_installed_dotnet_versions_from_regtree(
     registry_tree,
     datasource_id,
     package_type,
+    package_only=False,
 ):
     """
     Yield PackageData for the installed versions of .NET framework from a
@@ -122,13 +125,14 @@ def get_installed_dotnet_versions_from_regtree(
             if key == 'InstallPath':
                 file_references.append(models.FileReference(path=value))
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=datasource_id,
             type=package_type,
             name='microsoft-dot-net-framework',
             version=version,
             file_references=file_references,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 def get_installed_windows_programs_from_hive(
@@ -136,6 +140,7 @@ def get_installed_windows_programs_from_hive(
     datasource_id,
     package_type,
     registry_path='\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
+    package_only=False,
 ):
     """
     Yield installed Windows PackageData from a Windows registry file at
@@ -151,6 +156,7 @@ def get_installed_windows_programs_from_hive(
         registry_tree=registry_tree,
         datasource_id=datasource_id,
         package_type=package_type,
+        package_only=package_only,
     )
 
 
@@ -158,6 +164,7 @@ def get_installed_windows_programs_from_regtree(
     registry_tree,
     datasource_id,
     package_type,
+    package_only=False,
 ):
     """
     Yield installed Windows PackageData from a Windows ``registry_tree``.
@@ -213,7 +220,7 @@ def get_installed_windows_programs_from_regtree(
         if uninstall_string:
             file_references.append(models.FileReference(path=uninstall_string))
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=datasource_id,
             type=package_type,
             name=name,
@@ -222,12 +229,14 @@ def get_installed_windows_programs_from_regtree(
             homepage_url=homepage_url,
             file_references=file_references,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 def get_packages_from_registry_from_hive(
     location,
     datasource_id,
     package_type,
+    package_only=False,
 ):
     """
     Yield PackageData for Installed Windows Programs from the Windows registry
@@ -238,6 +247,7 @@ def get_packages_from_registry_from_hive(
         datasource_id=datasource_id,
         package_type=package_type,
         registry_path='\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
+        package_only=package_only,
     )
 
     yield from get_installed_windows_programs_from_hive(
@@ -245,6 +255,7 @@ def get_packages_from_registry_from_hive(
         datasource_id=datasource_id,
         package_type=package_type,
         registry_path='\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall',
+        package_only=package_only,
     )
 
     yield from get_installed_dotnet_versions_from_hive(
@@ -252,10 +263,11 @@ def get_packages_from_registry_from_hive(
         datasource_id=datasource_id,
         package_type=package_type,
         registry_path='\\Microsoft\\NET Framework Setup\\NDP',
+        package_only=package_only,
     )
 
 
-def get_installed_packages(root_dir, is_container=True):
+def get_installed_packages(root_dir, is_container=True, package_only=False):
     """
     Yield PackageData for Installed Windows Programs for every detected
     installed program from Windows registry hive files found in well known
@@ -280,7 +292,7 @@ def get_installed_packages(root_dir, is_container=True):
     for software_reg_loc, root_prefix in root_prefixes_by_software_reg_locations.items():
         if not os.path.exists(software_reg_loc):
             continue
-        for package in get_packages_from_registry_from_hive(software_reg_loc):
+        for package in get_packages_from_registry_from_hive(software_reg_loc, package_only):
             package.populate_installed_files(root_dir, root_prefix=root_prefix)
             yield package
 
@@ -342,11 +354,12 @@ class BaseRegInstalledProgramHandler(models.DatafileHandler):
     root_path_relative_to_datafile_path = None
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         yield from get_packages_from_registry_from_hive(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            package_only=package_only,
         )
 
     @classmethod
@@ -420,6 +433,8 @@ class BaseRegInstalledProgramHandler(models.DatafileHandler):
 
 class InstalledProgramFromDockerSoftwareDeltaHandler(BaseRegInstalledProgramHandler):
     datasource_id = 'win_reg_installed_programs_docker_software_delta'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*/Hives/Software_Delta',)
     description = 'Windows Registry Installed Program - Docker Software Delta'
     root_path_relative_to_datafile_path = '../../Files'
@@ -427,6 +442,8 @@ class InstalledProgramFromDockerSoftwareDeltaHandler(BaseRegInstalledProgramHand
 
 class InstalledProgramFromDockerFilesSoftwareHandler(BaseRegInstalledProgramHandler):
     datasource_id = 'win_reg_installed_programs_docker_file_software'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*/Files/Windows/System32/config/SOFTWARE',)
     description = 'Windows Registry Installed Program - Docker SOFTWARE'
     root_path_relative_to_datafile_path = '../../../..'
@@ -434,6 +451,8 @@ class InstalledProgramFromDockerFilesSoftwareHandler(BaseRegInstalledProgramHand
 
 class InstalledProgramFromDockerUtilityvmSoftwareHandler(BaseRegInstalledProgramHandler):
     datasource_id = 'win_reg_installed_programs_docker_utility_software'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*/UtilityVM/Files/Windows/System32/config/SOFTWARE',)
     description = 'Windows Registry Installed Program - Docker UtilityVM SOFTWARE'
     root_path_relative_to_datafile_path = '../../../..'

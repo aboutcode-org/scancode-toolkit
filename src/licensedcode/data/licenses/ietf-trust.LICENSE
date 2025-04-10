@@ -21,7 +21,6 @@ ignorable_holders:
     - IETF Trust
     - IETF Trust and the persons identified as the document authors
 ignorable_authors:
-    - IETF Trust
     - the IETF Trust
 ignorable_urls:
     - http://opensource.org/licenses/bsd-license.php

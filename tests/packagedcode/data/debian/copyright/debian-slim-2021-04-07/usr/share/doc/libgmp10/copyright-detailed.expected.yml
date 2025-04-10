@@ -10,7 +10,7 @@ license_detections:
     license_expression_spdx: LGPL-3.0-or-later OR GPL-2.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus OR gpl-2.0-plus
-        spdx_license_expression: LGPL-3.0-or-later OR GPL-2.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later OR GPL-2.0-or-later
         from_file:
         start_line: '19'
         end_line: 46
@@ -55,7 +55,7 @@ license_detections:
     license_expression_spdx: GFDL-1.1-or-later AND (LGPL-2.0-or-later OR GPL-1.0-or-later)
     matches:
       - license_expression: gfdl-1.1-plus
-        spdx_license_expression: GFDL-1.1-or-later
+        license_expression_spdx: GFDL-1.1-or-later
         from_file:
         start_line: 52
         end_line: 55
@@ -72,7 +72,7 @@ license_detections:
           meet the Debian Free Software Guidelines, and is not shipped in the
           debian packages.
       - license_expression: lgpl-2.0-plus OR gpl-1.0-plus
-        spdx_license_expression: LGPL-2.0-or-later OR GPL-1.0-or-later
+        license_expression_spdx: LGPL-2.0-or-later OR GPL-1.0-or-later
         from_file:
         start_line: 57
         end_line: 58

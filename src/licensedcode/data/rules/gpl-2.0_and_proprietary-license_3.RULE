@@ -1,6 +1,7 @@
 ---
 license_expression: gpl-2.0 AND proprietary-license
 is_license_notice: yes
+minimum_coverage: 90
 relevance: 100
 referenced_filenames:
     - LICENSE.txt
@@ -9,7 +10,7 @@ ignorable_urls:
     - https://opensource.org/licenses/gpl-2.0.php
 ---
 
-# License: GPLv2, see https://opensource.org/licenses/gpl-2.0.php and
+# {{License: GPLv2}}, see https://opensource.org/licenses/gpl-2.0.php and
 # ccompanying license "LICENSE.txt". Redistribution + modification under this
 # license permitted.
 

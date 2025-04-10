@@ -12,7 +12,7 @@ TL;DR:
 - We use DCO signoff in commit messages, like Linux does.
 - Porting ScanCode to other OS (FreeBSD is supported, etc.) is possible. Enter an issue for help.
 
-See `CONTRIBUTING.rst <https://github.com/nexB/scancode-toolkit/blob/develop/CONTRIBUTING.rst>`_
+See `CONTRIBUTING.rst <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/CONTRIBUTING.rst>`_
 for details.
 
 
@@ -82,7 +82,7 @@ If you have a multiprocessor machine you might want to run the tests in parallel
 typically run the tests in verbose mode with ``pytest -vvs -n4``.
 
 You can also run a subset of the test suite as shown in the CI configs
-https://github.com/nexB/scancode-toolkit/blob/develop/azure-pipelines.yml e,g,
+https://github.com/aboutcode-org/scancode-toolkit/blob/develop/azure-pipelines.yml e,g,
 ``pytest -n 2 -vvs tests/scancode`` runs only the test scripts present in the
 ``tests/scancode`` directory. (You can give the path to a specific test script
 file there too).
@@ -166,7 +166,7 @@ needing a compiler and toolchain to be installed.
 
 The corresponding source code and build scripts for all for the
 pre-built binaries are stored in a separate repository at
-https://github.com/nexB/scancode-plugins
+https://github.com/aboutcode-org/scancode-plugins
 
 ScanCode app archives should not require network access for installation or
 configuration of its third-party libraries and dependencies. To enable this,
@@ -186,9 +186,9 @@ recursive dependencies.
 
 There are utility scripts in ``etc/release`` that can help with the dependencies
 management process in particular to build or update wheels with native code for
-multiple OSes (Linux, macOS and Windows) and multiple Python versions (3.7+),
+multiple OSes (Linux, macOS and Windows) and multiple Python versions (3.9+),
 which is not a completely simple operation (and requires eventually 12 wheels
-and one source distribution to be published as we support 3 OSes and 4 Python
+and one source distribution to be published as we support 3 OSes and 5 Python
 versions).
 
 

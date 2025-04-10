@@ -30,37 +30,37 @@
       "license_expression_spdx": "LGPL-2.0-or-later",
       "matches": [
         {
-          "score": 75.0,
+          "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "from_file": null,
           "start_line": 1,
           "end_line": 1,
-          "from_file": null,
+          "matcher": "2-aho",
+          "score": 60.0,
           "matched_length": 1,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
+          "rule_relevance": 60,
           "rule_identifier": "lgpl_bare_single_word.RULE",
-          "rule_relevance": 75,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "- name: lgpl"
         },
         {
-          "score": 75.0,
+          "license_expression": "lgpl-2.0-plus",
+          "license_expression_spdx": "LGPL-2.0-or-later",
+          "from_file": null,
           "start_line": 2,
           "end_line": 2,
-          "from_file": null,
+          "matcher": "2-aho",
+          "score": 60.0,
           "matched_length": 1,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "lgpl-2.0-plus",
-          "spdx_license_expression": "LGPL-2.0-or-later",
+          "rule_relevance": 60,
           "rule_identifier": "lgpl_bare_single_word.RULE",
-          "rule_relevance": 75,
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
           "matched_text": "  url: http://repository.jboss.com/licenses/lgpl.txt"
         }
       ],
-      "identifier": "lgpl_2_0_plus-10aa305b-de20-e6cc-d2a0-3f4e76b8a2f9"
+      "identifier": "lgpl_2_0_plus-352c9c42-1459-8dfe-3910-c459079c06b9"
     }
   ],
   "other_license_expression": null,
@@ -72,6 +72,8 @@
     "pkg:maven/javassist/javassist@3.4.GA?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/javassist/javassist/3.4.GA/",

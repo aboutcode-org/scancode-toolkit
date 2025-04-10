@@ -1,0 +1,9 @@
+---
+license_expression: isc
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://opensource.org/licenses/ISC
+---
+
+available under the https://opensource.org/licenses/ISC {{ ISC license}}

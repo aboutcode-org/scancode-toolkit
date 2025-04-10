@@ -1,0 +1,18 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1990, 91, 92, 93, 94, 2000, 2003, 2004, 2005, 2007 Free Software Foundation,
+    Inc.
+  - Copyright (c) 1994, 1996, 1998, 2000, 2001, 2003, 2004, 2005, 2006, 2007 Free Software Foundation,
+    Inc.
+holders:
+  - Free Software Foundation, Inc.
+  - Free Software Foundation, Inc.
+authors:
+  - Eric Decker <cire@cisco.com>
+  - James Youngman <jay@gnu.org>
+  - Mike Rendell
+  - James Woods
+  - Eric B. Decker Michael Rendell

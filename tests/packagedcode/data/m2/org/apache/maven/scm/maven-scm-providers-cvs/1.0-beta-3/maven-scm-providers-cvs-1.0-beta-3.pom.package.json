@@ -34,6 +34,8 @@
     "pkg:maven/org.apache.maven.scm/maven-scm-providers-cvs@1.0-beta-3?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-providers-cvs/1.0-beta-3/",

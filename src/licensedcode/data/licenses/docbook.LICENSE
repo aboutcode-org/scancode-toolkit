@@ -6,8 +6,12 @@ category: Permissive
 owner: DocBook Project
 homepage_url: https://github.com/docbook/xslt10-stylesheets/blob/282955cda01b7ace132a734dca0a241cfd736d91/xsl/COPYING
 notes: this is an MIT/X11 style license with an extra advertizing clause
-spdx_license_key: LicenseRef-scancode-docbook
+spdx_license_key: DocBook-XML
+other_spdx_license_keys:
+    - LicenseRef-scancode-docbook
 faq_url: https://web-beta.archive.org/web/20160118144348/http://wiki.docbook.org/DocBookLicense
+other_urls:
+    - https://github.com/docbook/xslt10-stylesheets/blob/efd62655c11cc8773708df7a843613fa1e932bf8/xsl/COPYING#L27
 minimum_coverage: 80
 ---
 

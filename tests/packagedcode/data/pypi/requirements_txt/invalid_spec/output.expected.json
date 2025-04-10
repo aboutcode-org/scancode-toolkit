@@ -33,30 +33,10 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
-    "dependencies": [
-      {
-        "purl": "pkg:pypi/test",
-        "extracted_requirement": "test>>1.2.0",
-        "scope": "install",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_resolved": false,
-        "resolved_package": {},
-        "extra_data": {
-          "is_editable": false,
-          "link": null,
-          "hash_options": [],
-          "is_constraint": false,
-          "is_archive": null,
-          "is_wheel": false,
-          "is_url": null,
-          "is_vcs_url": null,
-          "is_name_at_url": false,
-          "is_local_path": null
-        }
-      }
-    ],
+    "dependencies": [],
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,

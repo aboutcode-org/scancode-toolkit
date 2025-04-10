@@ -1,8 +1,11 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
-relevance: 100
-notes: Seen in mailprio
+is_deprecated: yes
+notes: |
+    Seen in mailprio
+    Added in SPDX license list 3.23
+    Replaced by license: mailprio
 ---
 
 Rights are hereby granted to download, use, modify, sell, copy, and

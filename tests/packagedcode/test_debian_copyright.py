@@ -18,6 +18,7 @@ from debian_inspector.copyright import CatchAllParagraph
 from debian_inspector.copyright import CopyrightLicenseParagraph
 from debian_inspector.copyright import CopyrightHeaderParagraph
 from debian_inspector.copyright import CopyrightFilesParagraph
+from packages_test_utils import PackageTester
 
 from packagedcode import debian_copyright
 from scancode_config import REGEN_TEST_FIXTURES
@@ -223,6 +224,17 @@ class TestDebianDetector(FileBasedTesting):
         assert len(matches) == 1
         match = matches[0]
         assert match.matched_text() == 'license foo\nbar'
+
+
+class TestMetadataDebianCopyright(PackageTester):
+    test_data_dir = path.join(path.dirname(__file__), 'data/debian/copyright/')
+
+    def test_parse_copyright_file_metadata_archive(self):
+        test_file = self.get_test_loc('metadata_archive/diffutils_3.7-5_copyright')
+        expected_loc = self.get_test_loc('metadata_archive/diffutils_3.7-5_copyright.expected.json')
+        packages = list(debian_copyright.StandaloneDebianCopyrightFileHandler.parse(test_file))
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
 
 
 class TestEnhancedDebianCopyright(FileBasedTesting):

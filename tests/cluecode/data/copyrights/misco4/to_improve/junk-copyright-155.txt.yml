@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) assert.equal c.domain, foonet.net
+holders:
+  - assert.equal c.domain, foonet.net

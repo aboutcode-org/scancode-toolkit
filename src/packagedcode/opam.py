@@ -31,7 +31,7 @@ class OpamFileHandler(models.DatafileHandler):
         return resource.parent(codebase)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         opams = parse_opam(location)
 
         package_dependencies = []
@@ -44,7 +44,7 @@ class OpamFileHandler(models.DatafileHandler):
                     scope='dependency',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
             )
 
@@ -90,7 +90,7 @@ class OpamFileHandler(models.DatafileHandler):
                 )
             )
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -111,6 +111,7 @@ class OpamFileHandler(models.DatafileHandler):
             repository_homepage_url=repository_homepage_url,
             primary_language=cls.default_primary_language
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):

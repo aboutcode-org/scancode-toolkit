@@ -3,7 +3,7 @@ license_expression: gpl-3.0
 is_license_text: yes
 notes: this is a plain GPL not "or later"
 ignorable_copyrights:
-    - Copyright (c) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+    - Copyright (c) 2007 Free Software Foundation, Inc. https://fsf.org
 ignorable_holders:
     - Free Software Foundation, Inc.
 ignorable_urls:

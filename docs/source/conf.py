@@ -29,7 +29,7 @@ author = "AboutCode.org authors and contributors"
 extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_reredirects",
-    'sphinx_rtd_theme',
+    "sphinx_rtd_theme",
     "sphinx_rtd_dark_mode",
     "sphinx.ext.extlinks",
     "sphinx_copybutton",
@@ -47,11 +47,14 @@ redirects = {
 
 # This points to aboutcode.readthedocs.io
 # In case of "undefined label" ERRORS check docs on intersphinx to troubleshoot
-# Link was created at commit - https://github.com/nexB/aboutcode/commit/faea9fcf3248f8f198844fe34d43833224ac4a83
+# Link was created at commit - https://github.com/aboutcode-org/aboutcode/commit/faea9fcf3248f8f198844fe34d43833224ac4a83
 
 intersphinx_mapping = {
     "aboutcode": ("https://aboutcode.readthedocs.io/en/latest/", None),
-    "scancode-workbench": ("https://scancode-workbench.readthedocs.io/en/latest/", None),
+    "scancode-workbench": (
+        "https://scancode-workbench.readthedocs.io/en/develop/",
+        None,
+    ),
 }
 
 # List of regular expressions for the linkchecker to ignore
@@ -92,7 +95,9 @@ html_context = {
     "conf_py_path": "/docs/source/",  # path in the checkout to the docs root
 }
 
-html_css_files = ["_static/theme_overrides.css"]
+html_css_files = [
+    "theme_overrides.css",
+]
 
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
@@ -118,6 +123,4 @@ rst_prolog = """
 
 # -- Options for LaTeX output -------------------------------------------------
 
-latex_elements = {
-    'classoptions': ',openany,oneside'
-}
+latex_elements = {"classoptions": ",openany,oneside"}

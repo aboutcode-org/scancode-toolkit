@@ -1,0 +1,111 @@
+[
+  {
+    "type": "cargo",
+    "namespace": null,
+    "name": null,
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Rust",
+    "description": "",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": null,
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "workspace": {
+        "members": [
+          "boring",
+          "boring-sys",
+          "tokio-boring",
+          "hyper-boring"
+        ],
+        "resolver": "2",
+        "package": {
+          "version": "4.6.0",
+          "repository": "https://github.com/cloudflare/boring",
+          "edition": "2021"
+        },
+        "metadata": {
+          "release": {
+            "pre-release-commit-message": "Release {{version}}",
+            "shared-version": true,
+            "tag-prefix": "",
+            "publish": false
+          }
+        },
+        "dependencies": {
+          "boring-sys": {
+            "version": "4.6.0",
+            "path": "./boring-sys"
+          },
+          "boring": {
+            "version": "4.6.0",
+            "path": "./boring"
+          },
+          "tokio-boring": {
+            "version": "4.6.0",
+            "path": "./tokio-boring"
+          },
+          "bindgen": {
+            "version": "0.68.1",
+            "default-features": false,
+            "features": [
+              "runtime"
+            ]
+          },
+          "cmake": "0.1.18",
+          "fs_extra": "1.3.0",
+          "fslock": "0.2",
+          "bitflags": "2.4",
+          "foreign-types": "0.5",
+          "libc": "0.2",
+          "hex": "0.4",
+          "rusty-hook": "^0.11",
+          "futures": "0.3",
+          "tokio": "1",
+          "anyhow": "1",
+          "antidote": "1.0.0",
+          "http": "0.2",
+          "hyper": {
+            "version": "0.14",
+            "default-features": false
+          },
+          "linked_hash_set": "0.1",
+          "once_cell": "1.0",
+          "tower": "0.4",
+          "tower-layer": "0.3"
+        }
+      }
+    },
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "cargo_toml",
+    "purl": null
+  }
+]

@@ -1,0 +1,9 @@
+---
+license_expression: cc0-1.0 OR gpl-1.0-plus
+is_license_notice: yes
+referenced_filenames:
+    - license.txt
+    - Licenses/CC0-1.0.txt
+---
+
+The following files are released into the public domain and can be distributed under the terms and conditions of the Creative Commons 0 license (See Licenses/CC0-1.0.txt). For any areas that do not legally accept the public domain or CC0 these files can be distributed under the terms and conditions of the GPL (See license.txt):

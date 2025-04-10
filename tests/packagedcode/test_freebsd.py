@@ -58,6 +58,12 @@ class TestFreeBSD(PackageTester):
         package = freebsd.CompactManifestHandler.parse(test_file)
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_basic_package_only(self):
+        test_file = self.get_test_loc('freebsd/basic/+COMPACT_MANIFEST')
+        expected_loc = self.get_test_loc('freebsd/basic/+COMPACT_MANIFEST-package-only.expected')
+        package = freebsd.CompactManifestHandler.parse(location=test_file, package_only=True)
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES, package_only=True)
+
     def test_parse_not_yaml(self):
         test_file = self.get_test_loc('freebsd/not_yaml/+COMPACT_MANIFEST')
         try:

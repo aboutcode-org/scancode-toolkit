@@ -60,7 +60,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -82,7 +82,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -106,6 +106,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/",

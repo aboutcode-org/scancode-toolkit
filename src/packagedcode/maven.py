@@ -55,6 +55,7 @@ Third case: a maven repo layout: the jars are side-by-side with a .pom and
 there is no pom.properties check if there are side-by-side artifacts
 """
 
+
 class MavenBasePackageHandler(models.DatafileHandler):
 
     @classmethod
@@ -68,10 +69,13 @@ class MavenBasePackageHandler(models.DatafileHandler):
             yield from models.DatafileHandler.assemble(package_data, resource, codebase)
             return
 
+        if not package_data.purl:
+            return
+
         datafile_path = resource.path
 
         # This order is important as we want pom.xml to be used for package
-        # creation and then to update from MANIFEST later 
+        # creation and then to update from MANIFEST later
         manifest_path_pattern = '*/META-INF/MANIFEST.MF'
         nested_pom_xml_path_pattern = '*/META-INF/maven/**/pom.xml'
         datafile_name_patterns = (nested_pom_xml_path_pattern, manifest_path_pattern)
@@ -103,7 +107,7 @@ class MavenBasePackageHandler(models.DatafileHandler):
             return
 
         if manifests and pom_xmls:
-            #raise Exception(resource.path, meta_inf_resource, datafile_name_patterns, package_adder)
+            # raise Exception(resource.path, meta_inf_resource, datafile_name_patterns, package_adder)
             parent_resource = meta_inf_resource.parent(codebase)
             if not parent_resource:
                 parent_resource = meta_inf_resource
@@ -116,11 +120,11 @@ class MavenBasePackageHandler(models.DatafileHandler):
                     parent_resource=parent_resource,
                 )
         elif manifests and not pom_xmls:
-            yield from JavaJarManifestHandlerMixin.assemble(package_data, resource, codebase)
+            yield from JavaJarManifestHandlerMixin.assemble(package_data, resource, codebase, package_adder)
         elif pom_xmls and not manifests:
-            yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase)
+            yield from MavenPomXmlHandlerMixin.assemble(package_data, resource, codebase, package_adder)
         else:
-            yield from models.DatafileHandler.assemble(package_data, resource, codebase)
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
 
 
 class JavaJarManifestHandler(MavenBasePackageHandler):
@@ -132,13 +136,14 @@ class JavaJarManifestHandler(MavenBasePackageHandler):
     documentation_url = 'https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         sections = parse_manifest(location)
         if sections:
             main_section = sections[0]
             manifest = get_normalized_java_manifest_data(main_section)
             if manifest:
-                yield models.PackageData(**manifest,)
+                package_data = dict(**manifest,)
+                yield models.PackageData.from_data(package_data, package_only)
 
 
 class JavaJarManifestHandlerMixin(models.DatafileHandler):
@@ -148,7 +153,7 @@ class JavaJarManifestHandlerMixin(models.DatafileHandler):
         # we want to root of the jar, two levels up
         parent = resource.parent(codebase)
         if parent:
-            parent = resource.parent(codebase)
+            parent = parent.parent(codebase)
         if parent:
             models.DatafileHandler.assign_package_to_resources(
                 package,
@@ -206,13 +211,14 @@ class MavenPomXmlHandler(MavenBasePackageHandler):
                     return True
 
     @classmethod
-    def parse(cls, location, base_url='https://repo1.maven.org/maven2'):
+    def parse(cls, location, package_only=False, base_url='https://repo1.maven.org/maven2'):
         package_data = parse(
             location=location,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             base_url=base_url,
+            package_only=package_only,
         )
         if package_data:
             yield package_data
@@ -270,7 +276,7 @@ class MavenPomXmlHandlerMixin(models.DatafileHandler):
             for child in root.walk(codebase):
                 if 'pom.xml' in child.path:
                     number_poms += 1
-            
+
             if number_poms > 1:
                 root = resource
             else:
@@ -303,7 +309,7 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
     documentation_url = 'https://maven.apache.org/pom.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield PackageData from a pom.properties file (which is typically side-
         by-side with its pom file.)
@@ -313,10 +319,10 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
             if TRACE:
                 logger.debug(f'MavenPomPropertiesHandler.parse: properties: {properties!r}')
             if properties:
-                yield from cls.parse_pom_properties(properties=properties) 
+                yield from cls.parse_pom_properties(properties=properties, package_only=package_only)
 
     @classmethod
-    def parse_pom_properties(cls, properties):
+    def parse_pom_properties(cls, properties, package_only=False):
         namespace = properties.pop("groupId", None)
         name = properties.pop("artifactId", None)
         version = properties.pop("version", None)
@@ -325,7 +331,7 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
         else:
             extra_data = {}
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -334,6 +340,7 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
             version=version,
             extra_data=extra_data,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 def build_url(
@@ -1050,7 +1057,7 @@ def get_dependencies(pom):
             if dversion == 'latest.release':
                 dversion = None
 
-            is_resolved = bool(dversion and not any(c in dversion for c in '$[,]'))
+            is_pinned = bool(dversion and not any(c in dversion for c in '$[,]'))
 
             dqualifiers = {}
             # FIXME: this is missing from the original Pom parser
@@ -1062,7 +1069,7 @@ def get_dependencies(pom):
             # if packaging and packaging != 'jar':
             #     qualifiers['packaging'] = packaging
 
-            if is_resolved:
+            if is_pinned:
                 dpurl = models.PackageURL(
                     type='maven',
                     namespace=dgroup_id,
@@ -1088,7 +1095,7 @@ def get_dependencies(pom):
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=is_resolved,
+                is_pinned=is_pinned,
             )
             dependencies.append(dep_pack)
 
@@ -1189,6 +1196,7 @@ def parse(
     package_type,
     primary_language,
     base_url='https://repo1.maven.org/maven2',
+    package_only=False,
 ):
     """
     Return Packagedata objects from parsing a Maven pom file at `location` or
@@ -1199,7 +1207,8 @@ def parse(
         package_type=package_type,
         primary_language=primary_language,
         location=location,
-        base_url=base_url
+        base_url=base_url,
+        package_only=package_only,
     )
     if package:
         return package
@@ -1212,6 +1221,7 @@ def _parse(
     location=None,
     text=None,
     base_url='https://repo1.maven.org/maven2',
+    package_only=False,
 ):
     """
     Yield Packagedata objects from parsing a Maven pom file at `location` or
@@ -1283,7 +1293,7 @@ def _parse(
     ))
 
     # FIXME: there are still other data to map in a PackageData
-    return MavenPackageData(
+    package_data = dict(
         datasource_id=datasource_id,
         type=package_type,
         primary_language=primary_language,
@@ -1300,12 +1310,16 @@ def _parse(
         bug_tracking_url=bug_tracking_url,
         **urls,
     )
+    return MavenPackageData.from_data(package_data, package_only)
+
 
 class MavenPackageData(models.PackageData):
 
     datasource_id = 'maven_pom'
 
+    @classmethod
     def get_license_detections_for_extracted_license_statement(
+        cls,
         extracted_license,
         try_as_expression=True,
         approximate=True,
@@ -1314,16 +1328,16 @@ class MavenPackageData(models.PackageData):
         from packagedcode.licensing import get_normalized_license_detections
         from packagedcode.licensing import get_license_detections_for_extracted_license_statement
 
-        if not MavenPackageData.check_extracted_license_statement_structure(extracted_license):
+        if not cls.check_extracted_license_statement_structure(extracted_license):
             return get_normalized_license_detections(
                 extracted_license=extracted_license,
                 try_as_expression=try_as_expression,
                 approximate=approximate,
                 expression_symbols=expression_symbols,
             )
-        
+
         new_extracted_license = extracted_license.copy()
-        
+
         for license_entry in new_extracted_license:
             license_entry.pop("distribution")
             if not license_entry.get("name"):
@@ -1342,8 +1356,8 @@ class MavenPackageData(models.PackageData):
             expression_symbols=expression_symbols,
         )
 
-
-    def check_extracted_license_statement_structure(extracted_license):
+    @classmethod
+    def check_extracted_license_statement_structure(cls, extracted_license):
 
         is_list_of_mappings = False
         if not isinstance(extracted_license, list):
@@ -1355,7 +1369,7 @@ class MavenPackageData(models.PackageData):
             if not isinstance(extracted_license_item, dict):
                 is_list_of_mappings = False
                 break
-        
+
         return is_list_of_mappings
 
 

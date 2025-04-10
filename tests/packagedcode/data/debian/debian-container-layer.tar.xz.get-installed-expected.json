@@ -1,11 +1,11 @@
 [
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "libncurses5",
     "version": "6.1-1ubuntu1.18.04",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -15,8 +15,8 @@
       {
         "type": null,
         "role": "maintainer",
-        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-        "email": null,
+        "name": "Ubuntu Developers",
+        "email": "ubuntu-devel-discuss@lists.ubuntu.com",
         "url": null
       }
     ],
@@ -44,7 +44,7 @@
         "matches": [
           {
             "license_expression": "x11-fsf",
-            "spdx_license_expression": "X11-distribute-modifications-variant",
+            "license_expression_spdx": "X11-distribute-modifications-variant",
             "from_file": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
             "start_line": 23,
             "end_line": 45,
@@ -66,7 +66,7 @@
         "matches": [
           {
             "license_expression": "x11-xconsortium",
-            "spdx_license_expression": "X11",
+            "license_expression_spdx": "X11",
             "from_file": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
             "start_line": 50,
             "end_line": 70,
@@ -88,7 +88,7 @@
         "matches": [
           {
             "license_expression": "bsd-new",
-            "spdx_license_expression": "BSD-3-Clause",
+            "license_expression_spdx": "BSD-3-Clause",
             "from_file": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
             "start_line": 76,
             "end_line": 98,
@@ -110,7 +110,7 @@
         "matches": [
           {
             "license_expression": "x11-xconsortium",
-            "spdx_license_expression": "X11",
+            "license_expression_spdx": "X11",
             "from_file": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
             "start_line": 105,
             "end_line": 127,
@@ -133,8 +133,10 @@
     "extracted_license_statement": null,
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/ncurses"
+      "pkg:deb/ubuntu/ncurses"
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same",
       "missing_file_references": [
@@ -179,7 +181,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "debian-container-layer.tar.xz/var/lib/dpkg/status",
       "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
@@ -228,7 +230,7 @@
                 "matches": [
                   {
                     "license_expression": "x11-fsf",
-                    "spdx_license_expression": "X11-distribute-modifications-variant",
+                    "license_expression_spdx": "X11-distribute-modifications-variant",
                     "from_file": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
                     "start_line": 23,
                     "end_line": 45,
@@ -250,7 +252,7 @@
                 "matches": [
                   {
                     "license_expression": "x11-xconsortium",
-                    "spdx_license_expression": "X11",
+                    "license_expression_spdx": "X11",
                     "from_file": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
                     "start_line": 50,
                     "end_line": 70,
@@ -272,7 +274,7 @@
                 "matches": [
                   {
                     "license_expression": "bsd-new",
-                    "spdx_license_expression": "BSD-3-Clause",
+                    "license_expression_spdx": "BSD-3-Clause",
                     "from_file": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
                     "start_line": 76,
                     "end_line": 98,
@@ -294,7 +296,7 @@
                 "matches": [
                   {
                     "license_expression": "x11-xconsortium",
-                    "spdx_license_expression": "X11",
+                    "license_expression_spdx": "X11",
                     "from_file": "debian-container-layer.tar.xz/usr/share/doc/libncurses5/copyright",
                     "start_line": 105,
                     "end_line": 127,
@@ -318,6 +320,8 @@
             "notice_text": null,
             "source_packages": [],
             "file_references": [],
+            "is_private": false,
+            "is_virtual": false,
             "extra_data": {},
             "dependencies": [],
             "repository_homepage_url": null,
@@ -328,7 +332,7 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -409,6 +413,8 @@
                 "extra_data": {}
               }
             ],
+            "is_private": false,
+            "is_virtual": false,
             "extra_data": {},
             "dependencies": [],
             "repository_homepage_url": null,
@@ -419,20 +425,20 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:deb/libncurses5@6.1-1ubuntu1.18.04?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libncurses5@6.1-1ubuntu1.18.04?arch=amd64"
   },
   {
     "type": "deb",
-    "namespace": null,
+    "namespace": "ubuntu",
     "name": "libndp0",
     "version": "1.4-2ubuntu0.16.04.1",
     "qualifiers": {
-      "architecture": "amd64"
+      "arch": "amd64"
     },
     "subpath": null,
     "primary_language": null,
@@ -442,8 +448,8 @@
       {
         "type": null,
         "role": "maintainer",
-        "name": "Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>",
-        "email": null,
+        "name": "Ubuntu Developers",
+        "email": "ubuntu-devel-discuss@lists.ubuntu.com",
         "url": null
       }
     ],
@@ -474,7 +480,7 @@
         "matches": [
           {
             "license_expression": "lgpl-2.1-plus",
-            "spdx_license_expression": "LGPL-2.1-or-later",
+            "license_expression_spdx": "LGPL-2.1-or-later",
             "from_file": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
             "start_line": 13,
             "end_line": 13,
@@ -489,7 +495,7 @@
           },
           {
             "license_expression": "lgpl-2.1-plus",
-            "spdx_license_expression": "LGPL-2.1-or-later",
+            "license_expression_spdx": "LGPL-2.1-or-later",
             "from_file": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
             "start_line": 14,
             "end_line": 26,
@@ -504,7 +510,7 @@
           },
           {
             "license_expression": "lgpl-2.1",
-            "spdx_license_expression": "LGPL-2.1-only",
+            "license_expression_spdx": "LGPL-2.1-only",
             "from_file": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
             "start_line": 24,
             "end_line": 30,
@@ -524,8 +530,10 @@
     "extracted_license_statement": "- LGPL-2.1+\n- LGPL-2.1+\n- LGPL-2.1+\n",
     "notice_text": null,
     "source_packages": [
-      "pkg:deb/libndp"
+      "pkg:deb/ubuntu/libndp"
     ],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "multi_arch": "same",
       "missing_file_references": [
@@ -552,7 +560,7 @@
     "repository_homepage_url": null,
     "repository_download_url": null,
     "api_data_url": null,
-    "package_uid": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
+    "package_uid": "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758",
     "datafile_paths": [
       "debian-container-layer.tar.xz/var/lib/dpkg/status",
       "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
@@ -604,7 +612,7 @@
                 "matches": [
                   {
                     "license_expression": "lgpl-2.1-plus",
-                    "spdx_license_expression": "LGPL-2.1-or-later",
+                    "license_expression_spdx": "LGPL-2.1-or-later",
                     "from_file": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
                     "start_line": 13,
                     "end_line": 13,
@@ -619,7 +627,7 @@
                   },
                   {
                     "license_expression": "lgpl-2.1-plus",
-                    "spdx_license_expression": "LGPL-2.1-or-later",
+                    "license_expression_spdx": "LGPL-2.1-or-later",
                     "from_file": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
                     "start_line": 14,
                     "end_line": 26,
@@ -634,7 +642,7 @@
                   },
                   {
                     "license_expression": "lgpl-2.1",
-                    "spdx_license_expression": "LGPL-2.1-only",
+                    "license_expression_spdx": "LGPL-2.1-only",
                     "from_file": "debian-container-layer.tar.xz/usr/share/doc/libndp0/copyright",
                     "start_line": 24,
                     "end_line": 30,
@@ -655,6 +663,8 @@
             "notice_text": null,
             "source_packages": [],
             "file_references": [],
+            "is_private": false,
+            "is_virtual": false,
             "extra_data": {},
             "dependencies": [],
             "repository_homepage_url": null,
@@ -665,7 +675,7 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       },
@@ -737,6 +747,8 @@
                 "extra_data": {}
               }
             ],
+            "is_private": false,
+            "is_virtual": false,
             "extra_data": {},
             "dependencies": [],
             "repository_homepage_url": null,
@@ -747,11 +759,11 @@
           }
         ],
         "for_packages": [
-          "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
+          "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64&uuid=fixed-uid-done-for-testing-5642512d1758"
         ],
         "scan_errors": []
       }
     ],
-    "purl": "pkg:deb/libndp0@1.4-2ubuntu0.16.04.1?architecture=amd64"
+    "purl": "pkg:deb/ubuntu/libndp0@1.4-2ubuntu0.16.04.1?arch=amd64"
   }
 ]

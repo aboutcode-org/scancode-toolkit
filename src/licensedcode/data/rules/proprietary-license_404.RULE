@@ -2,7 +2,10 @@
 license_expression: proprietary-license
 is_license_text: yes
 relevance: 100
-notes: See https://keypirinha.com/license.html
+is_deprecated: yes
+notes: |
+    See https://keypirinha.com/license.html
+    This is now the keypirinha.LICENSE
 ---
 
 Redistribution and use in binary form, without modification, are permitted provided that the following conditions are met:

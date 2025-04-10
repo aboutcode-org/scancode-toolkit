@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Rusty Russell (c) 2000
+  - Patrick McHardy (c) 2006-2012
+holders:
+  - Rusty Russell
+  - Patrick McHardy

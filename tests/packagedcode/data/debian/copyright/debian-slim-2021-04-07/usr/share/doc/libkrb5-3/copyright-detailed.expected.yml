@@ -1,25 +1,23 @@
 declared_license:
 declared_license_expression: bsd-simplified AND generic-export-compliance AND cc-by-sa-3.0 AND
-  proprietary-license AND other-permissive AND mit-no-advert-export-control AND brian-gladman-3-clause
+  proprietary-license AND openvision AND mit-no-advert-export-control AND brian-gladman-3-clause
   AND bsd-new AND mit AND bsd-simplified AND mit AND bsd-new AND bsd-new AND michigan-disclaimer
   AND fsf-unlimited-no-warranty AND mit-no-advert-export-control AND openldap-2.8 AND bsd-new
-  AND bsd-new AND bsd-new AND freebsd-doc AND cmu-uc AND nrl-permission AND ietf-trust AND mit-old-style
-  AND mit AND bsd-simplified AND (mit-no-advert-export-control AND proprietary-license) AND
-  bsd-original-uc AND mit-no-advert-export-control AND bsd-original AND mit AND isc AND isc
-  AND other-permissive AND bsd-new AND rsa-md4 AND rsa-md5 AND rsa-1990 AND mit-with-modification-obligations
-  AND bsd-new AND (bsd-simplified OR gpl-2.0-plus) AND bsd-new AND bsd-simplified
+  AND bsd-new AND bsd-new AND bsd-2-clause-first-lines AND cmu-uc AND nrl-permission AND ietf-trust
+  AND mit-old-style AND mit AND bsd-simplified AND hpnd-export-us-acknowledgement AND bsd-original-uc
+  AND mit-no-advert-export-control AND bsd-original AND mit AND isc AND isc AND other-permissive
+  AND bsd-new AND rsa-md4 AND rsa-md5 AND rsa-1990 AND mit-with-modification-obligations AND
+  bsd-new AND (bsd-simplified OR gpl-2.0-plus) AND bsd-new AND bsd-simplified
 declared_license_expression_spdx: BSD-2-Clause AND LicenseRef-scancode-generic-export-compliance
-  AND CC-BY-SA-3.0 AND LicenseRef-scancode-proprietary-license AND LicenseRef-scancode-other-permissive
-  AND LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-brian-gladman-3-clause
-  AND BSD-3-Clause AND MIT AND BSD-2-Clause AND MIT AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-michigan-disclaimer
-  AND FSFULLRWD AND LicenseRef-scancode-mit-no-advert-export-control AND OLDAP-2.8 AND BSD-3-Clause
-  AND BSD-3-Clause AND BSD-3-Clause AND FreeBSD-DOC AND MIT-CMU AND LicenseRef-scancode-nrl-permission
-  AND LicenseRef-scancode-ietf-trust AND LicenseRef-scancode-mit-old-style AND MIT AND BSD-2-Clause
-  AND (LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-proprietary-license)
-  AND BSD-4-Clause-UC AND LicenseRef-scancode-mit-no-advert-export-control AND BSD-4-Clause
-  AND MIT AND ISC AND ISC AND LicenseRef-scancode-other-permissive AND BSD-3-Clause AND LicenseRef-scancode-rsa-md4
-  AND RSA-MD AND LicenseRef-scancode-rsa-1990 AND HPND-export-US-modify AND BSD-3-Clause AND
-  (BSD-2-Clause OR GPL-2.0-or-later) AND BSD-3-Clause AND BSD-2-Clause
+  AND CC-BY-SA-3.0 AND LicenseRef-scancode-proprietary-license AND OpenVision AND HPND-export2-US
+  AND LicenseRef-scancode-brian-gladman-3-clause AND BSD-3-Clause AND MIT AND BSD-2-Clause AND
+  MIT AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-michigan-disclaimer AND FSFULLRWD
+  AND HPND-export2-US AND OLDAP-2.8 AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND BSD-2-Clause-first-lines
+  AND MIT-CMU AND CMU-Mach-nodoc AND LicenseRef-scancode-ietf-trust AND LicenseRef-scancode-mit-old-style
+  AND MIT AND BSD-2-Clause AND HPND-export-US-acknowledgement AND BSD-4-Clause-UC AND HPND-export2-US
+  AND BSD-4-Clause AND MIT AND ISC AND ISC AND LicenseRef-scancode-other-permissive AND BSD-3-Clause
+  AND LicenseRef-scancode-rsa-md4 AND RSA-MD AND LicenseRef-scancode-rsa-1990 AND HPND-export-US-modify
+  AND BSD-3-Clause AND (BSD-2-Clause OR GPL-2.0-or-later) AND BSD-3-Clause AND BSD-2-Clause
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -28,7 +26,7 @@ license_detections:
       AND CC-BY-SA-3.0
     matches:
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 18
         end_line: 39
@@ -63,7 +61,7 @@ license_detections:
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: generic-export-compliance
-        spdx_license_expression: LicenseRef-scancode-generic-export-compliance
+        license_expression_spdx: LicenseRef-scancode-generic-export-compliance
         from_file:
         start_line: 41
         end_line: 52
@@ -88,7 +86,7 @@ license_detections:
           countries of Cuba, Iran, North Korea, Sudan, Syria, and residents and
           nationals of those countries.
       - license_expression: cc-by-sa-3.0
-        spdx_license_expression: CC-BY-SA-3.0
+        license_expression_spdx: CC-BY-SA-3.0
         from_file:
         start_line: 54
         end_line: 56
@@ -108,7 +106,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 64
         end_line: 70
@@ -128,23 +126,26 @@ license_detections:
           MIT trademarks in order to convey information (although in doing so,
           recognition of their trademark status should be given).
     identifier: proprietary_license-ae26591e-560d-5622-14d0-ff1ff9a49b22
-  - license_expression: other-permissive
-    license_expression_spdx: LicenseRef-scancode-other-permissive
+  - license_expression: openvision
+    license_expression_spdx: OpenVision
     matches:
-      - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+      - license_expression: openvision
+        license_expression_spdx: OpenVision
         from_file:
-        start_line: 82
+        start_line: 79
         end_line: 111
         matcher: 2-aho
         score: '100.0'
-        matched_length: 244
+        matched_length: 253
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: other-permissive_80.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_80.RULE
+        rule_identifier: openvision_1.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openvision_1.RULE
         matched_text: |
-          WARNING:  Retrieving the OpenVision Kerberos Administration system
+          Copyright, OpenVision Technologies, Inc., 1993-1996, All Rights
+             Reserved
+
+             WARNING:  Retrieving the OpenVision Kerberos Administration system
              source code, as described below, indicates your acceptance of the
              following terms.  If you do not agree to the following terms, do
              not retrieve the OpenVision Kerberos administration system.
@@ -174,12 +175,12 @@ license_detections:
              continuing Kerberos technology development and our gratitude for
              the valuable work which has been performed by MIT and the Kerberos
              community.
-    identifier: other_permissive-46e6e2b3-dadb-a39b-50ee-b8a8739b526d
+    identifier: openvision-b949c9b9-c46a-bdde-9343-730f91a4f4a8
   - license_expression: mit-no-advert-export-control
-    license_expression_spdx: LicenseRef-scancode-mit-no-advert-export-control
+    license_expression_spdx: HPND-export2-US
     matches:
       - license_expression: mit-no-advert-export-control
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
+        license_expression_spdx: HPND-export2-US
         from_file:
         start_line: 128
         end_line: 146
@@ -215,7 +216,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-brian-gladman-3-clause
     matches:
       - license_expression: brian-gladman-3-clause
-        spdx_license_expression: LicenseRef-scancode-brian-gladman-3-clause
+        license_expression_spdx: LicenseRef-scancode-brian-gladman-3-clause
         from_file:
         start_line: 156
         end_line: 175
@@ -252,7 +253,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 187
         end_line: 214
@@ -297,7 +298,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 222
         end_line: 240
@@ -333,7 +334,7 @@ license_detections:
     license_expression_spdx: BSD-2-Clause
     matches:
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 248
         end_line: 272
@@ -375,7 +376,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 334
         end_line: 352
@@ -411,7 +412,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 363
         end_line: 390
@@ -456,7 +457,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 400
         end_line: 427
@@ -501,7 +502,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-michigan-disclaimer
     matches:
       - license_expression: michigan-disclaimer
-        spdx_license_expression: LicenseRef-scancode-michigan-disclaimer
+        license_expression_spdx: LicenseRef-scancode-michigan-disclaimer
         from_file:
         start_line: 440
         end_line: 459
@@ -538,7 +539,7 @@ license_detections:
     license_expression_spdx: FSFULLRWD
     matches:
       - license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
+        license_expression_spdx: FSFULLRWD
         from_file:
         start_line: 469
         end_line: 476
@@ -560,10 +561,10 @@ license_detections:
              PURPOSE.
     identifier: fsf_unlimited_no_warranty-005cbd82-97e0-5c6c-e111-cd46d95d2c5a
   - license_expression: mit-no-advert-export-control
-    license_expression_spdx: LicenseRef-scancode-mit-no-advert-export-control
+    license_expression_spdx: HPND-export2-US
     matches:
       - license_expression: mit-no-advert-export-control
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
+        license_expression_spdx: HPND-export2-US
         from_file:
         start_line: 485
         end_line: 503
@@ -599,7 +600,7 @@ license_detections:
     license_expression_spdx: OLDAP-2.8
     matches:
       - license_expression: openldap-2.8
-        spdx_license_expression: OLDAP-2.8
+        license_expression_spdx: OLDAP-2.8
         from_file:
         start_line: 511
         end_line: 558
@@ -664,7 +665,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 568
         end_line: 595
@@ -709,7 +710,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 608
         end_line: 636
@@ -755,7 +756,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 647
         end_line: 675
@@ -797,11 +798,11 @@ license_detections:
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
     identifier: bsd_new-bcd7c498-0b2c-5abe-4ee7-1e4d56c69bcc
-  - license_expression: freebsd-doc
-    license_expression_spdx: FreeBSD-DOC
+  - license_expression: bsd-2-clause-first-lines
+    license_expression_spdx: BSD-2-Clause-first-lines
     matches:
-      - license_expression: freebsd-doc
-        spdx_license_expression: FreeBSD-DOC
+      - license_expression: bsd-2-clause-first-lines
+        license_expression_spdx: BSD-2-Clause-first-lines
         from_file:
         start_line: 682
         end_line: 705
@@ -810,8 +811,8 @@ license_detections:
         matched_length: 185
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: freebsd-doc_5.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/freebsd-doc_5.RULE
+        rule_identifier: bsd-2-clause-first-lines.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-2-clause-first-lines.LICENSE
         matched_text: |
           Redistribution and use in source and binary forms, with or without
              modification, are permitted provided that the following conditions
@@ -837,12 +838,12 @@ license_detections:
              STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
              ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
              OF THE POSSIBILITY OF SUCH DAMAGE.
-    identifier: freebsd_doc-9db33af1-af77-1b9f-27f4-0ae766439a3a
+    identifier: bsd_2_clause_first_lines-6f015fc4-b8cd-90a5-10f6-9b14c7ee7bfd
   - license_expression: cmu-uc
     license_expression_spdx: MIT-CMU
     matches:
       - license_expression: cmu-uc
-        spdx_license_expression: MIT-CMU
+        license_expression_spdx: MIT-CMU
         from_file:
         start_line: 713
         end_line: 729
@@ -873,10 +874,10 @@ license_detections:
              SOFTWARE.
     identifier: cmu_uc-81218bbc-ee50-f7e2-791a-f18dcff965fd
   - license_expression: nrl-permission
-    license_expression_spdx: LicenseRef-scancode-nrl-permission
+    license_expression_spdx: CMU-Mach-nodoc
     matches:
       - license_expression: nrl-permission
-        spdx_license_expression: LicenseRef-scancode-nrl-permission
+        license_expression_spdx: CMU-Mach-nodoc
         from_file:
         start_line: 735
         end_line: 743
@@ -902,7 +903,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-ietf-trust
     matches:
       - license_expression: ietf-trust
-        spdx_license_expression: LicenseRef-scancode-ietf-trust
+        license_expression_spdx: LicenseRef-scancode-ietf-trust
         from_file:
         start_line: 752
         end_line: 763
@@ -931,7 +932,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-mit-old-style
     matches:
       - license_expression: mit-old-style
-        spdx_license_expression: LicenseRef-scancode-mit-old-style
+        license_expression_spdx: LicenseRef-scancode-mit-old-style
         from_file:
         start_line: 769
         end_line: 776
@@ -956,7 +957,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 782
         end_line: 800
@@ -988,12 +989,11 @@ license_detections:
              CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
              SOFTWARE.
     identifier: mit-cacd5c0c-204a-85c2-affc-e4c125b2492a
-  - license_expression: bsd-simplified AND (mit-no-advert-export-control AND proprietary-license)
-    license_expression_spdx: BSD-2-Clause AND (LicenseRef-scancode-mit-no-advert-export-control
-      AND LicenseRef-scancode-proprietary-license)
+  - license_expression: bsd-simplified AND hpnd-export-us-acknowledgement
+    license_expression_spdx: BSD-2-Clause AND HPND-export-US-acknowledgement
     matches:
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 810
         end_line: 833
@@ -1029,8 +1029,8 @@ license_detections:
              OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
              OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
              SUCH DAMAGE.
-      - license_expression: mit-no-advert-export-control AND proprietary-license
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control AND LicenseRef-scancode-proprietary-license
+      - license_expression: hpnd-export-us-acknowledgement
+        license_expression_spdx: HPND-export-US-acknowledgement
         from_file:
         start_line: 837
         end_line: 856
@@ -1039,8 +1039,8 @@ license_detections:
         matched_length: 165
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit-no-advert-export-control_and_proprietary-license_1.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit-no-advert-export-control_and_proprietary-license_1.RULE
+        rule_identifier: hpnd-export-us-acknowledgement.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/hpnd-export-us-acknowledgement.LICENSE
         matched_text: |
           EXPORT OF THIS SOFTWARE from the United States of America may
                 require a specific license from the United States Government. It
@@ -1062,12 +1062,12 @@ license_detections:
              be held liable for any liability nor for any direct, indirect, or
              consequential damages with respect to any claim by the user or
              distributor of the ksu software.
-    identifier: bsd_simplified_and__mit_no_advert_export_control_and_proprietary_license-345b28a9-f29e-4bc5-6160-59a84fd1aadf
+    identifier: bsd_simplified_and_hpnd_export_us_acknowledgement-44301bcd-fd8f-70e4-66c1-5897d73ac6aa
   - license_expression: bsd-original-uc
     license_expression_spdx: BSD-4-Clause-UC
     matches:
       - license_expression: bsd-original-uc
-        spdx_license_expression: BSD-4-Clause-UC
+        license_expression_spdx: BSD-4-Clause-UC
         from_file:
         start_line: 866
         end_line: 899
@@ -1115,10 +1115,10 @@ license_detections:
              SUCH DAMAGE.
     identifier: bsd_original_uc-f28cb4d4-6336-ee60-f186-4c1929d3a4b0
   - license_expression: mit-no-advert-export-control
-    license_expression_spdx: LicenseRef-scancode-mit-no-advert-export-control
+    license_expression_spdx: HPND-export2-US
     matches:
       - license_expression: mit-no-advert-export-control
-        spdx_license_expression: LicenseRef-scancode-mit-no-advert-export-control
+        license_expression_spdx: HPND-export2-US
         from_file:
         start_line: 907
         end_line: 922
@@ -1151,7 +1151,7 @@ license_detections:
     license_expression_spdx: BSD-4-Clause
     matches:
       - license_expression: bsd-original
-        spdx_license_expression: BSD-4-Clause
+        license_expression_spdx: BSD-4-Clause
         from_file:
         start_line: 934
         end_line: 968
@@ -1203,7 +1203,7 @@ license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 978
         end_line: 996
@@ -1239,7 +1239,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 1004
         end_line: 1016
@@ -1269,7 +1269,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 1025
         end_line: 1037
@@ -1299,7 +1299,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 1046
         end_line: 1047
@@ -1318,7 +1318,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 1060
         end_line: 1087
@@ -1363,7 +1363,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-rsa-md4
     matches:
       - license_expression: rsa-md4
-        spdx_license_expression: LicenseRef-scancode-rsa-md4
+        license_expression_spdx: LicenseRef-scancode-rsa-md4
         from_file:
         start_line: 1096
         end_line: 1112
@@ -1397,7 +1397,7 @@ license_detections:
     license_expression_spdx: RSA-MD
     matches:
       - license_expression: rsa-md5
-        spdx_license_expression: RSA-MD
+        license_expression_spdx: RSA-MD
         from_file:
         start_line: 1121
         end_line: 1137
@@ -1431,7 +1431,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-rsa-1990
     matches:
       - license_expression: rsa-1990
-        spdx_license_expression: LicenseRef-scancode-rsa-1990
+        license_expression_spdx: LicenseRef-scancode-rsa-1990
         from_file:
         start_line: 1147
         end_line: 1153
@@ -1455,7 +1455,7 @@ license_detections:
     license_expression_spdx: HPND-export-US-modify
     matches:
       - license_expression: mit-with-modification-obligations
-        spdx_license_expression: HPND-export-US-modify
+        license_expression_spdx: HPND-export-US-modify
         from_file:
         start_line: 1163
         end_line: 1181
@@ -1491,7 +1491,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 1190
         end_line: 1217
@@ -1536,7 +1536,7 @@ license_detections:
     license_expression_spdx: BSD-2-Clause OR GPL-2.0-or-later
     matches:
       - license_expression: bsd-simplified OR gpl-2.0-plus
-        spdx_license_expression: BSD-2-Clause OR GPL-2.0-or-later
+        license_expression_spdx: BSD-2-Clause OR GPL-2.0-or-later
         from_file:
         start_line: 1226
         end_line: 1264
@@ -1592,7 +1592,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 1274
         end_line: 1302
@@ -1638,7 +1638,7 @@ license_detections:
     license_expression_spdx: BSD-2-Clause
     matches:
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 1311
         end_line: 1334

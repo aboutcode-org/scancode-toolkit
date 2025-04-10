@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2002 Free Software Foundation, Inc.
+holders:
+  - Free Software Foundation, Inc.
+authors:
+  - Mike Haertel, David Hayes, Richard Stallman, Len Tower, and Paul Eggert. Wayne Davison
+  - Randy Smith. GNU
+  - Thomas Lord. GNU
+  - Torbjorn Granlund and David MacKenzie

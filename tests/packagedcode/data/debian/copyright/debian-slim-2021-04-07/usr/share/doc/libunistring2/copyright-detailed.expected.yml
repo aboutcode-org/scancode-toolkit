@@ -31,7 +31,7 @@ other_license_detections:
     license_expression_spdx: FSFULLR
     matches:
       - license_expression: fsf-unlimited
-        spdx_license_expression: FSFULLR
+        license_expression_spdx: FSFULLR
         from_file:
         start_line: 13
         end_line: 15
@@ -51,7 +51,7 @@ other_license_detections:
     license_expression_spdx: GPL-1.0-or-later WITH Autoconf-exception-generic
     matches:
       - license_expression: gpl-1.0-plus WITH autoconf-simple-exception-2.0
-        spdx_license_expression: GPL-1.0-or-later WITH Autoconf-exception-generic
+        license_expression_spdx: GPL-1.0-or-later WITH Autoconf-exception-generic
         from_file:
         start_line: 21
         end_line: 25
@@ -73,7 +73,7 @@ other_license_detections:
     license_expression_spdx: LGPL-3.0-or-later
     matches:
       - license_expression: lgpl-3.0-plus
-        spdx_license_expression: LGPL-3.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later
         from_file:
         start_line: 54
         end_line: 54
@@ -86,7 +86,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-3.0-plus_166.RULE
         matched_text: 'License: lgpl-3+'
       - license_expression: lgpl-3.0-plus
-        spdx_license_expression: LGPL-3.0-or-later
+        license_expression_spdx: LGPL-3.0-or-later
         from_file:
         start_line: 55
         end_line: 70
@@ -119,7 +119,7 @@ other_license_detections:
     license_expression_spdx: GPL-3.0-or-later
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 72
         end_line: 72
@@ -132,7 +132,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 73
         end_line: 88
@@ -165,7 +165,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 90
         end_line: 90
@@ -178,7 +178,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 91
         end_line: 108
@@ -213,7 +213,7 @@ other_license_detections:
     license_expression_spdx: GFDL-1.2-or-later
     matches:
       - license_expression: gfdl-1.2-plus
-        spdx_license_expression: GFDL-1.2-or-later
+        license_expression_spdx: GFDL-1.2-or-later
         from_file:
         start_line: 110
         end_line: 110
@@ -226,7 +226,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/debian_common_gfdl-1.2-plus.RULE
         matched_text: 'License: gfdl-1.2+'
       - license_expression: gfdl-1.2-plus
-        spdx_license_expression: GFDL-1.2-or-later
+        license_expression_spdx: GFDL-1.2-or-later
         from_file:
         start_line: 111
         end_line: 120
@@ -253,7 +253,7 @@ other_license_detections:
     license_expression_spdx: X11
     matches:
       - license_expression: x11-xconsortium
-        spdx_license_expression: X11
+        license_expression_spdx: X11
         from_file:
         start_line: 123
         end_line: 143

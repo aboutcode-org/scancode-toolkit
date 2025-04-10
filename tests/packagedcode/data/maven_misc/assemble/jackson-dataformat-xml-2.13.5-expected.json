@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jackson-dataformat-xml-2.13.5/META-INF/LICENSE",
               "start_line": 1,
               "end_line": 8,
@@ -63,7 +63,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "jackson-dataformat-xml-2.13.5/META-INF/NOTICE",
               "start_line": 11,
               "end_line": 13,
@@ -77,7 +77,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jackson-dataformat-xml-2.13.5/META-INF/LICENSE",
               "start_line": 1,
               "end_line": 8,
@@ -102,6 +102,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
@@ -186,7 +188,9 @@
       "path": "jackson-dataformat-xml-2.13.5",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:jar/Jackson-dataformat-XML@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -224,7 +228,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jackson-dataformat-xml-2.13.5/META-INF/LICENSE",
               "start_line": 1,
               "end_line": 8,
@@ -287,7 +291,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "jackson-dataformat-xml-2.13.5/META-INF/LICENSE",
                   "start_line": 1,
                   "end_line": 8,
@@ -309,7 +313,7 @@
               "matches": [
                 {
                   "license_expression": "unknown-license-reference",
-                  "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+                  "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
                   "from_file": "jackson-dataformat-xml-2.13.5/META-INF/NOTICE",
                   "start_line": 11,
                   "end_line": 13,
@@ -323,7 +327,7 @@
                 },
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "jackson-dataformat-xml-2.13.5/META-INF/LICENSE",
                   "start_line": 1,
                   "end_line": 8,
@@ -349,6 +353,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
@@ -384,7 +390,7 @@
           "matches": [
             {
               "license_expression": "unknown-license-reference",
-              "spdx_license_expression": "LicenseRef-scancode-unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
               "from_file": "jackson-dataformat-xml-2.13.5/META-INF/NOTICE",
               "start_line": 11,
               "end_line": 13,
@@ -398,7 +404,7 @@
             },
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "jackson-dataformat-xml-2.13.5/META-INF/LICENSE",
               "start_line": 1,
               "end_line": 8,
@@ -420,7 +426,7 @@
       "license_clues": [
         {
           "license_expression": "free-unknown",
-          "spdx_license_expression": "LicenseRef-scancode-free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
           "from_file": "jackson-dataformat-xml-2.13.5/META-INF/NOTICE",
           "start_line": 3,
           "end_line": 3,

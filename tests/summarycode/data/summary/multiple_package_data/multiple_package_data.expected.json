@@ -76,7 +76,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "codebase/cargo.toml",
               "start_line": 1,
               "end_line": 1,
@@ -99,6 +99,8 @@
       "extracted_license_statement": "MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://crates.io/crates/codebase",
       "repository_download_url": null,
@@ -153,7 +155,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "codebase/setup.py",
               "start_line": 1,
               "end_line": 1,
@@ -176,6 +178,8 @@
       "extracted_license_statement": "license: apache-2.0\n",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://pypi.org/project/codebase",
       "repository_download_url": null,
@@ -438,7 +442,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "codebase/README.txt",
               "start_line": 3,
               "end_line": 3,
@@ -452,7 +456,7 @@
             },
             {
               "license_expression": "apache-2.0 OR mit",
-              "spdx_license_expression": "Apache-2.0 OR MIT",
+              "license_expression_spdx": "Apache-2.0 OR MIT",
               "from_file": "codebase/README.txt",
               "start_line": 3,
               "end_line": 3,
@@ -527,7 +531,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "codebase/apache-2.0.LICENSE",
               "start_line": 1,
               "end_line": 176,
@@ -614,7 +618,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "codebase/cargo.toml",
                   "start_line": 1,
                   "end_line": 1,
@@ -638,6 +642,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://crates.io/crates/codebase",
@@ -665,7 +671,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "codebase/cargo.toml",
               "start_line": 4,
               "end_line": 4,
@@ -734,7 +740,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "codebase/mit.LICENSE",
               "start_line": 1,
               "end_line": 18,
@@ -821,7 +827,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "codebase/setup.py",
                   "start_line": 1,
                   "end_line": 1,
@@ -845,6 +851,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/codebase",
@@ -871,7 +879,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "codebase/setup.py",
               "start_line": 3,
               "end_line": 3,

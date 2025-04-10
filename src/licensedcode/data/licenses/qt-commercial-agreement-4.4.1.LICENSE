@@ -10,7 +10,6 @@ other_urls:
     - https://www.qt.io/contact-us
 ignorable_authors:
     - The Qt Company
-    - permission from The Qt Company
 ignorable_urls:
     - https://opensource.org/licenses
 ---

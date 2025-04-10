@@ -58,7 +58,7 @@ class PhpComposerJsonHandler(BasePhpComposerHandler):
     documentation_url = 'https://getcomposer.org/doc/04-schema.md'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield one or more Package manifest objects given a file ``location``
         pointing to a package archive, manifest or similar.
@@ -69,7 +69,7 @@ class PhpComposerJsonHandler(BasePhpComposerHandler):
         with io.open(location, encoding='utf-8') as loc:
             package_json = json.load(loc)
 
-        yield build_package_data(package_json)
+        yield build_package_data(package_json, package_only)
 
 
 def get_repository_homepage_url(namespace, name):
@@ -86,7 +86,7 @@ def get_api_data_url(namespace, name):
         return f'https://packagist.org/p/packages/{name}.json'
 
 
-def build_package_data(package_data):
+def build_package_data(package_data, package_only=False):
 
     # Note: A composer.json without name and description is not a usable PHP
     # composer package. Name and description fields are required but only for
@@ -103,7 +103,7 @@ def build_package_data(package_data):
     else:
         ns, _, name = ns_name.rpartition('/')
 
-    package = models.PackageData(
+    package_mapping = dict(
         datasource_id=PhpComposerJsonHandler.datasource_id,
         type=PhpComposerJsonHandler.default_package_type,
         namespace=ns,
@@ -111,7 +111,9 @@ def build_package_data(package_data):
         repository_homepage_url=get_repository_homepage_url(ns, name),
         api_data_url=get_api_data_url(ns, name),
         primary_language=PhpComposerJsonHandler.default_primary_language,
+        is_private=is_private,
     )
+    package = models.PackageData.from_data(package_mapping, package_only)
 
     # mapping of top level composer.json items to the Package object field name
     plain_fields = [
@@ -157,7 +159,9 @@ def build_package_data(package_data):
     vendor_mapper(package)
 
     # Per https://getcomposer.org/doc/04-schema.md#license this is an expression
-    package.populate_license_fields()
+    if not package_only:
+        package.populate_license_fields()
+
     return package
 
 
@@ -170,16 +174,16 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
     documentation_url = 'https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
 
         packages = [
-            build_package_data(p)
+            build_package_data(p, package_only)
             for p in package_data.get('packages', [])
         ]
         packages_dev = [
-            build_package_data(p)
+            build_package_data(p, package_only)
             for p in package_data.get('packages-dev', [])
         ]
 
@@ -192,12 +196,13 @@ class PhpComposerLockHandler(BasePhpComposerHandler):
             for p in packages_dev
         ]
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=required_deps + required_dev_deps
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
         for package in packages + packages_dev:
             yield package
@@ -354,5 +359,5 @@ def build_dep_package(package, scope, is_runtime, is_optional):
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,
-        is_resolved=True,
+        is_pinned=True,
     )

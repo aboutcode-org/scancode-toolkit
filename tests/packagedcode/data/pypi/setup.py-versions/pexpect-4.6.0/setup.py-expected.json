@@ -59,17 +59,17 @@
         "license_expression_spdx": "ISC",
         "matches": [
           {
-            "score": 99.0,
+            "license_expression": "isc",
+            "license_expression_spdx": "ISC",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 99.0,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "isc",
-            "spdx_license_expression": "ISC",
-            "rule_identifier": "isc_22.RULE",
             "rule_relevance": 99,
+            "rule_identifier": "isc_22.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/isc_22.RULE",
             "matched_text": "ISC license"
           }
@@ -81,17 +81,17 @@
         "license_expression_spdx": "ISC",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "isc",
+            "license_expression_spdx": "ISC",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 6,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "isc",
-            "spdx_license_expression": "ISC",
-            "rule_identifier": "pypi_isc_license.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "pypi_isc_license.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_isc_license.RULE",
             "matched_text": "- 'License :: OSI Approved :: ISC License (ISCL)'"
           }
@@ -106,15 +106,18 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:pypi/ptyprocess",
-        "extracted_requirement": "ptyprocess>=0.5",
+        "extracted_requirement": ">=0.5",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": false,
+        "is_pinned": false,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

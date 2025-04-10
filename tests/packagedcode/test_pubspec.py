@@ -30,7 +30,7 @@ class TestPubspecDatadriven(PackageTester):
 
     def test_parse_lock(self):
         test_loc = self.get_test_loc('pubspec/mini-pubspec.lock')
-        expected_loc = self.get_test_loc('pubspec/mini-pubspec.lock-expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('pubspec/mini-pubspec.lock-expected.json')
         package_data = pubspec.DartPubspecLockHandler.parse(test_loc)
         self.check_packages_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 

@@ -35,7 +35,7 @@ other_license_detections:
     license_expression_spdx: HPND-Markus-Kuhn
     matches:
       - license_expression: markus-kuhn-license
-        spdx_license_expression: HPND-Markus-Kuhn
+        license_expression_spdx: HPND-Markus-Kuhn
         from_file:
         start_line: 21
         end_line: 23
@@ -55,7 +55,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 33
         end_line: 34
@@ -74,7 +74,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later AND GPL-2.0-only
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 78
         end_line: 78
@@ -87,7 +87,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 79
         end_line: 80
@@ -106,7 +106,7 @@ other_license_detections:
     license_expression_spdx: GPL-3.0-or-later AND GPL-3.0-only
     matches:
       - license_expression: gpl-3.0-plus
-        spdx_license_expression: GPL-3.0-or-later
+        license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: 82
         end_line: 82
@@ -119,7 +119,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_92.RULE
         matched_text: 'License: gpl-3+'
       - license_expression: gpl-3.0
-        spdx_license_expression: GPL-3.0-only
+        license_expression_spdx: GPL-3.0-only
         from_file:
         start_line: 83
         end_line: 84
@@ -138,7 +138,7 @@ other_license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 86
         end_line: 86
@@ -151,7 +151,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 87
         end_line: 102
@@ -184,7 +184,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 107
         end_line: 131
@@ -226,7 +226,7 @@ other_license_detections:
     license_expression_spdx: BSD-2-Clause
     matches:
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 136
         end_line: 155
@@ -263,7 +263,7 @@ other_license_detections:
     license_expression_spdx: MIT
     matches:
       - license_expression: mit
-        spdx_license_expression: MIT
+        license_expression_spdx: MIT
         from_file:
         start_line: 158
         end_line: 174
@@ -297,7 +297,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-unicode
     matches:
       - license_expression: unicode
-        spdx_license_expression: LicenseRef-scancode-unicode
+        license_expression_spdx: LicenseRef-scancode-unicode
         from_file:
         start_line: 177
         end_line: 208
@@ -346,7 +346,7 @@ other_license_detections:
     license_expression_spdx: AFL-3.0
     matches:
       - license_expression: afl-3.0
-        spdx_license_expression: AFL-3.0
+        license_expression_spdx: AFL-3.0
         from_file:
         start_line: 211
         end_line: 396

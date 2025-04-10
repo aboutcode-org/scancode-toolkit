@@ -1,0 +1,10 @@
+---
+license_expression: eupl-1.2
+is_license_tag: yes
+relevance: 99
+ignorable_urls:
+    - https://joinup.ec.europa.eu/software/page/eupl
+---
+
+name: European Union Public Licence (EUPL)
+  url: https://joinup.ec.europa.eu/software/page/eupl

@@ -1,0 +1,62 @@
+[
+  {
+    "type": "deb",
+    "namespace": "debian",
+    "name": "bsdutils",
+    "version": "1:2.36.1-8+deb11u1",
+    "qualifiers": {
+      "arch": "amd64"
+    },
+    "subpath": null,
+    "primary_language": null,
+    "description": "basic utilities from 4.4BSD-Lite\n This package contains the bare minimum of BSD utilities needed for a Debian\n system: logger, renice, script, scriptlive, scriptreplay and wall. The\n remaining standard BSD utilities are provided by bsdextrautils.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": null,
+        "role": "maintainer",
+        "name": "util-linux packagers",
+        "email": "util-linux@packages.debian.org",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "utils"
+    ],
+    "homepage_url": "http://www.kernel.org/pub/linux/utils/util-linux/",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": null,
+    "declared_license_expression_spdx": null,
+    "license_detections": [],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": null,
+    "notice_text": null,
+    "source_packages": [
+      "pkg:deb/debian/util-linux@2.36.1-8%2Bdeb11u1"
+    ],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "multi_arch": "foreign"
+    },
+    "dependencies": [],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "debian_installed_status_db",
+    "purl": "pkg:deb/debian/bsdutils@1:2.36.1-8%2Bdeb11u1?arch=amd64"
+  }
+]

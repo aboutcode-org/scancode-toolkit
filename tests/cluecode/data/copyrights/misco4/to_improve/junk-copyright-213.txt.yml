@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2002-$ year the original author or authors
+holders:
+  - the original author or authors

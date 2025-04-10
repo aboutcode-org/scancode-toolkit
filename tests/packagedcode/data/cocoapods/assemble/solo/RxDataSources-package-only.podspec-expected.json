@@ -1,0 +1,66 @@
+{
+  "packages": [],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "RxDataSources.podspec",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "cocoapods",
+          "namespace": null,
+          "name": "RxDataSources",
+          "version": "4.0.1",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Objective-C",
+          "description": "This is a collection of reactive data sources for UITableView and UICollectionView.\n\nIt enables creation of animated data sources for table an collection views in just a couple of lines of code.\n\n```swift\nlet data: Observable<Section> = ...\n\nlet dataSource = RxTableViewSectionedAnimatedDataSource<Section>()\ndataSource.cellFactory = { (tv, ip, i) in\n    let cell = tv.dequeueReusableCell(withIdentifier: \"Cell\") ?? UITableViewCell(style:.Default, reuseIdentifier: \"Cell\")\n    cell.textLabel!.text = \"\\(i)\"\n    return cell\n}\n\n// animated\ndata\n    .bind(to: animatedTableView.rx.items(dataSource: dataSource))\n    .disposed(by: disposeBag)\n\n// normal reload\ndata\n    .bind(to: tableView.rx.items(dataSource: dataSource))\n    .disposed(by: disposeBag)\n```",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Krunoslav Zaher ",
+              "email": "krunoslav.zaher@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://github.com/RxSwiftCommunity/RxDataSources",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/RxSwiftCommunity/RxDataSources/issues/",
+          "code_view_url": "https://github.com/RxSwiftCommunity/RxDataSources/tree/4.0.1",
+          "vcs_url": "https://github.com/RxSwiftCommunity/RxDataSources.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "MIT",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": "https://cocoapods.org/pods/RxDataSources",
+          "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
+          "api_data_url": "https://raw.githubusercontent.com/CocoaPods/Specs/blob/master/Specs/9/a/4/RxDataSources/4.0.1/RxDataSources.podspec.json",
+          "datasource_id": "cocoapods_podspec",
+          "purl": "pkg:cocoapods/RxDataSources@4.0.1"
+        }
+      ],
+      "for_packages": [],
+      "scan_errors": []
+    }
+  ]
+}

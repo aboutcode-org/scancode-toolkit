@@ -6,4 +6,4 @@ ignorable_urls:
     - http://choosealicense.com/licenses/bsd-3-clause
 ---
 
-License: [`bsd-3-clause`](http://choosealicense.com/licenses/bsd-3-clause/)
+{{License: [`bsd-3-clause}}`](http://choosealicense.com/licenses/bsd-3-clause/)

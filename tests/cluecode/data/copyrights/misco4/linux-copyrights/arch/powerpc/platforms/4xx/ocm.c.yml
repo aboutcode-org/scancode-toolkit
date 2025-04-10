@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) Copyright 2009, Applied Micro Circuits Corporation Victor Gallardo (vgallardo@amcc.com)
+  - MemTotal (c) Bytes
+holders:
+  - Applied Micro Circuits Corporation Victor Gallardo
+  - MemTotal Bytes

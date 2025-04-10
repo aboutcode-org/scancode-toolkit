@@ -6,6 +6,6 @@ referenced_filenames:
     - LICENSE
 ---
 
-;  Use of this source code is governed by a BSD-style license and patent
+;  Use of this source code is {{governed by a BSD-style license}} and patent
 ;  grant that can be found in the LICENSE file in the root of the source
 ;  tree.

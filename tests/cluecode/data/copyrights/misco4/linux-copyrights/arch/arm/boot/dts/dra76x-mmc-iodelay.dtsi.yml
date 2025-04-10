@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2018 Texas Instruments
+holders:
+  - Texas Instruments
+authors:
+  - Sekhar Nori <nsekhar@ti.com>

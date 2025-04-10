@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "univers"
+version = "0.1.0"
+description = "A mostly universal library to parse and compare software package versions and version ranges. A companion to Package URLs."
+authors = ["nexB. Inc. <info@aboutcode.org>"]
+license = "apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+attrs = "^21.2.0"
+packaging = "21.0"
+semantic-version = "^2.8.5"
+semver = "^2.13.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

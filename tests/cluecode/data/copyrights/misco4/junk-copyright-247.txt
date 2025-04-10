@@ -1,0 +1,1 @@
+(c) cloudtrail-s3-dataevents-enabled (https://docs.aws.amazon.com/config/latest/developerguide/cloudtrail-s3-dataevents-enabled.html) The AWS Account

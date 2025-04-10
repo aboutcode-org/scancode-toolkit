@@ -1,0 +1,24 @@
+{
+  "name": "boost",
+  "version": null,
+  "description": "Boost provides free peer-reviewed portable C++ source libraries",
+  "author": null,
+  "homepage_url": "https://www.boost.org",
+  "vcs_url": "https://github.com/conan-io/conan-center-index",
+  "license": [
+    "BSL-1.0"
+  ],
+  "keywords": [
+    "libraries",
+    "cpp"
+  ],
+  "requires": [
+    "zlib/[>=1.2.11 <2]",
+    "bzip2/1.0.8",
+    "xz_utils/5.4.4",
+    "zstd/1.5.5",
+    "libbacktrace/cci.20210118",
+    "icu/73.2",
+    "libiconv/1.17"
+  ]
+}

@@ -1,0 +1,44 @@
+[workspace]
+members = [
+    "boring",
+    "boring-sys",
+    "tokio-boring",
+    "hyper-boring"
+]
+resolver = "2"
+
+[workspace.package]
+version = "4.6.0"
+repository = "https://github.com/cloudflare/boring"
+edition = "2021"
+
+[workspace.metadata.release]
+pre-release-commit-message = "Release {{version}}"
+shared-version = true
+tag-prefix = ""
+publish = false
+
+[workspace.dependencies]
+boring-sys = { version = "4.6.0", path = "./boring-sys" }
+boring = { version = "4.6.0", path = "./boring" }
+tokio-boring = { version = "4.6.0", path = "./tokio-boring" }
+
+bindgen = { version = "0.68.1", default-features = false, features = ["runtime"] }
+cmake = "0.1.18"
+fs_extra = "1.3.0"
+fslock = "0.2"
+bitflags = "2.4"
+foreign-types = "0.5"
+libc = "0.2"
+hex = "0.4"
+rusty-hook = "^0.11"
+futures = "0.3"
+tokio = "1"
+anyhow = "1"
+antidote = "1.0.0"
+http = "0.2"
+hyper = { version = "0.14", default-features = false }
+linked_hash_set = "0.1"
+once_cell = "1.0"
+tower = "0.4"
+tower-layer = "0.3"

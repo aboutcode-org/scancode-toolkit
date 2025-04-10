@@ -1,6 +1,8 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
+is_deprecated: yes
+notes: This is now the owl-0.9.4.LICENSE
 ---
 
 # Open Works License

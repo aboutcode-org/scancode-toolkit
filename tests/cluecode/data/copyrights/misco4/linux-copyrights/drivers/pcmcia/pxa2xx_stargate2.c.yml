@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright Intel Corp 2005 Jonathan Cameron <jic23@cam.ac.uk>
+holders:
+  - Intel Corp Jonathan Cameron
+authors:
+  - Ed C. Epp

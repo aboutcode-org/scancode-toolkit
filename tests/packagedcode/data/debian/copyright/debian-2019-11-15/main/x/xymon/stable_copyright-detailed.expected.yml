@@ -24,15 +24,15 @@ other_license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0 AND gpl-2.0 WIT
 other_license_expression_spdx: GPL-2.0-only WITH x11vnc-openssl-exception AND GPL-2.0-only WITH
   x11vnc-openssl-exception AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
   AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (Zlib AND (GPL-1.0-or-later AND GPL-1.0-or-later))
-  AND (GPL-1.0-or-later AND Zlib) AND LicenseRef-scancode-ssleay-windows AND LicenseRef-scancode-public-domain
+  AND (GPL-1.0-or-later AND Zlib) AND SSLeay-standalone AND LicenseRef-scancode-public-domain
   AND BSD-3-Clause AND NTP
 license_detections: []
 other_license_detections:
   - license_expression: ssleay-windows
-    license_expression_spdx: LicenseRef-scancode-ssleay-windows
+    license_expression_spdx: SSLeay-standalone
     matches:
       - license_expression: ssleay-windows
-        spdx_license_expression: LicenseRef-scancode-ssleay-windows
+        license_expression_spdx: SSLeay-standalone
         from_file:
         start_line: 43
         end_line: 100
@@ -107,7 +107,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 105
         end_line: 105
@@ -124,7 +124,7 @@ other_license_detections:
     license_expression_spdx: NTP
     matches:
       - license_expression: mit-old-style-no-advert
-        spdx_license_expression: NTP
+        license_expression_spdx: NTP
         from_file:
         start_line: 116
         end_line: 126
@@ -152,7 +152,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-only WITH x11vnc-openssl-exception
     matches:
       - license_expression: gpl-2.0 WITH openssl-exception-gpl-2.0
-        spdx_license_expression: GPL-2.0-only WITH x11vnc-openssl-exception
+        license_expression_spdx: GPL-2.0-only WITH x11vnc-openssl-exception
         from_file:
         start_line: 129
         end_line: 135
@@ -176,7 +176,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-only
     matches:
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 137
         end_line: 137
@@ -189,7 +189,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0_561.RULE
         matched_text: 'License: gpl-2'
       - license_expression: gpl-2.0
-        spdx_license_expression: GPL-2.0-only
+        license_expression_spdx: GPL-2.0-only
         from_file:
         start_line: 138
         end_line: 143
@@ -212,7 +212,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 145
         end_line: 145
@@ -225,7 +225,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 146
         end_line: 152
@@ -249,7 +249,7 @@ other_license_detections:
     license_expression_spdx: GPL-1.0-or-later
     matches:
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 154
         end_line: 154
@@ -262,7 +262,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_72.RULE
         matched_text: 'License: gpl'
       - license_expression: gpl-1.0-plus
-        spdx_license_expression: GPL-1.0-or-later
+        license_expression_spdx: GPL-1.0-or-later
         from_file:
         start_line: 155
         end_line: 159
@@ -284,7 +284,7 @@ other_license_detections:
     license_expression_spdx: Zlib
     matches:
       - license_expression: zlib
-        spdx_license_expression: Zlib
+        license_expression_spdx: Zlib
         from_file:
         start_line: 163
         end_line: 179
@@ -318,7 +318,7 @@ other_license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 182
         end_line: 207
@@ -361,7 +361,7 @@ other_license_detections:
     license_expression_spdx: GPL-1.0-or-later AND Zlib
     matches:
       - license_expression: gpl-1.0-plus AND zlib
-        spdx_license_expression: GPL-1.0-or-later AND Zlib
+        license_expression_spdx: GPL-1.0-or-later AND Zlib
         from_file:
         start_line: 35
         end_line: 36

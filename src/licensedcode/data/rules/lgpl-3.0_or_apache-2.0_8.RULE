@@ -1,0 +1,15 @@
+---
+license_expression: lgpl-3.0 OR apache-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.LGPL
+    - LICENSE.GPL
+    - LICENSE.APACHE
+---
+
+available either under the terms of the {{LGPL License or the Apache License}}. You as the user are entitled to choose the terms under which {{to adopt JavaParser}}.
+
+For details about the {{LGPL License please refer to LICENSE.LGPL}}. Please note
+that {{LGPL is just an extension to GPL, located in LICENSE.GPL.}}
+
+For details about the Apache License please refer to LICENSE.APACHE

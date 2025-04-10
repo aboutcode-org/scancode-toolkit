@@ -39,17 +39,17 @@
         "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
         "matches": [
           {
-            "score": 99.0,
+            "license_expression": "proprietary-license",
+            "license_expression_spdx": "LicenseRef-scancode-proprietary-license",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 99.0,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "proprietary-license",
-            "spdx_license_expression": "LicenseRef-scancode-proprietary-license",
-            "rule_identifier": "proprietary-license_507.RULE",
             "rule_relevance": 99,
+            "rule_identifier": "proprietary-license_507.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/proprietary-license_507.RULE",
             "matched_text": "license Nonstandard"
           }
@@ -64,6 +64,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -72,7 +74,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -82,7 +85,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -92,7 +96,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -102,7 +107,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -112,7 +118,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -122,7 +129,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -132,7 +140,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -142,7 +151,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -152,7 +162,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -162,7 +173,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       },
@@ -172,7 +184,8 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

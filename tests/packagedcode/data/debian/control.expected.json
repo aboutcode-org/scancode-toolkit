@@ -1,0 +1,293 @@
+{
+  "packages": [
+    {
+      "type": "deb",
+      "namespace": "debian",
+      "name": "gzip",
+      "version": null,
+      "qualifiers": {
+        "arch": "any"
+      },
+      "subpath": null,
+      "primary_language": null,
+      "description": "GNU compression utilities\n This package provides the standard GNU file compression utilities, which \n are also the default compression tools for Debian.  They typically operate \n on files with names ending in '.gz', but can also decompress files ending \n in '.Z' created with 'compress'.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:deb/debian/gzip?arch=any&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "control/debian/control"
+      ],
+      "datasource_ids": [
+        "debian_control_in_source"
+      ],
+      "purl": "pkg:deb/debian/gzip?arch=any"
+    },
+    {
+      "type": "deb",
+      "namespace": "debian",
+      "name": "gzip-win32",
+      "version": null,
+      "qualifiers": {
+        "arch": "all"
+      },
+      "subpath": null,
+      "primary_language": null,
+      "description": "GNU compression utility (win32 build)\n This is a win32 version of gzip, meant to be used by the win32-loader\n component of Debian-Installer.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:deb/debian/gzip-win32?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "control/debian/control"
+      ],
+      "datasource_ids": [
+        "debian_control_in_source"
+      ],
+      "purl": "pkg:deb/debian/gzip-win32?arch=all"
+    }
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "control",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:deb/debian/gzip?arch=any&uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:deb/debian/gzip-win32?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "control/debian",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:deb/debian/gzip?arch=any&uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:deb/debian/gzip-win32?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "control/debian/control",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "deb",
+          "namespace": "debian",
+          "name": null,
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "maintainer",
+              "name": "Bdale Garbee",
+              "email": "bdale@gag.com",
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "uploader",
+              "name": "Carl Worth",
+              "email": "cworth@cworth.org",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "utils"
+          ],
+          "homepage_url": "https://www.gnu.org/software/gzip/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "https://salsa.debian.org/debian/gzip",
+          "vcs_url": "https://salsa.debian.org/debian/gzip.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:deb/gzip"
+          ],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_control_in_source",
+          "purl": null
+        },
+        {
+          "type": "deb",
+          "namespace": "debian",
+          "name": "gzip",
+          "version": null,
+          "qualifiers": {
+            "arch": "any"
+          },
+          "subpath": null,
+          "primary_language": null,
+          "description": "GNU compression utilities\n This package provides the standard GNU file compression utilities, which \n are also the default compression tools for Debian.  They typically operate \n on files with names ending in '.gz', but can also decompress files ending \n in '.Z' created with 'compress'.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_control_in_source",
+          "purl": "pkg:deb/debian/gzip?arch=any"
+        },
+        {
+          "type": "deb",
+          "namespace": "debian",
+          "name": "gzip-win32",
+          "version": null,
+          "qualifiers": {
+            "arch": "all"
+          },
+          "subpath": null,
+          "primary_language": null,
+          "description": "GNU compression utility (win32 build)\n This is a win32 version of gzip, meant to be used by the win32-loader\n component of Debian-Installer.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_control_in_source",
+          "purl": "pkg:deb/debian/gzip-win32?arch=all"
+        }
+      ],
+      "for_packages": [
+        "pkg:deb/debian/gzip?arch=any&uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:deb/debian/gzip-win32?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

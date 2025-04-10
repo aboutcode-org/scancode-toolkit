@@ -6,4 +6,4 @@ ignorable_urls:
     - https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
 ---
 
-[GNU Lesser General Public License]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html
+[{{GNU Lesser General Public License}}]: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html

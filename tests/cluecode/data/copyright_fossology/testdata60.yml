@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright 2003-2008 Bastian Blank <waldi@debian.org>
+holders:
+  - Bastian Blank

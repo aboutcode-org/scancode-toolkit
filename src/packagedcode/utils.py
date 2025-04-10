@@ -7,6 +7,8 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+from packageurl import PackageURL
+
 try:
     from license_expression import Licensing
     from license_expression import combine_expressions as le_combine_expressions
@@ -207,6 +209,26 @@ def yield_dependencies_from_package_data(package_data, datafile_path, package_ui
         )
 
 
+def parse_maintainer_name_email(maintainer):
+    """
+    Get name and email values from a author/maintainer string.
+
+    Example string:
+    Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>
+    """
+    email_wrappers = ["<", ">"]
+    has_email = "@" in maintainer and all([
+        True 
+        for char in email_wrappers
+        if char in maintainer
+    ])
+    if not has_email:
+        return maintainer, None
+
+    name, _, email = maintainer.rpartition("<")
+    return name.rstrip(" "), email.rstrip(">")
+
+
 def yield_dependencies_from_package_resource(resource, package_uid=None):
     """
     Yield a Dependency for each dependency from each package from``resource.package_data``
@@ -215,3 +237,70 @@ def yield_dependencies_from_package_resource(resource, package_uid=None):
     for pkg_data in resource.package_data:
         pkg_data = models.PackageData.from_dict(pkg_data)
         yield from yield_dependencies_from_package_data(pkg_data, resource.path, package_uid)
+
+
+def update_dependencies_as_resolved(dependencies):
+    """
+    For a list of dependency mappings with their respective
+    resolved packages, update in place the dependencies for those
+    resolved packages as resolved (update `is_pinned` as True),
+    if the requirement is also present as a resolved package.
+    """
+    #TODO: Use vers to mark update `is_pinned` even in the case
+    # of incomplete resolution/partially pinned dependencies
+
+    # These are only type, namespace and name (without version and qualifiers)
+    base_resolved_purls = []
+    resolved_packages = [
+        dep.get("resolved_package")
+        for dep in dependencies
+        if dep.get("resolved_package")
+    ]
+
+    # No resolved packages are present for dependencies
+    if not resolved_packages:
+        return
+
+    for pkg in resolved_packages:
+        purl=pkg.get("purl")
+        if purl:
+            base_resolved_purls.append(
+                get_base_purl(purl=purl)
+            )
+
+    for dependency in dependencies:
+        resolved_package = dependency.get("resolved_package")
+        dependencies_from_resolved = []
+        if resolved_package:
+            dependencies_from_resolved = resolved_package.get("dependencies")
+
+        if not dependencies_from_resolved:
+            continue
+
+        for dep in dependencies_from_resolved:
+            dep_purl = dep.get("purl")
+            if dep_purl in base_resolved_purls:
+                dep["is_pinned"] = True
+
+
+def get_base_purl(purl):
+    """
+    Get a base purl with only the type, name and namespace from
+    a given purl.
+    """
+    base_purl_fields = ["type", "namespace", "name"]
+    purl_mapping = PackageURL.from_string(purl=purl).to_dict()
+    base_purl_mapping = {
+        purl_field: purl_value
+        for purl_field, purl_value in purl_mapping.items()
+        if purl_field in base_purl_fields
+    }
+    return PackageURL(**base_purl_mapping).to_string()
+
+
+def is_simple_path(path):
+    return '*' not in path
+
+
+def is_simple_path_pattern(path):
+    return path.endswith('*') and path.count('*') == 1

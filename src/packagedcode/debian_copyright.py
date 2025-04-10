@@ -20,6 +20,8 @@ from debian_inspector.copyright import CopyrightFilesParagraph
 from debian_inspector.copyright import CopyrightLicenseParagraph
 from debian_inspector.copyright import CopyrightHeaderParagraph
 from debian_inspector.copyright import DebianCopyright
+from debian_inspector.package import CodeMetadata
+from debian_inspector.version import Version as DebVersion
 from license_expression import ExpressionError
 from license_expression import LicenseSymbolLike
 from license_expression import Licensing
@@ -93,7 +95,7 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
                 return True
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         debian_copyright = parse_copyright_file(location)
         license_fields = DebianLicenseFields.get_license_fields(
             debian_copyright=debian_copyright
@@ -109,19 +111,26 @@ class BaseDebianCopyrightFileHandler(models.DatafileHandler):
             # no name otherwise for now
             name = None
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
-            extracted_license_statement=license_fields.extracted_license_statement,
-            declared_license_expression=license_fields.declared_license_expression,
-            declared_license_expression_spdx=license_fields.declared_license_expression_spdx,
-            license_detections=license_fields.license_detections,
-            other_license_expression=license_fields.other_license_expression,
-            other_license_expression_spdx=license_fields.other_license_expression_spdx,
-            other_license_detections=license_fields.other_license_detections,
-            copyright=debian_copyright.get_copyright(),
         )
+
+        if not package_only:
+            license_data = dict(
+                extracted_license_statement=license_fields.extracted_license_statement,
+                declared_license_expression=license_fields.declared_license_expression,
+                declared_license_expression_spdx=license_fields.declared_license_expression_spdx,
+                license_detections=license_fields.license_detections,
+                other_license_expression=license_fields.other_license_expression,
+                other_license_expression_spdx=license_fields.other_license_expression_spdx,
+                other_license_detections=license_fields.other_license_detections,
+                copyright=debian_copyright.get_copyright(),
+            )
+            package_data.update(license_data)
+
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 @attr.s
@@ -264,9 +273,63 @@ class StandaloneDebianCopyrightFileHandler(BaseDebianCopyrightFileHandler):
     )
 
     @classmethod
+    def is_datafile(cls, location, filetypes=tuple()):
+        return (
+            super().is_datafile(location, filetypes=filetypes)
+            and not DebianCopyrightFileInPackageHandler.is_datafile(location)
+            and not DebianCopyrightFileInSourceHandler.is_datafile(location)
+        )
+
+    @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
         # assemble is the default
         yield from super().assemble(package_data, resource, codebase, package_adder)
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        Gets license/copyright information from file like
+        other copyright files, but also gets purl fields if
+        present in copyright filename, if obtained from
+        upstream metadata archive.
+        """
+        package_data = list(super().parse(location, package_only)).pop()
+        package_data_from_file = build_package_data_from_metadata_filename(
+            filename=os.path.basename(location),
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+        )
+        if package_data_from_file:
+            package_data.update_purl_fields(package_data=package_data_from_file)
+
+        yield package_data
+
+
+def build_package_data_from_metadata_filename(filename, datasource_id, package_type):
+    """
+    Return a PackageData built from the filename of a Debian package metadata.
+    """
+
+    # TODO: we cannot know the distro from the name only
+    # PURLs without namespace is invalid, so we need to
+    # have a default value for this
+    distro = 'debian'
+    try:
+        deb = CodeMetadata.from_filename(filename=filename)
+    except ValueError:
+        return
+
+    version = deb.version
+    if isinstance(version, DebVersion):
+        version = str(version)
+
+    return models.PackageData(
+        datasource_id=datasource_id,
+        type=package_type,
+        name=deb.name,
+        namespace=distro,
+        version=version,
+    )
 
 
 class NotReallyStructuredCopyrightFile(Exception):

@@ -1,0 +1,56 @@
+sources:
+  "1.10.1":
+    url:
+      - "https://libzip.org/download/libzip-1.10.1.tar.gz"
+      - "https://github.com/nih-at/libzip/releases/download/v1.10.1/libzip-1.10.1.tar.gz"
+    sha256: "9669ae5dfe3ac5b3897536dc8466a874c8cf2c0e3b1fdd08d75b273884299363"
+  "1.9.2":
+    url:
+      - "https://libzip.org/download/libzip-1.9.2.tar.gz"
+      - "https://github.com/nih-at/libzip/releases/download/v1.9.2/libzip-1.9.2.tar.gz"
+    sha256: "fd6a7f745de3d69cf5603edc9cb33d2890f0198e415255d0987a0cf10d824c6f"
+  "1.8.0":
+    url:
+      - "https://libzip.org/download/libzip-1.8.0.tar.gz"
+      - "https://github.com/nih-at/libzip/releases/download/v1.8.0/libzip-1.8.0.tar.gz"
+    sha256: "30ee55868c0a698d3c600492f2bea4eb62c53849bcf696d21af5eb65f3f3839e"
+  "1.7.3":
+    url:
+      - "https://libzip.org/download/libzip-1.7.3.tar.gz"
+      - "https://github.com/nih-at/libzip/releases/download/v1.7.3/libzip-1.7.3.tar.gz"
+    sha256: "0e2276c550c5a310d4ebf3a2c3dfc43fb3b4602a072ff625842ad4f3238cb9cc"
+patches:
+  "1.10.1":
+    - patch_file: "patches/1.7.3-0001-cmake-install-bundle.patch"
+      patch_description: "fix installation path of utilities"
+      patch_type: "conan"
+    - patch_file: "patches/1.10.1-0002-remove-rpath.patch"
+      patch_description: "remove rpath feature"
+      patch_type: "conan"
+  "1.9.2":
+    - patch_file: "patches/1.7.3-0001-cmake-install-bundle.patch"
+      patch_description: "fix installation path of utilities"
+      patch_type: "conan"
+    - patch_file: "patches/1.9.2-0002-remove-rpath.patch"
+      patch_description: "remove rpath feature"
+      patch_type: "conan"
+    - patch_file: "patches/1.9.2-0003-fix-zstd-name.patch"
+      patch_description: "fix zstd name"
+      patch_type: "portability"
+  "1.8.0":
+    - patch_file: "patches/1.7.3-0001-cmake-install-bundle.patch"
+      patch_description: "fix installation path of utilities"
+      patch_type: "conan"
+    - patch_file: "patches/1.8.0-0002-remove-rpath.patch"
+      patch_description: "remove rpath feature"
+      patch_type: "conan"
+    - patch_file: "patches/1.8.0-0003-fix-zstd-name.patch"
+      patch_description: "fix zstd name"
+      patch_type: "portability"
+  "1.7.3":
+    - patch_file: "patches/1.7.3-0001-cmake-install-bundle.patch"
+      patch_description: "fix installation path of utilities"
+      patch_type: "conan"
+    - patch_file: "patches/1.7.3-0002-remove-rpath.patch"
+      patch_description: "remove rpath feature"
+      patch_type: "conan"

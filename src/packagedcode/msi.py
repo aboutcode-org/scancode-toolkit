@@ -124,6 +124,7 @@ def create_package_data_from_msiinfo_results(
     msiinfo_results,
     datasource_id='msi_installer',
     package_type='msi',
+    package_only=False,
 ):
     """
     Return PackageData from a mapping of `msiinfo_results`
@@ -150,7 +151,7 @@ def create_package_data_from_msiinfo_results(
     description = msiinfo_results.pop('Comments', '')
     keywords = msiinfo_results.pop('Keywords', [])
 
-    return models.PackageData(
+    package_data = dict(
         datasource_id=datasource_id,
         type=package_type,
         name=name,
@@ -160,11 +161,14 @@ def create_package_data_from_msiinfo_results(
         keywords=keywords,
         extra_data=msiinfo_results
     )
+    return models.PackageData.from_data(package_data, package_only)
 
 
-def msi_parse(location,
+def msi_parse(
+    location,
     datasource_id='msi_installer',
     package_type='msi',
+    package_only=False,
 ):
     """
     Return PackageData from ``location``
@@ -175,6 +179,7 @@ def msi_parse(location,
             msiinfo_results=info,
             datasource_id=datasource_id,
             package_type=package_type,
+            package_only=package_only,
         )
     else:
         return models.PackageData(
@@ -190,7 +195,8 @@ class MsiInstallerHandler(models.DatafileHandler):
     default_package_type = 'msi'
     description = 'Microsoft MSI installer'
     documentation_url = 'https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal'
+    supported_oses = ('linux',)
 
     @classmethod
-    def parse(cls, location):
-        yield msi_parse(location)
+    def parse(cls, location, package_only=False):
+        yield msi_parse(location, package_only)

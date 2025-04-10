@@ -1,9 +1,11 @@
 ---
 license_expression: x11-xconsortium
 is_license_text: yes
+is_deprecated: yes
 relevance: 99
-notes: the no advert paragraph has its position switched with the warranty disclaimer in this
-    variant. The texts are otherwise essentially the same See https://github.com/achillean/shodan-python/blob/90491308971a7ba6e358d6152d7b02307964c6fe/LICENSE
+notes: |
+    Added in SPDX license list 3.25
+    Replaced by license: x11-swapped
 ---
 
 Permission is hereby granted, free of charge, to any person

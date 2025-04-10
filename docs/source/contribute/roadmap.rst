@@ -10,7 +10,7 @@ This is a high level list of what we are working on and what is completed.
 
 .. _note:
 
-  This is not updated regularly, see the `milestones <https://github.com/nexB/scancode-toolkit/milestones>`_
+  This is not updated regularly, see the `milestones <https://github.com/aboutcode-org/scancode-toolkit/milestones>`_
   instead for updated shorter and longer term roadmaps.
 
 Legend
@@ -27,9 +27,9 @@ Package manifest and dependency parsers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - |clock1030| Docker image base (as part of: https://github.com/pombredanne/conan ) #651
-- |clock1030| RubyGems base and dependencies #650 (code in https://github.com/nexB/scancode-toolkit-contrib/ )
-- |clock1030| Perl, CPAN (basic in https://github.com/nexB/scancode-toolkit-contrib/)
-- |clock1030| Go : parsing for Godep in https://github.com/nexB/scancode-toolkit-contrib/
+- |clock1030| RubyGems base and dependencies #650 (code in https://github.com/aboutcode-org/scancode-toolkit-contrib/ )
+- |clock1030| Perl, CPAN (basic in https://github.com/aboutcode-org/scancode-toolkit-contrib/)
+- |clock1030| Go : parsing for Godep in https://github.com/aboutcode-org/scancode-toolkit-contrib/
 - |clock1030| Windows PE #652
 - |white_large_square| RPM dependencies #649
 - |white_large_square| Windows Nuget dependencies #648
@@ -45,7 +45,7 @@ Package manifest and dependency parsers
 License Detection
 ^^^^^^^^^^^^^^^^^
 
-- |white_check_mark| support and detect license expressions (code in https://github.com/nexB/license-expression)
+- |white_check_mark| support and detect license expressions (code in https://github.com/aboutcode-org/license-expression)
 - |clock1030| support and detect composite licenses
 - |white_check_mark| support custom licenses
 - |white_large_square| move licenses data set to external separate repository
@@ -88,16 +88,16 @@ Classification, summarization and deduction
 Source code support (some will be spawned as their own tool)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- |clock1030| symbols : parsing complete in https://github.com/nexB/scancode-toolkit-contrib/
-- |clock1030| metrics : some elements in https://github.com/nexB/scancode-toolkit-contrib/
+- |clock1030| symbols : parsing complete in https://github.com/aboutcode-org/scancode-toolkit-contrib/
+- |clock1030| metrics : some elements in https://github.com/aboutcode-org/scancode-toolkit-contrib/
 
 Compiled code support (will be spawned as their own tool)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- |clock1030| ELFs : parsing complete in https://github.com/nexB/scancode-toolkit-contrib/
-- |clock1030| Java bytecode : parsing complete in https://github.com/nexB/scancode-toolkit-contrib/
-- |clock1030| Windows PE : parsing complete in https://github.com/nexB/scancode-toolkit-contrib/
-- |clock1030| Mach-O : parsing complete in in https://github.com/nexB/scancode-toolkit-contrib/
+- |clock1030| ELFs : parsing complete in https://github.com/aboutcode-org/scancode-toolkit-contrib/
+- |clock1030| Java bytecode : parsing complete in https://github.com/aboutcode-org/scancode-toolkit-contrib/
+- |clock1030| Windows PE : parsing complete in https://github.com/aboutcode-org/scancode-toolkit-contrib/
+- |clock1030| Mach-O : parsing complete in in https://github.com/aboutcode-org/scancode-toolkit-contrib/
 - |white_large_square| Dalvik/dex
 
 Data exchange
@@ -133,9 +133,9 @@ Other work in progress
 - |clock1030| ScanCode server: Separate project: https://github.com/nexB/scancode-server.
   Will include Integration / webhooks for Github, Bitbucket.
 - |clock1030| VulnerableCode: NVD and CVE lookups: Separate project:
-  https://github.com/nexB/vulnerablecode
+  https://github.com/aboutcode-org/vulnerablecode
 - |white_check_mark| ScanCode Workbench: desktop app for scan review: Separate project:
-  https://github.com/nexB/scancode-workbench
+  https://github.com/aboutcode-org/scancode-workbench
 - |white_large_square| DependentCode: dynamic dependencies resolutions: Separate project:
   https://github.com/nexB/dependentcode
 
@@ -143,7 +143,7 @@ Package mining and matching
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (Note that this will be a separate project)
-Some code is in https://github.com/nexB/scancode-toolkit-contrib/
+Some code is in https://github.com/aboutcode-org/scancode-toolkit-contrib/
 
 - |clock1030| exact matching
 - |clock1030| attribute-based matching

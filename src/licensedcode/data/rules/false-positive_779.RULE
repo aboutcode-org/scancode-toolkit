@@ -1,0 +1,14 @@
+---
+is_false_positive: yes
+notes: seen in kernel /Documentation/process/license-rules.rst
+---
+
+Dual Licensing Only
+
+   These licenses should only be used to dual license code with another
+   license in addition to a preferred license.  These licenses are available
+   from the directory::
+
+      LICENSES/dual/
+
+   in the kernel source tree.

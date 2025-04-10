@@ -47,7 +47,7 @@ according to your requirements.
 
 #. The basic scan options, i.e. ``-c`` or ``--copyright``,  ``-l`` or ``--license``,
    ``-p`` or ``--package``, ``-e`` or ``--email``, ``-u`` or ``--url``, and ``-i``
-   or ``--info`` cane be selected according to your requirements. If you do not
+   or ``--info`` can be selected according to your requirements. If you do not
    need one specific type of information (say, licenses), consider removing it
    because the more options you scan for, the longer it will take for the scan
    to complete.

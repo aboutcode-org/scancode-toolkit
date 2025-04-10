@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) rds-snapshot-encrypted (https://docs.aws.amazon.com/config/latest/developerguide/rds-snapshot-encrypted.html)
+holders:
+  - rds-snapshot-encrypted

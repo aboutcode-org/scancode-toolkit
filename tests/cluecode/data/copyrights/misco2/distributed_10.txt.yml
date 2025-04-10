@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) Distributed InforMation ProcBssing Ltd.
+holders:
+  - Distributed InforMation ProcBssing Ltd.
+holders_summary:
+  - value: Distributed InforMation ProcBssing Ltd.
+    count: 1

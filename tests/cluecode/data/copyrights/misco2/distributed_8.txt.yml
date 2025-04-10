@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - (c) Distributed via COMTEX News. (c) YYYY A&G Information Services
+holders:
+  - Distributed via COMTEX News. YYYY A&G Information Services
+holders_summary:
+  - value: Distributed via COMTEX News. YYYY A&G Information Services
+    count: 1

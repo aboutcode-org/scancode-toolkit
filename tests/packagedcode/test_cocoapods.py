@@ -46,19 +46,19 @@ class TestCocoaPodspec(PackageTester):
 
     def test_cocoapods_can_parse_LoadingShimmer(self):
         test_file = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('cocoapods/podspec/LoadingShimmer.podspec.expected.json')
         packages = PodspecHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_parse_nanopb(self):
         test_file = self.get_test_loc('cocoapods/podspec/nanopb.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/nanopb.podspec.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('cocoapods/podspec/nanopb.podspec.expected.json')
         packages = PodspecHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_parse_PayTabsSDK(self):
         test_file = self.get_test_loc('cocoapods/podspec/PayTabsSDK.podspec')
-        expected_loc = self.get_test_loc('cocoapods/podspec/PayTabsSDK.podspec.expected.json', must_exist=False)
+        expected_loc = self.get_test_loc('cocoapods/podspec/PayTabsSDK.podspec.expected.json')
         packages = PodspecHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
@@ -148,9 +148,15 @@ class TestCocoaPodfileLock(PackageTester):
         test_file = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock')
         assert PodfileLockHandler.is_datafile(test_file)
 
-    def test_cocoapods_can_parse_braintree_ios(self):
+    def test_cocoapods_can_parse_simple_podfile_lock(self):
         test_file = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock')
         expected_loc = self.get_test_loc('cocoapods/podfile.lock/braintree_ios_Podfile.lock.expected.json')
+        packages = PodfileLockHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_cocoapods_can_parse_complex_podfile_lock(self):
+        test_file = self.get_test_loc('cocoapods/podfile.lock/artsy_eigen_Podfile.lock')
+        expected_loc = self.get_test_loc('cocoapods/podfile.lock/artsy_eigen_Podfile.lock.expected.json')
         packages = PodfileLockHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
@@ -160,49 +166,56 @@ class TestCocoapodsEndToEndAssemble(PackageTester):
 
     def test_cocoapods_can_assemble_with_single_podspec(self):
         test_file = self.get_test_loc('cocoapods/assemble/single-podspec')
-        expected_file = self.get_test_loc('cocoapods/assemble/single-podspec-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cocoapods/assemble/single-podspec-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_assemble_with_multiple_podspec(self):
         test_file = self.get_test_loc('cocoapods/assemble/multiple-podspec')
-        expected_file = self.get_test_loc('cocoapods/assemble/multiple-podspec-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cocoapods/assemble/multiple-podspec-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_assemble_with_solo_podspec(self):
         test_file = self.get_test_loc('cocoapods/assemble/solo/RxDataSources.podspec')
-        expected_file = self.get_test_loc('cocoapods/assemble/solo/RxDataSources.podspec-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cocoapods/assemble/solo/RxDataSources.podspec-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_cocoapods_can_assemble_with_solo_podspec_package_only(self):
+        test_file = self.get_test_loc('cocoapods/assemble/solo/RxDataSources.podspec')
+        expected_file = self.get_test_loc('cocoapods/assemble/solo/RxDataSources-package-only.podspec-expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package-only', test_file, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_cocoapods_can_assemble_with_solo_podfile(self):
         test_file = self.get_test_loc('cocoapods/assemble/solo/Podfile')
-        expected_file = self.get_test_loc('cocoapods/assemble/solo/Podfile-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cocoapods/assemble/solo/Podfile-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_assemble_with_solo_podfile_lock(self):
         test_file = self.get_test_loc('cocoapods/assemble/solo/Podfile.lock')
-        expected_file = self.get_test_loc('cocoapods/assemble/solo/Podfile.lock-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cocoapods/assemble/solo/Podfile.lock-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_assemble_with_many_podspecs_podfile_and_podfile_lock(self):
         test_file = self.get_test_loc('cocoapods/assemble/many-podspecs')
-        expected_file = self.get_test_loc('cocoapods/assemble/many-podspecs-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cocoapods/assemble/many-podspecs-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_cocoapods_can_assemble_with_many_podspecs_podfile_and_podfile_lock_with_license(self):
         test_file = self.get_test_loc('cocoapods/assemble/many-podspecs')
-        expected_file = self.get_test_loc('cocoapods/assemble/many-podspecs-with-license-expected.json', must_exist=False)
+        expected_file = self.get_test_loc('cocoapods/assemble/many-podspecs-with-license-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', '--license', test_file, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)

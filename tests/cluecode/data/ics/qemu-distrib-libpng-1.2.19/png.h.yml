@@ -9,7 +9,7 @@ copyrights:
   - Copyright (c) 2004, 2006-2007 Glenn Randers-Pehrson
   - Copyright (c) 2000-2002 Glenn Randers-Pehrson
   - Copyright (c) 1998, 1999, 2000 Glenn Randers-Pehrson
-  - Copyright (c) 1996, 1997 Andreas Dilger Distributed
+  - Copyright (c) 1996, 1997 Andreas Dilger
   - Copyright (c) 1995, 1996 Guy Eric Schalnat, Group 42, Inc.
 holders:
   - Glenn Randers-Pehrson
@@ -18,14 +18,12 @@ holders:
   - Glenn Randers-Pehrson
   - Glenn Randers-Pehrson
   - Glenn Randers-Pehrson
-  - Andreas Dilger Distributed
+  - Andreas Dilger
   - Guy Eric Schalnat, Group 42, Inc.
 holders_summary:
   - value: Glenn Randers-Pehrson
     count: 4
+  - value: Andreas Dilger
+    count: 2
   - value: Guy Eric Schalnat, Group 42, Inc.
     count: 2
-  - value: Andreas Dilger
-    count: 1
-  - value: Andreas Dilger Distributed
-    count: 1

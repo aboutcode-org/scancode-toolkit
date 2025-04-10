@@ -1,0 +1,189 @@
+{
+  "packages": [
+    {
+      "type": "deb",
+      "namespace": "debian",
+      "name": "zsh",
+      "version": "5.7.1-1+deb10u1",
+      "qualifiers": {
+        "arch": "any all"
+      },
+      "subpath": null,
+      "primary_language": null,
+      "description": null,
+      "release_date": null,
+      "parties": [
+        {
+          "type": null,
+          "role": "maintainer",
+          "name": "Debian Zsh Maintainers",
+          "email": "pkg-zsh-devel@lists.alioth.debian.org",
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "uploader",
+          "name": "Michael Prokop",
+          "email": "mika@debian.org",
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "uploader",
+          "name": "Axel Beckert",
+          "email": "abe@debian.org",
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "uploader",
+          "name": "Frank Terbeck",
+          "email": "ft@bewatermyfriend.org",
+          "url": null
+        },
+        {
+          "type": null,
+          "role": "uploader",
+          "name": "Richard Hartmann",
+          "email": "richih@debian.org",
+          "url": null
+        }
+      ],
+      "keywords": [],
+      "homepage_url": "https://www.zsh.org/",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "https://salsa.debian.org/debian/zsh",
+      "vcs_url": "https://salsa.debian.org/debian/zsh.git",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [
+        "pkg:deb/debian/zsh"
+      ],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {},
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:deb/debian/zsh@5.7.1-1%2Bdeb10u1?arch=any%20all&uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "zsh_5.7.1-1+deb10u1.dsc"
+      ],
+      "datasource_ids": [
+        "debian_source_control_dsc"
+      ],
+      "purl": "pkg:deb/debian/zsh@5.7.1-1%2Bdeb10u1?arch=any%20all"
+    }
+  ],
+  "dependencies": [],
+  "files": [
+    {
+      "path": "zsh_5.7.1-1+deb10u1.dsc",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "deb",
+          "namespace": "debian",
+          "name": "zsh",
+          "version": "5.7.1-1+deb10u1",
+          "qualifiers": {
+            "arch": "any all"
+          },
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [
+            {
+              "type": null,
+              "role": "maintainer",
+              "name": "Debian Zsh Maintainers",
+              "email": "pkg-zsh-devel@lists.alioth.debian.org",
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "uploader",
+              "name": "Michael Prokop",
+              "email": "mika@debian.org",
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "uploader",
+              "name": "Axel Beckert",
+              "email": "abe@debian.org",
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "uploader",
+              "name": "Frank Terbeck",
+              "email": "ft@bewatermyfriend.org",
+              "url": null
+            },
+            {
+              "type": null,
+              "role": "uploader",
+              "name": "Richard Hartmann",
+              "email": "richih@debian.org",
+              "url": null
+            }
+          ],
+          "keywords": [],
+          "homepage_url": "https://www.zsh.org/",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "https://salsa.debian.org/debian/zsh",
+          "vcs_url": "https://salsa.debian.org/debian/zsh.git",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [
+            "pkg:deb/debian/zsh"
+          ],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "debian_source_control_dsc",
+          "purl": "pkg:deb/debian/zsh@5.7.1-1%2Bdeb10u1?arch=any%20all"
+        }
+      ],
+      "for_packages": [
+        "pkg:deb/debian/zsh@5.7.1-1%2Bdeb10u1?arch=any%20all&uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

@@ -7,18 +7,18 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import logging
 import os
 import uuid
-from fnmatch import fnmatchcase
-import logging
 import sys
 
+from fnmatch import fnmatchcase
+
 import attr
-from packageurl import normalize_qualifiers
-from packageurl import PackageURL
 import saneyaml
 
 from commoncode import filetype
+from commoncode.fileutils import as_posixpath
 from commoncode.datautils import choices
 from commoncode.datautils import Boolean
 from commoncode.datautils import Date
@@ -26,8 +26,12 @@ from commoncode.datautils import Integer
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
-from commoncode.fileutils import as_posixpath
 from commoncode.resource import Resource
+from license_expression import combine_expressions
+from license_expression import Licensing
+from packageurl import normalize_qualifiers
+from packageurl import PackageURL
+
 try:
     from typecode import contenttype
 except ImportError:
@@ -38,6 +42,7 @@ try:
 except ImportError:
     licensing = None
 
+# FIXME: what if licensing is not importable?
 from packagedcode.licensing import get_declared_license_expression_spdx
 
 """
@@ -118,10 +123,8 @@ Beyond these we have a few secondary models:
 - IdentifiablePackageData: a base class for a Package-like class with a Package URL.
 """
 
-SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
-
-TRACE = SCANCODE_DEBUG_PACKAGE
-TRACE_UPDATE = SCANCODE_DEBUG_PACKAGE
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+TRACE_UPDATE = os.environ.get('SCANCODE_DEBUG_PACKAGE_ASSEMBLY', False)
 
 
 def logger_debug(*args):
@@ -363,12 +366,21 @@ class DependentPackage(ModelMixin):
         label='is optional flag',
         help='True if this dependency is an optional dependency')
 
-    is_resolved = Boolean(
+    is_pinned = Boolean(
         default=False,
-        label='is resolved flag',
+        label='is pinned flag',
         help='True if this dependency version requirement has '
-             'been resolved and this dependency url points to an '
+             'been pinned and this dependency points to an '
              'exact version.')
+
+    is_direct = Boolean(
+        default=True,
+        label='is direct flag',
+        help='True if this is a direct, first-level dependency, '
+             'defined in the manifest of a package. False if this '
+             'is an indirect, transitive dependency resolved from '
+             'first level dependencies.'
+    )
 
     resolved_package = Mapping(
         label='resolved package data',
@@ -681,6 +693,24 @@ class PackageData(IdentifiablePackageData):
              'package type or datafile format.'
     )
 
+    is_private = Boolean(
+        default=False,
+        label='is private flag',
+        help='True if this is a private package, either not meant to be '
+             'published on a repository, and/or a local package without a '
+             'name and version used primarily to track dependencies and '
+             'other information, and build this package, for instance with '
+             'JavaScript and PHP applications.'
+    )
+
+    is_virtual = Boolean(
+        default=False,
+        label='is virtual flag',
+        help='True if this package is created only from a manifest or lockfile, '
+             'and not from its actual packaged code. The files of this package '
+             'are not present in the codebase.'
+    )
+
     extra_data = Mapping(
         label='extra data',
         help='A mapping of arbitrary extra package data.',
@@ -717,10 +747,55 @@ class PackageData(IdentifiablePackageData):
         repr=True,
     )
 
+    @classmethod
+    def from_data(cls, package_data, package_only=False):
+        """
+        Return PackageData object created out of the package metadata
+        present in `package_data` mapping. Also populate license and
+        copyright holder fields by computing them from extracted license
+        statement and extracted copyright.
 
-    def __attrs_post_init__(self, *args, **kwargs):
-        self.populate_license_fields()
-        self.populate_holder_field()
+        Skip the license/copyright detection step if `package_only` is True.
+        """
+        if "purl" in package_data:
+            package_data.pop("purl")
+
+        package_data = cls(**package_data)
+
+        if not package_only:
+            package_data.populate_license_fields()
+            package_data.populate_holder_field()
+        else:
+            package_data.normalize_extracted_license_statement()
+
+        return package_data
+
+    @property
+    def can_assemble(self):
+        from packagedcode import HANDLER_BY_DATASOURCE_ID
+        handler = HANDLER_BY_DATASOURCE_ID.get(self.datasource_id)
+        if issubclass(handler, NonAssemblableDatafileHandler):
+            return False
+
+        return True
+
+    def normalize_extracted_license_statement(self):
+        """
+        Normalizes the extracted license statement to a readable
+        YAML string if it was a pythonic object.
+        """
+        if (
+            self.extracted_license_statement and
+            not isinstance(self.extracted_license_statement, str)
+        ):
+            if isinstance(self.extracted_license_statement, dict):
+                self.extracted_license_statement = saneyaml.dump(
+                    dict(self.extracted_license_statement.items())
+                )
+            else:
+                self.extracted_license_statement = saneyaml.dump(
+                    self.extracted_license_statement
+                )
 
     def populate_holder_field(self):
         if not self.copyright:
@@ -780,8 +855,27 @@ class PackageData(IdentifiablePackageData):
                     f"license_detections: {self.license_detections}"
                 )
 
-        if self.extracted_license_statement and not isinstance(self.extracted_license_statement, str):
-            self.extracted_license_statement = saneyaml.dump(self.extracted_license_statement)
+        self.normalize_extracted_license_statement()
+
+    def update_purl_fields(self, package_data, replace=False):
+
+        if not self.type == package_data.type:
+            return
+
+        purl_fields = [
+            "name",
+            "namespace",
+            "version",
+            "qualifiers"
+        ]
+
+        for purl_field in purl_fields:
+            value = getattr(self, purl_field)
+            # We will not update only when replace is False and value is non-empty
+            if not replace and value:
+                continue
+
+            setattr(self, purl_field, getattr(package_data, purl_field))
 
     def to_dict(self, with_details=True, **kwargs):
         mapping = super().to_dict(with_details=with_details, **kwargs)
@@ -871,7 +965,7 @@ class PackageData(IdentifiablePackageData):
             return [], None
 
         if self.datasource_id:
-            default_relation_license=get_default_relation_license(
+            default_relation_license = get_default_relation_license(
                 datasource_id=self.datasource_id,
             )
         else:
@@ -886,7 +980,10 @@ class PackageData(IdentifiablePackageData):
 
 def get_default_relation_license(datasource_id):
     from packagedcode import HANDLER_BY_DATASOURCE_ID
-    handler = HANDLER_BY_DATASOURCE_ID[datasource_id]
+    handler = HANDLER_BY_DATASOURCE_ID.get(datasource_id, None)
+    if not handler:
+        return 'AND'
+
     return handler.default_relation_license
 
 
@@ -925,12 +1022,11 @@ def add_to_package(package_uid, resource, codebase):
 
 class DatafileHandler:
     """
-    A base handler class to handle any package manifests, lockfiles and data
-    files. Each subclass handles a package datafile format to parse datafiles
-    and assemble Package and Depdencies from these:
+    A base handler class to handle any package manifest, lockfile, package database
+    and related data files. Each subclass handles a package datafile format to parse
+    datafiles and assemble Package and Dependencies from these:
 
     - parses a datafile format and yields package data.
-
     - assembles this datafile package data in top-level packages and dependencies
     - assigns package files to their package
     """
@@ -940,6 +1036,16 @@ class DatafileHandler:
     # case). Must be a valid Python identifier: must start with an ASCII letter,
     # can only contain ASCII letters, digits and underscore. Must be lowercase
     datasource_id = None
+
+    # style of package data processed by this handler, either app for application package like npm,
+    # sys for system packages like rpm, or info for informational data file that provides hints but
+    # is not a package manifest, like with a README file
+    # possible values are app, sys and info
+    datasource_type = 'app'
+
+    # tuple of operating systems where getting package data using this DatafileHandler is supported.
+    # If None or empty, all platforms are supported, possible values are win, mac, linux, freebsd
+    supported_oses = None
 
     # Sequence of known fnmatch-style case-insensitive glob patterns (e.g., Unix
     # shell style patterns) that apply on the whole POSIX path for package
@@ -961,13 +1067,18 @@ class DatafileHandler:
     # Informational: Default primary language for this parser.
     default_primary_language = None
 
+    # If the handler is for a lockfile that contains locked/pinned, pre-resolved dependencies
+    is_lockfile = False
+
     # Informational: Description of this parser
     description = None
 
     # Informational: URL that documents this file format
     documentation_url = None
 
-    # Default Relation between license elements detected in an `extracted_license_statement`
+    # Default license expression relation between the license detected in an
+    # `extracted_license_statement` for this data file.
+    # This may vary for each data file based on conventions and specifications.
     default_relation_license = None
 
     @classmethod
@@ -989,7 +1100,16 @@ class DatafileHandler:
         """
         if filetype.is_file(location) or _bare_filename:
             loc = as_posixpath(location)
-            if any(fnmatchcase(loc, pat) for pat in cls.path_patterns):
+
+            # Some extension strings are used interchangebly
+            extension_aliases = {"yaml": "yml"}
+            path_patterns = list(cls.path_patterns)
+            for pattern in cls.path_patterns:
+                for extension, extension_alias in extension_aliases.items():
+                    new_pattern = pattern.replace(extension, extension_alias)
+                    path_patterns.append(new_pattern)
+
+            if any(fnmatchcase(loc, pat) for pat in path_patterns):
                 filetypes = filetypes or cls.filetypes
                 if not filetypes:
                     return True
@@ -1000,13 +1120,16 @@ class DatafileHandler:
                     return any(ft in actual_type for ft in filetypes)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield one or more PackageData objects given a package data file at
         ``location``.
 
         Subclasses must implement and are responsible for returning proper
         computed license fields and list of resources and files.
+
+        If `package_only`, skip the license/copyright detection on extracted
+        license/copyright data.
         """
         raise NotImplementedError
 
@@ -1088,7 +1211,7 @@ class DatafileHandler:
         starting ``resource`` in the ``codebase``.
 
         This default implementation  assigns the package to the whole
-        ``resource`` tree. Since ``resource`` is a file y default, this means
+        ``resource`` tree. Since ``resource`` is a file by default, this means
         that only the datafile ``resource`` is assigned to the ``package`` by
         default.
 
@@ -1098,6 +1221,11 @@ class DatafileHandler:
         # NOTE: we do not attach files to the Package level. Instead we
         # update `for_packages` of a codebase resource.
         package_uid = package.package_uid
+        if resource.path.endswith("-extract"):
+            archive_resource = resource.extracted_from(codebase)
+            if archive_resource:
+                package_adder(package_uid, archive_resource, codebase)
+
         if resource and package_uid:
             package_adder(package_uid, resource, codebase)
             for res in resource.walk(codebase):
@@ -1393,11 +1521,44 @@ class DatafileHandler:
         """
         pass
 
+    @classmethod
+    def validate(cls):
+        """
+        Validate this class.
+        Raise ImproperlyConfiguredDatafileHandler exception on errors.
+        """
+
+        did = cls.datasource_id
+        if not did:
+            raise ImproperlyConfiguredDatafileHandler(
+                f'The handler {cls!r} has an empty datasource_id {did!r}.')
+
+        DATASOURCE_TYPES = 'app', 'sys', 'info',
+        dfs = cls.datasource_type
+        if dfs not in DATASOURCE_TYPES:
+            raise ImproperlyConfiguredDatafileHandler(
+                f'The handler {did!r} : {cls!r} has an invalid '
+                f'datasource_type: {dfs!r}: must be one of {DATASOURCE_TYPES!r}.'
+            )
+
+        oses = 'linux', 'win', 'max', 'freebsd',
+        soses = cls.supported_oses
+        if soses and not all(s in oses for s in soses):
+            raise ImproperlyConfiguredDatafileHandler(
+                f'The handler {cls.datasource_id!r} : {cls!r} has invalid '
+                f'supported_oses: {soses!r}: must be empty or among {oses!r}'
+            )
+
+
+class ImproperlyConfiguredDatafileHandler(Exception):
+    """ScanCode Package Datafile Handler is not properly configured"""
+    pass
+
 
 class NonAssemblableDatafileHandler(DatafileHandler):
     """
-    A handler that has no default implmentation for the assemble method, e.g.,
-    it will not alone trigger the creation of a top-level Pacakge.
+    A handler with a default implementation of an assemble method doing nothing, e.g.,
+    it will not alone trigger the creation of a top-level Package.
     """
 
     @classmethod
@@ -1430,8 +1591,8 @@ def build_purl(mapping):
     subpath = mapping.get('subpath')
     return PackageURL(
         type=ptype,
-        name=name,
         namespace=namespace,
+        name=name,
         version=version,
         qualifiers=qualifiers,
         subpath=subpath,
@@ -1464,10 +1625,10 @@ class Package(PackageData):
     )
 
     def __attrs_post_init__(self, *args, **kwargs):
+        if not self.purl:
+            self.purl = self.set_purl()
         if not self.package_uid:
             self.package_uid = build_package_uid(self.purl)
-
-        self.populate_license_fields()
 
     def to_dict(self):
         return super().to_dict(with_details=False)
@@ -1480,7 +1641,7 @@ class Package(PackageData):
         return PackageData.from_dict(mapping)
 
     @classmethod
-    def from_package_data(cls, package_data, datafile_path):
+    def from_package_data(cls, package_data, datafile_path=None, package_only=False):
         """
         Return a Package from a ``package_data`` PackageData object
         or mapping. Or None.
@@ -1495,16 +1656,26 @@ class Package(PackageData):
         elif package_data:
             raise Exception(f'Invalid type: {package_data!r}', package_data)
 
-        package_data_mapping['datafile_paths'] = [datafile_path]
         package_data_mapping['datasource_ids'] = [dsid]
 
-        license_detections = package_data_mapping['license_detections']
-        for detection in license_detections:
-            for license_match in detection['matches']:
-                if not license_match['from_file']:
-                    license_match['from_file'] = datafile_path
+        if datafile_path:
+            package_data_mapping['datafile_paths'] = [datafile_path]
+            license_detections = package_data_mapping.get('license_detections', [])
+            for detection in license_detections:
+                for license_match in detection['matches']:
+                    if not license_match['from_file']:
+                        license_match['from_file'] = datafile_path
 
-        return cls.from_dict(package_data_mapping)
+        package = cls.from_dict(package_data_mapping)
+
+        if not package.package_uid:
+            package.package_uid = build_package_uid(package.purl)
+
+        if not package_only:
+            package.populate_license_fields()
+            package.populate_holder_field()
+
+        return package
 
     @classmethod
     def from_dict(cls, mapping):
@@ -1537,11 +1708,14 @@ class Package(PackageData):
         self,
         package_data,
         datafile_path,
+        check_compatible=True,
         replace=False,
         include_version=True,
         include_qualifiers=False,
         include_subpath=False,
         ignore_name_check=False,
+        default_relation='AND',
+        licensing=Licensing(),
     ):
         """
         Update this Package with data from the ``package_data`` PackageData.
@@ -1568,7 +1742,7 @@ class Package(PackageData):
         if isinstance(package_data, dict):
             package_data = PackageData.from_dict(package_data)
 
-        if not is_compatible(
+        if check_compatible and not is_compatible(
             purl1=self,
             purl2=package_data,
             include_version=include_version,
@@ -1594,15 +1768,15 @@ class Package(PackageData):
             'file_references',
         ])
 
+        license_modified = False
         for name, value in existing.items():
             new_value = new_package_data.get(name)
+            if not new_value:
+                if TRACE_UPDATE: logger_debug(f'  No new value: {name!r}: skipping')
+                continue
 
             if TRACE_UPDATE:
                 logger_debug(f'update: {name!r}={value!r} with new_value: {new_value!r}')
-
-            if not new_value:
-                if TRACE_UPDATE: logger_debug('  No new value: skipping')
-                continue
 
             if not value:
                 if TRACE_UPDATE: logger_debug('  set existing value to new')
@@ -1618,6 +1792,18 @@ class Package(PackageData):
             if name == 'extra_data':
                 value.update(new_value)
 
+            if 'license_detections' in name:
+                license_modified = True
+                license_keys = licensing.license_keys(
+                    expression=new_package_data.get("declared_license_expression"),
+                    unique=True,
+                )
+                if name == 'license_detections' and len(license_keys) > 1:
+                    setattr(self, 'other_license_detections', new_value)
+                else:
+                    merged = value + new_value
+                    setattr(self, name, merged)
+
             if name in list_fields:
                 if TRACE_UPDATE: logger_debug('  merge lists of values')
                 merged = merge_sequences(list1=value, list2=new_value)
@@ -1626,7 +1812,35 @@ class Package(PackageData):
             elif TRACE_UPDATE and value != new_value:
                 if TRACE_UPDATE: logger_debug('  skipping update: no replace')
 
+        if license_modified:
+            self.refresh_license_expressions(default_relation=default_relation)
+
         return True
+
+    def refresh_license_expressions(self, default_relation='AND'):
+        if self.license_detections:
+            self.declared_license_expression = str(combine_expressions(
+                    expressions=[
+                        detection["license_expression"]
+                        for detection in self.license_detections
+                    ],
+                    relation=default_relation,
+            ))
+            self.declared_license_expression_spdx = get_declared_license_expression_spdx(
+                declared_license_expression=self.declared_license_expression,
+            )
+
+        if self.other_license_detections:
+            self.other_license_expression = str(combine_expressions(
+                expressions=[
+                    detection["license_expression"]
+                    for detection in self.other_license_detections
+                ],
+                relation=default_relation,
+            ))
+            self.other_license_expression_spdx = get_declared_license_expression_spdx(
+                declared_license_expression=self.other_license_expression,
+            )
 
     def get_packages_files(self, codebase):
         """

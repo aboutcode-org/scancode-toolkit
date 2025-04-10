@@ -18,7 +18,12 @@
         "url": null
       }
     ],
-    "keywords": [],
+    "keywords": [
+      "rustup",
+      "multirust",
+      "install",
+      "proxy"
+    ],
     "homepage_url": "https://github.com/rust-lang/rustup.rs",
     "download_url": null,
     "size": null,
@@ -39,17 +44,17 @@
         "license_expression_spdx": "MIT OR Apache-2.0",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "mit OR apache-2.0",
+            "license_expression_spdx": "MIT OR Apache-2.0",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "mit OR apache-2.0",
-            "spdx_license_expression": "MIT OR Apache-2.0",
-            "rule_identifier": "mit_or_apache-2.0_15.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "mit_or_apache-2.0_15.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_or_apache-2.0_15.RULE",
             "matched_text": "MIT OR Apache-2.0"
           }
@@ -64,8 +69,283 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
-    "extra_data": {},
-    "dependencies": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "workspace": {
+        "members": [
+          "src/download"
+        ]
+      },
+      "documentation_url": "http://rust-lang.github.io/rustup.rs/rustup/index.html",
+      "rust_edition": "2018"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:cargo/rustup-dist",
+        "extracted_requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "path": "src/rustup-dist"
+        }
+      },
+      {
+        "purl": "pkg:cargo/rustup-utils",
+        "extracted_requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "path": "src/rustup-utils"
+        }
+      },
+      {
+        "purl": "pkg:cargo/download",
+        "extracted_requirement": null,
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "path": "src/download"
+        }
+      },
+      {
+        "purl": "pkg:cargo/clap",
+        "extracted_requirement": "2.18.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/error-chain",
+        "extracted_requirement": "0.12.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/itertools",
+        "extracted_requirement": "0.7.6",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/libc",
+        "extracted_requirement": "0.2.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/markdown",
+        "extracted_requirement": "0.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/rand",
+        "extracted_requirement": "0.5.2",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/regex",
+        "extracted_requirement": "1.0.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/remove_dir_all",
+        "extracted_requirement": "0.5.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/same-file",
+        "extracted_requirement": "1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/scopeguard",
+        "extracted_requirement": "0.3",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/sha2",
+        "extracted_requirement": "0.7.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/tempdir",
+        "extracted_requirement": "0.3.4",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/term",
+        "extracted_requirement": "0.5.1",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/time",
+        "extracted_requirement": "0.1.34",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/toml",
+        "extracted_requirement": "0.4",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/url",
+        "extracted_requirement": "1.1.0",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/wait-timeout",
+        "extracted_requirement": "0.1.5",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:cargo/openssl",
+        "extracted_requirement": "0.10.15",
+        "scope": "dependencies",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "version": "0.10.15"
+        }
+      },
+      {
+        "purl": "pkg:cargo/rustup-mock",
+        "extracted_requirement": "1.1.0",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "path": "src/rustup-mock",
+          "version": "1.1.0"
+        }
+      },
+      {
+        "purl": "pkg:cargo/lazy_static",
+        "extracted_requirement": "1.0.0",
+        "scope": "dev-dependencies",
+        "is_runtime": false,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
     "repository_homepage_url": "https://crates.io/crates/rustup",
     "repository_download_url": "https://crates.io/api/v1/crates/rustup/1.17.0/download",
     "api_data_url": "https://crates.io/api/v1/crates/rustup",

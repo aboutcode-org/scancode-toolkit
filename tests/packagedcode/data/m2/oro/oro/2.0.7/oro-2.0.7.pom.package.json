@@ -34,6 +34,8 @@
     "pkg:maven/oro/oro@2.0.7?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://repo1.maven.org/maven2/oro/oro/2.0.7/",

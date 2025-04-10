@@ -5,8 +5,6 @@ ignorable_copyrights:
     - (c) Copyright University of Cambridge
 ignorable_holders:
     - University of Cambridge
-ignorable_authors:
-    - the University of Cambridge
 ---
 
 Free use of the software in source and binary forms is permitted, provided that this

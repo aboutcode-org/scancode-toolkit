@@ -1,0 +1,26 @@
+---
+key: hpnd-sell-mit-disclaimer-xserver
+short_name: Historical sell xserver variant
+name: Historical Permission Notice and Disclaimer - sell xserver variant with MIT disclaimer
+category: Permissive
+owner: X.Org
+notes: |
+    Added in SPDX license list 3.23
+    This was previously the license rule: other-permissive_426.RULE
+spdx_license_key: HPND-sell-MIT-disclaimer-xserver
+other_urls:
+    - https://gitlab.freedesktop.org/xorg/xserver/-/blob/master/COPYING?ref_type=heads#L1781
+---
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+this permission notice appear in supporting documentation.  This permission
+notice shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

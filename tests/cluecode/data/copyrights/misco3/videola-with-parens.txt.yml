@@ -1,0 +1,12 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 1998-2001 VideoLAN Johan Bilien <jobi@via.ecp.fr> and Gildas Bazin <gbazin@netcourrier.com>
+holders:
+  - VideoLAN Johan Bilien and Gildas Bazin
+holders_summary:
+  - value: VideoLAN Johan Bilien and Gildas Bazin
+    count: 1

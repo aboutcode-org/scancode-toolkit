@@ -1,0 +1,8 @@
+what:
+  - copyrights
+  - holders
+  - authors
+authors:
+  - Colin Walters <walters@debian.org>
+  - Colin Walters, Chris Cheney, Jonas Smedegaard, Jeff Bailey, Stefan Gybas, Robert Millan,
+    Marc Dequenes, Peter Eisentraut

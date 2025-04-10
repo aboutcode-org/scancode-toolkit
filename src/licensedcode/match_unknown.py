@@ -44,6 +44,7 @@ else:
         pass
 
 MATCH_UNKNOWN = '6-unknown'
+MATCH_UNKNOWN_ORDER = 6
 
 UNKNOWN_NGRAM_LENGTH = 6
 
@@ -176,7 +177,7 @@ def match_unknowns(
     match_len = len(qspan)
 
     if TRACE:
-        #print('match_unknowns: matched_span:', get_tokens(matched_tokens))
+        # print('match_unknowns: matched_span:', get_tokens(matched_tokens))
         print('match_unknowns: qspan, match_len, matched_span:', qspan, match_len, matched_tokens)
 
     # we use the query side to build the ispans
@@ -227,6 +228,7 @@ def match_unknowns(
         hispan=hispan,
         query_run_start=query_run.start,
         matcher=MATCH_UNKNOWN,
+        matcher_order=MATCH_UNKNOWN_ORDER,
         query=query,
     )
 

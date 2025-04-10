@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+copyrights:
+  - Copyright (c) Distributed Frontera developers
+holders:
+  - Distributed Frontera developers
+holders_summary:
+  - value: Distributed Frontera developers
+    count: 1

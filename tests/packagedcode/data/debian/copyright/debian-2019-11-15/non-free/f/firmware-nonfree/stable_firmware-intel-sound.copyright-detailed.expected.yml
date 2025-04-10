@@ -8,10 +8,10 @@ declared_license_expression: intel AND intel AND (intel AND (bsd-new AND other-p
   AND delorie-historical AND intel-osl-1993)
 declared_license_expression_spdx: LicenseRef-scancode-intel AND LicenseRef-scancode-intel AND
   (LicenseRef-scancode-intel AND (BSD-3-Clause AND LicenseRef-scancode-other-permissive AND
-  LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND dtoa AND SMLNJ AND LicenseRef-scancode-amd-historical
-  AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical
+  LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND dtoa AND SMLNJ AND AMD-newlib AND
+  SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical
   AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson AND LicenseRef-scancode-delorie-historical
-  AND LicenseRef-scancode-intel-osl-1993)
+  AND HPND-Intel)
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -19,7 +19,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
+        license_expression_spdx: LicenseRef-scancode-intel
         from_file:
         start_line: 11
         end_line: 46
@@ -72,7 +72,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-intel
     matches:
       - license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
+        license_expression_spdx: LicenseRef-scancode-intel
         from_file:
         start_line: 53
         end_line: 87
@@ -124,13 +124,13 @@ license_detections:
       AND x11-lucent AND standard-ml-nj AND amd-historical AND sunpro AND hp-1986 AND nilsson-historical
       AND newlib-historical AND bsd-simplified AND x11-hanson AND delorie-historical AND intel-osl-1993
     license_expression_spdx: LicenseRef-scancode-intel AND (BSD-3-Clause AND LicenseRef-scancode-other-permissive
-      AND LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND dtoa AND SMLNJ AND LicenseRef-scancode-amd-historical
+      AND LicenseRef-scancode-other-copyleft) AND BSD-3-Clause AND dtoa AND SMLNJ AND AMD-newlib
       AND SunPro AND HP-1986 AND LicenseRef-scancode-nilsson-historical AND LicenseRef-scancode-newlib-historical
       AND BSD-2-Clause AND LicenseRef-scancode-x11-hanson AND LicenseRef-scancode-delorie-historical
-      AND LicenseRef-scancode-intel-osl-1993
+      AND HPND-Intel
     matches:
       - license_expression: intel
-        spdx_license_expression: LicenseRef-scancode-intel
+        license_expression_spdx: LicenseRef-scancode-intel
         from_file:
         start_line: 101
         end_line: 135
@@ -178,7 +178,7 @@ license_detections:
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
           POSSIBILITY OF SUCH DAMAGE.
       - license_expression: bsd-new AND other-permissive AND other-copyleft
-        spdx_license_expression: BSD-3-Clause AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
+        license_expression_spdx: BSD-3-Clause AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-other-copyleft
         from_file:
         start_line: 139
         end_line: 143
@@ -196,7 +196,7 @@ license_detections:
           file.  Unless otherwise noted in the body of the source file(s), the following copyright
           notices will apply to the contents of the newlib subdirectory:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 149
         end_line: 158
@@ -219,7 +219,7 @@ license_detections:
           the BSD License and may only be used or replicated with the express
           permission of Red Hat, Inc.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 165
         end_line: 186
@@ -254,7 +254,7 @@ license_detections:
           ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
           OF SUCH DAMAGE.
       - license_expression: x11-lucent
-        spdx_license_expression: dtoa
+        license_expression_spdx: dtoa
         from_file:
         start_line: '194'
         end_line: 203
@@ -277,7 +277,7 @@ license_detections:
           REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
           OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
       - license_expression: standard-ml-nj
-        spdx_license_expression: SMLNJ
+        license_expression_spdx: SMLNJ
         from_file:
         start_line: 212
         end_line: 229
@@ -308,7 +308,7 @@ license_detections:
           ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
           THIS SOFTWARE.
       - license_expression: amd-historical
-        spdx_license_expression: LicenseRef-scancode-amd-historical
+        license_expression_spdx: AMD-newlib
         from_file:
         start_line: 236
         end_line: 247
@@ -333,7 +333,7 @@ license_detections:
           So that all may benefit from your experience, please report  any  problems
           or  suggestions about this software
       - license_expression: sunpro
-        spdx_license_expression: SunPro
+        license_expression_spdx: SunPro
         from_file:
         start_line: 266
         end_line: 268
@@ -349,7 +349,7 @@ license_detections:
           Permission to use, copy, modify, and distribute this
           software is freely granted, provided that this notice is preserved.
       - license_expression: hp-1986
-        spdx_license_expression: HP-1986
+        license_expression_spdx: HP-1986
         from_file:
         start_line: 274
         end_line: 283
@@ -372,7 +372,7 @@ license_detections:
           Hewlett-Packard Company makes no representations about the
           suitability of this software for any purpose.
       - license_expression: nilsson-historical
-        spdx_license_expression: LicenseRef-scancode-nilsson-historical
+        license_expression_spdx: LicenseRef-scancode-nilsson-historical
         from_file:
         start_line: 289
         end_line: 296
@@ -393,7 +393,7 @@ license_detections:
           WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
           PURPOSE.
       - license_expression: newlib-historical
-        spdx_license_expression: LicenseRef-scancode-newlib-historical
+        license_expression_spdx: LicenseRef-scancode-newlib-historical
         from_file:
         start_line: 302
         end_line: 310
@@ -415,7 +415,7 @@ license_detections:
           the new terms are clearly indicated on the first page of each file where
           they apply.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 317
         end_line: 337
@@ -449,7 +449,7 @@ license_detections:
           (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
           THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: amd-historical
-        spdx_license_expression: LicenseRef-scancode-amd-historical
+        license_expression_spdx: AMD-newlib
         from_file:
         start_line: 343
         end_line: 354
@@ -474,7 +474,7 @@ license_detections:
           So that all may benefit from your experience, please report any problems
           or suggestions about this software to the
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 369
         end_line: 394
@@ -513,7 +513,7 @@ license_detections:
           OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
           ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 401
         end_line: 420
@@ -546,7 +546,7 @@ license_detections:
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 427
         end_line: 446
@@ -579,7 +579,7 @@ license_detections:
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 453
         end_line: 472
@@ -612,7 +612,7 @@ license_detections:
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
       - license_expression: x11-hanson
-        spdx_license_expression: LicenseRef-scancode-x11-hanson
+        license_expression_spdx: LicenseRef-scancode-x11-hanson
         from_file:
         start_line: 480
         end_line: 489
@@ -635,7 +635,7 @@ license_detections:
           OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY OF THIS
           SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 496
         end_line: 515
@@ -668,7 +668,7 @@ license_detections:
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 522
         end_line: 542
@@ -702,7 +702,7 @@ license_detections:
           OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
           ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: delorie-historical
-        spdx_license_expression: LicenseRef-scancode-delorie-historical
+        license_expression_spdx: LicenseRef-scancode-delorie-historical
         from_file:
         start_line: 548
         end_line: 553
@@ -721,7 +721,7 @@ license_detections:
           This file is distributed WITHOUT ANY WARRANTY; without even the implied
           warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
       - license_expression: intel-osl-1993
-        spdx_license_expression: LicenseRef-scancode-intel-osl-1993
+        license_expression_spdx: HPND-Intel
         from_file:
         start_line: 563
         end_line: 585
@@ -757,7 +757,7 @@ license_detections:
           OF ANY KIND.  IN NO EVENT SHALL INTEL'S TOTAL LIABILITY EXCEED THE SUM
           PAID TO INTEL FOR THE PRODUCT LICENSED HEREUNDER.
       - license_expression: hp-1986
-        spdx_license_expression: HP-1986
+        license_expression_spdx: HP-1986
         from_file:
         start_line: 591
         end_line: 600
@@ -780,7 +780,7 @@ license_detections:
           Hewlett-Packard Company makes no representations about the
           suitability of this software for any purpose.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 609
         end_line: 628
@@ -813,7 +813,7 @@ license_detections:
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 635
         end_line: 654
@@ -846,7 +846,7 @@ license_detections:
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 663
         end_line: 682
@@ -879,7 +879,7 @@ license_detections:
           OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
           SUCH DAMAGE.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 693
         end_line: 715
@@ -915,7 +915,7 @@ license_detections:
             ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
             POSSIBILITY OF SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 723
         end_line: 742
@@ -948,7 +948,7 @@ license_detections:
             OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
             SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 749
         end_line: 768
@@ -981,7 +981,7 @@ license_detections:
             OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
             SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 775
         end_line: 794
@@ -1014,7 +1014,7 @@ license_detections:
             OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
             SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 801
         end_line: 820
@@ -1047,7 +1047,7 @@ license_detections:
             OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
             SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 827
         end_line: 846
@@ -1080,7 +1080,7 @@ license_detections:
            OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
            SUCH DAMAGE.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 854
         end_line: 875
@@ -1115,7 +1115,7 @@ license_detections:
            NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
            SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 881
         end_line: 906
@@ -1154,7 +1154,7 @@ license_detections:
           NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
           SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 914
         end_line: 941
@@ -1195,7 +1195,7 @@ license_detections:
            (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
            OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: newlib-historical
-        spdx_license_expression: LicenseRef-scancode-newlib-historical
+        license_expression_spdx: LicenseRef-scancode-newlib-historical
         from_file:
         start_line: 947
         end_line: 955
@@ -1217,7 +1217,7 @@ license_detections:
           the new terms are clearly indicated on the first page of each file where
           they apply.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 962
         end_line: 982
@@ -1251,7 +1251,7 @@ license_detections:
           OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
           OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 989
         end_line: 1012
@@ -1288,7 +1288,7 @@ license_detections:
           TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
           USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 1019
         end_line: 1038

@@ -1,0 +1,25 @@
+sources:
+  "0.22":
+    url: "https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.tar.gz"
+    sha256: "49f089be11b490170bbf09ed2f51e5f5177f55be4cc66504a5861820e0fb06ab"
+  "0.21":
+    url: "https://ftp.gnu.org/pub/gnu/gettext/gettext-0.21.tar.gz"
+    sha256: "c77d0da3102aec9c07f43671e60611ebff89a996ef159497ce8e59d075786b12"
+  "0.20.1":
+    sha256: "66415634c6e8c3fa8b71362879ec7575e27da43da562c798a8a2f223e6e47f5c"
+    url: "https://ftp.gnu.org/pub/gnu/gettext/gettext-0.20.1.tar.gz"
+patches:
+  "0.21":
+    - patch_file: "patches/0002-memmove-is-intrinsic-function-on-MSVC.patch"
+      patch_description: "memmove is intrinsic function on MSVC"
+      patch_type: "portability"
+  "0.20.1":
+    - patch_file: "patches/0001-build-Fix-build-errors-with-MSVC.patch"
+      patch_description: "Fix build errors with MSVC"
+      patch_type: "portability"
+    - patch_file: "patches/0002-memmove-is-intrinsic-function-on-MSVC.patch"
+      patch_description: "memmove is intrinsic function on MSVC"
+      patch_type: "portability"
+    - patch_file: "patches/0003-Reported-by-Gabor-Z.-Papp-gzp-papp.hu.patch"
+      patch_description: "fix preloadable libintl for static build"
+      patch_type: "portability"

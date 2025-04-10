@@ -1,0 +1,140 @@
+[
+  {
+    "type": "conan",
+    "namespace": null,
+    "name": "libzip",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "C++",
+    "description": "A C library for reading, creating, and modifying zip archives",
+    "release_date": null,
+    "parties": [],
+    "keywords": [
+      "zip",
+      "zip-archives",
+      "zip-editing"
+    ],
+    "homepage_url": "https://github.com/nih-at/libzip",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "bsd-new",
+    "declared_license_expression_spdx": "BSD-3-Clause",
+    "license_detections": [
+      {
+        "license_expression": "bsd-new",
+        "license_expression_spdx": "BSD-3-Clause",
+        "matches": [
+          {
+            "license_expression": "bsd-new",
+            "license_expression_spdx": "BSD-3-Clause",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "bsd-new_10.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_10.RULE",
+            "matched_text": "BSD-3-Clause"
+          }
+        ],
+        "identifier": "bsd_new-50fa5753-f24d-ec04-33a1-36bb8ac0492c"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "- BSD-3-Clause\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:conan/zlib",
+        "extracted_requirement": "[>=1.2.11 <2]",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/bzip2@1.0.8",
+        "extracted_requirement": "1.0.8",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/xz_utils@5.4.5",
+        "extracted_requirement": "5.4.5",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/zstd@1.5.5",
+        "extracted_requirement": "1.5.5",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/openssl",
+        "extracted_requirement": "[>=1.1 <4]",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conan/mbedtls@3.5.0",
+        "extracted_requirement": "3.5.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "conan_conanfile_py",
+    "purl": "pkg:conan/libzip"
+  }
+]

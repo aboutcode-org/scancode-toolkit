@@ -1,0 +1,243 @@
+{
+  "packages": [
+    {
+      "type": "swift",
+      "namespace": null,
+      "name": "MapboxMaps",
+      "version": null,
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Swift",
+      "description": null,
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": null,
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": null,
+      "declared_license_expression_spdx": null,
+      "license_detections": [],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": null,
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "platforms": [
+          {
+            "options": [],
+            "platformName": "ios",
+            "version": "12.0"
+          },
+          {
+            "options": [],
+            "platformName": "macos",
+            "version": "10.15"
+          },
+          {
+            "options": [],
+            "platformName": "visionos",
+            "version": "1.0"
+          }
+        ]
+      },
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:swift/MapboxMaps?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "Package.swift.json"
+      ],
+      "datasource_ids": [
+        "swift_package_manifest_json"
+      ],
+      "purl": "pkg:swift/MapboxMaps"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:swift/github.com/mapbox/turf-swift",
+      "extracted_requirement": "vers:swift/>=2.8.0|<3.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:swift/github.com/mapbox/turf-swift?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:swift/MapboxMaps?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Package.swift.json",
+      "datasource_id": "swift_package_manifest_json"
+    },
+    {
+      "purl": "pkg:swift/github.com/mapbox/mapbox-core-maps-ios@11.4.0-rc.2",
+      "extracted_requirement": "11.4.0-rc.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:swift/github.com/mapbox/mapbox-core-maps-ios@11.4.0-rc.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:swift/MapboxMaps?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Package.swift.json",
+      "datasource_id": "swift_package_manifest_json"
+    },
+    {
+      "purl": "pkg:swift/github.com/mapbox/mapbox-common-ios@24.4.0-rc.2",
+      "extracted_requirement": "24.4.0-rc.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": true,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:swift/github.com/mapbox/mapbox-common-ios@24.4.0-rc.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:swift/MapboxMaps?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "Package.swift.json",
+      "datasource_id": "swift_package_manifest_json"
+    }
+  ],
+  "files": [
+    {
+      "path": "Package.swift.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "swift",
+          "namespace": null,
+          "name": "MapboxMaps",
+          "version": null,
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Swift",
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": null,
+          "declared_license_expression_spdx": null,
+          "license_detections": [],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": null,
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "platforms": [
+              {
+                "options": [],
+                "platformName": "ios",
+                "version": "12.0"
+              },
+              {
+                "options": [],
+                "platformName": "macos",
+                "version": "10.15"
+              },
+              {
+                "options": [],
+                "platformName": "visionos",
+                "version": "1.0"
+              }
+            ]
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:swift/github.com/mapbox/turf-swift",
+              "extracted_requirement": "vers:swift/>=2.8.0|<3.0.0",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:swift/github.com/mapbox/mapbox-core-maps-ios@11.4.0-rc.2",
+              "extracted_requirement": "11.4.0-rc.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": true,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:swift/github.com/mapbox/mapbox-common-ios@24.4.0-rc.2",
+              "extracted_requirement": "24.4.0-rc.2",
+              "scope": "dependencies",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": true,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "swift_package_manifest_json",
+          "purl": "pkg:swift/MapboxMaps"
+        }
+      ],
+      "for_packages": [
+        "pkg:swift/MapboxMaps?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "src",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:swift/MapboxMaps?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "src/mapbox.swift",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:swift/MapboxMaps?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

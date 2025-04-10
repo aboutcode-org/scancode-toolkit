@@ -1,7 +1,10 @@
 ---
 license_expression: freebsd-doc
 is_license_text: yes
-relevance: 100
+is_deprecated: yes
+notes: |
+    Added in SPDX license list 3.24
+    Replaced by license: bsd-2-clause-first-lines
 ---
 
 Redistribution and use in source and binary forms, with or without

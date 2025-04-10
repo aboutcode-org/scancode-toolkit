@@ -1,0 +1,10 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1998 Ingo Molnar
+  - Copyright 2008 Freescale Semiconductor Inc.
+holders:
+  - Ingo Molnar
+  - Freescale Semiconductor Inc.

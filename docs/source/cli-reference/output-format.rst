@@ -58,7 +58,7 @@ following options.
                 "--package": true,
                 "--url": true
               },
-              "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+              "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.",
               "start_timestamp": "2019-10-19T191117.292858",
               "end_timestamp": "2019-10-19T191219.743133",
               "message": null,
@@ -221,7 +221,7 @@ following options.
 
     The whole Output file looks like::
 
-        {"headers":[{"tool_name":"scancode-toolkit","tool_version":"3.1.1","options":{"input":["samples/"],"--copyright":true,"--email":true,"--info":true,"--json-lines":"output.json","--license":true,"--package":true,"--url":true},"notice":"Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.","start_timestamp":"2019-10-19T210920.143831","end_timestamp":"2019-10-19T211052.048182","message":null,"errors":[],"extra_data":{"files_count":36}}]}
+        {"headers":[{"tool_name":"scancode-toolkit","tool_version":"3.1.1","options":{"input":["samples/"],"--copyright":true,"--email":true,"--info":true,"--json-lines":"output.json","--license":true,"--package":true,"--url":true},"notice":"Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.","start_timestamp":"2019-10-19T210920.143831","end_timestamp":"2019-10-19T211052.048182","message":null,"errors":[],"extra_data":{"files_count":36}}]}
         {"files":[{"path":"samples" ... "scan_errors":[]}]}
         {"files":[{"path":"samples/README", ... "scan_errors":[]}]}
         {"files":[{"path":"samples/screenshot.png", ... "scan_errors":[]}]}
@@ -340,7 +340,7 @@ Comparing Different ``json`` Output Formats
         ScanCode should be considered or used as legal advice. Consult an Attorney
         for any legal advice.
         ScanCode is a free software code scanning tool from nexB Inc. and others.
-        Visit https://github.com/nexB/scancode-toolkit/ for support and download.</text>
+        Visit https://github.com/aboutcode-org/scancode-toolkit/ for support and download.</text>
 
 
         # Creation Info
@@ -459,7 +459,7 @@ Comparing Different ``json`` Output Formats
 
         This option is deprecated and will be replaced by new CSV and tabular
         output formats in the next ScanCode release. Visit
-        https://github.com/nexB/scancode-toolkit/issues/3043
+        https://github.com/aboutcode-org/scancode-toolkit/issues/3043
         for details and to provide inputs and feedback.
 
     The following code performs a scan on the samples directory, and publishes the results in

@@ -43,7 +43,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-gary-s-brown
     matches:
       - license_expression: gary-s-brown
-        spdx_license_expression: LicenseRef-scancode-gary-s-brown
+        license_expression_spdx: LicenseRef-scancode-gary-s-brown
         from_file:
         start_line: 81
         end_line: 82
@@ -62,7 +62,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later
     matches:
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 84
         end_line: 84
@@ -75,7 +75,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_22.RULE
         matched_text: 'License: gpl-2+'
       - license_expression: gpl-2.0-plus
-        spdx_license_expression: GPL-2.0-or-later
+        license_expression_spdx: GPL-2.0-or-later
         from_file:
         start_line: 85
         end_line: 100
@@ -108,7 +108,7 @@ other_license_detections:
     license_expression_spdx: GPL-2.0-or-later WITH cryptsetup-OpenSSL-exception
     matches:
       - license_expression: gpl-2.0-plus WITH openssl-exception-gpl-3.0-plus
-        spdx_license_expression: GPL-2.0-or-later WITH cryptsetup-OpenSSL-exception
+        license_expression_spdx: GPL-2.0-or-later WITH cryptsetup-OpenSSL-exception
         from_file:
         start_line: 103
         end_line: 130
@@ -153,7 +153,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 132
         end_line: 132
@@ -166,7 +166,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 133
         end_line: 149
@@ -200,7 +200,7 @@ other_license_detections:
     license_expression_spdx: LGPL-2.1-or-later WITH cryptsetup-OpenSSL-exception
     matches:
       - license_expression: lgpl-2.1-plus WITH openssl-exception-gpl-3.0-plus
-        spdx_license_expression: LGPL-2.1-or-later WITH cryptsetup-OpenSSL-exception
+        license_expression_spdx: LGPL-2.1-or-later WITH cryptsetup-OpenSSL-exception
         from_file:
         start_line: 152
         end_line: 180
@@ -246,7 +246,7 @@ other_license_detections:
     license_expression_spdx: CC0-1.0
     matches:
       - license_expression: cc0-1.0
-        spdx_license_expression: CC0-1.0
+        license_expression_spdx: CC0-1.0
         from_file:
         start_line: 183
         end_line: 187
@@ -268,7 +268,7 @@ other_license_detections:
     license_expression_spdx: Apache-2.0
     matches:
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: 189
         end_line: 189
@@ -281,7 +281,7 @@ other_license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: 'License: apache-2.0'
       - license_expression: apache-2.0
-        spdx_license_expression: Apache-2.0
+        license_expression_spdx: Apache-2.0
         from_file:
         start_line: '190'
         end_line: 203

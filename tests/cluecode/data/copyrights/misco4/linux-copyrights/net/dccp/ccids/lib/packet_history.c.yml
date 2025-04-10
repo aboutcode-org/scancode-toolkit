@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2007 The University of Aberdeen, Scotland, UK
+  - Copyright (c) 2005-7 The University of Waikato, Hamilton, New Zealand. An
+  - Copyright (c) 2003 Nils-Erik Mattsson, Joacim Haggmark, Magnus Erixzon
+  - Copyright (c) 2005 Arnaldo Carvalho de Melo <acme@conectiva.com.br>
+holders:
+  - The University of Aberdeen, Scotland, UK
+  - The University of Waikato, Hamilton, New Zealand. An
+  - Nils-Erik Mattsson, Joacim Haggmark, Magnus Erixzon
+  - Arnaldo Carvalho de Melo
+authors:
+  - the University of Waikato WAND research group

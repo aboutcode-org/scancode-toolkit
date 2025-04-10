@@ -1,0 +1,10 @@
+{
+  "name": "create-athena-partition",
+  "private": true,
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "athena-express": "^6.0.4"
+  }
+}

@@ -1,0 +1,10 @@
+---
+license_expression: egenix-1.1.0
+is_license_notice: yes
+ignorable_urls:
+    - https://www.egenix.com/products/eGenix.com-Public-License-1.1.0.pdf
+---
+
+# This module is from and is
+# distributed under the terms of the {{eGenix.com Public License Agreement}}
+# https://www.egenix.com/products/eGenix.com-Public-License-1.1.0.pdf

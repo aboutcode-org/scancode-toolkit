@@ -7,6 +7,6 @@ referenced_filenames:
     - LICENSE-MIT.txt
 ---
 
-The files are licensed under the **MIT** license - see the [LICENSE-MIT](LICENSE-MIT.txt) file for details.
+The files are {{licensed under the **MIT}}** license - see the [{{LICENSE-MIT}}](LICENSE-MIT.txt) file for details.
 
 These files contain the following tag instead of the full license text:

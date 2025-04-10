@@ -45,11 +45,11 @@ class HaxelibJsonHandler(models.DatafileHandler):
     documentation_url = 'https://lib.haxe.org/documentation/creating-a-haxelib-package/'
 
     @classmethod
-    def _parse(cls, json_data):
+    def _parse(cls, json_data, package_only=False):
         name = json_data.get('name')
         version = json_data.get('version')
 
-        package_data = models.PackageData(
+        package_mapping = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -60,6 +60,7 @@ class HaxelibJsonHandler(models.DatafileHandler):
             description=json_data.get('description'),
             primary_language=cls.default_primary_language,
         )
+        package_data = models.PackageData.from_data(package_mapping, package_only)
 
         if name and version:
             download_url = f'https://lib.haxe.org/p/{name}/{version}/download/'
@@ -79,19 +80,19 @@ class HaxelibJsonHandler(models.DatafileHandler):
 
         for dep_name, dep_version in json_data.get('dependencies', {}).items():
             dep_version = dep_version and dep_version.strip()
-            is_resolved = bool(dep_version)
+            is_pinned = bool(dep_version)
             dep_purl = PackageURL(
                 type=cls.default_package_type,
                 name=dep_name,
                 version=dep_version
             ).to_string()
-            dep = models.DependentPackage(purl=dep_purl, is_resolved=is_resolved,)
+            dep = models.DependentPackage(purl=dep_purl, is_pinned=is_pinned)
             package_data.dependencies.append(dep)
 
         return package_data
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package_data archive, manifest or similar.
@@ -111,4 +112,4 @@ class HaxelibJsonHandler(models.DatafileHandler):
         with io.open(location, encoding='utf-8') as loc:
             json_data = json.load(loc)
 
-        yield cls._parse(json_data)
+        yield cls._parse(json_data, package_only)

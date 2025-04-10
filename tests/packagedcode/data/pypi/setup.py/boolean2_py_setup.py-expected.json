@@ -54,39 +54,39 @@
         "license_expression_spdx": "BSD-3-Clause",
         "matches": [
           {
-            "score": 90.0,
+            "license_expression": "bsd-new",
+            "license_expression_spdx": "BSD-3-Clause",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 3,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "bsd-new",
-            "spdx_license_expression": "BSD-3-Clause",
+            "rule_relevance": 100,
             "rule_identifier": "bsd-new_708.RULE",
-            "rule_relevance": 90,
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_708.RULE",
             "matched_text": "revised BSD license"
           }
         ],
-        "identifier": "bsd_new-9d4149ba-60ed-9e49-34a8-20576feb3295"
+        "identifier": "bsd_new-98c737b4-e505-9919-75a7-94b39533f450"
       },
       {
         "license_expression": "bsd-new",
         "license_expression_spdx": "BSD-3-Clause",
         "matches": [
           {
-            "score": 99.0,
+            "license_expression": "bsd-new",
+            "license_expression_spdx": "BSD-3-Clause",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 99.0,
             "matched_length": 5,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "bsd-new",
-            "spdx_license_expression": "BSD-3-Clause",
-            "rule_identifier": "pypi_bsd_license.RULE",
             "rule_relevance": 99,
+            "rule_identifier": "pypi_bsd_license.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_bsd_license.RULE",
             "matched_text": "- 'License :: OSI Approved :: BSD License'"
           }
@@ -101,6 +101,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": "https://pypi.org/project/boolean.py",

@@ -70,6 +70,7 @@ if TRACE:
             return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 MATCHER_UNDETECTED = '5-undetected'
+MATCHER_UNDETECTED_ORDER = 4
 
 # All values of match_coverage less than this value then they are not considered
 # as perfect detections
@@ -259,8 +260,6 @@ class LicenseDetection:
         return detection
 
     def spdx_license_expression(self):
-        from licensedcode.cache import build_spdx_license_expression
-        from licensedcode.cache import get_cache
         return str(build_spdx_license_expression(
             license_expression=self.license_expression,
             licensing=get_cache().licensing,
@@ -333,6 +332,25 @@ class LicenseDetection:
         """
         id_safe_expression = python_safe_name(s=str(self.license_expression))
         return "{}-{}".format(id_safe_expression, self._identifier)
+
+    @property
+    def is_unknown(self):
+        """
+        Return True if there are unknown license keys in the license expression
+        for this detection, return False otherwise.
+        """
+        unknown_license_keys = [
+            "unknown-license-reference",
+            "unknown-spdx",
+            "unknown",
+            "free-unknown"
+        ]
+
+        for license_key in unknown_license_keys:
+            if license_key in self.license_expression:
+                return True
+
+        return False
 
     def get_start_end_line(self):
         """
@@ -622,7 +640,6 @@ class LicenseMatchFromResult(LicenseMatch):
     def coverage(self):
         return self.match_coverage
 
-    @property
     def matched_text(self, whole_lines=False, highlight=True):
         return self.text
 
@@ -694,8 +711,8 @@ class LicenseMatchFromResult(LicenseMatch):
         if rule_details:
             result["rule_notes"] = self.rule.notes
             result["referenced_filenames"] = self.rule.referenced_filenames
-        if include_text and self.matched_text:
-            result['matched_text'] = self.matched_text
+        if include_text and self.text:
+            result['matched_text'] = self.text
         if license_text_diagnostics and self.matched_text_diagnostics:
             result['matched_text_diagnostics'] = self.matched_text_diagnostics
         if rule_details:
@@ -1144,6 +1161,31 @@ def is_false_positive(license_matches, package_license=False):
     if package_license:
         return False
 
+    # FIXME: actually run copyright detection here?
+    copyright_words = ["copyright", "(c)"]
+    has_copyrights = all(
+        True
+        for license_match in license_matches
+        if any(
+            True
+            for word in copyright_words
+            if word in license_match.matched_text().lower()
+        ) 
+    )
+    has_full_relevance = all(
+        True
+        for license_match in license_matches
+        if license_match.rule.relevance == 100
+    )
+    if has_copyrights or has_full_relevance:
+        return False
+
+    has_low_relevance = all(
+        True
+        for license_match in license_matches
+        if license_match.rule.relevance < 60
+    )
+
     start_line_region = min(
         license_match.start_line for license_match in license_matches
     )
@@ -1175,13 +1217,13 @@ def is_false_positive(license_matches, package_license=False):
 
     is_single_match = len(license_matches) == 1
 
-    if is_single_match and is_bare_rule:
+    if is_single_match and is_bare_rule and has_low_relevance:
         return True
 
     if is_gpl and all_match_rule_length_one:
         return True
 
-    if start_line_region > FALSE_POSITIVE_START_LINE_THRESHOLD and any(
+    if has_low_relevance and start_line_region > FALSE_POSITIVE_START_LINE_THRESHOLD and any(
         match_rule_length_value <= FALSE_POSITIVE_RULE_LENGTH_THRESHOLD
         for match_rule_length_value in match_rule_length_values
     ):
@@ -1354,6 +1396,61 @@ def has_references_to_local_files(license_matches):
         bool(match.rule.referenced_filenames)
         for match in license_matches
     )
+
+
+def use_referenced_license_expression(referenced_license_expression, license_detection, licensing=Licensing()):
+    """
+    Return True if the ``license_detection`` LicenseDetection should include
+    the matches represented by the ``referenced_license_expression`` string.
+    Return False otherwise.
+
+    Used when we have a ``license_detection`` with a match to a license rule like
+    "See license in COPYING" and where the ``referenced_license_expression`` is the
+    expression found in the "COPYING" file, which is the combined expression from
+    all license detections found in "COPYING" (or multiple referenced files).
+
+    Reference: https://github.com/nexB/scancode-toolkit/issues/3547
+    """
+    #TODO: Also determing if referenced matches could be added but
+    # resulting license expression should not be modified.
+
+    if not referenced_license_expression or not license_detection:
+        return False
+
+    # We should always include referenced license matches to resolve an unknown
+    # license reference
+    if license_detection.is_unknown:
+        return True
+    
+    # We should always include referenced license matches when the license
+    # expression from the referenced license matches match the license
+    # expression for the detection
+    if referenced_license_expression == license_detection.license_expression:
+        return True
+
+    license_keys = set(
+        licensing.license_keys(expression=license_detection.license_expression)
+    )
+    referenced_license_keys = set(
+        licensing.license_keys(expression=referenced_license_expression)
+    )
+    same_expression = referenced_license_expression == license_detection.license_expression
+    same_license_keys = license_keys == referenced_license_keys
+
+    # If we have the same license keys but not the same license expression then
+    # the reference could merely be pointing to notices, combining which produces
+    # a different expression, and the original detection is correct
+    if same_license_keys and not same_expression:
+        return False
+
+    # when there are many license keys in an expression, and there are no
+    # unknown or other cases, we cannot safely conclude that we should
+    # follow the license in the referenced filenames. This is likely
+    # a case where we have larger notices and several combined expressions,
+    if len(referenced_license_keys) > 5:
+        return False
+
+    return True
 
 
 def get_detected_license_expression(
@@ -1529,6 +1626,7 @@ def get_undetected_matches(query_string):
         hispan=hispan,
         query_run_start=match_start,
         matcher=MATCHER_UNDETECTED,
+        matcher_order=MATCHER_UNDETECTED_ORDER,
         query=query_run.query,
     )
 
@@ -1807,6 +1905,7 @@ def process_detections(detections, licensing=Licensing()):
                     for key in license_keys
                 ):
                     detection.license_expression = license_expression
+                    detection.license_expression_spdx = detection.spdx_license_expression()
                     detection.detection_log.append(DetectionRule.NOT_LICENSE_CLUES.value)
                     detection.identifier = detection.identifier_with_expression
 

@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1998 Ingo Molnar
+  - Copyright 2008 Freescale Semiconductor Inc.
+  - Copyright 2011 Michal Simek <monstr@monstr.eu>
+  - Copyright 2011 PetaLogix Qld Pty Ltd
+holders:
+  - Ingo Molnar
+  - Freescale Semiconductor Inc.
+  - Michal Simek
+  - PetaLogix Qld Pty Ltd

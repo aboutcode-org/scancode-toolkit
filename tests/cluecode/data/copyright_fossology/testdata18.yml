@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2002 Tim Jansen
+  - Copyright (c) 2000, 2001 Const Kaplinsky
+  - Copyright (c) 2000 Tridia Corporation
+  - Copyright (c) 1999 AT&T Laboratories Cambridge
+holders:
+  - Tim Jansen
+  - Const Kaplinsky
+  - Tridia Corporation
+  - AT&T Laboratories Cambridge

@@ -1,0 +1,9 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) by Jaroslav Kysela <perex@perex.cz> Abramo Bagnara <abramo@alsa-project.org>
+    Cirrus Logic, Inc. Routines
+holders:
+  - Jaroslav Kysela Abramo Bagnara Cirrus Logic, Inc. Routines

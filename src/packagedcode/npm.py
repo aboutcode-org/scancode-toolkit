@@ -8,10 +8,12 @@
 #
 import base64
 import io
+import fnmatch
 import os
 import logging
 import json
 import re
+import sys
 import urllib.parse
 from functools import partial
 from itertools import islice
@@ -22,6 +24,9 @@ from packagedcode import models
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
+from packagedcode.utils import update_dependencies_as_resolved
+from packagedcode.utils import is_simple_path
+from packagedcode.utils import is_simple_path_pattern
 import saneyaml
 
 """
@@ -35,8 +40,10 @@ To check https://github.com/npm/normalize-package-data
 
 
 SCANCODE_DEBUG_PACKAGE = os.environ.get('SCANCODE_DEBUG_PACKAGE', False)
+SCANCODE_DEBUG_PACKAGE_NPM = os.environ.get('SCANCODE_DEBUG_PACKAGE_NPM', False)
 
 TRACE = SCANCODE_DEBUG_PACKAGE
+TRACE_NPM = SCANCODE_DEBUG_PACKAGE_NPM
 
 
 def logger_debug(*args):
@@ -45,8 +52,7 @@ def logger_debug(*args):
 
 logger = logging.getLogger(__name__)
 
-if TRACE:
-    import sys
+if TRACE or TRACE_NPM:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
@@ -62,6 +68,15 @@ if TRACE:
 
 
 class BaseNpmHandler(models.DatafileHandler):
+
+    lockfile_names = {
+        'package-lock.json',
+        '.package-lock.json',
+        'npm-shrinkwrap.json',
+        'yarn.lock',
+        'shrinkwrap.yaml',
+        'pnpm-lock.yaml'
+    }
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -79,30 +94,91 @@ class BaseNpmHandler(models.DatafileHandler):
         If there is no package.json, we do not have a package instance. In this
         case, we yield each of the dependencies in each lock file.
         """
-        lockfile_names = {
-            'package-lock.json',
-            '.package-lock.json',
-            'npm-shrinkwrap.json',
-            'yarn.lock',
-        }
 
         package_resource = None
         if resource.name == 'package.json':
             package_resource = resource
-        elif resource.name in lockfile_names:
+        elif resource.name in cls.lockfile_names:
             if resource.has_parent():
                 siblings = resource.siblings(codebase)
                 package_resource = [r for r in siblings if r.name == 'package.json']
                 if package_resource:
                     package_resource = package_resource[0]
 
-        if package_resource:
-            assert len(package_resource.package_data) == 1, f'Invalid package.json for {package_resource.path}'
-            pkg_data = package_resource.package_data[0]
-            pkg_data = models.PackageData.from_dict(pkg_data)
+        if not package_resource:
+            # we do not have a package.json
+            yield from yield_dependencies_from_package_resource(resource)
+            return
 
-            # do we have enough to create a package?
-            if pkg_data.purl:
+        if codebase.has_single_resource:
+            yield from models.DatafileHandler.assemble(package_data, resource, codebase, package_adder)
+            return
+
+        # We do not have any package data detected here
+        if not package_resource.package_data:
+            return
+
+        assert len(package_resource.package_data) == 1, f'Invalid package.json for {package_resource.path}'
+        pkg_data = package_resource.package_data[0]
+        pkg_data = models.PackageData.from_dict(pkg_data)
+
+        workspace_root = package_resource.parent(codebase)
+        workspace_root_path = None
+        if workspace_root:
+            workspace_root_path = package_resource.parent(codebase).path
+        workspaces = pkg_data.extra_data.get('workspaces') or []
+
+        # Also look for pnpm workspaces
+        pnpm_workspace = None
+        if not workspaces and workspace_root:
+            pnpm_workspace_path = os.path.join(workspace_root_path, 'pnpm-workspace.yaml')
+            pnpm_workspace = codebase.get_resource(path=pnpm_workspace_path)
+            if pnpm_workspace:
+                pnpm_workspace_pkg_data = pnpm_workspace.package_data
+                if pnpm_workspace_pkg_data:
+                    workspace_package = pnpm_workspace_pkg_data[0]
+                    extra_data = workspace_package.get('extra_data')
+                    workspaces = extra_data.get('workspaces')
+
+        workspace_members = cls.get_workspace_members(
+            workspaces=workspaces,
+            codebase=codebase,
+            workspace_root_path=workspace_root_path,
+        )
+
+        cls.update_workspace_members(workspace_members, codebase)
+
+        # do we have enough to create a package?
+        if pkg_data.purl and not workspaces:
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=package_resource.path,
+            )
+            package_uid = package.package_uid
+
+            package.populate_license_fields()
+
+            # Always yield the package resource in all cases and first!
+            yield package
+
+            if workspace_root:
+                for npm_res in cls.walk_npm(resource=workspace_root, codebase=codebase):
+                    if package_uid and package_uid not in npm_res.for_packages:
+                        package_adder(package_uid, npm_res, codebase)
+                    yield npm_res
+            yield package_resource
+
+        elif workspaces:
+            yield from cls.create_packages_from_workspaces(
+                workspace_members=workspace_members,
+                workspace_root=workspace_root,
+                codebase=codebase,
+                package_adder=package_adder,
+                pnpm=pnpm_workspace and pkg_data.purl,
+            )
+
+            package_uid = None
+            if pnpm_workspace and pkg_data.purl:
                 package = models.Package.from_package_data(
                     package_data=pkg_data,
                     datafile_path=package_resource.path,
@@ -114,37 +190,100 @@ class BaseNpmHandler(models.DatafileHandler):
                 # Always yield the package resource in all cases and first!
                 yield package
 
-                root = package_resource.parent(codebase)
-                if root:
-                    for npm_res in cls.walk_npm(resource=root, codebase=codebase):
-                        if package_uid and package_uid not in npm_res.for_packages:
+                if workspace_root:
+                    for npm_res in cls.walk_npm(resource=workspace_root, codebase=codebase):
+                        if package_uid and not npm_res.for_packages:
                             package_adder(package_uid, npm_res, codebase)
                         yield npm_res
-                elif codebase.has_single_resource:
-                    if package_uid and package_uid not in package_resource.for_packages:
-                        package_adder(package_uid, package_resource, codebase)
                 yield package_resource
 
-            else:
-                # we have no package, so deps are not for a specific package uid
-                package_uid = None
-
-            # in all cases yield possible dependencies
-            yield from yield_dependencies_from_package_data(pkg_data, package_resource.path, package_uid)
-
-            # we yield this as we do not want this further processed
-            yield package_resource
-
-            for lock_file in package_resource.siblings(codebase):
-                if lock_file.name in lockfile_names:
-                    yield from yield_dependencies_from_package_resource(lock_file, package_uid)
-
-                    if package_uid and package_uid not in lock_file.for_packages:
-                        package_adder(package_uid, lock_file, codebase)
-                    yield lock_file
         else:
-            # we do not have a package.json
-            yield from yield_dependencies_from_package_resource(resource)
+            # we have no package, so deps are not for a specific package uid
+            package_uid = None
+
+        yield from cls.yield_npm_dependencies_and_resources(
+            package_resource=package_resource,
+            package_data=pkg_data,
+            package_uid=package_uid,
+            codebase=codebase,
+            package_adder=package_adder,
+        )
+
+    @classmethod
+    def yield_npm_dependencies_and_resources(cls, package_resource, package_data, package_uid, codebase, package_adder):
+
+        # in all cases yield possible dependencies
+        yield from yield_dependencies_from_package_data(package_data, package_resource.path, package_uid)
+
+        # we yield this as we do not want this further processed
+        yield package_resource
+
+        for lock_file in package_resource.siblings(codebase):
+            if lock_file.name in cls.lockfile_names:
+                yield from yield_dependencies_from_package_resource(lock_file, package_uid)
+
+                if package_uid and package_uid not in lock_file.for_packages:
+                    package_adder(package_uid, lock_file, codebase)
+                yield lock_file
+
+    @classmethod
+    def create_packages_from_workspaces(
+        cls,
+        workspace_members,
+        workspace_root,
+        codebase,
+        package_adder,
+        pnpm=False,
+    ):
+
+        workspace_package_uids = []
+        for workspace_member in workspace_members:
+            if not workspace_member.package_data:
+                continue
+
+            pkg_data = workspace_member.package_data[0]
+            pkg_data = models.PackageData.from_dict(pkg_data)
+
+            package = models.Package.from_package_data(
+                package_data=pkg_data,
+                datafile_path=workspace_member.path,
+            )
+            package_uid = package.package_uid
+            workspace_package_uids.append(package_uid)
+
+            package.populate_license_fields()
+
+            # Always yield the package resource in all cases and first!
+            yield package
+
+            member_root = workspace_member.parent(codebase)
+            package_adder(package_uid, member_root, codebase)
+            for npm_res in cls.walk_npm(resource=member_root, codebase=codebase):
+                if package_uid and package_uid not in npm_res.for_packages:
+                    package_adder(package_uid, npm_res, codebase)
+                yield npm_res
+
+            yield from cls.yield_npm_dependencies_and_resources(
+                package_resource=workspace_member,
+                package_data=pkg_data,
+                package_uid=package_uid,
+                codebase=codebase,
+                package_adder=package_adder,
+            )
+
+        # All resources which are not part of a workspace package exclusively
+        # are a part of all packages (this is skipped if we have a root pnpm
+        # package)
+        if pnpm:
+            return
+        for npm_res in cls.walk_npm(resource=workspace_root, codebase=codebase):
+            if npm_res.for_packages:
+                continue
+
+            for package_uid in workspace_package_uids:
+                package_adder(package_uid, npm_res, codebase)
+
+            npm_res.save(codebase)
 
     @classmethod
     def walk_npm(cls, resource, codebase, depth=0):
@@ -167,6 +306,200 @@ class BaseNpmHandler(models.DatafileHandler):
                 for subchild in cls.walk_npm(child, codebase, depth=depth):
                     yield subchild
 
+    @classmethod
+    def update_dependencies_by_purl(
+        cls,
+        dependencies,
+        scope,
+        dependencies_by_purl,
+        is_runtime=False,
+        is_optional=False,
+        is_pinned=False,
+        is_direct=True,
+    ):
+        """
+        Update the `dependencies_by_purl` mapping (which contains the cumulative
+        dependencies for a package metadata) from a list of `dependencies` which
+        have new dependencies or metadata for already existing dependencies.
+        """
+        # npm/pnpm Dependency scopes which contain metadata for dependencies
+        # see documentation below for more details
+        # https://docs.npmjs.com/cli/v10/configuring-npm/package-json#peerdependenciesmeta
+        # https://pnpm.io/package_json#dependenciesmeta
+        metadata_deps = ['peerDependenciesMeta', 'dependenciesMeta']
+
+        if isinstance(dependencies, list):
+            for subdep in dependencies:
+                sdns, _ , sdname = subdep.rpartition('/')
+                dep_purl = PackageURL(
+                    type=cls.default_package_type,
+                    namespace=sdns,
+                    name=sdname
+                ).to_string()
+                dep_package = models.DependentPackage(
+                    purl=dep_purl,
+                    scope=scope,
+                    is_runtime=is_runtime,
+                    is_optional=is_optional,
+                    is_pinned=is_pinned,
+                    is_direct=is_direct,
+                )
+                dependencies_by_purl[dep_purl] = dep_package
+
+        elif isinstance(dependencies, dict):
+            for subdep, metadata in dependencies.items():
+                sdns, _ , sdname = subdep.rpartition('/')
+                dep_purl = PackageURL(
+                    type=cls.default_package_type,
+                    namespace=sdns,
+                    name=sdname
+                ).to_string()
+
+                if scope in metadata_deps :
+                    dep_package = dependencies_by_purl.get(dep_purl)
+                    if dep_package:
+                        dep_package.is_optional = metadata.get("optional")
+                    else:
+                        dep_package = models.DependentPackage(
+                            purl=dep_purl,
+                            scope=scope,
+                            is_runtime=is_runtime,
+                            is_optional=metadata.get("optional"),
+                            is_pinned=is_pinned,
+                            is_direct=is_direct,
+                        )
+                        dependencies_by_purl[dep_purl] = dep_package
+                    continue
+
+                # pnpm has peer dependencies also sometimes in version?
+                # dependencies:
+                #   '@react-spring/animated': 9.5.5_react@18.2.0
+                # TODO: store this relation too?
+                requirement = metadata
+                if 'pnpm' in cls.datasource_id:
+                    if '_' in metadata:
+                        requirement, _extra = metadata.split('_')
+
+                if ':' in requirement and '@' in requirement:
+                    # dependencies with requirements like this are aliases and should be reported
+                    aliased_package, _, constraint = requirement.rpartition('@')
+                    _, _, aliased_package_name = aliased_package.rpartition(':')
+                    sdns, _ , sdname = aliased_package_name.rpartition('/')
+                    dep_purl = PackageURL(
+                        type=cls.default_package_type,
+                        namespace=sdns,
+                        name=sdname
+                    ).to_string()
+                    requirement = constraint
+
+                dep_package = models.DependentPackage(
+                    purl=dep_purl,
+                    scope=scope,
+                    extracted_requirement=requirement,
+                    is_runtime=is_runtime,
+                    is_optional=is_optional,
+                    is_pinned=is_pinned,
+                    is_direct=is_direct,
+                )
+                dependencies_by_purl[dep_purl] = dep_package
+
+    @classmethod
+    def get_workspace_members(cls, workspaces, codebase, workspace_root_path):
+        """
+        Given the workspaces, a list of paths/glob path patterns for npm
+        workspaces present in package.json, the codebase, and the
+        workspace_root_path, which is the parent directory of the
+        package.json which contains the workspaces, get a list of
+        workspace member package.json resources.
+        """
+
+        workspace_members = []
+
+        for workspace_path in workspaces:
+
+            # Case 1: A definite path, instead of a pattern (only one package.json)
+            if is_simple_path(workspace_path):
+                workspace_dir_path = os.path.join(workspace_root_path, workspace_path)
+                workspace_member_path = os.path.join(workspace_dir_path, 'package.json')
+                workspace_member = codebase.get_resource(path=workspace_member_path)
+                if workspace_member and workspace_member.package_data:
+                    workspace_members.append(workspace_member)
+
+            # Case 2: we have glob path which is a directory, relative to the workspace root
+            # Here we have only one * at the last (This is an optimization, this is a very
+            # commonly encountered subcase of case 3)
+            elif is_simple_path_pattern(workspace_path):
+                workspace_pattern_prefix = workspace_path.rstrip('*')
+                workspace_dir_path = os.path.join(workspace_root_path, workspace_pattern_prefix)
+                workspace_search_dir = codebase.get_resource(path=workspace_dir_path)
+                if not workspace_search_dir:
+                    continue
+
+                for resource in workspace_search_dir.walk(codebase):
+                    if resource.package_data and NpmPackageJsonHandler.is_datafile(
+                        location=resource.location,
+                    ):
+                        workspace_members.append(resource)
+
+            # Case 3: This is a complex glob pattern, we are doing a full codebase walk
+            # and glob matching each resource
+            else:
+                workspace_root = codebase.get_resource(path=workspace_root_path)
+                for resource in workspace_root.walk(codebase):
+                    if NpmPackageJsonHandler.is_datafile(resource.location) and fnmatch.fnmatch(
+                        name=resource.location, pat=workspace_path,
+                    ):
+                        workspace_members.append(resource)
+
+        return workspace_members
+
+    @classmethod
+    def update_workspace_members(cls, workspace_members, codebase):
+        """
+        Update all version requirements referencing workspace level
+        package versions with data from all the `workspace_members`.
+        Example: "ruru-components@workspace:^"
+        """
+        # Collect info needed from all workspace member
+        workspace_package_versions_by_base_purl = {}
+        workspace_dependencies_by_base_purl = {}
+        for workspace_manifest in workspace_members:
+            workspace_package_data = workspace_manifest.package_data[0]
+
+            dependencies = workspace_package_data.get('dependencies')
+            for dependency in dependencies:
+                dep_purl = dependency.get('purl')
+                workspace_dependencies_by_base_purl[dep_purl] = dependency
+
+            is_private = workspace_package_data.get("is_private")
+            package_url = workspace_package_data.get('purl')
+            if is_private or not package_url:
+                continue
+
+            purl = PackageURL.from_string(package_url)
+            base_purl = PackageURL(
+                type=purl.type,
+                namespace=purl.namespace,
+                name=purl.name,
+            ).to_string()
+
+            version = workspace_package_data.get('version')
+            if purl and version:
+                workspace_package_versions_by_base_purl[base_purl] = version
+
+        # Update workspace member package information from
+        # workspace level data
+        for base_purl, dependency in workspace_dependencies_by_base_purl.items():
+            extracted_requirement = dependency.get('extracted_requirement')
+            if 'workspace' in extracted_requirement:
+                version = workspace_package_versions_by_base_purl.get(base_purl)
+                if version:
+                    new_requirement = extracted_requirement.replace('workspace', version)
+                    dependency['extracted_requirement'] = new_requirement
+
+        for member in workspace_members:
+            member.save(codebase)
+
 
 def get_urls(namespace, name, version, **kwargs):
     return dict(
@@ -185,7 +518,7 @@ class NpmPackageJsonHandler(BaseNpmHandler):
     documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-json'
 
     @classmethod
-    def _parse(cls, json_data):
+    def _parse(cls, json_data, package_only=False):
         name = json_data.get('name')
         version = json_data.get('version')
         homepage_url = json_data.get('homepage', '')
@@ -199,8 +532,12 @@ class NpmPackageJsonHandler(BaseNpmHandler):
 
         namespace, name = split_scoped_package_name(name)
 
-        urls = get_urls(namespace, name, version)
-        package = models.PackageData(
+        is_private = json_data.get('private') or False
+        if is_private:
+            urls = {}
+        else:
+            urls = get_urls(namespace, name, version)
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -209,8 +546,10 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             version=version or None,
             description=json_data.get('description', '').strip() or None,
             homepage_url=homepage_url,
+            is_private=is_private,
             **urls,
         )
+        package = models.PackageData.from_data(package_data, package_only)
         vcs_revision = json_data.get('gitHead') or None
 
         # mapping of top level package.json items to a function accepting as
@@ -220,17 +559,26 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             ('author', partial(party_mapper, party_type='author')),
             ('contributors', partial(party_mapper, party_type='contributor')),
             ('maintainers', partial(party_mapper, party_type='maintainer')),
-
             ('dependencies', partial(deps_mapper, field_name='dependencies')),
             ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
             ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
             ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
             ('bundledDependencies', bundle_deps_mapper),
+            ('resolutions', partial(deps_mapper, field_name='resolutions')),
             ('repository', partial(vcs_repository_mapper, vcs_revision=vcs_revision)),
             ('keywords', keywords_mapper,),
             ('bugs', bugs_mapper),
             ('dist', dist_mapper),
         ]
+
+        extra_data = {}
+        extra_data_fields = ['workspaces', 'engines', 'packageManager']
+        for extra_data_field in extra_data_fields:
+            value = json_data.get(extra_data_field)
+            if value:
+                extra_data[extra_data_field] = value
+
+        package.extra_data = extra_data
 
         for source, func in field_mappers:
             value = json_data.get(source) or None
@@ -249,7 +597,8 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         lics = json_data.get('licenses')
         package = licenses_mapper(lic, lics, package)
 
-        package.populate_license_fields()
+        if not package_only:
+            package.populate_license_fields()
 
         if TRACE:
             logger_debug(f'NpmPackageJsonHandler: parse: package: {package.to_dict()}')
@@ -257,17 +606,17 @@ class NpmPackageJsonHandler(BaseNpmHandler):
         return package
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with io.open(location, encoding='utf-8') as loc:
             json_data = json.load(loc)
 
-        yield cls._parse(json_data)
+        yield cls._parse(json_data, package_only)
 
 
 class BaseNpmLockHandler(BaseNpmHandler):
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
 
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
@@ -280,7 +629,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
 
         extra_data = dict(lockfile_version=lockfile_version)
         # this is the top level element that we return
-        root_package_data = models.PackageData(
+        root_package_mapping = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
@@ -290,6 +639,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
             extra_data=extra_data,
             **get_urls(root_ns, root_name, root_version)
         )
+        root_package_data = models.PackageData.from_data(root_package_mapping, package_only)
 
         # https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json#lockfileversion
         if lockfile_version == 1:
@@ -299,6 +649,38 @@ class BaseNpmLockHandler(BaseNpmHandler):
             deps_key = 'packages'
 
         deps_mapping = package_data.get(deps_key) or {}
+
+        # Top level package metadata is present here
+        root_pkg = deps_mapping.get("")
+        if root_pkg:
+            pkg_name = root_pkg.get('name')
+            pkg_ns, _ , pkg_name = pkg_name.rpartition('/')
+            pkg_version = root_pkg.get('version')
+            pkg_purl = PackageURL(
+                type=cls.default_package_type,
+                namespace=pkg_ns,
+                name=pkg_name,
+                version=pkg_version,
+            ).to_string()
+            if pkg_purl != root_package_data.purl:
+                if TRACE_NPM:
+                    logger_debug(f'BaseNpmLockHandler: parse: purl mismatch: {pkg_purl} vs {root_package_data.purl}')
+            else:
+                extracted_license_statement = root_pkg.get('license')
+                if extracted_license_statement:
+                    root_package_data.extracted_license_statement = extracted_license_statement
+                    root_package_data.populate_license_fields()
+
+                deps_mapper(
+                    deps=root_pkg.get('devDependencies') or {},
+                    package=root_package_data,
+                    field_name='devDependencies',
+                )
+                deps_mapper(
+                    deps=root_pkg.get('optionalDependencies') or {},
+                    package=root_package_data,
+                    field_name='optionalDependencies',
+                )
 
         dependencies = []
 
@@ -318,7 +700,7 @@ class BaseNpmLockHandler(BaseNpmHandler):
             if not dep:
                 # in v2 format the first dep is the same as the top level
                 # package and has no name
-                pass
+                continue
 
             # only present for first top level
             # otherwise get name from dep
@@ -346,11 +728,9 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=True,
+                is_pinned=True,
+                is_direct=False,
             )
-
-            # only seen in v2 for the top level package... but good to keep
-            extracted_license_statement = dep_data.get('license')
 
             # URLs and checksums
             misc = get_urls(ns, name, version)
@@ -359,16 +739,17 @@ class BaseNpmLockHandler(BaseNpmHandler):
             integrity = dep_data.get('integrity')
             misc.update(get_algo_hexsum(integrity).items())
 
-            resolved_package = models.PackageData(
+            resolved_package_mapping = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
                 primary_language=cls.default_primary_language,
                 namespace=ns,
                 name=name,
                 version=version,
-                extracted_license_statement=extracted_license_statement,
                 **misc,
+                is_virtual=True,
             )
+            resolved_package = models.PackageData.from_data(resolved_package_mapping, package_only)
             # these are paths t the root of the installed package in v2
             if dep:
                 resolved_package.file_references = [models.FileReference(path=dep)],
@@ -376,13 +757,11 @@ class BaseNpmLockHandler(BaseNpmHandler):
             # v1 as name/constraint pairs
             subrequires = dep_data.get('requires') or {}
 
-            # in v1 these are further nested dependencies
+            # in v1 these are further nested dependencies (TODO: handle these with tests)
             # in v2 these are name/constraint pairs like v1 requires
             subdependencies = dep_data.get('dependencies')
 
             # v2? ignored for now
-            dev_subdependencies = dep_data.get('devDependencies')
-            optional_subdependencies = dep_data.get('optionalDependencies')
             engines = dep_data.get('engines')
             funding = dep_data.get('funding')
 
@@ -392,28 +771,25 @@ class BaseNpmLockHandler(BaseNpmHandler):
                 subdeps_data = subdependencies
             subdeps_data = subdeps_data or {}
 
-            sub_deps = []
-            for subdep, subdep_req in subdeps_data.items():
-                sdns, _ , sdname = subdep.rpartition('/')
-                sdpurl = PackageURL(
-                    type=cls.default_package_type,
-                    namespace=sdns,
-                    name=sdname
-                ).to_string()
-                sub_deps.append(
-                    models.DependentPackage(
-                        purl=sdpurl,
-                        scope=scope,
-                        extracted_requirement=subdep_req,
-                        is_runtime=is_runtime,
-                        is_optional=is_optional,
-                        is_resolved=False,
-                    )
-                )
-            resolved_package.dependencies = sub_deps
-            dependency.resolved_package = resolved_package.to_dict()
-            dependencies.append(dependency)
+            sub_deps_by_purl = {}
+            cls.update_dependencies_by_purl(
+                dependencies=subdeps_data,
+                scope=scope,
+                dependencies_by_purl=sub_deps_by_purl,
+                is_runtime=is_runtime,
+                is_optional=is_optional,
+                is_pinned=False,
+                is_direct=True,
+            )
 
+            resolved_package.dependencies = [
+                sub_dep.to_dict()
+                for sub_dep in sub_deps_by_purl.values()
+            ]
+            dependency.resolved_package = resolved_package.to_dict()
+            dependencies.append(dependency.to_dict())
+
+        update_dependencies_as_resolved(dependencies=dependencies)
         root_package_data.dependencies = dependencies
 
         yield root_package_data
@@ -429,6 +805,7 @@ class NpmPackageLockJsonHandler(BaseNpmLockHandler):
     )
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'npm package-lock.json lockfile'
     documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json'
 
@@ -438,6 +815,7 @@ class NpmShrinkwrapJsonHandler(BaseNpmLockHandler):
     path_patterns = ('*/npm-shrinkwrap.json',)
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'npm shrinkwrap.json lockfile'
     documentation_url = 'https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json'
 
@@ -482,6 +860,7 @@ class YarnLockV2Handler(BaseNpmHandler):
     path_patterns = ('*/yarn.lock',)
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'yarn.lock lockfile v2 format'
     documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
 
@@ -490,7 +869,7 @@ class YarnLockV2Handler(BaseNpmHandler):
         return super().is_datafile(location, filetypes=filetypes) and is_yarn_v2(location)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Parse a bew yarn.lock v2 YAML format which looks like this:
 
@@ -525,7 +904,8 @@ class YarnLockV2Handler(BaseNpmHandler):
                 version=version,
             )
 
-            # TODO: add resolved_package with its own deps
+            # TODO: what type of checksum is this? ... this is a complex one
+            # See https://github.com/yarnpkg/berry/blob/f1edfae49d1bab7679ce3061e2749113dc3b80e8/packages/yarnpkg-core/sources/tgzUtils.ts
             checksum = details.get('checksum')
             dependencies = details.get('dependencies') or {}
             peer_dependencies = details.get('peerDependencies') or {}
@@ -533,24 +913,63 @@ class YarnLockV2Handler(BaseNpmHandler):
             # these are file references
             bin = details.get('bin') or []
 
-            dependency = models.DependentPackage(
-                    purl=str(purl),
-                    extracted_requirement=version,
-                    is_resolved=True,
-                    # FIXME: these are NOT correct
-                    scope='dependencies',
-                    # TODO: get details  from metadata
-                    is_optional=False,
-                    is_runtime=True,
-                )
-            top_dependencies.append(dependency)
+            deps_for_resolved_by_purl = {}
+            cls.update_dependencies_by_purl(
+                dependencies=dependencies,
+                scope="dependencies",
+                dependencies_by_purl=deps_for_resolved_by_purl,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=peer_dependencies,
+                scope="peerDependencies",
+                dependencies_by_purl=deps_for_resolved_by_purl,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=dependencies_meta,
+                scope="dependenciesMeta",
+                dependencies_by_purl=deps_for_resolved_by_purl,
+            )
 
-        yield models.PackageData(
+            dependencies_for_resolved = [
+                dep_package.to_dict()
+                for dep_package in deps_for_resolved_by_purl.values()
+            ]
+
+            resolved_package_mapping = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                namespace=ns,
+                name=name,
+                version=version,
+                dependencies=dependencies_for_resolved,
+                is_virtual=True,
+            )
+            resolved_package = models.PackageData.from_data(resolved_package_mapping)
+
+            # These are top level dependencies which do not have a
+            # scope defined there, so we are assigning the default
+            # scope, this would be merged with the dependency having
+            # correct scope value when resolved
+            dependency = models.DependentPackage(
+                purl=str(purl),
+                extracted_requirement=version,
+                is_pinned=True,
+                resolved_package=resolved_package.to_dict(),
+                scope='dependencies',
+                is_optional=False,
+                is_runtime=True,
+            )
+            top_dependencies.append(dependency.to_dict())
+
+        update_dependencies_as_resolved(dependencies=top_dependencies)
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=top_dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 class YarnLockV1Handler(BaseNpmHandler):
@@ -561,6 +980,7 @@ class YarnLockV1Handler(BaseNpmHandler):
     path_patterns = ('*/yarn.lock',)
     default_package_type = 'npm'
     default_primary_language = 'JavaScript'
+    is_lockfile = True
     description = 'yarn.lock lockfile v1 format'
     documentation_url = 'https://classic.yarnpkg.com/lang/en/docs/yarn-lock/'
 
@@ -569,7 +989,7 @@ class YarnLockV1Handler(BaseNpmHandler):
         return super().is_datafile(location, filetypes=filetypes) and not is_yarn_v2(location)
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Parse a classic yarn.lock format which looks like this:
             "@babel/core@^7.1.0", "@babel/core@^7.3.4":
@@ -585,7 +1005,7 @@ class YarnLockV1Handler(BaseNpmHandler):
         with io.open(location, encoding='utf-8') as yl:
             yl_dependencies = yl.read().split('\n\n')
 
-        dependencies = []
+        dependencies_by_purl = {}
         for yl_dependency in yl_dependencies:
             lines = yl_dependency.splitlines(False)
             if all(l.startswith('#') or not l.strip() for l in lines):
@@ -607,7 +1027,16 @@ class YarnLockV1Handler(BaseNpmHandler):
                     # hosted-git-info "^2.1.4"
                     # semver "2 || 3 || 4 || 5"
                     ns_name, _, constraint = stripped.partition(' ')
+                    if '"' in ns_name:
+                        ns_name = ns_name.replace('"', '')
                     ns, _ , name = ns_name.rpartition('/')
+
+                    if ':' in constraint and '@' in constraint:
+                        # dependencies with requirements like this are aliases and should be reported
+                        aliased_package, _, constraint = constraint.rpartition('@')
+                        _, _, aliased_package_name = aliased_package.rpartition(':')
+                        ns, _ , name = aliased_package_name.rpartition('/')
+
                     sub_dependencies.append((ns, name, constraint,))
 
                 elif line.startswith(' ' * 2):
@@ -638,10 +1067,15 @@ class YarnLockV1Handler(BaseNpmHandler):
                         # <alias-package>@npm:<package>
                         if "@npm:" in ns:
                             ns = ns.split(':')[1]
+                        if "@npm:" in name:
+                            name = name.split(':')[1]
                         top_requirements.append((ns, name, constraint,))
 
                 else:
                     raise Exception('Inconsistent content')
+
+            if TRACE_NPM:
+                logger_debug(f'YarnLockV1Handler: parse: top_requirements: {top_requirements}')
 
             # top_requirements should be all for the same package
             ns_names = set([(ns, name) for ns, name, _constraint in top_requirements])
@@ -657,15 +1091,17 @@ class YarnLockV1Handler(BaseNpmHandler):
             misc.update(get_algo_hexsum(integrity).items())
 
             # we create a resolve package with the details
-            resolved_package_data = models.PackageData(
+            resolved_package_mapping = dict(
                 datasource_id=cls.datasource_id,
                 type=cls.default_package_type,
                 namespace=ns,
                 name=name,
                 version=version,
                 primary_language=cls.default_primary_language,
+                is_virtual=True,
                 **misc,
             )
+            resolved_package_data = models.PackageData.from_data(resolved_package_mapping, package_only)
 
             # we add the sub-deps to the resolved package
             for subns, subname, subconstraint in sub_dependencies:
@@ -678,35 +1114,307 @@ class YarnLockV1Handler(BaseNpmHandler):
                     scope='dependencies',
                     is_optional=False,
                     is_runtime=True,
+                    is_direct=True,
                 )
                 resolved_package_data.dependencies.append(subdep)
 
             # we create a purl with a version, since we are resolved
-            dep_purl = PackageURL(
+            dep_purl = str(PackageURL(
                 type=cls.default_package_type,
                 namespace=ns,
                 name=name,
                 version=version,
-            )
+            ))
 
             dep = models.DependentPackage(
-                purl=str(dep_purl),
+                purl=dep_purl,
                 extracted_requirement=extracted_requirement,
-                is_resolved=True,
+                is_pinned=True,
                 # FIXME: these are NOT correct
                 scope='dependencies',
                 is_optional=False,
                 is_runtime=True,
+                is_direct=False,
                 resolved_package=resolved_package_data.to_dict(),
             )
-            dependencies.append(dep)
 
-        yield models.PackageData(
+            if not dep_purl in dependencies_by_purl:
+                dependencies_by_purl[dep_purl] = dep.to_dict()
+            else:
+                # FIXME: We have duplicate dependencies because of aliases
+                # should we do something?
+                pass
+
+        dependencies = list(dependencies_by_purl.values())
+        update_dependencies_as_resolved(dependencies=dependencies)
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
         )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class UnknownPnpmLockFormat(Exception):
+    pass
+
+
+class BasePnpmLockHandler(BaseNpmHandler):
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        Parses and yields package dependencies for all lockfile versions
+        present in the spec: https://github.com/pnpm/spec/blob/master/lockfile/
+        """
+
+        with open(location) as yl:
+            lock_data = saneyaml.load(yl.read())
+
+        lockfile_version = lock_data.get("lockfileVersion")
+        is_shrinkwrap = False
+        if not lockfile_version:
+            lockfile_version = lock_data.get("shrinkwrapVersion")
+            lockfile_minor_version = lock_data.get("shrinkwrapMinorVersion")
+            if lockfile_minor_version:
+                lockfile_version = f"{lockfile_version}.{lockfile_minor_version}"
+            is_shrinkwrap = True
+
+        extra_data = {
+            "lockfileVersion": lockfile_version,
+        }
+        major_v, minor_v = lockfile_version.split(".")
+
+        resolved_packages = lock_data.get("packages", {})
+        dependency_relations = lock_data.get("snapshots", {})
+        dependency_relations_by_purl = {}
+        if dependency_relations:
+            for purl_fields, relations in dependency_relations.items():
+                clean_purl_fields = purl_fields.split("(")[0]
+                sections = clean_purl_fields.split("/")
+                namespace = None
+                if len(sections) == 2:
+                    namespace, name_version = sections
+                elif len(sections) == 1:
+                    name_version, = sections
+                name, version = name_version.split("@")
+
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=name,
+                    namespace=namespace,
+                    version=version,
+                ).to_string()
+                dependency_relations_by_purl[purl] = relations
+
+        dependencies_by_purl = {}
+
+        for purl_fields, data in resolved_packages.items():
+            if major_v == "6":
+                clean_purl_fields = purl_fields.split("(")[0]
+            elif major_v == "5" or is_shrinkwrap:
+                clean_purl_fields = purl_fields.split("_")[0]
+            elif major_v == "9":
+                clean_purl_fields = purl_fields
+            else:
+                message = f"Unknown pnpm lockfile format: {lockfile_version}"
+                raise UnknownPnpmLockFormat(message, purl_fields)
+
+            sections = clean_purl_fields.split("/")
+            name_version = None
+            namespace = None
+            if major_v == "6":
+                if len(sections) == 2:
+                    _, name_version = sections
+                elif len(sections) == 3:
+                    _, namespace, name_version = sections
+                elif len(sections) == 1:
+                    name_version, = sections
+
+                name, version = name_version.split("@")
+            elif major_v == "9":
+                if len(sections) == 2:
+                    namespace, name_version = sections
+                elif len(sections) == 1:
+                    name_version, = sections
+
+                name, version = name_version.split("@")
+            elif major_v == "5" or is_shrinkwrap:
+                if len(sections) == 3:
+                    _, name, version = sections
+                elif len(sections) == 4:
+                    _, namespace, name, version = sections
+
+            purl = PackageURL(
+                type=cls.default_package_type,
+                name=name,
+                namespace=namespace,
+                version=version,
+            ).to_string()
+
+            checksum = data.get('resolution') or {}
+            integrity = checksum.get('integrity')
+            misc = get_algo_hexsum(integrity)
+
+            dependencies = data.get('dependencies') or {}
+            optional_dependencies = data.get('optionalDependencies') or {}
+            transitive_peer_dependencies = data.get('transitivePeerDependencies') or []
+
+            if purl in dependency_relations_by_purl:
+                dependency_relations = dependency_relations_by_purl.get(purl)
+                if dependency_relations:
+                    deps = dependency_relations.get('dependencies')
+                    if deps:
+                        dependencies.update(deps)
+                    optional_deps = dependency_relations.get('optionalDependencies')
+                    if optional_deps:
+                        optional_dependencies.update(optional_deps)
+                    transitive_peer_deps = dependency_relations.get('transitivePeerDependencies')
+                    if transitive_peer_deps:
+                        transitive_peer_dependencies.extend(transitive_peer_deps)
+
+            peer_dependencies = data.get('peerDependencies') or {}
+            peer_dependencies_meta = data.get('peerDependenciesMeta') or {}
+
+            deps_for_resolved_by_purl = {}
+            cls.update_dependencies_by_purl(
+                dependencies=dependencies,
+                scope='dependencies',
+                dependencies_by_purl=deps_for_resolved_by_purl,
+                is_pinned=True,
+                is_direct=False,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=peer_dependencies,
+                scope='peerDependencies',
+                dependencies_by_purl=deps_for_resolved_by_purl,
+                is_optional=True,
+                is_direct=False,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=optional_dependencies,
+                scope='optionalDependencies',
+                dependencies_by_purl=deps_for_resolved_by_purl,
+                is_pinned=True,
+                is_optional=True,
+                is_direct=False,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=peer_dependencies_meta,
+                scope='peerDependenciesMeta',
+                dependencies_by_purl=deps_for_resolved_by_purl,
+            )
+            cls.update_dependencies_by_purl(
+                dependencies=transitive_peer_dependencies,
+                scope='transitivePeerDependencies',
+                dependencies_by_purl=deps_for_resolved_by_purl,
+            )
+
+            dependencies_for_resolved = [
+                dep_package.to_dict()
+                for dep_package in deps_for_resolved_by_purl.values()
+            ]
+
+            resolved_package_mapping = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                namespace=namespace,
+                name=name,
+                version=version,
+                dependencies=dependencies_for_resolved,
+                is_virtual=True,
+                **misc,
+            )
+            resolved_package = models.PackageData.from_data(resolved_package_mapping)
+
+            extra_data_fields = ["cpu", "os", "engines", "deprecated", "hasBin"]
+
+            is_dev = data.get("dev", False)
+            is_runtime = not is_dev
+            is_optional = data.get("optional", False)
+
+            extra_data_deps = {}
+            for key in extra_data_fields:
+                value = data.get(key, None)
+                if value is not None:
+                    extra_data_deps[key] = value
+
+            dependency_data = models.DependentPackage(
+                purl=purl,
+                is_optional=is_optional,
+                is_runtime=is_runtime,
+                is_pinned=True,
+                is_direct=True,
+                resolved_package=resolved_package.to_dict(),
+                extra_data=extra_data_deps,
+            )
+            dependencies_by_purl[purl] = dependency_data
+
+        dependencies = [
+            dep.to_dict()
+            for dep in dependencies_by_purl.values()
+        ]
+        update_dependencies_as_resolved(dependencies=dependencies)
+        root_package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            dependencies=dependencies,
+            extra_data=extra_data,
+        )
+        yield models.PackageData.from_data(root_package_data)
+
+
+class PnpmShrinkwrapYamlHandler(BasePnpmLockHandler):
+    datasource_id = 'pnpm_shrinkwrap_yaml'
+    path_patterns = ('*/shrinkwrap.yaml',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    is_lockfile = True
+    description = 'pnpm shrinkwrap.yaml lockfile'
+    documentation_url = 'https://github.com/pnpm/spec/blob/master/lockfile/4.md'
+
+
+class PnpmLockYamlHandler(BasePnpmLockHandler):
+    datasource_id = 'pnpm_lock_yaml'
+    path_patterns = ('*/pnpm-lock.yaml',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    is_lockfile = True
+    description = 'pnpm pnpm-lock.yaml lockfile'
+    documentation_url = 'https://github.com/pnpm/spec/blob/master/lockfile/6.0.md'
+
+
+class PnpmWorkspaceYamlHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'pnpm_workspace_yaml'
+    path_patterns = ('*/pnpm-workspace.yaml',)
+    default_package_type = 'npm'
+    default_primary_language = 'JavaScript'
+    description = 'pnpm workspace yaml file'
+    documentation_url = 'https://pnpm.io/pnpm-workspace_yaml'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        """
+        Parses and gets pnpm workspace locations from the file.
+        """
+        with open(location) as yl:
+            workspace_data = saneyaml.load(yl.read())
+
+        workspaces = workspace_data.get('packages')
+        if workspaces:
+            extra_data = {
+                'workspaces': workspaces,
+            }
+            root_package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                extra_data=extra_data,
+            )
+            yield models.PackageData.from_data(root_package_data)
 
 
 def get_checksum_and_url(url):
@@ -1096,7 +1804,7 @@ def bundle_deps_mapper(bundle_deps, package):
     return package
 
 
-def deps_mapper(deps, package, field_name):
+def deps_mapper(deps, package, field_name, is_direct=True):
     """
     Handle deps such as dependencies, devDependencies, peerDependencies, optionalDependencies
     return a tuple of (dep type, list of deps)
@@ -1105,11 +1813,13 @@ def deps_mapper(deps, package, field_name):
     https://docs.npmjs.com/files/package.json#devdependencies
     https://docs.npmjs.com/files/package.json#optionaldependencies
     """
+    #TODO: verify, merge and use logic at BaseNpmHandler.update_dependencies_by_purl
     npm_dependency_scopes_attributes = {
         'dependencies': dict(is_runtime=True, is_optional=False),
         'devDependencies': dict(is_runtime=False, is_optional=True),
         'peerDependencies': dict(is_runtime=True, is_optional=False),
         'optionalDependencies': dict(is_runtime=True, is_optional=True),
+        'resolutions': dict(is_runtime=True, is_optional=False, is_pinned=True),
     }
     dependencies = package.dependencies
 
@@ -1127,9 +1837,21 @@ def deps_mapper(deps, package, field_name):
             deps_by_name[npm_name] = d
 
     for fqname, requirement in deps.items():
+        # Handle cases in ``resolutions`` with ``**``
+        # "resolutions": {
+        #   "**/@typescript-eslint/eslint-plugin": "^4.1.1",
+        if fqname.startswith('**'):
+            fqname = fqname.replace('**', '')
         ns, name = split_scoped_package_name(fqname)
         if not name:
             continue
+
+        if ':' in requirement and '@' in requirement:
+            # dependencies with requirements like this are aliases and should be reported
+            aliased_package, _, requirement = requirement.rpartition('@')
+            _, _, aliased_package_name = aliased_package.rpartition(':')
+            ns, _ , name = aliased_package_name.rpartition('/')
+
         purl = PackageURL(type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name
@@ -1147,6 +1869,7 @@ def deps_mapper(deps, package, field_name):
                 purl=purl,
                 scope=field_name,
                 extracted_requirement=requirement,
+                is_direct=is_direct,
                 **dependency_attributes
             )
             dependencies.append(dep)

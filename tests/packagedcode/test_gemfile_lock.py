@@ -274,7 +274,7 @@ class TestGemfileLock(FileBasedTesting):
                 }
             }
         }
-        self.assertEqual(expected, a.as_nv_tree())
+        assert a.as_nv_tree() == expected
 
     def test_Gem_flatten(self):
         Gem = gemfile_lock.Gem
@@ -319,7 +319,6 @@ class TestGemfileLock(FileBasedTesting):
         expected = {('a', '1'): {}}
         results = a.as_nv_tree()
         assert results == expected
-
 
     def test_Gem_to_dict(self):
         Gem = gemfile_lock.Gem

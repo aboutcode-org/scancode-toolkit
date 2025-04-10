@@ -65,6 +65,8 @@ class TestModels(PackageTester):
             ('notice_text', None),
             ('source_packages', []),
             ('file_references', []),
+            ('is_private', False),
+            ('is_virtual', False),
             ('extra_data', {}),
             ('dependencies', []),
             ('repository_homepage_url', None),
@@ -76,7 +78,7 @@ class TestModels(PackageTester):
         assert list(pd.to_dict().items()) == expected
 
     def test_Package_simple(self):
-        package = PackageData(
+        package_mapping = dict(
             datasource_id = 'rpm_archive',
             type='rpm',
             name='Sample',
@@ -86,8 +88,20 @@ class TestModels(PackageTester):
             vcs_url='git+https://somerepo.com/that.git',
             extracted_license_statement='apache-2.0',
         )
+        package_data = PackageData.from_data(package_data=package_mapping, package_only=False)
         expected_loc = 'models/simple-expected.json'
-        self.check_package_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        self.check_package_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_PackageData_model_can_assemble(self):
+        package_jar = models.PackageData(
+            type='maven', name='this', version='23', datasource_id="java_jar",
+        )
+        package_pom = models.PackageData(
+            type='maven', name='this', version='23', datasource_id="maven_pom",
+        )
+
+        assert not package_jar.can_assemble
+        assert package_pom.can_assemble
 
     def test_Package_model_qualifiers_are_serialized_as_mappings(self):
         package = models.PackageData(
@@ -108,7 +122,7 @@ class TestModels(PackageTester):
         assert package.qualifiers == dict(this='that')
 
     def test_Package_full(self):
-        package = PackageData(
+        package_mapping = dict(
             type='rpm',
             datasource_id = 'rpm_archive',
             namespace='fedora',
@@ -136,8 +150,9 @@ class TestModels(PackageTester):
             notice_text='licensed under the apacche 2.0 \nlicense',
             source_packages=["pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"],
         )
+        package_data = PackageData.from_data(package_data=package_mapping, package_only=False)
         expected_loc = 'models/full-expected.json'
-        self.check_package_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+        self.check_package_data(package_data, expected_loc, regen=REGEN_TEST_FIXTURES)
 
     def test_package_data_datasource_id_are_unique(self):
         """
@@ -177,11 +192,12 @@ class TestModels(PackageTester):
 
     def test_add_to_package(self):
         test_loc = self.get_test_loc('npm/electron')
-        test_package = models.Package(
+        test_package_data = dict(
             type='npm',
             name='electron',
             version='3.1.11',
         )
+        test_package = models.Package.from_data(test_package_data)
         test_package_uid = test_package.package_uid
         test_codebase = Codebase(
             location=test_loc,
@@ -241,12 +257,13 @@ class TestModels(PackageTester):
             'gpl',
             'GNU General Public License version 2.0 (GPLv2)',
         ]
-        package = PackageData(
+        package_mapping = dict(
             type='sourceforge',
             name='openstunts',
             copyright='Copyright (c) openstunts project',
             extracted_license_statement=extracted_license_statement,
         )
+        package = PackageData.from_data(package_data=package_mapping, package_only=False)
         # Test generated fields
         assert package.purl == 'pkg:sourceforge/openstunts'
         assert package.holder == 'openstunts project'

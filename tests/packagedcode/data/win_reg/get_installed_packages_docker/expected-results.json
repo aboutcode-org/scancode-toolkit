@@ -31,6 +31,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -40,11 +41,12 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": null,
       "package_uid": "pkg:windows-program/Test@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "layer/Hives/Software_Delta"
@@ -85,6 +87,7 @@
       "code_view_url": null,
       "vcs_url": null,
       "copyright": null,
+      "holder": null,
       "declared_license_expression": null,
       "declared_license_expression_spdx": null,
       "license_detections": [],
@@ -94,11 +97,12 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": null,
       "repository_download_url": null,
       "api_data_url": null,
-      "holder": null,
       "package_uid": "pkg:windows-program/Test2@0.0.1?uuid=fixed-uid-done-for-testing-5642512d1758",
       "datafile_paths": [
         "layer/Hives/Software_Delta"
@@ -249,6 +253,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -287,13 +292,14 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "win_reg_installed_programs_docker_software_delta",
-          "holder": null,
           "purl": "pkg:windows-program/Test@0.0.1"
         },
         {
@@ -319,6 +325,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -329,13 +336,14 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "win_reg_installed_programs_docker_software_delta",
-          "holder": null,
           "purl": null
         },
         {
@@ -369,6 +377,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -407,13 +416,14 @@
               "extra_data": {}
             }
           ],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "win_reg_installed_programs_docker_software_delta",
-          "holder": null,
           "purl": "pkg:windows-program/Test2@0.0.1"
         },
         {
@@ -439,6 +449,7 @@
           "code_view_url": null,
           "vcs_url": null,
           "copyright": null,
+          "holder": null,
           "declared_license_expression": null,
           "declared_license_expression_spdx": null,
           "license_detections": [],
@@ -449,13 +460,14 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": null,
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "win_reg_installed_programs_docker_software_delta",
-          "holder": null,
           "purl": null
         }
       ],

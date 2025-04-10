@@ -5,10 +5,10 @@ declared_license_expression: qti-linux-firmware AND proprietary-license AND open
   AND (gpl-2.0 OR bsd-new) AND (gpl-2.0 OR bsd-new) AND bsd-new AND bsd-new AND bsd-new AND
   isc
 declared_license_expression_spdx: LicenseRef-scancode-qti-linux-firmware AND LicenseRef-scancode-proprietary-license
-  AND OpenSSL AND OpenSSL AND LicenseRef-scancode-openssl AND LicenseRef-scancode-ssleay-windows
-  AND Zlib AND Zlib AND LicenseRef-scancode-public-domain AND BSD-3-Clause AND LicenseRef-scancode-gary-s-brown
-  AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-public-domain-disclaimer
-  AND LicenseRef-scancode-public-domain-disclaimer AND (GPL-2.0-only OR BSD-3-Clause) AND (GPL-2.0-only
+  AND OpenSSL AND OpenSSL AND OpenSSL-standalone AND SSLeay-standalone AND Zlib AND Zlib AND
+  LicenseRef-scancode-public-domain AND BSD-3-Clause AND LicenseRef-scancode-gary-s-brown AND
+  LicenseRef-scancode-other-permissive AND LicenseRef-scancode-public-domain-disclaimer AND
+  LicenseRef-scancode-public-domain-disclaimer AND (GPL-2.0-only OR BSD-3-Clause) AND (GPL-2.0-only
   OR BSD-3-Clause) AND BSD-3-Clause AND BSD-3-Clause AND BSD-3-Clause AND ISC
 other_license_expression:
 other_license_expression_spdx:
@@ -17,7 +17,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-qti-linux-firmware
     matches:
       - license_expression: qti-linux-firmware
-        spdx_license_expression: LicenseRef-scancode-qti-linux-firmware
+        license_expression_spdx: LicenseRef-scancode-qti-linux-firmware
         from_file:
         start_line: 6
         end_line: 211
@@ -240,7 +240,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-proprietary-license
     matches:
       - license_expression: proprietary-license
-        spdx_license_expression: LicenseRef-scancode-proprietary-license
+        license_expression_spdx: LicenseRef-scancode-proprietary-license
         from_file:
         start_line: 231
         end_line: 234
@@ -261,7 +261,7 @@ license_detections:
     license_expression_spdx: OpenSSL
     matches:
       - license_expression: openssl-ssleay
-        spdx_license_expression: OpenSSL
+        license_expression_spdx: OpenSSL
         from_file:
         start_line: 240
         end_line: 244
@@ -279,7 +279,7 @@ license_detections:
             Open Source licenses. In case of any license issues related to OpenSSL
             please contact openssl-core@openssl.org.
       - license_expression: openssl-ssleay
-        spdx_license_expression: OpenSSL
+        license_expression_spdx: OpenSSL
         from_file:
         start_line: 246
         end_line: 246
@@ -293,10 +293,10 @@ license_detections:
         matched_text: OpenSSL License
     identifier: openssl_ssleay-cbfdb9fc-932d-b226-10aa-6aeea27f1ff9
   - license_expression: openssl
-    license_expression_spdx: LicenseRef-scancode-openssl
+    license_expression_spdx: OpenSSL-standalone
     matches:
       - license_expression: openssl
-        spdx_license_expression: LicenseRef-scancode-openssl
+        license_expression_spdx: OpenSSL-standalone
         from_file:
         start_line: 252
         end_line: 299
@@ -358,10 +358,10 @@ license_detections:
            * Hudson (tjh@cryptsoft.com).
     identifier: openssl-e1da0b01-fab9-e27d-4ff3-c4944b09b621
   - license_expression: ssleay-windows
-    license_expression_spdx: LicenseRef-scancode-ssleay-windows
+    license_expression_spdx: SSLeay-standalone
     matches:
       - license_expression: ssleay-windows
-        spdx_license_expression: LicenseRef-scancode-ssleay-windows
+        license_expression_spdx: SSLeay-standalone
         from_file:
         start_line: 309
         end_line: 360
@@ -430,7 +430,7 @@ license_detections:
     license_expression_spdx: Zlib
     matches:
       - license_expression: zlib
-        spdx_license_expression: Zlib
+        license_expression_spdx: Zlib
         from_file:
         start_line: 371
         end_line: 371
@@ -447,7 +447,7 @@ license_detections:
     license_expression_spdx: Zlib
     matches:
       - license_expression: zlib
-        spdx_license_expression: Zlib
+        license_expression_spdx: Zlib
         from_file:
         start_line: 380
         end_line: 396
@@ -481,7 +481,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain
     matches:
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 413
         end_line: 415
@@ -501,7 +501,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 439
         end_line: 461
@@ -541,7 +541,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-gary-s-brown
     matches:
       - license_expression: gary-s-brown
-        spdx_license_expression: LicenseRef-scancode-gary-s-brown
+        license_expression_spdx: LicenseRef-scancode-gary-s-brown
         from_file:
         start_line: 469
         end_line: 470
@@ -560,7 +560,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-other-permissive
     matches:
       - license_expression: other-permissive
-        spdx_license_expression: LicenseRef-scancode-other-permissive
+        license_expression_spdx: LicenseRef-scancode-other-permissive
         from_file:
         start_line: 514
         end_line: 519
@@ -583,7 +583,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain-disclaimer
     matches:
       - license_expression: public-domain-disclaimer
-        spdx_license_expression: LicenseRef-scancode-public-domain-disclaimer
+        license_expression_spdx: LicenseRef-scancode-public-domain-disclaimer
         from_file:
         start_line: 531
         end_line: 539
@@ -609,7 +609,7 @@ license_detections:
     license_expression_spdx: LicenseRef-scancode-public-domain-disclaimer
     matches:
       - license_expression: public-domain-disclaimer
-        spdx_license_expression: LicenseRef-scancode-public-domain-disclaimer
+        license_expression_spdx: LicenseRef-scancode-public-domain-disclaimer
         from_file:
         start_line: 549
         end_line: 564
@@ -642,7 +642,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-only OR BSD-3-Clause
     matches:
       - license_expression: gpl-2.0 OR bsd-new
-        spdx_license_expression: GPL-2.0-only OR BSD-3-Clause
+        license_expression_spdx: GPL-2.0-only OR BSD-3-Clause
         from_file:
         start_line: 580
         end_line: 587
@@ -667,7 +667,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-only OR BSD-3-Clause
     matches:
       - license_expression: gpl-2.0 OR bsd-new
-        spdx_license_expression: GPL-2.0-only OR BSD-3-Clause
+        license_expression_spdx: GPL-2.0-only OR BSD-3-Clause
         from_file:
         start_line: 594
         end_line: 601
@@ -692,7 +692,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 613
         end_line: 635
@@ -732,7 +732,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 646
         end_line: 668
@@ -772,7 +772,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 677
         end_line: 697
@@ -810,7 +810,7 @@ license_detections:
     license_expression_spdx: ISC
     matches:
       - license_expression: isc
-        spdx_license_expression: ISC
+        license_expression_spdx: ISC
         from_file:
         start_line: 705
         end_line: 715

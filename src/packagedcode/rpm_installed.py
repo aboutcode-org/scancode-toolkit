@@ -36,7 +36,7 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
 
-def parse_rpm_xmlish(location, datasource_id, package_type):
+def parse_rpm_xmlish(location, datasource_id, package_type, package_only=False):
     """
     Yield PackageData built from an RPM XML'ish file at ``location``. This is a file
     created with the rpm CLI with the xml query option.
@@ -58,6 +58,7 @@ def parse_rpm_xmlish(location, datasource_id, package_type):
             rpm_tags=tags,
             datasource_id=datasource_id,
             package_type=package_type,
+            package_only=package_only,
         )
 
 
@@ -133,7 +134,7 @@ def collect_tags(raw_tags):
         yield name, value_type, value
 
 
-def build_package(rpm_tags, datasource_id, package_type, package_namespace=None):
+def build_package(rpm_tags, datasource_id, package_type, package_namespace=None, package_only=False):
     """
     Return a PackageData object from an ``rpm_tags`` iterable of (name,
     value_type, value) tuples.
@@ -157,8 +158,12 @@ def build_package(rpm_tags, datasource_id, package_type, package_namespace=None)
             except Exception as e:
                 raise Exception(value, converted) from e
             converted.update(handled)
+    
+    current_filerefs = converted.get("current_filerefs", None)
+    if current_filerefs:
+        converted.pop("current_filerefs")
 
-    package_data = models.PackageData.from_dict(converted)
+    package_data = models.PackageData.from_data(converted, package_only)
     return package_data
 
 ################################################################################
@@ -183,7 +188,10 @@ def name_value_str_handler(name):
 
 
 def size_handler(value, **kwargs):
-    return {'size': int(value)}
+    if not value == '0':
+        return {'size': int(value)}
+    else:
+        return {'size': None}
 
 
 def arch_handler(value, **kwargs):

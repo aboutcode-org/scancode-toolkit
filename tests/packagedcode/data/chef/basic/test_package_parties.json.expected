@@ -38,17 +38,17 @@
       "license_expression_spdx": "LicenseRef-scancode-public-domain",
       "matches": [
         {
-          "score": 70.0,
+          "license_expression": "public-domain",
+          "license_expression_spdx": "LicenseRef-scancode-public-domain",
+          "from_file": null,
           "start_line": 1,
           "end_line": 1,
-          "from_file": null,
+          "matcher": "1-hash",
+          "score": 70.0,
           "matched_length": 2,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "public-domain",
-          "spdx_license_expression": "LicenseRef-scancode-public-domain",
-          "rule_identifier": "public-domain_bare_words.RULE",
           "rule_relevance": 70,
+          "rule_identifier": "public-domain_bare_words.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_bare_words.RULE",
           "matched_text": "public-domain"
         }
@@ -63,6 +63,8 @@
   "notice_text": null,
   "source_packages": [],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [],
   "repository_homepage_url": "https://supermarket.chef.io/cookbooks/test/versions/0.01/",

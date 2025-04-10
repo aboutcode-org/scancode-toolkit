@@ -13,7 +13,7 @@ other_license_detections:
     license_expression_spdx: TCL
     matches:
       - license_expression: tcl
-        spdx_license_expression: TCL
+        license_expression_spdx: TCL
         from_file:
         start_line: 13
         end_line: 53
@@ -71,7 +71,7 @@ other_license_detections:
     license_expression_spdx: LicenseRef-scancode-pngsuite
     matches:
       - license_expression: pngsuite
-        spdx_license_expression: LicenseRef-scancode-pngsuite
+        license_expression_spdx: LicenseRef-scancode-pngsuite
         from_file:
         start_line: 56
         end_line: 57

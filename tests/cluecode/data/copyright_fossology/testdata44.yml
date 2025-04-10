@@ -1,0 +1,13 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - copyrighted by the Free Software Foundation, Inc.
+  - Copyright (c) 1995-2008 Software in the Public Interest
+holders:
+  - the Free Software Foundation, Inc.
+  - Software in the Public Interest
+authors:
+  - Ian Murdock <imurdock@debian.org> and Bruce Perens <bruce@pixar.com>
+  - Bruce Perens <Bruce@Pixar.com>

@@ -38,7 +38,7 @@ def test_license_reference_detection_in_manifest_unknown_with_license():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
-def test_license_reference_detection_in_manifest_known():
+def test_license_reference_detection_in_manifest_known_with_license():
     test_dir = test_env.get_test_loc('license_detection/reference-at-manifest/nanopb/', copy=True)
     result_file = test_env.get_temp_file('json')
     args = [

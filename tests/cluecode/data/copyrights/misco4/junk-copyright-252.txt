@@ -1,0 +1,1 @@
+(c) vpc-sg-open-only-to-authorized-ports (https://docs.aws.amazon.com/config/latest/developerguide/vpc-sg-open-only-to-authorized-ports.html) The VPC Security Group restricts IPv4 TCP

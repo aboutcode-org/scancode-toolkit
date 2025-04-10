@@ -4,22 +4,22 @@ what:
   - holders_summary
 copyrights:
   - Copyright 1999-2004 Ximian, Inc. 1999-2005 Novell, Inc.
-  - copyright 2000-2003 Ximian, Inc. , 2003 Gergo Erdi
-  - copyright 2000 Eskil Heyn Olsen , 2000 Ximian, Inc.
-  - copyright 1998 The Free Software Foundation , 2000 Ximian, Inc.
+  - copyright 2000-2003 Ximian, Inc., 2003 Gergo Erdi
+  - copyright 2000 Eskil Heyn Olsen, 2000 Ximian, Inc.
+  - copyright 1998 The Free Software Foundation, 2000 Ximian, Inc.
   - copyright 1998-2005 The OpenLDAP Foundation
-  - Copyright 1999-2003 The OpenLDAP Foundation , Redwood City, California, USA.
-  - Copyright 1999-2000 Eric Busboom , The Software Studio (http://www.softwarestudio.org) 2001
+  - Copyright 1999-2003 The OpenLDAP Foundation, Redwood City, California, USA.
+  - Copyright 1999-2000 Eric Busboom, The Software Studio (http://www.softwarestudio.org) 2001
     Critical Path
-  - (c) Copyright 1996 Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation
+  - (c) Copyright 1996 Apple Computer, Inc., AT&T Corp., International Business Machines Corporation
     and Siemens Rolm Communications Inc.
   - Copyright (c) 1997 Theo de Raadt
   - copyright 2000 Andrea Campi
   - copyright 2002 Andrea Campi
   - copyright 2003 Andrea Campi
   - Copyright 2002 Jonas Borgstrom <jonas@codefactory.se> 2002 Daniel Lundin <daniel@codefactory.se>
-    2002 CodeFactory AB
-  - copyright 1996 Apple Computer, Inc. , AT&T Corp. , International Business Machines Corporation
+    2002 CodeFactory AB.
+  - copyright 1996 Apple Computer, Inc., AT&T Corp., International Business Machines Corporation
     and Siemens Rolm Communications Inc.
   - copyright 1986-2000 Hiram Clawson
   - copyright 1997 Theo de Raadt
@@ -28,20 +28,20 @@ copyrights:
   - Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
 holders:
   - Ximian, Inc. Novell, Inc.
-  - Ximian, Inc. , Gergo Erdi
-  - Eskil Heyn Olsen , Ximian, Inc.
-  - The Free Software Foundation , Ximian, Inc.
+  - Ximian, Inc., Gergo Erdi
+  - Eskil Heyn Olsen, Ximian, Inc.
+  - The Free Software Foundation, Ximian, Inc.
   - The OpenLDAP Foundation
-  - The OpenLDAP Foundation , Redwood City, California, USA.
-  - Eric Busboom , The Software Studio Critical Path
-  - Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation and Siemens
+  - The OpenLDAP Foundation, Redwood City, California, USA.
+  - Eric Busboom, The Software Studio Critical Path
+  - Apple Computer, Inc., AT&T Corp., International Business Machines Corporation and Siemens
     Rolm Communications Inc.
   - Theo de Raadt
   - Andrea Campi
   - Andrea Campi
   - Andrea Campi
-  - Jonas Borgstrom Daniel Lundin CodeFactory AB
-  - Apple Computer, Inc. , AT&T Corp. , International Business Machines Corporation and Siemens
+  - Jonas Borgstrom Daniel Lundin CodeFactory AB.
+  - Apple Computer, Inc., AT&T Corp., International Business Machines Corporation and Siemens
     Rolm Communications Inc.
   - Hiram Clawson
   - Theo de Raadt
@@ -51,32 +51,32 @@ holders:
 holders_summary:
   - value: Andrea Campi
     count: 3
-  - value: Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation and
+  - value: Apple Computer, Inc., AT&T Corp., International Business Machines Corporation and
       Siemens Rolm Communications Inc.
     count: 2
   - value: Theo de Raadt
     count: 2
-  - value: Eric Busboom , The Software Studio Critical Path
+  - value: Eric Busboom, The Software Studio Critical Path
     count: 1
-  - value: Eskil Heyn Olsen , Ximian, Inc.
+  - value: Eskil Heyn Olsen, Ximian, Inc.
     count: 1
   - value: Hiram Clawson
     count: 1
-  - value: Jonas Borgstrom Daniel Lundin CodeFactory AB
+  - value: Jonas Borgstrom Daniel Lundin CodeFactory AB.
     count: 1
   - value: Keith Bostic
     count: 1
   - value: Sleepycat Software
     count: 1
-  - value: The Free Software Foundation , Ximian, Inc.
+  - value: The Free Software Foundation, Ximian, Inc.
     count: 1
   - value: The OpenLDAP Foundation
     count: 1
-  - value: The OpenLDAP Foundation , Redwood City, California, USA.
+  - value: The OpenLDAP Foundation, Redwood City, California, USA.
     count: 1
   - value: The Regents of the University of California
     count: 1
-  - value: Ximian, Inc. , Gergo Erdi
-    count: 1
   - value: Ximian, Inc. Novell, Inc.
+    count: 1
+  - value: Ximian, Inc., Gergo Erdi
     count: 1

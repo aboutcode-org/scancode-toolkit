@@ -66,6 +66,12 @@ class TestGemSpec(PackageTester):
         packages = rubygems.GemspecHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_rubygems_oj_gemspec_package_only(self):
+        test_file = self.get_test_loc('rubygems/gemspec/oj.gemspec')
+        expected_loc = self.get_test_loc('rubygems/gemspec/oj.gemspec-package-only.expected.json')
+        packages = rubygems.GemspecHandler.parse(location=test_file, package_only=True)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_rubygems_rubocop_gemspec(self):
         test_file = self.get_test_loc('rubygems/gemspec/rubocop.gemspec')
         expected_loc = self.get_test_loc('rubygems/gemspec/rubocop.gemspec.expected.json')

@@ -1,0 +1,55 @@
+---
+key: rh-eula-apache2
+short_name: Red Hat Apache-Based EULA
+name: Red Hat Apache-Based End User License Agreement
+category: Permissive
+owner: Red Hat
+homepage_url: https://www.redhat.com/en/about/eulas
+spdx_license_key: LicenseRef-scancode-rh-eula-apache2
+text_urls:
+    - https://www.redhat.com/licenses/Red_Hat_Apache-Based_EULA_20191118.pdf
+standard_notice: |
+    PLEASE READ THIS END USER LICENSE AGREEMENT CAREFULLY BEFORE USING SOFTWARE
+    FROM RED HAT. BY USING RED HAT SOFTWARE, YOU SIGNIFY YOUR ASSENT TO AND
+    ACCEPTANCE OF THIS END USER LICENSE AGREEMENT AND ACKNOWLEDGE YOU HAVE READ
+    AND UNDERSTAND THE TERMS. AN INDIVIDUAL ACTING ON BEHALF OF AN ENTITY
+    REPRESENTS THAT HE OR SHE HAS THE AUTHORITY TO ENTER INTO THIS END USER
+    LICENSE AGREEMENT ON BEHALF OF THAT ENTITY. IF YOU DO NOT ACCEPT THE TERMS
+    OF THIS AGREEMENT, THEN YOU MUST NOT USE THE RED HAT SOFTWARE. THIS END
+    USER LICENSE AGREEMENT DOES NOT PROVIDE ANY RIGHTS TO RED HAT SERVICES SUCH
+    AS SOFTWARE MAINTENANCE, UPGRADES OR SUPPORT. PLEASE REVIEW YOUR SERVICE OR
+    SUBSCRIPTION AGREEMENT(S) THAT YOU MAY HAVE WITH RED HAT OR OTHER
+    AUTHORIZED RED HAT SERVICE PROVIDERS REGARDING SERVICES AND ASSOCIATED
+    PAYMENTS.
+ignorable_copyrights:
+    - Copyright (c) 2019 Red Hat, Inc.
+ignorable_holders:
+    - Red Hat, Inc.
+ignorable_urls:
+    - http://www.apache.org/licenses/LICENSE
+    - http://www.redhat.com/about/corporate/trademark/
+    - http://www.redhat.com/licenses/thirdparty/eula.html
+---
+
+END USER LICENSE AGREEMENT
+RED HAT APACHE-BASED
+
+This end user license agreement (“EULA”) governs the use of any Red Hat software application that includes or refers to this license and any related updates, source code, appearance, structure and organization (the “Programs”), regardless of the delivery mechanism.
+
+1. License Grant. Subject to the following terms, Red Hat, Inc. (“Red Hat”) grants to you a perpetual, worldwide license to the Programs (each of which may include multiple software components) pursuant to the Apache License v.2.0 (http://www.apache.org/licenses/LICENSE- 2.0.html). With the exception of certain image files identified in Section 2 below, each software component is governed by a license located in the software component’s source code that permits you to run, copy, modify, and redistribute (subject to certain obligations in some cases) the software component. This EULA pertains solely to the Programs and does not limit your rights under, or grant you rights that supersede, the license terms of any particular component.
+
+2. Intellectual Property Rights. The Programs and each of their components are owned by Red Hat and other licensors and are protected under copyright law and other laws as applicable. Title to the Programs and any component, or to any copy or modification shall remain with Red Hat and other licensors, subject to the applicable license. The “Red Hat” mark, the individual Program marks, and the “Red Hat” logo are trademarks or registered trademarks of Red Hat and its affiliates in the U.S. and other countries. This EULA does not permit you to distribute the Programs using Red Hat's trademarks, regardless of whether the Programs have been modified. You may make a commercial redistribution of the Programs only if (a) permitted under a separate written agreement with Red Hat authorizing such commercial redistribution or (b) you remove and replace all occurrences of Red Hat trademarks and logos. Modifications to the software may corrupt the Programs. You should read the information found at http://www.redhat.com/about/corporate/trademark/ before distributing a copy of the Programs.
+
+3. Limited Warranty. Except as specifically stated in this Section 3, a separate agreement with Red Hat, or a license for a particular component, to the maximum extent permitted under applicable law, the Programs and the components are provided and licensed “as is” without warranty of any kind, express or implied, including the implied warranties of merchantability, non-infringement or fitness for a particular purpose. Red Hat warrants that the media on which the Programs and the components are provided will be free from defects in materials and manufacture under normal use for a period of 30 days from the date of delivery to you. Neither Red Hat nor its affiliates warrant that the functions contained in the Programs will meet your requirements or that the operation of the Programs will be entirely error free, appear or perform precisely as described in the accompanying documentation, or comply with regulatory requirements. This warranty extends only to the party that purchases subscription services for the Programs from Red Hat and/or its affiliates or a Red Hat authorized distributor.
+
+4. Limitation of Remedies and Liability. To the maximum extent permitted by applicable law, your exclusive remedy under this EULA is to return any defective media within 30 days of delivery along with a copy of your payment receipt and Red Hat, at its option, will replace it or refund the money you paid for the media. To the maximum extent permitted under applicable law, under no circumstances will Red Hat, its affiliates, any Red Hat authorized distributor, or the licensor of any component provided to you under this EULA be liable to you for any incidental or consequential damages, including lost profits or lost savings arising out of the use or inability to use the Programs or any component, even if Red Hat, its affiliates, an authorized distributor, and/or licensor has been advised of the possibility of such damages. In no event shall Red Hat's or its affiliates’ liability, an authorized distributor’s liability or the liability of the licensor of a component provided to you under this EULA exceed the amount that you paid to Red Hat for the media under this EULA.
+
+5. Export Control. You understand that countries, including the U.S., may restrict the import, use, export, re-export or transfer of encryption products and other controlled materials (which may include the Programs or related technical information licensed hereunder) (“Controlled Materials”). As required by U.S. law, you represent and warrant that you: (a) understand that certain of the Controlled Materials are of U.S. origin and subject to export controls under the U.S. Export Administration Regulations (the "EAR"); (b) are not located in (or owned or controlled by any person or entity located in) any country listed in Country Group E:1 in Supplement No. 1 to part 740 of the EAR; or by any person or entity listed on the U.S. Department of Treasury Office of Foreign Assets Control (“OFAC”) list of Specially Designated Nationals and Blocked Persons (“SDNs”) (and are not 50% or more owned or controlled by any one or more persons or entities identified on the SDN list); (c) will not export, re-export or transfer the Controlled Materials to (1) any prohibited destination, (2) anyone who has been prohibited from participating in U.S. export transactions by any federal agency of the U.S. government or (3) any end user who you know or have reason to know will use them in the design, development or production of nuclear, chemical or biological weapons, or rocket systems, space launch vehicles, or sounding rockets, or unmanned air vehicle systems or any other prohibited use under the EAR; and (d) understand and agree that if you are in the United States and export, re-export or transfer the Controlled Materials to eligible end users, you will, to the extent required by EAR Section 740.17(e), submit semi-annual reports to the U.S. Commerce Department's Bureau of Industry and Security, that include the name and address (including country) of each transferee.
+
+6. Third Party Software. The Programs may be provided with third party software that are not part of the Programs. These third party software are not required to run the Programs, are provided as a convenience to you, and are subject to their own license terms. The license terms either accompany the third party software or can be viewed at http://www.redhat.com/licenses/thirdparty/eula.html. If you do not agree to abide by the applicable license terms for the third party software, then you may not install them. If you wish to install the third party software on more than one system or transfer the third party software to another party, then you must contact the licensor of the applicable third party software.
+
+7. General. If any provision of this EULA is held to be unenforceable, the enforceability of the remaining provisions shall not be affected. Any claim, controversy or dispute arising under or relating to this EULA shall be governed by the laws of the State of New York and of the United States, without regard to any conflict of laws provisions. The rights and obligations of the parties to this EULA shall not be governed by the United Nations Convention on the International Sale of Goods.
+
+Copyright © 2019 Red Hat, Inc. All rights reserved. The Program marks, “Red Hat” mark and the Red Hat logo are trademarks or registered trademarks of Red Hat, Inc. All other trademarks are the property of their respective owners.
+
+Red Hat Apache-Based End User License Agreement November 18, 2019

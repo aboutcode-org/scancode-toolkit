@@ -20,7 +20,7 @@ Use of NVIDIA's products requires three elements: the SOFTWARE, the hardware on 
 
 2.1 Rights and Limitations of Grant. NVIDIA hereby grants Customer the following non-exclusive, non-transferable right to use the SOFTWARE, with the following limitations:
 
-2.1.1 Rights. Customer may install and use one copy of the SOFTWARE on a single computer, and except for making one back-up copy of the Software, may not otherwise copy the SOFTWARE. This LICENSE of SOFTWARE may not be shared or used concurrently on different computers.
+2.1.1 Rights. Customer may install and use one copy of the SOFTWARE on a single computer, and except for making one back-up copy of the Software, may not otherwise copy the SOFTWARE. This LICENSE of SOFTWARE {{may not be}} shared or used concurrently on different computers.
 
 2.1.2 Linux/FreeBSD/OpenSolaris Exception. Notwithstanding the foregoing terms of Section 2.1.1, SOFTWARE designed exclusively for use on the Linux or FreeBSD operating systems, or other operating systems derived from the source code to these operating systems, may be copied and redistributed, provided that the binary files thereof are not modified in any way (except for unzipping of compressed files).
 
@@ -28,7 +28,7 @@ Use of NVIDIA's products requires three elements: the SOFTWARE, the hardware on 
 
 No Reverse Engineering. Customer may not reverse engineer, decompile, or disassemble the SOFTWARE, nor attempt in any other manner to obtain the source code.
 
-No Separation of Components. The SOFTWARE is licensed as a single product. Its component parts may not be separated for use on more than one computer, nor otherwise used separately from the other parts.
+No Separation of Components. The SOFTWARE is licensed as a single product. Its component parts {{may not be}} separated for use on more than one computer, nor otherwise used separately from the other parts.
 
 No Rental. Customer may not rent or lease the SOFTWARE to someone else.
 

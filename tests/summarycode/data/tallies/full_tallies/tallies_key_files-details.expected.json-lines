@@ -14,7 +14,7 @@
           "--tallies-key-files": true
         },
         "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-        "output_format_version": "3.0.0",
+        "output_format_version": "3.2.0",
         "message": null,
         "errors": [],
         "warnings": [],
@@ -22,11 +22,11 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-            "platform": "Linux-5.15.0-89-generic-x86_64-with-glibc2.29",
-            "platform_version": "#99~20.04.1-Ubuntu SMP Thu Nov 2 15:16:47 UTC 2023",
-            "python_version": "3.8.10 (default, Nov 22 2023, 10:22:35) \n[GCC 9.4.0]"
+            "platform": "Linux-5.15.0-113-generic-x86_64-with-glibc2.35",
+            "platform_version": "#123-Ubuntu SMP Mon Jun 10 08:16:17 UTC 2024",
+            "python_version": "3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]"
           },
-          "spdx_license_list_version": "3.22",
+          "spdx_license_list_version": "3.24",
           "files_count": 26
         }
       }
@@ -573,7 +573,7 @@
             "matches": [
               {
                 "license_expression": "cc0-1.0",
-                "spdx_license_expression": "CC0-1.0",
+                "license_expression_spdx": "CC0-1.0",
                 "from_file": "scan/cc0-1.0.LICENSE",
                 "start_line": 1,
                 "end_line": 98,
@@ -636,7 +636,7 @@
             "matches": [
               {
                 "license_expression": "artistic-2.0",
-                "spdx_license_expression": "Artistic-2.0",
+                "license_expression_spdx": "Artistic-2.0",
                 "from_file": "scan/package.json",
                 "start_line": 198,
                 "end_line": 198,
@@ -787,7 +787,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/adler32.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -801,7 +801,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -879,7 +879,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -954,7 +954,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/zutil.h",
                 "start_line": 3,
                 "end_line": 3,
@@ -968,7 +968,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/arch/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1128,7 +1128,7 @@
             "matches": [
               {
                 "license_expression": "lgpl-2.1-plus",
-                "spdx_license_expression": "LGPL-2.1-or-later",
+                "license_expression_spdx": "LGPL-2.1-or-later",
                 "from_file": "scan/JGroups/src/FixedMembershipToken.java",
                 "start_line": 7,
                 "end_line": 20,
@@ -1203,7 +1203,7 @@
             "matches": [
               {
                 "license_expression": "cc-by-2.5",
-                "spdx_license_expression": "CC-BY-2.5",
+                "license_expression_spdx": "CC-BY-2.5",
                 "from_file": "scan/JGroups/src/GuardedBy.java",
                 "start_line": 4,
                 "end_line": 5,
@@ -1284,7 +1284,7 @@
             "matches": [
               {
                 "license_expression": "lgpl-2.1-plus",
-                "spdx_license_expression": "LGPL-2.1-or-later",
+                "license_expression_spdx": "LGPL-2.1-or-later",
                 "from_file": "scan/JGroups/src/ImmutableReference.java",
                 "start_line": 7,
                 "end_line": 20,
@@ -1453,7 +1453,7 @@
             "matches": [
               {
                 "license_expression": "lgpl-2.1-plus",
-                "spdx_license_expression": "LGPL-2.1-or-later",
+                "license_expression_spdx": "LGPL-2.1-or-later",
                 "from_file": "scan/JGroups/src/RouterStubManager.java",
                 "start_line": 7,
                 "end_line": 20,
@@ -1616,7 +1616,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/adler32.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -1630,7 +1630,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1708,7 +1708,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/deflate.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -1722,7 +1722,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1800,7 +1800,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/deflate.h",
                 "start_line": 3,
                 "end_line": 3,
@@ -1814,7 +1814,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1892,7 +1892,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -1967,7 +1967,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zutil.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -1981,7 +1981,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -2059,7 +2059,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zutil.h",
                 "start_line": 3,
                 "end_line": 3,
@@ -2073,7 +2073,7 @@
               },
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/zlib.h",
                 "start_line": 6,
                 "end_line": 23,
@@ -2192,7 +2192,7 @@
             "matches": [
               {
                 "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
-                "spdx_license_expression": "GPL-2.0-or-later WITH GNAT-exception",
+                "license_expression_spdx": "GPL-2.0-or-later WITH GNAT-exception",
                 "from_file": "scan/zlib/ada/zlib.ads",
                 "start_line": 6,
                 "end_line": 25,
@@ -2361,7 +2361,7 @@
             "matches": [
               {
                 "license_expression": "boost-1.0",
-                "spdx_license_expression": "BSL-1.0",
+                "license_expression_spdx": "BSL-1.0",
                 "from_file": "scan/zlib/dotzlib/ChecksumImpl.cs",
                 "start_line": 4,
                 "end_line": 5,
@@ -2477,7 +2477,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/gcc_gvmat64/gvmat64.S",
                 "start_line": 17,
                 "end_line": 31,
@@ -2599,7 +2599,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/infback9/infback9.c",
                 "start_line": 3,
                 "end_line": 3,
@@ -2674,7 +2674,7 @@
             "matches": [
               {
                 "license_expression": "zlib",
-                "spdx_license_expression": "Zlib",
+                "license_expression_spdx": "Zlib",
                 "from_file": "scan/zlib/infback9/infback9.h",
                 "start_line": 3,
                 "end_line": 3,
@@ -2790,7 +2790,7 @@
             "matches": [
               {
                 "license_expression": "mit-old-style",
-                "spdx_license_expression": "LicenseRef-scancode-mit-old-style",
+                "license_expression_spdx": "LicenseRef-scancode-mit-old-style",
                 "from_file": "scan/zlib/iostream2/zstream.h",
                 "start_line": 9,
                 "end_line": 15,

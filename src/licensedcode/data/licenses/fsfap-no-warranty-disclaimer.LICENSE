@@ -1,0 +1,17 @@
+---
+key: fsfap-no-warranty-disclaimer
+short_name: FSF All Permissive License (without Warranty)
+name: FSF All Permissive License (without Warranty)
+category: Permissive
+owner: Free Software Foundation (FSF)
+notes: |
+    Added in SPDX license list 3.23
+    This was previously the license rule: fsf-ap_3.RULE
+spdx_license_key: FSFAP-no-warranty-disclaimer
+other_urls:
+    - https://git.savannah.gnu.org/cgit/wget.git/tree/util/trunc.c?h=v1.21.3&id=40747a11e44ced5a8ac628a41f879ced3e2ebce9#n6
+---
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.

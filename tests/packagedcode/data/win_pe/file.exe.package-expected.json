@@ -32,24 +32,24 @@
     "copyright": "\u00a9 2009 Ian F. Darwin",
     "holder": "Ian F. Darwin",
     "declared_license_expression": "bsd-simplified-darwin",
-    "declared_license_expression_spdx": "LicenseRef-scancode-bsd-simplified-darwin",
+    "declared_license_expression_spdx": "BSD-2-Clause-Darwin",
     "license_detections": [
       {
         "license_expression": "bsd-simplified-darwin",
-        "license_expression_spdx": "LicenseRef-scancode-bsd-simplified-darwin",
+        "license_expression_spdx": "BSD-2-Clause-Darwin",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "bsd-simplified-darwin",
+            "license_expression_spdx": "BSD-2-Clause-Darwin",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "2-aho",
+            "score": 100.0,
             "matched_length": 217,
             "match_coverage": 100.0,
-            "matcher": "2-aho",
-            "license_expression": "bsd-simplified-darwin",
-            "spdx_license_expression": "LicenseRef-scancode-bsd-simplified-darwin",
-            "rule_identifier": "bsd-simplified-darwin.LICENSE",
             "rule_relevance": 100,
+            "rule_identifier": "bsd-simplified-darwin.LICENSE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/bsd-simplified-darwin.LICENSE",
             "matched_text": "Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995. Software written by Ian F. Darwin and others; maintained 1994-2004 Christos Zoulas. This software is not subject to any export provision of the United States Department of Commerce, and may be exported to any country or planet. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met: 1. Redistributions of source code must retain the above copyright notice immediately at the beginning of the file, without modification, this list of conditions, and the following disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
           }
@@ -64,6 +64,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": null,

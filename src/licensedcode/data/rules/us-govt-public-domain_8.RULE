@@ -2,6 +2,8 @@
 license_expression: us-govt-public-domain
 is_license_text: yes
 relevance: 100
+ignorable_authors:
+  - US Government
 ---
 
 These classes were either developed by a US Government employee

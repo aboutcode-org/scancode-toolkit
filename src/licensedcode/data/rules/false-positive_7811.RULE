@@ -1,0 +1,7 @@
+---
+is_false_positive: yes
+notes: Seen in Azure SDK. Not much of a license at all.
+---
+
+Azure SDK for Go uses third-party libraries or other resources that may be
+distributed under licenses different than the Azure SDK for Go software.

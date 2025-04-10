@@ -48,7 +48,7 @@
           "matches": [
             {
               "license_expression": "apache-2.0",
-              "spdx_license_expression": "Apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
               "from_file": "package/Castle.Core.nuspec",
               "start_line": 1,
               "end_line": 1,
@@ -71,6 +71,8 @@
       "extracted_license_statement": "http://www.apache.org/licenses/LICENSE-2.0.html",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://www.nuget.org/packages/Castle.Core/4.2.1",
       "repository_download_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1",
@@ -92,7 +94,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -109,7 +112,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -126,7 +130,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -143,7 +148,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -160,7 +166,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -177,7 +184,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -194,7 +202,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -211,7 +220,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -228,7 +238,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -245,7 +256,8 @@
       "scope": "dependency",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "framework": ".NETStandard1.3",
@@ -310,7 +322,7 @@
               "matches": [
                 {
                   "license_expression": "apache-2.0",
-                  "spdx_license_expression": "Apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
                   "from_file": "package/Castle.Core.nuspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -334,6 +346,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -342,7 +356,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",
@@ -355,7 +370,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",
@@ -368,7 +384,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",
@@ -381,7 +398,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",
@@ -394,7 +412,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",
@@ -407,7 +426,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",
@@ -420,7 +440,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",
@@ -433,7 +454,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",
@@ -446,7 +468,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",
@@ -459,7 +482,8 @@
               "scope": "dependency",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {
                 "framework": ".NETStandard1.3",

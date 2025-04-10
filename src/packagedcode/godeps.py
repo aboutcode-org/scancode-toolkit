@@ -38,7 +38,7 @@ class GodepsHandler(models.NonAssemblableDatafileHandler):
     documentation_url = 'https://github.com/tools/godep'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         godeps = Godep(location)
 
         if godeps.import_path:
@@ -60,11 +60,11 @@ class GodepsHandler(models.NonAssemblableDatafileHandler):
                     scope='Deps',
                     is_runtime=True,
                     is_optional=False,
-                    is_resolved=False,
+                    is_pinned=False,
                 )
             )
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             namespace=namespace,
@@ -72,6 +72,7 @@ class GodepsHandler(models.NonAssemblableDatafileHandler):
             primary_language=cls.default_primary_language,
             dependencies=dependencies,
          )
+        yield models.PackageData.from_data(package_data, package_only)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):

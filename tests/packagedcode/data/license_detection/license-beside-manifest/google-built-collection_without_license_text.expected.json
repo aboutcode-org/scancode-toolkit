@@ -33,7 +33,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "google-built-collection/LICENSE",
               "start_line": 3,
               "end_line": 28,
@@ -55,6 +55,8 @@
       "extracted_license_statement": null,
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://pub.dev/packages/built_collection/versions/5.1.1",
       "repository_download_url": "https://pub.dartlang.org/packages/built_collection/versions/5.1.1.tar.gz",
@@ -76,7 +78,8 @@
       "scope": "dev_dependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pubspec/pedantic?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -90,7 +93,8 @@
       "scope": "dev_dependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pubspec/test?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -104,7 +108,8 @@
       "scope": "environment",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {},
       "dependency_uid": "pkg:pubspec/sdk?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -152,7 +157,7 @@
           "matches": [
             {
               "license_expression": "bsd-new",
-              "spdx_license_expression": "BSD-3-Clause",
+              "license_expression_spdx": "BSD-3-Clause",
               "from_file": "google-built-collection/LICENSE",
               "start_line": 3,
               "end_line": 28,
@@ -209,7 +214,7 @@
               "matches": [
                 {
                   "license_expression": "bsd-new",
-                  "spdx_license_expression": "BSD-3-Clause",
+                  "license_expression_spdx": "BSD-3-Clause",
                   "from_file": "google-built-collection/LICENSE",
                   "start_line": 3,
                   "end_line": 28,
@@ -232,6 +237,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [
             {
@@ -240,7 +247,8 @@
               "scope": "dev_dependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -250,7 +258,8 @@
               "scope": "dev_dependencies",
               "is_runtime": false,
               "is_optional": true,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -260,7 +269,8 @@
               "scope": "environment",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

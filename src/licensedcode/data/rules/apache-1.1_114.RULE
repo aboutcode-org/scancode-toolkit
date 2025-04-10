@@ -10,7 +10,6 @@ ignorable_holders:
     - Leo Galambos
 ignorable_authors:
     - the Egothor Project
-    - the Egothor Project. Under
 ignorable_urls:
     - http://egothor.sf.net/
 ignorable_emails:

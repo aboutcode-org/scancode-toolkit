@@ -1,0 +1,26 @@
+---
+key: sax-pd-2.0
+short_name: Sax Public Domain Notice 2.0
+name: Sax Public Domain Notice 2.0
+category: Public Domain
+owner: SAX Project
+notes: |
+    Added in SPDX license list 3.23
+    This was previously the license rule: sax-pd_20.RULE
+spdx_license_key: SAX-PD-2.0
+other_urls:
+    - http://www.saxproject.org/copying.html
+ignorable_emails:
+    - david@megginson.com
+---
+
+SAX2 is Free!
+
+I hereby abandon any property rights to SAX 2.0 (the Simple API for
+XML), and release all of the SAX 2.0 source code, compiled code, and
+documentation contained in this distribution into the Public Domain.
+SAX comes with NO WARRANTY or guarantee of fitness for any
+purpose.
+
+David Megginson, david@megginson.com
+2000-05-05

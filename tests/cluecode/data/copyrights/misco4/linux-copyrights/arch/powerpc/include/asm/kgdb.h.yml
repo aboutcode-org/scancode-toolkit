@@ -1,0 +1,22 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - copyrights PPC64 Mods
+  - (c) 2005 Frank Rowand (frowand@mvista.com) PPC Mods
+  - (c) 2004 Tom Rini (trini@mvista.com) PPC Mods
+  - (c) 2003 John Whitney (john.whitney@timesys.com) PPC Mods
+  - (c) 1998 Michael Tesch (tesch@cs.wisc.edu)
+  - Copyright (c) 1995 David S. Miller (davem@caip.rutgers.edu)
+  - (c) MontaVista Software, Inc.
+holders:
+  - PPC64 Mods
+  - Frank Rowand PPC Mods
+  - Tom Rini PPC Mods
+  - John Whitney PPC Mods
+  - Michael Tesch
+  - David S. Miller
+  - MontaVista Software, Inc.
+authors:
+  - Tom Rini <trini@kernel.crashing.org>

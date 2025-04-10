@@ -59,17 +59,17 @@
       "license_expression_spdx": "MIT",
       "matches": [
         {
-          "score": 100.0,
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": null,
           "start_line": 1,
           "end_line": 1,
-          "from_file": null,
+          "matcher": "2-aho",
+          "score": 100.0,
           "matched_length": 3,
           "match_coverage": 100.0,
-          "matcher": "2-aho",
-          "license_expression": "mit",
-          "spdx_license_expression": "MIT",
-          "rule_identifier": "mit_1160.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "mit_1160.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1160.RULE",
           "matched_text": "license - name: MIT"
         }
@@ -86,6 +86,8 @@
     "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -94,7 +96,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -104,7 +107,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -114,7 +118,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -124,7 +129,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -134,7 +140,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

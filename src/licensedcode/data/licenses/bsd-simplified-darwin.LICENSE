@@ -4,7 +4,11 @@ short_name: BSD Simplified Darwin
 name: BSD Simplified Darwin
 category: Permissive
 owner: Ian Darwin
-spdx_license_key: LicenseRef-scancode-bsd-simplified-darwin
+spdx_license_key: BSD-2-Clause-Darwin
+other_spdx_license_keys:
+    - LicenseRef-scancode-bsd-simplified-darwin
+other_urls:
+    - https://github.com/file/file/blob/master/COPYING
 ---
 
 This software is not subject to any export provision of the United States

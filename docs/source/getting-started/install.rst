@@ -34,12 +34,17 @@ For advanced usage and experienced users, you can also use any of these mode:
     ``pip``. This is recommended for developers or users familiar with Python
     that want to embed ScanCode as a library.
 
+- :ref:`fedora_install`
+
+    ScanCode is part of main Fedora Linux repository. It will automatically install
+    all dependencies. This is recommended for production deployments.
+
 ----
 
 Before Installing
 -----------------
 
-- ScanCode requires a Python version 3.7, 3.8, 3.9  or 3.10 and is
+- ScanCode requires a Python version between 3.9 to 3.12 and is
   tested on Linux, macOS, and Windows. It should work fine on FreeBSD.
 
 .. _system_requirements:
@@ -66,8 +71,8 @@ System Requirements
 Prerequisites
 ^^^^^^^^^^^^^
 
-ScanCode needs a Python 3.7+ interpreter; We support all Python versions from
-3.7 to 3.10. The default version for the application archives is Python 3.8
+ScanCode needs a Python 3.9+ interpreter; We support all Python versions from
+3.9 to 3.12. The default version for the application archives is Python 3.9
 
 - **On Linux**:
 
@@ -85,11 +90,11 @@ ScanCode needs a Python 3.7+ interpreter; We support all Python versions from
 
     - On RPM-based distros run::
 
-          sudo yum install python3.8-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel libpopt0
+          sudo yum install python3.9-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel libpopt0
 
     - On Fedora 22 and later run::
 
-          sudo dnf install python3.8-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0
+          sudo dnf install python3.9-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs libpopt0
 
 
     If these packages are not available from your package manager, you must
@@ -98,13 +103,13 @@ ScanCode needs a Python 3.7+ interpreter; We support all Python versions from
 
 - **On Mac**:
 
-    The default Python 3 provided with macOS is 3.8.
-    Alternatively you can download and install Python 3.8 from https://www.python.org/
+    The default Python 3 provided with macOS is 3.9.
+    Alternatively you can download and install Python 3.9 from https://www.python.org/
 
 
 - **On Windows**:
 
-    Download and install Python 3.8 from https://www.python.org/
+    Download and install Python 3.9 from https://www.python.org/
 
     .. Note::
 
@@ -121,17 +126,17 @@ Installation as an Application: Downloading Releases
 -----------------------------------------------------
 
 Get the Scancode Toolkit tarball archive of a specific version and your
-operating system by going to the `project releases page <https://github.com/nexB/scancode-toolkit/releases/>`_
+operating system by going to the `project releases page <https://github.com/aboutcode-org/scancode-toolkit/releases/>`_
 
 For example, Version 30.0.1 archive can be obtained from
-`Toolkit release 30.0.1 <https://github.com/nexB/scancode-toolkit/releases/tag/v30.0.1>`_
+`Toolkit release 30.0.1 <https://github.com/aboutcode-org/scancode-toolkit/releases/tag/v30.0.1>`_
 under assets options.
 
 .. Note::
 
     ScanCode app archives come with packaged with all required dependencies except
     for Python that has to be downloaded and installed separately.
-    On more recent versions of Ubuntu, you will have to install Python 3.8 manually.
+    On more recent versions of Ubuntu, you will have to install Python 3.9 manually.
     One possibility is to use the Deadsnakes PPA (Personal Package Archive) which is
     a project that provides older Python version builds for Debian and Ubuntu and is
     available at https://github.com/deadsnakes/ and https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa
@@ -139,7 +144,7 @@ under assets options.
 
         sudo apt-get update && sudo apt-get upgrade
         sudo add-apt-repository ppa:deadsnakes/ppa --yes
-        sudo apt-get install python3.8 python3.8-distutils
+        sudo apt-get install python3.9 python3.9-distutils
 
 
 Installation on Linux and Mac
@@ -160,6 +165,32 @@ in the extracted directory and run::
 
 This will configure ScanCode and display the command line :ref:`cli_help_text`.
 
+.. note::
+   If you encounter a "No matching distribution" error while running the ``./configure`` command on a Mac M1, it may indicate compatibility issues with the current architecture. Here's a step-by-step guide to address this:
+
+   - **Change Mac M1 Architecture to x86_64:**
+     Switch the architecture from amd64 to x86_64 using the command:
+     ::
+
+         env /usr/bin/arch -x86_64 /bin/zsh --login
+   - **Use Rosetta Translation:**
+     Enable Rosetta translation in Terminal by executing:
+     ::
+
+         softwareupdate --install-rosetta
+   - **Transition Homebrew from arm64 to Intel:**
+     Change Homebrew from the arm64 architecture to the Intel (x86) architecture by running:
+     ::
+
+         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+   - **Install Intel-Specific Python:**
+     Use Homebrew to install Python specifically optimized for Intel architecture with:
+     ::
+
+         /usr/local/Homebrew/bin/brew install python3
+
+   Then rerun the ``./configure`` command. This sets up the project according to the new architecture and ensures proper configuration.
+   Following these steps should help resolve compatibility issues and allow smooth operation of the project on Mac M1 devices.
 
 .. _windows_app_install:
 
@@ -167,7 +198,7 @@ Installation on Windows 10
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Download the latest ScanCode release zip file for Windows from the latest
-  version at https://github.com/nexB/scancode-toolkit/releases/
+  version at https://github.com/aboutcode-org/scancode-toolkit/releases/
 
 - In the File Explorer, select the downloaded ScanCode zip and right-click.
 
@@ -243,7 +274,7 @@ The prerequisite is a working `docker installation <https://docs.docker.com/engi
 Download the ScanCode-Toolkit Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- ``git clone https://github.com/nexB/scancode-toolkit`` to get the latest
+- ``git clone https://github.com/aboutcode-org/scancode-toolkit`` to get the latest
   ( :ref:`source_code_install` ) source code.
 
 
@@ -298,7 +329,7 @@ Download the ScanCode-Toolkit Source Code
 
 Run the following once you have `Git <https://git-scm.com/>`_ installed::
 
-    git clone https://github.com/nexB/scancode-toolkit.git
+    git clone https://github.com/aboutcode-org/scancode-toolkit.git
     cd scancode-toolkit
 
 
@@ -350,8 +381,8 @@ the standard Python package management tool.
     for ARM (like py-ahocorasick, intbitset). See :ref:`system_requirements` for
     more information. See related issues for more info:
 
-    - `Fallback pure-python deps <https://github.com/nexB/scancode-toolkit/issues/3210>`_
-    - `pip install failing on M1 <https://github.com/nexB/scancode-toolkit/issues/3205>`_
+    - `Fallback pure-python deps <https://github.com/aboutcode-org/scancode-toolkit/issues/3210>`_
+    - `pip install failing on M1 <https://github.com/aboutcode-org/scancode-toolkit/issues/3205>`_
 
 The steps are:
 
@@ -384,6 +415,22 @@ For more information on Python virtualenv, visit this
 To uninstall, run::
 
     pip uninstall scancode-toolkit
+
+
+----
+
+.. _fedora_install:
+
+Install from Fedora's repository
+--------------------------------
+
+The package is available in Fedora 40 and newer. Run::
+
+    dnf install scancode-toolkit
+
+To uninstall, run::
+
+    dnf remove scancode-toolkit
 
 
 ----

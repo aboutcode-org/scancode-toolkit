@@ -6,7 +6,8 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "is_editable": false,
@@ -27,7 +28,8 @@
       "scope": "install",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {
         "is_editable": false,

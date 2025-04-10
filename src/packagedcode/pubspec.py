@@ -60,11 +60,11 @@ class DartPubspecYamlHandler(BaseDartPubspecHandler):
     documentation_url = 'https://dart.dev/tools/pub/pubspec'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with open(location) as inp:
             pubspec_data = saneyaml.load(inp.read())
 
-        package_data = build_package(pubspec_data)
+        package_data = build_package(pubspec_data, package_only)
         if package_data:
             yield package_data
 
@@ -78,18 +78,19 @@ class DartPubspecLockHandler(BaseDartPubspecHandler):
     documentation_url = 'https://web.archive.org/web/20220330081004/https://gpalma.pt/blog/what-is-the-pubspec-lock/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with open(location) as inp:
             locks_data = saneyaml.load(inp.read())
 
         dependencies = list(collect_locks(locks_data))
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             primary_language=cls.default_primary_language,
             dependencies=dependencies
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
 
 def collect_locks(locks_data):
@@ -219,13 +220,13 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
             name=name,
             version=version,
         )
-        is_resolved = True
+        is_pinned = True
     else:
         purl = PackageURL(
             type='pubspec',
             name=name,
         )
-        is_resolved = False
+        is_pinned = False
 
     dep = models.DependentPackage(
         purl=purl.to_string(),
@@ -233,12 +234,12 @@ def build_dep(name, version, scope, is_runtime=True, is_optional=False):
         scope=scope,
         is_runtime=is_runtime,
         is_optional=is_optional,
-        is_resolved=is_resolved,
+        is_pinned=is_pinned,
     )
     return dep
 
 
-def build_package(pubspec_data):
+def build_package(pubspec_data, package_only=False):
     """
     Return a package object from a package data mapping or None
     """
@@ -315,7 +316,7 @@ def build_package(pubspec_data):
     add_to_extra_if_present('executables')
     add_to_extra_if_present('publish_to')
 
-    return models.PackageData(
+    package_data = dict(
         datasource_id=DartPubspecYamlHandler.datasource_id,
         type=DartPubspecYamlHandler.default_primary_language,
         primary_language=DartPubspecYamlHandler.default_primary_language,
@@ -333,3 +334,4 @@ def build_package(pubspec_data):
         api_data_url=api_data_url,
         repository_download_url=repository_download_url,
     )
+    return models.PackageData.from_data(package_data, package_only)

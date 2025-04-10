@@ -1,0 +1,1 @@
+(c) Return SyntaxFacts.IsIdentifierPartCharacter (c) End

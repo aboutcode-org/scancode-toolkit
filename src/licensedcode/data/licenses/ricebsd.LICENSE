@@ -11,7 +11,7 @@ other_urls:
     - https://github.com/search?q="Also%2C+we+ask+that+use+of+ARPACK+is+properly"&type=code
         have this
 ignorable_copyrights:
-    - (c) 2001, Rice University
+    - Copyright (c) 2001, Rice University
 ignorable_holders:
     - Rice University
 ignorable_authors:

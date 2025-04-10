@@ -1,0 +1,14 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) Alan Cox GW4PTS (alan@lxorguk.ukuu.org.uk)
+  - Copyright (c) Jonathan Naylor G4KLX (g4klx@g4klx.demon.co.uk)
+  - Copyright (c) Joerg Reuter DL1BKE (jreuter@yaina.de)
+  - Copyright (c) Hans-Joachim Hetscher DD8NE (dd8ne@bnv-bamberg.de)
+holders:
+  - Alan Cox GW4PTS
+  - Jonathan Naylor G4KLX
+  - Joerg Reuter DL1BKE
+  - Hans-Joachim Hetscher DD8NE

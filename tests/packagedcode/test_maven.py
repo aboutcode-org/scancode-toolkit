@@ -236,13 +236,20 @@ class TestMavenMisc(BaseMavenCase):
         run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_maven_assembly_with_pom_and_manifest_package_only(self):
+        test_dir = self.get_test_loc('maven_misc/assemble/johnzon-jsonb-1.2.11')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/assemble/johnzon-jsonb-1.2.11-package-only-expected.json')
+        run_scan_click(['--package-only', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
     def test_maven_assembly_with_pom_and_jar_manifest(self):
         test_dir = self.get_test_loc('maven_misc/assemble/numbers-1.7.4')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('maven_misc/assemble/numbers-1.7.4-expected.json')
         run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
-    
+
     def test_maven_unknown_reference_to_license_in_manifest(self):
         test_dir = self.get_test_loc('maven_misc/assemble/jackson-dataformat-xml-2.13.5')
         result_file = self.get_temp_file('json')
@@ -250,12 +257,18 @@ class TestMavenMisc(BaseMavenCase):
         run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
+    def test_maven_package_assembly_jar_manifest(self):
+        test_dir = self.get_test_loc('maven_misc/assemble/spring-web-5.3.20-jar')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/assemble/spring-web-5.3.20-jar-expected.json')
+        run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_package_dependency_not_missing(self):
         test_file = self.get_test_loc('maven2/log4j/log4j-pom.xml')
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
 
-    def test_package_dependency_populate_is_resolved_field(self):
+    def test_package_dependency_populate_is_pinned_field(self):
         test_file = self.get_test_loc('maven_misc/parse/swagger-java-sample-app_2.10-1.3.1.pom')
         self.check_parse_to_package(test_file, regen=REGEN_TEST_FIXTURES)
 
@@ -275,7 +288,7 @@ class TestMavenMisc(BaseMavenCase):
         pom_resource = codebase.get_resource(
             'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml'
         )
-        self.assertTrue(pom_resource)
+        assert pom_resource
         top_level_resources_paths = [
             r.path for r in maven.MavenPomXmlHandler.get_top_level_resources(pom_resource, codebase)
         ]
@@ -288,7 +301,7 @@ class TestMavenMisc(BaseMavenCase):
             'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.properties',
             'activiti-image-generator-7-201802-EA-sources.jar-extract/META-INF/maven/org.activiti/activiti-image-generator/pom.xml',
         ]
-        self.assertEquals(expected_resource_paths, top_level_resources_paths)
+        assert top_level_resources_paths == expected_resource_paths
 
 
 class TestPomProperties(testcase.FileBasedTesting):

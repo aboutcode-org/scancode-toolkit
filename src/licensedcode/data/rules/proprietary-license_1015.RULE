@@ -1,0 +1,66 @@
+---
+license_expression: proprietary-license
+is_license_text: yes
+notes: https://lists.opensource.org/pipermail/license-discuss_lists.opensource.org/2003-August/007079.html
+---
+
+Permission is hereby granted, free of charge, to any person obtaining a 
+copy of this software and any associated files ("the Software"), to use 
+and distribute the Software, in source and binary form, with or without 
+modification, provided that the following conditions are met:
+1. All distributions of source code must retain all copyright notices 
+present in the original, and the following notice contained and 
+prominently displayed in each document:
+    This Software is licensed under the terms of
+    The Open Source License version 1.0
+    Please see license.txt for details.
+Where license.txt is the name of a file, which contains the full 
+unmodified text of this License, and which must be included in the 
+distribution.
+2. All distributions of the Software in binary form must reproduce the 
+above copyright notice, as well as the full text of this License, in the 
+documentation and/or other materials provided with the distribution.
+3. All distributions of the Software in binary form must include, in the
+documentation and/or other materials provided with the distribution, a 
+notice in English describing how to obtain the full source code, 
+including any modifications, without charge. Preferably, the source 
+should be included in the distribution or downloadable via the Internet. 
+The source code must be in the preferred form in which a programmer 
+would modify the program.
+4. Products derived from or containing any part of the Software must not 
+carry the same name as the Software without specific prior written 
+permission.
+5. The name "" must not be used to endorse or promote 
+products derived from or containing any part of the Software without 
+specific prior written permission.
+6. Products derived from or containing any part of the Software must be
+licensed as a whole at NO CHARGE to all third parties under the terms of 
+this license.
+You are not required to accept this License. However, nothing else 
+grants you permission to modify or distribute the Software or works 
+derived from it. These actions are prohibited by international law if 
+you do not accept this License.
+By modifying or distributing any part of the Software in any form, you 
+confirm your acceptance of this License in full.
+If any part of this License is declared unenforceable or invalid for any 
+reason, this License in its entirety is void and you may only use the 
+Software as international copyright law permits, meaning you may no 
+longer modify or distribute any part of the Software in any form.
+BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY 
+FOR THE SOFTWARE, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN 
+OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES 
+PROVIDE THE SOFTWARE "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER 
+EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE 
+ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH 
+YOU. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL 
+NECESSARY SERVICING, REPAIR OR CORRECTION.
+IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING 
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR 
+REDISTRIBUTE THE SOFTWARE AS PERMITTED ABOVE, BE LIABLE TO YOU FOR 
+DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL 
+DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE 
+(INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED 
+INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF 
+THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARES), EVEN IF SUCH HOLDER 
+OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.

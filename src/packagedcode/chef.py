@@ -183,14 +183,18 @@ class ChefMetadataJsonHandler(BaseChefMetadataHandler):
             return not parent.endswith('dist-info')
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield one or more Package manifest objects given a file ``location``
         pointing to a package archive, manifest or similar.
         """
         with io.open(location, encoding='utf-8') as loc:
             package_data = json.load(loc)
-        yield build_package(package_data, datasource_id=cls.datasource_id)
+        yield build_package(
+            package_data=package_data,
+            datasource_id=cls.datasource_id,
+            package_only=package_only,
+        )
 
 
 class ChefMetadataRbHandler(BaseChefMetadataHandler):
@@ -202,7 +206,7 @@ class ChefMetadataRbHandler(BaseChefMetadataHandler):
     documentation_url = 'https://docs.chef.io/config_rb_metadata/'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with io.open(location, encoding='utf-8') as loc:
             file_contents = loc.read()
 
@@ -213,10 +217,14 @@ class ChefMetadataRbHandler(BaseChefMetadataHandler):
             ChefMetadataFormatter()
         )
         package_data = json.loads(formatted_file_contents)
-        yield build_package(package_data, datasource_id=cls.datasource_id)
+        yield build_package(
+            package_data=package_data,
+            datasource_id=cls.datasource_id,
+            package_only=package_only,
+        )
 
 
-def build_package(package_data, datasource_id):
+def build_package(package_data, datasource_id, package_only=False):
     """
     Return a PackageData object from a package_data mapping from a metadata.json
     or similar or None.
@@ -261,7 +269,7 @@ def build_package(package_data, datasource_id):
             )
         )
 
-    return models.PackageData(
+    package_data = dict(
         datasource_id=datasource_id,
         type=ChefMetadataJsonHandler.default_package_type,
         name=name,
@@ -275,3 +283,4 @@ def build_package(package_data, datasource_id):
         primary_language='Ruby',
         **get_urls(name, version),
     )
+    return models.PackageData.from_data(package_data, package_only)

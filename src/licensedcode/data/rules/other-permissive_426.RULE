@@ -1,7 +1,11 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
-notes: Similar to hpnd-sell-variant-mit-disclaimer and seen in https://gitlab.freedesktop.org/xorg/xserver/-/blob/141e7dd8a373eafe28fb4f6433671979fb4c59a7/COPYING#L1781
+is_deprecated: yes
+notes: |
+    Similar to hpnd-sell-variant-mit-disclaimer and seen in https://gitlab.freedesktop.org/xorg/xserver/-/blob/141e7dd8a373eafe28fb4f6433671979fb4c59a7/COPYING#L1781
+    Added in SPDX license list 3.23
+    Replaced by license: hpnd-sell-mit-disclaimer-xserver
 ---
 
 Permission to use, copy, modify, distribute, and sell this software and its

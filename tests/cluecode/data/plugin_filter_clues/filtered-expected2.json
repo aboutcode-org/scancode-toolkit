@@ -52,7 +52,7 @@
           "matches": [
             {
               "license_expression": "pygres-2.2",
-              "spdx_license_expression": "LicenseRef-scancode-pygres-2.2",
+              "license_expression_spdx": "LicenseRef-scancode-pygres-2.2",
               "from_file": "LICENSE2",
               "start_line": 7,
               "end_line": 22,
@@ -94,17 +94,18 @@
           "end_line": 24
         }
       ],
-      "authors": [],
+      "authors": [
+        {
+          "author": "Pascal Andre, andre@chimay.via.ecp.fr",
+          "start_line": 3,
+          "end_line": 4
+        }
+      ],
       "emails": [
         {
           "email": "darcy@druid.net",
           "start_line": 3,
           "end_line": 3
-        },
-        {
-          "email": "andre@chimay.via.ecp.fr",
-          "start_line": 4,
-          "end_line": 4
         }
       ],
       "urls": [],

@@ -21,7 +21,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 14
         end_line: 16
@@ -42,7 +42,7 @@ license_detections:
       AND 0BSD AND BSD-2-Clause
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 22
         end_line: 22
@@ -55,7 +55,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_392.RULE
         matched_text: 'LGPL (v2.1 or later):'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 25
         end_line: 25
@@ -68,7 +68,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_392.RULE
         matched_text: 'LGPL (v2.1 or later):'
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 29
         end_line: 29
@@ -81,7 +81,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_308.RULE
         matched_text: '3-clause BSD:'
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 33
         end_line: 33
@@ -94,7 +94,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_426.RULE
         matched_text: Public domain, written by
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 36
         end_line: 36
@@ -107,7 +107,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_426.RULE
         matched_text: Public domain, written by
       - license_expression: bsd-zero
-        spdx_license_expression: 0BSD
+        license_expression_spdx: 0BSD
         from_file:
         start_line: 40
         end_line: 40
@@ -120,7 +120,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
         matched_text: '0-clause BSD:'
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 43
         end_line: 43
@@ -133,7 +133,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
         matched_text: '2-clause BSD:'
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 47
         end_line: 47
@@ -146,7 +146,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
         matched_text: '2-clause BSD:'
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 50
         end_line: 50
@@ -163,7 +163,7 @@ license_detections:
     license_expression_spdx: 0BSD
     matches:
       - license_expression: bsd-zero
-        spdx_license_expression: 0BSD
+        license_expression_spdx: 0BSD
         from_file:
         start_line: 55
         end_line: 55
@@ -181,7 +181,7 @@ license_detections:
       BSD-3-Clause
     matches:
       - license_expression: bsd-zero
-        spdx_license_expression: 0BSD
+        license_expression_spdx: 0BSD
         from_file:
         start_line: 61
         end_line: 61
@@ -194,7 +194,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
         matched_text: '0-clause BSD:'
       - license_expression: bsd-zero
-        spdx_license_expression: 0BSD
+        license_expression_spdx: 0BSD
         from_file:
         start_line: 64
         end_line: 64
@@ -207,7 +207,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
         matched_text: '0-clause BSD:'
       - license_expression: bsd-zero
-        spdx_license_expression: 0BSD
+        license_expression_spdx: 0BSD
         from_file:
         start_line: 67
         end_line: 67
@@ -220,7 +220,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
         matched_text: '0-clause BSD:'
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 71
         end_line: 71
@@ -233,7 +233,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
         matched_text: '2-clause BSD:'
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 74
         end_line: 74
@@ -246,7 +246,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
         matched_text: '2-clause BSD:'
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 77
         end_line: 77
@@ -259,7 +259,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/public-domain_426.RULE
         matched_text: Public domain, written by
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 80
         end_line: 80
@@ -272,7 +272,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_308.RULE
         matched_text: '3-clause BSD:'
       - license_expression: bsd-simplified
-        spdx_license_expression: BSD-2-Clause
+        license_expression_spdx: BSD-2-Clause
         from_file:
         start_line: 83
         end_line: 83
@@ -285,7 +285,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_156.RULE
         matched_text: '2-clause BSD:'
       - license_expression: public-domain
-        spdx_license_expression: LicenseRef-scancode-public-domain
+        license_expression_spdx: LicenseRef-scancode-public-domain
         from_file:
         start_line: 86
         end_line: 86
@@ -304,7 +304,7 @@ license_detections:
       AND GPL-2.0-or-later WITH Autoconf-exception-generic AND LicenseRef-scancode-free-unknown
     matches:
       - license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
-        spdx_license_expression: GPL-3.0-or-later WITH Autoconf-exception-3.0
+        license_expression_spdx: GPL-3.0-or-later WITH Autoconf-exception-3.0
         from_file:
         start_line: 98
         end_line: 98
@@ -317,7 +317,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
         matched_text: 'GPL (v3 or later), with Autoconf exception:'
       - license_expression: bsd-zero
-        spdx_license_expression: 0BSD
+        license_expression_spdx: 0BSD
         from_file:
         start_line: 101
         end_line: 101
@@ -330,7 +330,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-zero_6.RULE
         matched_text: '0-clause BSD:'
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 104
         end_line: 104
@@ -343,7 +343,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
         matched_text: 'FSF All Permissive License:'
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 107
         end_line: 107
@@ -356,7 +356,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
         matched_text: 'FSF All Permissive License:'
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 111
         end_line: 111
@@ -369,7 +369,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
         matched_text: 'FSF All Permissive License:'
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 114
         end_line: 114
@@ -382,7 +382,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
         matched_text: 'FSF All Permissive License:'
       - license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
-        spdx_license_expression: GPL-2.0-or-later WITH Autoconf-exception-generic
+        license_expression_spdx: GPL-2.0-or-later WITH Autoconf-exception-generic
         from_file:
         start_line: 118
         end_line: 118
@@ -395,7 +395,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_with_autoconf-simple-exception-2.0_17.RULE
         matched_text: 'GPL (v2 or later), with Autoconf exception:'
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 121
         end_line: 121
@@ -408,7 +408,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
         matched_text: 'FSF All Permissive License:'
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 124
         end_line: 124
@@ -421,7 +421,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
         matched_text: 'FSF All Permissive License:'
       - license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
-        spdx_license_expression: GPL-3.0-or-later WITH Autoconf-exception-3.0
+        license_expression_spdx: GPL-3.0-or-later WITH Autoconf-exception-3.0
         from_file:
         start_line: 128
         end_line: 128
@@ -434,7 +434,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_with_autoconf-exception-3.0_3.RULE
         matched_text: 'GPL (v3 or later), with Autoconf exception:'
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 131
         end_line: 131
@@ -447,7 +447,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
         matched_text: 'FSF All Permissive License:'
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 134
         end_line: 134
@@ -460,7 +460,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/fsf-ap_6.RULE
         matched_text: 'FSF All Permissive License:'
       - license_expression: free-unknown
-        spdx_license_expression: LicenseRef-scancode-free-unknown
+        license_expression_spdx: LicenseRef-scancode-free-unknown
         from_file:
         start_line: 137
         end_line: 139
@@ -494,14 +494,15 @@ copyright: |
   Copyright Juniper Networks, Inc.
   Copyright Bjorn Esser
   Copyright Zack Weinberg and Free Software Foundation, Inc
+  Copyright vt at altlinux.org
   Copyright Kevin Cernekee FSF
   Copyright Maarten Bosmans FSF
   Copyright Guido U. Draheim, Maarten Bosmans FSF
   Copyright Mike Frysinger FSF
-  Copyright Scott James Remnant, Dan Nicholson GPL
+  Copyright Scott James Remnant, Dan Nicholson
   Copyright Tim Toolan FSF
   Copyright Philip Withnall FSF
-  Copyright Steven G. Johnson, Daniel Richard G. GPL
+  Copyright Steven G. Johnson, Daniel Richard G.
   Copyright Francesco Salvestrini FSF
   Copyright Andrew Collier FSF
   Copyright 2002, 2003, 2004 SuSE Linux AG, Germany

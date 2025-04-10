@@ -20,7 +20,7 @@ class MicrosoftUpdateManifestHandler(models.NonAssemblableDatafileHandler):
     description = 'Microsoft Update Manifest .mum file'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with open(location , 'rb') as loc:
             parsed = xmltodict.parse(loc)
 
@@ -47,7 +47,7 @@ class MicrosoftUpdateManifestHandler(models.NonAssemblableDatafileHandler):
                 )
             )
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -57,3 +57,4 @@ class MicrosoftUpdateManifestHandler(models.NonAssemblableDatafileHandler):
             parties=parties,
             copyright=copyrght,
         )
+        yield models.PackageData.from_data(package_data, package_only)

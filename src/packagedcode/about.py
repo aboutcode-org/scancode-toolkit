@@ -47,7 +47,7 @@ class AboutFileHandler(models.DatafileHandler):
     documentation_url = 'https://aboutcode-toolkit.readthedocs.io/en/latest/specification.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield one or more Package manifest objects given a file ``location`` pointing to a
         package archive, manifest or similar.
@@ -90,7 +90,7 @@ class AboutFileHandler(models.DatafileHandler):
             file_references.append(models.FileReference(path=about_resource))
 
         # FIXME: we should put the unprocessed attributes in extra data
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=package_type,
             namespace=package_ns,
@@ -103,6 +103,7 @@ class AboutFileHandler(models.DatafileHandler):
             download_url=download_url,
             file_references=file_references,
         )
+        yield models.PackageData.from_data(package_data, package_only)
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):

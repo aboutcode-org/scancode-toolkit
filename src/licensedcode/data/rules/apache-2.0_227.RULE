@@ -9,5 +9,5 @@ ignorable_urls:
 
 <licenses>
         <license>
-            <name>The Apache Software License, Version 2.0</name>
+            <name>{{The Apache Software License, Version 2.0}}</name>
             <url>http://ehcache.sourceforge.net/LICENSE.txt</url>

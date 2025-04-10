@@ -8,7 +8,12 @@ homepage_url: https://fedoraproject.org/wiki/Licensing:Xerox?rd=Licensing/Xerox
 notes: |
     Per Fedora, this license is very similar to MIT, except that it requires
     that US Export Control laws be followed, which makes it GPL-Incompatible.
-spdx_license_key: LicenseRef-scancode-mit-no-advert-export-control
+spdx_license_key: HPND-export2-US
+other_spdx_license_keys:
+    - LicenseRef-scancode-mit-no-advert-export-control
+other_urls:
+    - https://web.mit.edu/kerberos/krb5-1.21/doc/mitK5license.html
+    - https://github.com/krb5/krb5/blob/krb5-1.21.2-final/NOTICE#L111-L133
 minimum_coverage: 70
 ---
 

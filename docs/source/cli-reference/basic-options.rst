@@ -108,7 +108,7 @@
                             "license_expression": "apache-2.0",
                             "rule_identifier": "apache-2.0_65.RULE",
                             "rule_relevance": 100,
-                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
+                            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE",
                             "matched_text": "License: Apache-2.0"
                         }
                     ],
@@ -175,7 +175,8 @@
                     "scope": "dependencies",
                     "is_runtime": true,
                     "is_optional": false,
-                    "is_resolved": false,
+                    "is_pinned": false,
+                    "is_direct": true,
                     "resolved_package": {},
                     "extra_data": {},
                     "dependency_uid": "pkg:bower/get-size?uuid=fixed-uid-done-for-testing-5642512d1758",
@@ -341,7 +342,8 @@
                                     "scope": "dependencies",
                                     "is_runtime": true,
                                     "is_optional": false,
-                                    "is_resolved": false,
+                                    "is_pinned": false,
+                                    "is_direct": true,
                                     "resolved_package": {},
                                     "extra_data": {}
                                 }
@@ -587,7 +589,7 @@
 
     A scan example using the ``--license-url-template TEXT`` option ::
 
-        scancode -clpieu --json-pp output.json samples --license-url-template https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/{}.LICENSE
+        scancode -clpieu --json-pp output.json samples --license-url-template https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/{}.LICENSE
 
     In a normal scan, reference url for "ZLIB License" is as follows::
 
@@ -595,11 +597,11 @@
 
     After using the option in the following manner::
 
-        ``--license-url-template https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/{}.LICENSE``
+        ``--license-url-template https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/{}.LICENSE``
 
-    the reference URL changes to this `zlib.LICENSE file <https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/zlib.LICENSE>`_::
+    the reference URL changes to this `zlib.LICENSE file <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/zlib.LICENSE>`_::
 
-        "reference_url": "https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/zlib.LICENSE",
+        "reference_url": "https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/zlib.LICENSE",
 
     The reference URL changes for all detected licenses in the scan, across the scan result file.
 
@@ -691,7 +693,7 @@
                             "license_expression": "unknown-license-reference",
                             "rule_identifier": "lead-in_unknown_30.RULE",
                             "rule_relevance": 100,
-                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE",
+                            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lead-in_unknown_30.RULE",
                             "matched_text": "dual-licensed under [`
                         },
                         {
@@ -704,7 +706,7 @@
                             "license_expression": "wtfpl-2.0",
                             "rule_identifier": "spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
                             "rule_relevance": 50,
-                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
+                            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_wtfpl_for_wtfpl-2.0.RULE",
                             "matched_text": "WTFPL"
                         },
                         {
@@ -717,7 +719,7 @@
                             "license_expression": "wtfpl-2.0",
                             "rule_identifier": "wtfpl-2.0_27.RULE",
                             "rule_relevance": 100,
-                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE",
+                            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/wtfpl-2.0_27.RULE",
                             "matched_text": "www.wtfpl.net/"
                         },
                         {
@@ -730,7 +732,7 @@
                             "license_expression": "mit",
                             "rule_identifier": "mit_64.RULE",
                             "rule_relevance": 100,
-                            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE",
+                            "rule_url": "https://github.com/aboutcode-org/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_64.RULE",
                             "matched_text": "MIT`](https://opensource.org/licenses/MIT)."
                         }
                     ],

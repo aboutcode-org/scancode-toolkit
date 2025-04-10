@@ -1,0 +1,86 @@
+[
+  {
+    "type": "conan",
+    "namespace": null,
+    "name": "libgettext",
+    "version": null,
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "C++",
+    "description": "An internationalization and localization system for multilingual programs",
+    "release_date": null,
+    "parties": [],
+    "keywords": [
+      "gettext",
+      "intl",
+      "libintl",
+      "i18n"
+    ],
+    "homepage_url": "https://www.gnu.org/software/gettext",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "lgpl-2.1-plus",
+    "declared_license_expression_spdx": "LGPL-2.1-or-later",
+    "license_detections": [
+      {
+        "license_expression": "lgpl-2.1-plus",
+        "license_expression_spdx": "LGPL-2.1-or-later",
+        "matches": [
+          {
+            "license_expression": "lgpl-2.1-plus",
+            "license_expression_spdx": "LGPL-2.1-or-later",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 50.0,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 50,
+            "rule_identifier": "spdx_license_id_lgpl-2.1-or-later_for_lgpl-2.1-plus.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_lgpl-2.1-or-later_for_lgpl-2.1-plus.RULE",
+            "matched_text": "LGPL-2.1-or-later"
+          }
+        ],
+        "identifier": "lgpl_2_1_plus-397bd8b3-769d-48fb-b989-bab6541dfeef"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "- LGPL-2.1-or-later\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {},
+    "dependencies": [
+      {
+        "purl": "pkg:conan/libiconv@1.17",
+        "extracted_requirement": "1.17",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "conan_conanfile_py",
+    "purl": "pkg:conan/libgettext"
+  }
+]

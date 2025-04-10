@@ -39,17 +39,17 @@
         "license_expression_spdx": "MIT",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 100.0,
             "matched_length": 4,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "mit",
-            "spdx_license_expression": "MIT",
-            "rule_identifier": "mit_in_manifest.RULE",
             "rule_relevance": 100,
+            "rule_identifier": "mit_in_manifest.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_in_manifest.RULE",
             "matched_text": ":type = MIT, :file = LICENSE"
           }
@@ -64,6 +64,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": "https://cocoapods.org/pods/LoadingShimmer",

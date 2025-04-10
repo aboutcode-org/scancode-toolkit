@@ -2,6 +2,8 @@
 license_expression: x11-xconsortium-veillard
 is_license_text: yes
 relevance: 99
+minimum_coverage: 100
+notes: text is truncated
 ---
 
 License: other

@@ -41,7 +41,7 @@
           "matches": [
             {
               "license_expression": "mit",
-              "spdx_license_expression": "MIT",
+              "license_expression_spdx": "MIT",
               "from_file": "RxDataSources.podspec",
               "start_line": 1,
               "end_line": 1,
@@ -64,6 +64,8 @@
       "extracted_license_statement": "MIT",
       "notice_text": null,
       "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
       "extra_data": {},
       "repository_homepage_url": "https://cocoapods.org/pods/RxDataSources",
       "repository_download_url": "https://github.com/RxSwiftCommunity/RxDataSources/archive/refs/tags/4.0.1.zip",
@@ -125,7 +127,7 @@
               "matches": [
                 {
                   "license_expression": "mit",
-                  "spdx_license_expression": "MIT",
+                  "license_expression_spdx": "MIT",
                   "from_file": "RxDataSources.podspec",
                   "start_line": 1,
                   "end_line": 1,
@@ -149,6 +151,8 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {},
           "dependencies": [],
           "repository_homepage_url": "https://cocoapods.org/pods/RxDataSources",

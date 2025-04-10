@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1997 Kenneth Stailey
+  - Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr
+  - Copyright (c) 1992 Ronald S. Karr
+  - Copyright (c) 1988 Landon Curt Noll & Ronald S. Karr
+holders:
+  - Kenneth Stailey
+  - Landon Curt Noll & Ronald S. Karr
+  - Ronald S. Karr
+  - Landon Curt Noll & Ronald S. Karr
+authors:
+  - Clint Adams <schizo@debian.org>

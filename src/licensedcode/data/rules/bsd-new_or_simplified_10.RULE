@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 95
 ---
 
-is OSI Certified Open Source Software licensed under the BSD license.
+is OSI Certified Open Source Software licensed under {{the BSD license}}.

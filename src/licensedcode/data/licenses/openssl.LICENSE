@@ -9,10 +9,14 @@ notes: |
     This is the OpenSSL license proper, without the SSLEay part. The SPDX
     OpenSSL identifier does not apply here. Instead it matches the openssl-
     ssleay license.
-spdx_license_key: LicenseRef-scancode-openssl
+spdx_license_key: OpenSSL-standalone
+other_spdx_license_keys:
+    - LicenseRef-scancode-openssl
 faq_url: http://www.openssl.org/support/faq.html
 other_urls:
     - http://www.openssl.org/source/license.html
+    - https://library.netapp.com/ecm/ecm_download_file/ECMP1196395
+    - https://hstechdocs.helpsystems.com/manuals/globalscape/archive/cuteftp6/open_ssl_license_agreement.htm
 minimum_coverage: 70
 ignorable_authors:
     - the OpenSSL Project

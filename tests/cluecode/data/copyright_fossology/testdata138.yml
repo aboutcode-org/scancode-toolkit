@@ -1,0 +1,15 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1989 The Regents of the University of California
+  - copyright Alexey Kuznetsov
+holders:
+  - The Regents of the University of California
+  - Alexey Kuznetsov
+authors:
+  - Anthony Towns <ajt@debian.org>
+  - Noah Meyerhans <noahm@debian.org>
+  - Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>
+  - Sun Microsystems, Inc.

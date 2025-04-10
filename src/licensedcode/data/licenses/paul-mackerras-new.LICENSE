@@ -5,7 +5,11 @@ name: Paul Mackerras New License
 category: Permissive
 owner: Paul Mackerras
 notes: this is a paul-mackerras without advert
-spdx_license_key: LicenseRef-scancode-paul-mackerras-new
+spdx_license_key: Mackerras-3-Clause
+other_spdx_license_keys:
+    - LicenseRef-scancode-paul-mackerras-new
+other_urls:
+    - https://github.com/ppp-project/ppp/blob/master/pppd/chap_ms.c#L6-L28
 ---
 
 Redistribution and use in source and binary forms, with or without

@@ -53,17 +53,17 @@
         "license_expression_spdx": "Apache-2.0",
         "matches": [
           {
-            "score": 95.0,
+            "license_expression": "apache-2.0",
+            "license_expression_spdx": "Apache-2.0",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "1-hash",
+            "score": 95.0,
             "matched_length": 6,
             "match_coverage": 100.0,
-            "matcher": "1-hash",
-            "license_expression": "apache-2.0",
-            "spdx_license_expression": "Apache-2.0",
-            "rule_identifier": "pypi_apache_no-version.RULE",
             "rule_relevance": 95,
+            "rule_identifier": "pypi_apache_no-version.RULE",
             "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_apache_no-version.RULE",
             "matched_text": "- 'License :: OSI Approved :: Apache Software License'"
           }
@@ -78,6 +78,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {
       "Documentation": "https://docs.openstack.org/pbr/"
     },

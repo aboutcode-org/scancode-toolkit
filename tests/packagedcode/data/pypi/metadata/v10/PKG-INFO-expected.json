@@ -39,22 +39,22 @@
         "license_expression_spdx": "LicenseRef-scancode-unknown",
         "matches": [
           {
-            "score": 100.0,
+            "license_expression": "unknown",
+            "license_expression_spdx": "LicenseRef-scancode-unknown",
+            "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "from_file": null,
+            "matcher": "5-undetected",
+            "score": 100.0,
             "matched_length": 4,
             "match_coverage": 100.0,
-            "matcher": "5-undetected",
-            "license_expression": "unknown",
-            "spdx_license_expression": "LicenseRef-scancode-unknown",
-            "rule_identifier": "package-manifest-unknown-623aa537047267a404620d70ae00f1448b424248",
             "rule_relevance": 100,
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-623aa537047267a404620d70ae00f1448b424248",
-            "matched_text": "license license: LICENSE.txt"
+            "rule_identifier": "package-manifest-unknown-54cabbf9e6e2ad452085853f06d62077e9d72ddb",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-54cabbf9e6e2ad452085853f06d62077e9d72ddb",
+            "matched_text": "license {'license': 'LICENSE.txt'}"
           }
         ],
-        "identifier": "unknown-083832d0-fb1a-f0bc-de38-c8d1cc1a3a8a"
+        "identifier": "unknown-d5d1ef26-6d73-51c2-0bd1-6551bb2e6e9c"
       }
     ],
     "other_license_expression": null,
@@ -64,6 +64,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [],
     "repository_homepage_url": "https://pypi.org/project/prompt-toolkit",

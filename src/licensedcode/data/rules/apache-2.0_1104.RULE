@@ -9,4 +9,4 @@ ignorable_authors:
 ---
 
 // Although ebpf.c is originally licensed under LGPL-3.0-or-later, the author (Giuseppe Scrivano)
-// agreed to relicense the file in Apache License 2.0
+// agreed to relicense the file in {{Apache License 2.0}}

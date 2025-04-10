@@ -33,6 +33,8 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
@@ -41,7 +43,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "@babel",
@@ -76,15 +79,18 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:npm/%22%40babel/highlight%22",
+              "purl": "pkg:npm/%40babel/highlight",
               "extracted_requirement": "^7.0.0",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -103,7 +109,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "@babel",
@@ -138,35 +145,40 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:npm/%22%40babel/code-frame%22",
+              "purl": "pkg:npm/%40babel/code-frame",
               "extracted_requirement": "^7.0.0",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": true,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%22%40babel/generator%22",
+              "purl": "pkg:npm/%40babel/generator",
               "extracted_requirement": "^7.3.4",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%22%40babel/types%22",
+              "purl": "pkg:npm/%40babel/types",
               "extracted_requirement": "^7.3.4",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
@@ -176,7 +188,8 @@
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -195,7 +208,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "@babel",
@@ -230,15 +244,18 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:npm/%22%40babel/types%22",
+              "purl": "pkg:npm/%40babel/types",
               "extracted_requirement": "^7.0.0",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -257,7 +274,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "@react-spring",
@@ -276,8 +294,7 @@
           "sha1": "da977382f91d9af4c400e4aa7dc37d3db07b87e0",
           "md5": null,
           "sha256": null,
-          "sha512":
-          "ac4be2a5b9668a18b3f3e128d35cc3a7976a5a7e977d893cab6ae537d735f1820e2f8a3a9ee63f569943a2871430761f1f8962baba4ee28d50b9d28e3b59c089",
+          "sha512": "ac4be2a5b9668a18b3f3e128d35cc3a7976a5a7e977d893cab6ae537d735f1820e2f8a3a9ee63f569943a2871430761f1f8962baba4ee28d50b9d28e3b59c089",
           "bug_tracking_url": null,
           "code_view_url": null,
           "vcs_url": null,
@@ -293,35 +310,40 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:npm/%22%40react-spring/animated%22",
+              "purl": "pkg:npm/%40react-spring/animated",
               "extracted_requirement": "9.7.3",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%22%40react-spring/core%22",
+              "purl": "pkg:npm/%40react-spring/core",
               "extracted_requirement": "9.7.3",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%22%40react-spring/shared%22",
+              "purl": "pkg:npm/%40react-spring/shared",
               "extracted_requirement": "9.7.3",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }
@@ -340,7 +362,8 @@
         "scope": "dependencies",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": false,
         "resolved_package": {
           "type": "npm",
           "namespace": "@testing-library",
@@ -375,25 +398,29 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": true,
           "extra_data": {},
           "dependencies": [
             {
-              "purl": "pkg:npm/%22%40babel/runtime%22",
+              "purl": "pkg:npm/%40babel/runtime",
               "extracted_requirement": "^7.12.5",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             },
             {
-              "purl": "pkg:npm/%22%40testing-library/dom%22",
+              "purl": "pkg:npm/%40testing-library/dom",
               "extracted_requirement": "^8.0.0",
               "scope": "dependencies",
               "is_runtime": true,
               "is_optional": false,
-              "is_resolved": false,
+              "is_pinned": false,
+              "is_direct": true,
               "resolved_package": {},
               "extra_data": {}
             }

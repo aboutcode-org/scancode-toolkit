@@ -13,6 +13,7 @@ from scancode.pool import get_pool
 # Import early because of the side effects
 import scancode_config
 
+import json
 import logging
 import os
 import platform
@@ -42,6 +43,9 @@ from commoncode.cliutils import GroupedHelpCommand
 from commoncode.cliutils import path_progress_message
 from commoncode.cliutils import progressmanager
 from commoncode.cliutils import PluggableCommandLineOption
+from commoncode.filetype import is_dir
+from commoncode.filetype import is_file
+from commoncode.filetype import is_readable
 from commoncode.fileutils import as_posixpath
 from commoncode.timeutils import time2tstamp
 from commoncode.resource import Codebase
@@ -67,7 +71,6 @@ from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.pool import ScanCodeTimeoutError
-
 
 # Tracing flags
 TRACE = False
@@ -173,6 +176,32 @@ def validate_depth(ctx, param, value):
     return value
 
 
+def validate_input_path(ctx, param, value):
+    """
+    Validate a ``value`` list of inputs path strings
+    """
+    options = ctx.params
+    from_json = options.get("--from-json", False)
+    for inp in value:
+        if not (is_file(location=inp, follow_symlinks=True) or is_dir(location=inp, follow_symlinks=True)):
+            raise click.BadParameter(f"input: {inp!r} is not a regular file or a directory")
+
+        if not is_readable(location=inp):
+            raise click.BadParameter(f"input: {inp!r} is not readable")
+
+        if from_json and not is_file(location=inp, follow_symlinks=True):
+            # extra JSON validation
+            raise click.BadParameter(f"JSON input: {inp!r} is not a file")
+            if not inp.lower().endswith(".json"):
+                raise click.BadParameter(f"JSON input: {inp!r} is not a JSON file with a .json extension")
+            with open(inp) as js:
+                start = js.read(100).strip()
+            if not start.startswith("{"):
+                raise click.BadParameter(f"JSON input: {inp!r} is not a well formed JSON file")
+
+    return value
+
+
 @click.command(name='scancode',
     epilog=epilog_text,
     cls=ScancodeCommand,
@@ -182,6 +211,7 @@ def validate_depth(ctx, param, value):
 
 @click.argument('input',
     metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
+    callback=validate_input_path,
     type=click.Path(exists=True, readable=True, path_type=str))
 
 @click.option('--strip-root',
@@ -450,6 +480,8 @@ def scancode(
         if check_version:
             from scancode.outdated import check_scancode_version
             outdated = check_scancode_version()
+        else:
+            outdated = None
 
         # run proper
         success, _results = run_scan(
@@ -850,9 +882,12 @@ def run_scan(
                 max_in_memory=max_in_memory,
                 max_depth=max_depth,
             )
-        except:
-            msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
-            raise ScancodeError(msg + '\n' + traceback.format_exc())
+        except Exception as e:
+            if from_json and isinstance(e, (json.decoder.JSONDecodeError, UnicodeDecodeError)):
+                raise click.BadParameter(f"Input JSON scan file(s) is not valid JSON: {input!r} : {e!r}")
+            else:
+                msg = f'Failed to process codebase at: {input!r}'
+                raise ScancodeError(msg + '\n' + traceback.format_exc())
 
         # update headers
         cle = codebase.get_or_create_current_header()

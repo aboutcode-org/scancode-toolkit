@@ -340,8 +340,8 @@ SPEC_SUB_DEPS = re.compile(
     '%(NAME_VERSION)s'
     '$' % locals()).match
 
-PLATS = re.compile('^  (?P<platform>.*)$').match
-BUNDLED_WITH = re.compile('^\s+(?P<version>(?:\d+.)+\d+)\s*$').match
+PLATS = re.compile(r'^  (?P<platform>.*)$').match
+BUNDLED_WITH = re.compile(r'^\s+(?P<version>(?:\d+.)+\d+)\s*$').match
 
 
 class GemfileLockParser:

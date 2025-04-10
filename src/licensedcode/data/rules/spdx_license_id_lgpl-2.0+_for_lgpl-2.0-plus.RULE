@@ -1,10 +1,10 @@
 ---
 license_expression: lgpl-2.0-plus
 is_license_reference: yes
-is_continuous: yes
+is_required_phrase: yes
 relevance: 50
 minimum_coverage: 100
 notes: Used to detect a bare SPDX license id
 ---
 
-lgpl-2.0+
+lgpl 2.0+

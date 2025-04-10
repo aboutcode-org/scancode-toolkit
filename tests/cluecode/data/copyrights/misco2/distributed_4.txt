@@ -1,0 +1,8 @@
+<string name="phmap">
+		parallel-hashmap (c)2019-2023 Gregory Popovitch.
+	</string>
+	<string name="sse2neon">
+		sse2neon (c) Distributed Ledger Technology Collaboration and contributors.
+	</string>
+	<string name="tracy">
+		Tracy Profiler (c)2017-2023 Bartosz Taudul.

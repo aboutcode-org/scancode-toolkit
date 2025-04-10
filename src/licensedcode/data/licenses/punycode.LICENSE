@@ -6,6 +6,8 @@ category: Permissive
 owner: nicemice
 homepage_url: https://git.savannah.gnu.org/gitweb/?p=libidn.git;a=blob;f=lib/punycode.c;h=14d70152b9c5723778af174ff6027cc3742b749e;hb=HEAD#l54
 spdx_license_key: LicenseRef-scancode-punycode
+text_urls:
+    - https://datatracker.ietf.org/doc/html/rfc3492#page-22
 ---
 
 Disclaimer and license: Regarding this entire document or any

@@ -41,15 +41,18 @@
     "notice_text": null,
     "source_packages": [],
     "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
     "extra_data": {},
     "dependencies": [
       {
         "purl": "pkg:pypi/pip@7.1.2",
-        "extracted_requirement": "pip==7.1.2",
+        "extracted_requirement": "==7.1.2",
         "scope": "install",
         "is_runtime": true,
         "is_optional": false,
-        "is_resolved": true,
+        "is_pinned": true,
+        "is_direct": true,
         "resolved_package": {},
         "extra_data": {}
       }

@@ -1,6 +1,10 @@
 ---
 license_expression: bsd-original-uc
 is_license_notice: yes
+ignorable_copyrights:
+    - copyright of UC Berkeley's Berkeley Software
+ignorable_holders:
+    - UC Berkeley's Berkeley Software
 ignorable_authors:
     - UC Berkeley and its contributors
     - the University of California, Berkeley and its contributors

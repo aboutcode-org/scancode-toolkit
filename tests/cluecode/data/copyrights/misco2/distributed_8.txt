@@ -1,0 +1,3 @@
+<copyright>(c) Distributed via COMTEX News. 
+                   (c) YYYY A&G Information Services, all rights reserved.
+        </copyright>

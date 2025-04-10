@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import json
 import xmltodict
 from packageurl import PackageURL
 
@@ -74,7 +75,7 @@ def _get_dep_packs(deps, extra_data):
             scope='dependency',
             is_runtime=True,
             is_optional=False,
-            is_resolved=False,
+            is_pinned=False,
             extra_data=extra,
         )
 
@@ -106,7 +107,7 @@ class NugetNuspecHandler(models.DatafileHandler):
     documentation_url = 'https://docs.microsoft.com/en-us/nuget/reference/nuspec'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         with open(location, 'rb') as loc:
             parsed = xmltodict.parse(loc)
 
@@ -163,7 +164,7 @@ class NugetNuspecHandler(models.DatafileHandler):
         elif 'licenseUrl' in nuspec:
             extracted_license_statement = nuspec.get('licenseUrl')
 
-        yield models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
@@ -177,4 +178,90 @@ class NugetNuspecHandler(models.DatafileHandler):
             vcs_url=vcs_url,
             **urls,
         )
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class NugetPackagesLockHandler(models.DatafileHandler):
+    datasource_id = 'nuget_packages_lock'
+    path_patterns = ('*packages.lock.json',)
+    default_package_type = 'nuget'
+    description = 'NuGet packages.lock.json file'
+    documentation_url = 'https://learn.microsoft.com/en-us/nuget/reference/cli-reference/cli-ref-restore'
+
+    @classmethod
+    def get_dependencies(cls, package_info, scope):
+        dependencies = []
+        dependencies_mapping = package_info.get("dependencies") or {}
+        for name, version in dependencies_mapping.items():
+            dependency = models.DependentPackage(
+                purl=str(PackageURL(type='nuget', name=name, version=version)),
+                extracted_requirement=version,
+                is_pinned=True,
+                scope=scope,
+                is_optional=False,
+                is_runtime=True,
+                is_direct=True,
+            )
+            dependencies.append(dependency)
+        return dependencies
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location) as loc:
+            parsed = json.load(loc)
+
+        if not parsed:
+            return
+
+        top_dependencies = []
+        for target_framework, packages in parsed.get('dependencies', {}).items():
+            extra_data = dict(
+                target_framework=target_framework,
+            )
+            for package_name, package_info in packages.items():
+                dependencies = cls.get_dependencies(package_info=package_info, scope=target_framework)
+                resolved_package_mapping = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                primary_language=cls.default_primary_language,
+                name=package_name,
+                dependencies=[
+                    dep.to_dict() for dep in dependencies
+                ],
+                is_virtual=True,
+                version=package_info.get('resolved'),
+                )
+                resolved_package = models.PackageData.from_data(resolved_package_mapping)
+                package_type = package_info.get('type')
+                if package_type == "Direct":
+                    is_direct = True
+                elif package_type == "Transitive":
+                    is_direct = False
+                else:
+                    raise Exception(f"Unknown package type: {package_type} for package {package_name} in {location}")
+                    
+
+                version = package_info.get('resolved')
+                requested = package_info.get('requested')
+                dependency = models.DependentPackage(
+                    purl=str(PackageURL(type='nuget', name=package_name, version=version)),
+                    extracted_requirement=requested or version,
+                    is_pinned=True,
+                    resolved_package=resolved_package.to_dict(),
+                    # We use the target framework as scope since there is no concept of scope in .NET
+                    # and we may have different resolutions for different target frameworks
+                    scope=target_framework,
+                    is_optional=False,
+                    is_runtime=True,
+                    is_direct=is_direct,
+                )
+                top_dependencies.append(dependency.to_dict())
+        package_data = dict(
+            datasource_id=cls.datasource_id,
+            type=cls.default_package_type,
+            primary_language=cls.default_primary_language,
+            extra_data=extra_data,
+            dependencies=top_dependencies,
+        )
+        yield models.PackageData.from_data(package_data, package_only)
 

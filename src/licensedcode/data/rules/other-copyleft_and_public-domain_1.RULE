@@ -1,7 +1,9 @@
 ---
 license_expression: other-copyleft AND public-domain
+is_deprecated: yes
 is_license_text: yes
 relevance: 100
+notes: This is now gcr-docs.LICENSE
 ---
 
 This work may be reproduced and distributed in whole or in part, in

@@ -1,0 +1,14 @@
+---
+key: gnome-examples-exception
+short_name: GNOME examples exception
+name: GNOME examples exception
+category: Permissive
+owner: GNOME Project
+is_exception: yes
+spdx_license_key: GNOME-examples-exception
+other_urls:
+    - https://gitlab.gnome.org/Archive/gnome-devel-docs/-/blob/master/platform-demos/C/legal.xml?ref_type=heads
+    - http://meldmerge.org/help/
+---
+
+As a special exception, the copyright holders give you permission to copy, modify, and distribute the example code contained in this document under the terms of your choosing, without restriction.

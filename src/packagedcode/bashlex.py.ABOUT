@@ -7,6 +7,6 @@ homepage_url: http://pygments.org/
 license_expression: bsd-simplified
 name: bashlex.py
 notice_file: bashlex.py.NOTICE
-package_url: pkg:generic/bashlex.py
+
 primary_language: Python
 notes: this is a derived and heavily modified Pygments bash lexer

@@ -9,8 +9,8 @@ notes: See https://github.com/panicinc/PunchClock/blob/f08ebc079717cd1b97f6a9ad4
 Redistribution and use, with or without modification, are permitted
 provided that the following conditions are met:
 
-  * The software, and any works derived from the software, may not
-  be sold without specific prior written permission from Panic Inc.
+  * The software, and any works derived from the software, {{may not
+  be}} sold without specific prior written permission from Panic Inc.
 
   * Redistributions must reproduce the above copyright notice, this
   list of conditions and the following disclaimer in the documentation

@@ -2,6 +2,10 @@
 license_expression: gpl-2.0 AND gpl-2.0-plus
 is_license_notice: yes
 minimum_coverage: 80
+ignorable_copyrights:
+    - copyright is held by Freescale
+ignorable_holders:
+    - Freescale
 ---
 
 The portions of this file whose copyright is held by Freescale and which

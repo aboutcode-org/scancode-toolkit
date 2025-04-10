@@ -31,7 +31,7 @@
       "matches": [
         {
           "license_expression": "(lgpl-2.1 OR lgpl-3.0) AND lgpl-2.1 AND (lgpl-2.1 WITH qt-lgpl-exception-1.1 OR gpl-3.0 WITH qt-lgpl-exception-1.1)",
-          "spdx_license_expression": "(LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.1-only AND (LGPL-2.1-only WITH Qt-LGPL-exception-1.1 OR GPL-3.0-only WITH Qt-LGPL-exception-1.1)",
+          "license_expression_spdx": "(LGPL-2.1-only OR LGPL-3.0-only) AND LGPL-2.1-only AND (LGPL-2.1-only WITH Qt-LGPL-exception-1.1 OR GPL-3.0-only WITH Qt-LGPL-exception-1.1)",
           "from_file": null,
           "start_line": 1,
           "end_line": 1,
@@ -55,6 +55,8 @@
   "notice_text": null,
   "source_packages": [],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {
     "sources": [
       {

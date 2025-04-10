@@ -7,6 +7,9 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import io
+import os
+import fnmatch
 import logging
 import sys
 from collections import namedtuple
@@ -14,13 +17,15 @@ from pathlib import Path
 
 from packagedcode import models
 from packagedcode import nevra
+from packagedcode.licensing import RESOURCE_TO_PACKAGE_LICENSE_FIELDS
 from packagedcode.pyrpm import RPM
 from packagedcode.rpm_installed import collect_installed_rpmdb_xmlish_from_rpmdb_loc
 from packagedcode.rpm_installed import parse_rpm_xmlish
 from packagedcode.utils import build_description
 from packagedcode.utils import get_ancestor
+from scancode.api import get_licenses
 
-TRACE = False
+TRACE = os.environ.get('SCANCODE_DEBUG_PACKAGE_API', False)
 
 
 def logger_debug(*args):
@@ -124,7 +129,7 @@ class EVR(namedtuple('EVR', 'epoch version release')):
 class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         # we receive the location of the Package database file and we need to
         # scan the parent which is the directory that contains the rpmdb
         loc_path = Path(location)
@@ -136,6 +141,7 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
             location=xmlish_loc,
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            package_only=package_only,
         )
         # TODO: package_data.namespace = cls.default_package_namespace
         return package_data
@@ -223,6 +229,8 @@ class BaseRpmInstalledDatabaseHandler(models.DatafileHandler):
 class RpmInstalledNdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # used by recent Suse
     datasource_id = 'rpm_installed_database_ndb'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*usr/lib/sysimage/rpm/Packages.db',)
     default_package_type = 'rpm'
     default_package_namespace = 'TBD'
@@ -233,7 +241,12 @@ class RpmInstalledNdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
 # TODO: add dependencies!!!
 class RpmInstalledSqliteDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # used by newer RHEL/CentOS/Fedora/CoreOS
+    # Filetype: SQLite 3.x database, ...
+    # Mimetype: application/vnd.sqlite3
+
     datasource_id = 'rpm_installed_database_sqlite'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*rpm/rpmdb.sqlite',)
     default_package_type = 'rpm'
     default_package_namespace = 'TBD'
@@ -245,6 +258,8 @@ class RpmInstalledSqliteDatabaseHandler(BaseRpmInstalledDatabaseHandler):
 class RpmInstalledBdbDatabaseHandler(BaseRpmInstalledDatabaseHandler):
     # used by legacy RHEL/CentOS/Fedora/Suse
     datasource_id = 'rpm_installed_database_bdb'
+    datasource_type = 'sys'
+    supported_oses = ('linux',)
     path_patterns = ('*var/lib/rpm/Packages',)
     filetypes = ('berkeley',)
     default_package_type = 'rpm'
@@ -274,7 +289,7 @@ class RpmArchiveHandler(models.DatafileHandler):
     documentation_url = 'https://en.wikipedia.org/wiki/RPM_Package_Manager'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         rpm_tags = get_rpm_tags(location, include_desc=True)
 
         if TRACE: logger_debug('recognize: rpm_tags', rpm_tags)
@@ -351,7 +366,7 @@ class RpmArchiveHandler(models.DatafileHandler):
             )
             logger_debug('recognize: data to create a package:\n', data)
 
-        package = models.PackageData(
+        package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             # TODO: namespace=cls.default_package_namespace,
@@ -365,9 +380,171 @@ class RpmArchiveHandler(models.DatafileHandler):
         )
 
         if TRACE:
-            logger_debug('recognize: created package:\n', package)
+            logger_debug('recognize: created package:\n', name)
+
+        yield models.PackageData.from_data(package_data, package_only)
+
+
+class RpmMarinerContainerManifestHandler(models.DatafileHandler):
+    datasource_id = 'rpm_mariner_manifest'
+    datasource_type = 'sys'
+    # container-manifest-1 is more minimal and has the same data
+    path_patterns = ('*var/lib/rpmmanifest/container-manifest-2',)
+    default_package_type = 'rpm'
+    default_package_namespace = 'mariner'
+    description = 'RPM mariner distroless package manifest'
+    documentation_url = 'https://github.com/microsoft/marinara/'
+
+    manifest_attributes = [
+        "name",
+        "version",
+        "n1",
+        "n2",
+        "party",
+        "n3",
+        "n4",
+        "arch",
+        "checksum_algo",
+        "filename"
+    ]
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with io.open(location, encoding='utf-8') as data:
+            lines = data.readlines()
+
+        for line in lines:
+            line = line.rstrip("\n")
+            metadata = line.split("\t")
+
+            package_data = {
+                "type": cls.default_package_type,
+                "namespace": cls.default_package_namespace,
+                "datasource_id": cls.datasource_id,
+            }
+            for key, value in zip(cls.manifest_attributes, metadata):
+                package_data[key] = value
+            
+            package_data = cls.clean_mariner_manifest_data(package_data)
+            yield models.PackageData.from_data(package_data=package_data)
+
+    @classmethod
+    def assemble(cls, package_data, resource, codebase, package_adder):
+
+        levels_up = len('var/lib/rpmmanifest/container-manifest-2'.split('/'))
+        root_resource = get_ancestor(
+            levels_up=levels_up,
+            resource=resource,
+            codebase=codebase,
+        )
+        package_name = package_data.name
+
+        package = models.Package.from_package_data(
+            package_data=package_data,
+            datafile_path=resource.path,
+        )
+        package_uid = package.package_uid
+
+        assemblable_paths = tuple(set([
+            f'*usr/share/licenses/{package_name}/COPYING*',
+            f'*usr/share/licenses/{package_name}/LICENSE*',
+        ]))
+
+        resources = []
+        for res in root_resource.walk(codebase):
+            if TRACE:
+                logger_debug(f'   rpm: mariner assemble: root_walk: res: {res}')
+            if not any([
+                fnmatch.fnmatch(name=res.location, pat=pattern)
+                for pattern in assemblable_paths
+            ]):
+                continue
+
+            if TRACE:
+                logger_debug(f'   rpm: mariner assemble: pattern matched for: res: {res}')
+
+            for pkgdt in res.package_data:
+                package_data = models.PackageData.from_dict(pkgdt)
+                if TRACE:
+                    logger_debug(f'     rpm: mariner assemble: package_data: {package_data.declared_license_expression}')
+
+                package.update(
+                    package_data=package_data,
+                    datafile_path=res.path,
+                    check_compatible=False,
+                    replace=False,
+                    include_version=False,
+                    include_qualifiers=False,
+                    include_subpath=False,
+                )
+
+            package_adder(package_uid, res, codebase)
+            resources.append(res)
 
         yield package
+        yield from resources
+
+    @staticmethod
+    def clean_mariner_manifest_data(package_data):
+        ignore_attributes = ["n1", "n2", "n3", "n4", "checksum_algo"]
+        for attribute in ignore_attributes:
+            package_data.pop(attribute)
+
+        if arch := package_data.pop("arch"):
+            package_data["qualifiers"] = {"arch": arch}
+
+        if filename := package_data.pop("filename"):
+            package_data["extra_data"] = {"filename": filename}
+        
+        if party := package_data.pop("party"):
+            party_obj = models.Party(
+                type=models.party_org,
+                role="owner",
+                name=party,
+            )
+            package_data["parties"] = [party_obj.to_dict()]
+
+        return package_data
+
+
+class RpmLicenseFilesHandler(models.NonAssemblableDatafileHandler):
+    datasource_id = 'rpm_package_licenses'
+    datasource_type = 'sys'
+    path_patterns = (
+        '*usr/share/licenses/*/COPYING*',
+        '*usr/share/licenses/*/LICENSE*',
+    )
+    default_package_type = 'rpm'
+    default_package_namespace = 'mariner'
+    description = 'RPM mariner distroless package license files'
+    documentation_url = 'https://github.com/microsoft/marinara/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+
+        # The license files are in a directory which is the package name,
+        # for example: "/usr/share/licenses/openssl/LICENSE"
+        name = location.split('/usr/share/licenses/').pop().split('/')[0]
+        package_data = models.PackageData(
+            type=cls.default_package_type,
+            namespace=cls.default_package_namespace,
+            name=name,
+            datasource_id=cls.datasource_id,
+        )
+
+        if package_only:
+            yield package_data
+
+        resource_license_attributes = get_licenses(
+            location=location,
+            include_text=True,
+            license_diagnostics=True,
+            license_text_diagnostics=True,
+        )
+        for key, key_pkg in RESOURCE_TO_PACKAGE_LICENSE_FIELDS.items():
+            setattr(package_data, key_pkg, resource_license_attributes.get(key))
+
+        yield package_data
 
 
 ALGO_BY_ID = {

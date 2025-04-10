@@ -38,17 +38,17 @@
       "license_expression_spdx": "BSD-3-Clause",
       "matches": [
         {
-          "score": 100.0,
+          "license_expression": "bsd-new",
+          "license_expression_spdx": "BSD-3-Clause",
+          "from_file": null,
           "start_line": 1,
           "end_line": 2,
-          "from_file": null,
+          "matcher": "1-hash",
+          "score": 100.0,
           "matched_length": 14,
           "match_coverage": 100.0,
-          "matcher": "1-hash",
-          "license_expression": "bsd-new",
-          "spdx_license_expression": "BSD-3-Clause",
-          "rule_identifier": "bsd-new_358.RULE",
           "rule_relevance": 100,
+          "rule_identifier": "bsd-new_358.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_358.RULE",
           "matched_text": "- name: The 3-Clause BSD License\n  url: https://opensource.org/licenses/BSD-3-Clause"
         }
@@ -65,6 +65,8 @@
     "pkg:maven/io.github.subiyacryolite/jds@2.17.0718b?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -73,7 +75,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -83,7 +86,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -93,7 +97,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -103,7 +108,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     },
@@ -113,7 +119,8 @@
       "scope": "test",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": true,
+      "is_pinned": true,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

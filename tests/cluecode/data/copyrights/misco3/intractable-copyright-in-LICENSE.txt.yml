@@ -1,0 +1,18 @@
+what:
+  - copyrights
+  - holders
+  - holders_summary
+  - authors
+copyrights:
+  - Copyright (c) 2015-2020 Formidable Labs
+  - Copyright (c) 2016-2020 Alexey Svetliakov https://github.com/asvetliakov , snerks https://github.com/snerks,
+    Krzysztof Cebula https://github.com Havret, Vitaliy Polyanskiy https://github.com/alreadyExisted,
+    James Lismore https://github.com/jlismore
+holders:
+  - Formidable Labs
+  - Alexey Svetliakov , snerks Krzysztof Cebula Havret, Vitaliy Polyanskiy James Lismore
+holders_summary:
+  - value: Alexey Svetliakov , snerks Krzysztof Cebula Havret, Vitaliy Polyanskiy James Lismore
+    count: 1
+  - value: Formidable Labs
+    count: 1

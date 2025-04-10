@@ -1,8 +1,9 @@
 ---
 license_expression: other-permissive
 is_license_text: yes
+is_deprecated: yes
 relevance: 100
-notes: Seen in mailprio
+notes: Seen in mailprio, this is now mailprio_3.RULE
 ---
 
 Rights are hereby granted to download, use, modify, sell, copy, and

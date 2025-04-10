@@ -9,6 +9,7 @@
 
 import os
 import logging
+from collections import Counter
 from pathlib import Path
 
 from commoncode import fileutils
@@ -20,6 +21,7 @@ from packageurl import PackageURL
 
 from packagedcode import models
 from packagedcode.utils import get_ancestor
+from packagedcode.utils import parse_maintainer_name_email
 
 """
 Handle Debian package archives, control files and installed databases.
@@ -59,7 +61,7 @@ class DebianDebPackageHandler(models.DatafileHandler):
     documentation_url = 'https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         yield build_package_data_from_package_filename(
             filename=fileutils.file_name(location),
             datasource_id=cls.datasource_id,
@@ -82,7 +84,7 @@ class DebianSourcePackageMetadataTarballHandler(models.DatafileHandler):
     documentation_url = 'https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         # strip extension
         filename, _, _ = location.rpartition('.tar')
         yield build_package_data_from_package_filename(
@@ -107,7 +109,7 @@ class DebianSourcePackageTarballHandler(models.DatafileHandler):
     documentation_url = 'https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         # strip extension
         filename, _, _ = location.rpartition('.tar')
         yield build_package_data_from_package_filename(
@@ -126,17 +128,19 @@ class DebianSourcePackageTarballHandler(models.DatafileHandler):
 class DebianControlFileInExtractedDebHandler(models.DatafileHandler):
     datasource_id = 'debian_control_extracted_deb'
     default_package_type = 'deb'
-    path_patterns = ('*/control.tar.gz-extract/control',)
+    path_patterns = ('*/control.tar.gz-extract/control','*/control.tar.xz-extract/control')
     description = 'Debian control file - extracted layout'
     documentation_url = 'https://www.debian.org/doc/debian-policy/ch-controlfields.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         # TODO: we cannot know the distro from the name only
         yield build_package_data(
             debian_data=get_paragraph_data_from_file(location=location),
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
+            distro='debian',
+            package_only=package_only,
         )
 
     @classmethod
@@ -156,15 +160,20 @@ class DebianControlFileInSourceHandler(models.DatafileHandler):
     documentation_url = 'https://www.debian.org/doc/debian-policy/ch-controlfields.html'
 
     @classmethod
-    def parse(cls, location):
-        # TODO: we cannot know the distro from the name only
+    def parse(cls, location, package_only=False):
         # NOTE: a control file in a source repo or debina.tar tarball can contain more than one package
+        debian_packages = []
         for debian_data in get_paragraphs_data_from_file(location=location):
-            yield build_package_data(
-                debian_data,
-                datasource_id=cls.datasource_id,
-                package_type=cls.default_package_type,
+            debian_packages.append(
+                build_package_data(
+                    debian_data=debian_data,
+                    datasource_id=cls.datasource_id,
+                    package_type=cls.default_package_type,
+                    package_only=package_only,
+                )
             )
+
+        yield from populate_debian_namespace(debian_packages)
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
@@ -185,17 +194,26 @@ class DebianDscFileHandler(models.DatafileHandler):
     documentation_url = 'https://wiki.debian.org/dsc'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         # this is typically signed
         debian_data = get_paragraph_data_from_file(
             location=location,
             remove_pgp_signature=True,
         )
-        yield build_package_data(
-            debian_data=debian_data,
+
+        package_data_from_file = build_package_data_from_package_filename(
+            filename=os.path.basename(location),
             datasource_id=cls.datasource_id,
             package_type=cls.default_package_type,
         )
+        package_data = build_package_data(
+            debian_data=debian_data,
+            datasource_id=cls.datasource_id,
+            package_type=cls.default_package_type,
+            package_only=package_only,
+        )
+        package_data.update_purl_fields(package_data=package_data_from_file)
+        yield package_data
 
     @classmethod
     def assign_package_to_resources(cls, package, resource, codebase, package_adder):
@@ -205,21 +223,28 @@ class DebianDscFileHandler(models.DatafileHandler):
 
 class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
     datasource_id = 'debian_installed_status_db'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = ('*var/lib/dpkg/status',)
     description = 'Debian installed packages database'
     documentation_url = 'https://www.debian.org/doc/debian-policy/ch-controlfields.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         # note that we do not know yet the distro at this stage
         # we could get it... but we get that later during assemble()
-        for debian_data in get_paragraphs_data_from_file(location):
-            yield build_package_data(
-                debian_data,
-                datasource_id=cls.datasource_id,
-                package_type=cls.default_package_type,
+        debian_packages = []
+        for debian_data in get_paragraphs_data_from_file(location=location):
+            debian_packages.append(
+                build_package_data(
+                    debian_data=debian_data,
+                    datasource_id=cls.datasource_id,
+                    package_type=cls.default_package_type,
+                    package_only=package_only,
+                )
             )
+
+        yield from populate_debian_namespace(debian_packages)
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -260,7 +285,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
 
         # We only need to adjust the md5sum/list path in the case of `same`
         qualifiers = package_data.qualifiers or {}
-        architecture = qualifiers.get('architecture')
+        architecture = qualifiers.get('arch')
 
         multi_arch = package_data.extra_data.get('multi_arch')
 
@@ -305,6 +330,7 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
                 package.update(
                     package_data=package_data,
                     datafile_path=res.path,
+                    check_compatible=False,
                     replace=False,
                     include_version=False,
                     include_qualifiers=False,
@@ -366,26 +392,32 @@ class DebianInstalledStatusDatabaseHandler(models.DatafileHandler):
 
 class DebianDistrolessInstalledDatabaseHandler(models.DatafileHandler):
     datasource_id = 'debian_distroless_installed_db'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = ('*var/lib/dpkg/status.d/*',)
     description = 'Debian distroless installed database'
     documentation_url = 'https://www.debian.org/doc/debian-policy/ch-controlfields.html'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         """
         Yield installed PackageData objects given a ``location``
         var/lib/dpkg/status.d/<status> file as found in a distroless container
         rootfs installation. distroless is derived from Debian but each package
         has its own status file.
         """
-        for debian_data in get_paragraphs_data_from_file(location):
-            yield build_package_data(
-                debian_data,
-                datasource_id=cls.datasource_id,
-                package_type=cls.default_package_type,
-                distro='distroless',
+        debian_packages = []
+        for debian_data in get_paragraphs_data_from_file(location=location):
+            debian_packages.append(
+                build_package_data(
+                    debian_data=debian_data,
+                    datasource_id=cls.datasource_id,
+                    package_type=cls.default_package_type,
+                    package_only=package_only,
+                )
             )
+
+        yield from populate_debian_namespace(debian_packages)
 
     @classmethod
     def assemble(cls, package_data, resource, codebase, package_adder):
@@ -444,6 +476,7 @@ class DebianInstalledFilelistHandler(models.DatafileHandler):
     # seen in installed rootfs in:
     #  - /var/lib/dpkg/info/<package name>.list
     datasource_id = 'debian_installed_files_list'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = (
         '*var/lib/dpkg/info/*.list',
@@ -451,7 +484,7 @@ class DebianInstalledFilelistHandler(models.DatafileHandler):
     description = 'Debian installed file paths list'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         return parse_debian_files_list(
             location=location,
             datasource_id=cls.datasource_id,
@@ -469,6 +502,7 @@ class DebianInstalledMd5sumFilelistHandler(models.DatafileHandler):
     #  - /var/lib/dpkg/info/<package name>.md5sums
     #  - /var/lib/dpkg/info/<package name:arch>.md5sums
     datasource_id = 'debian_installed_md5sums'
+    datasource_type = 'sys'
     default_package_type = 'deb'
     path_patterns = (
         '*var/lib/dpkg/info/*.md5sums',
@@ -477,7 +511,7 @@ class DebianInstalledMd5sumFilelistHandler(models.DatafileHandler):
     documentation_url = 'https://www.debian.org/doc/manuals/debian-handbook/sect.package-meta-information.en.html#sect.configuration-scripts'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         return parse_debian_files_list(
             location=location,
             datasource_id=cls.datasource_id,
@@ -502,7 +536,7 @@ class DebianMd5sumFilelistInPackageHandler(models.DatafileHandler):
     documentation_url = 'https://www.debian.org/doc/manuals/debian-handbook/sect.package-meta-information.en.html#sect.configuration-scripts'
 
     @classmethod
-    def parse(cls, location):
+    def parse(cls, location, package_only=False):
         return parse_debian_files_list(
             location=location,
             datasource_id=cls.datasource_id,
@@ -523,6 +557,9 @@ def build_package_data_from_package_filename(filename, datasource_id, package_ty
     """
 
     # TODO: we cannot know the distro from the name only
+    # PURLs without namespace is invalid, so we need to
+    # have a default value for this
+    distro = 'debian'
     deb = DebArchive.from_filename(filename=filename)
 
     if deb.architecture:
@@ -534,13 +571,15 @@ def build_package_data_from_package_filename(filename, datasource_id, package_ty
     if isinstance(version, DebVersion):
         version = str(version)
 
-    return models.PackageData(
+    package_data = dict(
         datasource_id=datasource_id,
         type=package_type,
         name=deb.name,
+        namespace=distro,
         version=version,
         qualifiers=qualifiers,
     )
+    return models.PackageData.from_data(package_data)
 
 
 def parse_debian_files_list(location, datasource_id, package_type):
@@ -554,7 +593,10 @@ def parse_debian_files_list(location, datasource_id, package_type):
         name, _, arch = filename.partition(':')
         qualifiers['arch'] = arch
     else:
-        name = filename
+        name = None
+        # For DebianMd5sumFilelistInPackageHandler we cannot infer name
+        if not filename == "md5sums":
+            name = filename
 
     file_references = []
     with open(location) as info_file:
@@ -578,16 +620,17 @@ def parse_debian_files_list(location, datasource_id, package_type):
     if not file_references:
         return
 
-    yield models.PackageData(
+    package_data = dict(
         datasource_id=datasource_id,
         type=package_type,
         name=name,
         qualifiers=qualifiers,
         file_references=file_references,
     )
+    yield models.PackageData.from_data(package_data) 
 
 
-def build_package_data(debian_data, datasource_id, package_type='deb', distro=None):
+def build_package_data(debian_data, datasource_id, package_type='deb', distro=None, package_only=False):
     """
     Return a PackageData object from a package_data mapping (from a dpkg status
     or similar file) or None.
@@ -598,7 +641,7 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
     qualifiers = {}
     architecture = debian_data.get('architecture')
     if architecture:
-        qualifiers['architecture'] = architecture
+        qualifiers['arch'] = architecture
 
     extra_data = {}
     # Multi-Arch can be: "foreign", "same", "allowed", "all", "optional" or
@@ -615,31 +658,70 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
 
     maintainer = debian_data.get('maintainer')
     if maintainer:
-        party = models.Party(role='maintainer', name=maintainer)
+        maintainer_name, maintainer_email = parse_maintainer_name_email(maintainer)
+        party = models.Party(role='maintainer', name=maintainer_name, email=maintainer_email)
         parties.append(party)
 
     orig_maintainer = debian_data.get('original_maintainer')
     if orig_maintainer:
-        party = models.Party(role='original_maintainer', name=orig_maintainer)
+        maintainer_name, maintainer_email = parse_maintainer_name_email(orig_maintainer)
+        party = models.Party(role='maintainer', name=maintainer_name, email=maintainer_email)
         parties.append(party)
+
+    uploaders = debian_data.get('uploaders')
+    if uploaders:
+        for uploader in uploaders.split(", "):
+            uploader_name, uploader_email = parse_maintainer_name_email(uploader)
+            party = models.Party(role='uploader', name=uploader_name, email=uploader_email)
+            parties.append(party)
+
+    vcs_url = debian_data.get('vcs-git')
+    if vcs_url and ' ' in vcs_url:
+        vcs_url = vcs_url.split(' ')[0]
+
+    code_view_url = debian_data.get('vcs-browser')
 
     keywords = []
     keyword = debian_data.get('section')
     if keyword:
         keywords.append(keyword)
 
+    # Get distro/namespace information from clues in package data
+    if not distro:
+        if version:
+            for clue, namespace in version_clues_for_namespace.items():
+                if clue in version:
+                    distro = namespace
+                    break
+
+        if maintainer:
+            for clue, namespace in maintainer_clues_for_namespace.items():
+                if clue in maintainer:
+                    distro = namespace
+                    break
+
     source_packages = []
     source = debian_data.get('source')
     if source:
+        # source package strings often have version in them like:
+        # Source: util-linux (2.36.1-8+deb11u1)
+        if " (" in source and ")" in source:
+            source_name, source_version = source.split(" (")
+            source_version, _ = source_version.split(")")
+        else:
+            source_name = source
+            source_version = None
+
         source_pkg_purl = PackageURL(
             type=package_type,
-            name=source,
-            namespace=distro
+            name=source_name,
+            version=source_version,
+            namespace=distro,
         ).to_string()
 
         source_packages.append(source_pkg_purl)
 
-    return models.PackageData(
+    package_data = dict(
         datasource_id=datasource_id,
         type=package_type,
         namespace=distro,
@@ -648,12 +730,55 @@ def build_package_data(debian_data, datasource_id, package_type='deb', distro=No
         qualifiers=qualifiers,
         description=description,
         homepage_url=homepage_url,
+        vcs_url=vcs_url,
+        code_view_url=code_view_url,
         size=size,
         source_packages=source_packages,
         keywords=keywords,
         parties=parties,
         extra_data=extra_data,
     )
+    return models.PackageData.from_data(package_data, package_only)
+
+
+def populate_debian_namespace(packages):
+    """
+    For an iterable of debian `packages`, populate the
+    most frequently occuring namespace, or the default
+    namespace 'debian' in packages without namespace.
+    """
+    if not packages:
+        return
+
+    namespaces_with_count = Counter([
+        package.namespace
+        for package in packages
+    ])
+    distro = max(namespaces_with_count, key=namespaces_with_count.get)
+    if not distro:
+        distro = 'debian'
+
+    for package in packages:
+        if not package.namespace:
+            package.namespace = distro
+        yield package
+
+
+version_clues_for_namespace = {
+    'deb': 'debian',
+    'ubuntu': 'ubuntu',
+}
+
+
+maintainer_clues_for_namespace = {
+    'packages.debian.org': 'debian',
+    'lists.debian.org': 'debian',
+    'lists.alioth.debian.org': 'debian',
+    '@debian.org': 'debian',
+    'debian-init-diversity@': 'debian',
+    'lists.ubuntu.com': 'ubuntu',
+    '@canonical.com': 'ubuntu',
+}
 
 
 ignored_root_dirs = {

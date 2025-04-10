@@ -1,0 +1,17 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 1995-2007 Free Software Foundation, Inc.
+  - Copyright (c) 1995-2007 Free Software Foundation, Inc.
+  - Copyright (c) 1995-1998, 2001-2007 Free Software Foundation, Inc.
+holders:
+  - Free Software Foundation, Inc.
+  - Free Software Foundation, Inc.
+  - Free Software Foundation, Inc.
+authors:
+  - Ulrich Drepper <drepper@gnu.org>
+  - Francois Pinard <pinard@iro.umontreal.ca>
+  - Erick Branderhorst <branderh@debian.org>
+  - Santiago Vila <sanvila@debian.org>

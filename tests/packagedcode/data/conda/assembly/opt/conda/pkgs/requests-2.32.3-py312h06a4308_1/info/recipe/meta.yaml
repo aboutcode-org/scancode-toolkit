@@ -1,0 +1,57 @@
+# This file created by conda-build 24.1.2
+# meta.yaml template originally from:
+# /feedstock/recipe, last modified Thu Nov  7 17:05:12 2024
+# ------------------------------------------------
+
+package:
+  name: requests
+  version: 2.32.3
+source:
+  sha256: 55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760
+  url: https://pypi.io/packages/source/r/requests/requests-2.32.3.tar.gz
+requirements:
+  host:
+    - zlib 1.2.13 h5eee18b_1
+  run:
+    - certifi >=2017.4.17
+  run_constrained:
+    - chardet >=3.0.2,<6
+test:
+  commands:
+    - pip check
+    - conda create -v --dry-run -n requests-test numpy
+  imports:
+    - requests
+  requires:
+    - conda
+    - pip
+about:
+  description: 'Requests is the only Non-GMO HTTP library for Python, safe for human
+
+    consumption.
+
+    '
+  dev_url: https://github.com/psf/requests
+  doc_url: https://requests.readthedocs.io/
+  home: https://requests.readthedocs.io/
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
+  summary: "Requests is an elegant and simple HTTP library for Python, built with\
+    \ \u2665."
+extra:
+  copy_test_source_files: true
+  final: true
+  flow_run_id: a6780417-397a-4b4b-9b26-7ad861f84324
+  recipe-maintainers:
+    - carlodri
+    - jakirkham
+    - kalefranz
+    - mcg1969
+    - mingwandroid
+    - msarahan
+    - ocefpaf
+    - pelson
+    - sigmavirus24
+  remote_url: git@github.com:AnacondaRecipes/requests-feedstock.git
+  sha: 997bb0da1a210a5aeef4073b32f674eaf1f8eaca

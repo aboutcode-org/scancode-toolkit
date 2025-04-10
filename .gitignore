@@ -108,7 +108,6 @@ TAGS
 Procfile
 local.cfg
 geckodriver.log
-var
 .metaflow
 selenium
 /dist/

@@ -13,7 +13,7 @@ Different Scans
 ---------------
 
 The following examples will use the ``samples`` directory that is provided with the `ScanCode
-Toolkit code <https://github.com/nexB/scancode-toolkit/tree/develop/samples>`_. All examples will
+Toolkit code <https://github.com/aboutcode-org/scancode-toolkit/tree/develop/samples>`_. All examples will
 be saved in the JSON format, which can be loaded into Scancode Workbench for visualization. See
 :ref:`how_to_visualize_scan_results` for more information. Another output format option is a
 static html file. See :ref:`cli_output_format` for more information.

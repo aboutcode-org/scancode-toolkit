@@ -34,6 +34,8 @@
     "pkg:maven/org.codehaus.mojo.natives/maven-native-generic-c@1.0-alpha-2?classifier=sources"
   ],
   "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
   "extra_data": {},
   "dependencies": [
     {
@@ -42,7 +44,8 @@
       "scope": "compile",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": false,
+      "is_pinned": false,
+      "is_direct": true,
       "resolved_package": {},
       "extra_data": {}
     }

@@ -11,7 +11,7 @@ attrbution document from a ScanCode scan.
 
 Read more about AboutCode Toolkit here: https://aboutcode-toolkit.readthedocs.io/.
 
-Check out the code at https://github.com/nexB/aboutcode-toolkit
+Check out the code at https://github.com/aboutcode-org/aboutcode-toolkit
 
 Command in AboutCode Toolkit to generate attribution:
 https://aboutcode-toolkit.readthedocs.io/en/latest/reference.html#attrib.

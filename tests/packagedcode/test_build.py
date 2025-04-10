@@ -85,48 +85,46 @@ class TestBuild(PackageTester):
 
     def test_MetadataBzl_parse(self):
         test_file = self.get_test_loc('metadatabzl/METADATA.bzl')
-        result_packages = build.BuckMetadataBzlHandler.parse(test_file)
-        expected_packages = [
-            models.PackageData(
-                datasource_id=build.BuckMetadataBzlHandler.datasource_id,
-                type='github',
-                name='example',
-                version='0.0.1',
-                extracted_license_statement=['BSD-3-Clause'],
-                parties=[
-                    models.Party(
-                        type=models.party_org,
-                        name='oss_foundation',
-                        role='maintainer'
-                    )
-                ],
-                homepage_url='https://github.com/example/example',
-            ),
-        ]
+        result_packages = build.BuckMetadataBzlHandler.parse(test_file, package_only=True)
+        package_data = dict(
+            datasource_id=build.BuckMetadataBzlHandler.datasource_id,
+            type='github',
+            name='example',
+            version='0.0.1',
+            extracted_license_statement=['BSD-3-Clause'],
+            parties=[
+                models.Party(
+                    type=models.party_org,
+                    name='oss_foundation',
+                    role='maintainer'
+                )
+            ],
+            homepage_url='https://github.com/example/example',
+        )
+        expected_packages = [models.PackageData.from_data(package_data=package_data, package_only=True)]
         compare_package_results(expected_packages, result_packages)
 
     def test_MetadataBzl_recognize_new_format(self):
         test_file = self.get_test_loc('metadatabzl/new-format/METADATA.bzl')
-        result_packages = build.BuckMetadataBzlHandler.parse(test_file)
-        expected_packages = [
-            models.PackageData(
-                datasource_id=build.BuckMetadataBzlHandler.datasource_id,
-                type='github',
-                name='example/example',
-                version='0.0.1',
-                extracted_license_statement='BSD-3-Clause',
-                parties=[
-                    models.Party(
-                        type=models.party_org,
-                        name='example_org',
-                        role='maintainer'
-                    )
-                ],
-                download_url='',
-                sha1='',
-                homepage_url='https://github.com/example/example',
-                vcs_url='https://github.com/example/example.git',
-                extra_data=dict(vcs_commit_hash="deadbeef")
-            )
-        ]
+        result_packages = build.BuckMetadataBzlHandler.parse(test_file, package_only=True)
+        package_data = dict(
+            datasource_id=build.BuckMetadataBzlHandler.datasource_id,
+            type='github',
+            name='example/example',
+            version='0.0.1',
+            extracted_license_statement='BSD-3-Clause',
+            parties=[
+                models.Party(
+                    type=models.party_org,
+                    name='example_org',
+                    role='maintainer'
+                )
+            ],
+            download_url='',
+            sha1='',
+            homepage_url='https://github.com/example/example',
+            vcs_url='https://github.com/example/example.git',
+            extra_data=dict(vcs_commit_hash="deadbeef")
+        )
+        expected_packages = [models.PackageData.from_data(package_data=package_data, package_only=True)]
         compare_package_results(expected_packages, result_packages)

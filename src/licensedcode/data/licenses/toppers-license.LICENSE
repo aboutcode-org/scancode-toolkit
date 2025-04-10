@@ -6,10 +6,6 @@ category: Permissive
 owner: TOPPERS
 homepage_url: https://www.toppers.jp/en/license.html
 spdx_license_key: LicenseRef-scancode-toppers-license
-ignorable_copyrights:
-    - copyright holders and the TOPPERS Project
-ignorable_holders:
-    - the TOPPERS Project
 ---
 
 The above copyright holders grant permission gratis to use,

@@ -1,0 +1,8 @@
+#ifndef MODULEAUTHOR
+#define MODULEAUTHOR    "LSI Corporation"
+#endif
+
+#ifndef COPYRIGHT
+#define COPYRIGHT       "Copyright (c) 1999-2008 " MODULEAUTHOR
+#endif
+

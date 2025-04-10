@@ -1,0 +1,13 @@
+---
+license_expression: mit OR apache-2.0
+is_license_notice: yes
+relevance: 100
+referenced_filenames:
+   - LICENSE_MIT
+   - LICENSE_APACHE
+---
+
+This source code is licensed under both the {{MIT}} license found in the
+LICENSE_MIT file in the root directory of this source tree and the {{Apache}}
+License, Version 2.0 found in the LICENSE_APACHE file in the root directory
+of this source tree.

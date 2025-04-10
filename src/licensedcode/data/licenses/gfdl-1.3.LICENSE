@@ -14,7 +14,7 @@ text_urls:
 other_urls:
     - https://www.gnu.org/licenses/fdl-1.3.txt
 ignorable_copyrights:
-    - Copyright (c) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc. <http://fsf.org/>
+    - Copyright (c) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc. http://fsf.org
 ignorable_holders:
     - Free Software Foundation, Inc.
 ignorable_urls:

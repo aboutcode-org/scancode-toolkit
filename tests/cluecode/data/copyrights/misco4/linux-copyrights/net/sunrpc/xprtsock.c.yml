@@ -1,0 +1,16 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - (c) 1998 Red Hat TCP
+  - (c) 1998 Red Hat TCP
+  - (c) 1999 Dave Airlie, University of Limerick, Ireland <airlied@linux.ie>
+  - (c) 1999 Trond Myklebust <trond.myklebust@fys.uio.no>
+  - (c) 2005 Chuck Lever <cel@netapp.com>
+holders:
+  - Red Hat TCP
+  - Red Hat TCP
+  - Dave Airlie, University of Limerick, Ireland
+  - Trond Myklebust
+  - Chuck Lever

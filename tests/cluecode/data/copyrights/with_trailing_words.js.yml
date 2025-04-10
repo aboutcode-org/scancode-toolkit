@@ -3,11 +3,10 @@ what:
   - holders
   - holders_summary
 copyrights:
-  - Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+  - Copyright 2012-2015 The Dojo Foundation http://dojofoundation.org
   - Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
   - Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
   - Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-    Distributed
   - (c) Varun Malhotra 2013 Source Code https://github.com/softvar/json2html
   - Copyright 2015, Mycompany
   - Copyright 2015, Mycompany
@@ -16,18 +15,16 @@ holders:
   - The Dojo Foundation
   - Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
   - Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-  - Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors Distributed
+  - Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
   - Varun Malhotra Source Code
   - Mycompany
   - Mycompany
   - Mycompany
 holders_summary:
+  - value: Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+    count: 3
   - value: Mycompany
     count: 3
-  - value: Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-    count: 2
-  - value: Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors Distributed
-    count: 1
   - value: The Dojo Foundation
     count: 1
   - value: Varun Malhotra Source Code

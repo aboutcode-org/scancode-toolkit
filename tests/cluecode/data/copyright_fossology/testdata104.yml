@@ -1,0 +1,11 @@
+what:
+  - copyrights
+  - holders
+  - authors
+copyrights:
+  - Copyright (c) 2001,2003 Keith Packard
+holders:
+  - Keith Packard
+authors:
+  - Colin Walters <walters@debian.org>
+  - Keith Packard

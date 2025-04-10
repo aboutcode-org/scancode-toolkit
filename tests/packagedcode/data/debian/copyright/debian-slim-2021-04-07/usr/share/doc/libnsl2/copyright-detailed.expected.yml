@@ -42,7 +42,7 @@ license_detections:
     license_expression_spdx: BSD-3-Clause
     matches:
       - license_expression: bsd-new
-        spdx_license_expression: BSD-3-Clause
+        license_expression_spdx: BSD-3-Clause
         from_file:
         start_line: 171
         end_line: '196'
@@ -85,7 +85,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later WITH Autoconf-exception-generic
     matches:
       - license_expression: gpl-2.0-plus WITH autoconf-simple-exception-2.0
-        spdx_license_expression: GPL-2.0-or-later WITH Autoconf-exception-generic
+        license_expression_spdx: GPL-2.0-or-later WITH Autoconf-exception-generic
         from_file:
         start_line: '199'
         end_line: 218
@@ -122,7 +122,7 @@ license_detections:
     license_expression_spdx: GPL-2.0-or-later WITH Libtool-exception
     matches:
       - license_expression: gpl-2.0-plus WITH libtool-exception-2.0
-        spdx_license_expression: GPL-2.0-or-later WITH Libtool-exception
+        license_expression_spdx: GPL-2.0-or-later WITH Libtool-exception
         from_file:
         start_line: 221
         end_line: 240
@@ -159,7 +159,7 @@ license_detections:
     license_expression_spdx: GPL-3.0-or-later WITH Autoconf-exception-generic-3.0
     matches:
       - license_expression: gpl-3.0-plus WITH autoconf-simple-exception
-        spdx_license_expression: GPL-3.0-or-later WITH Autoconf-exception-generic-3.0
+        license_expression_spdx: GPL-3.0-or-later WITH Autoconf-exception-generic-3.0
         from_file:
         start_line: 243
         end_line: 264
@@ -198,7 +198,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-only
     matches:
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 266
         end_line: 266
@@ -211,7 +211,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_38.RULE
         matched_text: 'License: lgpl-2.1'
       - license_expression: lgpl-2.1
-        spdx_license_expression: LGPL-2.1-only
+        license_expression_spdx: LGPL-2.1-only
         from_file:
         start_line: 267
         end_line: 280
@@ -242,7 +242,7 @@ license_detections:
     license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 282
         end_line: 282
@@ -255,7 +255,7 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_108.RULE
         matched_text: 'License: lgpl-2.1+'
       - license_expression: lgpl-2.1-plus
-        spdx_license_expression: LGPL-2.1-or-later
+        license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 283
         end_line: 298
@@ -288,7 +288,7 @@ license_detections:
     license_expression_spdx: X11
     matches:
       - license_expression: x11-xconsortium
-        spdx_license_expression: X11
+        license_expression_spdx: X11
         from_file:
         start_line: 301
         end_line: 321
@@ -326,7 +326,7 @@ license_detections:
     license_expression_spdx: FSFULLR
     matches:
       - license_expression: fsf-unlimited
-        spdx_license_expression: FSFULLR
+        license_expression_spdx: FSFULLR
         from_file:
         start_line: 324
         end_line: 326
@@ -346,7 +346,7 @@ license_detections:
     license_expression_spdx: FSFULLRWD
     matches:
       - license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
+        license_expression_spdx: FSFULLRWD
         from_file:
         start_line: 329
         end_line: 336
@@ -371,7 +371,7 @@ license_detections:
     license_expression_spdx: FSFUL
     matches:
       - license_expression: fsf-free
-        spdx_license_expression: FSFUL
+        license_expression_spdx: FSFUL
         from_file:
         start_line: 339
         end_line: 340
@@ -390,7 +390,7 @@ license_detections:
     license_expression_spdx: FSFAP
     matches:
       - license_expression: fsf-ap
-        spdx_license_expression: FSFAP
+        license_expression_spdx: FSFAP
         from_file:
         start_line: 343
         end_line: 346
@@ -411,7 +411,7 @@ license_detections:
     license_expression_spdx: FSFULLRWD
     matches:
       - license_expression: fsf-unlimited-no-warranty
-        spdx_license_expression: FSFULLRWD
+        license_expression_spdx: FSFULLRWD
         from_file:
         start_line: 349
         end_line: 356

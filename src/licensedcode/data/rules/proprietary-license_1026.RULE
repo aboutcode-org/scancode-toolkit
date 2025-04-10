@@ -1,0 +1,9 @@
+---
+license_expression: proprietary-license
+is_license_tag: yes
+is_continuous: yes
+relevance: 100
+minimum_coverage: 100
+---
+
+{{license NVIDIA Proprietary}}

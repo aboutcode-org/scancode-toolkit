@@ -1,6 +1,10 @@
 ---
 license_expression: other-permissive
 is_license_reference: yes
+is_deprecated: yes
+notes: |
+    Added in SPDX license list 3.24
+    Replaced by license: gutmann.LICENSE
 ---
 
 You can use this code in whatever way you want, as long as you don't try 
