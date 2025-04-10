@@ -6,4 +6,4 @@ relevance: 100
 minimum_coverage: 100
 ---
 
-['2 CLAUSE', 'BSD-2-Clause'],
+['2 CLAUSE', '{{BSD-2-Clause}}'],

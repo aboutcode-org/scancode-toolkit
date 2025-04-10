@@ -6,9 +6,9 @@ ignorable_urls:
     - http://mozilla.org/MPL/2.0
 ---
 
-Mozilla Public License
+{{Mozilla Public License
 
-Version 2.0
+Version 2.0}}
 
 
 

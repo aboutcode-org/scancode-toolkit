@@ -2,6 +2,8 @@
 license_expression: apache-2.0 WITH commons-clause
 is_license_reference: yes
 relevance: 100
+referenced_filenames:
+  - LICENSE
 ---
 
-Apache 2.0 with Commons Clause - see LICENSE
+{{Apache 2.0 with Commons Clause}} - see LICENSE

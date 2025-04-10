@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-License :: OSI-Approved Open Source :: Mozilla Public License 2.0 (MPL 2.0)
+License :: OSI-Approved Open Source :: {{Mozilla Public License 2.0}} ({{MPL 2.0}})

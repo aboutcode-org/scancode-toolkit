@@ -7,4 +7,4 @@ minimum_coverage: 100
 notes: Rule based on an SPDX license identifier and name
 ---
 
-license: GNU Library General Public License v2 only
+license: {{GNU Library General Public License v2 only}}

@@ -6,4 +6,4 @@ referenced_filenames:
     - COPYING
 ---
 
-released under the GPL (See file COPYING for details).
+released {{under the GPL}} (See file COPYING for details).

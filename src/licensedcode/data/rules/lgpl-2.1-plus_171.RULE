@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-FFmpeg is licensed under the GNU Lesser General Public License (LGPL) version 2.1 or later.
+FFmpeg is licensed under the {{GNU Lesser General Public License (LGPL) version 2.1 or later}}.

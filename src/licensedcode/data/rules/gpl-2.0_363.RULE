@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-This program may be used under the terms of version 2 of the GNU
-General Public License.
+This program may be used under the terms of {{version 2 of the GNU
+General Public License}}.

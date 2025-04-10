@@ -1,0 +1,3 @@
+ This software is (C) by the respective authors, and licensed under the GPL
+ License.
+

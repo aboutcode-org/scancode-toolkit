@@ -1,0 +1,10 @@
+---
+license_expression: gpl-2.0-plus
+is_license_reference: yes
+is_required_phrase: yes
+relevance: 100
+ignorable_urls:
+    - https://spdx.org/licenses/GPL-2.0
+---
+
+https://spdx.org/licenses/GPL-2.0+

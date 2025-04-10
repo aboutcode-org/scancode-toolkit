@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-licenses: GPL-3.0-only
+licenses: {{GPL-3.0-only}}

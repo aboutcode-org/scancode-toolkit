@@ -7,4 +7,4 @@ minimum_coverage: 100
 notes: Rule based on an SPDX license identifier and name
 ---
 
-licenseId: Apache-2.0
+licenseId: {{Apache-2.0}}

@@ -5,4 +5,4 @@ ignorable_urls:
     - https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 ---
 
-@license      https://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License v2.0 or later
+@license      https://www.gnu.org/licenses/old-licenses/gpl-2.0.html {{GNU General Public License v2.0 or later}}

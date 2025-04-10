@@ -6,4 +6,4 @@ relevance: 100
 minimum_coverage: 100
 ---
 
-['AGPL', 'AGPL-3.0-or-later'],
+['AGPL', '{{AGPL-3.0-or-later}}'],

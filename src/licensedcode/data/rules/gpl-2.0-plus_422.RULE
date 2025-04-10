@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-naturally licensed under the GNU General Public
-License version 2 or later.
+naturally licensed under the {{GNU General Public
+License version 2 or later}}.

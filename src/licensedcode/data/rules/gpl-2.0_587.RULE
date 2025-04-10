@@ -15,8 +15,8 @@ ignorable_emails:
 
 This code is taken from the OpenSSL project but the author (Andy Polyakov)
 has relicensed it under the GPLv2. Therefore this program is free software;
-you can redistribute it and/or modify it under the terms of the GNU General
-Public License version 2 as published by the Free Software Foundation.
+you can redistribute it and/or modify it {{under the terms of the GNU General
+Public License version 2}} as published by the Free Software Foundation.
 
 The original headers, including the original license headers, are
 included below for completeness.

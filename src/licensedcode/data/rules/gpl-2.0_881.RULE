@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-Legalese: This code is subject to the GNU General Public License v2
+Legalese: This code is subject to the {{GNU General Public License v2}}
