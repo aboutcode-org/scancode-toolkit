@@ -1,0 +1,8 @@
+---
+license_expression: lgpl-2.1-plus AND unrar
+is_license_notice: yes
+relevance: 100
+---
+
+free software distributed under the {{GNU LGPL}} 
+({{except for unRar}} code).

@@ -5204,7 +5204,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-5fa38069-d44a-1d3c-a69b-bec53481845a",
+      "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-0b1195bd-b395-981c-5c28-9bc61177229d",
       "license_expression": "gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain",
       "license_expression_spdx": "GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain",
       "detection_count": 2,
@@ -5295,16 +5295,16 @@
           "license_expression_spdx": "BSD-4-Clause",
           "from_file": "fusiondirectory/debian/copyright",
           "start_line": 1521,
-          "end_line": 1521,
+          "end_line": 1523,
           "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 3,
+          "score": 22.0,
+          "matched_length": 4,
           "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-          "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause",
-          "matched_text_diagnostics": "BSD-4-clause"
+          "rule_relevance": 22,
+          "rule_identifier": "bsd-original_required_phrase_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_required_phrase_2.RULE",
+          "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause\n\nLicense: GPL-2+",
+          "matched_text_diagnostics": "BSD-4-clause\n\nLicense:"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -5333,8 +5333,8 @@
           "matched_length": 139,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "gpl-3.0-plus_607.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_607.RULE",
+          "rule_identifier": "gpl-3.0-plus_615.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_615.RULE",
           "matched_text": "License: GPL-3+\n This package is free software; you can redistribute it and/or modify\n it under the terms of the GNU General Public License as published by\n the Free Software Foundation; either version 3 of the License, or\n (at your option) any later version.\n .\n This package is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n GNU General Public License for more details.\n .\n You should have received a copy of the GNU General Public License\n along with this package; if not, write to the Free Software\n Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA\n .\n On Debian systems, the complete text of the GNU General\n Public License 3 can be found in `/usr/share/common-licenses/GPL-3'.",
           "matched_text_diagnostics": "License: GPL-3+\n This package is free software; you can redistribute it and/or modify\n it under the terms of the GNU General Public License as published by\n the Free Software Foundation; either version 3 of the License, or\n (at your option) any later version.\n .\n This package is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n GNU General Public License for more details.\n .\n You should have received a copy of the GNU General Public License\n along with this package; if not, write to the Free Software\n Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA\n .\n On Debian systems, the complete text of the GNU General\n Public License 3 can be found in `/usr/share/common-licenses/GPL-3'."
         },
@@ -5512,9 +5512,9 @@
       ]
     },
     {
-      "identifier": "mit_and_other_permissive-c6d061db-c814-b7d1-536d-2c7524411540",
-      "license_expression": "mit AND other-permissive",
-      "license_expression_spdx": "MIT AND LicenseRef-scancode-other-permissive",
+      "identifier": "mit-f7c9941e-e7dd-ab33-1cda-a2aa7f78c087",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
       "detection_count": 2,
       "detection_log": [],
       "reference_matches": [
@@ -5525,30 +5525,14 @@
           "start_line": 3010,
           "end_line": 3010,
           "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 3,
+          "score": 99.0,
+          "matched_length": 5,
           "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "mit_221.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
+          "rule_relevance": 99,
+          "rule_identifier": "mit_1361.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1361.RULE",
           "matched_text": "License: MIT/X11 (BSD like)",
-          "matched_text_diagnostics": "License: MIT/X11 ("
-        },
-        {
-          "license_expression": "other-permissive",
-          "license_expression_spdx": "LicenseRef-scancode-other-permissive",
-          "from_file": "fusiondirectory/debian/copyright.in",
-          "start_line": 3010,
-          "end_line": 3010,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "other-permissive_16.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
-          "matched_text": "License: MIT/X11 (BSD like)",
-          "matched_text_diagnostics": "BSD like)"
+          "matched_text_diagnostics": "License: MIT/X11 (BSD like)"
         }
       ]
     },
@@ -6114,8 +6098,8 @@
           "vcs_url": "https://salsa.debian.org/debian/fusiondirectory.git",
           "copyright": null,
           "holder": null,
-          "declared_license_expression": "gpl-2.0-plus AND free-unknown AND bsd-new AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain) AND bsd-simplified AND (mit AND other-permissive) AND (public-domain AND bsd-original AND gpl-1.0-plus)",
-          "declared_license_expression_spdx": "GPL-2.0-or-later AND LicenseRef-scancode-free-unknown AND BSD-3-Clause AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain) AND BSD-2-Clause AND (MIT AND LicenseRef-scancode-other-permissive) AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
+          "declared_license_expression": "gpl-2.0-plus AND free-unknown AND bsd-new AND lgpl-3.0-plus AND public-domain AND mit AND bsd-original AND (gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain) AND bsd-simplified AND (public-domain AND bsd-original AND gpl-1.0-plus)",
+          "declared_license_expression_spdx": "GPL-2.0-or-later AND LicenseRef-scancode-free-unknown AND BSD-3-Clause AND LGPL-3.0-or-later AND LicenseRef-scancode-public-domain AND MIT AND BSD-4-Clause AND (GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain) AND BSD-2-Clause AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
           "license_detections": [
             {
               "license_expression": "gpl-2.0-plus",
@@ -6998,16 +6982,16 @@
                   "license_expression_spdx": "BSD-4-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1521,
-                  "end_line": 1521,
+                  "end_line": 1523,
                   "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 3,
+                  "score": 22.0,
+                  "matched_length": 4,
                   "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-                  "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause",
-                  "matched_text_diagnostics": "BSD-4-clause"
+                  "rule_relevance": 22,
+                  "rule_identifier": "bsd-original_required_phrase_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_required_phrase_2.RULE",
+                  "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause\n\nLicense: GPL-2+",
+                  "matched_text_diagnostics": "BSD-4-clause\n\nLicense:"
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -7036,8 +7020,8 @@
                   "matched_length": 139,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "gpl-3.0-plus_607.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_607.RULE",
+                  "rule_identifier": "gpl-3.0-plus_615.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_615.RULE",
                   "matched_text": "License: GPL-3+\n This package is free software; you can redistribute it and/or modify\n it under the terms of the GNU General Public License as published by\n the Free Software Foundation; either version 3 of the License, or\n (at your option) any later version.\n .\n This package is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n GNU General Public License for more details.\n .\n You should have received a copy of the GNU General Public License\n along with this package; if not, write to the Free Software\n Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA\n .\n On Debian systems, the complete text of the GNU General\n Public License 3 can be found in `/usr/share/common-licenses/GPL-3'.",
                   "matched_text_diagnostics": "License: GPL-3+\n This package is free software; you can redistribute it and/or modify\n it under the terms of the GNU General Public License as published by\n the Free Software Foundation; either version 3 of the License, or\n (at your option) any later version.\n .\n This package is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n GNU General Public License for more details.\n .\n You should have received a copy of the GNU General Public License\n along with this package; if not, write to the Free Software\n Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA\n .\n On Debian systems, the complete text of the GNU General\n Public License 3 can be found in `/usr/share/common-licenses/GPL-3'."
                 },
@@ -7139,7 +7123,7 @@
                 }
               ],
               "detection_log": [],
-              "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-5fa38069-d44a-1d3c-a69b-bec53481845a"
+              "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-0b1195bd-b395-981c-5c28-9bc61177229d"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7718,8 +7702,8 @@
               "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
             },
             {
-              "license_expression": "mit AND other-permissive",
-              "license_expression_spdx": "MIT AND LicenseRef-scancode-other-permissive",
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
               "matches": [
                 {
                   "license_expression": "mit",
@@ -7728,34 +7712,18 @@
                   "start_line": 3010,
                   "end_line": 3010,
                   "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 3,
+                  "score": 99.0,
+                  "matched_length": 5,
                   "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "mit_221.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
+                  "rule_relevance": 99,
+                  "rule_identifier": "mit_1361.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1361.RULE",
                   "matched_text": "License: MIT/X11 (BSD like)",
-                  "matched_text_diagnostics": "License: MIT/X11 ("
-                },
-                {
-                  "license_expression": "other-permissive",
-                  "license_expression_spdx": "LicenseRef-scancode-other-permissive",
-                  "from_file": "fusiondirectory/debian/copyright.in",
-                  "start_line": 3010,
-                  "end_line": 3010,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 2,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "other-permissive_16.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
-                  "matched_text": "License: MIT/X11 (BSD like)",
-                  "matched_text_diagnostics": "BSD like)"
+                  "matched_text_diagnostics": "License: MIT/X11 (BSD like)"
                 }
               ],
               "detection_log": [],
-              "identifier": "mit_and_other_permissive-c6d061db-c814-b7d1-536d-2c7524411540"
+              "identifier": "mit-f7c9941e-e7dd-ab33-1cda-a2aa7f78c087"
             },
             {
               "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
@@ -13453,16 +13421,16 @@
               "license_expression_spdx": "BSD-4-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1521,
-              "end_line": 1521,
+              "end_line": 1523,
               "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 3,
+              "score": 22.0,
+              "matched_length": 4,
               "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-              "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause",
-              "matched_text_diagnostics": "BSD-4-clause"
+              "rule_relevance": 22,
+              "rule_identifier": "bsd-original_required_phrase_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_required_phrase_2.RULE",
+              "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause\n\nLicense: GPL-2+",
+              "matched_text_diagnostics": "BSD-4-clause\n\nLicense:"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -13491,8 +13459,8 @@
               "matched_length": 139,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "gpl-3.0-plus_607.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_607.RULE",
+              "rule_identifier": "gpl-3.0-plus_615.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_615.RULE",
               "matched_text": "License: GPL-3+\n This package is free software; you can redistribute it and/or modify\n it under the terms of the GNU General Public License as published by\n the Free Software Foundation; either version 3 of the License, or\n (at your option) any later version.\n .\n This package is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n GNU General Public License for more details.\n .\n You should have received a copy of the GNU General Public License\n along with this package; if not, write to the Free Software\n Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA\n .\n On Debian systems, the complete text of the GNU General\n Public License 3 can be found in `/usr/share/common-licenses/GPL-3'.",
               "matched_text_diagnostics": "License: GPL-3+\n This package is free software; you can redistribute it and/or modify\n it under the terms of the GNU General Public License as published by\n the Free Software Foundation; either version 3 of the License, or\n (at your option) any later version.\n .\n This package is distributed in the hope that it will be useful,\n but WITHOUT ANY WARRANTY; without even the implied warranty of\n MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n GNU General Public License for more details.\n .\n You should have received a copy of the GNU General Public License\n along with this package; if not, write to the Free Software\n Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA\n .\n On Debian systems, the complete text of the GNU General\n Public License 3 can be found in `/usr/share/common-licenses/GPL-3'."
             },
@@ -13594,7 +13562,7 @@
             }
           ],
           "detection_log": [],
-          "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-5fa38069-d44a-1d3c-a69b-bec53481845a"
+          "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-0b1195bd-b395-981c-5c28-9bc61177229d"
         }
       ],
       "license_clues": [
@@ -13723,8 +13691,8 @@
         "pkg:deb/debian/fusiondirectory-theme-oxygen?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:deb/debian/fusiondirectory-webservice-shell?arch=all&uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "detected_license_expression": "gpl-2.0-plus AND bsd-simplified AND lgpl-3.0-plus AND (mit AND other-permissive) AND (public-domain AND bsd-original AND gpl-1.0-plus)",
-      "detected_license_expression_spdx": "GPL-2.0-or-later AND BSD-2-Clause AND LGPL-3.0-or-later AND (MIT AND LicenseRef-scancode-other-permissive) AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
+      "detected_license_expression": "gpl-2.0-plus AND bsd-simplified AND lgpl-3.0-plus AND mit AND (public-domain AND bsd-original AND gpl-1.0-plus)",
+      "detected_license_expression_spdx": "GPL-2.0-or-later AND BSD-2-Clause AND LGPL-3.0-or-later AND MIT AND (LicenseRef-scancode-public-domain AND BSD-4-Clause AND GPL-1.0-or-later)",
       "license_detections": [
         {
           "license_expression": "gpl-2.0-plus",
@@ -14303,8 +14271,8 @@
           "identifier": "gpl_2_0_plus-227f50b1-f05e-5b3b-b107-ae1e2f56448b"
         },
         {
-          "license_expression": "mit AND other-permissive",
-          "license_expression_spdx": "MIT AND LicenseRef-scancode-other-permissive",
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
           "matches": [
             {
               "license_expression": "mit",
@@ -14313,34 +14281,18 @@
               "start_line": 3010,
               "end_line": 3010,
               "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 3,
+              "score": 99.0,
+              "matched_length": 5,
               "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit_221.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_221.RULE",
+              "rule_relevance": 99,
+              "rule_identifier": "mit_1361.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1361.RULE",
               "matched_text": "License: MIT/X11 (BSD like)",
-              "matched_text_diagnostics": "License: MIT/X11 ("
-            },
-            {
-              "license_expression": "other-permissive",
-              "license_expression_spdx": "LicenseRef-scancode-other-permissive",
-              "from_file": "fusiondirectory/debian/copyright.in",
-              "start_line": 3010,
-              "end_line": 3010,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "other-permissive_16.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-permissive_16.RULE",
-              "matched_text": "License: MIT/X11 (BSD like)",
-              "matched_text_diagnostics": "BSD like)"
+              "matched_text_diagnostics": "License: MIT/X11 (BSD like)"
             }
           ],
           "detection_log": [],
-          "identifier": "mit_and_other_permissive-c6d061db-c814-b7d1-536d-2c7524411540"
+          "identifier": "mit-f7c9941e-e7dd-ab33-1cda-a2aa7f78c087"
         },
         {
           "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
