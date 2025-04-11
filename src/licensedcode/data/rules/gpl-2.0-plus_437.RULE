@@ -1,10 +1,12 @@
 ---
 license_expression: gpl-2.0-plus
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - gpl-3.0-plus
 ignorable_urls:
     - http://www.gnu.org/licenses/
-is_deprecated: yes
 ---
 
 lustre is free software: you can redistribute it and/or modify it

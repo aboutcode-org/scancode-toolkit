@@ -20,14 +20,9 @@
           "system_environment": {
             "operating_system": "linux",
             "cpu_architecture": "64",
-<<<<<<< HEAD
             "platform": "Linux-6.8.0-52-generic-x86_64-with-glibc2.35",
             "platform_version": "#53~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jan 15 19:18:46 UTC 2",
-=======
-            "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
-            "platform_version": "#45~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Sep 11 15:25:05 UTC 2",
->>>>>>> refs/remotes/upstream/develop
-            "python_version": "3.11.8 (main, Feb 12 2024, 14:25:06) [GCC 11.4.0]"
+            "python_version": "3.12.9 (main, Feb 20 2025, 19:13:20) [GCC 11.4.0]"
           },
           "spdx_license_list_version": "3.26",
           "files_count": 4

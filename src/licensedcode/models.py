@@ -2349,7 +2349,8 @@ class Rule(BasicRule):
         try:
             return get_existing_required_phrase_spans(self.text)
         except Exception as e:
-            raise InvalidRule(f'Invalid rule: {self}') from e
+            rule_file = self.rule_file(rules_data_dir=rules_data_dir)
+            raise InvalidRule(f'Invalid rule:file://{rule_file}  {self}') from e
 
     def compute_thresholds(self, small_rule=SMALL_RULE, tiny_rule=TINY_RULE):
         """
