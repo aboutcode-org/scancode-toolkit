@@ -14,7 +14,6 @@ import saneyaml
 
 from licensedcode import cache
 from licensedcode import models
-from licensedcode import match_hash
 from licensedcode import frontmatter
 from licensedcode.models import get_rule_id_for_text
 from license_expression import Licensing
@@ -73,7 +72,13 @@ class RuleData(object):
             print(rdat)
             print("########################################################")
             raise
-        self.data = {k: v for k, v in self.data.items() if v is not None or (v is None and k == "license_expression")}
+        if "referenced_filenames" in self.data and not self.data["referenced_filenames"]:
+            self.data.pop("referenced_filenames")
+        self.data = {
+            k: v for k, v in self.data.items()
+            if v is not None 
+            or (v is None and k == "license_expression")
+        }
 
 
 def load_data(location="00-new-licenses.txt"):
