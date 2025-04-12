@@ -19,12 +19,12 @@ from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
 from licensedcode.spans import Span
 from licensedcode.tokenize import get_existing_required_phrase_spans
+from licensedcode.tokenize import InvalidRuleRequiredPhrase
 from licensedcode_test_utils import create_rule_from_text_and_expression
 from licensedcode_test_utils import create_rule_from_text_file_and_expression
 from scancode.cli_test_utils import check_json
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
-
 
 
 def as_sorted_mapping_seq(licenses, include_text=False):
@@ -577,9 +577,7 @@ class TestRule(FileBasedTesting):
             validations.extend(rule.validate())
         expected = [
             'Unknown language: foobar',
-            'Invalid rule is_license_* flags. Only one allowed.',
             'At least one is_license_* flag is needed.',
-            'Invalid rule is_license_* flags. Only one allowed.',
             'At least one is_license_* flag is needed.',
         ]
         assert validations == expected
@@ -590,7 +588,7 @@ class TestRule(FileBasedTesting):
             'Which is a license originating at Massachusetts Institute of Technology (MIT).'
         )
         rule = models.Rule(license_expression='mit', text=rule_text)
-        key_phrase_spans = list(rule.build_key_phrase_spans())
+        key_phrase_spans = list(rule.build_required_phrase_spans())
         assert key_phrase_spans == [Span(4), Span(7, 9)]
 
     def test_key_phrases_raises_exception_when_markup_is_not_closed(self):
@@ -601,7 +599,7 @@ class TestRule(FileBasedTesting):
         rule = models.Rule(license_expression='mit', text=rule_text)
 
         try:
-            list(rule.build_key_phrase_spans())
+            list(rule.build_required_phrase_spans())
             raise Exception('Exception should be raised')
         except InvalidRule:
             pass
@@ -629,7 +627,7 @@ class TestGetKeyPhrases(TestCaseClass):
         try:
             list(get_existing_required_phrase_spans(text))
             raise Exception('Exception should be raised')
-        except InvalidRule:
+        except InvalidRuleRequiredPhrase:
             pass
 
     def test_get_key_phrases_ignores_stopwords_in_positions(self):
@@ -647,7 +645,7 @@ class TestGetKeyPhrases(TestCaseClass):
         try:
             list(get_existing_required_phrase_spans(text))
             raise Exception('Exception should be raised')
-        except InvalidRule:
+        except InvalidRuleRequiredPhrase:
             pass
 
     def test_get_key_phrases_only_considers_outer_key_phrase_markup(self):
@@ -660,5 +658,5 @@ class TestGetKeyPhrases(TestCaseClass):
         try:
             list(get_existing_required_phrase_spans(text))
             raise Exception('Exception should be raised')
-        except InvalidRule:
+        except InvalidRuleRequiredPhrase:
             pass

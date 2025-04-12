@@ -1586,17 +1586,17 @@
               "from_file": "crystal/utils/graphile/package.json",
               "start_line": 1,
               "end_line": 1,
-              "matcher": "2-aho",
+              "matcher": "1-hash",
               "score": 100.0,
-              "matched_length": 4,
+              "matched_length": 5,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "unknown-license-reference_41.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_41.RULE",
+              "rule_identifier": "unknown-license-reference_419.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_419.RULE",
               "matched_text": "SEE LICENSE IN LICENSE.md"
             }
           ],
-          "identifier": "unknown_license_reference-26bf01e8-0c66-d888-2936-9512f0dce7bc"
+          "identifier": "unknown_license_reference-b99f36c5-9829-bf8e-a6ef-4bd8b38a2a63"
         }
       ],
       "other_license_expression": null,
@@ -20872,17 +20872,17 @@
                   "from_file": "crystal/utils/graphile/package.json",
                   "start_line": 1,
                   "end_line": 1,
-                  "matcher": "2-aho",
+                  "matcher": "1-hash",
                   "score": 100.0,
-                  "matched_length": 4,
+                  "matched_length": 5,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "unknown-license-reference_41.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_41.RULE",
+                  "rule_identifier": "unknown-license-reference_419.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_419.RULE",
                   "matched_text": "SEE LICENSE IN LICENSE.md"
                 }
               ],
-              "identifier": "unknown_license_reference-26bf01e8-0c66-d888-2936-9512f0dce7bc"
+              "identifier": "unknown_license_reference-b99f36c5-9829-bf8e-a6ef-4bd8b38a2a63"
             }
           ],
           "other_license_expression": null,
