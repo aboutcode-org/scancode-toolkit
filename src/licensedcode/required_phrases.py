@@ -782,7 +782,7 @@ def gen_required_phrases_rules(
 
 def generate_new_required_phrase_rules(license_expression=None, verbose=False):
     """
-    Create new rules ctreated from collecting unique required phrases accross all rules.
+    Create new rules created from collecting unique required phrases accross all rules.
 
     As a side effect, also update existing rules matched to a required phrase text with the
     "is_required_phrase" flag.
