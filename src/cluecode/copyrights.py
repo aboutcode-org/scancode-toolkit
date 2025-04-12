@@ -438,7 +438,7 @@ def get_tokens(numbered_lines, splitter=re.compile(r'[\t =;]+').split):
             )
 
             # remove leading plus sign
-            if tok.startswith('+'):
+            if tok.startswith('+') and len(tok) > 1:
                 tok = tok.lstrip('+')
                 # convert 'AUTHOR' to ('author' or 'Author')
                 if tok == 'AUTHOR':
