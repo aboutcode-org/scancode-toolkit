@@ -4,7 +4,7 @@ is_license_text: yes
 relevance: 99
 notes: This variant of the mit-taylor-variant has a shorter disclaimer.
 ---
-
+{{
 Permission to use, copy, modify, and/or distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
  copyright notice and this permission notice appear in all copies.
@@ -12,3 +12,4 @@ Permission to use, copy, modify, and/or distribute this software for any
  This software is provided 'as is' and without any warranty, express or implied.
  In no event shall the authors be liable for any damages arising from the use of
  this software.
+}}
