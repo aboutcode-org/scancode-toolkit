@@ -1976,16 +1976,13 @@ class BasicRule:
             if not check_is_list_of_strings(self.referenced_filenames):
                 yield 'referenced_filenames must be a list of strings'
 
-            if (self.is_license_clue or self.is_license_intro) and self.is_required_phrase:
-                yield 'License intro/clue rules cannot be required phrase rules'
-
-            if self.is_required_phrase and self.skip_for_required_phrase_generation:
-                yield 'We can skip collecting required phrases only in non required phrase rules'
-
             if not all(check_is_list_of_strings(i) for i in ignorables):
                 yield 'ignorables must be a list of strings'
 
             if self.is_required_phrase:
+                if self.skip_for_required_phrase_generation:
+                    yield 'Cannot skip collecting required phrases in required phrase rule'
+
                 if self.is_license_intro:
                     yield 'is_required_phrase rule cannot be is_license_intro.'
 
