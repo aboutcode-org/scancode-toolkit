@@ -1,6 +1,7 @@
 ---
 license_expression: proprietary-license
 is_license_reference: yes
+is_required_phrase: yes
 ---
 
 Any use in a commercial product must be notified to the author by email

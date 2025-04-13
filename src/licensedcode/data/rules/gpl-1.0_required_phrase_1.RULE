@@ -4,4 +4,4 @@ is_license_tag: yes
 is_required_phrase: yes
 ---
 
-{{gpl 1 0}} license
+ gpl 1 0  license

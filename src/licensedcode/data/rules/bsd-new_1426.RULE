@@ -2,6 +2,7 @@
 license_expression: bsd-new
 is_license_text: yes
 is_continuous: yes
+skip_for_required_phrase_generation: yes
 ---
 
 {{
