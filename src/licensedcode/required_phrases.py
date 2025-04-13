@@ -939,6 +939,11 @@ def generate_new_required_phrase_rules(
         # check if we already have a rule we can match for this required phrase tag if needed
         matched_rule = rule_exists(text=phrase.raw_text)
         if matched_rule:
+            if matched_rule.is_from_license:
+                if TRACE and verbose:
+                    click.echo(f'Skipping rule matched to license: {matched_rule.identifier}.')
+                continue
+
             actual_rule = current_rules_by_identifier[matched_rule.identifier]
             if actual_rule.skip_for_required_phrase_generation:
                 if TRACE and verbose:
@@ -954,6 +959,8 @@ def generate_new_required_phrase_rules(
                 # this combo does not work, make it a reference
                 if actual_rule.is_license_intro or actual_rule.is_license_clue:
                     actual_rule.is_license_reference = True
+                    actual_rule.is_license_intro = False
+                    actual_rule.is_license_clue = False
                 actual_rule.is_required_phrase = True
                 modified = True
 
