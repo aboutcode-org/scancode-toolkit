@@ -1810,6 +1810,9 @@ PATTERNS = [
        r'[A-Z][a-z]+[\.,]?'
      r')$', 'NNP'),
 
+    # Matches a capitalized word with a dot (Like Frankie.Chu). 
+    (r'^[A-Z][a-zA-Z]*\.[a-zA-Z]+$', 'NNP'),
+
     # cmmunications
     (r'communications', 'NNP'),
 
@@ -3494,6 +3497,9 @@ GRAMMAR = """
 
     # developed by Atkinson, et al.
     AUTHOR: {<AUTH> <NNP>+ <CC> <AUTHDOT> } #Atkinson, et al.
+
+    # Author:Frankie.Chu
+    AUTHOR: {<AUTH> <NNP>}
 
 
 #######################################
