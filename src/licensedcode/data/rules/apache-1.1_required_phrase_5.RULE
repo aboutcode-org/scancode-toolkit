@@ -4,4 +4,4 @@ is_license_tag: yes
 is_required_phrase: yes
 ---
 
-{{apache 1 1}} license
+Apache 1.1 license
