@@ -941,7 +941,7 @@ def generate_new_required_phrase_rules(
         if matched_rule:
             actual_rule = current_rules_by_identifier[matched_rule.identifier]
             if actual_rule.skip_for_required_phrase_generation:
-                if verbose:
+                if TRACE and verbose:
                     click.echo(
                         f'WARNING: Skipping pre-existing required phrase rule '
                         f'"skip_for_required_phrase_generation": {actual_rule.identifier}.'
@@ -974,9 +974,9 @@ def generate_new_required_phrase_rules(
             if modified:
                 actual_rule.dump(rules_data_dir)
                 if verbose:
-                    click.echo(f'WARNING: Updating existing rule with is_required_phrase flag and more: {actual_rule.identifier}.')
+                    click.echo(f'UPDATING existing rule with is_required_phrase flag and more: {actual_rule.identifier}.')
             else:
-                if verbose:
+                if TRACE and verbose:
                     click.echo(f'WARNING: Skipping pre-existing required phrase rule: {actual_rule.identifier}.')
         else:
             if not update_only:
