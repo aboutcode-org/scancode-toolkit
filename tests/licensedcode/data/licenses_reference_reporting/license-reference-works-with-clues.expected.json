@@ -94,6 +94,113 @@
       ]
     },
     {
+      "identifier": "gpl_1_0_plus-0275ca3c-0d0c-8224-0676-9b6f2b7ff11c",
+      "license_expression": "gpl-1.0-plus",
+      "license_expression_spdx": "GPL-1.0-or-later",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
+          "from_file": "python.LICENSE",
+          "start_line": 71,
+          "end_line": 71,
+          "matcher": "2-aho",
+          "score": 85.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 85,
+          "rule_identifier": "gpl-1.0-plus_351.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+          "matched_text": "    is \"not incompatible\" with the GPL.",
+          "matched_text_diagnostics": "the GPL."
+        }
+      ]
+    },
+    {
+      "identifier": "gpl_1_0_plus-1b302adf-b195-03df-8d4e-459bdca225aa",
+      "license_expression": "gpl-1.0-plus",
+      "license_expression_spdx": "GPL-1.0-or-later",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
+          "from_file": "python.LICENSE",
+          "start_line": 66,
+          "end_line": 66,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 4,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl_194.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_194.RULE",
+          "matched_text": "    other software that is released under the GPL; the others don't.",
+          "matched_text_diagnostics": "released under the GPL;"
+        }
+      ]
+    },
+    {
+      "identifier": "gpl_1_0_plus-540d1532-9198-4c82-4d7b-c84ac418b631",
+      "license_expression": "gpl-1.0-plus",
+      "license_expression_spdx": "GPL-1.0-or-later",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
+          "from_file": "python.LICENSE",
+          "start_line": 62,
+          "end_line": 63,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "gpl-1.0-plus_200.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_200.RULE",
+          "matched_text": "(1) GPL-compatible doesn't mean that we're distributing Python under\n    the GPL.  All Python licenses, unlike the GPL, let you distribute",
+          "matched_text_diagnostics": "under\n    the GPL."
+        },
+        {
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
+          "from_file": "python.LICENSE",
+          "start_line": 63,
+          "end_line": 63,
+          "matcher": "2-aho",
+          "score": 85.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 85,
+          "rule_identifier": "gpl-1.0-plus_351.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+          "matched_text": "    the GPL.  All Python licenses, unlike the GPL, let you distribute",
+          "matched_text_diagnostics": "the GPL,"
+        },
+        {
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
+          "from_file": "python.LICENSE",
+          "start_line": 64,
+          "end_line": 65,
+          "matcher": "2-aho",
+          "score": 85.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 85,
+          "rule_identifier": "gpl-1.0-plus_351.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
+          "matched_text": "    a modified version without making your changes open source.  The\n    GPL-compatible licenses make it possible to combine Python with",
+          "matched_text_diagnostics": "The\n    GPL-"
+        }
+      ]
+    },
+    {
       "identifier": "openssl-e1da0b01-fab9-e27d-4ff3-c4944b09b621",
       "license_expression": "openssl",
       "license_expression_spdx": "OpenSSL-standalone",
@@ -174,143 +281,6 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/openssl-ssleay_2.RULE",
           "matched_text": "  OpenSSL License",
           "matched_text_diagnostics": "OpenSSL License"
-        }
-      ]
-    },
-    {
-      "identifier": "other_copyleft_and_gpl_1_0_plus-2a634b9a-02ad-d5b9-47fc-e91c5eb24808",
-      "license_expression": "other-copyleft AND gpl-1.0-plus",
-      "license_expression_spdx": "LicenseRef-scancode-other-copyleft AND GPL-1.0-or-later",
-      "detection_count": 1,
-      "detection_log": [],
-      "reference_matches": [
-        {
-          "license_expression": "other-copyleft",
-          "license_expression_spdx": "LicenseRef-scancode-other-copyleft",
-          "from_file": "python.LICENSE",
-          "start_line": 62,
-          "end_line": 62,
-          "matcher": "2-aho",
-          "score": 80.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 80,
-          "rule_identifier": "other-copyleft_24.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
-          "matched_text": "(1) GPL-compatible doesn't mean that we're distributing Python under",
-          "matched_text_diagnostics": "GPL-compatible"
-        },
-        {
-          "license_expression": "gpl-1.0-plus",
-          "license_expression_spdx": "GPL-1.0-or-later",
-          "from_file": "python.LICENSE",
-          "start_line": 62,
-          "end_line": 63,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 3,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "gpl-1.0-plus_200.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_200.RULE",
-          "matched_text": "(1) GPL-compatible doesn't mean that we're distributing Python under\n    the GPL.  All Python licenses, unlike the GPL, let you distribute",
-          "matched_text_diagnostics": "under\n    the GPL."
-        },
-        {
-          "license_expression": "gpl-1.0-plus",
-          "license_expression_spdx": "GPL-1.0-or-later",
-          "from_file": "python.LICENSE",
-          "start_line": 63,
-          "end_line": 63,
-          "matcher": "2-aho",
-          "score": 85.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 85,
-          "rule_identifier": "gpl-1.0-plus_351.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
-          "matched_text": "    the GPL.  All Python licenses, unlike the GPL, let you distribute",
-          "matched_text_diagnostics": "the GPL,"
-        },
-        {
-          "license_expression": "gpl-1.0-plus",
-          "license_expression_spdx": "GPL-1.0-or-later",
-          "from_file": "python.LICENSE",
-          "start_line": 64,
-          "end_line": 65,
-          "matcher": "2-aho",
-          "score": 85.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 85,
-          "rule_identifier": "gpl-1.0-plus_351.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
-          "matched_text": "    a modified version without making your changes open source.  The\n    GPL-compatible licenses make it possible to combine Python with",
-          "matched_text_diagnostics": "The\n    GPL-"
-        },
-        {
-          "license_expression": "other-copyleft",
-          "license_expression_spdx": "LicenseRef-scancode-other-copyleft",
-          "from_file": "python.LICENSE",
-          "start_line": 65,
-          "end_line": 65,
-          "matcher": "2-aho",
-          "score": 80.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 80,
-          "rule_identifier": "other-copyleft_24.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
-          "matched_text": "    GPL-compatible licenses make it possible to combine Python with",
-          "matched_text_diagnostics": "GPL-compatible"
-        },
-        {
-          "license_expression": "gpl-1.0-plus",
-          "license_expression_spdx": "GPL-1.0-or-later",
-          "from_file": "python.LICENSE",
-          "start_line": 66,
-          "end_line": 66,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "gpl_194.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_194.RULE",
-          "matched_text": "    other software that is released under the GPL; the others don't.",
-          "matched_text_diagnostics": "released under the GPL;"
-        },
-        {
-          "license_expression": "other-copyleft",
-          "license_expression_spdx": "LicenseRef-scancode-other-copyleft",
-          "from_file": "python.LICENSE",
-          "start_line": 68,
-          "end_line": 68,
-          "matcher": "2-aho",
-          "score": 80.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 80,
-          "rule_identifier": "other-copyleft_24.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
-          "matched_text": "(2) According to Richard Stallman, 1.6.1 is not GPL-compatible,",
-          "matched_text_diagnostics": "GPL-compatible,"
-        },
-        {
-          "license_expression": "gpl-1.0-plus",
-          "license_expression_spdx": "GPL-1.0-or-later",
-          "from_file": "python.LICENSE",
-          "start_line": 71,
-          "end_line": 71,
-          "matcher": "2-aho",
-          "score": 85.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 85,
-          "rule_identifier": "gpl-1.0-plus_351.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
-          "matched_text": "    is \"not incompatible\" with the GPL.",
-          "matched_text_diagnostics": "the GPL."
         }
       ]
     },
@@ -1240,7 +1210,7 @@
       "is_license_tag": false,
       "is_license_intro": false,
       "is_license_clue": false,
-      "is_required_phrase": false,
+      "is_required_phrase": true,
       "skip_for_required_phrase_generation": false,
       "is_continuous": false,
       "is_builtin": true,
@@ -1422,12 +1392,12 @@
       "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
       "is_license_text": false,
       "is_license_notice": false,
-      "is_license_reference": true,
+      "is_license_reference": false,
       "is_license_tag": false,
       "is_license_intro": false,
-      "is_license_clue": false,
+      "is_license_clue": true,
       "is_required_phrase": false,
-      "skip_for_required_phrase_generation": false,
+      "skip_for_required_phrase_generation": true,
       "is_continuous": false,
       "is_builtin": true,
       "is_from_license": false,
@@ -1442,7 +1412,7 @@
       "ignorable_authors": [],
       "ignorable_urls": [],
       "ignorable_emails": [],
-      "text": "GPL-compatible\n"
+      "text": "GPL-compatible"
     },
     {
       "license_expression": "python-cwi",
@@ -1683,8 +1653,8 @@
     {
       "path": "python.LICENSE",
       "type": "file",
-      "detected_license_expression": "python AND (other-copyleft AND gpl-1.0-plus) AND (python AND python-cwi) AND bzip2-libbzip-2010 AND sleepycat AND bsd-new AND openssl-ssleay AND openssl AND ssleay-windows AND tcl",
-      "detected_license_expression_spdx": "Python-2.0 AND (LicenseRef-scancode-other-copyleft AND GPL-1.0-or-later) AND (Python-2.0 AND LicenseRef-scancode-python-cwi) AND bzip2-1.0.6 AND Sleepycat AND BSD-3-Clause AND OpenSSL AND OpenSSL-standalone AND SSLeay-standalone AND TCL",
+      "detected_license_expression": "python AND gpl-1.0-plus AND (python AND python-cwi) AND bzip2-libbzip-2010 AND sleepycat AND bsd-new AND openssl-ssleay AND openssl AND ssleay-windows AND tcl",
+      "detected_license_expression_spdx": "Python-2.0 AND GPL-1.0-or-later AND (Python-2.0 AND LicenseRef-scancode-python-cwi) AND bzip2-1.0.6 AND Sleepycat AND BSD-3-Clause AND OpenSSL AND OpenSSL-standalone AND SSLeay-standalone AND TCL",
       "license_detections": [
         {
           "license_expression": "python",
@@ -1711,25 +1681,9 @@
           "identifier": "python-c496ccae-69a0-c5f8-a742-83bcd66bfe68"
         },
         {
-          "license_expression": "other-copyleft AND gpl-1.0-plus",
-          "license_expression_spdx": "LicenseRef-scancode-other-copyleft AND GPL-1.0-or-later",
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
           "matches": [
-            {
-              "license_expression": "other-copyleft",
-              "license_expression_spdx": "LicenseRef-scancode-other-copyleft",
-              "from_file": "python.LICENSE",
-              "start_line": 62,
-              "end_line": 62,
-              "matcher": "2-aho",
-              "score": 80.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 80,
-              "rule_identifier": "other-copyleft_24.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
-              "matched_text": "(1) GPL-compatible doesn't mean that we're distributing Python under",
-              "matched_text_diagnostics": "GPL-compatible"
-            },
             {
               "license_expression": "gpl-1.0-plus",
               "license_expression_spdx": "GPL-1.0-or-later",
@@ -1777,23 +1731,15 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_351.RULE",
               "matched_text": "    a modified version without making your changes open source.  The\n    GPL-compatible licenses make it possible to combine Python with",
               "matched_text_diagnostics": "The\n    GPL-"
-            },
-            {
-              "license_expression": "other-copyleft",
-              "license_expression_spdx": "LicenseRef-scancode-other-copyleft",
-              "from_file": "python.LICENSE",
-              "start_line": 65,
-              "end_line": 65,
-              "matcher": "2-aho",
-              "score": 80.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 80,
-              "rule_identifier": "other-copyleft_24.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
-              "matched_text": "    GPL-compatible licenses make it possible to combine Python with",
-              "matched_text_diagnostics": "GPL-compatible"
-            },
+            }
+          ],
+          "detection_log": [],
+          "identifier": "gpl_1_0_plus-540d1532-9198-4c82-4d7b-c84ac418b631"
+        },
+        {
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
+          "matches": [
             {
               "license_expression": "gpl-1.0-plus",
               "license_expression_spdx": "GPL-1.0-or-later",
@@ -1809,23 +1755,15 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_194.RULE",
               "matched_text": "    other software that is released under the GPL; the others don't.",
               "matched_text_diagnostics": "released under the GPL;"
-            },
-            {
-              "license_expression": "other-copyleft",
-              "license_expression_spdx": "LicenseRef-scancode-other-copyleft",
-              "from_file": "python.LICENSE",
-              "start_line": 68,
-              "end_line": 68,
-              "matcher": "2-aho",
-              "score": 80.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 80,
-              "rule_identifier": "other-copyleft_24.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
-              "matched_text": "(2) According to Richard Stallman, 1.6.1 is not GPL-compatible,",
-              "matched_text_diagnostics": "GPL-compatible,"
-            },
+            }
+          ],
+          "detection_log": [],
+          "identifier": "gpl_1_0_plus-1b302adf-b195-03df-8d4e-459bdca225aa"
+        },
+        {
+          "license_expression": "gpl-1.0-plus",
+          "license_expression_spdx": "GPL-1.0-or-later",
+          "matches": [
             {
               "license_expression": "gpl-1.0-plus",
               "license_expression_spdx": "GPL-1.0-or-later",
@@ -1844,7 +1782,7 @@
             }
           ],
           "detection_log": [],
-          "identifier": "other_copyleft_and_gpl_1_0_plus-2a634b9a-02ad-d5b9-47fc-e91c5eb24808"
+          "identifier": "gpl_1_0_plus-0275ca3c-0d0c-8224-0676-9b6f2b7ff11c"
         },
         {
           "license_expression": "python AND python-cwi",
@@ -2210,6 +2148,54 @@
         }
       ],
       "license_clues": [
+        {
+          "license_expression": "other-copyleft",
+          "license_expression_spdx": "LicenseRef-scancode-other-copyleft",
+          "from_file": "python.LICENSE",
+          "start_line": 62,
+          "end_line": 62,
+          "matcher": "2-aho",
+          "score": 80.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 80,
+          "rule_identifier": "other-copyleft_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+          "matched_text": "(1) GPL-compatible doesn't mean that we're distributing Python under",
+          "matched_text_diagnostics": "GPL-compatible"
+        },
+        {
+          "license_expression": "other-copyleft",
+          "license_expression_spdx": "LicenseRef-scancode-other-copyleft",
+          "from_file": "python.LICENSE",
+          "start_line": 65,
+          "end_line": 65,
+          "matcher": "2-aho",
+          "score": 80.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 80,
+          "rule_identifier": "other-copyleft_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+          "matched_text": "    GPL-compatible licenses make it possible to combine Python with",
+          "matched_text_diagnostics": "GPL-compatible"
+        },
+        {
+          "license_expression": "other-copyleft",
+          "license_expression_spdx": "LicenseRef-scancode-other-copyleft",
+          "from_file": "python.LICENSE",
+          "start_line": 68,
+          "end_line": 68,
+          "matcher": "2-aho",
+          "score": 80.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 80,
+          "rule_identifier": "other-copyleft_24.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/other-copyleft_24.RULE",
+          "matched_text": "(2) According to Richard Stallman, 1.6.1 is not GPL-compatible,",
+          "matched_text_diagnostics": "GPL-compatible,"
+        },
         {
           "license_expression": "bsd-simplified",
           "license_expression_spdx": "BSD-2-Clause",
