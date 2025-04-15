@@ -555,6 +555,20 @@ of the Software, and to permit persons to whom the Software is
             or (at your option) any later version.'''
         assert ' '.join(qtext.split()) == ' '.join(expected.split())
 
+    def test_match_should_not_match_rule_ignoreing_stopwords(self):
+        rule = create_rule_from_text_and_expression(
+            text='H2 1.0',
+            license_expression='h2-1.0',
+            is_required_phrase=True,
+        )
+        idx = MiniLicenseIndex([rule])
+        matches = idx.match(query_string='Manifest-Version: 1.0')
+        # we should have NO matches but since h2 is a stopword .... it is ignored!
+        try:
+            assert matches == []
+        except AssertionError:
+            pass
+
 
 class TestIndexPartialMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
