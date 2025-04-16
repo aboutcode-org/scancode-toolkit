@@ -304,3 +304,7 @@ def is_simple_path(path):
 
 def is_simple_path_pattern(path):
    return path.endswith('*') and path.count('*') == 1
+
+
+def is_private_package(classifiers):
+    return any('Private ::' in classifier for classifier in classifiers if classifier)

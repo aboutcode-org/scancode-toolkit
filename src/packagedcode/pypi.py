@@ -44,6 +44,7 @@ from packagedcode.utils import parse_maintainer_name_email
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
 from packagedcode.utils import get_base_purl
+from packagedcode.utils import is_private_package
 
 try:
     from zipfile import Path as ZipPath
@@ -511,9 +512,7 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
         description = project_data.get('description') or ''
         description = description.strip()
 
-        classifiers = project_data.get('classifiers', [])
-        is_private = any('Private ::' in classifier for classifier in classifiers)
-
+        is_private = is_private_package(project_data.get('classifiers', []))
         urls, extra_data = get_urls(metainfo=project_data, name=name, version=version)
 
         extracted_license_statement, license_file = get_declared_license(project_data)
@@ -551,7 +550,6 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
             download_url=urls.get('download'),
         )
         yield models.PackageData.from_data(package_data, package_only)
-
 
 def is_poetry_pyproject_toml(location):
     with open(location, 'r') as file:
@@ -740,6 +738,8 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
                     is_pinned=False,
                 )
                 dependencies.append(dependency.to_dict())
+
+        is_private = is_private_package(poetry_data.get('classifiers', []))
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -1019,6 +1019,9 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
     if license_file:
         extra_data['license_file'] = license_file
 
+    classifiers = get_attribute(meta, 'Classifier', multiple=True)
+    is_private = is_private_package(classifiers)
+
     # FIXME: We are getting dependencies from other sibling files, this is duplicated
     # data at the package_data level, is this necessary? We also have the entire dependency
     # relationships here at requires.txt present in ``.egg-info`` should we store these
@@ -1039,6 +1042,7 @@ def parse_metadata(location, datasource_id, package_type, package_only=False):
         dependencies=dependencies,
         file_references=file_references,
         extra_data=extra_data,
+        is_private=is_private,
         **urls,
     )
     return models.PackageData.from_data(package_data, package_only)
@@ -1214,6 +1218,8 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
         if license_file:
             extra_data['license_file'] = license_file
 
+        is_private = is_private_package(setup_args.get('classifiers', []))
+
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
@@ -1342,6 +1348,9 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
             if not extracted_license_statement:
                 extracted_license_statement = ''
             extracted_license_statement += f" license_files: {license_file_references}"
+
+        classifiers = parser.get('metadata', 'classifiers', fallback='').splitlines()
+        is_private = is_private_package(classifiers)
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -2286,7 +2295,7 @@ def get_pypi_urls(name, version, **kwargs):
     )
 
 
-def get_urls(metainfo, name, version,is_private, poetry=False):
+def get_urls(metainfo, name, version, is_private=False, poetry=False):
     """
     Return a mapping of standard URLs and a mapping of extra-data URls for URLs
     of this package:
