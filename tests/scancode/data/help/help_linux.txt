@@ -16,6 +16,7 @@ Options:
                       license/copyright detection and top-level package creation.
     -c, --copyright   Scan <input> for copyrights.
     --go-symbol       Collect Go symbols.
+    --rust-symbol     Collect Rust symbols from rust binaries.
 
   other scans:
     -i, --info   Scan <input> for file information (size, checksums, etc).

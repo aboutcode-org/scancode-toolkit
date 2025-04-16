@@ -1,0 +1,17 @@
+---
+key: mips
+short_name: MIPS License
+name: MIPS License
+category: Permissive
+owner: MIPS Computer Systems
+notes: |
+    Added in SPDX license list 3.25
+    This was previously the license rule: other-permissive_116.RULE
+spdx_license_key: MIPS
+other_urls:
+    - https://sourceware.org/cgit/binutils-gdb/tree/include/coff/sym.h#n11
+---
+
+MIPS Computer Systems, Inc. grants reproduction and use
+rights to all parties, PROVIDED that this comment is
+maintained in the copy.

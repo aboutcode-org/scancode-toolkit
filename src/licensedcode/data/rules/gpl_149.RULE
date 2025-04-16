@@ -5,6 +5,6 @@ minimum_coverage: 70
 ---
 
 This software may be used and distributed according to the terms
-of the GNU General Public License (GPL), incorporated herein by reference.
-Drivers based on this skeleton fall under the GPL and must retain
+of the {{GNU General Public License (GPL}}), incorporated herein by reference.
+Drivers based on this skeleton fall {{under the GPL}} and must retain
 the authorship (implicit copyright) notice.

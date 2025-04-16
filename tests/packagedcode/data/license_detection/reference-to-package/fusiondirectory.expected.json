@@ -5179,7 +5179,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-9e2a213a-3fc4-9ee3-8e3f-783829530b14",
+      "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-019820ec-d1c8-e78d-ff9b-8346652f5932",
       "license_expression": "gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain AND other-permissive",
       "license_expression_spdx": "GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain AND LicenseRef-scancode-other-permissive",
       "detection_count": 2,
@@ -5270,16 +5270,16 @@
           "license_expression_spdx": "BSD-4-Clause",
           "from_file": "fusiondirectory/debian/copyright",
           "start_line": 1521,
-          "end_line": 1521,
+          "end_line": 1523,
           "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 3,
+          "score": 22.0,
+          "matched_length": 4,
           "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-          "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause",
-          "matched_text_diagnostics": "BSD-4-clause"
+          "rule_relevance": 22,
+          "rule_identifier": "bsd-original_required_phrase_2.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_required_phrase_2.RULE",
+          "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause\n\nLicense: GPL-2+",
+          "matched_text_diagnostics": "BSD-4-clause\n\nLicense:"
         },
         {
           "license_expression": "gpl-2.0-plus",
@@ -7133,16 +7133,16 @@
                   "license_expression_spdx": "BSD-4-Clause",
                   "from_file": "fusiondirectory/debian/copyright",
                   "start_line": 1521,
-                  "end_line": 1521,
+                  "end_line": 1523,
                   "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 3,
+                  "score": 22.0,
+                  "matched_length": 4,
                   "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-                  "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause",
-                  "matched_text_diagnostics": "BSD-4-clause"
+                  "rule_relevance": 22,
+                  "rule_identifier": "bsd-original_required_phrase_2.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_required_phrase_2.RULE",
+                  "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause\n\nLicense: GPL-2+",
+                  "matched_text_diagnostics": "BSD-4-clause\n\nLicense:"
                 },
                 {
                   "license_expression": "gpl-2.0-plus",
@@ -7402,7 +7402,7 @@
                 }
               ],
               "detection_log": [],
-              "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-9e2a213a-3fc4-9ee3-8e3f-783829530b14"
+              "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-019820ec-d1c8-e78d-ff9b-8346652f5932"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -13748,16 +13748,16 @@
               "license_expression_spdx": "BSD-4-Clause",
               "from_file": "fusiondirectory/debian/copyright",
               "start_line": 1521,
-              "end_line": 1521,
+              "end_line": 1523,
               "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 3,
+              "score": 22.0,
+              "matched_length": 4,
               "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_bsd-4-clause_for_bsd-original.RULE",
-              "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause",
-              "matched_text_diagnostics": "BSD-4-clause"
+              "rule_relevance": 22,
+              "rule_identifier": "bsd-original_required_phrase_2.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-original_required_phrase_2.RULE",
+              "matched_text": "License: GPL-2+ or GPL-3+ or LGPL-2.1+ or LGPL-3+ or Expat or BSD-3-clause or BSD-4-clause\n\nLicense: GPL-2+",
+              "matched_text_diagnostics": "BSD-4-clause\n\nLicense:"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -14017,7 +14017,7 @@
             }
           ],
           "detection_log": [],
-          "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-9e2a213a-3fc4-9ee3-8e3f-783829530b14"
+          "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain_and_other_permissive-019820ec-d1c8-e78d-ff9b-8346652f5932"
         }
       ],
       "license_clues": [],

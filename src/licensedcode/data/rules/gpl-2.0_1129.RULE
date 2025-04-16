@@ -5,4 +5,4 @@ relevance: 100
 notes: seen in some SPDX templates
 ---
 
-insert GPL v2 text here
+insert {{GPL v2}} text here

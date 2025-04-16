@@ -6,4 +6,4 @@ relevance: 100
 minimum_coverage: 100
 ---
 
-['GPLV1', 'GPL-1.0-only'],
+['GPLV1', '{{GPL-1.0-only}}'],

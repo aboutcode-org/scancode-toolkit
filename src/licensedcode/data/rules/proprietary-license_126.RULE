@@ -151,7 +151,7 @@ or error-free.    does not guarantee that the information accessed by the Softwa
 Subscription Services will be accurate or complete.  You acknowledge that performance of the 
 Software and Subscription Services may be affected by any number of factors, including without 
 limitation, technical failure of the Software, the acts or omissions of third parties and other 
-causes reasonably beyond the control of  .  Certain features of the Software may not be 
+causes reasonably beyond the control of  .  Certain features of the Software {{may not be}} 
 forward-compatible with future versions of the Software and use of such features with future 
 versions of the Software may require purchase of the applicable future version of the Software.
 8.3 AS IS SALE:  EXCEPT FOR THE LIMITED WARRANTIES SET FORTH IN SECTION 8.1, YOU AGREE THAT
@@ -190,13 +190,13 @@ any termination of this Agreement, you must uninstall and destroy all copies of 
 11. MISCELLANEOUS:
 11.1 COMPLIANCE WITH EXPORT CONTROL LAWS:  You acknowledge that Software is subject to the export 
 control laws and regulations of the United States ("U.S.") and agree to abide by those laws and 
-regulations.  Under U.S. law, the Software may not be downloaded or otherwise exported, reexported, 
+regulations.  Under U.S. law, the Software {{may not be}} downloaded or otherwise exported, reexported, 
 or transferred to restricted countries, restricted end-users, or for restricted end-uses.  The U.S. 
 currently has embargo restrictions against Cuba, Iran, Iraq, Libya, North Korea, Sudan, and Syria.  
 The lists of restricted end-users are maintained on the U.S. Commerce Department''s Denied Persons 
 List, the Commerce Department''s Entity List, the Commerce Department''s List of Unverified Persons, 
 and the U.S. Treasury Department''s List of Specially Designated Nationals and Blocked Persons.  In 
-addition, the Software may not be downloaded or otherwise exported, reexported, or transferred to 
+addition, the Software {{may not be}} downloaded or otherwise exported, reexported, or transferred to 
 an end-user engaged in activities related to weapons of mass destruction.  Such activities include 
 but are not necessarily limited to activities related to:  (1) the design, development, production 
 or use of nuclear materials, nuclear facilities, or nuclear weapons; (2) the design, development, 

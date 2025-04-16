@@ -260,8 +260,6 @@ class LicenseDetection:
         return detection
 
     def spdx_license_expression(self):
-        from licensedcode.cache import build_spdx_license_expression
-        from licensedcode.cache import get_cache
         return str(build_spdx_license_expression(
             license_expression=self.license_expression,
             licensing=get_cache().licensing,
@@ -1166,26 +1164,22 @@ def is_false_positive(license_matches, package_license=False):
     # FIXME: actually run copyright detection here?
     copyright_words = ["copyright", "(c)"]
     has_copyrights = all(
-        True
-        for license_match in license_matches
-        if any(
-            True
+        any(
+            word in license_match.matched_text().lower()
             for word in copyright_words
-            if word in license_match.matched_text().lower()
-        ) 
+        )
+        for license_match in license_matches 
     )
     has_full_relevance = all(
-        True
+        license_match.rule.relevance == 100
         for license_match in license_matches
-        if license_match.rule.relevance == 100
     )
     if has_copyrights or has_full_relevance:
         return False
 
     has_low_relevance = all(
-        True
+        license_match.rule.relevance < 60
         for license_match in license_matches
-        if license_match.rule.relevance < 60
     )
 
     start_line_region = min(
@@ -1907,6 +1901,7 @@ def process_detections(detections, licensing=Licensing()):
                     for key in license_keys
                 ):
                     detection.license_expression = license_expression
+                    detection.license_expression_spdx = detection.spdx_license_expression()
                     detection.detection_log.append(DetectionRule.NOT_LICENSE_CLUES.value)
                     detection.identifier = detection.identifier_with_expression
 

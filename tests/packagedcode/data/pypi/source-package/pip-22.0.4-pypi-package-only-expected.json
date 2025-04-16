@@ -93,7 +93,8 @@
           "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
-            "Changelog": "https://pip.pypa.io/en/stable/news/"
+            "Changelog": "https://pip.pypa.io/en/stable/news/",
+            "license_file": "LICENSE.txt"
           },
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/pip",
@@ -409,12 +410,12 @@
           "notice_text": null,
           "source_packages": [],
           "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
             "Changelog": "https://pip.pypa.io/en/stable/news/"
           },
-          "is_private": false,
-          "is_virtual": false,
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/pip",
           "repository_download_url": null,
@@ -793,7 +794,8 @@
           "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
-            "Changelog": "https://pip.pypa.io/en/stable/news/"
+            "Changelog": "https://pip.pypa.io/en/stable/news/",
+            "license_file": "LICENSE.txt"
           },
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/pip",

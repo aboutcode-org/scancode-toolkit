@@ -6,4 +6,4 @@ ignorable_urls:
     - http://choosealicense.com/licenses/epl-1.0
 ---
 
-License: [`epl-1.0`](http://choosealicense.com/licenses/epl-1.0/)
+{{License: [`epl-1.0}}`](http://choosealicense.com/licenses/epl-1.0/)

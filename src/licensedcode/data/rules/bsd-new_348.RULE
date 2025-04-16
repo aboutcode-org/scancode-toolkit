@@ -7,4 +7,4 @@ ignorable_urls:
     - http://dist.codehaus.org/janino/new_bsd_license.txt
 ---
 
-License: New BSD License  (http://dist.codehaus.org/janino/new_bsd_license.txt
+License: {{New BSD License}}  (http://dist.codehaus.org/janino/new_bsd_license.txt

@@ -1,0 +1,724 @@
+{
+  "packages": [
+    {
+      "type": "conda",
+      "namespace": null,
+      "name": "requests",
+      "version": "2.32.3",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": null,
+      "description": "Requests is an elegant and simple HTTP library for Python, built with \u2665.",
+      "release_date": null,
+      "parties": [],
+      "keywords": [],
+      "homepage_url": "https://requests.readthedocs.io/",
+      "download_url": "https://repo.anaconda.com/pkgs/main/linux-64/requests-2.32.3-py312h06a4308_1.conda",
+      "size": 125693,
+      "sha1": null,
+      "md5": "8cc2fc3e2198c2efe6cd890a7684a16a",
+      "sha256": "940b9ae3f0b64e7ee51dfbdcfcffc674a447e5592f8a66d8064cd505fc122b78",
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": null,
+      "vcs_url": "https://github.com/psf/requests",
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "assembly/opt/conda/conda-meta/requests-2.32.3-py312h06a4308_1.json",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "matched_text": "Apache-2.0"
+            }
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        },
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "matched_text": "Apache-2.0"
+            }
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "Apache-2.0",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "requested_spec": "defaults/linux-64::requests==2.32.3=py312h06a4308_1[md5=8cc2fc3e2198c2efe6cd890a7684a16a]",
+        "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+        "extracted_package_dir": "/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1",
+        "files": [
+          "lib/python3.12/site-packages/requests-2.32.3.dist-info/LICENSE",
+          "lib/python3.12/site-packages/requests-2.32.3.dist-info/METADATA",
+          "lib/python3.12/site-packages/requests/__init__.py"
+        ],
+        "package_tarball_full_path": "opt/conda/pkgs/requests-2.32.3-py312h06a4308_1.conda"
+      },
+      "repository_homepage_url": null,
+      "repository_download_url": null,
+      "api_data_url": null,
+      "package_uid": "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "assembly/opt/conda/conda-meta/requests-2.32.3-py312h06a4308_1.json",
+        "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml"
+      ],
+      "datasource_ids": [
+        "conda_meta_json",
+        "conda_meta_yaml"
+      ],
+      "purl": "pkg:conda/requests@2.32.3"
+    },
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "requests",
+      "version": "2.32.3",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Python HTTP for Humans.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Kenneth Reitz",
+          "email": "me@kennethreitz.org",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "Development Status :: 5 - Production/Stable",
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3"
+      ],
+      "homepage_url": "https://requests.readthedocs.io",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": null,
+      "code_view_url": "https://github.com/psf/requests",
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "apache-2.0",
+      "declared_license_expression_spdx": "Apache-2.0",
+      "license_detections": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "matches": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "from_file": "assembly/opt/conda/lib/python3.12/site-packages/requests-2.32.3.dist-info/METADATA",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+              "matched_text": "Apache-2.0"
+            }
+          ],
+          "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "license: Apache-2.0\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "Documentation": "https://requests.readthedocs.io",
+        "license_file": "LICENSE"
+      },
+      "repository_homepage_url": "https://pypi.org/project/requests",
+      "repository_download_url": "https://pypi.org/packages/source/r/requests/requests-2.32.3.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/requests/2.32.3/json",
+      "package_uid": "pkg:pypi/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "assembly/opt/conda/lib/python3.12/site-packages/requests-2.32.3.dist-info/METADATA"
+      ],
+      "datasource_ids": [
+        "pypi_wheel_metadata"
+      ],
+      "purl": "pkg:pypi/requests@2.32.3"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:conda/zlib",
+      "extracted_requirement": "1.2.13 h5eee18b_1",
+      "scope": "host",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/zlib?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/certifi",
+      "extracted_requirement": ">=2017.4.17",
+      "scope": "run",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/certifi?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:conda/chardet",
+      "extracted_requirement": ">=3.0.2,<6",
+      "scope": "run_constrained",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:conda/chardet?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml",
+      "datasource_id": "conda_meta_yaml"
+    },
+    {
+      "purl": "pkg:pypi/charset-normalizer",
+      "extracted_requirement": "<4,>=2",
+      "scope": "install",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/charset-normalizer?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "assembly/opt/conda/lib/python3.12/site-packages/requests-2.32.3.dist-info/METADATA",
+      "datasource_id": "pypi_wheel_metadata"
+    }
+  ],
+  "files": [
+    {
+      "path": "assembly",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/conda-meta",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/conda-meta/requests-2.32.3-py312h06a4308_1.json",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "conda",
+          "namespace": null,
+          "name": "requests",
+          "version": "2.32.3",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": null,
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": null,
+          "download_url": "https://repo.anaconda.com/pkgs/main/linux-64/requests-2.32.3-py312h06a4308_1.conda",
+          "size": 125693,
+          "sha1": null,
+          "md5": "8cc2fc3e2198c2efe6cd890a7684a16a",
+          "sha256": "940b9ae3f0b64e7ee51dfbdcfcffc674a447e5592f8a66d8064cd505fc122b78",
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "matches": [
+                {
+                  "license_expression": "apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
+                  "from_file": "assembly/opt/conda/conda-meta/requests-2.32.3-py312h06a4308_1.json",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "matched_text": "Apache-2.0"
+                }
+              ],
+              "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache-2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "requested_spec": "defaults/linux-64::requests==2.32.3=py312h06a4308_1[md5=8cc2fc3e2198c2efe6cd890a7684a16a]",
+            "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+            "extracted_package_dir": "/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1",
+            "files": [
+              "lib/python3.12/site-packages/requests-2.32.3.dist-info/LICENSE",
+              "lib/python3.12/site-packages/requests-2.32.3.dist-info/METADATA",
+              "lib/python3.12/site-packages/requests/__init__.py"
+            ],
+            "package_tarball_full_path": "opt/conda/pkgs/requests-2.32.3-py312h06a4308_1.conda"
+          },
+          "dependencies": [],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "conda_meta_json",
+          "purl": "pkg:conda/requests@2.32.3"
+        }
+      ],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/lib",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/lib/python3.12",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/lib/python3.12/site-packages",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/lib/python3.12/site-packages/requests",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/lib/python3.12/site-packages/requests-2.32.3.dist-info",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/lib/python3.12/site-packages/requests-2.32.3.dist-info/LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/lib/python3.12/site-packages/requests-2.32.3.dist-info/METADATA",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "requests",
+          "version": "2.32.3",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Python HTTP for Humans.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Kenneth Reitz",
+              "email": "me@kennethreitz.org",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "Development Status :: 5 - Production/Stable",
+            "Natural Language :: English",
+            "Operating System :: OS Independent",
+            "Programming Language :: Python :: 3"
+          ],
+          "homepage_url": "https://requests.readthedocs.io",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": "https://github.com/psf/requests",
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "matches": [
+                {
+                  "license_expression": "apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
+                  "from_file": "assembly/opt/conda/lib/python3.12/site-packages/requests-2.32.3.dist-info/METADATA",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "matched_text": "Apache-2.0"
+                }
+              ],
+              "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "license: Apache-2.0\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "Documentation": "https://requests.readthedocs.io",
+            "license_file": "LICENSE"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/charset-normalizer",
+              "extracted_requirement": "<4,>=2",
+              "scope": "install",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://pypi.org/project/requests",
+          "repository_download_url": "https://pypi.org/packages/source/r/requests/requests-2.32.3.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/requests/2.32.3/json",
+          "datasource_id": "pypi_wheel_metadata",
+          "purl": "pkg:pypi/requests@2.32.3"
+        }
+      ],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758",
+        "pkg:pypi/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/lib/python3.12/site-packages/requests/__init__.py",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "conda",
+          "namespace": null,
+          "name": "requests",
+          "version": "2.32.3",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": null,
+          "description": "Requests is an elegant and simple HTTP library for Python, built with \u2665.",
+          "release_date": null,
+          "parties": [],
+          "keywords": [],
+          "homepage_url": "https://requests.readthedocs.io/",
+          "download_url": "https://pypi.io/packages/source/r/requests/requests-2.32.3.tar.gz",
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760",
+          "sha512": null,
+          "bug_tracking_url": null,
+          "code_view_url": null,
+          "vcs_url": "https://github.com/psf/requests",
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "apache-2.0",
+          "declared_license_expression_spdx": "Apache-2.0",
+          "license_detections": [
+            {
+              "license_expression": "apache-2.0",
+              "license_expression_spdx": "Apache-2.0",
+              "matches": [
+                {
+                  "license_expression": "apache-2.0",
+                  "license_expression_spdx": "Apache-2.0",
+                  "from_file": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/info/recipe/meta.yaml",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
+                  "matched_length": 3,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE",
+                  "matched_text": "Apache-2.0"
+                }
+              ],
+              "identifier": "apache_2_0-d66ab77d-a5cc-7104-e702-dc7df61fe9e8"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "Apache-2.0",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {},
+          "dependencies": [
+            {
+              "purl": "pkg:conda/zlib",
+              "extracted_requirement": "1.2.13 h5eee18b_1",
+              "scope": "host",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/certifi",
+              "extracted_requirement": ">=2017.4.17",
+              "scope": "run",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:conda/chardet",
+              "extracted_requirement": ">=3.0.2,<6",
+              "scope": "run_constrained",
+              "is_runtime": true,
+              "is_optional": false,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null,
+          "datasource_id": "conda_meta_yaml",
+          "purl": "pkg:conda/requests@2.32.3"
+        }
+      ],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/lib",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/lib/python3.12",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/lib/python3.12/site-packages",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/lib/python3.12/site-packages/requests",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "assembly/opt/conda/pkgs/requests-2.32.3-py312h06a4308_1/lib/python3.12/site-packages/requests/__init__.py",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:conda/requests@2.32.3?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

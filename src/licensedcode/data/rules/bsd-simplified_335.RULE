@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-LICENSE "BSD 2-clause \"Simplified\"
+LICENSE "{{BSD 2-clause \"Simplified\"}}

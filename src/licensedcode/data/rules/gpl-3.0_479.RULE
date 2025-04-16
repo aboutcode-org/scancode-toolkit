@@ -4,5 +4,5 @@ is_license_reference: yes
 relevance: 100
 ---
 
-On Debian systems, the text of the GNU General Public License
- version 3 can be found in the file `/usr/share/common-licenses/GPL-3.
+On Debian systems, the text of the {{GNU General Public License
+ version 3}} can be found in the file `/usr/share/common-licenses/GPL-3.

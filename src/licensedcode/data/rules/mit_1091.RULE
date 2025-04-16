@@ -6,4 +6,4 @@ ignorable_urls:
     - https://spdx.org/licenses/MIT
 ---
 
-LICENSE:     MIT (https://spdx.org/licenses/MIT)
+{{LICENSE:     MIT}} (https://spdx.org/licenses/MIT)

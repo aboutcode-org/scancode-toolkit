@@ -6,6 +6,6 @@ referenced_filenames:
     - LICENSE
 ---
 
-License
+{{License
 
-MIT licensed. See the bundled LICENSE file for more details.
+MIT}} licensed. See the bundled LICENSE file for more details.

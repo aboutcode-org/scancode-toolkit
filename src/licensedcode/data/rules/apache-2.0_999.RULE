@@ -6,4 +6,4 @@ ignorable_urls:
     - https://spdx.org/licenses/Apache-2.0.html
 ---
 
-license:  https://spdx.org/licenses/Apache-2.0.html Apache-2.0
+license:  https://spdx.org/licenses/Apache-2.0.html {{Apache-2.0}}

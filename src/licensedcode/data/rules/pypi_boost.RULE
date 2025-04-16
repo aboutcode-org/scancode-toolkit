@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-License :: OSI Approved :: Boost Software License 1.0 (BSL-1.0)
+License :: OSI Approved :: {{Boost Software License 1.0}} ({{BSL-1.0}})

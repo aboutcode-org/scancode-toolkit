@@ -4,7 +4,7 @@ is_license_text: yes
 notes: Based on the MIT with material and problematic changes. https://raw.githubusercontent.com/marvinick/noroof/4e06d35791bc3bf9327ca79cc3c24d1331d0bf7f/README.md
 ---
 
-Permission is hereby NOT granted, NOT free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+{{Permission is hereby NOT granted}}, NOT free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 

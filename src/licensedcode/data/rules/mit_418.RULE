@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-licensed
- * under the MIT/X11 License.
+{{licensed
+ * under the MIT}}/X11 License.

@@ -394,6 +394,12 @@ class TestNpm(PackageTester):
         packages = npm.PnpmLockYamlHandler.parse(test_file)
         self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_pnpm_lock_yaml_v9(self):
+        test_file = self.get_test_loc('npm/pnpm/pnpm-lock/v9/uView/pnpm-lock.yaml')
+        expected_loc = self.get_test_loc('npm/pnpm/pnpm-lock/v9/uView-pnpm-lock.yaml-expected')
+        packages = npm.PnpmLockYamlHandler.parse(test_file)
+        self.check_packages_data(packages, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_pnpm_shrinkwrap_yaml(self):
         test_file = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack/shrinkwrap.yaml')
         expected_loc = self.get_test_loc('npm/pnpm/shrinkwrap/v3/vuepack-shrinkwrap.yaml-expected')
@@ -409,6 +415,15 @@ class TestNpm(PackageTester):
     def test_pnpm_scan_with_workspace_package_json(self):
         test_folder = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe/')
         expected_file = self.get_test_loc('npm/pnpm/pnpm-lock/v5/cobe-scan.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_folder, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
+    def test_pnpm_scan_with_patterns_in_workspace(self):
+        test_folder = self.get_test_loc('npm/workspace/teleport/check-redirects/')
+        expected_file = self.get_test_loc('npm/workspace/teleport/check-redirects-expected.json')
         result_file = self.get_temp_file('results.json')
         run_scan_click(['--package', test_folder, '--json', result_file])
         check_json_scan(

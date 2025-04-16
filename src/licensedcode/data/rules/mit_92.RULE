@@ -6,4 +6,4 @@ referenced_filenames:
     - license.txt
 ---
 
-Released under MIT License. Please refer to license.txt for details
+Released {{under MIT License}}. Please refer to license.txt for details

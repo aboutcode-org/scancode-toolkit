@@ -9,8 +9,8 @@ ignorable_urls:
 ## License
 
 This code is made available under the same license as Bootstrap.
- It is available under the [MIT license](http://www.opensource.org/licenses/mit-license.php).
+ It is available {{under the [MIT license}}](http://www.opensource.org/licenses/mit-license.php).
 
 --
 
-The MIT License (MIT)
+{{The MIT License}} (MIT)

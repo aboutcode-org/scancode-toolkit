@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-This software is released under the MIT license.
+This software is released {{under the MIT license}}.

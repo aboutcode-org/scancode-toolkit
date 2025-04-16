@@ -3,10 +3,16 @@ download_url: https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/
 
 version: 1.0.5
 name: Start Bootstrap - Simple Sidebar
-home_url: http://startbootstrap.com/template-overviews/simple-sidebar/
+homepage_url: http://startbootstrap.com/template-overviews/simple-sidebar/
 owner: Iron Summit Media Strategies, LLC
 copyright: Copyright 2013-2015 Iron Summit Media Strategies, LLC.
 
-license_url: https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-simple-sidebar/v1.0.5/LICENSE
-dje_license: apache-2.0
-license_text_file: simple-sidebar.LICENSE
+license_expression: apache-2.0
+licenses:
+  - key: apache-2.0
+    name: Apache 2.0
+    file: simple-sidebar.LICENSE
+    url: https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-simple-sidebar/v1.0.5/LICENSE
+    spdx_license_key: Apache-2.0
+
+package_url: pkg:github/BlackrockDigital/startbootstrap-simple-sidebar@1.0.5

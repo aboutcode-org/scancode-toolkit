@@ -6,9 +6,12 @@ category: Copyleft Limited
 owner: Unspecified
 notes: this is typically seen with the LGPL but is not L/GPL specific
 is_exception: yes
-spdx_license_key: LicenseRef-scancode-indie-module-linking-exception
+spdx_license_key: Independent-modules-exception
 other_spdx_license_keys:
+    - LicenseRef-scancode-indie-module-linking-exception
     - LicenseRef-scancode-independent-module-linking-exception
+other_urls:
+    - https://gitlab.com/freepascal.org/fpc/source/-/blob/release_3_2_2/rtl/COPYING.FPC
 ---
 
 As a special exception, the copyright holders of this library give you

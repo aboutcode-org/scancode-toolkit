@@ -6,4 +6,4 @@ ignorable_urls:
     - http://antlr.org/license.html
 ---
 
-License: BSD licence  (http://antlr.org/license.html)
+License: {{BSD licence}}  (http://antlr.org/license.html)

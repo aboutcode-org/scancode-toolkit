@@ -4,4 +4,4 @@ is_license_text: yes
 relevance: 100
 ---
 
-license: This code is in the public domain
+license: This code is {{in the public domain}}
