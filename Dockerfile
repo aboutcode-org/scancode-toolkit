@@ -10,13 +10,11 @@
 FROM --platform=linux/amd64 python:3.12-slim-bookworm
 
 # OCI Labels 
-LABEL org.opencontainers.image.title="ScanCode Toolkit" 
-LABEL org.opencontainers.image.description="ScanCode Toolkit for code scanning and analysis." 
-LABEL org.opencontainers.image.url="https://github.com/nexB/scancode-toolkit" 
+LABEL org.opencontainers.image.title="scancode toolkit" 
+LABEL org.opencontainers.image.description="scancode toolkit detects licenses,copyrights,dependecies by scanning code to discover and inventory open source and third-party packages used in your code"
 LABEL org.opencontainers.image.source="https://github.com/nexB/scancode-toolkit" 
 LABEL org.opencontainers.image.documentation="https://scancode-toolkit.readthedocs.io/"
-LABEL org.opencontainers.image.created="${BUILD_DATE}"
-LABEL org.opencontainers.image.authors="https://github.com/nexB/scancode-toolkit"
+LABEL org.opencontainers.image.authors=" https://github.com/aboutcode-org/scancode-toolkit"
 LABEL org.opencontainers.image.version="v32.3.0"
 LABEL org.opencontainers.image.vendor="nexB Inc."
 LABEL org.opencontainers.image.licenses="Apache-2.0"
