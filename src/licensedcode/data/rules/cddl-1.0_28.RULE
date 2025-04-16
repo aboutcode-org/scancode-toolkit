@@ -7,6 +7,6 @@ ignorable_urls:
 ---
 
 <license>
-<name>CDDL 1</name>
+<name>{{CDDL 1}}</name>
 <url>http://opensource.org/licenses/CDDL-1.0</url>
 </license>

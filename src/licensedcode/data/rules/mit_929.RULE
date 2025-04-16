@@ -7,4 +7,4 @@ ignorable_urls:
     - https://jquery.org/license
 ---
 
-* jQuery__ is published under the terms of the [MIT license](https://jquery.org/license/).
+* jQuery__ is published under the terms of {{the [MIT license}}](https://jquery.org/license/).

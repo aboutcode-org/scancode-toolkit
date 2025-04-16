@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-DRIVER_LICENSE("GPL v2")
+DRIVER_LICENSE("{{GPL v2}}")

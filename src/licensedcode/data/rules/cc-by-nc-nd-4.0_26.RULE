@@ -6,4 +6,4 @@ ignorable_urls:
     - https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en
 ---
 
-> [![CC BY-NC-ND](images/cc-by-nc-nd.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en)
+> [![{{CC BY-NC-ND}}](images/{{cc-by-nc-nd}}.png)](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en)

@@ -7,4 +7,4 @@ referenced_filenames:
     - license/third_party/qunit_license.txt
 ---
 
-License: MIT ([license/third_party/qunit_license.txt][qunit])
+{{License: MIT}} ([license/third_party/qunit_license.txt][qunit])

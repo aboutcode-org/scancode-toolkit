@@ -7,6 +7,6 @@ referenced_filenames:
 notes: Seen in  https://github.com/swagger-api/swagger-codegen/blob/ca9a00261f08f024dd19fa45c9ff2098fed67451/modules/swagger-codegen/src/main/java/io/swagger/codegen/DefaultGenerator.java#L6980
 ---
 
-* The following code adds default LICENSE (Apache-2.0) for all generators
+* The following code adds default LICENSE ({{Apache-2.0}}) for all generators
  * To use license other than Apache2.0, update the following file:
  *   modules/swagger-codegen/src/main/resources/_common/LICENSE

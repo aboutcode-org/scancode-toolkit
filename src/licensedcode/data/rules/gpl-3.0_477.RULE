@@ -8,5 +8,5 @@ notes: the license is a mix of GPL 2 and GPL 3. We take GPL here as it was seen 
     in this context See also https://salsa.debian.org/pombredanne-guest/apache2/-/commit/0711baed327514834751dff77ae37d6b2c6c03c4
 ---
 
-On Debian systems, the text of the GNU General Public License
+On Debian systems, the text of the {{GNU General Public License}}
 version 2 can be found in the file `/usr/share/common-licenses/GPL-3'.

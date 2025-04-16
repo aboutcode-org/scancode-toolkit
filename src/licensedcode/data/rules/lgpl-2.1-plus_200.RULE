@@ -4,6 +4,6 @@ is_license_notice: yes
 relevance: 100
 ---
 
-This Software is distributed under the terms of the GNU Lesser
-General Public License version 2.1 (included below), or (at your
+This Software is distributed under the terms of the {{GNU Lesser
+General Public License}} version 2.1 (included below), or (at your
 option) any later version.

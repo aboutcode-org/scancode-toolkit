@@ -3,16 +3,16 @@ license_expression: bsd-new
 is_license_notice: yes
 relevance: 99
 ignorable_copyrights:
-  - copyright its authors
+    - copyright its authors
 ignorable_holders:
-  - its authors
+    - its authors
 ignorable_urls:
     - http://www.opensource.org/licenses/bsd-license.php
 ---
 
 Copyright and License
 
-This code is copyright its authors, and is distributed under the `BSD
-License`_.
+This code is copyright its authors, and is distributed under {{the `BSD
+License}}`_.
 
-.. _BSD License: http://www.opensource.org/licenses/bsd-license.php
+.. _{{BSD License}}: http://www.opensource.org/licenses/bsd-license.php

@@ -5,4 +5,4 @@ referenced_filenames:
     - COPYING.LIB
 ---
 
-licensed under the GNU Lesser General Public License version 2.1 or later.  See the file COPYING.LIB.
+licensed under the {{GNU Lesser General Public License version 2.1 or later}}.  See the file COPYING.LIB.

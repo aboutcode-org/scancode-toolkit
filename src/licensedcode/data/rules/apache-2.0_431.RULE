@@ -7,4 +7,4 @@ referenced_filenames:
     - license/third_party/guava_license.txt
 ---
 
-License: Apache 2 ([license/third_party/guava_license.txt][guava])
+{{License: Apache 2}} ([license/third_party/guava_license.txt][guava])

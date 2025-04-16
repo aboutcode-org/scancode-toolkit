@@ -6,4 +6,4 @@ ignorable_urls:
     - http://opensource.org/licenses/Python-2.0
 ---
 
-Python-2.0: http://opensource.org/licenses/Python-2.0
+{{Python-2.0}}: http://opensource.org/licenses/Python-2.0

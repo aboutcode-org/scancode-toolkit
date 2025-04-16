@@ -13,11 +13,11 @@ ignorable_emails:
     - apache@apache.org
 ---
 
-The complete text of the Apache Software License Version 1.1 is as follows:
+The complete text of the {{Apache Software License Version 1.1}} is as follows:
 
  /*                                      
   * ================================================================
-  *                   The Apache Software License, Version 1.1
+  *                   The {{Apache Software License, Version 1.1}}
   * ================================================================
   * 
   *    Copyright (C)  The Apache Software Foundation. All

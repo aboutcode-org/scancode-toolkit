@@ -7,4 +7,4 @@ referenced_filenames:
     - license/third_party/testdata/spring_license.txt
 ---
 
-License: Apache 2 ([license/third_party/testdata/spring_license.txt][spring])
+{{License: Apache 2}} ([license/third_party/testdata/spring_license.txt][spring])

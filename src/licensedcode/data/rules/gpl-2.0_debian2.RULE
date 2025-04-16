@@ -3,5 +3,5 @@ license_expression: gpl-2.0
 is_license_notice: yes
 ---
 
-Debian adaptions for these packages are licensed under the GNU General
-Public License, version 2, and are under Copyright by:
+Debian adaptions for these packages are licensed under {{the GNU General
+Public License, version 2}}, and are under Copyright by:

@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-This package, the EXT2 filesystem utilities, is protected by the GNU
-General Public License.
+This package, the EXT2 filesystem utilities, is protected by the {{GNU
+General Public License}}.

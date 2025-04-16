@@ -6,4 +6,4 @@ relevance: 100
 minimum_coverage: 100
 ---
 
-'BSD3-Clause': 'BSD-3-Clause',
+'BSD3-Clause': '{{BSD-3-Clause}}',

@@ -6,4 +6,4 @@ ignorable_urls:
     - http://www.opensource.org/licenses/zlib-license.php
 ---
 
-http://www.opensource.org/licenses/zlib-license.php zlib/libpng license
+http://www.opensource.org/licenses/zlib-license.php {{zlib/libpng license}}

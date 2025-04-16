@@ -5,4 +5,4 @@ is_license_notice: yes
 
 // This code is a derivative work of the LGPL code at
 
-// License: LGPL 2.1 (same terms as original code)
+// {{License: LGPL 2.1}} (same terms as original code)

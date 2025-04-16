@@ -2,6 +2,7 @@
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
 relevance: 100
+is_deprecated: yes
 ---
 
 licensed under terms of the GNU General Public License.

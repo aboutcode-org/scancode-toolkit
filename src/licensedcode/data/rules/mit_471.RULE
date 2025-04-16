@@ -6,6 +6,6 @@ referenced_filenames:
     - LICENSE.md
 ---
 
-License
+{{License
 
-MIT/X11, see LICENSE.md for details.
+MIT/X11}}, see LICENSE.md for details.

@@ -1,4 +1,0 @@
-#!/bin/sh
-`dirname $0`/configure -C \
-	--enable-developer \
-	"$@"

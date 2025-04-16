@@ -6,4 +6,4 @@ referenced_filenames:
     - License.txt
 ---
 
-This code is distributed under the zlib/libpng license (see License.txt for details).
+This code is distributed under the {{zlib/libpng license}} (see License.txt for details).

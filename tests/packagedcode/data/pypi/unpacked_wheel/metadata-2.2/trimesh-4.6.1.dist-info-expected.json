@@ -1,0 +1,602 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "trimesh",
+    "version": "4.6.1",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "Import, export, process, analyze and view triangular meshes.",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": null,
+        "email": "Michael Dawson-Haggerty <mikedh@kerfed.com>",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "graphics",
+      "mesh",
+      "geometry",
+      "3D",
+      "Development Status :: 4 - Beta",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Natural Language :: English",
+      "Topic :: Scientific/Engineering",
+      "Topic :: Multimedia :: Graphics",
+      "Topic :: Multimedia :: Graphics :: 3D Modeling"
+    ],
+    "homepage_url": "https://github.com/mikedh/trimesh",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "2-aho",
+            "score": 100.0,
+            "matched_length": 4,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "mit_26.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_26.RULE",
+            "matched_text": "The MIT License (MIT)"
+          },
+          {
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
+            "start_line": 5,
+            "end_line": 21,
+            "matcher": "2-aho",
+            "score": 100.0,
+            "matched_length": 161,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "mit.LICENSE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE",
+            "matched_text": "Permission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+          }
+        ],
+        "identifier": "mit-86fcf017-3572-9813-b7e8-0a10ec4a120f"
+      },
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "pypi_mit_license.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+            "matched_text": "- 'License :: OSI Approved :: MIT License'"
+          }
+        ],
+        "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "license: |\n  The MIT License (MIT)\n\n  Copyright (c) 2023 Michael Dawson-Haggerty\n\n  Permission is hereby granted, free of charge, to any person obtaining a copy\n  of this software and associated documentation files (the \"Software\"), to deal\n  in the Software without restriction, including without limitation the rights\n  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n  copies of the Software, and to permit persons to whom the Software is\n  furnished to do so, subject to the following conditions:\n\n  The above copyright notice and this permission notice shall be included in all\n  copies or substantial portions of the Software.\n\n  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n  SOFTWARE.\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "documentation": "https://trimesh.org",
+      "license_file": "LICENSE.md"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/numpy",
+        "extracted_requirement": ">=1.20",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/colorlog",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/manifold3d",
+        "extracted_requirement": ">=2.3.0",
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/chardet",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/lxml",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/jsonschema",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/networkx",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/svg-path",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pycollada",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/setuptools",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/shapely",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/xxhash",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/rtree",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/httpx",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/scipy",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/embreex",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pillow",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/xatlas",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/vhacdx",
+        "extracted_requirement": null,
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": ">= 3.9"
+        }
+      },
+      {
+        "purl": "pkg:pypi/mapbox-earcut",
+        "extracted_requirement": ">=1.0.2",
+        "scope": "easy",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": ">= 3.9"
+        }
+      },
+      {
+        "purl": "pkg:pypi/sympy",
+        "extracted_requirement": null,
+        "scope": "recommend",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/meshio",
+        "extracted_requirement": null,
+        "scope": "recommend",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyglet",
+        "extracted_requirement": "<2",
+        "scope": "recommend",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/psutil",
+        "extracted_requirement": null,
+        "scope": "recommend",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/scikit-image",
+        "extracted_requirement": null,
+        "scope": "recommend",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/fast-simplification",
+        "extracted_requirement": null,
+        "scope": "recommend",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/openctm",
+        "extracted_requirement": null,
+        "scope": "recommend",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/cascadio",
+        "extracted_requirement": null,
+        "scope": "recommend",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-cov",
+        "extracted_requirement": null,
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest",
+        "extracted_requirement": null,
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyinstrument",
+        "extracted_requirement": null,
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/ruff",
+        "extracted_requirement": null,
+        "scope": "test",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/coveralls",
+        "extracted_requirement": null,
+        "scope": "test-more",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pyright",
+        "extracted_requirement": null,
+        "scope": "test-more",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/ezdxf",
+        "extracted_requirement": null,
+        "scope": "test-more",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pytest-beartype",
+        "extracted_requirement": null,
+        "scope": "test-more",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {
+          "python_version": ">= 3.10"
+        }
+      },
+      {
+        "purl": "pkg:pypi/matplotlib",
+        "extracted_requirement": null,
+        "scope": "test-more",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pymeshlab",
+        "extracted_requirement": null,
+        "scope": "test-more",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/triangle",
+        "extracted_requirement": null,
+        "scope": "test-more",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/ipython",
+        "extracted_requirement": null,
+        "scope": "test-more",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/gmsh@4.12.2",
+        "extracted_requirement": "==4.12.2",
+        "scope": "deprecated",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/trimesh",
+        "extracted_requirement": null,
+        "scope": "all",
+        "is_runtime": true,
+        "is_optional": true,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/trimesh",
+    "repository_download_url": "https://pypi.org/packages/source/t/trimesh/trimesh-4.6.1.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/trimesh/4.6.1/json",
+    "datasource_id": "pypi_wheel_metadata",
+    "purl": "pkg:pypi/trimesh@4.6.1"
+  }
+]

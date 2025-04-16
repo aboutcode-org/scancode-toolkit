@@ -14,7 +14,7 @@ ignorable_emails:
     - apache@apache.org
 ---
 
-Apache License 1.1
+{{Apache License 1.1}}
 
 Copyright (c) 2000 The Apache Software Foundation. All rights reserved.
 

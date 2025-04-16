@@ -14,7 +14,6 @@ from commoncode.testcase import FileBasedTesting
 
 from licensedcode import index
 from licensedcode import models
-from licensedcode.models import get_key_phrase_spans
 from licensedcode.models import InvalidRule
 from licensedcode.models import Rule
 from licensedcode.models import rules_data_dir
@@ -577,23 +576,21 @@ class TestRule(FileBasedTesting):
             validations.extend(rule.validate())
         expected = [
             'Unknown language: foobar',
-            'Invalid rule is_license_* flags. Only one allowed.',
             'At least one is_license_* flag is needed.',
-            'Invalid rule is_license_* flags. Only one allowed.',
             'At least one is_license_* flag is needed.',
         ]
         assert validations == expected
 
-    def test_key_phrases_yields_spans(self):
+    def test_required_phrases_yields_spans(self):
         rule_text = (
             'This released software is {{released}} by under {{the MIT license}}. '
             'Which is a license originating at Massachusetts Institute of Technology (MIT).'
         )
         rule = models.Rule(license_expression='mit', text=rule_text)
-        key_phrase_spans = list(rule.build_key_phrase_spans())
-        assert key_phrase_spans == [Span(4), Span(7, 9)]
+        required_phrase_spans = list(rule.build_required_phrase_spans())
+        assert required_phrase_spans == [Span(4), Span(7, 9)]
 
-    def test_key_phrases_raises_exception_when_markup_is_not_closed(self):
+    def test_required_phrases_raises_exception_when_markup_is_not_closed(self):
         rule_text = (
             'This released software is {{released}} by under {{the MIT license. '
             'Which is a license originating at Massachusetts Institute of Technology (MIT).'
@@ -601,7 +598,7 @@ class TestRule(FileBasedTesting):
         rule = models.Rule(license_expression='mit', text=rule_text)
 
         try:
-            list(rule.build_key_phrase_spans())
+            list(rule.build_required_phrase_spans())
             raise Exception('Exception should be raised')
         except InvalidRule:
             pass
@@ -612,53 +609,3 @@ class TestRule(FileBasedTesting):
         rule = rules[0]
         assert rule.rule_file(rules_data_dir=rule_dir).startswith(rule_dir)
 
-
-class TestGetKeyPhrases(TestCaseClass):
-
-    def test_get_key_phrases_yields_spans(self):
-        text = (
-            'This released software is {{released}} by under {{the MIT license}}. '
-            'Which is a license originating at Massachusetts Institute of Technology (MIT).'
-        )
-
-        key_phrase_spans = get_key_phrase_spans(text)
-        assert list(key_phrase_spans) == [Span(4), Span(7, 9)]
-
-    def test_get_key_phrases_raises_exception_key_phrase_markup_is_not_closed(self):
-        text = 'This software is {{released by under the MIT license.'
-        try:
-            list(get_key_phrase_spans(text))
-            raise Exception('Exception should be raised')
-        except InvalidRule:
-            pass
-
-    def test_get_key_phrases_ignores_stopwords_in_positions(self):
-        text = 'The word comma is a stop word so comma does not increase the span position {{MIT license}}.'
-        key_phrase_spans = get_key_phrase_spans(text)
-        assert list(key_phrase_spans) == [Span(11, 12)]
-
-    def test_get_key_phrases_yields_spans_without_stop_words(self):
-        text = 'This released software is {{released span}} by under {{the MIT quot license}}.'
-        key_phrase_spans = get_key_phrase_spans(text)
-        assert list(key_phrase_spans) == [Span(4), Span(7, 9)]
-
-    def test_get_key_phrases_does_not_yield_empty_spans(self):
-        text = 'This released software {{comma}} is {{}} by under {{the MIT license}}.'
-        try:
-            list(get_key_phrase_spans(text))
-            raise Exception('Exception should be raised')
-        except InvalidRule:
-            pass
-
-    def test_get_key_phrases_only_considers_outer_key_phrase_markup(self):
-        text = 'This released {{{software under the MIT}}} license.'
-        key_phrase_spans = get_key_phrase_spans(text)
-        assert list(key_phrase_spans) == [Span(2, 5)]
-
-    def test_get_key_phrases_ignores_nested_key_phrase_markup(self):
-        text = 'This released {{software {{under the}} MIT}} license.'
-        try:
-            list(get_key_phrase_spans(text))
-            raise Exception('Exception should be raised')
-        except InvalidRule:
-            pass

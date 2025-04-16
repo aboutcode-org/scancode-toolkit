@@ -7,4 +7,4 @@ referenced_filenames:
     - license/third_party/closure-compiler_LICENSE.txt
 ---
 
-License: Apache 2 ([license/third_party/closure-compiler_LICENSE.txt][closure-compiler])
+{{License: Apache 2}} ([license/third_party/closure-compiler_LICENSE.txt][closure-compiler])

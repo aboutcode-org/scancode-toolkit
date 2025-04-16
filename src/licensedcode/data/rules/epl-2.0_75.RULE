@@ -6,5 +6,5 @@ ignorable_urls:
     - https://opensource.org/licenses/EPL-2.0
 ---
 
-<name>EPL-2.0
+<name>{{EPL-2.0}}
       <url>https://opensource.org/licenses/EPL-2.0

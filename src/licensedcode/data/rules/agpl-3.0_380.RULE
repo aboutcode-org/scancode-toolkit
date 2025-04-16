@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-licenses: AGPL-3.0
+licenses: {{AGPL-3.0}}
