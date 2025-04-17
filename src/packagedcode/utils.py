@@ -299,8 +299,8 @@ def get_base_purl(purl):
 
 
 def is_simple_path(path):
-   return '*' not in path
+    return '*' not in path
 
 
 def is_simple_path_pattern(path):
-   return path.endswith('*') and path.count('*') == 1
+    return path.endswith('*') and path.count('*') == 1

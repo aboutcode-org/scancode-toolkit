@@ -132,12 +132,12 @@ if not __version__:
 # 4. hardcoded This is the default, fallback version in case package is not installed or we
 # do not have a proper version otherwise.
 if not __version__:
-    __version__ = '32.3.0'
+    __version__ = '32.3.1'
 
 #######################
 # used to warn user when the version is out of date
 # this is (year, month, day)
-__release_date__ = datetime.datetime(2024, 10, 21)
+__release_date__ = datetime.datetime(2025, 1, 6)
 
 # See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
 # on the data format version

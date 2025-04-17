@@ -1,0 +1,101 @@
+# https://raw.githubusercontent.com/KellisLab/benj/refs/heads/main/conda/scenicplus.yml
+
+name: scenicplus
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - conda-forge::python==3.8
+  - conda-forge::pandas>=1.3.5
+  - conda-forge::numpy
+  - conda-forge::tqdm
+  - conda-forge::ray-core
+  - conda-forge::attr
+  - conda-forge::typing
+  - conda-forge::matplotlib
+  - conda-forge::scikit-learn>=0.22.2
+  # - conda-forge::statistics
+  - bioconda::pyranges
+  - conda-forge::scipy
+  - bioconda::pybiomart
+  - conda-forge::requests
+  - bioconda::arboreto>=0.1.6
+  - bioconda::gseapy==0.10.8
+  - conda-forge::networkx
+  - conda-forge::seaborn
+  - bioconda::pyBigWig
+  - conda-forge::plotly
+  - conda-forge::adjustText
+  - bioconda::macs2
+  - conda-forge::lxml
+  - bioconda::tspex
+  - conda-forge::kaleido-core
+  - conda-forge::pyvis
+  - conda-forge::pygam
+  - conda-forge::scanpy~=1.9
+  - conda-forge::cython
+  - conda-forge::plotnine
+  - conda-forge::mudata
+  - conda-forge::sphinx_rtd_theme
+  - conda-forge::nbsphinx
+  - conda-forge::nbsphinx-link
+  - conda-forge::numpydoc
+  - conda-forge::sphinx-book-theme
+  - conda-forge::pip
+  ### pycisTopic:
+  - conda-forge::python-annoy
+  - bioconda::bbknn
+  - conda-forge::ipython
+  - conda-forge::ipykernel
+  - conda-forge::gensim
+  - bioconda::harmonypy
+  - conda-forge::ipympl
+  - conda-forge::leidenalg
+  - conda-forge::pbr ## req for lda, which conda-forge doesn't have correctly
+  # - conda-forge::lda
+  # - conda-forge::loompy==3.0.7 ### conda-forge has not updated recently
+  - conda-forge::pyopenssl
+  - conda-forge::polars>=0.11.0
+  - bioconda::pybedtools
+  - bioconda::pyfasta
+  - conda-forge::python-levenshtein
+  - bioconda::scanorama
+  - bioconda::scrublet
+  - conda-forge::statsmodels
+  - conda-forge::pytables
+  - conda-forge::umap-learn
+  - conda-forge::xlrd
+  - conda-forge::papermill
+  - conda-forge::bs4
+  - conda-forge::pyarrow
+  ### pyscenic
+  - conda-forge::cytoolz
+  - conda-forge::aiohttp
+  - conda-forge::llvmlite
+  - conda-forge::numba>=0.51.2
+  - conda-forge::attrs
+  - conda-forge::frozendict
+  - conda-forge::numexpr
+  - conda-forge::cloudpickle
+  - conda-forge::dask
+  - conda-forge::distributed
+  - conda-forge::boltons
+  - conda-forge::pyyaml
+  - conda-forge::interlap
+  - conda-forge::fsspec
+  ## other
+  - conda-forge::ply
+  - conda-forge::pandoc
+  - conda-forge::globre
+  - conda-forge::numpy_groupies
+  - pip:
+      - git+https://github.com/aertslab/pycisTopic@master#egg=pycisTopic
+      - git+https://github.com/aertslab/pycistarget@master#egg=pycistarget
+      - git+https://github.com/aertslab/pySCENIC@master#egg=pyscenic
+      - git+https://github.com/aertslab/LoomXpy@main#egg=loomxpy
+      - ctxcore>=0.2.0
+      - tmtoolkit
+      - multiprocessing_on_dill
+      - lda

@@ -14,6 +14,7 @@ from packageurl import PackageURL
 
 from packagedcode import models
 from packagedcode.pypi import BaseDependencyFileHandler
+from dparse2.parser import parse_requirement_line
 
 """
 Handle Conda manifests and metadata, see https://docs.conda.io/en/latest/
@@ -23,17 +24,35 @@ See https://repo.continuum.io/pkgs/free for examples.
 """
 
 # TODO: there are likely other package data files for Conda
-# TODO: report platform
-
 
 class CondaYamlHandler(BaseDependencyFileHandler):
-    # TODO: there are several other manifests worth adding
     datasource_id = 'conda_yaml'
-    path_patterns = ('*conda.yaml', '*conda.yml',)
-    default_package_type = 'pypi'
+    path_patterns = ('*conda*.yaml', '*env*.yaml', '*environment*.yaml')
+    default_package_type = 'conda'
     default_primary_language = 'Python'
     description = 'Conda yaml manifest'
     documentation_url = 'https://docs.conda.io/'
+
+    @classmethod
+    def parse(cls, location, package_only=False):
+        with open(location) as fi:
+            conda_data = saneyaml.load(fi.read())
+        dependencies = get_conda_yaml_dependencies(conda_data=conda_data)
+        name = conda_data.get('name')
+        extra_data = {}
+        channels = conda_data.get('channels')
+        if channels:
+            extra_data['channels'] = channels
+        if name or dependencies:
+            package_data = dict(
+                datasource_id=cls.datasource_id,
+                type=cls.default_package_type,
+                name=name,
+                primary_language=cls.default_primary_language,
+                dependencies=dependencies,
+                extra_data=extra_data,
+            )
+            yield models.PackageData.from_data(package_data, package_only)
 
 
 class CondaMetaYamlHandler(models.DatafileHandler):
@@ -83,9 +102,7 @@ class CondaMetaYamlHandler(models.DatafileHandler):
         metayaml = get_meta_yaml_data(location)
         package_element = metayaml.get('package') or {}
         package_name = package_element.get('name')
-        if not package_name:
-            return
-        version = package_element.get('version')
+        package_version = package_element.get('version')
 
         # FIXME: source is source, not download
         source = metayaml.get('source') or {}
@@ -99,6 +116,7 @@ class CondaMetaYamlHandler(models.DatafileHandler):
         vcs_url = about.get('dev_url')
 
         dependencies = []
+        extra_data = {}
         requirements = metayaml.get('requirements') or {}
         for scope, reqs in requirements.items():
             # requirements format is like:
@@ -107,14 +125,51 @@ class CondaMetaYamlHandler(models.DatafileHandler):
             # u'progressbar2', u'python >=3.6'])])
             for req in reqs:
                 name, _, requirement = req.partition(" ")
-                purl = PackageURL(type=cls.default_package_type, name=name)
+                version = None
+                if requirement.startswith("=="):
+                    _, version = requirement.split("==") 
+
+                # requirements may have namespace, version too
+                # - conda-forge::numpy=1.15.4
+                namespace = None
+                if "::" in name:
+                    namespace, name = name.split("::")
+
+                is_pinned = False
+                if "=" in name:
+                    name, version = name.split("=")
+                    is_pinned = True
+                    requirement = f"={version}"
+
+                if name in ('pip', 'python'):
+                    if not scope in extra_data:
+                        extra_data[scope] = [req]
+                    else:
+                        extra_data[scope].append(req)
+                    continue
+
+                purl = PackageURL(
+                    type=cls.default_package_type,
+                    name=name,
+                    namespace=namespace,
+                    version=version,
+                )
+                if "run" in scope:
+                    is_runtime = True
+                    is_optional = False
+                else:
+                    is_runtime = False
+                    is_optional = True
+
                 dependencies.append(
                     models.DependentPackage(
                         purl=purl.to_string(),
                         extracted_requirement=requirement,
                         scope=scope,
-                        is_runtime=True,
-                        is_optional=False,
+                        is_runtime=is_runtime,
+                        is_optional=is_optional,
+                        is_pinned=is_pinned,
+                        is_direct=True,
                     )
                 )
 
@@ -122,7 +177,7 @@ class CondaMetaYamlHandler(models.DatafileHandler):
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=package_name,
-            version=version,
+            version=package_version,
             download_url=download_url,
             homepage_url=homepage_url,
             vcs_url=vcs_url,
@@ -130,8 +185,90 @@ class CondaMetaYamlHandler(models.DatafileHandler):
             sha256=sha256,
             extracted_license_statement=extracted_license_statement,
             dependencies=dependencies,
+            extra_data=extra_data,
         )
         yield models.PackageData.from_data(package_data, package_only)
+
+
+def get_conda_yaml_dependencies(conda_data):
+    """
+    Return a list of DependentPackage mappins from conda and pypi
+    dependencies present in a `conda_data` mapping.
+    """
+    dependencies = conda_data.get('dependencies') or []
+    deps = []
+    for dep in dependencies:
+        if isinstance(dep, str):
+            namespace = None
+            specs = None
+            is_pinned = False
+
+            if "::" in dep:
+                namespace, dep = dep.split("::")
+
+            req = parse_requirement_line(dep)
+            if req:
+                name = req.name
+                version = None
+
+                specs = str(req.specs)
+                if '==' in specs:
+                    version = specs.replace('==','')
+                    is_pinned = True
+                purl = PackageURL(type='pypi', name=name, version=version)
+            else:
+                if "=" in dep:
+                    dep, version = dep.split("=")
+                    is_pinned = True
+                    specs = f"={version}"
+
+                purl = PackageURL(
+                    type='conda',
+                    namespace=namespace,
+                    name=dep,
+                    version=version,
+                )
+
+            if purl.name in ('pip', 'python'):
+                continue
+
+            deps.append(
+                models.DependentPackage(
+                    purl=purl.to_string(),
+                    extracted_requirement=specs,
+                    scope='dependencies',
+                    is_runtime=True,
+                    is_optional=False,
+                    is_pinned=is_pinned,
+                    is_direct=True,
+                ).to_dict()
+            )
+
+        elif isinstance(dep, dict):
+            for line in dep.get('pip', []):
+                req = parse_requirement_line(line)
+                if req:
+                    name = req.name
+                    version = None
+                    is_pinned = False
+                    specs = str(req.specs)
+                    if '==' in specs:
+                        version = specs.replace('==','')
+                        is_pinned = True
+                    purl = PackageURL(type='pypi', name=name, version=version)
+                    deps.append(
+                        models.DependentPackage(
+                            purl=purl.to_string(),
+                            extracted_requirement=specs,
+                            scope='dependencies',
+                            is_runtime=True,
+                            is_optional=False,
+                            is_pinned=is_pinned,
+                            is_direct=True,
+                        ).to_dict()
+                    )
+
+    return deps
 
 
 def get_meta_yaml_data(location):
@@ -158,10 +295,21 @@ def get_meta_yaml_data(location):
             # Replace the variable with the value
             if '{{' in line and '}}' in line:
                 for variable, value in variables.items():
-                    line = line.replace('{{ ' + variable + ' }}', value)
+                    if "|lower" in line:
+                        line = line.replace('{{ ' + variable + '|lower' + ' }}', value.lower())
+                    else:
+                        line = line.replace('{{ ' + variable + ' }}', value)
             yaml_lines.append(line)
 
-    return saneyaml.load('\n'.join(yaml_lines))
+    # Cleanup any remaining complex jinja template lines
+    # as the yaml load fails otherwise for unresolved jinja
+    cleaned_yaml_lines = [
+        line
+        for line in yaml_lines
+        if not "{{" in line
+    ]
+
+    return saneyaml.load(''.join(cleaned_yaml_lines))
 
 
 def get_variables(location):

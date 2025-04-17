@@ -239,7 +239,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-22.04, ubuntu-24.04, macos-12, macos-13]
+        os: [ubuntu-22.04, ubuntu-24.04, macos-13, macos-14]
         pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
@@ -371,7 +371,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [macos-12, macos-13]
+        os: [macos-13, macos-14]
         pyver: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:

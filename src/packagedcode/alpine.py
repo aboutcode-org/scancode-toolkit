@@ -58,6 +58,7 @@ class AlpineApkArchiveHandler(models.DatafileHandler):
 
 class AlpineInstalledDatabaseHandler(models.DatafileHandler):
     datasource_id = 'alpine_installed_db'
+    datasource_type = 'sys'
     path_patterns = ('*lib/apk/db/installed',)
     default_package_type = 'alpine'
     description = 'Alpine Linux installed package database'

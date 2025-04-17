@@ -14,8 +14,6 @@ v33.0.0 (next next, roadmap)
 - Dependencies for
 - Support for copyright detection objects.
 
-- We can now collect packages from a Go binary using go-inspector (Linux-only)
-
 - A new field in packages with the license category for the
   detected license expression and also an API function to
   compute license categories from license expressions.
@@ -39,6 +37,33 @@ v33.0.0 (next next, roadmap)
 
 - Update Dockerfile and test container build.
   See https://github.com/aboutcode-org/scancode-toolkit/issues/3955
+
+v32.3.1 - 2024-01-06
+--------------------
+
+This is a minor release with license and package detection
+improvements, bugfixes and with new and updated license detection rules
+and new licenses added.
+
+- We can now collect packages from a Rust binary using rust-inspector
+  for rust binaries built with `cargo-auditable`(Linux-only)
+  Also adds a plugin for colelcting rust symbols with the option
+  ``--rust-symbol``. See the initial release for more info:
+  https://github.com/aboutcode-org/rust-inspector/releases/tag/v0.1.0
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4043
+
+- Improves and adds bugfixes for package detection in the following ecosystems:
+  conda, npm, rust, go.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4073
+
+- Updates go-inspector to v0.5.0 . GoReSym is now built from source and has
+  been updated to v3.0.1. https://github.com/aboutcode-org/scancode-toolkit/pull/3972
+
+- Adds new and updated licenses, license detection rules.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3963
+
+- Adds the latest license-expression with an updated licenseDB.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3960
 
 v32.3.0 - 2024-10-21
 --------------------
@@ -88,6 +113,9 @@ Changes in Output Data Structure:
 
 - Drop python 3.8 support as this is end of life. Please use older releases if you
   are using python 3.8 but this is not recommended.
+
+- We can now collect packages from a Go binary using go-inspector (Linux-only)
+  See https://github.com/aboutcode-org/scancode-toolkit/pull/3894
 
 v32.2.1 - 2024-07-02
 ---------------------

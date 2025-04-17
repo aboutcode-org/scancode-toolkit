@@ -58,32 +58,18 @@
     "file_references": [],
     "is_private": false,
     "is_virtual": false,
-    "extra_data": {},
+    "extra_data": {
+      "host": [
+        "pip",
+        "python"
+      ],
+      "run": [
+        "python >=3.6"
+      ]
+    },
     "dependencies": [
       {
-        "purl": "pkg:conda/pip",
-        "extracted_requirement": "",
-        "scope": "host",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_pinned": false,
-        "is_direct": true,
-        "resolved_package": {},
-        "extra_data": {}
-      },
-      {
-        "purl": "pkg:conda/python",
-        "extracted_requirement": "",
-        "scope": "host",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_pinned": false,
-        "is_direct": true,
-        "resolved_package": {},
-        "extra_data": {}
-      },
-      {
-        "purl": "pkg:conda/mccortex",
+        "purl": "pkg:conda/mccortex@1.0",
         "extracted_requirement": "==1.0",
         "scope": "run",
         "is_runtime": true,
@@ -94,7 +80,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conda/nextflow",
+        "purl": "pkg:conda/nextflow@19.01.0",
         "extracted_requirement": "==19.01.0",
         "scope": "run",
         "is_runtime": true,
@@ -105,7 +91,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conda/cortexpy",
+        "purl": "pkg:conda/cortexpy@0.45.7",
         "extracted_requirement": "==0.45.7",
         "scope": "run",
         "is_runtime": true,
@@ -116,7 +102,7 @@
         "extra_data": {}
       },
       {
-        "purl": "pkg:conda/kallisto",
+        "purl": "pkg:conda/kallisto@0.44.0",
         "extracted_requirement": "==0.44.0",
         "scope": "run",
         "is_runtime": true,
@@ -151,17 +137,6 @@
       {
         "purl": "pkg:conda/progressbar2",
         "extracted_requirement": "",
-        "scope": "run",
-        "is_runtime": true,
-        "is_optional": false,
-        "is_pinned": false,
-        "is_direct": true,
-        "resolved_package": {},
-        "extra_data": {}
-      },
-      {
-        "purl": "pkg:conda/python",
-        "extracted_requirement": ">=3.6",
         "scope": "run",
         "is_runtime": true,
         "is_optional": false,

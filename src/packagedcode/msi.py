@@ -195,6 +195,7 @@ class MsiInstallerHandler(models.DatafileHandler):
     default_package_type = 'msi'
     description = 'Microsoft MSI installer'
     documentation_url = 'https://docs.microsoft.com/en-us/windows/win32/msi/windows-installer-portal'
+    supported_oses = ('linux',)
 
     @classmethod
     def parse(cls, location, package_only=False):

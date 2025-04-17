@@ -121,8 +121,14 @@ def test_run_scan_includes_outdated_in_extra():
     assert results['headers'][0]['extra_data']['OUTDATED'] == 'out of date'
 
 
+def test_no_version_check_run_is_successful():
+    test_file = test_env.get_test_loc('single/iproute.c')
+    result_file = test_env.get_temp_file('json')
+    run_scan_click(['--no-check-version', test_file, '--json', result_file], expected_rc=0)
+
+
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
-    result = run_scan_click(['--help'])
+    result = run_scan_click(options=['--help'], test_mode=False, retry=False)
     assert 'Usage: scancode [OPTIONS]' in result.output
     # this was showing up on Windows
     assert 'scancode-script.py' not in result.output

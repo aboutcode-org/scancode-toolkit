@@ -55,6 +55,7 @@ Third case: a maven repo layout: the jars are side-by-side with a .pom and
 there is no pom.properties check if there are side-by-side artifacts
 """
 
+
 class MavenBasePackageHandler(models.DatafileHandler):
 
     @classmethod
@@ -71,7 +72,7 @@ class MavenBasePackageHandler(models.DatafileHandler):
         datafile_path = resource.path
 
         # This order is important as we want pom.xml to be used for package
-        # creation and then to update from MANIFEST later 
+        # creation and then to update from MANIFEST later
         manifest_path_pattern = '*/META-INF/MANIFEST.MF'
         nested_pom_xml_path_pattern = '*/META-INF/maven/**/pom.xml'
         datafile_name_patterns = (nested_pom_xml_path_pattern, manifest_path_pattern)
@@ -103,7 +104,7 @@ class MavenBasePackageHandler(models.DatafileHandler):
             return
 
         if manifests and pom_xmls:
-            #raise Exception(resource.path, meta_inf_resource, datafile_name_patterns, package_adder)
+            # raise Exception(resource.path, meta_inf_resource, datafile_name_patterns, package_adder)
             parent_resource = meta_inf_resource.parent(codebase)
             if not parent_resource:
                 parent_resource = meta_inf_resource
@@ -272,7 +273,7 @@ class MavenPomXmlHandlerMixin(models.DatafileHandler):
             for child in root.walk(codebase):
                 if 'pom.xml' in child.path:
                     number_poms += 1
-            
+
             if number_poms > 1:
                 root = resource
             else:
@@ -315,7 +316,7 @@ class MavenPomPropertiesHandler(models.NonAssemblableDatafileHandler):
             if TRACE:
                 logger.debug(f'MavenPomPropertiesHandler.parse: properties: {properties!r}')
             if properties:
-                yield from cls.parse_pom_properties(properties=properties, package_only=package_only) 
+                yield from cls.parse_pom_properties(properties=properties, package_only=package_only)
 
     @classmethod
     def parse_pom_properties(cls, properties, package_only=False):
@@ -1308,11 +1309,14 @@ def _parse(
     )
     return MavenPackageData.from_data(package_data, package_only)
 
+
 class MavenPackageData(models.PackageData):
 
     datasource_id = 'maven_pom'
 
+    @classmethod
     def get_license_detections_for_extracted_license_statement(
+        cls,
         extracted_license,
         try_as_expression=True,
         approximate=True,
@@ -1321,16 +1325,16 @@ class MavenPackageData(models.PackageData):
         from packagedcode.licensing import get_normalized_license_detections
         from packagedcode.licensing import get_license_detections_for_extracted_license_statement
 
-        if not MavenPackageData.check_extracted_license_statement_structure(extracted_license):
+        if not cls.check_extracted_license_statement_structure(extracted_license):
             return get_normalized_license_detections(
                 extracted_license=extracted_license,
                 try_as_expression=try_as_expression,
                 approximate=approximate,
                 expression_symbols=expression_symbols,
             )
-        
+
         new_extracted_license = extracted_license.copy()
-        
+
         for license_entry in new_extracted_license:
             license_entry.pop("distribution")
             if not license_entry.get("name"):
@@ -1349,8 +1353,8 @@ class MavenPackageData(models.PackageData):
             expression_symbols=expression_symbols,
         )
 
-
-    def check_extracted_license_statement_structure(extracted_license):
+    @classmethod
+    def check_extracted_license_statement_structure(cls, extracted_license):
 
         is_list_of_mappings = False
         if not isinstance(extracted_license, list):
@@ -1362,7 +1366,7 @@ class MavenPackageData(models.PackageData):
             if not isinstance(extracted_license_item, dict):
                 is_list_of_mappings = False
                 break
-        
+
         return is_list_of_mappings
 
 

@@ -138,8 +138,8 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: macos12_cpython
-          image_name: macOS-12
+          job_name: macos14_cpython
+          image_name: macOS-14
           python_versions: ['3.9', '3.10', '3.11', '3.12']
           python_architecture: x64
           test_suites:

@@ -5,7 +5,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/skeleton for support or download.
+# See https://github.com/aboutcode-org/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 import io
@@ -33,7 +33,8 @@ DEJACODE_API_HEADERS = {
 
 def can_do_api_calls():
     if not DEJACODE_API_KEY and DEJACODE_API_URL:
-        print("DejaCode DEJACODE_API_KEY and DEJACODE_API_URL not configured. Doing nothing")
+        print(
+            "DejaCode DEJACODE_API_KEY and DEJACODE_API_URL not configured. Doing nothing")
         return False
     else:
         return True
@@ -68,7 +69,8 @@ def get_package_data(distribution):
         return results[0]
 
     elif len_results > 1:
-        print(f"More than 1 entry exists, review at: {DEJACODE_API_URL_PACKAGES}")
+        print(
+            f"More than 1 entry exists, review at: {DEJACODE_API_URL_PACKAGES}")
     else:
         print("Could not find package:", distribution.download_url)
 
@@ -149,7 +151,8 @@ def find_latest_dejacode_package(distribution):
     # there was no exact match, find the latest version
     # TODO: consider the closest version rather than the latest
     # or the version that has the best data
-    with_versions = [(packaging_version.parse(p["version"]), p) for p in packages]
+    with_versions = [(packaging_version.parse(p["version"]), p)
+                     for p in packages]
     with_versions = sorted(with_versions)
     latest_version, latest_package_version = sorted(with_versions)[-1]
     print(
