@@ -99,6 +99,7 @@ class TestBuild(PackageTester):
                     role='maintainer'
                 )
             ],
+            extra_data=dict(upstream_hash='deadbeef'),
             homepage_url='https://github.com/example/example',
         )
         expected_packages = [models.PackageData.from_data(package_data=package_data, package_only=True)]
