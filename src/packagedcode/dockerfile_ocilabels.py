@@ -11,23 +11,16 @@
 
 import io
 from pathlib import Path
-from dockerfile_parse import DockerfileParser  
+from dockerfile_parse import DockerfileParser
 from packagedcode import models
 from packagedcode import utils
+from packagedcode.models import NonAssemblableDatafileHandler
 import fnmatch
 
 
-class DockerfileHandler(models.DatafileHandler):
+class DockerOCILabelsHandler(NonAssemblableDatafileHandler):
     datasource_id = 'dockerfile_oci_labels'
-
-    @classmethod 
-    def is_datafile(cls, path): 
-        patterns = ['Dockerfile', 'containerfile', '*.dockerfile'] 
-        filename=os.path.basename(path)
-        for pattern in patterns: 
-            if fnmatch.fnmatch(filename, pattern): 
-                return True 
-        return False
+    path_patterns = ('Dockerfile', 'containerfile', '*.dockerfile')
     
     @classmethod
     def parse(cls, location, package_only=False):
@@ -38,10 +31,10 @@ class DockerfileHandler(models.DatafileHandler):
         package_data = {
             'datasource_id': cls.datasource_id,
             'type': cls.default_package_type,
-            'name': labels.get('name', 'None'),  
-            'version': labels.get('version', 'None'),  
-            'license_expression': labels.get('license', 'None'),
-            'labels': labels,  
+            'name': labels.get('name', 'None'),
+            'version': labels.get('version', 'None'),
+            'license_expression': labels.get('license'),
+            'labels': labels,
         }
 
         yield models.PackageData.from_data(package_data, package_only)

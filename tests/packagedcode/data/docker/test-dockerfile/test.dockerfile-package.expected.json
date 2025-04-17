@@ -1,0 +1,18 @@
+[
+  {
+    "datasource_id": "docker_oci_labels",
+    "type": "default",
+    "name": "Kanboard",
+    "version": "1.2.42",
+    "license_expression": "MIT",
+    "labels": {
+      "org.opencontainers.image.source": "https://github.com/kanboard/kanboard",
+      "org.opencontainers.image.title": "Kanboard",
+      "org.opencontainers.image.description": "Kanboard is project management software that focuses on the Kanban methodology",
+      "org.opencontainers.image.vendor": "Kanboard",
+      "org.opencontainers.image.licenses": "MIT",
+      "org.opencontainers.image.url": "https://kanboard.org",
+      "org.opencontainers.image.documentation": "https://docs.kanboard.org"
+    }
+  }
+]
