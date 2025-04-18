@@ -10,8 +10,6 @@
 import logging
 import os
 
-from license_expression import Licensing
-
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
 from licensedcode.detection import LicenseDetection
