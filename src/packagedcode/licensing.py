@@ -10,6 +10,8 @@
 import logging
 import os
 
+import saneyaml
+
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
 from licensedcode.detection import LicenseDetection
@@ -32,8 +34,6 @@ from packagedcode.utils import combine_expressions
 from summarycode.classify import check_resource_name_start_and_end
 from summarycode.classify import LEGAL_STARTS_ENDS
 from summarycode.classify import README_STARTS_ENDS
-
-import saneyaml
 
 
 """
