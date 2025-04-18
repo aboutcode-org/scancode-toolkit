@@ -583,17 +583,13 @@ def get_license_expression_from_detection_mappings(
     )
 
 
-def matches_have_unknown(matches, licensing=Licensing()):
+def matches_have_unknown(matches):
     """
-    Return True if any of the LicenseMatch in `matches` has an unknown license.
+    Return True if any of the LicenseMatch in ``matches`` has an unknown license.
+    Note that by construction and design, an unknown license must have the word "unknown" in its
+    license key, so we can shortcut the test with a string check.
     """
-    for match in matches:
-        exp = match.rule.license_expression_object
-        if any(
-            key in ('unknown', 'unknown-spdx')
-            for key in licensing.license_keys(exp)
-        ):
-            return True
+    return any('unknown' in match.rule.license_expression for match in matches)
 
 
 def get_license_detections_from_matches(matches):
