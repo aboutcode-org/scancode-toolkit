@@ -35,7 +35,6 @@ from summarycode.classify import check_resource_name_start_and_end
 from summarycode.classify import LEGAL_STARTS_ENDS
 from summarycode.classify import README_STARTS_ENDS
 
-
 """
 Detect and normalize licenses as found in package manifests data.
 """
@@ -56,7 +55,6 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
-
 
 RESOURCE_TO_PACKAGE_LICENSE_FIELDS = {
     'detected_license_expression': 'declared_license_expression',
@@ -253,7 +251,7 @@ def add_referenced_license_detection_from_package(resource, codebase):
                 continue
 
             for sibling_detection in sibling_license_detections:
-                
+
                 modified = True
                 detection_modified = True
                 license_match_mappings.extend(sibling_detection["matches"])
@@ -713,8 +711,7 @@ def get_normalized_license_detections(
     expression_symbols=None,
 ):
     """
-    Return a normalized license expression string detected from a list of
-    declared license items.
+    Return a list of LicenseDetection detected in ``extracted license`` data.
     """
     license_detections = []
 
@@ -737,6 +734,7 @@ def get_normalized_license_detections(
                 logger_debug(f'get_normalized_license_detections: str:')
 
         elif isinstance(extracted_license, dict):
+            # FIXME: why ignoring keys?
             for extracted_license_statement in extracted_license.values():
                 detections = get_license_detections_for_extracted_license_statement(
                     extracted_license_statement=extracted_license_statement,
@@ -751,6 +749,7 @@ def get_normalized_license_detections(
                     license_detections.extend(detections)
 
             if not license_detections:
+                # FIXME: we should  Never detect on dict representation, but on a YAML dump instead
                 unknown_dict_object = repr(dict(extracted_license.items()))
                 unknown_detection = get_unknown_license_detection(query_string=unknown_dict_object)
                 license_detections.append(unknown_detection)
@@ -822,7 +821,7 @@ def get_license_detections_and_expression(
     try_as_expression=True,
     approximate=True,
     expression_symbols=None,
-    datasource_id = None,
+    datasource_id=None,
 ):
     """
     Given a text `extracted_license_statement` return a list of LicenseDetection objects.
@@ -887,8 +886,7 @@ def get_license_detections_for_extracted_license_statement(
     expression_symbols=None,
 ):
     """
-    Return a list of LicenseDetection objects after detecting licenses in
-    the given `extracted_license_statement`.
+    Return a list of LicenseDetection detected  the ``extracted_license_statement`` string.
     """
     if not extracted_license_statement:
         return []
