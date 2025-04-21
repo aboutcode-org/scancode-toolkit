@@ -11,6 +11,7 @@ import logging
 import os
 
 import saneyaml
+from license_expression import Licensing
 
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
@@ -579,13 +580,19 @@ def get_license_expression_from_detection_mappings(
     )
 
 
-def matches_have_unknown(matches):
+def matches_have_unknown(matches, licensing=Licensing()):
     """
     Return True if any of the LicenseMatch in ``matches`` has an unknown license.
     Note that by construction and design, an unknown license must have the word "unknown" in its
-    license key, so we can shortcut the test with a string check.
+    license key, but we only care about two specific license keys, and not all license keys.
     """
-    return any('unknown' in match.rule.license_expression for match in matches)
+    for match in matches:
+        exp = match.rule.license_expression_object
+        if any(
+            key in ('unknown', 'unknown-spdx')
+            for key in licensing.license_keys(exp)
+        ):
+            return True
 
 
 def get_license_detections_from_matches(matches):
