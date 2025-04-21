@@ -2355,7 +2355,7 @@ class Rule(BasicRule):
 
     def build_required_phrase_spans(self):
         """
-        Return a list of Spans marking key phrases token positions of that must
+        Return a list of Spans marking required phrases token positions of that must
         be present for this rule to be matched.
         """
         if self.is_from_license:

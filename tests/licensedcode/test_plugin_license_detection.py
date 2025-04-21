@@ -297,19 +297,25 @@ def test_find_referenced_resource_does_not_find_based_file_name_suffix():
 def test_match_reference_license():
     # Setup: Create a new scan to use for a virtual codebase
     test_dir = test_env.get_test_loc('plugin_license/license_reference/scan/scan-ref', copy=True)
-    scan_loc = test_env.get_temp_file('json')
+    result_file = test_env.get_temp_file('json')
     args = [
         '--license',
         '--license-text',
         '--license-text-diagnostics',
         '--license-diagnostics',
-        '--json', scan_loc,
+        '--json', result_file,
         test_dir,
     ]
     run_scan_click(args)
 
     # test proper
     from commoncode.resource import VirtualCodebase
-    codebase = VirtualCodebase(scan_loc)
+    codebase = VirtualCodebase(result_file)
     resource = codebase.get_resource(path='scan-ref/license-notice.txt')
     assert len(resource.license_detections[0]["matches"]) == 1
+
+    expected_loc = test_env.get_test_loc(
+        'plugin_license/license_reference/scan/scan-ref.expected.json',
+        must_exist=False,
+    )
+    check_json_scan(expected_loc, result_file, regen=REGEN_TEST_FIXTURES)

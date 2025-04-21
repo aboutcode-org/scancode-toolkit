@@ -1702,6 +1702,9 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         idx = LicenseIndex(rules)
 
         results = [match.matched_text(_usecache=False) for match in idx.match(location=query_location)]
+
+        # Expected may be surprising, but we are not testing matching quality, only matched text
+        # and we are using a small limited index with only three rules
         expected = [
             'This source code is licensed under both the Apache 2.0 license '
             '(found in the\n#  LICENSE',

@@ -342,8 +342,8 @@ py3 = _sys_v0 == 3
 
 _sys_v1 = sys.version_info[1]
 py311 = py3 and _sys_v1 == 11
-py312 = py3 and _sys_v1 == 11
-py313 = py3 and _sys_v1 == 11
+py312 = py3 and _sys_v1 == 12
+py313 = py3 and _sys_v1 == 13
 
 
 @pytest.mark.skipif(py311, reason='Fails on 311 for obscure reasons')
