@@ -50,7 +50,7 @@
           "rule_relevance": 100,
           "rule_identifier": "mit_27.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_27.RULE",
-          "matched_text": "- name: The MIT License"
+          "matched_text": "name: The MIT License"
         },
         {
           "license_expression": "mit",
@@ -65,7 +65,7 @@
           "rule_relevance": 100,
           "rule_identifier": "mit_237.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_237.RULE",
-          "matched_text": "  url: http://www.opensource.org/licenses/mit-license.php"
+          "matched_text": "url: http://www.opensource.org/licenses/mit-license.php"
         }
       ],
       "identifier": "mit-b25fa533-c536-1062-9012-a925b16f3d93"
@@ -74,7 +74,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: The MIT License\n  url: http://www.opensource.org/licenses/mit-license.php\n",
+  "extracted_license_statement": "- license:\n    name: The MIT License\n    url: http://www.opensource.org/licenses/mit-license.php\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.codehaus.mojo/build-helper-maven-plugin@1.2-SNAPSHOT?classifier=sources"

@@ -50,7 +50,7 @@
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_jcraft_4.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_jcraft_4.RULE",
-          "matched_text": "  url: http://www.jcraft.com/jsch/LICENSE.txt"
+          "matched_text": "url: http://www.jcraft.com/jsch/LICENSE.txt"
         },
         {
           "license_expression": "bsd-new",
@@ -65,7 +65,7 @@
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_jcraft_3.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_jcraft_3.RULE",
-          "matched_text": "  comments: License information from http://www.jcraft.com/jsch"
+          "matched_text": "comments: License information from http://www.jcraft.com/jsch"
         }
       ],
       "identifier": "bsd_new-cb93014d-4035-1c17-df2b-272477a9ec37"
@@ -74,7 +74,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: BSD\n  url: http://www.jcraft.com/jsch/LICENSE.txt\n  comments: License information from http://www.jcraft.com/jsch\n",
+  "extracted_license_statement": "- license:\n    name: BSD\n    url: http://www.jcraft.com/jsch/LICENSE.txt\n    comments: License information from http://www.jcraft.com/jsch\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/com.jcraft/jsch@0.1.23?classifier=sources"

@@ -80,7 +80,7 @@ class TestPlugins(PackageTester):
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 
     def test_package_command_scan_maven(self):
-        test_dir = self.get_test_loc('maven2')
+        test_dir = self.get_test_loc('plugin/maven')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin/maven-package-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
@@ -90,20 +90,6 @@ class TestPlugins(PackageTester):
         test_dir = self.get_test_loc('npm/package')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin/npm-package-expected.json')
-        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
-
-    def test_package_command_scan_maven_with_license(self):
-        test_dir = self.get_test_loc('maven2')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin/maven-package-with-license-expected.json')
-        run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
-
-    def test_package_command_scan_npm_with_license(self):
-        test_dir = self.get_test_loc('npm/package')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin/npm-package-with-license-expected.json')
         run_scan_click(['--package', '--strip-root', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 

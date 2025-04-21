@@ -14,10 +14,12 @@
   "organization_url": "http://www.jboss.org/products/javassist.html",
   "licenses": [
     {
-      "name": "MPL 1.1",
-      "url": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html",
-      "comments": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.",
-      "distribution": null
+      "license": {
+        "name": "MPL 1.1",
+        "url": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html",
+        "comments": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.",
+        "distribution": null
+      }
     }
   ],
   "developers": [],
