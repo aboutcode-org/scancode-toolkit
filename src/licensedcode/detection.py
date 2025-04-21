@@ -338,20 +338,10 @@ class LicenseDetection:
     def is_unknown(self):
         """
         Return True if there are unknown license keys in the license expression
-        for this detection, return False otherwise.
+        for this detection, return False otherwise. By design these are licenses with "unknown" in
+        their key.
         """
-        unknown_license_keys = [
-            "unknown-license-reference",
-            "unknown-spdx",
-            "unknown",
-            "free-unknown"
-        ]
-
-        for license_key in unknown_license_keys:
-            if license_key in self.license_expression:
-                return True
-
-        return False
+        return 'unknown' in self.license_expression
 
     def get_start_end_line(self):
         """
