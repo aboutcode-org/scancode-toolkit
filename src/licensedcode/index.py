@@ -1003,20 +1003,20 @@ class LicenseIndex(object):
 
         matchers = [
             # matcher, include_low in post-matching remaining matchable check
-            Matcher(function=get_spdx_id_matches, include_low=True, name='spdx_lid', keep_trucking=True),
-            Matcher(function=self.get_exact_matches, include_low=False, name='aho', keep_trucking=False),
+            Matcher(function=get_spdx_id_matches, include_low=True, name='spdx_lid', continue_matching=True),
+            Matcher(function=self.get_exact_matches, include_low=False, name='aho', continue_matching=False),
         ]
 
         if approximate:
-            matchers += [Matcher(function=approx, include_low=False, name='seq', keep_trucking=False), ]
+            matchers += [Matcher(function=approx, include_low=False, name='seq', continue_matching=False), ]
 
         already_matched_qspans = []
-        for mtcher in matchers:
+        for matcher in matchers:
             if TRACE:
                 logger_debug()
-                logger_debug(f'match_query: matching with matcher: {mtcher.name}')
+                logger_debug(f'match_query: matching with matcher: {matcher.name}')
 
-            matched = mtcher.function(
+            matched = matcher.function(
                 qry,
                 matched_qspans=already_matched_qspans,
                 existing_matches=matches,
@@ -1026,7 +1026,7 @@ class LicenseIndex(object):
             if TRACE:
                 self.debug_matches(
                     matches=matched,
-                    message=f'matched with: {mtcher.name}',
+                    message=f'matched with: {matcher.name}',
                     location=qry.location,
                     query_string=qry.query_string,
                 )
@@ -1050,14 +1050,14 @@ class LicenseIndex(object):
             already_matched_qspans.extend(
                 mtch.qspan for mtch in matched if mtch.coverage() == 100)
 
-            if not mtcher.keep_trucking:
+            if not matcher.continue_matching:
 
                 if not whole_query_run.is_matchable(
-                    include_low=mtcher.include_low,
+                    include_low=matcher.include_low,
                     qspans=already_matched_qspans,
                 ):
                     if TRACE:
-                        logger_debug('  match_query: no more matchable ... stop matching after matcher:', mtcher.name)
+                        logger_debug('  match_query: no more matchable ... stop matching after matcher:', matcher.name)
                     break
 
             # break if deadline has passed
@@ -1205,7 +1205,7 @@ class Matcher(NamedTuple):
     # whether to inlude low tokens when checking if there are matchable left
     include_low: bool
     # True if matching should continue after this matcher
-    keep_trucking: bool = True
+    continue_matching: bool = True
 
 
 def get_weak_rids(len_legalese, tids_by_rid, _idx):
