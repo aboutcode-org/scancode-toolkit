@@ -130,8 +130,8 @@ license_detections:
         matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit_1356.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
+        rule_identifier: mit_1456.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1456.RULE
         matched_text: |
           License: Expat
            Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -189,7 +189,7 @@ license_detections:
            .
            You should have received a copy of the GNU General Public License
            along with this program; if not, see <http://www.gnu.org/licenses/>.
-    identifier: apache_2_0_and_mit_and_gpl_2_0_plus-644b38a4-9718-d306-cf6e-73a38187c494
+    identifier: apache_2_0_and_mit_and_gpl_2_0_plus-ac74ebb3-adc7-0711-c5ae-ccd22b2e225b
 other_license_detections: []
 copyright: |
   Copyright (c) 1995-2018 Red Hat, Inc.

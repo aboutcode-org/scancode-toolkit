@@ -1,13 +1,11 @@
 ---
-license_expression: proprietary-license
+license_expression: chillicream-1.0
 is_license_text: yes
-is_deprecated: yes
-notes: https://chillicream.com/licensing/chillicream-license See also https://github.com/ChilliCream/graphql-platform/issues/6704
-replaced_by:
-    - chillicream-1.0
+minimum_coverage: 90
+notes: this was previously the proprietary-license_1023.RULE
 ---
 
-ChilliCream License 1.0
+{{ChilliCream License 1.0}}
 
 This is the license we use for our proprietary software like Banana Cake Pop.
 Acceptance
@@ -51,4 +49,3 @@ your licenses are all the licenses granted to you for the software under these t
 use means anything you do with the software requiring one of your licenses.
 
 trademark means trademarks, service marks, and similar rights.
-Last updated on 2024-03-05 by PascalSenn

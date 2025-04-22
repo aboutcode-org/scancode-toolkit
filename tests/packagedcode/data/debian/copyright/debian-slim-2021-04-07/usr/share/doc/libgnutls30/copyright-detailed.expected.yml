@@ -463,8 +463,8 @@ license_detections:
         matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit_1356.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
+        rule_identifier: mit_1456.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1456.RULE
         matched_text: |
           License: Expat
            Permission is hereby granted, free of charge, to any person obtaining a
@@ -484,7 +484,7 @@ license_detections:
            OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
            ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
            OTHER DEALINGS IN THE SOFTWARE.
-    identifier: mit-ebcd17e0-25e4-491a-88e2-568bcfdca823
+    identifier: mit-f8c6587d-7bf2-3b36-ec1a-6f40de8bdaae
   - license_expression: apache-2.0
     license_expression_spdx: Apache-2.0
     matches:
@@ -676,8 +676,8 @@ license_detections:
         matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit_1356.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
+        rule_identifier: mit_1456.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1456.RULE
         matched_text: |
           License: Expat
            * Permission is hereby granted, free of charge, to any person obtaining a
@@ -697,7 +697,7 @@ license_detections:
            * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
            * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
            * DEALINGS IN THE SOFTWARE.
-    identifier: mit-ebcd17e0-25e4-491a-88e2-568bcfdca823
+    identifier: mit-f8c6587d-7bf2-3b36-ec1a-6f40de8bdaae
   - license_expression: mit
     license_expression_spdx: MIT
     matches:
@@ -711,8 +711,8 @@ license_detections:
         matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit_1356.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
+        rule_identifier: mit_1456.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1456.RULE
         matched_text: |
           License: Expat
            * Permission is hereby granted, free of charge, to any person obtaining a
@@ -732,7 +732,7 @@ license_detections:
            * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
            * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
            * DEALINGS IN THE SOFTWARE.
-    identifier: mit-ebcd17e0-25e4-491a-88e2-568bcfdca823
+    identifier: mit-f8c6587d-7bf2-3b36-ec1a-6f40de8bdaae
   - license_expression: mit AND lgpl-2.1-plus
     license_expression_spdx: MIT AND LGPL-2.1-or-later
     matches:
@@ -746,8 +746,8 @@ license_detections:
         matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit_1356.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
+        rule_identifier: mit_1456.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1456.RULE
         matched_text: |
           License: Expat
            * Permission is hereby granted, free of charge, to any person obtaining a
@@ -780,7 +780,7 @@ license_detections:
         rule_identifier: lgpl-2.1-plus_299.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_299.RULE
         matched_text: 'License: LGPLv2.1+'
-    identifier: mit_and_lgpl_2_1_plus-994c9ee6-fbb1-6703-d994-cc4f723a2e03
+    identifier: mit_and_lgpl_2_1_plus-89278816-6bf2-6d6c-be29-455ea1d9fa45
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
@@ -824,8 +824,8 @@ license_detections:
         matched_length: 163
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: mit_1356.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE
+        rule_identifier: mit_1456.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1456.RULE
         matched_text: |
           License: Expat
            Permission is hereby granted, free of charge, to any person obtaining a
@@ -846,7 +846,7 @@ license_detections:
            CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
            TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
            SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-    identifier: mit-ebcd17e0-25e4-491a-88e2-568bcfdca823
+    identifier: mit-f8c6587d-7bf2-3b36-ec1a-6f40de8bdaae
   - license_expression: lgpl-3.0-plus AND gpl-2.0-plus
     license_expression_spdx: LGPL-3.0-or-later AND GPL-2.0-or-later
     matches:
