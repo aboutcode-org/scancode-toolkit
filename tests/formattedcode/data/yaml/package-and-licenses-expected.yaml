@@ -910,9 +910,9 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
-    is_required_phrase: no
+    is_required_phrase: yes
     skip_for_required_phrase_generation: no
-    is_continuous: yes
+    is_continuous: no
     is_builtin: yes
     is_from_license: no
     is_synthetic: no
@@ -926,7 +926,7 @@ license_rule_references:
     ignorable_authors: []
     ignorable_urls: []
     ignorable_emails: []
-    text: '{{apache-2.0 OR MIT}}'
+    text: apache-2.0 OR MIT
   - license_expression: mit
     identifier: mit.LICENSE
     language: en

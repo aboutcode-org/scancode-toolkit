@@ -38,6 +38,7 @@ from licensedcode import TINY_RULE
 from licensedcode.frontmatter import dumps_frontmatter
 from licensedcode.frontmatter import load_frontmatter
 from licensedcode.languages import LANG_INFO as known_languages
+from licensedcode.stopwords import STOPWORDS
 from licensedcode.tokenize import get_existing_required_phrase_spans
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import index_tokenizer_with_stopwords
@@ -1691,7 +1692,6 @@ class BasicRule:
         )
     )
 
-
     # These thresholds attributes are computed upon text loading or calling the
     # thresholds function explicitly
     ###########################################################################
@@ -1960,7 +1960,7 @@ class BasicRule:
         if not is_false_positive:
             if self.relevance == 0 and not self.is_deprecated:
                 yield 'Invalid stored relevance. Should be more than 0 for non-deprecated rule'
-    
+
             if not (0 <= self.minimum_coverage <= 100):
                 yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
 
@@ -1976,16 +1976,13 @@ class BasicRule:
             if not check_is_list_of_strings(self.referenced_filenames):
                 yield 'referenced_filenames must be a list of strings'
 
-            if (self.is_license_clue or self.is_license_intro) and self.is_required_phrase:
-                yield 'License intro/clue rules cannot be required phrase rules'
-
-            if self.is_required_phrase and self.skip_for_required_phrase_generation:
-                yield 'We can skip collecting required phrases only in non required phrase rules'
-
             if not all(check_is_list_of_strings(i) for i in ignorables):
                 yield 'ignorables must be a list of strings'
 
             if self.is_required_phrase:
+                if self.skip_for_required_phrase_generation:
+                    yield 'Cannot skip collecting required phrases in required phrase rule'
+
                 if self.is_license_intro:
                     yield 'is_required_phrase rule cannot be is_license_intro.'
 
@@ -1996,6 +1993,12 @@ class BasicRule:
                     from licensedcode.cache import get_licenses_db
                     if self.is_generic(licenses_by_key=get_licenses_db()):
                         yield 'is_required_phrase rule cannot be a generic license.'
+
+                    # no stopwords in short rules! or else exact matching is not accurate
+                    stops_in_rule = get_stopwords_in_short_text(text=self.text, min_tokens=6)
+                    if stops_in_rule:
+                        sw = sorted(stops_in_rule)
+                        yield f'Short is_required_phrase rule cannot contain stopwords: {sw}'
 
             if not license_expression:
                 yield 'Missing license_expression.'
@@ -2026,7 +2029,6 @@ class BasicRule:
                     yield 'Invalid replaced_by: must be a list'
             if self.is_deprecated and not self.replaced_by and not self.relevance == 0:
                 yield 'Invalid replaced_by: must be provided with is_deprecated_flag unless relevance is 0'
-
 
         if thorough:
             text = self.text
@@ -2209,6 +2211,18 @@ class BasicRule:
         return data
 
 
+def get_stopwords_in_short_text(text, min_tokens=4):
+    """
+    Return a sorted set of stopwords if ``text`` has less than ``min_tokens`` tokens and contains
+    STOPWORDS or None.
+    Stopwords in short texts may make exact matching inaccurate.
+    """
+    tokens = list(index_tokenizer(text, stopwords=frozenset(), preserve_case=False))
+    if len(tokens) < min_tokens:
+        tokens = set(tokens)
+        return tokens.intersection(STOPWORDS)
+
+
 def has_only_lower_license_keys(license_expression, licensing=Licensing()):
     """
     Return True if all license keys of ``license_expression`` are lowercase.
@@ -2379,7 +2393,6 @@ class Rule(BasicRule):
 
         self.is_small = self.length < small_rule
         self.is_tiny = self.length < tiny_rule
-
 
     def dump(self, rules_data_dir, **kwargs):
         """

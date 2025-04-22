@@ -1,8 +1,9 @@
 ---
 license_expression: cern-ohl-p-2.0
 is_license_reference: yes
+skip_for_required_phrase_generation: yes
+is_continuous: yes
 relevance: 100
-minimum_coverage: 100
 ---
 
-cern-ohl-p-2.0
+{{cern-ohl-p-2.0}}

@@ -1376,11 +1376,11 @@ class ApkLicenseDetection:
 
     def to_dict(self):
         return dict(
-            declared_license=self.declared_license                        ,
-            cleaned_license=self.cleaned_license                         ,
-            mapped_license=self.mapped_license                          ,
-            license_detections=self.license_detections                            ,
-            license_expression=self.license_expression             ,
+            declared_license=self.declared_license,
+            cleaned_license=self.cleaned_license,
+            mapped_license=self.mapped_license,
+            license_detections=self.license_detections,
+            license_expression=self.license_expression,
         )
 
 

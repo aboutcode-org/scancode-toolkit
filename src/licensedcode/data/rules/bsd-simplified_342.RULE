@@ -1,8 +1,8 @@
 ---
 license_expression: bsd-simplified
 is_license_tag: yes
-is_continuous: yes
+is_required_phrase: yes
 relevance: 100
 ---
 
-{{ SPDX-LicenseIdentifier: BSD-2-Clause }}
+  SPDX-LicenseIdentifier: BSD-2-Clause

@@ -1,8 +1,8 @@
 ---
 license_expression: simpl-2.0
 is_license_tag: yes
-is_continuous: yes
+is_required_phrase: yes
 relevance: 100
 ---
 
-{{  SPDX-LicenseIdentifier: SimPL-2.0 }}
+   SPDX-LicenseIdentifier: SimPL-2.0

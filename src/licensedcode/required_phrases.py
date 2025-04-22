@@ -25,6 +25,8 @@ from licensedcode.models import find_rule_base_location
 from licensedcode.models import get_ignorables
 from licensedcode.models import get_normalized_ignorables
 from licensedcode.models import get_rules_by_expression
+from licensedcode.models import get_rules_by_identifier
+from licensedcode.models import get_stopwords_in_short_text
 from licensedcode.models import load_rules
 from licensedcode.models import rules_data_dir
 from licensedcode.models import Rule
@@ -53,6 +55,8 @@ phrases" found in rules.
 "is_required_phrase" rules and license attributes/fields.
 
 """
+
+TRACE = False
 
 # Add rule identifiers here to trace required phrase collection or required
 # phrase marking for a specific rule (Example: "mit_12.RULE")
@@ -362,7 +366,7 @@ def get_updatable_rules_by_expression(license_expression=None, simple_expression
             if rule.skip_for_required_phrase_generation:
                 continue
 
-            # skip non-approx matchable, they will be matche exactly
+            # skip non-approx matchable, they will be matched exactly
             if not index.is_rule_approx_matchable(rule):
                 continue
 
@@ -419,33 +423,35 @@ def add_license_attributes_as_required_phrases_to_rules_text(
     """
 
     license_fields_mapping_by_order = {
-        "name": license_object.name,
-        "short_name": license_object.short_name,
+        "name": [license_object.name],
+        "short_name": [license_object.short_name],
         # "key",
-        # "spdx_license_key",
+        "spdx_license_key": [license_object.spdx_license_key],
+        "other_spdx_license_keys": license_object.other_spdx_license_keys or [],
     }
 
     for rule in rules:
-        for field_name, required_phrase_text in license_fields_mapping_by_order.values():
-            debug = False
-            if rule.identifier in TRACE_REQUIRED_PHRASE_FOR_RULES:
-                click.echo(
-                    f"Updating rule: {rule.identifier} "
-                    f"with required phrase from license: {field_name!r}: {required_phrase_text!r}."
+        for field_name, required_phrase_texts in license_fields_mapping_by_order.values():
+            for required_phrase_text in required_phrase_texts:
+                debug = False
+                if rule.identifier in TRACE_REQUIRED_PHRASE_FOR_RULES:
+                    click.echo(
+                        f"Updating rule: {rule.identifier} "
+                        f"with required phrase from license: {field_name!r}: {required_phrase_text!r}."
+                    )
+                    debug = True
+
+                source = rule.source or ""
+                if write_phrase_source:
+                    source += f" {license_object.key}.LICENSE : {field_name}"
+
+                add_required_phrase_to_rule(
+                    rule=rule,
+                    required_phrase=required_phrase_text,
+                    source=source,
+                    debug=debug,
+                    dry_run=dry_run,
                 )
-                debug = True
-
-            source = rule.source or ""
-            if write_phrase_source:
-                source += f" {license_object.key}.LICENSE : {field_name}"
-
-            add_required_phrase_to_rule(
-                rule=rule,
-                required_phrase=required_phrase_text,
-                source=source,
-                debug=debug,
-                dry_run=dry_run,
-            )
 
 
 def get_ignorable_spans(rule):
@@ -457,12 +463,12 @@ def get_ignorable_spans(rule):
     ignorable_spans = []
     ignorables = rule.referenced_filenames + rule.ignorable_urls
     for ignorable in ignorables:
+        spans = find_phrase_spans_in_text(
+            text=rule.text,
+            required_phrase=ignorable,
+            preserve_case=True)
         ignorable_spans.extend(
-            find_phrase_spans_in_text(
-                text=rule.text,
-                required_phrase=ignorable,
-                preserve_case=True,
-            )
+            spans
         )
 
     return ignorable_spans
@@ -743,6 +749,15 @@ def validate_and_reindex(validate, reindex, verbose):
     cls=PluggableCommandLineOption,
 )
 @click.option(
+    "--max-count",
+    type=int,
+    default=0,
+    metavar="INT",
+    help="Optional maximum count of rules to process. If provided as a non-zero value, "
+    "stop after processing this count of rules.",
+    cls=PluggableCommandLineOption,
+)
+@click.option(
     "-r",
     "--reindex",
     is_flag=True,
@@ -759,6 +774,29 @@ def validate_and_reindex(validate, reindex, verbose):
     cls=PluggableCommandLineOption,
 )
 @click.option(
+    "--min-tokens",
+    type=int,
+    default=2,
+    metavar="INT",
+    help="Minimum number of tokens in the text used to generate a 'good' new rule.",
+    cls=PluggableCommandLineOption,
+)
+@click.option(
+    "--min-single-token-len",
+    type=int,
+    default=5,
+    metavar="INT",
+    help="Minimum length of the token in a single-word rule text used to generate a 'good' new rule.",
+    cls=PluggableCommandLineOption,
+)
+@click.option(
+    "--update-only",
+    is_flag=True,
+    default=False,
+    help="Do not create new rules, only update existing rules.",
+    cls=PluggableCommandLineOption,
+)
+@click.option(
     "-v",
     "--verbose",
     is_flag=True,
@@ -772,15 +810,40 @@ def gen_required_phrases_rules(
     validate,
     reindex,
     verbose,
+    max_count,
+    min_tokens,
+    min_single_token_len,
+    update_only,
 ):
     """
     Create new license detection rules from "required phrases" in existing rules.
+    Also update existing rules with "is_required_phrase" if they are "required phrases" but are
+    not tagged as such.
     """
-    generate_new_required_phrase_rules(license_expression=license_expression, verbose=verbose)
-    validate_and_reindex(validate, reindex, verbose)
+    generate_new_required_phrase_rules(
+        license_expression=license_expression,
+        verbose=verbose,
+        max_count=max_count,
+        min_tokens=min_tokens,
+        min_single_token_len=min_single_token_len,
+        update_only=update_only,
+    )
+
+    validate_and_reindex(
+        validate=validate,
+        reindex=reindex,
+        verbose=verbose,
+    )
 
 
-def generate_new_required_phrase_rules(license_expression=None, verbose=False):
+def generate_new_required_phrase_rules(
+    license_expression=None,
+    verbose=False,
+    max_count=0,
+    min_tokens=2,
+    min_single_token_len=5,
+    update_only=False,
+):
     """
     Create new rules created from collecting unique required phrases accross all rules.
 
@@ -788,10 +851,14 @@ def generate_new_required_phrase_rules(license_expression=None, verbose=False):
     "is_required_phrase" flag.
 
     Consider only rules with the optional ``license_expression`` if provided.
+    Process only up to ``max_count`` rules if provided.
+    Use min_tokens and min_single_token_len minima to consider what is a long enough rule text.
     """
     if verbose:
         lex = license_expression or "all"
-        click.echo(f'Collecting required phrases for {lex} license_expression.')
+        click.echo(f'Collecting required phrases for {lex!r} license_expression.')
+        if max_count:
+            click.echo(f'Limiting to {max_count} rules.')
 
     index = get_index()
     licenses_by_key = get_licenses_db()
@@ -799,9 +866,18 @@ def generate_new_required_phrase_rules(license_expression=None, verbose=False):
     # track text -> expressions to keep only a text that uniquely identifies a single expression
     phrases_by_normalized_phrase = defaultdict(list)
 
-    for rule in index.rules_by_rid:
-        if rule.license_expression != license_expression:
+    requested_license_expression = license_expression
+
+    for rules_count, rule in enumerate(index.rules_by_rid, 1):
+        if max_count and rules_count == max_count:
+            break
+
+        if requested_license_expression and rule.license_expression != requested_license_expression:
+            if TRACE:
+                click.echo(f'Skipping rule for expression: {rule!r}')
             continue
+
+        license_expression = rule.license_expression
 
         if (
             rule.is_required_phrase
@@ -809,24 +885,51 @@ def generate_new_required_phrase_rules(license_expression=None, verbose=False):
             or rule.is_license_intro
             or rule.is_license_clue
             or rule.is_false_positive
-            or rule.is_from_license
             or rule.is_generic(licenses_by_key)
         ):
+            if TRACE:
+                click.echo(f'Skipping rule: {rule!r}')
             continue
 
-        for required_phrase_text in get_required_phrase_verbatim(rule.text):
-            phrase = RequiredPhraseRuleCandidate.create(license_expression=license_expression, text=required_phrase_text)
-            if phrase.is_good(rule):
+        if verbose:
+            click.echo(f'Processing rule: {rule!r}')
+
+        required_phrase_texts = []
+        if rule.is_from_license:
+            lic = licenses_by_key[license_expression]
+            required_phrase_texts = [
+                lic.name,
+                lic.short_name,
+                lic.spdx_license_key,
+            ] + list(lic.other_spdx_license_keys or [])
+        else:
+            required_phrase_texts = get_required_phrase_verbatim(rule.text)
+
+        for required_phrase_text in required_phrase_texts:
+            if verbose:
+                click.echo(f'    Processing rule required_phrase_text: {required_phrase_text!r}')
+
+            phrase = RequiredPhraseRuleCandidate.create(
+                license_expression=license_expression,
+                text=required_phrase_text,
+            )
+
+            if phrase.is_good(rule, min_tokens=min_tokens, min_single_token_len=min_single_token_len):
                 phrases_by_normalized_phrase[phrase.normalized_text].append(phrase)
 
-                # Add new variations of the required phrases already present in the list
-                for variation in generate_required_phrase_variations(required_phrase_text):
-                    phrase = RequiredPhraseRuleCandidate.create(license_expression=license_expression, text=variation)
-                    if phrase.is_good(rule):
-                        phrases_by_normalized_phrase[phrase.normalized_text].append(phrase)
+            # Add new variations of the required phrases already present in the list
+            for variation in generate_required_phrase_variations(required_phrase_text):
+                phrase_variant = RequiredPhraseRuleCandidate.create(
+                    license_expression=license_expression,
+                    text=variation,
+                )
+                if phrase_variant.is_good(rule, min_tokens=min_tokens, min_single_token_len=min_single_token_len):
+                    phrases_by_normalized_phrase[phrase_variant.normalized_text].append(phrase_variant)
+
+    current_rules_by_identifier = get_rules_by_identifier()
 
     for phrases in phrases_by_normalized_phrase.values():
-        # keep only phrases pointing used for the same expression
+        # keep only phrases pointing to the same expression
         if len(set(p.license_expression for p in phrases)) == 1:
             # keep the first one
             phrase = phrases[0]
@@ -836,42 +939,75 @@ def generate_new_required_phrase_rules(license_expression=None, verbose=False):
         # check if we already have a rule we can match for this required phrase tag if needed
         matched_rule = rule_exists(text=phrase.raw_text)
         if matched_rule:
-            if matched_rule.skip_for_required_phrase_generation:
-                if verbose:
+            if matched_rule.is_from_license:
+                if TRACE and verbose:
+                    click.echo(f'Skipping rule matched to license: {matched_rule.identifier}.')
+                continue
+
+            actual_rule = current_rules_by_identifier[matched_rule.identifier]
+            if actual_rule.skip_for_required_phrase_generation:
+                if TRACE and verbose:
                     click.echo(
                         f'WARNING: Skipping pre-existing required phrase rule '
-                        f'"skip_for_required_phrase_generation": {matched_rule.identifier}.'
+                        f'"skip_for_required_phrase_generation": {actual_rule.identifier}.'
                     )
-                    continue
+                continue
 
             modified = False
 
-            if not matched_rule.is_required_phrase:
-                matched_rule.is_required_phrase = True
+            if not actual_rule.is_required_phrase:
+                # this combo does not work, make it a reference
+                if actual_rule.is_license_intro or actual_rule.is_license_clue:
+                    actual_rule.is_license_reference = True
+                    actual_rule.is_license_intro = False
+                    actual_rule.is_license_clue = False
+                actual_rule.is_required_phrase = True
                 modified = True
 
-            if matched_rule.text.strip() != phrase.raw_text:
-                matched_rule.text = phrase.raw_text
+            # keep original text as-is, removing the curly braces
+            new_text = actual_rule.text.replace('{{', ' ').replace('}}', ' ')
+            if actual_rule.text != new_text:
+                actual_rule.text = new_text
                 modified = True
 
-            if matched_rule.is_continuous:
-                matched_rule.is_continuous = False
+            if actual_rule.is_continuous:
+                actual_rule.is_continuous = False
+                modified = True
+
+            if actual_rule.minimum_coverage:
+                actual_rule.minimum_coverage = 0
                 modified = True
 
             if modified:
-                matched_rule.dump(rules_data_dir)
+                actual_rule.dump(rules_data_dir)
                 if verbose:
-                    click.echo(f'WARNING: Updating existing rule with is_required flag and more: {matched_rule.identifier}.')
+                    click.echo(f'UPDATING existing rule with is_required_phrase flag and more: {actual_rule.identifier}.')
             else:
+                if TRACE and verbose:
+                    click.echo(f'WARNING: Skipping pre-existing required phrase rule: {actual_rule.identifier}.')
+        else:
+            if not update_only:
+                # at last create a new rule
+                rule = phrase.create_rule()
                 if verbose:
-                    click.echo(f'WARNING: Skipping pre-existing required phrase rule: {matched_rule.identifier}.')
+                    click.echo(f'Creating required phrase new rule: {rule.identifier}.')
 
-            continue
 
-        # at last create a new rule
-        rule = phrase.create_rule()
-        if verbose:
-            click.echo(f'Creating required phrase new rule: {rule.identifier}.')
+def is_long_enough(text, min_tokens, min_single_token_len):
+    """
+    Return True if ``text`` has at least ``min_tokens`` tokens and at least ``min_single_token_len``
+    length if composed of only one token.
+    """
+    tokens = get_normalized_tokens(text)
+    num_tokens = len(tokens)
+
+    if num_tokens < min_tokens:
+        return False
+
+    if num_tokens == 1 and len(tokens[0]) < min_single_token_len:
+        return False
+    else:
+        return True
 
 
 @attr.s
@@ -884,19 +1020,30 @@ class RequiredPhraseRuleCandidate:
     raw_text = attr.ib(metadata=dict(help='Raw, original required phrase text.'))
     normalized_text = attr.ib(metadata=dict(help='Normalized required phrase text.'))
 
-    def is_good(self, rule):
+    def is_good(self, rule, min_tokens, min_single_token_len):
         """
-        Return True if this phrase is a minimally suitable to use as a required phrase
+        Return True if this phrase is a minimally suitable to use as a required phrase.
+        Use the original rule to ensure we skip when referenced_filenames could be damaged.
+        Also skip short rules that would contain stopwords as they could not be detected correctly.
         """
-        # long enough
-        num_tokens = len(get_normalized_tokens(self.normalized_text))
-        if num_tokens <= 1:
+        # long enough in words and length if one word
+        text = self.normalized_text
+        if not is_long_enough(
+            text=text,
+            min_tokens=min_tokens,
+            min_single_token_len=min_single_token_len,
+        ):
             return False
 
         to_ignore = set()
         # not a referenced filename
         to_ignore.update(map(get_normalized_text, rule.referenced_filenames))
-        if self.normalized_text in to_ignore:
+        if text in to_ignore:
+            return False
+
+        # short rules cannot contain stopwords or else matching will be inaccurate
+        stops_in_rule = get_stopwords_in_short_text(text=text)
+        if stops_in_rule:
             return False
 
         return True

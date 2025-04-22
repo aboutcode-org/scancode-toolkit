@@ -1,7 +1,8 @@
 ---
 license_expression: gpl-3.0 AND other-copyleft
 is_license_notice: yes
+skip_for_required_phrase_generation: yes
 relevance: 100
 ---
 
-Additional permission under GNU GPL version 3 section 7:
+{{Additional permission under GNU GPL version 3 section 7}}

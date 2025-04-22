@@ -1,8 +1,8 @@
 ---
 license_expression: gpl-2.0
 is_license_tag: yes
-is_continuous: yes
+is_required_phrase: yes
 relevance: 100
 ---
 
-{{ SPDXLicense-Identifier: GPL-2.0-only }}
+  SPDXLicense-Identifier: GPL-2.0-only

@@ -723,6 +723,45 @@ class TestQueryWithMultipleRuns(IndexTesting):
 
         assert not any(qr.is_matchable() for qr in qry.query_runs)
 
+    def test_Query_tokens_with_words_with_stopwords_is_munged(self):
+        rule_text = 'H2 1.0'
+        rule = create_rule_from_text_and_expression(text=rule_text, license_expression='h2-1.0',)
+        legalese = build_dictionary_from_iterable(['version'])
+        idx = index.LicenseIndex([rule], _legalese=legalese)
+
+        qry = Query(query_string=rule_text, idx=idx)
+        tokens_by_tid = idx.tokens_by_tid
+        tokens = [tokens_by_tid[t] for t in qry.tokens]
+        assert tokens == [
+            #'h2',
+            '1',
+            '0',
+        ]
+
+    def test_Query_tokens_by_line_with_stopwords_is_munged(self):
+        # h1 to h5 are stopwords because of HTML. h2-1.0 is a license name too
+        rule_text = 'H2 1.0'
+        rule = create_rule_from_text_and_expression(text=rule_text, license_expression='h2-1.0',)
+        legalese = build_dictionary_from_iterable(['version'])
+        idx = index.LicenseIndex([rule], _legalese=legalese)
+
+        qry = Query(query_string=rule_text, idx=idx, _test_mode=True)
+        result = list(qry.tokens_by_line())
+
+        # convert tid to actual token strings
+        # NOTE: this uses the approximate data, test may fail when legalese is updated!
+        tokens_by_tid = idx.tokens_by_tid
+        qtbl_as_str = lambda qtbl: [[None if tid is None else tokens_by_tid[tid] for tid in tids] for tids in qtbl]
+
+        result_str = qtbl_as_str(result)
+        assert result_str == [
+            [
+                #'h2',
+                '1',
+                '0',
+            ]
+        ]
+
 
 class TestQueryWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
