@@ -1,10 +1,6 @@
 ---
-license_expression: other-permissive
+license_expression: bola11
 is_license_text: yes
-relevance: 100
-is_deprecated: yes
-replaced_by:
-    - bola11_1.RULE
 ---
 
 BOLA - Buena Onda License Agreement
@@ -14,7 +10,6 @@ event will the authors be held liable for any damages arising from the use of
 this work.
 
 To all effects and purposes, this work is to be considered Public Domain.
-
 
 However, if you want to be "Buena onda", you should:
 

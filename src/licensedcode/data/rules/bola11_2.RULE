@@ -1,10 +1,6 @@
 ---
-license_expression: other-permissive
+license_expression: bola11
 is_license_text: yes
-relevance: 100
-is_deprecated: yes
-replaced_by:
-    - bola11_2.RULE
 notes: https://blitiri.com.ar/p/bola/ and https://github.com/albertito/libfiu/blob/20ea5e85ec63e3dedd6904e103fb2e56b46840cf/LICENSE
 ---
 

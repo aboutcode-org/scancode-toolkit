@@ -1,10 +1,6 @@
 ---
-license_expression: other-permissive
+license_expression: bola11
 is_license_notice: yes
-relevance: 100
-is_deprecated: yes
-replaced_by:
-    - bola11_6.RULE
 notes: https://blitiri.com.ar/p/bola/
 ignorable_urls:
     - http://geekbakery.net/archives/2012/08/buena-onda-license-agreement.geek

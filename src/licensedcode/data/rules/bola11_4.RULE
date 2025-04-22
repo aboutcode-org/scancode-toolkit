@@ -1,10 +1,6 @@
 ---
-license_expression: other-permissive
+license_expression: bola11
 is_license_text: yes
-relevance: 100
-is_deprecated: yes
-replaced_by:
-    - bola11_4.RULE
 ---
 
 I don't like licenses, because I don't like having to worry about all this

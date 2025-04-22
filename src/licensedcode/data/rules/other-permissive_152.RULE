@@ -2,6 +2,9 @@
 license_expression: other-permissive
 is_license_text: yes
 relevance: 100
+is_deprecated: yes
+replaced_by:
+    - bola11.LICENSE
 ---
 
 BOLA - Buena Onda License Agreement (v1.1)
