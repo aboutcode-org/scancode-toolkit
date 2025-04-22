@@ -1,0 +1,8 @@
+---
+license_expression: proprietary-license
+is_license_reference: yes
+ignorable_urls:
+ - https://www.autosar.org/fileadmin/standards/R22-11/FO/AUTOSAR_PRS_SOMEIPServiceDiscoveryProtocol.pdf
+---
+{{ https://www.autosar.org/fileadmin/standards/R22-11/FO/AUTOSAR_PRS_SOMEIPServiceDiscoveryProtocol.pdf }}
+
