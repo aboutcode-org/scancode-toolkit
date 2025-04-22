@@ -1,6 +1,9 @@
 ---
 key: ttf2pt1
 is_deprecated: yes
+replaced_by:
+    - bsd-2-clause-plus-advertizing
+    - other-permissive
 short_name: TTF2PT1 Project License
 name: TTF2PT1 Project License
 category: Permissive

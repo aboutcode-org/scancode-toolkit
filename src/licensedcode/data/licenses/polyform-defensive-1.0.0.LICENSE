@@ -1,6 +1,8 @@
 ---
 key: polyform-defensive-1.0.0
 is_deprecated: yes
+replaced_by:
+    - polyform-shield-1.0.0
 short_name: PolyForm Defensive License 1.0.0
 name: PolyForm Defensive License 1.0.0
 category: Source-available

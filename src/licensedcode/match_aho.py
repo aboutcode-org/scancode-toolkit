@@ -76,7 +76,7 @@ def add_sequence(automaton, tids, rid, start=0, with_duplicates=False):
 
 
 MATCH_AHO_EXACT = '2-aho'
-MATCH_AHO_EXACT_ORDER = 2
+MATCH_AHO_EXACT_ORDER = 1
 MATCH_AHO_FRAG = '5-aho-frag'
 MATCH_AHO_FRAG_ORDER = 5
 

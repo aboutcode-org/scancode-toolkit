@@ -794,15 +794,15 @@ other_license_detections:
         end_line: 142
         matcher: 2-aho
         score: '100.0'
-        matched_length: 10
+        matched_length: 13
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-1.0-plus_469.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_469.RULE
+        rule_identifier: gpl-1.0-plus_terse_3.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_terse_3.RULE
         matched_text: |
-          distributed under the terms of the GNU
+          is free software, distributed under the terms of the GNU
            General Public License
-    identifier: gpl_1_0_plus-df8dc57b-9ffe-5d74-afd6-5514ed17578c
+    identifier: gpl_1_0_plus-40c8e5d8-9947-442e-eff8-1873e7ca8ed7
   - license_expression: gpl-2.0
     license_expression_spdx: GPL-2.0-only
     matches:

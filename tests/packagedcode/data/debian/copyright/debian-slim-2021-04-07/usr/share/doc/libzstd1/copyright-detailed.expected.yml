@@ -30,8 +30,8 @@ other_license_detections:
         matched_length: 132
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: zlib_81.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_81.RULE
+        rule_identifier: zlib.LICENSE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/zlib.LICENSE
         matched_text: |
           This software is provided 'as-is', without any express or implied
           warranty. In no event will the authors be held liable for any damages
@@ -48,7 +48,7 @@ other_license_detections:
           2. Altered source versions must be plainly marked as such, and must not be
              misrepresented as being the original software.
           3. This notice may not be removed or altered from any source distribution.
-    identifier: zlib-9a572338-50f0-922a-4ff5-942f61bbd11b
+    identifier: zlib-d0d19c8a-d320-af07-cc84-513d4283c0bc
   - license_expression: mit
     license_expression_spdx: MIT
     matches:

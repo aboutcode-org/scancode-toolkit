@@ -1,0 +1,9 @@
+---
+license_expression: cc0-1.0 AND agpl-3.0
+is_license_tag: yes
+relevance: 100
+notes: https://github.com/streetpea/chiaki-ng/blob/ba7402c4505ec4bd4ea9584dbcda5d6d5d8a2ee3/gui/io.github.streetpea.Chiaki4deck.appdata.xml
+---
+
+{{  <metadata_license>CC0-1.0 }}</metadata_license>
+{{  <project_license>AGPL-3.0-only }}</project_license>

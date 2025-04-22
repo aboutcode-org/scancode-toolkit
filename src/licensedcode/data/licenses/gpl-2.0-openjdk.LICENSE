@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-openjdk
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH openjdk-exception
 short_name: GPL 2.0 with OpenJDK Classpath exception
 name: GPL 2.0 with OpenJDK Classpath exception
 category: Copyleft Limited

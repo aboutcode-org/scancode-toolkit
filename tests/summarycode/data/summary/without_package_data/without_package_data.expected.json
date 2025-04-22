@@ -56,7 +56,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39",
+      "identifier": "apache_2_0_and__apache_2_0_or_mit-ab5115d2-1eff-af76-1473-34378a32b2bb",
       "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
       "detection_count": 1,
@@ -68,12 +68,12 @@
           "start_line": 3,
           "end_line": 3,
           "matcher": "2-aho",
-          "score": 80.0,
-          "matched_length": 4,
+          "score": 100.0,
+          "matched_length": 5,
           "match_coverage": 100.0,
-          "rule_relevance": 80,
-          "rule_identifier": "apache-2.0_73.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE"
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_1109.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1109.RULE"
         },
         {
           "license_expression": "apache-2.0 OR mit",
@@ -194,12 +194,12 @@
               "start_line": 3,
               "end_line": 3,
               "matcher": "2-aho",
-              "score": 80.0,
-              "matched_length": 4,
+              "score": 100.0,
+              "matched_length": 5,
               "match_coverage": 100.0,
-              "rule_relevance": 80,
-              "rule_identifier": "apache-2.0_73.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE"
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_1109.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1109.RULE"
             },
             {
               "license_expression": "apache-2.0 OR mit",
@@ -216,11 +216,11 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE"
             }
           ],
-          "identifier": "apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39"
+          "identifier": "apache_2_0_and__apache_2_0_or_mit-ab5115d2-1eff-af76-1473-34378a32b2bb"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 57.14,
+      "percentage_of_license_text": 50.0,
       "copyrights": [
         {
           "copyright": "Copyright Example Corp.",

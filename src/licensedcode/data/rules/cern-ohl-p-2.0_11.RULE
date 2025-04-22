@@ -1,7 +1,10 @@
 ---
 license_expression: cern-ohl-p-2.0
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - cern-ohl-p-2.0
 ---
 
 licenses.nuget.org/CERN-OHL-P-2.0

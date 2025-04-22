@@ -1,7 +1,10 @@
 ---
 license_expression: gnu-javamail-exception
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - gnu-javamail-exception
 ---
 
 licenses.nuget.org/gnu-javamail-exception

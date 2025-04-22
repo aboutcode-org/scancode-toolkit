@@ -290,8 +290,25 @@
           "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
         }
       ],
-      "license_clues": [],
-      "percentage_of_license_text": 4.03,
+      "license_clues": [
+        {
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
+          "from_file": "base-example/PKG-INFO",
+          "start_line": 8,
+          "end_line": 8,
+          "matcher": "2-aho",
+          "score": 60.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 60,
+          "rule_identifier": "unknown_kernel4.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_kernel4.RULE",
+          "matched_text": "License: UNKNOWN",
+          "matched_text_diagnostics": "License: UNKNOWN"
+        }
+      ],
+      "percentage_of_license_text": 5.65,
       "scan_errors": []
     },
     {

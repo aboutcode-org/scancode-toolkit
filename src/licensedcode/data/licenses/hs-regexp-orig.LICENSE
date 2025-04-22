@@ -1,6 +1,8 @@
 ---
 key: hs-regexp-orig
 is_deprecated: yes
+replaced_by:
+    - regexp
 short_name: Henry Spencer Original Regexp License
 name: Henry Spencer Original Regexp License
 category: Permissive

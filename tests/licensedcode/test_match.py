@@ -465,7 +465,8 @@ class TestLicenseMatchBasic(FileBasedTesting):
         assert match.query.unknowns_by_pos == {0: 1, 7: 2, 20: 1}
         assert match.qspan == Span(2, 20)
 
-        itokens = [idx.tokens_by_tid[i] for i in match.itokens(idx)]
+        tokens_by_tid = idx.tokens_by_tid
+        itokens = [tokens_by_tid[i] for i in match.itokens(idx)]
         assert itokens == [
             'licensed',
             'under',
@@ -1701,6 +1702,9 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         idx = LicenseIndex(rules)
 
         results = [match.matched_text(_usecache=False) for match in idx.match(location=query_location)]
+
+        # Expected may be surprising, but we are not testing matching quality, only matched text
+        # and we are using a small limited index with only three rules
         expected = [
             'This source code is licensed under both the Apache 2.0 license '
             '(found in the\n#  LICENSE',
@@ -1708,7 +1712,10 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             'This source code is licensed under [both] [the] [Apache] [2].[0] license '
             '(found in the\n#  LICENSE file in the root directory of this source tree)',
 
-            'GPLv2 ('
+             'the GPLv2 (found\n'
+             '#  in the COPYING file in the root directory [of] [this] [source] [tree]).\n'
+             '#  [You] [may] [select], [at] [your] [option], [one] [of] [the] '
+             '[above]-[listed] licenses',
         ]
         assert results == expected
 

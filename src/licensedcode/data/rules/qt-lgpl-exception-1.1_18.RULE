@@ -1,7 +1,10 @@
 ---
 license_expression: qt-lgpl-exception-1.1
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - qt-lgpl-exception-1.1
 ---
 
 licenses.nuget.org/Qt-LGPL-exception-1.1

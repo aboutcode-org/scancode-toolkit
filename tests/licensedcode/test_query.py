@@ -69,7 +69,7 @@ class TestQueryWithSingleRun(IndexTesting):
     def test_Query_tokens_by_line_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
         rule = create_rule_from_text_and_expression(text=rule_text, license_expression='bsd')
-        legalese = build_dictionary_from_iterable(['redistribution', 'form', ])
+        legalese = build_dictionary_from_iterable(['redistribution', 'form'])
         idx = index.LicenseIndex([rule], _legalese=legalese)
         querys = '''
             The
@@ -94,7 +94,9 @@ class TestQueryWithSingleRun(IndexTesting):
         assert result == expected
 
         # convert tid to actual token strings
-        qtbl_as_str = lambda qtbl: [[None if tid is None else idx.tokens_by_tid[tid] for tid in tids] for tids in qtbl]
+        # NOTE: this uses the approximate data, test may fail when legales is updated!
+        tokens_by_tid = idx.tokens_by_tid
+        qtbl_as_str = lambda qtbl: [[None if tid is None else tokens_by_tid[tid] for tid in tids] for tids in qtbl]
 
         result_str = qtbl_as_str(result)
         expected_str = [
@@ -111,11 +113,10 @@ class TestQueryWithSingleRun(IndexTesting):
 
         assert qry.line_by_pos == [3, 3, 3, 3, 3, 3, 3, 3, 3, 6]
 
-        idx = index.LicenseIndex([create_rule_from_text_and_expression(text=rule_text, license_expression='bsd')])
         querys = 'and this is not a license'
         qry = Query(query_string=querys, idx=idx, _test_mode=True)
         result = list(qry.tokens_by_line())
-        expected = [['and', None, None, None, 'license']]
+        expected = [['and', None, None, None, None]]
         assert qtbl_as_str(result) == expected
 
     def test_Query_known_and_unknown_positions(self):
@@ -286,12 +287,13 @@ class TestQueryWithSingleRun(IndexTesting):
         idx = index.LicenseIndex(load_rules(rule_dir))
         query_loc = self.get_test_loc('query/old_rtos_exact/gpl-2.0-freertos.RULE')
 
-        index_text_tokens = [idx.tokens_by_tid[t] for t in idx.tids_by_rid[0]]
+        tokens_by_tid = idx.tokens_by_tid
+        index_text_tokens = [tokens_by_tid[t] for t in idx.tids_by_rid[0]]
 
         qry = Query(location=query_loc, idx=idx, line_threshold=4)
         wqry = qry.whole_query_run()
 
-        query_text_tokens = [idx.tokens_by_tid[t] for t in wqry.tokens]
+        query_text_tokens = [tokens_by_tid[t] for t in wqry.tokens]
 
         assert index_text_tokens == query_text_tokens
         assert ' '.join(index_text_tokens) == ' '.join(query_text_tokens)
@@ -497,7 +499,8 @@ class TestQueryWithMultipleRuns(IndexTesting):
         assert len(qruns) == 1
         qr = qruns[0]
         # test
-        result = [idx.tokens_by_tid[tid] for tid in qr.tokens]
+        tokens_by_tid = idx.tokens_by_tid
+        result = [tokens_by_tid[tid] for tid in qr.tokens]
         expected = ['redistributions', 'in', 'binary', 'form', 'must', 'redistributions', 'in']
         assert result == expected
 
@@ -737,10 +740,8 @@ class TestQueryWithFullIndex(FileBasedTesting):
         assert len(result.query_runs) < 500
 
         qrs = result.query_runs[:10]
-        # for i, qr in enumerate(qrs):
-        #     print('qr:', i,
-        #           'qr_text:', ' '.join(idx.tokens_by_tid[t] for t in qr.matchable_tokens()))
-        assert any('license gpl' in ' '.join(idx.tokens_by_tid[t] for t in qr.matchable_tokens())
+        tokens_by_tid = idx.tokens_by_tid
+        assert any('license gpl' in ' '.join(tokens_by_tid[t] for t in qr.matchable_tokens())
                    for qr in qrs)
 
     def test_query_from_binary_lkms_3(self):
@@ -749,8 +750,8 @@ class TestQueryWithFullIndex(FileBasedTesting):
         result = Query(location, idx=idx)
         assert len(result.query_runs) < 900
         qr = result.query_runs[0]
-        assert 'license dual bsd gpl' in ' '.join(
-            idx.tokens_by_tid[t] for t in qr.matchable_tokens())
+        tokens_by_tid = idx.tokens_by_tid
+        assert 'license dual bsd gpl' in ' '.join(tokens_by_tid[t] for t in qr.matchable_tokens())
 
     def test_query_run_tokens(self):
         query_s = ' '.join(''' 3 unable to create proc entry license gpl
@@ -770,9 +771,9 @@ class TestQueryWithFullIndex(FileBasedTesting):
         # NOTE: this is not a token present in any rules or licenses
         unknown_tokens = ('baridationally',)
         assert unknown_tokens not in idx.dictionary
+        tokens_by_tid = idx.tokens_by_tid
         assert ' '.join([t for t in query_s.split()
-            if t not in unknown_tokens]) == ' '.join(
-                idx.tokens_by_tid[t] for t in qr.tokens)
+            if t not in unknown_tokens]) == ' '.join(tokens_by_tid[t] for t in qr.tokens)
 
     def test_query_run_tokens_matchable(self):
         idx = cache.get_index()
@@ -806,14 +807,15 @@ class TestQueryWithFullIndex(FileBasedTesting):
         linux include asm include asm generic include acpi acpi c posix types 32 h
         types h types h h h h h
         '''.split())
-        assert ' '.join(idx.tokens_by_tid[t] for t in qr.tokens) == expected_qr0
+        tokens_by_tid = idx.tokens_by_tid
+        assert ' '.join(tokens_by_tid[t] for t in qr.tokens) == expected_qr0
 
-        assert ' '.join(idx.tokens_by_tid[t] for p, t in enumerate(
+        assert ' '.join(tokens_by_tid[t] for p, t in enumerate(
                 qr.tokens) if p in qr.matchables) == expected_qr0
 
         # only gpl and gnu are is in high matchables
         expected = 'license gpl author gnu gnu'
-        assert ' '.join(idx.tokens_by_tid[t] for p, t in enumerate(
+        assert ' '.join(tokens_by_tid[t] for p, t in enumerate(
                 qr.tokens) if p in qr.high_matchables) == expected
 
     def test_query_run_for_text_with_long_lines(self):
@@ -837,10 +839,12 @@ class TestQueryWithFullIndex(FileBasedTesting):
         idx = cache.get_index()
         # build a query first
         qry1 = Query(location, idx=idx)
+
+        tokens_by_tid = idx.tokens_by_tid
         # this has the side effect to populate the unknown
-        txt = ' '.join(f'{i}-{idx.tokens_by_tid[t]}' for i, t in enumerate(qry1.tokens))
+        txt = ' '.join(f'{i}-{tokens_by_tid[t]}' for i, t in enumerate(qry1.tokens))
         assert txt == (
-            '0-this 1-repository 2-uses 3-2 4-different 5-licenses '
+            '0-this 1-repository 2-uses 3-2 4-different 5-license '
             '6-all 7-files 8-in 9-the 10-lib 11-directory 12-use 13-bsd 14-2 15-clause 16-license '
             '17-all 18-other 19-files 20-use 21-gplv2 22-license 23-unless 24-explicitly 25-stated 26-otherwise '
             '27-relevant 28-license 29-is 30-reminded 31-at 32-the 33-top 34-of 35-each 36-source 37-file '

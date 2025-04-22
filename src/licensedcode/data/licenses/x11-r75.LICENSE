@@ -1,6 +1,8 @@
 ---
 key: x11-r75
 is_deprecated: yes
+replaced_by:
+    - mit
 short_name: X11-R7.5
 name: X.Org Preferred License
 category: Permissive

@@ -25,7 +25,6 @@ import packages_test_utils
 from packagedcode import alpine
 from scancode_config import REGEN_TEST_FIXTURES
 
-
 """
 Data-driven tests using tests and expectations stored in YAML files.
 Test functions are attached to test classes at module import time
@@ -53,8 +52,7 @@ class AlpineLicenseTest(object):
             data = saneyaml.load(df.read())
         data['data_file'] = data_file
         alptest = cls(**data)
-        alptest.license_expression = cls.licensing.parse(
-            alptest.license_expression).render()
+        alptest.license_expression = cls.licensing.parse(alptest.license_expression).render()
         return alptest
 
     def to_dict(self):
@@ -110,14 +108,19 @@ def make_test(license_test, regen=REGEN_TEST_FIXTURES):
 
     def closure_test_function(*args, **kwargs):
         declared = license_test.declared_license
-        _cleaned, detected, _license_detections = alpine.detect_declared_license(declared)
+        detection = alpine.get_alpine_license_detection(declared)
 
         if regen:
-            license_test.license_expression = detected
+            license_test.license_expression = detection.license_expression
             license_test.dump()
             return
 
-        assert detected  == license_test.license_expression
+        if detection.license_expression != license_test.license_expression:
+            assert (
+                (detection.license_expression, list(detection.to_dict().items()))
+                == 
+                (license_test.license_expression, list(license_test.to_dict().items())) 
+            )
 
     return closure_test_function
 

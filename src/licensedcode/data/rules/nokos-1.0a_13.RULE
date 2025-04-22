@@ -1,7 +1,10 @@
 ---
 license_expression: nokos-1.0a
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - nokos-1.0a
 ---
 
 licenses.nuget.org/Nokia

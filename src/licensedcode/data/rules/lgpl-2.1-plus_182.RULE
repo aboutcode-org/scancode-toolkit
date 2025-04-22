@@ -2,7 +2,7 @@
 license_expression: lgpl-2.1-plus
 is_license_reference: yes
 relevance: 99
-notes: note the mistaken use of purpose instead of public
+notes: note the mistaken use of purpose instead of public. Also "lesser" implies at least 2.1 vs. the "library" used in 2.0 
 ---
 
 Lesser General Purpose Licence (LGPL)

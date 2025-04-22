@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_text: yes
+is_deprecated: yes
 notes: this is a per-GPL text found in RMS regex code from circa 1985
+replaced_by:
+    - other-copyleft
 ---
 
 This program is distributed in the hope that it will be useful,

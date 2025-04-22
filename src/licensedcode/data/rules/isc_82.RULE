@@ -1,9 +1,12 @@
 ---
 license_expression: isc
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+replaced_by:
+    - isc
 ---
 
 licenced under the {{ISC license}}. The license can be found in the COPYING file that should have accompanied this release.

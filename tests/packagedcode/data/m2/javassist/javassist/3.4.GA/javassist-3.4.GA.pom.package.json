@@ -51,16 +51,16 @@
           "start_line": 2,
           "end_line": 2,
           "matcher": "2-aho",
-          "score": 60.0,
-          "matched_length": 1,
+          "score": 100.0,
+          "matched_length": 2,
           "match_coverage": 100.0,
-          "rule_relevance": 60,
-          "rule_identifier": "lgpl_bare_single_word.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_bare_single_word.RULE",
+          "rule_relevance": 100,
+          "rule_identifier": "lgpl-2.0-plus_51.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.0-plus_51.RULE",
           "matched_text": "  url: http://repository.jboss.com/licenses/lgpl.txt"
         }
       ],
-      "identifier": "lgpl_2_0_plus-352c9c42-1459-8dfe-3910-c459079c06b9"
+      "identifier": "lgpl_2_0_plus-fc560f64-1829-6012-e096-e504c9ab8813"
     }
   ],
   "other_license_expression": null,

@@ -10,12 +10,12 @@ ignorable_urls:
 
 <licenses>
       <license>
-          <name>LGPL, version 2.1</name>
+          <name>{{LGPL, version 2.1}}</name>
           <url>http://www.gnu.org/licenses/licenses.html</url>
           <distribution>repo</distribution>
       </license>
       <license>
-          <name>Apache License v2.0</name>
+          <name>{{Apache License v2.0}}</name>
           <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
           <distribution>repo</distribution>
       </license>

@@ -1,12 +1,14 @@
 ---
 key: commercial-option
 is_deprecated: yes
+replaced_by:
+    - commercial-license
 short_name: Commercial Option
 name: Commercial Option
 category: Commercial
 owner: Unspecified
-is_generic: yes
 notes: replaced by commercial-license
+is_generic: yes
 ---
 
 This component may be licensed under a commercial contract from the supplier.

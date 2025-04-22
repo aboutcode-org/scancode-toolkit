@@ -1,7 +1,10 @@
 ---
 license_expression: nist-pd
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - nist-pd
 ---
 
 licenses.nuget.org/NIST-PD

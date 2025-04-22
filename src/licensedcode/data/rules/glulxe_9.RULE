@@ -1,7 +1,10 @@
 ---
 license_expression: glulxe
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - glulxe
 ---
 
 licenses.nuget.org/Glulxe

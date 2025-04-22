@@ -1,6 +1,8 @@
 ---
 key: x11-xconsortium_veillard
 is_deprecated: yes
+replaced_by:
+    - x11-xconsortium-veillard
 short_name: X11-Style (X Consortium Veillard) - Deprecated
 name: X11-Style (X Consortium Veillard) - Deprecated
 category: Permissive

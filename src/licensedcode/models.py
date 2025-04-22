@@ -135,6 +135,14 @@ class License:
             'updated accordingly to point to a new license expression.')
     )
 
+    replaced_by = attr.ib(
+        default=[],
+        repr=False,
+        metadata=dict(
+            help='A list of new license expressions that replace this license, '
+            'only if deprecated and replaced by something else.')
+    )
+
     language = attr.ib(
         default='en',
         repr=False,
@@ -438,7 +446,7 @@ class License:
         - the ``is_builtin`` flag if ``include_builtin`` is True.
         """
 
-        # do not include false, epties and paths
+        # do not include false, empties and paths
         def include_field(name, value):
             if not value:
                 return False
@@ -455,6 +463,8 @@ class License:
                 return False
             if not include_text and  name == 'text':
                 return False
+            if (not self.replaced_by or self.replaced_by == []) and  name == 'replaced_by':
+                return False
 
             return True
 
@@ -466,7 +476,10 @@ class License:
         """
         # include everything
         data = self._to_dict(include_field=lambda k, v: True)
+        # ... but ignore deprecated
         data.pop('is_deprecated', None)
+        data.pop('replaced_by', None)
+
         data['scancode_url'] = self.scancode_url
         data['licensedb_url'] = self.licensedb_url
         data['spdx_url'] = self.spdx_url
@@ -490,8 +503,7 @@ class License:
     def load(self, license_file, check_consistency=True):
         """
         Populate license data from a .LICENSE file stored as a YAML frontmatter.
-        Does not load text files yet.
-        Unknown fields are ignored and not bound to the License object.
+        Note: Unknown fields are ignored and not bound to the License object.
         """
         try:
             content, data = load_frontmatter(license_file)
@@ -626,6 +638,12 @@ class License:
 
             if lic.is_generic and lic.is_unknown:
                 error('is_generic and is_unknown flags are incompatible')
+
+            if lic.replaced_by and not lic.is_deprecated:
+                error('replaced_by is only valid with is_deprecated_flag')
+
+            if lic.is_deprecated and not lic.replaced_by:
+                error('a list of replaced_by expressions is required with is_deprecated_flag')
 
             # URLS dedupe and consistency
             if no_dupe_urls:
@@ -768,7 +786,7 @@ def get_yaml_safe_text(text):
     data = {"text": text}
     yaml_string = saneyaml_dump(data)
     try:
-        loaded_yaml = saneyaml_load(yaml_string)
+        saneyaml_load(yaml_string)
     except Exception:
         text = text.replace('\n\n', '\n \n')
     return text
@@ -844,6 +862,7 @@ def get_rules(
     validate=False,
     validate_thorough=False,
     is_builtin=True,
+    with_deprecated=False
 ):
     """
     Yield Rule objects loaded from a ``licenses_db`` and license files found in
@@ -857,11 +876,13 @@ def get_rules(
     """
     licenses_db = licenses_db or load_licenses(
         licenses_data_dir=licenses_data_dir,
+        with_deprecated=with_deprecated,
     )
 
     rules = list(load_rules(
         rules_data_dir=rules_data_dir,
         is_builtin=is_builtin,
+        with_deprecated=with_deprecated,
     ))
 
     if validate:
@@ -1078,6 +1099,8 @@ def validate_rules(rules, licenses_by_key, with_text=False, rules_data_dir=rules
     of ``rules`` Rule integrity and correctness using known licenses from a
     mapping of ``licenses_by_key`` {key: License}`.
     """
+    # always skip deprecated rules
+    rules = [r for r in rules if not r.is_deprecated]
     errors = _validate_all_rules(rules=rules, licenses_by_key=licenses_by_key, thorough=thorough)
     if errors:
         message = ['Errors while validating rules:']
@@ -1122,14 +1145,14 @@ def build_rule_from_license(license_obj):
             # a license text is always 100% relevant
             has_stored_relevance=True,
             relevance=100,
-
+            is_deprecated=license_obj.is_deprecated,
+            replaced_by=license_obj.replaced_by,
             has_stored_minimum_coverage=bool(minimum_coverage),
             minimum_coverage=minimum_coverage,
 
             is_builtin=license_obj.is_builtin,
             is_from_license=True,
             is_license_text=True,
-
             ignorable_copyrights=license_obj.ignorable_copyrights,
             ignorable_holders=license_obj.ignorable_holders,
             ignorable_authors=license_obj.ignorable_authors,
@@ -1194,7 +1217,7 @@ def load_rules(
     rules_data_dir=rules_data_dir,
     with_checks=True,
     is_builtin=True,
-    with_depreacted=False,
+    with_deprecated=False,
 ):
     """
     Return an iterable of rules loaded from rule files in ``rules_data_dir``.
@@ -1218,8 +1241,8 @@ def load_rules(
 
             try:
                 rule = Rule.from_file(rule_file=rule_file)
-                if not with_depreacted and rule.is_deprecated:
-                    continue 
+                if not with_deprecated and rule.is_deprecated:
+                    continue
                 else:
                     yield rule
 
@@ -1567,6 +1590,14 @@ class BasicRule:
             'to rules as permanent.')
     )
 
+    replaced_by = attr.ib(
+        default=[],
+        repr=False,
+        metadata=dict(
+            help='A list of new license expressions that replace this license rule, '
+            'only if deprecated and replaced by something else.')
+    )
+
     ###########################################################################
     # lists of clues that can be ignored when detected in this license as they
     # are part of the license or rule text itself
@@ -1803,7 +1834,7 @@ class BasicRule:
         """
         Setup a few basic computed attributes after instance creation.
         """
-        self.relevance = as_int(float(self.relevance or 100))
+        self.relevance = as_int(float(self.relevance))
         self.minimum_coverage = as_int(float(self.minimum_coverage or 0))
 
         if self.license_expression:
@@ -1927,10 +1958,13 @@ class BasicRule:
             yield f'Unknown language: {self.language}'
 
         if not is_false_positive:
+            if self.relevance == 0 and not self.is_deprecated:
+                yield 'Invalid stored relevance. Should be more than 0 for non-deprecated rule'
+    
             if not (0 <= self.minimum_coverage <= 100):
                 yield 'Invalid rule minimum_coverage. Should be between 0 and 100.'
 
-            if not (0 <= self.relevance <= 100):
+            if not (0 < self.relevance <= 100):
                 yield 'Invalid rule relevance. Should be between 0 and 100.'
 
             if has_many_license_flags:
@@ -1984,6 +2018,15 @@ class BasicRule:
             if self.referenced_filenames:
                 if len(set(self.referenced_filenames)) != len(self.referenced_filenames):
                     yield 'referenced_filenames cannot contain duplicates.'
+
+            if self.replaced_by:
+                if not self.is_deprecated:
+                    yield 'Invalid replaced_by: only valid with is_deprecated_flag'
+                if not isinstance(self.replaced_by, list):
+                    yield 'Invalid replaced_by: must be a list'
+            if self.is_deprecated and not self.replaced_by and not self.relevance == 0:
+                yield 'Invalid replaced_by: must be provided with is_deprecated_flag unless relevance is 0'
+
 
         if thorough:
             text = self.text
@@ -2142,6 +2185,9 @@ class BasicRule:
 
         if self.source:
             data['source'] = self.source
+
+        if self.is_deprecated and self.replaced_by:
+            data['replaced_by'] = self.replaced_by
 
         if include_text and self.text:
             data['text'] = self.text
@@ -2303,7 +2349,8 @@ class Rule(BasicRule):
         try:
             return get_existing_required_phrase_spans(self.text)
         except Exception as e:
-            raise InvalidRule(f'Invalid rule: {self}') from e
+            rule_file = self.rule_file(rules_data_dir=rules_data_dir)
+            raise InvalidRule(f'Invalid rule:file://{rule_file}  {self}') from e
 
     def compute_thresholds(self, small_rule=SMALL_RULE, tiny_rule=TINY_RULE):
         """
@@ -2403,14 +2450,15 @@ class Rule(BasicRule):
         self.skip_for_required_phrase_generation = data.get('skip_for_required_phrase_generation', False)
         self.source = data.get('source')
 
-        relevance = as_int(float(data.get('relevance') or 0))
+        stored_relevance = data.get('relevance', None)
+
         # Keep track if we have a stored relevance of not.
-        if relevance:
-            self.relevance = relevance
-            self.has_stored_relevance = True
-        else:
+        if stored_relevance is None:
             self.relevance = 100
             self.has_stored_relevance = False
+        else:
+            self.has_stored_relevance = True
+            self.relevance = as_int(float(stored_relevance))
 
         minimum_coverage = as_int(float(data.get('minimum_coverage') or 0))
         self._minimum_containment = minimum_coverage / 100
@@ -2430,6 +2478,8 @@ class Rule(BasicRule):
         self.is_license_clue = data.get('is_license_clue', False)
         self.is_continuous = data.get('is_continuous', False)
         self.is_deprecated = data.get('is_deprecated', False)
+
+        self.replaced_by = data.get('replaced_by', []) or []
 
         self.referenced_filenames = data.get('referenced_filenames', []) or []
 
@@ -2727,7 +2777,7 @@ class UnknownRule(SynthethicRule):
         self.identifier = f'license-detection-unknown-{self._unique_id}'
 
         self.license_expression = UNKNOWN_LICENSE_KEY
-        #TODO: that this could be shared across rules as an optimization
+        # TODO: that this could be shared across rules as an optimization
         self.license_expression_object = self.licensing.parse(UNKNOWN_LICENSE_KEY)
         self.is_license_notice = True
         self.notes = 'Unknown license based on a composite of license words.'

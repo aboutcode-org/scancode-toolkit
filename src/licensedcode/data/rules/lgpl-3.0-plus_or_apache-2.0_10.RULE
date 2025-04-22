@@ -9,7 +9,7 @@ ignorable_urls:
 <licenses>
         <license>
             <name>GNU Lesser General Public License
-            <url>http://www.gnu.org/licenses/lgpl-3.0.html
+            <url>{{http://www.gnu.org/licenses/lgpl-3.0.html}}
         <license>
-            <name>Apache License, Version 2.0
+            <name>{{Apache License, Version 2.0}}
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt

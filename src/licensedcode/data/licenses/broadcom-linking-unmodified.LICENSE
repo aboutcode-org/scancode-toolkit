@@ -1,6 +1,8 @@
 ---
 key: broadcom-linking-unmodified
 is_deprecated: yes
+replaced_by:
+    - broadcom-unmodified-exception
 short_name: Broadcom Linking Exception if unmodified
 name: Broadcom Linking Exception if unmodified
 category: Copyleft Limited

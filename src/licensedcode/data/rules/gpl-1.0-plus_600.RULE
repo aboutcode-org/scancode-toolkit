@@ -1,8 +1,11 @@
 ---
 license_expression: gpl-1.0-plus
 is_license_notice: yes
+is_deprecated: yes
 referenced_filenames:
     - /usr/share/common-licenses/GPL-1
+replaced_by:
+    - gpl-1.0-plus
 ---
 
 This program is free software; you can redistribute it and/or modify

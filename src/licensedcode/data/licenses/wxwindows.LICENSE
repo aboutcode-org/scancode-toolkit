@@ -1,6 +1,8 @@
 ---
 key: wxwindows
 is_deprecated: yes
+replaced_by:
+    - lgpl-2.0-plus WITH wxwindows-exception-3.1
 short_name: wxWindows Library Licence 3.1
 name: wxWindows Library Licence 3.1
 category: Copyleft Limited

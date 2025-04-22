@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "unknown_license_reference-8dac7670-e286-f6de-27a1-f2b5c87524ff",
+      "identifier": "unknown_license_reference-8637bfcb-e3d3-84a6-a4f2-cf82132b6a78",
       "license_expression": "unknown-license-reference",
       "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "detection_count": 1,
@@ -15,13 +15,13 @@
           "end_line": 34,
           "matcher": "2-aho",
           "score": 100.0,
-          "matched_length": 5,
+          "matched_length": 6,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "unknown-license-reference_25.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_25.RULE",
+          "rule_identifier": "unknown-license-reference_417.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_417.RULE",
           "matched_text": "  \"license\": \"SEE LICENSE IN LICENSE.txt\",",
-          "matched_text_diagnostics": "license\": \"SEE LICENSE IN LICENSE."
+          "matched_text_diagnostics": "license\": \"SEE LICENSE IN LICENSE.txt\","
         }
       ]
     }
@@ -45,21 +45,21 @@
               "end_line": 34,
               "matcher": "2-aho",
               "score": 100.0,
-              "matched_length": 5,
+              "matched_length": 6,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "unknown-license-reference_25.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_25.RULE",
+              "rule_identifier": "unknown-license-reference_417.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_417.RULE",
               "matched_text": "  \"license\": \"SEE LICENSE IN LICENSE.txt\",",
-              "matched_text_diagnostics": "license\": \"SEE LICENSE IN LICENSE."
+              "matched_text_diagnostics": "license\": \"SEE LICENSE IN LICENSE.txt\","
             }
           ],
           "detection_log": [],
-          "identifier": "unknown_license_reference-8dac7670-e286-f6de-27a1-f2b5c87524ff"
+          "identifier": "unknown_license_reference-8637bfcb-e3d3-84a6-a4f2-cf82132b6a78"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 0.2,
+      "percentage_of_license_text": 0.25,
       "scan_errors": []
     }
   ]

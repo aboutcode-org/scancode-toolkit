@@ -1,7 +1,10 @@
 ---
 license_expression: agpl-1.0-plus
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - agpl-1.0-plus
 ---
 
 licenses.nuget.org/{{AGPL-1.0-or-later}}

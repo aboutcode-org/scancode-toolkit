@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-redhat
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH 389-exception
 short_name: GPL 2.0 with Fedora Red Hat Exception
 name: GPL 2.0 with Fedora Red Hat Exception
 category: Copyleft Limited

@@ -1,8 +1,12 @@
 ---
 license_expression: apache-2.0
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
 minimum_coverage: 100
+replaced_by:
+    - apache-2.0
+    - apache-2.0
 ignorable_urls:
     - https://www.apache.org/licenses/LICENSE-2.0
 ---

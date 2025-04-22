@@ -2,7 +2,10 @@
 license_expression: bsd-ack
 is_license_text: yes
 is_deprecated: yes
+relevance: 100
 notes: this is a bsd-new rather
+replaced_by:
+    - bsd-new
 ---
 
 Redistribution and use in source and binary forms, with or without

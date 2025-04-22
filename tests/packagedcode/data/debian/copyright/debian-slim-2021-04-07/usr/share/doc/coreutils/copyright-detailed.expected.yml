@@ -21,8 +21,8 @@ license_detections:
         matched_length: 102
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_290.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
+        rule_identifier: gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
+    identifier: gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
@@ -90,8 +90,8 @@ license_detections:
         matched_length: 102
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_290.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
+        rule_identifier: gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -105,7 +105,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
+    identifier: gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
@@ -159,8 +159,8 @@ license_detections:
         matched_length: 102
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_290.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
+        rule_identifier: gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -174,7 +174,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
+    identifier: gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d
   - license_expression: gpl-3.0-plus
     license_expression_spdx: GPL-3.0-or-later
     matches:
@@ -261,14 +261,14 @@ license_detections:
         license_expression_spdx: GPL-3.0-or-later
         from_file:
         start_line: '193'
-        end_line: 214
-        matcher: 3-seq
-        score: '75.18'
-        matched_length: 106
-        match_coverage: '75.18'
+        end_line: 204
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 102
+        match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_286.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_286.RULE
+        rule_identifier: gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -282,16 +282,10 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-
-
-          src/dircolors.c
-          ---------------
-
-             Copyright (C) 1996-2007 Free Software Foundation, Inc.
-             Copyright (C) 1994, 1995, 1997, 1998, 1999, 2000 H. Peter Anvin
-
-             This program is free software: you can redistribute it and/or modify
-             it under the terms of the GNU General Public License
+    identifier: gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d
+  - license_expression: gpl-3.0-plus
+    license_expression_spdx: GPL-3.0-or-later
+    matches:
       - license_expression: gpl-3.0-plus
         license_expression_spdx: GPL-3.0-or-later
         from_file:
@@ -302,8 +296,8 @@ license_detections:
         matched_length: 102
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_290.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
+        rule_identifier: gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -317,7 +311,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-    identifier: gpl_3_0_plus-0da3ef65-99de-5ae9-77c7-870876e764cf
+    identifier: gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d
   - license_expression: gpl-3.0-plus
     license_expression_spdx: GPL-3.0-or-later
     matches:
@@ -331,8 +325,8 @@ license_detections:
         matched_length: 102
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_290.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
+        rule_identifier: gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -346,7 +340,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
-    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
+    identifier: gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d
   - license_expression: gpl-3.0-plus
     license_expression_spdx: GPL-3.0-or-later
     matches:
@@ -360,8 +354,8 @@ license_detections:
         matched_length: 102
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-3.0-plus_290.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE
+        rule_identifier: gpl-3.0-plus_29.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE
         matched_text: |
           This program is free software: you can redistribute it and/or modify
              it under the terms of the GNU General Public License as published by
@@ -375,7 +369,7 @@ license_detections:
 
              You should have received a copy of the GNU General Public License
              along with this program.  If not, see <http://www.gnu.org/licenses/>.
-    identifier: gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f
+    identifier: gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d
   - license_expression: gfdl-1.2-plus
     license_expression_spdx: GFDL-1.2-or-later
     matches:

@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_text: yes
+is_deprecated: yes
 notes: Seen in https://web.archive.org/web/20000816064907/http://home.pacbell.net/david-b/xml/
+replaced_by:
+    - warranty-disclaimer
 ---
 
 * This program is open source software; you may use, copy, modify, and

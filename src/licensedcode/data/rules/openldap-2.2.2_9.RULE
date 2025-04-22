@@ -1,7 +1,10 @@
 ---
 license_expression: openldap-2.2.2
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - openldap-2.2.2
 ---
 
 licenses.nuget.org/OLDAP-2.2.2

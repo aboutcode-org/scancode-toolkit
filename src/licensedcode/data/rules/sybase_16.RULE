@@ -1,7 +1,10 @@
 ---
 license_expression: sybase
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - sybase
 ---
 
 licenses.nuget.org/Watcom-1.0

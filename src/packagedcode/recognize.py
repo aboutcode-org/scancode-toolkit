@@ -118,6 +118,8 @@ def _parse(
             # We should continue when an Exception has occured when trying to
             # recognize a package
             if TRACE:
-                logger_debug(f'_parse: Exception: {str(e)}')
+                import traceback
+                logger_debug(f'_parse: Exception: {str(e)} : {traceback.format_exc()}')
+                raise Exception(f'_parse: error') from e
 
             continue

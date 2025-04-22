@@ -12,7 +12,6 @@ from array import array
 from collections import Counter
 from collections import defaultdict
 from functools import partial
-from operator import itemgetter
 import os
 import sys
 from time import time
@@ -33,6 +32,8 @@ from licensedcode.seq import match_blocks as match_blocks_seq
 from licensedcode import query
 from licensedcode import tokenize
 from licensedcode.spans import Span
+from typing import NamedTuple
+from typing import Callable
 
 """
 Main license index construction, query processing and matching entry points for
@@ -130,11 +131,9 @@ class LicenseIndex(object):
     # slots are not really needed but they help with sanity and avoid an
     # unchecked proliferation of new attributes
     __slots__ = (
-        'len_tokens',
         'len_legalese',
         'dictionary',
         'digit_only_tids',
-        'tokens_by_tid',
 
         'rules_by_id',
         'rules_by_rid',
@@ -175,9 +174,6 @@ class LicenseIndex(object):
         If ``_all_languages`` is True, use all spoken languages license and rules.
         Otherwise, use only English rules and licenses.
         """
-        # total number of unique known tokens
-        self.len_tokens = 0
-
         # largest token ID for a "legalese" token. A token with a larger id than
         # len_legalese is considered a "junk" very common token
         self.len_legalese = 0
@@ -187,11 +183,6 @@ class LicenseIndex(object):
 
         # set of token ids made entirely of digits
         self.digit_only_tids = set()
-
-        # mapping-like of token id int -> token string as a list where the index is the
-        # token id and the value the actual token string.
-        # This the reverse of the dictionary.
-        self.tokens_by_tid = []
 
         # Note: all the following are mappings-like (using lists) of
         # rid-> data are lists of data where the index integer is the rule id.
@@ -291,15 +282,15 @@ class LicenseIndex(object):
         # initial dictionary mapping for known legalese tokens
         ########################################################################
 
-        # FIXME: we should start enumerating at 1 below: token ids then become
+        # TODO: we should start enumerating at 1 below: token ids then become
         # valid "unichr" values, making it easier downstream when used in
         # automatons
 
         self.dictionary = dictionary = dict(_legalese)
         dictionary_get = dictionary.get
 
-        self.len_legalese = len_legalese = len(dictionary)
-        highest_tid = len_legalese - 1
+        self.len_legalese = len_legalese = len(set(dictionary.values()))
+        highest_tid = len_legalese -1
 
         # Add SPDX key tokens to the dictionary: these are always treated as
         # non-legalese. This may seem weird but they are detected in expressions
@@ -539,17 +530,11 @@ class LicenseIndex(object):
         ########################################################################
         # Finalize index data structures
         ########################################################################
-        # Create the tid -> token string lookup structure.
-        ########################################################################
-        self.tokens_by_tid = tokens_by_tid = [
-            ts for ts, _tid in sorted(dictionary.items(), key=itemgetter(1))]
-        self.len_tokens = len_tokens = len(tokens_by_tid)
-
         # some tokens are made entirely of digits and these can create some
         # worst case behavior when there are long runs on these
         ########################################################################
         self.digit_only_tids = intbitset([
-            i for i, s in enumerate(self.tokens_by_tid) if s.isdigit()])
+            i for s, i in dictionary.items() if s.isdigit()])
 
         # Finalize automatons
         ########################################################################
@@ -564,8 +549,9 @@ class LicenseIndex(object):
         # Do some sanity checks
         ########################################################################
 
-        msg = 'Inconsistent structure lengths'
-        assert len_tokens == highest_tid + 1 == len(dictionary), msg
+        len_tokens = max(dictionary.values())
+        msg = 'Inconsistent dictopnary structure lengths'
+        assert highest_tid == max(dictionary.values()), msg
 
         msg = 'Cannot support more than licensedcode.index.MAX_TOKENS: %d' % MAX_TOKENS
         assert len_tokens <= MAX_TOKENS, msg
@@ -574,7 +560,7 @@ class LicenseIndex(object):
         for rules in dupe_rules_by_hash.values():
             if len(rules) == 1:
                 continue
-            drp = [rule.identifier for rule in rules]
+            drp = [f'file://{rule.rule_file()}' for rule in rules]
             drp.sort()
             dupe_rule_paths.append('\n'.join(drp))
 
@@ -590,6 +576,14 @@ class LicenseIndex(object):
         text implies that they can only be matched exactly using an automaton.
         """
         return rule.rid in self.approx_matchable_rids
+
+    @property
+    def tokens_by_tid(self):
+        """
+        Return an approximate mapping  of token id -> token string, only considering one token of
+        a set of token that share the same tid. Used only for debugging and testing.
+        """
+        return {tid: ts for ts, tid in self.dictionary.items()}
 
     def debug_matches(
         self,
@@ -1009,20 +1003,20 @@ class LicenseIndex(object):
 
         matchers = [
             # matcher, include_low in post-matching remaining matchable check
-            (self.get_exact_matches, False, 'aho'),
-            (get_spdx_id_matches, True, 'spdx_lid'),
+            Matcher(function=get_spdx_id_matches, include_low=True, name='spdx_lid', keep_trucking=True),
+            Matcher(function=self.get_exact_matches, include_low=False, name='aho', keep_trucking=False),
         ]
 
         if approximate:
-            matchers += [(approx, False, 'seq'), ]
+            matchers += [Matcher(function=approx, include_low=False, name='seq', keep_trucking=False), ]
 
         already_matched_qspans = []
-        for matcher, include_low, matcher_name in matchers:
+        for mtcher in matchers:
             if TRACE:
                 logger_debug()
-                logger_debug('match_query: matching with matcher:', matcher_name)
+                logger_debug(f'match_query: matching with matcher: {mtcher.name}')
 
-            matched = matcher(
+            matched = mtcher.function(
                 qry,
                 matched_qspans=already_matched_qspans,
                 existing_matches=matches,
@@ -1032,7 +1026,7 @@ class LicenseIndex(object):
             if TRACE:
                 self.debug_matches(
                     matches=matched,
-                    message='matched with: ' + matcher_name,
+                    message=f'matched with: {mtcher.name}',
                     location=qry.location,
                     query_string=qry.query_string,
                 )
@@ -1041,12 +1035,12 @@ class LicenseIndex(object):
             matches.extend(matched)
 
             # Subtract whole text matched if this is long enough
-            for m in matched:
-                if (m.rule.is_license_text
-                    and m.rule.length > 120
-                    and m.coverage() > 98
+            for mtch in matched:
+                if (mtch.rule.is_license_text
+                    and mtch.rule.length > 120
+                    and mtch.coverage() > 98
                 ):
-                    qry.subtract(m.qspan)
+                    qry.subtract(mtch.qspan)
 
             # Check if we have some matchable left: do not match futher if we do
             # not need to collect qspans matched exactly e.g. with coverage 100%
@@ -1054,15 +1048,17 @@ class LicenseIndex(object):
             # fragments (unused for now).
 
             already_matched_qspans.extend(
-                m.qspan for m in matched if m.coverage() == 100)
+                mtch.qspan for mtch in matched if mtch.coverage() == 100)
 
-            if not whole_query_run.is_matchable(
-                include_low=include_low,
-                qspans=already_matched_qspans,
-            ):
-                if TRACE:
-                    logger_debug('  match_query: no more matchable ... stop matching after matcher:', matcher_name)
-                break
+            if not mtcher.keep_trucking:
+
+                if not whole_query_run.is_matchable(
+                    include_low=mtcher.include_low,
+                    qspans=already_matched_qspans,
+                ):
+                    if TRACE:
+                        logger_debug('  match_query: no more matchable ... stop matching after matcher:', mtcher.name)
+                    break
 
             # break if deadline has passed
             if time() > deadline:
@@ -1083,7 +1079,7 @@ class LicenseIndex(object):
             # matching for unknown_licenses. Create a Span to check for unknown
             # based on this.
             original_qspan = Span(0, len(qry.tokens) - 1)
-            good_qspans = (m.qspan for m in good_matches)
+            good_qspans = (mtch.qspan for mtch in good_matches)
             good_qspan = Span().union(*good_qspans)
 
             unmatched_qspan = original_qspan.difference(good_qspan)
@@ -1196,7 +1192,20 @@ class LicenseIndex(object):
         Return a text string from a sequence of token ids.
         Used for tracing and debugging.
         """
-        return u' '.join('None' if t is None else self.tokens_by_tid[t] for t in tokens)
+        tokens_by_tid = self.tokens_by_tid
+        return u' '.join('None' if t is None else tokens_by_tid[t] for t in tokens)
+
+
+class Matcher(NamedTuple):
+    """A matcher used in the match process"""
+    # matcher name used in debugging
+    name: str
+    # function to call, passing a query
+    function: Callable
+    # whether to inlude low tokens when checking if there are matchable left
+    include_low: bool
+    # True if matching should continue after this matcher
+    keep_trucking: bool = True
 
 
 def get_weak_rids(len_legalese, tids_by_rid, _idx):
@@ -1212,13 +1221,14 @@ def get_weak_rids(len_legalese, tids_by_rid, _idx):
         weak_rids_add(rid)
 
     if TRACE:
+        tokens_by_tid = _idx.tokens_by_tid
         for rid in sorted(weak_rids):
             rule = _idx.rules_by_rid[rid]
             message = (
                 'WARNING: Weak rule, made only of frequent junk tokens. '
                 'Can only be matched exactly:',
                 rule.identifier,
-                u' '.join(_idx.tokens_by_tid[t] for t in tids))
+                u' '.join(tokens_by_tid[t] for t in tids))
             logger_debug(u' '.join(message))
 
     return weak_rids

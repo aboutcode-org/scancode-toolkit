@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - other-permissive
 ---
 
 This library is free software; you can redistribute it and/or modify it as you like.

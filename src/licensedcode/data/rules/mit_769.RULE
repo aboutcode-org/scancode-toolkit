@@ -1,9 +1,12 @@
 ---
 license_expression: mit
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
 referenced_filenames:
     - License.txt
+replaced_by:
+    - mit
 ---
 
 * It is licenced {{under the MIT license}}. The full license text can be found

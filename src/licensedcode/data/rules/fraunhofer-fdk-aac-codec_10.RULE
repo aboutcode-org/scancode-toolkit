@@ -1,7 +1,10 @@
 ---
 license_expression: fraunhofer-fdk-aac-codec
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - fraunhofer-fdk-aac-codec
 ---
 
 licenses.nuget.org/FDK-AAC

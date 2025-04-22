@@ -1,7 +1,10 @@
 ---
 license_expression: open-public
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - open-public
 ---
 
 licenses.nuget.org/OPL-1.0

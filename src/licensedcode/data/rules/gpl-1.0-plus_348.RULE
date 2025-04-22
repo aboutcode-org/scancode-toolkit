@@ -1,8 +1,11 @@
 ---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
+is_deprecated: yes
 relevance: 90
 notes: a weak reference typically to the GPL
+replaced_by:
+    - gpl-1.0-plus
 ---
 
 GNU licence

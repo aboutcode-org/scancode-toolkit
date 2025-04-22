@@ -264,6 +264,20 @@ class LicenseMatch(object):
         trace_rule=TRACE_REPR_MATCHED_RULE,
         trace_text=TRACE_REPR_ALL_MATCHED_TEXTS,
     ):
+        return self.representation(
+            trace_spans=trace_spans,
+            trace_thresholds=trace_thresholds,
+            trace_rule=trace_rule,
+            trace_text=trace_text,
+        )
+
+    def representation(
+        self,
+        trace_spans=TRACE_REPR_SPAN_DETAILS,
+        trace_thresholds=TRACE_REPR_THRESHOLDS,
+        trace_rule=TRACE_REPR_MATCHED_RULE,
+        trace_text=TRACE_REPR_ALL_MATCHED_TEXTS,
+    ):
         spans = ''
         if trace_spans:
             spans = (

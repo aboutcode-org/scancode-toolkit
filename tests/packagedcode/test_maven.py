@@ -456,7 +456,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'mit'}
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'apache-2.0 AND mit'
+        expected = 'apache-2.0 AND unknown AND mit'
         assert result == expected
 
     def test_get_license_detections_with_unknown_url_known_comments(self):
@@ -465,7 +465,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'mit'}
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'apache-2.0 AND mit'
+        expected = 'apache-2.0 AND unknown AND mit'
         assert result == expected
 
     def test_get_license_detections_with_unknown_url_unknown_comments(self):
@@ -474,7 +474,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'mit'}
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'apache-2.0 AND mit'
+        expected = 'apache-2.0 AND unknown AND mit'
         assert result == expected
 
     def test_get_license_detections_unknown_name(self):
@@ -483,7 +483,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'mit'}
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'apache-2.0 AND mit'
+        expected = 'unknown AND apache-2.0 AND mit'
         assert result == expected
 
     def test_get_license_detections_same_name_and_url(self):
@@ -509,7 +509,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'MIT', 'url': 'LICENSE.txt'},
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'mit'
+        expected = 'mit AND unknown-license-reference'
         assert result == expected
 
     def test_get_license_detections_with_duplicated_license(self):
@@ -518,7 +518,7 @@ class TestMavenComputeNormalizedLicense(testcase.FileBasedTesting):
             {'name': 'GNU Lesser General Public License', 'url': 'http://www.gnu.org/licenses/lgpl.html'},
         ]
         _detections, result = get_license_detections_and_expression(declared_license)
-        expected = 'lgpl-2.0-plus'
+        expected = 'lgpl-2.0-plus AND lgpl-2.1-plus'
         assert result == expected
 
 

@@ -156,13 +156,11 @@
       ]
     },
     {
-      "identifier": "bsd_new-68720980-08c9-ffb1-f28e-24c2e067385b",
+      "identifier": "bsd_new-9d13d609-d8f8-ab6e-b0ff-2ae14e4359b2",
       "license_expression": "bsd-new",
       "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 1,
-      "detection_log": [
-        "unknown-reference-to-local-file"
-      ],
+      "detection_log": [],
       "reference_matches": [
         {
           "license_expression": "bsd-new",
@@ -177,20 +175,6 @@
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_1302.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1302.RULE"
-        },
-        {
-          "license_expression": "bsd-new",
-          "license_expression_spdx": "BSD-3-Clause",
-          "from_file": "pypi/LICENSE.rst",
-          "start_line": 1,
-          "end_line": 1,
-          "matcher": "2-aho",
-          "score": 99.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 99,
-          "rule_identifier": "bsd-new_89.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
         }
       ]
     },
@@ -429,26 +413,10 @@
               "rule_relevance": 100,
               "rule_identifier": "bsd-new_1302.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_1302.RULE"
-            },
-            {
-              "license_expression": "bsd-new",
-              "license_expression_spdx": "BSD-3-Clause",
-              "from_file": "pypi/LICENSE.rst",
-              "start_line": 1,
-              "end_line": 1,
-              "matcher": "2-aho",
-              "score": 99.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 99,
-              "rule_identifier": "bsd-new_89.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_89.RULE"
             }
           ],
-          "detection_log": [
-            "unknown-reference-to-local-file"
-          ],
-          "identifier": "bsd_new-68720980-08c9-ffb1-f28e-24c2e067385b"
+          "detection_log": [],
+          "identifier": "bsd_new-9d13d609-d8f8-ab6e-b0ff-2ae14e4359b2"
         },
         {
           "license_expression": "bsd-new",

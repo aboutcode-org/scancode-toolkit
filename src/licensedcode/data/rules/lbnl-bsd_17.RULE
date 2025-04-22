@@ -3,6 +3,8 @@ license_expression: lbnl-bsd
 is_license_text: yes
 is_deprecated: yes
 notes: This is now dhb-lbnl-bsd-2007 LICENSE
+replaced_by:
+    - dhb-lbnl-bsd-2007
 ---
 
 1. Redistribution and use in source and binary forms, with or without

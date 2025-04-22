@@ -1,7 +1,10 @@
 ---
 license_expression: mit
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - mit
 ---
 
 licence   Licenced under MIT licence

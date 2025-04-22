@@ -24,12 +24,11 @@ declared_license_expression_spdx: GPL-2.0-or-later
 other_license_expression: (gpl-2.0-plus AND gpl-2.0-plus) AND (gpl-2.0-plus AND gpl-2.0-plus)
   AND bsd-new AND bsd-simplified AND mit AND mit AND bsd-simplified AND (gpl-2.0-plus AND gpl-2.0-plus)
   AND (gpl-2.0-plus AND gpl-2.0-plus) AND mit AND bsd-simplified AND bsd-simplified AND bsd-simplified
-  AND (lgpl-2.1-plus AND lgpl-2.1-plus AND lgpl-2.1)
+  AND (lgpl-2.1-plus AND lgpl-2.1-plus)
 other_license_expression_spdx: (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later
   AND GPL-2.0-or-later) AND BSD-3-Clause AND BSD-2-Clause AND MIT AND MIT AND BSD-2-Clause AND
   (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND MIT
-  AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND (LGPL-2.1-or-later AND LGPL-2.1-or-later
-  AND LGPL-2.1-only)
+  AND BSD-2-Clause AND BSD-2-Clause AND BSD-2-Clause AND (LGPL-2.1-or-later AND LGPL-2.1-or-later)
 license_detections: []
 other_license_detections:
   - license_expression: bsd-simplified
@@ -45,10 +44,10 @@ other_license_detections:
         matched_length: 4
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: bsd-simplified_136.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_136.RULE
+        rule_identifier: bsd-simplified_50.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-simplified_50.RULE
         matched_text: license BSD-2-clause
-    identifier: bsd_simplified-2383ae10-5494-e069-46c2-e2d6cb56951f
+    identifier: bsd_simplified-71450002-f253-703f-89da-2ec134364868
   - license_expression: bsd-new
     license_expression_spdx: BSD-3-Clause
     matches:
@@ -255,8 +254,8 @@ other_license_detections:
           On Debian systems, the complete text of the GNU General
           Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
     identifier: gpl_2_0_plus-cc17af11-ba60-7b3d-40d0-91bc262b80f8
-  - license_expression: lgpl-2.1-plus AND lgpl-2.1
-    license_expression_spdx: LGPL-2.1-or-later AND LGPL-2.1-only
+  - license_expression: lgpl-2.1-plus
+    license_expression_spdx: LGPL-2.1-or-later
     matches:
       - license_expression: lgpl-2.1-plus
         license_expression_spdx: LGPL-2.1-or-later
@@ -275,14 +274,14 @@ other_license_detections:
         license_expression_spdx: LGPL-2.1-or-later
         from_file:
         start_line: 176
-        end_line: 187
-        matcher: 2-aho
+        end_line: '190'
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 106
+        matched_length: 133
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: lgpl-2.1-plus_36.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_36.RULE
+        rule_identifier: lgpl-2.1-plus_517.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_517.RULE
         matched_text: |
           This library is free software: you can redistribute it and/or modify
           it under the terms of the GNU Lesser General Public License as published by
@@ -296,22 +295,10 @@ other_license_detections:
 
           You should have received a copy of the GNU Lesser General Public License
           along with this library.  If not, see <http://www.gnu.org/licenses/>.
-      - license_expression: lgpl-2.1
-        license_expression_spdx: LGPL-2.1-only
-        from_file:
-        start_line: 189
-        end_line: '190'
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 27
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: lgpl-2.1_293.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_293.RULE
-        matched_text: |
+
           On Debian systems, the complete text of the GNU Lesser General
           Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
-    identifier: lgpl_2_1_plus_and_lgpl_2_1-204b36b2-a9f6-ee19-a401-520ccd0f3862
+    identifier: lgpl_2_1_plus-5f0c85ab-aa49-accc-a25f-f11b4e8bc6da
 copyright: |
   2018 Giuseppe Scrivano <gscrivan@redhat.com>
   Akihiro Suda <suda.akihiro@lab.ntt.co.jp>

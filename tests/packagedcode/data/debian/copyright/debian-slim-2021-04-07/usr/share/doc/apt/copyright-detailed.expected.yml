@@ -17,8 +17,8 @@ license_detections:
         matched_length: 2
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-2.0-plus_374.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_374.RULE
+        rule_identifier: gpl-2.0-plus_225.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-2.0-plus_225.RULE
         matched_text: 'License: GPLv2+'
       - license_expression: gpl-2.0-plus
         license_expression_spdx: GPL-2.0-or-later
@@ -50,6 +50,6 @@ license_detections:
           See /usr/share/common-licenses/GPL-2, or
           <http://www.gnu.org/copyleft/gpl.txt> for the terms of the latest version
           of the GNU General Public License.
-    identifier: gpl_2_0_plus-74a334f0-c991-de85-1854-94aa27b9207b
+    identifier: gpl_2_0_plus-23d81b2b-cbc8-38a7-f26a-4852df54ce23
 other_license_detections: []
 copyright: copyright 1997, 1998, 1999 Jason Gunthorpe and others

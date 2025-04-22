@@ -1,7 +1,10 @@
 ---
 license_expression: agpl-3.0-plus
 is_license_tag: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - agpl-3.0-plus
 ---
 
 licenses: {{AGPL-3.0-or-later}}

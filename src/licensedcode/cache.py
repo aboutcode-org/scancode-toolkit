@@ -284,7 +284,7 @@ def build_licensing(licenses_db=None):
     from licensedcode.models import load_licenses
 
     licenses_db = licenses_db or load_licenses()
-    return Licensing((LicenseSymbolLike(lic) for lic in licenses_db.values()))
+    return Licensing(symbols=(LicenseSymbolLike(lic) for lic in licenses_db.values()))
 
 
 def build_spdx_symbols(licenses_db=None):
@@ -323,7 +323,6 @@ def get_licenses_by_spdx_key(
     license db if not provided.
 
     Optionally include deprecated if ``include_deprecated`` is True.
-
 
     Optionally make the keys lowercase if ``lowercase_keys`` is True.
 

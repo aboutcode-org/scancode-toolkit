@@ -60,7 +60,7 @@
       ]
     },
     {
-      "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f",
+      "identifier": "gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d",
       "license_expression": "gpl-3.0-plus",
       "license_expression_spdx": "GPL-3.0-or-later",
       "detection_count": 1,
@@ -76,8 +76,8 @@
           "matched_length": 102,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "gpl-3.0-plus_290.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE"
+          "rule_identifier": "gpl-3.0-plus_29.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE"
         }
       ]
     }
@@ -283,11 +283,11 @@
               "matched_length": 102,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "gpl-3.0-plus_290.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_290.RULE"
+              "rule_identifier": "gpl-3.0-plus_29.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-3.0-plus_29.RULE"
             }
           ],
-          "identifier": "gpl_3_0_plus-494d0068-7138-a14f-4cbb-fd2137263a4f"
+          "identifier": "gpl_3_0_plus-ab631a6e-10ac-69e1-8910-f809c0735e6d"
         }
       ],
       "license_clues": [],

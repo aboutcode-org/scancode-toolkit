@@ -404,8 +404,8 @@ other_license_detections:
         matched_length: 64
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: gpl-1.0-plus_600.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_600.RULE
+        rule_identifier: gpl-1.0-plus_602.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl-1.0-plus_602.RULE
         matched_text: |
           This program is free software; you can redistribute it and/or modify
           it under the terms of the GNU General Public License as published by
@@ -414,7 +414,7 @@ other_license_detections:
 
           On Debian systems, the complete text of version 1 of the GNU General
           Public License can be found in `/usr/share/common-licenses/GPL-1'
-    identifier: gpl_1_0_plus-7fb9c875-428b-be17-3c9d-10d24f6fdce2
+    identifier: gpl_1_0_plus-3a204c34-9b1f-adaa-9188-41beee43a326
   - license_expression: gpl-2.0
     license_expression_spdx: GPL-2.0-only
     matches:

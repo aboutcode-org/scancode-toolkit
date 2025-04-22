@@ -6,7 +6,7 @@ ignorable_urls:
     - http://www.gnu.org/licenses/lgpl.txt
     - https://www.mozilla.org/en-US/MPL/1.1/
 ---
-
+{{
 <licenses>
  <license>
  <name>Mozilla Public License Version 1.1</name>
@@ -21,3 +21,4 @@ ignorable_urls:
  <url>http://www.gnu.org/licenses/lgpl.txt</url>
  </license>
  </licenses>
+ }}

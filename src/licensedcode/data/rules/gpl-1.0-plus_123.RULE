@@ -1,7 +1,10 @@
 ---
 license_expression: gpl-1.0-plus
 is_license_tag: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - gpl-1.0-plus
 ---
 
 COPYING    Copyright / {{GNU General Public License}}

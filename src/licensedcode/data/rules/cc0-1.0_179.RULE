@@ -2,7 +2,10 @@
 license_expression: cc0-1.0
 is_license_reference: yes
 is_required_phrase: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - cc0-1.0
 ---
 
 licenses.nuget.org/CC0-1.0

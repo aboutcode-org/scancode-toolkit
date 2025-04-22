@@ -1,9 +1,12 @@
 ---
 license_expression: mit
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
 referenced_filenames:
     - LICENSE
+replaced_by:
+    - mit
 ---
 
 This project is {{licensed under the MIT}} license, see LICENSE for details.

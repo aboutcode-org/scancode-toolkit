@@ -1,7 +1,10 @@
 ---
 license_expression: lgpl-2.1-plus
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - lgpl-2.1-plus
 ---
 
 * This software may be modified and distributed under the terms of the
