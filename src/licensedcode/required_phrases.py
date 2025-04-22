@@ -26,6 +26,7 @@ from licensedcode.models import get_ignorables
 from licensedcode.models import get_normalized_ignorables
 from licensedcode.models import get_rules_by_expression
 from licensedcode.models import get_rules_by_identifier
+from licensedcode.models import get_stopwords_in_short_text
 from licensedcode.models import load_rules
 from licensedcode.models import rules_data_dir
 from licensedcode.models import Rule
@@ -900,7 +901,6 @@ def generate_new_required_phrase_rules(
                 lic.name,
                 lic.short_name,
                 lic.spdx_license_key,
-                lic.key,
             ] + list(lic.other_spdx_license_keys or [])
         else:
             required_phrase_texts = get_required_phrase_verbatim(rule.text)
@@ -1024,6 +1024,7 @@ class RequiredPhraseRuleCandidate:
         """
         Return True if this phrase is a minimally suitable to use as a required phrase.
         Use the original rule to ensure we skip when referenced_filenames could be damaged.
+        Also skip short rules that would contain stopwords as they could not be detected correctly.
         """
         # long enough in words and length if one word
         text = self.normalized_text
@@ -1038,6 +1039,11 @@ class RequiredPhraseRuleCandidate:
         # not a referenced filename
         to_ignore.update(map(get_normalized_text, rule.referenced_filenames))
         if text in to_ignore:
+            return False
+
+        # short rules cannot contain stopwords or else matching will be inaccurate
+        stops_in_rule = get_stopwords_in_short_text(text=text)
+        if stops_in_rule:
             return False
 
         return True
