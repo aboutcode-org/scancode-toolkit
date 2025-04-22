@@ -20,10 +20,12 @@
   "organization_url": "http://mina.apace.org/",
   "licenses": [
     {
-      "name": "Apache 2.0 License",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0",
-      "comments": null,
-      "distribution": "repo"
+      "license": {
+        "name": "Apache 2.0 License",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0",
+        "comments": null,
+        "distribution": "repo"
+      }
     }
   ],
   "developers": [],

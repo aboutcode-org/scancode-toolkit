@@ -14,16 +14,20 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "Public Domain",
-      "url": null,
-      "comments": null,
-      "distribution": null
+      "license": {
+        "name": "Public Domain",
+        "url": null,
+        "comments": null,
+        "distribution": null
+      }
     },
     {
-      "name": "GPL",
-      "url": "http://nexb.com",
-      "comments": null,
-      "distribution": null
+      "license": {
+        "name": "GPL",
+        "url": "http://nexb.com",
+        "comments": null,
+        "distribution": null
+      }
     }
   ],
   "developers": [],

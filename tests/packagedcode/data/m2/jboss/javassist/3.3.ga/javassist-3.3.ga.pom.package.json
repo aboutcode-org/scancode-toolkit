@@ -50,7 +50,7 @@
           "rule_relevance": 50,
           "rule_identifier": "spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_mpl-1.1_for_mpl-1.1.RULE",
-          "matched_text": "- name: MPL 1.1"
+          "matched_text": "name: MPL 1.1"
         },
         {
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
@@ -65,7 +65,7 @@
           "rule_relevance": 100,
           "rule_identifier": "mpl-1.1_or_lgpl-2.1-plus_6.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_or_lgpl-2.1-plus_6.RULE",
-          "matched_text": "  url: http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html"
+          "matched_text": "url: http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html"
         },
         {
           "license_expression": "mpl-1.1 OR lgpl-2.1-plus",
@@ -80,7 +80,7 @@
           "rule_relevance": 100,
           "rule_identifier": "mpl-1.1_or_lgpl-2.1-plus_5.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mpl-1.1_or_lgpl-2.1-plus_5.RULE",
-          "matched_text": "  comments: Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately."
+          "matched_text": "comments: Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately."
         }
       ],
       "identifier": "mpl_1_1_and__mpl_1_1_or_lgpl_2_1_plus-78e94784-b15c-76e4-0a76-6ca49b732494"
@@ -89,7 +89,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: MPL 1.1\n  url: http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html\n  comments: Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.\n",
+  "extracted_license_statement": "- license:\n    name: MPL 1.1\n    url: http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html\n    comments: Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/jboss/javassist@3.3.ga?classifier=sources"

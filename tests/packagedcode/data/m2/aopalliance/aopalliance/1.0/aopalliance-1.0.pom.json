@@ -14,10 +14,12 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "Public Domain",
-      "url": null,
-      "comments": null,
-      "distribution": null
+      "license": {
+        "name": "Public Domain",
+        "url": null,
+        "comments": null,
+        "distribution": null
+      }
     }
   ],
   "developers": [],

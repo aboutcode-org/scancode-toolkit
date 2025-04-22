@@ -56,7 +56,7 @@
               "rule_relevance": 100,
               "rule_identifier": "apache-2.0_1379.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1379.RULE",
-              "matched_text": "- name: Apache License, version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
+              "matched_text": "name: Apache License, version 2.0\nurl: http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
           ],
           "identifier": "apache_2_0-1096ecf3-d346-9d22-51d7-abc4e11a8ad0"
@@ -65,7 +65,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "- name: Apache License, version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
+      "extracted_license_statement": "- license:\n    name: Apache License, version 2.0\n    url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?classifier=sources"
@@ -886,7 +886,7 @@
                   "rule_relevance": 100,
                   "rule_identifier": "apache-2.0_1379.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1379.RULE",
-                  "matched_text": "- name: Apache License, version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
+                  "matched_text": "name: Apache License, version 2.0\nurl: http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
               ],
               "identifier": "apache_2_0-1096ecf3-d346-9d22-51d7-abc4e11a8ad0"
@@ -895,7 +895,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "- name: Apache License, version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
+          "extracted_license_statement": "- license:\n    name: Apache License, version 2.0\n    url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?classifier=sources"

@@ -85,7 +85,7 @@
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_182.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_182.RULE",
-          "matched_text": "- name: The Apache License, Version 2.0"
+          "matched_text": "name: The Apache License, Version 2.0"
         },
         {
           "license_expression": "apache-2.0",
@@ -100,7 +100,7 @@
           "rule_relevance": 100,
           "rule_identifier": "apache-2.0_1317.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1317.RULE",
-          "matched_text": "  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
+          "matched_text": "url: http://www.apache.org/licenses/LICENSE-2.0.txt"
         }
       ],
       "identifier": "apache_2_0-82b98cc4-34fe-2658-e07e-839e12d32ec7"
@@ -109,7 +109,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: The Apache License, Version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
+  "extracted_license_statement": "- license:\n    name: The Apache License, Version 2.0\n    url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/edu.psu.swe.commons/commons-jaxrs@1.22?classifier=sources"

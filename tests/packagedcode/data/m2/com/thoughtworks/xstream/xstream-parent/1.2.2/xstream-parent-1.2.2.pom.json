@@ -14,10 +14,12 @@
   "organization_url": "http://xstream.codehaus.org",
   "licenses": [
     {
-      "name": "BSD style",
-      "url": "http://xstream.codehaus.com/license.html",
-      "comments": null,
-      "distribution": "repo"
+      "license": {
+        "name": "BSD style",
+        "url": "http://xstream.codehaus.com/license.html",
+        "comments": null,
+        "distribution": "repo"
+      }
     }
   ],
   "developers": [],

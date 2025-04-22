@@ -59,7 +59,7 @@
               "rule_relevance": 100,
               "rule_identifier": "cc0-1.0_203.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE",
-              "matched_text": "- name: CC0 Universal\n  url: http://www.creativecommons.org/publicdomain/zero/1.0/"
+              "matched_text": "name: CC0 Universal\nurl: http://www.creativecommons.org/publicdomain/zero/1.0/"
             }
           ],
           "identifier": "cc0_1_0-6bdf45cc-fe1e-2f20-02e3-fbae31f10c0e"
@@ -68,7 +68,7 @@
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "- name: CC0 Universal\n  url: http://www.creativecommons.org/publicdomain/zero/1.0/\n",
+      "extracted_license_statement": "- license:\n    name: CC0 Universal\n    url: http://www.creativecommons.org/publicdomain/zero/1.0/\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/com.github.peteroupc/numbers@1.7.4?classifier=sources"
@@ -406,7 +406,7 @@
                   "rule_relevance": 100,
                   "rule_identifier": "cc0-1.0_203.RULE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc0-1.0_203.RULE",
-                  "matched_text": "- name: CC0 Universal\n  url: http://www.creativecommons.org/publicdomain/zero/1.0/"
+                  "matched_text": "name: CC0 Universal\nurl: http://www.creativecommons.org/publicdomain/zero/1.0/"
                 }
               ],
               "identifier": "cc0_1_0-6bdf45cc-fe1e-2f20-02e3-fbae31f10c0e"
@@ -415,7 +415,7 @@
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "- name: CC0 Universal\n  url: http://www.creativecommons.org/publicdomain/zero/1.0/\n",
+          "extracted_license_statement": "- license:\n    name: CC0 Universal\n    url: http://www.creativecommons.org/publicdomain/zero/1.0/\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/com.github.peteroupc/numbers@1.7.4?classifier=sources"
