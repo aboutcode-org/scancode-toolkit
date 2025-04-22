@@ -140,6 +140,18 @@ class TestPyPiPkgInfoAndMetadata(PackageTester):
         expected_loc = self.get_test_loc('pypi/metadata/v21/PKG-INFO-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_sdist_pkg_infometadata_format_v22(self):
+        test_file = self.get_test_loc('pypi/metadata/v22/PKG-INFO')
+        package = pypi.PythonSdistPkgInfoFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/metadata/v22/PKG-INFO-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+    
+    def test_parse_sdist_pkg_infometadata_format_v23(self):
+        test_file = self.get_test_loc('pypi/metadata/v23/PKG-INFO')
+        package = pypi.PythonSdistPkgInfoFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/metadata/v23/PKG-INFO-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
     def test_parse_sdist_pkg_info_basic(self):
         test_file = self.get_test_loc('pypi/metadata/PKG-INFO')
         package = pypi.PythonSdistPkgInfoFile.parse(test_file)
@@ -238,11 +250,23 @@ class TestPypiInstalledWheel(PackageTester):
         expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.1/with_sources/anonapi-0.0.19.dist-info-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
+    def test_parse_with_unpacked_wheel_meta_v22_1(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.2/trimesh-4.6.1.dist-info/METADATA')
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.2/trimesh-4.6.1.dist-info-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)   
+
     def test_parse_with_unpacked_wheel_meta_v23_1(self):
         test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.3/beartype-0.19.0.dist-info/METADATA')
         package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
         expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.3/beartype-0.19.0.dist-info-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
+
+    def test_parse_with_unpacked_wheel_meta_v24_1(self):
+        test_file = self.get_test_loc('pypi/unpacked_wheel/metadata-2.4/narwhals-1.29.0.dist-info/METADATA')
+        package = pypi.PythonInstalledWheelMetadataFile.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/unpacked_wheel/metadata-2.4/narwhals-1.29.0.dist-info-expected.json')
+        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)    
 
 
 class TestPypiUnpackedSdist(PackageTester):

@@ -14,7 +14,7 @@ jobs:
     - template: etc/ci/azure-posix.yml
       parameters:
           job_name: core_tests
-          image_name: ubuntu-20.04
+          image_name: ubuntu-24.04
           python_versions: ['3.10']
           test_suites:
               misc_and_scancode: |
@@ -197,8 +197,8 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: ubuntu20_test_all_supported_click_versions
-          image_name: ubuntu-20.04
+          job_name: ubuntu22_test_all_supported_click_versions
+          image_name: ubuntu-22.04
           python_versions: ['3.9', '3.10', '3.11', '3.12']
           python_architecture: x64
           test_suites:
@@ -225,8 +225,8 @@ jobs:
 
     - template: etc/ci/azure-posix.yml
       parameters:
-          job_name: ubuntu20_cpython_latest_from_pip
-          image_name: ubuntu-20.04
+          job_name: ubuntu24_cpython_latest_from_pip
+          image_name: ubuntu-24.04
           python_versions: ['3.9', '3.10', '3.11', '3.12']
           test_suites:
               all: venv/bin/pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] && venv/bin/pytest -n 2 -vvs tests/scancode/test_cli.py

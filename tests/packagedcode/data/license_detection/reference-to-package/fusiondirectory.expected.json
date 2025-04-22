@@ -5204,7 +5204,7 @@
       ]
     },
     {
-      "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-0b1195bd-b395-981c-5c28-9bc61177229d",
+      "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-1d67076d-fc82-2d09-98fd-fdb7477e3cb8",
       "license_expression": "gpl-2.0-plus AND gpl-3.0-plus AND lgpl-2.1-plus AND lgpl-3.0-plus AND bsd-new AND bsd-original AND mit AND public-domain",
       "license_expression_spdx": "GPL-2.0-or-later AND GPL-3.0-or-later AND LGPL-2.1-or-later AND LGPL-3.0-or-later AND BSD-3-Clause AND BSD-4-Clause AND MIT AND LicenseRef-scancode-public-domain",
       "detection_count": 2,
@@ -5365,8 +5365,8 @@
           "matched_length": 163,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "mit_1356.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE",
+          "rule_identifier": "mit_1456.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1456.RULE",
           "matched_text": "License: Expat\n Permission is hereby granted, free of charge, to any person obtaining a copy of\n this software and associated documentation files (the \"Software\"), to deal in\n the Software without restriction, including without limitation the rights to\n use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\n of the Software, and to permit persons to whom the Software is furnished to do\n so, subject to the following conditions:\n .\n The above copyright notice and this permission notice shall be included in all\n copies or substantial portions of the Software.\n .\n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n SOFTWARE.",
           "matched_text_diagnostics": "License: Expat\n Permission is hereby granted, free of charge, to any person obtaining a copy of\n this software and associated documentation files (the \"Software\"), to deal in\n the Software without restriction, including without limitation the rights to\n use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\n of the Software, and to permit persons to whom the Software is furnished to do\n so, subject to the following conditions:\n .\n The above copyright notice and this permission notice shall be included in all\n copies or substantial portions of the Software.\n .\n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n SOFTWARE."
         },
@@ -5512,7 +5512,7 @@
       ]
     },
     {
-      "identifier": "mit-f7c9941e-e7dd-ab33-1cda-a2aa7f78c087",
+      "identifier": "mit-f1081db8-cf8f-d788-87a4-610ad4860824",
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
       "detection_count": 2,
@@ -5529,8 +5529,8 @@
           "matched_length": 5,
           "match_coverage": 100.0,
           "rule_relevance": 99,
-          "rule_identifier": "mit_1361.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1361.RULE",
+          "rule_identifier": "mit_1461.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1461.RULE",
           "matched_text": "License: MIT/X11 (BSD like)",
           "matched_text_diagnostics": "License: MIT/X11 (BSD like)"
         }
@@ -7052,8 +7052,8 @@
                   "matched_length": 163,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "mit_1356.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE",
+                  "rule_identifier": "mit_1456.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1456.RULE",
                   "matched_text": "License: Expat\n Permission is hereby granted, free of charge, to any person obtaining a copy of\n this software and associated documentation files (the \"Software\"), to deal in\n the Software without restriction, including without limitation the rights to\n use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\n of the Software, and to permit persons to whom the Software is furnished to do\n so, subject to the following conditions:\n .\n The above copyright notice and this permission notice shall be included in all\n copies or substantial portions of the Software.\n .\n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n SOFTWARE.",
                   "matched_text_diagnostics": "License: Expat\n Permission is hereby granted, free of charge, to any person obtaining a copy of\n this software and associated documentation files (the \"Software\"), to deal in\n the Software without restriction, including without limitation the rights to\n use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\n of the Software, and to permit persons to whom the Software is furnished to do\n so, subject to the following conditions:\n .\n The above copyright notice and this permission notice shall be included in all\n copies or substantial portions of the Software.\n .\n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n SOFTWARE."
                 },
@@ -7123,7 +7123,7 @@
                 }
               ],
               "detection_log": [],
-              "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-0b1195bd-b395-981c-5c28-9bc61177229d"
+              "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-1d67076d-fc82-2d09-98fd-fdb7477e3cb8"
             },
             {
               "license_expression": "gpl-2.0-plus",
@@ -7716,14 +7716,14 @@
                   "matched_length": 5,
                   "match_coverage": 100.0,
                   "rule_relevance": 99,
-                  "rule_identifier": "mit_1361.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1361.RULE",
+                  "rule_identifier": "mit_1461.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1461.RULE",
                   "matched_text": "License: MIT/X11 (BSD like)",
                   "matched_text_diagnostics": "License: MIT/X11 (BSD like)"
                 }
               ],
               "detection_log": [],
-              "identifier": "mit-f7c9941e-e7dd-ab33-1cda-a2aa7f78c087"
+              "identifier": "mit-f1081db8-cf8f-d788-87a4-610ad4860824"
             },
             {
               "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
@@ -13491,8 +13491,8 @@
               "matched_length": 163,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "mit_1356.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1356.RULE",
+              "rule_identifier": "mit_1456.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1456.RULE",
               "matched_text": "License: Expat\n Permission is hereby granted, free of charge, to any person obtaining a copy of\n this software and associated documentation files (the \"Software\"), to deal in\n the Software without restriction, including without limitation the rights to\n use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\n of the Software, and to permit persons to whom the Software is furnished to do\n so, subject to the following conditions:\n .\n The above copyright notice and this permission notice shall be included in all\n copies or substantial portions of the Software.\n .\n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n SOFTWARE.",
               "matched_text_diagnostics": "License: Expat\n Permission is hereby granted, free of charge, to any person obtaining a copy of\n this software and associated documentation files (the \"Software\"), to deal in\n the Software without restriction, including without limitation the rights to\n use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\n of the Software, and to permit persons to whom the Software is furnished to do\n so, subject to the following conditions:\n .\n The above copyright notice and this permission notice shall be included in all\n copies or substantial portions of the Software.\n .\n THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n SOFTWARE."
             },
@@ -13562,7 +13562,7 @@
             }
           ],
           "detection_log": [],
-          "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-0b1195bd-b395-981c-5c28-9bc61177229d"
+          "identifier": "gpl_2_0_plus_and_gpl_3_0_plus_and_lgpl_2_1_plus_and_lgpl_3_0_plus_and_bsd_new_and_bsd_original_and_mit_and_public_domain-1d67076d-fc82-2d09-98fd-fdb7477e3cb8"
         }
       ],
       "license_clues": [
@@ -14285,14 +14285,14 @@
               "matched_length": 5,
               "match_coverage": 100.0,
               "rule_relevance": 99,
-              "rule_identifier": "mit_1361.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1361.RULE",
+              "rule_identifier": "mit_1461.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1461.RULE",
               "matched_text": "License: MIT/X11 (BSD like)",
               "matched_text_diagnostics": "License: MIT/X11 (BSD like)"
             }
           ],
           "detection_log": [],
-          "identifier": "mit-f7c9941e-e7dd-ab33-1cda-a2aa7f78c087"
+          "identifier": "mit-f1081db8-cf8f-d788-87a4-610ad4860824"
         },
         {
           "license_expression": "public-domain AND bsd-original AND gpl-1.0-plus",
