@@ -1,0 +1,9 @@
+---
+license_expression: mit AND sgmlug
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 100
+notes: Seen at https://github.com/ClusterHQ/gentoo/blob/788ab0efedd847a20fd99d952fd611ce2f98aaa9/usr/portage/app-text/linuxdoc-tools/linuxdoc-tools-0.9.68-r1.ebuild#L13
+---
+
+LICENSE="MIT SGMLUG"

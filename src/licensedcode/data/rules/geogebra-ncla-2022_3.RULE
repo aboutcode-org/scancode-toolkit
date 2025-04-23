@@ -1,0 +1,11 @@
+---
+license_expression: geogebra-ncla-2022
+is_license_tag: yes
+referenced_filenames:
+    - LICENSE.txt
+---
+
+LICENSE=	GEOGEBRA
+LICENSE_NAME=	GeoGebra Non-Commercial License Agreement
+LICENSE_FILE=	LICENSE.txt
+LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept

@@ -1,0 +1,13 @@
+---
+license_expression: mapbox-tos-2024
+is_license_notice: yes
+notes: Seen in https://github.com/cgcs2000/mapbox-gl-js/blob/71af1cf42daa6db68a4a77e9bbde873e04285da0/README.md?plain=1#L59
+---
+
+must be used according to the {{Mapbox Terms of Service}}. This license allows developers
+with a current active Mapbox account to use and modify the Mapbox Web SDK.
+Developers may modify the Mapbox Web SDK code so long as the modifications do not
+change or interfere with marked portions of the code related to billing, accounting,
+and anonymized data collection. The Mapbox Web SDK only sends anonymized usage data,
+which Mapbox uses for fixing bugs and errors, accounting, and generating aggregated anonymized statistics.
+This license terminates automatically if a user no longer has an active Mapbox account.

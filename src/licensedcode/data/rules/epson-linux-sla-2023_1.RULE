@@ -1,0 +1,12 @@
+---
+license_expression: epson-linux-sla-2023
+is_license_tag: yes
+referenced_filenames:
+    - COPYING.EPSON
+---
+
+LICENSE=	EPSON
+LICENSE_NAME=	{{EPSON END USER SOFTWARE LICENSE AGREEMENT}}
+LICENSE_FILE=	/usr/share/doc/ /COPYING.EPSON
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
+LEGAL_TEXT=	License does not permit public sharing or revenue earning, and restricts exports
