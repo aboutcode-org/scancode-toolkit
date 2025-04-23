@@ -1,0 +1,154 @@
+---
+key: activision-eula
+short_name: Activision EULA
+name: Activision EULA
+category: Proprietary Free
+owner: Activision
+homepage_url: https://www.doomworld.com/eternity/activision_eula.txt
+spdx_license_key: LicenseRef-scancode-activision-eula
+other_urls:
+    - https://doomwiki.org/wiki/Raven_source_code_licensing
+    - https://github.com/NixOS/nixpkgs/blob/master/lib/licenses.nix
+ignorable_emails:
+    - legal@activision.com
+---
+
+SOFTWARE LICENSE AGREEMENT
+
+IMPORTANT - READ CAREFULLY: USE OF THIS PROGRAM IS SUBJECT TO THE SOFTWARE
+LICENSE TERMS SET FORTH BELOW. "PROGRAM" INCLUDES ALL SOFTWARE INCLUDED WITH
+THIS AGREEMENT, THE ASSOCIATED MEDIA, ANY PRINTED MATERIALS, AND ANY ON-LINE OR
+ELECTRONIC DOCUMENTATION, AND ANY AND ALL COPIES OF SUCH SOFTWARE AND MATERIALS.
+BY OPENING THIS PACKAGE, INSTALLING, AND/OR USING THE PROGRAM AND ANY SOFTWARE
+PRGRAMS INCLUDED WITHIN, YOU ACCEPT THE TERMS OF THIS LICENSE WITH ACTIVISION,
+INC. ("ACTIVISION").
+
+   LIMITED USE LICENSE. Subject to the conditions described below, Activision
+grants you the non-exclusive, non-transferable, limited right and license to
+install and use one copy of this Program solely and exclusively for your
+personal use. All rights not specifically granted under this Agreement are
+reserved by Activision and, as applicable, Activision's licensors. This Program
+is licensed, not sold, for your use. Your license confers no title or ownership
+in this Program and should not be construed as a sale of any rights in this
+Program.
+
+   LICENSE CONDITIONS.
+You shall not:
+o  Exploit this Program or any of its parts commercially.
+o  Use this Program, or permit use of this Program, on more than one computer,
+computer terminal, or workstation at the same time.
+o  Make copies of this Program or any part thereof, or make copies of the
+materials accompanying this Program.
+o  Use the program, or permit use of this Program, in a network, multi-user
+arrangement or remote access arrangement, including any online use, except as
+otherwise explicitly provided by this Program.
+o  Sell, rent, lease or license any copies of this Program, without the express
+prior written consent of Activision.
+o  Remove, disable or circumvent any proprietary notices or labels contained on
+or within the Program.
+
+   OWNERSHIP.  All title, ownership rights and intellectual property rights in and
+to this Program and any and all copies thereof (including but not limited to any
+titles, computer code, themes, objects, characters, character names, stories,
+dialog, catch phrases, locations, concepts, artwork, animation, sounds, musical
+compositions, audio-visual effects, methods of operation, moral rights, any
+related documentation, and "applets" incorporated into this Program) are owned
+by Activision, affiliates of Activision or Activision's licensors. This Program
+is protected by the copyright laws of the United States, international copyright
+treaties and conventions and other laws. This Program contains certain licensed
+materials and Activision's licensors may protect their rights in the event of
+any violation of this Agreement.
+
+PROGRAM UTILITIES. This Program contains certain design, programming and
+processing utilities, tools, assets and other resources ("Program Utilities")
+for use with this Program that allow you to create customized new game levels
+and other related game materials for personal use in connection with the Program
+("New Game Materials"). The use of the Program Utilities is subject to the
+following additional license restrictions:
+
+"   You agree that, as a condition to your using the Program Utilities, you will
+not use or allow third parties to use the Program Utilities and the New Game
+Materials created by you for any commercial purposes, including but not limited
+to selling, renting, leasing, licensing, distributing, or otherwise transferring
+the ownership of such New Game Materials, whether on a stand alone basis or
+packaged in combination with the New Game Materials created by others, through
+any and all distribution channels, including, without limitation, retail sales
+and on-line electronic distribution. You agree not to solicit, initiate or
+encourage any proposal or offer from any person or entity to create any New Game
+Materials for commercial distribution. You agree to promptly inform Activision
+in writing of any instances of your receipt of any such proposal or offer.
+"   If you decide to make available the use of the New Game Materials created by
+you to other gamers, you agree to do so solely without charge.
+"   New Game Materials may be created only if such New Game Materials can be used
+exclusively in combination with the retail version of the Program. New Game
+Materials may not be designed to be used as a stand-alone product.
+"   New Game Materials must not contain any illegal, obscene or defamatory
+materials, materials that infringe rights of privacy and publicity of third
+parties or (without appropriate irrevocable licenses granted specifically for
+that purpose) any trademarks, copyright-protected works or other properties of
+third parties.
+"   All New Game Materials must contain prominent identification at least in any
+on-line description and with reasonable duration on the opening screen: (a) the
+name and E-mail address of the New Game Materials' creator(s) and (b) the words
+"THIS MATERIAL IS NOT MADE OR SUPPORTED BY ACTIVISION."
+
+WARRANTY INFORMATION.  THIS PROGRAM IS PROVIDED AS IS. ACTIVISION AND ITS
+AFFILIATES MAKE NO WARRANTIES OF ANY KIND, WHETHER ORAL OR WRITTEN, EXPRESS OR
+IMPLIED, INCLUDING ANY WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE OR NON-INFRINGEMENT, AND NO OTHER REPRESENTATIONS OR CLAIMS OF ANY KIND
+SHALL BE BINDING ON OR OBLIGATE ACTIVISION OR ITS AFFILIATES.
+
+LIMITATION ON DAMAGES.  IN NO EVENT WILL ACTIVISION OR ANY AFFILIATES OF
+ACTIVISION BE LIABLE FOR SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES RESULTING
+FROM POSSESSION, USE OR MALFUNCTION OF THE PROGRAM, INCLUDING DAMAGES TO
+PROPERTY, LOSS OF GOODWILL, COMPUTER FAILURE OR MALFUNCTION AND, TO THE EXTENT
+PERMITTED BY LAW, DAMAGES FOR PERSONAL INJURIES, EVEN IF ACTIVISION HAS BEEN
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. ACTIVISION'S LIABILITY SHALL NOT
+EXCEED THE ACTUAL PRICE PAID FOR THE LICENSE TO USE THIS PROGRAM. SOME
+STATES/COUNTRIES DO NOT ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS
+AND/OR THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO
+THE ABOVE LIMITAIONS AND/OR EXCLUSION OR LIMITATION OF LIABILITY MAY NOT APPLY
+TO YOU. THIS WARRANTY GIVES YOU SPECIFIC LEGAL RIGHTS, AND YOU MAY HAVE OTHER
+RIGHTS WHICH VARY FROM JURISDICTION TO JURISDICTION.
+
+TERMINATION. Without prejudice to any other rights of Activision, this Agreement
+will terminate automatically if you fail to comply with its terms and
+conditions. In such event, you must destroy all copies of this Program and all
+of its component parts.
+U.S. GOVERNMENT RESTRICTED RIGHTS. The Program and documentation have been
+developed entirely at private expense and are provided as "Commercial Computer
+Software" or "restricted computer software." Use, duplication or disclosure by
+the U.S. Government or a U.S. Government subcontractor is subject to the
+restrictions set forth in subparagraph (c)(1)(ii) of the Rights in Technical
+Data and Computer Software clauses in DFARS 252.227-7013 or as set forth in
+subparagraph (c)(1) and (2) of the Commercial Computer Software Restricted
+Rights clauses at FAR 52.227-19, as applicable. The Contractor/Manufacturer is
+Activision, Inc., 3100 Ocean Park Boulevard, Santa Monica, California 90405.
+
+INJUNCTION. Because Activision would be irreparably damaged if the terms of this
+Agreement were not specifically enforced, you agree that Activision shall be
+entitled, without bond, other security or proof of damages, to appropriate
+equitable remedies with respect to breaches of this Agreement, in addition to
+such other remedies as Activision may otherwise have under applicable laws.
+
+INDEMNITY.  You agree to indemnify, defend and hold Activision, its partners,
+affiliates, licensors, contractors, officers, directors, employees and agents
+harmless from all damages, losses and expenses arising directly or indirectly
+from your acts and omissions to act in using the Product pursuant to the terms
+of this Agreement
+
+MISCELLANEOUS. This Agreement represents the complete agreement concerning this
+license between the parties and supersedes all prior agreements and
+representations between them. It may be amended only by a writing executed by
+both parties. If any provision of this Agreement is held to be unenforceable for
+any reason, such provision shall be reformed only to the extent necessary to
+make it enforceable and the remaining provisions of this Agreement shall not be
+affected. This Agreement shall be construed under California law as such law is
+applied to agreements between California residents entered into and to be
+performed within California, except as governed by federal law and you consent
+to the exclusive jurisdiction of the state and federal courts in Los Angeles,
+California.
+
+If you have any questions concerning this license, you may contact Activision at
+3100 Ocean Park Boulevard, Santa Monica, California 90405, (310) 255-2000,
+Attn. Business and Legal Affairs, legal@activision.com

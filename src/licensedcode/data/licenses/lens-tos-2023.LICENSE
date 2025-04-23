@@ -1,0 +1,179 @@
+---
+key: lens-tos-2023
+short_name: Lens TOS 2023
+name: Lens Terms of Service Agreement 2023
+category: Proprietary Free
+owner: Lens
+homepage_url: https://k8slens.dev/legal/tos
+spdx_license_key: LicenseRef-scancode-lens-tos-2023
+ignorable_urls:
+    - https://www.mirantis.com/company/privacy-policy
+ignorable_emails:
+    - mirantis.legal@mirantis.com
+---
+
+Lens Terms of Service Agreement
+
+October 16, 2023
+
+PLEASE READ THIS AGREEMENT CAREFULLY BEFORE USING ACCESSING OR CONSUMING THE SOFTWARE OR SERVICES. BY CLICKING YOUR ASSENT OR USING, ACCESSING OR CONSUMING SOFTWARE OR SERVICES, YOU SIGNIFY YOUR ASSENT TO AND ACCEPTANCE OF THIS AGREEMENT AND ACKNOWLEDGE YOU HAVE READ AND UNDERSTAND THE TERMS. AN INDIVIDUAL ACTING ON BEHALF OF AN ENTITY REPRESENTS THAT HE OR SHE HAS THE AUTHORITY TO ENTER INTO THIS AGREEMENT ON BEHALF OF THAT ENTITY. IF YOU DO NOT ACCEPT THE TERMS OF THIS AGREEMENT, THEN DO NOT USE THE SOFTWARE OR SERVICES. YOU CONFIRM THAT YOU ARE AT LEAST 18 YEARS OLD OR THE AGE OF MAJORITY IN YOUR JURISDICTION.
+
+1. THE AGREEMENT
+
+1.1. These terms are collectively an agreement between Mirantis, Inc., a Delaware corporation, with offices at 900 E. Hamilton Ave., Suite 650, Campbell, CA 95008, USA (“Mirantis” sometimes “our” or “we”) and the user of the Mirantis software or services who accepts the terms of this agreement. Subject to the terms and conditions of this agreement, Mirantis provides software and tools for cloud native software development, devops and related purposes (the “Lens Software”), centralized cloud services (“Lens Cloud”), related support and other services (“Lens Services”), provided through and/or marketed at our website at k8slens.dev, including all sub-domains (the “Website”). Except to the extent you and Mirantis have executed a separate agreement, these terms and conditions exclusively govern your access to and use of the Lens Software, Lens Cloud, Lens Services and Website (collectively, the “Services”), and constitute a binding legal agreement between you and Mirantis (the “Terms”). These Terms, including all Additional Terms referenced in Section 1.2 below, are, collectively, the “Agreement”. If you accept or agree to the Agreement on behalf of a company, organization or other legal entity (a “Legal Entity”), you represent and warrant that you have the authority to bind that Legal Entity to the Agreement and, in such event, “Customer” “you” and “your” will refer and apply to that company or other legal entity. You acknowledge and agree that, by accessing, purchasing or using the Services, you are indicating that you have read, understand and agree to be bound by the Agreement whether or not you have created a Lens ID account. If you do not agree to these Terms and all applicable additional terms, then you have no right to access or use any of the Services.
+
+1.2. The Services are subject to additional terms as shown below (“Additional Terms”). For clarity, unless otherwise indicated in specific Additional Terms, Services are provided by Mirantis.
+
+    Lens Desktop Software Additional Terms
+
+    Lens Cloud Services Additional Terms
+
+    1.3. Mirantis may modify or discontinue Services and/or features or elements of Services at any time and without notifying you, provided that we will not make changes to the Service for the purpose of altering your charges during the current term of your service.
+
+    1.4. Mirantis may, from time to time, make changes to this Agreement. When such changes are made, Mirantis will make the updated Agreement available and accessible through the Services, or by sending a notice to you via email. You shall be responsible for reviewing and becoming familiar with any such modifications. Your continued use of any part of the Services following such notification constitutes your acceptance of the modified Agreement. This Agreement may also be superseded by expressly-designated legal notices or terms applicable to specific features or services. These expressly-designated legal notices or terms are incorporated into this Agreement and supersede the provision(s) of this Agreement that are designated as being superseded.
+
+    1.5. For avoidance of doubt, this Agreement does not cover any Mirantis software other than Lens Software. Other Mirantis software may be distributed and licensed under separate software license terms and any professional services (other than the Services set forth in this Agreement in connection with the Lens Software) will be offered under additional or separate terms.
+
+2. GENERAL USE
+
+2.1. Subject to terms and conditions of this Agreement, Mirantis grants you a limited, personal, non-exclusive, and non-transferable license to use Services. You may not modify, edit, copy, reproduce, create derivative works of, reverse engineer, alter, enhance or in any way exploit Services in any manner.
+
+2.2. The Services are intended for persons above the age to consent to processing in their region (e.g. 13 in the US, 16 in the EU, etc.), however, you must be at least 18 to make purchases. If you are under the age of 18 or whatever is the age of majority where you access the Services, you may make purchases only with the involvement of your legal guardian, and you represent and warrant that your legal guardian has read, understood and agreed to this Agreement.
+
+2.3. If you breach any of the terms of this Agreement, the license described in section 2.1 will terminate automatically and you must immediately stop using all Services, and delete any related downloaded software and printed materials.
+
+3. LENS ID ACCOUNT
+
+3.1. The use of some features of the Services may require signing up and registering for a personal Lens ID account with Mirantis (“Lens ID”). If you choose to register for a Lens ID, you shall provide accurate, complete, and up-to-date registration information. Some Services may exchange your Lens ID login information to authentication keys or tokens (“Tokens”). You are responsible for all use of your Lens ID and for the security of your password and any Tokens that may be used to access and use your Lens ID and you acknowledge that you will be solely and fully responsible for all losses incurred through, or in connection with, access to and use of the Software and Services under such credentials. If you become aware of any unauthorized use of your Lens ID, you agree to notify Mirantis immediately, change your password, and revoke all tokens.
+
+3.2. Your Lens ID is personal to you and you are allowed to create a single Lens ID for yourself. You are not allowed to create Lens IDs for others and you are not allowed to create multiple Lens IDs for yourself or others.
+
+3.3. Some features of the Services may have usage limits. Mirantis reserves the right to enforce usage limits in its sole discretion. Repeated exceeding of the usage limits may lead to suspension or termination of your Lens ID.
+
+4. PRIVACY
+
+4.1. You agree to allow Mirantis and its affiliates to store and use information provided by you, including names, business phone numbers, and business e-mail addresses anywhere Mirantis does business that will be used only in connection with Mirantis’ business relationship with you, and may be transferred worldwide between Mirantis, its affiliates, subcontractors, partners, and assignees for uses consistent with Mirantis’ business relationship with you. Except for the foregoing and except for Lens Cloud Services as further stipulated in the Additional Terms, your use of, and Mirantis providing the Services does not require you to provide, disclose or give access to Mirantis any personal information (e.g. Personally Identifiable Information) or similarly protected sensitive data or personal data to Mirantis. You agree to take all reasonable steps to avoid disclosure of personal data to Mirantis; and that you are liable for all your personal data related obligations, including without limitation, confidentiality and data protection and privacy obligations and restrictions, imposed by applicable law, regulation or court order. If disclosed, you warrant that you have obtained all the relevant consents to disclose personal data to Mirantis, and you will defend, indemnify and hold Mirantis harmless from and against any claims arising out of your breach of this Section 4.1.
+
+4.2. The Lens Software may automatically communicate with Mirantis servers to perform automated software updates and usage tracking. These features are designed to help provide a great end user experience.
+
+    Automated Lens Software Updates. The Lens Software may automatically communicate with Mirantis servers to determine whether there are updated version(s) of the Lens Software available. You agree that the Software may be updated automatically on your computer without providing any further notice or receiving any additional consent. You may manually opt- out from automated Software updates.
+
+    Telemetry Usage Tracking. In the default mode, the Lens Software automatically communicates with Mirantis servers to send certain telemetry data about the usage. This data is collected only for Mirantis legitimate interest and for the purpose of making the Software better. The telemetry data contain information about user interface events and generic information about the attached clusters. For avoidance of doubt, no sensitive data is sent, but some of the data can be qualified as data identifying an individual under various jurisdictions and you may manually opt-out from sending telemetry data.
+
+    4.3. Mirantis will send occasional promotional emails about features, updates, events, and relevant announcements. By providing your email, you agree to receive these communications. You can opt out when you create your Lens ID or by clicking the "Unsubscribe" link in our emails. Please note that you may still receive important non-promotional communications.
+
+    4.4. For more information about how Mirantis handles and processes personal information, please visit https://www.mirantis.com/company/privacy-policy/.
+
+5. FEES & PAYMENTS
+
+5.1. Mirantis reserves the right to require payment of fees from you for certain services and features made available to you via Services. If you choose to subscribe to any features that carry a fee, you shall pay all applicable fees, as described and Order Form and in the then applicable price list for the features you select. “Order Form(s)” means each written order form(s) executed (including online) by you and Mirantis incorporating this Agreement and is subject to the terms and conditions herein.
+
+5.2. When you subscribe to a feature that carries a fee (“Subscription”), we will invoice you for your first fee on the date that we process the order for your Subscription. We may suspend or terminate your Lens ID and/or access to any or all the Services if your payment is late and/or your offered payment method cannot be processed.
+
+5.3. All fees are exclusive of any applicable sales, use, import or export taxes, duties, fees, value-added taxes, tariffs or other amounts attributable to your use of the Services (collectively, “Taxes”). You are solely responsible for the payment of any such Taxes. In the event we are required to pay Taxes on your behalf, you shall promptly reimburse us for all amounts paid.
+
+5.4 You agree to provide Mirantis with complete and accurate billing and contact information. A service charge of the highest interest rate permitted by applicable law, whichever is lower, may be applied by Mirantis to all amounts which are not paid when due under this Agreement and any Order Form(s), accruing from the due date. You agree that neither you, nor your affiliates shall withhold or offset Fees due to Mirantis for any reason. Should Mirantis be required to use a collection agency or other means to collect payment due under this Agreement and/or any applicable Order Form(s), You agree to pay reasonable collection agency fees or reasonable attorney’s fees associated with such collection.
+
+5.4. In case your purchase is for a subscription having monthly, annual or any other term, the Order will automatically renew for a new term at the end of current term. The pricing of your subscription may change at the time of renewal to then current pricing. You may elect not to renew by giving us notice at any time until the date of renewal.
+
+5.5 Mirantis reserves the right to change its price list and to institute new charges at any time, upon notice to you, which may be sent by email to an email address associated with your Lens ID or made available to you through the Services. Your use of the Services following such notification constitutes your acceptance of any new or increased charges.
+
+6. INTELLECTUAL PROPRIETARY RIGHTS
+
+6.1. The Services are protected by copyright, trademark, and other laws of the United States and foreign countries. Except as expressly provided in the Agreement, Mirantis and its licensors exclusively own all right, title and interest in and to the Services, including all associated intellectual property rights. You will not remove, alter or obscure any copyright, trademark, service mark or other proprietary rights notices incorporated in or accompanying the Services.
+
+6.2. As between you and Mirantis, you own all right, title and interest (including, all intellectual property rights) in and to the content you have created (“User Content”).
+
+6.3. You grant Mirantis a perpetual, irrevocable, fully-paid and royalty-free license to collect, access, process, transmit, store, copy, share, display, and use any data and information collected by Mirantis or provided by you in connection with your use of the Services in order to provide, operate, develop, improve, and/or optimize any of our Services, and otherwise as permitted by our Privacy Policy.
+
+6.4. All trademarks, service marks, logos, trade names and any other proprietary designations of Mirantis or Lens used herein are trademarks or registered trademarks of Mirantis. Any other trademarks, service marks, logos, trade names and any other proprietary designations are the trademarks or registered trademarks of their respective parties.
+
+6.5. Mirantis respects the intellectual property rights of others and encourages you to do the same. Accordingly, we have a policy of removing User Content that violates intellectual property rights of others, suspending access to the Services (or any portion thereof) to any user who uses the Services in violation of someone’s intellectual property rights, and/or terminating in appropriate circumstances the Lens ID of any user who uses the Services in violation of someone’s intellectual property rights.
+
+6.6. Pursuant to Title 17 of the United States Code, Section 512, we have implemented procedures for receiving written notification of claimed copyright infringement and for processing such claims in accordance with such law. If you believe your copyright or other intellectual property right is being infringed by a user of the Services, please provide written notice to our Mirantis for notice of claims of infringement:
+
+Mirantis, Inc. ATTN: Mirantis Legal 900 E. Hamilton Ave., Suite 650 Campbell, CA 95008 USA
+
+Email: mirantis.legal@mirantis.com
+
+To be sure the matter is handled immediately, your written notice must:
+
+    Contain your physical or electronic signature;
+    Identify the copyrighted work or other intellectual property alleged to have been infringed;
+    Identify the allegedly infringing material in a sufficiently precise manner to allow us to locate that material;
+    Contain adequate information by which we can contact you (including postal address, telephone number, and e-mail address);
+    Contain a statement that you have a good faith belief that use of the copyrighted material or other intellectual property is not authorized by the owner, the owner’s agent or the law;
+    Contain a statement that the information in the written notice is accurate; and
+    Contain a statement, under penalty of perjury, that you are authorized to act on behalf of the copyright or other intellectual property right owner.
+
+Unless the notice pertains to copyright or other intellectual property infringement, Mirantis will be unable to address the listed concern.
+
+6.7. Mirantis reserves the right, in its sole discretion, to terminate the Lens ID and disable access to Services of any user who is the subject of repeated DMCA or other infringement notifications.
+
+7. FEEDBACK
+
+You may provide comments, bug reports, ideas or other feedback to Mirantis about the Services or Lens Materials, including without limitation about how to improve the Services or any other Mirantis products (“Feedback”). By submitting any Feedback, you agree that Mirantis is free to use such Feedback at its discretion and without any additional compensation to you. You hereby grant Mirantis a perpetual, irrevocable, nonexclusive license under all rights necessary to incorporate and use your Feedback for any purpose, including but not limited to, developing, manufacturing, having manufactured, licensing, marketing, and selling, directly or indirectly, products and services using such Feedback. You understand and agree that we are not obligated to use, display, reproduce, or distribute any such ideas, know-how, concepts, or techniques contained in the Feedback, and you have no right to compel such use, display, reproduction, or distribution.
+
+8. THIRD-PARTY SERVICES
+
+As part of providing the Services, Mirantis may make services developed and maintained by third-parties available to you (“Third-Party Services”). You acknowledge that your use of any Third-Party Services may be subject to additional fees, a separate agreement between you and the Third-Party Services provider, and that Mirantis shall not be a party to any such agreement. Your use of such Third-Party Services is at your own risk and Mirantis does not endorse and is not responsible for the accuracy, functionality, usefulness, or intellectual property rights of or relating to any Third-Party Services.
+
+9. EXTERNAL SITES
+
+Services may include hyperlinks to other web sites or resources (collectively, “External Sites”). Such links are provided solely as a convenience to our users and Mirantis has no control over any External Sites which are provided by companies or persons other than Mirantis. You acknowledge and agree that Mirantis is not responsible for the availability of any External Sites, and does not endorse any advertising, products or other materials on or available from the External Sites. If you decide to access any of the External Sites linked to from the Services, you do so entirely at your own risk and you must follow the privacy policies and terms and conditions for those External Sites.
+
+10. TERMINATION
+
+10.1. Mirantis may terminate this Agreement at its sole discretion at any time without prior notice or liability.
+
+10.2. You may terminate this Agreement at any time by deleting your Lens ID and discontinuing your use of the Services.
+
+10.3. Upon any termination or expiration of this Agreement, whether by you or Mirantis, any information (including User Content) that you have submitted on or through the Services may no longer be accessed by you and Mirantis will have no obligation to maintain any such information in its storage, databases or to forward any such information to you or any third party. You are solely responsible for retrieving your User Content from the Services prior to termination of your account. If we terminate the Agreement or disable your Lens ID other than as a result of your breach of this Agreement, we will provide you a reasonable opportunity to retrieve your User Content.
+
+10.4. Upon any termination of this Agreement, Sections 5 (Fees & Payments), 6 (Proprietary Rights), 7 (Feedback), 8 (Third-Party Services), 9 (External Sites), 10 (Termination), 11 (Exclusion of Warranties), 12 (Limitation of Liability), 13 (Indemnification), and 14 (Miscellaneous) shall survive.
+
+11. EXCLUSION OF WARRANTIES
+
+YOU EXPRESSLY UNDERSTAND AND AGREE THAT YOUR USE OF THE SERVICES AND LENS MATERIALS IS AT YOUR SOLE RISK AND THAT THE SERVICES AND LENS MATERIALS ARE PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT WARRANTIES OF ANY KIND EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, MIRANTIS MAKES NO EXPRESS WARRANTIES AND DISCLAIMS ALL IMPLIED WARRANTIES OF ANY KIND, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT OF THIRD PARTY RIGHTS, CORRECTNESS, ACCURACY AND RELIABILITY. WITHOUT LIMITING THE GENERALITY OF THE FOREGOING, MIRANTIS DOES NOT REPRESENT OR WARRANT TO YOU THAT: (I) YOUR USE OF THE SERVICES WILL MEET YOUR REQUIREMENTS; (II) YOUR USE OF THE SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE OR FREE FROM ERROR; (III) ANY DATA PROVIDED THROUGH THE SERVICES WILL BE ACCURATE; OR (IV) THE SERVICES, LENS MATERIALS, USER CONTENT, OR ANY OTHER CONTENT OR FEATURE MADE AVAILABLE ON OR THROUGH THE SERVICES ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
+
+12. LIMITATION OF LIABILITY
+
+12.1. IN NO EVENT WILL MIRANTIS BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, PUNITIVE, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES WHICH MAY BE INCURRED BY YOU, HOWEVER CAUSED AND UNDER ANY THEORY OF LIABILITY, INCLUDING, BUT NOT LIMITED TO, ANY LOSS OF REVENUE OR PROFIT (WHETHER INCURRED DIRECTLY OR INDIRECTLY), ANY LOSS OF GOODWILL OR BUSINESS REPUTATION, ANY LOSS OF DATA, THE COST OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, OR OTHER INTANGIBLE LOSS, EVEN IF MIRANTIS OR A MIRANTIS AUTHORIZED REPRESENTATIVE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+12.2. MIRANTIS’ TOTAL AGGREGATE LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATING TO THIS AGREEMENT IS LIMITED TO THE GREATER OF (I) THE AGGREGATE AMOUNTS PAID BY YOU TO MIRANTIS UNDER THIS AGREEMENT IN THE 12-MONTH PERIOD IMMEDIATELY PRECEDING THE DATE THE CLAIM AROSE, OR (II) $1.00 (USD) THE EXISTENCE OF MULTIPLE CLAIMS OR SUITS UNDER OR RELATED TO THIS AGREEMENT WILL NOT ENLARGE OR EXTEND THIS LIMITATION OF DAMAGES. THE PROVISIONS OF THIS SECTION DO NOT WAIVE OR LIMIT OUR ABILITY TO OBTAIN INJUNCTIVE OR OTHER EQUITABLE RELIEF FOR BREACH OF THIS AGREEMENT.
+
+12.3. You acknowledge and agree that Mirantis makes the Services and Lens Materials available to you and enters into this Agreement in reliance upon the warranty disclaimers and the limitations of liability set forth herein, that the warranty disclaimers and the limitations of liability set forth herein reflect a reasonable and fair allocation of risk between you and Mirantis, and that the warranty disclaimer and the limitations of liability set forth herein form an essential basis of the bargain between you and Mirantis. Mirantis would not be able to provide the Services or Lens Materials to you without these limitations.
+
+13. INDEMNIFICATION
+
+You agree to defend, hold harmless and indemnify Mirantis and its subsidiaries, affiliates, officers, agents, employees, advertisers, licensors, suppliers or partners from and against any third party claim arising from or in any way related to (i) your breach of the Agreement; (ii) your violation of applicable laws, rules or regulations in connection with your use of the Services or Lens Materials; or (iii) your User Content, including any liability or expense arising from all claims, losses, damages (actual and consequential), suits, judgments, litigation costs and attorneys’ fees, of every kind and nature. In such case, Mirantis will provide you with written notice of such claim, suit or action; will provide you the opportunity to control the defense and/or settlement of such claim, suit or action; and will provide you reasonable assistance in such defense or settlement, upon reasonable request.
+
+14. MISCELLANEOUS
+
+14.1. The Agreement constitutes the entire agreement between you and Mirantis regarding your use of the Services and Lens Materials and completely replaces any prior agreements between you and Mirantis in relation to the Services and Lens Materials. To the extent the terms of any purchase order, written terms or conditions, or other document that you submit to us that contains terms that are different from, in conflict with, or in addition to the terms of this Agreement, such terms are hereby rejected by Mirantis and will be void and of no effect.
+
+14.2. You agree that Mirantis may provide you with notices, including those regarding changes to this Agreement, by email, regular mail, or postings on the Service. By providing Mirantis your email address, you consent to receiving electronic communications from us in lieu of communication by postal mail. These electronic communications are part of your relationship with us. You agree that any notices, agreements, disclosures or other communications that we send you electronically will satisfy any legal communication requirements, including that such communications be in writing. You may provide us with legal notices via email to mirantis.legal@mirantis.com.
+
+14.3. This Agreement will be governed by and construed in accordance with the laws of the State of California, without reference to its conflicts of law provisions. If You or your affiliate are located, registered or domiciled in Australia, New Zealand, Canada, the United States, the United Kingdom, the European Union or European Economic Area then any dispute regarding this Agreement will be subject to the exclusive jurisdiction of the state courts in and for Santa Clara County, California, U.S.A. (or, if there is federal jurisdiction, the United States District Court for the Northern District of California).
+
+14.4. In the event You or your affiliate are not located, registered or domiciled in Australia, New Zealand, Canada, the United States, the United Kingdom, the European Union or European Economic Area, then you agree that any dispute arising from this Agreement shall be settled by the American Arbitration in an accordance its Commercial Arbitration Rules and judgment on the aware rendered by the arbitrator may be entered in any court having jurisdiction thereof. The arbitration shall be governed by the laws of the states of California and the United States of America without reference it their conflict of laws principles. Claims shall be heard by a single arbitrator and the place of arbitration shall be Santa Clara County, California. The arbitrators will have the authority to allocate the costs of the arbitration process among the parties but will only have the authority to allocate attorney’s fees if a particular applicable law permits the to do so, This clause shall not preclude parties from seeking provisional remedies in aid of arbitration from a court of appropriate jurisdiction.
+
+14.5 This Agreement will not be governed by the United Nations Convention on Contracts for the International Sale of Goods, the application of which is hereby expressly excluded. The Uniform Computer Information Transactions Act (UCITA) or any similar laws or regulations do not apply to this Agreement. Any claim or action, regardless of form, arising out of this Agreement or an Order Form will be made against Mirantis, Inc. alone.
+
+14.4. Any unauthorized use or disclosure of Website or Mirantis ’ intellectual property may cause immediate and irreparable injury to the Mirantis and, notwithstanding anything to the contrary in this Agreement, in the event of such unauthorized use and/or disclosure, Mirantis will be entitled, in addition to any other available remedies, to seek immediate injunctive and other equitable relief, without bond and without the necessity of showing actual monetary damages.
+
+14.5. Neither party may assign this Agreement or any of its rights or obligations hereunder without the prior written consent of the other party, which shall not be unreasonably withheld; provided that either party may assign this Agreement or rights granted hereunder without the consent of the other party (i) to its Affiliate, and (ii) the transfer of this Agreement or rights granted hereunder to a successor entity in the event of a merger, corporate reorganization, or acquisition of all or substantially all the assets of a party. In no event shall the Agreement be transferred or assigned to a direct competitor of the other party. Any attempted assignment or transfer in violation of this Section 14.5 shall be null and void.
+
+14.6. The waiver or failure of Mirantis to exercise in any respect any right provided for in this Agreement will not be deemed a waiver of any further right under this Agreement.
+
+14.7. If any provision of this Agreement is held by a court of competent jurisdiction to be unenforceable because it is invalid or in conflict with any law of any relevant jurisdiction, the validity of the remaining provisions will not be affected, and the rights and obligations of the parties will be construed and enforced as if this Agreement did not contain the particular provisions held to be unenforceable and to the extent possible, the court will modify or reform this Agreement to give as much effect as possible to that provision.
+
+14.8. Neither party will be liable to the other for any failure to perform any of its obligations (except payment obligations) under this Agreement during any period in which the performance is delayed by circumstances beyond its reasonable control, such as systemic, pandemics, electrical, telecommunications, or other utility failures, earthquake, storms, fire, flood or other elements of nature, embargo, strike, riot, terrorism, sabotage, change in law or policy, or the intervention of any governmental authority .
+
+14.9. The parties are independent contractors. No provision of this Agreement creates an association, trust, partnership, or joint venture or imposes fiduciary duties, obligations, or liability between you and Mirantis. Neither party will have any rights, power, or authority to act or create an obligation, express or implied, on behalf of another party except as specified in this Agreement.
+
+14.10. We may identify you as a customer to current and prospective clients. You hereby give us the permission to use your logo and name in any of our marketing materials, including our Services.
+
+15. CONTACT US
+
+If you have any questions about this Agreement or otherwise need to contact us for any reason, you can reach us at mirantis.legal@mirantis.com.

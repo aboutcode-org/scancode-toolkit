@@ -1,0 +1,287 @@
+---
+key: octl-0.21
+short_name: Open Compensation Token License v0.21
+name: Open Compensation Token License Version 0.21
+category: Source-available
+owner: license-token
+homepage_url: https://github.com/open-compensation-token-license/license/blob/main/LICENSE.md
+spdx_license_key: LicenseRef-scancode-octl-0.21
+faq_url: https://medium.com/@iuaugmenta/the-open-compensation-token-license-octl-a-blockchain-revolution-for-open-source-monetization-8a759dd56ca7
+other_urls:
+    - https://www.license-token.com/
+    - https://github.com/iunera/iu-transport-datatypes/blob/main/src/main/java/com/iunera/publictransport/keys/RideKeysGeneration.java
+ignorable_copyrights:
+    - Copyright (c) Tim Frey and Christian Schmitt
+    - copyright or otherwise protected Work, Derivate Works, Projects, Source
+    - copyright protected Work, Derivate Works, Projects, Source
+ignorable_holders:
+    - Tim Frey and Christian Schmitt
+    - otherwise protected Work, Derivate Works, Projects, Source
+    - protected Work, Derivate Works, Projects, Source
+ignorable_urls:
+    - https://github.com/open-compensation-token-license/license
+    - https://github.com/open-compensation-token-license/octl
+---
+
+Open Compensation Token License
+Version 0.21, December 2024
+Copyright © Tim Frey and Christian Schmitt
+
+Implementation: License-token.com
+
+TERMS AND CONDITIONS FOR USING NON-FUNGIBLE TOKENS AND SMART CONTRACTS TO LICENSE SOFTWARE
+
+IMPORTANT: THIS IS AN OPEN BETA LICENSE AND ASSOCIATED SMART CONTRACTS AND WILL BE INCREMENTALLY IMPROVED. USE AT YOUR OWN RISK!
+
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+
+Preamble
+
+This License is in active development. Therefore, anyone using the current version should check for updates regularly. Later versions of this License and associated software will supersede the current version.
+
+This License and associated software artifacts come without any warranties or guarantees. It is to be assumed that, like in any software project, there are bugs and failures.
+
+Goal of the Open Compensation Token License is to enable creators (for instance of software) to open source and tie their Work to non-fungible tokens to earn fair royalty for their work in a non-fungible token based economy. This possibility shall advance and help distributed ledger technology to become mainstream and motivate creatives to publish their work in an open source and collaborative way.
+
+In a nutshell, the Open Compensation Token License and associated smart contracts leverage native fits between usage permissions or rights and the associated creations in a completely non-fungible token manner, defining "license terms and conditions," "usage licenses," and the creations themselves.
+
+1. Definitions
+
+The Open Compensation Token License is this document and associated software realizations. Concrete, not limiting, definitions of terms and given in the following:
+
+1.1. General Terms
+
+Open Compensation Token License (short OCTL) shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document. In this document the (OCTL) is also referred to as this License. The actual version of the Open Compensation Token License (short OCTL) shall be found in text in https://github.com/open-compensation-token-license/license.
+
+OCTL smart contracts shall mean the software artifacts provided as realization of the OCTL and their manifestation in one or more different blockchains. Deployed and valid or updated instances references of those smart contracts (contract addresses) and their way of operation and documentation to interact with those shall be found in: https://github.com/open-compensation-token-license/octl. The final execution of those smart contracts and interaction of Legal Actors shall happen in a decentralized network and not be controlled by a singular entity. Hence, when OCTL smart contracts are mentioned in this document it shall always mean their source code resulting in their final object code, their storage and their associated resulting way of operation and execution in a distributed and decentralized way. Distributed ledger addresses where active OCTL smart contracts can be used to on a blockchain are documented in ONCHAINCONTRACTS.md.
+
+OCTL Root Project shall mean the Digital Artifacts of the OCTL, including the Open Compensation Token License itself and OCTL smart contracts and documentation. Ideally, one can also recognize most of the OCTL Digital Artifacts additionally by the tag "octl-sid:7dec4673-5559-4895-9714-1cdd61a58b57" in files.
+
+OCTL Application shall mean an actors usage of the OCTL associated OCTL smart contracts to issue, distribute, sell or define Application Licenses.
+
+OCTL Application License shall mean the License, permission and grant to apply the OCTL to a Project or a Digital Artifact.
+
+Application License shall mean any kind of copyright or patent grant to use, reproduce, apply a Digital Artifact in Source or Object form which made available under the terms and conditions of the OCTL.
+
+Token or also labelled crypto tokens are artifacts created by means of distributed ledger technology (DLT).
+
+1.2. Actors
+
+Legal Entity shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.
+
+Legal Actor shall mean any natural person, Legal Entity or any form of association representing the will of natural persons or Legal Entities.
+
+Rights Owner shall mean any Legal Actor owning the copyrights, patents or similar rights, permissions grants to issue copyright, patent grants or similar of Digital Artifacts, Work, Source, Object, Derivative Works, Contribution or similar to others.
+
+OCTL Maintainers shall mean the group of Rights Owners of the OCTL itself.
+
+OCTL Applicant shall mean any kind of Legal Actor, applying the OCTL to one or more Projects or Digital Artifacts.
+
+Project Contributor shall mean any Legal Actor on behalf of whom a Contribution has been received by Licensor that was accepted incorporated within the Work.
+
+Project Owners shall mean any Legal Actors, owning the rights and permissions of a Project.
+
+Licensor shall mean the Rights Owner or Legal Actor authorized by the Rights Owner that is granting an Application License according to the terms and conditions of the OCTL, such as for instance Project Owners.
+
+Licensee shall mean any Legal Actor who got granted a License by a Licensor, according to the terms of the OCTL.
+
+1.3. Artifacts
+
+Digital Artifact shall mean any kind of digital manifestation of an intellectual creation for which a copyright or patent right exists.
+
+Source form shall mean any Digital Artifact in the preferred form for making modifications, including but not limited to images, texts, instructions, training set or instructions for machine learning, concepts, software source code, documentation source, and configuration files.
+
+Object form shall mean a Digital Artifact in any form resulting from mechanical transformation or translation of a source form, including but not limited to compiled object code, trained or configured machine learning models, generated documentation, and conversions to other media types.
+
+Work shall mean the work of authorship of a Digital Artifact, whether in Source or Object form.
+
+Derivative Works shall mean any Work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original Work of authorship. For the purposes of this OCTL, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of the Work and Derivative Works thereof.
+
+Contribution shall mean any Work of authorship, including the original version of the work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to the Licensor for inclusion in the Work by the Copyright Owner or by an individual or Legal Entity authorized to submit on behalf of the Copyright Owner. For the purposes of this definition, "submitted" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the Copyright Owner as "Not a Contribution."
+
+Project shall mean any Legal Actors assembly of Work, Derivative Work, Contributions in form of any kind of manifested, referenced or similar set of Digital Artifacts, such as a git project for example, or a sole Digital Artifact.
+
+OCTL Fellow Project or OCTL Digital Artifact shall mean a Project or Digital Artifact made available under the terms and conditions of the OCTL, as indicated by a copyright notice that is included in or attached to the work.
+
+1.4. Actor representations
+
+In the case of the OCTL a Token shall be created by OCTL smart contracts. The Tokens and OCTL smart contracts shall manifest, document, represent and realize permissions, rights, Digital Artifacts and Legal Actors described in this OCTL.
+
+Token Holder shall mean any Legal Actor who created, let create or got into possession of a Token in any other way.
+
+Contributor Token shall mean any non-fungible Token tied to a smart contract of the OCTL, allowing the Token Holder who is the Rights Owner to represent one or more Digital Artifacts. For example such Contributor Tokens can represent as a copyright protected Work, Derivate Works, Projects, Source, Object or any other kind of Contribution.
+
+Surrogate ID and URI (Uniform Resource Identifier) shall mean any unique identifier such as a Universally Unique Identifier (UUID) or Token, representing one or more Digital Artifacts or intellectual property rights. A Digital Artifact or intellectual property rights can be associated with multiple Surrogate ID/URI and Surrogate ID/URI themselves or a set of those can be represented by other Surrogate ID/URI. The association of Digital Artifacts can for instance be specified in a file or a git commit or a list of files and Surrogate IDs to create sets. Another way is to include a OCTL-SID-INFO.txt in the root of a project, defining which artifacts belong to which SID. In source code one can also use tags to make associations. Surrogate IDs/URI can be used as method to associate Contributor Tokens with the contents of the Surrogate IDs/URIs.
+
+License Token shall mean any non-fungible Token representing terms, conditions and computation directives for a License and its cost for a defined intellectual property, in Object or Source, represented by a Contribution Token.
+
+Granted License Token shall mean any non-fungible Token representing usage rights of copyright or otherwise protected Work, Derivate Works, Projects, Source, Object or any other kind of Contributions. Granted License Tokens represent or contain Application Licenses.
+
+1.5. Specific OCTL Actor representations
+
+OCTL Maintainers shall be represented by the authors of the OCTL and smart contracts itself.
+
+2. Terms of applying the Open Compensation Token License to Digital Artifacts
+
+Any Legal Actor (second party) shall be granted an OCTL Application License form the OCTL Root Project/OCTL Maintainers (first party) to license Digital Artifacts to a Licensee (third party) which the Legal Actor holds the sufficient rights and permissions (being the Rights Owner of the artifacts), provided the following terms and conditions are met:
+
+    The Licensee (third party) of the Legal Actor (second party) acknowledges and agrees in special that even malicious or illegal Digital Artifacts of the Legal Actor being sold via OCTL smart contracts/Tokens are not in control of the OCTL Root Project (first party) and only the Legal Actor himself is accountable for those.
+    The terms and conditions of an Application License for the Digital Artifacts are represented and referenced by License Tokens.
+    The associated OCTL smart contracts are used to issue Application Licences in form of Granted License Tokens.
+    The Licensees of the Legal Actor acknowledge the terms, conditions and fees of the OCTL and that the usage of the OCTL Root Project itself. Thereby, the Legal Actor and their Licensees specifically acknowlege that the OCTL Application is provided with potential failures, without any warranties, guarantees and further liabilities as described in any document of the OCTL Root Project.
+    The Legal Actor uses and applies a verbatim copy of the Open Compensation Token License and apply its associated smart contracts.
+    The Legal Actor conspicuously and appropriately publish on each copy an appropriate copyright notice.
+    The Legal Actor keeps intact all notices of the Open Compensation Token License.
+    The Legal Actor keeps intact all notices of the absence of any warranty.
+    The Legal Actor gives all recipients (Licensees) a copy of the OCTL.
+    The Licensee of the Legal Actor acknowledges and agrees that any kind of contractual situation is only with the Legal Actor and not with the authors of the OCTL.
+    The Legal Actor and their Licensee agree to the compensation methods of the OCTL smart contracts.
+
+In case a Legal Actor, as second party, and any of their Licensees, as third party, of him meets the provisions of the OCTL, the OCTL smart contracts, as the first party, can be used to issue Application Licences in a tokenized form of Granted Licences for Digital Artifacts such as Work, Derivate Works, Projects, Source, Object or any other kind of Contributions. The additive terms and conditions to the OCTL terms and conditions are specified for Granted License Token by referning License Tokens and their terms and conditions. Licensed Digital Artifacts are referenced in Granted License Token allowing each third party Licensee to proof the validity to use the work by the associated terms and condition of the associated License Tokens.
+
+2.1. Updates
+
+With the agreement of over 75% of the OCTL Maintainers, may publish revised and/or new versions of the Open Compensation Token License or its associated artifacts, such as smart contracts, from time to time.
+
+Such new versions will be similar in spirit to the present version, but may differ in detail to address new problems or concerns.
+
+Each version is given a distinguishing version number. If in a Project, applying the Open Compensation Token License, no version or the term "or any later version of the Open Compensation Token License is used, any version later than the specified version or the latest published version of the Open Compensation Token License shall be applicable for the project.
+
+Since this License is under development, please note that later versions shall override and restrict permissions or introduce new obligations.
+
+2.2. Contributions to the OCTL itself
+
+Any Legal Actor may provide suggestions or improvements in form of Digital Artifacts for the OCTL and its associated artifacts (e.g. OCTL smart contracts) and ask for inclusion and incorporation of these into the OCTL. Any such inclusion request shall be seen as a donation free of charge where all usage rights, permissions and perpetual copyright is granted to the OCTL Maintainers without any terms and conditions.
+
+2.3. Jurisdiction of the OCTL
+
+In order to cover distributed and decentralized residence and execution and contractual places of the OCTL smart contracts, Digital Artifacts, OCTL Maintainers, OCTL Applicants, Licenses and related actors, a common jurisdiction for all shall be agreed on by each participant (for example, but not limited to: OCTL Author, OCTL Maintainers, OCTL Applicant, Licensee): Any action or suit relating to this OCTL itself or Digital Artifacts licensed under the OCTL may be brought only in the courts of Cyprus and under the laws of that jurisdiction excluding its conflict-of-law provisions. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. Any use of the original Work outside the scope of this OCTL or after its termination shall be subject to the requirements and penalties laws of other countries, and international treaty. This section shall survive the termination of this License.
+
+2.4. Digital OCTL manifestation
+
+The OCTL shall manifests in a distributed and decentralized way.
+
+2.4.1. Software implementation of this License
+
+The OCTL comes with manifestations of its meaning in smart contracts in source and executable contracts on the blockchain.
+
+2.4.2. Smart contract realization and Open Compensation Token License
+
+    In case there is a difference of the written version and the OCTL smart contracts, the written version shall prevail.
+    In case there are elements in OCTL smart contract that are not written in the OCTL text, the smart contract code shall serve as manifestation of the meaning of the OCTL.
+
+3. OCTL Project Setup and Management
+
+By default OCTL Projects shall be seen as decentralized and distributed set of work.
+
+3.1. Inclusion of Contributions
+
+Each Contributor transfers
+
+    own ownership and use,
+    rights to revise the works,
+    sharing of any revenue,
+    and potential owned other intellectual property such as patents, included in the Contributions Work to the terms and conditions of the OCTL.
+
+4. Licensing of Downstream Recipients
+
+By using the OCTL smart contracts in the intended way, all licensing matters of this OCTL are fulfilled for ordinary cases.
+
+4.1. Compulsory to obtain Application Licenses via License Tokens
+
+Any Project, being itself licensed with the OCTL or not, using Digital Artifacts or other Projects licensed under the terms and conditions of the OCTL shall obtain the necessary Application License of the used Projects and an OCTL Application License itself and tied to its terms and conditions. Thereby, using is defined as applying, linking, or any other form of utilization that is described in 4. The necessary Application License need to be procured by getting into possession of the representing Application License Token. Details of the different Application Licenses are described in 4.
+
+4.2. Exemption
+
+Projects using artifacts licensed under the terms and conditions of the OCTL for solely academic or testing purposes shall be exempted from obtaining any kind of license as long as they are not reproducing the work licensed under the terms and conditions of the OCTL publicly or within a company.
+
+4.3. Inclusion in other Licenses
+
+In case a Legal Actor licenses own work under a custom license, in combination with any kind of Work that is under OCTL, the Legal Actor shall ensure the following:
+
+    Each Third party gets a copy of the OCTL and shall be tied to the original terms of conditions of the artifacts of the OCTL like if they used the project themselves.
+    Each time the Legal Actor conveys a work covered by the terms and conditions of the OCTL, the recipient, or Legal Actor, acting then as Licensee or on his behalf, is required to procure the following token representations:
+    The necessary Application Licenses according to the usage scenarios of the OCTL Projects which are used.
+    An OCTL Application License.
+
+4.4. Value added services
+
+A Legal Actor may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights for Projects licensed under the terms and conditions of the OCTL. However, in accepting such obligations, a Legal Actor may act only on their own behalf and on their sole responsibility, not on behalf of any other Contributor, and only if the Legal Actor agrees to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of the Legal Actor accepting any such warranty or additional.
+
+5. Application Licenses
+
+The term Granted License Tokens is the technical manifestation of an Application License. Users of Projects and Digital Artifcats licensed under the terms and conditions of the OCTL need to obtain Granted License Tokens via the associated OCTL smart Contracts under the following terms:
+
+5.1. Application License procurement
+
+Granted Application Licenses have to be procured 10 days after the use of artifacts under the OCTL.
+
+5.2. Application License pricing
+
+Each Project can choose their own pricing metrics, within the parameters of the OCTL. Licensees may have to specify a questionnaire about their usage that then gets use to compute the License costs for each Digital Artifact or Project under the OCTL.
+
+5.3. Application License creation
+
+Application Licenses are valid as long as the associated Granted License Tokens are valid. The OCTL smart contracts specify the validity and transferability of the Application Licenses.
+
+5.4. The following Application License can be obtained for any Project licensing under the terms and conditions the OCTL
+
+For each Application License, a corresponding license token shall be procured. Licenses can differ in price for the purchasing Legal Actor, for instance if it is an open source project under the OCTL or it is an end customer. Specific Application Licenses are defined via License Tokens and associated definitions. As of this moment only OCTL Maintainers are allowed to define new Application Licenses.
+
+5.5. OCTL progress distribution
+
+Each process of procuring Application Licenses with the OCTL might define a fee to be substracted for the OCTL creators which is automatically deducted during Application License procurement.
+
+5.6. Granted License Tokens
+
+Application Licenses can be represented by License tokens on a distributed ledger where the association with Contributor Tokens is documented.
+
+5.6.1. Uniqueness
+
+Each license token shall be unique and not interchangeable.
+
+5.6.2. Transferablility
+
+    The OCTL Smart Contract implementation specifies transferability feature or denies them.
+    Transfers of an Application Licenses can also include a commission that is distributed to the Contributor Token holders.
+    Once a Application License Token was transferred a new Token Holder this shall represent the transfer of the Application License itself.
+
+5.7. Time based Application License Tokens
+
+Time based Granted License Tokens grant Application Licenses only for a specified time period. After this period the Application Licenses holder is not holding a valid Application Licenses anymore. The OCTL smart contracts contain the specifics how long an Application License is valid.
+
+5.8. Procurement of Application Licenses for a third party
+
+Not all Legal Actors use blockchain technology, therefore the OCTL supports the following scenario: Legal Actors can procure tokens on behalf of another entity, provided the purchasing Legal Actors only purchase a non-transferable Granted License Token for the third party.
+
+6. Contributions
+
+Providing Contributions to a Project can be associated with non-fungible Contributor Tokens.
+
+6.1. Royalty
+
+Royalties are, for instance, collected by donations, Contribution Token sales, Application License procurements, sales or trade of Tokens and stored via OCTL smart contracts. Those royalties are then distributed according to the OCTL smart contracts to creators and/or owners of different OCTL Tokens.
+
+6.2. Terms of inclusion
+
+Unless a Contributor explicitly states otherwise, any Contribution intentionally submitted for inclusion in the Work of an OCTL Fellow Project shall be under the terms and conditions of the OCTL, without any additional terms or conditions.
+
+7. Token price
+
+The Token price of any token associated with the OCTL is the net amount after eventual taxes. Eventual sales tax, withholding tax, service tax, goods tax or any other tax such as value added tax needs to be covered by the token purchasing entity and is on top of any Token price.
+
+8. Trademarks
+
+This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work.
+
+9. Disclaimer of Warranty
+
+Unless required by applicable law or agreed to in writing, each Licensor of an OCTL Project and the OCTL Fellow Project itself provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. Any Legal Actor is solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with your exercise of permissions under this OCTL.
+
+In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and gross negligence acts) or agreed to in writing, shall any Contributor or Maintainer of an Project and the OCTL Fellow Project itself be liable to Legal Actor, and in specific Licensee, for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.
+
+If the disclaimer of warranty and limitation of liability provided above cannot be given local legal effect according to their terms, reviewing courts shall apply local law that most closely approximates an absolute waiver of all civil liability in connection with the Program, unless a warranty or assumption of liability accompanies a copy of the Program in return for a fee.
+
+     END OF TERMS AND CONDITIONS
+
+@octl.sid:7dec4673-5559-4895-9714-1cdd61a58b57
