@@ -1,9 +1,11 @@
 ---
-license_expression: unicode-mappings
-is_license_text: yes
-is_deprecated: yes
-replaced_by:
-    - unicode-ucd.LICENSE
+key: unicode-ucd
+short_name: Unicode UCD TOU
+name: Unicode Character Database (UCD) Terms of Use
+category: Permissive
+owner: Unicode Consortium
+homepage_url: https://fedoraproject.org/wiki/Licensing:UCD
+spdx_license_key: LicenseRef-scancode-unicode-ucd
 ---
 
 UCD Terms of Use

@@ -1,10 +1,11 @@
 ---
-license_expression: proprietary-license
-is_license_text: yes
-is_deprecated: yes
-replaced_by:
-    - inria-compcert.LICENSE
-notes: https://github.com/AbsInt/CompCert/blob/5be9ae2235b16239f023a36679b7d515dd774c68/LICENSE
+key: inria-compcert
+short_name: INRIA NCLA CompCert
+name: INRIA Non-Commercial License Agreement for the CompCert verified compiler
+category: Proprietary Free
+owner: INRIA
+homepage_url: https://compcert.org/doc/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-inria-compcert
 ---
 
 INRIA Non-Commercial License Agreement for the CompCert verified compiler
