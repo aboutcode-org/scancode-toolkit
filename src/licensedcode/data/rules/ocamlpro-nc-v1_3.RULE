@@ -1,5 +1,5 @@
 ---
-license_expression: proprietary-license
+license_expression: ocamlpro-nc-v1
 is_license_text: yes
 notes: https://github.com/dune-universe/dune-universe/blob/d13749a8265158da7fc629f1e5c4ced1e8a68d61/packages/alt-ergo.2.4.1/LICENSE.md
     https://github.com/dune-universe/dune-universe/blob/d13749a8265158da7fc629f1e5c4ced1e8a68d61/packages/alt-ergo.2.4.1/docs/sphinx_docs/About/licenses/index.rst
@@ -9,9 +9,6 @@ ignorable_holders:
     - OCamlPro
 ignorable_emails:
     - contact@ocamlpro.com
-is_deprecated: yes
-replaced_by:
-    - ocamlpro-nc-v1_1.RULE
 ---
 
 OCamlPro Non-Commercial Purpose License, version 1

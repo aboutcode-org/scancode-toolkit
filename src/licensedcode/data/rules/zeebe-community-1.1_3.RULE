@@ -1,0 +1,11 @@
+---
+license_expression: zeebe-community-1.1
+is_license_notice: yes
+referenced_filenames:
+    - licenses/ZEEBE-COMMUNITY-LICENSE-1.1.txt
+---
+
+licensed under the [{{Zeebe Community License 1.1}}](/licenses/ZEEBE-COMMUNITY-LICENSE-1.1.txt).
+Using gRPC tooling to generate stubs for the protocol does not constitute creating
+a derivative work under the {{Zeebe Community License 1.1}} and no licensing restrictions
+are imposed on the resulting stub code by the {{Zeebe Community License 1.1}}.
