@@ -513,7 +513,7 @@ class PyprojectTomlHandler(BaseExtractedPythonLayout):
         description = description.strip()
 
         is_private = is_private_package(project_data.get('classifiers', []))
-        urls, extra_data = get_urls(metainfo=project_data, name=name, version=version)
+        urls, extra_data = get_urls(metainfo=project_data, name=name, version=version,is_private=is_private)
 
         extracted_license_statement, license_file = get_declared_license(project_data)
         if license_file:
@@ -752,6 +752,7 @@ class PoetryPyprojectTomlHandler(BasePoetryPythonLayout):
             keywords=get_keywords(poetry_data),
             parties=get_pyproject_toml_parties(poetry_data),
             extra_data=extra_data,
+            is_private=is_private,
             dependencies=dependencies,
             **urls,
         )
@@ -1208,7 +1209,9 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             # search for possible dunder versions here and elsewhere
             version = detect_version_attribute(location)
 
-        urls, extra_data = get_urls(metainfo=setup_args, name=name, version=version)
+        is_private = is_private_package(setup_args.get('classifiers', []))
+
+        urls, extra_data = get_urls(metainfo=setup_args, name=name, version=version,is_private=is_private)
 
         dependencies = get_setup_py_dependencies(setup_args)
         python_requires = get_setup_py_python_requires(setup_args)
@@ -1218,7 +1221,6 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
         if license_file:
             extra_data['license_file'] = license_file
 
-        is_private = is_private_package(setup_args.get('classifiers', []))
 
         package_data = dict(
             datasource_id=cls.datasource_id,
@@ -1231,6 +1233,7 @@ class PythonSetupPyHandler(BaseExtractedPythonLayout):
             extracted_license_statement=extracted_license_statement,
             dependencies=dependencies,
             keywords=get_keywords(setup_args),
+            is_private=is_private,
             extra_data=extra_data,
             **urls,
         )
@@ -1361,6 +1364,7 @@ class SetupCfgHandler(BaseExtractedPythonLayout):
             homepage_url=metadata.get('url'),
             primary_language=cls.default_primary_language,
             dependencies=dependent_packages,
+            is_private=is_private,
             extracted_license_statement=extracted_license_statement,
         )
         yield models.PackageData.from_data(package_data, package_only)
@@ -2337,10 +2341,10 @@ def get_urls(metainfo, name, version, is_private=False, poetry=False):
     # Project-URL: Say Thanks!
 
     extra_data = {}
-    if not is_private:
-       urls = get_pypi_urls(name, version)
-    else:
-        urls = {}
+    if is_private:
+        return {}, {}
+    
+    urls = get_pypi_urls(name, version)
 
     def add_url(_url, _utype=None, _attribute=None):
         """

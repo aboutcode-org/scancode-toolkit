@@ -1,0 +1,12 @@
+[
+  {
+    "type": "pypi",
+    "name": "example_setup",
+    "version": "1.0.0",
+    "description": null,
+    "primary_language": "Python",
+    "is_private": true,
+    "datasource_id": "pypi_setup_py",
+    "purl": "pkg:pypi/example-setup@1.0.0"
+  }
+]

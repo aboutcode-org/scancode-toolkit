@@ -345,7 +345,17 @@ class TestPyprojectTomlFileHandler(PackageTester):
         expected_loc = self.get_test_loc('pypi/pyproject-toml/standard/private-classifier-pyproject.toml-expected.json') 
         self.check_packages_data(packages, expected_loc,regen=REGEN_TEST_FIXTURES)
         
+    def test_parse_setup_py_private_package(self):
+        test_file = self.get_test_loc('pypi/setup.py/private-classifier-setup.py')
+        packages = pypi.PythonSetupPyHandler.parse(test_file)
+        expected_loc = self.get_test_loc('pypi/setup.py/private-classifier-setup.py-expected.json')
+        self.check_packages_data(packages, expected_loc, regen=True)
 
+    def test_parse_egg_info_private_package(self):
+        test_file = self.get_test_loc('pypi/develop/private-classifier.egg-info/PKG-INFO')
+        packages = pypi.parse_metadata(test_file, datasource_id="pypi_egg_info", package_type="pypi")
+        expected_loc = self.get_test_loc('pypi/develop/private-classifier-egg-info-expected.json')
+        self.check_packages_data(packages, expected_loc, regen=True)
 class TestPoetryHandler(PackageTester):
 
     def test_is_pyproject_toml_poetry(self):
