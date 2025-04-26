@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.txt
 ---
 
-This project is licensed under the AGPL v3 license, see LICENSE.txt.
+This project is {{licensed under the AGPL v3 license}}, see LICENSE.txt.

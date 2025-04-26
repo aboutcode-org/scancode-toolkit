@@ -1,0 +1,155 @@
+[
+  {
+    "type": "conda",
+    "namespace": null,
+    "name": "abeona",
+    "version": "0.45.0",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": null,
+    "description": "A simple transcriptome assembler based on kallisto and Cortex graphs.",
+    "release_date": null,
+    "parties": [],
+    "keywords": [],
+    "homepage_url": "https://github.com/winni2k/abeona",
+    "download_url": "https://pypi.io/packages/source/a/abeona/abeona-0.45.0.tar.gz",
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": "bc7512f2eef785b037d836f4cc6faded457ac277f75c6e34eccd12da7c85258f",
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": null,
+    "vcs_url": "https://github.com/winni2k/abeona",
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "apache-2.0",
+    "declared_license_expression_spdx": "Apache-2.0",
+    "license_detections": [
+      {
+        "license_expression": "apache-2.0",
+        "license_expression_spdx": "Apache-2.0",
+        "matches": [
+          {
+            "license_expression": "apache-2.0",
+            "license_expression_spdx": "Apache-2.0",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 3,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "apache-2.0_292.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_292.RULE",
+            "matched_text": "license Apache Software"
+          }
+        ],
+        "identifier": "apache_2_0-b61e521f-8056-676d-d623-119feca87b8c"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "Apache Software",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "host": [
+        "pip",
+        "python"
+      ],
+      "run": [
+        "python >=3.6"
+      ]
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:conda/mccortex@1.0",
+        "extracted_requirement": "==1.0",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/nextflow@19.01.0",
+        "extracted_requirement": "==19.01.0",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/cortexpy@0.45.7",
+        "extracted_requirement": "==0.45.7",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/kallisto@0.44.0",
+        "extracted_requirement": "==0.44.0",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/bwa",
+        "extracted_requirement": "",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/pandas",
+        "extracted_requirement": "",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:conda/progressbar2",
+        "extracted_requirement": "",
+        "scope": "run",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": null,
+    "repository_download_url": null,
+    "api_data_url": null,
+    "datasource_id": "conda_meta_yaml",
+    "purl": "pkg:conda/abeona@0.45.0"
+  }
+]

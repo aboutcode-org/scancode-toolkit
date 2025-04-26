@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-This library is licensed under the Apache 2.0 license
+This library is {{licensed under the Apache 2.0 license}}

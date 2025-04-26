@@ -6,4 +6,4 @@ ignorable_urls:
     - http://mths.be/mit
 ---
 
-Available under MIT license <http://mths.be/mit
+Available {{under MIT license}} <http://mths.be/mit

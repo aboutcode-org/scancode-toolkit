@@ -107,7 +107,8 @@
       "extra_data": {
         "Documentation": "https://docs.celeryproject.org/en/latest/index.html",
         "Changelog": "https://docs.celeryproject.org/en/stable/changelog.html",
-        "Funding": "https://opencollective.com/celery"
+        "Funding": "https://opencollective.com/celery",
+        "license_file": "LICENSE"
       },
       "repository_homepage_url": "https://pypi.org/project/celery",
       "repository_download_url": "https://pypi.org/packages/source/c/celery/celery-5.2.7.tar.gz",
@@ -1336,7 +1337,8 @@
           "extra_data": {
             "Documentation": "https://docs.celeryproject.org/en/latest/index.html",
             "Changelog": "https://docs.celeryproject.org/en/stable/changelog.html",
-            "Funding": "https://opencollective.com/celery"
+            "Funding": "https://opencollective.com/celery",
+            "license_file": "LICENSE"
           },
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/celery",
@@ -7339,7 +7341,8 @@
           "extra_data": {
             "Documentation": "https://docs.celeryproject.org/en/latest/index.html",
             "Changelog": "https://docs.celeryproject.org/en/stable/changelog.html",
-            "Funding": "https://opencollective.com/celery"
+            "Funding": "https://opencollective.com/celery",
+            "license_file": "LICENSE"
           },
           "dependencies": [
             {

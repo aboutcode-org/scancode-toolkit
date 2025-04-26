@@ -17,10 +17,10 @@ ignorable_emails:
 ---
 
 is licensed under the
-Apache Software License, Version 1.1, which is reproduced below.
+{{Apache Software License, Version 1.1}}, which is reproduced below.
 
 /*
-* The Apache Software License, Version 1.1
+* The {{Apache Software License, Version 1.1}}
 *
 *
 * Copyright (c)  The Apache Software Foundation. All rights

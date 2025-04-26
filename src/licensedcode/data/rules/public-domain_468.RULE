@@ -4,7 +4,7 @@ is_license_text: yes
 notes: See in https://github.com/yannrouillard/opencsw-pkg/blob/89d7f41fce3cd2f09b6dc7b6e35d946283ee74b7/cpan/Barcode-Code128/trunk/files/COPYING#L2
 ---
 
-This module is placed into the public domain.  You are free to
+This module is placed into the {{public domain}}.  You are free to
     use, modify, or redistribute this module in any way for commercial
     or other uses.  My only request is that if you change it, please
     submit copies of your changed code (or diffs) so that I can

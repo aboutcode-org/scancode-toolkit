@@ -63,7 +63,9 @@
       "path": "hsqldb-2.4.0.jar-extract",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:osgi/org.hsqldb.hsqldb@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
@@ -156,21 +158,27 @@
       "path": "hsqldb-2.4.0.jar-extract/org",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:osgi/org.hsqldb.hsqldb@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "hsqldb-2.4.0.jar-extract/org/hsqldb",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:osgi/org.hsqldb.hsqldb@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     },
     {
       "path": "hsqldb-2.4.0.jar-extract/org/hsqldb/Database.class",
       "type": "file",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:osgi/org.hsqldb.hsqldb@2.4.0?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "scan_errors": []
     }
   ]

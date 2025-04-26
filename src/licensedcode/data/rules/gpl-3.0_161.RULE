@@ -8,4 +8,4 @@ ignorable_holders:
     - GNU General
 ---
 
-copyright: GNU General Public License, version 3 (GPL-3.0)
+copyright: {{GNU General Public License, version 3}} ({{GPL-3.0}})

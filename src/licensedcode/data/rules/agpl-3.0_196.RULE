@@ -8,5 +8,5 @@ ignorable_urls:
 
 licenses {
             license {
-                    name 'GNU Affero General Public License'
+                    name '{{GNU Affero General Public License}}'
                     url 'https://www.gnu.org/licenses/agpl-3.0.html'

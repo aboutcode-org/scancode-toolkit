@@ -7,4 +7,4 @@ referenced_filenames:
     - license/third_party/source-map-loader_LICENSE.txt
 ---
 
-License: MIT ([license/third_party/source-map-loader_LICENSE.txt](third_party/source-map-loader_LICENSE.txt))
+{{License: MIT}} ([license/third_party/source-map-loader_LICENSE.txt](third_party/source-map-loader_LICENSE.txt))

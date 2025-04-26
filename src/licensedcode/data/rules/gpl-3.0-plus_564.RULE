@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-<copyright>GPL-3.0+</copyright>
+<copyright>{{GPL-3.0+}}</copyright>

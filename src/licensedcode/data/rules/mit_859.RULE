@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.txt
 ---
 
-is made available under the MIT license. The license can be viewed [here](LICENSE.txt).
+is made available {{under the MIT license}}. The license can be viewed [here](LICENSE.txt).

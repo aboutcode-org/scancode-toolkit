@@ -1,0 +1,160 @@
+---
+key: dbisl-1.0
+language: de
+short_name: DB Inner Source License 1.0
+name: Deutsche Bahn Inner Source License 1.0
+category: Copyleft Limited
+owner: Deutsche Bahn
+homepage_url: https://github.com/dbsystel/open-source-policies/blob/master/DB-Inner-Source-License.md
+spdx_license_key: LicenseRef-scancode-dbisl-1.0
+text_urls:
+    - https://raw.githubusercontent.com/dbsystel/open-source-policies/refs/heads/master/DB-Inner-Source-License.md
+ignorable_urls:
+    - http://creativecommons.org/licenses/by/4.0
+    - http://creativecommons.org/licenses/by/4.0/
+    - https://github.com/cornelius
+    - https://github.com/schlomo
+---
+
+# DB Inner Source Lizenz Version 1.0
+
+_Fachautoren: [Cornelius Schumacher](https://github.com/cornelius), [Schlomo Schapiro](https://github.com/schlomo) (beide DB Systel GmbH)_
+
+Diese Inner-Source-Lizenz für die Deutsche Bahn („DBISL“) gilt für Werke (im Sinne der nachfolgenden Begriffsbestimmung), die unter DBISL-Bedingungen zur Verfügung gestellt werden. Das Werk darf nur in der durch diese Lizenz gestatteten Form genutzt werden (insoweit eine solche Nutzung dem Urheber vorbehalten ist).
+
+Das Werk wird unter den Bedingungen dieser Lizenz zur Verfügung gestellt, wenn der Lizenzgeber (im Sinne der nachfolgenden Begriffsbestimmung) den folgenden Hinweis unmittelbar hinter dem Urheberrechtshinweis dieses Werks anbringt:
+
+„Lizenziert unter der DBISL“ oder alternativ „Licensed under the DBISL“
+
+oder in einer anderen Form zum Ausdruck bringt, dass er es unter der DBISL lizenzieren möchte.
+
+## 1. Begriffsbestimmungen
+
+Für diese Lizenz gelten folgende Begriffsbestimmungen:
+
+* „Lizenz“: diese Lizenz.
+* „Originalwerk“: das Werk oder die Software, die vom Lizenzgeber unter dieser Lizenz verbreitet oder zugänglich gemacht wird, und zwar als Quellcode und gegebenenfalls auch als ausführbarer Code.
+* „Bearbeitungen“: die Werke oder Software, die der Lizenznehmer auf der Grundlage des Originalwerks oder seiner Bearbeitungen schaffen kann. In dieser Lizenz wird nicht festgelegt, wie umfangreich die Änderung oder wie stark die Abhängigkeit vom Originalwerk für eine Einstufung als Bearbeitung sein muss; dies bestimmt sich nach dem anwendbaren Urheberrecht
+* „Werk“: das Originalwerk oder seine Bearbeitungen.
+* „Quellcode“: diejenige Form des Werkes, die zur Auffassung durch den Menschen bestimmt ist und die am besten geeignet ist, um vom Menschen verstanden und verändert zu werden.
+* „Ausführbarer Code“: die — üblicherweise — kompilierte Form des Werks, die von einem Computer als Programm ausgeführt werden soll.
+* „Lizenzgeber“: die juristische Person innerhalb des DB Konzerns, die das Werk unter der Lizenz verbreitet oder zugänglich macht.
+* „Urheberrechtsinhaber/Autor“: jeder, der bestimmte von ihm selbst entwickelte oder von Dritten vorgegebene Aufgabenstellungen in ein Originalwerk umsetzt oder am Originalwerk eine Bearbeitung vornimmt.
+* „Bearbeiter“: jeder, der das Werk unter der Lizenz verändert oder auf andere Weise zur Schaffung einer Bearbeitung beiträgt. Jeder Autor ist auch Bearbeiter.
+* „Lizenznehmer“ („Sie“, „Ihnen“): jede juristische Person innerhalb des DB Konzerns, die das Werk unter den Lizenzbedingungen nutzt.
+* „Verbreitung“ oder „Zugänglichmachung“: alle Formen von Verkauf, Überlassung, Verleih, Vermietung, Verbreitung, Weitergabe, Übermittlung oder anderweitiger Online- oder Offline-Bereitstellung von Vervielfältigungen des Werks oder Zugänglichmachung seiner wesentlichen Funktionen für dritte natürliche oder juristische Personen.
+* „Beitrag“: jedes urheberrechtliche Werk, einschließlich des Originalwerks sowie jeglicher Änderungen, die der Bearbeiter vornimmt, und die dem Lizenzgeber bewusst zur Aufnahme in das Werk eingereicht werden.
+* „DB“ oder „DB Konzern“: die Deutsche Bahn AG und alle mit ihr nach §15 AktG verbundenen Unternehmen.
+
+## 2. Umfang der Lizenzrechte
+
+Der Lizenzgeber erteilt Ihnen hiermit eine weltweite, unentgeltliche, nicht ausschließliche, unterlizenzierbare Lizenz, die Sie für Geschäftszwecke des DB Konzerns berechtigt:
+
+* das Werk uneingeschränkt zu nutzen,
+* das Werk zu vervielfältigen,
+* das Werk zu verändern und Bearbeitungen auf der Grundlage des Werks zu schaffen,
+* das Werk oder Vervielfältigungen davon innerhalb der DB zu verbreiten,
+
+Für die Wahrnehmung dieser Rechte können beliebige, derzeit bekannte oder künftige Medien, Träger und Formate verwendet werden, soweit das geltende Recht dem nicht entgegensteht.
+
+Der Lizenzgeber erteilt dem Lizenznehmer ein nicht ausschließliches, unentgeltliches Nutzungsrecht an seinen Patenten, sofern dies zur Ausübung der durch die Lizenz erteilten Nutzungsrechte am Werk notwendig ist.
+
+## 3. Zugänglichmachung des Quellcodes
+
+Der Lizenzgeber kann das Werk entweder als Quellcode oder als ausführbaren Code zur Verfügung stellen. Stellt er es als ausführbaren Code zur Verfügung, so stellt er darüber hinaus eine maschinenlesbare Kopie des Quellcodes für jedes von ihm verbreitete Vervielfältigungsstück des Werks zur Verfügung, oder er verweist in einem Vermerk im Anschluss an den dem Werk beigefügten Urheberrechtshinweis auf einen Speicherort, an dem problemlos und unentgeltlich auf den Quellcode zugegriffen werden kann, solange der Lizenzgeber das Werk verbreitet oder zugänglich macht.
+
+## 4. Einschränkungen des Urheberrechts
+
+Es ist nicht Zweck dieser Lizenz, Ausnahmen oder Schranken der ausschließlichen Rechte des Urhebers am Werk, die dem Lizenznehmer zugutekommen, einzuschränken. Auch die Erschöpfung dieser Rechte bleibt von dieser Lizenz unberührt.
+
+## 5. Pflichten des Lizenznehmers
+
+Die Einräumung der oben genannten Rechte ist an mehrere Beschränkungen und Pflichten für den Lizenznehmer gebunden:
+
+* Inner Source: Der Lizenznehmer darf das Werk ausschließlich für Geschäftszwecke des DB Konzerns nutzen.
+* Urheberrechtshinweis, Lizenztext, Nennung des Bearbeiters: Der Lizenznehmer muss alle Urheberrechts-, Patent- oder Markenrechtshinweise und alle Hinweise auf die Lizenz und den Haftungsausschluss unverändert lassen. Jedem von ihm verbreiteten oder zugänglich gemachten Vervielfältigungsstück des Werks muss der Lizenznehmer diese Hinweise sowie diese Lizenz beifügen. Der Lizenznehmer muss auf jedem abgeleiteten Werk deutlich darauf hinweisen, dass das Werk geändert wurde, und das Datum der Bearbeitung angeben.
+* „Copyleft“-Klausel: Der Lizenznehmer darf Vervielfältigungen des Originalwerks oder Bearbeitungen nur unter den Bedingungen dieser DBISL oder einer neueren Version dieser Lizenz innerhalb der DB verbreiten oder zugänglich machen. Der Lizenznehmer (der zum Lizenzgeber wird) darf für das Werk oder die Bearbeitung keine zusätzlichen Bedingungen anbieten oder vorschreiben, die die Bedingungen dieser Lizenz verändern oder einschränken.
+* Bereitstellung des Quellcodes: Wenn der Lizenznehmer Vervielfältigungsstücke des Werks verbreitet oder zugänglich macht, muss er eine maschinenlesbare Fassung des Quellcodes mitliefern oder einen Speicherort angeben, über den problemlos und unentgeltlich so lange auf diesen Quellcode zugegriffen werden kann, wie der Lizenznehmer das Werk verbreitet oder zugänglich macht.
+* Rechtsschutz: Diese Lizenz erlaubt nicht die Benutzung von Kennzeichen, Marken oder geschützten Namensrechten des Lizenzgebers, soweit dies nicht für die angemessene und übliche Beschreibung der Herkunft des Werks und der inhaltlichen Wiedergabe des Urheberrechtshinweises erforderlich ist.
+
+# 6. Urheber und Bearbeiter
+
+Der ursprüngliche Lizenzgeber gewährleistet, dass er das Urheberrecht am Originalwerk innehat oder dieses an ihn lizenziert wurde und dass er befugt ist, diese Lizenz zu erteilen.
+
+Jeder Bearbeiter gewährleistet, dass er das Urheberrecht an den von ihm vorgenommenen Änderungen des Werks besitzt und befugt ist, einen Beitrag unter dieser Lizenz zu erstellen und beizutragen.
+
+Für jeden Fall, in dem der Lizenznehmer die Lizenz annimmt, erteilt der ursprüngliche Lizenzgeber und alle folgenden Bearbeiter eine Befugnis zur Nutzung der Beiträge zum Werk unter den Bedingungen dieser Lizenz.
+
+## 7. Gewährleistungsausschluss
+
+Falls die konzerninternen Leistungsbedingungen keine Anwendung finden, gelten die folgenden Regelungen.
+
+Die Arbeit an diesem Werk wird laufend fortgeführt; es wird durch unzählige Bearbeiter ständig verbessert. Das Werk ist nicht vollendet und kann daher Fehler („Bugs“) enthalten, die dieser Art der Entwicklung inhärent sind.
+
+Aus den genannten Gründen wird das Werk unter dieser Lizenz „so, wie es ist“ ohne jegliche Gewährleistung zur Verfügung gestellt. Dies gilt unter anderem — aber nicht ausschließlich — für Marktreife, Verwendbarkeit für einen bestimmten Zweck, Mängelfreiheit, Richtigkeit sowie Nichtverletzung von anderen Immaterialgüterrechten als dem Urheberrecht (vgl. dazu Artikel 6 dieser Lizenz).
+
+Dieser Gewährleistungsausschluss ist wesentlicher Bestandteil der Lizenz und Bedingung für die Einräumung von Rechten an dem Werk.
+
+## 8. Haftungsausschluss/Haftungsbeschränkung
+
+Falls die konzerninternen Leistungsbedingungen keine Anwendung finden, gelten die folgenden Regelungen.
+
+Außer in Fällen von Vorsatz oder der Verursachung von Personenschäden haftet der Lizenzgeber nicht für direkte oder indirekte, materielle oder immaterielle Schäden irgendwelcher Art, die aus der Lizenz oder der Benutzung des Werks folgen; dies gilt unter anderem, aber nicht ausschließlich, für Firmenwertverluste, Produktionsausfall, Computerausfall oder Computerfehler, Datenverlust oder wirtschaftliche Schäden, und zwar auch dann, wenn der Lizenzgeber auf die Möglichkeit solcher Schäden hingewiesen wurde. Unabhängig davon haftet der Lizenzgeber im Rahmen der gesetzlichen Produkthaftung, soweit die entsprechenden Regelungen auf das Werk anwendbar sind.
+
+## 9. Zusatzvereinbarungen
+
+Wenn der Lizenznehmer das Werk verbreitet, kann er Zusatzvereinbarungen schließen, in denen Verpflichtungen oder Dienstleistungen festgelegt werden, die mit dieser Lizenz vereinbar sind.
+
+Der Lizenznehmer darf Verpflichtungen nur in seinem eigenen Namen eingehen, nicht jedoch im Namen des ursprünglichen Lizenzgebers oder eines anderen Bearbeiters, und nur, wenn er sich gegenüber allen Bearbeitern verpflichtet, sie zu entschädigen, zu verteidigen und von der Haftung freizustellen, falls aufgrund der von ihm eingegangenen Gewährleistungsverpflichtung oder Haftungsübernahme Forderungen gegen sie geltend gemacht werden oder eine Haftungsverpflichtung entsteht.
+
+## 10. Annahme der Lizenz
+
+Der Lizenznehmer stimmt den Bestimmungen dieser Lizenz zu, indem er das Symbol „Lizenz annehmen“ unter dem Fenster mit dem Lizenztext anklickt oder indem er seine Zustimmung auf vergleichbare Weise gibt. Das Anklicken des Symbols gilt als Anzeichen der eindeutigen und unwiderruflichen Annahme der Lizenz und der darin enthaltenen Klauseln und Bedingungen.
+
+In gleicher Weise gilt als Zeichen der eindeutigen und unwiderruflichen Zustimmung die Ausübung eines Rechtes, das in Artikel 2 dieser Lizenz angeführt ist, wie das Erstellen einer Bearbeitung oder die Verbreitung oder Zugänglichmachung des Werks oder dessen Vervielfältigungen.
+
+## 11. Informationspflichten
+
+Wenn der Lizenznehmer das Werk verbreitet oder zugänglich macht (beispielsweise, indem er es zum Herunterladen von einer Website anbietet), muss der Lizenznehmer über den Vertriebskanal oder das benutzte Verbreitungsmedium dem Adressatenkreis bzw. der Öffentlichkeit Mindest-Informationen bereitstellen, üblicherweise bezüglich der Lizenzgeber, der Lizenz und ihrer Zugänglichkeit, des Abschlusses des Lizenzvertrags sowie darüber, wie die Lizenz durch den Lizenznehmer gespeichert und vervielfältigt werden kann.
+
+## 12. Beendigung der Lizenz
+
+Die Lizenz und die damit eingeräumten Rechte erlöschen automatisch, wenn der Lizenznehmer gegen die Lizenzbedingungen verstößt.
+
+Ein solches Erlöschen der Lizenz führt nicht zum Erlöschen der Lizenzen von Dritten, denen das Werk vom Lizenznehmer unter dieser Lizenz zur Verfügung gestellt worden ist, solange diese Personen die Lizenzbedingungen erfüllen.
+
+## 13. Einreichung von Beiträgen
+
+Sofern nichts ausdrücklich anderes angegeben, unterliegt jeder Beitrag, den der Lizenzgeber bewusst zur Aufnahme in das Werk eingereicht hat, den Bedingungen dieser Lizenz, ohne dass zusätzliche Bedingungen gelten. Ungeachtet des Vorstehenden ersetzt oder ändert keine der hierin enthaltenen Bestimmungen die Bedingungen einer separaten Lizenzvereinbarung, die der Auftraggeber möglicherweise mit dem Auftragnehmer für solche Beiträge abgeschlossen hat.
+
+Für die Länder, in denen Urheberpersönlichkeitsrechte an einem Werk entstehen können, verzichtet der Urheberrechtsinhaber/Autor im gesetzlich zulässigen Umfang auf seine Urheberpersönlichkeitsrechte, um die Lizenzierung der oben aufgeführten Verwertungsrechte wirksam durchführen zu können.
+
+## 14. Sonstiges
+
+Unbeschadet des Artikels 9 stellt diese Lizenz die vollständige Vereinbarung der Parteien über das Werk dar.
+
+Es gilt deutsches Recht. Sind einzelne Bestimmungen der Lizenz nach geltendem Recht nichtig oder unwirksam, so berührt dies nicht die Wirksamkeit oder Durchsetzbarkeit der Lizenz an sich. Solche Bestimmungen werden vielmehr dergestalt ausgelegt oder modifiziert, dass sie wirksam und durchsetzbar sind.
+
+## 15. Gesellschaftsrechtliche Veränderungen
+
+Bei gesellschaftsrechtlichen Veränderungen, z.B. dem Verkauf oder der Abspaltung einer DB Gesellschaft, gilt folgende Regelung:
+
+Eine weitere Nutzung der lizenzierten Software durch ein nicht mehr dem DB Konzern angehöriges Unternehmen unterliegt der Zustimmung durch die Urheber bzw. das [Entscheidungsgremium].
+
+## 16. Lizenzänderungen
+
+Die Urheber eines Werks können gemeinsam eine Änderung der Lizenz entscheiden, z.B. um das Werk als Open Source Software zu veröffentlichen. Falls die Urheber nicht verfügbar sind oder sich nicht einigen können, so kann das [Entscheidungsgremium] stellvertretend für alle Urheber innerhalb der DB die Änderung der Lizenz für ein Werk beschließen.
+
+## 17. Streitbeilegung
+
+Unbeschadet der Regelungen in den konzerninternen Leistungsbedingungen zwischen den Parteien gilt zwischen den Parteien Folgendes:
+
+Bei Streitigkeiten im Zusammenhang mit der Auslegung und Anwendung dieser Lizenz, bei denen mehr als ein Konzernunternehmen beteiligt ist, dient das [Entscheidungsgremium] als Entscheidungsgremium, welches von jeder Partei angerufen werden kann.
+
+## 18. Lizenz der Lizenz
+
+Dieser Lizenztext ist lizenziert unter einer „[Creative Commons Namensnennung 4.0 International Lizenz](http://creativecommons.org/licenses/by/4.0/)“ (CC-BY 4.0), siehe http://creativecommons.org/licenses/by/4.0/ für den vollständigen Lizenztext.
+
+Sie dürfen diesen Lizenztext für sich kopieren und anpassen, solange Sie dabei die Deutsche Bahn Marke und „DB“ nur innerhalb der DB benutzen. Falls Sie das Material für die Verwendung außerhalb der DB anpassen, so müssen Sie alle Nennungen der Deutschen Bahn und DB ersetzen bzw. entfernen. Geänderte Versionen des Lizenztextes müssen klar als geänderte Versionen kenntlich gemacht werden.
+
+Teile des Textes dieser Lizenz basieren auf der EU Public License (EUPL) v1.2.

@@ -6,5 +6,5 @@ referenced_filenames:
     - /usr/share/common-licenses/LGPL-2.1
 ---
 
-On Debian GNU/Linux systems a full copy of the LGPL 2.1 can be found at
+On Debian GNU/Linux systems a full copy of the {{LGPL 2.1}} can be found at
  /usr/share/common-licenses/LGPL-2.1

@@ -3,4 +3,4 @@ license_expression: gpl-2.0
 is_license_notice: yes
 ---
 
-released under GNU General Public License, version 2 (GPL v.2). This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A  PARTICULAR  PURPOSE.  See  the  GPLv.2 license for more details.
+released under {{GNU General Public License, version 2}} (GPL v.2). This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A  PARTICULAR  PURPOSE.  See  the  GPLv.2 license for more details.

@@ -111,6 +111,13 @@ Package type:  cargo
   description:       Rust Cargo.toml package manifest
   path_patterns:    '*/Cargo.toml', '*/cargo.toml'
 --------------------------------------------
+Package type:  cargo
+  datasource_id:     rust_binary
+  documentation URL: https://github.com/rust-secure-code/cargo-auditable/blob/master/PARSING.md
+  primary language:  Rust
+  description:       Rust binary
+  path_patterns:    
+--------------------------------------------
 Package type:  chef
   datasource_id:     chef_cookbook_metadata_json
   documentation URL: https://docs.chef.io/config_rb_metadata/
@@ -189,11 +196,25 @@ Package type:  conan
   path_patterns:    '*/conanfile.py'
 --------------------------------------------
 Package type:  conda
+  datasource_id:     conda_meta_json
+  documentation URL: https://docs.conda.io/
+  primary language:  Python
+  description:       Conda metadata JSON in rootfs
+  path_patterns:    '*conda-meta/*.json'
+--------------------------------------------
+Package type:  conda
   datasource_id:     conda_meta_yaml
   documentation URL: https://docs.conda.io/
   primary language:  None
   description:       Conda meta.yml manifest
   path_patterns:    '*/meta.yaml'
+--------------------------------------------
+Package type:  conda
+  datasource_id:     conda_yaml
+  documentation URL: https://docs.conda.io/
+  primary language:  Python
+  description:       Conda yaml manifest
+  path_patterns:    '*conda*.yaml', '*env*.yaml', '*environment*.yaml'
 --------------------------------------------
 Package type:  cpan
   datasource_id:     cpan_dist_ini
@@ -677,13 +698,6 @@ Package type:  pubspec
   primary language:  dart
   description:       Dart pubspec manifest
   path_patterns:    '*pubspec.yaml'
---------------------------------------------
-Package type:  pypi
-  datasource_id:     conda_yaml
-  documentation URL: https://docs.conda.io/
-  primary language:  Python
-  description:       Conda yaml manifest
-  path_patterns:    '*conda.yaml', '*conda.yml'
 --------------------------------------------
 Package type:  pypi
   datasource_id:     pip_requirements

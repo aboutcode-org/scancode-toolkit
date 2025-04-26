@@ -8,7 +8,7 @@ notes: an older W3C notice
 Notice and Disclaimers
 
 1. Unless otherwise noted, all materials contained in this Site are copyrighted
-and may not be used except as provided in these terms and conditions or in the
+and {{may not be}} used except as provided in these terms and conditions or in the
 copyright notice (documents and software) or other proprietary notice provided
 with the relevant materials.
 2. The materials contained in the Site may be downloaded or copied provided
@@ -16,7 +16,7 @@ that ALL copies retain the copyright and any other proprietary notices
 contained on the materials. No material may be modified, edited or taken out of
 context such that its use creates a false or misleading statement or impression
 as to the positions, statements or actions of W3C.
-3. The name and trademarks of copyright holders may NOT be used in advertising
+3. The name and trademarks of copyright holders {{may NOT be}} used in advertising
 or publicity pertaining to the Web site, its content, specifications, or
 software without specific, written prior permission. Title to copyright in Web
 site documents will at all times remain with copyright holders. Use of W3C

@@ -209,7 +209,7 @@ class TestIndexing(IndexTesting):
         index.LicenseIndex(rules)
 
     @pytest.mark.scanslow
-    def test_index_rules_with_key_phrases_and_without_are_duplicates(self):
+    def test_index_rules_with_required_phrases_and_without_are_duplicates(self):
         rules_dir = self.get_test_loc('index/duplicate-key-phrases/rules')
         lics_dir = self.get_test_loc('index/duplicate-key-phrases/licenses')
         rules = models.get_rules(licenses_data_dir=lics_dir, rules_data_dir=rules_dir)

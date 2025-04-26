@@ -3,10 +3,10 @@ license_expression: gpl-2.0
 is_license_notice: yes
 ---
 
-This program can be redistributed or modified under the terms of the
-GNU General Public License version 2 as published by the Free Software
+This program can be redistributed or modified {{under the terms of the
+GNU General Public License version 2}} as published by the Free Software
 Foundation.
 This program is distributed without any warranty or implied warranty
 of merchantability or fitness for a particular purpose.
 
-See the GNU General Public License version 2 for more details.
+See {{the GNU General Public License version 2}} for more details.

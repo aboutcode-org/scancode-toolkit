@@ -138,13 +138,13 @@ other_license_expression_spdx: (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-or-l
   AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
   AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only
   AND GPL-2.0-only) AND (LGPL-2.0-or-later AND LGPL-2.0-only) AND (LGPL-2.0-or-later AND LGPL-2.0-only)
-  AND LicenseRef-scancode-stlport-4.5 AND LicenseRef-scancode-public-domain AND (GPL-2.0-only
-  AND GPL-2.0-only) AND ((GPL-2.0-only AND GPL-2.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
-  AND LicenseRef-scancode-public-domain AND BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only)
-  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND
-  (LGPL-2.1-or-later AND LGPL-2.1-or-later) AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND
-  (X11 AND LicenseRef-scancode-public-domain) AND BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only)
-  AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only)
+  AND Boehm-GC-without-fee AND LicenseRef-scancode-public-domain AND (GPL-2.0-only AND GPL-2.0-only)
+  AND ((GPL-2.0-only AND GPL-2.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND LicenseRef-scancode-public-domain
+  AND BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-or-later AND GPL-2.0-or-later)
+  AND (GPL-3.0-or-later AND GPL-3.0-or-later) AND (LGPL-2.1-or-later AND LGPL-2.1-or-later)
+  AND (GPL-2.0-or-later AND GPL-2.0-or-later) AND (X11 AND LicenseRef-scancode-public-domain)
+  AND BSD-3-Clause AND (GPL-2.0-only AND GPL-2.0-only) AND (GPL-2.0-only AND GPL-2.0-only) AND
+  (GPL-2.0-only AND GPL-2.0-only)
 license_detections: []
 other_license_detections:
   - license_expression: other-copyleft
@@ -304,10 +304,10 @@ other_license_detections:
           version 2.2 of Bison.
     identifier: gpl_3_0_plus_with_bison_exception_2_2-637d6c30-89c5-8764-b189-8bb20227ccfc
   - license_expression: stlport-4.5
-    license_expression_spdx: LicenseRef-scancode-stlport-4.5
+    license_expression_spdx: Boehm-GC-without-fee
     matches:
       - license_expression: stlport-4.5
-        license_expression_spdx: LicenseRef-scancode-stlport-4.5
+        license_expression_spdx: Boehm-GC-without-fee
         from_file:
         start_line: 734
         end_line: 741

@@ -4,5 +4,5 @@ is_license_reference: yes
 relevance: 99
 ---
 
-* this software may be distributed under the terms of BSD
- * license.
+* this software may be distributed under the terms of {{BSD
+ * license}}.

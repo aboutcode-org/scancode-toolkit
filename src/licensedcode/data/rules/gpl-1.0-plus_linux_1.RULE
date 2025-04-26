@@ -7,6 +7,6 @@ notes: One of the many Linux GPL declaration. It should be treated as GPL-2.0 bu
     be done short of knowning what is the license in COPYING
 ---
 
-* This file is subject to the terms and conditions of the GNU General Public
- * License.  See the file COPYING in the main directory of this archive
+* This file is subject to the terms and conditions of the {{GNU General Public
+ * License}}.  See the file COPYING in the main directory of this archive
  * for more details.

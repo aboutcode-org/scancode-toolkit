@@ -7,4 +7,4 @@ referenced_filenames:
 notes: sometimes a bsd-new, sometimes a bsd-simplified. bsd-new is safer
 ---
 
-source files are distributed under the BSD-style license found in the LICENSE file.
+source files are distributed under the {{BSD-style license}} found in the LICENSE file.

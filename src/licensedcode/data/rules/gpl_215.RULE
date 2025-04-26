@@ -4,5 +4,5 @@ is_license_notice: yes
 ---
 
 All the drivers and utilities are published in form of source code under
-GNU General Public License in this version. Please refer to GNU General
-Public License announcement in each source code file for more detail.
+{{GNU General Public License}} in this version. Please refer to {{GNU General
+Public License}} announcement in each source code file for more detail.

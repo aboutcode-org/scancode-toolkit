@@ -5,7 +5,7 @@
 # ScanCode is a trademark of nexB Inc.
 # SPDX-License-Identifier: Apache-2.0
 # See http://www.apache.org/licenses/LICENSE-2.0 for the license text.
-# See https://github.com/nexB/skeleton for support or download.
+# See https://github.com/aboutcode-org/skeleton for support or download.
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
@@ -55,7 +55,8 @@ TRACE_DEEP = False
     "-d",
     "--dest",
     "dest_dir",
-    type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
+    type=click.Path(exists=True, readable=True,
+                    path_type=str, file_okay=False),
     metavar="DIR",
     default=utils_thirdparty.THIRDPARTY_DIR,
     show_default=True,
@@ -224,7 +225,8 @@ def fetch_thirdparty(
     environments = None
     if wheels:
         evts = itertools.product(python_versions, operating_systems)
-        environments = [utils_thirdparty.Environment.from_pyver_and_os(pyv, os) for pyv, os in evts]
+        environments = [utils_thirdparty.Environment.from_pyver_and_os(
+            pyv, os) for pyv, os in evts]
 
     # Collect PyPI repos
     repos = []
@@ -260,13 +262,14 @@ def fetch_thirdparty(
                     repos=repos,
                 )
                 if not fetched:
-                    wheels_or_sdist_not_found[f"{name}=={version}"].append(environment)
+                    wheels_or_sdist_not_found[f"{name}=={version}"].append(
+                        environment)
                     if TRACE:
                         print(f"      NOT FOUND")
 
         if (sdists or
             (f"{name}=={version}" in wheels_or_sdist_not_found and name in sdist_only)
-         ):
+            ):
             if TRACE:
                 print(f"  ==> Fetching sdist: {name}=={version}")
 
@@ -289,7 +292,8 @@ def fetch_thirdparty(
         sdist_missing = sdists and "sdist" in dists and not name in wheel_only
         if sdist_missing:
             mia.append(f"SDist missing: {nv} {dists}")
-        wheels_missing = wheels and any(d for d in dists if d != "sdist") and not name in sdist_only
+        wheels_missing = wheels and any(
+            d for d in dists if d != "sdist") and not name in sdist_only
         if wheels_missing:
             mia.append(f"Wheels missing: {nv} {dists}")
 
@@ -299,7 +303,8 @@ def fetch_thirdparty(
         raise Exception(mia)
 
     print(f"==> FETCHING OR CREATING ABOUT AND LICENSE FILES")
-    utils_thirdparty.fetch_abouts_and_licenses(dest_dir=dest_dir, use_cached_index=use_cached_index)
+    utils_thirdparty.fetch_abouts_and_licenses(
+        dest_dir=dest_dir, use_cached_index=use_cached_index)
     utils_thirdparty.clean_about_files(dest_dir=dest_dir)
 
     # check for problems

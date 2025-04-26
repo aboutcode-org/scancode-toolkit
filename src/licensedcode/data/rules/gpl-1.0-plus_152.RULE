@@ -6,5 +6,5 @@ ignorable_urls:
     - http://www.plupload.com/license
 ---
 
-Released under GPL License.
+Released {{under GPL}} License.
  License: http://www.plupload.com/license

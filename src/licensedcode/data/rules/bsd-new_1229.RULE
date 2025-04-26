@@ -6,6 +6,6 @@ relevance: 100
 
 <licenses>
     <license>
-      <name>The BSD 3-Clause License</name>
+      <name>The {{BSD 3-Clause License}}</name>
     </license>
   </licenses>

@@ -6,5 +6,5 @@ referenced_filenames:
     - COPYING
 ---
 
-The ./COPYING file (GPL-2.0-or-later) is the default license for code without
+The ./COPYING file ({{GPL-2.0-or-later}}) is the default license for code without
 an explicitly defined license.

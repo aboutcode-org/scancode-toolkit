@@ -6,5 +6,5 @@ referenced_filenames:
     - COPYING
 ---
 
-// This software is made available under the MIT License
+// This software is made available {{under the MIT License}}
 // See COPYING for details

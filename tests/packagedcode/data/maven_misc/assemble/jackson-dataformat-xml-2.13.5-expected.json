@@ -188,7 +188,9 @@
       "path": "jackson-dataformat-xml-2.13.5",
       "type": "directory",
       "package_data": [],
-      "for_packages": [],
+      "for_packages": [
+        "pkg:jar/Jackson-dataformat-XML@2.13.5?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],

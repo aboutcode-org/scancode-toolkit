@@ -9,7 +9,7 @@ ignorable_urls:
 
 ## Legal Issues
 
-This software is distributed under the [MIT license](https://raw.github.com/master/LICENSE.txt).
+This software is {{distributed under the [MIT license}}](https://raw.github.com/master/LICENSE.txt).
 
 In particular, please be aware that
 

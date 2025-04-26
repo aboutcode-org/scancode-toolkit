@@ -1,0 +1,318 @@
+[
+  {
+    "type": "pypi",
+    "namespace": null,
+    "name": "ForeTiS",
+    "version": "0.0.7",
+    "qualifiers": {},
+    "subpath": null,
+    "primary_language": "Python",
+    "description": "state-of-the-art and easy-to-use time series forecasting",
+    "release_date": null,
+    "parties": [
+      {
+        "type": "person",
+        "role": "author",
+        "name": "Josef Eiglsperger, Florian Haselbeck; Dominik G. Grimm",
+        "email": "josef.eiglsperger@tum.de",
+        "url": null
+      }
+    ],
+    "keywords": [
+      "Development Status :: 2 - Pre-Alpha",
+      "Intended Audience :: Science/Research",
+      "Operating System :: POSIX :: Linux",
+      "Programming Language :: Python :: 3",
+      "Topic :: Scientific/Engineering :: Artificial Intelligence"
+    ],
+    "homepage_url": "https://github.com/grimmlab/ForeTiS",
+    "download_url": null,
+    "size": null,
+    "sha1": null,
+    "md5": null,
+    "sha256": null,
+    "sha512": null,
+    "bug_tracking_url": null,
+    "code_view_url": "https://github.com/grimmlab/ForeTiS",
+    "vcs_url": null,
+    "copyright": null,
+    "holder": null,
+    "declared_license_expression": "mit",
+    "declared_license_expression_spdx": "MIT",
+    "license_detections": [
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-spdx-id",
+            "score": 100.0,
+            "matched_length": 1,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+            "rule_url": null,
+            "matched_text": "MIT"
+          }
+        ],
+        "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+      },
+      {
+        "license_expression": "mit",
+        "license_expression_spdx": "MIT",
+        "matches": [
+          {
+            "license_expression": "mit",
+            "license_expression_spdx": "MIT",
+            "from_file": null,
+            "start_line": 1,
+            "end_line": 1,
+            "matcher": "1-hash",
+            "score": 100.0,
+            "matched_length": 5,
+            "match_coverage": 100.0,
+            "rule_relevance": 100,
+            "rule_identifier": "pypi_mit_license.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+            "matched_text": "- 'License :: OSI Approved :: MIT License'"
+          }
+        ],
+        "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
+      }
+    ],
+    "other_license_expression": null,
+    "other_license_expression_spdx": null,
+    "other_license_detections": [],
+    "extracted_license_statement": "license: MIT\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
+    "notice_text": null,
+    "source_packages": [],
+    "file_references": [],
+    "is_private": false,
+    "is_virtual": false,
+    "extra_data": {
+      "Documentation": "https://ForeTiS.readthedocs.io/",
+      "license_file": "LICENSE"
+    },
+    "dependencies": [
+      {
+        "purl": "pkg:pypi/torch",
+        "extracted_requirement": ">=1.11.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/xgboost",
+        "extracted_requirement": ">=1.5.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/optuna",
+        "extracted_requirement": ">=2.10.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/sqlalchemy@1.4.46",
+        "extracted_requirement": "==1.4.46",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": true,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/joblib",
+        "extracted_requirement": ">=1.1.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/numpy",
+        "extracted_requirement": ">=1.22.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pandas",
+        "extracted_requirement": ">=1.4.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/scikit-learn",
+        "extracted_requirement": ">=1.0.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/tensorflow",
+        "extracted_requirement": ">=2.8.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/tensorflow-probability",
+        "extracted_requirement": ">=0.18",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/statsmodels",
+        "extracted_requirement": ">=0.13.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/scipy",
+        "extracted_requirement": ">=1.8.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/pmdarima",
+        "extracted_requirement": ">=2.0.1",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/gpflow",
+        "extracted_requirement": ">=2.5.2",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/matplotlib",
+        "extracted_requirement": ">=3.3.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/changefinder",
+        "extracted_requirement": ">=0.3",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/bayesian-torch",
+        "extracted_requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/blitz-bayesian-pytorch",
+        "extracted_requirement": null,
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      },
+      {
+        "purl": "pkg:pypi/tables",
+        "extracted_requirement": ">=3.7.0",
+        "scope": "install",
+        "is_runtime": true,
+        "is_optional": false,
+        "is_pinned": false,
+        "is_direct": true,
+        "resolved_package": {},
+        "extra_data": {}
+      }
+    ],
+    "repository_homepage_url": "https://pypi.org/project/ForeTiS",
+    "repository_download_url": "https://pypi.org/packages/source/F/ForeTiS/ForeTiS-0.0.7.tar.gz",
+    "api_data_url": "https://pypi.org/pypi/ForeTiS/0.0.7/json",
+    "datasource_id": "pypi_sdist_pkginfo",
+    "purl": "pkg:pypi/foretis@0.0.7"
+  }
+]

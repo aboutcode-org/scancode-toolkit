@@ -249,11 +249,18 @@ class TestMavenMisc(BaseMavenCase):
         expected_file = self.get_test_loc('maven_misc/assemble/numbers-1.7.4-expected.json')
         run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
-    
+
     def test_maven_unknown_reference_to_license_in_manifest(self):
         test_dir = self.get_test_loc('maven_misc/assemble/jackson-dataformat-xml-2.13.5')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('maven_misc/assemble/jackson-dataformat-xml-2.13.5-expected.json')
+        run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
+        check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_maven_package_assembly_jar_manifest(self):
+        test_dir = self.get_test_loc('maven_misc/assemble/spring-web-5.3.20-jar')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('maven_misc/assemble/spring-web-5.3.20-jar-expected.json')
         run_scan_click(['--package', '--license', '--license-diagnostics', '--processes', '-1', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES)
 

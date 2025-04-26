@@ -1,6 +1,8 @@
 ---
 license_expression: other-permissive
 is_license_notice: yes
+is_deprecated: yes
+notes: This is now the socketxx-2003.LICENSE
 ---
 
 // Permission is granted to use at your own risk and distribute this software

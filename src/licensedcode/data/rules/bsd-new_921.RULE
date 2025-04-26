@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-distributed under the BSD license, see the LICENSE file for details.
+distributed under {{the BSD license}}, see the LICENSE file for details.

@@ -7,8 +7,8 @@ notes: https://github.com/libigl/libigl/blob/21acee15fe4451e828b52bedcdba53b79d8
 *                                License                                    *
  *                                                                           *
  *  This library is free software; you can redistribute it and/or modify it  *
- *  under the terms of the {{GNU Library General Public License}} as published   *
- *  by the Free Software Foundation, {{version 2}}.                              *
+ *  under the terms of the {{GNU Library General Public License as published   *
+ *  by the Free Software Foundation, version 2}}.                              *
  *                                                                           *
  *  This library is distributed in the hope that it will be useful, but      *
  *  WITHOUT ANY WARRANTY; without even the implied warranty of               *

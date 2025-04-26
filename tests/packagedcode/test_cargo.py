@@ -155,6 +155,15 @@ class TestCargo(PackageTester):
             expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
         )
 
+    def test_scan_works_on_rust_binary_with_inspector(self):
+        test_file = self.get_test_loc('cargo/binary/cargo_dependencies')
+        expected_file = self.get_test_loc('cargo/binary/cargo-binary.expected.json')
+        result_file = self.get_temp_file('results.json')
+        run_scan_click(['--package', test_file, '--json', result_file])
+        check_json_scan(
+            expected_file, result_file, remove_uuid=True, regen=REGEN_TEST_FIXTURES
+        )
+
 
 PERSON_PARSER_TEST_TABLE = [
     ('Barney Rubble <b@rubble.com>', ('Barney Rubble ', '<b@rubble.com>')),

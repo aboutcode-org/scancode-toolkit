@@ -10,6 +10,13 @@ notes: formerly under spdx_license_key bzip2-1.0.5. See bzip2-libbzip-2010 for r
 other_urls:
     - http://www.bzip.org/
     - https://sourceware.org/git/?p=bzip2.git;a=blob;f=LICENSE;hb=bzip2-1.0.5
+    - https://spdx.org/licenses/bzip2-1.0.5.html
+ignorable_copyrights:
+    - copyright (c) Julian R Seward
+ignorable_holders:
+    - Julian R Seward
+ignorable_emails:
+    - jseward@acm.org
 ---
 
 The bzip2 license

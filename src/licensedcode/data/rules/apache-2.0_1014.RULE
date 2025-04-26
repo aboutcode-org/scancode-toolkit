@@ -7,5 +7,5 @@ referenced_filenames:
     - /usr/share/common-licenses/Apache-2.0
 ---
 
-On Debian systems, the text of the Apache Software License version 2 can
+On Debian systems, the text of the {{Apache Software License version 2}} can
  be found in the file `/usr/share/common-licenses/Apache-2.0'.

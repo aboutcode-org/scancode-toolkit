@@ -7,4 +7,4 @@ ignorable_urls:
     - http://opensource.org/licenses/BSD-3-Clause
 ---
 
-<license uri="http://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause License</license>
+<license uri="http://opensource.org/licenses/BSD-3-Clause">{{BSD 3-Clause License}}</license>
