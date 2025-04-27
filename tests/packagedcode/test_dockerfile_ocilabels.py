@@ -9,11 +9,13 @@
 
 import pytest
 import json
+import os
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
-from packagedcode.models import DockerOCILabelsHandler
+from packagedcode.dockerfile_ocilabels import DockerOCILabelsHandler
 
 class TestDockerOCILabelsHandler(FileDrivenTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     @pytest.mark.parametrize('test_file, expected', [
         ('docker/test.dockerfile', True),
@@ -52,14 +54,11 @@ class TestDockerOCILabelsHandler(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         run_scan_click(['--package', test_file, '--json-pp', result_file])
         result = json.load(open(result_file))
+        expected_loc = self.get_test_loc('docker/test.containerfile-scan.expected.json')
+        expected_package_data = json.load(open(expected_loc))
         package_data = result.get('package_data', [])
         assert len(package_data) == 1
-        package = package_data[0]
-        assert package['datasource_id'] == 'docker_oci_labels'
-        assert package['labels'] == {
-            'org.opencontainers.image.source': 'https://github.com/kubernetes-sigs/blixt',
-            'org.opencontainers.image.licenses': 'GPL-2.0-only,BSD-2-Clause'
-        }
+        assert package_data == expected_package_data
 
     def load_expected(self, expected_file):
         with open(expected_file) as f:

@@ -20,7 +20,8 @@ import fnmatch
 
 class DockerOCILabelsHandler(NonAssemblableDatafileHandler):
     datasource_id = 'dockerfile_oci_labels'
-    path_patterns = ('Dockerfile', 'containerfile', '*.dockerfile')
+    default_package_type = 'docker'
+    path_patterns = ('Dockerfile', 'containerfile', '*.dockerfile','*.containerfile')
     
     @classmethod
     def parse(cls, location, package_only=False):
@@ -28,13 +29,16 @@ class DockerOCILabelsHandler(NonAssemblableDatafileHandler):
         Parse a Dockerfile and yield one or more PackageData objects with OCI labels and metadata.
         """
         labels = cls.extract_oci_labels_from_dockerfile(location)
+        license_value = labels.get('org.opencontainers.image.licenses')
+        if license_value:
+           license_value = license_value.strip()
         package_data = {
             'datasource_id': cls.datasource_id,
             'type': cls.default_package_type,
-            'name': labels.get('name', 'None'),
-            'version': labels.get('version', 'None'),
-            'license_expression': labels.get('license'),
-            'labels': labels,
+            'name': labels.get('org.opencontainers.image.title'),
+            'version': None,
+            'extracted_license_statement':license_value,
+            'extra_data': {'labels': labels},
         }
 
         yield models.PackageData.from_data(package_data, package_only)
