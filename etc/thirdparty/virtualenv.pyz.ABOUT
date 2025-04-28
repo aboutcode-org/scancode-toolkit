@@ -11,5 +11,3 @@ redistribute: yes
 attribute: yes
 track_changes: yes
 package_url: pkg:github/pypa/get-virtualenv@20.30.0#public/virtualenv.pyz
-notes: this archive has been modified from the original to remove extra
- embedded wheels that are not needed as we support only Python 3.7+
