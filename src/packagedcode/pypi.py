@@ -45,7 +45,6 @@ from packagedcode.utils import parse_maintainer_name_email
 from packagedcode.utils import yield_dependencies_from_package_data
 from packagedcode.utils import yield_dependencies_from_package_resource
 from packagedcode.utils import get_base_purl
-from packagedcode.utils import is_private_package
 
 try:
     from zipfile import Path as ZipPath
@@ -75,6 +74,8 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, str) and a or repr(a) for a in args))
 
+def is_private_package(classifiers):
+    return any('Private ::' in classifier for classifier in classifiers if classifier)
 
 class PythonEggPkgInfoFile(models.DatafileHandler):
     datasource_id = 'pypi_egg_pkginfo'
