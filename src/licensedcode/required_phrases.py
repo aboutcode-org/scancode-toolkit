@@ -305,6 +305,7 @@ def update_rules_using_is_required_phrases_rules(
     rules_by_expression = get_updatable_rules_by_expression(
         license_expression,
         simple_expression=False,
+        verbose=verbose,
     )
     if verbose:
         click.echo(f"update_rules_using_is_required_phrases_rules: rules_by_expression # {len(rules_by_expression)}")
@@ -329,13 +330,13 @@ def get_base_rules_by_expression(license_expression=None):
     return rules_by_expression
 
 
-def get_updatable_rules_by_expression(license_expression=None, simple_expression=True):
+def get_updatable_rules_by_expression(license_expression=None, simple_expression=True, verbose=False):
     """
     Return a mapping of rules_by_expression, filtered for an optional ``license_expression``.
     The rules are suitable to receive required phrase updates
     If simple_expression is True, only consider lincense rules with a single license key.
     """
-    rules_by_expression = get_base_rules_by_expression()
+    rules_by_expression = get_base_rules_by_expression(license_expression)
 
     index = get_index()
     licensing = Licensing()
@@ -350,29 +351,38 @@ def get_updatable_rules_by_expression(license_expression=None, simple_expression
                 continue
 
         updatable_rules = []
+        if verbose:
+            click.echo(f"get_updatable_rules_by_expression: rule_identifiers # {[rule.identifier for rule in rules]}")
+
         for rule in rules:
             if rule.is_from_license:
+                if verbose:
+                    click.echo(f"get_updatable_rules_by_expression: {rule.identifier} ignored because rule.is_from_license")
                 continue
 
-            # long texts are best left alone
-            if rule.is_license_text and len(rule.text) > 300:
+            # very long texts are best left alone
+            if len(rule.text) > 4000:
+                if verbose:
+                    click.echo(f"get_updatable_rules_by_expression: {rule.identifier} ignored because rule.is_long")
                 continue
 
             # skip required phrase, false positive, tiny and and more
-            if rule.is_required_phrase or not rule.is_approx_matchable:
+            if not rule.is_approx_matchable:
+                if verbose:
+                    click.echo(f"get_updatable_rules_by_expression: {rule.identifier} ignored because rule.is_approx_matchable")
                 continue
 
             # skip rules that ask to be skipped
             if rule.skip_for_required_phrase_generation:
-                continue
-
-            # skip non-approx matchable, they will be matched exactly
-            if not index.is_rule_approx_matchable(rule):
+                if verbose:
+                    click.echo(f"get_updatable_rules_by_expression: {rule.identifier} ignored because rule.skip_for_required_phrase_generation")
                 continue
 
             updatable_rules.append(rule)
 
         if updatable_rules:
+            if verbose:
+                click.echo(f"get_updatable_rules_by_expression: updatable_rules # {[rule.identifier for rule in updatable_rules]}")
             updatable_rules_by_expression[expression] = updatable_rules
 
     return updatable_rules_by_expression
@@ -465,7 +475,7 @@ def get_ignorable_spans(rule):
     for ignorable in ignorables:
         spans = find_phrase_spans_in_text(
             text=rule.text,
-            required_phrase=ignorable,
+            phrase_text=ignorable,
             preserve_case=True)
         ignorable_spans.extend(
             spans
@@ -484,7 +494,7 @@ def add_required_phrase_to_rule(rule, required_phrase, source, debug=False, dry_
     # These are candidate spans for new requriedf_phrases, if they exist
     new_required_phrase_spans = find_phrase_spans_in_text(
         text=rule.text,
-        required_phrase=required_phrase,
+        phrase_text=required_phrase,
     )
 
     # we get spans for already existing required phrases and ignorables

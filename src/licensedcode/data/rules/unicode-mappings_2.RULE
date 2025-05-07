@@ -3,7 +3,7 @@ license_expression: unicode-mappings
 is_license_text: yes
 is_deprecated: yes
 replaced_by:
-    - unicode-ucd.LICENSE
+    - unicode-ucd
 ---
 
 UCD Terms of Use

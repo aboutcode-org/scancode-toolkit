@@ -2,9 +2,9 @@
 license_expression: proprietary-license
 is_license_text: yes
 is_deprecated: yes
-replaced_by:
-    - inria-compcert.LICENSE
 notes: https://github.com/AbsInt/CompCert/blob/5be9ae2235b16239f023a36679b7d515dd774c68/LICENSE
+replaced_by:
+    - inria-compcert
 ---
 
 INRIA Non-Commercial License Agreement for the CompCert verified compiler
