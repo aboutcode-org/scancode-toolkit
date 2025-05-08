@@ -1074,9 +1074,9 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         # looks acceptable below. Most cases just need to fix the test.
         expected = [
             # detected, match.lines(), match.qspan,
-            ('gpl-2.0-plus', (12, 25), Span(48, 157)),
-            ('fsf-unlimited-no-warranty', (231, 238), Span(965, 1028)),
-            ('warranty-disclaimer', (306, 307), Span(1337, 1359)),
+            ('gpl-2.0-plus', (12, 25), Span(51, 160)),
+            ('fsf-unlimited-no-warranty', (231, 238), Span(978, 1041)),
+            ('warranty-disclaimer', (306, 307), Span(1351, 1373)),
         ]
         self.check_position('positions/automake.pl', expected)
 
