@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE.TXT
 ---
 
-This software is distributed under the GNU General Public License GPLv3 or higher, see LICENSE.TXT for details.
+This software is distributed under the {{GNU General Public License}} {{GPLv3 or higher}}, see LICENSE.TXT for details.

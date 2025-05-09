@@ -4,6 +4,6 @@ is_license_reference: yes
 relevance: 100
 ---
 
-is released under the [Apache License, Version 2.0].
+is released under the [{{Apache License, Version 2.0}}].
 
-[Apache License, Version 2.0]:
+[{{Apache License, Version 2.0}}]:

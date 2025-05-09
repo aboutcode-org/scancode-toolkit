@@ -1,7 +1,10 @@
 ---
 license_expression: lgpl-2.1 AND gpl-2.0 WITH generic-exception
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - lgpl-2.1 AND gpl-2.0 WITH generic-exception
 ---
 
 License

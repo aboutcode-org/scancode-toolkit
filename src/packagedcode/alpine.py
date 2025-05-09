@@ -8,6 +8,7 @@
 #
 import base64
 import codecs
+import dataclasses
 import email
 import posixpath
 import re
@@ -1064,7 +1065,7 @@ def c_git_commit_handler(value, **kwargs):
     """
     Return a git VCS URL from a package commit.
     """
-    return {f'vcs_url': f'git+http://git.alpinelinux.org/aports/commit/?id={value}'}
+    return {f'vcs_url': f'git+https://git.alpinelinux.org/aports/commit/?id={value}'}
 
 
 def A_arch_handler(value, **kwargs):
@@ -1362,19 +1363,39 @@ package_handlers_by_field_name = {
 }
 
 
-def detect_declared_license(declared):
+@dataclasses.dataclass
+class ApkLicenseDetection:
     """
-    Return a tuple of (cleaned declared license, detected license expression)
-    strings from a ``declared`` license text. Both can be None.
+    Represent the results of an Alpine license detection, including intermediate steps.
+    """
+    declared_license: str
+    cleaned_license: str
+    mapped_license: str
+    license_detections: list
+    license_expression: str
+
+    def to_dict(self):
+        return dict(
+            declared_license=self.declared_license,
+            cleaned_license=self.cleaned_license,
+            mapped_license=self.mapped_license,
+            license_detections=self.license_detections,
+            license_expression=self.license_expression,
+        )
+
+
+def get_alpine_license_detection(declared):
+    """
+    Return an ApkLicenseDetection from a ``declared`` license text
     """
     # cleaning first to fix syntax quirks and try to get something we can parse
-    cleaned = normalize_and_cleanup_declared_license(declared)
-    if not cleaned:
-        return None, None
+    cleaned_license = normalize_and_cleanup_declared_license(declared)
+    if not cleaned_license:
+        return None
 
-    # then we apply mappings for known non-standard symbols
+    # then we apply mappings for known non-standard symbols.
     # the output should be a proper SPDX expression
-    mapped = apply_expressions_mapping(cleaned)
+    mapped_license = apply_expressions_mapping(cleaned_license)
 
     # Finally perform SPDX expressions detection: Alpine uses mostly SPDX, but
     # with some quirks such as some non standard symbols (in addition to the
@@ -1382,12 +1403,36 @@ def detect_declared_license(declared):
     extra_licenses = {}
     expression_symbols = get_license_symbols(extra_licenses=extra_licenses)
 
-    license_detections, detected_license_expression = get_license_detections_and_expression(
-        extracted_license_statement=mapped,
+    license_detections, license_expression = get_license_detections_and_expression(
+        extracted_license_statement=mapped_license,
         expression_symbols=expression_symbols,
     )
 
-    return cleaned, detected_license_expression, license_detections
+    return ApkLicenseDetection(
+        declared_license=declared,
+        cleaned_license=cleaned_license,
+        mapped_license=mapped_license,
+        license_expression=license_expression,
+        license_detections=license_detections,
+    )
+
+
+def detect_declared_license(declared):
+    """
+    Return a three-tuple of detected license data from a ``declared`` license text, with this shape:
+        (cleaned declared license, detected license expression, license_detections)
+    - cleaned declared license and detected license expression are strings.
+    - license_detections is a list of LicenseDetection.
+    - Any of these can be None.
+    """
+    if alpine_detection := get_alpine_license_detection(declared):
+        return (
+            alpine_detection.cleaned_license,
+            alpine_detection.license_expression,
+            alpine_detection.license_detections,
+        )
+    else:
+        return None, None, None
 
 
 def get_license_symbols(extra_licenses):
@@ -1416,25 +1461,19 @@ def get_license_symbols(extra_licenses):
 def normalize_and_cleanup_declared_license(declared):
     """
     Return a cleaned and normalized declared license.
-
-    The expression should be valida SPDX but are far from this in practice.
-
+    The expressions should be valid SPDX license expressions but they are far from this in practice.
     Several fixes are applied:
-
     - plain text replacemnet aka. syntax fixes are plain text replacements
       to make the expression parsable
-
     - common fixes includes also nadling space-separated and comma-separated
       lists of licenses
     """
     declared = declared or ''
 
-    # normalize spaces
+    # normalize spaces and case
     declared = ' '.join(declared.split())
-
     declared = declared.lower()
 
-    # performa replacements
     declared = apply_syntax_fixes(declared)
 
     # comma-separated as in gpl-2.0+, lgpl-2.1+, zlib
@@ -1516,15 +1555,15 @@ EXPRESSION_SYNTAX_FIXES = {
 
 def apply_syntax_fixes(s):
     """
-    Fix the expression string s by aplying replacement for various quirks.
+    Fix the expression string ``s`` by aplying replacement for various quirks to get clean license
+    expression syntax.
     """
     for src, tgt in EXPRESSION_SYNTAX_FIXES.items():
         s = s.replace(src, tgt)
     return s
 
+
 # These are parsed expression objects replacement that make the expression SPDX compliant
-
-
 # {alpine sub-expression: SPDX subexpression}
 DECLARED_TO_SPDX = {
     'openssl-exception': 'licenseref-scancode-generic-exception',

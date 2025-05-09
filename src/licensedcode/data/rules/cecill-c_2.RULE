@@ -1,6 +1,7 @@
 ---
 license_expression: cecill-c
 is_license_reference: yes
+is_required_phrase: yes
 ---
 
 CeCILL-C Free Software License Agreement

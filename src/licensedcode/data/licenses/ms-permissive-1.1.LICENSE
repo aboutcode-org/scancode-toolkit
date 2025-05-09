@@ -1,6 +1,8 @@
 ---
 key: ms-permissive-1.1
 is_deprecated: yes
+replaced_by:
+    - ms-pl
 short_name: MS-PL 1.1
 name: Microsoft Permissive License (MS-PL) v1.1
 category: Permissive

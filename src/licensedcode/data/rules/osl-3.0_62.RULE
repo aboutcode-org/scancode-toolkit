@@ -1,0 +1,13 @@
+---
+license_expression: osl-3.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.txt
+ignorable_urls:
+    - http://www.opensource.org/licenses/OSL-3.0
+---
+
+This source file is subject to Open Software License (OSL 3.0)
+  Lincence details is bundled with this package in the file LICENSE.txt.
+  It is also available at this URL:
+  <http://www.opensource.org/licenses/OSL-3.0>

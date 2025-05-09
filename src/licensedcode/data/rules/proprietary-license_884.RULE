@@ -4,7 +4,7 @@ is_license_text: yes
 notes: https://github.com/seyedk-pacbits/mylicenses/blob/ea4e6fab6f01da2558ba2da5103d1198c8d419b6/LICENSE#L5
 ---
 
-Permission is hereby NOT granted,  to any person obtaining any copy
+{{Permission is hereby NOT granted}},  to any person obtaining any copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software  the rightsto use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is

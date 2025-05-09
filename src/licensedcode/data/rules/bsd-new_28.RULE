@@ -7,4 +7,4 @@ notes: bsdn notice variant, debian style
 
 License:
 
-Software licensed under the BSD license, see /usr/share/common-licenses/BSD
+Software licensed under {{the BSD license}}, see /usr/share/common-{{licenses/BSD}}

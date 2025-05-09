@@ -8,7 +8,7 @@ ignorable_urls:
 
 <licenses>
     <license>
-      <name>GNU LESSER GENERAL PUBLIC LICENSE</name>
+      <name>{{GNU LESSER GENERAL PUBLIC LICENSE}}</name>
       <url>https://www.gnu.org/licenses/lgpl.txt</url>
     </license>
   </licenses>

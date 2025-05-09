@@ -2,7 +2,10 @@
 license_expression: apache-2.0
 is_license_reference: yes
 is_continuous: yes
+is_deprecated: yes
 relevance: 99
+replaced_by:
+    - apache-2.0
 ---
 
 Apache Public Licence

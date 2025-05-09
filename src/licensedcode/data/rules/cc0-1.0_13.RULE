@@ -6,6 +6,6 @@ ignorable_urls:
     - https://creativecommons.org/publicdomain/zero/1.0/deed
 ---
 
-## License
+## {{License
 
-[Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed)
+[Creative Commons Zero v1.0 Universal}}](https://creativecommons.org/publicdomain/zero/1.0/deed)

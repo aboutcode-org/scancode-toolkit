@@ -1,7 +1,10 @@
 ---
 license_expression: freebsd-doc
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - freebsd-doc
 ---
 
 licenses.nuget.org/FreeBSD-DOC

@@ -1,0 +1,7 @@
+---
+license_expression: bsd-new AND cc0-1.0 AND gpl-2.0-plus
+is_license_tag: yes
+relevance: 100
+---
+
+LICENSE = {{"BSD-3-Clause & CC0-1.0 & GLP-2.0-or-later"}}

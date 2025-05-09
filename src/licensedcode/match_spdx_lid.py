@@ -392,7 +392,7 @@ def clean_text(text):
 
 
 _split_spdx_lid = re.compile(
-    '(spdx(?:\\-|\\s)+licen(?:s|c)e(?:\\-|\\s)+identifier\\s*:?\\s*)',
+    '(spd[xz][\\-\\s]+lin?[cs]en?[sc]es?[\\-\\s]+identifi?er\\s*:?\\s*)',
     re.IGNORECASE).split
 
 _nuget_split_spdx_lid = re.compile(
@@ -402,12 +402,13 @@ _nuget_split_spdx_lid = re.compile(
 
 def split_spdx_lid(text):
     """
-    Split text if it contains an "SPDX license identifier". Return a 2-tuple if
-    if there is an SPDX license identifier where the first item contains the
-    "SPDX license identifier" text proper and the second item contains the
-    remainder of the line (expected to be a license expression). Otherwise
-    return a 2-tuple where the first item is None and the second item contains
-    the orignal text.
+    Split text if it contains an "SPDX license identifier". Return a 2-tuple if if there is an SPDX
+    license identifier where the first item contains the "SPDX license identifier" text proper and
+    the second item contains the remainder of the line (expected to be a license expression).
+    Otherwise return a 2-tuple where the first item is None and the second item contains the
+    original text.
+
+    Also supports "https://licenses.nuget.org" followed by a license expression.
     """
     segments = _split_spdx_lid(text)
     expression = segments[-1]

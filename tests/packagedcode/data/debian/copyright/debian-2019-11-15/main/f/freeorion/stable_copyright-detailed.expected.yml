@@ -251,12 +251,12 @@ other_license_detections:
         start_line: 146
         end_line: 521
         matcher: 3-seq
-        score: '99.82'
-        matched_length: 3348
-        match_coverage: '99.82'
+        score: '99.97'
+        matched_length: 3347
+        match_coverage: '99.97'
         rule_relevance: 100
-        rule_identifier: cc-by-sa-3.0_41.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_41.RULE
+        rule_identifier: cc-by-sa-3.0_86.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/cc-by-sa-3.0_86.RULE
         matched_text: |
           Creative Commons Attribution-ShareAlike 3.0 Unported
           ․
@@ -634,7 +634,7 @@ other_license_detections:
           does not form part of the License.
           ․
           Creative Commons may be contacted at http://creativecommons.org/.
-    identifier: cc_by_sa_3_0-33d6e24f-4dca-f73d-ade0-52b78a9bc1e8
+    identifier: cc_by_sa_3_0-74f95720-661a-f9ed-42d1-d686fac86ea0
   - license_expression: bitstream
     license_expression_spdx: Bitstream-Vera
     matches:

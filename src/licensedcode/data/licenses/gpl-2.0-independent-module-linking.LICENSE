@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-independent-module-linking
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH classpath-exception-2.0
 short_name: GPL 2.0 with Independent Module Linking exception
 name: GPL 2.0 with Independent Module Linking exception
 category: Copyleft Limited

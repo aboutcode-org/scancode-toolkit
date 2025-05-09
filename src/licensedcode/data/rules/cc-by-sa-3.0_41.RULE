@@ -7,7 +7,7 @@ ignorable_urls:
     - http://creativecommons.org/compatiblelicenses
 ---
 
-License: CC-BY-SA-3.0
+{{License: CC-BY-SA-3.0}}
  Creative Commons Attribution-ShareAlike 3.0 Unported
  .
  CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE

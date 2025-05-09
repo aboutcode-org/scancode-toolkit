@@ -6,8 +6,10 @@ relevance: 100
 notes: |
     Added in SPDX license list 3.26
     Replaced by license: mips.LICENSE
+replaced_by:
+    - mips
 ---
 
-grants reproduction and use   |
- * | rights to all parties, PROVIDED that this comment is      |
- * | maintained in the copy.
+grants reproduction and use
+rights to all parties, PROVIDED that this comment is
+maintained in the copy.

@@ -1,7 +1,10 @@
 ---
 license_expression: lgpl-2.0-plus
 is_license_reference: yes
+is_deprecated: yes
 relevance: 99
+replaced_by:
+    - lgpl-2.1-plus
 ---
 
 Lesser General Purpose license (LGPL)

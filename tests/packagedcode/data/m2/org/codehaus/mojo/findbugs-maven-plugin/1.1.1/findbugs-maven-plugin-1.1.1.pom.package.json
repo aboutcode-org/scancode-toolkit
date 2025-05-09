@@ -71,7 +71,7 @@
           "rule_relevance": 100,
           "rule_identifier": "mit_1160.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_1160.RULE",
-          "matched_text": "license - name: MIT"
+          "matched_text": "license name: MIT"
         }
       ],
       "identifier": "mit-d9e3f4a1-d310-01d5-c705-8088549acd7c"
@@ -80,7 +80,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: MIT\n  url: LICENSE.txt\n",
+  "extracted_license_statement": "- license:\n    name: MIT\n    url: LICENSE.txt\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.codehaus.mojo/findbugs-maven-plugin@1.1.1?classifier=sources"

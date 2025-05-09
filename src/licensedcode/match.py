@@ -55,7 +55,7 @@ TRACE_FILTER_RULE_MIN_COVERAGE = False
 TRACE_FILTER_BELOW_MIN_SCORE = False
 TRACE_FILTER_SINGLE_WORD_GIBBERISH = False
 TRACE_SET_LINES = False
-TRACE_KEY_PHRASES = False
+TRACE_REQUIRED_PHRASES = False
 TRACE_REGIONS = False
 TRACE_FILTER_LICENSE_LIST = False
 TRACE_FILTER_LICENSE_LIST_DETAILED = False
@@ -91,7 +91,7 @@ if (TRACE
     or TRACE_MATCHED_TEXT_DETAILS
     or TRACE_HIGHLIGHTED_TEXT
     or TRACE_FILTER_SINGLE_WORD_GIBBERISH
-    or TRACE_KEY_PHRASES
+    or TRACE_REQUIRED_PHRASES
     or TRACE_REGIONS
     or TRACE_FILTER_LICENSE_LIST
     or TRACE_FILTER_LICENSE_LIST_DETAILED
@@ -133,7 +133,7 @@ if (TRACE
 
 class DiscardReason(IntEnum):
     NOT_DISCARDED = 0
-    MISSING_KEY_PHRASES = 1
+    MISSING_REQUIRED_PHRASES = 1
     BELOW_MIN_COVERAGE = 2
     SPURIOUS_SINGLE_TOKEN = 3
     TOO_SHORT = 4
@@ -258,6 +258,20 @@ class LicenseMatch(object):
     )
 
     def __repr__(
+        self,
+        trace_spans=TRACE_REPR_SPAN_DETAILS,
+        trace_thresholds=TRACE_REPR_THRESHOLDS,
+        trace_rule=TRACE_REPR_MATCHED_RULE,
+        trace_text=TRACE_REPR_ALL_MATCHED_TEXTS,
+    ):
+        return self.representation(
+            trace_spans=trace_spans,
+            trace_thresholds=trace_thresholds,
+            trace_rule=trace_rule,
+            trace_text=trace_text,
+        )
+
+    def representation(
         self,
         trace_spans=TRACE_REPR_SPAN_DETAILS,
         trace_thresholds=TRACE_REPR_THRESHOLDS,
@@ -645,15 +659,15 @@ class LicenseMatch(object):
             discard_reason = DiscardReason.NOT_DISCARDED
 
         elif (
-            self.discard_reason == DiscardReason.MISSING_KEY_PHRASES
-            and other.discard_reason == DiscardReason.MISSING_KEY_PHRASES
+            self.discard_reason == DiscardReason.MISSING_REQUIRED_PHRASES
+            and other.discard_reason == DiscardReason.MISSING_REQUIRED_PHRASES
         ):
-            discard_reason = DiscardReason.MISSING_KEY_PHRASES
+            discard_reason = DiscardReason.MISSING_REQUIRED_PHRASES
 
-        elif self.discard_reason == DiscardReason.MISSING_KEY_PHRASES:
+        elif self.discard_reason == DiscardReason.MISSING_REQUIRED_PHRASES:
             discard_reason = other.discard_reason
 
-        elif other.discard_reason == DiscardReason.MISSING_KEY_PHRASES:
+        elif other.discard_reason == DiscardReason.MISSING_REQUIRED_PHRASES:
             discard_reason = self.discard_reason
 
         else:
@@ -756,7 +770,7 @@ class LicenseMatch(object):
         side effects as the caching depends on which index instance is being
         used and this index can change during testing.
         """
-        if TRACE_MATCHED_TEXT:
+        if TRACE_MATCHED_TEXT and not TRACE_REPR_ALL_MATCHED_TEXTS:
             logger_debug(f'LicenseMatch.matched_text: self.query: {self.query}')
 
         query = self.query
@@ -1834,7 +1848,7 @@ def filter_invalid_matches_to_single_word_gibberish(
 
     - the scanned file is a binary file (we could relax this in the future
     - the matched rule has a single word (length 1)
-    - the matched rule "is_license_reference: yes"
+    - the matched rule "is_license_reference" or "is_license_clue"
     - the matched rule has a low relevance, e.g., under 75
     - the matched text has either:
       - one or more leading or trailing punctuations (except for +)
@@ -1850,11 +1864,12 @@ def filter_invalid_matches_to_single_word_gibberish(
 
     for match in matches:
         rule = match.rule
-        if rule.length == 1 and rule.is_license_reference and match.query.is_binary:
-            matched_text = match.matched_text(
-                whole_lines=False,
-                highlight=False,
-            ).strip()
+        if (
+            rule.length == 1
+            and (rule.is_license_reference or rule.is_license_clue)
+            and match.query.is_binary
+        ):
+            matched_text = match.matched_text(whole_lines=False, highlight=False,).strip()
 
             rule_text = rule.text
 
@@ -1978,11 +1993,15 @@ def is_valid_short_match(
     False
     >>> is_valid_short_match("GPL[", "GPL")
     False
+    >>> is_valid_short_match("GPL\\\\ ", "GPL")
+    False
     >>> is_valid_short_match("~gpl", "GPL")
     False
     >>> is_valid_short_match("GPL", "gpl")
     True
     >>> is_valid_short_match("Gpl+", "gpl+")
+    True
+    >>> is_valid_short_match("  GPL      foo  ", "  GPL   foo ")
     True
     >>> is_valid_short_match("~gpl", "GPL", max_diff=0)
     False
@@ -2037,21 +2056,24 @@ def is_valid_short_match(
     if matched_text == rule_text:
         return True
 
-    # For long enough rules (length in characters), we consider all matches to
-    # be correct
-    len_rule_text = len(rule_text)
+    normalized_matched_text = " ".join(matched_text.split())
+    normalized_rule_text = " ".join(rule_text.split())
+
+    if normalized_matched_text == normalized_rule_text:
+        return True
+
+    # For long enough rules (length in characters), we consider all matches to be correct
+    len_rule_text = len(normalized_rule_text)
     if len_rule_text >= 5:
         return True
 
     # Length differences help decide that this is invalid as the extra chars
     # will be punctuation by construction
-    diff = len(matched_text) - len_rule_text
+    diff = len(normalized_matched_text) - len_rule_text
 
     if diff and diff != max_diff:
         if trace:
-            logger_debug(
-                '    ==> is_valid_short_match:', 'diff:', diff,
-                'max_diff:', max_diff)
+            logger_debug('    ==> is_valid_short_match:', 'diff:', diff, 'max_diff:', max_diff)
 
         return False
 
@@ -2129,25 +2151,27 @@ def filter_false_positive_matches(
     return kept, discarded
 
 
-def filter_matches_missing_key_phrases(
+def filter_matches_missing_required_phrases(
     matches,
-    trace=TRACE_KEY_PHRASES,
-    reason=DiscardReason.MISSING_KEY_PHRASES,
+    trace=TRACE_REQUIRED_PHRASES,
+    reason=DiscardReason.MISSING_REQUIRED_PHRASES,
 ):
     """
     Return a filtered list of kept LicenseMatch matches and a list of
     discardable matches  given a ``matches`` list of LicenseMatch by removing
-    all ``matches`` that do not contain all key phrases defined in their matched
+    all ``matches`` that do not contain all required phrases defined in their matched
     rule.
-    A key phrase must be matched exactly without gaps or unknown words.
+    A required phrase must be matched exactly without gaps or unknown words.
 
     A rule with "is_continuous" set to True is the same as if its whole text
-    was defined as a keyphrase and is processed here too.
+    was defined as a required phrase and is processed here too.
+    Same for a rule with "is_required_phrase" set to True.
+
     """
-    # never discard a solo match, unless matched to "is_continuous" rule
+    # never discard a solo match, unless matched to "is_continuous" or "is_required_phrase" rule
     if len(matches) == 1:
         rule = matches[0]
-        if not rule.is_continuous:
+        if not (rule.is_continuous or rule.is_required_phrase):
             return matches, []
 
     kept = []
@@ -2156,19 +2180,19 @@ def filter_matches_missing_key_phrases(
     discarded_append = discarded.append
 
     if trace:
-        logger_debug('filter_matches_missing_key_phrases')
+        logger_debug('filter_matches_missing_required_phrases')
 
     for match in matches:
         if trace:
-            logger_debug('  CHECKING KEY PHRASES for:', match)
+            logger_debug('  CHECKING REQUIRED PHRASES for:', match)
 
-        is_continuous = match.rule.is_continuous
-        ikey_spans = match.rule.key_phrase_spans
+        is_continuous = match.rule.is_continuous or match.rule.is_required_phrase
+        ikey_spans = match.rule.required_phrase_spans
 
         if not (ikey_spans or is_continuous):
             kept_append(match)
             if trace:
-                logger_debug('    ==> KEEPING, NO KEY PHRASES OR IS_CONTINUOUS DEFINED')
+                logger_debug('    ==> KEEPING, NO REQUIRED PHRASES OR IS_CONTINUOUS DEFINED')
             continue
 
         if is_continuous and not match.is_continuous():
@@ -2182,7 +2206,7 @@ def filter_matches_missing_key_phrases(
             if any(ikey_span not in ispan for ikey_span in ikey_spans):
                 if trace:
                     logger_debug(
-                        '    ==> DISCARDING, KEY PHRASES MISSING',
+                        '    ==> DISCARDING, REQUIRED PHRASES MISSING',
                         'ikey_spans:', ikey_spans,
                         'ispan:', ispan,
                     )
@@ -2193,11 +2217,11 @@ def filter_matches_missing_key_phrases(
             # use whole ispan in this case
             ikey_spans = [match.ispan]
 
-        # keep matches as candidate if they contain all key phrase positions in the ispan
+        # keep matches as candidate if they contain all required phrase positions in the ispan
         if trace:
-            print('    CANDIDATE TO KEEP: all ikey_span in match.ispan:', ikey_spans, ispan)
+            print('    CANDIDATE TO KEEP: all ikey_span in match.ispan: ikey_spans:', ikey_spans, 'ispan:', ispan)
 
-        # discard matches that contain key phrases, but interrupted by
+        # discard matches that contain required phrases, but interrupted by
         # unknown or stop words.
 
         unknown_by_pos = match.query.unknowns_by_pos
@@ -2208,8 +2232,8 @@ def filter_matches_missing_key_phrases(
         istopwords_by_pos = match.rule.stopwords_by_pos
         istopwords_by_pos_get = istopwords_by_pos.get
 
-        # iterate on each key phrase span to ensure that they are continuous
-        # and contain no unknown words on the query side
+        # iterate on each required phrase span to ensure that they are continuous
+        # and contain no unknown words or stop words on the query side
 
         is_valid = True
 
@@ -2217,7 +2241,7 @@ def filter_matches_missing_key_phrases(
 
         for ikey_span in ikey_spans:
 
-            # check that are no gaps in the key phrase span on the query side
+            # check that are no gaps in the required phrase span on the query side
             # BUT, do not redo the check for is_continuous already checked above
             if is_continuous:
                 qkey_span = qspan
@@ -2229,22 +2253,19 @@ def filter_matches_missing_key_phrases(
 
                 qkey_span = Span(qkey_poss)
                 if len(qkey_span) != qkey_span.magnitude():
-
-                    logger_debug(
-                        '    ==> DISCARDING, KEY PHRASES PRESENT, BUT NOT CONTINUOUS:',
-                        'qkey_span:', qkey_span, 'qpan:', qspan
-                    )
-
+                    if trace:
+                        logger_debug(
+                            '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT NOT CONTINUOUS:',
+                            'qkey_span:', qkey_span, 'qspan:', qspan
+                        )
                     is_valid = False
                     break
 
-            # check that key phrase spans does not contain stop words and does
-            # not contain unknown words
-
-            # NOTE: we do not check the last qkey_span position of a key phrase
+            # Check that required phrase spans does not contain unknown words. 
+            # NOTE: we do not check the last qkey_span position of a required phrase
             # since unknown is a number of words after a given span position:
             # these are pinned to the last position and we would not care for
-            # what unknown or stop words show up after a key phrase ends.
+            # what unknown or stop words show up after a required phrase ends.
 
             qkey_span_end = qkey_span.end
             contains_unknown = any(
@@ -2254,13 +2275,16 @@ def filter_matches_missing_key_phrases(
 
             if contains_unknown:
                 logger_debug(
-                    '    ==> DISCARDING, KEY PHRASES PRESENT, BUT UNKNOWNS:',
-                    'qkey_span:', qkey_span, 'qpan:', qspan,
+                    '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT UNKNOWNS:',
+                    'qkey_span:', qkey_span, 'qspan:', qspan,
                     'unknown_by_pos:', unknown_by_pos
                 )
 
                 is_valid = False
                 break
+
+            # Check that required phrase spans does not contain stop words. This must be true for
+            # continuous rules or not, as long as we have a key span: it cannot be interrupted
 
             has_same_stopwords_pos = True
             for qpos, ipos in zip(qspan, ispan):
@@ -2273,8 +2297,8 @@ def filter_matches_missing_key_phrases(
 
             if not has_same_stopwords_pos:
                 logger_debug(
-                    '    ==> DISCARDING, KEY PHRASES PRESENT, BUT STOPWORDS NOT SAME:',
-                    'qkey_span:', qkey_span, 'qpan:', qspan,
+                    '    ==> DISCARDING, REQUIRED PHRASES PRESENT, BUT STOPWORDS NOT SAME:',
+                    'qkey_span:', qkey_span, 'qspan:', qspan,
                     'istopwords_by_pos:', istopwords_by_pos,
                     'qstopwords_by_pos:', qstopwords_by_pos
                 )
@@ -2283,11 +2307,14 @@ def filter_matches_missing_key_phrases(
                 break
 
         if is_valid:
-            logger_debug('    ==> KEEPING, KEY PHRASES PRESENT, CONTINUOUS AND NO UNKNOWNS')
+            logger_debug('    ==> KEEPING, REQUIRED PHRASES PRESENT, CONTINUOUS AND NO UNKNOWNS')
             kept_append(match)
         else:
             match.discard_reason = reason
             discarded_append(match)
+
+        if discarded and not kept:
+            logger_debug('    ==> REINSTATING DISCARDED MISSING REQUIRED PHRASES')
 
         if trace:
             print()
@@ -2631,8 +2658,13 @@ def is_candidate_false_positive(
     license list match.
     """
     is_candidate = (
-        # only tags or refs,
-        (match.rule.is_license_reference or match.rule.is_license_tag or match.rule.is_license_intro)
+        # only tags, refs, or clues
+        (
+            match.rule.is_license_reference
+            or match.rule.is_license_tag
+            or match.rule.is_license_intro
+            or match.rule.is_license_clue
+        )
         # but not tags that are SPDX license identifiers
         and not match.matcher == '1-spdx-id'
         # exact matches only
@@ -2647,6 +2679,8 @@ def is_candidate_false_positive(
         print('  is_candidate_false_positive:', is_candidate,
               'is_license_reference:', match.rule.is_license_reference,
               'is_license_tag:', match.rule.is_license_tag,
+              'is_license_intro:', match.rule.is_license_intro,
+              'is_license_clue:', match.rule.is_license_clue,
               'coverage:', match.coverage(),
               'match.len():', match.len(), '<=', 'max_length:', max_length,
               ':', match.len() <= max_length
@@ -2707,9 +2741,9 @@ def refine_matches(
     # FIXME: we should have only a single loop on all the matches at once!!
     # and not 10's of loops!!!
 
-    matches, discarded = filter_matches_missing_key_phrases(matches)
+    matches, discarded = filter_matches_missing_required_phrases(matches)
     all_discarded_extend(discarded)
-    _log(matches, discarded, 'HAS KEY PHRASES')
+    _log(matches, discarded, 'HAS REQUIRED PHRASES')
 
     matches, discarded = filter_spurious_matches(matches)
     all_discarded_extend(discarded)
@@ -2798,6 +2832,7 @@ def refine_matches(
     return matches, all_discarded
 
 
+# variant using slots and attrs
 @attr.s(slots=True, frozen=True)
 class Token1:
     """
@@ -2818,6 +2853,7 @@ class Token1:
     is_known = attr.ib(default=False)
 
 
+# variant using slots
 class Token2:
     """
     Used to represent a token in collected query-side matched texts and SPDX
@@ -2855,6 +2891,7 @@ class Token2:
         self.is_known = is_known
 
 
+# variant using namedtuple
 class Token3(NamedTuple):
     """
     Used to represent a token in collected query-side matched texts and SPDX

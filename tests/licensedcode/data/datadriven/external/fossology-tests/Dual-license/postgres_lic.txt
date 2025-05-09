@@ -1,9 +1,3 @@
-
- Declared Ubuntu Licences:  , BSD, BSD-like, Perl / BSD, Tcl 
-
- ****************************** 
-
-
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: PostgreSQL
 Source: ftp://ftp.postgresql.org/mirror/postgresql/src/

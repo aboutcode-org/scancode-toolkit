@@ -6,4 +6,4 @@ ignorable_urls:
     - http://choosealicense.com/licenses/mit
 ---
 
-License: [`mit`](http://choosealicense.com/licenses/mit/)
+{{License: [`mit}}`](http://choosealicense.com/licenses/mit/)

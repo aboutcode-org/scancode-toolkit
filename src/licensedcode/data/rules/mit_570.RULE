@@ -7,4 +7,4 @@ ignorable_urls:
     - https://raw.githubusercontent.com/master/LICENSE
 ---
 
-License MIT https://img.shields.io/badge/license-MIT https://raw.githubusercontent.com//master/LICENSE)
+{{License MIT}} https://img.shields.io/badge/license-MIT https://raw.githubusercontent.com//master/LICENSE)

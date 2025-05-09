@@ -1,7 +1,8 @@
 ---
 license_expression: lgpl-2.0
-is_license_tag: yes
+is_license_reference: yes
+is_required_phrase: yes
 relevance: 80
 ---
 
-LGPL-2.0
+lgpl 2.0

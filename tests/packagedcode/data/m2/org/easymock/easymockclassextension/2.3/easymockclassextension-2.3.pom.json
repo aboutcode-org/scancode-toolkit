@@ -14,10 +14,12 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "MIT License",
-      "url": "http://www.easymock.org/License.html",
-      "comments": null,
-      "distribution": "repo"
+      "license": {
+        "name": "MIT License",
+        "url": "http://www.easymock.org/License.html",
+        "comments": null,
+        "distribution": "repo"
+      }
     }
   ],
   "developers": [],

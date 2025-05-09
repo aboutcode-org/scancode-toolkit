@@ -1,0 +1,16 @@
+---
+license_expression: elastic-license-v2 OR agpl-3.0 OR mongodb-sspl-1.0
+is_license_notice: yes
+relevance: 100
+notes: See https://github.com/elastic/elasticsearch/commit/a59c182f9f7e9d1bf3d6eecbc0e44f24ff91d053
+---
+
+Source code in this repository is covered by (i) a triple license under the "{{GNU
+Affero General Public License v3.0 only}}", "{{the Server Side Public License, v 1}}",
+and the "{{Elastic License 2.0}}", or (ii) an "{{Apache License 2.0}}" compatible
+license or (iii) solely under the "{{Elastic License 2.0}}", in each case, as noted
+in the applicable header. The default throughout the repository is a triple
+license under the "{{GNU Affero General Public License v3.0 only}}", "{{the Server
+Side Public License, v 1}}", and the "{{Elastic License 2.0}}", unless the header
+specifies another license. Code that is licensed solely under the "{{Elastic
+License 2.0}}" is found only in the x-pack folder.

@@ -5,4 +5,4 @@ minimum_coverage: 99
 ---
 
 JZlib 0.0.* were released under the GNU LGPL license.  Later, we have switched 
-over to a BSD-style license.
+over to a {{BSD-style license}}.

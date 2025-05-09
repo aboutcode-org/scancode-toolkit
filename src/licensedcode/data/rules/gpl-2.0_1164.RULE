@@ -5,6 +5,6 @@ ignorable_urls:
     - https://www.kernel.org/pub/linux/kernel/COPYING
 ---
 
-based on Linux, which is licensed under the 
-GNU General Public License version 2, see: 
+based on Linux, which is licensed under {{the 
+GNU General Public License version 2}}, see: 
 https://www.kernel.org/pub/linux/kernel/COPYING

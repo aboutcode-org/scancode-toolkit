@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-"LicenseId": "BSD-3-Clause",
+"LicenseId": "{{BSD-3-Clause}}",

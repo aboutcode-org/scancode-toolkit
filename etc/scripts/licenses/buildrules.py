@@ -14,8 +14,8 @@ import saneyaml
 
 from licensedcode import cache
 from licensedcode import models
-from licensedcode import match_hash
 from licensedcode import frontmatter
+from licensedcode.models import get_rule_id_for_text
 from license_expression import Licensing
 
 """
@@ -72,7 +72,13 @@ class RuleData(object):
             print(rdat)
             print("########################################################")
             raise
-        self.data = {k: v for k, v in self.data.items() if v is not None or (v is None and k == "license_expression")}
+        if "referenced_filenames" in self.data and not self.data["referenced_filenames"]:
+            self.data.pop("referenced_filenames")
+        self.data = {
+            k: v for k, v in self.data.items()
+            if v is not None 
+            or (v is None and k == "license_expression")
+        }
 
 
 def load_data(location="00-new-licenses.txt"):
@@ -130,26 +136,9 @@ def load_data(location="00-new-licenses.txt"):
     return rules
 
 
-def rule_exists(text):
-    """
-    Return the matched rule identifier if the text is an existing rule matched
-    exactly, False otherwise.
-    """
-    idx = cache.get_index()
-
-    matches = idx.match(query_string=text)
-    if not matches:
-        return False
-    if len(matches) > 1:
-        return False
-    match = matches[0]
-    if match.matcher == match_hash.MATCH_HASH and match.score() == 100:
-        return match.rule.identifier
-
-
 def all_rule_by_tokens():
     """
-    Return a mapping of {tuples of tokens: rule id}, with one item for each
+    Return a mapping of {(tuple of token id): rule id}, with one item for each
     existing and added rules. Used to avoid duplicates.
     """
     rule_tokens = {}
@@ -159,7 +148,7 @@ def all_rule_by_tokens():
         except Exception as e:
             rf = f"  file://{rule.rule_file()}"
             raise Exception(
-                f"Failed to to get tokens from rule:: {rule.identifier}\n" f"{rf}"
+                f"Failed to get tokens from rule:: {rule.identifier}\n" f"{rf}"
             ) from e
     return rule_tokens
 
@@ -347,7 +336,7 @@ def cli(licenses_file, dump_to_file_on_errors=False):
 
         text = rule.text
 
-        existing_rule = rule_exists(text)
+        existing_rule = get_rule_id_for_text(text)
         skinny_text = " ".join(text[:80].split()).replace("{", " ").replace("}", " ")
 
         existing_msg = (

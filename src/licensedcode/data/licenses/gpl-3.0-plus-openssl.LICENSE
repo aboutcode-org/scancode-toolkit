@@ -1,6 +1,8 @@
 ---
 key: gpl-3.0-plus-openssl
 is_deprecated: yes
+replaced_by:
+    - gpl-3.0-plus WITH openssl-exception-gpl-3.0-plus
 short_name: GPL 3.0 or later with OpenSSL exception
 name: GPL 3.0 or later with OpenSSL exception
 category: Copyleft Limited

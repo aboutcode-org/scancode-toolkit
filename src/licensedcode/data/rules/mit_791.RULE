@@ -1,10 +1,13 @@
 ---
 license_expression: mit
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - mit
 ignorable_urls:
     - https://opensource.org/licenses/mit
 ---
 
-Licensed under the MIT licence.
+{{Licensed under the MIT}} licence.
  * https://opensource.org/licenses/mit

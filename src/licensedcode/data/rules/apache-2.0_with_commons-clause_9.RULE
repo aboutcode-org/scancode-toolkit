@@ -4,7 +4,7 @@ is_license_notice: yes
 relevance: 100
 ---
 
-“Commons Clause” License Condition v1.0
+{{“Commons Clause”}} License Condition v1.0
 
 The Software is provided to you by the Licensor under the License, as defined below, subject to the following condition.
 
@@ -14,4 +14,4 @@ For purposes of the foregoing, “Sell” means practicing any or all of the rig
 
 Software: n8n
 
-License: Apache 2.0
+{{License: Apache 2.0}}

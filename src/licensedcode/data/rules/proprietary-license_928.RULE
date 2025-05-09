@@ -5,6 +5,8 @@ is_deprecated: yes
 notes: |
     Added in SPDX license list 3.24
     This is now ppl.LICENSE
+replaced_by:
+    - odc-by-1.0
 ---
 
 LICENSE

@@ -1,7 +1,10 @@
 ---
 license_expression: naist-2003
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - naist-2003
 ---
 
 licenses.nuget.org/NAIST-2003

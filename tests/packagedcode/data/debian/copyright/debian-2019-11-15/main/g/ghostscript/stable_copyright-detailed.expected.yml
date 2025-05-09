@@ -57,34 +57,32 @@ declared_license:
   - FTL
   - ZLIB
   - ISC
-declared_license_expression: (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND agpl-3.0-plus
-  AND bsd-new AND (agpl-3.0 AND agpl-3.0-plus) AND agpl-3.0-plus AND lgpl-2.1 AND lgpl-2.1 AND
-  freetype AND freetype AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND ghostscript-1988
-  AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817 AND agpl-3.0-plus AND gpl-1.0-plus AND
-  gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND fsf-free AND gpl-2.0-plus AND gpl-1.0-plus
-  AND gpl-1.0-plus AND gpl-1.0-plus AND (gpl-1.0-plus OR cups) AND gpl-2.0-plus AND gpl-2.0-plus
-  AND zlib AND bsd-new AND bsd-new AND sunsoft AND mit AND public-domain AND apache-2.0 AND
-  apache-2.0 AND apache-2.0 AND apache-2.0 AND (agpl-3.0 AND agpl-3.0-plus) AND afpl-9.0 AND
-  isc AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND
-  gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
-  AND gpl-2.0-plus AND other-permissive AND x11-opengroup AND other-permissive AND gpl-1.0-plus
-  AND gpl-1.0-plus AND x11-lucent-variant AND ghostpdl-permissive AND zlib AND gpl-3.0-plus
-  AND gpl-3.0-plus AND gpl-1.0-plus
-declared_license_expression_spdx: (AGPL-3.0-only AND AGPL-3.0-or-later) AND AGPL-3.0-or-later
-  AND AGPL-3.0-or-later AND BSD-3-Clause AND (AGPL-3.0-only AND AGPL-3.0-or-later) AND AGPL-3.0-or-later
-  AND LGPL-2.1-only AND LGPL-2.1-only AND FTL AND FTL AND GPL-1.0-or-later AND GPL-1.0-or-later
-  AND GPL-1.0-or-later AND LicenseRef-scancode-ghostscript-1988 AND AGPL-3.0-only WITH PS-or-PDF-font-exception-20170817
-  AND AGPL-3.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later
-  AND FSFUL AND GPL-2.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later
-  AND (GPL-1.0-or-later OR LicenseRef-scancode-cups) AND GPL-2.0-or-later AND GPL-2.0-or-later
-  AND Zlib AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-sunsoft AND MIT AND LicenseRef-scancode-public-domain
-  AND Apache-2.0 AND Apache-2.0 AND Apache-2.0 AND Apache-2.0 AND (AGPL-3.0-only AND AGPL-3.0-or-later)
-  AND LicenseRef-scancode-afpl-9.0 AND ISC AND GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-or-later
+declared_license_expression: agpl-3.0-plus AND agpl-3.0-plus AND agpl-3.0-plus AND bsd-new AND
+  agpl-3.0-plus AND agpl-3.0-plus AND lgpl-2.1 AND lgpl-2.1 AND freetype AND freetype AND gpl-1.0-plus
+  AND gpl-1.0-plus AND gpl-1.0-plus AND ghostscript-1988 AND agpl-3.0 WITH ps-or-pdf-font-exception-20170817
+  AND agpl-3.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND
+  fsf-free AND gpl-2.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND gpl-1.0-plus AND (gpl-1.0-plus
+  OR cups) AND gpl-2.0-plus AND gpl-2.0-plus AND zlib AND bsd-new AND bsd-new AND sunsoft AND
+  mit AND public-domain AND apache-2.0 AND apache-2.0 AND apache-2.0 AND apache-2.0 AND agpl-3.0-plus
+  AND agpl-3.0-plus AND isc AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus AND gpl-2.0-plus
+  AND gpl-2.0-plus AND gpl-2.0-plus AND other-permissive AND x11-opengroup AND other-permissive
+  AND gpl-1.0-plus AND gpl-1.0-plus AND x11-lucent-variant AND ghostpdl-permissive AND zlib
+  AND gpl-3.0-plus AND gpl-3.0-plus AND gpl-1.0-plus
+declared_license_expression_spdx: AGPL-3.0-or-later AND AGPL-3.0-or-later AND AGPL-3.0-or-later
+  AND BSD-3-Clause AND AGPL-3.0-or-later AND AGPL-3.0-or-later AND LGPL-2.1-only AND LGPL-2.1-only
+  AND FTL AND FTL AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND LicenseRef-scancode-ghostscript-1988
+  AND AGPL-3.0-only WITH PS-or-PDF-font-exception-20170817 AND AGPL-3.0-or-later AND GPL-1.0-or-later
+  AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND FSFUL AND GPL-2.0-or-later
+  AND GPL-1.0-or-later AND GPL-1.0-or-later AND GPL-1.0-or-later AND (GPL-1.0-or-later OR LicenseRef-scancode-cups)
+  AND GPL-2.0-or-later AND GPL-2.0-or-later AND Zlib AND BSD-3-Clause AND BSD-3-Clause AND LicenseRef-scancode-sunsoft
+  AND MIT AND LicenseRef-scancode-public-domain AND Apache-2.0 AND Apache-2.0 AND Apache-2.0
+  AND Apache-2.0 AND AGPL-3.0-or-later AND AGPL-3.0-or-later AND ISC AND GPL-2.0-or-later AND
+  GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-or-later
   AND GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-or-later
-  AND GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-or-later AND GPL-2.0-or-later AND LicenseRef-scancode-other-permissive
-  AND MIT-open-group AND LicenseRef-scancode-other-permissive AND GPL-1.0-or-later AND GPL-1.0-or-later
-  AND LicenseRef-scancode-x11-lucent-variant AND LicenseRef-scancode-ghostpdl-permissive AND
-  Zlib AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-1.0-or-later
+  AND GPL-2.0-or-later AND LicenseRef-scancode-other-permissive AND MIT-open-group AND LicenseRef-scancode-other-permissive
+  AND GPL-1.0-or-later AND GPL-1.0-or-later AND LicenseRef-scancode-x11-lucent-variant AND LicenseRef-scancode-ghostpdl-permissive
+  AND Zlib AND GPL-3.0-or-later AND GPL-3.0-or-later AND GPL-1.0-or-later
 other_license_expression:
 other_license_expression_spdx:
 license_detections:
@@ -1651,36 +1649,23 @@ license_detections:
           ARISING OUT OF OR IN CONNECTION WITH
           THE USE OR PERFORMANCE OF THIS SOFTWARE.
     identifier: isc-ea6c318e-91a9-413d-027a-507b2cebec2c
-  - license_expression: agpl-3.0 AND agpl-3.0-plus
-    license_expression_spdx: AGPL-3.0-only AND AGPL-3.0-or-later
+  - license_expression: agpl-3.0-plus
+    license_expression_spdx: AGPL-3.0-or-later
     matches:
-      - license_expression: agpl-3.0
-        license_expression_spdx: AGPL-3.0-only
-        from_file:
-        start_line: 73
-        end_line: 73
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: agpl-3.0_191.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0_191.RULE
-        matched_text: 'License: agpl-'
       - license_expression: agpl-3.0-plus
         license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 73
         end_line: 73
-        matcher: 2-aho
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 2
+        matched_length: 3
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: agpl-3.0-plus_28.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_28.RULE
-        matched_text: agpl-3+
-    identifier: agpl_3_0_and_agpl_3_0_plus-7568fcdd-6845-c873-3c58-56d8665789bf
+        rule_identifier: agpl-3.0-plus_302.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_302.RULE
+        matched_text: 'License: agpl-3+'
+    identifier: agpl_3_0_plus-f03deb97-b7c6-4caa-6a33-100e6d8fde38
   - license_expression: agpl-3.0-plus
     license_expression_spdx: AGPL-3.0-or-later
     matches:
@@ -1720,36 +1705,23 @@ license_detections:
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_143.RULE
         matched_text: GPL Ghostscript,
     identifier: agpl_3_0_plus-02164878-d830-a722-7cb5-b3f8e9c993e7
-  - license_expression: agpl-3.0 AND agpl-3.0-plus
-    license_expression_spdx: AGPL-3.0-only AND AGPL-3.0-or-later
+  - license_expression: agpl-3.0-plus
+    license_expression_spdx: AGPL-3.0-or-later
     matches:
-      - license_expression: agpl-3.0
-        license_expression_spdx: AGPL-3.0-only
-        from_file:
-        start_line: 91
-        end_line: 91
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: agpl-3.0_191.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0_191.RULE
-        matched_text: 'License: agpl-'
       - license_expression: agpl-3.0-plus
         license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 91
         end_line: 91
-        matcher: 2-aho
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 2
+        matched_length: 3
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: agpl-3.0-plus_28.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_28.RULE
-        matched_text: agpl-3+
-    identifier: agpl_3_0_and_agpl_3_0_plus-7568fcdd-6845-c873-3c58-56d8665789bf
+        rule_identifier: agpl-3.0-plus_302.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_302.RULE
+        matched_text: 'License: agpl-3+'
+    identifier: agpl_3_0_plus-f03deb97-b7c6-4caa-6a33-100e6d8fde38
   - license_expression: agpl-3.0-plus
     license_expression_spdx: AGPL-3.0-or-later
     matches:
@@ -2076,53 +2048,43 @@ license_detections:
            you may not use this file
            except in compliance with the License.
     identifier: apache_2_0-e99ce2b4-baeb-173b-2ae8-7dd715246734
-  - license_expression: agpl-3.0 AND agpl-3.0-plus
-    license_expression_spdx: AGPL-3.0-only AND AGPL-3.0-or-later
+  - license_expression: agpl-3.0-plus
+    license_expression_spdx: AGPL-3.0-or-later
     matches:
-      - license_expression: agpl-3.0
-        license_expression_spdx: AGPL-3.0-only
-        from_file:
-        start_line: 352
-        end_line: 352
-        matcher: 2-aho
-        score: '100.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 100
-        rule_identifier: agpl-3.0_191.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0_191.RULE
-        matched_text: 'License: agpl-'
       - license_expression: agpl-3.0-plus
         license_expression_spdx: AGPL-3.0-or-later
         from_file:
         start_line: 352
         end_line: 352
-        matcher: 2-aho
+        matcher: 1-hash
         score: '100.0'
-        matched_length: 2
+        matched_length: 3
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: agpl-3.0-plus_28.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_28.RULE
-        matched_text: agpl-3+
-    identifier: agpl_3_0_and_agpl_3_0_plus-7568fcdd-6845-c873-3c58-56d8665789bf
-  - license_expression: afpl-9.0
-    license_expression_spdx: LicenseRef-scancode-afpl-9.0
+        rule_identifier: agpl-3.0-plus_302.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_302.RULE
+        matched_text: 'License: agpl-3+'
+    identifier: agpl_3_0_plus-f03deb97-b7c6-4caa-6a33-100e6d8fde38
+  - license_expression: agpl-3.0-plus
+    license_expression_spdx: AGPL-3.0-or-later
     matches:
-      - license_expression: afpl-9.0
-        license_expression_spdx: LicenseRef-scancode-afpl-9.0
+      - license_expression: agpl-3.0-plus
+        license_expression_spdx: AGPL-3.0-or-later
         from_file:
-        start_line: 350
-        end_line: 350
-        matcher: 2-aho
-        score: '90.0'
-        matched_length: 2
-        match_coverage: '100.0'
-        rule_relevance: 90
-        rule_identifier: afpl-9.0_9.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/afpl-9.0_9.RULE
-        matched_text: AFPL Ghostscript,
-    identifier: afpl_9_0-abf2c1de-3f64-cc21-be49-583ff4b55f69
+        start_line: 349
+        end_line: 351
+        matcher: 3-seq
+        score: '91.67'
+        matched_length: 22
+        match_coverage: '91.67'
+        rule_relevance: 100
+        rule_identifier: agpl-3.0-plus_301.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/agpl-3.0-plus_301.RULE
+        matched_text: |
+          This file may be distributed
+           as part of GNU Ghostscript and/or AFPL Ghostscript,
+           under the same terms and conditions as Ghostscript.
+    identifier: agpl_3_0_plus-fafbd866-acc7-9792-d164-b353fa792a39
   - license_expression: gpl-2.0-plus
     license_expression_spdx: GPL-2.0-or-later
     matches:

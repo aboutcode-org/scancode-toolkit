@@ -1,7 +1,10 @@
 ---
 license_expression: cecill-c
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - cecill-c
 ---
 
 licenses.nuget.org/CECILL-C

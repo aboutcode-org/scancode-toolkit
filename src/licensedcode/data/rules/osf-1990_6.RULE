@@ -1,11 +1,13 @@
 ---
 license_expression: osf-1990
 is_license_text: yes
-relevance: 100
 is_deprecated: yes
+relevance: 100
 notes: |
     seen in https://metacpan.org/release/RJBS/Data-UUID-1.226/source/LICENSE
     This is now the HP-1989 LICENSE
+replaced_by:
+    - osf-1990
 ---
 
 To anyone who acknowledges that this file is provided "AS IS"

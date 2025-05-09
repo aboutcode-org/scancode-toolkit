@@ -766,13 +766,14 @@ class MavenPom(pom.Pom):
     def _find_licenses(self):
         """Return an iterable of license mappings."""
         for lic in self.pom_data.findall('licenses/license'):
-            yield dict([
-                ('name', self._get_attribute('name', lic)),
-                ('url', self._get_attribute('url', lic)),
-                ('comments', self._get_attribute('comments', lic)),
-                # arcane and seldom used
-                ('distribution', self._get_attribute('distribution', lic)),
-            ])
+            yield {"license": dict([
+                      ('name', self._get_attribute('name', lic)),
+                      ('url', self._get_attribute('url', lic)),
+                      ('comments', self._get_attribute('comments', lic)),
+                      # arcane and seldom used
+                      ('distribution', self._get_attribute('distribution', lic)),
+                ])
+            }
 
     def _find_parties(self, key='developers/developer'):
         """Return an iterable of party mappings for a given xpath."""
@@ -1254,7 +1255,7 @@ def _parse(
             # complex defeinition in Maven
             qualifiers['type'] = extension
 
-    extracted_license_statement = pom.licenses
+    extracted_license_statement = clean_licenses(pom.licenses) or None
 
     group_id = pom.group_id
     artifact_id = pom.artifact_id
@@ -1325,52 +1326,121 @@ class MavenPackageData(models.PackageData):
         approximate=True,
         expression_symbols=None,
     ):
+        """
+        Return license detections from a Maven POM license data structure.
+        This looks like this in XML, and some attributes are more important than others.
+        Which one exists and whether we can detect a proper license in each also determines which
+        attribute we need to consider.
+        The original XML has this shape:
+        <licenses>
+          <license>
+            <name>Apache-2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments> notes... </comments>
+          </license>
+        </licenses>
+        The data structure we keep has this shape:
+        [{"license":
+            {
+              "name": "Apache-2.0",
+               "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+               "comments": "notes...",
+            }
+        },
+        .... other license]
+        """
+
         from packagedcode.licensing import get_normalized_license_detections
         from packagedcode.licensing import get_license_detections_for_extracted_license_statement
 
-        if not cls.check_extracted_license_statement_structure(extracted_license):
+        if not is_standard_maven_license_data_structure(licenses=extracted_license):
+            # use the generic detection
             return get_normalized_license_detections(
                 extracted_license=extracted_license,
                 try_as_expression=try_as_expression,
                 approximate=approximate,
                 expression_symbols=expression_symbols,
             )
+        extracted_license = clean_licenses(extracted_license)
+        extracted_license_statement = saneyaml.dump(extracted_license)
 
-        new_extracted_license = extracted_license.copy()
-
-        for license_entry in new_extracted_license:
-            license_entry.pop("distribution")
-            if not license_entry.get("name"):
-                license_entry.pop("name")
-            if not license_entry.get("url"):
-                license_entry.pop("url")
-            if not license_entry.get("comments"):
-                license_entry.pop("comments")
-
-        extracted_license_statement = saneyaml.dump(new_extracted_license)
-
-        return get_license_detections_for_extracted_license_statement(
+        detections = get_license_detections_for_extracted_license_statement(
             extracted_license_statement=extracted_license_statement,
             try_as_expression=try_as_expression,
             approximate=approximate,
             expression_symbols=expression_symbols,
         )
+        # TODO: if we have any unknown license, we need to try harder
+        # We can detect each license item individually and check if the unknown was detected
+        # in the name, URL or comment field.
+        # name, URL, comments
+        # name unknwon: keep that unknown in all cases
+        # URL or comments with unknown, but name not unknown: we want to combine the unknown
+        # matches with the correct name match
 
-    @classmethod
-    def check_extracted_license_statement_structure(cls, extracted_license):
+        return detections
 
-        is_list_of_mappings = False
-        if not isinstance(extracted_license, list):
-            return is_list_of_mappings
-        else:
-            is_list_of_mappings = True
 
-        for extracted_license_item in extracted_license:
-            if not isinstance(extracted_license_item, dict):
-                is_list_of_mappings = False
-                break
+def clean_licenses(licenses):
+    """
+    Return a modified, cleaned ``licenses`` list of POM license data cleaned from unwanted data
+    (some fields, empty entries, etc).
+    Each item in the list has this shape:
+        [
+            {"license": {"name": "Apache-2.0",  "url": "https://www... ", "comments": "..."} },
+            {"license": {other fields} },
+        ]
+    """
+    for licitem in (licenses or []):
+        if not isinstance(licitem, dict):
+            continue
 
-        return is_list_of_mappings
+        license_attributes = licitem.get("license")
+        if not license_attributes or not len(licitem) == 1:
+            continue
+
+        license_attributes.pop("distribution", None)
+        if not license_attributes.get("name"):
+            license_attributes.pop("name", None)
+        if not license_attributes.get("url"):
+            license_attributes.pop("url", None)
+        if not license_attributes.get("comments"):
+            license_attributes.pop("comments", None)
+
+    return licenses
+
+
+def is_standard_maven_license_data_structure(licenses):
+    """
+    Return True if ``licenses`` has the structure expected from a Maven POM license data. The data
+    is a list of dicts of dicts, each top dict with a single item as {"license" : {mapping of
+    attributes}. We expect the POM license data to be in that shape in most cases, except for legacy
+    non POM 4 data.
+    Each item in the list has this shape:
+        [
+            {"license": {"name": "Apache-2.0",  "url": "https://www... ", "comments": "..."} },
+            {"license": {other fields} },
+        ]
+
+    """
+    if not isinstance(licenses, list):
+        return False
+
+    fields = ("name", "url", "comment",)
+
+    for item in licenses:
+        if not isinstance(item, dict):
+            return False
+        if not len(item) == 1:
+            return False
+        litem = item.get('license') or {}
+        if not isinstance(litem, dict):
+            return False
+        if not any(field in item for field in fields):
+            return False
+
+    return True
 
 
 def build_vcs_and_code_view_urls(scm):

@@ -1,7 +1,10 @@
 ---
 license_expression: proprietary-license
 is_license_text: yes
+is_deprecated: yes
 notes: https://chillicream.com/licensing/chillicream-license See also https://github.com/ChilliCream/graphql-platform/issues/6704
+replaced_by:
+    - chillicream-1.0
 ---
 
 ChilliCream License 1.0

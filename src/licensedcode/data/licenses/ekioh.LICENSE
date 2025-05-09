@@ -1,6 +1,8 @@
 ---
 key: ekioh
 is_deprecated: yes
+replaced_by:
+    - mit-0
 short_name: Ekioh License
 name: Ekioh License
 category: Permissive

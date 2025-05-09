@@ -1,6 +1,8 @@
 ---
 key: qwt-1.0
 is_deprecated: yes
+replaced_by:
+    - lgpl-2.1 WITH qwt-exception-1.0
 short_name: Qwt License 1.0 Deprecated
 name: Qwt License 1.0 Deprecated
 category: Copyleft Limited

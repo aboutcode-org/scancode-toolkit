@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-new AND mit
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bsd-new AND mit
 ---
 
 * The script is dual licenced under the BSD and MIT licenses

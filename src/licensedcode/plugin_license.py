@@ -32,7 +32,6 @@ from licensedcode.detection import LicenseDetectionFromResult
 from licensedcode.detection import sort_unique_detections
 from licensedcode.detection import UniqueDetection
 from licensedcode.detection import use_referenced_license_expression
-from packagedcode.utils import combine_expressions
 from scancode.api import SCANCODE_LICENSEDB_URL
 
 TRACE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE', False)
@@ -207,7 +206,10 @@ class LicenseScanner(ScanPlugin):
             if TRACE:
                 license_expressions_before = resource.detected_license_expression
 
-            modified = add_referenced_filenames_license_matches_for_detections(resource, codebase)
+            try:
+                modified = add_referenced_filenames_license_matches_for_detections(resource, codebase)
+            except Exception as e:
+                raise Exception(f"Failed to process resource: {resource!r}") from e
 
             if TRACE and modified:
                 license_expressions_after = resource.detected_license_expression
@@ -217,8 +219,6 @@ class LicenseScanner(ScanPlugin):
                     f'before: {license_expressions_before}\n'
                     f'after : {license_expressions_after}'
                 )
-        
-        #raise Exception()
 
         license_detections = collect_license_detections(
             codebase=codebase,
@@ -269,6 +269,8 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             f'add_referenced_license_matches: resource_path: {resource.path}',
         )
 
+    licensing = get_cache().licensing
+
     for license_detection_mapping in license_detection_mappings:
 
         license_detection = LicenseDetectionFromResult.from_license_detection_mapping(
@@ -309,6 +311,8 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
                 detection["license_expression"]
                 for detection in referenced_detections
             ],
+            relation='AND',
+            licensing=licensing,
         )
         if not use_referenced_license_expression(
             referenced_license_expression=referenced_license_expression,
@@ -343,10 +347,14 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
 
         license_expression_spdx = build_spdx_license_expression(
             license_expression=str(license_expression),
-            licensing=get_cache().licensing,
+            licensing=licensing,
         )
-        license_detection_mapping["license_expression"] = str(license_expression)
-        license_detection_mapping["license_expression_spdx"] = str(license_expression_spdx)
+        if license_expression is not None:
+            license_expression = str(license_expression)
+        if license_expression_spdx is not None:
+            license_expression_spdx = str(license_expression_spdx)
+        license_detection_mapping["license_expression"] = license_expression
+        license_detection_mapping["license_expression_spdx"] = license_expression_spdx
         license_detection_mapping["detection_log"] = detection_log
         license_detection_mapping["identifier"] = get_new_identifier_from_detections(
             initial_detection=license_detection_mapping,
@@ -359,16 +367,24 @@ def add_referenced_filenames_license_matches_for_detections(resource, codebase):
             detection["license_expression"]
             for detection in resource.license_detections
         ]
-        resource.detected_license_expression = combine_expressions(
+        detected_license_expression = combine_expressions(
             expressions=license_expressions,
             relation='AND',
             unique=True,
-        )
+            licensing=licensing)
+        if detected_license_expression is not None:
+            detected_license_expression = str(detected_license_expression)
 
-        resource.detected_license_expression_spdx = str(build_spdx_license_expression(
+        resource.detected_license_expression = detected_license_expression
+
+        detected_license_expression_spdx = build_spdx_license_expression(
             license_expression=resource.detected_license_expression,
-            licensing=get_cache().licensing,
-        ))
+            licensing=licensing)
+
+        if detected_license_expression_spdx is not None:
+            detected_license_expression_spdx = str(detected_license_expression_spdx)
+
+        resource.detected_license_expression_spdx = detected_license_expression_spdx
 
         codebase.save_resource(resource)
         return resource

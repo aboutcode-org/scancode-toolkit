@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-3-clause-no-military
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - bsd-3-clause-no-military
 ---
 
 licenses.nuget.org/BSD-3-Clause-No-Military-License

@@ -5,6 +5,8 @@ is_deprecated: yes
 notes: |
     Added in SPDX license list 3.26
     Replaced by license: generic-xts.LICENSE
+replaced_by:
+    - generic-xts
 ---
 
 * Permission to use, copy, and modify this software with or without fee

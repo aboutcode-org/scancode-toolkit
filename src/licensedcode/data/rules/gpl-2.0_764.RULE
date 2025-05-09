@@ -1,10 +1,13 @@
 ---
 license_expression: gpl-2.0
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
 referenced_filenames:
     - COPYING
+replaced_by:
+    - gpl-2.0
 ---
 
-LicenseText "GNU GENERAL PUBLIC LICENSE, v2"
+LicenseText "{{GNU GENERAL PUBLIC LICENSE, v2}}"
    LicenseData COPYING

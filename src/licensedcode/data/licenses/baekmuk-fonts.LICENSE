@@ -13,6 +13,7 @@ ignorable_copyrights:
     - Copyright (c) Kim Jeong-Hwan
 ignorable_holders:
     - Kim Jeong-Hwan
+minimum_coverage: 80
 ---
 
 Baekmuk Fonts License

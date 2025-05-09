@@ -5,5 +5,5 @@ notes: gpl in wpa supplicant variant2
 ---
 
 please note that these
-# libraries are licensed under GPL and as such, BSD license may not apply for
+# libraries are licensed {{under GPL}} and as such, BSD license may not apply for
 # the resulting binary.

@@ -1,14 +1,14 @@
 Changelog
 =========
 
-v33.0.0 (next next, roadmap)
-----------------------------
-
 - We now support new package manifest formats:
 
   - OpenWRT packages.
   - Yocto/BitBake .bb recipes.
 
+
+v33.0.0 (next next, roadmap)
+----------------------------
 
 - Fallback packages for non-native dependencies of SCTK.
 - Dependencies for
@@ -26,9 +26,14 @@ v33.0.0 (next next, roadmap)
 
 - `--unknown-licenses` is removed and this is always enabled
   and only used in case of improper detections automatically.
-  Also tag all license rules with required phrases to improve
-  license detection and reduce false positives.
-  See https://github.com/nexB/scancode-toolkit/issues/3300
+
+- All license rules have been tagged with required phrases to improve detection accuracy
+  and reduce false positives. See https://github.com/nexB/scancode-toolkit/issues/3300
+
+- Equivalent words like license and licence, as well as plurals are now treated as the same in
+  license detection. With this, many redundant rules have been deprecated.
+
+- The license detection accuracy of Maven POMS has been improved fixing corner cases.
 
 - File categorization support added, a post scan plugin tagging
   files with priority levels for review, and also take advantage
@@ -38,7 +43,31 @@ v33.0.0 (next next, roadmap)
 - Update Dockerfile and test container build.
   See https://github.com/aboutcode-org/scancode-toolkit/issues/3955
 
-v32.3.2 - 2024-01-20
+- Update ABOUT files to adapt the ABOUT File Specification.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/4181
+
+
+v32.3.3 - 2025-03-06
+--------------------
+
+This is a patch release with license and package detection
+improvements, bugfixes and with new and updated license detection rules
+and new licenses added.
+
+- Add new and updated licenses and license rules
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4165
+  https://github.com/aboutcode-org/scancode-toolkit/issues/3819
+
+- Bump commoncode to v32.2.1 and pin bs4 to fix copyright scan issues
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4149
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4176
+
+- Refactor and fix package assembly for pypi installed wheels
+  and fix pypi manifest parsing
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4171
+
+
+v32.3.2 - 2025-01-20
 --------------------
 
 This is a patch release with license and package detection

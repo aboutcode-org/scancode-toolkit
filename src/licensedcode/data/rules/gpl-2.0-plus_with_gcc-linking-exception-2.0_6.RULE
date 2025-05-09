@@ -1,8 +1,11 @@
 ---
 license_expression: gpl-2.0-plus WITH gcc-linking-exception-2.0
 is_license_notice: yes
+is_deprecated: yes
 referenced_filenames:
     - COPYING
+replaced_by:
+    - gpl-2.0-plus WITH gcc-linking-exception-2.0
 ---
 
 GNU CC is free software; you can redistribute it and/or modify

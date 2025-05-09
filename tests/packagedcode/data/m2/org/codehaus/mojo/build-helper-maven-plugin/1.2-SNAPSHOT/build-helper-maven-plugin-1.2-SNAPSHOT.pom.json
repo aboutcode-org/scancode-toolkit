@@ -20,10 +20,12 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "The MIT License",
-      "url": "http://www.opensource.org/licenses/mit-license.php",
-      "comments": null,
-      "distribution": "repo"
+      "license": {
+        "name": "The MIT License",
+        "url": "http://www.opensource.org/licenses/mit-license.php",
+        "comments": null,
+        "distribution": "repo"
+      }
     }
   ],
   "developers": [

@@ -1,7 +1,10 @@
 ---
 license_expression: mit-old-style-no-advert
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - mit-old-style-no-advert
 ---
 
 licenses.nuget.org/NTP

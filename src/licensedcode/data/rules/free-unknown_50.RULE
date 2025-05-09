@@ -1,8 +1,10 @@
 ---
 license_expression: other-permissive
-is_deprecated: yes
 is_license_notice: yes
+is_deprecated: yes
 notes: POSIX man page notice, no license key assigned yet
+replaced_by:
+    - other-copyleft
 ---
 
 This notice shall appear on any product containing this material.

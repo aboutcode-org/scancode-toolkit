@@ -20,10 +20,12 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "Eclipse Public License - v 1.0",
-      "url": "http://www.eclipse.org/legal/epl-v10.html",
-      "comments": null,
-      "distribution": null
+      "license": {
+        "name": "Eclipse Public License - v 1.0",
+        "url": "http://www.eclipse.org/legal/epl-v10.html",
+        "comments": null,
+        "distribution": null
+      }
     }
   ],
   "developers": [

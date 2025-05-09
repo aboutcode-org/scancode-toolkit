@@ -6,4 +6,4 @@ referenced_filenames:
     - LICENSE
 ---
 
-This library is licensed under the MIT license. For further information see LICENSE file.
+This library is {{licensed under the MIT}} license. For further information see LICENSE file.

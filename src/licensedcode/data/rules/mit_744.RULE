@@ -8,4 +8,4 @@ ignorable_urls:
     - https://github.com/kr/pty
 ---
 
-This product contains software (https://github.com/kr/pty) developed by Keith Rarick, licensed under the MIT License.
+This product contains software (https://github.com/kr/pty) developed by Keith Rarick, {{licensed under the MIT}} License.

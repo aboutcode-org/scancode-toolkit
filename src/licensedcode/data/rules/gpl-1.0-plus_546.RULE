@@ -4,4 +4,4 @@ is_license_reference: yes
 relevance: 100
 ---
 
-GPL-1.0+  GNU General Public License v1.0 or later
+{{GPL-1.0+}}  {{GNU General Public License v1.0 or later}}

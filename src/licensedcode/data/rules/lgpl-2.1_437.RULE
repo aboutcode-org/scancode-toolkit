@@ -6,7 +6,7 @@ ignorable_urls:
 ---
 
 <license>
-    <name>GNU Lesser General Public License Version 2.1, February 1999</name>
+    <name>{{GNU Lesser General Public License Version 2.1}}, February 1999</name>
     <url>http://jgrapht.sourceforge.net/LGPL.html</url>
     <distribution>repo</distribution>
 </license>

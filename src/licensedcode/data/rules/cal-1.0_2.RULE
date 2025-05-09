@@ -11,22 +11,22 @@ owner has marked it with any of the following notices, or a similar demonstratio
 of intent: *
 
 
-
+{{
 SPDX-License-Identifier: CAL-1.0
 
 Licensed under the Cryptographic Autonomy License version 1.0
-
+}}
 
 
 *or*
 
 
-
+{{
 SPDX-License-Identifier: CAL-1.0-Combined-Work-Exception
 
 Licensed under the Cryptographic Autonomy License version 1.0, with Combined
 Work Exception
-
+}}
 
 
 

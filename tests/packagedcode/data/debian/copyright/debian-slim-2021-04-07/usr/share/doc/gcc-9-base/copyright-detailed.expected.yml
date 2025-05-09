@@ -1220,16 +1220,17 @@ license_detections:
       - license_expression: lgpl-2.1-plus
         license_expression_spdx: LGPL-2.1-or-later
         from_file:
-        start_line: 857
+        start_line: 856
         end_line: 866
         matcher: 2-aho
         score: '100.0'
-        matched_length: 86
+        matched_length: 88
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: lgpl-2.1-plus_396.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_396.RULE
+        rule_identifier: lgpl-2.1-plus_509.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1-plus_509.RULE
         matched_text: |
+          gnu.org>
           License: LGPL-2.1+
            This library is free software; you can redistribute it and/or
            modify it under the terms of the GNU Library General Public
@@ -1240,7 +1241,7 @@ license_detections:
            but WITHOUT ANY WARRANTY; without even the implied warranty of
            MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
            Library General Public License for more details.
-    identifier: lgpl_2_1_plus_and__lgpl_2_1_and_lgpl_3_0_and_gpl_3_0__and__lgpl_2_1_and_lgpl_3_0-d98cca80-ca02-194f-67c1-081450d70c19
+    identifier: lgpl_2_1_plus_and__lgpl_2_1_and_lgpl_3_0_and_gpl_3_0__and__lgpl_2_1_and_lgpl_3_0-60e82c28-20c0-f808-9d68-348c82b50b00
   - license_expression: gpl-3.0-plus
     license_expression_spdx: GPL-3.0-or-later
     matches:
