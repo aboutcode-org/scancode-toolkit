@@ -8,19 +8,19 @@
       "package_data": [
         {
           "type": "generic",
-          "namespace": null,
-          "name": "java-memory-assistant",
-          "version": "{{.version}}",
+          "namespace": "paketo-buildpacks",
+          "name": "pipeline-builder-canary",
+          "version": null,
           "qualifiers": {},
           "subpath": null,
           "primary_language": null,
-          "description": "A Cloud Native Buildpack that installs the Java Memory Assistant agent",
+          "description": "A Cloud Native Buildpack that provides/does nothing. For testing only.",
           "release_date": null,
           "parties": [],
           "keywords": [
-            "agent"
+            "nothing"
           ],
-          "homepage_url": "https://github.com/paketo-buildpacks/java-memory-assistant",
+          "homepage_url": "https://github.com/paketo-buildpacks/pipeline-builder-canary",
           "download_url": null,
           "size": null,
           "sha1": null,
@@ -69,7 +69,19 @@
           "is_virtual": false,
           "extra_data": {
             "api_version": "0.7",
-            "id": "paketo-buildpacks/java-memory-assistant",
+            "id": "paketo-buildpacks/pipeline-builder-canary",
+            "include_files": [
+              "LICENSE",
+              "NOTICE",
+              "README.md",
+              "linux/amd64/bin/build",
+              "linux/amd64/bin/detect",
+              "linux/amd64/bin/main",
+              "linux/arm64/bin/build",
+              "linux/arm64/bin/detect",
+              "linux/arm64/bin/main",
+              "buildpack.toml"
+            ],
             "targets": [
               {
                 "arch": "amd64",
@@ -83,7 +95,7 @@
           },
           "dependencies": [
             {
-              "purl": "pkg:generic/sap-java-memory-assistant@0.5.0?arch=amd64",
+              "purl": "pkg:generic/apache-maven@3.9.9",
               "extracted_requirement": null,
               "scope": "runtime",
               "is_runtime": true,
@@ -93,7 +105,7 @@
               "resolved_package": {},
               "extra_data": {
                 "cpes": [
-                  "cpe:2.3:a:sap:java-memory-assistant:0.5.0:*:*:*:*:*:*:*"
+                  "cpe:2.3:a:apache:maven:3.9.9:*:*:*:*:*:*:*"
                 ]
               }
             }
@@ -102,7 +114,7 @@
           "repository_download_url": null,
           "api_data_url": null,
           "datasource_id": "buildpack_toml",
-          "purl": "pkg:generic/java-memory-assistant@%7B%7B.version%7D%7D"
+          "purl": "pkg:generic/paketo-buildpacks/pipeline-builder-canary"
         }
       ],
       "for_packages": [],

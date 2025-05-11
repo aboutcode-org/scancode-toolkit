@@ -38,26 +38,38 @@ class BuildpackHandler(models.NonAssemblableDatafileHandler):
 
         buildpack_id = buildpack.get("id")
         name = buildpack.get("name")
+        namespace = None
 
-        if buildpack_id:
+        if buildpack_id and "/" in buildpack_id:
             namespace, name = buildpack_id.split("/", 1)
+        version = buildpack.get("version")
+        if version and "{{" in version and "}}" in version:
+            version = None
         
         # Initialize common package data
         package_data = dict(
             datasource_id=cls.datasource_id,
             type=cls.default_package_type,
             name=name,
-            version=buildpack.get("version"),
+            namespace=namespace,
+            version=version,
             description=buildpack.get("description"),
             homepage_url=buildpack.get("homepage"),
             keywords=buildpack.get("keywords", []),
             extracted_license_statement=None,
-            dependencies=[],
-            extra_data={}
+            extra_data={},
         )
 
         if api_version:
             package_data["extra_data"]["api_version"] = api_version
+
+        if buildpack_id:
+            package_data["extra_data"]["id"] = buildpack_id
+
+        metadata = data.get("metadata", {})
+        include_files = metadata.get("include-files", [])
+        if include_files:
+            package_data["extra_data"]["include_files"] = include_files
 
         # Handle Paketo-specific fields if present
         if "api" in data:
@@ -71,12 +83,7 @@ class BuildpackHandler(models.NonAssemblableDatafileHandler):
 
     @staticmethod
     def handle_paketo_buildpack(data, buildpack, package_data):
-        buildpack_id = buildpack.get("id")
-        if buildpack_id:
-            package_data["extra_data"]["id"] = buildpack_id
-
         package_data.update({
-            "version": buildpack.get("version"),
             "description": buildpack.get("description"),
             "homepage_url": buildpack.get("homepage"),
             "keywords": buildpack.get("keywords", []),
@@ -90,7 +97,6 @@ class BuildpackHandler(models.NonAssemblableDatafileHandler):
                 if license_entry.get("type")  
             ]
             package_data["extracted_license_statement"] = "\n".join(license_statements)
-
 
         dependencies = []
         metadata = data.get("metadata", {})
