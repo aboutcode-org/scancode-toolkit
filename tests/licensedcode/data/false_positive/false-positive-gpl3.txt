@@ -1,0 +1,17 @@
+    .chip	= {
+        .base	= S5PC100_GPL1(0),
+        .ngpio	= S5PC100_GPIO_L1_NR,
+        .label	= "GPL1",
+    },
+}, {
+    .chip	= {
+        .base	= S5PC100_GPL2(0),
+        .ngpio	= S5PC100_GPIO_L2_NR,
+        .label	= "GPL2",
+    },
+}, {
+    .chip	= {
+        .base	= S5PC100_GPL3(0),
+        .ngpio	= S5PC100_GPIO_L3_NR,
+        .label	= "GPL3",
+    },

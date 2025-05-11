@@ -1325,3 +1325,10 @@ class TestRegression(FileBasedTesting):
         matches = idx.match(location=query_location)
         results = [m.rule.license_expression for m in matches]
         assert results == expected
+
+    def test_detection_returns_correct_no_gpl3_false_positive(self):
+        idx = cache.get_index()
+        query_location = self.get_test_loc('false_positive/false-positive-gpl3.txt')
+        matches = idx.match(location=query_location)
+        assert not matches
+    
