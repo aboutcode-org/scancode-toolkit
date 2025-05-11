@@ -1,0 +1,30 @@
+---
+license_expression: epson-avasys-pl-2008
+is_license_notice: yes
+ignorable_copyrights:
+    - Copyright (c) SEIKO EPSON CORPORATION 2003-2006
+ignorable_holders:
+    - SEIKO EPSON CORPORATION
+---
+
+# Copyright (C) SEIKO EPSON CORPORATION 2003-2006.
+#
+# This file is part of the "ESC/PageS-Filter" program.
+#
+# The "ESC/PageS-Filter" program is free software.
+# You can redistribute it and/or modify it under the terms of the {{EPSON
+# AVASYS Public License}} (versions dated 2005-04-01 or later) as published
+# by EPSON AVASYS Corporation.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY;  without even the implied warranty of FITNESS
+# FOR A PARTICULAR PURPOSE or MERCHANTABILITY.
+# See the EPSON AVASYS Public License for more details.
+#
+# You should have received a verbatim copy of the //{{EPSON AVASYS Public
+# License}} along with this program; if not, write to:
+#
+#      EPSON AVASYS Corporation.
+#      1077-5, Otsu, Shimonogo, Ueda-shi,
+#      Nagano-ken 386-1214 JAPAN
+#

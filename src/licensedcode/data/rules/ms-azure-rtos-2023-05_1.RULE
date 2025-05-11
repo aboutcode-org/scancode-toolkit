@@ -1,0 +1,13 @@
+---
+license_expression: ms-azure-rtos-2023-05
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - azrtos-licenses/*
+---
+
+## License
+Use of MICROSOFT AZURE RTOS software is restricted under the corresponding license for that software at the
+[azrtos-licenses](azrtos-licenses/) directory.
+
+This repo's derivative work from Azure RTOS distribution also falls under the same {{MICROSOFT AZURE RTOS license}}.

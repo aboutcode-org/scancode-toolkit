@@ -1,0 +1,10 @@
+---
+license_expression: octl-0.21
+is_license_reference: yes
+is_required_phrase: yes
+relevance: 99
+ignorable_urls:
+    - https://github.com/open-compensation-token-license/license/blob/main/LICENSE.md
+---
+
+https://github.com/open-compensation-token-license/license/blob/main/LICENSE.md

@@ -1,0 +1,8 @@
+---
+license_expression: apache-2.0 AND ocamlpro-nc-v1
+is_license_notice: yes
+---
+
+licensed under the terms of the
+  {{Apache license v2}}. Some recent OCamlPro additions are licensed under
+  the terms of the {{OCamlPro Non-Commercial Purpose License v1}}

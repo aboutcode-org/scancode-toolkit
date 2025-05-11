@@ -1,0 +1,344 @@
+---
+key: onezoom-np-sal-v1
+short_name: OneZoom Non-Profit Source Available Licence v1
+name: OneZoom Non-Profit Source Available Licence v1
+category: Source-available
+owner: OneZoom
+homepage_url: http://www.onezoom.org/static/downloads/OneZoom_License_V1.pdf
+spdx_license_key: LicenseRef-scancode-onezoom-np-sal-v1
+other_urls:
+    - https://github.com/OneZoom/OZtree/blob/main/license.txt
+standard_notice: |
+    Licensed under the OneZoom Licence, Version 1 (the “Licence”). You may not
+    use this software file unless you comply with the terms and obligations in
+    the Licence. You may obtain a copy of the Licence at:
+    www.onezoom.org/static/downloads/OneZoom_License_V1.pdf and you will also
+    find a copy in the root directory of the OneZoom software GitHub
+    repository.
+ignorable_urls:
+    - http://www.onezoom.org/static/downloads/OneZoom_License_V1.pdf
+    - https://opensource.org/licenses/MIT
+ignorable_emails:
+    - mail@onezoom.org
+---
+
+ONEZOOM NON-PROFIT SOURCE AVAILABLE LICENCE
+Version 1, 6/9/2017
+
+1 DEFINITIONS
+
+1.1 In this Licence, unless the context requires otherwise, the following definitions apply:
+
+"Advancement of Science" means the advancement of science or science education, and for
+the avoidance of doubt, excludes pseudoscience (such as intelligent design);
+
+"Cease To Exist" means the Original Developer has a receiver or administrative
+ receiver appointed over the whole of it assets, or passes a
+ resolution for winding up, or a court makes an order to that effect,
+ or becomes subject to an administration order, or enters into any
+ voluntary arrangement with its creditors, or ceases to carry on its
+ whole activities, but excludes where the Original Developer
+ transfers its activities or assets to another entity;
+
+"Control" means (a) the power of a legal entity, direct or indirect, to cause
+ the direction or management of another entity, whether by
+ contract or otherwise; or (b) the ownership by a legal entity of
+ more than fifty percent (50%) of the outstanding shares or
+ beneficial ownership of another entity;
+
+"Independent Work" means any contribution that You create for use with the Software
+or a Modification, and which does not contain Intellectual Property
+Rights from the original Software or a Modification;
+
+"Intellectual Property Rights" means patents, rights to inventions, copyright and related rights,
+trade marks, business names and domain names, rights in get-up,
+goodwill and the right to sue for passing off, rights in designs,
+database rights, rights to use, and protect the confidentiality of,
+confidential information (including know-how and trade secrets)
+and all other intellectual property rights, in each case whether
+registered or unregistered and including all applications and rights
+to apply for and be granted, renewals or extensions of, and rights
+to claim priority from, such rights and all similar or equivalent
+rights or forms of protection which subsist or will subsist now or in
+the future in any part of the world;
+
+"Larger Work" means a work which combines Software or Modifications, or
+portions thereof, with code not governed by the terms of this
+Licence;
+
+"Made Public" means making the Software or Modification available to the public,
+ including providing the Source Code or Object Code of the
+ Software or Modifications to a third party; uploading or installing
+ the Software or Modifications onto a public facing display; or
+ running the Software or Modifications on a server that serves
+ public webpages;
+
+"MIT Licence" means the Open Source Initiative approved version of The MIT
+ Licence in force at the time, currently found at:
+ https://opensource.org/licenses/MIT;
+
+"Modification" means the Source Code and Object Code of (a) any file that
+ results from an addition to, deletion from, or modification of the contents 
+ of a file containing Software or a previous Modification; (b) any new file 
+ that contains any part of the Software or a
+ previous Modification; and (c) without prejudice to the exclusions
+ below, any new file that is contributed or otherwise made available
+ under this Licence, but excludes:
+ • Independent Work that is required to make a Modification
+ function ("Functional Independent Work"); and
+ • Independent Work that is not required to make a
+  Modification function ("Non-Functional Independent Work").
+  
+"Object Code" means any form resulting from mechanical transformation or
+ translation of Source Code, including but not limited to compiled
+ object code, generated documentation, and conversions to other
+ media types;
+
+"Original Developer" means OneZoom, a charity registered in England and Wales
+ with registered number: 1163559;
+
+"Software" means OneZoom's Tree of Life Explorer software located at the
+ Original Developer's GitHub repository at:
+ github.com/orgs/OneZoom and all updates, upgrades, releases
+ and versions thereof, including:
+ • the Source Code and Object Code; and
+ • all other works or materials recorded or embodied in the
+  software including the audio or visual content in any
+  screen displays in the user interface;
+
+"Source Code" means the common form of computer software code, including but
+not limited to software source code and all associated documentation or configuration files included in, or with, such code; and
+"You" or "Your" means any not-for-profit entity (and any entity which Controls, is
+ Controlled by, or is under common Control with such legal entity)
+ or any individual or group of individuals acting in their personal
+ capacity, exercising rights under this Licence.
+
+1.2 References to a party is a party to this Licence; parties is to be construed accordingly.
+
+1.3 Unless the context otherwise requires, words in the singular shall include the plural and in the
+plural include the singular.
+
+1.4 Unless otherwise specified, a reference to writing or written excludes faxes, texts and email.
+
+1.5 Any phrase introduced by the terms "including", "include", "in particular" or any similar
+ expression shall be construed so as not to limit the generality of any words or expressions in
+ connection with which it is used.
+
+1.6 Any obligation in this Licence on a person not to do something includes an obligation not to
+ agree, allow, permit or acquiesce to that act or thing being done and to prevent such act or
+ thing being done by a third party.
+
+2 SCOPE OF LICENCE
+
+2.1 Subject to clause 2.2, and compliance with this Licence, the Original Developer hereby grants
+ to You a perpetual, irrevocable, worldwide, non-exclusive, royalty-free licence under the
+ Intellectual Property Rights to use, reproduce, modify, display, distribute and sub-license (on
+ the same terms as this Licence) the Software (or portions thereof), with or without
+ Modifications, and as part of a Larger Work for charitable, non-commercial, not-for-profit
+ purposes relating to the Advancement of Science. For the avoidance of doubt, You may sub-
+ license the Intellectual Property Rights in any Software or a Modification to a for-profit
+ organisation in relation to your use, reproduction, modification, display and/or distribution of
+ such Software and Modifications under this Licence, but that for-profit organisation must not
+ and cannot use such Software or Modifications for its own purposes (unless such use is in
+ accordance with clause 3).
+
+2.2 The Licence in clause 2.1 does not permit use of the Software or any Modifications to build a
+ tree with sponsorable elements whether or not such sponsorship generates revenue. In this
+ scenario, You must agree a separate licence with the Original Developer in accordance with
+ clause 3.3.
+
+2.3 Subject to the Original Developer acknowledging You in accordance with clause 4.1e), You
+ hereby grant to the Original Developer a perpetual, irrevocable, worldwide, non-exclusive,
+ royalty-free licence to use and exploit the Modifications, and any Functional Independent
+ Works, (and any Non-Functional Independent Works uploaded to the Original Developer's
+ GitHub repository in accordance with clause 4.1e), for any purpose.
+
+2.4 Should the Original Developer Cease to Exist the Software, any Modifications and any
+ Functional Independent Works, (and any Non-Functional Independent Works uploaded to the
+ Original Developer's GitHub repository in accordance with clause 4.1e), shall automatically be
+ licensed under the MIT Licence.
+
+3 OTHER LICENCES FOR COMMERCIAL USE OR USE BY FOR-PROFIT ORGANISATIONS
+
+3.1 For-profit organisations are not permitted to use or exploit the Software or any Modification
+ under this Licence in any manner. If such organisations wish to use or exploit the Software or
+ any Modification they must contact the Original Developer to negotiate a licence.
+
+3.2 Where You wish to use or exploit the Software or any Modifications for commercial purposes
+ You must contact the Original Developer to negotiate a separate royalty-paying or fee-paying
+ licence.
+
+3.3 If You wish to use the Software or any Modifications to build a tree with sponsorable elements
+ whether or not such sponsorship generates revenue, You must agree a separate licence with
+ the Original Developer.
+
+3.4 The Original Developer takes the misuse of Software and Modifications by for-profit
+organisations seriously, and monitors use of the Software and any Modifications by any party
+for commercial purposes.
+
+4 OBLIGATIONS AND RIGHTS OF CONTRIBUTORS
+
+4.1 You warrant and represent that:
+
+a) Modifications or Independent Works You create, or to which You contribute, are Your
+ original creation(s), or where such Modifications or Independent Works include
+ Intellectual Property Rights of a third party, You have a licence from such third party
+ to use its Intellectual Property Rights in Your Modifications and have included any
+ acknowledgement required by such third party;
+
+b) any Software or Modifications that are Made Public shall:
+   i. be licensed on the same terms as this Licence with the notice at Appendix 1,
+   Part 1 included, and unless covered by clause 4.2, you will not licence
+   Software or any Modifications under any other terms; and
+   ii. be provided to the Original Developer (in accordance with clause 4.1e) and
+   any third parties (in the manner agreed between You and such third parties)
+   in Source Code form (and Object Code form if requested);
+
+c) You shall include the notices in Appendix 1, Part 2 in all copies of the Software or any
+   Modifications;
+
+d) You will not remove any copyright, trade mark or other intellectual property notices, or
+   any acknowledgements relating to the Original Developer or any third party,
+   contained within the Software or any Modifications You use; and
+
+e) You shall provide the Original Developer with a copy of any Modifications, and any
+   Functional Independent Works (and any Non-Functional Independent Works if You so
+   wish) that are Made Public in Source Code form (and Object Code form on request)
+   along with any acknowledgement You wish to be used, by uploading them to the
+   Original Developer's GitHub repository at: github.com/orgs/OneZoom.
+
+4.2 You may license:
+
+a) Functional Independent Works under any licence of your choice in addition to this
+   Licence; and
+
+b) Non-functional Independent Works under any licence of your choice, or keep such
+   works confidential.
+
+5 VERSIONS OF THIS LICENCE
+
+5.1 The Original Developer may publish revised or new versions of this Licence from time to time
+    and each version will be given a new version number.
+
+5.2 You must distribute and make the Software and Modifications available under the terms of the
+    version of the License under which You originally received the Software and Modifications.
+
+6 DISCLAIMER
+
+6.1 THE ORIGINAL DEVELOPER PROVIDES THE SOFTWARE ON AN "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR
+    IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS
+    THAT THE SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE FIT FOR A
+    PARTICULAR PURPOSE OR NON-INFRINGING.
+
+6.2 You are solely responsible for any Modifications, Functional Independent Works and Non-
+    functional Independent Works You create ("Your Own Work") including
+    i. determining the appropriateness of Your use or redistribution of the Software
+    and Your Own Work,
+    ii. the use and distribution of the Software and Your Own Work by any third
+    party to whom You license these to,
+    iii. Your exercise of permissions under, and non-compliance with, this Licence.
+
+6.3 You assume any risks and costs associated with the creation, use and distribution of Your
+ Own Work, including responsibility for any losses awarded against or incurred by the Original
+ Developer in the event of your non-compliance with this licence, and any losses resulting from
+ claims by third parties regarding infringement or alleged infringement of their Intellectual
+ Property Rights in relation to Your Own Work.
+
+7 SUPPORT
+
+7.1 The Original Developer will not provide any support for the Software under this Licence.
+ Should You require support from the Original Developer, You shall contact the Original
+ Developer and agree the scope of, and costs for, any support.
+
+7.2 You may choose to provide support to individuals or entities You make the Software or
+ Modifications available to, but must do so on Your own behalf and make it clear that such
+ support is offered by You alone.
+
+8 LIMITATION OF LIABILITY
+
+8.1 Under no circumstances, whether in tort (including negligence), contract, or otherwise, shall
+ the Original Developer be liable to You or any third party for any direct, indirect, special,
+ incidental, or consequential damages including, without limitation, damages for lost of profits,
+ goodwill, use, data or other intangible losses, even if such party shall have been informed of
+ the possibility of such damages, arising from Your or a third party's use of the Software or any
+ Modifications, or Your or a third party's infringement of third party rights.
+
+9 INTELLECTUAL PROPERTY
+
+9.1 The Software (and Intellectual Property Rights in such Software) is owned by the Original
+ Developer or its third party licensors and shall at all times remain vested in the Original
+Developer or its licensors.
+
+9.2 The Software is protected by UK and international copyright and other intellectual property
+ laws, and You are not permitted to use the Software, including copying such Software, except
+ in accordance with this Licence.
+
+9.3 You shall not use the name, trade marks, trade names, service marks, or product names of
+ the Original Developer, except as required by clauses 4.1b)i or 4.1d) or as otherwise agreed
+ with the Original Developer.
+
+9.4 The Original Developer does not endorse, and You shall not suggest that the Original
+ Developer endorses, any use You make of the Software or any Modifications.
+
+10 TERMINATION
+
+10.1 This License and the rights granted hereunder will terminate automatically if You fail to
+ comply with the terms herein and fail to remedy such breach within 30 days of becoming
+ aware of the breach.
+
+10.2 The Original Developer may terminate Your rights under this Licence, at any time immediately
+ on notice, if You are causing the Original Developer any damage, including reputational
+damage, in the Original Developer's absolute discretion.
+
+10.3 In the event of termination in accordance with clauses 10.1 and 10.2, all end user licences
+ and sub-licences that have been validly granted by You hereunder prior to termination shall
+ survive termination.
+
+11 OTHER
+
+11.1 Nothing in this Licence shall supersede the terms of any separate licence agreements made
+ by You formally and in writing with the Original Developer in relation to Modifications.
+
+11.2 Subject to clause 11.1, this License represents the complete agreement concerning subject
+ matter hereof between the Original Developer and You.
+
+11.3 If any provision or part-provision of this Licence is or becomes invalid, illegal or
+ unenforceable, it shall be deemed modified to the minimum extent necessary to make it valid,
+ legal and enforceable. If such modification is not possible, the relevant provision or part-
+ provision shall be deemed deleted.
+
+11.4 This Licence and any dispute or claim arising out of or in connection with it or its subject
+ matter or formation (including non-contractual disputes or claims) shall be governed by and
+ construed in accordance with the law of England and Wales.
+
+11.5 You agree that the courts of England and Wales shall have exclusive jurisdiction to settle any
+ dispute or claim arising out of or in connection with this agreement or its subject matter or
+ formation (including non-contractual disputes or claims).
+
+12 QUESTIONS OR QUERIES
+
+12.1 If You have any questions or queries regarding this Licence, including as to whether Your
+ proposed use is permitted under this Licence, You may contact the Original Developer at
+ mail@onezoom.org
+
+APPENDIX 1
+
+Part 1
+Licensed under the OneZoom Licence, Version 1 (the "Licence"). You may not use this software file
+unless you comply with the terms and obligations in the Licence. You may obtain a copy of the
+Licence at: www.onezoom.org/static/downloads/OneZoom_License_V1.pdf.
+
+Part 2
+Copyright [YEAR] [NAME OF CONTRIBUTOR] [SHORT DESCRIPTION OF HOW YOU HAVE
+
+AMENDED SOFTWARE]
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OR THAT THIS SOFTWARE IS
+FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-
+INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED
+SOFTWARE IS WITH YOU. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS OF
+THIS SOFTWARE BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THIS SOFTWARE OR THE USE OR OTHER DEALINGS IN THIS
+SOFTWARE.

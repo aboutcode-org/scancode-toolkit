@@ -1,0 +1,105 @@
+---
+key: trendmicro-cl-1.0
+short_name: Trend Micro Community License 1.0
+name: Trend Micro Community License 1.0
+category: Proprietary Free
+owner: Trend Micro
+homepage_url: https://github.com/trendmicro/cloud-risk-assessment-agent/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-trendmicro-cl-1.0
+ignorable_copyrights:
+    - Copyright Meta Platforms, Inc.
+ignorable_holders:
+    - Meta Platforms, Inc.
+ignorable_urls:
+    - https://github.com/trendmicro/cloud-risk-assessment-agent/blob/main
+---
+
+Trend Micro Community License 1.0
+
+This license agreement (the “Agreement”) contains the terms and conditions
+for use of the TrendMicro Llama-TrendCybertron-8B-Instruct large language
+model (the “Model”) and related agent software (the “Software”) with which
+these terms and conditions are provided. The Model is based on the Meta
+Llama 3 model. Meta Llama 3 is licensed under the Meta Llama 3 Community
+License, Copyright Meta Platforms, Inc. All Rights Reserved.
+
+“Licensee” means the entity entering into this Agreement.
+“Licensed Materials” means, collectively, the Model and the Software.
+“Licensor” means Trend Micro Incorporated.
+
+By using or distributing any portion or element of the Licensed Materials, you
+agree to be bound by this Agreement.
+
+1. License Rights and Redistribution.
+   a. Grant of Rights. Licensor hereby grants you a non-exclusive, worldwide,
+      non-transferable and royalty-free limited license to use, reproduce, modify
+      and distribute the Licensed Materials, but not in connection with any
+      product or service that competes with the Licensed Materials or any product
+      or service of Licensor. Products and services compete even when provided
+      free of charge. If you market a product as a practical substitute for a
+      product or service, it competes with that product or service.
+   b. Redistribution and Use.
+      i. If you distribute or make available to others the Licensed Materials, or
+         offer a product or service that uses the Licensed Materials, you (x) must
+         provide such others with copy of this Agreement; (y) must prominently
+         display “Powered by Trend Micro’s TrendMicro Llama-TrendCybertron-8B-
+         Instruct” on the user interface, splash screen, dashboard, or similar
+         product documentation; and (z) hereby consent to Licensor listing your
+         name and product on its adopter’s web page.
+      ii. You must retain, in all copies of the Licensed Materials that you make or
+          distribute, a copy of this Agreement, or the following statement: “These
+          materials are made available under the Trend Micro Community License
+          1.0 https://github.com/trendmicro/cloud-risk-assessment-agent/blob/main
+          /Trend Micro Community License 1.0.pdf” If you modify the
+          Licensed Materials, you must also indicate that you have done so.
+      iii. Your use of the Licensed Materials must comply with applicable laws and
+           regulations, and, for the benefit of Meta Platforms Inc. and its
+           affiliates, and Licensor, comply with the terms of the Llama 3 Community
+           License.
+      iv. The Licensed Materials are intended for security purposes. However, you
+          must not make any statement to any other party regarding the Licensed
+          Materials, or any products or services you provide using the Licensed
+          Materials, that would constitute a warranty by Licensor, or that would
+          reasonably be considered a warranty by Licensor.
+
+2. Disclaimer of Warranty. THE LICENSED MATERIALS AND ANY OUTPUT
+   THEREFROM ARE PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES
+   OF ANY KIND, AND LICENSOR DISCLAIMS ALL WARRANTIES OF ANY KIND,
+   BOTH EXPRESS AND IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY
+   WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR
+   FITNESS FOR A PARTICULAR PURPOSE. YOU ARE SOLELY RESPONSIBLE
+   FOR DETERMINING THE APPROPRIATENESS OF USING OR REDISTRIBUTING
+   THE LICENSED MATERIALS AND ASSUME ANY RISKS ASSOCIATED WITH
+   YOUR USE OF THE LICENSED MATERIALS AND ANY OUTPUT AND RESULTS.
+   If this provision is unenforceable under applicable law, the licenses granted to
+   you hereunder are void.
+
+3. Limitation of Liability. IN NO EVENT WILL LICENSOR BE LIABLE UNDER ANY
+   THEORY OF LIABILITY, WHETHER IN CONTRACT, TORT, NEGLIGENCE,
+   PRODUCTS LIABILITY, OR OTHERWISE, ARISING OUT OF THIS AGREEMENT,
+   FOR ANY LOST PROFITS OR ANY INDIRECT, SPECIAL, CONSEQUENTIAL,
+   INCIDENTAL, EXEMPLARY OR PUNITIVE DAMAGES, EVEN IF LICENSOR OR
+   ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF ANY OF THE
+   FOREGOING. If this provision is unenforceable under applicable law, the
+   licenses granted to you hereunder are void.
+
+4. Intellectual Property.
+   a. Licensor hereby reserves all rights not expressly granted in this Agreement.
+      No trademark licenses are granted under this Agreement, except to you as
+      necessary to comply with Section 1.b.
+   b. If you bring litigation or other claims against Licensor alleging that the
+      Licensed Materials constitutes infringement of intellectual property rights,
+      then any licenses granted to you under this Agreement shall terminate
+      immediately.
+
+5. Term and Termination. The term of this Agreement will commence upon your
+   first access to the Licensed Materials and will continue unless and until you
+   violate its terms, at which point your rights hereunder will terminate
+   automatically. Sections 2, 3, 4 and 6 will survive any termination of this
+   Agreement.
+
+6. Governing Law and Jurisdiction. This Agreement will be governed and
+   construed under the laws of the State of California without regard to choice
+   of law principles, and the UN Convention on Contracts for the International
+   Sale of Goods does not apply to this Agreement. The courts of California shall
+   have exclusive jurisdiction of any dispute arising out of this Agreement.

@@ -1,0 +1,9 @@
+---
+license_expression: geant4-sl-1.0
+is_license_notice: yes
+ignorable_urls:
+    - http://geant4.web.cern.ch/geant4/license/LICENSE.html
+---
+
+Geant4 is licensed under the
+[{{Geant4 software license}}](http://geant4.web.cern.ch/geant4/license/LICENSE.html).
