@@ -106,10 +106,47 @@ class BuildpackHandler(models.NonAssemblableDatafileHandler):
             dep_name = dep.get("name")
             dep_version = dep.get("version")
             dep_cpes = dep.get("cpes", [])
-            extra_data = {"cpes": dep_cpes} if dep_cpes else {}
-
+            
+            resolved_package = {}
+            
+            for field in ["id", "name", "sha256", "stacks", "uri", "licenses", "homepage"]:
+                if field in dep:
+                    resolved_package[field] = dep[field]
+            
+            if dep_cpes:
+                resolved_package["cpes"] = dep_cpes
+            
+            if "arch" in dep:
+                resolved_package["arch"] = dep["arch"]
+            
+            if "license" in dep:
+                resolved_package["license"] = dep["license"]
+            
+            if "uri" in dep:
+                resolved_package["download_url"] = dep["uri"]
+            
+            for checksum_type in ["sha256", "sha512", "md5"]:
+                if checksum_type in dep:
+                    resolved_package[checksum_type] = dep[checksum_type]
+            
+            extra_data = {}
+            for key, value in dep.items():
+                if key not in ["purl", "name", "version", "cpes", "id", "sha256", 
+                              "stacks", "uri", "licenses", "license", "homepage", 
+                              "arch", "sha512", "md5"]:
+                    extra_data[key] = value
+            
             if not dep_purl and dep_name and dep_version:
-                dep_purl = PackageURL(type="generic", name=dep_name, version=dep_version).to_string()
+                qualifiers = {}
+                if "arch" in dep:
+                    qualifiers["arch"] = dep["arch"]
+                
+                dep_purl = PackageURL(
+                    type="generic", 
+                    name=dep_name, 
+                    version=dep_version,
+                    qualifiers=qualifiers if qualifiers else None
+                ).to_string()
 
             if dep_purl:
                 dependencies.append(
@@ -118,7 +155,10 @@ class BuildpackHandler(models.NonAssemblableDatafileHandler):
                         scope="runtime",
                         is_runtime=True,
                         is_optional=False,
-                        extra_data=extra_data,
+                        is_pinned=True if "sha256" in dep else False,
+                        is_direct=True,
+                        resolved_package=resolved_package,
+                        extra_data=extra_data if extra_data else None,
                     )
                 )
 
@@ -128,12 +168,24 @@ class BuildpackHandler(models.NonAssemblableDatafileHandler):
                 group_id = group.get("id")
                 group_version = group.get("version")
                 if group_id and group_version:
+                    resolved_package = {
+                        "id": group_id,
+                        "version": group_version
+                    }
+                    
+                    for key, value in group.items():
+                        if key not in ["id", "version", "optional"]:
+                            resolved_package[key] = value
+                    
                     dependencies.append(
                         models.DependentPackage(
                             purl=PackageURL(type="buildpack", name=group_id, version=group_version).to_string(),
                             scope="runtime",
                             is_runtime=True,
                             is_optional=group.get("optional", False),
+                            is_pinned=False, 
+                            is_direct=True,   
+                            resolved_package=resolved_package,
                         )
                     )
 

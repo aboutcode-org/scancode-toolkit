@@ -98,13 +98,30 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_pinned": false,
+        "is_pinned": true,
         "is_direct": true,
-        "resolved_package": {},
-        "extra_data": {
+        "resolved_package": {
+          "id": "opentelemetry-java",
+          "name": "OpenTelemetry Java Agent",
+          "sha256": "d05f6e36fac8db629263a6aaec2841cc934d064d7b19bfe38425b604b8b54926",
+          "stacks": [
+            "*"
+          ],
+          "uri": "https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v2.10.0/opentelemetry-javaagent.jar",
+          "licenses": [
+            {
+              "type": "Apache-2.0",
+              "uri": "https://github.com/open-telemetry/opentelemetry-java-instrumentation/blob/main/LICENSE"
+            }
+          ],
           "cpes": [
             "cpe:2.3:a:open-telemetry:opentelemetry-java-agent:2.10.0:*:*:*:*:*:*:*"
-          ]
+          ],
+          "download_url": "https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v2.10.0/opentelemetry-javaagent.jar"
+        },
+        "extra_data": {
+          "source": "https://github.com/open-telemetry/opentelemetry-java-instrumentation/archive/refs/tags/v2.10.0.tar.gz",
+          "source-sha256": "3a921baa391e9fa3f3622bedf1770567bcfed2a13de07642a2273b8beeca934a"
         }
       }
     ],

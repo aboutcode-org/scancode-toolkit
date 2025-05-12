@@ -93,13 +93,32 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_pinned": false,
+        "is_pinned": true,
         "is_direct": true,
-        "resolved_package": {},
-        "extra_data": {
+        "resolved_package": {
+          "id": "maven",
+          "name": "Apache Maven",
+          "sha256": "7a9cdf674fc1703d6382f5f330b3d110ea1b512b51f1652846d9e4e8a588d766",
+          "stacks": [
+            "io.buildpacks.stacks.bionic",
+            "io.paketo.stacks.tiny",
+            "*"
+          ],
+          "uri": "https://repo1.maven.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.tar.gz",
+          "licenses": [
+            {
+              "type": "Apache-2.0",
+              "uri": "https://www.apache.org/licenses/"
+            }
+          ],
           "cpes": [
             "cpe:2.3:a:apache:maven:3.9.9:*:*:*:*:*:*:*"
-          ]
+          ],
+          "download_url": "https://repo1.maven.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.tar.gz"
+        },
+        "extra_data": {
+          "source": "https://repo1.maven.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-src.tar.gz",
+          "source-sha256": "8a24c448d4ac397e6b0c019a4d7250068c02d1cdb553299e6bb71c3ccca78b2c"
         }
       }
     ],

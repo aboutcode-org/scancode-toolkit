@@ -95,13 +95,32 @@
         "scope": "runtime",
         "is_runtime": true,
         "is_optional": false,
-        "is_pinned": false,
+        "is_pinned": true,
         "is_direct": true,
-        "resolved_package": {},
-        "extra_data": {
+        "resolved_package": {
+          "id": "java-memory-assistant",
+          "name": "Java Memory Assistant Agent",
+          "sha256": "9c5ffb4bdeec5ed6b4f1d734469500754a857d1452c3d253d89e2315addb04c5",
+          "stacks": [
+            "io.buildpacks.stacks.bionic",
+            "io.paketo.stacks.tiny",
+            "*"
+          ],
+          "uri": "https://github.com/SAP-archive/java-memory-assistant/releases/download/0.5.0/java-memory-assistant-0.5.0.jar",
+          "licenses": [
+            {
+              "type": "Apache-2.0",
+              "uri": "https://github.com/SAP/java-memory-assistant/blob/master/LICENSE"
+            }
+          ],
           "cpes": [
             "cpe:2.3:a:sap:java-memory-assistant:0.5.0:*:*:*:*:*:*:*"
-          ]
+          ],
+          "download_url": "https://github.com/SAP-archive/java-memory-assistant/releases/download/0.5.0/java-memory-assistant-0.5.0.jar"
+        },
+        "extra_data": {
+          "source": "https://github.com/sap/java-memory-assistant/archive/refs/tags/0.5.0.tar.gz",
+          "source-sha256": "dedf82a5c10df5b12e602c1237f00a459a38b6a55c0ff8d671fa0d3909dfe4fc"
         }
       }
     ],
