@@ -622,6 +622,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -944,6 +945,7 @@
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -1019,6 +1021,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -1094,6 +1097,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -1164,6 +1168,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -1239,6 +1244,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -1505,6 +1511,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -1623,6 +1630,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -1702,6 +1710,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -1875,6 +1884,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -1982,6 +1992,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": true,
       "tallies": {
         "detected_license_expression": [
@@ -2096,6 +2107,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -2192,6 +2204,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -2310,6 +2323,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -2389,6 +2403,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -2579,6 +2594,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -2704,6 +2720,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -2824,6 +2841,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -2905,6 +2923,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -2992,6 +3011,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -3106,6 +3126,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -3258,6 +3279,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -3341,6 +3363,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -3564,6 +3587,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -3709,6 +3733,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -3852,6 +3877,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -3977,6 +4003,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -4100,6 +4127,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -4223,6 +4251,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -4298,6 +4327,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -4405,6 +4435,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -4480,6 +4511,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -4587,6 +4619,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -4716,6 +4749,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -4812,6 +4846,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": true,
       "tallies": {
         "detected_license_expression": [
@@ -4976,6 +5011,7 @@
       "is_readme": true,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -5051,6 +5087,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -5200,6 +5237,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -5275,6 +5313,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -5387,6 +5426,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -5495,6 +5535,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -5570,6 +5611,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -5700,6 +5742,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [
@@ -5775,6 +5818,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_notice": false,
       "is_generated": false,
       "tallies": {
         "detected_license_expression": [

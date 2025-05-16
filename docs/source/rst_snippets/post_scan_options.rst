@@ -53,9 +53,9 @@ All "Post-Scan" Options
                          for key, top-level files, with occurrence counts.
                          Key files are top-level codebase files such as
                          COPYING, README and package manifests as reported
-                         by the ``--classify`` option: "is_legal",
-                         "is_readme", "is_manifest" and "is_top_level"
-                         flags.
+                         by the ``--classify`` option: "is_legal"
+                         , "is_readme", "is_manifest", "is_notice" and
+                         "is_top_level" flags.
 
                          Sub-Option of: ``--classify`` and ``--summary``.
 

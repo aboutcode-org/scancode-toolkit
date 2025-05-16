@@ -304,7 +304,7 @@ class KeyFilesTallies(PostScanPlugin):
             help='Compute tallies for license, copyright and other scans for key, '
                  'top-level files. Key files are top-level codebase files such '
                  'as COPYING, README and package manifests as reported by the '
-                 '--classify option "is_legal", "is_readme", "is_manifest" '
+                 '--classify option "is_legal", "is_readme", "is_manifest", "is_notice" '
                  'and "is_top_level" flags.',
             help_group=POST_SCAN_GROUP,
             required_options=['classify', 'tallies']

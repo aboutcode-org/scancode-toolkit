@@ -64,6 +64,19 @@ class TestClassify(FileDrivenTesting):
             set_classification_flags(res)
             assert res.is_manifest
 
+
+    def test_set_classification_flags_is_notice(self):
+        test_dir = self.get_test_loc('classify/notice')
+        codebase = Codebase(
+            test_dir, resource_attributes=FileClassifier.resource_attributes)
+        print(Codebase)
+        for res in codebase.walk():
+            print(res)
+            if not res.is_file:
+                continue
+            set_classification_flags(res)
+            assert res.is_notice
+
     def test_classify_cli_option(self):
         test_dir = self.get_test_loc('classify/cli')
         result_file = self.get_temp_file('json')

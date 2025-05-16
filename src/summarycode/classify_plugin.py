@@ -75,7 +75,10 @@ class FileClassifier(PostScanPlugin):
 
         ('is_key_file',
          Boolean(help='True if this file is "top-level" file and either a '
-                      'legal, readme or manifest file.')),
+                      'legal, notice, readme or manifest file.')),
+                      
+        ('is_notice',
+        Boolean(help='True if this file is likely a notice file')),
 
 #         ('is_doc',
 #          Boolean(help='True if this file is likely a documentation file.')),

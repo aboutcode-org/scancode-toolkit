@@ -1025,6 +1025,7 @@ files:
     is_readme: no
     is_top_level: yes
     is_key_file: no
+    is_notice: no
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -1065,6 +1066,7 @@ files:
     is_readme: yes
     is_top_level: yes
     is_key_file: yes
+    is_notice: no
     detected_license_expression: apache-2.0 AND (apache-2.0 OR mit)
     detected_license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
     license_detections:
@@ -1141,6 +1143,7 @@ files:
     is_readme: no
     is_top_level: yes
     is_key_file: yes
+    is_notice: no
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:
@@ -1350,6 +1353,7 @@ files:
     is_readme: no
     is_top_level: yes
     is_key_file: yes
+    is_notice: no
     detected_license_expression: mit
     detected_license_expression_spdx: MIT
     license_detections:
@@ -1489,6 +1493,7 @@ files:
     is_readme: no
     is_top_level: no
     is_key_file: no
+    is_notice: no
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:

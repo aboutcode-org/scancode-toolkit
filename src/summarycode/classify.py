@@ -91,6 +91,9 @@ README_STARTS_ENDS = (
     'readme',
 )
 
+NOTICE_STARTS_ENDS = (
+    "notice",
+)
 
 def check_resource_name_start_and_end(resource, STARTS_ENDS):
     """
@@ -111,6 +114,7 @@ def set_classification_flags(resource,
     _LEGAL=LEGAL_STARTS_ENDS,
     _MANIF=MANIFEST_ENDS,
     _README=README_STARTS_ENDS,
+    _NOTICE=NOTICE_STARTS_ENDS,
 ):
     """
     Set classification flags on the `resource` Resource
@@ -119,8 +123,9 @@ def set_classification_flags(resource,
 
     resource.is_legal = is_legal = check_resource_name_start_and_end(resource, _LEGAL)
     resource.is_readme = is_readme = check_resource_name_start_and_end(resource, _README)
+    resource.is_notice = is_notice = check_resource_name_start_and_end(resource, _NOTICE)
     # FIXME: this will never be picked up as this is NOT available in a pre-scan plugin
     has_package_data = bool(getattr(resource, 'package_data', False))
     resource.is_manifest = is_manifest = path.endswith(_MANIF) or has_package_data
-    resource.is_key_file = (resource.is_top_level and (is_readme or is_legal or is_manifest))
+    resource.is_key_file = (resource.is_top_level and (is_readme or is_legal or is_manifest or is_notice))
     return resource
