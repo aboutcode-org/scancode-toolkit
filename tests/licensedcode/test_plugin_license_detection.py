@@ -93,6 +93,24 @@ def test_license_match_unknown_clues_is_not_in_expression():
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
+def test_license_match_extra_words_3_seq():
+    test_dir = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-3-seq-license/', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = [
+        '--license',
+        '--license-text',
+        '--license-text-diagnostics',
+        '--license-diagnostics',
+        '--strip-root',
+        '--verbose',
+        '--json', result_file,
+        test_dir,
+    ]
+    run_scan_click(args)
+    test_loc = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-3-seq-license.expected.json')
+    check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
+
+
 def test_license_match_unknown_license_intro_eclipse_foundation():
     test_dir = test_env.get_test_loc('plugin_license/unknown_intro/scan-unknown-intro-eclipse-foundation/', copy=True)
     result_file = test_env.get_temp_file('json')

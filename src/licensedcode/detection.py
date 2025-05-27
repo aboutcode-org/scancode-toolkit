@@ -124,6 +124,7 @@ class DetectionRule(Enum):
     These are logged in LicenseDetection.detection_log for verbosity.
     """
     UNKNOWN_MATCH = 'unknown-match'
+    EXTRA_WORDS = 'extra-words'
     LICENSE_CLUES = 'license-clues'
     LOW_QUALITY_MATCH_FRAGMENTS = 'low-quality-matches'
     FALSE_POSITIVE = 'possible-false-positive'
@@ -1545,6 +1546,13 @@ def get_detected_license_expression(
         # in detections but ideally we should return synthetic unknowns for these
         detection_log.append(DetectionRule.LOW_QUALITY_MATCH_FRAGMENTS.value)
         return detection_log, combined_expression
+    
+    elif analysis == DetectionCategory.EXTRA_WORDS.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionCategory.EXTRA_WORDS.value}')
+        # Apply filtering or handling logic if needed
+        matches_for_expression = license_matches
+        detection_log.append(DetectionRule.EXTRA_WORDS.value)
 
     else:
         if TRACE_ANALYSIS:
