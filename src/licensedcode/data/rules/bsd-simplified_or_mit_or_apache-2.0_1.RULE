@@ -1,0 +1,8 @@
+---
+license_expression: bsd-simplified OR mit OR apache-2.0
+is_license_tag: yes
+is_required_phrase: yes
+relevance: 90
+---
+
+"license": "(BSD-2-Clause OR MIT OR Apache-2.0)",

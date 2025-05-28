@@ -1,0 +1,9 @@
+---
+license_expression: bsd-new OR gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+---
+
+is licensed with a (you choose) {{BSD 3-clause}} or
+        // {{GPL2}}. See LICENSE file for details.
