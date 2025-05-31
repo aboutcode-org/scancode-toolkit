@@ -750,7 +750,9 @@
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
-      "detection_log": [],
+      "detection_log": [
+        "extra-words"
+      ],
       "reference_matches": [
         {
           "license_expression": "apache-2.0",
@@ -981,7 +983,9 @@
               "matched_text_diagnostics": "License\n\n[PaddleNLP\u9075\u5faa][Apache-2.[0\u5f00\u6e90\u534f\u8bae]](./LICENSE)\u3002"
             }
           ],
-          "detection_log": [],
+          "detection_log": [
+            "extra-words"
+          ],
           "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80"
         }
       ],
@@ -1547,7 +1551,9 @@
                   "matched_text_diagnostics": "License\n\n[PaddleNLP\u9075\u5faa][Apache-2.[0\u5f00\u6e90\u534f\u8bae]](./LICENSE)\u3002"
                 }
               ],
-              "detection_log": [],
+              "detection_log": [
+                "extra-words"
+              ],
               "identifier": "apache_2_0-999670be-3d5e-ebf8-ae18-b555c26c5e80"
             },
             {
