@@ -1055,26 +1055,10 @@ def is_correct_detection_non_unknown(license_matches):
     are correct/perfect license detections and also there aren't any unknowns.
     """
     return (
-        is_correct_detection_2(license_matches)
+        is_correct_detection(license_matches)
         and not has_unknown_matches(license_matches)
-    )
-
-def is_correct_detection_2(license_matches):
-    """
-    Return True if all the matches in ``license_matches`` List of LicenseMatch
-    are perfect license detections, and the matcher is always either `1-hash` 
-    or `1-spdx-id`.
-    """
-    matchers = (license_match.matcher for license_match in license_matches)
-    is_match_coverage_perfect = [
-        license_match.coverage() == 100
-        for license_match in license_matches
-    ]
-
-    return (
-        all(matcher in ("1-hash", "1-spdx-id") for matcher in matchers)
-        and all(is_match_coverage_perfect)
-    )    
+        and not has_extra_words(license_matches)
+    )  
 
 
 def is_correct_detection(license_matches):
