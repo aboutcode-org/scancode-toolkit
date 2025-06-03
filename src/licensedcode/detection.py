@@ -124,6 +124,7 @@ class DetectionRule(Enum):
     These are logged in LicenseDetection.detection_log for verbosity.
     """
     UNKNOWN_MATCH = 'unknown-match'
+    EXTRA_WORDS = 'extra-words'
     LICENSE_CLUES = 'license-clues'
     LOW_QUALITY_MATCH_FRAGMENTS = 'low-quality-matches'
     FALSE_POSITIVE = 'possible-false-positive'
@@ -1056,7 +1057,8 @@ def is_correct_detection_non_unknown(license_matches):
     return (
         is_correct_detection(license_matches)
         and not has_unknown_matches(license_matches)
-    )
+        and not has_extra_words(license_matches)
+    )  
 
 
 def is_correct_detection(license_matches):
@@ -1380,7 +1382,7 @@ def has_references_to_local_files(license_matches):
     Return True if any of the matched Rule for the ``license_matches`` has a
     non empty `referenced_filenames`, otherwise return False.
     """
-    return any(
+    return not has_extra_words(license_matches) and any(
         bool(match.rule.referenced_filenames)
         for match in license_matches
     )
@@ -1545,6 +1547,13 @@ def get_detected_license_expression(
         # in detections but ideally we should return synthetic unknowns for these
         detection_log.append(DetectionRule.LOW_QUALITY_MATCH_FRAGMENTS.value)
         return detection_log, combined_expression
+    
+    elif analysis == DetectionCategory.EXTRA_WORDS.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionCategory.EXTRA_WORDS.value}')
+        # Apply filtering or handling logic if needed
+        matches_for_expression = license_matches
+        detection_log.append(DetectionRule.EXTRA_WORDS.value)
 
     else:
         if TRACE_ANALYSIS:
@@ -1726,7 +1735,7 @@ def analyze_detection(license_matches, package_license=False):
     ):
         return DetectionCategory.LICENSE_CLUES.value
 
-    # Case where all matches have `matcher` as `1-hash` or `4-spdx-id`
+    # Case where all matches have `matcher` as `1-hash` or `1-spdx-id`
     elif is_correct_detection_non_unknown(license_matches=license_matches):
         return DetectionCategory.PERFECT_DETECTION.value
 
