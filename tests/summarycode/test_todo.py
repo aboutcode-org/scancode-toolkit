@@ -30,6 +30,8 @@ class TestScanReview(FileDrivenTesting):
         run_scan_click([
             '-clip',
             '--todo',
+            '--classify',
+            '--summary',
             '--json-pp', result_file, test_dir
         ])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)

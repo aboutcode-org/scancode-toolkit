@@ -70,7 +70,7 @@ class AmbiguousDetectionsToDoPlugin(PostScanPlugin):
     """
     Summarize a scan by compiling review items of ambiguous detections.
     """
-    sort_order = 10
+    sort_order = 3
 
     resource_attributes = dict(for_todo=attr.ib(default=attr.Factory(list)))
     codebase_attributes = dict(todo=attr.ib(default=attr.Factory(list)))
