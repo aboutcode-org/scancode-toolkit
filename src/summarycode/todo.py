@@ -188,6 +188,13 @@ def get_ambiguous_package_detections(codebase):
         package_data = getattr(resource, 'package_data', []) or []
         for package in package_data:
             detection_type = None
+
+            # Top-level packages are not created for private packages so
+            # these should not be consider for package detection issues
+            is_private = package.get("is_private", False)
+            if is_private:
+                continue
+
             if not package["purl"]:
                 if resource.path not in deps_datafile_paths and not resource.for_packages:
                     detection_type=PackageDetectionCategory.CANNOT_CREATE_PURL.value
