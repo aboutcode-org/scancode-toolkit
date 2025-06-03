@@ -78,7 +78,7 @@ class LicenseScanner(ScanPlugin):
     )
 
     run_order = 4
-    sort_order = 4
+    sort_order = 5
 
     options = [
         PluggableCommandLineOption(('-l', '--license'),

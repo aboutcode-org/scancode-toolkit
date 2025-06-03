@@ -1,5 +1,4 @@
 {
-  "license_detections": [],
   "todo": [
     {
       "detection_id": "borceux-d99f172d-bc25-b4f7-b6bf-cccec1995ce5",
@@ -39,10 +38,14 @@
       }
     }
   ],
+  "license_detections": [],
   "files": [
     {
       "path": "README.multi-orig-tarball-package",
       "type": "file",
+      "for_todo": [
+        "borceux-d99f172d-bc25-b4f7-b6bf-cccec1995ce5"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -65,9 +68,6 @@
         }
       ],
       "percentage_of_license_text": 10.53,
-      "for_todo": [
-        "borceux-d99f172d-bc25-b4f7-b6bf-cccec1995ce5"
-      ],
       "scan_errors": []
     }
   ]
