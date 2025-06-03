@@ -311,13 +311,13 @@ class WindowsExecutableHandler(models.NonAssemblableDatafileHandler):
 
         License = get_first(infos, 'License')
 
-        extracted_license_statement = {}
-        if LegalCopyright or LegalTrademarks or License:
-            extracted_license_statement = dict(
-                LegalCopyright=copyr,
-                LegalTrademarks=LegalTrademarks,
-                License=License
-            )
+        extracted_license_statement = None
+        if LegalTrademarks or License:
+            extracted_license_statement = {}
+            if LegalTrademarks and LegalTrademarks != '':
+                extracted_license_statement['LegalTrademarks'] = LegalTrademarks
+            if License:
+                extracted_license_statement['License'] = License
 
         description = concat(infos, 'FileDescription', 'Comments')
 
