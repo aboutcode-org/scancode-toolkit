@@ -317,9 +317,11 @@ class AmbiguousDetection:
         license_diagnostics = False
         if detection_object.detection_log != None:
             license_diagnostics = True
+            license_text_diagnostics = True
         detection_mapping = detection_object.to_dict(
             include_text=True,
             license_diagnostics=license_diagnostics,
+            license_text_diagnostics=license_text_diagnostics,
         )
         return cls(
             detection_type='license',
