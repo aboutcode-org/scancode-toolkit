@@ -45,6 +45,7 @@ heuristics.
 """
 
 TRACE = os.environ.get('SCANCODE_DEBUG_LICENSE_DETECTION', False)
+TRACE_REFERENCE = os.environ.get('SCANCODE_DEBUG_PLUGIN_LICENSE_REFERENCE', False)
 
 TRACE_ANALYSIS = False
 TRACE_IS_FUNCTIONS = False
@@ -1829,6 +1830,63 @@ def get_referenced_filenames(license_matches):
     return unique_filenames
 
 
+def has_resolved_referenced_file(license_matches):
+    """
+    Return a list of unique referenced filenames found in the rules of a list of
+    ``license_matches``
+    """
+    match_origin_files = list(set([
+        license_match.from_file
+        for license_match in license_matches
+    ]))
+    if len(match_origin_files) == 2:
+        return True
+    else:
+        return False
+
+
+def find_referenced_resource_from_package(referenced_filename, resource, codebase, **kwargs):
+    """
+    Return a Resource matching the ``referenced_filename`` path or filename
+    given a ``resource`` in ``codebase``.
+
+    Return None if the ``referenced_filename`` cannot be found in the same
+    directory as the base ``resource``, or at the codebase ``root``.
+
+    ``referenced_filename`` is the path or filename referenced in a
+    LicenseMatch detected at ``resource``,
+    """
+    if not resource:
+        return
+
+    codebase_packages = codebase.attributes.packages
+    datafile_paths_by_package_uid = {}
+    for package in codebase_packages:
+        package_uid = package.get("package_uid")
+        datafile_paths = package.get("datafile_paths")
+        if package_uid and datafile_paths:
+            datafile_paths_by_package_uid[package_uid] = datafile_paths
+
+    root_path = codebase.root.path
+
+    for package_uid in resource.for_packages:
+        if not package_uid in datafile_paths_by_package_uid:
+            continue
+
+        datafile_paths = datafile_paths_by_package_uid.get(package_uid)
+        for path in datafile_paths:
+            datafile_path = posixpath.join(root_path, path)
+            datafile_resource = codebase.get_resource(path=datafile_path)
+            if not datafile_resource or not datafile_resource.parent_path():
+                continue
+
+            parent_path = datafile_resource.parent_path()
+            referenced_path = posixpath.join(parent_path, referenced_filename)
+            referenced_resource = codebase.get_resource(path=referenced_path)
+            if referenced_resource:
+                return referenced_resource
+
+
 def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
     """
     Return a Resource matching the ``referenced_filename`` path or filename
@@ -1862,6 +1920,135 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
     resource = codebase.get_resource(path=path)
     if resource:
         return resource
+
+
+def update_expressions_from_license_detections(resource, codebase):
+
+    license_expressions = [
+        detection["license_expression"]
+        for detection in resource.license_detections
+    ]
+    detected_license_expression = combine_expressions(
+        expressions=license_expressions,
+        relation='AND',
+        unique=True,
+        licensing=get_cache().licensing)
+    if detected_license_expression is not None:
+        detected_license_expression = str(detected_license_expression)
+
+    resource.detected_license_expression = detected_license_expression
+
+    detected_license_expression_spdx = build_spdx_license_expression(
+        license_expression=resource.detected_license_expression,
+        licensing=get_cache().licensing)
+
+    if detected_license_expression_spdx is not None:
+        detected_license_expression_spdx = str(detected_license_expression_spdx)
+
+    resource.detected_license_expression_spdx = detected_license_expression_spdx
+
+    codebase.save_resource(resource)
+    return resource
+
+
+def update_detection_from_referenced_files(referenced_filenames, license_detection_mapping, resource, codebase, analysis, find_referenced_resource_func):
+    
+    license_detection = LicenseDetectionFromResult.from_license_detection_mapping(
+        license_detection_mapping=license_detection_mapping,
+        file_path=resource.path,
+    )
+    license_match_mappings = license_detection_mapping["matches"]
+
+    referenced_detections = []
+    referenced_resources = []
+    for referenced_filename in referenced_filenames:
+        referenced_resource = find_referenced_resource_func(
+            referenced_filename=referenced_filename,
+            resource=resource,
+            codebase=codebase,
+        )
+
+        if referenced_resource and referenced_resource.license_detections:
+            referenced_detections.extend(
+                referenced_resource.license_detections
+            )
+            referenced_resources.append(referenced_resource)
+
+            # For LicenseMatches with different resources as origin, add the
+            # resource path to these matches as origin info
+            for detection in referenced_resource.license_detections:
+                populate_matches_with_path(
+                    matches=detection["matches"],
+                    path=referenced_resource.path
+                )
+
+    if not referenced_detections:
+        return False
+
+    referenced_license_expression = str(combine_expressions(
+        expressions=[
+            detection["license_expression"]
+            for detection in referenced_detections
+        ],
+        relation='AND',
+        licensing=get_cache().licensing,
+    ))
+
+    if not use_referenced_license_expression(
+        referenced_license_expression=referenced_license_expression,
+        license_detection=license_detection,
+    ):
+        if TRACE_REFERENCE and referenced_resources:
+            paths = [
+                resource.path
+                for resource in referenced_resource
+            ]
+            logger_debug(
+                f'use_referenced_license_expression: False for '
+                f'resources: {paths} and '
+                f'license_expression: {referenced_license_expression}',
+            )
+        return False
+
+    if TRACE_REFERENCE and referenced_resources:
+        paths = [
+            resource.path
+            for resource in referenced_resource
+        ]
+        logger_debug(
+            f'use_referenced_license_expression: True for '
+            f'resources: {paths} and '
+            f'license_expression: {referenced_license_expression}',
+        )
+
+    matches_to_extend = get_matches_from_detection_mappings(
+        license_detections=referenced_detections,
+    )
+    license_match_mappings.extend(matches_to_extend)
+
+    detection_log, license_expression = get_detected_license_expression(
+        license_match_mappings=license_match_mappings,
+        analysis=analysis,
+        post_scan=True,
+    )
+
+    license_expression_spdx = build_spdx_license_expression(
+        license_expression=str(license_expression),
+        licensing=get_cache().licensing,
+    )
+    if license_expression is not None:
+        license_expression = str(license_expression)
+    if license_expression_spdx is not None:
+        license_expression_spdx = str(license_expression_spdx)
+    license_detection_mapping["license_expression"] = license_expression
+    license_detection_mapping["license_expression_spdx"] = license_expression_spdx
+    license_detection_mapping["detection_log"] = detection_log
+    license_detection_mapping["identifier"] = get_new_identifier_from_detections(
+        initial_detection=license_detection_mapping,
+        detections_added=referenced_detections,
+        license_expression=license_expression,
+    )
+    return True
 
 
 def process_detections(detections, licensing=Licensing()):
