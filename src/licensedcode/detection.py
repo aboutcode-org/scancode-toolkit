@@ -1382,7 +1382,7 @@ def has_references_to_local_files(license_matches):
     Return True if any of the matched Rule for the ``license_matches`` has a
     non empty `referenced_filenames`, otherwise return False.
     """
-    return any(
+    return not has_extra_words(license_matches) and any(
         bool(match.rule.referenced_filenames)
         for match in license_matches
     )

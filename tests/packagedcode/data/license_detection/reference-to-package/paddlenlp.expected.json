@@ -725,7 +725,9 @@
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 2,
-      "detection_log": [],
+      "detection_log": [
+        "extra-words"
+      ],
       "reference_matches": [
         {
           "license_expression": "apache-2.0",
@@ -1024,7 +1026,9 @@
               "matched_text_diagnostics": "License\n\n[PaddleNLP] is provided under the [Apache-2.0 License](./LICENSE)."
             }
           ],
-          "detection_log": [],
+          "detection_log": [
+            "extra-words"
+          ],
           "identifier": "apache_2_0-4571361c-d5af-4e7e-c015-6cc10c1b8174"
         }
       ],
@@ -1577,7 +1581,9 @@
                   "matched_text_diagnostics": "License\n\n[PaddleNLP] is provided under the [Apache-2.0 License](./LICENSE)."
                 }
               ],
-              "detection_log": [],
+              "detection_log": [
+                "extra-words"
+              ],
               "identifier": "apache_2_0-4571361c-d5af-4e7e-c015-6cc10c1b8174"
             }
           ],
