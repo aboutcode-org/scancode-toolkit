@@ -23,6 +23,7 @@ from license_expression import Licensing
 
 from commoncode.resource import clean_path
 from commoncode.text import python_safe_name
+from commoncode.fileutils import as_posixpath
 from licensedcode.cache import build_spdx_license_expression
 from licensedcode.cache import get_cache
 from licensedcode.cache import get_index
@@ -130,6 +131,7 @@ class DetectionRule(Enum):
     EXTRA_WORDS = 'extra-words'
     LICENSE_CLUES = 'license-clues'
     LOW_QUALITY_MATCH_FRAGMENTS = 'low-quality-matches'
+    IMPERFECT_COVERAGE = 'imperfect-match-coverage'
     FALSE_POSITIVE = 'possible-false-positive'
     NOT_LICENSE_CLUES = 'not-license-clues-as-more-detections-present'
     UNKNOWN_REFERENCE_TO_LOCAL_FILE = 'unknown-reference-to-local-file'
@@ -1139,10 +1141,10 @@ def has_extra_words(license_matches):
 
 def has_low_rule_relevance(license_matches):
     """
-    Return True if any on the matches in ``license_matches`` List of LicenseMatch
+    Return True if all on the matches in ``license_matches`` List of LicenseMatch
     objects has a match with low score because of low rule relevance.
     """
-    return any(
+    return all(
         license_match.rule.relevance < LOW_RELEVANCE_THRESHOLD
         for license_match in license_matches
     )
@@ -1238,11 +1240,16 @@ def has_unknown_matches(license_matches):
 
 def is_unknown_intro(license_match):
     """
-    Return True if the LicenseMatch is an unknown license intro.
+    Return True if the LicenseMatch is unknown and can be considered
+    as a license intro to other license matches.
+    I.e. this is not an unknown when followed by other proper matches.
     """
     return (
         license_match.rule.has_unknown and
-        license_match.rule.is_license_intro
+        (
+            license_match.rule.is_license_intro or license_match.rule.is_license_clue or
+            license_match.rule.license_expression == 'free-unknown'
+        )
     )
 
 
@@ -1338,7 +1345,10 @@ def is_license_intro(license_match):
     from licensedcode.match_aho import MATCH_AHO_EXACT
 
     return (
-        license_match.rule.is_license_intro
+        (
+            license_match.rule.is_license_intro or license_match.rule.is_license_clue or
+            license_match.rule.license_expression == 'free-unknown'
+        )
         and (
             license_match.matcher == MATCH_AHO_EXACT
             or license_match.coverage() == 100
@@ -1554,9 +1564,15 @@ def get_detected_license_expression(
     elif analysis == DetectionCategory.EXTRA_WORDS.value:
         if TRACE_ANALYSIS:
             logger_debug(f'analysis {DetectionCategory.EXTRA_WORDS.value}')
-        # Apply filtering or handling logic if needed
+        # TODO: Fix score if extra words allowed in rules
         matches_for_expression = license_matches
         detection_log.append(DetectionRule.EXTRA_WORDS.value)
+
+    elif analysis == DetectionCategory.IMPERFECT_COVERAGE.value:
+        if TRACE_ANALYSIS:
+            logger_debug(f'analysis {DetectionCategory.IMPERFECT_COVERAGE.value}')
+        matches_for_expression = license_matches
+        detection_log.append(DetectionRule.IMPERFECT_COVERAGE.value)
 
     else:
         if TRACE_ANALYSIS:
@@ -1903,7 +1919,11 @@ def find_referenced_resource_from_package(referenced_filename, resource, codebas
 
         datafile_paths = datafile_paths_by_package_uid.get(package_uid)
         for path in datafile_paths:
-            datafile_path = posixpath.join(root_path, path)
+            # support strip_root and normal cases
+            if not as_posixpath(path).startswith(f"{as_posixpath(root_path)}/"):
+                datafile_path = posixpath.join(root_path, path)
+            else:
+                datafile_path = path
             datafile_resource = codebase.get_resource(path=datafile_path)
             if not datafile_resource or not datafile_resource.parent_path():
                 continue
@@ -1941,8 +1961,6 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
         return resource
 
     # Also look at codebase root for referenced file
-    # TODO: look at project root identified by key-files
-    # instead of codebase scan root
     root_path = codebase.root.path
     path = posixpath.join(root_path, referenced_filename)
     resource = codebase.get_resource(path=path)

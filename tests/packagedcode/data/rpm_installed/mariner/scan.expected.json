@@ -565,7 +565,9 @@
               "matched_text_diagnostics": "The OpenSSL toolkit stays under a double license, i.e. both the conditions of\nthe OpenSSL License and the original SSLeay license apply to the toolkit."
             }
           ],
-          "detection_log": [],
+          "detection_log": [
+            "imperfect-match-coverage"
+          ],
           "identifier": "openssl_ssleay-dc6d828d-629e-dcb5-0545-6a4248d1411c"
         }
       ],
@@ -1365,7 +1367,9 @@
                   "matched_text_diagnostics": "The OpenSSL toolkit stays under a double license, i.e. both the conditions of\nthe OpenSSL License and the original SSLeay license apply to the toolkit."
                 }
               ],
-              "detection_log": [],
+              "detection_log": [
+                "imperfect-match-coverage"
+              ],
               "identifier": "openssl_ssleay-dc6d828d-629e-dcb5-0545-6a4248d1411c"
             }
           ],

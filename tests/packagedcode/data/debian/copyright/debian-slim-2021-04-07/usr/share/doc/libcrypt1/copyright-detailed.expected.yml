@@ -299,9 +299,9 @@ license_detections:
         matched_text: Public domain, written by
     identifier: bsd_zero_and_bsd_simplified_and_public_domain_and_bsd_new-33742a24-5ed2-ddf4-f29a-58e0cddc9766
   - license_expression: gpl-3.0-plus WITH autoconf-exception-3.0 AND bsd-zero AND fsf-ap AND
-      gpl-2.0-plus WITH autoconf-simple-exception-2.0 AND free-unknown
+      gpl-2.0-plus WITH autoconf-simple-exception-2.0
     license_expression_spdx: GPL-3.0-or-later WITH Autoconf-exception-3.0 AND 0BSD AND FSFAP
-      AND GPL-2.0-or-later WITH Autoconf-exception-generic AND LicenseRef-scancode-free-unknown
+      AND GPL-2.0-or-later WITH Autoconf-exception-generic
     matches:
       - license_expression: gpl-3.0-plus WITH autoconf-exception-3.0
         license_expression_spdx: GPL-3.0-or-later WITH Autoconf-exception-3.0
@@ -475,7 +475,7 @@ license_detections:
           Copyright holders unknown, no statement of license (all of these
              files are part of the testsuite and do not contribute to the
              installed library or its headers):
-    identifier: gpl_3_0_plus_with_autoconf_exception_3_0_and_bsd_zero_and_fsf_ap_and_gpl_2_0_plus_with_autoconf_simple_exception_2_0_and_free_unknown-9de6335e-46f3-3ded-4a43-79d664c09328
+    identifier: gpl_3_0_plus_with_autoconf_exception_3_0_and_bsd_zero_and_fsf_ap_and_gpl_2_0_plus_with_autoconf_simple_exception_2_0-9de6335e-46f3-3ded-4a43-79d664c09328
 other_license_detections: []
 copyright: |
   Copyright Thorsten Kukuk, Bjorn Esser, Zack Weinberg LGPL

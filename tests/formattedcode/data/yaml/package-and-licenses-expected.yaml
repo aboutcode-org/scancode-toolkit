@@ -29,9 +29,9 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-6.8.0-52-generic-x86_64-with-glibc2.35
-        platform_version: '#53~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Wed Jan 15 19:18:46 UTC 2'
-        python_version: 3.12.9 (main, Feb 20 2025, 19:13:20) [GCC 11.4.0]
+        platform: Linux-5.15.0-141-generic-x86_64-with-glibc2.35
+        platform_version: '#151-Ubuntu SMP Sun May 18 21:35:19 UTC 2025'
+        python_version: 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]
       spdx_license_list_version: '3.26'
       files_count: 4
 summary:
@@ -1018,13 +1018,14 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages: []
     is_legal: no
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: no
+    is_community: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -1057,14 +1058,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: no
     is_manifest: no
     is_readme: yes
     is_top_level: yes
     is_key_file: yes
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression: apache-2.0 AND (apache-2.0 OR mit)
     detected_license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
     license_detections:
@@ -1133,14 +1135,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: yes
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: yes
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:
@@ -1342,14 +1345,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: yes
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: yes
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression: mit
     detected_license_expression_spdx: MIT
     license_detections:
@@ -1417,6 +1421,12 @@ files:
     is_media: no
     is_source: no
     is_script: no
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    is_community: no
     package_data:
       - type: pypi
         namespace:
@@ -1484,11 +1494,6 @@ files:
         purl: pkg:pypi/codebase
     for_packages:
       - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
-    is_legal: no
-    is_manifest: no
-    is_readme: no
-    is_top_level: no
-    is_key_file: no
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:
