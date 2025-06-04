@@ -355,13 +355,14 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -394,15 +395,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -447,15 +449,16 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -488,6 +491,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -712,11 +721,6 @@
       "for_packages": [
         "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [

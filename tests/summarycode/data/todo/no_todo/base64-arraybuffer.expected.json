@@ -363,6 +363,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
       "package_data": [],
       "for_packages": [],
       "detected_license_expression": null,
@@ -403,6 +404,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -445,6 +447,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -521,6 +524,7 @@
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -597,6 +601,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -639,6 +644,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -715,6 +721,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",

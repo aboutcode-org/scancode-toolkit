@@ -37,6 +37,8 @@ from licensedcode.query import Query
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_tokenizer
 
+from summarycode.classify import check_is_path_community_file
+
 """
 LicenseDetection data structure and processing.
 
@@ -1667,6 +1669,25 @@ def get_license_keys_from_detections(license_detections, licensing=Licensing()):
     return list(license_keys)
 
 
+def can_ignore_ambiguous_detection(license_detection):
+    """
+    Return True if the license_detection is not an ambigious detection
+    which needs to be reviewed. A few cases are:
+    1. All the locations of the license detection are community files
+    """
+    all_file_paths = [
+        file_region.path
+        for file_region in license_detection.file_regions
+    ]
+    if all(
+        check_is_path_community_file(file_path)
+        for file_path in all_file_paths
+    ):
+        return True
+
+    return False
+
+
 def get_ambiguous_license_detections_by_type(unique_license_detections):
     """
     Return a list of ambiguous unique license detections which needs review
@@ -1677,13 +1698,20 @@ def get_ambiguous_license_detections_by_type(unique_license_detections):
     ambi_license_detections = {}
 
     for detection in unique_license_detections:
+
         if not detection.license_expression:
             ambi_license_detections[DetectionCategory.LOW_QUALITY_MATCH_FRAGMENTS.value] = detection
+
+        elif can_ignore_ambiguous_detection(detection):
+            continue
 
         elif is_undetected_license_matches(license_matches=detection.matches):
             ambi_license_detections[DetectionCategory.UNDETECTED_LICENSE.value] = detection
 
-        elif has_correct_license_clue_matches(license_matches=detection.matches):
+        elif (
+            has_correct_license_clue_matches(license_matches=detection.matches) and
+            has_unknown_matches(license_matches=detection.matches)
+        ):
             ambi_license_detections[DetectionCategory.LICENSE_CLUES.value] = detection
 
         elif "unknown" in detection.license_expression:
