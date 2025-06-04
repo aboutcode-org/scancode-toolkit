@@ -314,7 +314,9 @@
       "license_expression": "python AND python-cwi",
       "license_expression_spdx": "Python-2.0 AND LicenseRef-scancode-python-cwi",
       "detection_count": 1,
-      "detection_log": [],
+      "detection_log": [
+        "imperfect-match-coverage"
+      ],
       "reference_matches": [
         {
           "license_expression": "python",
@@ -1821,7 +1823,9 @@
               "matched_text_diagnostics": "Permission to use, copy, modify, and distribute this software and its\ndocumentation for any purpose and without fee is hereby granted,\nprovided that the above copyright notice appear in all copies and that\nboth that copyright notice and this permission notice appear in\nsupporting documentation, and that the name of Stichting Mathematisch\nCentrum or CWI not be used in advertising or publicity pertaining to\ndistribution of the software without specific, written prior\npermission.\n\nSTICHTING MATHEMATISCH CENTRUM DISCLAIMS ALL WARRANTIES WITH REGARD TO\nTHIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND\nFITNESS, IN NO EVENT SHALL STICHTING MATHEMATISCH CENTRUM BE LIABLE\nFOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT\nOF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
             }
           ],
-          "detection_log": [],
+          "detection_log": [
+            "imperfect-match-coverage"
+          ],
           "identifier": "python_and_python_cwi-dda7296c-6bc9-a87c-6fcd-8aa47c3484dc"
         },
         {
