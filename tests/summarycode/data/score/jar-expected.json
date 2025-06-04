@@ -333,15 +333,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -374,15 +375,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -415,15 +417,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -456,15 +459,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -519,6 +523,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
       "package_data": [
         {
           "type": "jar",
@@ -595,11 +605,6 @@
       "for_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": true,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -632,15 +637,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -673,15 +679,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -714,15 +721,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -755,6 +763,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
       "package_data": [
         {
           "type": "maven",
@@ -804,11 +818,6 @@
       "for_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": true,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -841,6 +850,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
       "package_data": [
         {
           "type": "maven",
@@ -1015,11 +1030,6 @@
       "for_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": true,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -1074,15 +1084,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1115,15 +1126,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1156,15 +1168,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1197,15 +1210,16 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -1272,15 +1286,16 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
