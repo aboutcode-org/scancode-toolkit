@@ -598,6 +598,12 @@ class LicenseMatch(object):
         in the matched range (including unknowns and unmatched) and the matched
         rule relevance.
         """
+
+        # Check whether extra words in the matched text appear in allowed positions,
+        # and do not exceed the maximum allowed word count at those positions.
+        if is_extra_words_position_valid(match=self):
+            return 100
+        
         # relevance is a number between 0 and 100. Divide by 100
         relevance = self.rule.relevance / 100
         if not relevance:
@@ -1070,6 +1076,57 @@ def merge_matches(matches, max_dist=None, trace=TRACE_MERGE):
 # FIXME we should consider the length and distance between matches to break
 # early from the loops: trying to check containment on wildly separated matches
 # does not make sense
+
+def is_extra_words_position_valid(match):
+    """
+    Return True if the extra words appear in valid positions and 
+    do not exceed the maximum allowed word count at those positions.
+    Otherwise, return False.
+    """
+    
+    rule_spans = match.ispan.subspans()
+
+    # If there are multiple subspans, it means not all required tokens are contiguous.
+    if len(rule_spans) > 1:
+        return False
+
+    matched_tokens = list(index_tokenizer(match.matched_text(whole_lines=False, highlight=False)))
+    rule_tokens = list(index_tokenizer(match.rule.text))
+    extra_phrase_spans = match.rule.extra_phrase_spans
+
+    if not extra_phrase_spans:
+        return False
+    
+    # count of `extra-words` tokens i.e inserted in `matched_tokens`
+    matched_count = 0
+
+    # Count of extra phrase markers   
+    extra_phrase_count = 0
+
+    for span, allowed_extra_words in extra_phrase_spans:
+        rule_index = span.start - extra_phrase_count - 1
+        allowed_extra_words = allowed_extra_words
+
+        matched_index = span.start + matched_count - extra_phrase_count
+        extra_words_count = 0
+
+        # return false if token before `extra-words` in `matched_token` is not same as token before `extra-phrases` in `rule_tokens`
+        if(matched_tokens[matched_index-1] != rule_tokens[rule_index]):
+            return False 
+
+        # Count how many tokens in `matched_text` do not match the next rule token
+        while (matched_index < len(matched_tokens) and
+               matched_tokens[matched_index] != rule_tokens[rule_index + 1]):
+            matched_index += 1
+            matched_count += 1
+            extra_words_count += 1
+
+            if extra_words_count > allowed_extra_words:
+               return False
+
+        extra_phrase_count += 1
+
+    return True
 
 
 def filter_contained_matches(

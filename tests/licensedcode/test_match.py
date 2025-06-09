@@ -20,6 +20,7 @@ from licensedcode.match import filter_matches_missing_required_phrases
 from licensedcode.match import filter_overlapping_matches
 from licensedcode.match import get_full_matched_text
 from licensedcode.match import get_matching_regions
+from licensedcode.match import is_extra_words_position_valid
 from licensedcode.match import LicenseMatch
 from licensedcode.match import merge_matches
 from licensedcode.match import reportable_tokens
@@ -1321,6 +1322,106 @@ class TestLicenseMatchFilter(FileBasedTesting):
         assert matches[5].qspan in regions[1]
 
 
+class TestExtraWordsPosition(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_valid_extra_words_within_limit(self):
+        rule_text = """
+        Redistribution and use [[4]] in source and binary forms are permitted.
+        """
+        rule = create_rule_from_text_and_expression(
+            license_expression='extra-words',
+            text=rule_text
+        )
+        idx = index.LicenseIndex([rule])
+
+        query = """
+        Redistribution and use of this software in source and binary forms are permitted.
+        """
+        match = idx.match(query_string=query, _skip_hash_match=True)[0]
+        assert is_extra_words_position_valid(match) is True
+
+    def test_invalid_extra_words_exceed_limit(self):
+        rule_text = """
+        Redistribution and use [[2]] in source and binary forms are permitted.
+        """
+        rule = create_rule_from_text_and_expression(
+            license_expression='extra-words',
+            text=rule_text
+        )
+        idx = index.LicenseIndex([rule])
+
+        query = """
+        Redistribution and use of this software in source and binary forms are permitted.
+        """
+        match = idx.match(query_string=query, _skip_hash_match=True)[0]
+        assert is_extra_words_position_valid(match) is False
+
+    def test_no_extra_words_allowed(self):
+        rule_text = """
+        Redistribution and use in source and binary forms are permitted.
+        """
+        rule = create_rule_from_text_and_expression(
+            license_expression='extra-words',
+            text=rule_text
+        )
+        idx = index.LicenseIndex([rule])
+
+        query = """
+        Redistribution and use of software in source and binary forms are permitted.
+        """
+        match = idx.match(query_string=query, _skip_hash_match=True)[0]
+        assert is_extra_words_position_valid(match) is False
+
+    def test_multiple_extra_spans_valid(self):
+        rule_text = """
+        Redistribution [[2]] and use [[1]] in source and binary forms are permitted.
+        """
+        rule = create_rule_from_text_and_expression(
+            license_expression='extra-words',
+            text=rule_text
+        )
+        idx = index.LicenseIndex([rule])
+
+        query = """
+        Redistribution of content and use again in source and binary forms are permitted.
+        """
+        match = idx.match(query_string=query, _skip_hash_match=True)[0]
+        assert is_extra_words_position_valid(match) is True
+
+    def test_extra_words_at_wrong_position(self):
+        rule_text = """
+        Redistribution and use [[2]] in source and binary forms are permitted.
+        """
+        rule = create_rule_from_text_and_expression(
+            license_expression='extra-words',
+            text=rule_text
+        )
+        idx = index.LicenseIndex([rule])
+
+        query = """
+        Redistribution and amazing use in great source and binary forms are permitted.
+        """
+        match = idx.match(query_string=query, _skip_hash_match=True)[0]
+        assert is_extra_words_position_valid(match) is False
+
+    def test_exact_match_without_extra_markers(self):
+        rule_text = """
+        Redistribution and use in source and binary forms are permitted.
+        """
+        rule = create_rule_from_text_and_expression(
+            license_expression='extra-words',
+            text=rule_text
+        )
+        idx = index.LicenseIndex([rule])
+
+        query = """
+        Redistribution and use in source and binary forms are permitted.
+        """
+        match = idx.match(query_string=query, _skip_hash_match=True)[0]
+        assert is_extra_words_position_valid(match) is False
+
+
 class TestLicenseMatchScore(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
@@ -1380,6 +1481,29 @@ class TestLicenseMatchScore(FileBasedTesting):
 
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 19) | Span(30, 51), ispan=Span(0, 41))
         assert m1.score() == 80.77
+
+    def test_LicenseMatch_matches_score_100_for_extra_words_within_limit(self):
+        rule_text = 'Neither the name of [[3]] nor the names of its'
+        rule = create_rule_from_text_and_expression(license_expression='bsd_new', text=rule_text)
+        idx = index.LicenseIndex([rule])
+
+        query = 'Neither the name of XXX YYY ZZZ nor the names of its'
+        matches = idx.match(query_string=query, _skip_hash_match=True)
+        match = matches[0]
+        score = match.score()
+        assert score == 100
+
+    def test_LicenseMatch_matches_score_not_100_for_extra_words_exceed_limit(self):
+        rule_text = 'Neither the name of [[3]] nor the names of its'
+        rule = create_rule_from_text_and_expression(license_expression='bsd_new', text=rule_text)
+        idx = index.LicenseIndex([rule])
+
+        # The query includes 4 extra words instead of the allowed 3.
+        query = 'Neither the name of XXX YYY ZZZ AAA nor the names of its'
+        matches = idx.match(query_string=query, _skip_hash_match=True)
+        match = matches[0]
+        score = match.score()
+        assert score != 100         
 
     def test_LicenseMatch_stopwords_are_treated_as_unknown_2484(self):
         rules_dir = self.get_test_loc('stopwords/index/rules')
