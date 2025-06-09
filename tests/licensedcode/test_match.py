@@ -1381,6 +1381,29 @@ class TestLicenseMatchScore(FileBasedTesting):
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 19) | Span(30, 51), ispan=Span(0, 41))
         assert m1.score() == 80.77
 
+    def test_LicenseMatch_matches_score_100_for_extra_words_within_limit(self):
+        rule_text = 'Neither the name of [[3]] nor the names of its'
+        rule = create_rule_from_text_and_expression(license_expression='bsd_new', text=rule_text)
+        idx = index.LicenseIndex([rule])
+
+        query = 'Neither the name of XXX YYY ZZZ nor the names of its'
+        matches = idx.match(query_string=query, _skip_hash_match=True)
+        match = matches[0]
+        score = match.score()
+        assert score == 100
+
+    def test_LicenseMatch_matches_score_not_100_for_extra_words_exceed_limit(self):
+        rule_text = 'Neither the name of [[3]] nor the names of its'
+        rule = create_rule_from_text_and_expression(license_expression='bsd_new', text=rule_text)
+        idx = index.LicenseIndex([rule])
+
+        # The query includes 4 extra words instead of the allowed 3.
+        query = 'Neither the name of XXX YYY ZZZ AAA nor the names of its'
+        matches = idx.match(query_string=query, _skip_hash_match=True)
+        match = matches[0]
+        score = match.score()
+        assert score != 100         
+
     def test_LicenseMatch_stopwords_are_treated_as_unknown_2484(self):
         rules_dir = self.get_test_loc('stopwords/index/rules')
         lics_dir = self.get_test_loc('stopwords/index/licenses')

@@ -391,6 +391,9 @@ class LicenseIndex(object):
             # "weak" rules can only be matched with an automaton exactly.
             is_weak = True
 
+            # identify and capture the spans of extra phrases specified within the rule
+            rule.extra_phrase_spans = list(rule.extra_phrases())
+         
             for rts in rule.tokens():
                 rule_tokens_append(rts)
                 rtid = dictionary_get(rts)

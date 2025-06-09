@@ -7,6 +7,7 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
+import re
 import os
 import sys
 import traceback
@@ -43,6 +44,7 @@ from licensedcode.tokenize import get_existing_required_phrase_spans
 from licensedcode.tokenize import index_tokenizer
 from licensedcode.tokenize import index_tokenizer_with_stopwords
 from licensedcode.tokenize import query_lines
+from licensedcode.tokenize import get_extra_phrase_spans
 from scancode.api import SCANCODE_LICENSEDB_URL
 from scancode.api import SCANCODE_LICENSE_URL
 from scancode.api import SCANCODE_RULE_URL
@@ -1683,6 +1685,17 @@ class BasicRule:
         )
     )
 
+    extra_phrase_spans = attr.ib(
+        default=attr.Factory(list),
+        repr=False,
+        metadata=dict(
+            help='List of tuples `(Span, int)` representing extra phrases for this rule.'
+            'Each tuple contains a Span of token positions in the rule text and an integer'
+            'indicating the maximum number of extra tokens allowed at that position.'
+            'extra phrases are enclosed in [[double square brackets]] in the rule text.'
+        )
+    )
+
     source = attr.ib(
         default=None,
         repr=False,
@@ -2317,8 +2330,10 @@ class Rule(BasicRule):
         "is_continuous",  "minimum_coverage" and "stopword_by_pos" are
         recomputed as a side effect.
         """
+        
+        # remove extra_phrase marker from rules
+        text = remove_extra_phrase(self.text)
 
-        text = self.text
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach
 
@@ -2352,6 +2367,17 @@ class Rule(BasicRule):
             and len(self.required_phrase_spans[0]) == self.length
         ):
             self.is_continuous = True
+
+    def extra_phrases(self):
+        """        
+        Return an iterable of `(Span, int)` tuples marking the positions of extra phrases in the rule text.
+
+        Each tuple consists of:
+            - a `Span` object representing the position in the tokenized rule text, and
+            - an integer `n` indicating how many extra tokens are allowed at that position.
+        """
+        if self.text:
+            yield from get_extra_phrase_spans(self.text)     
 
     def build_required_phrase_spans(self):
         """
@@ -2569,6 +2595,13 @@ class Rule(BasicRule):
             from licensedcode.cache import get_index
             return get_index().rules_by_id[rule_identifier]
 
+
+def remove_extra_phrase(text):
+    """
+    Remove extra phrase markers like [[n]], where the n is a digit.
+    """
+    pattern = r'\[\[\d+\]\]'
+    return re.sub(pattern, '', text)
 
 def compute_relevance(length):
     """
