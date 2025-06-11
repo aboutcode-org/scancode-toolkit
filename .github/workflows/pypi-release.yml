@@ -30,11 +30,14 @@ jobs:
         with:
           python-version: 3.12
 
-      - name: Install pypa/build
-        run: python -m pip install build --user
+      - name: Install pypa/build and twine
+        run: python -m pip install --user build twine
 
       - name: Build a binary wheel and a source tarball
         run: python -m build --sdist --wheel --outdir dist/
+
+      - name: Validate wheel and sdis for Pypi
+        run: python -m twine check dist/*
 
       - name: Upload built archives
         uses: actions/upload-artifact@v4
