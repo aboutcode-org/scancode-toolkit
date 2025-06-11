@@ -1,6 +1,13 @@
 Release notes
 =============
 
+Version 32.3.0 - (2025-03-06)
+-----------------------------
+
+- Fix ``click`` compatibililty issues.
+  https://github.com/aboutcode-org/commoncode/pull/89
+  https://github.com/aboutcode-org/commoncode/pull/86
+
 Version 32.2.1 - (2025-03-06)
 -----------------------------
 
@@ -35,7 +42,8 @@ Version 32.0.0 - (2024-09-05)
 Version 31.2.1 - (2024-05-16)
 -----------------------------
 
-- Remove ``commoncode.system.get_etc_os_release_info`` and replace it with ``commoncode.distro_os_release_parser``.
+- Remove ``commoncode.system.get_etc_os_release_info`` and replace it with
+  ``commoncode.distro_os_release_parser``.
 
 
 Version 31.2.0 - (2024-05-16)

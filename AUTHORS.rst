@@ -11,4 +11,5 @@ The following organizations or individuals have contributed to this repo:
 - Saravanan G @SaravananOffl
 - Sebastian Schuberth @sschuberth
 - Steven Esser @majurg
+- Theodore Aptekarev @piiq
 - Thomas Druez @tdruez
