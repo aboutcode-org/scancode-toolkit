@@ -18,6 +18,7 @@ def sparsify(d):
     Example:
     >>> sparsify({1: 3, 4: 5})
     {1: 3, 4: 5}
+
     """
     e = d.copy()
     d.update(e)

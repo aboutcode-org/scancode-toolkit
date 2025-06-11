@@ -54,7 +54,7 @@ def download_url(url, file_name=None, verify=True, timeout=10):
 
 def ping_url(url):
     """
-    Returns True is `url` is reachable.
+    Return True is `url` is reachable.
     """
     try:
         from urlib.request import urlopen

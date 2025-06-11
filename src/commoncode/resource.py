@@ -120,8 +120,6 @@ def depth_walk(
     directory recursively up to ``max_depth`` path segments extending from the
     ``root_location``. The behaviour is similar of ``os.walk``.
 
-    Arguments:
-
     - root_location: Absolute, normalized path for the directory to be walked
     - max_depth: positive integer for fixed depth limit. 0 for no limit.
     - skip_ignored: Callback function that takes a location as argument and
@@ -829,7 +827,7 @@ class Codebase:
 
         if not cache_location:
             raise TypeError(
-                "Resource cannot be dumped to disk and is used only" f"in memory: {resource}"
+                f"Resource cannot be dumped to disk and is used onlyin memory: {resource}"
             )
 
         # TODO: consider messagepack or protobuf for compact/faster processing?
@@ -1173,7 +1171,7 @@ class Resource(object):
 
     @classmethod
     def build_path(cls, root_location, location):
-        """
+        r"""
         Return a POSIX path string (using "/"  separators) of ``location`` relative
         to ``root_location`. Both locations are absolute native locations.
         The returned path has no leading and trailing slashes.  The first segment

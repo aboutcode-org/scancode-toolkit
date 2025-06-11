@@ -27,7 +27,7 @@ LOG = logging.getLogger(__name__)
 
 
 def lines(s):
-    """
+    r"""
     Split a string in lines using the following conventions:
     - a line ending \r\n or \n is a separator and yields a new list element
     - empty lines or lines with only white spaces are not returned.
@@ -54,7 +54,7 @@ def nopunc():
 
 def nopunctuation(text):
     """
-    Replaces any non alphanum symbol (i.e. punctuation) in text with space.
+    Replace any non alphanum symbol (i.e. punctuation) in text with space.
     Preserve the characters offsets by replacing punctuation with spaces.
     Warning: this also drops line endings.
     """
@@ -81,7 +81,7 @@ def unixlinesep(text, preserve=False):
 
 def nolinesep(text):
     """
-    Removes line separators, replacing them with spaces.
+    Remove line separators, replacing them with spaces.
     """
     if not isinstance(text, str):
         text = as_unicode(text)

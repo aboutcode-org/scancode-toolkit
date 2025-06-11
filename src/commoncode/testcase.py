@@ -69,8 +69,7 @@ def get_test_loc(
 
     if not path.exists(test_data_dir):
         raise IOError(
-            "[Errno 2] No such directory: test_data_dir not found:"
-            " '%(test_data_dir)s'" % locals()
+            "[Errno 2] No such directory: test_data_dir not found: '%(test_data_dir)s'" % locals()
         )
 
     tpath = to_os_native_path(test_path)
@@ -78,7 +77,7 @@ def get_test_loc(
 
     if must_exist and not path.exists(test_loc):
         raise IOError(
-            "[Errno 2] No such file or directory: " "test_path not found: '%(test_loc)s'" % locals()
+            "[Errno 2] No such file or directory: test_path not found: '%(test_loc)s'" % locals()
         )
 
     return test_loc

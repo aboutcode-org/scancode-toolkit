@@ -33,7 +33,7 @@ def attribute(
     metadata=None,
 ):  # NOQA
     """
-    A generic attribute with help metadata and that is not included in the
+    Return a generic attribute with help metadata and that is not included in the
     representation by default.
     """
     metadata = metadata or dict()
@@ -67,7 +67,7 @@ def Boolean(
     help=None,
 ):  # NOQA
     """
-    A boolean attribute.
+    Return a boolean attribute.
     """
     return attribute(
         default=default,
@@ -94,7 +94,7 @@ def TriBoolean(
     help=None,
 ):  # NOQA
     """
-    A tri-boolean attribute with possible values of None, True and False.
+    Return a tri-boolean attribute with possible values of None, True and False.
     """
     return attribute(
         default=default,
@@ -121,7 +121,7 @@ def String(
     help=None,
 ):  # NOQA
     """
-    A string attribute.
+    Return a string attribute.
     """
     return attribute(
         default=default,
@@ -148,7 +148,7 @@ def Integer(
     help=None,
 ):  # NOQA
     """
-    An integer attribute.
+    Return an integer attribute.
     """
     converter = converter or attr.converters.optional(int)
     return attribute(
@@ -176,7 +176,7 @@ def Float(
     help=None,
 ):  # NOQA
     """
-    A float attribute.
+    Return a float attribute.
     """
     return attribute(
         default=default,
@@ -204,7 +204,7 @@ def List(
     help=None,
 ):  # NOQA
     """
-    A list attribute: the optional item_type defines the type of items it stores.
+    Return a list attribute: the optional item_type defines the type of items it stores.
     """
     if default is attr.NOTHING:
         default = attr.Factory(list)
@@ -235,7 +235,7 @@ def Mapping(
     label=None,
 ):  # NOQA
     """
-    A mapping attribute: the optional value_type defines the type of values it
+    Return a mapping attribute: the optional value_type defines the type of values it
     stores. The key is always a string.
 
     Notes: in Python 2 the type is Dict as there is no typing available for
@@ -274,7 +274,7 @@ def Date(
     help=None,
 ):  # NOQA
     """
-    A date attribute. It always serializes to an ISO date string.
+    Return a date attribute. It always serializes to an ISO date string.
     Behavior is TBD and for now this is exactly a string.
     """
     return String(
