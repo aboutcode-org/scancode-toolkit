@@ -56,6 +56,7 @@ class TestAPI(FileBasedTesting):
             ('sha1', None),
             ('md5', None),
             ('sha256', None),
+            ('sha1_git', None),
             ('mime_type', 'inode/x-empty'),
             ('file_type', 'empty'),
             ('programming_language', None),
