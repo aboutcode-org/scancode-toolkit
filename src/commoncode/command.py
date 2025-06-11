@@ -129,9 +129,9 @@ def execute2(
     log=TRACE,
 ):
     """
-    DEPRECATED: DO NOT USE. Use execute() instead
     Run a `cmd_loc` command with the `args` arguments list and return the return
     code, the stdout and stderr.
+    DEPRECATED: DO NOT USE. Use execute() instead
 
     To avoid RAM exhaustion, always write stdout and stderr streams to files.
 

@@ -63,6 +63,7 @@ Examples:
      urn:dje:component:dropbear:
 
 The product object type syntax is the same as the component syntax.
+
 """
 
 from urllib.parse import quote_plus

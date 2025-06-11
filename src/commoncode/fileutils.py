@@ -70,7 +70,7 @@ def create_dir(location):
 
     if os.path.exists(location):
         if not os.path.isdir(location):
-            err = "Cannot create directory: existing file " "in the way " "%(location)s."
+            err = "Cannot create directory: existing file in the way %(location)s."
             raise OSError(err % locals())
     else:
         # may fail on win if the path is too long
@@ -140,7 +140,7 @@ def prepare_path(pth):
 
 
 def is_posixpath(location):
-    """
+    r"""
     Return True if the `location` path is likely a POSIX-like path using POSIX path
     separators (slash or "/")or has no path separator.
 
@@ -164,7 +164,7 @@ def is_posixpath(location):
 
 
 def as_posixpath(location):
-    """
+    r"""
     Return a POSIX-like path using POSIX path separators (slash or "/") for a
     `location` path. This converts Windows paths to look like POSIX paths: Python
     accepts gracefully POSIX paths on Windows.
@@ -174,7 +174,7 @@ def as_posixpath(location):
 
 
 def as_winpath(location):
-    """
+    r"""
     Return a Windows-like path using Windows path separators (backslash or "\") for a
     `location` path.
     """
