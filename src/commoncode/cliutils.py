@@ -164,9 +164,20 @@ Try the '--help' option for help on options and arguments."""
                     formatter.write_dl(sorted_records)
 
 
+class CompatProgressBar(ProgressBar):
+    # TODO Remove when dropping support for Python 3.9 or Click 8.1.
+    @property
+    def is_hidden(self) -> bool:
+        return self.hidden
+
+    @is_hidden.setter
+    def is_hidden(self, value: bool) -> None:
+        self.hidden = value
+
+
 # overriden and copied from Click to work around Click woes for
 # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
-class DebuggedProgressBar(ProgressBar):
+class DebuggedProgressBar(CompatProgressBar):
     # overriden and copied from Click to work around Click woes for
     # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
     def make_step(self, n_steps):
@@ -177,7 +188,7 @@ class DebuggedProgressBar(ProgressBar):
     # overriden and copied from Click to work around Click woes for
     # https://github.com/aboutcode-org/scancode-toolkit/issues/2583
     def generator(self):
-        if self.hidden:
+        if self.is_hidden:
             yield from self.iter
         else:
             for rv in self.iter:
@@ -196,11 +207,11 @@ class EnhancedProgressBar(DebuggedProgressBar):
     """
 
     def render_progress(self):
-        if not self.hidden:
+        if not self.is_hidden:
             return super(EnhancedProgressBar, self).render_progress()
 
 
-class ProgressLogger(ProgressBar):
+class ProgressLogger(CompatProgressBar):
     """
     A subclass of Click ProgressBar providing a verbose line-by-line progress
     reporting.
@@ -217,7 +228,7 @@ class ProgressLogger(ProgressBar):
 
     def __init__(self, *args, **kwargs):
         super(ProgressLogger, self).__init__(*args, **kwargs)
-        self.hidden = False
+        self.is_hidden = False
 
     def render_progress(self):
         line = self.format_progress_line()
