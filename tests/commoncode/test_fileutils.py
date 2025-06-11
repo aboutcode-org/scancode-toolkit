@@ -28,10 +28,6 @@ from commoncode.testcase import make_non_writable
 
 @skip("Somehow permissions tests do not work OK yet on Python 3")
 class TestPermissionsDeletions(FileBasedTesting):
-    """
-    This is failing for now on Python 3
-    """
-
     test_data_dir = os.path.join(os.path.dirname(__file__), "data")
 
     def test_delete_unwritable_directory_and_files(self):
