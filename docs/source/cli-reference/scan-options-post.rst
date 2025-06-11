@@ -1060,6 +1060,7 @@ To see all plugins available via command line help, use ``--plugins``.
             "sha1": null,
             "md5": null,
             "sha256": null,
+            "sha1_git": null,
             "mime_type": null,
             "file_type": null,
             "programming_language": null,

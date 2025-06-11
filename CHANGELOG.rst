@@ -46,6 +46,9 @@ v33.0.0 (next next, roadmap)
 - Update ABOUT files to adapt the ABOUT File Specification.
   See https://github.com/aboutcode-org/scancode-toolkit/issues/4181
 
+- Also return sha1_git checksums for each files with ``--info`` plugin.
+  https://github.com/aboutcode-org/scancode-toolkit/issues/624
+
 
 v32.3.3 - 2025-03-06
 --------------------
