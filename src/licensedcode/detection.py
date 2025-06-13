@@ -1730,9 +1730,8 @@ def get_ambiguous_license_detections_by_type(unique_license_detections):
         ):
             ambi_license_detections[DetectionCategory.LICENSE_CLUES.value] = detection
 
-        elif "unknown" in detection.license_expression:
-            if has_unknown_matches(license_matches=detection.matches):
-                ambi_license_detections[DetectionCategory.UNKNOWN_MATCH.value] = detection
+        elif detection.is_unknown:
+            ambi_license_detections[DetectionCategory.UNKNOWN_MATCH.value] = detection
 
         elif is_match_coverage_less_than_threshold(
             license_matches=detection.matches,
@@ -1876,14 +1875,15 @@ def get_referenced_filenames(license_matches):
 
 def has_resolved_referenced_file(license_matches):
     """
-    Return a list of unique referenced filenames found in the rules of a list of
-    ``license_matches``
+    Return True if a list of ``license_matches`` has matches from both the original
+    files and the referenced files. This would mean that the license reference is
+    resolved successfully.
     """
     match_origin_files = list(set([
         license_match.from_file
         for license_match in license_matches
     ]))
-    if len(match_origin_files) == 2:
+    if len(match_origin_files) >= 2:
         return True
     else:
         return False
@@ -1894,16 +1894,20 @@ def find_referenced_resource_from_package(referenced_filename, resource, codebas
     Return a Resource matching the ``referenced_filename`` path or filename
     given a ``resource`` in ``codebase``.
 
+    To find the `referenced_filename` the sibling files are searched beside all the
+    package manifest paths, for all the packages which the resource is a part of,
+    to resolve references to files in package ecosystem specific locations.
+
     Return None if the ``referenced_filename`` cannot be found in the same
     directory as the base ``resource``, or at the codebase ``root``.
 
     ``referenced_filename`` is the path or filename referenced in a
     LicenseMatch detected at ``resource``,
     """
-    if not resource:
+    codebase_packages = codebase.attributes.packages
+    if not (resource and codebase_packages):
         return
 
-    codebase_packages = codebase.attributes.packages
     datafile_paths_by_package_uid = {}
     for package in codebase_packages:
         package_uid = package.get("package_uid")
@@ -1940,6 +1944,9 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
     Return a Resource matching the ``referenced_filename`` path or filename
     given a ``resource`` in ``codebase``.
 
+    To find the `referenced_filename` the sibling files of the `resource`
+    and files at the `codebase` root are searched.
+
     Return None if the ``referenced_filename`` cannot be found in the same
     directory as the base ``resource``, or at the codebase ``root``.
 
@@ -1969,7 +1976,14 @@ def find_referenced_resource(referenced_filename, resource, codebase, **kwargs):
 
 
 def update_expressions_from_license_detections(resource, codebase):
+    """
+    Set the `detected_license_expression` and `detected_license_expression_spdx`
+    for a `resource` from the individual license_expressions of it's detections.
 
+    This needs to be executed after license detections in a resource are modified,
+    for example when detections are updated with license matches from a resolved
+    reference to a file.
+    """
     license_expressions = [
         detection["license_expression"]
         for detection in resource.license_detections
@@ -1997,8 +2011,18 @@ def update_expressions_from_license_detections(resource, codebase):
     return resource
 
 
-def update_detection_from_referenced_files(referenced_filenames, license_detection_mapping, resource, codebase, analysis, find_referenced_resource_func):
-    
+def update_detection_from_referenced_files(
+    referenced_filenames,
+    license_detection_mapping,
+    resource,
+    codebase,
+    analysis,
+    find_referenced_resource_func,
+):
+    """
+    Return True if the `license_detection_mapping` was updated with resolved
+    license references to other `referenced_filenames`, or return False otherwise.
+    """
     license_detection = LicenseDetectionFromResult.from_license_detection_mapping(
         license_detection_mapping=license_detection_mapping,
         file_path=resource.path,

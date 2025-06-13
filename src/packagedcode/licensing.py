@@ -336,7 +336,11 @@ def add_license_from_sibling_file(resource, codebase):
 
 
 def add_referenced_license_detection_from_package_manifest_siblings(resource, codebase):
-
+    """
+    Return True if we have references to licenses in other files and we could find and resolve
+    the references successfully. Resolving the references mean adding licenses matches from
+    the referenced file and updating the license expressions accordingly.
+    """
     if TRACE:
         logger_debug(f'packagedcode.licensing: add_referenced_license_detection_from_package_manifest_siblings: resource: {resource.path}')
 
@@ -846,8 +850,8 @@ def get_license_detections_and_expression(
     datasource_id=None,
 ):
     """
-    Given a text `extracted_license_statement` return a list of LicenseDetection objects.
-    `extracted_license_statement` is typically found in package manifests.
+    Return a list of LicenseDetection objects from an `extracted_license_statement`
+    text. `extracted_license_statement` is typically found in package manifests.
 
     If `try_as_expression` is True try first to parse this as a license
     expression using the ``expression_symbols`` mapping of {lowered key:
@@ -908,7 +912,7 @@ def get_license_detections_for_extracted_license_statement(
     expression_symbols=None,
 ):
     """
-    Return a list of LicenseDetection detected  the ``extracted_license_statement`` string.
+    Return a list of LicenseDetection detected in the ``extracted_license_statement`` string.
     """
     if not extracted_license_statement:
         return []
