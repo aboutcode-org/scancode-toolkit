@@ -94,6 +94,13 @@ README_STARTS_ENDS = (
     'readme',
 )
 
+# Community files are usually files used for FOSS project and community
+# maintainence purposes. We want to detect these as in the context of
+# licenses as these files don't have interesting license detections, or
+# license detection issues are not important to review for these files.
+# this is similar to `key` files, which also has a lot of community info
+# but there the license declarations are extremely important as they have
+# information on the primary (or even secondary) licenses for the package
 COMMUNITY_FILES = (
     'CHANGELOG',
     'ROADMAP',
@@ -129,10 +136,16 @@ def check_is_community_file(filename):
 
 
 def check_is_resource_community_file(resource):
+    """
+    Return True if the `resource` is a community file.
+    """
     return check_is_community_file(resource.name) or check_is_community_file(resource.base_name)
 
 
 def check_is_path_community_file(path):
+    """
+    Return True if the file at `path` is a community file.
+    """
     name = file_name(path, force_posix=True)
     base_name = file_base_name(path, force_posix=True)
     return check_is_community_file(name) or check_is_community_file(base_name)
@@ -141,7 +154,7 @@ def check_is_path_community_file(path):
 def check_resource_name_start_and_end(resource, STARTS_ENDS):
     """
     Return True if `resource.name` or `resource.base_name` begins or ends with
-    an element of `STARTS_ENDS`
+    an element of `STARTS_ENDS`.
     """
     name = resource.name.lower()
     base_name = resource.base_name.lower()
@@ -159,7 +172,7 @@ def set_classification_flags(resource,
     _README=README_STARTS_ENDS,
 ):
     """
-    Set classification flags on the `resource` Resource
+    Set classification flags on the `resource` Resource.
     """
     path = resource.path.lower()
 
