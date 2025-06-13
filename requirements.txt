@@ -8,9 +8,10 @@ certifi==2024.2.2
 cffi==1.16.0
 chardet==5.0.0
 charset-normalizer==2.1.0
-click==8.1.7
+click==8.2.1;python_version>='3.10'
+click==8.1.7;python_version<'3.10'
 colorama==0.4.5
-commoncode==32.2.1
+commoncode==32.3.0
 construct==2.10.68
 container-inspector==31.1.0
 cryptography==42.0.5

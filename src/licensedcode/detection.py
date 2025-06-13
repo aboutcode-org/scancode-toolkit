@@ -905,6 +905,15 @@ class UniqueDetection:
     detection_log = attr.ib(default=attr.Factory(list))
     file_regions = attr.ib(factory=list)
 
+    @property
+    def is_unknown(self):
+        """
+        Return True if there are unknown license keys in the license expression
+        for this detection, return False otherwise. By design these are licenses with "unknown" in
+        their key.
+        """
+        return 'unknown' in self.license_expression
+
     @classmethod
     def get_unique_detections(cls, license_detections):
         """
