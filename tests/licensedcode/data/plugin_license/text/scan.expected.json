@@ -5,7 +5,9 @@
       "license_expression": "fsf-ap",
       "license_expression_spdx": "FSFAP",
       "detection_count": 1,
-      "detection_log": [],
+      "detection_log": [
+        "imperfect-match-coverage"
+      ],
       "reference_matches": [
         {
           "license_expression": "fsf-ap",
@@ -110,7 +112,9 @@
               "matched_text": "Reproduction and distribution of this file, with or without modification, are\npermitted in any medium without royalties provided the copyright notice\nand this notice are preserved. This file is offered as-is, without any warranties."
             }
           ],
-          "detection_log": [],
+          "detection_log": [
+            "imperfect-match-coverage"
+          ],
           "identifier": "fsf_ap-49ad9aab-c91b-eeb7-e90f-dc3f959b1c36"
         }
       ],

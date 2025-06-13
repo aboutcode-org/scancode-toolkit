@@ -1019,13 +1019,14 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages: []
     is_legal: no
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: no
+    is_community: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -1059,14 +1060,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: no
     is_manifest: no
     is_readme: yes
     is_top_level: yes
     is_key_file: yes
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression: apache-2.0 AND (apache-2.0 OR mit)
     detected_license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
     license_detections:
@@ -1136,14 +1138,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: yes
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: yes
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:
@@ -1346,14 +1349,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: yes
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: yes
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression: mit
     detected_license_expression_spdx: MIT
     license_detections:
@@ -1422,6 +1426,12 @@ files:
     is_media: no
     is_source: no
     is_script: no
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    is_community: no
     package_data:
       - type: pypi
         namespace:
@@ -1489,11 +1499,6 @@ files:
         purl: pkg:pypi/codebase
     for_packages:
       - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
-    is_legal: no
-    is_manifest: no
-    is_readme: no
-    is_top_level: no
-    is_key_file: no
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:

@@ -3590,15 +3590,51 @@
       ]
     },
     {
-      "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296",
+      "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
       "license_expression": "zlib",
       "license_expression_spdx": "Zlib",
-      "detection_count": 9,
+      "detection_count": 7,
       "reference_matches": [
         {
           "license_expression": "zlib",
           "license_expression_spdx": "Zlib",
           "from_file": "scan/arch/adler32.c",
+          "start_line": 3,
+          "end_line": 3,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 12,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "zlib_5.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+        },
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "from_file": "scan/arch/zlib.h",
+          "start_line": 6,
+          "end_line": 23,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 144,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "zlib_17.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
+        }
+      ]
+    },
+    {
+      "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296",
+      "license_expression": "zlib",
+      "license_expression_spdx": "Zlib",
+      "detection_count": 2,
+      "reference_matches": [
+        {
+          "license_expression": "zlib",
+          "license_expression_spdx": "Zlib",
+          "from_file": "scan/zlib/infback9/infback9.c",
           "start_line": 3,
           "end_line": 3,
           "matcher": "2-aho",
@@ -4828,9 +4864,26 @@
               "rule_relevance": 100,
               "rule_identifier": "zlib_5.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "scan/arch/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ],
-          "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296"
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
         }
       ],
       "license_clues": [],
@@ -4997,9 +5050,26 @@
               "rule_relevance": 100,
               "rule_identifier": "zlib_5.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "scan/arch/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ],
-          "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296"
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
         }
       ],
       "license_clues": [],
@@ -8744,9 +8814,26 @@
               "rule_relevance": 100,
               "rule_identifier": "zlib_5.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "scan/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ],
-          "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296"
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
         }
       ],
       "license_clues": [],
@@ -8820,9 +8907,26 @@
               "rule_relevance": 100,
               "rule_identifier": "zlib_5.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "scan/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ],
-          "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296"
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
         }
       ],
       "license_clues": [],
@@ -8896,9 +9000,26 @@
               "rule_relevance": 100,
               "rule_identifier": "zlib_5.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "scan/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ],
-          "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296"
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
         }
       ],
       "license_clues": [],
@@ -9687,9 +9808,26 @@
               "rule_relevance": 100,
               "rule_identifier": "zlib_5.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "scan/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ],
-          "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296"
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
         }
       ],
       "license_clues": [],
@@ -9763,9 +9901,26 @@
               "rule_relevance": 100,
               "rule_identifier": "zlib_5.RULE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_5.RULE"
+            },
+            {
+              "license_expression": "zlib",
+              "license_expression_spdx": "Zlib",
+              "from_file": "scan/zlib/zlib.h",
+              "start_line": 6,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 144,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "zlib_17.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/zlib_17.RULE"
             }
           ],
-          "identifier": "zlib-27de81f4-f6ce-2bf5-ab37-9a4c71f4b296"
+          "identifier": "zlib-663c0d51-510f-fca6-b163-671ecb188ff9",
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ]
         }
       ],
       "license_clues": [],

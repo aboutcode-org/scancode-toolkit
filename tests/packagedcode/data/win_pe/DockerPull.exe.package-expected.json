@@ -1,0 +1,75 @@
+{
+  "type": "winexe",
+  "namespace": null,
+  "name": "DockerPull",
+  "version": "1.0.7.0",
+  "qualifiers": {},
+  "subpath": null,
+  "primary_language": null,
+  "description": "Docker Image Puller \u65e0\u9700\u5b89\u88c5 Docker \u6216 Python \u73af\u5883,\u76f4\u63a5\u4ece Docker \u4ed3\u5e93\u62c9\u53d6\u955c\u50cf,\u652f\u6301\u56fd\u5185\u955c\u50cf\u6e90\u52a0\u901f\u548c\u591a\u67b6\u6784\u652f\u6301\u3002\u9879\u76ee\u5730\u5740:https://github.com/topcss/docker-pull-tar",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "organization",
+      "role": "author",
+      "name": "topcss",
+      "email": null,
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": "MIT License | GitHub: https://github.com/topcss/docker-pull-tar",
+  "holder": "MIT License | GitHub: https://github.com/topcss/docker-pull-tar",
+  "declared_license_expression": "mit",
+  "declared_license_expression_spdx": "MIT",
+  "license_detections": [
+    {
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": null,
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_14.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+          "matched_text": "MIT License | GitHub: https://github.com/topcss/docker-pull-tar"
+        }
+      ],
+      "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929"
+    }
+  ],
+  "other_license_expression": null,
+  "other_license_expression_spdx": null,
+  "other_license_detections": [],
+  "extracted_license_statement": "LegalCopyright: 'MIT License | GitHub: https://github.com/topcss/docker-pull-tar'\n",
+  "notice_text": null,
+  "source_packages": [],
+  "file_references": [],
+  "is_private": false,
+  "is_virtual": false,
+  "extra_data": {},
+  "dependencies": [],
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null,
+  "datasource_id": "windows_executable",
+  "purl": "pkg:winexe/DockerPull@1.0.7.0"
+}

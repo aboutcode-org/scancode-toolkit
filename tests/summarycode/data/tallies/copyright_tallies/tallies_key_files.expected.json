@@ -169,6 +169,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -202,6 +203,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -235,6 +237,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -268,6 +271,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright 2005, JBoss Inc., and individual contributors",
@@ -313,6 +317,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
@@ -364,6 +369,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright 2010, Red Hat, Inc. and individual contributors",
@@ -409,6 +415,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -448,6 +455,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -487,6 +495,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright 2009, Red Hat Middleware LLC, and individual contributors",
@@ -532,6 +541,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [
@@ -571,6 +581,7 @@
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -604,6 +615,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -637,6 +649,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2011 Mark Adler",
@@ -682,6 +695,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -727,6 +741,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",
@@ -772,6 +787,7 @@
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -805,6 +821,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -838,6 +855,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 2002-2004 Dmitriy Anisimkov",
@@ -883,6 +901,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2011 Mark Adler",
@@ -928,6 +947,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -973,6 +993,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2012 Jean-loup Gailly",
@@ -1018,6 +1039,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1051,6 +1073,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 2004 by Henrik Ravn",
@@ -1096,6 +1119,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright Henrik Ravn 2004",
@@ -1141,6 +1165,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1174,6 +1199,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2010 Jean-loup Gailly, Brian Raiter and Gilles Vollant",
@@ -1225,6 +1251,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1258,6 +1285,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2008 Mark Adler",
@@ -1303,6 +1331,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 2003 Mark Adler",
@@ -1348,6 +1377,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [],
       "holders": [],
       "authors": [],
@@ -1381,6 +1411,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1997 Christian Michelsen Research AS Advanced Computing",
@@ -1426,6 +1457,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly and Mark Adler",
@@ -1471,6 +1503,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2005, 2010, 2011, 2012 Jean-loup Gailly",
@@ -1516,6 +1549,7 @@
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
       "copyrights": [
         {
           "copyright": "Copyright (c) 1995-2013 Jean-loup Gailly",

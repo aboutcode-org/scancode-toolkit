@@ -1,4 +1,32 @@
 {
+  "summary": {
+    "declared_license_expression": "mit",
+    "license_clarity_score": {
+      "score": 100,
+      "declared_license": true,
+      "identification_precision": true,
+      "has_license_text": true,
+      "declared_copyrights": true,
+      "conflicting_license_categories": false,
+      "ambiguous_compound_licensing": false
+    },
+    "declared_holder": "Niklas von Hertzen",
+    "primary_language": "JavaScript",
+    "other_license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      }
+    ],
+    "other_holders": [
+      {
+        "value": null,
+        "count": 2
+      }
+    ],
+    "other_languages": []
+  },
+  "todo": [],
   "packages": [
     {
       "type": "npm",
@@ -309,7 +337,6 @@
       ]
     }
   ],
-  "todo": [],
   "files": [
     {
       "path": "base64-arraybuffer-0.1.4",
@@ -331,6 +358,13 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [],
       "for_packages": [],
       "detected_license_expression": null,
@@ -341,7 +375,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "for_todo": [],
       "files_count": 5,
       "dirs_count": 1,
       "size_count": 4564,
@@ -367,6 +400,13 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -379,7 +419,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "for_todo": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -405,6 +444,13 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "for_todo": [],
+      "is_legal": true,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -451,7 +497,6 @@
         }
       ],
       "authors": [],
-      "for_todo": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -477,6 +522,13 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": true,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -523,7 +575,6 @@
         }
       ],
       "authors": [],
-      "for_todo": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -549,6 +600,13 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -561,7 +619,6 @@
       "copyrights": [],
       "holders": [],
       "authors": [],
-      "for_todo": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 1704,
@@ -587,6 +644,13 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [],
       "for_packages": [
         "pkg:npm/base64-arraybuffer@0.1.4?uuid=fixed-uid-done-for-testing-5642512d1758"
@@ -633,7 +697,6 @@
         }
       ],
       "authors": [],
-      "for_todo": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -659,6 +722,13 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "for_todo": [],
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -871,7 +941,6 @@
           "end_line": 7
         }
       ],
-      "for_todo": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

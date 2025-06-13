@@ -29,6 +29,7 @@ from licensedcode.detection import populate_matches_with_path
 from packagedcode import get_package_handler
 from packagedcode.licensing import add_referenced_license_matches_for_package
 from packagedcode.licensing import add_referenced_license_detection_from_package
+from packagedcode.licensing import add_referenced_license_detection_from_package_manifest_siblings
 from packagedcode.licensing import add_license_from_sibling_file
 from packagedcode.licensing import get_license_expression_from_detection_mappings
 from packagedcode.models import add_to_package
@@ -145,7 +146,7 @@ class PackageScanner(ScanPlugin):
     required_plugins = ['scan:licenses']
 
     run_order = 3
-    sort_order = 3
+    sort_order = 4
 
     options = [
         PluggableCommandLineOption(
@@ -270,11 +271,16 @@ class PackageScanner(ScanPlugin):
 
         # Create codebase-level packages and dependencies
         create_package_and_deps(codebase, strip_root=strip_root, **kwargs)
-        #raise Exception()
 
         if has_licenses:
             # This step is dependent on top level packages
             for resource in codebase.walk(topdown=False):
+                # If there is an unresolved unknown reference to a file, in a file which is part of a package
+                # we check if the referenced file is present beside the package manifest for the package
+                modified = add_referenced_license_detection_from_package_manifest_siblings(resource, codebase)
+                if TRACE_LICENSE and modified:
+                    logger_debug(f'packagedcode: process_codebase: add_referenced_license_detection_from_package_manifest_siblings: modified: {modified}')
+
                 # If there is a unknown reference to a package we add the license
                 # from the package license detection
                 modified = list(add_referenced_license_detection_from_package(resource, codebase))

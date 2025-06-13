@@ -1,0 +1,872 @@
+{
+  "packages": [
+    {
+      "type": "pypi",
+      "namespace": null,
+      "name": "beartype",
+      "version": "0.17.2",
+      "qualifiers": {},
+      "subpath": null,
+      "primary_language": "Python",
+      "description": "Unbearably fast runtime type checking in pure Python.\n.. # ------------------( LICENSE                             )------------------\n.. # Copyright (c) 2014-2024 Beartype authors.\n.. # See \"LICENSE\" for further details.\n.. #\n\n**Beartype** is an open-source pure-Python PEP-compliant near-real-time\nhybrid runtime-static third-generation type checker emphasizing efficiency,\nusability, unsubstantiated jargon we just made up, and thrilling puns.",
+      "release_date": null,
+      "parties": [
+        {
+          "type": "person",
+          "role": "author",
+          "name": "Cecil Curry, et al.",
+          "email": "leycec@gmail.com",
+          "url": null
+        },
+        {
+          "type": "person",
+          "role": "maintainer",
+          "name": "Cecil Curry, et al.",
+          "email": "leycec@gmail.com",
+          "url": null
+        }
+      ],
+      "keywords": [
+        "type checking",
+        "type hints",
+        "Development Status :: 5 - Production/Stable",
+        "Intended Audience :: Developers"
+      ],
+      "homepage_url": "https://beartype.readthedocs.io",
+      "download_url": null,
+      "size": null,
+      "sha1": null,
+      "md5": null,
+      "sha256": null,
+      "sha512": null,
+      "bug_tracking_url": "https://github.com/beartype/beartype/issues",
+      "code_view_url": "https://github.com/beartype/beartype",
+      "vcs_url": null,
+      "copyright": null,
+      "holder": null,
+      "declared_license_expression": "mit",
+      "declared_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-spdx-id",
+              "score": 100.0,
+              "matched_length": 1,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+              "rule_url": null,
+              "matched_text": "MIT"
+            }
+          ],
+          "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "1-hash",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "pypi_mit_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+              "matched_text": "- 'License :: OSI Approved :: MIT License'"
+            }
+          ],
+          "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
+        }
+      ],
+      "other_license_expression": null,
+      "other_license_expression_spdx": null,
+      "other_license_detections": [],
+      "extracted_license_statement": "license: MIT\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
+      "notice_text": null,
+      "source_packages": [],
+      "is_private": false,
+      "is_virtual": false,
+      "extra_data": {
+        "Documentation": "https://beartype.readthedocs.io",
+        "Forums": "https://github.com/beartype/beartype/discussions",
+        "Releases": "https://github.com/beartype/beartype/releases",
+        "Download-URL": "https://github.com/beartype/beartype/archive/0.17.2.tar.gz",
+        "license_file": "LICENSE"
+      },
+      "repository_homepage_url": "https://pypi.org/project/beartype",
+      "repository_download_url": "https://pypi.org/packages/source/b/beartype/beartype-0.17.2.tar.gz",
+      "api_data_url": "https://pypi.org/pypi/beartype/0.17.2/json",
+      "package_uid": "pkg:pypi/beartype@0.17.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_paths": [
+        "beartype-0.17.2.dist-info/METADATA"
+      ],
+      "datasource_ids": [
+        "pypi_wheel_metadata"
+      ],
+      "purl": "pkg:pypi/beartype@0.17.2"
+    }
+  ],
+  "dependencies": [
+    {
+      "purl": "pkg:pypi/typing-extensions",
+      "extracted_requirement": ">=3.10.0.0",
+      "scope": "all",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/typing-extensions?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/beartype@0.17.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "beartype-0.17.2.dist-info/METADATA",
+      "datasource_id": "pypi_wheel_metadata"
+    },
+    {
+      "purl": "pkg:pypi/coverage",
+      "extracted_requirement": ">=5.5",
+      "scope": "dev",
+      "is_runtime": true,
+      "is_optional": true,
+      "is_pinned": false,
+      "is_direct": true,
+      "resolved_package": {},
+      "extra_data": {},
+      "dependency_uid": "pkg:pypi/coverage?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "for_package_uid": "pkg:pypi/beartype@0.17.2?uuid=fixed-uid-done-for-testing-5642512d1758",
+      "datafile_path": "beartype-0.17.2.dist-info/METADATA",
+      "datasource_id": "pypi_wheel_metadata"
+    }
+  ],
+  "license_detections": [
+    {
+      "identifier": "mit-0e83171f-f52c-747e-2310-febf0be67375",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 2,
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ],
+      "reference_matches": [
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "beartype-0.17.2/beartype/__init__.py",
+          "start_line": 4,
+          "end_line": 4,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "unknown-license-reference_381.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_381.RULE",
+          "matched_text": "# See \"LICENSE\" for further details.",
+          "matched_text_diagnostics": "See \"LICENSE\" for further details."
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/LICENSE",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_14.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+          "matched_text": "MIT License",
+          "matched_text_diagnostics": "MIT License"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "pypi_mit_license.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+          "matched_text": "- 'License :: OSI Approved :: MIT License'"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+          "start_line": 11,
+          "end_line": 11,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_30.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+          "matched_text": "License: MIT",
+          "matched_text_diagnostics": "License: MIT"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/LICENSE",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_14.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+          "matched_text": "MIT License",
+          "matched_text_diagnostics": "MIT License"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [],
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "1-spdx-id",
+          "score": 100.0,
+          "matched_length": 1,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+          "rule_url": null,
+          "matched_text": "MIT"
+        }
+      ]
+    },
+    {
+      "identifier": "mit-e55683fd-5f52-c031-5df7-3ca3519bc260",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [
+        "unknown-reference-to-local-file"
+      ],
+      "reference_matches": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+          "start_line": 20,
+          "end_line": 20,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 5,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "pypi_mit_license.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+          "matched_text": "Classifier: License :: OSI Approved :: MIT License",
+          "matched_text_diagnostics": "License :: OSI Approved :: MIT License"
+        },
+        {
+          "license_expression": "unknown-license-reference",
+          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+          "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+          "start_line": 23,
+          "end_line": 23,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
+          "matched_text": "License-File: LICENSE",
+          "matched_text_diagnostics": "License-File: LICENSE"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/LICENSE",
+          "start_line": 1,
+          "end_line": 1,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_14.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+          "matched_text": "MIT License",
+          "matched_text_diagnostics": "MIT License"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "beartype",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "beartype-0.17.2.dist-info",
+      "type": "directory",
+      "package_data": [],
+      "for_packages": [],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "beartype-0.17.2.dist-info/LICENSE",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/beartype@0.17.2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_14.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+              "matched_text": "MIT License",
+              "matched_text_diagnostics": "MIT License"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mit-9967e727-165e-9bb5-f090-7de5e47a3929"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 25.0,
+      "scan_errors": []
+    },
+    {
+      "path": "beartype-0.17.2.dist-info/METADATA",
+      "type": "file",
+      "package_data": [
+        {
+          "type": "pypi",
+          "namespace": null,
+          "name": "beartype",
+          "version": "0.17.2",
+          "qualifiers": {},
+          "subpath": null,
+          "primary_language": "Python",
+          "description": "Unbearably fast runtime type checking in pure Python.\n.. # ------------------( LICENSE                             )------------------\n.. # Copyright (c) 2014-2024 Beartype authors.\n.. # See \"LICENSE\" for further details.\n.. #\n\n**Beartype** is an open-source pure-Python PEP-compliant near-real-time\nhybrid runtime-static third-generation type checker emphasizing efficiency,\nusability, unsubstantiated jargon we just made up, and thrilling puns.",
+          "release_date": null,
+          "parties": [
+            {
+              "type": "person",
+              "role": "author",
+              "name": "Cecil Curry, et al.",
+              "email": "leycec@gmail.com",
+              "url": null
+            },
+            {
+              "type": "person",
+              "role": "maintainer",
+              "name": "Cecil Curry, et al.",
+              "email": "leycec@gmail.com",
+              "url": null
+            }
+          ],
+          "keywords": [
+            "type checking",
+            "type hints",
+            "Development Status :: 5 - Production/Stable",
+            "Intended Audience :: Developers"
+          ],
+          "homepage_url": "https://beartype.readthedocs.io",
+          "download_url": null,
+          "size": null,
+          "sha1": null,
+          "md5": null,
+          "sha256": null,
+          "sha512": null,
+          "bug_tracking_url": "https://github.com/beartype/beartype/issues",
+          "code_view_url": "https://github.com/beartype/beartype",
+          "vcs_url": null,
+          "copyright": null,
+          "holder": null,
+          "declared_license_expression": "mit",
+          "declared_license_expression_spdx": "MIT",
+          "license_detections": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "license_expression_spdx": "MIT",
+                  "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-spdx-id",
+                  "score": 100.0,
+                  "matched_length": 1,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "spdx-license-identifier-mit-5da48780aba670b0860c46d899ed42a0f243ff06",
+                  "rule_url": null,
+                  "matched_text": "MIT"
+                }
+              ],
+              "identifier": "mit-a822f434-d61f-f2b1-c792-8b8cb9e7b9bf"
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "matches": [
+                {
+                  "license_expression": "mit",
+                  "license_expression_spdx": "MIT",
+                  "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+                  "start_line": 1,
+                  "end_line": 1,
+                  "matcher": "1-hash",
+                  "score": 100.0,
+                  "matched_length": 5,
+                  "match_coverage": 100.0,
+                  "rule_relevance": 100,
+                  "rule_identifier": "pypi_mit_license.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+                  "matched_text": "- 'License :: OSI Approved :: MIT License'"
+                }
+              ],
+              "identifier": "mit-24a5293c-14d7-5403-efac-1a8b7532c0e8"
+            }
+          ],
+          "other_license_expression": null,
+          "other_license_expression_spdx": null,
+          "other_license_detections": [],
+          "extracted_license_statement": "license: MIT\nclassifiers:\n  - 'License :: OSI Approved :: MIT License'\n",
+          "notice_text": null,
+          "source_packages": [],
+          "file_references": [
+            {
+              "path": "beartype/__init__.py",
+              "size": 9331,
+              "sha1": null,
+              "md5": null,
+              "sha256": "20ec758584c77bdbf3d2eae4e22208c85ed6e686c91d6d2be572e00f4f10885f",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "beartype/meta.py",
+              "size": 32328,
+              "sha1": null,
+              "md5": null,
+              "sha256": "b60a4c1f3177e1fa8bb244d0ba0f2fba9ab02df1dcaf82ca4ac0ba5814cf91ac",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "beartype/py.typed",
+              "size": 0,
+              "sha1": null,
+              "md5": null,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "beartype-0.17.2.dist-info/LICENSE",
+              "size": 1079,
+              "sha1": null,
+              "md5": null,
+              "sha256": "c3e5f3d24346a4129b6b00966361e5494376a335d4fc9eb7dbc40d886f2735f1",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "beartype-0.17.2.dist-info/METADATA",
+              "size": 30452,
+              "sha1": null,
+              "md5": null,
+              "sha256": "20d00884cc17f1d42da09136c1826ee43730faa9aa3529dac2ccf95e29650b92",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "beartype-0.17.2.dist-info/WHEEL",
+              "size": 92,
+              "sha1": null,
+              "md5": null,
+              "sha256": "a2241587fe4f9d033413780f762cf4f5608d9b08870cc6867abfde96a0777283",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "beartype-0.17.2.dist-info/top_level.txt",
+              "size": 9,
+              "sha1": null,
+              "md5": null,
+              "sha256": "9f9a39a9bd5dc2b50314952aecb6ffc2fba3f30e94687604a50eba16c2a60d7d",
+              "sha512": null,
+              "extra_data": {}
+            },
+            {
+              "path": "beartype-0.17.2.dist-info/RECORD",
+              "size": null,
+              "sha1": null,
+              "md5": null,
+              "sha256": null,
+              "sha512": null,
+              "extra_data": {}
+            }
+          ],
+          "is_private": false,
+          "is_virtual": false,
+          "extra_data": {
+            "Documentation": "https://beartype.readthedocs.io",
+            "Forums": "https://github.com/beartype/beartype/discussions",
+            "Releases": "https://github.com/beartype/beartype/releases",
+            "Download-URL": "https://github.com/beartype/beartype/archive/0.17.2.tar.gz",
+            "license_file": "LICENSE"
+          },
+          "dependencies": [
+            {
+              "purl": "pkg:pypi/typing-extensions",
+              "extracted_requirement": ">=3.10.0.0",
+              "scope": "all",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            },
+            {
+              "purl": "pkg:pypi/coverage",
+              "extracted_requirement": ">=5.5",
+              "scope": "dev",
+              "is_runtime": true,
+              "is_optional": true,
+              "is_pinned": false,
+              "is_direct": true,
+              "resolved_package": {},
+              "extra_data": {}
+            }
+          ],
+          "repository_homepage_url": "https://pypi.org/project/beartype",
+          "repository_download_url": "https://pypi.org/packages/source/b/beartype/beartype-0.17.2.tar.gz",
+          "api_data_url": "https://pypi.org/pypi/beartype/0.17.2/json",
+          "datasource_id": "pypi_wheel_metadata",
+          "purl": "pkg:pypi/beartype@0.17.2"
+        }
+      ],
+      "for_packages": [
+        "pkg:pypi/beartype@0.17.2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+              "start_line": 11,
+              "end_line": 11,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_30.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE",
+              "matched_text": "License: MIT",
+              "matched_text_diagnostics": "License: MIT"
+            }
+          ],
+          "detection_log": [],
+          "identifier": "mit-3fce6ea2-8abd-6c6b-3ede-a37af7c6efee"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+              "start_line": 20,
+              "end_line": 20,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "pypi_mit_license.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/pypi_mit_license.RULE",
+              "matched_text": "Classifier: License :: OSI Approved :: MIT License",
+              "matched_text_diagnostics": "License :: OSI Approved :: MIT License"
+            },
+            {
+              "license_expression": "unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+              "start_line": 23,
+              "end_line": 23,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "unknown-license-reference_see_license_at_manifest_1.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_1.RULE",
+              "matched_text": "License-File: LICENSE",
+              "matched_text_diagnostics": "License-File: LICENSE"
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_14.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+              "matched_text": "MIT License",
+              "matched_text_diagnostics": "MIT License"
+            }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "mit-e55683fd-5f52-c031-5df7-3ca3519bc260"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/METADATA",
+              "start_line": 31,
+              "end_line": 31,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "unknown-license-reference_381.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_381.RULE",
+              "matched_text": ".. # See \"LICENSE\" for further details.",
+              "matched_text_diagnostics": "See \"LICENSE\" for further details."
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_14.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+              "matched_text": "MIT License",
+              "matched_text_diagnostics": "MIT License"
+            }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "mit-0e83171f-f52c-747e-2310-febf0be67375"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 7.28,
+      "scan_errors": []
+    },
+    {
+      "path": "beartype-0.17.2.dist-info/RECORD",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/beartype@0.17.2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "beartype-0.17.2.dist-info/WHEEL",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/beartype@0.17.2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "beartype-0.17.2.dist-info/top_level.txt",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/beartype@0.17.2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
+      "license_clues": [],
+      "percentage_of_license_text": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "beartype/__init__.py",
+      "type": "file",
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/beartype@0.17.2?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "unknown-license-reference",
+              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
+              "from_file": "beartype-0.17.2/beartype/__init__.py",
+              "start_line": 4,
+              "end_line": 4,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 5,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "unknown-license-reference_381.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_381.RULE",
+              "matched_text": "# See \"LICENSE\" for further details.",
+              "matched_text_diagnostics": "See \"LICENSE\" for further details."
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "beartype-0.17.2/beartype-0.17.2.dist-info/LICENSE",
+              "start_line": 1,
+              "end_line": 1,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 2,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_14.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_14.RULE",
+              "matched_text": "MIT License",
+              "matched_text_diagnostics": "MIT License"
+            }
+          ],
+          "detection_log": [
+            "unknown-reference-to-local-file"
+          ],
+          "identifier": "mit-0e83171f-f52c-747e-2310-febf0be67375"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 15.62,
+      "scan_errors": []
+    }
+  ]
+}

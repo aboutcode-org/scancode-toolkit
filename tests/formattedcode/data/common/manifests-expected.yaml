@@ -1883,13 +1883,14 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages: []
     is_legal: no
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: no
+    is_community: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -1923,14 +1924,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: no
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: no
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -1964,6 +1966,12 @@ files:
     is_media: no
     is_source: no
     is_script: no
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    is_community: no
     package_data:
       - type: maven
         namespace: javax.persistence
@@ -2035,11 +2043,6 @@ files:
         purl: pkg:maven/javax.persistence/persistence-api@1.0
     for_packages:
       - pkg:maven/javax.persistence/persistence-api@1.0?uuid=fixed-uid-done-for-testing-5642512d1758
-    is_legal: no
-    is_manifest: no
-    is_readme: no
-    is_top_level: no
-    is_key_file: no
     detected_license_expression: cddl-1.0
     detected_license_expression_spdx: CDDL-1.0
     license_detections:
@@ -2100,13 +2103,14 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages: []
     is_legal: no
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: no
+    is_community: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -2140,6 +2144,12 @@ files:
     is_media: no
     is_source: no
     is_script: no
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    is_community: no
     package_data:
       - type: npm
         namespace:
@@ -2320,11 +2330,6 @@ files:
         purl: pkg:npm/grunt-esvm@3.2.8
     for_packages:
       - pkg:npm/grunt-esvm@3.2.8?uuid=fixed-uid-done-for-testing-5642512d1758
-    is_legal: no
-    is_manifest: no
-    is_readme: no
-    is_top_level: no
-    is_key_file: no
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:
@@ -2413,13 +2418,14 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages: []
     is_legal: no
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: no
+    is_community: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -2453,6 +2459,12 @@ files:
     is_media: no
     is_source: no
     is_script: no
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    is_community: no
     package_data:
       - type: npm
         namespace:
@@ -2566,11 +2578,6 @@ files:
         purl: pkg:npm/angular-compare-validator@0.1.1
     for_packages:
       - pkg:npm/angular-compare-validator@0.1.1?uuid=fixed-uid-done-for-testing-5642512d1758
-    is_legal: no
-    is_manifest: no
-    is_readme: no
-    is_top_level: no
-    is_key_file: no
     detected_license_expression: mit
     detected_license_expression_spdx: MIT
     license_detections:
@@ -2636,13 +2643,14 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages: []
     is_legal: no
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: no
+    is_community: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -2676,6 +2684,12 @@ files:
     is_media: no
     is_source: yes
     is_script: yes
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    is_community: no
     package_data:
       - type: pypi
         namespace:
@@ -2872,11 +2886,6 @@ files:
         purl: pkg:pypi/bluepyopt
     for_packages:
       - pkg:pypi/bluepyopt?uuid=fixed-uid-done-for-testing-5642512d1758
-    is_legal: no
-    is_manifest: no
-    is_readme: no
-    is_top_level: no
-    is_key_file: no
     detected_license_expression: lgpl-3.0
     detected_license_expression_spdx: LGPL-3.0-only
     license_detections:

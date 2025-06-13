@@ -1,6 +1,4 @@
 {
-  "packages": [],
-  "dependencies": [],
   "todo": [
     {
       "detection_id": "pkg:pypi/scancode-toolkit-e7ce965e-449d-5c31-b5e4-5ad0dfd29f5c",
@@ -53,10 +51,15 @@
       }
     }
   ],
+  "packages": [],
+  "dependencies": [],
   "files": [
     {
       "path": "incomplete-setup.cfg",
       "type": "file",
+      "for_todo": [
+        "pkg:pypi/scancode-toolkit-e7ce965e-449d-5c31-b5e4-5ad0dfd29f5c"
+      ],
       "package_data": [
         {
           "type": "pypi",
@@ -104,9 +107,6 @@
         }
       ],
       "for_packages": [],
-      "for_todo": [
-        "pkg:pypi/scancode-toolkit-e7ce965e-449d-5c31-b5e4-5ad0dfd29f5c"
-      ],
       "scan_errors": []
     }
   ]

@@ -1,5 +1,4 @@
 {
-  "license_detections": [],
   "todo": [
     {
       "detection_id": "borceux-d99f172d-bc25-b4f7-b6bf-cccec1995ce5",
@@ -28,6 +27,7 @@
             "rule_notes": null,
             "referenced_filenames": [],
             "matched_text": "This src:package consists of various tarballs.\n\nThis README is a dummy file for creating the base tarball of the name",
+            "matched_text_diagnostics": "package consists of [various] [tarballs].\n\n[This] README",
             "rule_text": "Copyright 1993 Francis Borceux\nYou may freely use, modify, and/or distribute each of the files in this package without limitation.  The package consists of the following files:\n\nREADME\ncompatibility/OldDiagram\ncompatibility/OldMaxiDiagram\ncompatibility/OldMicroDiagram\ncompatibility/OldMiniDiagram\ncompatibility/OldMultipleArrows\ndiagram/Diagram\ndiagram/MaxiDiagram\ndiagram/MicroDiagram\ndiagram/MiniDiagram\ndiagram/MultipleArrows\nuser-guides/Diagram_Mode_d_Emploi\nuser-guides/Diagram_Read_Me\n\nOf course no support is guaranteed, but the author will attempt to assist with problems.  Current email address:\nfrancis dot borceux at uclouvain dot be."
           }
         ],
@@ -38,10 +38,14 @@
       }
     }
   ],
+  "license_detections": [],
   "files": [
     {
       "path": "README.multi-orig-tarball-package",
       "type": "file",
+      "for_todo": [
+        "borceux-d99f172d-bc25-b4f7-b6bf-cccec1995ce5"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -64,9 +68,6 @@
         }
       ],
       "percentage_of_license_text": 10.53,
-      "for_todo": [
-        "borceux-d99f172d-bc25-b4f7-b6bf-cccec1995ce5"
-      ],
       "scan_errors": []
     }
   ]

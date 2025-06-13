@@ -1,0 +1,23 @@
+{
+  "Full Version": null,
+  "ProductVersion": "0.9.7 (2021-09-29)",
+  "FileVersion": "0.9.7 (2021-09-29)",
+  "Assembly Version": null,
+  "BuildDate": null,
+  "ProductName": "onixcheck",
+  "OriginalFilename": "onixcheck.exe",
+  "InternalName": "onixcheck.exe",
+  "License": null,
+  "LegalCopyright": "\u00a9 2016-2021 Titusz Pan",
+  "LegalTrademarks": null,
+  "LegalTrademarks1": null,
+  "LegalTrademarks2": null,
+  "LegalTrademarks3": null,
+  "FileDescription": "Validate ONIX for Books XML files",
+  "Comments": null,
+  "CompanyName": "Craft AG https://craft.de",
+  "Company": null,
+  "URL": null,
+  "WWW": null,
+  "extra_data": {}
+}
