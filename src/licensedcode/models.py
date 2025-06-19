@@ -2319,6 +2319,9 @@ class Rule(BasicRule):
         except Exception:
             trace = traceback.format_exc()
             raise InvalidRule(f'While loading: file://{rule_file}\n{trace}')
+        
+        # remove extra_phrase marker from rules
+        self.text = remove_extra_phrase(self.text)
 
         return self
 
@@ -2331,8 +2334,13 @@ class Rule(BasicRule):
         recomputed as a side effect.
         """
         
+        # identify and capture the spans of extra phrases specified within the rule
+        self.extra_phrase_spans = list(self.extra_phrases())
+        
         # remove extra_phrase marker from rules
-        text = remove_extra_phrase(self.text)
+        self.text = remove_extra_phrase(self.text)
+
+        text = self.text
 
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach

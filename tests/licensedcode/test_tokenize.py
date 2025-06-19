@@ -616,9 +616,9 @@ class TestExtraPhraseTokenizer(FileBasedTesting):
         assert spans == [(Span([2]), 2)]
 
     def test_get_extra_phrase_spans_multiple(self):
-        text = 'Some [[1]] text [[3]] with multiple markers.'
+        text = 'Some [[4]] text [[6]] with multiple markers.'
         spans = get_extra_phrase_spans(text)
-        assert spans == [(Span([1]), 1), (Span([3]), 3)]
+        assert spans == [(Span([1]), 4), (Span([3]), 6)]
 
     def test_get_extra_phrase_spans_returns_nothing_if_none_found(self):
         text = 'Just some normal text.'

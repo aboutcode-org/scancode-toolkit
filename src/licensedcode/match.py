@@ -601,7 +601,7 @@ class LicenseMatch(object):
 
         # Check whether extra words in the matched text appear in allowed positions,
         # and do not exceed the maximum allowed word count at those positions.
-        if is_extra_words_position_valid(self):
+        if is_extra_words_position_valid(match=self):
             return 100
         
         # relevance is a number between 0 and 100. Divide by 100
@@ -1104,26 +1104,30 @@ def is_extra_words_position_valid(match):
     extra_phrase_count = 0
 
     for span, allowed_extra_words in extra_phrase_spans:
-        rule_index = span.start
+        rule_index = span.start - extra_phrase_count - 1
         allowed_extra_words = allowed_extra_words
 
-        matched_index = rule_index + matched_count - extra_phrase_count
+        matched_index = span.start + matched_count - extra_phrase_count
         extra_words_count = 0
 
-        # Count how many tokens in matched_text do not match the next rule token
+        # return false if token before `extra-words` in `matched_token` is not same as token before `extra-phrases` in `rule_tokens`
+        if(matched_tokens[matched_index-1] != rule_tokens[rule_index]):
+            return False 
+
+        # Count how many tokens in `matched_text` do not match the next rule token
         while (matched_index < len(matched_tokens) and
                matched_tokens[matched_index] != rule_tokens[rule_index + 1]):
             matched_index += 1
             matched_count += 1
             extra_words_count += 1
 
+            if extra_words_count > allowed_extra_words:
+               return False
+
         extra_phrase_count += 1
 
-        if extra_words_count > allowed_extra_words:
-            return False
-
     return True
-        
+
 
 def filter_contained_matches(
     matches,
