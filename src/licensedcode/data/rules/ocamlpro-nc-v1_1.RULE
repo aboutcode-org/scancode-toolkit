@@ -1,0 +1,11 @@
+---
+license_expression: ocamlpro-nc-v1
+is_license_notice: yes
+referenced_filenames:
+    - OCamlPro-Non-Commercial-License.pdf
+---
+
+Files referring to the license indicated in this file are licensed
+under the terms of the {{OCamlPro Non-Commercial Purpose License,
+version 1}}. More details about this license can be found in
+OCamlPro-Non-Commercial-License.pdf

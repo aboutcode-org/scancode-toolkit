@@ -14,10 +14,12 @@
   "organization_url": "http://www.aQute.biz",
   "licenses": [
     {
-      "name": "This material is licensed under the Apache Software License, Version 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0",
-      "comments": null,
-      "distribution": "repo"
+      "license": {
+        "name": "This material is licensed under the Apache Software License, Version 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0",
+        "comments": null,
+        "distribution": "repo"
+      }
     }
   ],
   "developers": [],

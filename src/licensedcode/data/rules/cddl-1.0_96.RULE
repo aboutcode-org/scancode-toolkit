@@ -1,0 +1,12 @@
+---
+license_expression: cddl-1.0
+is_license_tag: yes
+ignorable_urls:
+    - http://www.sun.com/cddl/cddl.html
+---
+
+licenses
+
+<license>
+  <name>{{Common Development and Distribution License (CDDL) v1.0}}
+  <url>http://www.sun.com/cddl/cddl.html

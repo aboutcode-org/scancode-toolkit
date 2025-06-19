@@ -76,7 +76,6 @@ license_expressions:
   - curl
   - curl
   - mit
-  - mit
   - bsd-new AND nvidia-2002
   - bsd-new
   - nvidia-2002

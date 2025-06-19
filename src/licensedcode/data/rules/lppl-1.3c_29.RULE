@@ -1,7 +1,10 @@
 ---
 license_expression: lppl-1.3c
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - lppl-1.3c
 ---
 
 licenses.nuget.org/LPPL-1.3c

@@ -1,7 +1,10 @@
 ---
 license_expression: afmparse
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - afmparse
 ---
 
 licenses.nuget.org/Afmparse

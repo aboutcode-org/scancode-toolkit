@@ -1,9 +1,11 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_notice: yes
+is_deprecated: yes
 referenced_filenames:
     - COPYING
+replaced_by:
+    - warranty-disclaimer
 ---
 
 This package is free software;  you can redistribute it and/or

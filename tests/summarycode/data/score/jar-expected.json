@@ -48,39 +48,24 @@
               "license_expression_spdx": "Apache-2.0",
               "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
               "start_line": 1,
-              "end_line": 1,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 5,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_48.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
-              "matched_text": "- name: Apache License, version 2.0"
-            },
-            {
-              "license_expression": "apache-2.0",
-              "license_expression_spdx": "Apache-2.0",
-              "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
-              "start_line": 2,
               "end_line": 2,
-              "matcher": "2-aho",
+              "matcher": "1-hash",
               "score": 100.0,
-              "matched_length": 9,
+              "matched_length": 16,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_42.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
-              "matched_text": "  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
+              "rule_identifier": "apache-2.0_1379.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1379.RULE",
+              "matched_text": "name: Apache License, version 2.0\nurl: http://www.apache.org/licenses/LICENSE-2.0.txt"
             }
           ],
-          "identifier": "apache_2_0-efc1b129-3bcc-a9c0-71ea-964bc53d5512"
+          "identifier": "apache_2_0-1096ecf3-d346-9d22-51d7-abc4e11a8ad0"
         }
       ],
       "other_license_expression": null,
       "other_license_expression_spdx": null,
       "other_license_detections": [],
-      "extracted_license_statement": "- name: Apache License, version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
+      "extracted_license_statement": "- license:\n    name: Apache License, version 2.0\n    url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
       "notice_text": null,
       "source_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?classifier=sources"
@@ -284,6 +269,28 @@
       ]
     },
     {
+      "identifier": "apache_2_0-1096ecf3-d346-9d22-51d7-abc4e11a8ad0",
+      "license_expression": "apache-2.0",
+      "license_expression_spdx": "Apache-2.0",
+      "detection_count": 1,
+      "reference_matches": [
+        {
+          "license_expression": "apache-2.0",
+          "license_expression_spdx": "Apache-2.0",
+          "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
+          "start_line": 1,
+          "end_line": 2,
+          "matcher": "1-hash",
+          "score": 100.0,
+          "matched_length": 16,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_1379.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1379.RULE"
+        }
+      ]
+    },
+    {
       "identifier": "apache_2_0-4800df2e-4a56-bac0-cac1-9fd31da23344",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
@@ -304,42 +311,6 @@
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1227.RULE"
         }
       ]
-    },
-    {
-      "identifier": "apache_2_0-efc1b129-3bcc-a9c0-71ea-964bc53d5512",
-      "license_expression": "apache-2.0",
-      "license_expression_spdx": "Apache-2.0",
-      "detection_count": 1,
-      "reference_matches": [
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
-          "start_line": 1,
-          "end_line": 1,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 5,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_48.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE"
-        },
-        {
-          "license_expression": "apache-2.0",
-          "license_expression_spdx": "Apache-2.0",
-          "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
-          "start_line": 2,
-          "end_line": 2,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 9,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_42.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE"
-        }
-      ]
     }
   ],
   "files": [
@@ -353,6 +324,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -362,15 +334,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -394,6 +367,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -403,15 +377,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -435,6 +410,7 @@
       "sha1": "0467cda446fa0a3adffb8e70100efdf15a75f053",
       "md5": "68230276f5363d3774ffdf92294e66c1",
       "sha256": "a8f82250b0ac94b410c306f5f349b83ee6725bef680c73cc3d8d04b2b396fe66",
+      "sha1_git": "4a8957e9df8943d884e684970decc38b33359e72",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -444,15 +420,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -476,6 +453,7 @@
       "sha1": "2b8b815229aa8a61e483fb4ba0588b8b6c491890",
       "md5": "3b83ef96387f14655fc854ddc3c6bd57",
       "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "sha1_git": "d645695673349e3947e8e5ae42332d0ac3164cd7",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -485,15 +463,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -539,6 +518,7 @@
       "sha1": "036a3e80c37a3b97cfc479d529dc2ba3082cd364",
       "md5": "e371da445e8b18fcf8ee5b8c26373007",
       "sha256": "dbd900a6c5e68795b2673418961804f26f534c1b122fe787f884b5f32df80ba9",
+      "sha1_git": "d838e1feae9b1a566ef59329a8b067e36b0c56b7",
       "mime_type": "text/plain",
       "file_type": "ASCII text, with CRLF line terminators",
       "programming_language": null,
@@ -548,6 +528,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
       "package_data": [
         {
           "type": "jar",
@@ -624,11 +610,6 @@
       "for_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": true,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -652,6 +633,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -661,15 +643,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -693,6 +676,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -702,15 +686,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -734,6 +719,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -743,15 +729,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -775,6 +762,7 @@
       "sha1": "ec48402737754d5dd48993edd640303d600b3353",
       "md5": "90b08182f023ccc15728ac74aa9d0491",
       "sha256": "a28c75b035294db0c6d3d6424d72ebcc15f3eb457585e62e9787dc4f1758adf7",
+      "sha1_git": "5842c1d1c52fc9283c849ee294a1da163f3cafd0",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -784,6 +772,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
       "package_data": [
         {
           "type": "maven",
@@ -833,11 +827,6 @@
       "for_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": true,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -861,6 +850,7 @@
       "sha1": "73c974462b2e26d2747a6289f9bd251ca21ece2a",
       "md5": "9ec6be9d5ad127d9ecc132198049f747",
       "sha256": "af6819e54c0ffd60204b55b17d0574385f2bc49a17d43efb8ab58c4d595a8835",
+      "sha1_git": "62f910882b61faac67e519aab18e2cff402a3c4f",
       "mime_type": "text/plain",
       "file_type": "exported SGML document, ASCII text",
       "programming_language": null,
@@ -870,6 +860,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": true,
+      "is_readme": false,
+      "is_top_level": true,
+      "is_key_file": true,
+      "is_community": false,
       "package_data": [
         {
           "type": "maven",
@@ -907,39 +903,24 @@
                   "license_expression_spdx": "Apache-2.0",
                   "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
                   "start_line": 1,
-                  "end_line": 1,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 5,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_48.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_48.RULE",
-                  "matched_text": "- name: Apache License, version 2.0"
-                },
-                {
-                  "license_expression": "apache-2.0",
-                  "license_expression_spdx": "Apache-2.0",
-                  "from_file": "jar/META-INF/maven/org.jboss.logging/jboss-logging/pom.xml",
-                  "start_line": 2,
                   "end_line": 2,
-                  "matcher": "2-aho",
+                  "matcher": "1-hash",
                   "score": 100.0,
-                  "matched_length": 9,
+                  "matched_length": 16,
                   "match_coverage": 100.0,
                   "rule_relevance": 100,
-                  "rule_identifier": "apache-2.0_42.RULE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_42.RULE",
-                  "matched_text": "  url: http://www.apache.org/licenses/LICENSE-2.0.txt"
+                  "rule_identifier": "apache-2.0_1379.RULE",
+                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1379.RULE",
+                  "matched_text": "name: Apache License, version 2.0\nurl: http://www.apache.org/licenses/LICENSE-2.0.txt"
                 }
               ],
-              "identifier": "apache_2_0-efc1b129-3bcc-a9c0-71ea-964bc53d5512"
+              "identifier": "apache_2_0-1096ecf3-d346-9d22-51d7-abc4e11a8ad0"
             }
           ],
           "other_license_expression": null,
           "other_license_expression_spdx": null,
           "other_license_detections": [],
-          "extracted_license_statement": "- name: Apache License, version 2.0\n  url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
+          "extracted_license_statement": "- license:\n    name: Apache License, version 2.0\n    url: http://www.apache.org/licenses/LICENSE-2.0.txt\n",
           "notice_text": null,
           "source_packages": [
             "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?classifier=sources"
@@ -1059,11 +1040,6 @@
       "for_packages": [
         "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": true,
-      "is_readme": false,
-      "is_top_level": true,
-      "is_key_file": true,
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -1109,6 +1085,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -1118,15 +1095,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1150,6 +1128,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -1159,15 +1138,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1191,6 +1171,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -1200,15 +1181,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1232,6 +1214,7 @@
       "sha1": "8d85486b6c1d383228c97fe01080642147908b62",
       "md5": "05d343e2e3156e7a5e2cf6027409be50",
       "sha256": "e13d193f4d3d93fb353f08e793e9419a75e1c6fd5a65f02ee3ac143da6e2199c",
+      "sha1_git": "f06b5eacaa03870e805b3ae81e40ca12e66ff27a",
       "mime_type": "text/x-java",
       "file_type": "Java source, ASCII text",
       "programming_language": "Java",
@@ -1241,15 +1224,16 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -1307,6 +1291,7 @@
       "sha1": "86f3915cbc0290e13fe06a3fc3e8eeafa54a08b6",
       "md5": "321a67c59b5b3d41705e0742b3e9064d",
       "sha256": "9427d0ade7b02e93b261dbc8ceb92ef60e3275cf52da88efb9d67a6b8acda232",
+      "sha1_git": "ba41e2efa222126f6eb2b5550382d7d96542466b",
       "mime_type": "text/x-java",
       "file_type": "Java source, ASCII text",
       "programming_language": "Java",
@@ -1316,15 +1301,16 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:maven/org.jboss.logging/jboss-logging@3.4.2.Final?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [

@@ -6,6 +6,7 @@ license_expressions:
   - bsd-unchanged
   - isc
   - isc
+  - sudo
   - isc
   - bsd-credit
   - public-domain

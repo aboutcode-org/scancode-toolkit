@@ -1,8 +1,9 @@
 ---
 license_expression: bsd-2-clause-views
 is_license_reference: yes
+is_required_phrase: yes
 relevance: 100
 notes: SPDX id
 ---
 
-BSD-2-Clause-Views
+ BSD-2-Clause-Views

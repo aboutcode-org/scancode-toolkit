@@ -1,7 +1,10 @@
 ---
 license_expression: w3c-software-19980720
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - w3c-software-19980720
 ---
 
 licenses.nuget.org/W3C-19980720

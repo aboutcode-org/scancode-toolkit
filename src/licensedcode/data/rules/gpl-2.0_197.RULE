@@ -1,10 +1,13 @@
 ---
 license_expression: gpl-2.0
 is_license_reference: yes
+is_deprecated: yes
 relevance: 99
 referenced_filenames:
     - kernel-base/COPYING
 notes: this is a notice found in the linux kernel that is both weak and incorrect
+replaced_by:
+    - gpl-2.0
 ---
 
 For licensing details see kernel-base/COPYING

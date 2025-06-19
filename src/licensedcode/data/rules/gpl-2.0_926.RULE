@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-program licensed under the GPL-v2
+program licensed under the {{GPL-v2}}

@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_notice: yes
+is_deprecated: yes
 notes: Seen in some perl module
+replaced_by:
+    - other-permissive
 ---
 
 This library is free software; you can redistribute it and/or modify it as you like. However, please be sure to provide proper credit where it is due.

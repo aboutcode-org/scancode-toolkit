@@ -14,10 +14,12 @@
   "organization_url": null,
   "licenses": [
     {
-      "name": "GNU LESSER GENERAL PUBLIC LICENSE",
-      "url": "http://www.gnu.org/licenses/lgpl.txt",
-      "comments": null,
-      "distribution": null
+      "license": {
+        "name": "GNU LESSER GENERAL PUBLIC LICENSE",
+        "url": "http://www.gnu.org/licenses/lgpl.txt",
+        "comments": null,
+        "distribution": null
+      }
     }
   ],
   "developers": [],

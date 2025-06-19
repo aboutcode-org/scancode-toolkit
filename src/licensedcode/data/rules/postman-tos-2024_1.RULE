@@ -1,0 +1,17 @@
+---
+license_expression: postman-tos-2024
+is_license_notice: yes
+ignorable_urls:
+    - https://www.postman.com/licenses/postman-eula
+---
+
+Organizations that request Postman products must agree to the
+    <span><a className="link-style" href="https://www.postman.com/licenses/postman-eula"> {{Postman EULA}} </a></span>
+    along with any applicable Postman terms of service prior to obtaining access to the products.
+</li>
+<li>Postman reserves the right to supplement or amend these eligibility guidelines at any time without notice.</li>
+<li>Products will be distributed to qualifying organizations only, not to individuals.</li>
+<li>Postman reserves the right to grant or deny an organization&apos;s request at any time, for any reason.</li>
+<li>For organizations that possess multiple IRS designations, the product donation licenses and discounts may only be used by the 501(c)(3) or 501(c)(4) organization.</li>
+<li>Recipient organizations may not transfer or resell Postman products.</li>
+</ul>

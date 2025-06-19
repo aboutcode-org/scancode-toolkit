@@ -1,7 +1,10 @@
 ---
 license_expression: bsd-simplified
 is_license_text: yes
+is_deprecated: yes
 minimum_coverage: 100
+replaced_by:
+    - bsd-simplified
 ---
 
 Cryptix General Licence

@@ -1,0 +1,9 @@
+---
+license_expression: beegfs-eula-2024
+is_license_notice: yes
+ignorable_urls:
+    - http://www.beegfs.com/
+---
+
+BeeGFS and the BeeGFS Setup are licensed under the terms of the {{BeeGFS End User License Agreement}}
+(see http://www.beegfs.com for more information).

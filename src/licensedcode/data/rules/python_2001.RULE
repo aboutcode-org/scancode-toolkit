@@ -27,7 +27,7 @@ at the Corporation for National Research Initiatives (CNRI) in Reston,
 Virginia where he released several versions of the software.  Python
 1.6 was the last of the versions released by CNRI.  In 2000, Guido and
 the Python core development team moved to BeOpen.com to form the
-BeOpen PythonLabs team.  Python 2.0 was the first and only release
+BeOpen PythonLabs team.  {{Python 2.0}} was the first and only release
 from BeOpen.com.
 
 Following the release of Python 1.6, and after Guido van Rossum left
@@ -38,9 +38,9 @@ Foundation (FSF) interacted to develop enabling wording changes to the
 Python license.  Python 1.6.1 is essentially the same as Python 1.6,
 with a few minor bug fixes, and with a different license that enables
 later versions to be GPL-compatible.  Python 2.1 is a derivative work
-of Python 1.6.1, as well as of Python 2.0.
+of Python 1.6.1, as well as of {{Python 2.0}}.
 
-After Python 2.0 was released by BeOpen.com, Guido van Rossum and the
+After {{Python 2.0}} was released by BeOpen.com, Guido van Rossum and the
 other PythonLabs developers joined Digital Creations.  All
 intellectual property added from this point on, starting with Python
 2.1 and its alpha and beta releases, is owned by the Python Software
@@ -104,10 +104,10 @@ agrees to be bound by the terms and conditions of this License
 Agreement.
 
 
-BEOPEN.COM TERMS AND CONDITIONS FOR PYTHON 2.0
+BEOPEN.COM TERMS AND CONDITIONS FOR {{PYTHON 2.0}}
 ----------------------------------------------
 
-BEOPEN PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1
+BEOPEN {{PYTHON OPEN SOURCE LICENSE AGREEMENT VERSION 1}}
 
 1. This LICENSE AGREEMENT is between BeOpen.com ("BeOpen"), having an
 office at 160 Saratoga Avenue, Santa Clara, CA 95051, and the

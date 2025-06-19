@@ -194,31 +194,6 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-21b00e16-ec3a-6dc3-3971-5dbd5f5b756a",
-      "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-      "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
-      "detection_count": 2,
-      "detection_log": [],
-      "reference_matches": [
-        {
-          "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-          "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
-          "from_file": "google_appengine_sdk/django-1.2/MANIFEST.in",
-          "start_line": 7,
-          "end_line": 9,
-          "matcher": "3-seq",
-          "score": 5.88,
-          "matched_length": 5,
-          "match_coverage": 5.88,
-          "rule_relevance": 100,
-          "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-          "matched_text": "include django/contrib/gis/geos/LICENSE\ninclude django/dispatch/license.txt\ninclude django/utils/simplejson/LICENSE.txt",
-          "matched_text_diagnostics": "LICENSE\n[include] [django]/[dispatch]/license.txt\n[include] [django]/[utils]/[simplejson]/LICENSE.txt"
-        }
-      ]
-    },
-    {
       "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5",
       "license_expression": "bsd-new",
       "license_expression_spdx": "BSD-3-Clause",
@@ -401,36 +376,11 @@
       "for_packages": [
         "pkg:pypi/django?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "detected_license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-      "detected_license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
-      "license_detections": [
-        {
-          "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-          "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
-          "matches": [
-            {
-              "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-              "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
-              "from_file": "google_appengine_sdk/django-1.2/MANIFEST.in",
-              "start_line": 7,
-              "end_line": 9,
-              "matcher": "3-seq",
-              "score": 5.88,
-              "matched_length": 5,
-              "match_coverage": 5.88,
-              "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-              "matched_text": "include django/contrib/gis/geos/LICENSE\ninclude django/dispatch/license.txt\ninclude django/utils/simplejson/LICENSE.txt",
-              "matched_text_diagnostics": "LICENSE\n[include] [django]/[dispatch]/license.txt\n[include] [django]/[utils]/[simplejson]/LICENSE.txt"
-            }
-          ],
-          "detection_log": [],
-          "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-21b00e16-ec3a-6dc3-3971-5dbd5f5b756a"
-        }
-      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
       "license_clues": [],
-      "percentage_of_license_text": 3.38,
+      "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
@@ -1099,36 +1049,11 @@
       "for_packages": [
         "pkg:pypi/django@1.3.1?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "detected_license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-      "detected_license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
-      "license_detections": [
-        {
-          "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-          "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
-          "matches": [
-            {
-              "license_expression": "apache-2.0 AND cc-by-nc-nd-3.0 AND other-permissive AND proprietary-license",
-              "license_expression_spdx": "Apache-2.0 AND CC-BY-NC-ND-3.0 AND LicenseRef-scancode-other-permissive AND LicenseRef-scancode-proprietary-license",
-              "from_file": "google_appengine_sdk/django-1.3/MANIFEST.in",
-              "start_line": 7,
-              "end_line": 9,
-              "matcher": "3-seq",
-              "score": 5.88,
-              "matched_length": 5,
-              "match_coverage": 5.88,
-              "rule_relevance": 100,
-              "rule_identifier": "apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_and_cc-by-nc-nd-3.0_and_other-permissive_and_proprietary-license_1.RULE",
-              "matched_text": "include django/contrib/gis/geos/LICENSE\ninclude django/dispatch/license.txt\ninclude django/utils/simplejson/LICENSE.txt",
-              "matched_text_diagnostics": "LICENSE\n[include] [django]/[dispatch]/license.txt\n[include] [django]/[utils]/[simplejson]/LICENSE.txt"
-            }
-          ],
-          "detection_log": [],
-          "identifier": "apache_2_0_and_cc_by_nc_nd_3_0_and_other_permissive_and_proprietary_license-21b00e16-ec3a-6dc3-3971-5dbd5f5b756a"
-        }
-      ],
+      "detected_license_expression": null,
+      "detected_license_expression_spdx": null,
+      "license_detections": [],
       "license_clues": [],
-      "percentage_of_license_text": 2.73,
+      "percentage_of_license_text": 0,
       "scan_errors": []
     },
     {
@@ -1274,8 +1199,25 @@
           "identifier": "bsd_new-f4e99f86-00ab-18d9-a65d-a3a12767dcf5"
         }
       ],
-      "license_clues": [],
-      "percentage_of_license_text": 3.38,
+      "license_clues": [
+        {
+          "license_expression": "unknown",
+          "license_expression_spdx": "LicenseRef-scancode-unknown",
+          "from_file": "google_appengine_sdk/django-1.3/PKG-INFO",
+          "start_line": 8,
+          "end_line": 8,
+          "matcher": "2-aho",
+          "score": 60.0,
+          "matched_length": 2,
+          "match_coverage": 100.0,
+          "rule_relevance": 60,
+          "rule_identifier": "unknown_kernel4.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown_kernel4.RULE",
+          "matched_text": "License: UNKNOWN",
+          "matched_text_diagnostics": "License: UNKNOWN"
+        }
+      ],
+      "percentage_of_license_text": 4.73,
       "scan_errors": []
     },
     {

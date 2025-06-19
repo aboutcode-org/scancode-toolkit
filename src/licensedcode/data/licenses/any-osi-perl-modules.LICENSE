@@ -11,6 +11,7 @@ other_urls:
     - https://metacpan.org/pod/Net::MQTT::Simple#LICENSE
 ignorable_urls:
     - http://www.opensource.org/licenses/alphabetical
+minimum_coverage: 90
 ---
 
 This software may be redistributed under the terms of the GPL, LGPL,

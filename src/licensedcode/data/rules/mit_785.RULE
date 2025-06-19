@@ -6,5 +6,5 @@ ignorable_urls:
     - https://www.opensource.org/licenses/mit-license.php
 ---
 
-MIT license.
+{{MIT license}}.
  * https://www.opensource.org/licenses/mit-license.php

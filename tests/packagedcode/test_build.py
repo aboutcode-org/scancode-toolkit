@@ -99,7 +99,30 @@ class TestBuild(PackageTester):
                     role='maintainer'
                 )
             ],
+            extra_data=dict(upstream_hash='deadbeef'),
             homepage_url='https://github.com/example/example',
+        )
+        expected_packages = [models.PackageData.from_data(package_data=package_data, package_only=True)]
+        compare_package_results(expected_packages, result_packages)
+    
+    def test_MetadataBzl_parse_with_package_url(self):
+        test_file = self.get_test_loc('metadatabzl/with-package-url/METADATA.bzl')
+        result_packages = build.BuckMetadataBzlHandler.parse(test_file, package_only=True)
+        package_data = dict(
+            datasource_id=build.BuckMetadataBzlHandler.datasource_id,
+            name='animation',
+            namespace='androidx.compose.animation',
+            type='maven',
+            version='0.0.1',
+            extracted_license_statement=['BSD-3-Clause'],
+            parties=[
+                models.Party(
+                    type=models.party_org,
+                    name='oss_foundation',
+                    role='maintainer'
+                )
+            ],
+            homepage_url='https://developer.android.com/jetpack/androidx/releases/compose-animation#0.0.1',
         )
         expected_packages = [models.PackageData.from_data(package_data=package_data, package_only=True)]
         compare_package_results(expected_packages, result_packages)

@@ -1,0 +1,17 @@
+---
+license_expression: gpl-1.0-plus
+is_license_notice: yes
+is_deprecated: yes
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-1
+replaced_by:
+    - gpl-1.0-plus
+---
+
+This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 1, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of version 1 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-1'

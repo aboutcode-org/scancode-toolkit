@@ -3,4 +3,4 @@ license_expression: zlib
 is_license_reference: yes
 ---
 
-The zlib/libpng License
+The {{zlib/libpng License}}

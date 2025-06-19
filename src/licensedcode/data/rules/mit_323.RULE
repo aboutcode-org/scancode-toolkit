@@ -1,9 +1,12 @@
 ---
 license_expression: mit
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - mit
 ignorable_urls:
     - https://opensource.org/licenses/mit-license.php
 ---
 
-MIT License - https://opensource.org/licenses/mit-license.php
+{{MIT License}} - https://opensource.org/licenses/mit-license.php

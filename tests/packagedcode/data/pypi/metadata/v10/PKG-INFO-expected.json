@@ -31,30 +31,30 @@
     "vcs_url": null,
     "copyright": null,
     "holder": null,
-    "declared_license_expression": "unknown",
-    "declared_license_expression_spdx": "LicenseRef-scancode-unknown",
+    "declared_license_expression": "unknown-license-reference",
+    "declared_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
     "license_detections": [
       {
-        "license_expression": "unknown",
-        "license_expression_spdx": "LicenseRef-scancode-unknown",
+        "license_expression": "unknown-license-reference",
+        "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
         "matches": [
           {
-            "license_expression": "unknown",
-            "license_expression_spdx": "LicenseRef-scancode-unknown",
+            "license_expression": "unknown-license-reference",
+            "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
             "from_file": null,
             "start_line": 1,
             "end_line": 1,
-            "matcher": "5-undetected",
-            "score": 100.0,
-            "matched_length": 4,
+            "matcher": "1-hash",
+            "score": 90.0,
+            "matched_length": 3,
             "match_coverage": 100.0,
-            "rule_relevance": 100,
-            "rule_identifier": "package-manifest-unknown-54cabbf9e6e2ad452085853f06d62077e9d72ddb",
-            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/package-manifest-unknown-54cabbf9e6e2ad452085853f06d62077e9d72ddb",
-            "matched_text": "license {'license': 'LICENSE.txt'}"
+            "rule_relevance": 90,
+            "rule_identifier": "unknown-license-reference_339.RULE",
+            "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_339.RULE",
+            "matched_text": "license LICENSE.txt"
           }
         ],
-        "identifier": "unknown-d5d1ef26-6d73-51c2-0bd1-6551bb2e6e9c"
+        "identifier": "unknown_license_reference-bf47ad8c-fa3f-0e58-e5e5-d0aef2c37b43"
       }
     ],
     "other_license_expression": null,

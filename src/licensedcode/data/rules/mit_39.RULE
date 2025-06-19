@@ -1,8 +1,10 @@
 ---
 license_expression: mit
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
-minimum_coverage: 100
+replaced_by:
+    - mit
 ---
 
-MIT/X11 Licence
+{{MIT/X11 Licence}}

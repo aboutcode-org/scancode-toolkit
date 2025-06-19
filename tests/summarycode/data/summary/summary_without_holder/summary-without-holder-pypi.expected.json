@@ -117,7 +117,8 @@
       "is_virtual": false,
       "extra_data": {
         "Documentation": "https://pip.pypa.io",
-        "Changelog": "https://pip.pypa.io/en/stable/news/"
+        "Changelog": "https://pip.pypa.io/en/stable/news/",
+        "license_file": "LICENSE.txt"
       },
       "repository_homepage_url": "https://pypi.org/project/pip",
       "repository_download_url": "https://pypi.org/packages/source/p/pip/pip-22.0.4.tar.gz",
@@ -157,17 +158,17 @@
       ]
     },
     {
-      "identifier": "mit-707ccf7a-5c60-0e4c-5844-349c989a00f5",
+      "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
       "license_expression": "mit",
       "license_expression_spdx": "MIT",
-      "detection_count": 2,
+      "detection_count": 3,
       "reference_matches": [
         {
           "license_expression": "unknown-license-reference",
           "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-          "from_file": "pip-22.0.4/setup.cfg",
-          "start_line": 87,
-          "end_line": 87,
+          "from_file": "pip-22.0.4/PKG-INFO",
+          "start_line": 25,
+          "end_line": 25,
           "matcher": "2-aho",
           "score": 100.0,
           "matched_length": 4,
@@ -175,20 +176,6 @@
           "rule_relevance": 100,
           "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
-        },
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "pip-22.0.4/LICENSE.txt",
-          "start_line": 3,
-          "end_line": 20,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 161,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "mit.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
         },
         {
           "license_expression": "mit",
@@ -247,42 +234,6 @@
           "rule_relevance": 100,
           "rule_identifier": "mit_30.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_30.RULE"
-        }
-      ]
-    },
-    {
-      "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
-      "license_expression": "mit",
-      "license_expression_spdx": "MIT",
-      "detection_count": 1,
-      "reference_matches": [
-        {
-          "license_expression": "unknown-license-reference",
-          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-          "from_file": "pip-22.0.4/PKG-INFO",
-          "start_line": 25,
-          "end_line": 25,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 4,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "unknown-license-reference_see_license_at_manifest_2.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/unknown-license-reference_see_license_at_manifest_2.RULE"
-        },
-        {
-          "license_expression": "mit",
-          "license_expression_spdx": "MIT",
-          "from_file": "pip-22.0.4/LICENSE.txt",
-          "start_line": 3,
-          "end_line": 20,
-          "matcher": "2-aho",
-          "score": 100.0,
-          "matched_length": 161,
-          "match_coverage": 100.0,
-          "rule_relevance": 100,
-          "rule_identifier": "mit.LICENSE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
         }
       ]
     },
@@ -349,13 +300,14 @@
     {
       "path": "pip-22.0.4",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -366,15 +318,16 @@
     {
       "path": "pip-22.0.4/AUTHORS.txt",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": true,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -385,15 +338,16 @@
     {
       "path": "pip-22.0.4/LICENSE.txt",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -426,15 +380,16 @@
     {
       "path": "pip-22.0.4/MANIFEST.in",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -445,15 +400,16 @@
     {
       "path": "pip-22.0.4/NEWS.rst",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -464,6 +420,12 @@
     {
       "path": "pip-22.0.4/PKG-INFO",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "pypi",
@@ -561,7 +523,8 @@
           "is_virtual": false,
           "extra_data": {
             "Documentation": "https://pip.pypa.io",
-            "Changelog": "https://pip.pypa.io/en/stable/news/"
+            "Changelog": "https://pip.pypa.io/en/stable/news/",
+            "license_file": "LICENSE.txt"
           },
           "dependencies": [],
           "repository_homepage_url": "https://pypi.org/project/pip",
@@ -574,11 +537,6 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -670,15 +628,16 @@
     {
       "path": "pip-22.0.4/README.rst",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -689,13 +648,14 @@
     {
       "path": "pip-22.0.4/docs",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -706,6 +666,12 @@
     {
       "path": "pip-22.0.4/docs/requirements.txt",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "pypi",
@@ -932,11 +898,6 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -947,15 +908,16 @@
     {
       "path": "pip-22.0.4/pyproject.toml",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": true,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -966,6 +928,12 @@
     {
       "path": "pip-22.0.4/setup.cfg",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "pypi",
@@ -1025,25 +993,11 @@
                   "rule_relevance": 100,
                   "rule_identifier": "mit.LICENSE",
                   "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
-                },
-                {
-                  "license_expression": "mit",
-                  "license_expression_spdx": "MIT",
-                  "from_file": "pip-22.0.4/LICENSE.txt",
-                  "start_line": 3,
-                  "end_line": 20,
-                  "matcher": "2-aho",
-                  "score": 100.0,
-                  "matched_length": 161,
-                  "match_coverage": 100.0,
-                  "rule_relevance": 100,
-                  "rule_identifier": "mit.LICENSE",
-                  "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
                 }
               ],
-              "identifier": "mit-707ccf7a-5c60-0e4c-5844-349c989a00f5",
+              "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
               "detection_log": [
-                "unknown-reference-to-local-file"
+                "package-unknown-reference-to-local-file"
               ]
             }
           ],
@@ -1068,13 +1022,8 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
-      "detected_license_expression": "mit",
-      "detected_license_expression_spdx": "MIT",
+      "detected_license_expression": "unknown-license-reference",
+      "detected_license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
       "license_detections": [
         {
           "license_expression": "mit",
@@ -1107,25 +1056,11 @@
               "rule_relevance": 100,
               "rule_identifier": "mit.LICENSE",
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
-            },
-            {
-              "license_expression": "mit",
-              "license_expression_spdx": "MIT",
-              "from_file": "pip-22.0.4/LICENSE.txt",
-              "start_line": 3,
-              "end_line": 20,
-              "matcher": "2-aho",
-              "score": 100.0,
-              "matched_length": 161,
-              "match_coverage": 100.0,
-              "rule_relevance": 100,
-              "rule_identifier": "mit.LICENSE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/licenses/mit.LICENSE"
             }
           ],
-          "identifier": "mit-707ccf7a-5c60-0e4c-5844-349c989a00f5",
+          "identifier": "mit-59433771-4926-870e-d21a-8162cfa060a3",
           "detection_log": [
-            "unknown-reference-to-local-file"
+            "package-unknown-reference-to-local-file"
           ]
         }
       ],
@@ -1136,6 +1071,12 @@
     {
       "path": "pip-22.0.4/setup.py",
       "type": "file",
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "pypi",
@@ -1247,11 +1188,6 @@
       "for_packages": [
         "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -1298,13 +1234,14 @@
     {
       "path": "pip-22.0.4/src",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1315,13 +1252,14 @@
     {
       "path": "pip-22.0.4/src/pip",
       "type": "directory",
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1332,15 +1270,16 @@
     {
       "path": "pip-22.0.4/src/pip/__init__.py",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1351,15 +1290,16 @@
     {
       "path": "pip-22.0.4/src/pip/__main__.py",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -1370,15 +1310,16 @@
     {
       "path": "pip-22.0.4/src/pip/py.typed",
       "type": "file",
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/pip@22.0.4?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],

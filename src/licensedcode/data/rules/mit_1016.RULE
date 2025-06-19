@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-plugin is licensed under the MIT licence.
+plugin is {{licensed under the MIT}} licence.

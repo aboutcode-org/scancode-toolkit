@@ -1,0 +1,10 @@
+---
+license_expression: beegfs-eula-2024
+is_license_reference: yes
+is_required_phrase: yes
+relevance: 99
+ignorable_urls:
+    - https://www.beegfs.io/docs/BeeGFS_EULA.txt
+---
+
+https://www.beegfs.io/docs/BeeGFS_EULA.txt

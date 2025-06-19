@@ -1,6 +1,8 @@
 ---
 key: lgpl-2.1-spell-checker
 is_deprecated: yes
+replaced_by:
+    - spell-checker-exception-lgpl-2.1-plus
 short_name: LGPL 2.1 or later with Spell-Checker exception
 name: LGPL 2.1 or later with Spell-Checker exception
 category: Copyleft Limited

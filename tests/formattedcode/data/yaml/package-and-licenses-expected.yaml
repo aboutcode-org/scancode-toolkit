@@ -21,7 +21,7 @@ headers:
       for any legal advice.
       ScanCode is a free software code scanning tool from nexB Inc. and others.
       Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-    output_format_version: 3.2.0
+    output_format_version: 4.0.0
     message:
     errors: []
     warnings: []
@@ -29,10 +29,10 @@ headers:
       system_environment:
         operating_system: linux
         cpu_architecture: 64
-        platform: Linux-5.15.0-113-generic-x86_64-with-glibc2.35
-        platform_version: '#123-Ubuntu SMP Mon Jun 10 08:16:17 UTC 2024'
-        python_version: 3.10.12 (main, Nov 20 2023, 15:14:05) [GCC 11.4.0]
-      spdx_license_list_version: '3.24'
+        platform: Linux-5.15.0-141-generic-x86_64-with-glibc2.35
+        platform_version: '#151-Ubuntu SMP Sun May 18 21:35:19 UTC 2025'
+        python_version: 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]
+      spdx_license_list_version: '3.26'
       files_count: 4
 summary:
   declared_license_expression: apache-2.0
@@ -316,7 +316,7 @@ license_detections:
         rule_identifier: apache-2.0_65.RULE
         rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
         matched_text: license = Apache-2.0
-  - identifier: apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39
+  - identifier: apache_2_0_and__apache_2_0_or_mit-ab5115d2-1eff-af76-1473-34378a32b2bb
     license_expression: apache-2.0 AND (apache-2.0 OR mit)
     license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
     detection_count: 1
@@ -327,12 +327,12 @@ license_detections:
         start_line: 3
         end_line: 3
         matcher: 2-aho
-        score: '80.0'
-        matched_length: 4
+        score: '100.0'
+        matched_length: 5
         match_coverage: '100.0'
-        rule_relevance: 80
-        rule_identifier: apache-2.0_73.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE
+        rule_relevance: 100
+        rule_identifier: apache-2.0_1109.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1109.RULE
         matched_text: This is licensed under Apache-2.0 or MIT
       - license_expression: apache-2.0 OR mit
         license_expression_spdx: Apache-2.0 OR MIT
@@ -626,6 +626,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: yes
@@ -845,66 +847,18 @@ license_rule_references:
       See the License for the specific language governing permissions and
       limitations under the License.
   - license_expression: apache-2.0
-    identifier: apache-2.0_65.RULE
+    identifier: apache-2.0_1109.RULE
     language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1109.RULE
     is_license_text: no
-    is_license_notice: no
+    is_license_notice: yes
     is_license_reference: no
-    is_license_tag: yes
-    is_license_intro: no
-    is_license_clue: no
-    is_continuous: no
-    is_builtin: yes
-    is_from_license: no
-    is_synthetic: no
-    length: 4
-    relevance: 100
-    minimum_coverage: 80
-    referenced_filenames: []
-    notes:
-    ignorable_copyrights: []
-    ignorable_holders: []
-    ignorable_authors: []
-    ignorable_urls: []
-    ignorable_emails: []
-    text: 'license: Apache-2.0'
-  - license_expression: apache-2.0
-    identifier: apache-2.0_73.RULE
-    language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
-    is_builtin: yes
-    is_from_license: no
-    is_synthetic: no
-    length: 4
-    relevance: 80
-    minimum_coverage: 80
-    referenced_filenames: []
-    notes:
-    ignorable_copyrights: []
-    ignorable_holders: []
-    ignorable_authors: []
-    ignorable_urls: []
-    ignorable_emails: []
-    text: is licensed under [Apache]
-  - license_expression: apache-2.0 OR mit
-    identifier: apache-2.0_or_mit_36.RULE
-    language: en
-    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE
-    is_license_text: no
-    is_license_notice: no
-    is_license_reference: yes
-    is_license_tag: no
-    is_license_intro: no
-    is_license_clue: no
-    is_continuous: yes
     is_builtin: yes
     is_from_license: no
     is_synthetic: no
@@ -918,7 +872,61 @@ license_rule_references:
     ignorable_authors: []
     ignorable_urls: []
     ignorable_emails: []
-    text: '{{apache-2.0 OR MIT}}'
+    text: licenced under {{Apache 2.0}}
+  - license_expression: apache-2.0
+    identifier: apache-2.0_65.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_65.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: no
+    is_license_tag: yes
+    is_license_intro: no
+    is_license_clue: no
+    is_required_phrase: yes
+    skip_for_required_phrase_generation: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 4
+    relevance: 100
+    minimum_coverage: 80
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: license="Apache-2.0
+  - license_expression: apache-2.0 OR mit
+    identifier: apache-2.0_or_mit_36.RULE
+    language: en
+    rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE
+    is_license_text: no
+    is_license_notice: no
+    is_license_reference: yes
+    is_license_tag: no
+    is_license_intro: no
+    is_license_clue: no
+    is_required_phrase: yes
+    skip_for_required_phrase_generation: no
+    is_continuous: no
+    is_builtin: yes
+    is_from_license: no
+    is_synthetic: no
+    length: 5
+    relevance: 100
+    minimum_coverage: 80
+    referenced_filenames: []
+    notes:
+    ignorable_copyrights: []
+    ignorable_holders: []
+    ignorable_authors: []
+    ignorable_urls: []
+    ignorable_emails: []
+    text: apache-2.0 OR MIT
   - license_expression: mit
     identifier: mit.LICENSE
     language: en
@@ -929,6 +937,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: no
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: yes
@@ -972,6 +982,8 @@ license_rule_references:
     is_license_tag: no
     is_license_intro: no
     is_license_clue: no
+    is_required_phrase: yes
+    skip_for_required_phrase_generation: no
     is_continuous: no
     is_builtin: yes
     is_from_license: no
@@ -986,7 +998,7 @@ license_rule_references:
     ignorable_authors: []
     ignorable_urls: []
     ignorable_emails: []
-    text: apache-2.0
+    text: Apache-2.0
 files:
   - path: package-and-licenses
     type: directory
@@ -997,6 +1009,7 @@ files:
     sha1:
     md5:
     sha256:
+    sha1_git:
     mime_type:
     file_type:
     programming_language:
@@ -1006,13 +1019,14 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages: []
     is_legal: no
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: no
+    is_community: no
+    package_data: []
+    for_packages: []
     detected_license_expression:
     detected_license_expression_spdx:
     license_detections: []
@@ -1036,6 +1050,7 @@ files:
     sha1: 1df6d834f14cf559f8294602edc62cd1fd3a801a
     md5: 4d6efca9ce0e3674ff53d5769e8e6d3b
     sha256: 558bb811471ccfa7e3a17920decbea52596cdb3cbb40bcd3b55dba2a62814650
+    sha1_git: 109b12c996b5dd0776b484ade75c0e45d0a97cb5
     mime_type: text/plain
     file_type: ASCII text
     programming_language:
@@ -1045,14 +1060,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: no
     is_manifest: no
     is_readme: yes
     is_top_level: yes
     is_key_file: yes
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression: apache-2.0 AND (apache-2.0 OR mit)
     detected_license_expression_spdx: Apache-2.0 AND (Apache-2.0 OR MIT)
     license_detections:
@@ -1065,12 +1081,12 @@ files:
             start_line: 3
             end_line: 3
             matcher: 2-aho
-            score: '80.0'
-            matched_length: 4
+            score: '100.0'
+            matched_length: 5
             match_coverage: '100.0'
-            rule_relevance: 80
-            rule_identifier: apache-2.0_73.RULE
-            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE
+            rule_relevance: 100
+            rule_identifier: apache-2.0_1109.RULE
+            rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1109.RULE
             matched_text: This is licensed under Apache-2.0 or MIT
           - license_expression: apache-2.0 OR mit
             license_expression_spdx: Apache-2.0 OR MIT
@@ -1085,9 +1101,9 @@ files:
             rule_identifier: apache-2.0_or_mit_36.RULE
             rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE
             matched_text: This is licensed under Apache-2.0 or MIT
-        identifier: apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39
+        identifier: apache_2_0_and__apache_2_0_or_mit-ab5115d2-1eff-af76-1473-34378a32b2bb
     license_clues: []
-    percentage_of_license_text: '57.14'
+    percentage_of_license_text: '50.0'
     copyrights:
       - copyright: Copyright Example Corp.
         start_line: 5
@@ -1112,6 +1128,7 @@ files:
     sha1: 803d68221700c6b60432e1d8b010939d0eed6867
     md5: f427d9ebd9d6c9d4b172a0a5960f298c
     sha256: 91fea55e6d99116f24c4293db9d8db13860de1bb00c8b74b49c7d77cbf7fecdb
+    sha1_git: 28827dd3ff369ed5f984600d81819a7aac10206b
     mime_type: text/plain
     file_type: ASCII text
     programming_language:
@@ -1121,14 +1138,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: yes
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: yes
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:
@@ -1321,6 +1339,7 @@ files:
     sha1: 9cbb2036cd73988fc5d0e6cf39440c6537c5f95e
     md5: 89ae103eebeb166a19618c03192ae445
     sha256: 7835c7a4c87bdf13cbc406b0f696d6ad20351ee48e591f3df4b1d26e57d415cf
+    sha1_git: 518e1abe66afdcebdb2667c5fb5a6ac7db3bc0bc
     mime_type: text/plain
     file_type: ASCII text
     programming_language:
@@ -1330,14 +1349,15 @@ files:
     is_media: no
     is_source: no
     is_script: no
-    package_data: []
-    for_packages:
-      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     is_legal: yes
     is_manifest: no
     is_readme: no
     is_top_level: yes
     is_key_file: yes
+    is_community: no
+    package_data: []
+    for_packages:
+      - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
     detected_license_expression: mit
     detected_license_expression_spdx: MIT
     license_detections:
@@ -1396,6 +1416,7 @@ files:
     sha1: ca794853822fc3793fbb4957185148f522c6a8df
     md5: dce126308b696b221e6e2a95baac2f43
     sha256: 5818a2cd6a864bda25cb95ce8a991abaf2992de4ab9d5417fc9730b2497f1a1a
+    sha1_git: 5a4f05388d110a0616dc430afda0a66fcdc76b79
     mime_type: text/plain
     file_type: ASCII text
     programming_language:
@@ -1405,6 +1426,12 @@ files:
     is_media: no
     is_source: no
     is_script: no
+    is_legal: no
+    is_manifest: no
+    is_readme: no
+    is_top_level: no
+    is_key_file: no
+    is_community: no
     package_data:
       - type: pypi
         namespace:
@@ -1472,11 +1499,6 @@ files:
         purl: pkg:pypi/codebase
     for_packages:
       - pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758
-    is_legal: no
-    is_manifest: no
-    is_readme: no
-    is_top_level: no
-    is_key_file: no
     detected_license_expression: apache-2.0
     detected_license_expression_spdx: Apache-2.0
     license_detections:

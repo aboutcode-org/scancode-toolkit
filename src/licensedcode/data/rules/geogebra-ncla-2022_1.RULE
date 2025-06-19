@@ -1,0 +1,11 @@
+---
+license_expression: geogebra-ncla-2022
+is_license_notice: yes
+ignorable_urls:
+    - http://www.geogebra.org/license
+ignorable_emails:
+    - office@geogebra.org
+---
+
+@license: This file is subject to the {{GeoGebra Non-Commercial License Agreement}}, see {{http://www.geogebra.org/license}}.
+  For questions please write us at office@geogebra.org.

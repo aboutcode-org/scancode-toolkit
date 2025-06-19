@@ -1,0 +1,9 @@
+---
+license_expression: eqvsl-1.0
+is_license_reference: yes
+is_required_phrase: yes
+ignorable_urls:
+    - https://www.eclipse.org/legal/eclipse-foundation-quality-verification-suite-license.php
+---
+
+https://www.eclipse.org/legal/eclipse-foundation-quality-verification-suite-license.php[Eclipse Foundation Quality Verification Suite License^]

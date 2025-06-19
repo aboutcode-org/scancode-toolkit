@@ -1,8 +1,10 @@
 ---
 license_expression: free-unknown
-is_deprecated: yes
 is_license_text: yes
+is_deprecated: yes
 notes: found in old texi2html code in older bash/support
+replaced_by:
+    - warranty-disclaimer
 ---
 
 This program is the intellectual property of the European

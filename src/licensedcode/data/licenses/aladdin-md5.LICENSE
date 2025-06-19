@@ -1,6 +1,8 @@
 ---
 key: aladdin-md5
 is_deprecated: yes
+replaced_by:
+    - zlib
 short_name: Aladdin MD5 License
 name: Aladdin MD5 License
 category: Permissive

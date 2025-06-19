@@ -263,7 +263,7 @@
       ]
     },
     {
-      "identifier": "apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39",
+      "identifier": "apache_2_0_and__apache_2_0_or_mit-ab5115d2-1eff-af76-1473-34378a32b2bb",
       "license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
       "detection_count": 1,
@@ -275,12 +275,12 @@
           "start_line": 3,
           "end_line": 3,
           "matcher": "2-aho",
-          "score": 80.0,
-          "matched_length": 4,
+          "score": 100.0,
+          "matched_length": 5,
           "match_coverage": 100.0,
-          "rule_relevance": 80,
-          "rule_identifier": "apache-2.0_73.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE"
+          "rule_relevance": 100,
+          "rule_identifier": "apache-2.0_1109.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1109.RULE"
         },
         {
           "license_expression": "apache-2.0 OR mit",
@@ -376,6 +376,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -385,13 +386,14 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -415,6 +417,7 @@
       "sha1": "1df6d834f14cf559f8294602edc62cd1fd3a801a",
       "md5": "4d6efca9ce0e3674ff53d5769e8e6d3b",
       "sha256": "558bb811471ccfa7e3a17920decbea52596cdb3cbb40bcd3b55dba2a62814650",
+      "sha1_git": "109b12c996b5dd0776b484ade75c0e45d0a97cb5",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -424,15 +427,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0 AND (apache-2.0 OR mit)",
       "detected_license_expression_spdx": "Apache-2.0 AND (Apache-2.0 OR MIT)",
       "license_detections": [
@@ -447,12 +451,12 @@
               "start_line": 3,
               "end_line": 3,
               "matcher": "2-aho",
-              "score": 80.0,
-              "matched_length": 4,
+              "score": 100.0,
+              "matched_length": 5,
               "match_coverage": 100.0,
-              "rule_relevance": 80,
-              "rule_identifier": "apache-2.0_73.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_73.RULE"
+              "rule_relevance": 100,
+              "rule_identifier": "apache-2.0_1109.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1109.RULE"
             },
             {
               "license_expression": "apache-2.0 OR mit",
@@ -469,11 +473,11 @@
               "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_or_mit_36.RULE"
             }
           ],
-          "identifier": "apache_2_0_and__apache_2_0_or_mit-9b638e72-e872-a67f-3447-eec297ef7b39"
+          "identifier": "apache_2_0_and__apache_2_0_or_mit-ab5115d2-1eff-af76-1473-34378a32b2bb"
         }
       ],
       "license_clues": [],
-      "percentage_of_license_text": 57.14,
+      "percentage_of_license_text": 50.0,
       "copyrights": [
         {
           "copyright": "Copyright Example Corp.",
@@ -504,6 +508,7 @@
       "sha1": "a6a5418b4d67d9f3a33cbf184b25ac7f9fa87d33",
       "md5": "e23fadd6ceef8c618fc1c65191d846fa",
       "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+      "sha1_git": "d9a10c0d8e868ebf8da0b3dc95bb0be634c34bfe",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -513,15 +518,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [
@@ -567,6 +573,7 @@
       "sha1": "97d0edda5c68c41ccb29397461b12af7ea216314",
       "md5": "5f0e096c1e8b60e7d47d2386a77c55ba",
       "sha256": "fa9742ed8f0a094978bbf7fc86e0d3c188f6a4544696c78cdce9b916fb465680",
+      "sha1_git": "fa67deffea35a13a12abb431b4eaf420608a6b2d",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -576,6 +583,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "cargo",
@@ -657,11 +670,6 @@
         "pkg:cargo/codebase?uuid=fixed-uid-done-for-testing-5642512d1758",
         "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -713,6 +721,7 @@
       "sha1": "d162bf6d725758cf35e4b4e49db3750e85bc98a0",
       "md5": "8d18be6409468bae48b33b87db85824a",
       "sha256": "17eeb111a052462b64de9a5a56983f8d732922d8666ecbf20ede8f776b4c4df4",
+      "sha1_git": "2d4a989856a52f5063bbd779043307a07901c5ed",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -722,15 +731,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -776,6 +786,7 @@
       "sha1": "10c7f4a6c2f60591dd08c9afeaeb7a05c76388a9",
       "md5": "425b1701628572de3fd81f9de0be2d64",
       "sha256": "e0e775cf6127edc482607cabcd652f3b10e6c69e03dc2e92c4b2174103831b3c",
+      "sha1_git": "d455402042e9413212d0aa3244ffe173bff1cbf3",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": "Python",
@@ -785,6 +796,12 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "pypi",
@@ -865,11 +882,6 @@
       "for_packages": [
         "pkg:pypi/codebase?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "apache-2.0",
       "detected_license_expression_spdx": "Apache-2.0",
       "license_detections": [

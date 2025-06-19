@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 100
 ---
 
-License :: OSI Approved :: Common Development and Distribution License 1.0 (CDDL-1.0)
+License :: OSI Approved :: {{Common Development and Distribution License 1.0}} ({{CDDL-1.0}})

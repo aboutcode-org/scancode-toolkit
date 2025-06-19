@@ -156,6 +156,7 @@ A sample JSON output file structure will look like::
           "date": "2019-02-12",
           "sha1": "2e07e32c52d607204fad196052d70e3d18fb8636",
           "md5": "effc6856ef85a9250fb1a470792b3f38",
+          "sha1_git": "d9a10c0d8e868ebf8da0b3dc95bb0be634c34bfe",
           "mime_type": "text/plain",
           "file_type": "ASCII text",
           "programming_language": null,

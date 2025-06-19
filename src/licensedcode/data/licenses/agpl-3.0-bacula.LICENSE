@@ -1,6 +1,14 @@
 ---
 key: agpl-3.0-bacula
 is_deprecated: yes
+replaced_by:
+    - bacula-exception
+    - bsd-simplified
+    - bsd-simplified
+    - bsd-simplified
+    - agpl-3.0-plus
+    - agpl-3.0-plus
+    - agpl-3.0
 short_name: AGPL 3.0 with Bacula exception
 name: AGPL 3.0 with Bacula exception
 category: Copyleft

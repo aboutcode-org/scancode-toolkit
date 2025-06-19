@@ -1,10 +1,12 @@
 ---
 license_expression: libpbm
 is_license_notice: yes
+is_deprecated: yes
 relevance: 90
 minimum_coverage: 10
-is_deprecated: yes
 notes: The warranty disclaimer is different and possibly predates libpbm. See https://github.com/oracle/solaris-xorg/blob/master/open-src/app/xlock/sun-src/image.c
+replaced_by:
+    - libpbm
 ---
 
 Permission to use, copy, modify, and distribute this software and its

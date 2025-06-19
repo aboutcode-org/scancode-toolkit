@@ -1,6 +1,11 @@
 ---
 key: gpl-3.0-openbd
 is_deprecated: yes
+replaced_by:
+    - gpl-3.0
+    - openbd-exception-3.0
+    - gpl-3.0 WITH gpl-generic-additional-terms
+    - gpl-1.0-plus
 short_name: GPL 3.0h with OpenBD exception
 name: GPL 3.0h with OpenBD exception
 category: Copyleft

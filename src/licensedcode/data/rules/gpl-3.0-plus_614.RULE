@@ -1,0 +1,10 @@
+---
+license_expression: gpl-3.0-plus
+is_license_notice: yes
+ignorable_urls:
+    - http://www.gnu.org/copyleft/gpl.html
+---
+
+# This script is distributed under the terms and conditions of the GNU General
+# Public License, Version 3 or later. See http://www.gnu.org/copyleft/gpl.html
+# for details.

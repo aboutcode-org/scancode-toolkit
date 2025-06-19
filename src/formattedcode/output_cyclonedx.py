@@ -20,9 +20,9 @@ from pprint import pformat
 from typing import List
 
 import attr
+from lxml import etree
 from commoncode.cliutils import OUTPUT_GROUP
 from commoncode.cliutils import PluggableCommandLineOption
-from lxml import etree
 from plugincode.output import OutputPlugin
 from plugincode.output import output_impl
 

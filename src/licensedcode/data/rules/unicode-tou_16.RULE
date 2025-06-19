@@ -1,7 +1,10 @@
 ---
 license_expression: unicode-tou
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - unicode-tou
 ---
 
 licenses.nuget.org/Unicode-TOU

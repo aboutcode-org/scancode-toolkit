@@ -1,9 +1,12 @@
 ---
 license_expression: unknown-license-reference
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
 referenced_filenames:
     - LICENCE.TXT
+replaced_by:
+    - unknown-license-reference
 ---
 
 For licence information, see LICENCE.TXT

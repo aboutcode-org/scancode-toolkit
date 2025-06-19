@@ -4,5 +4,5 @@ is_license_notice: yes
 relevance: 100
 ---
 
-On Debian GNU/Linux systems, the complete text of the GNU General Public
-License can be found in /usr/share/common-licenses/GPL-2 file.
+On Debian GNU/Linux systems, the complete text of the {{GNU General Public
+License}} can be found in {{/usr/share/common-licenses/GPL-2}} file.

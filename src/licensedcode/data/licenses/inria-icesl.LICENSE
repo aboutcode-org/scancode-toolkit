@@ -1,0 +1,79 @@
+---
+key: inria-icesl
+short_name: INRIA IceSL EULA
+name: INRIA End User License Agreement for IceSL Software
+category: Proprietary Free
+owner: INRIA
+homepage_url: https://icesl.loria.fr/assets/pdf/EULA_IceSL_binary.pdf
+spdx_license_key: LicenseRef-scancode-inria-icesl
+---
+
+End User License Agreement for IceSL Software
+
+By downloading, installing or using the software, You, the licensee in your own name,
+Hereinafter referred to as “Licensee”
+accept the terms of this license agreement and agree to be committed to
+Institut national de recherche en informatique et en automatique (Inria),
+A public scientific and technological research establishment, governed by decree no. 85-831 of August 2, 1985 (as amended), located at Domaine de Voluceau – Rocquencourt BP 105, 78153 Le Chesnay Cedex, France,
+Represented by its Chairman and Managing Director, Dr. Michel Cosnard, and, on his behalf for the purposes hereof, by Dr. Sylvain Petitjean, Director of the Inria Nancy – Grand Est research center, established in France - 615, rue du Jardin Botanique, 54600 Villers-lès- Nancy,
+Hereinafter referred to as “Inria” or as “Licensor”;
+of the other part, The Licensor and the Licensee hereinafter, collectively or individually, referred to as “the
+Parties” or “the Party”.
+
+NOW AND THEREFORE, IT IS AGREED AS FOLLOWS:
+The Parties, intending to be legally bound, agree as follow:
+
+Article 1 – Definitions
+For the purpose of this Agreement, in addition to the words and phrases that are defined throughout the body of this Agreement, the following words and phrases shall have the following meanings:
+of the one part,
+
+- Software shall mean the IceSL software (registration pending at the French Agency for the Protection of Programs);
+- Agreement shall mean the present End User License agreement for IceSL Software.
+
+Article 2 – Scope of the agreement - Ownership
+The Agreement shall define the conditions of use of Software by Licensee.
+Licensee acknowledges that the intellectual property rights and title to the licensed Software and any trademarks or service marks relating thereto remain with Licensor. Licensee shall have no right, title or interest in the licensed Software except as expressly set forth in this Agreement.
+
+Article 3 – Delivery/Access of licensed Software to Licensee
+Licensor will provide the licensed Software to the Licensee, in the following manner:
+The licensed Software will be made available to the Licensee electronically, by downloading and installing the Software.
+
+Article 4 –Grant of License and restrictions
+4.1 Licensor hereby grants to Licensee, for an indeterminate term, a free, non-exclusive and non-transferable license to use the object code of the Software only for internal research purposes of the Licensee. Usage by third parties is forbidden. Licensee shall not permit anyone other than Licensee and its employees concerned by an internal research activity to use the licensed Software.
+4.2 The licensed Software may be used by Licensee for internal research and academic purposes only. Using Software for consulting services or commercial purposes is strictly forbidden.
+Licensee may not use the licensed Software for commercial purposes, including but not limited to the sale of the licensed Software or reproduction or distribution of the licensed Software in any form.
+If another use is desired, the Licensee is requested to let it know to the Licensor (by contacting the authors of the Software and/or the Technology Transfer Office of Inria Nancy - Grand Est).
+4.3 Licensee may not remove, obscure nor modify any copyright or other notices included in the Software.
+4.4 Licensee may not reverse engineer, decompile, disassemble, translate or adapt the Software, or otherwise attempt to discover its source code from the object code.
+Licensee may not incorporate, or let others incorporate, the Software, in part or in whole, into any other program.
+4.5 The Licensee may install and use a reasonable number of copies of the Software solely for internal research purposes and not for production use.
+
+Article 5 – Confidential Information
+The Parties will retain in strict confidence, and will not disclose to a third party without the written consent of the other Party all information forwarded to one by the other in relation with this Agreement and/or the Software.
+Licensee agrees to maintain the confidentiality of any data contained in or relating to the usage of the licensed the Software.
+Each Party’s obligation of confidence hereunder will be fulfilled by using at least same degree of care with the other Party’s confidential information it uses to protect its own confidential information. This obligation will exist while this Agreement is in force and shall survive to expiration of this Agreement.
+
+Article 6 – Term and termination
+6.1 The license of the Software will be effective from the date of the Licensee acceptance of the Agreement (date of the download and installation of the Software by the Licensee) and shall continue until the copyright on the Software is in force..
+6.2 In the event that the Licensors believe that Licensee has exceeded the scope of the License, Licensor shall so notify the breaching Licensee in writing.
+The Licensor may immediately terminate this Agreement if the Licensee fails to comply with any term therein.
+6.3 Upon Termination of this Agreement, the grant of license with respect with Software will terminate and Licensee shall return to Licensor the licensed Software and destroy all the copies of it.
+All provisions relating to confidentiality and ownership shall survive the termination
+
+Article 7 – Limitation of liability
+7.1 The Licensor shall not be liable for any indirect, special, incidental, punitive or consequential damages, including but not limited to loss of data, business interruption, or loss of profits, arising out of the use of or the inability to use the licensed Software.
+7.2 Licensor makes no representation or warranty, and expressly disclaims any liability with respect to the content of any licensed Software, including but not limited to errors or omissions contained therein, infringement of intellectual property rights, rights of publicity, privacy, trademark rights, moral rights, or the disclosure of confidential information.
+
+Article 8 – Disclaimer of warranties
+8.1 The licensed Software is provided on an "as is" basis, and Licensor disclaims any and all other warranties, conditions, or representations (express, implied, oral or written), relating
+to the licensed Software or any part thereof, including, without limitation, any and all implied warranties of quality, performance, merchantability or fitness for a particular purpose.
+8.2 Licensor makes no warranties respecting any harm that may be caused by the transmission of a computer virus, worm, time bomb, logic bomb or other such computer program.
+8.3 Licensor doesn’t offer any support, assistance to Licensee for the installation or the implementation of licensed Software. Licensor doesn’t offer any maintenance on the licensed Software.
+
+Article 9 – Miscellaneous
+9.1 In the event of a difficulty or dispute concerning the interpretation or performance of this agreement, the Parties shall endeavor to resolve their disagreement amicably.
+9.2 If no amicable settlement is reached within thirty (30) days of notification of the dispute by one of the Parties, by registered letter with acknowledgement of receipt, the more diligent Party shall bring the dispute before the French competent courts.
+This agreement constitutes the entire agreement of the Parties in relation to its object.
+9.3 If any provision or provisions of this Agreement shall be held to be invalid, illegal, unenforceable or in conflict with the law of any jurisdiction, the validity, legality, enforceability of the remaining provisions shall not in any way be affected or impaired thereby.
+
+IN WITNESS WHEREOF, the Parties have caused this Agreement to be executed by their duly authorized representatives.

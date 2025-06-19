@@ -1,8 +1,10 @@
 ---
 license_expression: gpl-1.0-plus
 is_license_reference: yes
-relevance: 100
 is_deprecated: yes
+relevance: 100
+replaced_by:
+    - gpl-2.0-plus
 ---
 
 taken from the original NTT provided GPL source.

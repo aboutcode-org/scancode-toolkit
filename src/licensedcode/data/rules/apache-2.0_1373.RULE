@@ -1,0 +1,10 @@
+---
+license_expression: apache-2.0
+is_license_notice: yes
+relevance: 100
+is_deprecated: yes
+replaced_by:
+  - apache-2.0
+---
+
+provided under the {{Apache-2.0 License}}

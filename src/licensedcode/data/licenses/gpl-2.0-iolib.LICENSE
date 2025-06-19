@@ -1,12 +1,14 @@
 ---
 key: gpl-2.0-iolib
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH iolib-exception-2.0
 short_name: GPL 2.0 with GNU IO Library exception
 name: GPL 2.0 with GNU IO Library exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
-is_exception: yes
 notes: replaced by iolib-exception-2.0
+is_exception: yes
 ---
 
 This is part of libio/iostream, providing -*- C++ -*- input/output.

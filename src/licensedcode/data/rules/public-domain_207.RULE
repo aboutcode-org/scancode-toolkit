@@ -4,5 +4,5 @@ is_license_reference: yes
 relevance: 95
 ---
 
-dedication of qmail to the public
-domain.
+dedication of qmail to the {{public
+domain}}.

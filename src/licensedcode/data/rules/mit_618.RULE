@@ -8,5 +8,5 @@ referenced_filenames:
     - license/third_party/teamcity-service-messages_LICENSE.txt
 ---
 
-License: MIT ([license/third_party/mocha-teamcity-reporter_LICENSE.txt](third_party/mocha-teamcity-reporter_LICENSE.txt)
+{{License: MIT}} ([license/third_party/mocha-teamcity-reporter_LICENSE.txt](third_party/mocha-teamcity-reporter_LICENSE.txt)
  and [license/third_party/teamcity-service-messages_LICENSE.txt](third_party/teamcity-service-messages_LICENSE.txt))

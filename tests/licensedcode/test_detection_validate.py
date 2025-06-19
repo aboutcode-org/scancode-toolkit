@@ -9,25 +9,23 @@
 
 import unittest
 from pprint import pprint
+from time import time
 
 import pytest
 import saneyaml
-from commoncode.functional import flatten
 from commoncode import text
 
 from licensedcode import cache
 from licensedcode import models
+from licensedcode.detection import is_correct_detection
 from licensedcode.models import licenses_data_dir
 from licensedcode.models import rules_data_dir
+from licensedcode.models import License
 from scancode_config import REGEN_TEST_FIXTURES
 
 """
 Validate that each license and rule text is properly detected with exact
 detection and that their ignorable clues are correctly detected.
-
-TODO: to make the license detection test worthy, we should disable hash matching
-such that we test everything else including the automaton, sets and
-sequence detections.
 """
 
 
@@ -41,11 +39,12 @@ def make_validation_test(rule, test_name, regen=REGEN_TEST_FIXTURES):
     if rule.is_false_positive:
 
         def closure_test_function(*args, **kwargs):
-            check_special_rule_cannot_be_detected(rule)
+            check_false_positive_rule_cannot_be_detected(rule)
+
     else:
 
         def closure_test_function(*args, **kwargs):
-            check_rule_or_license_can_be_self_detected_exactly(rule)
+            check_rule_or_license_can_be_detected_exactly(rule)
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name
@@ -53,7 +52,23 @@ def make_validation_test(rule, test_name, regen=REGEN_TEST_FIXTURES):
     return closure_test_function
 
 
-def check_special_rule_cannot_be_detected(rule):
+def make_deprecated_validation_test(rule, test_name, regen=REGEN_TEST_FIXTURES):
+    """
+    Build and return a test function closing on tests arguments.
+    """
+    if isinstance(test_name, bytes):
+        test_name = test_name.decode('utf-8')
+
+    def closure_test_function(*args, **kwargs):
+        check_deprecated_rule_or_license_can_be_detected(licensish=rule, regen=regen)
+
+    closure_test_function.__name__ = test_name
+    closure_test_function.funcname = test_name
+
+    return closure_test_function
+
+
+def check_false_positive_rule_cannot_be_detected(rule):
     idx = cache.get_index()
 
     results = idx.match(query_string=rule.text)
@@ -67,42 +82,62 @@ def check_special_rule_cannot_be_detected(rule):
         assert results == []
 
 
-def check_rule_or_license_can_be_self_detected_exactly(rule):
+def check_rule_or_license_can_be_detected_exactly(licensish):
+    """
+    Check that a rule or license can be detected exactly, either by thyself (or with an exact match
+    to any rule for deprecated rules).
+    """
     idx = cache.get_index()
-    matches = idx.match(
-        query_string=rule.text,
-        _skip_hash_match=True,
-        deadline=10,
-    )
-    expected = [rule.identifier, '100']
-    results = flatten((m.rule.identifier, str(int(m.coverage()))) for m in matches)
+    deadline = time() + 20  # ms
+    matches = idx.match(query_string=licensish.text, _skip_hash_match=True, deadline=deadline)
+    # ensure we can self-detect exactly
+    expected = [licensish.identifier]
+    results = [m.rule.identifier for m in matches]
 
     if results != expected:
-        from licensedcode.tracing import get_texts
-        rule_file = rule.rule_file()
-        # On failure, we compare again to get additional failure details such as
-        # a clickable text_file path
-        failure_trace = ['======= TEST ====']
-        failure_trace.extend(results)
-        failure_trace.extend(['',
-            f'file://{rule_file}',
-            '======================',
-        ])
+        expected.append(f'file://{licensish.rule_file()}')
+        assert results == expected
 
-        for i, match in enumerate(matches):
-            qtext, itext = get_texts(match)
-            m_rule_file = match.rule.rule_file()
+    icm = is_correct_detection(matches)
+    if not icm:
+        expected.append(f'file://{licensish.rule_file()}')
+        assert results == expected
 
-            failure_trace.extend(['',
-                f'======= MATCH {i} ====',
-                repr(match),
-                f'file://{m_rule_file}',
-                '======= Matched Query Text:', '', qtext, ''
-                '======= Matched Rule Text:', '', itext
-            ])
 
-        # this assert will always fail and provide a detailed failure trace
-        assert '\n'.join(failure_trace) == '\n'.join(expected)
+def check_deprecated_rule_or_license_can_be_detected(licensish, regen=REGEN_TEST_FIXTURES):
+    """
+    Check that a deprecated rule or license can still be detected by other rules.
+    """
+    idx = cache.get_index()
+
+    deadline = time() + 20  # ms
+    matches = idx.match(query_string=licensish.text, deadline=deadline)
+
+    if regen:
+        detected_expressions = [m.rule.license_expression for m in matches]
+        is_from_license = licensish.is_from_license
+        if is_from_license:
+            licensish = License.from_dir(key=licensish.license_expression)
+
+        licensish.replaced_by = detected_expressions
+        if is_from_license:
+            licensish.dump(licenses_data_dir=licenses_data_dir)
+        else:
+            licensish.dump(rules_data_dir=rules_data_dir)
+        return
+
+    expected = list(licensish.replaced_by)
+    results = [m.rule.license_expression for m in matches]
+
+    if results != expected:
+        expected.append(f'file://{licensish.rule_file()}')
+        assert results == expected
+
+    icm = is_correct_detection(matches)
+    if not icm:
+        expected.extend(m.representation(trace_text=True, trace_rule=True) for m in matches)
+        expected.append(f'file://{licensish.rule_file()}')
+        assert results == expected
 
 
 def make_ignorable_clues_test(rule, test_name, regen=REGEN_TEST_FIXTURES):
@@ -111,9 +146,6 @@ def make_ignorable_clues_test(rule, test_name, regen=REGEN_TEST_FIXTURES):
     """
     if isinstance(test_name, bytes):
         test_name = test_name.decode('utf-8')
-
-    if rule.is_false_positive:
-        return
 
     def closure_test_function(*args, **kwargs):
         check_ignorable_clues(rule, regen=regen)
@@ -130,6 +162,9 @@ def check_ignorable_clues(licensish, regen=REGEN_TEST_FIXTURES, verbose=False):
     or Rule object are properly detected in that rule text file. Optionally
     ``regen`` the ignorables to update the License or Rule .yml data file.
     """
+    if licensish.is_false_positive or licensish.is_deprecated:
+        return
+
     result = models.get_ignorables(text=licensish.text)
 
     if verbose:
@@ -241,10 +276,14 @@ class TestValidateLicenseExtended5(unittest.TestCase):
     pytestmark = pytest.mark.scanvalidate
 
 
-_rules = sorted(models.get_rules(), key=lambda r: r.identifier)
+# keep deprecated to test we can detect them
+_temp_rules = sorted(models.get_rules(with_deprecated=True), key=lambda r: r.identifier)
+_deprecated_rules = [r for r in _temp_rules  if not r.is_false_positive and r.is_deprecated and not r.relevance == 0]
+_current_rules = [r for r in _temp_rules  if not r.is_deprecated]
+del _temp_rules
 
 build_validation_tests(
-    _rules,
+    _current_rules,
     test_classes=[
         TestValidateLicenseBasic,
         TestValidateLicenseExtended1,
@@ -257,6 +296,19 @@ build_validation_tests(
     test_name_prefix="test_validate_detect_",
     regen=REGEN_TEST_FIXTURES,
 )
+
+build_validation_tests(
+    _deprecated_rules,
+    test_classes=[
+        TestValidateLicenseBasic,
+        TestValidateLicenseExtended5,
+     ],
+    test_func_creator=make_deprecated_validation_test,
+    test_name_prefix="test_validate_detect_deprecated_",
+    regen=REGEN_TEST_FIXTURES,
+)
+
+del _deprecated_rules
 
 
 class TestValidateLicenseIgnorableCluesBasic(unittest.TestCase):
@@ -290,7 +342,7 @@ class TestValidateLicenseIgnorableClues5(unittest.TestCase):
 
 
 build_validation_tests(
-    _rules,
+    _current_rules,
     test_classes=[
         TestValidateLicenseIgnorableCluesBasic,
         TestValidateLicenseIgnorableClues1,
@@ -300,8 +352,8 @@ build_validation_tests(
         TestValidateLicenseIgnorableClues5,
      ],
     test_func_creator=make_ignorable_clues_test,
-    test_name_prefix="test_ignorables_in_license_",
+    test_name_prefix="test_ignorables_in_rule_or_license_",
     regen=REGEN_TEST_FIXTURES,
 )
 
-del _rules
+del _current_rules

@@ -56,7 +56,7 @@
         "end_line": 8,
         "matcher": "1-spdx-id",
         "score": 100.0,
-        "matched_length": 5,
+        "matched_length": 6,
         "match_coverage": 100.0,
         "rule_relevance": 100,
         "rule_identifier": "spdx-license-identifier-epl_2_0-fc3580adf1834d6862422242a06d59e74eb62582",
@@ -64,6 +64,6 @@
         "matched_text": " * SPDX-License-Identifier: EPL-2.0"
       }
     ],
-    "identifier": "epl_2_0-16e050c0-576a-1003-b3c3-e5b5354b0fc2"
+    "identifier": "epl_2_0-034c1d66-824a-5186-d07a-a42d04dacf68"
   }
 ]

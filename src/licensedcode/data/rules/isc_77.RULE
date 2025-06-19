@@ -1,8 +1,11 @@
 ---
 license_expression: isc
 is_license_notice: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - isc
 ---
 
 License
-Unless otherwise marked, everything in this repo is licenced under the [ISC License].
+Unless otherwise marked, everything in this repo is licenced under the [{{ISC License}}].

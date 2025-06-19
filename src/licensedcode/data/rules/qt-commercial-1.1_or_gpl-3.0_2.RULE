@@ -1,0 +1,8 @@
+---
+license_expression: qt-commercial-1.1 OR gpl-3.0
+is_license_tag: yes
+is_required_phrase: yes
+relevance: 100
+---
+
+    SPDXLicense-Identifier: LicenseRefQtCommercial OR GPL3.0only

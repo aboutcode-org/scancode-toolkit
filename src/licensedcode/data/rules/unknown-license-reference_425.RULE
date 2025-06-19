@@ -1,0 +1,9 @@
+---
+license_expression: unknown-license-reference
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.txt
+---
+
+# For the full copyright and license information, please view
+# the {{ LICENSE.txt file that was distributed }} with this source code.

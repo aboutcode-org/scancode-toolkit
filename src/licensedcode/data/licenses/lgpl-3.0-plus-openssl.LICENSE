@@ -1,6 +1,10 @@
 ---
 key: lgpl-3.0-plus-openssl
 is_deprecated: yes
+replaced_by:
+    - lgpl-3.0-plus WITH openssl-exception-lgpl-3.0-plus
+    - zpl-2.1
+    - zlib
 short_name: LGPL 3.0 or later with OpenSSL exception
 name: LGPL 3.0 or later with OpenSSL exception
 category: Copyleft Limited

@@ -1,0 +1,11 @@
+---
+license_expression: sudo
+is_license_tag: yes
+referenced_filenames:
+    - LICENSE.md
+---
+
+LICENSE=	sudo
+LICENSE_NAME=	{{Sudo license}}
+LICENSE_FILE=	/LICENSE.md
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept

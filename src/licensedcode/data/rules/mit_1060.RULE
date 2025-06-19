@@ -4,4 +4,4 @@ is_license_tag: yes
 relevance: 90
 ---
 
-License: MIT-like
+{{License: MIT}}-like

@@ -9,6 +9,7 @@
 
 import os
 import pickle
+
 from shutil import rmtree
 
 from commoncode.fileutils import create_dir
@@ -185,10 +186,7 @@ class LicenseCache:
                     additional_license_plugins=plugin_directories,
                 )
 
-                # save the cache as pickle new tree checksum
-                with open(cache_file, 'wb') as fn:
-                    pickle.dump(license_cache, fn, protocol=PICKLE_PROTOCOL)
-
+                license_cache.dump(cache_file)
                 return license_cache
 
         except lockfile.LockTimeout:
@@ -200,6 +198,13 @@ class LicenseCache:
         cache = get_cache()
         if cache.additional_license_directory or cache.additional_license_plugins:
             return True
+
+    def dump(self, cache_file):
+        """
+        Dump this license cache on disk at ``cache_file``.
+        """
+        with open(cache_file, 'wb') as fn:
+            pickle.dump(self, fn, protocol=PICKLE_PROTOCOL)
 
 
 def build_index(
@@ -235,9 +240,12 @@ def build_index(
     if not licenses_db:
         # combine the licenses in these additional directories with the licenses in the original DB
         additional_license_dirs = get_license_dirs(additional_dirs=additional_directories)
-        combined_license_directories = [licenses_data_dir] + additional_license_dirs
         # generate a single combined license db with all licenses
-        licenses_db = load_licenses_from_multiple_dirs(license_dirs=combined_license_directories)
+        licenses_db = load_licenses_from_multiple_dirs(
+            builtin_license_data_dir=licenses_data_dir,
+            additional_license_data_dirs=additional_license_dirs,
+            with_deprecated=False,
+        )
 
     # if we have additional directories, extract the rules from them
     additional_rule_dirs = get_rule_dirs(additional_dirs=additional_directories)
@@ -276,7 +284,7 @@ def build_licensing(licenses_db=None):
     from licensedcode.models import load_licenses
 
     licenses_db = licenses_db or load_licenses()
-    return Licensing((LicenseSymbolLike(lic) for lic in licenses_db.values()))
+    return Licensing(symbols=(LicenseSymbolLike(lic) for lic in licenses_db.values()))
 
 
 def build_spdx_symbols(licenses_db=None):
@@ -315,7 +323,6 @@ def get_licenses_by_spdx_key(
     license db if not provided.
 
     Optionally include deprecated if ``include_deprecated`` is True.
-
 
     Optionally make the keys lowercase if ``lowercase_keys`` is True.
 
@@ -393,7 +400,7 @@ def get_cache(
     Return a LicenseCache either rebuilt, cached or loaded from disk.
 
     If ``index_all_languages`` is True, include texts in all languages when
-    building the license index. Otherwise, only include the English license \
+    building the license index. Otherwise, only include the English license
     texts and rules (the default)
     """
     return populate_cache(
@@ -508,6 +515,9 @@ def build_spdx_license_expression(license_expression, licensing=None):
     >>> spdx = "MIT OR GPL-2.0-only WITH LicenseRef-scancode-generic-exception"
     >>> assert build_spdx_license_expression(exp) == spdx
     """
+    if not license_expression:
+        return
+
     if not licensing:
         licensing = get_licensing()
     validate_spdx_license_keys(license_expression=license_expression, licensing=licensing)
@@ -531,7 +541,7 @@ def validate_spdx_license_keys(license_expression, licensing):
         if not type(key) == str:
             msg = f"Invalid license key: {key} of type {type(key)}, license key should be a string"
             messages.append(msg)
-    
+
         lic = license_db.get(key, None)
         if not lic:
             licenses = load_licenses(with_deprecated=True)

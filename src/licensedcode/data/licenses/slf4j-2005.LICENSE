@@ -1,6 +1,8 @@
 ---
 key: slf4j-2005
 is_deprecated: yes
+replaced_by:
+    - x11
 short_name: SLF4J License 2005
 name: SLF4J License 2005
 category: Permissive

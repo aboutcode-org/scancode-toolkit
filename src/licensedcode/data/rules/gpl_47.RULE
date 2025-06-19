@@ -6,8 +6,8 @@ is_license_notice: yes
 Trademarks and the GPL
 
 AbiSource software products, such as AbiWord, are copyrighted works
-released under the terms of the GNU General Public License
-(GPL). Verbatim copies of such works may be made and distributed, by
+released under the terms of the {{GNU General Public License
+(GPL}}). Verbatim copies of such works may be made and distributed, by
 anyone, in accordance with the terms of the GPL without violating the
 AbiSource trademarks. The GPL also grants you certain rights to make
 and distribute derivative works based on the source code to AbiSource

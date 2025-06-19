@@ -1,7 +1,10 @@
 ---
 license_expression: sun-bsd-no-nuclear
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - sun-bsd-no-nuclear
 ---
 
 licenses.nuget.org/BSD-3-Clause-No-Nuclear-License

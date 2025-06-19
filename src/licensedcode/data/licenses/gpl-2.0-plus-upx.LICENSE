@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-plus-upx
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH upx-exception-2.0-plus
 short_name: GPL 2.0 or later with UPX exception
 name: GPL 2.0 or later with UPX exception
 category: Copyleft Limited

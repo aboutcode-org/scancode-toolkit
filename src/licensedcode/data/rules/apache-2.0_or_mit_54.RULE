@@ -7,14 +7,14 @@ ignorable_urls:
 ---
 
 @license
- is dual licensed under both
+ is {{dual licensed under both}}
 
-  1. The Apache 2.0 License
+  1. {{The Apache 2.0 License
      http://www.apache.org/licenses/LICENSE-2.0
-
+}}
   and
 
-  2. The MIT License
+  2. {{The MIT License
      http://opensource.org/licenses/MIT
-
+}}
  may be distributed under either license.

@@ -1,6 +1,8 @@
 ---
 key: w3c-software-20021231
 is_deprecated: yes
+replaced_by:
+    - w3c
 short_name: W3C-SOFTWARE-20021231
 name: W3C Software Notice and License (2002-12-31)
 category: Permissive

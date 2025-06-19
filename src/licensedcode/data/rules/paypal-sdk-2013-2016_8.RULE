@@ -1,8 +1,8 @@
 ---
 license_expression: paypal-sdk-2013-2016
 is_license_reference: yes
-is_continuous: yes
+is_required_phrase: yes
 relevance: 100
 ---
 
-{{PayPal SDK License}}
+ PayPal SDK License

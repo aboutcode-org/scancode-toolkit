@@ -1,0 +1,8 @@
+---
+is_false_positive: yes
+notes: a comment about license in Samba
+---
+
+The only changes we've made are to
+accommodate the licenses we use, which are GPLv3 and LGPLv3 (or later)
+whereas the Linux kernel uses GPLv2.

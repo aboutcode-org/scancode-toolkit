@@ -1,6 +1,8 @@
 ---
 key: gpl-2.0-javascript
 is_deprecated: yes
+replaced_by:
+    - gpl-2.0-plus WITH javascript-exception-2.0
 short_name: GPL 2.0 with Javascript exception
 name: GPL 2.0 with Javascript exception
 category: Copyleft Limited

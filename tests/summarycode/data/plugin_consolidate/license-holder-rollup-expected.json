@@ -3,25 +3,11 @@
   "dependencies": [],
   "license_detections": [
     {
-      "identifier": "apache_2_0-b955b3e8-dd31-4357-9227-7a93de3b06a1",
+      "identifier": "apache_2_0-505389d4-2849-121a-a1e6-c7ff37d86eb3",
       "license_expression": "apache-2.0",
       "license_expression_spdx": "Apache-2.0",
       "detection_count": 1,
       "reference_matches": [
-        {
-          "license_expression": "unknown-license-reference",
-          "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-          "from_file": "license-holder-rollup/no-majority/foo/baz",
-          "start_line": 2,
-          "end_line": 2,
-          "matcher": "2-aho",
-          "score": 50.0,
-          "matched_length": 2,
-          "match_coverage": 100.0,
-          "rule_relevance": 50,
-          "rule_identifier": "license-intro_2.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE"
-        },
         {
           "license_expression": "apache-2.0",
           "license_expression_spdx": "Apache-2.0",
@@ -30,11 +16,11 @@
           "end_line": 2,
           "matcher": "2-aho",
           "score": 100.0,
-          "matched_length": 3,
+          "matched_length": 5,
           "match_coverage": 100.0,
           "rule_relevance": 100,
-          "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+          "rule_identifier": "apache-2.0_1109.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1109.RULE"
         }
       ]
     },
@@ -137,6 +123,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -172,6 +159,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -207,6 +195,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -244,6 +233,7 @@
       "sha1": "21aec44ff80c4f5c2957b4360647785ae25c7854",
       "md5": "5b896afc8c6958d74694967f60bf4d70",
       "sha256": "d792df04dffa67fadaa439594792af377e508806960a0094d84dfc8e608cd4f3",
+      "sha1_git": "e0b2a8349211c0c43480236d0a50a313d2aa0860",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -329,6 +319,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -364,6 +355,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -401,6 +393,7 @@
       "sha1": "8b94498ae812abc4f82304aa2f9766df45ba1873",
       "md5": "87ad74664f4ba242df4bedf2a83b2169",
       "sha256": "0e8b9334e6f8a9b51d745da57c2a958966c3ed8aab580922fb98e146e9c7552c",
+      "sha1_git": "98285c2a8f6cb854d5b00ebbd5015b1808ac2832",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -486,6 +479,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -523,6 +517,7 @@
       "sha1": "e77836a77dea5398842c5dea1eb4e117ae4af544",
       "md5": "bf1dfc5106c2a5a818bd26aa414cd38d",
       "sha256": "56b9cf21e16f43cfbd38acb731bef245396fad8b488f27aaf2758c6ab50f5ab5",
+      "sha1_git": "842ce478b39ef875660db851224b309b06da67d7",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -542,20 +537,6 @@
           "license_expression_spdx": "Apache-2.0",
           "matches": [
             {
-              "license_expression": "unknown-license-reference",
-              "license_expression_spdx": "LicenseRef-scancode-unknown-license-reference",
-              "from_file": "license-holder-rollup/no-majority/foo/baz",
-              "start_line": 2,
-              "end_line": 2,
-              "matcher": "2-aho",
-              "score": 50.0,
-              "matched_length": 2,
-              "match_coverage": 100.0,
-              "rule_relevance": 50,
-              "rule_identifier": "license-intro_2.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/license-intro_2.RULE"
-            },
-            {
               "license_expression": "apache-2.0",
               "license_expression_spdx": "Apache-2.0",
               "from_file": "license-holder-rollup/no-majority/foo/baz",
@@ -563,14 +544,14 @@
               "end_line": 2,
               "matcher": "2-aho",
               "score": 100.0,
-              "matched_length": 3,
+              "matched_length": 5,
               "match_coverage": 100.0,
               "rule_relevance": 100,
-              "rule_identifier": "spdx_license_id_apache-2.0_for_apache-2.0.RULE",
-              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/spdx_license_id_apache-2.0_for_apache-2.0.RULE"
+              "rule_identifier": "apache-2.0_1109.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/apache-2.0_1109.RULE"
             }
           ],
-          "identifier": "apache_2_0-b955b3e8-dd31-4357-9227-7a93de3b06a1"
+          "identifier": "apache_2_0-505389d4-2849-121a-a1e6-c7ff37d86eb3"
         }
       ],
       "license_clues": [],

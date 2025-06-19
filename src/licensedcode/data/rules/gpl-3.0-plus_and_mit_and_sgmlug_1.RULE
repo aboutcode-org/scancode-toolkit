@@ -1,0 +1,9 @@
+---
+license_expression: gpl-3.0-plus AND mit AND sgmlug
+is_license_tag: yes
+relevance: 100
+minimum_coverage: 100
+notes: Seen at https://github.com/zougloub/gentoo/blob/242e24b98f4e2b89974e268fac93d2b11f0b6fca/app-text/linuxdoc-tools/linuxdoc-tools-0.9.73-r1.ebuild#L12
+---
+
+LICENSE="GPL-3+ MIT SGMLUG"

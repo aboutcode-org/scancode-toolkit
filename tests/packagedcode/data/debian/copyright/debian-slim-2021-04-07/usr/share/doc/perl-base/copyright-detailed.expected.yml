@@ -396,9 +396,10 @@ other_license_expression: ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND 
   OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus OR artistic-perl-1.0) AND
   ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (gpl-1.0-plus
   OR artistic-perl-1.0) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND ((gpl-1.0-plus
-  AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus)
-  AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
+  AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
+  AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
+  OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND
+  ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0)) AND (artistic-perl-1.0
   OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0 AND artistic-perl-1.0))
   AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0) OR (artistic-perl-1.0
   AND artistic-perl-1.0)) AND (artistic-perl-1.0 OR gpl-1.0-plus) AND ((gpl-1.0-plus AND gpl-1.0)
@@ -637,8 +638,9 @@ other_license_expression_spdx: ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl)
   AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
   (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl)) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND
-  Artistic-1.0-Perl)) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
+  AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
+  GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
   AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
   AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later
   AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR
@@ -823,12 +825,12 @@ other_license_detections:
         matched_length: 21
         match_coverage: '100.0'
         rule_relevance: 100
-        rule_identifier: artistic-perl-1.0_2.RULE
-        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_2.RULE
+        rule_identifier: artistic-perl-1.0_27.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_27.RULE
         matched_text: |
           On Debian GNU/Linux systems, the complete text of the
           Artistic Licence can be found in `/usr/share/common-licenses/Artistic'.
-    identifier: artistic_perl_1_0-28364b45-8110-28fe-aee5-cb6a37853295
+    identifier: artistic_perl_1_0-7b86e72f-b0e8-f208-ec26-52b4d77fd07a
   - license_expression: artistic-2.0
     license_expression_spdx: Artistic-2.0
     matches:
@@ -4674,6 +4676,40 @@ other_license_detections:
           You may redistribute only under the same terms as Perl 5, as specified
           in the README file that comes with the distribution.
     identifier: gpl_1_0_plus_or_artistic_perl_1_0-8a66f022-d8b4-4b86-212a-934dd2bc3089
+  - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    license_expression_spdx: Artistic-1.0-Perl OR GPL-1.0-or-later
+    matches:
+      - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+        license_expression_spdx: Artistic-1.0-Perl OR GPL-1.0-or-later
+        from_file:
+        start_line: 1504
+        end_line: 1504
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 7
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
+        matched_text: released under the same license as Perl.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-27b808ee-1246-e9bc-bc46-2f8c35871c4f
+  - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+    license_expression_spdx: Artistic-1.0-Perl OR GPL-1.0-or-later
+    matches:
+      - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
+        license_expression_spdx: Artistic-1.0-Perl OR GPL-1.0-or-later
+        from_file:
+        start_line: 1510
+        end_line: 1510
+        matcher: 2-aho
+        score: '100.0'
+        matched_length: 7
+        match_coverage: '100.0'
+        rule_relevance: 100
+        rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
+        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/artistic-perl-1.0_or_gpl-1.0-plus_53.RULE
+        matched_text: released under the same license as Perl.
+    identifier: artistic_perl_1_0_or_gpl_1_0_plus-27b808ee-1246-e9bc-bc46-2f8c35871c4f
   - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
     license_expression_spdx: Artistic-1.0-Perl OR GPL-1.0-or-later
     matches:

@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-license is AGPL-3.0-only.
+license is {{AGPL-3.0-only}}.

@@ -50,7 +50,7 @@
           "rule_relevance": 100,
           "rule_identifier": "bsd-new_jcraft_4.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/bsd-new_jcraft_4.RULE",
-          "matched_text": "  url: http://www.jcraft.com/jsch/LICENSE.txt"
+          "matched_text": "url: http://www.jcraft.com/jsch/LICENSE.txt"
         }
       ],
       "identifier": "bsd_new-9b2ba589-3ced-488c-3ecb-90b41e97c23f"
@@ -59,7 +59,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: BSD\n  url: http://www.jcraft.com/jsch/LICENSE.txt\n",
+  "extracted_license_statement": "- license:\n    name: BSD\n    url: http://www.jcraft.com/jsch/LICENSE.txt\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/com.jcraft/jsch@0.1.27?classifier=sources"

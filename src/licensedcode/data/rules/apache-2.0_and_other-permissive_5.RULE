@@ -10,6 +10,6 @@ ignorable_urls:
 License
 
 The original Pyrex program was licensed "free of restrictions" (see below).
-Cython itself is licensed under the permissive **Apache License**.
+Cython itself is {{licensed under the permissive **Apache License**.}}
 
-See `LICENSE.txt <https://github.com/cython/cython/blob/master/LICENSE.txt>`_.
+See `LICENSE.txt {{<https://github.com/cython/cython/blob/master/LICENSE.txt>`_.}}

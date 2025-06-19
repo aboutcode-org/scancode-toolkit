@@ -1,6 +1,8 @@
 ---
 key: lgpl-3-plus-linking
 is_deprecated: yes
+replaced_by:
+    - lgpl-3.0-plus WITH lgpl-3.0-linking-exception
 short_name: LGPL 3.0 or later with Linking exception
 name: LGPL 3.0 or later with Linking exception
 category: Copyleft Limited

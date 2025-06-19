@@ -6,5 +6,5 @@ referenced_filenames:
     - LICENSE
 ---
 
-Released under the BSD-style license that can
+Released under the {{BSD-style license}} that can
 be found in Go's LICENSE file.

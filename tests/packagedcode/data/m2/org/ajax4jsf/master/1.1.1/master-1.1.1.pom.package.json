@@ -64,7 +64,7 @@
           "rule_relevance": 100,
           "rule_identifier": "lgpl-2.1_85.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_85.RULE",
-          "matched_text": "- name: LGPL 2.1"
+          "matched_text": "name: LGPL 2.1"
         },
         {
           "license_expression": "lgpl-2.0-plus",
@@ -79,7 +79,7 @@
           "rule_relevance": 100,
           "rule_identifier": "lgpl_3.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl_3.RULE",
-          "matched_text": "  url: http://www.gnu.org/licenses/lgpl.html"
+          "matched_text": "url: http://www.gnu.org/licenses/lgpl.html"
         },
         {
           "license_expression": "lgpl-2.1",
@@ -94,7 +94,7 @@
           "rule_relevance": 100,
           "rule_identifier": "lgpl-2.1_36.RULE",
           "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/lgpl-2.1_36.RULE",
-          "matched_text": "  comments: GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"
+          "matched_text": "comments: GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"
         }
       ],
       "identifier": "lgpl_2_1_and_lgpl_2_0_plus-d477d49d-52e2-0d03-97d9-7786a7accad2"
@@ -103,7 +103,7 @@
   "other_license_expression": null,
   "other_license_expression_spdx": null,
   "other_license_detections": [],
-  "extracted_license_statement": "- name: LGPL 2.1\n  url: http://www.gnu.org/licenses/lgpl.html\n  comments: GNU LESSER GENERAL PUBLIC LICENSE Version 2.1\n",
+  "extracted_license_statement": "- license:\n    name: LGPL 2.1\n    url: http://www.gnu.org/licenses/lgpl.html\n    comments: GNU LESSER GENERAL PUBLIC LICENSE Version 2.1\n",
   "notice_text": null,
   "source_packages": [
     "pkg:maven/org.ajax4jsf/master@1.1.1?classifier=sources"

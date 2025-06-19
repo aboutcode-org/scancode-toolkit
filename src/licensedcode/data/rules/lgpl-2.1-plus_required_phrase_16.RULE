@@ -1,0 +1,11 @@
+---
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+is_required_phrase: yes
+is_deprecated: yes
+relevance: 100
+replaced_by:
+    - lgpl-2.1-plus
+---
+
+GNU Lesser General Public License as published by Free Software Foundation; either version 2.1 of licence, or (at your option) any later version

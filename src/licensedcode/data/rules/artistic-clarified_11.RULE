@@ -1,7 +1,10 @@
 ---
 license_expression: artistic-clarified
 is_license_reference: yes
+is_deprecated: yes
 relevance: 100
+replaced_by:
+    - artistic-clarified
 ---
 
 licenses.nuget.org/ClArtistic

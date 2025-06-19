@@ -6,5 +6,5 @@ referenced_filenames:
     - BSD_LICENSE
 ---
 
-Use of this source code is governed by a BSD-style license that can be found in the
+Use of this source code is {{governed by a BSD-style license}} that can be found in the
 BSD_LICENSE file.

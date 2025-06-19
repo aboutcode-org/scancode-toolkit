@@ -4,4 +4,4 @@ is_license_notice: yes
 relevance: 100
 ---
 
-The repository utilizes code licensed under the terms of the Apache Software License and therefore is licensed under ASL v2 or later.
+The repository utilizes code licensed under the terms of the {{Apache Software License}} and therefore is licensed under ASL v2 or later.
