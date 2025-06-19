@@ -2319,9 +2319,6 @@ class Rule(BasicRule):
         except Exception:
             trace = traceback.format_exc()
             raise InvalidRule(f'While loading: file://{rule_file}\n{trace}')
-        
-        # remove extra_phrase marker from rules
-        self.text = remove_extra_phrase(self.text)
 
         return self
 
