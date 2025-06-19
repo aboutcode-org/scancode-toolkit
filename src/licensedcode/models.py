@@ -2447,7 +2447,9 @@ class Rule(BasicRule):
         # other rule metadata, like debugging collection of required phrases
         if kwargs:
             metadata.update(kwargs)
-        content = self.text
+
+        # remove extra_phrase marker
+        content = remove_extra_phrase(self.text)
         output = dumps_frontmatter(content=content, metadata=metadata)
         with open(rule_file, 'w') as of:
             of.write(output)
