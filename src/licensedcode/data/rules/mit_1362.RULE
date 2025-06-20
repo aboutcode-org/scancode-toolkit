@@ -1,0 +1,9 @@
+---
+license_expression: mit
+is_license_reference: yes
+relevance: 100
+ignorable_urls:
+    - https://img.shields.io/badge/%7B%7BLicense-MIT%7D%7D.svg
+---
+
+https://img.shields.io/badge/{{License-MIT}}.svg
