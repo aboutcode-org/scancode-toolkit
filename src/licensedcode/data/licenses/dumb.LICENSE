@@ -5,7 +5,7 @@ name: DUMB License
 category: Permissive
 owner: kode54
 homepage_url: https://github.com/kode54/dumb
-spdx_license_key: DUMB
+spdx_license_key: LicenseRef-scancode-dumb
 text_urls:
     - https://github.com/kode54/dumb/blob/master/LICENSE
 other_urls:

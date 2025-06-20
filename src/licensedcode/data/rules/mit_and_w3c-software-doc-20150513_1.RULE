@@ -1,0 +1,11 @@
+---
+license_expression: mit AND w3c-software-doc-20150513
+is_license_notice: yes
+ignorable_urls:
+    - https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
+---
+
+{{MIT License}}
+ *
+ * {{@license W3C}}
+ * {{https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document}}

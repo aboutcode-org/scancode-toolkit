@@ -1,0 +1,15 @@
+---
+license_expression: afl-2.1 OR bsd-new
+is_license_notice: yes
+---
+
+is available under *either* the terms of the {{BSD 3-Clause "New" License}} *or* the
+{{Academic Free License version 2.1}}. you may choose which
+license to receive this code under (except as noted in per-module LICENSE
+files). Some modules may not be the copyright of the . These
+modules contain explicit declarations of copyright in both the LICENSE files in
+the directories in which they reside and in the code itself. No external
+contributions are allowed under licenses which are fundamentally incompatible
+with the {{AFL-2.1 OR and BSD-3-Clause licenses}} that is distributed under.
+
+The text of the {{AFL-2.1 and BSD-3-Clause licenses}} is reproduced below.

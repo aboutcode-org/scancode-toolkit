@@ -1,0 +1,8 @@
+---
+license_expression: new-relic-1.0
+is_license_reference: yes
+ignorable_urls:
+    - https://github.com/newrelic/csec-node-agent/blob/v2.0.0/LICENSE
+---
+
+distributed under the [UNKNOWN License]({{https://github.com/newrelic/csec-node-agent/blob/v2.0.0/LICENSE}}

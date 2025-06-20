@@ -1,0 +1,49 @@
+---
+key: new-relic-1.0
+short_name: New Relic Software License v1.0
+name: New Relic Software License v1.0
+category: Commercial
+owner: New Relic
+homepage_url: https://github.com/newrelic/csec-node-agent/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-new-relic-1.0
+ignorable_emails:
+    - opensource@newrelic.com
+---
+
+## New Relic Software License v1.0
+
+### Acceptance
+
+This software license applies to the repositories, directories, or files that it has been associated with (referred to here as “the Software”). In order to get any license under these terms, you must agree to them as both strict obligations and conditions to all your licenses.
+
+### License
+
+New Relic grants you a license for the Software to do everything you might do with the Software that would otherwise infringe the New Relic’s copyrights or patent rights, conditional on only using the Software for Permitted Purposes and compliance with all other Restrictions on Use. All other uses are prohibited. 
+
+### Permitted Purposes
+
+The Software is solely for use with New Relic’s proprietary SaaS service (“New Relic Service”). To use the Software you must have a valid and active subscription agreement to the New Relic Service. You may not use the Software in conjunction with any other similar service.
+
+### Restrictions on Use
+
+1. The use of the Software is limited to you and your organization. You cannot expose the Software to third parties via the network or use the Software on behalf of anyone else.
+2. You cannot modify the Software. You can compile or link the Software into your programs as described in the New Relic Documentation, but you cannot otherwise make any derivative works of the Software.
+3. You cannot reverse engineer or decompile the Software. 
+4. You cannot use the Software for competitive analysis, benchmarking, or any purposes that compete with or are intended to compete with New Relic.
+5. You cannot remove or obscure any proprietary notices in the Software.
+6. You can only copy the Software to the extent needed to use the Software within your organization. You cannot distribute the Software to any third parties.
+7. You can only use the New Relic Services and the Software consistent with your subscription agreement with New Relic, New Relic’s product Documentation and Acceptable Use Policy.
+
+### Intellectual Property
+
+Any feedback provided to New Relic about the Software, including feedback provided as source code, comments, or other copyrightable or patentable material, is provided to New Relic under the terms of the Apache Software License, version 2. If you do not provide attribution information or a copy of the license with your feedback, you waive the performance of those requirements of the Apache License with respect to New Relic. The license grant regarding any feedback is irrevocable and persists past the termination of this license.
+
+### Termination
+
+This license terminates when the Software stops being provided by New Relic or when described by the New Relic subscription agreement, whichever comes first. When this license terminates, you have a commercially reasonable time to either remove the Software from your systems.
+
+### Other Terms
+
+1. The Software is provided “AS IS.”  New Relic disclaims all warranties, whether express, implied, statutory or otherwise, including warranties of merchantability, fitness for a particular purpose, title, and noninfringement.
+2. To the full extent permitted by law, New Relic will have no liability arising from or related to the Software or from this license for any direct, indirect, special, incidental, or consequential damages of any kind, even if advised of their possibility in advance, and regardless of legal theory (whether contract, tort, negligence, strict liability or otherwise).
+3. The Software may contain third-party software, including open source software (“OSS”). The third party software is governed by its own license and subject to its own terms, disclosed in the provided licensing information associated with the third party components. If a source code disclosure is required under the terms of the license covering any OSS component, the source code can be requested of New Relic by emailing opensource@newrelic.com.

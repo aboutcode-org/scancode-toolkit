@@ -1,0 +1,6 @@
+---
+is_false_positive: yes
+notes: seen in pkg:npm/css-declaration-sorter and others, the cc domain at the end causes issues
+---
+
+"author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",

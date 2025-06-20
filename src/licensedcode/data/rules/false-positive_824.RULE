@@ -1,0 +1,11 @@
+---
+is_false_positive: yes
+notes: seen in pkg:npm/validate-npm-package-license
+---
+
+warnings: [
+    'license should be ' +
+    'a valid SPDX license expression (without "LicenseRef"), ' +
+    '"UNLICENSED", or ' +
+    '"SEE LICENSE IN <filename>"',
+    'license is similar to the valid expression "Apache-2.0"'

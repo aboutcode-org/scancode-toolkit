@@ -1,0 +1,8 @@
+---
+license_expression: new-relic-1.0
+is_license_tag: yes
+relevance: 100
+notes: this is not in spdx yet, seen in pkg:npm/@newrelic/security-agent
+---
+
+* SPDX-License-Identifier: {{New Relic Software License v1.0}}
