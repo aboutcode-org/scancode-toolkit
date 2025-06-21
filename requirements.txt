@@ -18,6 +18,7 @@ cryptography==42.0.5
 debian-inspector==31.1.0
 dockerfile-parse==1.2.0
 dparse2==0.7.0
+deprecated == 1.2.18
 extractcode==31.0.0
 extractcode-7z==16.5.210531
 extractcode-libarchive==3.5.1.210531
@@ -41,6 +42,7 @@ lxml==5.1.0
 MarkupSafe==2.1.5
 more-itertools==8.13.0
 normality==2.3.3
+oelint_parser==8.1.0
 packageurl-python==0.15.0
 packaging==24.1
 packvers==21.5
@@ -62,6 +64,7 @@ pyparsing==3.0.9
 pytz==2022.1
 PyYAML==6.0.1
 rdflib==6.2.0
+regex == 2024.11.6
 requests==2.31.0
 saneyaml==0.6.0
 semantic-version==2.8.5
