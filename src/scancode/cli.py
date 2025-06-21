@@ -181,7 +181,7 @@ def validate_input_path(ctx, param, value):
     Validate a ``value`` list of inputs path strings
     """
     options = ctx.params
-    from_json = options.get("--from-json", False)
+    from_json = options.get("from_json", False)
     for inp in value:
         if not (is_file(location=inp, follow_symlinks=True) or is_dir(location=inp, follow_symlinks=True)):
             raise click.BadParameter(f"input: {inp!r} is not a regular file or a directory")
@@ -189,18 +189,20 @@ def validate_input_path(ctx, param, value):
         if not is_readable(location=inp):
             raise click.BadParameter(f"input: {inp!r} is not readable")
 
-        if from_json and not is_file(location=inp, follow_symlinks=True):
-            # extra JSON validation
-            raise click.BadParameter(f"JSON input: {inp!r} is not a file")
+        if from_json:
+            if is_dir(location=inp, follow_symlinks=True):
+                raise click.BadParameter("Error: Invalid value: Input JSON scan file(s) is not valid JSON")
+
             if not inp.lower().endswith(".json"):
-                raise click.BadParameter(f"JSON input: {inp!r} is not a JSON file with a .json extension")
-            with open(inp) as js:
-                start = js.read(100).strip()
-            if not start.startswith("{"):
-                raise click.BadParameter(f"JSON input: {inp!r} is not a well formed JSON file")
+                raise click.BadParameter("Error: Invalid value: Input JSON scan file(s) is not valid JSON")
+
+            try:
+                with open(inp, 'r', encoding='utf-8') as f:
+                    json.load(f)  # Try to parse the file as JSON
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                    raise click.BadParameter("Error: Invalid value: Input JSON scan file(s) is not valid JSON")
 
     return value
-
 
 @click.command(name='scancode',
     epilog=epilog_text,
