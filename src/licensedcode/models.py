@@ -2338,7 +2338,6 @@ class Rule(BasicRule):
         self.text = remove_extra_phrase(self.text)
 
         text = self.text
-
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach
 
@@ -2447,9 +2446,7 @@ class Rule(BasicRule):
         # other rule metadata, like debugging collection of required phrases
         if kwargs:
             metadata.update(kwargs)
-
-        # remove extra_phrase marker
-        content = remove_extra_phrase(self.text)
+        content = self.text
         output = dumps_frontmatter(content=content, metadata=metadata)
         with open(rule_file, 'w') as of:
             of.write(output)
