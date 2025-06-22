@@ -1,0 +1,244 @@
+---
+key: root-cert-3.0
+short_name: Root Certificate License Agreement v3.0
+name: Root Certificate License Agreement v3.0
+category: Proprietary Free
+owner: Broadcom
+homepage_url: https://github.com/newrelic/node-newrelic/blob/main/THIRD_PARTY_NOTICES_ADDENDUM.md
+spdx_license_key: LicenseRef-scancode-root-cert-3.0
+text_urls:
+    - https://docs.broadcom.com/doc/root-certificate-license-agreement-en
+other_urls:
+    - https://github.com/newrelic/node-newrelic/blob/main/THIRD_PARTY_NOTICES.md?plain=1#L5509
+standard_notice: |
+    This product includes certificates from Symantec which are used under the
+    following license (https://docs.broadcom.com/doc/root-certificate-license-
+    agreement-en):
+ignorable_urls:
+    - http://www.symantec.com/about/profile/policies/trademarks.jsp
+    - https://www.geotrust.com/resources/rootcertificates/index.html
+    - https://www.thawte.com/roots/index.html
+    - https://www.verisign.com/support/roots.html
+ignorable_emails:
+    - dl-tssroot@symantec.com
+    - root@symantec.com
+---
+
+ROOT CERTIFICATE LICENSE AGREEMENT
+
+SYMANTEC CORPORATION AND/OR ITS AFFILIATES (“SYMANTEC”) IS WILLING TO PROVIDE THE
+ROOT CERTIFICATES TO YOU AS THE INDIVIDUAL, THE COMPANY, OR THE LEGAL ENTITY THAT
+WILL BE UTILIZING THE ROOT CERTIFICATES (REFERENCED BELOW AS “YOU” OR “YOUR”)
+ONLY ON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS OF THIS AGREEMENT
+(“AGREEMENT”). READ THE TERMS AND CONDITIONS OF THIS AGREEMENT CAREFULLY
+BEFORE USING THE ROOT CERTIFICATES. THIS IS A LEGAL AND ENFORCEABLE CONTRACT
+BETWEEN YOU AND SYMANTEC. BY USING THE ROOT CERTIFICATES, YOU AGREE TO THE
+TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THESE TERMS AND
+CONDITIONS, MAKE NO FURTHER USE OF THE ROOT CERTIFICATES. UNLESS OTHERWISE
+DEFINED HEREIN, CAPITALIZED TERMS WILL HAVE THE MEANING GIVEN IN THE “DEFINITIONS”
+SECTION OF THIS AGREEMENT AND SUCH CAPITALIZED TERMS MAY BE USED IN THE
+SINGULAR OR IN THE PLURAL, AS THE CONTEXT REQUIRES.
+
+ROOT CERTIFICATE TERMS AND CONDITIONS
+1. DEFINITIONS.
+"Certificate" means an electronic file that, at least, states a name or identifies the issuing Certificate
+Authority, identifies the subscriber, contains the subscriber's public key, identifies the Certificate's
+operational period, contains a Certificate serial number, and contains a digital signature of the issuing
+Certificate Authority.
+“Certificate Authority” or “CA” means a person or entity authorized to issue, suspend, or revoke
+Certificates.
+“Intermediate CA” means a CA Certificate signed by a Root Certificate Intermediate that issues
+Certificates either to end-entities or other Certificate Authorities, but not to both.
+"Products" means all versions of Your product or service with which the Root Certificates are incorporated
+(including successor products and services or any major or minor upgrades thereto).
+"Root Certificate" means a self-signed Certificate issued by a top-level Certificate Authority to itself, which
+includes such Certificate Authority's public key. The Root Certificates and Root Certificate files to be
+provided by Company to Customer pursuant to this Agreement are available for download at
+https://www.verisign.com/support/roots.html, https://www.thawte.com/roots/index.html or
+https://www.geotrust.com/resources/rootcertificates/index.html.
+
+2. LICENSE. During the term of this Agreement, Symantec grants You a royalty-free, non-exclusive, nontransferable license to (a) use the Root Certificate for the purposes of testing (without the right to modify);
+(b) make copies of Root Certificates only in order to embed and incorporate them, unmodified and in full,
+as roots in Your Products; (c) distribute the Root Certificates as embedded and incorporated in such
+Products; and (d) use the relevant logos and trademarks of Symantec in Your marketing materials,
+advertisements, product data sheets, product packaging and websites solely conjunction with the
+distribution of the Root Certificates in accordance with Symantec’s published guidelines for such usage.
+You shall not have the right to further distribute the Root Certificates other than as described herein
+without an additional license grant, in a separate writing, from Symantec.
+
+3. RESTRICTIONS. You may not: (a) modify or create any derivative works of Root Certificates; (b)
+assign, sublicense, sell, rent, or lease Symantec's root keys or Root Certificates; (c) use such Root
+Certificates except as expressly permitted under this Agreement; (d) remove or alter any trademark, logo,
+copyright, or other proprietary notices, legends, symbols, or labels provided in the Root Certificates; or (e)
+certify, or cause a third party to certify, the public key contained in the Root Certificates by issuing or
+creating a Certificate containing such public key.
+
+4. CUSTOMER’S OBLIGATIONS.
+
+4.1. During the term of this Agreement, You shall use commercially reasonable efforts regularly check the
+applicable Symantec URL for updates to the Root Certificates and update Root Certificates embedded
+into Your Products with the most currently available Root Certificates, unmodified and in full, or as a patch
+or update. If Symantec updates its Root Certificates,, You shall use commercially reasonable efforts to (i)
+discontinue all copying and use of the Root Certificates which have been replaced, and (ii) to use
+Symantec’s then-current Root Certificates. Any updates to the Root Certificates are incorporated into and
+subject to the terms of this Agreement.
+
+4.2. You shall appoint at least one (1) individual as the administrative contact designated to address any
+Root Certificate issues and shall provide the contact information for such individual to dl-tssroot@symantec.com.
+
+4.3 In the event You become aware of or suspect any event that diminishes the integrity of Symantec's
+data or public key system ("Compromise"), You shall immediately notify Symantec at dl-tss-
+root@symantec.com of such Compromise, and take reasonable steps to assist and cooperate with
+Symantec to remedy the Compromise.
+
+4.4 In the event that Symantec modifies these terms of use for the Root certificates for all end users,
+Symantec shall post the modified terms for the Agreement on the applicable URL and may post the
+modified terms on the Symantec corporate website. You shall be responsible for regularly checking the
+applicable URL for modifications to this Agreement. Such modifications shall be effective and binding on
+Customer within thirty (30) days of Symantec’s posting such modifications to its website. If you do not
+accept the modified Agreement, discontinue use of the Root Certificates and this Agreement will be
+deemed as terminated.
+
+5. CONFIDENTIALITY.
+
+5.1. Confidential Information. "Confidential Information" means the root private keys corresponding to the
+public key in a Root Certificate, and any confidential, trade secret, or other proprietary information
+disclosed by a party to the other party under this Agreement, except for Information that: (i) is public
+knowledge at the time of disclosure, (ii) was known by the receiving party before disclosure by the
+disclosing party, or becomes public knowledge or otherwise known to the receiving party after such
+disclosure, other than by breach of a confidentiality obligation, or (iii) is independently developed by the
+receiving party by persons without access to Confidential Information of the disclosing party.
+
+5.2. Protection of Confidential Information. The receiving party shall: (i) not disclose the Confidential
+information to any third party, (ii) not use the Confidential Information except for purposes of performing
+this Agreement, and (iii) take steps consistent with its protection of its own confidential and proprietary
+information (but in no event exercise less than reasonable care) to prevent unauthorized disclosure of the
+Confidential Information. Each party acknowledges that breach of this Section 5 may cause irreparable
+harm to the disclosing party entitling the disclosing party to injunctive relief, among other remedies.
+
+5.3. Mutual Cooperation. Each party will notify and cooperate with the other party in enforcing the
+disclosing party's rights if such party becomes aware of a threatened or actual violation of the
+confidentiality requirements of this Section 5. Each party shall have confidentiality agreements with its
+employees, agents or independent contractors sufficient in scope to fulfill its confidentiality obligations
+under this Agreement.
+
+6. INTELLECTUAL PROPERTY. You acknowledge that Symantec, including its wholly owned
+subsidiaries, retains all intellectual property rights and title (including any patent, copyright, trademark,
+trade secret, and other rights) in and to the Root Certificates, the public and private keys corresponding to
+such Root Certificates ("Symantec Intellectual Property"). This Agreement does not give You any
+intellectual property rights in the Symantec intellectual property except for the license granted in Section
+
+2. To the extent You use Symantec's trademarks or logos as permitted herein, You agree to comply with
+all usage requirements set forth in the then current version of Symantec's Logo and Trademark Usage
+Guide (http://www.symantec.com/about/profile/policies/trademarks.jsp) and any other guides and
+procedures of Symantec.
+
+7. NO WARRANTIES. THE ROOT CERTIFICATES, INCLUDING UPDATES, ARE PROVIDED "AS IS"
+WITHOUT ANY WARRANTY WHATSOEVER. SYMANTEC HEREBY DISCLAIMS ALL WARRANTIES,
+WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING WITHOUT LIMITATION, ANY
+IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR
+NONINFRINGEMENT OF THIRD PARTY RIGHTS.
+
+8. LIMITATION OF LIABILITY. UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY WILL
+SYMANTEC OR ITS LICENSORS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY
+CONSEQUENTIAL, INDIRECT, SPECIAL, INCIDENTAL, OR EXEMPLARY DAMAGES, WHETHER
+FORESEEABLE OR UNFORESEEABLE, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES. YOU WILL TAKE REASONABLE MEASURES TO INSURE THAT
+THE TERMS AND CONDITIONS SET FORTH IN THE PRECEDING SENTENCE OF THIS SECTION 8
+ARE INCORPORATED INTO ANY AGREEMENT BETWEEN YOU AND YOUR CUSTOMERS OR
+LICENSEES. SYMANTEC SHALL NOT BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY
+DAMAGES CAUSED BY YOUR OR A THIRD PARTY’S CONTINUED USE OF ANY OUTDATED
+ROOTS FOR WHICH AN UPDATED VERSION IS MADE AVAILABLE BY SYMANTEC. FURTHER,
+UNDER NO CIRCUMSTANCES WILL SYMANTEC'S LIABILITY FOR ANY ACTION OR CLAIM EXCEED
+USD$1,000, REGARDLESS OF WHETHER SUCH ACTION OR CLAIM IS BASED IN CONTRACT,
+TORT, STRICT LIABILITY, OR OTHERWISE.
+
+9. TERM AND TERMINATION.
+
+9.1. Term. This Agreement shall become effective as of the earlier of, Your first use of the Root
+Certificates, and shall remain in effect until the earlier of (i) Your discontinued use of the Root Certificates;
+(ii) termination by either party under the terms of Section 9.2, below; or (iii) Symantec’s notice to You that
+Symantec is no longer providing Root Certificates for use.
+
+9.2. Termination for Default/Insolvency. Either party shall be entitled to terminate this Agreement in the
+event of a failure by the other party to perform any of its material obligations under this Agreement if such
+breach is not cured within thirty (30) days after receipt of written notice thereof from the non-defaulting
+party or within forty-eight (48) hours after receipt of such written notice if a breach by You may
+compromise the security of the Symantec Trust Network or other system. This Agreement shall terminate
+upon the election of and notice from a party to the other if the other party is adjudged insolvent or
+bankrupt, or the institution of any proceedings by or against the other party seeking relief, reorganization,
+or arrangement under any laws relating to insolvency, or any assignment for the benefit of creditors, or
+the appointment of a receiver, liquidator, or trustee of any of the other party's property or assets, or the
+liquidation, dissolution, or winding up of the other party's business.
+
+9.3. Effect of Expiration or Termination. Upon expiration or termination of this Agreement, except for a
+breach by You, You may continue to distribute the current version of Your Products which incorporate the
+Root Certificates. Any updates or upgrades thereto may not include the Root Certificates and You shall
+stop making copies of Root Certificates, shall stop including Root Certificates in Your Products, and shall
+stop using Symantec’s logos and trademarks. The provisions of Sections 3, 4.3, 5, 6, 7, 8, 9.3, and 10
+shall survive termination of this Agreement.
+
+10. GENERAL.
+
+10.1. Governing Laws. This Agreement and any disputes relating to the services provided hereunder shall
+be governed and interpreted according to each of the following laws, respectively, without regard to its
+conflicts of law provisions: (a) the laws of the State of California, if You are located in North America or
+Latin America; or (b) the law of England, if You are located in Europe, Middle East or Africa; or (c) the
+laws of Singapore, if You are located in Asia Pacific including Japan. The United Nations Convention on
+Contracts for the International Sale of Goods shall not apply to this Agreement.
+
+10.2. Binding Upon Successors; Assignment. This Agreement shall be binding upon, and inure to the
+benefit of, the successors, executors, heirs, representatives, administrators, and assigns of the parties
+hereto. Notwithstanding the foregoing, You may not assign Your rights or obligations under this
+Agreement without the prior written consent of Symantec. Any such purported assignment of this
+Agreement without obtaining written consent shall be void and of no effect.
+
+10.3. Severability; Enforcement; No Waiver. The unenforceability of any provision or provisions of this
+Agreement shall not impair the enforceability of any other part of this Agreement. If any provision of this
+Agreement shall be deemed invalid or unenforceable, in whole or in part, this Agreement shall be deemed
+amended to delete or modify, as necessary, the invalid or unenforceable provision to render it valid,
+enforceable, and, insofar as possible, consistent with the original intent of the parties. The failure of a
+party, at any time or from time to time, to require performance of any obligations of the other party
+hereunder shall not be deemed a waiver and shall not affect its right to enforce any provision of this
+Agreement at a subsequent time.
+
+10.4. Entire Agreement; Amendments; Waivers. This Agreement constitutes the entire understanding and
+agreement of the parties, whether written or oral, with respect to the subject matter hereof and supersede
+all prior and contemporaneous agreements or understandings between the parties. Any term or provision
+of this Agreement may be amended, and the observance of any term of this Agreement may be waived,
+only by writing signed by the parties to be bound thereby.
+
+10.5. Compliance with Law, Export Requirements and Foreign Reshipment Liability. Each party shall
+comply with all applicable federal, state and local laws and regulations in connection with its performance
+under this Agreement. Services, including documentation, may include controlled technology or technical
+data (collectively “Controlled Technology”) that is subject to the U.S. Export Administration Regulations
+(EAR), and diversion contrary to U.S. law is prohibited. You agree to comply with all relevant laws
+including the U.S. EAR and the laws of any country from which Controlled Technology is exported. All
+Controlled Technology is prohibited for export or re-export to Cuba, North Korea, Iran, Sudan and Syria
+and to any country or its nationals subject to relevant embargo or sanction or to any entity or person for
+which an export license is required per any relevant restricted party list, without first obtaining a license.
+Furthermore, You hereby agree that You will not use or allow use of Controlled Technology in connection
+with chemical, biological, or nuclear weapons, or missiles, drones or space launch vehicles capable of
+delivering such weapons. Symantec shall have the right to suspend performance of any of its obligations
+under this Agreement, without any prior notice being required and without any liability to Customer, if You
+fail to comply with this provision.
+
+10.6. Notices. You will make all notices, demands or requests to Symantec with respect to this Agreement
+in writing to the "Contact" address listed on the website from where you downloaded the Root Certificates,
+with a copy to: General Counsel – Legal Department, Symantec Corporation, 350 Ellis Street, Mountain
+View, California 94043, USA. Notices shall be effective on the date received (unless the notice specifies a
+later date) only if it is sent by a courier service that confirms delivery in writing or if sent by certified or
+registered mail, postage prepaid, return receipt requested. Symantec may post notices and updates
+regarding the Agreement or the Root Certificates at the URL provided to You for the Root Certificates.
+You shall be responsible for regularly checking the applicable URL for notices from Symantec regarding
+the Agreement or the Root Certificates. No notices, demands, or requests to Symantec with respect to
+this Agreement may be delivered by electronic mail. You shall immediately notify Symantec of any legal
+notices served on You that might affect Symantec, and shall promptly forward the original or a copy of
+such notice to Symantec.
+
+10.7. Independent Parties. The relationship between You and Symantec is that of independent
+contractors. Neither party nor its employees, consultants, contractors, or agents are agents, employees,
+or joint venturers of the other party, nor do they have any authority to bind the other party by contract or
+otherwise to any obligation.
+
+Root Certificate License Agreement v3.0 (January 2014)

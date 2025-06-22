@@ -1,0 +1,8 @@
+---
+license_expression: root-cert-3.0
+is_license_reference: yes
+ignorable_urls:
+    - https://docs.broadcom.com/doc/root-certificate-license-agreement-en
+---
+
+used under the following license ({{https://docs.broadcom.com/doc/root-certificate-license-agreement-en}}):
