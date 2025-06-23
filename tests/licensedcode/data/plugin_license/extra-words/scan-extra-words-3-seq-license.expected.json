@@ -1,12 +1,12 @@
 {
   "license_detections": [
     {
-      "identifier": "bsd_new-f757f201-d182-a694-093b-6c34d20e9f8e",
+      "identifier": "bsd_new-f327c6f9-6086-8bd5-22c6-3aee3b99acf2",
       "license_expression": "bsd-new",
       "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 1,
       "detection_log": [
-        "extra-words"
+        "extra-words-permitted-in-rule"
       ],
       "reference_matches": [
         {
@@ -16,7 +16,7 @@
           "start_line": 1,
           "end_line": 31,
           "matcher": "3-seq",
-          "score": 92.67,
+          "score": 100,
           "matched_length": 215,
           "match_coverage": 100.0,
           "rule_relevance": 100,
@@ -46,7 +46,7 @@
               "start_line": 1,
               "end_line": 31,
               "matcher": "3-seq",
-              "score": 92.67,
+              "score": 100,
               "matched_length": 215,
               "match_coverage": 100.0,
               "rule_relevance": 100,
@@ -57,9 +57,9 @@
             }
           ],
           "detection_log": [
-            "extra-words"
+            "extra-words-permitted-in-rule"
           ],
-          "identifier": "bsd_new-f757f201-d182-a694-093b-6c34d20e9f8e"
+          "identifier": "bsd_new-f327c6f9-6086-8bd5-22c6-3aee3b99acf2"
         }
       ],
       "license_clues": [],
