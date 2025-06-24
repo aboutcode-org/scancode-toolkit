@@ -408,8 +408,12 @@ class LicenseDetection:
         by the length of a match to the overall detection length.
         """
         length = self.length
-        weighted_scores = (m.score() * (m.len() / length) for m in self.matches)
-        return min([round(sum(weighted_scores), 2), 100])
+        for m in self.matches:
+            # Check whether extra words in the matched text appear in allowed positions,
+            # and do not exceed the maximum allowed word count at those positions.
+            score = 100 if is_extra_words_position_valid(m) else m.score()
+            weighted_scores += score * (m.len() / length)
+        return min([round(weighted_scores, 2), 100])
 
     def append(
         self,
@@ -1165,13 +1169,18 @@ def has_low_rule_relevance(license_matches):
 
 def is_extra_words_at_valid_positions(license_matches):
     """
-    Return True if any of the matches in ``license_matches`` List of LicenseMatch
+    Return True if all the matches in `license_matches List of LicenseMatch
     has extra words are in the correct place.
     """
-    return any(
-        is_extra_words_position_valid(license_match)
-        for license_match in license_matches
-    )
+    for match in license_matches:
+        # check when we have `extra-words` detection
+        # if `query_coverage_coefficient` is positive number then 'extra-words` exit
+        if calculate_query_coverage_coefficient(match) > 0:
+            if not is_extra_words_position_valid(match):
+                return False
+            
+    # at the end return True if all matches have no extra-wors or this extra-words are in the right place
+    return True
 
 def is_false_positive(license_matches, package_license=False):
     """
@@ -1827,14 +1836,14 @@ def analyze_detection(license_matches, package_license=False):
         threshold=IMPERFECT_MATCH_COVERAGE_THR,
     ):
         return DetectionCategory.IMPERFECT_COVERAGE.value
-    
-    # Case where `extra-words` are in the right place
-    elif is_extra_words_at_valid_positions(license_matches=license_matches):
-        return DetectionCategory.EXTRA_WORDS_PERMITTED.value
 
     # Case where at least one of the match have extra words
     elif has_extra_words(license_matches=license_matches):
-        return DetectionCategory.EXTRA_WORDS.value
+        # Case where `extra-words` are in the right place
+        if is_extra_words_at_valid_positions(license_matches=license_matches):
+            return DetectionCategory.EXTRA_WORDS_PERMITTED.value
+        else:
+            return DetectionCategory.EXTRA_WORDS.value
 
     # Cases where Match Coverage is a perfect 100 for all matches
     else:

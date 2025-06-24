@@ -597,13 +597,7 @@ class LicenseMatch(object):
         computed from the number of matched tokens, the number of query tokens
         in the matched range (including unknowns and unmatched) and the matched
         rule relevance.
-        """
-
-        # Check whether extra words in the matched text appear in allowed positions,
-        # and do not exceed the maximum allowed word count at those positions.
-        if is_extra_words_position_valid(match=self):
-            return 100
-        
+        """       
         # relevance is a number between 0 and 100. Divide by 100
         relevance = self.rule.relevance / 100
         if not relevance:
@@ -832,7 +826,11 @@ class LicenseMatch(object):
         result['start_line'] = self.start_line
         result['end_line'] = self.end_line
         result['matcher'] = self.matcher
-        result['score'] = self.score()
+        # update score if `extra-words` are in right place
+        if(is_extra_words_position_valid(match=self)):
+            result['score'] = 100
+        else:
+            result['score'] = self.score()            
         result['matched_length'] = self.len()
         result['match_coverage'] = self.coverage()
         result['rule_relevance'] = self.rule.relevance

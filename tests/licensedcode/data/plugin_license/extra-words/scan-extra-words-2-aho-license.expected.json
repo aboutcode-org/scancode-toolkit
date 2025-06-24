@@ -1,7 +1,7 @@
 {
   "license_detections": [
     {
-      "identifier": "bsd_new-f3efb258-e9c3-604d-9bbd-147fe74af22e",
+      "identifier": "bsd_new-fbfc5955-0c63-4c98-2ce9-08e1e1796f50",
       "license_expression": "bsd-new",
       "license_expression_spdx": "BSD-3-Clause",
       "detection_count": 1,
@@ -59,7 +59,7 @@
           "detection_log": [
             "extra-words-permitted-in-rule"
           ],
-          "identifier": "bsd_new-f3efb258-e9c3-604d-9bbd-147fe74af22e"
+          "identifier": "bsd_new-fbfc5955-0c63-4c98-2ce9-08e1e1796f50"
         }
       ],
       "license_clues": [],
