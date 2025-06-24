@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
@@ -17,8 +16,7 @@ import utils_thirdparty
 @click.option(
     "-d",
     "--dest",
-    type=click.Path(exists=True, readable=True,
-                    path_type=str, file_okay=False),
+    type=click.Path(exists=True, readable=True, path_type=str, file_okay=False),
     required=True,
     help="Path to the thirdparty directory to check.",
 )
@@ -43,8 +41,7 @@ def check_thirdparty_dir(
     """
     Check a thirdparty directory for problems and print these on screen.
     """
-    # check for problems
-    print(f"==> CHECK FOR PROBLEMS")
+    print("==> CHECK FOR PROBLEMS")
     utils_thirdparty.find_problems(
         dest_dir=dest,
         report_missing_sources=sdists,
