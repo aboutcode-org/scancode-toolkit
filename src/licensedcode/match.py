@@ -1081,11 +1081,16 @@ def is_extra_words_position_valid(match):
     do not exceed the maximum allowed word count at those positions.
     Otherwise, return False.
     """
-    
-    rule_spans = match.ispan.subspans()
+    # Find `query_coverage_coefficient` such that match have `extra-words` or not
+    score_coverage_relevance = (
+        match.coverage() * match.rule.relevance
+    ) / 100
 
-    # If there are multiple subspans, it means not all required tokens are contiguous.
-    if len(rule_spans) > 1:
+    # Calculate the query coverage coefficient
+    query_coverage_coefficient = score_coverage_relevance - match.score()
+
+    # Return False if the match has no extra words
+    if query_coverage_coefficient == 0:
         return False
 
     matched_tokens = list(index_tokenizer(match.matched_text(whole_lines=False, highlight=False)))
