@@ -156,7 +156,7 @@ jobs:
     - template: etc/ci/azure-win.yml
       parameters:
           job_name: win2019_cpython_1
-          image_name: windows-2019
+          image_name: windows-2025
           python_versions: ['3.9']
           python_architecture: x64
           test_suites:
@@ -250,7 +250,7 @@ jobs:
     - template: etc/ci/azure-win.yml
       parameters:
           job_name: win2019_cpython_latest_from_pip
-          image_name: windows-2019
+          image_name: windows-2025
           python_versions: ['3.9', '3.10', '3.11', '3.12', '3.13']
           test_suites:
               all: venv\Scripts\pip install --upgrade-strategy eager --force-reinstall --upgrade -e .[testing] &&  venv\Scripts\pytest -n 2 -vvs  tests\scancode\test_cli.py
