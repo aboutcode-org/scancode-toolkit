@@ -150,7 +150,7 @@ fi
 
 # Requirement arguments passed to pip and used by default or with --dev.
 REQUIREMENTS="--editable . --constraint requirements.txt"
-DEV_REQUIREMENTS="--editable .[dev] --constraint requirements.txt --constraint requirements-dev.txt"
+DEV_REQUIREMENTS="--editable .[dev,packages] --constraint requirements.txt --constraint requirements-dev.txt"
 
 # where we create a virtualenv
 VIRTUALENV_DIR=venv
@@ -234,7 +234,7 @@ create_virtualenv() {
         fi
 
         $PYTHON_EXECUTABLE "$VIRTUALENV_PYZ" \
-            --pip embed --setuptools embed \
+            --wheel embed --pip embed --setuptools embed \
             --seeder pip \
             --never-download \
             --no-periodic-update \

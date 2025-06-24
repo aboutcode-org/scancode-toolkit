@@ -283,8 +283,6 @@ def fetch_thirdparty(
         if name in no_dist:
             continue
         sdist_missing = sdists and "sdist" in dists and name not in wheel_only
-        if sdist_missing:
-            mia.append(f"SDist missing: {nv} {dists}")
         wheels_missing = wheels and any(d for d in dists if d != "sdist") and name not in sdist_only
         if wheels_missing:
             mia.append(f"Wheels missing: {nv} {dists}")

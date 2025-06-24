@@ -1791,14 +1791,16 @@ v3.2.0rc1 (2020-09-08)
  - Add new license rules for "bad" licenses #1899 @viragumathe5
  - Improve copyright detection @WizardOhio24
  - Improve tests @hanif-ali
- - Add and improve support for package manifest for #2080 Go, Ruby gem gemspec, Cocoapod podspec, opam, Python PKG-INFO - Rohit Potter @rpotter12
- - Add and improve support for package lockfiles for Pipfile.lock, requirements.tx, Cargo.lock - Rohit Potter @rpotter12
+ - Add and improve support for package manifest for #2080 Go, Ruby gem gemspec,
+   Cocoapod podspec, opam, Python PKG-INFO - Rohit Potter @rpotter12
+ - Add and improve support for package lockfiles for Pipfile.lock,
+   requirements.tx, Cargo.lock - Rohit Potter @rpotter12
  - Add new --max-depth option to limit sca depth - Hanif Ali @hanif-ali
  - Add initial Debian packaging - @aj4ayushjain
  - Add new documentation web site and documentation generation system
  - The "headers" attribute in JSON outputs now contains a 'duration' field. #1942
  - Rework packaging and third-party support handling: Create new scripts and
-   process to provision, install and manage third-party dependencies - Abhishek Kumar @Abhishek-Dev09
+   process to provision, install and manage third-party dependencies @Abhishek-Dev09
  - Improve CSV output and fix manifest path bug #1718 Aditya Viki8
  - Add new documentation, as well as tools and process. Ayan Sinha Mahapatra
  - Add new license detection rules - Ayan Sinha Mahapatra
@@ -1826,9 +1828,12 @@ v3.2.0rc1 (2020-09-08)
  - Improve Documentation - Michael Herzog
  - Add new checksum type for sha256 - Nitish @nitish81299
  - Improve documentation - Philippe Ombredanne
- - Add new license detection rules and improve detection #1777 #1720 #1734 #1486 #1757 #1749 #1283 #1795 #2214 #1978
- - Add new license detection rules and improve detection #2187 #2188 #2189 #1904 #2207 #1905 #419 #2190 #1910 #1911
- - Add new license detection rules and improve detection #1841 #1913 #1795 #2124 #2145 #1800 #2200 #2206 #2186
+ - Add new license detection rules and improve detection
+   #1777 #1720 #1734 #1486 #1757 #1749 #1283 #1795 #2214 #1978
+ - Add new license detection rules and improve detection
+   #2187 #2188 #2189 #1904 #2207 #1905 #419 #2190 #1910 #1911
+ - Add new license detection rules and improve detection
+   #1841 #1913 #1795 #2124 #2145 #1800 #2200 #2206 #2186
  - Allow to call "run_scan" as a function #1780
  - Update license data to SPDX 3.7 #1789
  - Collect matched license text correctly including with Turkish diacritics #1872
@@ -1869,7 +1874,8 @@ Major new feature:
 
 New features:
 
- - Improve package manifest support for #1643 RPMs, #1628 Cran, Python #1600, Maven #1649 Chef #1600 @licodeli @JonoYang
+ - Improve package manifest support for #1643 RPMs, #1628 Cran, Python #1600,
+   Maven #1649 Chef #1600 @licodeli @JonoYang
  - Add plugin to collect ELF and LKM clues #1685 @licodeli
  - Add runtime support for FreeBSD #1695  @knobix
  - Add support to extract lzip archives #245 #989
@@ -1946,15 +1952,18 @@ Other:
 v2.9.9 (2018-12-12)
 -------------------
 
-This is the penultimate pre-release of what will come up for 3.0 with some API change for packages.
+This is the penultimate pre-release of what will come up for 3.0
+with some API change for packages.
 
 API changes:
- - Streamline Package models #1226 #1324 and #1327. In particular the way checksums are managed has changed
+ - Streamline Package models #1226 #1324 and #1327.
+   In particular the way checksums are managed has changed
 
 Other changes:
  - Copyright detection improvements #1305 by @JonoYang
  - Correct CC-BY V3.0 and V4.0 license texts by correct one by @sschuberth #1320
- - Add new and improved licenses and license detection rules including the latest SPDX list 3.4 and #1322 #1324
+ - Add new and improved licenses and license detection rules including
+   the latest SPDX list 3.4 and #1322 #1324
  - Rename proprietary license key to proprietary-license
  - Rename commercial license key to commercial-license
  - Improve npm package.json handling #1308 and #1314 by @majurg
@@ -1967,14 +1976,16 @@ This is a close-to-final pre-release of what will come up for 3.0 with some API 
 
 API changes:
  - In Package models, rename normalized_license to license_expression and
-   add license detection on the declared_license to populate the license_expression #1092 #1268 #1278
+   add license detection on the declared_license to populate
+   the license_expression #1092 #1268 #1278
 
 Outputs:
  - Do not open output files until the command lines are validated as correct #1266
  - The html-app output is marked as DEPRECATED. Use the AboutCode manager app instead #
  - Ensure HTML outputs can deal with non-ASCII file paths without crashsing #1292
  - JSON outputs now use a "headers" attributes for top-level scan headers #
- - SPDX output is now possible even without "--info" SHA1 checksums. This creates a partially valid document
+ - SPDX output is now possible even without "--info" SHA1 checksums.
+   This creates a partially valid document
  - LicenseRef for non-SPDX ScanCode licenses are named as "LicenseRef-scancode-<scancode key>" #
  - license_expression are correctly included in the CSV output #1238
  - do not crash with multiple outputs  #1199
@@ -1986,7 +1997,8 @@ License detection:
  - An optional  "relevance" attribute has been added to the license YAML
    attributes. This is to store the relevance to e matched .LICENSE text when used
    as a rule.
- - Licenses have been synchronized with the latest v3.3 SPDX license list and the latest DejaCode licenses #1242
+ - Licenses have been synchronized with the latest v3.3 SPDX license list
+   and the latest DejaCode licenses #1242
  - Duplicated SPDX keys have been fixed #1264
  - Add new and improved license detection rules #1313 #1306 #1302 #1298 #1293
    #1291 #1289 #1270 #1269 #1192 #1186 #1170 #1164 #1128 #1124 #1112 #1110 #1108
@@ -1996,7 +2008,8 @@ Packages:
  - Add support for haxe "haxelib" package manifests #1227
  - Remove code_type attribute from Package models
  - In Package models, rename normalized_license  to license_expression and
-   add license detection on the declared_license to populate the license_expression #1092 #1268 #1278
+   add license detection on the declared_license to populate the
+   license_expression #1092 #1268 #1278
  - Improve data returned for PHP Composer packages
  - Add PackageURL to top level output for packages
  - Report nuget as proper packages #1088
@@ -2122,7 +2135,8 @@ API change:
  - The returned copyright data structure has changed and is now simpler and less nested
 
 Licenses:
- - Add new license and rules and improve licene rules #1186 #1108 #1124 #1171 #1173 #1039 #1098 #1111
+ - Add new license and rules and improve licene rules
+   #1186 #1108 #1124 #1171 #1173 #1039 #1098 #1111
  - Add new license clarity scoring #1180
    This is also for use in the ClearlyDefined project
  - Add is_exception to license scan results #1159

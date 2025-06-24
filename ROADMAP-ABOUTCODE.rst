@@ -94,7 +94,7 @@ License detection quality improvements
 Improve package detection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Create synthethic, private packages from non-packaged files based on license and copyright  
+- Create synthethic, private packages from non-packaged files based on license and copyright
 - Create simplified purl-only lightweight package detection
 - Evolve model for dependencies towards requirements and true dependencies
 - Track private non-published packages
@@ -102,7 +102,7 @@ Improve package detection
 Primary copyright detection for packages
 
 - This is closely tied to the primary license detection and should focus
-  on package manifests and key files. 
+  on package manifests and key files.
 - Support copyright parsing from all package ecosystems.
 
 
@@ -130,7 +130,7 @@ ABCTK: AboutCode Toolkit
 - add support for patterns for docoumented resources
 - add support for exclude for docoumented resources
 - document deployed resource for a development resource
- 
+
 
 PURLDB: PurlDB
 ----------------
@@ -154,7 +154,7 @@ VCIO: VulnerableCode.io
 - Adopt VulnTotal model throughout
 - Log advisory history
 - Add vulnerable code reachability
-- Add vulnerable code required context/config 
+- Add vulnerable code required context/config
 - Add more upstream resources
 - Deploy purlsync public pilot
 
@@ -178,14 +178,14 @@ INSPECTORS: misc package and technology inspectors
 
   - Decompile and collect binary symbols.
   - Collect source symbols
-  - Resolve dependencies for Gradle, SBT and Maven. 
+  - Resolve dependencies for Gradle, SBT and Maven.
 
 - Inspector for JavaScript, CSS
 
   - Decompile/deminify and collect bundled and minified symbols.
   - Analyze map files
   - Collect source symbols
-  - Resolve dependencies for npm, yarn and pnpm. 
+  - Resolve dependencies for npm, yarn and pnpm.
 
 - Inspector for C/C++
   - Collect source symbols

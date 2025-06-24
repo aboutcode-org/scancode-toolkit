@@ -12,7 +12,7 @@ click==8.2.1;python_version>='3.10'
 click==8.1.7;python_version<'3.10'
 colorama==0.4.6
 commoncode==32.3.0
-construct==2.10.68
+construct==2.10.70
 container-inspector==33.0.0
 cryptography==45.0.4
 debian-inspector==31.1.0
@@ -24,7 +24,7 @@ extractcode-libarchive==3.5.1.210531
 fasteners==0.19
 fingerprints==1.2.3
 ftfy==6.3.1
-future==0.18.2
+future==1.0.0
 gemfileparser2==0.9.4
 html5lib==1.1
 idna==3.10
@@ -32,11 +32,11 @@ importlib-metadata==6.2.1
 inflection==0.5.1
 intbitset==4.0.0
 isodate==0.7.2
-jaraco.functools==4.1.0
+jaraco.functools==4.2.1
 javaproperties==0.8.2
 Jinja2==3.1.6
 jsonstreams==0.6.0
-license-expression==30.4.1
+license-expression==30.4.3
 lxml==5.4.0
 MarkupSafe==3.0.2
 more-itertools==10.7.0

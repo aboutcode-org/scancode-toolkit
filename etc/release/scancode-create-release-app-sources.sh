@@ -29,7 +29,7 @@ mkdir -p $thirdparty_dir
 venv/bin/python setup.py --quiet sdist
 mv dist/*.tar.gz $release_dir
 
-./configure --rel
+./configure --dev
 
 venv/bin/python etc/scripts/fetch_thirdparty.py \
   --requirements requirements.txt \

@@ -153,7 +153,9 @@ def split_req(req):
     if not req:
         raise ValueError("req is required")
     # do not allow multiple constraints and tags
-    if not any(c in req for c in ",;"):
+    if ";" in req:
+        req = req.split(";")[0]
+    if any(c in req for c in ",:"):
         raise Exception(f"complex requirements with : or ; not supported: {req}")
     req = "".join(req.split())
     if not any(c in req for c in comparators):
