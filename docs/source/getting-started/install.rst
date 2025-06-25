@@ -194,8 +194,8 @@ This will configure ScanCode and display the command line :ref:`cli_help_text`.
 
 .. _windows_app_install:
 
-Installation on Windows 10
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installation on Windows 10/11
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Download the latest ScanCode release zip file for Windows from the latest
   version at https://github.com/aboutcode-org/scancode-toolkit/releases/
@@ -234,7 +234,7 @@ Installation on Windows 10
   then Right-click in this window and select Paste. This will paste the path you
   copied before and is where you extracted ScanCode::
 
-    cd path/to/extracted/ScanCode
+    cd path\to\extracted\ScanCode
 
 - Press Enter.
 
