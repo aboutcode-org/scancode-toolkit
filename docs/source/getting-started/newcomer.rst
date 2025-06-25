@@ -14,7 +14,6 @@ Table of Contents
 #. :ref:`newcomer_try_scancode`
 
     - :ref:`newcomer_before`
-    - :ref:`newcomer_install`
     - :ref:`newcomer_scan_codebase`
     - :ref:`newcomer_scancode_tips`
     - :ref:`newcomer_all_tutorials`
@@ -54,26 +53,18 @@ determine their license, copyrights and other information, according to your req
 #. The :ref:`newcomer_all_tutorials` is essentially an exhaustive list of all Tutorials and How To's
    with a brief description on what they help you to achieve.
 
-.. _newcomer_install:
-
-Installing ScanCode
--------------------
-
-ScanCode-Toolkit can be installed in 3 different methods.
-
-
 .. _newcomer_before:
 
 Before you start using ScanCode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. You need to make sure :ref:`install_prerequisites` are installed, and a `virtualenv <https://docs.python-guide.org/dev/virtualenvs/>`_
-   is created.
+   is created. There are a few different ways to install ScanCode:
 
-:ref:`app_install`
-:ref:`docker_install`
-:ref:`pip_install`
-:ref:`source_code_install`
+- :ref:`app_install` [Recommended for newcomers]
+- :ref:`docker_install`
+- :ref:`pip_install`
+- :ref:`source_code_install`
 
 
 #. Run ``scancode -h`` to make sure ScanCode was installed properly.

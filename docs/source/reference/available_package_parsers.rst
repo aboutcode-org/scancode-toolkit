@@ -5,7 +5,7 @@
 Supported package manifests and package datafiles
 -------------------------------------------------
 
-ScanCode supports a wide variety of package manifests, lockfiles
+Scancode supports a wide variety of package manifests, lockfiles
 and other package datafiles containing package and dependency
 information.
 
@@ -224,12 +224,28 @@ parsers in scancode-toolkit during documentation builds.
      - ``conan_conanfile_py``
      - C++
      - https://docs.conan.io/2.0/reference/conanfile.html
+   * - Conda metadata JSON in rootfs
+     - ``*conda-meta/*.json``
+     - ``conda``
+     - ``linux``, ``win``, ``mac``
+     - ``conda_meta_json``
+     - Python
+     - https://docs.conda.io/
    * - Conda meta.yml manifest
      - ``*/meta.yaml``
      - ``conda``
      - ``linux``, ``win``, ``mac``
      - ``conda_meta_yaml``
      - None
+     - https://docs.conda.io/
+   * - Conda yaml manifest
+     - ``*conda*.yaml``
+       ``*env*.yaml``
+       ``*environment*.yaml``
+     - ``conda``
+     - ``linux``, ``win``, ``mac``
+     - ``conda_yaml``
+     - Python
      - https://docs.conda.io/
    * - CPAN Perl dist.ini
      - ``*/dist.ini``
@@ -728,14 +744,6 @@ parsers in scancode-toolkit during documentation builds.
      - ``pubspec_yaml``
      - dart
      - https://dart.dev/tools/pub/pubspec
-   * - Conda yaml manifest
-     - ``*conda.yaml``
-       ``*conda.yml``
-     - ``pypi``
-     - ``linux``, ``win``, ``mac``
-     - ``conda_yaml``
-     - Python
-     - https://docs.conda.io/
    * - pip requirements file
      - ``*requirement*.txt``
        ``*requirement*.pip``
