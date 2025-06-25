@@ -349,7 +349,7 @@ jobs:
 
       - name: test install app archive
         run: |
-          for f in `find dist -type f -name "*.tar.gz"`; \
+          for f in `find dist -type f -name "*.zip"`; \
             do \
                 python etc/release/scancode_release_tests.py $f; \
             done
@@ -390,7 +390,7 @@ jobs:
 
       - name: test install app archive
         run: |
-          for f in `find dist -type f -name "*.tar.gz"`; \
+          for f in `find dist -type f -name "*.zip"`; \
             do \
                 python etc/release/scancode_release_tests.py $f; \
             done
