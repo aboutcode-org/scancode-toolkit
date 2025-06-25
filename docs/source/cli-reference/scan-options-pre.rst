@@ -18,7 +18,7 @@ Pre-Scan Options
 
         scancode --ignore "*.java" samples samples.json
 
-    Here, Scancode ignores files ending with `.java`, and continues with other files as usual.
+    Here, ScanCode ignores files ending with `.java`, and continues with other files as usual.
 
     More information on :ref:`glob_pattern_matching`.
 
@@ -35,7 +35,7 @@ Pre-Scan Options
 
         scancode --include "*.java" samples samples.json
 
-    Here, Scancode selectively scans files that has names ending with `.java`, and ignores all other files. This
+    Here, ScanCode selectively scans files that has names ending with `.java`, and ignores all other files. This
     is basically complementary in behavior to the ``--ignore`` option.
 
     More information on :ref:`glob_pattern_matching`.

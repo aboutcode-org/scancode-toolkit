@@ -3,7 +3,7 @@
 All Available Options
 =====================
 
-This section contains an exhaustive list of all Scancode options, arranged in various sections.
+This section contains an exhaustive list of all ScanCode options, arranged in various sections.
 The sections are as follows:
 
 - Basic Scan Options

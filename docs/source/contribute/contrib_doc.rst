@@ -79,7 +79,7 @@ examples::
     git push
     git status
 
-The Scancode-Toolkit webhook with ReadTheDocs should rebuild the documentation after your
+The ScanCode-Toolkit webhook with ReadTheDocs should rebuild the documentation after your
 Pull Request is Merged.
 
 Refer the `Pro Git Book <https://git-scm.com/book/en/v2/>`_ available online for Git tutorials
