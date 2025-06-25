@@ -2,7 +2,7 @@ All "Core" Scan Options
 -----------------------
 
 -n, --processes INTEGER  Scan ``<input>`` using n parallel processes.
-                         [Default: 1]
+                         [Default: (number of CPUs)-1]
 
 -v, --verbose            Print verbose file-by-file progress messages.
 

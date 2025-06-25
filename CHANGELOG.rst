@@ -35,6 +35,10 @@ v33.0.0 (next next, roadmap)
 
 - The license detection accuracy of Maven POMS has been improved fixing corner cases.
 
+- default value for `--processes` was previously 1. It was changed
+  to (number of CPUs)-1.
+  See https://github.com/aboutcode-org/scancode-toolkit/issues/2980
+
 - File categorization support added, a post scan plugin tagging
   files with priority levels for review, and also take advantage
   of these in other summary plugins.

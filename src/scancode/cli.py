@@ -201,6 +201,13 @@ def validate_input_path(ctx, param, value):
 
     return value
 
+def default_processes():
+    """ return number that is used as a default value for --processes """
+    cpu_count = os.cpu_count()
+    if cpu_count > 1:
+        return cpu_count-1
+    else:
+        return 1
 
 @click.command(name='scancode',
     epilog=epilog_text,
@@ -230,10 +237,10 @@ def validate_input_path(ctx, param, value):
 
 @click.option('-n', '--processes',
     type=int,
-    default=1,
+    default=default_processes(),
     metavar='INT',
     help='Set the number of parallel processes to use. '
-         'Disable parallel processing if 0. Also disable threading if -1. [default: 1]',
+         'Disable parallel processing if 0. Also disable threading if -1. [default: (number of CPUs)-1]',
     help_group=cliutils.CORE_GROUP, sort_order=10, cls=PluggableCommandLineOption)
 
 @click.option('--timeout',
