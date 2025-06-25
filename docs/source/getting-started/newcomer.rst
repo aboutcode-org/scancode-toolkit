@@ -76,10 +76,6 @@ Before you start using ScanCode
 :ref:`source_code_install`
 
 
-#. Now you can either follow the instructions for the recommended :ref:`app_install` method ,
-   or run ``pip install scancode-toolkit[full]`` like that in the :ref:`pip_install` documentation.
-   Alternatively, you can also :ref:`source_code_install`.
-
 #. Run ``scancode -h`` to make sure Scancode was installed properly.
    If this shows any Error, refer the `Common Installation Errors Issue <https://github.com/aboutcode-org/scancode-toolkit/issues/1837>`_
    for common errors.
