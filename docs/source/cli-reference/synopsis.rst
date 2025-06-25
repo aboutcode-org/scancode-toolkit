@@ -18,14 +18,9 @@ Toolkit Command Line Interface in the following sections:
 Installation
 ------------
 
-Scancode-Toolkit installation can be done by downloading ScanCode as an application, which
-is recommended generally. For users who wish to use ScanCode as a library, it can be
-installed via ``pip``, the default Python Package Manager. Refer the following sections for
-detailed Instructions on the each of the Installation Methods.
+See the following for the installation guide:
 
-- :ref:`app_install`
-- :ref:`pip_install`
-- :ref:`source_code_install`
+- :ref:`newcomer_install`
 
 .. _synopsis_quickstart:
 
