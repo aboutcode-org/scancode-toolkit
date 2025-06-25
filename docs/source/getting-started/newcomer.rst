@@ -61,16 +61,6 @@ Installing ScanCode
 
 Scancode-Toolkit can be installed in 3 different methods.
 
-#. The :ref:`newcomer_scan_codebase` section helps you with configuring and
-   installing ScanCode and performing a basic scan, and then visualizing the
-   results.
-
-#. The :ref:`newcomer_scancode_tips` section helps you customize the scan
-   according to your requirements, and better understand advanced features.
-
-#. The :ref:`newcomer_all_tutorials` is an exhaustive directory of all Tutorials
-   and How To's with a brief description.
-
 
 .. _newcomer_before:
 
