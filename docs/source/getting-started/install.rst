@@ -80,7 +80,7 @@ ScanCode needs a Python 3.9+ interpreter; We support all Python versions from
 
     For Ubuntu, it is ``sudo apt install python3-dev``
 
-    - On Ubuntu 16, 18, 20 and 22 run::
+    - On Ubuntu 16, 18, 20 ,22 and 24 run::
 
           sudo apt install python-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0
 
