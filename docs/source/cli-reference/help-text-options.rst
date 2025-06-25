@@ -13,7 +13,7 @@ can't access, the more elaborate online documentation.
 Help text
 ---------
 
-The Scancode-Toolkit Command Line Interface has a Help option displaying all the options. It also
+The ScanCode-Toolkit Command Line Interface has a Help option displaying all the options. It also
 displays basic usage, and some simple examples. The command line option for this is ``--help``.
 
 .. Tip::
@@ -24,7 +24,7 @@ To see the help text from the Terminal, execute the following command::
 
     $ scancode --help
 
-The Following Help Text is displayed, i.e. This is the help text for Scancode Version 32.0.0:
+The Following Help Text is displayed, i.e. This is the help text for ScanCode Version 32.0.0:
 
 .. code-block:: none
 
@@ -212,7 +212,7 @@ The Following Help Text is displayed, i.e. This is the help text for Scancode Ve
 Command Examples Text
 ---------------------
 
-The Scancode-Toolkit Command Line Interface has an ``--examples`` option which displays some basic
+The ScanCode-Toolkit Command Line Interface has an ``--examples`` option which displays some basic
 examples (more than the basic synopsis in ``--help``). These examples include the following aspects
 of code scanning:
 
@@ -229,9 +229,9 @@ To see the help text from the Terminal, execute the following command::
 
     $ scancode --examples
 
-The Following Text is displayed, i.e. This is the examples for Scancode Version 3.1.1 ::
+The Following Text is displayed, i.e. This is the examples for ScanCode Version 3.1.1 ::
 
-    Scancode command lines examples:
+    ScanCode command lines examples:
 
     (Note for Windows: use '\' back slash instead of '/' forward slash for paths.)
 
@@ -311,7 +311,7 @@ To see the help text from the Terminal, execute the following command::
     #. Output Control
     #. Basic Scan Options
 
-The Following Text is displayed, i.e. This is the available plugins for Scancode Version 31.2.1 ::
+The Following Text is displayed, i.e. This is the available plugins for ScanCode Version 31.2.1 ::
 
   --------------------------------------------
   Plugin: scancode_output:csv  class: formattedcode.output_csv:CsvOutput
@@ -825,7 +825,7 @@ The Following Text is displayed, i.e. This is the available plugins for Scancode
 ``--list-packages`` Option
 --------------------------
 
-This shows all the types of packages that can be scanned using Scancode.
+This shows all the types of packages that can be scanned using ScanCode.
 These are located in packagedcode i.e. Code used to parse various package formats.
 
 See the :ref:`supported_packages` page for more details and documentation

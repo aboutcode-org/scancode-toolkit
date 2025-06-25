@@ -16,7 +16,7 @@ Other available CLIs
 ``scancode-reindex-licenses`` command
 -------------------------------------
 
-ScanCode maintains a license index to search for and detect licenses. When Scancode is
+ScanCode maintains a license index to search for and detect licenses. When ScanCode is
 configured for the first time, a license index is built and used in every scan thereafter.
 
 This ``scancode-reindex-licenses`` command rebuilds the license index. Running this command
@@ -33,7 +33,7 @@ The ``--additional-directory`` option allows the user to include additional dire
 of licenses to use in license detection.
 
 This command only needs to be run once for each set of additional directories, in all subsequent
-runs of Scancode with the same directories all the licenses in the directories will be cached
+runs of ScanCode with the same directories all the licenses in the directories will be cached
 and used in License detection. But reindexing removes these directories, if they aren't
 reintroduced as additional directories.
 

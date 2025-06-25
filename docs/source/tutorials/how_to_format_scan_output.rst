@@ -1,9 +1,9 @@
 .. _how_to_specify_output_format:
 
-How to specify Scancode Output Format
+How to specify ScanCode Output Format
 =====================================
 
-A basic overview of formatting Scancode Output is presented here.
+A basic overview of formatting ScanCode Output is presented here.
 
 More information on :ref:`cli_output_format`.
 
@@ -38,6 +38,6 @@ For more details on the HTML output format refer :ref:`output_html`.
 
 .. WARNING::
 
-    The ``--html-app`` option has been deprecated, use Scancode Workbench instead.
+    The ``--html-app`` option has been deprecated, use ScanCode Workbench instead.
 
 .. include::  /rst_snippets/custom_output_format.rst
