@@ -38,10 +38,10 @@ Table of Contents
 
 .. _newcomer_try_scancode:
 
-Try ScanCode Toolkit
+Try ScanCode-Toolkit
 --------------------
 
-This section is about using the ScanCode Toolkit, i.e. Performing a scan on a codebase/files to
+This section is about using the ScanCode-Toolkit, i.e. Performing a scan on a codebase/files to
 determine their license, copyrights and other information, according to your requirements.
 
 #. The :ref:`newcomer_scan_codebase` section helps you with configuring your virtual environment,
@@ -142,7 +142,7 @@ ScanCode Versions
 
 .. _newcomer_learn_scancode:
 
-Learn more about ScanCode Toolkit
+Learn more about ScanCode-Toolkit
 ---------------------------------
 
 Here we give an introduction on the ScanCode-Toolkit Documentation Sections that can help you to
@@ -153,7 +153,7 @@ learn more about ScanCode-Toolkit.
 CLI Reference
 ^^^^^^^^^^^^^
 
-This section contains a complete guide to ScanCode Toolkit Command Line options, i.e. What the
+This section contains a complete guide to ScanCode-Toolkit Command Line options, i.e. What the
 command-line options are, how different options affect the scan and outputs, how to use these
 options and examples of their use cases.
 
@@ -179,7 +179,7 @@ This section has documentation on :ref:`explain_how_scancode_works`.
 Plugins
 ^^^^^^^
 
-Plugins are an integral part of ScanCode Toolkit in the sense they are used to easily extend
+Plugins are an integral part of ScanCode-Toolkit in the sense they are used to easily extend
 ScanCode capabilities, and developers can code their own plugins according to their requirements.
 
 This section has documentation on:
@@ -215,7 +215,7 @@ If you haven't contributed to ScanCode-Toolkit refer :ref:`newcomer_good_first_i
 
 To determine where to contribute, you can refer:
 
-#. ScanCode Toolkit tracks issues via the `GitHub Issue tracker <https://github.com/aboutcode-org/scancode-toolkit/issues>`_
+#. ScanCode-Toolkit tracks issues via the `GitHub Issue tracker <https://github.com/aboutcode-org/scancode-toolkit/issues>`_
 #. Broad `milestones <https://github.com/aboutcode-org/scancode-toolkit/milestones>`_ for upcoming versions are also maintained.
 
 And documentation related to contributing code can be referred at :ref:`contrib_code_dev`.
@@ -266,7 +266,7 @@ You can contribute to the following Open Issues on documentation.
 
 #. `First Timers Only Issues List <https://github.com/aboutcode-org/scancode-toolkit/issues/1826>`_
 #. `Documentation Inconsistencies Tracker <https://github.com/aboutcode-org/scancode-toolkit/issues/1813>`_
-#. `ScanCode Toolkit Documentation Roadmap <https://github.com/aboutcode-org/scancode-toolkit/issues/1824>`_
+#. `ScanCode-Toolkit Documentation Roadmap <https://github.com/aboutcode-org/scancode-toolkit/issues/1824>`_
 #. `Issues with label Documentation <https://github.com/aboutcode-org/scancode-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation>`_
 
 .. note::

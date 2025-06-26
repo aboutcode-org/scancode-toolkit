@@ -53,7 +53,7 @@ To see all plugins available via command line help, use ``--plugins``.
     .. note::
 
         The ``--consolidate`` option will be deprecated in a future version of
-        ScanCode Toolkit as top level packages, dependencies and licenses
+        ScanCode-Toolkit as top level packages, dependencies and licenses
         now provide improved consolidated data.
 
     The JSON file containing scan results after using the ``--consolidate`` Plugin is structured as

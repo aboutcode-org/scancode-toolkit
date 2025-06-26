@@ -24,5 +24,5 @@ Join the conversation
 
 Join our `general chatroom <https://matrix.to/#/#aboutcode-org_discuss:gitter.im>`_ to chat
 with aboutcode community members, and if you want to talk to users and developers of
-ScanCode Toolkit, use `scancode room <https://matrix.to/#/#aboutcode-org_scancode:gitter.im>`_
+ScanCode-Toolkit, use `scancode room <https://matrix.to/#/#aboutcode-org_scancode:gitter.im>`_
 

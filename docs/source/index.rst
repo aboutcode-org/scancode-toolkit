@@ -1,9 +1,9 @@
-ScanCode Toolkit Documentation
+ScanCode-Toolkit Documentation
 ==============================
 
-Welcome to ScanCode Toolkit Documentation!
+Welcome to ScanCode-Toolkit Documentation!
 
-If you are new to ScanCode Toolkit, start here:
+If you are new to ScanCode-Toolkit, start here:
 
 .. toctree::
    :maxdepth: 2
@@ -100,7 +100,7 @@ Reference Documents
 --------------------
 
 Reference documents provide reference pages for technical reference information
-about ScanCode Toolkit, including how it works and supported features.
+about ScanCode-Toolkit, including how it works and supported features.
 
 .. toctree::
    :maxdepth: 2

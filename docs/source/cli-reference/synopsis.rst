@@ -62,7 +62,7 @@ throughout the documentation.
 Type of Options
 ---------------
 
-ScanCode Toolkit Command Line options can be divided into these major sections:
+ScanCode-Toolkit Command Line options can be divided into these major sections:
 
 - :ref:`cli_basic`
 - :ref:`Extractcode Options <cli_extract>`
