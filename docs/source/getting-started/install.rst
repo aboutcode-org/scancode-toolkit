@@ -274,8 +274,9 @@ The prerequisite is a working `docker installation <https://docs.docker.com/engi
 Download the ScanCode-Toolkit Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- ``git clone https://github.com/aboutcode-org/scancode-toolkit`` to get the latest
-  ( :ref:`source_code_install` ) source code.
+Run the following once you have `Git <https://git-scm.com/>`_ installed::
+
+    git clone https://github.com/aboutcode-org/scancode-toolkit.git
 
 
 Build the Docker image
