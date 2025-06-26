@@ -1,3 +1,5 @@
+.. _scan_output_options:
+
 All Scan Output Options
 -----------------------
 

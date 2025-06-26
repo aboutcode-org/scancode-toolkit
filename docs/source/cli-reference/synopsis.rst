@@ -7,10 +7,10 @@ ScanCode detects licenses, copyrights, package manifests and direct dependencies
 in source code and binary files, by scanning the files. This page introduces you to the ScanCode
 Toolkit Command Line Interface in the following sections:
 
-- Quickstart
-- Type of Options
-- Output Formats
-- Other Important Documentation
+- :ref:`synopsis_quickstart`
+- :ref:`scancode_cli_options`
+- :ref:`synopsis_output`
+- :ref:`other_imp_doc`
 
 
 .. _synopsis_quickstart:
@@ -79,8 +79,10 @@ Line Options listed under each section.
 Output Formats
 --------------
 
-The output file format is set by using the various output options. The recommended output format
-is JSON. If ``--json`` is used, the entire file being in one line, without whitespace characters.
+The output file format is set by using the various output options. See
+:ref:`scan_output_options`. The recommended output format is JSON. If
+``--json`` is used, the entire file being in one line, without whitespace
+characters.
 
 The following example scans will show you how to run a scan with each of the result formats. For
 the scans, we will use the ``samples`` directory provided with the ScanCode Toolkit.
@@ -285,5 +287,7 @@ file. When the scan is done, open ``samples.html`` in your web browser.
 
 .. image:: data/scancode-toolkit-static-html1.png
 .. image:: data/scancode-toolkit-static-html2.png
+
+.. _other_imp_doc:
 
 .. include::  /rst_snippets/other_imp_doc.rst
