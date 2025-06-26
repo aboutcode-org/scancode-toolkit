@@ -1,6 +1,6 @@
 parameters:
     job_name: ''
-    image_name: 'ubuntu-16.04'
+    image_name: 'ubuntu-22.04'
     container: ''
     python_path: ''
     python_version: ''

@@ -48,7 +48,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Mankaran Singh @MankaranSingh
 - Marc-Etienne Vargenau @vargenau
 - Martin Petkov @MartinPetkov
-- Maximilian Huber @maxhbr 
+- Maximilian Huber @maxhbr
 - Michael Herzog @mjherzog
 - Michael Rupprecht @michaelrup
 - Mike Rombout @mrombout
@@ -89,7 +89,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Thomas Druez @tdruez
 - Thomas Steenbergen @tsteenbe
 - Thorsten Harter @ThorstenHarter
-- Till Jaeger @LeChasseur 
+- Till Jaeger @LeChasseur
 - Tobias Furuholm @furuholm
 - Tushar Goel @TG1999
 - Tushar Mittal @techytushar
@@ -97,7 +97,7 @@ The following organizations or individuals have contributed to ScanCode:
 - Van Lindberg @VanL
 - Vibhu Agarwal @Vibhu-Agarwal
 - Viktor Tiulpin @tiulpin
-- Vinay Kumar Singh @Vinay0001 
+- Vinay Kumar Singh @Vinay0001
 - Virag Umathe @viragumathe5
 - Yash D. Saraf @yashdsaraf
 - Yash Nisar @yash-nisar

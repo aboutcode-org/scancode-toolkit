@@ -12,7 +12,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.12]
+        python-version: [3.13]
 
     steps:
       - name: Checkout code
@@ -24,14 +24,12 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install Dependencies
-        run:  pip install -e .[docs]
+        run:  ./configure --dev
 
-      - name: Check Sphinx Documentation build minimally
-        working-directory: ./docs
-        run: sphinx-build -E -W source build
+      - name: Check documentation and HTML for errors and dead links
+        run: make docs-check
 
-      - name: Check for documentation style errors
-        working-directory: ./docs
-        run: ./scripts/doc8_style_check.sh
+      - name: Check documentation for style errors
+        run: make doc8
 
 

@@ -77,7 +77,7 @@ Documentation improvements
 ==========================
 
 Documentation can come in the form of new documentation pages/sections, tutorials/how-to documents,
-any other general upgrades, etc. Even a minor typo fix is welcomed. 
+any other general upgrades, etc. Even a minor typo fix is welcomed.
 
 If something is missing in the documentation or if you found some part confusing,
 please file an issue with your suggestions for improvement. Use the “Documentation Improvement”
@@ -104,25 +104,25 @@ To set up ScanCode for local development:
 
     git clone https://github.com/your_name_here/scancode-toolkit.git
 
-   See also GitHub docs for `SSH <https://help.github.com/articles/connecting-to-github-with-ssh/>`_ 
+   See also GitHub docs for `SSH <https://help.github.com/articles/connecting-to-github-with-ssh/>`_
    or `HTTPS <https://help.github.com/articles/which-remote-url-should-i-use/#cloning-with-https-urls-recommended>`_
-    
+
    If you want to change the connection type, do following
-     
+
     SSH to HTTPS ::
-     
+
       git remote set-url <repository-alias-name> https://github.com/your_name_here/scancode-toolkit.git
-     
+
     HTTPS to SSH ::
-     
+
       git remote set-url <repository-alias-name> git@github.com:your_name_here/scancode-toolkit.git
-     
+
    Generally <repository-alias-name> is named origin, but in the case of multiple fetch/pull source of repository you can choose whatever name you want
-     
+
 3. Create a branch for local development::
 
     git checkout -b name-of-your-bugfix-or-feature
-    
+
 4. Check out the Contributing to Code Development `documentation <https://scancode-toolkit.readthedocs.io/en/stable/contribute/contrib_dev.html>`_, as it contains more in-depth guide for contributing code and documentation.
 
 5. To configure your local environment for development, locate to the main
@@ -130,7 +130,7 @@ To set up ScanCode for local development:
    The configure script creates an isolated Python `virtual environment` in
    your checkout directory, the Python `pip` tool, and installs the third-party
    libraries (from the `thirdparty/ directory`), setup the paths, etc.
-   See https://virtualenv.pypa.io/en/latest/ for more details. 
+   See https://virtualenv.pypa.io/en/latest/ for more details.
 
    Run this command to configure ScanCode::
 
@@ -160,15 +160,17 @@ To set up ScanCode for local development:
 6. Now you can make your code changes in your local clone.
    Please create new unit tests for your code. We love tests!
 
-7. An update to the ``CHANGELOG`` is required if any important changes are made that needs to be communicated such as:
+7. An update to the ``CHANGELOG`` is required if any important changes are made
+   that needs to be communicated such as:
 
    * Changes in the API.
 
    * Addition or deletion of CLI options.
 
    * Addition of any new feature or any other miscellaneous changes to the program.
-   
-8. If there is a code change, a significant document, or any other changes, you must update the ``AUTHORS`` to include your own name.
+
+8. If there is a code change, a significant document, or any other changes,
+   you must update the ``AUTHORS`` to include your own name.
 
 9. When you are done with your changes, run all the tests.
    Use this command::

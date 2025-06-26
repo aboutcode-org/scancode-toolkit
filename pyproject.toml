@@ -14,7 +14,6 @@ norecursedirs = [
    "dist",
    "build",
    "_build",
-   "dist",
    "etc",
    "local",
    "ci",
@@ -34,7 +33,9 @@ norecursedirs = [
    "thirdparty",
    "tmp",
    "venv",
+   ".venv",
    "tests/data",
+   "*/tests/test_data",
    ".eggs",
    "src/*/data",
    "tests/*/data",
@@ -51,3 +52,79 @@ addopts = [
     "--strict-markers",
     "--doctest-modules"
 ]
+
+[tool.ruff]
+line-length = 100
+extend-exclude = []
+target-version = "py310"
+include = [
+  "pyproject.toml",
+  "src/**/*.py",
+  "etc/**/*.py",
+  "test/**/*.py",
+  "tests/**/*.py",
+  "doc/**/*.py",
+  "docs/**/*.py",
+  "*.py",
+  "."
+
+]
+# ignore test data and testfiles: they should never be linted nor formatted 
+exclude = [
+# main style
+  "**/tests/data/**/*",
+# scancode-toolkit
+  "**/tests/*/data/**/*",
+# dejacode, purldb
+  "**/tests/testfiles/**/*",
+# vulnerablecode, fetchcode
+  "**/tests/*/test_data/**/*",
+  "**/tests/test_data/**/*",
+# django migrations
+  "**/migrations/**/*"
+]
+
+[tool.ruff.lint]
+# Rules: https://docs.astral.sh/ruff/rules/
+select = [
+#    "E",  # pycodestyle
+#    "W",  # pycodestyle warnings
+    "D",  # pydocstyle
+#    "F",  # Pyflakes
+#    "UP", # pyupgrade
+#    "S",  # flake8-bandit
+    "I",  # isort
+#    "C9", # McCabe complexity
+]
+ignore = ["D1", "D200", "D202", "D203", "D205", "D212", "D400", "D415", "I001"]
+
+
+[tool.ruff.lint.isort]
+force-single-line = true
+lines-after-imports = 1
+default-section = "first-party"
+known-first-party = ["src", "tests", "etc/scripts/**/*.py"]
+known-third-party = ["click", "pytest"]
+
+sections = { django = ["django"] }
+section-order = [
+    "future",
+    "standard-library",
+    "django",
+    "third-party",
+    "first-party",
+    "local-folder",
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.per-file-ignores]
+# Place paths of files to be ignored by ruff here
+"tests/*" = ["S101"]
+"test_*.py" = ["S101"]
+
+
+[tool.doc8]
+ignore-path = ["docs/build", "doc/build", "docs/_build", "doc/_build"]
+max-line-length=100

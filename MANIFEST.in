@@ -1,4 +1,6 @@
 graft src
+graft docs
+graft etc
 
 graft thirdparty
 graft etc/thirdparty
@@ -10,6 +12,7 @@ include *.ABOUT
 include *.toml
 include *.yml
 include *.rst
+include *.png
 include setup.*
 include configure*
 include requirements*
@@ -22,7 +25,14 @@ include scancode*
 include PYTHON_EXECUTABLE
 
 include Dockerfile
+include .dockerignore
+include .gitignore
+include .readthedocs.yml
+include manage.py
+include Dockerfile*
+include Makefile
+include MANIFEST.in
+
 include .VERSION
 
 global-exclude *.py[co] __pycache__ *.*~
-

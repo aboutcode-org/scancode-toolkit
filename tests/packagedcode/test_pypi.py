@@ -100,12 +100,6 @@ class TestPyPiDevelopEggInfoPkgInfo(PackageTester):
         expected_loc = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info-expected.json')
         self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
 
-    def test_develop_with_parse(self):
-        test_file = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info/PKG-INFO')
-        package = pypi.PythonEditableInstallationPkgInfoFile.parse(test_file)
-        expected_loc = self.get_test_loc('pypi/develop/scancode_toolkit.egg-info-expected.json')
-        self.check_packages_data(package, expected_loc, regen=REGEN_TEST_FIXTURES)
-
 
 class TestPyPiPkgInfoAndMetadata(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
