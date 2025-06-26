@@ -98,7 +98,7 @@ option.
 JSON file output
 ^^^^^^^^^^^^^^^^
 
-Scan the ``samples`` directory and save the scan to a JSON file (pretty-printed):::
+Scan the ``samples`` directory and save the scan to a JSON file (pretty-printed)::
 
     scancode -clpieu --json-pp output.json samples
 
