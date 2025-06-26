@@ -131,20 +131,22 @@ if not __version__:
 
 # 4. hardcoded This is the default, fallback version in case package is not installed or we
 # do not have a proper version otherwise.
+# See https://scancode-toolkit.readthedocs.io/en/latest/misc/versioning.html for
+# more information on versioning
 if not __version__:
-    __version__ = '32.3.3'
+    __version__ = '32.4.0'
 
 #######################
 # used to warn user when the version is out of date
 # this is (year, month, day)
-__release_date__ = datetime.datetime(2025, 1, 20)
+__release_date__ = datetime.datetime(2025, 6, 26)
 
-# See https://github.com/nexB/scancode-toolkit/issues/2653 for more information
-# on the data format version
-__output_format_version__ = '4.0.0'
+# See https://scancode-toolkit.readthedocs.io/en/latest/misc/versioning.html
+# for more information on the data format version
+__output_format_version__ = '4.1.0'
 
 # see https://github.com/spdx/tools-python/issues/820
-# this is actually `3.25.0`
+# this is actually `3.26.0`
 spdx_license_list_version = '3.26'
 
 ################################################################################

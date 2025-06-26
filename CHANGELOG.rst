@@ -27,14 +27,6 @@ v33.0.0 (next next, roadmap)
 - `--unknown-licenses` is removed and this is always enabled
   and only used in case of improper detections automatically.
 
-- All license rules have been tagged with required phrases to improve detection accuracy
-  and reduce false positives. See https://github.com/nexB/scancode-toolkit/issues/3300
-
-- Equivalent words like license and licence, as well as plurals are now treated as the same in
-  license detection. With this, many redundant rules have been deprecated.
-
-- The license detection accuracy of Maven POMS has been improved fixing corner cases.
-
 - File categorization support added, a post scan plugin tagging
   files with priority levels for review, and also take advantage
   of these in other summary plugins.
@@ -46,9 +38,72 @@ v33.0.0 (next next, roadmap)
 - Update ABOUT files to adapt the ABOUT File Specification.
   See https://github.com/aboutcode-org/scancode-toolkit/issues/4181
 
+v32.4.0 - 2025-06-26
+--------------------
+
+This is a feature release with::
+
+  - python 3.13 support
+  - support added for adding required phrases to rules automatically
+  - misc license and package detection improvements
+  - new and updated license detection rules and new licenses
+  - misc bugfixes, dependency and documentation updates
+
+There are new data attributes, and we have a output format version bump
+from ``4.0.0`` to ``4.1.0``. The changes in Output Data Structure are:
+
+  - A new resource level attribute ``sha1_git`` is added, which has
+    the corresponding checksum value for files, and is empty for
+    directories. This is returned optionally with the ``--info`` plugin.
+
+  - A new resource level attribute ``is_community`` is added, which is
+    True from commonly used files used for community/project maintainence.
+    This is returned optionally with the ``--classify`` plugin.
+
+These are the details for the most important changes introduced::
+
+- Add support for adding required phrases in rules automatically using
+  some console scripts and CLI options using already marked required
+  phrases for the same license-expression and license field attributes
+  The new console scripts are:
+    - `add-required-phrases` to add required phrases from other rules or
+      license attributes
+    - `gen-new-required-phrases-rules` to add required phrase rules for
+      marked required phrase in rules
+  This improves detection accuracy and reduces false positives. 
+  https://github.com/aboutcode-org/scancode-toolkit/pull/3924
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4237
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4241
+
+- Default value of processes used for scancode scans is changed from
+  1 to `N-1`, where N is the number of CPU processes available in the
+  system. https://github.com/aboutcode-org/scancode-toolkit/pull/4104
+
 - Also return sha1_git checksums for each files with ``--info`` plugin.
   https://github.com/aboutcode-org/scancode-toolkit/issues/624
 
+- Equivalent words like license and licence, as well as plurals are
+  now treated as the same in license detection. With this,
+  many redundant rules have been deprecated.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4215
+
+- Support running scancode with python3.13
+  Update and use latest native dependencies with py3.13 support,
+  update and test py3.13 usage in CI and other scripts, and
+  update other third-party dependencies, use latest skeleton
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4430
+
+- Misc license detection improvements, new licenses and license
+  detection rules.
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4261
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4412
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4405
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4278
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4093
+
+- Fix an issues where `pip install scancode-toolkit` was failing
+  because of a compatibility issue with Click
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4427
 
 v32.3.3 - 2025-03-06
 --------------------
