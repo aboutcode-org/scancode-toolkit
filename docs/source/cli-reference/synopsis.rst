@@ -80,12 +80,18 @@ Output Formats
 --------------
 
 The output file format is set by using the various output options. See
-:ref:`scan_output_options`. The recommended output format is JSON. If
-``--json`` is used, the entire file being in one line, without whitespace
-characters.
+:ref:`scan_output_options`. The recommended output format is JSON.
 
-The following example scans will show you how to run a scan with each of the result formats. For
-the scans, we will use the ``samples`` directory provided with the ScanCode Toolkit.
+If ``--json`` is used, the entire file being in one line, without
+whitespace characters. If ``--json-pp`` is used, the output is in a
+pretty-printed JSON format—structured with indentation and line breaks to
+make it more human-readable, rather than compressed into a single line.
+
+The following example scans will show you how to run a scan with each of
+the result formats. For the scans, we will use the ``samples`` directory
+provided with the ScanCode-Toolkit, along with the ``--json-pp`` output
+option.
+
 
 .. include::  /rst_snippets/tip_snippets/stdout.rst
 
