@@ -58,8 +58,8 @@ determine their license, copyrights and other information, according to your req
 Before you start using ScanCode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. You need to make sure :ref:`install_prerequisites` are installed, and a `virtualenv <https://docs.python-guide.org/dev/virtualenvs/>`_
-   is created. There are a few different ways to install ScanCode:
+#. You need to make sure :ref:`install_prerequisites` are installed. There
+   are a few different ways to install ScanCode:
 
 - :ref:`app_install` [Recommended for newcomers]
 - :ref:`docker_install`
