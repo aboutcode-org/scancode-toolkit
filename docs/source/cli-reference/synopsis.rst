@@ -7,25 +7,10 @@ ScanCode detects licenses, copyrights, package manifests and direct dependencies
 in source code and binary files, by scanning the files. This page introduces you to the ScanCode
 Toolkit Command Line Interface in the following sections:
 
-- Installation
 - Quickstart
 - Type of Options
 - Output Formats
 - Other Important Documentation
-
-.. _syn_install:
-
-Installation
-------------
-
-Scancode-Toolkit installation can be done by downloading ScanCode as an application, which
-is recommended generally. For users who wish to use ScanCode as a library, it can be
-installed via ``pip``, the default Python Package Manager. Refer the following sections for
-detailed Instructions on the each of the Installation Methods.
-
-- :ref:`app_install`
-- :ref:`pip_install`
-- :ref:`source_code_install`
 
 
 .. _synopsis_quickstart:
