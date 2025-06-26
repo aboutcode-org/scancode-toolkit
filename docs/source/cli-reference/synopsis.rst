@@ -27,6 +27,7 @@ detailed Instructions on the each of the Installation Methods.
 - :ref:`pip_install`
 - :ref:`source_code_install`
 
+
 .. _synopsis_quickstart:
 
 Quickstart
@@ -37,11 +38,11 @@ The basic command to perform a scan, in case of a download and configure install
 
     path/to/scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>
 
-The basic usage, if Scancode is installed from ``pip``, or in Windows::
+The basic usage, if ScanCode is installed from ``pip``, or in Windows::
 
     scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <SCAN INPUT>
 
-Here Scancode scans the <SCAN INPUT> file or directory for license, origin and packages and saves
+Here ScanCode scans the <SCAN INPUT> file or directory for license, origin and packages and saves
 results to FILE(s) using one or more output format option. Error and progress are printed to
 stdout.
 
@@ -66,10 +67,10 @@ While a scan using absolute paths from the file system root will look like::
 Commands similar to ``scancode -clpi --json-pp output.json samples`` will be used as examples
 throughout the documentation.
 
-- Here we are inside the ``virtualenv`` where Scancode-Toolkit is configured.
+- Here we are inside the ``virtualenv`` where ScanCode-Toolkit is configured.
 
 - And the default ``samples`` folder is being scanned, which is distributed by default with
-  Scancode-Toolkit.
+  ScanCode-Toolkit.
 
 .. _scancode_cli_options:
 

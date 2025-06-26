@@ -70,7 +70,7 @@ These are the details for the most important changes introduced::
       license attributes
     - `gen-new-required-phrases-rules` to add required phrase rules for
       marked required phrase in rules
-  This improves detection accuracy and reduces false positives. 
+  This improves detection accuracy and reduces false positives.
   https://github.com/aboutcode-org/scancode-toolkit/pull/3924
   https://github.com/aboutcode-org/scancode-toolkit/pull/4237
   https://github.com/aboutcode-org/scancode-toolkit/pull/4241
