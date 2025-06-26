@@ -90,7 +90,7 @@ Once you are all set up with ScanCode-Toolkit, i.e. Running ``scancode -h`` show
 #. Refer :ref:`synopsis_quickstart` for commonly used scan commands, and commonly used
    :ref:`synopsis_output`. (The recommended output format is ``JSON``)
 
-#. Refer `this section <file:///home/ayansm/Desktop/GSoD/main_repo/aboutcode/docs/build/html/scancode-toolkit/cli-reference/list-options.html#all-extractcode-options>`_ for Extractcode Options.
+#. Refer :ref:`extractcpde_options` for the use of ExtractCode.
 
 #. :ref:`how_to_run_a_scan` is a sample tutorial for absolute beginners, to walk them through the
    process of running a scan. Follow this tutorial and perform a scan on the ``sample`` folder
