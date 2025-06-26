@@ -6,8 +6,8 @@ ignorable_urls:
 ---
 
 <licenses>
-    <license>
-        <name>{{Public Domain}}</name>
+    {{<license>
+        <name>Public Domain}}</name>
         <url>https://github.com/stleary/JSON-java/blob/master/LICENSE</url>
         <distribution>repo</distribution>
     </license>
