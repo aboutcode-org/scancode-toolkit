@@ -80,7 +80,8 @@ Output Formats
 --------------
 
 The output file format is set by using the various output options. See
-:ref:`scan_output_options`. The recommended output format is JSON.
+:doc:`../rst_snippets/output_format_options` . The recommended output
+format is JSON.
 
 If ``--json`` is used, the entire file being in one line, without
 whitespace characters. If ``--json-pp`` is used, the output is in a

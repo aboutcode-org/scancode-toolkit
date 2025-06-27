@@ -90,7 +90,7 @@ Once you are all set up with ScanCode-Toolkit, i.e. Running ``scancode -h`` show
 #. Refer :ref:`synopsis_quickstart` for commonly used scan commands, and commonly used
    :ref:`synopsis_output`. (The recommended output format is ``JSON``)
 
-#. Refer :ref:`extractcpde_options` for the use of ExtractCode.
+#. Refer :doc:`../rst_snippets/extract` for the use of ExtractCode.
 
 #. :ref:`how_to_run_a_scan` is a sample tutorial for absolute beginners, to walk them through the
    process of running a scan. Follow this tutorial and perform a scan on the ``sample`` folder
