@@ -597,7 +597,7 @@ class LicenseMatch(object):
         computed from the number of matched tokens, the number of query tokens
         in the matched range (including unknowns and unmatched) and the matched
         rule relevance.
-        """       
+        """
         # relevance is a number between 0 and 100. Divide by 100
         relevance = self.rule.relevance / 100
         if not relevance:

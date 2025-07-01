@@ -85,6 +85,9 @@ required_phrase_splitter = re.compile(required_phrase_pattern, re.UNICODE).finda
 extra_phrase_pattern = r'(?:' + query_pattern + r'|\[\[|\]\])'
 extra_phrase_splitter = re.compile(extra_phrase_pattern, re.UNICODE).findall
 
+
+extra_phrase_removal_pattern = re.compile(r'\[\[\d+\]\]')
+
 REQUIRED_PHRASE_OPEN = '{{'
 REQUIRED_PHRASE_CLOSE = '}}'
 
@@ -348,6 +351,8 @@ def index_tokenizer_with_stopwords(text, stopwords=STOPWORDS):
     """
     if not text:
         return [], {}
+    
+    text = extra_phrase_removal_pattern.sub('', text)
 
     tokens = []
     tokens_append = tokens.append
