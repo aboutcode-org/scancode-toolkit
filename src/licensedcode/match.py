@@ -1106,15 +1106,14 @@ def is_extra_words_position_valid(match):
     # Count of extra phrase markers   
     extra_phrase_count = 0
 
-    for span, allowed_extra_words in extra_phrase_spans:
-        rule_index = span.start - extra_phrase_count - 1
-        allowed_extra_words = allowed_extra_words
+    for span, allowed_extra_word in extra_phrase_spans:
+        rule_index = span.start
 
         matched_index = span.start + matched_count - extra_phrase_count
         extra_words_count = 0
 
         # return false if token before `extra-words` in `matched_token` is not same as token before `extra-phrases` in `rule_tokens`
-        if(matched_tokens[matched_index-1] != rule_tokens[rule_index]):
+        if(matched_tokens[matched_index-1] != rule_tokens[rule_index-1]):
             return False 
 
         # Count how many tokens in `matched_text` do not match the next rule token
@@ -1124,7 +1123,7 @@ def is_extra_words_position_valid(match):
             matched_count += 1
             extra_words_count += 1
 
-            if extra_words_count > allowed_extra_words:
+            if extra_words_count > allowed_extra_word:
                return False
 
         extra_phrase_count += 1

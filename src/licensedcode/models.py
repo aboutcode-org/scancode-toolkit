@@ -7,7 +7,6 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-import re
 import os
 import sys
 import traceback
@@ -2333,9 +2332,6 @@ class Rule(BasicRule):
         
         # identify and capture the spans of extra phrases specified within the rule
         self.extra_phrase_spans = list(self.extra_phrases())
-        
-        # remove extra_phrase marker from rules
-        self.text = remove_extra_phrase(self.text)
 
         text = self.text
         # We tag this rule as being a bare URL if it starts with a scheme and is
@@ -2599,13 +2595,6 @@ class Rule(BasicRule):
             from licensedcode.cache import get_index
             return get_index().rules_by_id[rule_identifier]
 
-
-def remove_extra_phrase(text):
-    """
-    Remove extra phrase markers like [[n]], where the n is a digit.
-    """
-    pattern = r'\[\[\d+\]\]'
-    return re.sub(pattern, '', text)
 
 def compute_relevance(length):
     """
