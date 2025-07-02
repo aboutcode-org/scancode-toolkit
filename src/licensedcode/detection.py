@@ -1095,7 +1095,7 @@ def is_correct_detection(license_matches):
     ]
 
     return (
-        all(matcher in ("1-hash", "1-spdx-id", "2-aho") for matcher in matchers)
+        all(matcher in ("1-hash", "1-spdx-id", "2-aho", "3-seq") for matcher in matchers)
         and all(is_match_coverage_perfect)
     )
 
@@ -1153,6 +1153,17 @@ def has_extra_words(license_matches):
     return any(
         match_query_coverage_diff_value > 0
         for match_query_coverage_diff_value in match_query_coverage_diff_values
+    )
+
+
+def has_extra_words_spans(license_matches):
+    """
+    Return True if all of the matches rules in ``license_matches`` (a list of LicenseMatch)
+    has `extra_phrase` marker and also have matcher `3-seq`.
+    """
+    return all(
+        match.matcher == '3-seq' and match.rule.extra_phrase_spans
+        for match in license_matches
     )
 
 
