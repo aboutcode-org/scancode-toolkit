@@ -21,6 +21,7 @@ from licensedcode.spans import Span
 from licensedcode.tokenize import get_existing_required_phrase_spans
 from licensedcode.tokenize import get_extra_phrase_spans
 from licensedcode.tokenize import index_tokenizer
+from licensedcode.tokenize import index_tokenizer_with_stopwords
 from licensedcode.tokenize import InvalidRuleRequiredPhrase
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import ngrams
@@ -640,7 +641,49 @@ class TestExtraPhraseTokenizer(FileBasedTesting):
 
     def test_get_extra_phrase_spans_ignores_unopened_closing_bracket(self):
         text = 'Neither the name of 3]] nor the names of its'
-        assert get_extra_phrase_spans(text) == []    
+        assert get_extra_phrase_spans(text) == []  
+
+
+class TestIndexTokenizerWithStopwords(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_index_tokenizer_with_stopwords_empty_input(self):
+        toks, stops = index_tokenizer_with_stopwords('')
+        assert toks == []
+        assert stops == {}
+
+    def test_index_tokenizer_with_stopwords_removes_extra_phrase(self):
+        text = 'Neither the name of [[3]] nor the names of its'
+        toks, stops = index_tokenizer_with_stopwords(text)
+        assert toks == ['neither', 'the', 'name', 'of', 'nor', 'the', 'names', 'of', 'its']
+        assert stops == {}
+
+    def test_index_tokenizer_with_stopwords_removes_curly_phrase(self):
+        text = '{{Hi}}some {{}}Text with{{junk}}spAces!'
+        toks, stops = index_tokenizer_with_stopwords(text)
+        assert toks == ['hi', 'some', 'text', 'with', 'junk', 'spaces']
+        assert stops == {}
+
+    def test_index_tokenizer_with_custom_stopwords(self):
+        stops_set = set(['is', 'a'])
+        text = 'This is a test'
+        toks, stops = index_tokenizer_with_stopwords(text, stopwords=stops_set)
+        assert toks == ['this', 'test']
+        assert stops == {0: 2}
+
+    def test_index_tokenizer_with_leading_stopwords(self):
+        stops_set = set(['is', 'a', 'the'])
+        text = 'The is a test with result'
+        toks, stops = index_tokenizer_with_stopwords(text, stopwords=stops_set)
+        assert toks == ['test', 'with', 'result']
+        assert stops == {-1: 3}
+
+    def test_index_tokenizer_with_embedded_stopwords_after_position(self):
+        stops_set = set(['markup', 'lt', 'gt', 'quot'])
+        text = 'some &quot&lt markup &gt&quot'
+        toks, stops = index_tokenizer_with_stopwords(text, stopwords=stops_set)
+        assert toks == ['some']
+        assert stops == {0: 5}
 
 
 class TestNgrams(FileBasedTesting):
