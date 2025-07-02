@@ -538,6 +538,12 @@
 
         The option ``--license-text-diagnostics`` is a sub-option of ``--license-text``.
 
+    .. admonition:: Attention
+
+        The option ``--license-text`` will not work with the ``--csv``
+        output as outputting full license texts in a CSV file doesn't serve
+        a practical purpose.
+
     With the ``--license-text`` option, the scan results attribute "matched text" includes the matched text
     for the detected license.
 
