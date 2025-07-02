@@ -1421,6 +1421,22 @@ class TestExtraWordsPosition(FileBasedTesting):
         match = idx.match(query_string=query, _skip_hash_match=True)[0]
         assert is_extra_words_position_valid(match) is False
 
+    def test_extra_words_one_at_right_place_and_one_at_not_right_place(self):
+        rule_text = """
+        Redistribution and use [[3]] in source and binary forms are permitted.
+        """
+        rule = create_rule_from_text_and_expression(
+            license_expression='extra-words',
+            text=rule_text
+        )
+        idx = index.LicenseIndex([rule])
+
+        query = """
+        Redistribution and use of this software in source and binary extra-words forms are permitted.
+        """
+        match = idx.match(query_string=query, _skip_hash_match=True)[0]
+        assert is_extra_words_position_valid(match) is False
+
 
 class TestLicenseMatchScore(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

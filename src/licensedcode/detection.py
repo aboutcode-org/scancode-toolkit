@@ -1156,17 +1156,6 @@ def has_extra_words(license_matches):
     )
 
 
-def has_extra_words_spans(license_matches):
-    """
-    Return True if all of the matches rules in ``license_matches`` (a list of LicenseMatch)
-    has `extra_phrase` marker and also have matcher `3-seq`.
-    """
-    return all(
-        match.matcher == '3-seq' and match.rule.extra_phrase_spans
-        for match in license_matches
-    )
-
-
 def has_low_rule_relevance(license_matches):
     """
     Return True if all on the matches in ``license_matches`` List of LicenseMatch

@@ -1106,6 +1106,9 @@ def is_extra_words_position_valid(match):
     # Count of extra phrase markers   
     extra_phrase_count = 0
 
+    rule_index = 0
+    matched_index = 0
+
     for span, allowed_extra_word in extra_phrase_spans:
         rule_index = span.start
 
@@ -1128,6 +1131,17 @@ def is_extra_words_position_valid(match):
 
         extra_phrase_count += 1
 
+    rule_index+=1    
+
+    # check if any `extra-words` is present and return False because this `extra-words` are not at marked place
+    while (matched_index < len(matched_tokens) and
+        matched_tokens[matched_index] == rule_tokens[rule_index]):        
+        matched_index+=1
+        rule_index+=1
+
+    if matched_index != len(matched_tokens):
+        return False    
+    
     return True
 
 
