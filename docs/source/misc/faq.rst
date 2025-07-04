@@ -56,12 +56,12 @@ integration with my system to trigger the license check and to use the result?
 
 In terms of API, there are two stable entry points:
 
-#. The JSON output when you use it as a command line tool from any language or
-when you call the scancode.cli.scancode function from a Python script.
+- The JSON output when you use it as a command line tool from any language
+  or when you call the scancode.cli.scancode function from a Python script.
 
-#. Otherwise the scancode.cli.api module provides a simple function if you are
-only interested in calling a certain service on a given file (such as license
-detection or copyright detection)
+- Otherwise the scancode.cli.api module provides a simple function if you
+  are only interested in calling a certain service on a given file (such as
+  license detection or copyright detection)
 
 
 Can I install ScanCode in a Unicode path?

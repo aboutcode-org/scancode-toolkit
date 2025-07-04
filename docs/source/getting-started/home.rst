@@ -41,7 +41,7 @@ most advanced open source and commercial tools available today for Software
 Composition Analysis.
 
 
-What does ScanCode Toolkit do?
+What does ScanCode-Toolkit do?
 ------------------------------
 
 ScanCode detects and normalizes origin, dependencies, licensing and other

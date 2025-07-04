@@ -199,7 +199,7 @@ following options.
           "scan_errors": []
         },
 
-    This is the recommended Output option for ScanCode Toolkit.
+    This is the recommended Output option for ScanCode-Toolkit.
 
 ----
 

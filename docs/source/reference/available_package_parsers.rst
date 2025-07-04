@@ -5,7 +5,7 @@
 Supported package manifests and package datafiles
 -------------------------------------------------
 
-Scancode supports a wide variety of package manifests, lockfiles
+ScanCode supports a wide variety of package manifests, lockfiles
 and other package datafiles containing package and dependency
 information.
 

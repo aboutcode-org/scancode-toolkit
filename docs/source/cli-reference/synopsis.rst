@@ -7,11 +7,11 @@ ScanCode detects licenses, copyrights, package manifests and direct dependencies
 in source code and binary files, by scanning the files. This page introduces you to the ScanCode
 Toolkit Command Line Interface in the following sections:
 
-- Installation
-- Quickstart
-- Type of Options
-- Output Formats
-- Other Important Documentation
+- :ref:`syn_install`
+- :ref:`synopsis_quickstart`
+- :ref:`scancode_cli_options`
+- :ref:`synopsis_output`
+- :ref:`other_imp_doc`
 
 .. _syn_install:
 
@@ -26,7 +26,8 @@ detailed Instructions on the each of the Installation Methods.
 - :ref:`app_install`
 - :ref:`pip_install`
 - :ref:`source_code_install`
-
+- :ref:`docker_install`
+- :ref:`fedora_install`
 
 .. _synopsis_quickstart:
 
@@ -77,7 +78,7 @@ throughout the documentation.
 Type of Options
 ---------------
 
-ScanCode Toolkit Command Line options can be divided into these major sections:
+ScanCode-Toolkit Command Line options can be divided into these major sections:
 
 - :ref:`cli_basic`
 - :ref:`Extractcode Options <cli_extract>`
@@ -94,18 +95,27 @@ Line Options listed under each section.
 Output Formats
 --------------
 
-The output file format is set by using the various output options. The recommended output format
-is JSON. If ``--json`` is used, the entire file being in one line, without whitespace characters.
+The output file format is set by using the various output options. See
+:doc:`../rst_snippets/output_format_options` . The recommended output
+format is JSON.
 
-The following example scans will show you how to run a scan with each of the result formats. For
-the scans, we will use the ``samples`` directory provided with the ScanCode Toolkit.
+If ``--json`` is used, the entire file being in one line, without
+whitespace characters. If ``--json-pp`` is used, the output is in a
+pretty-printed JSON format—structured with indentation and line breaks to
+make it more human-readable, rather than compressed into a single line.
+
+The following example scans will show you how to run a scan with each of
+the result formats. For the scans, we will use the ``samples`` directory
+provided with the ScanCode-Toolkit, along with the ``--json-pp`` output
+option.
+
 
 .. include::  /rst_snippets/tip_snippets/stdout.rst
 
 JSON file output
 ^^^^^^^^^^^^^^^^
 
-Scan the ``samples`` directory and save the scan to a JSON file (pretty-printed):::
+Scan the ``samples`` directory and save the scan to a JSON file (pretty-printed)::
 
     scancode -clpieu --json-pp output.json samples
 
@@ -300,5 +310,7 @@ file. When the scan is done, open ``samples.html`` in your web browser.
 
 .. image:: data/scancode-toolkit-static-html1.png
 .. image:: data/scancode-toolkit-static-html2.png
+
+.. _other_imp_doc:
 
 .. include::  /rst_snippets/other_imp_doc.rst

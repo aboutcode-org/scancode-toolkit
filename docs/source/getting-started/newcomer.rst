@@ -38,10 +38,10 @@ Table of Contents
 
 .. _newcomer_try_scancode:
 
-Try ScanCode Toolkit
+Try ScanCode-Toolkit
 --------------------
 
-This section is about using the ScanCode Toolkit, i.e. Performing a scan on a codebase/files to
+This section is about using the ScanCode-Toolkit, i.e. Performing a scan on a codebase/files to
 determine their license, copyrights and other information, according to your requirements.
 
 #. The :ref:`newcomer_scan_codebase` section helps you with configuring your virtual environment,
@@ -58,13 +58,14 @@ determine their license, copyrights and other information, according to your req
 Before you start using ScanCode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. You need to make sure :ref:`install_prerequisites` are installed, and a `virtualenv <https://docs.python-guide.org/dev/virtualenvs/>`_
-   is created. There are a few different ways to install ScanCode:
+#. You need to make sure :ref:`install_prerequisites` are installed. There
+   are a few different ways to install ScanCode:
 
 - :ref:`app_install` [Recommended for newcomers]
 - :ref:`docker_install`
 - :ref:`pip_install`
 - :ref:`source_code_install`
+- :ref:`fedora_install`
 
 
 #. Run ``scancode -h`` to make sure ScanCode was installed properly.
@@ -90,7 +91,7 @@ Once you are all set up with ScanCode-Toolkit, i.e. Running ``scancode -h`` show
 #. Refer :ref:`synopsis_quickstart` for commonly used scan commands, and commonly used
    :ref:`synopsis_output`. (The recommended output format is ``JSON``)
 
-#. Refer `this section <file:///home/ayansm/Desktop/GSoD/main_repo/aboutcode/docs/build/html/scancode-toolkit/cli-reference/list-options.html#all-extractcode-options>`_ for Extractcode Options.
+#. Refer :doc:`../rst_snippets/extract` for the use of ExtractCode.
 
 #. :ref:`how_to_run_a_scan` is a sample tutorial for absolute beginners, to walk them through the
    process of running a scan. Follow this tutorial and perform a scan on the ``sample`` folder
@@ -142,7 +143,7 @@ ScanCode Versions
 
 .. _newcomer_learn_scancode:
 
-Learn more about ScanCode Toolkit
+Learn more about ScanCode-Toolkit
 ---------------------------------
 
 Here we give an introduction on the ScanCode-Toolkit Documentation Sections that can help you to
@@ -153,7 +154,7 @@ learn more about ScanCode-Toolkit.
 CLI Reference
 ^^^^^^^^^^^^^
 
-This section contains a complete guide to ScanCode Toolkit Command Line options, i.e. What the
+This section contains a complete guide to ScanCode-Toolkit Command Line options, i.e. What the
 command-line options are, how different options affect the scan and outputs, how to use these
 options and examples of their use cases.
 
@@ -179,7 +180,7 @@ This section has documentation on :ref:`explain_how_scancode_works`.
 Plugins
 ^^^^^^^
 
-Plugins are an integral part of ScanCode Toolkit in the sense they are used to easily extend
+Plugins are an integral part of ScanCode-Toolkit in the sense they are used to easily extend
 ScanCode capabilities, and developers can code their own plugins according to their requirements.
 
 This section has documentation on:
@@ -215,7 +216,7 @@ If you haven't contributed to ScanCode-Toolkit refer :ref:`newcomer_good_first_i
 
 To determine where to contribute, you can refer:
 
-#. ScanCode Toolkit tracks issues via the `GitHub Issue tracker <https://github.com/aboutcode-org/scancode-toolkit/issues>`_
+#. ScanCode-Toolkit tracks issues via the `GitHub Issue tracker <https://github.com/aboutcode-org/scancode-toolkit/issues>`_
 #. Broad `milestones <https://github.com/aboutcode-org/scancode-toolkit/milestones>`_ for upcoming versions are also maintained.
 
 And documentation related to contributing code can be referred at :ref:`contrib_code_dev`.
@@ -266,7 +267,7 @@ You can contribute to the following Open Issues on documentation.
 
 #. `First Timers Only Issues List <https://github.com/aboutcode-org/scancode-toolkit/issues/1826>`_
 #. `Documentation Inconsistencies Tracker <https://github.com/aboutcode-org/scancode-toolkit/issues/1813>`_
-#. `ScanCode Toolkit Documentation Roadmap <https://github.com/aboutcode-org/scancode-toolkit/issues/1824>`_
+#. `ScanCode-Toolkit Documentation Roadmap <https://github.com/aboutcode-org/scancode-toolkit/issues/1824>`_
 #. `Issues with label Documentation <https://github.com/aboutcode-org/scancode-toolkit/issues?q=is%3Aopen+is%3Aissue+label%3Adocumentation>`_
 
 .. note::

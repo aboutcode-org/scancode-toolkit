@@ -5,7 +5,7 @@ How to set what will be detected in Scan
 
 ScanCode allows you to scan a codebase for license, copyright and other interesting information
 that can be discovered in files. The following options are available for detection when using
-ScanCode Toolkit:
+ScanCode-Toolkit:
 
 .. include::  /rst_snippets/basic_options.rst
 
