@@ -65,6 +65,7 @@ Before you start using ScanCode
 - :ref:`docker_install`
 - :ref:`pip_install`
 - :ref:`source_code_install`
+- :ref:`fedora_install`
 
 
 #. Run ``scancode -h`` to make sure ScanCode was installed properly.
