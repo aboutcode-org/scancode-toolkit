@@ -286,6 +286,17 @@ Run the ``docker build`` source code checkout directory.::
     cd scancode-toolkit
     docker build --tag scancode-toolkit --tag scancode-toolkit:$(git describe --tags) .
 
+.. note::
+
+  As ``$(git describe --tags)`` is a Unix-style command. If you are on
+  windows, please run the ``git describe --tags`` separately to get the
+  output, then manually insert that value into your Docker command.
+  For instance, ::
+
+    C:\scancode-toolkit>git describe --tags
+    v32.4.0
+    C:\scancode-toolkit>docker build --tag scancode-toolkit --tag scancode-toolkit:v32.4.0 .
+
 
 Run using Docker
 ^^^^^^^^^^^^^^^^
