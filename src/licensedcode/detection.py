@@ -31,6 +31,7 @@ from licensedcode.cache import get_licensing
 from licensedcode.match import LicenseMatch
 from licensedcode.match import set_matched_lines
 from licensedcode.match import is_extra_words_position_valid
+from licensedcode.match import is_extra_words_at_valid_positions
 from licensedcode.models import compute_relevance
 from licensedcode.models import Rule
 from licensedcode.models import UnDetectedRule
@@ -1166,21 +1167,6 @@ def has_low_rule_relevance(license_matches):
         for license_match in license_matches
     )
 
-
-def is_extra_words_at_valid_positions(license_matches):
-    """
-    Return True if all the matches in `license_matches List of LicenseMatch
-    has extra words are in the correct place.
-    """
-    for match in license_matches:
-        # check when we have `extra-words` detection
-        # if `query_coverage_coefficient` is positive number then 'extra-words` exit
-        if calculate_query_coverage_coefficient(match) > 0:
-            if not is_extra_words_position_valid(match):
-                return False
-            
-    # at the end return True if all matches have no extra-wors or this extra-words are in the right place
-    return True
 
 def is_false_positive(license_matches, package_license=False):
     """

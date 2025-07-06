@@ -1133,16 +1133,25 @@ def is_extra_words_position_valid(match):
 
     rule_index+=1    
 
-    # check if any `extra-words` is present and return False because this `extra-words` are not at marked place
+    # check if any `extra-words` is present after checking all `extra-phrase-spans` in rules
     while (matched_index < len(matched_tokens) and
         matched_tokens[matched_index] == rule_tokens[rule_index]):        
         matched_index+=1
         rule_index+=1
-
+    
+    # some `extra-words` are found
     if matched_index != len(matched_tokens):
         return False    
     
     return True
+
+
+def is_extra_words_at_valid_positions(license_matches):
+    """
+    Return True if any of the matches in `license_matches` that have `extra-words`
+    are in the right place.
+    """
+    return any(is_extra_words_position_valid(match) for match in license_matches)
 
 
 def filter_contained_matches(
