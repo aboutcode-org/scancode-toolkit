@@ -592,6 +592,16 @@ class NpmPackageJsonHandler(BaseNpmHandler):
             json_data = json.load(loc)
 
         yield cls._parse(json_data, package_only)
+    
+    @classmethod
+    def get_top_level_resources(cls, manifest_resource, codebase):
+        if "package.json" in manifest_resource.path:
+            path_segments = manifest_resource.path.split('package.json')
+            leading_segment = path_segments[0].strip()
+            meta_inf_resource = codebase.get_resource(leading_segment)
+            if meta_inf_resource:
+                yield meta_inf_resource
+                yield from meta_inf_resource.walk(codebase)
 
 
 class BaseNpmLockHandler(BaseNpmHandler):
