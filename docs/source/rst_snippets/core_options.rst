@@ -25,3 +25,12 @@ All "Core" Scan Options
                          including and below the starting point. INTEGER
                          must be positive or zero for no limit.
                          [Default: 0]
+
+
+.. note::
+
+    For optimal performance, it's recommended to set the `-n, --processes`
+    option to "number of CPU cores minus 1".
+    For example, on a quad-core/eight-thread machine, use ``-n 7``.
+
+
