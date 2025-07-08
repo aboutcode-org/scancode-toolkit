@@ -1096,9 +1096,17 @@ def is_correct_detection(license_matches):
     ]
 
     return (
-        all(matcher in ("1-hash", "1-spdx-id", "2-aho", "3-seq") for matcher in matchers)
+        all(matcher in ("1-hash", "1-spdx-id", "2-aho") for matcher in matchers)
         and all(is_match_coverage_perfect)
     )
+
+
+def has_extra_phrases(license_matches):
+    """
+    Return True if any of the matches in `license_matches` list of LicenseMatch
+    have the `extra-phrase` marker in their matches rule.
+    """
+    return any(match.rule.extra_phrase_spans for match in license_matches)
 
 
 def is_match_coverage_less_than_threshold(license_matches, threshold, any_matches=True):

@@ -1133,7 +1133,7 @@ def is_extra_words_position_valid(match):
 
     rule_index+=1    
 
-    # check if any `extra-words` is present after checking all `extra-phrase-spans` in rules
+    # After all spans are processed, ensure no unexpected extra words remain
     while (matched_index < len(matched_tokens) and
         matched_tokens[matched_index] == rule_tokens[rule_index]):        
         matched_index+=1

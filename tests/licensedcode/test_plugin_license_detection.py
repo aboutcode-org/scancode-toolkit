@@ -113,7 +113,7 @@ def test_license_match_unknown_clues_is_not_in_expression():
 
 
 def test_license_match_extra_words_3_seq():
-    test_dir = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-3-seq-license/with-copyrights')
+    test_dir = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-3-seq-license/')
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',
@@ -126,12 +126,12 @@ def test_license_match_extra_words_3_seq():
         test_dir,
     ]
     run_scan_click(args)
-    test_loc = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-with-copyrights-license.expected.json')
+    test_loc = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-3-seq-license.expected.json')
     check_json_scan(test_loc, result_file, regen=REGEN_TEST_FIXTURES)
 
 
 def test_license_match_extra_words_3_seq_without_copyrights():
-    test_dir = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-3-seq-license/without-copyrights')
+    test_dir = test_env.get_test_loc('plugin_license/extra-words/scan-extra-words-3-seq-license-without-copyright/')
     result_file = test_env.get_temp_file('json')
     args = [
         '--license',

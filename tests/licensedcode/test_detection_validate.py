@@ -18,6 +18,7 @@ from commoncode import text
 from licensedcode import cache
 from licensedcode import models
 from licensedcode.detection import is_correct_detection
+from licensedcode.detection import has_extra_phrases
 from licensedcode.models import licenses_data_dir
 from licensedcode.models import rules_data_dir
 from licensedcode.models import License
@@ -99,7 +100,7 @@ def check_rule_or_license_can_be_detected_exactly(licensish):
         assert results == expected
 
     icm = is_correct_detection(matches)
-    if not icm:
+    if not icm and not has_extra_phrases(matches):
         expected.append(f'file://{licensish.rule_file()}')
         assert results == expected
 
