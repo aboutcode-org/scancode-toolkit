@@ -7,12 +7,12 @@
 # See https://aboutcode.org for more information about nexB OSS projects.
 #
 
-FROM --platform=linux/amd64 python:3.12-slim-bookworm
+FROM --platform=linux/amd64 python:3.13-slim-bookworm AS build_amd64
 
 # Python settings: Force unbuffered stdout and stderr (i.e. they are flushed to terminal immediately)
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 # Python settings: do not write pyc files
-ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONDONTWRITEBYTECODE=1
 
 # OS requirements as per
 # https://scancode-toolkit.readthedocs.io/en/latest/getting-started/install.html
