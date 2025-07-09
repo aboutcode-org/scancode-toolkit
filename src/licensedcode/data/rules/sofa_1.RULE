@@ -1,10 +1,6 @@
 ---
-license_expression: proprietary-license
+license_expression: sofa
 is_license_text: yes
-is_deprecated: yes
-notes: https://web.archive.org/web/20160308060350/https://www.iausofa.org/tandc.html
-replaced_by:
-    - sofa
 ---
 
 SOFA Software License

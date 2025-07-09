@@ -38,6 +38,15 @@ v33.0.0 (next next, roadmap)
 - Update ABOUT files to adapt the ABOUT File Specification.
   See https://github.com/aboutcode-org/scancode-toolkit/issues/4181
 
+- Add licenses from SPDX License List 3.27
+  - Total Licenses: 21
+    - Old Licenses: 13
+      - From rules: 4
+      - From licenses: 9
+    - New licenses: 8
+  https://github.com/aboutcode-org/scancode-toolkit/pull/4468
+
+
 v32.4.0 - 2025-06-26
 --------------------
 

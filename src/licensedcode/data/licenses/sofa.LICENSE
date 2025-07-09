@@ -2,14 +2,18 @@
 key: sofa
 short_name: SOFA Software License
 name: SOFA Software License
-owner: (SOFA) Standards of Fundamental Astronomy Board of the International Astronomical Union
 category: Proprietary Free
+owner: SOFA
 notes: |
-   Added in SPDX License List 3.27
-   This was previously the proprietary-license_972.RULE
+    Added in SPDX License List 3.27
+    This was previously the proprietary-license_972.RULE
 spdx_license_key: SOFA
 other_urls:
     - http://www.iausofa.org/tandc.html
+ignorable_urls:
+    - http://www.iausofa.org/
+ignorable_emails:
+    - sofa@ukho.gov.uk
 ---
 
 =====================

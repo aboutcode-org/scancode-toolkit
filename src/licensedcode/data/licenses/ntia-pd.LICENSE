@@ -2,7 +2,7 @@
 key: ntia-pd
 short_name: NTIA Public Domain Notice
 name: NTIA Public Domain Notice
-owner: National Telecommunications and Information Administration (NTIA)
+owner: NTIA
 category: Public Domain
 spdx_license_key: NTIA-PD
 other_urls:

@@ -2,11 +2,13 @@
 key: ngrep
 short_name: ngrep License
 name: ngrep License
-owner: Jordan Ritter
 category: Permissive
+owner: Jordan Ritter
 spdx_license_key: ngrep
 other_urls:
     - https://github.com/jpr5/ngrep/blob/master/LICENSE
+ignorable_authors:
+    - Jordan Ritter
 ---
 
 Permission is granted to anyone to use this software for any purpose on

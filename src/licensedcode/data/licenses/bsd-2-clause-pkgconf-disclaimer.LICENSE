@@ -4,7 +4,7 @@ short_name: BSD 2-Clause pkgconf disclaimer variant
 name: BSD 2-Clause pkgconf disclaimer variant
 spdx_license_key: BSD-2-Clause-pkgconf-disclaimer
 category: Permissive
-owner: Audacious developers
+owner: Audacious Project
 other_urls:
     - https://github.com/audacious-media-player/audacious/blob/master/src/audacious/main.cc
     - https://github.com/audacious-media-player/audacious/blob/master/COPYING

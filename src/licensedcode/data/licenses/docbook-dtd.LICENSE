@@ -2,11 +2,15 @@
 key: docbook-dtd
 short_name: DocBook DTD License
 name: DocBook DTD License
-spdx_license_key: DocBook-DTD
 category: Permissive
 owner: OASIS
+spdx_license_key: DocBook-DTD
 other_urls:
     - http://www.docbook.org/xml/simple/1.1/docbook-simple-1.1.zip
+ignorable_urls:
+    - http://www.oasis-open.org/docbook
+ignorable_emails:
+    - docbook@lists.oasis-open.org
 ---
 
 Permission to use, copy, modify and distribute the DocBook XML DTD

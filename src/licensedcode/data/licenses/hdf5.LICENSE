@@ -14,6 +14,17 @@ standard_notice: "This file is part of HDF5.  The full HDF5 copyright notice, in
     terms governing use, modification, and redistribution, is contained in  \nthe COPYING file,\
     \ which can be found at the root of the source code     \ndistribution tree, or in https://support.hdfgroup.org/ftp/HDF5/releases.\n\
     If you do not have access to either file, you may request a copy from   \nhelp@hdfgroup.org. "
+ignorable_copyrights:
+    - Copyright 1998-2006 by The Board of Trustees of the University of Illinois
+    - Copyright 2006 by The HDF Group
+ignorable_holders:
+    - The Board of Trustees of the University of Illinois
+    - The HDF Group
+ignorable_authors:
+    - with support from Lawrence Livermore National Laboratory and the United States Department
+        of Energy
+    - with support from the Lawrence Berkeley National Laboratory
+    - with support from the University of California, Lawrence Livermore National Laboratory
 ---
 
 Copyright Notice and License Terms for
