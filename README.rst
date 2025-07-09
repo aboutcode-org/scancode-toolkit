@@ -226,12 +226,12 @@ For discussions and chats, we have:
 Source code and downloads
 =========================
 
-* https://github.com/nexB/scancode-toolkit/releases
-* https://github.com/nexB/scancode-toolkit.git
+* https://github.com/aboutcode-org/scancode-toolkit/releases
+* https://github.com/aboutcode-org/scancode-toolkit.git
 * https://pypi.org/project/scancode-toolkit/
-* https://github.com/nexB/scancode-thirdparty-src.git
-* https://github.com/nexB/scancode-plugins.git
-* https://github.com/nexB/thirdparty-packages.git
+* https://github.com/aboutcode-org/scancode-thirdparty-src.git
+* https://github.com/aboutcode-org/scancode-plugins.git
+* https://github.com/aboutcode-org/thirdparty-packages.git
 
 License
 =======
