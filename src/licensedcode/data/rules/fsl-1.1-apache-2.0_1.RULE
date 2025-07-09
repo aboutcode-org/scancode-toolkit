@@ -1,26 +1,15 @@
 ---
-key: fsl-1.1-apache-2.0
-short_name: FSL-1.1-Apache-2.0
-name: Functional Source License, Version 1.1, Apache 2.0 Future License
-category: Source-available
-owner: Sentry
-homepage_url: https://raw.githubusercontent.com/getsentry/fsl.software/main/FSL-1.1-Apache-2.0.template.md
-spdx_license_key: FSL-1.1-ALv2
-other_spdx_license_keys:
-    - LicenseRef-scancode-fsl-1.1-apache-2.0
-other_urls:
-    - https://fsl.software/
-    - https://fsl.software/FSL-1.1-ALv2.template.md
+license_expression: fsl-1.1-apache-2.0
+is_license_text: yes
 ignorable_urls:
     - http://www.apache.org/licenses/LICENSE-2.0
 ---
 
-
-# Functional Source License, Version 1.1, ALv2 Future License
+# Functional Source License, Version 1.1, Apache 2.0 Future License
 
 ## Abbreviation
 
-FSL-1.1-ALv2
+FSL-1.1-Apache-2.0
 
 ## Notice
 

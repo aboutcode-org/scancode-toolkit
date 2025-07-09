@@ -1,6 +1,9 @@
 ---
 license_expression: proprietary-license
 is_license_text: yes
+is_deprecated: yes
+replaced_by:
+    - sofa
 notes: https://web.archive.org/web/20160308060350/https://www.iausofa.org/tandc.html
 ---
 
