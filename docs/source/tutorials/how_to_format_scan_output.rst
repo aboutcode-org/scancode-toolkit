@@ -35,7 +35,9 @@ The following commands will output scan results in a formatted HTML page or simp
 * ``scancode --html-app /path/to/output.html /path/to/target/dir``
 
 For more details on the HTML output format refer :ref:`output_html`.
-To create a more elaborate template, refer to the default template provided with ScanCode. This template can be used with the --html option to generate customized HTML output.
+To create a more elaborate template, refer to the default template provided
+with ScanCode. This template can be used with the ``--html`` option to
+generate customized HTML output.
 
 
 .. WARNING::
