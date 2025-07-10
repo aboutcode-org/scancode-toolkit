@@ -28,9 +28,9 @@ data for this particular scan.
        {% endif %}
    ]
 
-   .. note::
+.. note::
 
-       File name and extension does not matter for the template file.
+    File name and extension does not matter for the template file.
 
 Now I can run ScanCode using my newly created template:
 
@@ -53,7 +53,6 @@ Now the results are saved in ``output.txt`` and we can easily view them with ``h
      copyright:"copyrighted by the Free Software Foundation",
    ]
 
-For a more elaborate template, refer this `default template <https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/formattedcode/templates/html/template.html>`_
-given with ScanCode, to generate HTML output with the ``--html`` output format option.
+.. include::  /rst_snippets/custom_html_output_avaliable_data.rst
 
 Documentation on `Jinja templates <https://jinja.palletsprojects.com/en/2.10.x/>`_.
