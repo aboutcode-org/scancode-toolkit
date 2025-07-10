@@ -29,8 +29,8 @@ All "Core" Scan Options
 
 .. note::
 
-    For optimal performance, it's recommended to set the `-n, --processes`
-    option to "number of CPU cores minus 1".
-    For example, on a quad-core/eight-thread machine, use ``-n 7``.
+    For local machines running additional applications like browsers, IDEs,
+    or chat tools, it’s recommended to allocate (number of CPUs) minus 2,
+    or fewer, based on current CPU usage for optimal stability.
 
 
