@@ -43,10 +43,6 @@ All Scan Output Options
 
 --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
 
---html-app FILE         [DEPRECATED] Use ``scancode-workbench``
-                        instead. Write scan output as a mini HTML
-                        application to FILE.
-
 --cyclonedx FILE        Write scan output as a CycloneDx 1.3 BOM
                         in pretty-printed JSON format to FILE
 
