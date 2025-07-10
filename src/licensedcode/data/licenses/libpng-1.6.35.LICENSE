@@ -1,10 +1,15 @@
 ---
-license_expression: libpng
-is_license_text: yes
-is_deprecated: yes
-notes: Added in SPDX license list 3.27
-replaced_by:
-    - libpng-1.6.35
+key: libpng-1.6.35
+short_name: PNG Reference Library License v1
+name: PNG Reference Library License v1 (for libpng 0.5 through 1.6.35)
+category: Permissive
+owner: libpng
+notes: |
+    Added in SPDX license list 3.27
+    This was previously the license rule: libpng_31.RULE
+spdx_license_key: libpng-1.6.35
+other_urls:
+    - http://www.libpng.org/pub/png/src/libpng-LICENSE.txt
 ignorable_copyrights:
     - Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
     - Copyright (c) 1996-1997 Andreas Dilger
@@ -15,6 +20,9 @@ ignorable_holders:
     - Glenn Randers-Pehrson
     - Guy Eric Schalnat, Group 42, Inc.
 ---
+
+PNG Reference Library License version 1 (for libpng 0.5 through 1.6.35)
+-----------------------------------------------------------------------
 
 libpng versions 1.0.7, July 1, 2000, through 1.6.35, July 15, 2018 are
 Copyright (c) 2000-2002, 2004, 2006-2018 Glenn Randers-Pehrson, are

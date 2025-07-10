@@ -693,13 +693,12 @@ other_license_expression_spdx: ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic
   AND Artistic-1.0-Perl)) AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND LicenseRef-scancode-other-copyleft
   AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND
   (Artistic-1.0-Perl OR GPL-1.0-or-later) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl
-  AND Artistic-1.0-Perl) OR LicenseRef-scancode-artistic-1988-1.0) AND (Artistic-1.0-Perl OR
-  LicenseRef-scancode-artistic-1988-1.0 OR GPL-1.0-or-later) AND LicenseRef-scancode-artistic-1988-1.0
-  AND LicenseRef-scancode-artistic-1988-1.0 AND ((Artistic-1.0-Perl AND Artistic-1.0-Perl) OR
-  (GPL-1.0-or-later AND GPL-1.0-only) OR LicenseRef-scancode-artistic-1988-1.0) AND (LicenseRef-scancode-artistic-1988-1.0
-  OR GPL-1.0-or-later) AND (((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
-  AND MIT) AND (GPL-1.0-or-later OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only)
-  OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND (Artistic-1.0-Perl OR GPL-1.0-or-later)
+  AND Artistic-1.0-Perl) OR Artistic-dist) AND (Artistic-1.0-Perl OR Artistic-dist OR GPL-1.0-or-later)
+  AND Artistic-dist AND Artistic-dist AND ((Artistic-1.0-Perl AND Artistic-1.0-Perl) OR (GPL-1.0-or-later
+  AND GPL-1.0-only) OR Artistic-dist) AND (Artistic-dist OR GPL-1.0-or-later) AND (((GPL-1.0-or-later
+  AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl)) AND MIT) AND (GPL-1.0-or-later
+  OR Artistic-1.0-Perl) AND ((GPL-1.0-or-later AND GPL-1.0-only) OR (Artistic-1.0-Perl AND Artistic-1.0-Perl))
+  AND (Artistic-1.0-Perl OR GPL-1.0-or-later)
 license_detections: []
 other_license_detections:
   - license_expression: lgpl-2.1
@@ -1441,7 +1440,7 @@ other_license_detections:
         end_line: 2483
         matcher: 1-hash
         score: '90.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 90
         rule_identifier: other-copyleft_4.RULE
@@ -1796,10 +1795,10 @@ other_license_detections:
           warranty.
     identifier: fsf_ap-a7d380d0-4462-458a-36c1-1852bdcbf538
   - license_expression: artistic-dist-1.0
-    license_expression_spdx: LicenseRef-scancode-artistic-1988-1.0
+    license_expression_spdx: Artistic-dist
     matches:
       - license_expression: artistic-dist-1.0
-        license_expression_spdx: LicenseRef-scancode-artistic-1988-1.0
+        license_expression_spdx: Artistic-dist
         from_file:
         start_line: 2716
         end_line: 2840
@@ -2115,7 +2114,7 @@ other_license_detections:
         end_line: 168
         matcher: 1-hash
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_47.RULE
@@ -2166,8 +2165,8 @@ other_license_detections:
       - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
         license_expression_spdx: Artistic-1.0-Perl OR GPL-1.0-or-later
         from_file:
-        start_line: '190'
-        end_line: '190'
+        start_line: 190
+        end_line: 190
         matcher: 1-hash
         score: '90.91'
         matched_length: 10
@@ -2183,8 +2182,8 @@ other_license_detections:
       - license_expression: artistic-perl-1.0 OR gpl-1.0-plus
         license_expression_spdx: Artistic-1.0-Perl OR GPL-1.0-or-later
         from_file:
-        start_line: '198'
-        end_line: '198'
+        start_line: 198
+        end_line: 198
         matcher: 1-hash
         score: '91.67'
         matched_length: 11
@@ -2373,7 +2372,7 @@ other_license_detections:
         end_line: 317
         matcher: 1-hash
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
@@ -2915,7 +2914,7 @@ other_license_detections:
         end_line: 586
         matcher: 1-hash
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_15.RULE
@@ -2934,7 +2933,7 @@ other_license_detections:
         end_line: 601
         matcher: 1-hash
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_25.RULE
@@ -3876,7 +3875,7 @@ other_license_detections:
         end_line: 1105
         matcher: 2-aho
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
@@ -4084,7 +4083,7 @@ other_license_detections:
         end_line: 1210
         matcher: 2-aho
         score: '70.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 70
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_34.RULE
@@ -4610,7 +4609,7 @@ other_license_detections:
         end_line: 1468
         matcher: 2-aho
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_45.RULE
@@ -4854,7 +4853,7 @@ other_license_detections:
         end_line: 1583
         matcher: 1-hash
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: artistic-perl-1.0_or_gpl-1.0-plus_49.RULE
@@ -5226,7 +5225,7 @@ other_license_detections:
         end_line: 1779
         matcher: 2-aho
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
@@ -5353,7 +5352,7 @@ other_license_detections:
         end_line: 1845
         matcher: 2-aho
         score: '100.0'
-        matched_length: '19'
+        matched_length: 19
         match_coverage: '100.0'
         rule_relevance: 100
         rule_identifier: gpl-1.0-plus_or_artistic-perl-1.0_39.RULE
@@ -5451,14 +5450,13 @@ other_license_detections:
           modify it under the same terms as Perl itself.
     identifier: artistic_perl_1_0_or_gpl_1_0_plus-5362e445-2780-fe5e-5f5c-8e18d2260a6e
   - license_expression: artistic-perl-1.0 OR artistic-dist-1.0 OR gpl-1.0-plus
-    license_expression_spdx: Artistic-1.0-Perl OR LicenseRef-scancode-artistic-1988-1.0 OR GPL-1.0-or-later
+    license_expression_spdx: Artistic-1.0-Perl OR Artistic-dist OR GPL-1.0-or-later
     matches:
       - license_expression: artistic-perl-1.0 OR artistic-dist-1.0 OR gpl-1.0-plus
-        license_expression_spdx: Artistic-1.0-Perl OR LicenseRef-scancode-artistic-1988-1.0
-          OR GPL-1.0-or-later
+        license_expression_spdx: Artistic-1.0-Perl OR Artistic-dist OR GPL-1.0-or-later
         from_file:
-        start_line: '1913'
-        end_line: '1928'
+        start_line: 1913
+        end_line: 1928
         matcher: 2-aho
         score: '100.0'
         matched_length: 103
@@ -5485,13 +5483,13 @@ other_license_detections:
           "Artistic-dist" tag.
     identifier: artistic_perl_1_0_or_artistic_dist_1_0_or_gpl_1_0_plus-9cd54d77-c838-d496-0a92-de100a6c75bc
   - license_expression: artistic-dist-1.0
-    license_expression_spdx: LicenseRef-scancode-artistic-1988-1.0
+    license_expression_spdx: Artistic-dist
     matches:
       - license_expression: artistic-dist-1.0
-        license_expression_spdx: LicenseRef-scancode-artistic-1988-1.0
+        license_expression_spdx: Artistic-dist
         from_file:
-        start_line: '1942'
-        end_line: '1944'
+        start_line: 1942
+        end_line: 1944
         matcher: 2-aho
         score: '100.0'
         matched_length: 21
@@ -5505,13 +5503,13 @@ other_license_detections:
           under the "Artistic-dist" tag.
     identifier: artistic_dist_1_0-52936621-27b8-5371-2fc4-9a5b06005497
   - license_expression: artistic-dist-1.0 OR gpl-1.0-plus
-    license_expression_spdx: LicenseRef-scancode-artistic-1988-1.0 OR GPL-1.0-or-later
+    license_expression_spdx: Artistic-dist OR GPL-1.0-or-later
     matches:
       - license_expression: artistic-dist-1.0 OR gpl-1.0-plus
-        license_expression_spdx: LicenseRef-scancode-artistic-1988-1.0 OR GPL-1.0-or-later
+        license_expression_spdx: Artistic-dist OR GPL-1.0-or-later
         from_file:
-        start_line: '1969'
-        end_line: '1993'
+        start_line: 1969
+        end_line: 1993
         matcher: 2-aho
         score: '100.0'
         matched_length: 213

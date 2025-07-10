@@ -1,6 +1,10 @@
 ---
 license_expression: public-domain
 is_license_text: yes
+is_deprecated: yes
+replaced_by:
+    - unlicense-libtelnet
+notes: Added in SPDX license list 3.27
 ---
 
 The author or authors of this code dedicate any and all copyright interest

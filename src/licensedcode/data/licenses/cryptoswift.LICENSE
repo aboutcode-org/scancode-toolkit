@@ -5,22 +5,18 @@ name: CryptoSwift License
 category: Permissive
 owner: Marcin Krzyzanowski
 homepage_url: https://github.com/krzyzanowskim/CryptoSwift/blob/main/LICENSE
-spdx_license_key: LicenseRef-scancode-cryptoswift
+spdx_license_key: CryptoSwift
+other_spdx_license_keys:
+    - LicenseRef-scancode-cryptoswift
 other_urls:
+    - https://github.com/krzyzanowskim/CryptoSwift/blob/main/LICENSE
     - https://github.com/krzyzanowskim/CryptoSwift/blob/main/CONTRIBUTING.md
-ignorable_copyrights:
-    - Copyright (c) 2014-3099 Marcin Krzyzanowski <marcin.krzyzanowski@gmail.com>
-ignorable_holders:
-    - Marcin Krzyzanowski
 ignorable_authors:
     - the Marcin Krzyzanowski (http://krzyzanowskim.com/)
 ignorable_urls:
     - http://krzyzanowskim.com/
-ignorable_emails:
-    - marcin.krzyzanowski@gmail.com
 ---
 
-Copyright (C) 2014-3099 Marcin Krzyżanowski <marcin.krzyzanowski@gmail.com>
 This software is provided 'as-is', without any express or implied warranty.
 
 In no event will the authors be held liable for any damages arising from the use of this software.
