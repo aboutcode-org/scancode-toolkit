@@ -82,7 +82,7 @@ installation of ScanCode. The code for this sort of plugin is located here::
 
     https://github.com/aboutcode-org/scancode-plugins
 
-This wiki page will focus on optional post-scan plugins.
+This page will focus on optional post-scan plugins.
 
 Example Post-Scan Plugin: Hello ScanCode
 ----------------------------------------
@@ -256,7 +256,7 @@ Imports
 Create a ``PostScanPlugin`` class
 """""""""""""""""""""""""""""""""
 
-The ``PostScanPlugin`` class
+The ``PostScanPlugin`` class (see
 `PostScanPlugin code <https://github.com/nexB/plugincode/blob/main/src/plugincode/post_scan.py>`_)
 inherits from the ``CodebasePlugin`` class (see
 `CodebasePlugin code <https://github.com/nexB/plugincode/blob/main/src/plugincode/__init__.py>`_),
@@ -294,8 +294,11 @@ which inherits from the ``BasePlugin`` class (see
 Load the plugin
 ---------------
 
-- To load and use the plugin in the normal course, navigate to the plugin's root folder (in this
-  example: ``/plugins/scancode-hello/``) and run ``pip install .`` (don't forget the final ``.``).
+- Esure the ScanCode-Toolkit's virtual environment ``(venv)`` is activated.
+
+- Navigate to the plugin's root folder (in this example:
+  ``/scancode-plugins/misc/scancode-hello/``) and run ``pip install .``
+  (don't forget the final ``.``).
 
 - If you're developing and want to test your work, save your edits and run ``pip install -e .``
   from the same folder.
@@ -304,13 +307,14 @@ Load the plugin
 More-complex examples
 ---------------------
 
-This Hello ScanCode example is quite simple. For examples of more-complex structures and
-functionalities you can take a look at the other post-scan plugins for guidance and ideas.
+This ``Hello ScanCode`` example is quite simple. For more complex
+structures and functionalities examples, you can take a look at the other
+post-scan plugins for guidance and ideas.
 
-One good example is the License Policy post-scan plugin. This plugin is installed when ScanCode
-is installed and consequently is not located in the ``/plugins/`` directory used for
-manually-installed post-scan plugins. The code for the License Policy plugin can be found at
+One good example is the License Policy post-scan plugin. This is a build-in
+plugin. The code for the License Policy plugin can be found at
 `/scancode-toolkit/src/licensedcode/plugin_license_policy.py
-<https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py>`_
-and illustrates how a plugin can be used to analyze the results of a ScanCode scan using external
-data files and add the results of that analysis as a new field in the ScanCode JSON output file.
+<https://github.com/aboutcode-org/scancode-toolkit/blob/develop/src/licensedcode/plugin_license_policy.py>`_.
+It illustrates how a plugin can be used to analyze the results of a
+ScanCode scan and add the results of that analysis as a new field in the
+ScanCode JSON output file.
