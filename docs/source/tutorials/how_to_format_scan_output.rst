@@ -3,9 +3,10 @@
 How to specify ScanCode Output Format
 =====================================
 
-A basic overview of formatting ScanCode Output is presented here.
+ScanCode-Toolkit offers various output formats for different use cases.
+This page highlights the most commonly used options.
 
-More information on :ref:`cli_output_format`.
+For the complete output list, please refer to :ref:`cli_output_format`.
 
 JSON
 ----
