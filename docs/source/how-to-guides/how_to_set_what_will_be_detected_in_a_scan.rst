@@ -1,7 +1,7 @@
 .. _how_to_set_what_scan_detects:
 
-How to set what will be detected in Scan
-========================================
+Set what will be detected in Scan
+=================================
 
 ScanCode allows you to scan a codebase for license, copyright and other interesting information
 that can be discovered in files. The following options are available for detection when using

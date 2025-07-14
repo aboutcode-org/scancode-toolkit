@@ -1,7 +1,7 @@
 .. _how_to_specify_output_format:
 
-How to specify ScanCode Output Format
-=====================================
+Specify ScanCode Output Format
+==============================
 
 A basic overview of formatting ScanCode Output is presented here.
 

@@ -1,7 +1,7 @@
 .. _install_external_licenses:
 
-How to Install External Licenses to Use in License Detection
-============================================================
+Install External Licenses to Use in License Detection
+=====================================================
 
 Users can install external licenses and rules in the form of:
 

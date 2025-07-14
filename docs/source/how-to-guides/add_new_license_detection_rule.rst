@@ -1,7 +1,7 @@
 .. _add_new_license_det_rule:
 
-How to Add New License Rules for Enhanced Detection
-===================================================
+Add New License Rules for Enhanced Detection
+============================================
 
 ScanCode relies on license rules to detect licenses. A rule is a simple text
 file containing a license text or notice or mention with YAML frontmatter with data

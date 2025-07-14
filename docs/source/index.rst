@@ -43,18 +43,6 @@ Reference documents describe the Command Line options, and application concepts 
 
 ----
 
-Tutorials
----------
-
-Tutorial documents provide specific instructions to help you get started.
-
-.. toctree::
-   :maxdepth: 2
-
-   tutorials/index
-
-----
-
 How-To Documents
 ----------------
 

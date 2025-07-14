@@ -119,10 +119,10 @@ Other Important Documentation Pages:
 - A `synopsis <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/synopsis.html>`_
   of ScanCode command line options.
 
-- Tutorials on:
+- How-Tos on:
 
-  - `How to run a scan <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_run_a_scan.html>`_
-  - `How to visualize scan results <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_visualize_scan_results.html>`_
+  - `Run a scan <https://scancode-toolkit.readthedocs.io/en/latest/how-to-guides/how_to_run_a_scan.html>`_
+  - `Visualize scan results <https://scancode-toolkit.readthedocs.io/en/latest/how-to-guides/how_to_visualize_scan_results.html>`_
 
 - An exhaustive list of `all available options <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/list-options.html>`_
 
@@ -171,7 +171,7 @@ After ScanCode is installed successfully you can run an example scan printed on 
 
     scancode -clip --json-pp - samples
 
-Follow the `How to Run a Scan <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_run_a_scan.html>`_
+Follow the `How to Run a Scan <https://scancode-toolkit.readthedocs.io/en/latest/how-to-guides/how_to_run_a_scan.html>`_
 tutorial to perform a basic scan on the ``samples`` directory distributed by
 default with ScanCode.
 
@@ -180,8 +180,8 @@ See more command examples::
     scancode --examples
 
 See `How to select what will be detected in a scan
-<https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_set_what_will_be_detected_in_a_scan.html>`_
-and `How to specify the output format <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_format_scan_output.html>`_
+<https://scancode-toolkit.readthedocs.io/en/latest/how-to-guides/how_to_set_what_will_be_detected_in_a_scan.html>`_
+and `How to specify the output format <https://scancode-toolkit.readthedocs.io/en/latest/how-to-guides/how_to_format_scan_output.html>`_
 for more information.
 
 You can also refer to the `command line options synopsis
@@ -203,7 +203,7 @@ directory::
     ./extractcode mytar.tar.bz2
 
 See `all extractcode options <https://scancode-toolkit.readthedocs.io/en/latest/cli-reference/list-options.html#all-extractcode-options>`_
-and `how to extract archives <https://scancode-toolkit.readthedocs.io/en/latest/tutorials/how_to_extract_archives.html>`_ for details.
+and `how to extract archives <https://scancode-toolkit.readthedocs.io/en/latest/how-to-guides/how_to_extract_archives.html>`_ for details.
 
 
 Support
