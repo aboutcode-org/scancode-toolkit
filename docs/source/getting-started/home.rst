@@ -138,7 +138,8 @@ Thank you for giving ScanCode a try!
 
 License
 -------
-ScanCode is licensed under Apache-2.0 and others. See `License
+ScanCode is licensed under Apache-2.0 and others. Datasets contributed is
+subject to CC-BY-4.0. See `License
 <https://github.com/aboutcode-org/scancode-toolkit?tab=readme-ov-file#license>`_
 for details.
 
