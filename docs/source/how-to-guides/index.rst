@@ -14,5 +14,6 @@
    add_new_license
    add_new_license_detection_rule
    install_new_license_plugin
+   run_as_library
    generate_attribution
    how_to_add_a_post_scan_plugin

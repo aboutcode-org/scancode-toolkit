@@ -423,6 +423,10 @@ For more information on Python virtualenv, visit this
     no default dependencies on pre-built binaries. This may come handy for some
     special use cases such as packaging for a Linux or FreeBSD distro.
 
+.. NOTE::
+
+  Refer :ref:`run_as_library` for usage samples.
+
 
 To uninstall, run::
 
