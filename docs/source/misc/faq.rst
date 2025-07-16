@@ -82,3 +82,62 @@ When scanning binaries, the line numbers are just a relative indication of where
 a detection was found: there is no such thing as lines in a binary. The numbers
 reported are based on the strings extracted from the binaries, typically broken
 as new lines with each NULL character.
+
+
+How does ``--license-text`` for ScanCode works exactly?
+-------------------------------------------------------------
+
+I have a question about how ``--license-text`` for ScanCode works exactly:
+Is the matched text that gets included into the result exactly the lines of text
+from the input file that are covered by the ``start_line`` and ``end_line``
+fields of the result? I.e., if I would post-process the input file and extract
+``start_line`` to ``end_line`` from it, would I get exactly the ``matched_text``
+contents? Or is there some more "magic" involved when populating the
+``matched_text`` field?
+
+ScanCode is a bit smarter than just start and end line, as matching is based on
+words, not lines of the actual scanned text.
+And a whole line may not always be matched.
+
+For instance with this command::
+
+    $ echo "Foo is a wonder piece of code. Licensed under the GPL. For support contact foo@bar.com " > tst
+    $ scancode --license --license-text --license-text-diagnostics --yaml - tst
+    ...
+        license_detections:
+            -   license_expression: gpl-1.0-plus
+                license_expression_spdx: GPL-1.0-or-later
+                matches:
+                    -   license_expression: gpl-1.0-plus
+                        license_expression_spdx: GPL-1.0-or-later
+                        from_file: tst
+                        start_line: 1
+                        end_line: 1
+                        matcher: 2-aho
+                        score: '100.0'
+                        matched_length: 4
+                        match_coverage: '100.0'
+                        rule_relevance: 100
+                        rule_identifier: gpl_85.RULE
+                        rule_url: https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/gpl_85.RULE
+                        matched_text: Foo is a wonder piece of code. Licensed under the GPL.
+                            For support contact foo@bar.com
+                        matched_text_diagnostics: Licensed under the GPL.
+    ...
+
+then:
+
+- ``matched_text`` is based on ``start_line`` and ``end_line``
+- ``matched_text_diagnostics`` is based on the exact matched words (and it includes "tagged" gaps or extra)
+
+
+
+
+
+
+
+
+
+
+
+
