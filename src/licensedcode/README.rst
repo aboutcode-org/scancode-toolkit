@@ -9,22 +9,22 @@ perform scans and provide precise license conclusions.
 Key Functionality
 -----------------
 
- * License Rule Management: Stores and manages a large collection of
-   license rules, including full texts, snippets, and regular expressions.
+- License Rule Management: Stores and manages a large collection of
+  license rules, including full texts, snippets, and regular expressions.
 
- * Pattern Matching: Implements sophisticated algorithms for matching
-   detected code against known license patterns and texts.
+- Pattern Matching: Implements sophisticated algorithms for matching
+  detected code against known license patterns and texts.
 
- * License Detection Logic: Contains the core logic for processing scan
-   input, applying rules, and determining the presence and type of
-   licenses.
+- License Detection Logic: Contains the core logic for processing scan
+  input, applying rules, and determining the presence and type of
+  licenses.
 
- * Rule-based Detection: Utilizes a robust system of rules to identify
-   licenses even when only fragments or variations of license texts are
-   present.
+- Rule-based Detection: Utilizes a robust system of rules to identify
+  licenses even when only fragments or variations of license texts are
+  present.
 
- * License Expression Parsing: Supports the parsing and interpretation of
-   complex license expressions (e.g., "MIT AND Apache-2.0").
+- License Expression Parsing: Supports the parsing and interpretation of
+  complex license expressions (e.g., "MIT AND Apache-2.0").
 
 
 How It Works (High-Level)
@@ -32,20 +32,20 @@ How It Works (High-Level)
 
 At a high level, the `licensedcode`` module operates by:
 
- 1. Loading License Data: It initializes by loading a curated set of
-    license texts, short license identifiers, and detection rules from its
-    internal data store.
+1. Loading License Data: It initializes by loading a curated set of
+  license texts, short license identifiers, and detection rules from its
+  internal data store.
 
- 2. Scanning Input: When ScanCode processes a file or directory, the
-    content is converted into an internal representation (a "query").
+2. Scanning Input: When ScanCode processes a file or directory, the
+  content is converted into an internal representation (a "query").
 
- 3. Applying Rules: The module then applies its extensive set of rules and
-    patterns to the input content through a multi-stage pipeline, looking
-    for matches.
+3. Applying Rules: The module then applies its extensive set of rules and
+  patterns to the input content through a multi-stage pipeline, looking
+  for matches.
 
- 4. Reporting Detections: Upon successful matches, it reports the
-    identified licenses, their confidence levels, and the exact locations
-    (lines, characters) where they were found.
+4. Reporting Detections: Upon successful matches, it reports the
+  identified licenses, their confidence levels, and the exact locations
+  (lines, characters) where they were found.
 
 For a more in-depth understanding of the underlying technical principles
 and the detection pipeline, please refer to the sections below.
