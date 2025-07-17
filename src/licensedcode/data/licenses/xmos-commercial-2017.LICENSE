@@ -1,0 +1,143 @@
+---
+key: xmos-commercial-2017
+short_name: XMOS Commercial 2017
+name: XMOS Commercial 2017
+category: Commercial
+owner: XMOS
+homepage_url: https://github.com/xmos/lib_lin/blob/master/LICENSE.txt
+spdx_license_key: LicenseRef-scancode-xmos-commercial-2017
+---
+
+Software Release License Agreement
+
+BY ACCESSING, USING, INSTALLING OR DOWNLOADING THE XMOS SOFTWARE, YOU AGREE TO BE BOUND BY THE FOLLOWING TERMS. IF YOU DO NOT AGREE TO THESE, DO NOT ATTEMPT TO DOWNLOAD, ACCESS OR USE THE XMOS Software.
+
+Parties:
+
+(1) XMOS Limited, incorporated and registered in England and Wales with company number 5494985 whose registered office is 107 Cheapside, London, EC2V 6DN (XMOS).
+
+(2)  An individual or legal entity exercising permissions granted by this License (Customer).
+
+If you are entering into this Agreement on behalf of another legal entity such as a company, partnership, university, college etc. (for example, as an employee, student or consultant), you warrant that you have authority to bind that entity.
+
+1. Definitions
+
+"License" means this Software License and any schedules or annexes to it.
+
+"License Fee" means the fee for the XMOS Software as detailed in any schedules or annexes to this Software License
+
+"Licensee Modifications" means all developments and modifications of the XMOS Software developed independently by the Customer.
+
+"XMOS Modifications" means all developments and modifications of the XMOS Software developed or co-developed by XMOS.
+
+"XMOS Hardware" means any XMOS hardware devices supplied by XMOS from time to time and/or the particular XMOS devices detailed in any schedules or annexes to this Software License.
+
+"XMOS Software" comprises the XMOS owned circuit designs, schematics, source code, object code, reference designs, (including related programmer comments and documentation, if any), error corrections, improvements, modifications (including XMOS Modifications) and updates.
+
+The headings in this License do not affect its interpretation. Save where the context otherwise requires, references to clauses and schedules are to clauses and schedules of this License.
+
+Unless the context otherwise requires:
+
+- references to XMOS and the Customer include their permitted successors and assigns; 
+- references to statutory provisions include those statutory provisions as amended or re-enacted; and
+- references to any gender include all genders.
+
+Words in the singular include the plural and in the plural include the singular.
+
+2. License
+
+XMOS grants the Customer a non-exclusive license to use, develop, modify and distribute the XMOS Software with, or for the purpose of being used with, XMOS Hardware.
+
+Open Source Software (OSS) must be used and dealt with in accordance with any license terms under which OSS is distributed.
+
+3. Consideration
+
+In consideration of the mutual obligations contained in this License, the parties agree to its terms.
+
+4. Term
+
+Subject to clause 12 below, this License shall be perpetual.
+
+5. Restrictions on Use
+
+The Customer will adhere to all applicable import and export laws and regulations of the country in which it resides and of the United States and United Kingdom, without limitation. The Customer agrees that it is its responsibility to obtain copies of and to familiarise itself fully with these laws and regulations to avoid violation.
+
+6. Modifications
+
+The Customer will own all intellectual property rights in the Licensee Modifications but will undertake to provide XMOS with any fixes made to correct any bugs found in the XMOS Software on a non-exclusive, perpetual and royalty free license basis.
+
+XMOS will own all intellectual property rights in the XMOS Modifications. 
+The Customer may only use the Licensee Modifications and XMOS Modifications on, or in relation to, XMOS Hardware.
+
+7. Support
+
+Support of the XMOS Software may be provided by XMOS pursuant to a separate support agreement. 
+
+8. Warranty and Disclaimer
+
+The XMOS Software is provided "AS IS" without a warranty of any kind. XMOS and its licensors' entire liability and Customer's exclusive remedy under this warranty to be determined in XMOS's sole and absolute discretion, will be either (a) the corrections of defects in media or replacement of the media, or (b) the refund of the license fee paid (if any).
+
+Whilst XMOS gives the Customer the ability to load their own software and applications onto XMOS devices, the security of such software and applications when on the XMOS devices is the Customer's own responsibility and any breach of security shall not be deemed a defect or failure of the hardware. XMOS shall have no liability whatsoever in relation to any costs, damages or other losses Customer may incur as a result of any breaches of security in relation to your software or applications.
+
+XMOS AND ITS LICENSORS DISCLAIM ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY/ SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT EXCEPT TO THE EXTENT THAT THESE DISCLAIMERS ARE HELD TO BE LEGALLY INVALID UNDER APPLICABLE LAW.
+
+9. High Risk Activities
+
+The XMOS Software is not designed or intended for use in conjunction with on-line control equipment in hazardous environments requiring fail-safe performance, including without limitation the operation of nuclear facilities, aircraft navigation or communication systems, air traffic control, life support machines, or weapons systems (collectively "High Risk Activities") in which the failure of the XMOS Software could lead directly to death, personal injury, or severe physical or environmental damage. XMOS and its licensors specifically disclaim any express or implied warranties relating to use of the XMOS Software in connection with High Risk Activities.
+
+10. Liability
+
+TO THE EXTENT NOT PROHIBITED BY APPLICABLE LAW, NEITHER XMOS NOR ITS LICENSORS SHALL BE LIABLE FOR ANY LOST REVENUE, BUSINESS, PROFIT, CONTRACTS OR DATA, ADMINISTRATIVE OR OVERHEAD EXPENSES, OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES HOWEVER CAUSED AND REGARDLESS OF THEORY OF LIABILITY ARISING OUT OF THIS LICENSE, EVEN IF XMOS HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. In no event shall XMOS's liability to the Customer whether in contract, tort (including negligence), or otherwise exceed the License Fee.
+
+Customer agrees to indemnify, hold harmless, and defend XMOS and its licensors from and against any claims or lawsuits, including attorneys' fees and any other liabilities, demands, proceedings, damages, losses, costs, expenses fines and charges which are made or brought against or incurred by XMOS as a result of your use or distribution of the Licensee Modifications or your use or distribution of XMOS Software, or any development of it, other than in accordance with the terms of this License.
+
+11. Ownership
+
+The copyrights and all other intellectual and industrial property rights for the protection of information with respect to the XMOS Software (including the methods and techniques on which they are based) are retained by XMOS and/or its licensors. Nothing in this Agreement serves to transfer such rights. Customer may not sell, mortgage, underlet, sublease, sublicense, lend or transfer possession of the XMOS Software in any way whatsoever to any third party who is not bound by this Agreement.
+
+12. Termination
+
+Either party may terminate this License at any time on written notice to the other if the other:
+
+- is in material or persistent breach of any of the terms of this License and either that breach is incapable of remedy, or the other party fails to remedy that breach within 30 days after receiving written notice requiring it to remedy that breach; or
+
+- is unable to pay its debts (within the meaning of section 123 of the Insolvency Act 1986), or becomes insolvent, or is subject to an order or a resolution for its liquidation, administration, winding-up or dissolution (otherwise than for the purposes of a solvent amalgamation or reconstruction), or has an administrative or other receiver, manager, trustee, liquidator, administrator or similar officer appointed over all or any substantial part of its assets, or enters into or proposes any composition or arrangement with its creditors generally, or is subject to any analogous event or proceeding in any applicable jurisdiction.
+
+Termination by either party in accordance with the rights contained in clause 12 shall be without prejudice to any other rights or remedies of that party accrued prior to termination.
+
+On termination for any reason:
+
+- all rights granted to the Customer under this License shall cease;
+- the Customer shall cease all activities authorised by this License;
+- the Customer shall immediately pay any sums due to XMOS under this License; and
+- the Customer shall immediately destroy or return to the XMOS (at the XMOS's option) all copies of the XMOS Software then in its possession, custody or control and, in the case of destruction, certify to XMOS that it has done so.
+
+Clauses 5, 8, 9, 10 and 11 shall survive any effective termination of this Agreement.
+
+13. Third party rights
+
+No term of this License is intended to confer a benefit on, or to be enforceable by, any person who is not a party to this license.
+
+14. Confidentiality and publicity
+
+Each party shall, during the term of this License and thereafter, keep confidential all, and shall not use for its own purposes nor without the prior written consent of the other disclose to any third party any, information of a confidential nature (including, without limitation, trade secrets and information of commercial value) which may become known to such party from the other party and which relates to the other party, unless such information is public knowledge or already known to such party at the time of disclosure, or subsequently becomes public knowledge other than by breach of this license, or subsequently comes lawfully into the possession of such party from a third party.
+
+The terms of this license are confidential and may not be disclosed by the Customer without the prior written consent of XMOS.
+The provisions of clause 14 shall remain in full force and effect notwithstanding termination of this license for any reason.
+
+15. Entire agreement
+
+This License and the documents annexed as appendices to this License or otherwise referred to herein contain the whole agreement between the parties relating to the subject matter hereof and supersede all prior agreements, arrangements and understandings between the parties relating to that subject matter.
+
+16. Assignment
+
+The Customer shall not assign this License or any of the rights granted under it without XMOS's prior written consent.
+
+17. Governing law and jurisdiction
+
+This License shall be governed by and construed in accordance with English law and each party hereby submits to the non-exclusive jurisdiction of the English courts.
+
+This License has been entered into on the date stated at the beginning of it.
+
+Schedule
+XMOS LIN library software

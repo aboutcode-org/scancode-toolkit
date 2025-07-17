@@ -1,0 +1,14 @@
+---
+key: mldonkey-exception-gpl-2.0
+short_name: MLDonkey Exception to GPL 2.0
+name: MLDonkey Exception to GPL 2.0
+category: Copyleft Limited
+owner: ygrek
+homepage_url: https://github.com/ygrek/mldonkey/blob/unstable-2-02-1/COPYING#L9
+is_exception: yes
+spdx_license_key: LicenseRef-scancode-mldonkey-exception-gpl-2.0
+---
+
+This licence is a copy from the GPL licence, with the noticeable difference
+that, in Section 3, the "preferred form of the work for making modifications
+to it" does not apply to the donkey/donkey.lam file of the distribution.

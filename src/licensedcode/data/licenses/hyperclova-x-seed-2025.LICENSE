@@ -1,0 +1,79 @@
+---
+key: hyperclova-x-seed-2025
+short_name: HyperCLOVA X SEED Model 2025
+name: HyperCLOVA X SEED Model License Agreement 2025
+category: Proprietary Free
+owner: HuggingFace
+homepage_url: https://huggingface.co/naver-hyperclovax/HyperCLOVAX-SEED-Vision-Instruct-3B/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-hyperclova-x-seed-2025
+ignorable_copyrights:
+    - Copyright (c) NAVER Corp.
+ignorable_holders:
+    - NAVER Corp.
+ignorable_authors:
+    - NAVER Corp.
+---
+
+HyperCLOVA X SEED Model License Agreement
+
+Model Release Date: April 24, 2025
+ 
+This HyperCLOVA X SEED Model License Agreement (the “Agreement”) is a legal agreement between you and NAVER Corporation and NAVER Cloud Corporation (“NAVER”) and governs your use of the Models that NAVER provides to You under this Agreement. 
+
+NAVER Corp., as the holder of the intellectual property of the Model, and its affiliate, NAVER Cloud Corp., as the exclusive business operator of HyperCLOVA X, enter into this Agreement with you. NAVER and you are each a “party” and collectively the “parties.”
+
+By using, reproducing, modifying, distributing, performing or displaying any portion or element of the Model or Derivative Model, or otherwise accepting the terms of this Agreement, you agree to be bound by this Agreement. You represent to us that you are lawfully able to enter into contracts, and if you are entering into this Agreement for an entity, that you have legal authority to bind that entity. 
+
+1.	Definitions. 
+
+1.1.	"Affiliate” means any entity directly or indirectly controlling, controlled by or under common control with either party, where “control” means the possession, directly or indirectly, of the power to independently direct or cause the direction of the management and policies of an entity, whether through ownership of more than fifty percent (50%) of the stock or other equity interests entitled to vote for representation on its board of directors, or body performing similar functions, by contract or otherwise.
+
+1.2.	“Derivative Model” means all (i) modifications to the Model, (ii) works based on the Model, or (iii) any other machine learning model which is created by transfer of patterns of the weights, parameters, operations, or Output of the Model, to that model in order to cause that model to perform similarly to the Model, including distillation methods that use intermediate data representations or methods based on the generation of synthetic data Outputs by the Model for training that Model. For clarity, Outputs are not deemed Derivative Model. 
+
+1.3.	“Licensee” or “you” means you, or your employer or any other person or entity (if you are entering into this Agreement on such person or entity’s behalf), of the age required under applicable laws, rules or regulations to provide legal consent and that has legal authority to bind your employer or such other person or entity if you are entering in this Agreement on their behalf.
+
+1.4.	“Model” means the foundational large language models and software and algorithms, including machine-learning model code and trained model weights distributed by NAVER. 
+
+1.5.	“Output” means the information content output of the Model or a Derivative Model that results from operating or otherwise using the Model or Derivative Models. 
+
+2.	Conditions for Use, License Grant and Restrictions
+
+2.1.	Conditions for Use. The Model and any Derivative Model are subject to the terms of this Agreement and govern your use. If You institute copyright or patent litigation against any entity (including a crossclaim or counterclaim in a lawsuit) alleging that the Model or a Derivative Model constitutes direct or contributory copyright or patent infringement, then any license granted to you under this Agreement for that Model or Derivative Model will terminate as of the date such litigation is filed. NAVER may update this Agreement to comply with legal and regulatory requirements any time and You agree to either comply with any updated license or cease your copying, use, and distribution of the Model and any Derivative Model.
+
+2.2.	License Grant. Subject to the terms and conditions of this Agreement, NAVER hereby grants to you a non-exclusive, worldwide, non-transferable, revocable and royalty-free limited license under NAVER’s intellectual property or other rights owned by NAVER embodied in the Model to access, download, install, copy, use, reproduce, distribute, create derivative works of, and make modifications to the Model. 
+
+2.3.	Prohibited Use Policy. NAVER is committed to safety, trust and transparency in AI development. NAVER encourages You to (i) ensure that the product or service you develop, use, offer as a service or distributes meets the legal and ethical requirements of the relevant industry or use case, (ii) take reasonable measures to address unintended bias and to mitigate harm to others, including underrepresented or vulnerable groups, and (iii) inform users of the nature and limitations of the product or service. NAVER expressly prohibits the use of its products or services for any purpose in violation of applicable law and regulation, including but not limited to (a) illegal surveillance, (b) illegal collection or processing of biometric information without the consent of the subject where required under applicable law, or (c) illegal harassment, abuse, threatening or bullying of individuals or groups of individuals or intentionally misleading or deceiving others. 
+
+3.	Redistribution. 
+
+3.1.	You may reproduce, distribute or make available the Model or Derivative Models thereof, or a product or service (including another AI model) that contains any of them, if you meet all of the following conditions: you must (i) include the Prohibited Use Policy referenced in Section 2.3. as an enforceable provision in any agreement (e.g., license agreement, terms of use, etc.) governing the use and/or distribution of the Model or Derivative Model and you must provide notice to subsequence users you distribute to the Model or Derivative Models are subject to the use restrictions in Section 2.3., (ii) provide all third party recipients of the Model or Derivative Models a copy of this Agreement, (iii) cause any modified files to carry prominent notices stating that you modified the files; (iv) include the following attribution notice within a “Notice” text file distributed as part of such copies: “HyperCLOVA X SEED Model is licensed under the HyperCLOVA X SEED Model License Agreement, Copyright © NAVER Corp. All Rights Reserved.”, and (v) prominently display “Powered by HyperCLOVA X” on a related website, user interface, blogpost, about page, or product documentation. If you use the Model or any Outputs of the Model to create, train, fine tune, or otherwise improve an AI model, which is distributed or made available, you shall also include “HyperCLOVA X” at the beginning of any such AI model name.
+
+3.2.	You may add your own copyright statement to your modifications and, except as set forth in this Section, may provide additional or different license terms and conditions for use, reproduction, or distribution of your modifications, or for any such Derivative Models as a whole, provided your use, reproduction, and distribution of the Model or Derivative Models otherwise comply with the terms and conditions stated in this Agreement. Any additional or different terms and conditions you impose must not conflict with the terms of this Agreement. 
+
+4.	Additional Commercial Terms. If (i) as of the Model Release Date, the monthly active users of the products or services made available by or for Licensee, or Licensee’s Affiliates, is greater than 10 million monthly active users in the preceding calendar month, or (ii) the Licensee or its Affiliate distributes or makes available any product or service, which is substantially similar to or directly competes with any product and service provided by NAVER, then the Licensee must request a license from NAVER. Such license may be granted by NAVER at its sole discretion, and the Licensee is not authorized to exercise any rights under this Agreement unless and until NAVER expressly grants you such rights.
+
+5.	Generated Output. NAVER claims no rights in Outputs you generate using the Model. You and your use are solely responsible for Outputs and their subsequent uses. 
+
+6.	DISCLAIMER OF WARRANTY. UNLESS REQUIRED BY APPLICABLE LAW, THE MODEL AND ANY OUTPUT AND RESULTS THEREFROM ARE PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OR ANY KIND, AND NAVER DISCLAIMS ALL WARRANTIES OF ANY KIND, BOTH EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU ARE SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING OR REDISTRIBUTING THE MODEL, DERIVATIVE MODELS, OUTPUTS AND ASSUME ANY RISKS ASSOCIATED WITH YOUR USE OF THE MODEL AND ANY OUTPUTS AND RESULTS AND YOUR EXERCISE OF PERMISSION UNDER THIS AGREEMENT. 
+
+7.	LIMITATION OF LIABILITY. IN NO EVENT AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, UNLESS REQUIRED BY APPLICABLE LAW (SUCH AS IN CASES OF DELIBERATE AND GROSSLY NEGLIGENT ACTS), WILL NAVER BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR LOST PROFITS OF ANY KIND, ARISING FROM OR RELATED TO THIS AGREEMENT, OR RESULTING FROMTHE USE OR INABILITY TO USE THE MODEL, DERIVATIVE MODELS OR, OUTPUTS (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGES, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES), EVEN IF NAVER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+8.	Indemnity. You will indemnify and hold harmless NAVER from and against any claim by any third party arising out of or related to your use or distribution of the Model, Derivative Model or Outputs. 
+
+9.	Intellectual Property.
+
+9.1.	This Agreement does not grant permission to use the trade names, trademarks, service marks, or product names of NAVER, except as required for reasonable and customary use in describing the origin of the Model and reproducing the content of the “Notice” text file. 
+
+9.2.	NAVER Corp. owns the Model and any Derivative Model created by NAVER Corp. Except as expressively granted in this Agreement, NAVER Corp. reserves all rights, interests and remedies in connection with the Model and Derivative Model created by NAVER Corp. and no other license or right is granted to you by implication, estoppel or otherwise. Subject to NAVER Corp.’s ownership of the Model and any Derivative Model made by or for NAVER Corp., with respect to any derivative works and modifications of the Model that are made by you, as between you and NAVER Corp., you are and will be the owner of such derivative works and modifications.
+
+10.	Term and Termination. The term of this Agreement will commence upon your acceptance of this Agreement or access to the Model and will continue in full force and effect until terminated in accordance with the terms and conditions of this Agreement. NAVER may terminate this Agreement if you breach any of the terms or conditions of this Agreement. Upon termination of this Agreement, you shall delete and cease use of the Model and Derivative Model. Section 5, 6, 7 and 10 shall survive the termination of this Agreement. 
+
+11.	Governing Law and Jurisdiction. 
+
+11.1.	This Agreement will be governed by and construed in accordance with the laws of the Republic of Korea, without regard to its conflicts of laws principles. 
+
+11.2.	Any disputes, controversies, or claims arising out of or relating to this Agreement, including its existence, validity, interpretation, performance, breach, or termination, shall be referred to and finally resolved by arbitration administered by the Korean Commercial Arbitration Board (KCAB) in accordance with the International Arbitration Rules of the Korean Commercial Arbitration Board in force at the time of the commencement of the arbitration. The seat of arbitration shall be Seoul, Republic of Korea. The tribunal shall consist of one arbitrator. The language of the arbitration shall be English. Either party may seek interim or provisional relief from a court of competent jurisdiction, and doing so shall not be considered a waiver of any provision in this section. The arbitral tribunal also has the authority to issue orders for interim or provisional relief.
+
+12.	Modifications. NAVER reserves the right to modify or amend this Agreement at any time, in its sole discretion. Any modifications will be effective upon posting the updated Agreement on our website or through other means of communication. You are responsible for reviewing the Agreement periodically for changes. 
+
+13.	No Waiver. NAVER will not be treated as having waived any rights by not exercising (or delaying the exercise of) any rights under this Agreement.

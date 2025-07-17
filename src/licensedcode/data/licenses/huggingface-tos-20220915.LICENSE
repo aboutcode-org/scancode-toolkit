@@ -3,7 +3,7 @@ key: huggingface-tos-20220915
 short_name: HuggingFace TOS 2022-09-15
 name: HuggingFace Terms of Service 2022-09-15
 category: Commercial
-owner: BigScience
+owner: HuggingFace
 homepage_url: https://huggingface.co/terms-of-service
 spdx_license_key: LicenseRef-scancode-huggingface-tos-20220915
 ignorable_urls:

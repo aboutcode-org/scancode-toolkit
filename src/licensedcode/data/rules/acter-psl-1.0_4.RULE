@@ -1,0 +1,11 @@
+---
+license_expression: acter-psl-1.0
+is_license_reference: yes
+relevance: 90
+ignorable_urls:
+    - https://github.com/acterglobal/a3/blob/main/LICENSE.txt
+---
+
+The full license can be found in the [`acterglobal/a3` repository]
+{{(https://github.com/acterglobal/a3/blob/main/LICENSE.txt).}}
+For other uses, please contact the Acter team.

@@ -1,0 +1,81 @@
+---
+key: odin-2000
+short_name: Odin Software License 2000
+name: Odin Software License 2000
+category: Proprietary Free
+owner: Odin Project
+homepage_url: https://trac.netlabs.org/odin32/browser/trunk/LICENSE.TXT
+spdx_license_key: LicenseRef-scancode-odin-2000
+other_urls:
+    - https://github.com/rousseaux/netlabs.odin32/blob/master/LICENSE.TXT
+---
+
+Project Odin Software License
+
+You may, without charge, royalty, or other payment, copy and
+distribute copies of this work in source or binary form
+provided that:
+(1) you appropriately publish on each copy an appropriate
+copyright notice; (2) faithfully reproduce all prior copyright
+included in the original work; and (3) agree to indemnify and
+hold all prior authors, copyright holders and licensors of the
+work harmless from and against all damages arising from use of
+or the inability to use the work.
+
+You may not use the work as base of another work. You are
+encouraged to make changes to this work but you have to
+submit all changes back to the work and only use them if
+they become part of the work. If you have the need to
+create a derivative work you may contact the Odin
+management team and a special arrangement can be done.
+
+However, you are encouraged to use the work for porting your
+free or commercial applications. You can ship software
+using the work as long as the original copyright for the work
+is mentioned and you do not charge for using any part of the
+work. You may also ship the work in binaries and sources for
+use with your applications as long as you do not violate the
+distribution regulations of this license.
+
+These license terms can be amended by a custom license
+agreement between a third party and the administration
+team. Such a custom license might only limit the above terms
+if the changes cause a direct advantage for the functionality
+or completeness of the product and do not interfere with the
+goal of an open-source and free emulation product.
+
+Parts of the work may be governed by a license other than
+this one, if the source directory of the part contains a
+license file called "LICENSE.TXT" of its own. If a different
+license exists, it supercedes this license. Removing the
+the part specific license will automatically put back the
+part under the terms of this license. Only the Odin management
+team is allowed to put parts of the work under a different
+license and remove the part specific licenses. The purpose
+of using different licenses is solely for allowing code
+sharing of certain parts of the work with other projects that
+have incompatible licenses. These parts should either have
+this license in a version that makes it compatible with the
+license of the second project, or the license of the second
+project as long as it conforms to the goals of an open source
+and free emulation software.
+
+Warranty
+
+EXCEPT AS OTHERWISE RESTRICTED BY LAW, THIS WORK IS PROVIDED
+WITHOUT ANY EXPRESSED OR IMPLIED WARRANTIES OF ANY KIND, INCLUDING
+BUT NOT LIMITED TO, ANY IMPLIED WARRANTIES OF FITNESS FOR A
+PARTICULAR PURPOSE, MERCHANTABILITY OR TITLE.  EXCEPT AS
+OTHERWISE PROVIDED BY LAW, NO AUTHOR, COPYRIGHT HOLDER OR
+LICENSOR SHALL BE LIABLE TO YOU FOR DAMAGES OF ANY KIND, EVEN IF 
+THEY HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+Odin management team
+
+The board of Odin managers currently consists of the following members:
+
+Patrick Haller
+Achim Hasenmueller
+Sander van Leeuwen
+
+2000/08/21

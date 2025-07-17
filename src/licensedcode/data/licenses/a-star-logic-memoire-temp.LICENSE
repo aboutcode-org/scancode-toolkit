@@ -1,0 +1,30 @@
+---
+key: a-star-logic-memoire-temp
+short_name: A-Star-Logic Memoire temporary License
+name: A-Star-Logic Memoire temporary License
+category: Proprietary Free
+owner: A-star-logic
+homepage_url: https://github.com/A-star-logic/memoire/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-a-star-logic-memoire-temp
+other_urls:
+    - https://github.com/A-star-logic/memoire/blob/main/README.md#license--running-the-app
+---
+
+A* Logic Memoire temporary License
+
+1. Overview
+
+This license allows for free use of the app for non-commercial, hobby, or educational purposes, and requires a paid license for any commercial or production deployment.
+Over time, portions of the code will transition to an open core license.
+
+2. Definitions
+
+- Non-Commercial Use: Includes use for personal, hobby, and educational projects where there is no direct or indirect financial gain.
+- Production Use: Includes any deployment or use of the software in commercial settings, revenue-generating operations, or high-scale environments intended for public or customer-facing applications.
+- Default Alive: Refers to the point where A* Logic has achieved sufficient, predictable revenue to maintain positive cash flow.
+
+3. Transition to Open Source Licensing
+Upon reaching "default alive" status and/or as publicly announced by A* Logic, portions of the codebase will be released under an open source License, while other portions will remain under this license.
+
+4. Warranty Disclaimer
+The software is provided “as-is,” without warranties or conditions of any kind, either express or implied. A* Logic shall not be liable for any damages arising from the use of this software.

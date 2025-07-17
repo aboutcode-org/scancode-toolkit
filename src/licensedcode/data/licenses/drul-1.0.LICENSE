@@ -1,0 +1,32 @@
+---
+key: drul-1.0
+short_name: DRUL 1.0
+name: Detection Rule Usage License (DRUL) 1.0
+category: Permissive
+owner: mthcht
+homepage_url: https://github.com/mthcht/ThreatHunting-Keywords-yara-rules/blob/main/LICENSE
+spdx_license_key: LicenseRef-scancode-drul-1.0
+---
+
+# Detection Rule Usage License (DRUL) 1.0
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this rule set and associated documentation files (the "Rules"), to deal
+in the Rules without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Rules, and to permit persons to whom the Rules are furnished to do so,
+subject to the following condition:
+
+Attribution — You must give appropriate credit to the original author(s) of the
+Rules, and indicate if changes were made. You may
+do so in any reasonable manner, but not in any way that suggests the licensor endorses
+you or your use.
+Wherever feasible, a link to the original project should be included.
+
+THE RULES ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE RULES OR THE USE OR OTHER DEALINGS IN THE
+RULES.

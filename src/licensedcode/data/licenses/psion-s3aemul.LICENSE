@@ -1,0 +1,71 @@
+---
+key: psion-s3aemul
+short_name: Psion User LIcence for S3AEMUL
+name: Psion User LIcence for S3AEMUL
+category: Proprietary Free
+owner: Psion
+homepage_url: https://psion.gtkc.net/psion-gmbh/emulator/serie3a/licence.txt
+spdx_license_key: LicenseRef-scancode-psion-s3aemul
+---
+
+PSION PLC BUSINESS/INSTITUTION/GOVERNMENT/HOME USER LICENCE
+                                  for
+                                S3AEMUL
+---------------------------------------------------------------------
+                                LICENCE
+
+ NOTICE TO THE USER ("licensee"): CAREFULLY READ THE FOLLOWING LEGAL
+AGREEMENT. THE LICENSEE'S USE OF THIS SOFTWARE IS CONDITIONAL UPON
+COMPLIANCE BY THE LICENSEE WITH THE TERMS OF THIS AGREEMENT.
+
+i).  S3AEMUL may be used on a royalty free basis.
+
+ii). You may copy and distribute copies of S3AEMUL in the same form
+     as you receive it, without any files being removed, altered or
+     added.  You may not copy it in any other form.
+
+ Note: "S3AEMUL" consists of the following files: licence.txt (this
+user licence agreement), readme.txt (a documentation file), and
+s3aemul.exe, epoc.dll, epoc.rmi, hhserver.par, rtm.exe, and
+dpmi16bi.ovl (software files).
+
+---------------------------------------------------------------------
+
+                               COPYRIGHT
+
+ S3AEMUL is protected by United Kingdom copyright laws and
+international treaty provisions. The licensee acknowledges that no
+title to the intellectual property in S3AEMUL is transferred to the
+licensee. The licensee further acknowledges that full ownership
+rights to S3AEMUL will remain the exclusive property of Psion PLC,
+and that the licensee will not acquire any rights to S3AEMUL except
+as expressly set forth in this licence. The licensee agrees that any
+copies of S3AEMUL made by the licensee will contain the same
+proprietary notices which appear on and in the original release of
+S3AEMUL.
+
+                          REVERSE ENGINEERING
+
+ The licensee agrees that he or she will not attempt to reverse
+compile, modify, translate or disassemble S3AEMUL, in whole or in part.
+
+                              NO WARRANTY
+
+ BECAUSE PSION S3AEMUL IS LICENSED FREE OF CHARGE, WE PROVIDE
+ABSOLUTELY NO WARRANTY, TO THE EXTENT PERMITTED BY APPLICABLE LAW.
+EXCEPT WHERE OTHERWISE STATED IN WRITING, PSION PLC PROVIDE S3AEMUL
+"AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE
+RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. 
+SHOULD THE S3AEMUL PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+ IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW WILL PSION PLC BE
+LIABLE TO YOU FOR DAMAGES, INCLUDING ANY LOST PROFITS, LOST MONIES,
+OR OTHER SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF
+THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO
+LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
+THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH PROGRAMS
+NOT DISTRIBUTED BY PSION PLC), EVEN IF YOU HAVE BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY OTHER PARTY.

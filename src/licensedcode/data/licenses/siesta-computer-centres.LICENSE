@@ -1,0 +1,126 @@
+---
+key: siesta-computer-centres
+short_name: Siesta Licence for Computer Centres
+name: Siesta Licence for Computer Centres
+category: Proprietary Free
+owner: ICMAB
+homepage_url: https://web.archive.org/web/20150920220207/http://departments.icmab.es/leem/siesta/CodeAccess/computer-center-licence.html
+spdx_license_key: LicenseRef-scancode-siesta-computer-centres
+---
+
+SIESTA LICENCE for COMPUTER CENTRES
+
+Motivation and Preamble
+
+The SIESTA program has been devised for its general use in research
+within the academic community. Some conditions have been defined for
+the use, distribution, and modification of SIESTA, which the authors
+consider fair and within the common fair practices in the academic
+community.
+
+
+1. Definitions
+
+"The Authors" are:
+
+    * Emilio Artacho, University of Cambridge, and IkerBasque and
+    CIC-Nanogune, San Sebastián * José María Cela,
+    Barcelona Supercomputing Center * Julian Gale, Curtin University
+    of Technology, Perth * Alberto García, ICMAB-CSIC, Barcelona *
+    Javier Junquera, Universidad de Cantabria, Santander * Pablo
+    Ordejón, CIN2-CSIC, Barcelona * Daniel Sánchez-Portal, Centro
+    de Física de Materiales, CSIC-UPV/EHU, San Sebastián * 
+    José M. Soler, Universidad Autónoma de Madrid
+
+Although we, the Authors, acknowledge that a limited number of
+auxiliary subroutines were written by (or are based on previous
+subroutines written by) other authors consider that the implementation
+of all the basic algorithms of the SIESTA program is ours.
+
+The Siesta team ("the Developers") are the Authors and:
+
+    * Richard M. Martin, University of Illinois at Urbana-Champaign
+
+"The Copyright-Holder" is the set of Authors.
+
+The valid distributors of the Siesta package ("The Distributors") are
+the Developers as specified above.
+
+"The SIESTA package" is the suite of software, including the SIESTA
+code itself, but also all other software, documentation, scripts, and
+ancillary support material distributed as a single entity. This
+Licence covers the entirety of said data.
+
+The Licensee is the person (never an institution) to whom the SIESTA
+package is distributed (under the terms of this Licence) by the
+Distributors; they are bound by this agreement.
+
+
+
+2. NO WARRANTY 
+
+There is no warranty for any part of the SIESTA package. The SIESTA
+package is provided by the Distributors "as-is" without warranty of
+any kind, either express or implied, including but not limited to the
+implied warranties of merchantability or fitness for a particular
+purpose. In no event shall the Distributors be liable for any direct,
+indirect, incidental, special, exemplary, or consequential damages
+(including, but not limited to, procurement of substitute goods or
+services; loss of use, data, or profits; or business interruption)
+however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising
+in any way out of the use of this software, even if advised of the
+possibility of such damage. The entire risk as to the quality or
+performance of the program, or any action the Licensee may take based
+on the output of any part of the SIESTA package, is with the Licensee.
+
+
+3. Limitation of Usage 
+
+The Licensee is hereby provided with a non-exclusive, royalty-free
+right to install the SIESTA package in any (or several) of the
+computers of the Licensee’s Centre, and manipulate it in order to
+compile the SIESTA program and the auxiliary programs distributed in
+the package, and to make the binary executable files (of SIESTA and
+auxiliary codes) accessible to any independently licensed SIESTA user
+that has access to the Licensee computers. The Licensee is bound by
+this agreement to grant access to the (source or executable) files
+only to people holding a valid Licence to use SIESTA, and prevent
+access to any other party. 
+
+This Licence does not grant the Licensee the right to use, develop or
+distribute either the SIESTA package or any of its components. For
+such purposes, a separate SIESTA user licence has to be issued to a
+member or members of the Licensee Centre (person, not the
+institution), if applicable.
+
+The Licensee is hereby also requested to cite the following papers in
+any document issued by the Centre that refers to the SIESTA package:
+
+    1. “Self-consistent order-N density-functional calculations for
+    very large systems”, P. Ordejón, E. Artacho and J. M. Soler,
+    Phys. Rev. B (Rapid Comm.) 53, R10441-10443 (1996).
+
+    2. “The SIESTA method for ab initio order-N materials simulation”
+    J. M. Soler, E. Artacho,J. D. Gale, A. García, J. Junquera,
+    P. Ordejón, and D. Sánchez-Portal, J. Phys.: Condens. Matt. 14,
+    2745-2779 (2002).
+
+Other papers relevant to the SIESTA package and method can also be
+cited as best scientific practice dictates. Licensees are recommended
+to send reference to the Developers of any publication containing
+results wholly or partially derived from the results of use of the
+SIESTA package.
+
+4. Support 
+
+The present Licence does not imply support services of any kind to the
+Licensee by the Distributors, including, but not limited to,
+installation, compilation and use of the software in the package.
+
+5. All Other Rights 
+
+All other rights not explicitly mentioned in this document are
+reserved. In particular, the Authors reserve all rights to resolve any
+and all conflicts arising in the development and distribution policies
+of the SIESTA package.

@@ -16,7 +16,7 @@ ignorable_holders:
     - Ben Davis, Robert J Ohannessian and Julien Cugniere
 ignorable_urls:
     - http://dumb.sf.net/
-    - http://www.gnu.org/philosophy/bsd.html 
+    - http://www.gnu.org/philosophy/bsd.html
 ---
 
 /*  _______         ____    __         ___    ___
