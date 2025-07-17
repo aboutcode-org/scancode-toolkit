@@ -7,6 +7,9 @@ ignorable_holders:
     - MediaTek Inc.
 ignorable_authors:
     - MediaTek Inc.
+is_deprecated: yes
+replaced_by:
+    - mediatek-proprietary-2016
 ---
 
 This software/firmware and related documentation ("MediaTek Software") are

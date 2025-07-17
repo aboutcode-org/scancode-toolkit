@@ -29,6 +29,7 @@ license_expressions:
   - adobe-glyph
   - mit-xfig
   - x11-tiff
+  - unknown-license-reference
   - other-permissive
   - x11 AND other-permissive
   - widget-workshop

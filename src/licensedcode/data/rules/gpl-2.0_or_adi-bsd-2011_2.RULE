@@ -1,0 +1,9 @@
+---
+license_expression: gpl-2.0 OR adi-bsd-2011
+is_license_notice: yes
+ignorable_urls:
+    - https://github.com/analogdevicesinc/genalyzer/blob/master/LICENSE
+    - https://github.com/analogdevicesinc/genalyzer/blob/master/LICENSE_ADIBSD
+---
+
+has two license models. The first is {{[GPL-v2]}}(https://github.com/analogdevicesinc/genalyzer/blob/master/LICENSE) which is often used when linking against the GPL-v2 version of FFTW. Alternatively, if you have your own FFTW license, the [{{ADI BSD license}}](https://github.com/analogdevicesinc/genalyzer/blob/master/LICENSE_ADIBSD) can be used. The provided Windows builds are GPL as they include FFTW.

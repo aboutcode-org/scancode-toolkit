@@ -368,6 +368,7 @@
       "sha1": null,
       "md5": null,
       "sha256": null,
+      "sha1_git": null,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -377,13 +378,14 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [],
       "detected_license_expression": null,
       "detected_license_expression_spdx": null,
       "license_detections": [],
@@ -407,6 +409,7 @@
       "sha1": "f4399249b905c17338eb06776a7205d6f643d396",
       "md5": "d897358d498fd2dbb1efedfa297fc0f3",
       "sha256": "63940bc96c0feeef3b22b96d7d6a4873cdb7f12151ce3362967afdc7f8ec6698",
+      "sha1_git": "f006181c3c30965e499423bd3fb25ac7cf968c78",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -416,15 +419,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
       "is_top_level": true,
       "is_key_file": true,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -482,6 +486,7 @@
       "sha1": "1ef59e75d33ed8b7b43548fd55843d894db4b910",
       "md5": "1385905becfdfd8d777342fcb1242d83",
       "sha256": "1780e44cd2317e04461131b34ea6fa5b1da4a571123c9a391ddc3b865c456298",
+      "sha1_git": "b6127d64177c08d34ea51f31688e7d97efeda829",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": "JavaScript",
@@ -491,15 +496,16 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "package_data": [],
-      "for_packages": [
-        "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
-      ],
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
       "is_key_file": false,
+      "is_community": false,
+      "package_data": [],
+      "for_packages": [
+        "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
+      ],
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [
@@ -557,6 +563,7 @@
       "sha1": "003103b742ebfb1e76e80d9fc05ab0b3046f2ab6",
       "md5": "bd8911e2d8af0caa689f76b9975761fd",
       "sha256": "d27968b827780212a965387f5ec3421ee59a0bf9166847629db0e716e6d2d9c3",
+      "sha1_git": "f54d82ed9fae5b25af27ca4ab8250538f9d5e4ad",
       "mime_type": "application/json",
       "file_type": "JSON data",
       "programming_language": null,
@@ -566,6 +573,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
+      "is_legal": false,
+      "is_manifest": false,
+      "is_readme": false,
+      "is_top_level": false,
+      "is_key_file": false,
+      "is_community": false,
       "package_data": [
         {
           "type": "npm",
@@ -790,11 +803,6 @@
       "for_packages": [
         "pkg:npm/%40invisionag/eslint-config-ivx@0.0.10?uuid=fixed-uid-done-for-testing-5642512d1758"
       ],
-      "is_legal": false,
-      "is_manifest": false,
-      "is_readme": false,
-      "is_top_level": false,
-      "is_key_file": false,
       "detected_license_expression": "mit",
       "detected_license_expression_spdx": "MIT",
       "license_detections": [

@@ -10,10 +10,10 @@ Akanksha Garg <akanksha.garg2k@gmail.com>
 `GITHUB <https://github.com/akugarg>`_
 
 
-Project: Detect Unknown Licenses and Indirect License References in Scancode
------------------------------------------------------------------------------
+Project: Detect Unknown Licenses and Indirect License References in ScanCode
+----------------------------------------------------------------------------
 
-`ScanCode-toolkit <https://github.com/aboutcode-org/scancode-toolkit>`_
+`ScanCode-Toolkit <https://github.com/aboutcode-org/scancode-toolkit>`_
 
 `Project Link <https://summerofcode.withgoogle.com/archive/2021/projects/6229596998991872>`_
 
@@ -24,7 +24,7 @@ Description
 ------------
 
 The main motive of this project was to improve license detection of unknown licenses
-and follow references to indirect license references in Scancode-TK
+and follow references to indirect license references in ScanCode-Toolkit
 
 **Improvement in the License Data Model Definition**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -78,7 +78,7 @@ containing n-grams from all regular license texts and rules. This is tracked in 
 **Addition of some new Licenses**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There were some licenses that were not present in Scancode-toolkit as for now.
+There were some licenses that were not present in ScanCode-Toolkit as for now.
 They have been added now.
 
 `nexB/scancode-toolkit#2625 <https://github.com/aboutcode-org/scancode-toolkit/pull/2625>`_

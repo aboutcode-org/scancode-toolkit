@@ -40,7 +40,7 @@ Entry points definition in ``setup.py``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, in ``setup.py``, you must provide an entry point called ``scancode_location_provider``.
-This allows ScanCode Toolkit to discover the plugin and use it in license detection.
+This allows ScanCode-Toolkit to discover the plugin and use it in license detection.
 Here is the definition of ``entry_points`` in ``setup.py``::
 
     entry_points={
@@ -51,7 +51,7 @@ Here is the definition of ``entry_points`` in ``setup.py``::
 
 The ``scancode_location_provider`` entry point maps to a list with information about the plugin.
 The variable ``licenses_to_install1`` is the name of the entry point. All entry point names
-**must** start with the prefix ``licenses``, or else ScanCode Toolkit will not use them in
+**must** start with the prefix ``licenses``, or else ScanCode-Toolkit will not use them in
 license detection.
 
 Directory structure

@@ -1,0 +1,35 @@
+---
+license_expression: open-aleph-1.0
+is_license_notice: yes
+ignorable_urls:
+    - https://github.com/Aleph-Alpha/.github/blob/main/oal.pdf
+---
+
+The following applies to all files in this repository, unless otherwise noted:
+
+This project is licensed under the terms of the {{Open Aleph License 1.0}}, available at
+{{https://github.com/Aleph-Alpha/.github/blob/main/oal.pdf}}
+
+Excerpt from the license text:
+
+Subject to the terms and conditions of this License, the Licensor grants you a non-exclusive, worldwide,
+non-transferable, non-sublicensable, and royalty-free limited right to use, copy, modify, distribute, make
+otherwise publicly available, and reproduce the Works and Derivative Works under Licensor’s copyright,
+for any Non-Commercial and Non-Administrative purpose.
+You may not use, copy, modify, distribute, make otherwise publicly available, reproduce, or sublicense the
+Works or Derivative Works except as expressly provided under and in accordance with this License.
+Your rights granted under this License will automatically terminate if you fail to comply with any of the
+terms of this License.
+
+EXCEPT FOR DAMAGES CAUSED BY INTENT OR FRAUDULENTLY CONCEALED
+DEFECTS, AND EXCEPT FOR DAMAGES RESULTING FROM BREACH OF ANY
+WARRANTY OR GUARANTEE EXPRESSLY GIVEN BY LICENSOR IN THE OPEN ALEPH LICENSE,
+IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY
+DAMAGES ARISING OUT OF THE OPEN ALEPH LICENSE OR THE USE OF THE WORK. ANY
+MANDATORY STATUTORY LIABILITY UNDER APPLICABLE LAW REMAINS
+UNAFFECTED.
+
+EXCEPT AS EXPRESSLY STATED IN THIS LICENSE OR REQUIRED BY APPLICABLE
+LAW, THE WORKS ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES
+OF ANY KIND INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES REGARDING
+THE CONTENTS, ACCURACY, OR FITNESS FOR A PARTICULAR PURPOSE.

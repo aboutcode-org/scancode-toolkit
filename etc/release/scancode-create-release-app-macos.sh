@@ -33,7 +33,7 @@ thirdparty_src_dir=$release_dir/thirdparty-src
 mkdir -p $thirdparty_dir
 mkdir -p $thirdparty_src_dir
 
-./configure --rel
+./configure --dev
 
 venv/bin/python etc/scripts/fetch_thirdparty.py \
   --requirements requirements-native.txt \

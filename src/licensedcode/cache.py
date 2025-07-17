@@ -515,6 +515,9 @@ def build_spdx_license_expression(license_expression, licensing=None):
     >>> spdx = "MIT OR GPL-2.0-only WITH LicenseRef-scancode-generic-exception"
     >>> assert build_spdx_license_expression(exp) == spdx
     """
+    if not license_expression:
+        return
+
     if not licensing:
         licensing = get_licensing()
     validate_spdx_license_keys(license_expression=license_expression, licensing=licensing)

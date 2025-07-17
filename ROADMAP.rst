@@ -1,7 +1,7 @@
 ScanCode IO/TK Roadmap
 ========================
 
-SCIO: ScanCode.io 
+SCIO: ScanCode.io
 SCTK: ScanCode Toolkit
 
 Top Issues
@@ -22,13 +22,13 @@ The goal of this improvement is to:
 
 - In a license detection, expose a primary license expression in addition
   to the complete, full license expression.
-  
+
 - Make the logic of selection of the primary license visible, at the minimum
   with a log of combination and primary license selection operations.
 
 This is for SCTK first.
 
-Status: 
+Status:
 
 This has been completed in SCTK and also included in SCIO. We use
 an updated --summary option and a new license clarity score for this.
@@ -93,18 +93,18 @@ Roadmap
 
 - SCTK: add primary license field in package output and populate this based on
   package-type/ecosystem conventions.
-- SCTK: also populate secondary license fields 
+- SCTK: also populate secondary license fields
 - SCIO: add primary license field in DiscoveredPackage models and feed it with
   the data from packages
 - SCIO: Do we track secondary? or is this just data aggregated on the fly.
-- SCIO: Refine primary license based on license in "key files"  
+- SCIO: Refine primary license based on license in "key files"
 
 
 2. Primary copyright detection for packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - This is closely tied to the primary license detection and should focus
-  on package manifests and key files. 
+  on package manifests and key files.
 - Support copyright parsing from all package ecosystems.
 
 3. Package files
@@ -135,7 +135,8 @@ Roadmap
 6. License detection quality improvements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Finish and merge unknown license detection (this depends on completion of 4. Go to two-level reporting of detections for license)
+- Finish and merge unknown license detection (this depends on completion of 4.
+  Go to two-level reporting of detections for license)
 - Update scancode-analyze to the new two-level reporting of license detections
 - Revamp how common list of suprrious licenses are detected (this is a bug)
 - Use important key phrases for license detection https://github.com/nexB/scancode-toolkit/issues/2637

@@ -4,6 +4,9 @@ is_license_notice: yes
 relevance: 90
 ignorable_urls:
     - http://www.greensock.com/
+is_deprecated: yes
+replaced_by:
+    - gsap-standard-no-charge-2025
 ---
 
 See http://www.greensock.com/ for details

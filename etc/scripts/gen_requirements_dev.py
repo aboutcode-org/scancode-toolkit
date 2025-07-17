@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 #
 # Copyright (c) nexB Inc. and others. All rights reserved.
 # ScanCode is a trademark of nexB Inc.
@@ -36,7 +35,8 @@ def gen_dev_requirements():
         type=pathlib.Path,
         required=True,
         metavar="DIR",
-        help='Path to the "site-packages" directory where wheels are installed such as lib/python3.6/site-packages',
+        help="Path to the 'site-packages' directory where wheels are installed "
+        "such as lib/python3.12/site-packages",
     )
     parser.add_argument(
         "-d",

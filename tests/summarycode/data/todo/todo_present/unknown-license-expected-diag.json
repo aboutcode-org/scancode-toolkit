@@ -56,6 +56,7 @@
             "rule_notes": "Unknown license based on a composite of license words.",
             "referenced_filenames": [],
             "matched_text": "form shall mean the preferred form for making\nthe purposes of this definition control\nsoftware is modified by someone else\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.",
+            "matched_text_diagnostics": "form shall mean the preferred form for making\nthe purposes of this definition control\n[software] [is] [modified] [by] [someone] [else]\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) [to] [the] interfaces of,\n      the Work and Derivative Works thereof.",
             "rule_text": "form shall mean the preferred form for making\nthe purposes of this definition control\nsoftware is modified by someone else\n\n\n\nrepresent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof."
           }
         ],

@@ -1,0 +1,9 @@
+---
+license_expression: gsap-standard-no-charge-2025
+is_license_notice: yes
+relevance: 100
+ignorable_urls:
+    - https://gsap.com/standard-license
+---
+
+* Subject to the terms at {{https://gsap.com/standard-license}}

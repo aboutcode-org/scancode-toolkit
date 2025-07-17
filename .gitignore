@@ -114,3 +114,5 @@ selenium
 
 # Ignore extra rpmdb sqlite stuff
 rpmdb.sqlite-*
+/.ruff_cache/
+.env

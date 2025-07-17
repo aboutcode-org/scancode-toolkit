@@ -112,3 +112,45 @@ class TestWinPeParseToPackage(TestWinPePeInfo):
         for manifest in win_pe.WindowsExecutableHandler.parse(test_file):
             package_data.append(manifest.to_dict())
         return package_data
+
+
+class TestWinPeInfoParseToPackage(FileBasedTesting):
+    """
+    Test packagedata creation without the .exe file just from
+    the extracted pe info JSON. To extract the PE package info
+    add a test in TestWinPePeInfo and regen, then transfer the
+    function into this class, with necessary modifications.
+    """
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    pe_expected_file_suffix = '.expected.json'
+    package_expected_file_suffix = '.package-expected.json'
+
+    def get_packages_data_from_pe_info(self, pe_info_file):
+        with io.open(pe_info_file, encoding='utf-8') as expect:
+            pe_info = json.load(expect)
+        return win_pe.get_package_data_from_pe_info(pe_info).to_dict()
+
+    def check_win_pe(self, test_file, regen=REGEN_TEST_FIXTURES):
+        package_expected_file = test_file.replace(self.pe_expected_file_suffix, self.package_expected_file_suffix)
+        package_data = self.get_packages_data_from_pe_info(test_file)
+        if regen:
+            with open(package_expected_file, 'w') as out:
+                json.dump(package_data, out, indent=2)
+
+        with io.open(package_expected_file, encoding='utf-8') as expect:
+            expected = json.load(expect)
+
+        assert package_data == expected
+
+    def test_win_pe_youtube_dlc_exe(self):
+        test_file = self.get_test_loc('win_pe/youtube-dlc.exe'+self.pe_expected_file_suffix)
+        self.check_win_pe(test_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_win_pe_dockerpull_exe(self):
+        test_file = self.get_test_loc('win_pe/DockerPull.exe'+self.pe_expected_file_suffix)
+        self.check_win_pe(test_file, regen=REGEN_TEST_FIXTURES)
+
+    def test_win_pe_onixcheck_exe(self):
+        test_file = self.get_test_loc('win_pe/onixcheck.exe'+self.pe_expected_file_suffix)
+        self.check_win_pe(test_file, regen=REGEN_TEST_FIXTURES)

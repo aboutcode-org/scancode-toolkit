@@ -1,0 +1,23 @@
+---
+license_expression: gpl-2.0 OR adi-bsd-2011
+is_license_notice: yes
+ignorable_urls:
+    - https://github.com/analogdevicesinc/hdl/blob/master/LICENSE_ADIBSD
+    - https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+---
+
+# Redistribution and use of source or resulting binaries, with or without modification
+# of this file, are permitted under one of the following two license terms:
+#
+#   1. The {{GNU General Public License version 2}} as published by the
+#      Free Software Foundation, which can be found in the top level directory
+#      of this repository (LICENSE_GPL2), and also online at:
+#      <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
+#
+# OR
+#
+#   2. An {{ADI specific BSD license}}, which can be found in the top level directory
+#      of this repository (LICENSE_ADIBSD), and also on-line at:
+#      https://github.com/analogdevicesinc/hdl/blob/master/LICENSE_ADIBSD
+#      This will allow to generate bit files and not release the source code,
+#      as long as it attaches to an ADI device.

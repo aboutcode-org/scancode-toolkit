@@ -1,0 +1,8 @@
+---
+license_expression: mit
+is_license_reference: yes
+referenced_filenames:
+    - LICENSE
+---
+
+All rights not explicitly granted in the {{MIT license}} are reserved. See the included LICENSE file for more details.

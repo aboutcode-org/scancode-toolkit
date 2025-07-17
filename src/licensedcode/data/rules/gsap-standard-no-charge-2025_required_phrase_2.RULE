@@ -1,0 +1,9 @@
+---
+license_expression: gsap-standard-no-charge-2025
+is_license_reference: yes
+is_required_phrase: yes
+ignorable_urls:
+    - http://greensock.com/standard-license
+---
+
+http://greensock.com/standard-license

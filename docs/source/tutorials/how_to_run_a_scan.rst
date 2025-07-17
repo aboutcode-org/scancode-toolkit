@@ -2,7 +2,7 @@ How to Run a Scan
 =================
 
 In this simple tutorial example, we perform a basic scan on the ``samples`` directory distributed
-by default with Scancode.
+by default with ScanCode.
 
 
 Prerequisites
@@ -15,7 +15,7 @@ Looking into Files
 ------------------
 
 As mentioned previously, we are going to perform the scan on the ``samples`` directory distributed
-by default with Scancode Toolkit. Here's the directory structure and respective files:
+by default with ScanCode-Toolkit. Here's the directory structure and respective files:
 
 .. image::  /tutorials/data/files_sample.png
 

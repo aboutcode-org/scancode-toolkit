@@ -2,6 +2,9 @@
 license_expression: proprietary-license
 is_license_notice: yes
 relevance: 100
+is_deprecated: yes
+replaced_by:
+    - gsap-standard-no-charge-2025
 ---
 
 Standard 'no charge' license

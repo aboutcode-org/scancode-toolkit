@@ -7,11 +7,14 @@ owner: Perl Foundation
 homepage_url: http://www.perlfoundation.org/
 notes: "This is a variant Artistic license still used in today's Perl and that \ncomes with\
     \ the \"dist\" tool included in the standard Perl distrbution.\nSee also https://github.com/pexip/os-perl/blob/d7a993d1118c65177c97ae41577b188653845a8a/regen-configure/U/README#L158\n"
-spdx_license_key: LicenseRef-scancode-artistic-1988-1.0
+spdx_license_key: Artistic-dist
+other_spdx_license_keys:
+    - LicenseRef-scancode-artistic-1988-1.0
 text_urls:
     - https://raw.githubusercontent.com/rmanfredi/dist/2cec35331a912b165e2dd135d22de81f34bbc83f/Artistic
 other_urls:
     - https://github.com/pexip/os-perl/blob/d7a993d1118c65177c97ae41577b188653845a8a/regen-configure/U/README#L158
+    - https://github.com/pexip/os-perl/blob/833cf4c86cc465ccfc627ff16db67e783156a248/debian/copyright#L2720-L2845
 ---
 
                       The "Artistic License"

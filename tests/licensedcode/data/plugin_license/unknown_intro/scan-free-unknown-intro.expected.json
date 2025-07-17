@@ -1,0 +1,102 @@
+{
+  "license_detections": [
+    {
+      "identifier": "mit-5bfe2e00-00c1-6e00-d2a6-379ee31e7c0f",
+      "license_expression": "mit",
+      "license_expression_spdx": "MIT",
+      "detection_count": 1,
+      "detection_log": [
+        "unknown-intro-followed-by-match"
+      ],
+      "reference_matches": [
+        {
+          "license_expression": "free-unknown",
+          "license_expression_spdx": "LicenseRef-scancode-free-unknown",
+          "from_file": "scan-free-unknown-intro/README.md",
+          "start_line": 3,
+          "end_line": 5,
+          "matcher": "2-aho",
+          "score": 50.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 50,
+          "rule_identifier": "free-unknown_88.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_88.RULE",
+          "matched_text": "This plugin was created in [Realytics](https://www.realytics.io/) in 2017. Thank you for supporting Open Source.\n\n## License",
+          "matched_text_diagnostics": "Open Source.\n\n## License"
+        },
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "from_file": "scan-free-unknown-intro/README.md",
+          "start_line": 5,
+          "end_line": 7,
+          "matcher": "2-aho",
+          "score": 100.0,
+          "matched_length": 3,
+          "match_coverage": 100.0,
+          "rule_relevance": 100,
+          "rule_identifier": "mit_31.RULE",
+          "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_31.RULE",
+          "matched_text": "## License\n\nMIT License",
+          "matched_text_diagnostics": "License\n\nMIT License"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "type": "file",
+      "detected_license_expression": "mit",
+      "detected_license_expression_spdx": "MIT",
+      "license_detections": [
+        {
+          "license_expression": "mit",
+          "license_expression_spdx": "MIT",
+          "matches": [
+            {
+              "license_expression": "free-unknown",
+              "license_expression_spdx": "LicenseRef-scancode-free-unknown",
+              "from_file": "scan-free-unknown-intro/README.md",
+              "start_line": 3,
+              "end_line": 5,
+              "matcher": "2-aho",
+              "score": 50.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 50,
+              "rule_identifier": "free-unknown_88.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/free-unknown_88.RULE",
+              "matched_text": "This plugin was created in [Realytics](https://www.realytics.io/) in 2017. Thank you for supporting Open Source.\n\n## License",
+              "matched_text_diagnostics": "Open Source.\n\n## License"
+            },
+            {
+              "license_expression": "mit",
+              "license_expression_spdx": "MIT",
+              "from_file": "scan-free-unknown-intro/README.md",
+              "start_line": 5,
+              "end_line": 7,
+              "matcher": "2-aho",
+              "score": 100.0,
+              "matched_length": 3,
+              "match_coverage": 100.0,
+              "rule_relevance": 100,
+              "rule_identifier": "mit_31.RULE",
+              "rule_url": "https://github.com/nexB/scancode-toolkit/tree/develop/src/licensedcode/data/rules/mit_31.RULE",
+              "matched_text": "## License\n\nMIT License",
+              "matched_text_diagnostics": "License\n\nMIT License"
+            }
+          ],
+          "detection_log": [
+            "unknown-intro-followed-by-match"
+          ],
+          "identifier": "mit-5bfe2e00-00c1-6e00-d2a6-379ee31e7c0f"
+        }
+      ],
+      "license_clues": [],
+      "percentage_of_license_text": 22.73,
+      "scan_errors": []
+    }
+  ]
+}

@@ -1,7 +1,10 @@
 ---
 license_expression: libpng
 is_license_text: yes
-relevance: 100
+is_deprecated: yes
+notes: Added in SPDX license list 3.27
+replaced_by:
+    - libpng-1.6.35
 ignorable_copyrights:
     - Copyright (c) 1995-1996 Guy Eric Schalnat, Group 42, Inc.
     - Copyright (c) 1996-1997 Andreas Dilger

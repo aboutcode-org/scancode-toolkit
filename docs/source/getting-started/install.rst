@@ -19,7 +19,7 @@ For advanced usage and experienced users, you can also use any of these mode:
 
 - :ref:`docker_install`
 
-    An alternative to installing the latest Scancode Toolkit release natively is
+    An alternative to installing the latest ScanCode-Toolkit release natively is
     to build a Docker image from the included Dockerfile. The only prerequisite
     is a working Docker installation.
 
@@ -44,7 +44,7 @@ For advanced usage and experienced users, you can also use any of these mode:
 Before Installing
 -----------------
 
-- ScanCode requires a Python version between 3.9 to 3.12 and is
+- ScanCode requires a Python version between 3.9 to 3.13 and is
   tested on Linux, macOS, and Windows. It should work fine on FreeBSD.
 
 .. _system_requirements:
@@ -80,7 +80,7 @@ ScanCode needs a Python 3.9+ interpreter; We support all Python versions from
 
     For Ubuntu, it is ``sudo apt install python3-dev``
 
-    - On Ubuntu 16, 18, 20 and 22 run::
+    - On Ubuntu 16, 18, 20 ,22 and 24 run::
 
           sudo apt install python-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev libpopt0
 
@@ -114,7 +114,7 @@ ScanCode needs a Python 3.9+ interpreter; We support all Python versions from
     .. Note::
 
       64-bit Python interpreters (x86-64) are the only interpreters supported by
-      Scancode on all operating systems which means only 64-bit Windows is supported.
+      ScanCode on all operating systems which means only 64-bit Windows is supported.
 
     See the :ref:`windows_app_install` section for more installation details.
 
@@ -125,7 +125,7 @@ ScanCode needs a Python 3.9+ interpreter; We support all Python versions from
 Installation as an Application: Downloading Releases
 -----------------------------------------------------
 
-Get the Scancode Toolkit tarball archive of a specific version and your
+Get the ScanCode-Toolkit tarball archive of a specific version and your
 operating system by going to the `project releases page <https://github.com/aboutcode-org/scancode-toolkit/releases/>`_
 
 For example, Version 30.0.1 archive can be obtained from
@@ -194,8 +194,8 @@ This will configure ScanCode and display the command line :ref:`cli_help_text`.
 
 .. _windows_app_install:
 
-Installation on Windows 10
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installation on Windows 10/11
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Download the latest ScanCode release zip file for Windows from the latest
   version at https://github.com/aboutcode-org/scancode-toolkit/releases/
@@ -234,7 +234,7 @@ Installation on Windows 10
   then Right-click in this window and select Paste. This will paste the path you
   copied before and is where you extracted ScanCode::
 
-    cd path/to/extracted/ScanCode
+    cd path\to\extracted\ScanCode
 
 - Press Enter.
 
@@ -267,15 +267,16 @@ Un-installation
 Installation via Docker:
 ------------------------
 
-You can install Scancode Toolkit by building a Docker image from the included Dockerfile.
+You can install ScanCode-Toolkit by building a Docker image from the included Dockerfile.
 The prerequisite is a working `docker installation <https://docs.docker.com/engine/install/>`_.
 
 
 Download the ScanCode-Toolkit Source Code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- ``git clone https://github.com/aboutcode-org/scancode-toolkit`` to get the latest
-  ( :ref:`source_code_install` ) source code.
+Run the following once you have `Git <https://git-scm.com/>`_ installed::
+
+    git clone https://github.com/aboutcode-org/scancode-toolkit.git
 
 
 Build the Docker image
@@ -285,6 +286,17 @@ Run the ``docker build`` source code checkout directory.::
 
     cd scancode-toolkit
     docker build --tag scancode-toolkit --tag scancode-toolkit:$(git describe --tags) .
+
+.. note::
+
+  As ``$(git describe --tags)`` is a Unix-style command. If you are on
+  windows, please run the ``git describe --tags`` separately to get the
+  output, then manually insert that value into your Docker command.
+  For instance, ::
+
+    C:\scancode-toolkit>git describe --tags
+    v32.4.0
+    C:\scancode-toolkit>docker build --tag scancode-toolkit --tag scancode-toolkit:v32.4.0 .
 
 
 Run using Docker
@@ -317,7 +329,7 @@ those after will be forwarded to scancode.
 Installation from Source Code: Git Clone
 -----------------------------------------
 
-You can download the Scancode Toolkit Source Code and build from it yourself.
+You can download the ScanCode-Toolkit Source Code and build from it yourself.
 This is what you would want to do it if:
 
 - You are developing ScanCode or adding new patches or want to run tests.

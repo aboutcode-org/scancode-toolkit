@@ -1,6 +1,6 @@
 .. _cli_output_control_filters:
 
-Controlling Scancode Output and Filters
+Controlling ScanCode Output and Filters
 =======================================
 
 .. include::  /rst_snippets/output_control_options.rst

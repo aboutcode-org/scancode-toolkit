@@ -30,18 +30,18 @@ ScanCode tries to address these issues by offering:
 - Extensive documentation and support.
 - We release of the code and reference data under permissive licenses (Apache
   2.0 and CC-BY-4.0)
-- ScanCode.io to assemble scripted and specialied code analysis pipelines with
+- ScanCode.io to assemble scripted and specialized code analysis pipelines with
   a web-based analysis server
 - ScanCode workbench for desktop-based scans visualization
 
 ScanCode is recognized as the industry leading engine for license and copyright
 detection and used as the basis of several open source compliance efforts in
-open source projects and companies. It's detection engine is embedded in the
+open source projects and companies. Its detection engine is embedded in the
 most advanced open source and commercial tools available today for Software
 Composition Analysis.
 
 
-What does ScanCode Toolkit do?
+What does ScanCode-Toolkit do?
 ------------------------------
 
 ScanCode detects and normalizes origin, dependencies, licensing and other
@@ -52,8 +52,8 @@ related information in your code:
   <https://github.com/package-url/purl-spec>`_,
 
 - by detecting license tags, notices and texts in text and binaries using the
-  world most comprehensive database of licenses texts and notices and a unique
-  combination of techniuqes,
+  world's most comprehensive database of license texts and notices and a unique
+  combination of techniques,
 
 - by recognizing copyright statements using an advanced natural language parsing
   grammar and detecting other origin clues (such as emails, urls, and authors)
@@ -65,7 +65,7 @@ Using this data you can:
 
 - Discover direct dependent packages and indirect pinned or locked dependencies,
 
-- Assemble a software component Inventory of your codebase, and report the data
+- Assemble a software component inventory of your codebase, and report the data
   using standard SBOM formats,
 
 - Use this data as the input to:

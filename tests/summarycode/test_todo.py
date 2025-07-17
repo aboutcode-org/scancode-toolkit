@@ -30,6 +30,8 @@ class TestScanReview(FileDrivenTesting):
         run_scan_click([
             '-clip',
             '--todo',
+            '--classify',
+            '--summary',
             '--json-pp', result_file, test_dir
         ])
         check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
@@ -102,6 +104,24 @@ class TestScanReview(FileDrivenTesting):
             '--license-text',
             '--license-diagnostics',
             '--license-text-diagnostics',
+            '--todo',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_uuid=True, remove_file_date=True, regen=REGEN_TEST_FIXTURES)
+
+    def test_todo_ignores_unknown_license_detections_from_community_files(self):
+        test_dir = self.get_test_loc('ignore_issue/invariant-2.2.4/')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('ignore_issue/invariant-2.2.4-expected.json')
+        run_scan_click([
+            '--license',
+            '--license-text',
+            '--license-diagnostics',
+            '--license-text-diagnostics',
+            '--package',
+            '--info',
+            '--classify',
+            '--summary',
             '--todo',
             '--json-pp', result_file, test_dir
         ])
