@@ -2888,7 +2888,7 @@ GRAMMAR = """
     # Nicolas Pitre, (c) 2002 Monta Vista Software Inc
     # Cliff Brake, (c) 2001
     #COPYRIGHT: {<NAME>  <COPY>  <NAME-YEAR> <NAME>  <COPY>  <YR-RANGE>}    #1566.1
-    
+
     # copyright: Copyright (c) Joe Joyce and contributors, 2016-2019.
     COPYRIGHT: {<COPY>+ <NAME>  <CC>  <NN>  <YR-RANGE>} #1579992
 
